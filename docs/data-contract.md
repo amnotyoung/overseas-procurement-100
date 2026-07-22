@@ -214,6 +214,11 @@ interface Discrepancy {
   action: string;     // 필수. 본 데이터에 무엇을 반영했나
   userAction: string; // 필수. 실무자가 당장 할 일
   upstream?: Upstream; // 선택. 자료집 발행처의 정정이 필요할 때만
+
+  // 이 불일치가 자료집의 어느 대목인지. 제도 전체의 sourceRefs[0]과 다를 때만 적는다.
+  // 정오표는 발행처가 해당 쪽을 펴 봐야 하는 문서라 쪽수가 정확해야 한다.
+  sourcePage?: string;     // 예: "17"
+  sourceSection?: string;  // 예: "Ⅲ. 통관 등 관련 사항(시공/기자재)"
 }
 
 interface Upstream {

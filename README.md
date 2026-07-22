@@ -16,20 +16,24 @@
 
 ## 지금 상태
 
-**네팔 파일럿 완료** — 3개 제도, 검증 통과, **불일치 8건 발견(high 2 / medium 3 / low 3)**
+**네팔 파일럿 완료** — 3개 제도, 검증 통과, **불일치 10건 발견(high 3 / medium 4 / low 3)**
 
 | 제도 | 축 | 검증 상태 | 불일치 |
 |---|---|---|---|
 | [네팔 공공조달 입찰제도](data/institutions/nepal-bidding-system.json) | bidding | `article-verified` | 3 |
 | [네팔 조달 거버넌스·감독체계](data/institutions/nepal-procurement-governance.json) | governance | `article-verified` | 2 |
-| [네팔 ODA 사업 발굴·형성 절차](data/institutions/nepal-oda-project-pipeline.json) | pipeline | `law-linked` | 3 |
+| [네팔 ODA 사업 발굴·형성 절차](data/institutions/nepal-oda-project-pipeline.json) | pipeline | `article-verified` | 5 |
 
-발견한 것 중 실무에서 바로 문제가 되는 두 건:
+발견한 것 중 실무에서 바로 문제가 되는 세 건:
 
 - **대리인 제출서류** — 자료집은 "주민등록 등본"이라 하지만 원문(PPR r.39(1)(d))은
   **PAN(영구계좌번호) 등록증명서 인증등본 + 대리인 수락서**다. 세무등록번호와 주민등록은 다른 서류이고, 누락 시 입찰서가 심사에서 빠질 수 있다.
 - **ODA 사업 착수 지점** — 자료집은 "공여기관이 수원기관 부처와 협의해 발굴"이라 하지만,
-  네팔 국제개발협력정책 §5.2.2·§5.2.3은 그 접촉 자체에 **재무부 사전 승인**과 **국가계획위원회 동의**를 요구한다.
+  네팔 정책은 그 접촉 자체에 **재무부 사전 승인**을 요구한다(FAMP §3.3.2(k)). 공여기관도 승인 대상이다(§3.3.5(b)).
+- **근거 정책이 폐지됨** — 자료집이 전제한 국제개발협력정책 2019는 **대외원조동원정책 2025**(2025-04-21 승인)
+  §3.7.1로 폐지됐다. 자료집 발행 2개월 뒤다. 차관 1천만 달러 문턱과 국가계획위원회 동의 요건이 사라졌고
+  조세면제가 좁아졌다 — 자료집을 현행 기준으로 그대로 쓰면 없어진 요건을 준비하거나
+  면제받을 수 없는 세금을 사업비에서 누락하게 된다.
 
 전체는 [검증 대장](docs/verification-log.md) 참조.
 
@@ -73,7 +77,8 @@
 │   └── manifest.json            국가·제도 진행 대장 (11개국 × 3축)
 ├── docs/
 │   ├── data-contract.md         스키마 정의 — 작성 전 반드시 읽을 것
-│   └── verification-log.md      검증 대장 (불일치 공개)
+│   ├── verification-log.md      검증 대장 (자동 생성)
+│   └── errata.md                자료집 정오표 (자동 생성)
 ├── sources/
 │   ├── koica-2025-asia-pacific/
 │   │   ├── extract.sh           자료집 PDF → 국가별 텍스트
@@ -82,9 +87,14 @@
 ├── tools/
 │   ├── validate.py              스키마 검증
 │   ├── check_links.py           외부 링크 생존 확인
+│   ├── build_docs.py            검증 대장·정오표 생성
 │   └── build_site.py            정적 사이트 생성
 └── site/                        생성된 화면 (빌드 산출물)
 ```
+
+`docs/verification-log.md`와 `docs/errata.md`는 **손으로 고치지 않는다.**
+불일치는 JSON이 단일 출처이고 두 문서는 그것을 읽는 형식으로 옮긴 것이다.
+실제로 손으로 관리하던 동안 데이터와 어긋났고(문서 8건 vs 데이터 10건), 그래서 생성으로 바꿨다.
 
 ---
 
@@ -170,9 +180,12 @@ sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.
 4. 인용 조문을 하나씩 대조하고, 금액·비율·기한은 원문 표와 맞춘다.
 5. **자료집이 말하지 않은 것도 본다.** 근거 문서를 읽다 보면 자료집에 없는 의무가 나온다.
    네팔 `high` 2건 중 1건이 여기서 나왔다.
-6. `docs/data-contract.md`에 맞춰 3개 JSON을 쓰고 `python3 tools/validate.py`를 통과시킨다.
-7. 불일치는 `verification.discrepancies`에 넣고 `docs/verification-log.md`에 요약한다.
-8. `python3 tools/build_site.py`로 화면을 다시 만든다. 국가·제도가 늘면 목록·필터·통계는 자동으로 따라온다.
+6. **근거 문서가 아직 살아 있는지 확인한다.** 폐지·개정됐으면 대조 자체가 무의미해진다.
+   네팔 건은 자료집이 전제한 정책이 발행 2개월 뒤 폐지된 것이 이 단계에서 드러났다.
+7. `docs/data-contract.md`에 맞춰 3개 JSON을 쓰고 `python3 tools/validate.py`를 통과시킨다.
+8. 불일치는 `verification.discrepancies`에 `action`·`userAction`·`upstream`까지 채워 넣는다.
+9. `python3 tools/build_docs.py && python3 tools/build_site.py`로 문서와 화면을 다시 만든다.
+   국가·제도가 늘면 목록·필터·통계·정오표가 자동으로 따라온다.
 
 작성 원칙은 [데이터 계약 §5](docs/data-contract.md)에 있다. 핵심은 하나다 —
 **불일치를 적을 때 자료집이 틀렸다고 쓰지 말고, 무엇이 어떻게 다르며 실무에 어떤 영향인지 쓴다.**
