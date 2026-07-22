@@ -1,0 +1,170 @@
+{
+  "project": "overseas-procurement-100",
+  "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋",
+  "schemaVersion": "0.1",
+  "updatedAt": "2026-07-22",
+
+  "axes": [
+    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "11/11" },
+    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "11/11" },
+    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "11/11" }
+  ],
+
+  "axisSelection": {
+    "method": "KOICA 2025 자료집(아시아·태평양) 11개국 전수 섹션 조사",
+    "ration": "3축만 11/11로 존재한다. 인허가(6/11)·건축입찰(1/11, 네팔만)·진출유의사항(7/11)은 축으로 삼으면 다른 대륙 확장 시 결측이 생기므로, 존재하는 국가에 한해 canvas.entryBarriers·submittedDocuments·fieldVerification으로 흡수한다.",
+    "surveyedAt": "2026-07-22"
+  },
+
+  "sourceDocuments": [
+    {
+      "id": "koica-2025-asia-pacific",
+      "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아시아·태평양 지역",
+      "publisher": "한국국제협력단(KOICA)",
+      "issuedOn": "2025-02-25",
+      "pdfPages": 117,
+      "layout": "좌우 2면 스프레드(1228.82 × 841.89 pt). 단순 추출 시 좌우 페이지 텍스트가 섞이므로 sources/koica-2025-asia-pacific/extract.sh로 분할 추출한다.",
+      "status": "확보"
+    },
+    { "id": "koica-2025-africa", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아프리카 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
+    { "id": "koica-2025-latin-america", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중남미 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
+    { "id": "koica-2025-middle-east-cis", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중동·CIS 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" }
+  ],
+
+  "countries": [
+    {
+      "slug": "nepal", "name": "네팔", "nameEn": "Nepal", "iso3": "NPL",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "5-14", "docPages": "6-25",
+      "institutions": {
+        "bidding": { "slug": "nepal-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 3 },
+        "governance": { "slug": "nepal-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 2 },
+        "pipeline": { "slug": "nepal-oda-project-pipeline", "status": "done", "verification": "law-linked", "discrepancies": 3 }
+      },
+      "primaryLaws": [
+        "Public Procurement Act, 2063 (2007)",
+        "Public Procurement Rules, 2064 (2007)",
+        "International Development Cooperation Policy, 2019"
+      ],
+      "notes": "파일럿 국가. 자료집에 유일하게 건축 관련 입찰제도 섹션이 있다."
+    },
+    {
+      "slug": "timor-leste", "name": "동티모르", "nameEn": "Timor-Leste", "iso3": "TLS",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "16-21", "docPages": "28-39",
+      "institutions": {
+        "bidding": { "slug": "timor-leste-bidding-system", "status": "pending" },
+        "governance": { "slug": "timor-leste-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "timor-leste-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션이 자료집에 없다. 현지 조달법 원문 확보가 선행돼야 한다. 투자청 SERVE(www.serve.gov.tl) 언급 있음."
+    },
+    {
+      "slug": "laos", "name": "라오스", "nameEn": "Lao People's Democratic Republic", "iso3": "LAO",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "23-31", "docPages": "42-59",
+      "institutions": {
+        "bidding": { "slug": "laos-bidding-system", "status": "pending" },
+        "governance": { "slug": "laos-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "laos-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "입찰제도·법규·규정·인허가 섹션이 모두 있어 네팔 다음으로 밀도가 높다."
+    },
+    {
+      "slug": "bangladesh", "name": "방글라데시", "nameEn": "Bangladesh", "iso3": "BGD",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "33-42", "docPages": "62-81",
+      "institutions": {
+        "bidding": { "slug": "bangladesh-bidding-system", "status": "pending" },
+        "governance": { "slug": "bangladesh-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "bangladesh-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. Public Procurement Act 2006 / Rules 2008 원문 대조 필요."
+    },
+    {
+      "slug": "vietnam", "name": "베트남", "nameEn": "Viet Nam", "iso3": "VNM",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "44-62", "docPages": "84-121",
+      "institutions": {
+        "bidding": { "slug": "vietnam-bidding-system", "status": "pending" },
+        "governance": { "slug": "vietnam-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "vietnam-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "자료집 최대 분량(19면). 입찰제도·법규·규정·인허가 전부 있음. Law on Bidding 2023(22/2023/QH15) 개정 반영 여부 확인 필요."
+    },
+    {
+      "slug": "sri-lanka", "name": "스리랑카", "nameEn": "Sri Lanka", "iso3": "LKA",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "64-68", "docPages": "124-133",
+      "institutions": {
+        "bidding": { "slug": "sri-lanka-bidding-system", "status": "pending" },
+        "governance": { "slug": "sri-lanka-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "sri-lanka-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "자료집 분량 최소 수준(5면). Procurement Guidelines 2006 원문 보강 필요."
+    },
+    {
+      "slug": "indonesia", "name": "인도네시아", "nameEn": "Indonesia", "iso3": "IDN",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "70-78", "docPages": "136-153",
+      "institutions": {
+        "bidding": { "slug": "indonesia-bidding-system", "status": "pending" },
+        "governance": { "slug": "indonesia-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "indonesia-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. LKPP 및 Perpres 16/2018 계열 규정 확인 필요."
+    },
+    {
+      "slug": "cambodia", "name": "캄보디아", "nameEn": "Cambodia", "iso3": "KHM",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "80-89", "docPages": "156-175",
+      "institutions": {
+        "bidding": { "slug": "cambodia-bidding-system", "status": "pending" },
+        "governance": { "slug": "cambodia-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "cambodia-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "입찰제도·법규·인허가 섹션 있음."
+    },
+    {
+      "slug": "pakistan", "name": "파키스탄", "nameEn": "Pakistan", "iso3": "PAK",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "91-98", "docPages": "178-193",
+      "institutions": {
+        "bidding": { "slug": "pakistan-bidding-system", "status": "pending" },
+        "governance": { "slug": "pakistan-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "pakistan-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "공고 게재 기준(30만 PKR 이상, 국내 15일·국제 30일)이 자료집에 명시돼 PPRA Rules 2004 대조 대상이 뚜렷하다. 연방·주별 PPRA가 분리돼 있어 관할 구분 주의."
+    },
+    {
+      "slug": "fiji", "name": "피지", "nameEn": "Fiji", "iso3": "FJI",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "100-104", "docPages": "196-205",
+      "institutions": {
+        "bidding": { "slug": "fiji-bidding-system", "status": "pending" },
+        "governance": { "slug": "fiji-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "fiji-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "자료집에 '피지 입찰 관련 법제도 환경' 표가 있다. 태평양 도서국 유일 사례."
+    },
+    {
+      "slug": "philippines", "name": "필리핀", "nameEn": "Philippines", "iso3": "PHL",
+      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
+      "pdfPages": "106-116", "docPages": "208-229",
+      "institutions": {
+        "bidding": { "slug": "philippines-bidding-system", "status": "pending" },
+        "governance": { "slug": "philippines-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "philippines-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "사전 조달회의(pre-procurement conference) 언급 있음. RA 9184 → RA 12009(New Government Procurement Act, 2024) 전환 반영 여부 확인 필요."
+    }
+  ],
+
+  "progress": {
+    "countriesTotal": 11,
+    "countriesDone": 1,
+    "institutionsTotal": 33,
+    "institutionsDone": 3,
+    "discrepanciesFound": 8
+  }
+}
