@@ -2,18 +2,18 @@
   "project": "overseas-procurement-100",
   "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋",
   "schemaVersion": "0.1",
-  "updatedAt": "2026-07-22",
+  "updatedAt": "2026-07-23",
 
   "axes": [
-    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "11/11" },
-    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "11/11" },
-    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "11/11" }
+    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "아시아 11/11 · 탄자니아 확인" },
+    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "아시아 11/11 · 탄자니아 확인" },
+    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "아시아 11/11 · 탄자니아 확인" }
   ],
 
   "axisSelection": {
-    "method": "KOICA 2025 자료집(아시아·태평양) 11개국 전수 섹션 조사",
-    "ration": "3축만 11/11로 존재한다. 인허가(6/11)·건축입찰(1/11, 네팔만)·진출유의사항(7/11)은 축으로 삼으면 다른 대륙 확장 시 결측이 생기므로, 존재하는 국가에 한해 canvas.entryBarriers·submittedDocuments·fieldVerification으로 흡수한다.",
-    "surveyedAt": "2026-07-22"
+    "method": "KOICA 2025 자료집(아시아·태평양) 11개국 전수 섹션 조사. 아프리카(탄자니아)에서도 3축 존재 확인.",
+    "ration": "3축만 11/11로 존재한다. 인허가(6/11)·건축입찰(1/11, 네팔만)·진출유의사항(7/11)은 축으로 삼으면 다른 대륙 확장 시 결측이 생기므로, 존재하는 국가에 한해 canvas.entryBarriers·submittedDocuments·fieldVerification으로 흡수한다. 탄자니아도 같은 3축 구조로 정규화됐다.",
+    "surveyedAt": "2026-07-23"
   },
 
   "sourceDocuments": [
@@ -26,7 +26,15 @@
       "layout": "좌우 2면 스프레드(1228.82 × 841.89 pt). 단순 추출 시 좌우 페이지 텍스트가 섞이므로 sources/koica-2025-asia-pacific/extract.sh로 분할 추출한다.",
       "status": "확보"
     },
-    { "id": "koica-2025-africa", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아프리카 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
+    {
+      "id": "koica-2025-africa",
+      "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아프리카 지역",
+      "publisher": "한국국제협력단(KOICA)",
+      "issuedOn": "2025-02-25",
+      "pdfPages": 120,
+      "layout": "페이지마다 크기가 다르다 — 표지·간지는 A4(595pt), 국가 본문은 A3 스프레드(1190.55 × 841.89 pt)에 좌측 A4 영역으로 조판. pdfinfo가 첫 페이지만 봐서 A4로 오인하므로, 페이지별 폭을 개별 확인해 좌면(0~폭/2)을 추출한다.",
+      "status": "확보"
+    },
     { "id": "koica-2025-latin-america", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중남미 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
     { "id": "koica-2025-middle-east-cis", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중동·CIS 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" }
   ],
@@ -50,6 +58,25 @@
         "International Development Cooperation Policy, 2019 — Foreign Aid Mobilization Policy 2025 §3.7.1로 폐지"
       ],
       "notes": "파일럿 국가. 자료집에 유일하게 건축 관련 입찰제도 섹션이 있다. 자료집이 전제한 수원체계 근거(IDCP 2019)가 발행 2개월 뒤 폐지돼, ODA 파이프라인은 신규 정책 기준으로 전면 재작성했다."
+    },
+    {
+      "slug": "tanzania", "name": "탄자니아", "nameEn": "Tanzania", "iso3": "TZA",
+      "region": "아프리카", "sourceDocument": "koica-2025-africa",
+      "pdfPages": "102-112", "docPages": "205-225",
+      "institutions": {
+        "bidding": { "slug": "tanzania-bidding-system", "status": "done", "verification": "law-linked", "discrepancies": 2 },
+        "governance": { "slug": "tanzania-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
+        "pipeline": { "slug": "tanzania-oda-project-pipeline", "status": "done", "verification": "source-document", "discrepancies": 1 }
+      },
+      "primaryLaws": [
+        "Public Procurement Act, No. 10 of 2023 (2024-06-17 시행)",
+        "Public Procurement Regulations, 2025 (GN No. 261 of 2025)"
+      ],
+      "supersededLaws": [
+        "Public Procurement Act, 2011 — PPA 2023 §131(1)로 폐지",
+        "Public Procurement Regulations, 2013 — PPR 2025로 교체"
+      ],
+      "notes": "아프리카 첫 국가. 자료집이 근거로 삼은 PPA 2011·PPR 2013이 자료집 발행 8개월 전(2024-06-17)에 이미 PPA 2023·PPR 2025로 교체됐다 — 네팔보다 이른 폐지. 조달제도 2건은 새 법 기준으로 재작성, 보증률 세부는 새 규정 Third Schedule 정독이 남았다. 자료집이 A3 스프레드라 좌면 추출 필요."
     },
     {
       "slug": "timor-leste", "name": "동티모르", "nameEn": "Timor-Leste", "iso3": "TLS",
@@ -164,12 +191,15 @@
   ],
 
   "progress": {
-    "countriesTotal": 11,
-    "countriesDone": 1,
-    "institutionsTotal": 33,
-    "institutionsDone": 3,
-    "discrepanciesFound": 10,
-    "discrepanciesHigh": 3,
-    "upstreamPending": 10
+    "note": "countriesTotal은 아시아·태평양 11개국 기준. 아프리카 등 타 지역 국가 수는 자료집 확보 시 갱신.",
+    "countriesDone": 2,
+    "institutionsDone": 6,
+    "discrepanciesFound": 14,
+    "discrepanciesHigh": 5,
+    "upstreamPending": 14,
+    "byCountry": {
+      "nepal": { "institutions": 3, "discrepancies": 10, "high": 3 },
+      "tanzania": { "institutions": 3, "discrepancies": 4, "high": 2 }
+    }
   }
 }

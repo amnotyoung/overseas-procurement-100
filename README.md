@@ -16,13 +16,27 @@
 
 ## 지금 상태
 
-**네팔 파일럿 완료** — 3개 제도, 검증 통과, **불일치 10건 발견(high 3 / medium 4 / low 3)**
+**2개국 6개 제도 완료** — 검증 통과, **불일치 14건(high 5 / medium 5 / low 4)**
+
+네팔(아시아·태평양)
 
 | 제도 | 축 | 검증 상태 | 불일치 |
 |---|---|---|---|
 | [네팔 공공조달 입찰제도](data/institutions/nepal-bidding-system.json) | bidding | `article-verified` | 3 |
 | [네팔 조달 거버넌스·감독체계](data/institutions/nepal-procurement-governance.json) | governance | `article-verified` | 2 |
 | [네팔 ODA 사업 발굴·형성 절차](data/institutions/nepal-oda-project-pipeline.json) | pipeline | `article-verified` | 5 |
+
+탄자니아(아프리카)
+
+| 제도 | 축 | 검증 상태 | 불일치 |
+|---|---|---|---|
+| [탄자니아 공공조달 입찰제도](data/institutions/tanzania-bidding-system.json) | bidding | `law-linked` | 2 |
+| [탄자니아 조달 거버넌스·감독체계](data/institutions/tanzania-procurement-governance.json) | governance | `law-linked` | 1 |
+| [탄자니아 ODA 사업 발굴·형성 절차](data/institutions/tanzania-oda-project-pipeline.json) | pipeline | `source-document` | 1 |
+
+두 나라 모두에서 **자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
+탄자니아는 발행 **8개월 전**에 이미 새 법(PPA 2023, 2024-06-17 시행)이 시행돼 자료집이 발행 시점에 폐지된 법을 참조했다.
+근거 문서의 현행 여부 확인이 워크플로의 필수 단계임을 보여준다.
 
 발견한 것 중 실무에서 바로 문제가 되는 세 건:
 
