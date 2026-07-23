@@ -254,6 +254,13 @@
         "impact": "자료집 발행일(2025-02-25) 기준으로 이미 8개월 전에 새 법·규정이 시행됐다. 자료집을 그대로 따르면 폐지된 법(PPA 2011)과 구 규정(PPR 2013)의 조문·보증률을 적용하게 되고, 신설된 force account 문턱·가격상한·NeST 전자조달 의무·지역업체 우대를 놓친다. 특히 보증 금액이 입찰서류 위임으로 바뀌어, 자료집의 고정 비율을 전제로 예산·보증을 잡으면 실제 발주 조건과 어긋날 수 있다.",
         "action": "근거를 PPA 2023 + PPR 2025로 교체하고, 자료집이 참조한 PPR 2013은 구 규정으로 legalBasis에 병기했다. 보증률 수치 대조는 새 규정 Third Schedule 정독이 필요해 fieldVerification·unresolved에 남겼다.",
         "userAction": "2024년 6월 이후 탄자니아 입찰에는 자료집의 PPR 2013 기준을 그대로 적용하지 않는다. 발주 건의 입찰서류에서 보증 금액·형태를 직접 확인하고, NeST 등록과 지역업체 우대 요건을 사전에 점검한다.",
+        "review": {
+          "topic": "Whether the guide's procurement law is still in force",
+          "guideSays": "The guide bases Tanzania's bidding rules on the Public Procurement Regulations 2013 (and the 2011 Act).",
+          "lawSays": "Public Procurement Act No. 10 of 2023 §131(1) repealed the 2011 Act; the new Act took effect on 17 June 2024 (GN 455), and the regulations were replaced by the Public Procurement Regulations 2025 (GN No. 261).",
+          "impact": "The new Act and regulations took effect about eight months before the guide was published (25 Feb 2025) — the guide already cited repealed law. Following it applies the old fixed surety rates and misses the new force-account threshold, price cap, mandatory NeST e-procurement, and stronger local-supplier preference.",
+          "verify": "For tenders after June 2024, apply PPA 2023 and PPR 2025. Confirm surety amounts in each tender's documents, and check NeST registration and local-preference requirements before bidding."
+        },
         "sourcePage": "213",
         "sourceSection": "Ⅲ-1. 탄자니아 입찰 관련 법규",
         "upstream": {
@@ -272,6 +279,13 @@
         "impact": "NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다. 자료집이 이를 다루지 않아, 종이 기반 절차를 전제로 준비하면 입찰이 불가능하다.",
         "action": "applicability와 procedure에 NeST 전자조달 의무를 반영했다.",
         "userAction": "탄자니아 입찰 참여 전 NeST(국가전자조달시스템) 등록을 완료하고 전자입찰 역량을 갖춘다. 종이 기반 절차를 전제로 준비하지 않는다.",
+        "review": {
+          "topic": "Mandatory e-procurement (NeST)",
+          "guideSays": "The guide describes the bidding process but does not mention mandatory e-procurement.",
+          "lawSays": "PPA 2023 mandates the National e-Procurement System of Tanzania (NeST) for all procurement, replacing the former TANePS.",
+          "impact": "Without NeST registration and e-bidding capability, a firm cannot participate at all. Preparing for a paper-based process makes bidding impossible.",
+          "verify": "Confirm NeST registration is complete before any tender, and that the procuring entity runs the tender through NeST."
+        },
         "sourcePage": "214",
         "sourceSection": "Ⅲ-1. 입찰 진행절차",
         "upstream": {
@@ -290,6 +304,13 @@
         "impact": "자료집의 고정 보증률(입찰 5%·계약 10%·하자 3%)과 하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이다. 새 규정에서는 입찰·이행보증은 입찰서류가, 하자보증·하자담보기간은 계약이 정하므로, 자료집 비율을 전제로 보증·예산을 잡으면 실제 조건과 어긋난다. 확정 값(선금 30% 상한, 지체상금 물품 0.10~0.20%로 자료집 0.15% 포함)은 정합적이나, 자료집의 지체상금 '운송·보관 0.5%'는 새 규정에 대응 항목이 없다.",
         "action": "입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.",
         "userAction": "입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 자료집의 3%·1~2년을 전제로 하지 않는다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일이며 '운송·보관 0.5%'는 새 규정 근거가 없으므로 계약 특약 여부를 따로 확인한다.",
+        "review": {
+          "topic": "Surety rates (bid / performance / retention) and liquidated damages",
+          "guideSays": "The guide gives fixed rates: bid security 5%, performance security 10%, defect security 3%, defects-liability period 1-2 years, and liquidated damages of 0.15% (manufacturing) and 0.5% (transport/storage).",
+          "lawSays": "PPR 2025 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is 'the period specified in the contract' (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no 'transport/storage' liquidated-damages category.",
+          "impact": "The guide's fixed rates come from the repealed 2013 regulations. Budgeting on them may not match the actual tender/contract terms. The 0.5% transport/storage rate has no basis in the new regulations.",
+          "verify": "Read the bid and performance security amounts from each tender's documents; read retention money and the defects-liability period from the contract. Do not assume 5% / 10% / 3% / 1-2 years. Check whether any 'transport/storage' liquidated damages exist as a contract-specific special term."
+        },
         "sourcePage": "213",
         "sourceSection": "Ⅲ-1. 보증 비교표",
         "upstream": {

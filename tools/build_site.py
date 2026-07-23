@@ -118,6 +118,22 @@ def cite_link(d: dict, text: str) -> str:
     return esc
 
 
+def _review_html(rv: dict | None) -> str:
+    """불일치 카드 안의 현지 직원용 영어 검토 접기."""
+    if not rv:
+        return ""
+    return f"""<details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">{e(rv['topic'])}</p>
+    <p><b>The guide says</b> — {e(rv['guideSays'])}</p>
+    <p><b>The law says</b> — {e(rv['lawSays'])}</p>
+    <p><b>Why it matters</b> — {e(rv['impact'])}</p>
+    <p class="rv-verify"><b>✔ Verify</b> — {e(rv['verify'])}</p>
+  </div>
+</details>"""
+
+
 def disc_card(d: dict, x: dict, *, link: str = "") -> str:
     """불일치 카드 하나. 상세·검증대장·정오표에서 공통으로 쓴다."""
     up = x.get("upstream")
@@ -151,6 +167,7 @@ def disc_card(d: dict, x: dict, *, link: str = "") -> str:
   <p class="cite">근거 · {cite_link(d, x['citation'])}</p>
   <p class="impact">{el(x['impact'])}</p>
   <div class="todo"><b>실무자가 할 일</b>{el(x['userAction'])}</div>
+  {_review_html(x.get('review'))}
   <p class="act-row">이 데이터에 반영 — {el(x['action'])}</p>
   {up_html}
 </div>"""
@@ -369,6 +386,15 @@ ul.plain li{margin-bottom:6px}
 .disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
 .disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
 .disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
 .todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
   border:1px solid var(--key);font-size:13.5px;line-height:1.7}
 .todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}

@@ -244,6 +244,17 @@ interface Discrepancy {
   // 정오표는 발행처가 해당 쪽을 펴 봐야 하는 문서라 쪽수가 정확해야 한다.
   sourcePage?: string;     // 예: "17"
   sourceSection?: string;  // 예: "Ⅲ. 통관 등 관련 사항(시공/기자재)"
+
+  // 현지 직원(영어) 검증용. 이 불일치를 실제로 확인하는 사람이 한국어를 못 읽을 수 있다.
+  review?: DiscrepancyReview;
+}
+
+interface DiscrepancyReview {
+  topic: string;      // 영어 주제 (짧게). "Agent's required documents"
+  guideSays: string;  // 자료집이 뭐라 했는지 영어. 현지 직원은 한국어 자료집을 못 읽는다.
+  lawSays: string;    // 법령이 실제로 뭐라 하는지 영어 (원문 요지 + 조문)
+  impact: string;     // 왜 문제인지 영어
+  verify: string;     // 현장에서 확인할 것 — 영어 행동 지시. "Confirm with the procuring entity that..."
 }
 
 interface Upstream {
@@ -284,6 +295,20 @@ upstream priority 기준
 
 `upstream`이 있는 항목은 `docs/errata.md`에 정오표로 모여 발행처에 전달할 수 있는 형태가 된다.
 전달 후에는 `state`를 갱신해 후속을 추적한다.
+
+### review — 현지 직원이 검증하는 사람이다
+
+이 데이터의 최종 검증자는 KOICA 해외사무소 직원이고, 현지 직원이면 한국어를 못 읽는다.
+불일치의 법령 원문(`actualText`)·조문(`citation`)은 이미 영어지만, 자료집 서술(`sourceText`)과
+영향·행동(`impact`·`userAction`)은 한국어라 정작 확인할 사람이 못 읽는다. `review`는 그 간극을 메운다.
+
+- `guideSays` — 자료집이 뭐라 했는지 영어로. 현지 직원은 한국어 자료집을 펴 볼 수 없으니 여기서 읽는다.
+- `verify` — **현장에서 무엇을 확인할지** 영어 행동 지시. 이게 검토 시트의 핵심이다.
+  "발주처 입찰서류에서 보증 금액을 확인하라", "현행 규정 reg.X와 대조하라"처럼 실행 가능해야 한다.
+
+`review`가 있는 불일치는 `tools/build_docs.py`가 `docs/review-sheet.en.md`(영어 검토 시트)로 모은다.
+현지 직원이 이 시트를 들고 원문·발주처와 대조한다. **`high`·`medium` 불일치는 `review`를 채우는 것을 원칙으로 한다** —
+실무 손해로 이어지는 것일수록 현지에서 확인돼야 하기 때문이다.
 
 #### Unresolved
 

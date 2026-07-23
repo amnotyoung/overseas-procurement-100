@@ -60,8 +60,13 @@
 | `upstream` | 자료집 발행처 | 다음 판에서 무엇을 고쳐야 하나 |
 
 `upstream`이 있는 항목은 [정오표](docs/errata.md)에 `현재 서술 → 수정 제안 → 근거 조문` 형태로 모여
-그대로 옮겨 전달할 수 있다. 현재 **정정 요망 4건 / 보완 권고 4건, 전부 미제보** 상태다.
-전달 후 `upstream.state`를 갱신하면 문서와 화면이 따라온다. 자동 발송은 하지 않는다.
+그대로 옮겨 전달할 수 있다. 전달 후 `upstream.state`를 갱신하면 문서와 화면이 따라온다. 자동 발송은 하지 않는다.
+
+**검증하는 사람은 현지 직원이다.** 이 데이터의 최종 검증자는 KOICA 해외사무소 직원이고,
+현지인이면 한국어를 못 읽는다. 그래서 `high`·`medium` 불일치마다 영어 검토 블록(`review`)을 달아,
+`자료집이 뭐라 했나 → 법이 뭐라 하나 → 현장에서 확인할 것(Verify)` 형태로 [영어 검토 시트](docs/review-sheet.en.md)를
+생성한다. 상세 페이지의 불일치 카드에도 "Field verification (English)" 접기로 붙는다.
+법령 원문(`actualText`)·조문(`citation`)은 이미 영어라, `review`는 그 사이의 한국어 간극만 메운다.
 
 ---
 
@@ -92,7 +97,8 @@
 ├── docs/
 │   ├── data-contract.md         스키마 정의 — 작성 전 반드시 읽을 것
 │   ├── verification-log.md      검증 대장 (자동 생성)
-│   └── errata.md                자료집 정오표 (자동 생성)
+│   ├── errata.md                자료집 정오표 (자동 생성)
+│   └── review-sheet.en.md       현지 직원용 영어 검토 시트 (자동 생성)
 ├── sources/
 │   ├── koica-2025-asia-pacific/
 │   │   ├── extract.sh           자료집 PDF → 국가별 텍스트

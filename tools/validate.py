@@ -193,6 +193,19 @@ def check(path: Path) -> None:
             if d.get("id") and not d["id"].startswith(slug):
                 err(slug, f"discrepancies[{i}].id가 slug로 시작하지 않음: {d['id']!r}")
 
+            rv = d.get("review")
+            if rv is not None:
+                for field in ("topic", "guideSays", "lawSays", "impact", "verify"):
+                    if not rv.get(field):
+                        err(slug, f"discrepancies[{i}].review.{field} 누락")
+                # 영어 검토 시트라 한글이 섞이면 현지 직원이 못 읽는다
+                for field in ("topic", "verify"):
+                    if rv.get(field) and any('가' <= ch <= '힣' for ch in rv[field]):
+                        warn(slug, f"discrepancies[{i}].review.{field}에 한글이 섞임 — 영어 검토용")
+            elif d.get("severity") in ("high", "medium"):
+                warn(slug, f"discrepancies[{i}]({d.get('id')})는 severity={d.get('severity')}인데 "
+                           f"review(현지 직원 영어 검토)가 없음")
+
             up = d.get("upstream")
             if up is not None:
                 if up.get("priority") not in UPSTREAM_PRIORITY:
