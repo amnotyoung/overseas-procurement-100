@@ -59,18 +59,25 @@ def build_verification_log(items: list[dict]) -> str:
     a(f"- 기준일: {verified}")
     a(f"- 대상: {len(items)}개 제도 ({', '.join(countries)})")
     a(f"- 결과: **불일치 {len(rows)}건 — 높음 {counts['high']} / 보통 {counts['medium']} / 낮음 {counts['low']}**")
+    n_office = sum(1 for _, x in rows if (x.get("fieldCheck") or {}).get("status")
+                   in ("confirmed", "refuted", "partial"))
     a(f"- 발행처 조치 필요: **{n_up}건** (정정 요망 {n_fix} / 보완 권고 {n_up - n_fix}) → [정오표](errata.md)")
+    a(f"- 사무소 현장 확인: **{n_office}/{len(rows)}건** 회신됨 → [영어 검토 시트](review-sheet.en.md)")
     a("")
     a("## 제도별 검증 상태")
     a("")
-    a("| 제도 | 국가 | 검증 | 불일치 | 확인일 |")
-    a("|---|---|---|---|---|")
+    a("| 제도 | 국가 | 검증 | 불일치 | 사무소 확인 | 확인일 |")
+    a("|---|---|---|---|---|---|")
     for d in items:
         v = d["verification"]
         ds = v.get("discrepancies", [])
         hi = sum(1 for x in ds if x["severity"] == "high")
+        office = sum(1 for x in ds if (x.get("fieldCheck") or {}).get("status")
+                     in ("confirmed", "refuted", "partial"))
+        reviewable = sum(1 for x in ds if x.get("review"))
+        office_cell = f"{office}/{reviewable}" if reviewable else "—"
         a(f"| [{d['name']}](../data/institutions/{d['slug']}.json) | {d['country']['name']} | "
-          f"{VERIF_LABEL[v['status']]} | {len(ds)}건{f' (높음 {hi})' if hi else ''} | {v['verifiedAt']} |")
+          f"{VERIF_LABEL[v['status']]} | {len(ds)}건{f' (높음 {hi})' if hi else ''} | {office_cell} | {v['verifiedAt']} |")
     a("")
     a("---")
     a("")
@@ -94,6 +101,14 @@ def build_verification_log(items: list[dict]) -> str:
                 a(f"- 발행처 조치: **{up['priority']}** · {UP_STATE.get(up['state'], up['state'])}")
             else:
                 a("- 발행처 조치: 없음 (본 데이터의 보완 사항)")
+            fc = x.get("fieldCheck")
+            if fc:
+                fc_ko = {"confirmed": "✔ 확인됨", "refuted": "✗ 반증됨(우리 판단 오류)",
+                         "partial": "◐ 부분 확인", "pending": "… 확인 중"}
+                a(f"- 사무소 확인: **{fc_ko.get(fc['status'], fc['status'])}** · "
+                  f"{fc['checkedBy']} · {fc['checkedOn']} — {fc['finding']}")
+            elif x.get("review"):
+                a("- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)")
             a("")
             a("**자료집**")
             a("")
@@ -259,15 +274,23 @@ def build_review_sheet(items: list[dict]) -> str:
     a("the current law. Your job is the **Verify** line: confirm it against the original text or the")
     a("procuring entity, and flag whether the guide needs correcting.")
     a("")
+    n_done = sum(1 for _, x in rows if (x.get("fieldCheck") or {}).get("status") in
+                 ("confirmed", "refuted", "partial"))
     a(f"- As of: {verified}")
     a(f"- Countries: {', '.join(countries)}")
-    a(f"- Items needing field check: **{len(rows)}** (HIGH {n_hi})")
+    a(f"- Items needing field check: **{len(rows)}** (HIGH {n_hi}) · returned by office: **{n_done}/{len(rows)}**")
     a("")
     a("HIGH = following the guide risks bid rejection, document loss, or a procedural breach.")
+    a("")
+    a("**How to return your findings:** under each item's *Office result* line, mark the status,")
+    a("write what you found, and add your office name and date. Send the filled sheet back;")
+    a("the dataset manager will record it. Items already returned show the result inline.")
     a("")
     a("---")
     a("")
 
+    fc_label = {"confirmed": "✔ CONFIRMED", "refuted": "✗ REFUTED (our call was off)",
+                "partial": "◐ PARTIAL", "pending": "… pending"}
     cur_country = None
     for i, (d, x) in enumerate(rows, 1):
         cc = d["country"]["nameEn"]
@@ -276,7 +299,9 @@ def build_review_sheet(items: list[dict]) -> str:
             a("")
             cur_country = cc
         rv = x["review"]
-        a(f"### {i:02d}. [{SEV_EN[x['severity']]}] {rv['topic']}")
+        fc = x.get("fieldCheck")
+        done_mark = f" — {fc_label.get(fc['status'], fc['status'])}" if fc and fc.get("status") != "pending" else ""
+        a(f"### {i:02d}. [{SEV_EN[x['severity']]}] {rv['topic']}{done_mark}")
         a("")
         a(f"- Institution: {d['country']['nameEn']} — {AXIS_EN.get(d['axis'], d['axis'])}")
         a(f"- Legal basis: {x['citation']}")
@@ -291,6 +316,17 @@ def build_review_sheet(items: list[dict]) -> str:
         a(f"**Why it matters** — {rv['impact']}")
         a("")
         a(f"**✔ Verify** — {rv['verify']}")
+        a("")
+        if fc:
+            a(f"**Office result** — {fc_label.get(fc['status'], fc['status'])} · "
+              f"{fc['checkedBy']} · {fc['checkedOn']}")
+            a(f"> {fc['finding']}"
+              + (f" ([evidence]({fc['evidenceUrl']}))" if fc.get("evidenceUrl") else ""))
+        else:
+            a("**Office result** *(fill and return)* —")
+            a("- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`")
+            a("- Finding: ")
+            a("- Checked by / date: ")
         a("")
         a("---")
         a("")

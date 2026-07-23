@@ -81,6 +81,17 @@
 생성한다. 상세 페이지의 불일치 카드에도 "Field verification (English)" 접기로 붙는다.
 법령 원문(`actualText`)·조문(`citation`)은 이미 영어라, `review`는 그 사이의 한국어 간극만 메운다.
 
+**검증 결과는 데이터로 돌아온다 (회신 → 관리자 반영).** `review.verify`는 지시일 뿐이고,
+사무소가 확인한 결과는 `fieldCheck`가 받는다. 흐름은 —
+
+1. [영어 검토 시트](docs/review-sheet.en.md)를 사무소에 전달한다. 각 항목 끝에 **결과 회신 양식**(status/finding/date)이 붙어 있다.
+2. 사무소가 현장·원문 확인 후 양식을 채워 회신한다.
+3. **관리자**가 그 회신을 불일치의 `fieldCheck`에 옮긴다 — `confirmed`(확인됨) / `refuted`(우리 오류) / `partial`(부분) / `pending`.
+4. `build_docs`·`build_site`를 다시 돌리면 검토 시트·검증 대장·화면에 "사무소 확인" 상태가 반영된다.
+
+`refuted`(우리 판단이 틀림)는 지우지 않고 남긴다 — 무엇을 왜 틀렸는지가 다음 작성의 교훈이 되기 때문이다.
+자세한 반영 규칙은 [데이터 계약의 fieldCheck 절](docs/data-contract.md)에 있다.
+
 ---
 
 ## 왜 3축인가

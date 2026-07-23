@@ -9,9 +9,13 @@ procuring entity, and flag whether the guide needs correcting.
 
 - As of: 2026-07-23
 - Countries: Cambodia, Nepal, Tanzania
-- Items needing field check: **14** (HIGH 5)
+- Items needing field check: **14** (HIGH 5) · returned by office: **0/14**
 
 HIGH = following the guide risks bid rejection, document loss, or a procedural breach.
+
+**How to return your findings:** under each item's *Office result* line, mark the status,
+write what you found, and add your office name and date. Send the filled sheet back;
+the dataset manager will record it. Items already returned show the result inline.
 
 ---
 
@@ -31,6 +35,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — Check the procuring entity's standard bidding documents against PPR r.39(1)(d): confirm a local agent must provide a PAN registration certificate and a letter of acceptance, not a resident registration document.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 02. [HIGH] Where ODA project formation actually starts
@@ -47,6 +56,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — Confirm the MoF (International Economic Relations Division) approval route before contacting a line ministry, and check the recipient agency has prior MoF approval. This applies to the donor agency itself too (§3.3.5(b)).
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 03. [HIGH] Whether the guide's underlying aid policy is still in force
@@ -62,6 +76,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — The 2019 policy was valid at the guide's publication (25 Feb 2025) but has since been replaced. The USD 10 million concessional-loan threshold and the National Planning Commission consent requirement are gone, and tax exemption has narrowed. Applying the guide as-is prepares for requirements that no longer exist.
 
 **✔ Verify** — For projects after April 2025, use the Foreign Aid Mobilization Policy 2025, not the 2019 policy. Recheck loan thresholds and tax-exemption assumptions against the new policy.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 
@@ -81,6 +100,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — For tenders after June 2024, apply PPA 2023 and PPR 2025. Confirm surety amounts in each tender's documents, and check NeST registration and local-preference requirements before bidding.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 05. [HIGH] Legal basis for PPRA's mandate
@@ -96,6 +120,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — PPRA as an institution continues, but its governing framework changed. Using the guide as-is misses the new price cap, mandatory NeST, and stronger local-supplier preference, and points to section numbers from a repealed Act.
 
 **✔ Verify** — Use PPA 2023 as the reference. Check whether the estimated price is subject to a PPRA price cap, and whether the procuring entity is registered/operating on NeST.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 
@@ -115,6 +144,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — Treat thresholds/methods as provisionally valid under the 2012-era regulations, but check penalties and consulting-procurement rules against the 2023 law. Recheck thresholds once the new sub-decrees are issued.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 07. [MEDIUM] Governance framework — new statute's oversight powers
@@ -130,6 +164,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — The guide's structural description is accurate, but it does not surface the new MEF inspection power or the stronger penalties, which may lead to underestimating audit and compliance risk.
 
 **✔ Verify** — Confirm KOICA grant projects fall under the GDICDM / SOP 2019 track (externally funded). Check penalties and MEF inspection powers against the 2023 law.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 
@@ -149,6 +188,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — No change to bid preparation. When citing the basis, use PPR r.141 (procedure) together with PPA §63 (substance).
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 09. [MEDIUM] Who prepares the Project Concept Paper (PCP)
@@ -164,6 +208,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — It changes whether the counterpart for PCP consultation is the MoF or the line ministry. Approaching the wrong party at the formation stage wastes time.
 
 **✔ Verify** — Treat the line ministry as the PCP preparer; forwarding goes through a MoF letter. Confirm the readiness-checklist form and submission route with the KOICA Nepal office.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 
@@ -181,6 +230,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — When listing equipment, check whether items are sufficiently produced in Nepal (no exemption). For loan-linked projects, check the financing agreement for any exemption clause.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 11. [MEDIUM] Who publishes and handles tenders — PPMO vs procuring entities
@@ -196,6 +250,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — Reading 'PPMO oversees tenders' leads a bidder to miss the actual procuring entity and to file complaints with PPMO, which has no power to handle them — wasting the 7-day complaint window.
 
 **✔ Verify** — Confirm each tender's issuing and contracting body is the individual procuring entity, not PPMO. Complaints go to the head of the procuring entity (§47), then the Review Committee (§49).
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 
@@ -215,6 +274,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — Confirm NeST registration is complete before any tender, and that the procuring entity runs the tender through NeST.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 13. [MEDIUM] Surety rates (bid / performance / retention) and liquidated damages
@@ -231,6 +295,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 **✔ Verify** — Read the bid and performance security amounts from each tender's documents; read retention money and the defects-liability period from the contract. Do not assume 5% / 10% / 3% / 1-2 years. Check whether any 'transport/storage' liquidated damages exist as a contract-specific special term.
 
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
+
 ---
 
 ### 14. [MEDIUM] Whether Ministry of Finance approval is a prerequisite for project formation
@@ -246,6 +315,11 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 **Why it matters** — Reading 'direct identification possible' and advancing with a line ministry alone can stall formalization (RD signing) while MoF approval is obtained. Approval is a prerequisite, not an option.
 
 **✔ Verify** — Confirm the MoF External Finance Department approval route at the outset. A Record of Discussion (RD) cannot be signed without it.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding: 
+- Checked by / date: 
 
 ---
 

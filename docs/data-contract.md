@@ -247,6 +247,9 @@ interface Discrepancy {
 
   // 현지 직원(영어) 검증용. 이 불일치를 실제로 확인하는 사람이 한국어를 못 읽을 수 있다.
   review?: DiscrepancyReview;
+
+  // 사무소 검증 결과. review.verify(지시)를 사무소가 수행한 뒤 회신한 결과를 관리자가 여기 옮긴다.
+  fieldCheck?: DiscrepancyFieldCheck;
 }
 
 interface DiscrepancyReview {
@@ -255,6 +258,14 @@ interface DiscrepancyReview {
   lawSays: string;    // 법령이 실제로 뭐라 하는지 영어 (원문 요지 + 조문)
   impact: string;     // 왜 문제인지 영어
   verify: string;     // 현장에서 확인할 것 — 영어 행동 지시. "Confirm with the procuring entity that..."
+}
+
+interface DiscrepancyFieldCheck {
+  status: "confirmed" | "refuted" | "partial" | "pending";  // 사무소 확인 결과
+  checkedBy: string;    // "KOICA 탄자니아사무소" 등 — 누가 확인했나
+  checkedOn: string;    // YYYY-MM-DD — 언제
+  finding: string;      // 무엇을 발견했나. 영어 권장(검토 시트 독자가 현지 직원)
+  evidenceUrl?: string; // 선택. 근거 링크·문서
 }
 
 interface Upstream {
@@ -309,6 +320,28 @@ upstream priority 기준
 `review`가 있는 불일치는 `tools/build_docs.py`가 `docs/review-sheet.en.md`(영어 검토 시트)로 모은다.
 현지 직원이 이 시트를 들고 원문·발주처와 대조한다. **`high`·`medium` 불일치는 `review`를 채우는 것을 원칙으로 한다** —
 실무 손해로 이어지는 것일수록 현지에서 확인돼야 하기 때문이다.
+
+### fieldCheck — 사무소 검증 결과가 데이터로 돌아오는 루프
+
+`review.verify`는 "확인하라"는 지시일 뿐, 결과가 데이터로 돌아오지 않으면 루프가 닫히지 않는다.
+`fieldCheck`가 그 결과를 받는다. **회신 → 관리자 반영** 방식으로 작동한다:
+
+1. `docs/review-sheet.en.md`를 사무소에 전달한다. 시트의 각 항목 끝에는 **결과 회신 양식**이 붙어 있다.
+2. 사무소가 현장·원문 확인 후 양식(status / finding / checkedBy / date)을 채워 회신한다.
+3. **관리자**가 그 회신을 해당 불일치의 `fieldCheck`에 옮기고, 아래 규칙대로 데이터를 조정한다.
+4. `build_docs`·`build_site`를 다시 돌리면 검토 시트·검증 대장·화면에 확인 상태가 반영된다.
+
+status에 따른 관리자 조치:
+
+| status | 뜻 | 관리자가 할 일 |
+|---|---|---|
+| `confirmed` | 불일치가 사실로 확인됨 | 그대로 유지. `upstream.state`를 발행처 전달로 진행할 근거가 강해진다 |
+| `refuted` | 우리 판단이 틀렸음(자료집이 맞거나 상황이 다름) | `fieldCheck`는 기록으로 남기되, `sourceText`·`actualText`를 재검토하고 필요하면 불일치를 수정·철회한다 |
+| `partial` | 부분 사실 또는 추가 정보 | `finding`을 반영해 데이터를 갱신하고, 관련 `unresolved`를 해소한다 |
+| `pending` | 확인 진행 중 | 아직 회신 전. 검토 시트에 "확인 대기"로 남는다 |
+
+`fieldCheck`가 **없는** 불일치는 아직 사무소에 회신 요청조차 안 된 상태다(암묵적 미확인).
+`refuted`는 우리 오류를 **지우지 않고 남긴다** — 무엇을 왜 틀렸는지가 다음 작성의 교훈이 되기 때문이다.
 
 #### Unresolved
 

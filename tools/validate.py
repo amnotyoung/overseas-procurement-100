@@ -6,6 +6,7 @@
 종료코드 0 = 통과, 1 = 오류 있음
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -29,6 +30,7 @@ EDGE_TYPES = {"sequence", "message", "loop"}
 SEVERITIES = {"high", "medium", "low"}
 UPSTREAM_PRIORITY = {"정정 요망", "보완 권고"}
 UPSTREAM_STATE = {"not-reported", "reported", "acknowledged", "fixed", "declined"}
+FIELDCHECK_STATUS = {"confirmed", "refuted", "partial", "pending"}
 REASON_CODES = {
     "no-public-text", "local-language-only", "paywalled",
     "donor-internal", "site-unreachable", "title-needs-confirmation",
@@ -205,6 +207,18 @@ def check(path: Path) -> None:
             elif d.get("severity") in ("high", "medium"):
                 warn(slug, f"discrepancies[{i}]({d.get('id')})는 severity={d.get('severity')}인데 "
                            f"review(현지 직원 영어 검토)가 없음")
+
+            fc = d.get("fieldCheck")
+            if fc is not None:
+                if fc.get("status") not in FIELDCHECK_STATUS:
+                    err(slug, f"discrepancies[{i}].fieldCheck.status가 목록 밖: {fc.get('status')!r}")
+                for field in ("checkedBy", "checkedOn", "finding"):
+                    if not fc.get(field):
+                        err(slug, f"discrepancies[{i}].fieldCheck.{field} 누락")
+                if fc.get("checkedOn") and not re.match(r"^\d{4}-\d{2}-\d{2}$", str(fc["checkedOn"])):
+                    err(slug, f"discrepancies[{i}].fieldCheck.checkedOn 날짜 형식 오류: {fc['checkedOn']!r}")
+                if fc.get("evidenceUrl") and not str(fc["evidenceUrl"]).startswith(("http://", "https://")):
+                    err(slug, f"discrepancies[{i}].fieldCheck.evidenceUrl 스킴 없음: {fc['evidenceUrl']!r}")
 
             up = d.get("upstream")
             if up is not None:

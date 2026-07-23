@@ -8,20 +8,21 @@
 - 대상: 9개 제도 (네팔, 캄보디아, 탄자니아)
 - 결과: **불일치 17건 — 높음 5 / 보통 9 / 낮음 3**
 - 발행처 조치 필요: **17건** (정정 요망 9 / 보완 권고 8) → [정오표](errata.md)
+- 사무소 현장 확인: **0/17건** 회신됨 → [영어 검토 시트](review-sheet.en.md)
 
 ## 제도별 검증 상태
 
-| 제도 | 국가 | 검증 | 불일치 | 확인일 |
-|---|---|---|---|---|
-| [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) | 네팔 | 조문 대조 완료 | 3건 (높음 1) | 2026-07-22 |
-| [네팔 조달 거버넌스·감독체계](../data/institutions/nepal-procurement-governance.json) | 네팔 | 조문 대조 완료 | 2건 | 2026-07-22 |
-| [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) | 네팔 | 조문 대조 완료 | 5건 (높음 2) | 2026-07-23 |
-| [캄보디아 공공조달 입찰제도](../data/institutions/cambodia-bidding-system.json) | 캄보디아 | 원문 링크 연결 | 1건 | 2026-07-23 |
-| [캄보디아 조달 거버넌스·감독체계](../data/institutions/cambodia-procurement-governance.json) | 캄보디아 | 원문 링크 연결 | 1건 | 2026-07-23 |
-| [캄보디아 ODA 사업 발굴·형성 절차](../data/institutions/cambodia-oda-project-pipeline.json) | 캄보디아 | 자료집 기재 | 0건 | 2026-07-23 |
-| [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) | 탄자니아 | 조문 대조 완료 | 3건 (높음 1) | 2026-07-23 |
-| [탄자니아 조달 거버넌스·감독체계](../data/institutions/tanzania-procurement-governance.json) | 탄자니아 | 원문 링크 연결 | 1건 (높음 1) | 2026-07-23 |
-| [탄자니아 ODA 사업 발굴·형성 절차](../data/institutions/tanzania-oda-project-pipeline.json) | 탄자니아 | 자료집 기재 | 1건 | 2026-07-23 |
+| 제도 | 국가 | 검증 | 불일치 | 사무소 확인 | 확인일 |
+|---|---|---|---|---|---|
+| [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) | 네팔 | 조문 대조 완료 | 3건 (높음 1) | 0/2 | 2026-07-22 |
+| [네팔 조달 거버넌스·감독체계](../data/institutions/nepal-procurement-governance.json) | 네팔 | 조문 대조 완료 | 2건 | 0/1 | 2026-07-22 |
+| [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) | 네팔 | 조문 대조 완료 | 5건 (높음 2) | 0/4 | 2026-07-23 |
+| [캄보디아 공공조달 입찰제도](../data/institutions/cambodia-bidding-system.json) | 캄보디아 | 원문 링크 연결 | 1건 | 0/1 | 2026-07-23 |
+| [캄보디아 조달 거버넌스·감독체계](../data/institutions/cambodia-procurement-governance.json) | 캄보디아 | 원문 링크 연결 | 1건 | 0/1 | 2026-07-23 |
+| [캄보디아 ODA 사업 발굴·형성 절차](../data/institutions/cambodia-oda-project-pipeline.json) | 캄보디아 | 자료집 기재 | 0건 | — | 2026-07-23 |
+| [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) | 탄자니아 | 조문 대조 완료 | 3건 (높음 1) | 0/3 | 2026-07-23 |
+| [탄자니아 조달 거버넌스·감독체계](../data/institutions/tanzania-procurement-governance.json) | 탄자니아 | 원문 링크 연결 | 1건 (높음 1) | 0/1 | 2026-07-23 |
+| [탄자니아 ODA 사업 발굴·형성 절차](../data/institutions/tanzania-oda-project-pipeline.json) | 탄자니아 | 자료집 기재 | 1건 | 0/1 | 2026-07-23 |
 
 ---
 
@@ -32,6 +33,7 @@
 - 제도: [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) · `nepal-bidding-system-D01`
 - 근거: Public Procurement Rules, 2064 (2007) r.39(1)(d)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -52,6 +54,7 @@
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D01`
 - 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -72,6 +75,7 @@
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D02`
 - 근거: Foreign Aid Mobilization Policy, 2025 §3.7.1, §3.7.2 (승인 2025-04-21)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -92,6 +96,7 @@
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D01`
 - 근거: Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2025 (GN No. 261)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -112,6 +117,7 @@
 - 제도: [탄자니아 조달 거버넌스·감독체계](../data/institutions/tanzania-procurement-governance.json) · `tanzania-procurement-governance-D01`
 - 근거: Public Procurement Act, No. 10 of 2023 §8, §74, §131(1)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -136,6 +142,7 @@ PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그�
 - 제도: [캄보디아 공공조달 입찰제도](../data/institutions/cambodia-bidding-system.json) · `cambodia-bidding-system-D01`
 - 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); 구법 Law on Public Procurement, 2012 폐지
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -156,6 +163,7 @@ PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그�
 - 제도: [캄보디아 조달 거버넌스·감독체계](../data/institutions/cambodia-procurement-governance.json) · `cambodia-procurement-governance-D01`
 - 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)
 - 발행처 조치: **보완 권고** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -176,6 +184,7 @@ PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그�
 - 제도: [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) · `nepal-bidding-system-D02`
 - 근거: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63
 - 발행처 조치: **보완 권고** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -196,6 +205,7 @@ PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그�
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D03`
 - 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -216,6 +226,7 @@ PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달�
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D04`
 - 근거: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d)
 - 발행처 조치: **보완 권고** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -236,6 +247,7 @@ PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달�
 - 제도: [네팔 조달 거버넌스·감독체계](../data/institutions/nepal-procurement-governance.json) · `nepal-procurement-governance-D01`
 - 근거: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2)
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -256,6 +268,7 @@ PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달�
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D02`
 - 근거: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
 - 발행처 조치: **보완 권고** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -276,6 +289,7 @@ NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다.
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D03`
 - 근거: Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
 - 발행처 조치: **정정 요망** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 
@@ -296,6 +310,7 @@ NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다.
 - 제도: [탄자니아 ODA 사업 발굴·형성 절차](../data/institutions/tanzania-oda-project-pipeline.json) · `tanzania-oda-project-pipeline-D01`
 - 근거: 자료집 Ⅱ-1 수원체계 (탄자니아 재정기획부 원조사업요청 승인)
 - 발행처 조치: **보완 권고** · 미제보
+- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **자료집**
 

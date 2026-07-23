@@ -118,6 +118,28 @@ def cite_link(d: dict, text: str) -> str:
     return esc
 
 
+FIELDCHECK_LABEL = {
+    "confirmed": ("사무소 확인됨", "ok"),
+    "refuted": ("사무소 반증 — 우리 판단 오류", "bad"),
+    "partial": ("사무소 부분 확인", "warn"),
+    "pending": ("사무소 확인 중", "muted"),
+}
+
+
+def _fieldcheck_html(fc: dict | None) -> str:
+    """사무소 검증 결과 — 회신이 반영되면 카드에 표시된다."""
+    if not fc:
+        return ""
+    label, tone = FIELDCHECK_LABEL.get(fc["status"], (fc["status"], "muted"))
+    ev = (f' · <a class="ref" href="{e(fc["evidenceUrl"])}" target="_blank" rel="noopener">근거</a>'
+          if fc.get("evidenceUrl") else "")
+    return f"""<div class="fieldcheck">
+  <div class="fc-hd"><span class="badge {tone}">{e(label)}</span>
+    <span class="badge plain muted">{e(fc['checkedBy'])} · {e(fc['checkedOn'])}</span></div>
+  <p class="fc-find">{el(fc['finding'])}{ev}</p>
+</div>"""
+
+
 def _review_html(rv: dict | None) -> str:
     """불일치 카드 안의 현지 직원용 영어 검토 접기."""
     if not rv:
@@ -168,6 +190,7 @@ def disc_card(d: dict, x: dict, *, link: str = "") -> str:
   <p class="impact">{el(x['impact'])}</p>
   <div class="todo"><b>실무자가 할 일</b>{el(x['userAction'])}</div>
   {_review_html(x.get('review'))}
+  {_fieldcheck_html(x.get('fieldCheck'))}
   <p class="act-row">이 데이터에 반영 — {el(x['action'])}</p>
   {up_html}
 </div>"""
@@ -395,6 +418,9 @@ ul.plain li{margin-bottom:6px}
 .review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
 .review .rv-topic{font-weight:700;font-size:13.5px}
 .review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
 .todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
   border:1px solid var(--key);font-size:13.5px;line-height:1.7}
 .todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
