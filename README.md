@@ -16,7 +16,7 @@
 
 ## 지금 상태
 
-**2개국 6개 제도 완료** — 검증 통과, **불일치 15건(high 5 / medium 6 / low 4)**
+**3개국 9개 제도 완료** — 검증 통과, **불일치 17건(high 5 / medium 8 / low 4)**
 
 네팔(아시아·태평양)
 
@@ -34,9 +34,22 @@
 | [탄자니아 조달 거버넌스·감독체계](data/institutions/tanzania-procurement-governance.json) | governance | `law-linked` | 1 |
 | [탄자니아 ODA 사업 발굴·형성 절차](data/institutions/tanzania-oda-project-pipeline.json) | pipeline | `source-document` | 1 |
 
-두 나라 모두에서 **자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
-탄자니아는 발행 **8개월 전**에 이미 새 법(PPA 2023, 2024-06-17 시행)이 시행돼 자료집이 발행 시점에 폐지된 법을 참조했다.
-근거 문서의 현행 여부 확인이 워크플로의 필수 단계임을 보여준다.
+탄자니아(아프리카)에 이어
+
+| 제도 | 축 | 검증 상태 | 불일치 |
+|---|---|---|---|
+| [캄보디아 공공조달 입찰제도](data/institutions/cambodia-bidding-system.json) | bidding | `law-linked` | 1 |
+| [캄보디아 조달 거버넌스·감독체계](data/institutions/cambodia-procurement-governance.json) | governance | `law-linked` | 1 |
+| [캄보디아 ODA 사업 발굴·형성 절차](data/institutions/cambodia-oda-project-pipeline.json) | pipeline | `source-document` | 0 |
+
+**세 나라 모두에서 자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
+탄자니아는 발행 **8개월 전**에 새 법(PPA 2023) 시행, 캄보디아도 2023년 신법으로 구법(2012) 폐지.
+근거 문서의 현행 여부 확인이 워크플로의 필수 단계임을 세 번 연속 확인했다.
+
+다만 세 나라의 대조 **깊이는 다르다** — 네팔·탄자니아는 영문 원문이 있어 조문 verbatim까지 확인(`article-verified`)했지만,
+캄보디아는 신법 원문이 크메르어 스캔본이라 조문 대조가 불가능해 `law-linked`에 머문다.
+게다가 캄보디아는 시행규정이 아직 초안이라 **2012 프레임 규정이 잠정 유효** — 자료집의 금액구간·입찰방식은 아직 맞고
+신설 법률사항(컨설팅 조달·강화 벌칙)만 누락되는, 앞선 두 나라와 또 다른 양상이다.
 
 발견한 것 중 실무에서 바로 문제가 되는 세 건:
 

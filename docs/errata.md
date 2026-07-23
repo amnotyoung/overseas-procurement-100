@@ -8,7 +8,7 @@
 - 대상: KOICA 2025 국가별 개발협력사업 참여전략 자료집(아시아·태평양)
 - 대상: KOICA 2025 국가별 개발협력사업 참여전략 자료집(아프리카)
 - 작성 기준일: 2026-07-23
-- 결과: **정정 요망 8건 / 보완 권고 7건**
+- 결과: **정정 요망 9건 / 보완 권고 8건**
 
 | 구분 | 뜻 |
 |---|---|
@@ -146,7 +146,25 @@
 
 ---
 
-## 08. canvas.applicability / 보증률
+## 08. canvas.legalBasis / 근거 조달법의 현행 여부
+
+**정정 요망** · 미제보 · 캄보디아 · 자료집 163쪽 (Ⅲ-1. 캄보디아 입찰 제도)
+
+**현재 자료집 서술**
+
+> 공공조달법에서는 공개입찰을 권장하고 있으나, 이에 대한 규제나 유인책은 없으며 …(자료집이 '공공조달법'을 근거로 입찰제도를 서술하되 법령 연도를 명시하지 않음)
+
+**수정 제안**
+
+> 캄보디아 입찰제도의 근거 법령을 'Law on Public Procurement 2023(Royal Kram NS/RKM/0523/005, 2023-05-16 공포)'으로 명시할 것. 2012년 구법은 폐지됨. 시행규정은 초안 단계로 2012 프레임 규정이 잠정 유효하므로 금액구간·입찰방식은 유지하되, 신설된 컨설팅 조달·강화된 벌칙·MEF 검사권을 반영
+
+**근거** — Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); 구법 Law on Public Procurement, 2012 폐지
+
+**사유** — 자료집의 입찰방식·금액구간은 규정 잠정유효로 아직 맞을 수 있으나, 법률 자체가 바뀌어 신설된 컨설팅 조달 규율·강화된 벌칙·MEF 검사권을 놓친다. 특히 벌칙이 개인 징역·법인 벌금으로 강화돼, 조달 위반 리스크가 커졌다.
+
+---
+
+## 09. canvas.applicability / 보증률
 
 **정정 요망** · 미제보 · 탄자니아 · 자료집 213쪽 (Ⅲ-1. 보증 비교표)
 
@@ -164,7 +182,7 @@
 
 ---
 
-## 09. canvas.bottlenecks / 대리인 위반 시 제재 근거
+## 10. canvas.bottlenecks / 대리인 위반 시 제재 근거
 
 **보완 권고** · 미제보 · 네팔 · 자료집 11-13쪽 (Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도)
 
@@ -182,7 +200,7 @@
 
 ---
 
-## 10. canvas.bottlenecks / 조세·관세 면제 범위
+## 11. canvas.bottlenecks / 조세·관세 면제 범위
 
 **보완 권고** · 미제보 · 네팔 · 자료집 17쪽 (Ⅲ. 통관 등 관련 사항(시공/기자재))
 
@@ -200,7 +218,25 @@
 
 ---
 
-## 11. canvas.applicability / 전자조달 시스템
+## 12. canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
+
+**보완 권고** · 미제보 · 캄보디아 · 자료집 159쪽 (Ⅱ-2. 협력국 조달관련 조직체계)
+
+**현재 자료집 서술**
+
+> (자료집 Ⅱ-2가 GDPP·GDICDM 이원 구조와 SOP 2019를 서술하나, 근거를 2012법 체계로 전제하고 신법의 MEF 검사권·강화 벌칙을 다루지 않음)
+
+**수정 제안**
+
+> 조직체계 서술에 근거 법령을 '2023 공공조달법'으로 갱신하고, MEF 사후검토·부정기 검사권과 강화된 벌칙(개인 징역·법인 벌금)을 추가할 것. GDPP·GDICDM 이원 구조와 SOP 2019 서술은 정확하므로 유지
+
+**근거** — Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)
+
+**사유** — 자료집의 이원 구조·SOP 2019 서술은 정확하나, 신법이 부여한 MEF 검사권과 강화된 벌칙이 드러나지 않아 조달 위반·감사 리스크를 과소평가할 수 있다.
+
+---
+
+## 13. canvas.applicability / 전자조달 시스템
 
 **보완 권고** · 미제보 · 탄자니아 · 자료집 214쪽 (Ⅲ-1. 입찰 진행절차)
 
@@ -218,7 +254,7 @@
 
 ---
 
-## 12. canvas.procedure / 사업 발굴 착수 지점
+## 14. canvas.procedure / 사업 발굴 착수 지점
 
 **보완 권고** · 미제보 · 탄자니아 · 자료집 208-209쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -236,7 +272,7 @@
 
 ---
 
-## 13. canvas.legalBasis.articles
+## 15. canvas.legalBasis.articles
 
 **보완 권고** · 미제보 · 네팔 · 자료집 11-13쪽 (Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도)
 
@@ -254,7 +290,7 @@
 
 ---
 
-## 14. canvas.authorities[PPMO].role
+## 16. canvas.authorities[PPMO].role
 
 **보완 권고** · 미제보 · 네팔 · 자료집 9쪽 (Ⅱ-2. 협력국 조달관련 조직체계)
 
@@ -272,7 +308,7 @@
 
 ---
 
-## 15. canvas.bottlenecks / 누락된 실무 제약
+## 17. canvas.bottlenecks / 누락된 실무 제약
 
 **보완 권고** · 미제보 · 네팔 · 자료집 18-19쪽 (Ⅳ-2. 협력국 진출 참고사항 / 네팔 진출 유의사항)
 
@@ -304,14 +340,16 @@
 | 05 canvas.legalBasis / PPRA 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
 | 06 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
 | 07 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
-| 08 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
-| 09 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
-| 10 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
-| 11 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
-| 12 canvas.procedure / 사업 발굴 착수 지점 | 보완 권고 | 미제보 |
-| 13 canvas.legalBasis.articles | 보완 권고 | 미제보 |
-| 14 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
-| 15 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
+| 08 canvas.legalBasis / 근거 조달법의 현행 여부 | 정정 요망 | 미제보 |
+| 09 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
+| 10 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
+| 11 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
+| 12 canvas.legalBasis / 감독체계 근거 법령 및 신설 권한 | 보완 권고 | 미제보 |
+| 13 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
+| 14 canvas.procedure / 사업 발굴 착수 지점 | 보완 권고 | 미제보 |
+| 15 canvas.legalBasis.articles | 보완 권고 | 미제보 |
+| 16 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
+| 17 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
 
 상태값: `not-reported`(미제보) · `reported`(제보함) · `acknowledged`(발행처 확인) · `fixed`(개정판 반영) · `declined`(정정 불요 회신)
 

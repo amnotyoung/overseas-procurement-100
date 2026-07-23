@@ -149,11 +149,18 @@
       "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
       "pdfPages": "80-89", "docPages": "156-175",
       "institutions": {
-        "bidding": { "slug": "cambodia-bidding-system", "status": "pending" },
-        "governance": { "slug": "cambodia-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "cambodia-oda-project-pipeline", "status": "pending" }
+        "bidding": { "slug": "cambodia-bidding-system", "status": "done", "verification": "law-linked", "discrepancies": 1 },
+        "governance": { "slug": "cambodia-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
+        "pipeline": { "slug": "cambodia-oda-project-pipeline", "status": "done", "verification": "source-document", "discrepancies": 0 }
       },
-      "notes": "입찰제도·법규·인허가 섹션 있음."
+      "primaryLaws": [
+        "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)",
+        "외부재원 조달 표준운영절차(SOP, 2019)"
+      ],
+      "supersededLaws": [
+        "Law on Public Procurement, 2012 (Royal Kram NS/RKM/0112/004) — 2023 신법으로 폐지"
+      ],
+      "notes": "세 번째 국가. 조달법이 2023년 신법으로 교체됐으나(구법 2012 폐지) 시행규정은 2012 프레임 잠정유효 — 자료집의 금액구간·입찰방식은 규정 소관이라 아직 유효, 신설 법률사항(컨설팅 조달·강화 벌칙·MEF 검사권)만 누락. 신법 원문이 크메르어 스캔본이라 조문 verbatim 대조 불가, law-linked에 머문다. 재원별 이원 조달(국내 GDPP·외부 GDICDM/SOP 2019), 무상·유상 수원총괄 분리(CDC/CRDB·MEF)가 특징. 페이지가 A3(1190pt)라 첫 페이지(1228) 기준 추출과 달라 개별 재추출 필요."
     },
     {
       "slug": "pakistan", "name": "파키스탄", "nameEn": "Pakistan", "iso3": "PAK",
@@ -192,14 +199,15 @@
 
   "progress": {
     "note": "countriesTotal은 아시아·태평양 11개국 기준. 아프리카 등 타 지역 국가 수는 자료집 확보 시 갱신.",
-    "countriesDone": 2,
-    "institutionsDone": 6,
-    "discrepanciesFound": 15,
+    "countriesDone": 3,
+    "institutionsDone": 9,
+    "discrepanciesFound": 17,
     "discrepanciesHigh": 5,
-    "upstreamPending": 15,
+    "upstreamPending": 17,
     "byCountry": {
       "nepal": { "institutions": 3, "discrepancies": 10, "high": 3 },
-      "tanzania": { "institutions": 3, "discrepancies": 5, "high": 2 }
+      "tanzania": { "institutions": 3, "discrepancies": 5, "high": 2 },
+      "cambodia": { "institutions": 3, "discrepancies": 2, "high": 0 }
     }
   }
 }

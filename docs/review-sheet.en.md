@@ -8,8 +8,8 @@ the current law. Your job is the **Verify** line: confirm it against the origina
 procuring entity, and flag whether the guide needs correcting.
 
 - As of: 2026-07-23
-- Countries: Nepal, Tanzania
-- Items needing field check: **12** (HIGH 5)
+- Countries: Cambodia, Nepal, Tanzania
+- Items needing field check: **14** (HIGH 5)
 
 HIGH = following the guide risks bid rejection, document loss, or a procedural breach.
 
@@ -99,9 +99,43 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
+## Cambodia
+
+### 06. [MEDIUM] Whether the guide's procurement law is current
+
+- Institution: Cambodia — Bidding system
+- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); 구법 Law on Public Procurement, 2012 폐지
+- KOICA guide: p.163
+
+**The guide says** — The guide describes the bidding system on the basis of 'the public procurement law' without naming the year.
+
+**The law says** — Cambodia's Law on Public Procurement 2012 was abrogated by the new Law on Public Procurement 2023 (Royal Kram NS/RKM/0523/005, promulgated 16 May 2023), which adds consulting-services procurement, implementation procedures, heavier penalties (imprisonment for individuals, fines up to KHR 100 million), and MEF post-review/inspection powers. Its implementing regulations are still in draft, so the 2012-era sub-decrees remain in force until replaced.
+
+**Why it matters** — The bidding methods and value thresholds in the guide are regulation-level and may still be valid (transitional provision), but the guide misses the new statute's consulting-procurement rules and stronger penalties, raising compliance risk.
+
+**✔ Verify** — Treat thresholds/methods as provisionally valid under the 2012-era regulations, but check penalties and consulting-procurement rules against the 2023 law. Recheck thresholds once the new sub-decrees are issued.
+
+---
+
+### 07. [MEDIUM] Governance framework — new statute's oversight powers
+
+- Institution: Cambodia — Procurement governance
+- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)
+- KOICA guide: p.159
+
+**The guide says** — The guide describes the two-track structure (GDPP for locally funded, GDICDM for externally funded) and SOP 2019, on the 2012-law framework.
+
+**The law says** — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.
+
+**Why it matters** — The guide's structural description is accurate, but it does not surface the new MEF inspection power or the stronger penalties, which may lead to underestimating audit and compliance risk.
+
+**✔ Verify** — Confirm KOICA grant projects fall under the GDICDM / SOP 2019 track (externally funded). Check penalties and MEF inspection powers against the 2023 law.
+
+---
+
 ## Nepal
 
-### 06. [MEDIUM] Legal source cited for blacklisting an agent
+### 08. [MEDIUM] Legal source cited for blacklisting an agent
 
 - Institution: Nepal — Bidding system
 - Legal basis: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63
@@ -117,7 +151,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
-### 07. [MEDIUM] Who prepares the Project Concept Paper (PCP)
+### 09. [MEDIUM] Who prepares the Project Concept Paper (PCP)
 
 - Institution: Nepal — ODA project pipeline
 - Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a)
@@ -133,7 +167,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
-### 08. [MEDIUM] Scope of tax and customs exemption
+### 10. [MEDIUM] Scope of tax and customs exemption
 
 - Institution: Nepal — ODA project pipeline
 - Legal basis: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d)
@@ -149,7 +183,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
-### 09. [MEDIUM] Who publishes and handles tenders — PPMO vs procuring entities
+### 11. [MEDIUM] Who publishes and handles tenders — PPMO vs procuring entities
 
 - Institution: Nepal — Procurement governance
 - Legal basis: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2)
@@ -167,7 +201,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ## Tanzania
 
-### 10. [MEDIUM] Mandatory e-procurement (NeST)
+### 12. [MEDIUM] Mandatory e-procurement (NeST)
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
@@ -183,7 +217,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
-### 11. [MEDIUM] Surety rates (bid / performance / retention) and liquidated damages
+### 13. [MEDIUM] Surety rates (bid / performance / retention) and liquidated damages
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
@@ -199,7 +233,7 @@ HIGH = following the guide risks bid rejection, document loss, or a procedural b
 
 ---
 
-### 12. [MEDIUM] Whether Ministry of Finance approval is a prerequisite for project formation
+### 14. [MEDIUM] Whether Ministry of Finance approval is a prerequisite for project formation
 
 - Institution: Tanzania — ODA project pipeline
 - Legal basis: 자료집 Ⅱ-1 수원체계 (탄자니아 재정기획부 원조사업요청 승인)
