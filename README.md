@@ -91,7 +91,8 @@
 │   ├── build_site.py            정적 사이트 생성
 │   ├── board_adapter.mjs        process → korea100studio board-v1 변환
 │   ├── check_boards.mjs         프로세스 보드 품질 게이트 (audit)
-│   └── board-baseline.json      보드 품질 기준선
+│   ├── board-baseline.json      보드 품질 기준선
+│   └── piercing-check.js        우리 렌더의 노드 관통 검사 (브라우저 콘솔)
 ├── package.json                 Node 도구(게이트)의 devDependency
 └── site/                        생성된 화면 (빌드 산출물)
 ```
@@ -121,7 +122,16 @@ python3 tools/build_site.py
 
 **업무구조도**는 레인 × 게이트 그리드에 노드를 놓고 엣지를 SVG로 잇는다.
 원본 UI 규칙을 승계해 `current`(핵심)·`risk`(유의)·`loop`(회귀)만 강조하고 `done`·`waiting`은 중립으로 둔다.
-노드를 누르면 담당·기한·산출문서·병목·근거조문·확신도가 열리고, 마우스를 올리면 연결된 노드만 남는다.
+노드를 누르면 담당·기한·산출문서·근거조문·확신도가 열리고, 마우스를 올리면 연결된 노드만 남는다.
+
+엣지 라우팅은 **직교 + 거터 회피**다 — 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로
+우회한다. 여러 직교 경로 후보를 만들어 무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다.
+korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+초기 곡선 라우터는 노드 회피가 없어 입찰 보드에만 관통이 5건 있었는데(육안으로 놓쳤고 audit이 잡았다),
+직교 라우팅으로 세 보드 모두 관통 0이 됐다.
+
+우리 렌더의 관통은 브라우저에서 실측해야 정확하다([piercing-check.js](tools/piercing-check.js)를
+상세 페이지 콘솔에 붙여넣으면 검사한다). board-v1 audit과는 레이아웃이 달라 별개다.
 
 미리보기는 아무 정적 서버로나 띄운다.
 

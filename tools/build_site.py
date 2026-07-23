@@ -775,75 +775,87 @@ function draw(){{
       +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
   }});
   d+='</defs>';
+  var GAP=5;
+  function rel(rc){{return {{x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height}};}}
   function box(id){{
     var el=board.querySelector('.node[data-id="'+id+'"]');
-    if(!el)return null;
-    var r=el.getBoundingClientRect();
-    return {{x:r.left-bb.left+board.scrollLeft,y:r.top-bb.top+board.scrollTop,w:r.width,h:r.height}};
+    if(!el)return null; return rel(el.getBoundingClientRect());
   }}
-  var GAP=5;
 
-  /* 1) 각 엣지가 노드의 어느 변에서 나가고 어느 변으로 들어올지 정한다.
-        곡선의 끝점 접선이 곧 화살촉 방향이 되므로(orient="auto"),
-        이동량이 큰 축을 진입 축으로 삼아야 선의 진행과 화살촉이 어긋나지 않는다. */
-  var geo=[];
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){{ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); }});
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){{ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); }});
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){{ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }}
+
+  function segHit(ax,ay,bx,by,e1,e2){{
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){{ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){{ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }}
+      else {{ if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }}
+    }} return n;
+  }}
+  function uniq(pts){{ return pts.filter(function(p,i){{ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }}); }}
+  function score(pts,e1,e2){{ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){{ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }}
+    return {{pts:pts,p:p,l:l}}; }}
+
+  function route(a,b,ed){{
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={{x:acx,y:below?a.b:a.y}}, tp={{x:bcx,y:below?b.y:b.b}}, tg={{x:tp.x,y:tp.y+(below?-GAP:GAP)}};
+    cs.push(score([sp,{{x:sp.x,y:tg.y}},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){{ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{{x:sp.x,y:my}},{{x:tp.x,y:my}},tg,tp],e1,e2)); }});
+    colGut.forEach(function(gx){{                                                          // 열 측면 탈출
+      var as={{x:gx>acx?a.r:a.x,y:acy}};
+      cs.push(score([as,{{x:gx,y:acy}},{{x:gx,y:tg.y}},tg,tp],e1,e2)); }});
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={{x:right?a.r:a.x,y:acy}}, tp2={{x:right?b.x:b.r,y:bcy}}, tg2={{x:tp2.x+(right?-GAP:GAP),y:tp2.y}};
+    cs.push(score([sp2,{{x:tg2.x,y:sp2.y}},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){{ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{{x:mx,y:sp2.y}},{{x:mx,y:tp2.y}},tg2,tp2],e1,e2)); }});
+    rowGut.forEach(function(gy){{                                                          // 행 거터 우회
+      var as={{x:acx,y:gy>acy?a.b:a.y}};
+      cs.push(score([as,{{x:acx,y:gy}},{{x:tp2.x,y:gy}},tg2,tp2],e1,e2)); }});
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){{ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{{x:acx,y:a.b}},{{x:acx,y:gy}},{{x:bcx,y:gy}},{{x:bcx,y:b.b+GAP}},{{x:bcx,y:b.b}}],e1,e2)); }}
+    cs=cs.filter(function(c){{return c.pts.length>=2;}});
+    cs.sort(function(x,y){{ return x.p-y.p || x.l-y.l; }});
+    return cs[0];
+  }}
+
+  function rnd(v){{return Math.round(v*10)/10;}}
+  function orthPath(pts){{                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){{
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }}
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }}
+
   EDGES.forEach(function(ed){{
     var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
-    var dx=(b.x+b.w/2)-(a.x+a.w/2), dy=(b.y+b.h/2)-(a.y+a.h/2);
-    var mode=(ed.type==='loop'||dx<-4)?'loop':(Math.abs(dy)>Math.abs(dx)?'v':'h');
-    var s,t;
-    if(mode==='loop'){{ s='bottom'; t='bottom'; }}
-    else if(mode==='v'){{ s=dy>0?'bottom':'top'; t=dy>0?'top':'bottom'; }}
-    else {{ s=dx>0?'right':'left'; t=dx>0?'left':'right'; }}
-    geo.push({{ed:ed,a:a,b:b,mode:mode,s:s,t:t}});
-  }});
-
-  /* 2) 같은 노드의 같은 변에 여러 선이 붙으면 자리를 나눈다.
-        회귀선은 우회 경로라 항상 바깥쪽에 붙여, 직선 흐름의 화살촉과 겹쳐
-        머리끼리 맞물린 것처럼 보이는 일을 막는다. */
-  var slot={{}};
-  function reg(id,side,g,role){{
-    var k=id+'|'+side; (slot[k]=slot[k]||[]).push({{g:g,role:role}});
-  }}
-  geo.forEach(function(g){{ reg(g.ed.source,g.s,g,'s'); reg(g.ed.target,g.t,g,'t'); }});
-
-  function anchor(bx,side,id,g,role){{
-    var frac;
-    if(g.mode==='loop') frac=0.78;
-    else {{
-      var arr=(slot[id+'|'+side]||[]).filter(function(x){{return x.g.mode!=='loop';}});
-      var i=0;
-      for(var k=0;k<arr.length;k++){{ if(arr[k].g===g&&arr[k].role===role){{i=k;break;}} }}
-      frac=(i+1)/(arr.length+1);
-    }}
-    if(side==='top')    return {{x:bx.x+bx.w*frac, y:bx.y}};
-    if(side==='bottom') return {{x:bx.x+bx.w*frac, y:bx.y+bx.h}};
-    if(side==='left')   return {{x:bx.x,           y:bx.y+bx.h*frac}};
-    return {{x:bx.x+bx.w, y:bx.y+bx.h*frac}};
-  }}
-
-  /* 3) 경로를 그린다 */
-  geo.forEach(function(g){{
-    var p1=anchor(g.a,g.s,g.ed.source,g,'s'), p2=anchor(g.b,g.t,g.ed.target,g,'t');
-    var x1=p1.x,y1=p1.y,x2=p2.x,y2=p2.y,m,path;
-    if(g.t==='top')         y2-=GAP;
-    else if(g.t==='bottom') y2+=GAP;
-    else if(g.t==='left')   x2-=GAP;
-    else                    x2+=GAP;
-
-    if(g.mode==='loop'){{
-      m=Math.max(y1,y2)+26;
-      path='M'+x1+' '+y1+' C'+x1+' '+m+','+x2+' '+m+','+x2+' '+y2;
-    }} else if(g.mode==='v'){{
-      m=(y1+y2)/2;
-      path='M'+x1+' '+y1+' C'+x1+' '+m+','+x2+' '+m+','+x2+' '+y2;
-    }} else {{
-      m=(x1+x2)/2;
-      path='M'+x1+' '+y1+' C'+m+' '+y1+','+m+' '+y2+','+x2+' '+y2;
-    }}
-    var t=g.ed.type||'sequence';
-    d+='<path d="'+path+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
-      +(t==='sequence'?'.5':'.75')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
   }});
   svg.innerHTML=d;
