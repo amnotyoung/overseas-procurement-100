@@ -16,7 +16,7 @@
 
 ## 지금 상태
 
-**2개국 6개 제도 완료** — 검증 통과, **불일치 14건(high 5 / medium 5 / low 4)**
+**2개국 6개 제도 완료** — 검증 통과, **불일치 15건(high 5 / medium 6 / low 4)**
 
 네팔(아시아·태평양)
 
@@ -30,7 +30,7 @@
 
 | 제도 | 축 | 검증 상태 | 불일치 |
 |---|---|---|---|
-| [탄자니아 공공조달 입찰제도](data/institutions/tanzania-bidding-system.json) | bidding | `law-linked` | 2 |
+| [탄자니아 공공조달 입찰제도](data/institutions/tanzania-bidding-system.json) | bidding | `article-verified` | 3 |
 | [탄자니아 조달 거버넌스·감독체계](data/institutions/tanzania-procurement-governance.json) | governance | `law-linked` | 1 |
 | [탄자니아 ODA 사업 발굴·형성 절차](data/institutions/tanzania-oda-project-pipeline.json) | pipeline | `source-document` | 1 |
 

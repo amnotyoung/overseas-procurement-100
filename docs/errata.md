@@ -8,7 +8,7 @@
 - 대상: KOICA 2025 국가별 개발협력사업 참여전략 자료집(아시아·태평양)
 - 대상: KOICA 2025 국가별 개발협력사업 참여전략 자료집(아프리카)
 - 작성 기준일: 2026-07-23
-- 결과: **정정 요망 7건 / 보완 권고 7건**
+- 결과: **정정 요망 8건 / 보완 권고 7건**
 
 | 구분 | 뜻 |
 |---|---|
@@ -146,7 +146,25 @@
 
 ---
 
-## 08. canvas.bottlenecks / 대리인 위반 시 제재 근거
+## 08. canvas.applicability / 보증률
+
+**정정 요망** · 미제보 · 탄자니아 · 자료집 213쪽 (Ⅲ-1. 보증 비교표)
+
+**현재 자료집 서술**
+
+> 입찰보증 입찰금액의 5% 이상 / 계약보증 계약금액의 10% 이상 / 하자보증 계약금액의 3% 이상 (탄자니아 규정 = Public Procurement Regulations 2013)
+
+**수정 제안**
+
+> 보증 비교표의 '탄자니아 규정'을 Public Procurement Regulations 2025(GN No. 261) 기준으로 갱신할 것 — 입찰·이행보증 금액은 규정 고정이 아니라 입찰서류 위임(reg.23(6), reg.29(2)), 선금 30% 상한(reg.315(2)), 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2)). 구 규정(PPR 2013)의 5%·10%·3% 고정 비율은 삭제
+
+**근거** — Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), Third Schedule
+
+**사유** — 자료집의 고정 보증률(입찰 5%·계약 10%·하자 3%)은 폐지된 구 규정(PPR 2013) 값이다. 새 규정에서는 발주 건마다 입찰서류가 금액을 정하므로, 자료집 비율을 전제로 보증·예산을 잡으면 실제 조건과 어긋난다. 다만 선금 상한(30%)과 지체상금 물품 범위(0.10~0.20%, 자료집의 0.15% 포함)는 정합적이다.
+
+---
+
+## 09. canvas.bottlenecks / 대리인 위반 시 제재 근거
 
 **보완 권고** · 미제보 · 네팔 · 자료집 11-13쪽 (Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도)
 
@@ -164,7 +182,7 @@
 
 ---
 
-## 09. canvas.bottlenecks / 조세·관세 면제 범위
+## 10. canvas.bottlenecks / 조세·관세 면제 범위
 
 **보완 권고** · 미제보 · 네팔 · 자료집 17쪽 (Ⅲ. 통관 등 관련 사항(시공/기자재))
 
@@ -182,7 +200,7 @@
 
 ---
 
-## 10. canvas.applicability / 전자조달 시스템
+## 11. canvas.applicability / 전자조달 시스템
 
 **보완 권고** · 미제보 · 탄자니아 · 자료집 214쪽 (Ⅲ-1. 입찰 진행절차)
 
@@ -200,7 +218,7 @@
 
 ---
 
-## 11. canvas.procedure / 사업 발굴 착수 지점
+## 12. canvas.procedure / 사업 발굴 착수 지점
 
 **보완 권고** · 미제보 · 탄자니아 · 자료집 208-209쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -218,7 +236,7 @@
 
 ---
 
-## 12. canvas.legalBasis.articles
+## 13. canvas.legalBasis.articles
 
 **보완 권고** · 미제보 · 네팔 · 자료집 11-13쪽 (Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도)
 
@@ -236,7 +254,7 @@
 
 ---
 
-## 13. canvas.authorities[PPMO].role
+## 14. canvas.authorities[PPMO].role
 
 **보완 권고** · 미제보 · 네팔 · 자료집 9쪽 (Ⅱ-2. 협력국 조달관련 조직체계)
 
@@ -254,7 +272,7 @@
 
 ---
 
-## 14. canvas.bottlenecks / 누락된 실무 제약
+## 15. canvas.bottlenecks / 누락된 실무 제약
 
 **보완 권고** · 미제보 · 네팔 · 자료집 18-19쪽 (Ⅳ-2. 협력국 진출 참고사항 / 네팔 진출 유의사항)
 
@@ -286,13 +304,14 @@
 | 05 canvas.legalBasis / PPRA 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
 | 06 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
 | 07 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
-| 08 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
-| 09 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
-| 10 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
-| 11 canvas.procedure / 사업 발굴 착수 지점 | 보완 권고 | 미제보 |
-| 12 canvas.legalBasis.articles | 보완 권고 | 미제보 |
-| 13 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
-| 14 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
+| 08 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
+| 09 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
+| 10 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
+| 11 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
+| 12 canvas.procedure / 사업 발굴 착수 지점 | 보완 권고 | 미제보 |
+| 13 canvas.legalBasis.articles | 보완 권고 | 미제보 |
+| 14 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
+| 15 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
 
 상태값: `not-reported`(미제보) · `reported`(제보함) · `acknowledged`(발행처 확인) · `fixed`(개정판 반영) · `declined`(정정 불요 회신)
 
