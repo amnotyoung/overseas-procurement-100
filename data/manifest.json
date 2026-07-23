@@ -1,6 +1,6 @@
 {
   "project": "overseas-procurement-100",
-  "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋",
+  "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋. 발주자(KOICA) 자신의 조달 규정도 같은 3축으로 정리해 협력국 제도와 대비한다.",
   "schemaVersion": "0.1",
   "updatedAt": "2026-07-23",
 
@@ -35,6 +35,7 @@
       "layout": "페이지마다 크기가 다르다 — 표지·간지는 A4(595pt), 국가 본문은 A3 스프레드(1190.55 × 841.89 pt)에 좌측 A4 영역으로 조판. pdfinfo가 첫 페이지만 봐서 A4로 오인하므로, 페이지별 폭을 개별 확인해 좌면(0~폭/2)을 추출한다.",
       "status": "확보"
     },
+    { "id": "koica-regulations", "title": "KOICA 조달 관련 규정 4종 — 대외무상협력사업 조달·계약규정·시행세칙·국제조달규정·현지입찰 적격심사지침", "publisher": "한국국제협력단(KOICA)", "issuedOn": "2025-02-25", "note": "ALIO(공공기관 경영정보 공개시스템, apbaId=C0146, reportFormNo=21110) 공개본. 발주자 편의 근거. 자료집이 아니라 규정 원문 자체.", "status": "확보" },
     { "id": "koica-2025-latin-america", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중남미 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
     { "id": "koica-2025-middle-east-cis", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중동·CIS 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" }
   ],
@@ -194,20 +195,38 @@
         "pipeline": { "slug": "philippines-oda-project-pipeline", "status": "pending" }
       },
       "notes": "사전 조달회의(pre-procurement conference) 언급 있음. RA 9184 → RA 12009(New Government Procurement Act, 2024) 전환 반영 여부 확인 필요."
+    },
+    {
+      "slug": "koica", "name": "KOICA(발주자)", "nameEn": "Korea International Cooperation Agency", "iso3": "KOR",
+      "region": "공여기관", "sourceDocument": "koica-regulations", "isDonor": true,
+      "institutions": {
+        "bidding": { "slug": "koica-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 0 },
+        "governance": { "slug": "koica-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 0 },
+        "pipeline": { "slug": "koica-oda-project-pipeline", "status": "done", "verification": "article-verified", "discrepancies": 0 }
+      },
+      "primaryLaws": [
+        "대외무상협력사업에 관한 조달 및 계약규정 (규정 제533호, 2025.02.25.)",
+        "대외무상협력사업에 관한 조달 및 계약규정 시행세칙 (2025.02.25.)",
+        "국제조달규정 (2025.02.25.)",
+        "현지입찰 시공자 선정 적격심사지침 (지침 제597호, 2026.03.05.)"
+      ],
+      "notes": "발주자(KOICA) 편. 협력국 수원 제도가 아니라 KOICA 자신의 조달 규범을 같은 3축으로 정규화했다. 국제조달규정 제4장(수원국 조달시스템 이용)과 조달·계약규정 §39②(수원국 법령 준용 가능)가 이 데이터셋이 협력국 조달법을 정리하는 상위 근거다. 자료집↔원문 대조가 아니라 규정 원문 직접 정리라 discrepancy가 없다. 원문은 ALIO 공개본."
     }
   ],
 
   "progress": {
-    "note": "countriesTotal은 아시아·태평양 11개국 기준. 아프리카 등 타 지역 국가 수는 자료집 확보 시 갱신.",
+    "note": "countriesTotal은 아시아·태평양 11개국 기준. 아프리카 등 타 지역 국가 수는 자료집 확보 시 갱신. 발주자(KOICA) 편은 협력국과 별도로 집계한다.",
     "countriesDone": 3,
-    "institutionsDone": 9,
+    "donorDone": 1,
+    "institutionsDone": 12,
     "discrepanciesFound": 17,
     "discrepanciesHigh": 5,
     "upstreamPending": 17,
     "byCountry": {
       "nepal": { "institutions": 3, "discrepancies": 10, "high": 3 },
       "tanzania": { "institutions": 3, "discrepancies": 5, "high": 2 },
-      "cambodia": { "institutions": 3, "discrepancies": 2, "high": 0 }
+      "cambodia": { "institutions": 3, "discrepancies": 2, "high": 0 },
+      "koica": { "institutions": 3, "discrepancies": 0, "high": 0, "isDonor": true }
     }
   }
 }

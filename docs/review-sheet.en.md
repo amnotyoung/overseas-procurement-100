@@ -7,8 +7,8 @@ entity. Each item below is a point where the Korean-language KOICA strategy guid
 the current law. Your job is the **Verify** line: confirm it against the original text or the
 procuring entity, and flag whether the guide needs correcting.
 
-- As of: 2026-07-23
-- Countries: Cambodia, Nepal, Tanzania
+- As of: 2026-07-24
+- Countries: Cambodia, Nepal, Republic of Korea (KOICA), Tanzania
 - Items needing field check: **14** (HIGH 5) · returned by office: **0/14**
 
 HIGH = following the guide risks bid rejection, document loss, or a procedural breach.
