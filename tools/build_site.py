@@ -444,17 +444,14 @@ JS_THEME = """
 """
 
 
-def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str = "") -> str:
+def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str = "",
+         standalone: bool = False) -> str:
     up = "../" * depth if depth else ""
-    return f"""<!doctype html>
-<html lang="ko"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)}</title>
-<style>{CSS}</style>
-<script>{JS_THEME}</script>
-</head><body>
-<header class="site"><div class="wrap">
+    # standalone(배포용 단독 파일)은 사이트 내부로 나가는 메뉴를 없앤다 — 받는 사람에게
+    # 다른 파일이 없으므로 깨질 링크를 애초에 두지 않는다. 테마 토글만 남긴다.
+    header = f"""<header class="site"><div class="wrap" style="justify-content:flex-end;min-height:0;height:auto;padding-block:6px">
+  <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+</div></header>""" if standalone else f"""<header class="site"><div class="wrap">
   <a class="brand" href="{up}index.html">{e(SITE_TITLE)}</a>
   <span class="brand-sub">{e(SITE_SUB)}</span>
   <nav>
@@ -463,7 +460,16 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
     <a href="{up}errata/index.html"{' aria-current="page"' if nav == "errata" else ''}>정오표</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
-</div></header>
+</div></header>"""
+    return f"""<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(title)}</title>
+<style>{CSS}</style>
+<script>{JS_THEME}</script>
+</head><body>
+{header}
 {body}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
@@ -591,7 +597,7 @@ document.querySelectorAll('.side button').forEach(function(b){
 
 # ─────────────────────────────────────────────────────────── 상세
 
-def build_detail(d: dict, items: list[dict]) -> str:
+def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str:
     idx = items.index(d)
     prev = items[idx - 1] if idx > 0 else None
     nxt = items[idx + 1] if idx < len(items) - 1 else None
@@ -655,8 +661,11 @@ def build_detail(d: dict, items: list[dict]) -> str:
     bott = "".join(f"<li>{el(x)}</li>" for x in c["bottlenecks"])
     barr = "".join(f"<li>{el(x)}</li>" for x in c.get("entryBarriers", []))
     fv = "".join(f"<li>{el(x)}</li>" for x in d["fieldVerification"])
+    # 관련 제도 — standalone(단독 파일)에서는 그 파일이 없으므로 링크 대신 이름만.
     rel = "".join(
-        f'<a class="chip" style="text-decoration:none" href="../{e(r)}/index.html">{e(next((y["name"] for y in items if y["slug"] == r), r))}</a>'
+        (f'<span class="chip">{e(next((y["name"] for y in items if y["slug"] == r), r))}</span>'
+         if standalone else
+         f'<a class="chip" style="text-decoration:none" href="../{e(r)}/index.html">{e(next((y["name"] for y in items if y["slug"] == r), r))}</a>')
         for r in d["related"])
 
     # 검증
@@ -691,14 +700,17 @@ def build_detail(d: dict, items: list[dict]) -> str:
 </div>"""
         for q in quotes)
 
-    body = f"""
+    subnav = "" if standalone else f"""
 <div class="subnav"><div class="wrap">
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px">{opts}</select>
   <a class="btn" {'href="../' + e(prev["slug"]) + '/index.html"' if prev else 'disabled'} style="text-decoration:none">← 이전</a>
   <a class="btn" {'href="../' + e(nxt["slug"]) + '/index.html"' if nxt else 'disabled'} style="text-decoration:none">다음 →</a>
   <span class="pos">{idx + 1}/{len(items)}</span>
-</div></div>
+</div></div>"""
+
+    body = f"""
+{subnav}
 
 <div class="wrap dtl-hd">
   <div class="row">
@@ -766,8 +778,7 @@ def build_detail(d: dict, items: list[dict]) -> str:
 {f'''<section class="blk">
   <h2>자료집 ↔ 원문 불일치 {len(discs)}건</h2>
   <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
-    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 {n_up}건이며
-    <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 {n_up}건입니다{"" if standalone else ' — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다'}.</p>
   {disc_html}
 </section>''' if discs else ''}
 
@@ -814,9 +825,8 @@ def build_detail(d: dict, items: list[dict]) -> str:
 var NODES={json.dumps(node_view, ensure_ascii=False)};
 var EDGES={json.dumps(edges, ensure_ascii=False)};
 
-document.getElementById('sel').addEventListener('change',function(){{
-  location.href='../'+this.value+'/index.html';
-}});
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){{ location.href='../'+this.value+'/index.html'; }});
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){{
@@ -974,7 +984,7 @@ document.getElementById('dlg').addEventListener('click',function(ev){{
 addEventListener('load',draw); addEventListener('resize',draw);
 new MutationObserver(draw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
-    return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js)
+    return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone)
 
 
 # ─────────────────────────────────────────────────────────── 검증 대장
@@ -1119,6 +1129,93 @@ def build_errata(items: list[dict]) -> str:
     return page(f"자료집 정오표 | {SITE_TITLE}", body, depth=1, nav="errata")
 
 
+# ─────────────────────────────────────────────────────────── 배포용 단일 파일
+
+def build_bundle(country_slug: str, country_name: str, items: list[dict]) -> str:
+    """한 국가의 제도들을 네비게이션 없는 자족 단일 HTML로 묶는다.
+
+    각 제도를 standalone HTML로 만들어 iframe srcdoc에 임베드한다 — iframe이
+    JS 스코프를 격리하므로 여러 제도의 업무구조도·drawer가 서로 충돌하지 않는다.
+    외부 리소스 요청이 전혀 없어(모두 인라인·srcdoc) 파일 하나로 오프라인에서 열린다.
+    """
+    docs = [d for d in items if d["slug"].startswith(country_slug + "-")]
+    docs.sort(key=lambda d: d["priority"])
+    if not docs:
+        return ""
+
+    tabs, frames = [], []
+    for i, d in enumerate(docs):
+        inner = build_detail(d, items, standalone=True)
+        srcdoc = html.escape(inner, quote=True)
+        active = " active" if i == 0 else ""
+        tabs.append(
+            f'<button class="tab{active}" data-i="{i}" onclick="showTab({i})">'
+            f'{e(AXIS_LABEL[d["axis"]])}</button>')
+        frames.append(
+            f'<iframe class="fr{active}" data-i="{i}" title="{e(d["name"])}" '
+            f'loading="{"eager" if i == 0 else "lazy"}" srcdoc="{srcdoc}"></iframe>')
+
+    asof = max(d["asOfDate"] for d in docs)
+    return f"""<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(country_name)} 공공조달 제도 | {e(SITE_TITLE)}</title>
+<style>
+*,*::before,*::after{{box-sizing:border-box}}
+:root{{color-scheme:light dark}}
+body{{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+  background:#f4f5f7;color:#16181d}}
+@media (prefers-color-scheme:dark){{body{{background:#0b0d11;color:#e8eaed}}}}
+.top{{position:sticky;top:0;z-index:10;background:inherit;border-bottom:1px solid rgba(128,128,128,.25);
+  padding:12px 18px 0}}
+.top h1{{font-size:16px;margin:0 0 2px;letter-spacing:-.02em}}
+.top .sub{{font-size:12px;color:#6b7280;margin:0 0 10px}}
+@media (prefers-color-scheme:dark){{.top .sub{{color:#9aa3af}}}}
+.tabs{{display:flex;gap:4px;flex-wrap:wrap}}
+.tab{{font:inherit;font-size:13.5px;font-weight:600;border:1px solid transparent;border-bottom:none;
+  background:none;color:#6b7280;padding:9px 15px;border-radius:8px 8px 0 0;cursor:pointer}}
+.tab:hover{{color:inherit}}
+.tab.active{{color:#157f3d;background:#fff;border-color:rgba(128,128,128,.25)}}
+@media (prefers-color-scheme:dark){{.tab.active{{color:#4ade80;background:#0f1115}}}}
+.frames{{background:#fff}}
+@media (prefers-color-scheme:dark){{.frames{{background:#0f1115}}}}
+.fr{{display:none;width:100%;border:0;min-height:80vh}}
+.fr.active{{display:block}}
+.foot{{font-size:11.5px;color:#6b7280;padding:14px 18px;line-height:1.7}}
+</style>
+</head><body>
+<div class="top">
+  <h1>{e(country_name)} 공공조달 제도</h1>
+  <p class="sub">KOICA 참여전략 자료집을 각국 법령 원문과 대조한 한 장 요약 · 자료집 기준일 {e(asof)}</p>
+  <div class="tabs">{''.join(tabs)}</div>
+</div>
+<div class="frames">{''.join(frames)}</div>
+<div class="foot">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.
+  조달법은 개정이 잦으므로 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.
+</div>
+<script>
+function fit(fr){{ try{{ fr.style.height=(fr.contentWindow.document.body.scrollHeight+20)+'px'; }}catch(e){{}} }}
+function showTab(i){{
+  document.querySelectorAll('.tab').forEach(function(t){{ t.classList.toggle('active', +t.dataset.i===i); }});
+  document.querySelectorAll('.fr').forEach(function(fr){{
+    var on=+fr.dataset.i===i; fr.classList.toggle('active', on);
+    if(on){{ try{{ fr.contentWindow.draw && fr.contentWindow.draw(); }}catch(e){{}} setTimeout(function(){{fit(fr);}},60); }}
+  }});
+}}
+document.querySelectorAll('.fr').forEach(function(fr){{
+  fr.addEventListener('load', function(){{
+    // iframe 안의 테마 토글·업무구조도가 부모 테마를 따르도록, 그리고 높이를 맞춘다
+    fit(fr);
+    if(fr.classList.contains('active')) setTimeout(function(){{ try{{fr.contentWindow.draw&&fr.contentWindow.draw();}}catch(e){{}} fit(fr); }},80);
+  }});
+}});
+addEventListener('resize', function(){{ var a=document.querySelector('.fr.active'); if(a) fit(a); }});
+</script>
+</body></html>"""
+
+
 # ─────────────────────────────────────────────────────────── main
 
 def main() -> int:
@@ -1150,6 +1247,22 @@ def main() -> int:
     print(f"  {SITE}/verification/index.html")
     for d in items:
         print(f"  {SITE}/model/{d['slug']}/index.html")
+
+    # 배포용 단일 파일 — 국가별로 dist/{country}.html 생성 (네비 없는 자족 파일)
+    dist = ROOT / "dist"
+    dist.mkdir(exist_ok=True)
+    countries = {}  # country_slug(= 제도 slug 접두) → 국가 한글명
+    for d in items:
+        countries[d["country"]["nameEn"].lower().replace(" ", "-")] = d["country"]["name"]
+    print("\n배포용 단일 파일 (dist/):")
+    for country_slug, country_name in sorted(countries.items()):
+        html_str = build_bundle(country_slug, country_name, items)
+        if not html_str:
+            continue
+        out = dist / f"{country_slug}.html"
+        out.write_text(html_str, encoding="utf-8")
+        size_kb = len(html_str.encode("utf-8")) // 1024
+        print(f"  {out}  ({size_kb}KB, 자족·오프라인)")
     return 0
 
 
