@@ -130,7 +130,7 @@ python3 tools/build_site.py
 | 경로 | 화면 |
 |---|---|
 | `site/index.html` | 제도 대장 — 검색, 국가·축 필터, 검증 배지, 불일치 건수 |
-| `site/model/{slug}/index.html` | 한 장 요약 — 업무구조도 + 캔버스 + 불일치 + 검증 |
+| `site/model/{slug}/index.html` | 한 장 요약 — 업무구조도 + 캔버스 + **법령 원문** + 불일치 + 검증 |
 | `site/verification/index.html` | 검증 대장 — 불일치 전체와 미확인 항목 |
 | `site/errata/index.html` | 정오표 — 발행처에 전달할 수정 제안과 그 상태 |
 

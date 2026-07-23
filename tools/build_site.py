@@ -379,6 +379,19 @@ ul.plain li{margin-bottom:6px}
   border:1px dashed var(--line)}
 .up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
 
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
 .srcs{font-size:13.5px}
 .srcs li{margin-bottom:9px}
 .srcs a{color:var(--info)}
@@ -638,6 +651,20 @@ def build_detail(d: dict, items: list[dict]) -> str:
     disc_html = "".join(disc_card(d, x) for x in discs)
     n_up = sum(1 for x in discs if x.get("upstream"))
 
+    # 원문 근거 — 현장에서 그대로 인용할 조문 verbatim
+    quotes = d.get("sourceQuotes", [])
+    quotes_html = "".join(
+        f"""<div class="qc">
+  <div class="qhd">
+    <span class="qart">{link(e(q["article"]), surl.get(q["law"]))}</span>
+    <span class="badge plain muted">{e(q["law"])}</span>
+  </div>
+  <div class="qtext">{e(q["quote"])}</div>
+  <p class="qgist">{el(q["gist"])}</p>
+  {f'<details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">{e(q["ko"])}</p></details>' if q.get("ko") else ''}
+</div>"""
+        for q in quotes)
+
     body = f"""
 <div class="subnav"><div class="wrap">
   <label for="sel">제도 선택</label>
@@ -702,6 +729,13 @@ def build_detail(d: dict, items: list[dict]) -> str:
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
   </div>
 </section>
+
+{f'''<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes">{quotes_html}</div>
+</section>''' if quotes else ''}
 
 {f'''<section class="blk">
   <h2>자료집 ↔ 원문 불일치 {len(discs)}건</h2>

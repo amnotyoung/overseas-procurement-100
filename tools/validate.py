@@ -128,6 +128,24 @@ def check(path: Path) -> None:
     if not isinstance(data.get("related"), list):
         err(slug, "related 배열 누락")
 
+    # --- sourceQuotes (선택이지만 있으면 규칙 준수) ---
+    sq = data.get("sourceQuotes")
+    if sq is not None:
+        if not isinstance(sq, list):
+            err(slug, "sourceQuotes는 배열이어야 함")
+        else:
+            source_laws = {s.get("law") for s in data.get("verification", {}).get("sources", [])}
+            for i, q in enumerate(sq):
+                for field in ("law", "article", "quote", "gist"):
+                    if not q.get(field):
+                        err(slug, f"sourceQuotes[{i}].{field} 누락")
+                # quote는 원문이므로 최소 길이 확인(요약이 아니라 verbatim이어야)
+                if q.get("quote") and len(q["quote"]) < 20:
+                    warn(slug, f"sourceQuotes[{i}] quote가 너무 짧음 — verbatim 원문인지 확인")
+                # law가 verification.sources와 연결되는지 (URL 자동 연결 조건)
+                if q.get("law") and q["law"] not in source_laws:
+                    warn(slug, f"sourceQuotes[{i}].law가 verification.sources에 없음 — 원문 URL 연결 안 됨: {q['law']!r}")
+
     # --- sourceRefs ---
     refs = data.get("sourceRefs")
     if not isinstance(refs, list) or not refs:

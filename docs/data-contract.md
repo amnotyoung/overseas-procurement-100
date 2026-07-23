@@ -161,6 +161,31 @@ sourceRefs: Array<{
 }>;
 ```
 
+### 4.5a sourceQuotes (현장 대응용 원문 인용)
+
+한국어 서술만으로는 현지에서 발주처와 다툴 때 근거가 되지 못한다. 우리 요약이 아니라
+**법령 조문 원문 그 자체**를 제시할 수 있어야 한다. `sourceQuotes`는 대조에 실제로 쓴
+핵심 조문의 영문 verbatim을 담는다 — 그대로 복사해 현장에서 인용할 수 있는 형태다.
+
+```ts
+sourceQuotes?: Array<{
+  law: string;        // 필수. verification.sources[].law와 일치 (URL 자동 연결)
+  article: string;    // 필수. "reg.23(6)", "§131(1)"
+  quote: string;      // 필수. 영문 원문 verbatim. 의역·축약 금지 — 원문 그대로
+  gist: string;       // 필수. 이 조문이 실무에 뜻하는 바(한국어 한 줄)
+  ko?: string;        // 선택. 원문의 한국어 직역(참고용). 공식 번역이 아님을 전제
+}>;
+```
+
+규칙
+- `quote`는 **원문 그대로**다. 우리가 읽기 쉽게 고치지 않는다. 줄바꿈·조판 잔재는 공백으로 정리하되
+  단어·어순은 손대지 않는다. 원문에 오탈자가 있으면 그대로 두고 `gist`에서 설명한다.
+- 한 제도가 인용한 핵심 조문은 모두 담는다. 최소한 discrepancy·process의 `legal_basis`에서
+  근거로 든 조문은 원문이 있어야 한다.
+- 원문을 확보하지 못한 근거(정책·관행, RD·MoU 같은 비공개 문서)는 `sourceQuotes`에 넣지 않는다.
+  그런 항목이 근거의 다수면 `verification.status`가 `source-document`에 머무는 것이 정상이다.
+- `law`는 `verification.sources[].law`와 문자열이 같아야 원문 URL이 자동 연결된다.
+
 ### 4.6 verification 블록
 
 ```ts
