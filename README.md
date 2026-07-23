@@ -88,7 +88,11 @@
 │   ├── validate.py              스키마 검증
 │   ├── check_links.py           외부 링크 생존 확인
 │   ├── build_docs.py            검증 대장·정오표 생성
-│   └── build_site.py            정적 사이트 생성
+│   ├── build_site.py            정적 사이트 생성
+│   ├── board_adapter.mjs        process → korea100studio board-v1 변환
+│   ├── check_boards.mjs         프로세스 보드 품질 게이트 (audit)
+│   └── board-baseline.json      보드 품질 기준선
+├── package.json                 Node 도구(게이트)의 devDependency
 └── site/                        생성된 화면 (빌드 산출물)
 ```
 
@@ -149,6 +153,36 @@ python3 tools/check_links.py
 `curl`로 2차 확인한 뒤, 그래도 판정이 안 서면 **보류**로 남겨 사람이 보게 한다.
 죽었다고 단정하는 것은 서버가 4xx/5xx로 명확히 없다고 답했을 때뿐이다.
 
+### 프로세스 보드 품질 게이트 (선택)
+
+```bash
+npm install          # 최초 1회 — korea100studio(audit)를 설치
+npm run check:boards
+```
+
+[korea100studio](https://github.com/hosungseo/korea100studio)의 `audit`으로 업무구조도의
+구성 품질을 점검한다. 우리 `process`와 korea100studio의 board-v1 스키마는 거의 1:1이라
+([board_adapter.mjs](tools/board_adapter.mjs) 30줄로 변환) 우리 데이터를 그대로 채점할 수 있다.
+둘 다 korea100의 프로세스 렌더러에서 나왔기 때문이다.
+
+**절대 판정이 아니라 회귀 감지다.** audit은 korea100studio의 세로 스윔레인 레이아웃 기준으로
+채점하는데, 우리 화면([build_site.py](tools/build_site.py))은 가로 그리드라 배치가 다르다.
+그래서 `stretch`·`crossings` 같은 레이아웃 의존 지표를 절대 기준으로 강제하면 거짓 실패가 난다.
+대신 [baseline](tools/board-baseline.json)과 비교해 **이번 변경이 더 나쁘게 만들었는지**를 본다.
+
+- **hard fail** — 노드 관통(`nodePiercings`)이 늘거나, 새 렌더 실패(엣지 과밀 `collinear`)가 생김.
+  이 둘은 그래프 구조가 특정 지점에서 과밀하다는 렌더러 반중립 신호다.
+- **경고** — `score` 악화, 레이아웃 의존 예산 초과. 우리 렌더에는 무해할 수 있어 확인만 권한다.
+
+구조가 실제 제도 모습이라 불가피하면(예: 네팔 입찰의 P08은 4개 첨부요건 합류점) `npm run check:boards:update`로
+baseline을 갱신한다. **이 게이트는 개발용 선택 도구다** — 데이터 검증은 `validate.py`가 담당하고,
+배포 산출물에 Node는 들어가지 않는다.
+
+> audit이 실제로 잡은 것: 우리가 스크린샷으로 "괜찮다"고 넘긴 보드 3개 중,
+> 입찰제도는 P08 4중 합류로 board-v1 렌더 불가, ODA는 회귀 엣지 `E17`이 `P04`를 관통(우리 눈은 놓침)했다.
+> board-v1과 우리 렌더는 배치가 달라 우리 화면에는 그대로 나타나지 않지만,
+> "한 지점에 엣지가 몰린다"는 신호는 어느 렌더러에서든 유효하다.
+
 ### 자료집에서 원문 뽑기
 
 ```bash
@@ -186,6 +220,8 @@ sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.
 8. 불일치는 `verification.discrepancies`에 `action`·`userAction`·`upstream`까지 채워 넣는다.
 9. `python3 tools/build_docs.py && python3 tools/build_site.py`로 문서와 화면을 다시 만든다.
    국가·제도가 늘면 목록·필터·통계·정오표가 자동으로 따라온다.
+10. (선택) `npm run check:boards`로 새 프로세스 보드의 구성 품질이 회귀하지 않았는지 본다.
+    한 지점에 엣지가 몰리면(합류·전역 회귀) 여기서 잡힌다.
 
 작성 원칙은 [데이터 계약 §5](docs/data-contract.md)에 있다. 핵심은 하나다 —
 **불일치를 적을 때 자료집이 틀렸다고 쓰지 말고, 무엇이 어떻게 다르며 실무에 어떤 영향인지 쓴다.**
