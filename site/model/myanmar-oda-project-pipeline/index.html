@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미얀마 ODA 사업 발굴·형성 절차 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline">03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline" selected>09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system">13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" href="../myanmar-procurement-governance/index.html" style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../cambodia-bidding-system/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">9/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 09</span>
+    <span class="badge plain muted">미얀마 · Myanmar</span>
+    <span class="badge plain muted">ODA 사업형성</span>
+    <span class="badge bad">재검토 필요</span>
+
+  </div>
+  <h1>미얀마 ODA 사업 발굴·형성 절차</h1>
+  <p class="one">수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요</p>
+  <div class="tiles">
+    <div class="tile"><b>10</b><span>절차 노드</span></div>
+    <div class="tile"><b>4</b><span>행위 레인</span></div>
+    <div class="tile"><b>5</b><span>게이트</span></div>
+    <div class="tile ok"><b>2</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>0</b><span>불일치</span></div>
+    <div class="tile warn"><b>6</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">발굴</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">개념승인</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">설계·협상</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">승인·서명</span></div><div class="bcell"><span class="stage-k">G5</span><span class="stage-t">이행</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">수원부처</span></div><div class="bcell" data-lane="수원부처" data-stage="G1 발굴"><button class="node" data-id="P01" data-tone="key">
+  <span class="id">P01<span class="tag">핵심</span></span>
+  <span class="nm">수요·지원 가능성 협의</span></button><button class="node" data-id="P02" data-tone="key">
+  <span class="id">P02<span class="tag">핵심</span></span>
+  <span class="nm">선도기관·정합성 확인</span></button></div><div class="bcell" data-lane="수원부처" data-stage="G2 개념승인"></div><div class="bcell" data-lane="수원부처" data-stage="G3 설계·협상"></div><div class="bcell" data-lane="수원부처" data-stage="G4 승인·서명"></div><div class="bcell" data-lane="수원부처" data-stage="G5 이행"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">MIFER·FERD·DACU</span></div><div class="bcell" data-lane="MIFER·FERD·DACU" data-stage="G1 발굴"></div><div class="bcell" data-lane="MIFER·FERD·DACU" data-stage="G2 개념승인"><button class="node" data-id="P03" data-tone="key">
+  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="nm">FERD 단일창구 제출</span></button><button class="node" data-id="P04" data-tone="warn">
+  <span class="id">P04<span class="tag">유의</span></span>
+  <span class="nm">DACU·고위 개념승인</span></button></div><div class="bcell" data-lane="MIFER·FERD·DACU" data-stage="G3 설계·협상"><button class="node" data-id="P06">
+  <span class="id">P06</span>
+  <span class="nm">협정안 법률검토·협상</span></button></div><div class="bcell" data-lane="MIFER·FERD·DACU" data-stage="G4 승인·서명"></div><div class="bcell" data-lane="MIFER·FERD·DACU" data-stage="G5 이행"><button class="node" data-id="P10" data-tone="back">
+  <span class="id">P10<span class="tag">회귀</span></span>
+  <span class="nm">분기보고·조정</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">개발파트너</span></div><div class="bcell" data-lane="개발파트너" data-stage="G1 발굴"></div><div class="bcell" data-lane="개발파트너" data-stage="G2 개념승인"></div><div class="bcell" data-lane="개발파트너" data-stage="G3 설계·협상"><button class="node" data-id="P05">
+  <span class="id">P05</span>
+  <span class="nm">PID 자체심사·전체설계</span></button></div><div class="bcell" data-lane="개발파트너" data-stage="G4 승인·서명"><button class="node" data-id="P08">
+  <span class="id">P08</span>
+  <span class="nm">협정 서명·AIMS 등록</span></button></div><div class="bcell" data-lane="개발파트너" data-stage="G5 이행"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">고위 승인·이행</span></div><div class="bcell" data-lane="고위 승인·이행" data-stage="G1 발굴"></div><div class="bcell" data-lane="고위 승인·이행" data-stage="G2 개념승인"></div><div class="bcell" data-lane="고위 승인·이행" data-stage="G3 설계·협상"></div><div class="bcell" data-lane="고위 승인·이행" data-stage="G4 승인·서명"><button class="node" data-id="P07" data-tone="warn">
+  <span class="id">P07<span class="tag">유의</span></span>
+  <span class="nm">정부 고위 최종승인</span></button></div><div class="bcell" data-lane="고위 승인·이행" data-stage="G5 이행"><button class="node" data-id="P09">
+  <span class="id">P09</span>
+  <span class="nm">PMU·PSC 이행</span></button></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">수원부처와 개발파트너가 국가·부문 우선순위에 맞는 사업을 발굴하고, MIFER 산하 FERD 단일창구를 통해 정부 고위 승인, 양자 협정·MoU·교환각서 협상과 서명, AIMS 등록, 이행 모니터링으로 연결한다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>수원부처·정부기관 또는 개발파트너가 사회경제 개발 수요와 지원 가능성을 협의</li><li>단일 또는 복수 수원기관 중 선도 정부기관을 정하고 국가·부문·지역 계획과 중복 여부를 검토</li><li>사업개념서와 관련 문서를 FERD 단일창구에 제출 — 주/지역 정부 제안은 해당 최고책임자 사전승인 확인</li><li>FERD가 DACU 검토와 필요한 고위 승인 절차를 조정하고, 승인된 제안을 개발파트너에 공식 전달</li><li>개발파트너가 자체 심사·승인을 진행하고 수원기관과 전체 사업설계·예산·조달계획을 구체화</li><li>FERD가 양자협정·MoU·Exchange of Notes 초안에 관계부처 법률의견을 취합하고 개발파트너와 협상</li><li>최종안을 경제·정부 고위 승인회의에 상정 — 현행 승인기관 명칭과 권한은 서명 전 재확인</li><li>권한 있는 당사자가 협정·MoU·교환각서를 서명하고 FERD·AIMS에 사업정보와 문서를 등록</li><li>수원부처와 개발파트너가 PMU·PSC로 사업을 이행하고 FERD가 분기보고·제약사항·중복을 모니터링</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">미얀마 정부기관과 공식 협정·MoU·교환각서 등으로 연결되는 양자·다자 무상, 양허성 차관, 기술협력 사업에 적용한다. 개발파트너가 미얀마 정부기관과 공식 협정 없이 독립적으로 재원조달·집행하는 독립사업은 2020 DAP 승인절차의 적용 제외다. 2020 DAP는 MIFER를 DACU 심의의 단일창구로 정하고 사업개념 승인→최종 설계 승인→협정 서명→FERD 보고를 규정했으나, 2021년 이후 정부구조 변화로 경제위원회·DACU·최종 승인기관의 정확한 현행 권한은 서명 전에 확인해야 한다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Myanmar Development Assistance Policy, September 2020</a></span><span class="ar">§§6.1-6.4, Annex A §§10.1-10.4</span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div><div class="law"><span class="nm"><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">MIFER/FERD official functions and responsibilities</a></span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div><div class="law"><span class="nm">양자 개발협력협정·MoU·Exchange of Notes</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">양자합의</span></div><div class="law"><span class="nm">개발파트너별 사업형성·승인·조달 규정</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">투자대외경제관계부(MIFER) 대외경제관계국(FERD)</a></b><span>개발원조 단일창구·정부와 개발파트너의 1차 접점. 수원부처 제안의 고위 승인 상신, PID 공식 전달, 협정·MoU·교환각서 협상·서명 조정, AIMS·분기보고·PMU/PSC 관리</span></div><div class="auth"><b>개발원조조정단위(DACU)</b><span>개발원조의 국가주도·조정·효과성을 검토하고 FERD를 사무국으로 사용. 2020 DAP의 사업개념·최종설계 검토기관</span></div><div class="auth"><b>수원부처·정부기관</b><span>사업수요 발굴, 선도 정부기관 지정, 국가·부문계획 정합성 검토, 제안서·설계·예산·조달계획 작성, 사업 이행</span></div><div class="auth"><b>고위 승인기관·경제위원회</b><span>FERD가 상신한 사업과 최종 협정안을 승인. 현행 MIFER 페이지는 경제위원회와 국정관리평의회 회의 상정을 기재하나 2026년 현재 기관명·권한 재확인 필요</span></div><div class="auth"><b>개발파트너(PID)</b><span>수원부처·FERD와 사업개념·설계를 협의하고 자체 승인 후 협정·MoU·교환각서를 체결, 사업·재원 정보를 AIMS에 제공</span></div><div class="auth"><b>PMU·PSC 및 MIFER 개발관리조정과</b><span>사업 이행을 점검하고 3개월 보고·제약사항 분석·기획 및 사업평가 부서 보고</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">투자대외경제관계부(MIFER), 대외경제관계국(FERD), 개발원조조정단위(DACU), 관련 수원부처·주/지역 정부, 고위 승인기관, 경제위원회, 개발파트너(PID), 프로젝트관리단(PMU)·운영위원회(PSC), 기획부서·사업평가진도보고부서</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>선도 수원부처·정부기관</b><div class="chips"><span class="chip">Concept Proposal Form 또는 사업개념서</span><span class="chip">사업/프로그램 설계문서</span><span class="chip">재원·예산계획</span><span class="chip">예비 조달계획</span><span class="chip">협정·MoU 초안</span><span class="chip">주/지역 정부 제안의 최고책임자 사전승인</span></div></div><div class="docset"><b>FERD·DACU·고위 승인기관</b><div class="chips"><span class="chip">관계기관 검토의견</span><span class="chip">DACU 검토·승인 또는 고위 승인 상신안</span><span class="chip">법률의견 취합본</span><span class="chip">최종 협정·MoU·Exchange of Notes 승인안</span></div></div><div class="docset"><b>개발파트너·수원부처</b><div class="chips"><span class="chip">서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes</span><span class="chip">AIMS 사업등록 정보</span><span class="chip">PMU·PSC 회의록</span><span class="chip">분기 이행보고서</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>2020 DAP는 국가고문·의회·경제위원회를 전제로 작성됐고 2021년 이후 정부구조가 바뀌었다. 현재 MIFER 페이지도 국정관리평의회 회의를 적고 있어 2026년 현재 최종 승인기관 명칭·권한을 그대로 적용할 수 없다</li><li>사업개념 승인과 최종 설계 승인을 FERD 단일창구·DACU 검토로 두 단계 진행해 문서 품질·번역·관계기관 의견 취합이 일정에 직접 영향을 준다</li><li>개발파트너 자체 승인과 미얀마 정부 승인이 병렬로 필요하며, 협정안 법률의견·고위 승인이 끝나기 전에는 공식화할 수 없다</li><li>외부재원 조달은 개발파트너 규정이 우선할 수 있어 사업형성 단계에서 재원협정의 조달 우선순위를 확정해야 한다</li><li>MIFER 공식 기능 페이지와 2020 DAP는 AIMS 등록·분기보고·PMU/PSC 모니터링을 요구하나 공개 시스템의 현재 운영상태는 확인하지 못했다</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>FERD 단일창구와 수원부처를 모두 거쳐야 하므로 초기에 선도 정부기관과 공식 연락경로를 확정해야 한다</li><li>영문 문서 품질과 미얀마어 번역 정확성이 승인 지연 요인으로 DAP에 명시돼 있다</li><li>현행 고위 승인기관과 서명권자를 협정 협상 초기에 서면 확인하지 않으면 최종 단계에서 재상신될 수 있다</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>2026년 현재 DACU·경제위원회의 존속·구성·승인권한과 최종 정부 승인회의 명칭</li><li>무상·차관 사업별 현행 금액기준과 승인권자 — 2020 DAP의 20억 짯 기준을 그대로 적용하지 말고 재확인</li><li>KOICA 미얀마 신규사업에서 FERD·수원부처·대한민국 정부 사이의 실제 PCP·예비조사·PD·협정 순서</li><li>Mohinga AIMS의 현재 접속·등록 주체·필수 필드와 사업정보 공개범위</li><li>협정 서명 후 FERD 문서 제출 2주 및 분기 이행보고가 현재도 적용되는지</li><li>주/지역 정부 제안의 현행 사전승인권자와 서면 형식</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a></div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes"><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.1 — MIFER as a Single Window</a></span>
+    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
+  </div>
+  <div class="qtext">The Ministry of Investment and Foreign Economic Relations shall be the single window for the submission of all cases requiring the DACU’s consideration prior to submission to the Economic Committee.</div>
+  <p class="qgist">개발원조 안건은 MIFER가 DACU·경제위원회 심의의 단일창구다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.3 — Phase 2: Project/Programme Concept Approval</a></span>
+    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
+  </div>
+  <div class="qtext">Once a project/programme concept has been agreed, the Government Entity shall submit all relevant documentation to FERD who shall prepare the case for submission to the DACU. The DACU will review the proposal and may either offer an endorsement, allowing for full Project/Programme development to begin, or convey the case to the Economic Committee for further review and approval.</div>
+  <p class="qgist">합의된 사업개념은 FERD를 통해 DACU가 검토하고 승인 또는 상위 심의로 보낸다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 3</a></span>
+    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
+  </div>
+  <div class="qtext">By now, the Lead Government Entity shall have gathered sufficient information to prepare the following documents (or documents comparable in nature): a draft Project/Programme/Concessional Loan Design; a draft Financing Plan; an Indicative Procurement Plan; and a draft Agreement/MoU.</div>
+  <p class="qgist">최종 승인 단계에는 설계·재원·조달계획·협정 초안을 함께 준비한다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 8</a></span>
+    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
+  </div>
+  <div class="qtext">Within two weeks of a Grant Agreement/MoU or Concessional Loan Agreement being signed, the Lead Government Entity shall submit to FERD for its records a copy of that Agreement/MoU and any other relevant documentation.</div>
+  <p class="qgist">협정 서명 후 2주 이내 FERD에 문서 사본을 제출한다는 2020 정책 기준이다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">Duties and Responsibilities of the Asia and America Division</a></span>
+    <span class="badge plain muted">MIFER/FERD official functions and responsibilities</span>
+  </div>
+  <div class="qtext">Responsibility to submit the projects proposal proposed by the relevant ministries in order to get the approval of the higher level organizations and after that, sending the project proposals to PIDs for their approval and assistance officially; Initiating and coordinating for the signing of Memorandum of Understanding (MOU), Exchange of Letters and Exchange of Notes between the two countries after the proposed projects approved by PIDs’ side;</div>
+  <p class="qgist">FERD는 수원부처 제안을 고위 승인에 상신하고 PID 승인 뒤 양자 문서 서명을 조정한다.</p>
+
+</div></div>
+</section>
+
+
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">MIFER의 현행 FERD 공식 기능 페이지에서 단일창구·제안 상신·PID 전달·양자문서 협상·AIMS·분기보고 역할을 확인하고, MIFER가 발간한 Myanmar Development Assistance Policy 2020의 사업개념·최종설계·협정 서명 SOP를 조문 단위로 대조했다. 두 자료 사이의 2021년 이후 기관 변화는 보수적으로 분리했다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">FERD 중심의 현재 실무기능과 2020 DAP의 문서·단계 구조는 확인했다. DACU·경제위원회·의회·국정관리평의회 등 최종 승인기관의 2026년 현행 명칭·권한, 무상·차관 금액기준, KOICA 고유 사업형성 절차는 공식 최신 SOP로 확정하지 못했다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-26 · 자료집 기준일 2026-07-26</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">About FERD</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 Functions; Asia and America Division; Development Management and Coordination Division; Legal Section</span><span class="ar">확인 2026-07-26 · Ministry of Investment and Foreign Economic Relations, Myanmar</span></li><li><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Myanmar Development Assistance Policy, September 2020</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §§6.1-6.4; Annex A §§10.1-10.4</span><span class="ar">확인 2026-07-26 · Foreign Economic Relations Department, Ministry of Investment and Foreign Economic Relations</span></li><li><a class="ref" href="https://mifer.gov.mm/en/publications" target="_blank" rel="noopener">MIFER Publications — Myanmar Development Assistance Policy</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-26 · Ministry of Investment and Foreign Economic Relations, Myanmar</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">미얀마는 KOICA 2025 아시아·태평양 자료집 수록국이 아니므로 자료집 불일치가 없다. MIFER 1차 자료를 기준으로 별도 보강했다.</p><p class="note">2020 DAP는 MIFER를 단일창구로 하고 FERD를 DACU 사무국으로 둔다. 현재 MIFER의 FERD 소개 페이지도 이 역할과 AIMS·분기보고·PMU/PSC 기능을 계속 기재한다.</p><p class="note">다만 2020 DAP는 국가고문·의회·당시 경제위원회를 전제로 한다. 현재 MIFER 페이지의 Legal Section은 최종 협정안을 경제위원회와 국정관리평의회 회의에 상정한다고 기재해 2020 절차와 기관명이 달라졌다.</p><p class="note">따라서 본 레코드는 변동 가능성이 낮은 FERD 단일창구·수원부처·PID·협정·등록·모니터링 단계만 본문 절차로 채택하고, 최종 승인기관과 금액기준은 needs-review로 남겼다.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>2021년 이후 개발원조 승인기관·서명권자 최신 SOP <span class="badge plain muted">title-needs-confirmation</span></h3><p style="margin:0 0 8px;font-size:13.5px">2020 DAP의 국가고문·의회·경제위원회 경로와 현재 MIFER 페이지의 경제위원회·국정관리평의회 회의 경로가 다르며, 2026년 최종 승인기관을 정한 최신 SOP를 확보하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — FERD 또는 KOICA 미얀마사무소에 무상·차관별 현행 상신기관, 승인권자, 서명권자를 서면 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>KOICA 미얀마 국별 신규사업 형성 절차 <span class="badge plain muted">donor-internal</span></h3><p style="margin:0 0 8px;font-size:13.5px">KOICA의 PCP·예비조사·PD 심사와 미얀마 FERD 승인절차를 연결한 공개 최신 지침을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — KOICA 미얀마사무소의 신규사업 안내 또는 실제 최근 협정 사례로 양측 단계·필수문서를 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3>Mohinga Aid Information Management System 운영지침 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">MIFER 공식 페이지는 AIMS 관리 기능을 기재하지만 2026년 현재 등록 매뉴얼과 공개 접속상태를 확인하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — FERD에 AIMS 등록 주체·시점·필수정보·공개범위를 확인한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    재검토 필요 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "수요·지원 가능성 협의", "lane": "수원부처", "stage": "G1 발굴", "type": "task", "status": "current", "actor": "수원부처 · 개발파트너", "action": "사회경제 개발수요와 지원 가능성을 협의한다.", "confidence": 0.85}, "P02": {"id": "P02", "name": "선도기관·정합성 확인", "lane": "수원부처", "stage": "G1 발굴", "type": "gateway", "status": "current", "actor": "선도 정부기관", "action": "선도기관을 정하고 국가·부문·지역 계획, 진행·계획 사업과의 중복을 검토한다.", "output_documents": ["초기 사업개념", "정합성 검토"], "confidence": 0.8}, "P03": {"id": "P03", "name": "FERD 단일창구 제출", "lane": "MIFER·FERD·DACU", "stage": "G2 개념승인", "type": "notice", "status": "current", "actor": "선도 정부기관 · FERD", "action": "사업개념서와 관련 문서를 FERD에 제출한다.", "output_documents": ["Concept Proposal Form", "관련 검토문서"], "confidence": 0.85, "legal_basis": [{"law": "Myanmar Development Assistance Policy, September 2020", "article": "§6.3", "url": "https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf"}]}, "P04": {"id": "P04", "name": "DACU·고위 개념승인", "lane": "MIFER·FERD·DACU", "stage": "G2 개념승인", "type": "gateway", "status": "risk", "actor": "DACU · 고위 승인기관", "action": "FERD가 검토·상신을 조정하고 승인된 제안을 개발파트너에 공식 전달한다.", "blocker": "2026년 현재 DACU·고위 승인기관의 정확한 명칭·권한 미확인", "confidence": 0.65}, "P05": {"id": "P05", "name": "PID 자체심사·전체설계", "lane": "개발파트너", "stage": "G3 설계·협상", "type": "task", "status": "waiting", "actor": "개발파트너 · 수원부처", "action": "자체 심사와 함께 사업설계·재원·예산·예비 조달계획을 구체화한다.", "output_documents": ["사업설계", "재원계획", "예산", "예비 조달계획"], "confidence": 0.8}, "P06": {"id": "P06", "name": "협정안 법률검토·협상", "lane": "MIFER·FERD·DACU", "stage": "G3 설계·협상", "type": "task", "status": "waiting", "actor": "FERD · 관계부처 · 개발파트너", "action": "FERD가 법률의견을 취합하고 협정·MoU·교환각서 최종안을 협상한다.", "output_documents": ["법률의견", "최종 협정·MoU·Exchange of Notes 초안"], "confidence": 0.8}, "P07": {"id": "P07", "name": "정부 고위 최종승인", "lane": "고위 승인·이행", "stage": "G4 승인·서명", "type": "gateway", "status": "risk", "actor": "경제·정부 고위 승인기관", "action": "최종 협정안과 사업설계를 승인한다. 서명 전에 현행 승인기관·권한을 확인한다.", "blocker": "2020 DAP와 현재 MIFER 페이지의 기관 경로가 다름", "confidence": 0.55}, "P08": {"id": "P08", "name": "협정 서명·AIMS 등록", "lane": "개발파트너", "stage": "G4 승인·서명", "type": "notice", "status": "waiting", "actor": "권한 있는 정부기관 · 개발파트너 · FERD", "action": "협정·MoU·교환각서를 서명하고 FERD·AIMS에 사업정보와 문서를 등록한다.", "output_documents": ["서명 협정·MoU·Exchange of Notes", "AIMS 등록정보"], "confidence": 0.75}, "P09": {"id": "P09", "name": "PMU·PSC 이행", "lane": "고위 승인·이행", "stage": "G5 이행", "type": "task", "status": "waiting", "actor": "수원부처 · 개발파트너 · PMU/PSC", "action": "사업을 이행하고 PMU·PSC 회의로 진도·제약사항을 관리한다.", "output_documents": ["PMU·PSC 회의록", "이행보고서"], "confidence": 0.8}, "P10": {"id": "P10", "name": "분기보고·조정", "lane": "MIFER·FERD·DACU", "stage": "G5 이행", "type": "system", "status": "loop", "actor": "FERD 개발관리조정과", "action": "3개월 보고를 수집·분석하고 제약사항·중복을 조정해 상위기관과 기획·평가부서에 보고한다.", "output_documents": ["분기 진도보고", "제약사항 분석"], "confidence": 0.75}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "sequence"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence"}, {"id": "E04", "source": "P04", "target": "P05", "type": "message", "label": "공식 전달"}, {"id": "E05", "source": "P05", "target": "P06", "type": "sequence"}, {"id": "E06", "source": "P06", "target": "P07", "type": "sequence"}, {"id": "E07", "source": "P07", "target": "P08", "type": "message", "label": "승인"}, {"id": "E08", "source": "P08", "target": "P09", "type": "sequence"}, {"id": "E09", "source": "P09", "target": "P10", "type": "message", "label": "분기보고"}, {"id": "E10", "source": "P10", "target": "P09", "type": "loop", "label": "제약 조정"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>

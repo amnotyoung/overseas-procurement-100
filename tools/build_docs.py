@@ -168,7 +168,10 @@ def build_errata(items: list[dict]) -> str:
                              SEV_ORDER[t[1]["severity"]]))
     n_fix = sum(1 for _, x in rows if x["upstream"]["priority"] == "정정 요망")
     verified = max((d["verification"]["verifiedAt"] for d in items), default="")
-    docs_used = {r["document"] for d in items for r in d["sourceRefs"]}
+    # 정오표에는 실제 upstream 정정 항목이 생긴 기준문서만 적는다.
+    # 자료집 미수록 보강국의 1차자료나 KOICA 규정 원문까지 정오표 대상으로
+    # 오인되지 않도록 rows에서 역산한다.
+    docs_used = {r["document"] for d, _ in rows for r in d["sourceRefs"]}
 
     L: list[str] = []
     a = L.append

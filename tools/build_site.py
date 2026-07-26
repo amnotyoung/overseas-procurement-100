@@ -26,6 +26,12 @@ SITE = ROOT / "site"
 SITE_TITLE = "그 나라 조달은 어떻게 할까"
 SITE_SUB = "협력국 조달제도 안내"
 
+
+def clean_generated_html(value: str) -> str:
+    """생성 HTML의 줄 끝 공백을 제거하고 POSIX 개행으로 끝낸다."""
+    return "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
+
+
 AXIS_LABEL = {"bidding": "입찰제도", "governance": "조달 거버넌스", "pipeline": "ODA 사업형성"}
 VERIF_LABEL = {
     "article-verified": "조문 대조 완료",
@@ -1259,13 +1265,19 @@ def main() -> int:
     (SITE / "verification").mkdir(parents=True)
     (SITE / "errata").mkdir(parents=True)
 
-    (SITE / "index.html").write_text(build_index(items), encoding="utf-8")
-    (SITE / "verification" / "index.html").write_text(build_verification(items), encoding="utf-8")
-    (SITE / "errata" / "index.html").write_text(build_errata(items), encoding="utf-8")
+    (SITE / "index.html").write_text(clean_generated_html(build_index(items)), encoding="utf-8")
+    (SITE / "verification" / "index.html").write_text(
+        clean_generated_html(build_verification(items)), encoding="utf-8"
+    )
+    (SITE / "errata" / "index.html").write_text(
+        clean_generated_html(build_errata(items)), encoding="utf-8"
+    )
     for d in items:
         out = SITE / "model" / d["slug"]
         out.mkdir(parents=True, exist_ok=True)
-        (out / "index.html").write_text(build_detail(d, items), encoding="utf-8")
+        (out / "index.html").write_text(
+            clean_generated_html(build_detail(d, items)), encoding="utf-8"
+        )
 
     n = len(list(SITE.rglob("*.html")))
     print(f"빌드 완료 — {n}개 페이지")
@@ -1286,7 +1298,7 @@ def main() -> int:
         if not html_str:
             continue
         out = dist / f"{country_slug}.html"
-        out.write_text(html_str, encoding="utf-8")
+        out.write_text(clean_generated_html(html_str), encoding="utf-8")
         size_kb = len(html_str.encode("utf-8")) // 1024
         print(f"  {out}  ({size_kb}KB, 자족·오프라인)")
     return 0

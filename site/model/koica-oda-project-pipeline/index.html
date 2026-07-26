@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOICA 조달·계약 집행 절차 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline">03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline" selected>06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system">13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" href="../koica-procurement-governance/index.html" style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../myanmar-bidding-system/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">6/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 06</span>
+    <span class="badge plain muted">대한민국(KOICA·발주자) · Republic of Korea (KOICA)</span>
+    <span class="badge plain muted">ODA 사업형성</span>
+    <span class="badge ok">조문 대조 완료</span>
+
+  </div>
+  <h1>KOICA 조달·계약 집행 절차</h1>
+  <p class="one">사업부서 조달의뢰부터 예정가격 산정·입찰·낙찰·계약체결·이행·검수·대가지급·하자담보까지 이어지는 KOICA의 조달·계약 집행 파이프라인</p>
+  <div class="tiles">
+    <div class="tile"><b>14</b><span>절차 노드</span></div>
+    <div class="tile"><b>3</b><span>행위 레인</span></div>
+    <div class="tile"><b>5</b><span>게이트</span></div>
+    <div class="tile ok"><b>18</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>0</b><span>불일치</span></div>
+    <div class="tile warn"><b>4</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">조달의뢰</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">가격산정</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">입찰·낙찰</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">계약체결</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">이행·정산</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">소관 사업부서</span></div><div class="bcell" data-lane="소관 사업부서" data-stage="G0 조달의뢰"><button class="node" data-id="P01">
+  <span class="id">P01</span>
+  <span class="nm">조달의뢰</span></button></div><div class="bcell" data-lane="소관 사업부서" data-stage="G1 가격산정"></div><div class="bcell" data-lane="소관 사업부서" data-stage="G2 입찰·낙찰"></div><div class="bcell" data-lane="소관 사업부서" data-stage="G3 계약체결"></div><div class="bcell" data-lane="소관 사업부서" data-stage="G4 이행·정산"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">조달부서·계약담당자</span></div><div class="bcell" data-lane="조달부서·계약담당자" data-stage="G0 조달의뢰"></div><div class="bcell" data-lane="조달부서·계약담당자" data-stage="G1 가격산정"><button class="node" data-id="P02">
+  <span class="id">P02</span>
+  <span class="nm">추정가격 산정</span></button><button class="node" data-id="P03" data-tone="key">
+  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="nm">예정가격 작성·봉서</span></button></div><div class="bcell" data-lane="조달부서·계약담당자" data-stage="G2 입찰·낙찰"><button class="node" data-id="P04">
+  <span class="id">P04</span>
+  <span class="nm">입찰공고</span></button><button class="node" data-id="P05">
+  <span class="id">P05</span>
+  <span class="nm">입찰참가자격 확인</span></button><button class="node" data-id="P07">
+  <span class="id">P07</span>
+  <span class="nm">낙찰자 결정</span></button></div><div class="bcell" data-lane="조달부서·계약담당자" data-stage="G3 계약체결"><button class="node" data-id="P08">
+  <span class="id">P08</span>
+  <span class="nm">계약체결·계약보증금</span></button></div><div class="bcell" data-lane="조달부서·계약담당자" data-stage="G4 이행·정산"><button class="node" data-id="P10">
+  <span class="id">P10</span>
+  <span class="nm">이행·감독</span></button><button class="node" data-id="P11">
+  <span class="id">P11</span>
+  <span class="nm">검사·검수</span></button><button class="node" data-id="P12">
+  <span class="id">P12</span>
+  <span class="nm">대가·선금 지급</span></button><button class="node" data-id="P13" data-tone="warn">
+  <span class="id">P13<span class="tag">유의</span></span>
+  <span class="nm">지체상금·계약해지</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">계약상대자</span></div><div class="bcell" data-lane="계약상대자" data-stage="G0 조달의뢰"></div><div class="bcell" data-lane="계약상대자" data-stage="G1 가격산정"></div><div class="bcell" data-lane="계약상대자" data-stage="G2 입찰·낙찰"><button class="node" data-id="P06">
+  <span class="id">P06</span>
+  <span class="nm">입찰·개찰</span></button></div><div class="bcell" data-lane="계약상대자" data-stage="G3 계약체결"><button class="node" data-id="P09">
+  <span class="id">P09</span>
+  <span class="nm">청렴계약 약정</span></button></div><div class="bcell" data-lane="계약상대자" data-stage="G4 이행·정산"><button class="node" data-id="P14" data-tone="warn">
+  <span class="id">P14<span class="tag">유의</span></span>
+  <span class="nm">하자담보</span></button></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">소관 사업부서의 조달의뢰를 받아 추정가격·예정가격을 산정하고, 입찰·낙찰·계약체결·이행·감독·검사·검수·대가지급·하자담보로 이어지는 조달 집행을 규정에 따라 수행하여 사업 목적물을 확보한다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>소관 사업부서장이 품목·세부규격·가격을 상세히 하여 조달의뢰 (규정 §9①)</li><li>추정가격 산정 (규정 §10)</li><li>예정가격 작성·봉서 또는 암호화 — 누설 금지 (규정 §11)</li><li>지정정보처리장치를 통한 입찰공고 (규정 §12)</li><li>입찰참가자격 확인 및 입찰보증금 (규정 §13, §14)</li><li>낙찰자 결정 — 최저가+계약이행능력/평가기준/협상/경쟁적 대화 (규정 §22, §25, §25-2)</li><li>계약체결 및 계약보증금 납부 (규정 §24, §26)</li><li>청렴계약 약정 (규정 §33)</li><li>이행 및 감독 (규정 §35①)</li><li>검사·검수 (규정 §35②③)</li><li>대가·선금 지급 — 검사 후 청구 접수일부터 5일 이내 (규정 §29)</li><li>하자담보 — 계약금액 2~10% 하자보수보증금, 하자담보책임기간 보관 (규정 §31)</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">KOICA의 물품 제조·구매, 용역(기술용역 포함), 공사 조달 전반에 적용된다. 현지계약은 소관 사업부서장이 조달·계약업무를 총괄하고 재외공관장·해외사무소장·주재원 등에게 계약업무를 위임·위탁할 수 있다(규정 §4①). 국제기구·비정부 간 국제기구·해외원조기관 등과 합의한 경우 조달업무를 해당기관에 위임·위탁할 수 있다(규정 §4②). 규정에 특별한 정함이 없으면 「공기업·준정부기관 계약사무규칙」을 따르고 「국가를 당사자로 하는 계약에 관한 법률」 및 그 시행령·시행규칙을 준용한다(규정 §39①).</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://www.law.go.kr/법령/한국국제협력단법시행령" target="_blank" rel="noopener">한국국제협력단법 시행령</a></span><span class="ar">제13조의4</span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7162&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">대외무상협력사업에 관한 조달 및 계약규정</a></span><span class="ar">제9조~제35조</span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div><div class="law"><span class="nm"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7165&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">대외무상협력사업에 관한 조달 및 계약규정 시행세칙</a></span><span class="ar">제41조, 제50조, 제62조, 제65조</span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div><div class="law"><span class="nm"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7167&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">국제조달규정</a></span><span class="ar">제31조, 제32조</span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div><div class="law"><span class="nm"><a class="ref" href="https://www.law.go.kr/법령/국가를당사자로하는계약에관한법률" target="_blank" rel="noopener">국가를 당사자로 하는 계약에 관한 법률 및 같은 법 시행령</a></span><span class="ar">준용(규정 §39①)</span><span class="badge plain muted" style="margin-left:auto">법률</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b>소관 사업부서장</b><span>조달의뢰 — 품목·세부규격·가격을 상세히 작성해 현지사정·조달기간을 감안해 적기 의뢰(규정 §9①)</span></div><div class="auth"><b><a class="ref" href="https://www.koica.go.kr/sites/koica_kr/index.do" target="_blank" rel="noopener">조달부서장</a></b><span>조달 집행, 조달의뢰 보완요청, 계약심의 회부(규정 §9①, §38)</span></div><div class="auth"><b><a class="ref" href="https://www.koica.go.kr/sites/koica_kr/index.do" target="_blank" rel="noopener">계약담당자(해외사무소장 위임)</a></b><span>계약체결, 감독·검사·검수, 대가지급(규정 §4①, §35)</span></div><div class="auth"><b>물류전담업체</b><span>물자의 운송·포장·보관·하역·통관·보험 전담(규정 §7)</span></div><div class="auth"><b>전문검정기관·전문가</b><span>검사설비·전문지식을 갖춘 경우 감독·검사 업무 위탁 수행(규정 §35④)</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">소관 사업부서장, 조달부서장, 계약담당자(해외사무소장 위임전결), 계약상대자, 조달협력업체, 물류전담업체, 감독·검사자 및 전문검정기관</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>소관 사업부서</b><div class="chips"><span class="chip">조달의뢰서 — 품목·세부규격·가격 (규정 §9①)</span></div></div><div class="docset"><b>입찰자·계약상대자</b><div class="chips"><span class="chip">입찰서 및 입찰보증금 (규정 §14)</span><span class="chip">계약보증금 또는 보증확약문서 (규정 §26, §36②)</span><span class="chip">청렴계약 약정 (규정 §33)</span><span class="chip">하자보수보증금 — 계약금액 2~10% (규정 §31②)</span></div></div><div class="docset"><b>계약담당자</b><div class="chips"><span class="chip">예정가격조서 (규정 §11②)</span><span class="chip">계약서 (규정 §24)</span><span class="chip">검사·검수조서 (규정 §35②③)</span><span class="chip">대가지급 결의 (규정 §29)</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>예정가격은 봉서 또는 암호화하여 누설되지 않도록 해야 한다 (규정 §11②)</li><li>계약상대자가 계약상 의무를 이행하지 않으면 계약보증금을 국고에 귀속시킨다 (규정 §26③)</li><li>정당한 이유 없이 계약상 의무를 지체하면 지체상금을 납부하게 한다 (규정 §30)</li><li>하자보수보증금은 계약금액의 100분의 2 이상 100분의 10 이하이며, 하자담보책임기간 동안 보관한다 (규정 §31②)</li><li>청렴계약을 지키지 않으면 입찰·낙찰 취소 또는 계약 해제·해지 대상이 된다 (규정 §33③)</li><li>대가는 검사 등을 거쳐 청구서 접수일부터 5일 이내에 지급하되 공휴일·토요일은 제외한다 (규정 §29①⑤)</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>규정에 정함이 없는 사항은 「공기업·준정부기관 계약사무규칙」과 「국가를 당사자로 하는 계약에 관한 법률」 계열을 준용하는 구조라 국내 계약법령 이해가 필요하다 (규정 §39①)</li><li>현지계약은 수원국 법령·현지관례·국제관행에 따라 달리 체결할 수 있어, 규정 절차와 현지 실무의 조정이 필요하다 (규정 §39②)</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>현지계약에서 수원국 법령·현지관례에 따라 달리 체결하는 부분(규정 §39②)과 이 집행 절차의 조정 방식</li><li>시행세칙의 선금지급 신청·검수·하자보수보증금 세부 서식</li><li>하자담보책임기간의 공종별 구체 기간 — 「건설산업기본법 시행령」 준용분 미대조</li><li>물류전담업체 지정(규정 §7)과 현지 통관·보험 실무의 연계</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../koica-bidding-system/index.html">KOICA 현지입찰 시공자 선정(적격심사)</a><a class="chip" style="text-decoration:none" href="../koica-procurement-governance/index.html">KOICA 국제조달 경로 선택·감독</a></div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes"><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7162&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">제22조(낙찰자의 결정) ①</a></span>
+    <span class="badge plain muted">대외무상협력사업에 관한 조달 및 계약규정</span>
+  </div>
+  <div class="qtext">경쟁입찰의 경우 다음 각호의 1에 해당하는 입찰자를 낙찰자로 한다. 1. 충분한 계약이행능력이 있다고 인정되는 자로서 최저가격으로 입찰한 자 2. 입찰공고 또는 입찰설명서에 명기된 평가기준에 따라 협력단에 가장 유리하게 입찰한 자 3. 기타 계약의 성질ㆍ규모 등을 감안하여 특별히 정한 사항이 있는 경우에는 그 기준에 가장 적합하게 입찰한 자</div>
+  <p class="qgist">경쟁입찰 낙찰자는 계약이행능력이 있는 최저가 입찰자, 또는 명기된 평가기준상 가장 유리한 자, 또는 특별기준에 가장 적합한 자다. 최저가+계약이행능력 심사가 원칙이며 그 세부가 적격심사지침이다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7162&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">제31조(하자담보) ②</a></span>
+    <span class="badge plain muted">대외무상협력사업에 관한 조달 및 계약규정</span>
+  </div>
+  <div class="qtext">하자보수를 보증하기 위하여 계약금액의 100분의 2 이상 100분의 10 이하에서 하자보수보증금을 납부하게 하고, 제1항에 의한 하자담보책임기간동안 이를 보관하여야 한다.</div>
+  <p class="qgist">하자보수보증금은 계약금액의 2~10%로 납부받아 하자담보책임기간 동안 보관한다. 현지입찰 시 이 발주자 기준과 수원국 관례가 다를 수 있어 계약서에 어느 기준을 쓸지 명시해야 한다.</p>
+
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7162&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">제29조(대가 및 선금지급) ①</a></span>
+    <span class="badge plain muted">대외무상협력사업에 관한 조달 및 계약규정</span>
+  </div>
+  <div class="qtext">물품 및 공사의 대가는 당해 사업에 대한 검사 등과 다음 각호의 기준일 이후 대가지급 청구서를 접수한 날로부터 5일 이내에 이를 지급한다. 이 경우 계약상대자와 합의하여 5일을 초과하지 아니하는 범위 내에서 대가의 지급기한을 연장할 수 있다.</div>
+  <p class="qgist">물품·공사 대가는 검사 후 청구서 접수일부터 5일 이내에 지급하며, 합의로 5일 범위에서 연장할 수 있다(공휴일·토요일 제외).</p>
+
+</div></div>
+</section>
+
+
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">KOICA 규정 원문(ALIO 공개본 HWP)을 조문 단위로 읽어 조달의뢰부터 하자담보까지의 집행 절차를 정리했다. 협력국 카드와 달리 자료집↔원문 대조가 아니라 발주자(KOICA) 규정 자체를 원문에서 정규화한 것이다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">조달·계약규정 제3장(가격조사·산정 §9~§11), 제4장(입찰 및 계약의 방법 §12~§25-2), 제5장(계약의 체결 및 이행 §26~§33), 제6장(자격제한 등 §34~§38)을 확인했다. 국제조달규정 §31(이행·하자보증)·§32(선금)의 현지입찰 연계, 시행세칙 §41·§50·§62·§65의 낙찰·보증·지급·하자 세부 위임을 확인했다. 준용 대상인 국가계약법령 원문은 미대조.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-24 · 자료집 기준일 2025-02-25</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7162&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">대외무상협력사업에 관한 조달 및 계약규정 (규정 제533호, 2025.02.25. 개정)</a><span class="badge plain muted" style="margin-left:6px">공여기관 규정</span><span class="ar">대조 조문 §9(조달의뢰), §10(추정가격), §11(예정가격), §12~§18(입찰), §21·§22(계약방법·낙찰자 결정), §23-2~§25-2(수의·협상·경쟁적 대화), §26(계약보증금), §29(대가·선금), §30(지체상금), §31(하자담보), §33(청렴계약), §35(감독·검사·검수)</span><span class="ar">확인 2026-07-24 · 한국국제협력단(KOICA)</span></li><li><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7165&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">대외무상협력사업에 관한 조달 및 계약규정 시행세칙 (2025.02.25. 개정)</a><span class="badge plain muted" style="margin-left:6px">공여기관 규정</span><span class="ar">대조 조문 §41(낙찰자 결정방법), §50(계약보증금), §62(대가지급), §65(하자보수보증금)</span><span class="ar">확인 2026-07-24 · 한국국제협력단(KOICA)</span></li><li><a class="ref" href="https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&amp;reportFormNo=21110&amp;table_name=COMM_RULE&amp;idx_name=RULE_NO&amp;idx=7167&amp;reportGbn=Y&amp;bid_type=K1400" target="_blank" rel="noopener">국제조달규정 (2025.02.25. 개정)</a><span class="badge plain muted" style="margin-left:6px">공여기관 규정</span><span class="ar">대조 조문 §31(이행보증 및 하자보증), §32(선금과 선금반환보증)</span><span class="ar">확인 2026-07-24 · 한국국제협력단(KOICA)</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">이 카드는 협력국(수원국) 제도가 아니라 발주자(KOICA) 규정이다. 자료집↔법령 대조 대상이 아니므로 discrepancies가 없다.</p><p class="note">slug의 접미사(-oda-project-pipeline)는 데이터셋의 pipeline 축 규칙을 따른 것이고, 이 카드의 실제 내용은 &#x27;ODA 사업형성&#x27;이 아니라 &#x27;KOICA 조달·계약 집행 절차&#x27;다. 협력국 pipeline 카드(사업 발굴~MoU)와는 대상이 다르다.</p><p class="note">하자보수보증금 2~10%(규정 §31②)는 발주자(KOICA) 기준이다. 현지입찰·UCS에서 수원국 관례(예: 네팔 계약이행보증 5%·하자 1년)와 다를 수 있어 계약서에 적용 기준을 명시해야 한다.</p><p class="note">낙찰자 결정(§22)의 계약이행능력 심사 세부는 시행세칙 §41을 거쳐 적격심사지침(시설공사)·물품구매 적격심사지침(물품)으로 이어진다 — koica-bidding-system 참조.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>국가를 당사자로 하는 계약에 관한 법률 및 같은 법 시행령·시행규칙 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">규정 §39①이 정함 없는 사항에 준용하는 국가계약법령의 세부 조문(예: 계약보증금·지체상금 산정)을 이 카드에서 대조하지 않았다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 국가법령정보센터에서 국가계약법 시행령의 계약보증금·지체상금·검사 조문을 확보해 규정 §26·§30·§35의 준용 지점과 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3>건설산업기본법 시행령 별표 1(공종별 하자담보책임기간) <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">규정 §31①의 하자담보책임기간이 공종별로 갈리는데, 그 구체 기간을 정하는 준용 근거를 이 카드에서 대조하지 않았다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 건설산업기본법 시행령 별표 1의 공종별 하자담보책임기간을 확보해 규정 §31①의 적용과 대조한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "조달의뢰", "lane": "소관 사업부서", "stage": "G0 조달의뢰", "type": "task", "status": "done", "actor": "소관 사업부서장", "action": "품목·세부규격·가격을 상세히 작성하고 수원국 현지사정·조달기간을 감안해 적기에 조달의뢰한다. 조달부서장은 필요 시 보완을 요청할 수 있다.", "output_documents": ["조달의뢰서"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§9①", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P02": {"id": "P02", "name": "추정가격 산정", "lane": "조달부서·계약담당자", "stage": "G1 가격산정", "type": "task", "status": "done", "actor": "조달부서", "action": "예산에 계상된 금액 등을 고려해 추정가격을 산정한다.", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§10", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P03": {"id": "P03", "name": "예정가격 작성·봉서", "lane": "조달부서·계약담당자", "stage": "G1 가격산정", "type": "task", "status": "current", "actor": "조달부서", "action": "규격서·설계서에 따라 예정가격을 작성해 봉서하거나 암호화하여 개찰 전까지 누설되지 않도록 한다. 현지·국제입찰은 작성을 생략할 수 있다.", "output_documents": ["예정가격조서"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§11", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P04": {"id": "P04", "name": "입찰공고", "lane": "조달부서·계약담당자", "stage": "G2 입찰·낙찰", "type": "notice", "status": "waiting", "actor": "조달부서", "action": "지정정보처리장치를 이용해 공고한다. 필요 시 일간신문 게재를 병행한다.", "output_documents": ["입찰공고"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§12", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P05": {"id": "P05", "name": "입찰참가자격 확인", "lane": "조달부서·계약담당자", "stage": "G2 입찰·낙찰", "type": "task", "status": "waiting", "actor": "조달부서", "action": "허가·면허·등록·납세 등 자격요건과 부정당업자 해당 여부를 확인한다. 조달협력업체 등록자는 심사를 생략할 수 있다.", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§13", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P06": {"id": "P06", "name": "입찰·개찰", "lane": "계약상대자", "stage": "G2 입찰·낙찰", "type": "task", "status": "waiting", "actor": "입찰자", "action": "입찰보증금을 납부하고 입찰서를 제출한다. 낙찰자가 계약을 체결하지 않으면 입찰보증금은 협력단에 귀속된다.", "output_documents": ["입찰서", "입찰보증금"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§14", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P07": {"id": "P07", "name": "낙찰자 결정", "lane": "조달부서·계약담당자", "stage": "G2 입찰·낙찰", "type": "gateway", "status": "waiting", "actor": "조달부서장", "action": "계약이행능력이 있는 최저가 입찰자, 또는 명기된 평가기준상 가장 유리한 자를 낙찰자로 한다. 계약이행능력 심사는 시행세칙 §41을 거쳐 적격심사지침으로 이어진다.", "output_documents": ["낙찰 결정"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§22", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}, {"law": "대외무상협력사업에 관한 조달 및 계약규정 시행세칙", "article": "§41", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7165&reportGbn=Y&bid_type=K1400"}]}, "P08": {"id": "P08", "name": "계약체결·계약보증금", "lane": "조달부서·계약담당자", "stage": "G3 계약체결", "type": "task", "status": "waiting", "actor": "계약담당자", "action": "계약서를 작성하고 계약보증금을 납부받는다. 시행세칙에 정한 경우 계약보증금의 전부·일부를 면제하되 보증확약문서를 받는다.", "output_documents": ["계약서", "계약보증금"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§24, §26", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P09": {"id": "P09", "name": "청렴계약 약정", "lane": "계약상대자", "stage": "G3 계약체결", "type": "task", "status": "waiting", "actor": "계약상대자", "action": "입찰·낙찰·계약체결·이행 과정에서 금품·향응 등을 주고받지 않을 것을 약정한다. 위반 시 입찰·낙찰 취소 또는 계약 해제·해지 대상이다.", "output_documents": ["청렴계약 약정서"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§33", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P10": {"id": "P10", "name": "이행·감독", "lane": "조달부서·계약담당자", "stage": "G4 이행·정산", "type": "task", "status": "waiting", "actor": "계약담당자", "action": "계약서·설계서 등에 따라 계약이행을 감독한다. 필요 시 전문검정기관·전문가에게 위탁할 수 있다.", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§35①④", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P11": {"id": "P11", "name": "검사·검수", "lane": "조달부서·계약담당자", "stage": "G4 이행·정산", "type": "gateway", "status": "waiting", "actor": "검사자", "action": "이행 완료분을 계약서·설계서로 검사하고, 납품물자는 계약서와 일치하는지 검수한다.", "output_documents": ["검사·검수조서"], "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§35②③", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P12": {"id": "P12", "name": "대가·선금 지급", "lane": "조달부서·계약담당자", "stage": "G4 이행·정산", "type": "task", "status": "waiting", "actor": "계약담당자", "action": "물품·공사 대가는 검사 후 청구서 접수일부터 5일 이내(공휴일·토요일 제외)에 지급한다. 선금은 요청 시 지급할 수 있다.", "deadline": "청구서 접수일부터 5일 이내", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§29", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P13": {"id": "P13", "name": "지체상금·계약해지", "lane": "조달부서·계약담당자", "stage": "G4 이행·정산", "type": "gateway", "status": "risk", "actor": "계약담당자", "action": "정당한 이유 없는 지체에 지체상금을 부과한다. 지체상금이 계약보증금 상당액에 이르면 계약을 해제·해지하거나 계약보증금 추가납부로 유지한다.", "blocker": "귀책 지체·의무불이행 시 계약보증금 국고 귀속 및 해지", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§30", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}, {"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§34", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}, "P14": {"id": "P14", "name": "하자담보", "lane": "계약상대자", "stage": "G4 이행·정산", "type": "task", "status": "risk", "actor": "계약상대자", "action": "계약금액의 2~10% 하자보수보증금을 납부하고, 하자담보책임기간 동안 하자를 보수한다. 발주자(KOICA) 기준이므로 현지 관례와 다르면 계약서에 적용 기준을 명시한다.", "output_documents": ["하자보수보증금"], "blocker": "발주자 기준(2~10%)과 수원국 관례가 다를 수 있어 계약서 명시 필요", "confidence": 0.9, "legal_basis": [{"law": "대외무상협력사업에 관한 조달 및 계약규정", "article": "§31", "url": "https://www.alio.go.kr/item/itemBoard21110.do?apbaId=C0146&reportFormNo=21110&table_name=COMM_RULE&idx_name=RULE_NO&idx=7162&reportGbn=Y&bid_type=K1400"}]}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "sequence"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence"}, {"id": "E04", "source": "P04", "target": "P05", "type": "sequence"}, {"id": "E05", "source": "P05", "target": "P06", "type": "message", "label": "공고·자격확인 후 입찰"}, {"id": "E06", "source": "P06", "target": "P07", "type": "sequence"}, {"id": "E07", "source": "P07", "target": "P08", "type": "sequence", "label": "낙찰"}, {"id": "E08", "source": "P08", "target": "P09", "type": "sequence"}, {"id": "E09", "source": "P09", "target": "P10", "type": "sequence"}, {"id": "E10", "source": "P10", "target": "P11", "type": "sequence"}, {"id": "E11", "source": "P11", "target": "P12", "type": "sequence", "label": "검수 완료"}, {"id": "E12", "source": "P10", "target": "P13", "type": "message", "label": "지체·불이행"}, {"id": "E13", "source": "P12", "target": "P14", "type": "sequence", "label": "하자담보기간 개시"}, {"id": "E14", "source": "P13", "target": "P04", "type": "loop", "label": "해지 시 재입찰"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>

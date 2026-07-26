@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="index.html" aria-current="page">제도 대장</a>
+    <a href="verification/index.html">검증 대장</a>
+    <a href="errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+<div class="wrap hero">
+  <div class="eyebrow">자료집에서 원문으로</div>
+  <h1>그 나라 조달은 어떻게 할까?</h1>
+  <p class="lede">협력국 입찰에 처음 들어가더라도 괜찮습니다.</p>
+  <p class="lede">자료집에 흩어진 절차를 담당자·서류·기한이 보이는 한 장으로 정리하고, 근거는 각국 법령 원문까지 대조했습니다.</p>
+  <p class="meta">제도 15개 · 5개국 · 조문 대조 완료 9개 · 자료집 기준일 2026-07-26</p>
+</div>
+
+<div class="statbar"><div class="wrap">
+  <div class="search">
+    <label for="q">검 색</label>
+    <input id="q" placeholder="제도 · 국가 · 키워드" autocomplete="off">
+    <span class="count" id="cnt">전체 15건</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>15</b><span>제도</span></div>
+    <div class="stat"><b>5</b><span>국가</span></div>
+    <div class="stat"><b>168</b><span>절차 노드</span></div>
+    <div class="stat ok"><b>9</b><span>조문 대조 완료</span></div>
+    <div class="stat bad"><b>17</b><span>불일치 발견</span></div>
+  </div>
+</div></div>
+
+<div class="wrap cols">
+  <aside class="side">
+    <div class="grp">
+      <h3>국가별 바로가기</h3>
+      <button aria-pressed="true" data-f="c" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">15</span></button>
+      <button aria-pressed="false" data-f="c" data-v="네팔"><i class="dot"></i>네팔<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="대한민국(KOICA·발주자)"><i class="dot"></i>대한민국(KOICA·발주자)<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="미얀마"><i class="dot"></i>미얀마<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="캄보디아"><i class="dot"></i>캄보디아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="탄자니아"><i class="dot"></i>탄자니아<span class="n">3</span></button>
+    </div>
+    <div class="grp">
+      <h3>제도 축</h3>
+      <button aria-pressed="true" data-f="a" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">15</span></button>
+      <button aria-pressed="false" data-f="a" data-v="bidding"><i class="dot"></i>입찰제도<span class="n">5</span></button><button aria-pressed="false" data-f="a" data-v="governance"><i class="dot"></i>조달 거버넌스<span class="n">5</span></button><button aria-pressed="false" data-f="a" data-v="pipeline"><i class="dot"></i>ODA 사업형성<span class="n">5</span></button>
+    </div>
+  </aside>
+
+  <main class="panel">
+    <div class="panel-hd">제도 대장 <span>· <span id="hcnt">15</span>개 결과</span></div>
+    <table>
+      <thead><tr><th>NO</th><th>제도</th><th>국가</th><th>축</th><th>검증</th><th>대조 결과</th></tr></thead>
+      <tbody id="tb"><tr data-c="네팔" data-a="bidding"
+  data-s="네팔 공공조달 입찰제도 공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 ppmo가 표준을 관장하는 조달 체계 nepal">
+  <td class="no">01</td>
+  <td class="name"><a href="model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a>
+    <p>공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 PPMO가 표준을 관장하는 조달 체계</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">입찰제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge bad">불일치 3</span></td>
+</tr><tr data-c="네팔" data-a="governance"
+  data-s="네팔 조달 거버넌스·감독체계 총리실 산하 ppmo가 표준·정책·전자조달포털·블랙리스트를 관장하되 개별 조달에는 법적으로 관여하지 못하고, 분쟁은 독립 검토위원회가 다루는 이원 구조 nepal">
+  <td class="no">02</td>
+  <td class="name"><a href="model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a>
+    <p>총리실 산하 PPMO가 표준·정책·전자조달포털·블랙리스트를 관장하되 개별 조달에는 법적으로 관여하지 못하고, 분쟁은 독립 검토위원회가 다루는 이원 구조</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge warn">불일치 2</span></td>
+</tr><tr data-c="네팔" data-a="pipeline"
+  data-s="네팔 oda 사업 발굴·형성 절차 재무부를 단일 관문으로 하는 수원체계에서 n-2년 pcp 제출부터 rod·mou 체결까지 이어지는 무상원조 사업 형성 파이프라인 nepal">
+  <td class="no">03</td>
+  <td class="name"><a href="model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a>
+    <p>재무부를 단일 관문으로 하는 수원체계에서 N-2년 PCP 제출부터 RoD·MoU 체결까지 이어지는 무상원조 사업 형성 파이프라인</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge bad">불일치 5</span></td>
+</tr><tr data-c="대한민국(KOICA·발주자)" data-a="bidding"
+  data-s="koica 현지입찰 시공자 선정(적격심사) 현지입찰 시설공사에서 예정가격 이하 최저가 입찰자부터 계약이행능력을 심사해 종합평점이 적격통과점수(95점, 100억원 이상 92점) 이상이면 낙찰자로 결정하는 발주자 측 적격심사 제도 republic of korea (koica)">
+  <td class="no">04</td>
+  <td class="name"><a href="model/koica-bidding-system/index.html">KOICA 현지입찰 시공자 선정(적격심사)</a>
+    <p>현지입찰 시설공사에서 예정가격 이하 최저가 입찰자부터 계약이행능력을 심사해 종합평점이 적격통과점수(95점, 100억원 이상 92점) 이상이면 낙찰자로 결정하는 발주자 측 적격심사 제도</p></td>
+  <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
+  <td style="font-size:13px;color:var(--muted)">입찰제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="대한민국(KOICA·발주자)" data-a="governance"
+  data-s="koica 국제조달 경로 선택·감독 국외조달을 현지입찰·국제입찰·수원국 조달시스템(ucs) 세 경로로 나누고, 계약심의위원회·입찰참가자격 제한·수원국 시스템 이용 시의 사무소 사전 서면 승인으로 감독하는 발주자 거버넌스 republic of korea (koica)">
+  <td class="no">05</td>
+  <td class="name"><a href="model/koica-procurement-governance/index.html">KOICA 국제조달 경로 선택·감독</a>
+    <p>국외조달을 현지입찰·국제입찰·수원국 조달시스템(UCS) 세 경로로 나누고, 계약심의위원회·입찰참가자격 제한·수원국 시스템 이용 시의 사무소 사전 서면 승인으로 감독하는 발주자 거버넌스</p></td>
+  <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
+  <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="대한민국(KOICA·발주자)" data-a="pipeline"
+  data-s="koica 조달·계약 집행 절차 사업부서 조달의뢰부터 예정가격 산정·입찰·낙찰·계약체결·이행·검수·대가지급·하자담보까지 이어지는 koica의 조달·계약 집행 파이프라인 republic of korea (koica)">
+  <td class="no">06</td>
+  <td class="name"><a href="model/koica-oda-project-pipeline/index.html">KOICA 조달·계약 집행 절차</a>
+    <p>사업부서 조달의뢰부터 예정가격 산정·입찰·낙찰·계약체결·이행·검수·대가지급·하자담보까지 이어지는 KOICA의 조달·계약 집행 파이프라인</p></td>
+  <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
+  <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="미얀마" data-a="bidding"
+  data-s="미얀마 공공조달 입찰제도 2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계 myanmar">
+  <td class="no">07</td>
+  <td class="name"><a href="model/myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도</a>
+    <p>2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">입찰제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="미얀마" data-a="governance"
+  data-s="미얀마 조달 거버넌스·감독체계 중앙 조달청이 아니라 발주기관별 입찰위원회가 집행·기록·1차 이의처리를 맡고, 제한·직접조달의 고액 건은 상위 승인을 받으며, 불복 시 기획재정부가 부처합동 이의해결팀을 구성하는 분권형 체계 myanmar">
+  <td class="no">08</td>
+  <td class="name"><a href="model/myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a>
+    <p>중앙 조달청이 아니라 발주기관별 입찰위원회가 집행·기록·1차 이의처리를 맡고, 제한·직접조달의 고액 건은 상위 승인을 받으며, 불복 시 기획재정부가 부처합동 이의해결팀을 구성하는 분권형 체계</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="미얀마" data-a="pipeline"
+  data-s="미얀마 oda 사업 발굴·형성 절차 수원부처·개발파트너가 사업개념을 만들고 mifer 산하 대외경제관계국(ferd)을 단일창구로 고위 승인·협정 협상·서명·aims 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요 myanmar">
+  <td class="no">09</td>
+  <td class="name"><a href="model/myanmar-oda-project-pipeline/index.html">미얀마 ODA 사업 발굴·형성 절차</a>
+    <p>수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
+  <td><span class="badge bad">재검토 필요</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="캄보디아" data-a="bidding"
+  data-s="캄보디아 공공조달 입찰제도 품목 구분 없이 공개입찰·가격경쟁·비교견적·직접계약의 4개 방식을 금액구간으로 나누되, 수의계약 선호로 공개 정보가 적은 조달 체계 — 2023년 새 조달법으로 근거가 교체됨 cambodia">
+  <td class="no">10</td>
+  <td class="name"><a href="model/cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a>
+    <p>품목 구분 없이 공개입찰·가격경쟁·비교견적·직접계약의 4개 방식을 금액구간으로 나누되, 수의계약 선호로 공개 정보가 적은 조달 체계 — 2023년 새 조달법으로 근거가 교체됨</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">입찰제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge warn">불일치 1</span></td>
+</tr><tr data-c="캄보디아" data-a="governance"
+  data-s="캄보디아 조달 거버넌스·감독체계 경제재무부(mef) 아래 국내재원은 공공조달국(gdpp), 외부재원은 국제협력차관관리국(gdicdm)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐 cambodia">
+  <td class="no">11</td>
+  <td class="name"><a href="model/cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계</a>
+    <p>경제재무부(MEF) 아래 국내재원은 공공조달국(GDPP), 외부재원은 국제협력차관관리국(GDICDM)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge warn">불일치 1</span></td>
+</tr><tr data-c="캄보디아" data-a="pipeline"
+  data-s="캄보디아 oda 사업 발굴·형성 절차 무상은 cdc/crdb, 유상은 경제재무부(mef)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 koica 예비조사·pd 심사로 형성되는 절차 cambodia">
+  <td class="no">12</td>
+  <td class="name"><a href="model/cambodia-oda-project-pipeline/index.html">캄보디아 ODA 사업 발굴·형성 절차</a>
+    <p>무상은 CDC/CRDB, 유상은 경제재무부(MEF)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 KOICA 예비조사·PD 심사로 형성되는 절차</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
+  <td><span class="badge muted">자료집 기재</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="탄자니아" data-a="bidding"
+  data-s="탄자니아 공공조달 입찰제도 ppra가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(nest) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨 tanzania">
+  <td class="no">13</td>
+  <td class="name"><a href="model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a>
+    <p>PPRA가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(NeST) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">입찰제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge bad">불일치 3</span></td>
+</tr><tr data-c="탄자니아" data-a="governance"
+  data-s="탄자니아 조달 거버넌스·감독체계 재정기획부 산하 공공조달규제청(ppra)이 표준·정책·전자조달(nest)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함 tanzania">
+  <td class="no">14</td>
+  <td class="name"><a href="model/tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계</a>
+    <p>재정기획부 산하 공공조달규제청(PPRA)이 표준·정책·전자조달(NeST)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge bad">불일치 1</span></td>
+</tr><tr data-c="탄자니아" data-a="pipeline"
+  data-s="탄자니아 oda 사업 발굴·형성 절차 재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, pcp 제출부터 예비·기획조사를 거쳐 재정기획부와 rd 체결로 공식화되는 사업 형성 절차 tanzania">
+  <td class="no">15</td>
+  <td class="name"><a href="model/tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a>
+    <p>재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, PCP 제출부터 예비·기획조사를 거쳐 재정기획부와 RD 체결로 공식화되는 사업 형성 절차</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
+  <td><span class="badge muted">자료집 기재</span></td>
+  <td><span class="badge warn">불일치 1</span></td>
+</tr></tbody>
+    </table>
+    <div class="empty" id="none" hidden>조건에 맞는 제도가 없습니다.</div>
+  </main>
+</div>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var q=document.getElementById('q'),tb=document.getElementById('tb'),
+    cnt=document.getElementById('cnt'),hcnt=document.getElementById('hcnt'),
+    none=document.getElementById('none'),F={c:'',a:''};
+function apply(){
+  var t=q.value.trim().toLowerCase(),n=0;
+  Array.prototype.forEach.call(tb.rows,function(r){
+    var ok=(!F.c||r.dataset.c===F.c)&&(!F.a||r.dataset.a===F.a)&&(!t||r.dataset.s.indexOf(t)>=0);
+    r.hidden=!ok; if(ok)n++;
+  });
+  cnt.textContent=(t||F.c||F.a)?(n+'건 표시'):('전체 '+n+'건');
+  hcnt.textContent=n; none.hidden=n>0;
+}
+q.addEventListener('input',apply);
+document.querySelectorAll('.side button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=b.dataset.f;F[f]=b.dataset.v;
+    document.querySelectorAll('.side button[data-f="'+f+'"]').forEach(function(x){
+      x.setAttribute('aria-pressed',String(x===b));});
+    apply();
+  });
+});
+</script>
+</body></html>

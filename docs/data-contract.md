@@ -17,7 +17,7 @@
 | `LegalBasisKind` | 법률/대통령령/부령… | **법계 중립 8종** | 각국 법령 위계가 상이(Act/Rules/Ordinance/Directive…) |
 | `verification.status` | source-linked / article-verified / needs-review | **4단계로 확장** | 자료집만 있는 상태와 원문 링크 상태를 구분해야 함 |
 | `verification.discrepancies` | 없음 | **신규** | 자료집↔원문 불일치가 본 프로젝트의 핵심 산출물 |
-| `sourceRefs` | 없음 | **신규 필수** | 모든 서술이 자료집 몇 쪽에서 왔는지 역추적 |
+| `sourceRefs` | 없음 | **신규 필수** | 모든 서술이 기준문서 어느 부분에서 왔는지 역추적 |
 
 > 원본의 `canvas` 9칸 구조와 `process`(lanes/stages/nodes/edges)는 **그대로 승계**한다.
 
@@ -44,8 +44,11 @@
 | `data/institutions/{slug}.json` | 제도별 원본 | 수동 |
 | `data/manifest.json` | 국가·제도 진행 대장 | 수동 |
 | `docs/data-contract.md` | 본 문서 | 수동 |
-| `docs/verification-log.md` | 검증 대장(불일치 공개) | 수동 |
+| `docs/verification-log.md` | 검증 대장(불일치 공개) | `build_docs.py` |
+| `docs/errata.md` | 자료집 정오표 | `build_docs.py` |
+| `docs/review-sheet.en.md` | 현지 직원용 영어 검토 시트 | `build_docs.py` |
 | `sources/koica-2025-asia-pacific/` | 자료집 원문 추출 텍스트 | `extract.sh` |
+| `sources/laws/{country}/` | 대조에 쓴 법령·정책 원문 | 수동 확보 |
 
 ---
 
@@ -150,7 +153,7 @@ interface DocSet { actor: string; documents: string[]; }
 
 ### 4.5 sourceRefs (신규 필수)
 
-모든 레코드는 자료집 어느 쪽에서 왔는지 역추적 가능해야 한다.
+모든 레코드는 기준문서 어느 부분에서 왔는지 역추적 가능해야 한다.
 
 ```ts
 sourceRefs: Array<{
@@ -210,6 +213,13 @@ verification: {
   unresolved?: Unresolved[];      // 선택. 확인 못 한 항목
 };
 ```
+
+KOICA 자료집에 없는 국가를 별도 보강할 때는 다음 규칙을 적용한다.
+
+- `data/manifest.json`의 `sourceDocuments`에 조달법·지침·개발원조정책 등 1차자료 묶음을 등록한다.
+- `sourceRefs`는 해당 법령·정책의 쪽수 또는 웹페이지 섹션을 직접 가리킨다.
+- 자료집과 대조할 원문이 없으므로 `verification.discrepancies`는 비워 두고, 미수록 보강국임을 매니페스트와 검증 메모에 명시한다.
+- 검증 배지는 실제 확인 깊이대로 부여한다. 1차자료를 썼다는 사실만으로 `article-verified`가 되지는 않는다.
 
 #### VerificationStatus (4단계)
 
@@ -426,7 +436,7 @@ interface ProcessEdge {
 - [ ] `slug`가 `{country-slug}-{axis-suffix}` 규칙을 따르는가
 - [ ] `axis` 값이 3축 중 하나인가
 - [ ] 모든 `legalBasis[].kind`가 `LegalBasisKind` 8종 안에 있는가
-- [ ] `sourceRefs`가 비어 있지 않은가 (자료집 역추적 가능)
+- [ ] `sourceRefs`가 비어 있지 않은가 (자료집 또는 별도 보강 1차자료 역추적 가능)
 - [ ] `canvas.procedure` 길이가 6~10인가
 - [ ] `status: "full"`이면 `process`가 있는가
 - [ ] `process.nodes[].lane`/`stage`가 선언된 목록에 존재하는가

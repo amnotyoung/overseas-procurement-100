@@ -8,7 +8,7 @@
 | | 원본 | 본 프로젝트 |
 |---|---|---|
 | 대상 | 대한민국 1개국 × 제도 66개 | 협력국 33개국 내외 × 국가당 3개 |
-| 1차 출처 | 국가법령정보센터 | KOICA 국가별 개발협력사업 참여전략 자료집(2025) |
+| 1차 출처 | 국가법령정보센터 | KOICA 국가별 개발협력사업 참여전략 자료집(2025) + 미수록 보강국 현지 1차자료 |
 | 검증 | 국가법령정보센터 Open API 기계 대조 | 각국 조달법·규칙 영문 원문 조문 단위 대조 |
 | 산출 | 제도 한 장 요약 | 제도 한 장 요약 **+ 자료집↔원문 불일치 대장** |
 
@@ -16,7 +16,8 @@
 
 ## 지금 상태
 
-**3개국 9개 제도 완료** — 검증 통과, **불일치 17건(high 5 / medium 8 / low 4)**
+**협력국 4개국 12개 제도 + 발주자(KOICA) 3개 제도 완료** — 검증 통과,
+**불일치 17건(high 5 / medium 9 / low 3)**
 
 네팔(아시아·태평양)
 
@@ -34,7 +35,7 @@
 | [탄자니아 조달 거버넌스·감독체계](data/institutions/tanzania-procurement-governance.json) | governance | `law-linked` | 1 |
 | [탄자니아 ODA 사업 발굴·형성 절차](data/institutions/tanzania-oda-project-pipeline.json) | pipeline | `source-document` | 1 |
 
-탄자니아(아프리카)에 이어
+캄보디아(아시아·태평양)
 
 | 제도 | 축 | 검증 상태 | 불일치 |
 |---|---|---|---|
@@ -42,11 +43,25 @@
 | [캄보디아 조달 거버넌스·감독체계](data/institutions/cambodia-procurement-governance.json) | governance | `law-linked` | 1 |
 | [캄보디아 ODA 사업 발굴·형성 절차](data/institutions/cambodia-oda-project-pipeline.json) | pipeline | `source-document` | 0 |
 
-**세 나라 모두에서 자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
+미얀마(아시아·태평양 · 자료집 미수록 1차자료 보강)
+
+| 제도 | 축 | 검증 상태 | 불일치 |
+|---|---|---|---|
+| [미얀마 공공조달 입찰제도](data/institutions/myanmar-bidding-system.json) | bidding | `article-verified` | 0 |
+| [미얀마 조달 거버넌스·감독체계](data/institutions/myanmar-procurement-governance.json) | governance | `article-verified` | 0 |
+| [미얀마 ODA 사업 발굴·형성 절차](data/institutions/myanmar-oda-project-pipeline.json) | pipeline | `needs-review` | 0 |
+
+미얀마는 KOICA 2025 아시아·태평양 자료집의 11개국에 포함되지 않아 현지 지침·정책 원문으로 별도 보강했다.
+조달 2축은 Directive 1/2022가 바꾼 **2천만/2억 MMK** 공고 구간과 2017 지침의 보충 절차를 함께 반영했다.
+ODA 파이프라인은 MIFER/FERD의 단일창구 기능과 2020 개발원조정책의 안정적인 단계만 담았고,
+2021년 이후 최종 승인기관·서명권자 최신 SOP를 확보하지 못해 `needs-review`로 남겼다.
+자료집과 대조할 원문이 없으므로 미얀마의 불일치는 0건이며, 이는 무오류 판정이 아니라 **대조 대상 없음**을 뜻한다.
+
+**자료집 수록 완료 3개국 모두에서 자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
 탄자니아는 발행 **8개월 전**에 새 법(PPA 2023) 시행, 캄보디아도 2023년 신법으로 구법(2012) 폐지.
 근거 문서의 현행 여부 확인이 워크플로의 필수 단계임을 세 번 연속 확인했다.
 
-다만 세 나라의 대조 **깊이는 다르다** — 네팔·탄자니아는 영문 원문이 있어 조문 verbatim까지 확인(`article-verified`)했지만,
+다만 자료집 수록 3개국의 대조 **깊이는 다르다** — 네팔·탄자니아는 영문 원문이 있어 조문 verbatim까지 확인(`article-verified`)했지만,
 캄보디아는 신법 원문이 크메르어 스캔본이라 조문 대조가 불가능해 `law-linked`에 머문다.
 게다가 캄보디아는 시행규정이 아직 초안이라 **2012 프레임 규정이 잠정 유효** — 자료집의 금액구간·입찰방식은 아직 맞고
 신설 법률사항(컨설팅 조달·강화 벌칙)만 누락되는, 앞선 두 나라와 또 다른 양상이다.
@@ -64,7 +79,7 @@
 
 전체는 [검증 대장](docs/verification-log.md) 참조.
 
-**발견에서 끝내지 않는다.** 불일치 8건마다 세 가지를 붙였다.
+**발견에서 끝내지 않는다.** 불일치마다 세 가지를 붙였다.
 
 | 필드 | 수신자 | 답하는 질문 |
 |---|---|---|
@@ -117,7 +132,7 @@
 ```
 ├── data/
 │   ├── institutions/*.json      제도별 정규화 데이터
-│   └── manifest.json            국가·제도 진행 대장 (11개국 × 3축)
+│   └── manifest.json            국가·제도 진행 대장 (자료집 11개국 + 보강국 × 3축)
 ├── docs/
 │   ├── data-contract.md         스키마 정의 — 작성 전 반드시 읽을 것
 │   ├── verification-log.md      검증 대장 (자동 생성)
@@ -127,7 +142,7 @@
 │   ├── koica-2025-asia-pacific/
 │   │   ├── extract.sh           자료집 PDF → 국가별 텍스트
 │   │   └── pages/               추출된 원문 (117장 × 좌우 2면)
-│   └── laws/nepal/              대조에 쓴 법령 원문 PDF
+│   └── laws/{country}/          대조에 쓴 법령·정책 원문 PDF
 ├── tools/
 │   ├── validate.py              스키마 검증
 │   ├── check_links.py           외부 링크 생존 확인
@@ -267,6 +282,7 @@ sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.
 ## 다음 국가를 추가할 때
 
 1. `data/manifest.json`에서 해당 국가의 `pdfPages` 범위를 확인하고 `sources/.../pages/`의 해당 텍스트를 읽는다.
+   자료집 미수록 보강국이면 `sourceDocuments`에 1차자료 묶음을 등록하고, 그 사실을 국가 메모에 명시한다.
 2. **자료집이 인용한 조문을 전부 뽑는다.**
 3. 해당국 조달법·규칙 **영문 원문을 확보**한다. 먼저 조문 목록을 뽑아 **총 조문 수를 확인**한다.
    — 네팔 건은 이 단계에서 "법은 76조뿐"이 나왔고, 덕분에 자료집의 "141 조항"이 규칙 조항임을 특정할 수 있었다.
@@ -282,6 +298,7 @@ sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.
    네팔 건은 자료집이 전제한 정책이 발행 2개월 뒤 폐지된 것이 이 단계에서 드러났다.
 7. `docs/data-contract.md`에 맞춰 3개 JSON을 쓰고 `python3 tools/validate.py`를 통과시킨다.
 8. 불일치는 `verification.discrepancies`에 `action`·`userAction`·`upstream`까지 채워 넣는다.
+   자료집 미수록 보강국은 대조 대상이 없으므로 불일치를 만들지 않고 `sourceRefs`가 법령·정책 원문을 직접 가리키게 한다.
 9. `python3 tools/build_docs.py && python3 tools/build_site.py`로 문서와 화면을 다시 만든다.
    국가·제도가 늘면 목록·필터·통계·정오표가 자동으로 따라온다.
 10. (선택) `npm run check:boards`로 새 프로세스 보드의 구성 품질이 회귀하지 않았는지 본다.
@@ -297,12 +314,13 @@ sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.
 
 | 지역 | 국가 수 | 자료집 | 상태 |
 |---|---|---|---|
-| 아시아·태평양 | 11 | 확보 | 네팔 완료, 10개국 대기 |
+| 아시아·태평양 | 11 + 보강 1 | 확보 | 자료집 수록 네팔·캄보디아 완료, 9개국 대기 + 미얀마 별도 보강 |
 | 아프리카 | ? | 미확보 | — |
 | 중남미 | ? | 미확보 | — |
 | 중동·CIS | ? | 미확보 | — |
 
-국가당 3개 기준으로 아시아·태평양만 33개다. 4개 지역을 합치면 100개 규모가 된다.
+국가당 3개 기준으로 자료집 수록 아시아·태평양만 33개이며, 미얀마 보강분 3개가 추가됐다.
+4개 지역을 합치면 100개 규모가 된다.
 
 ---
 

@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>탄자니아 공공조달 입찰제도 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline">03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system" selected>13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" href="../cambodia-oda-project-pipeline/index.html" style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../tanzania-procurement-governance/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">13/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 13</span>
+    <span class="badge plain muted">탄자니아 · Tanzania</span>
+    <span class="badge plain muted">입찰제도</span>
+    <span class="badge ok">조문 대조 완료</span>
+    <span class="badge bad">불일치 3건</span>
+  </div>
+  <h1>탄자니아 공공조달 입찰제도</h1>
+  <p class="one">PPRA가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(NeST) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨</p>
+  <div class="tiles">
+    <div class="tile"><b>11</b><span>절차 노드</span></div>
+    <div class="tile"><b>3</b><span>행위 레인</span></div>
+    <div class="tile"><b>5</b><span>게이트</span></div>
+    <div class="tile ok"><b>14</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>3</b><span>불일치 (높음 1)</span></div>
+    <div class="tile warn"><b>3</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">준비</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">공고</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">입찰</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">평가</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">계약</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">발주 공공기관</span></div><div class="bcell" data-lane="발주 공공기관" data-stage="G0 준비"><button class="node" data-id="P01">
+  <span class="id">P01</span>
+  <span class="nm">조달계획·방식 선택</span></button><button class="node" data-id="P02">
+  <span class="id">P02</span>
+  <span class="nm">표준입찰서류 작성</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G1 공고"><button class="node" data-id="P03" data-tone="key">
+  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="nm">NeST 전자공고</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G2 입찰"></div><div class="bcell" data-lane="발주 공공기관" data-stage="G3 평가"><button class="node" data-id="P07">
+  <span class="id">P07</span>
+  <span class="nm">개찰·접수</span></button><button class="node" data-id="P08">
+  <span class="id">P08</span>
+  <span class="nm">평가·비교</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G4 계약"><button class="node" data-id="P10">
+  <span class="id">P10</span>
+  <span class="nm">낙찰 결정·통지</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">입찰자</span></div><div class="bcell" data-lane="입찰자" data-stage="G0 준비"></div><div class="bcell" data-lane="입찰자" data-stage="G1 공고"><button class="node" data-id="P04">
+  <span class="id">P04</span>
+  <span class="nm">NeST 등록·입찰서류 수령</span></button></div><div class="bcell" data-lane="입찰자" data-stage="G2 입찰"><button class="node" data-id="P06">
+  <span class="id">P06</span>
+  <span class="nm">입찰서 전자제출</span></button></div><div class="bcell" data-lane="입찰자" data-stage="G3 평가"></div><div class="bcell" data-lane="입찰자" data-stage="G4 계약"><button class="node" data-id="P11">
+  <span class="id">P11</span>
+  <span class="nm">이행보증 제출·계약</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">PPRA·보증기관</span></div><div class="bcell" data-lane="PPRA·보증기관" data-stage="G0 준비"></div><div class="bcell" data-lane="PPRA·보증기관" data-stage="G1 공고"></div><div class="bcell" data-lane="PPRA·보증기관" data-stage="G2 입찰"><button class="node" data-id="P05" data-tone="warn">
+  <span class="id">P05<span class="tag">유의</span></span>
+  <span class="nm">입찰보증 확보</span></button></div><div class="bcell" data-lane="PPRA·보증기관" data-stage="G3 평가"><button class="node" data-id="P09" data-tone="warn">
+  <span class="id">P09<span class="tag">유의</span></span>
+  <span class="nm">가격상한 점검</span></button></div><div class="bcell" data-lane="PPRA·보증기관" data-stage="G4 계약"></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">공공기관(procuring entity)의 조달을 경쟁입찰 원칙으로 수행하고, 입찰·이행·선금·하자 보증으로 계약이행을 담보하며, 전 조달을 국가전자조달시스템(NeST)으로 처리해 투명성과 지역업체 참여를 높인다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>발주기관 조달계획 수립 및 조달방식 선택 — 경쟁입찰 원칙, force account는 법정 문턱 내에서만 (PPA §76, §81)</li><li>입찰공고 및 표준입찰서류 발행 — NeST를 통한 전자조달 (PPA §83, §84)</li><li>입찰서류에 보증 금액·형태·조건 명시 (PPR 2025 reg.23(6))</li><li>입찰서 제출 시 입찰보증(bid security) 또는 입찰보증선언(bid securing declaration) 동봉 (PPR 2025 reg.23)</li><li>개찰 및 입찰서 접수 (PPA §88)</li><li>평가기준에 따른 평가·비교 — 지역업체·현지생산품 우대 반영 (PPA §87, §89)</li><li>낙찰 결정 및 통지</li><li>낙찰자 이행보증(performance security) 제출 후 계약 체결 (PPR 2025 reg.29)</li><li>선금 지급 시 선금보증 확보 (PPR 2025)</li><li>하자담보기간 동안 하자보증 유지</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">탄자니아 공공기관의 물품(goods)·용역(services)·공사(works) 조달에 적용된다. 경쟁입찰이 원칙이며, force account(직영)는 PPA 2023 §76이 정한 문턱 이내에서만 허용된다(구법 대비 조건 강화). 전 조달은 국가전자조달시스템(NeST)으로 처리하도록 의무화됐다. 보증 금액은 새 규정에서 규정 고정이 아니라 위임된다 — 입찰보증(reg.23(6))·이행보증(reg.29(2))은 발주기관이 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 규정에 확정 값이 있는 것은 선금 30% 상한(reg.315(2))과 지체상금 물품 0.10~0.20%/일·공사 0.10~0.15%/일(reg.318(2))뿐이다. 자료집이 든 고정 보증률(입찰 5%·계약 10%·하자 3%)·하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이고, 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정에 대응 항목이 없다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></span><span class="ar">§74(price cap), §76(force account), §81(competitive tendering), §83~§86(입찰공고·서류·보증), §131(폐지)</span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</a></span><span class="ar">reg.23~29(보증), reg.5</span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">Public Procurement Regulations, 2013 (자료집 인용 — 구 규정)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">PPRA 표준입찰서류(Standard Tender Documents)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">표준문서</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">공공조달규제청(PPRA)</a></b><span>조달 가이드라인·표준입찰서류 제정, 법 이행 모니터링, 가격상한(price cap) 설정, 부당행위 조사, NeST 운영 감독</span></div><div class="auth"><b>발주 공공기관(procuring entity)</b><span>입찰공고·서류작성·개찰·평가·낙찰·계약, 보증 금액·형태를 입찰서류에 명시</span></div><div class="auth"><b>재정기획부(MoF)</b><span>PPRA 소관 부처. 조달 규정 제정</span></div><div class="auth"><b>은행·보험사</b><span>입찰보증·이행보증·선금보증·하자보증 발행. 외국 발행분도 입찰서류 요건 충족 시 거부 불가</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">발주 공공기관(procuring entity), 국내외 입찰자, 공공조달규제청(PPRA), 재정기획부, 입찰·이행 보증을 발행하는 은행·보험사, 산업별 발주 공기업(TANESCO·TANROADS·TPDC 등), 탄자니아투자청(TIC), 기업등록청(BRELA)</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>입찰자(공통)</b><div class="chips"><span class="chip">입찰서(NeST 전자제출)</span><span class="chip">입찰보증(bid security) 또는 입찰보증선언 — 인증수표·신용장·은행지급보증·보험증서 (PPR 2025 reg.23(5), Third Schedule)</span><span class="chip">사업자등록(BRELA) 규정준수 인증서</span><span class="chip">납세자식별번호(TIN) 인증서</span><span class="chip">유효한 세금공제 인증서</span><span class="chip">TIC 서비스 이용료 지불 영수증</span></div></div><div class="docset"><b>낙찰자</b><div class="chips"><span class="chip">이행보증(performance security) (reg.29)</span><span class="chip">선금보증(선금 수령 시)</span><span class="chip">하자보증(하자담보기간)</span></div></div><div class="docset"><b>발주 공공기관</b><div class="chips"><span class="chip">표준입찰서류</span><span class="chip">입찰공고</span><span class="chip">평가보고서</span><span class="chip">낙찰통지서</span><span class="chip">조달계약서</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>자료집이 근거로 삼은 Public Procurement Act 2011과 Regulations 2013이 각각 PPA 2023(2024-06-17 시행)과 PPR 2025(GN 261)로 교체됐다. 자료집을 그대로 따르면 폐지된 법령의 조문·보증률을 적용하게 된다</li><li>보증 금액이 규정에 고정되지 않고 입찰서류에 위임돼(reg.23(6)), 자료집의 고정 비율(입찰 5%·계약 10%·하자 3%)이 발주 건마다 다를 수 있다</li><li>전 조달의 NeST(국가전자조달시스템) 처리가 의무화돼, 시스템 등록·전자입찰 역량이 없으면 참여 자체가 막힌다</li><li>PPA 2023이 지역업체·현지생산품 우대를 강화해, 외국 기업은 현지 파트너십 없이는 평가에서 불리할 수 있다</li><li>탄자니아의 다소 느린 행정처리로 인허가·등록에 시간 여유가 필요하다</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>지사의 모든 주주·발기인이 탄자니아 국적이어도 외국 기업으로 분류 — 외국인 조달 규율 적용</li><li>선적 전 적합성 확인(PVoC) 제도로 수입 기자재에 CoC(적합성인증서) 필요, 검사비 FOB의 0.25~0.50%</li><li>낮은 노동 생산성</li><li>본토와 잔지바르 자치정부의 이원 행정</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>NeST 전자조달 의무의 적용 대상·예외 — PPA 2023 시행규정 확인 필요</li><li>force account(직영) 허용 문턱의 구체 금액 — PPA 2023 §76</li><li>지체상금 &#x27;운송·보관 0.5%&#x27;가 계약 특약으로 실제 쓰이는지 — 새 규정 reg.318에는 물품·공사만 있어 표준 근거가 없음(현장 계약서 확인)</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a></div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes"><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§131(1)</a></span>
+    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
+  </div>
+  <div class="qtext">The Public Procurement Act of 2011 is hereby repealed.</div>
+  <p class="qgist">자료집이 근거로 삼은 2011년 조달법은 폐지됐다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">2011년 공공조달법은 이로써 폐지된다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.23(6)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">The procuring entity shall specify, in the tender documents, any requirements with respect to the issuer and the nature, form, amount and other principal terms and conditions of the required tender security.</div>
+  <p class="qgist">입찰보증의 금액·형태·조건은 규정이 아니라 발주기관이 입찰서류에 정한다. 자료집의 고정 5%는 구 규정 값이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">발주기관은 요구되는 입찰보증의 발행인, 성격·형태·금액과 그 밖의 주요 조건을 입찰서류에 명시한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.29(2)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">The procuring entity shall specify in the tender documents any requirement with respect to the issuer and the nature, form, amount and other principal terms and conditions of the required performance security.</div>
+  <p class="qgist">이행보증도 금액을 입찰서류에 위임한다. 자료집의 고정 10%는 구 규정 값이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">발주기관은 요구되는 이행보증의 발행인, 성격·형태·금액과 그 밖의 주요 조건을 입찰서류에 명시한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.315(2)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">The agreed amount of advance payment shall be specified in the contract documents and under no circumstances, shall it exceed thirty percent of the contract value.</div>
+  <p class="qgist">선금은 계약가의 30%를 초과할 수 없다(초과 시 PPRA 승인). 자료집의 &#x27;20~30%&#x27;와 정합.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">합의된 선금 금액은 계약서류에 명시되며, 어떤 경우에도 계약가치의 30%를 초과할 수 없다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.318(2)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">The rates of liquidated damages per day shall be- (a) for procurement of goods or materials, 0.10 to 0.20 percent of the contract value per day of delay, up to a sum equivalent to the amount of the performance guarantee; (b) for procurement of works, 0.10 to 0.15 percent of the contract value per day of delay, up to a sum equivalent to the amount of the performance guarantee; and (c) for consultancy services, 0.10 to 0.20 percent of the contract value per day of delay, up to a sum equivalent to the amount of the performance guarantee.</div>
+  <p class="qgist">지체상금은 물품 0.10~0.20%·공사 0.10~0.15%·컨설팅 0.10~0.20%/일(각 이행보증 한도). 자료집의 제조 0.15%는 이 범위 안이나 &#x27;운송·보관&#x27; 항목은 없다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">일일 지체상금률은 (a) 물품·자재 0.10~0.20%, (b) 공사 0.10~0.15%, (c) 컨설팅 용역 0.10~0.20%로 하며, 각각 이행보증 금액을 한도로 한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Third Schedule, FORM No. 1 (Bid Securing Declaration)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">We understand this bid securing declaration shall expire if we are not the successful tenderer, immediately upon- (i) receipt of your notification of the name of the successful tenderer; or (ii) twenty-eight days after the expiry of our tender.</div>
+  <p class="qgist">입찰보증선언은 낙찰 통지 수령 또는 &#x27;입찰 만료 후 28일&#x27;에 만료된다. 자료집의 &#x27;마감+28일&#x27;과 대응.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">본 입찰보증선언은 당사가 낙찰자가 아닌 경우 (i) 낙찰자 명단 통지 수령, 또는 (ii) 입찰 만료 후 28일에 즉시 소멸한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§76(1)</a></span>
+    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
+  </div>
+  <div class="qtext">For the purpose of this Act, &quot;force account&quot; means a process where works are carried out by a public or semi-public entities by making recourse to its officers and equipment or in collaborating with a local technician or another public body.</div>
+  <p class="qgist">force account(직영)는 공공기관이 자체 인력·장비로 공사를 수행하는 방식이며, §76(2)의 정당화 사유·문턱 내에서만 허용된다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">이 법의 목적상 &#x27;force account(직영)&#x27;란 공공 또는 준공공기관이 자체 인력·장비 또는 현지 기술자·타 공공기관과 협력해 공사를 수행하는 절차를 말한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§74 (definition)</a></span>
+    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
+  </div>
+  <div class="qtext">&quot;price cap&quot; means an established minimum and maximum price which shall be charged for particular goods, works or services;</div>
+  <p class="qgist">PPRA가 특정 물품·공사·용역의 최소·최대 가격을 정하는 신설 제도. 자료집에 없다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">&#x27;가격상한(price cap)&#x27;이란 특정 물품·공사·용역에 부과되는, 정해진 최소·최대 가격을 말한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.329(2)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">The procuring entity shall authorise payments by measurement and certification of work completed, at the intervals or stages specified in the contract, provided that a percentage of each payment may be withheld as retention money if so stated in the contract.</div>
+  <p class="qgist">하자보증은 유보금(retention money) 방식으로, &#x27;계약에 명시된 경우&#x27; 각 지급금의 일정 비율을 유보한다. 자료집의 계약금액 3% 고정은 규정 값이 아니라 계약 위임이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">발주기관은 계약에 정한 간격·단계에서 완료된 작업을 측정·확인해 대금을 지급하되, 계약에 그렇게 정한 경우 각 지급금의 일정 비율을 유보금으로 유보할 수 있다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">reg.329(7)</a></span>
+    <span class="badge plain muted">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span>
+  </div>
+  <div class="qtext">Where the procuring entity is satisfied as to the non-consultancy services provided or works completed, and after any period specified in the contract has elapsed, it shall authorise the final payment to the service provider or contractor on his application, and release any performance guarantee, provided the service provider or contractor has rectified all the defects identified.</div>
+  <p class="qgist">하자담보기간은 &#x27;계약에 정한 기간&#x27;이며, 하자를 모두 시정하고 그 기간이 지나면 최종 대금 지급과 이행보증 해제가 이뤄진다. 자료집의 &#x27;1~2년&#x27; 고정도 계약별이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">발주기관은 비컨설팅 용역·공사 완료에 만족하고 계약에 정한 기간이 경과하면, 시공자의 신청에 따라 최종 대금을 지급하고 이행보증을 해제한다 — 다만 확인된 하자를 모두 시정한 경우에 한한다.</p></details>
+</div></div>
+</section>
+
+<section class="blk">
+  <h2>자료집 ↔ 원문 불일치 3건</h2>
+  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
+    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 3건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge bad">심각도 높음</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">D01</span>
+  </div>
+  <h3>canvas.legalBasis / 근거 법령의 현행 여부</h3>
+  <div class="quote src"><b>자료집</b>탄자니아 입찰 관련 법규 · Public Procurement Regulations 2013 — 물품·용역·공사에 대한 입찰절차, 자격, 계약관리 등에 대해 상세히 기술</div>
+  <div class="quote act"><b>법령 원문</b>PPA 2023 §131(1) — &quot;The Public Procurement Act of 2011 is hereby repealed.&quot; 새 법은 2024-06-17 시행(GN 455). 규정도 Public Procurement Regulations 2025(GN No. 261)로 교체됐다. 새 규정 reg.23(6)은 보증 금액을 규정에 고정하지 않고 입찰서류에 위임한다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §131(1); Public Procurement Regulations, 2025 (GN No. 261)</p>
+  <p class="impact">자료집 발행일(2025-02-25) 기준으로 이미 8개월 전에 새 법·규정이 시행됐다. 자료집을 그대로 따르면 폐지된 법(PPA 2011)과 구 규정(PPR 2013)의 조문·보증률을 적용하게 되고, 신설된 force account 문턱·가격상한·NeST 전자조달 의무·지역업체 우대를 놓친다. 특히 보증 금액이 입찰서류 위임으로 바뀌어, 자료집의 고정 비율을 전제로 예산·보증을 잡으면 실제 발주 조건과 어긋날 수 있다.</p>
+  <div class="todo"><b>실무자가 할 일</b>2024년 6월 이후 탄자니아 입찰에는 자료집의 PPR 2013 기준을 그대로 적용하지 않는다. 발주 건의 입찰서류에서 보증 금액·형태를 직접 확인하고, NeST 등록과 지역업체 우대 요건을 사전에 점검한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Whether the guide&#x27;s procurement law is still in force</p>
+    <p><b>The guide says</b> — The guide bases Tanzania&#x27;s bidding rules on the Public Procurement Regulations 2013 (and the 2011 Act).</p>
+    <p><b>The law says</b> — Public Procurement Act No. 10 of 2023 §131(1) repealed the 2011 Act; the new Act took effect on 17 June 2024 (GN 455), and the regulations were replaced by the Public Procurement Regulations 2025 (GN No. 261).</p>
+    <p><b>Why it matters</b> — The new Act and regulations took effect about eight months before the guide was published (25 Feb 2025) — the guide already cited repealed law. Following it applies the old fixed surety rates and misses the new force-account threshold, price cap, mandatory NeST e-procurement, and stronger local-supplier preference.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — For tenders after June 2024, apply PPA 2023 and PPR 2025. Confirm surety amounts in each tender&#x27;s documents, and check NeST registration and local-preference requirements before bidding.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 근거를 PPA 2023 + PPR 2025로 교체하고, 자료집이 참조한 PPR 2013은 구 규정으로 legalBasis에 병기했다. 보증률 수치 대조는 새 규정 Third Schedule 정독이 필요해 fieldVerification·unresolved에 남겼다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>탄자니아 입찰 관련 법규를 현행 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 교체할 것. Public Procurement Act 2011은 §131로 폐지됨. 반영 필요 사항 — ① 보증 금액의 입찰서류 위임(reg.23(6)) ② force account 문턱(§76) ③ 가격상한 신설(§74) ④ NeST 전자조달 의무 ⑤ 지역업체·현지생산품 우대 강화</div>
+
+</div>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">D02</span>
+  </div>
+  <h3>canvas.applicability / 전자조달 시스템</h3>
+  <div class="quote src"><b>자료집</b>(자료집은 입찰 절차를 서술하나 전자조달 시스템 의무화를 다루지 않음)</div>
+  <div class="quote act"><b>법령 원문</b>PPA 2023은 전 조달을 국가전자조달시스템(NeST, National e-Procurement System of Tanzania)으로 처리하도록 의무화했다. 종전 TANePS를 대체하는 통합 시스템이다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> (전자조달 규정) — PPRA 시행 공지</p>
+  <p class="impact">NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다. 자료집이 이를 다루지 않아, 종이 기반 절차를 전제로 준비하면 입찰이 불가능하다.</p>
+  <div class="todo"><b>실무자가 할 일</b>탄자니아 입찰 참여 전 NeST(국가전자조달시스템) 등록을 완료하고 전자입찰 역량을 갖춘다. 종이 기반 절차를 전제로 준비하지 않는다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Mandatory e-procurement (NeST)</p>
+    <p><b>The guide says</b> — The guide describes the bidding process but does not mention mandatory e-procurement.</p>
+    <p><b>The law says</b> — PPA 2023 mandates the National e-Procurement System of Tanzania (NeST) for all procurement, replacing the former TANePS.</p>
+    <p><b>Why it matters</b> — Without NeST registration and e-bidding capability, a firm cannot participate at all. Preparing for a paper-based process makes bidding impossible.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Confirm NeST registration is complete before any tender, and that the procuring entity runs the tender through NeST.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — applicability와 procedure에 NeST 전자조달 의무를 반영했다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>입찰 진행절차에 &#x27;전 조달은 국가전자조달시스템(NeST)으로 처리 의무화 [PPA 2023]. 사전 시스템 등록 필요&#x27; 추가</div>
+
+</div>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">D03</span>
+  </div>
+  <h3>canvas.applicability / 보증률</h3>
+  <div class="quote src"><b>자료집</b>입찰보증 입찰금액의 5% 이상 / 계약보증 계약금액의 10% 이상 / 하자보증 계약금액의 3% 이상 / 하자담보기간 1~2년 / 지체상금 제조 0.15%·운송 0.5% (탄자니아 규정 = Public Procurement Regulations 2013)</div>
+  <div class="quote act"><b>법령 원문</b>PPR 2025는 보증 비율을 규정에 고정하지 않고 위임한다 — 입찰보증(reg.23(6))·이행보증(reg.29(2))은 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 확정 값이 있는 것은 선금 30% 상한(reg.315(2))과 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐이며, 지체상금에 &#x27;운송·보관&#x27; 항목은 없다.</div>
+  <p class="cite">근거 · Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule</p>
+  <p class="impact">자료집의 고정 보증률(입찰 5%·계약 10%·하자 3%)과 하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이다. 새 규정에서는 입찰·이행보증은 입찰서류가, 하자보증·하자담보기간은 계약이 정하므로, 자료집 비율을 전제로 보증·예산을 잡으면 실제 조건과 어긋난다. 확정 값(선금 30% 상한, 지체상금 물품 0.10~0.20%로 자료집 0.15% 포함)은 정합적이나, 자료집의 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정에 대응 항목이 없다.</p>
+  <div class="todo"><b>실무자가 할 일</b>입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 자료집의 3%·1~2년을 전제로 하지 않는다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일이며 &#x27;운송·보관 0.5%&#x27;는 새 규정 근거가 없으므로 계약 특약 여부를 따로 확인한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Surety rates (bid / performance / retention) and liquidated damages</p>
+    <p><b>The guide says</b> — The guide gives fixed rates: bid security 5%, performance security 10%, defect security 3%, defects-liability period 1-2 years, and liquidated damages of 0.15% (manufacturing) and 0.5% (transport/storage).</p>
+    <p><b>The law says</b> — PPR 2025 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is &#x27;the period specified in the contract&#x27; (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no &#x27;transport/storage&#x27; liquidated-damages category.</p>
+    <p><b>Why it matters</b> — The guide&#x27;s fixed rates come from the repealed 2013 regulations. Budgeting on them may not match the actual tender/contract terms. The 0.5% transport/storage rate has no basis in the new regulations.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Read the bid and performance security amounts from each tender&#x27;s documents; read retention money and the defects-liability period from the contract. Do not assume 5% / 10% / 3% / 1-2 years. Check whether any &#x27;transport/storage&#x27; liquidated damages exist as a contract-specific special term.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>보증 비교표의 &#x27;탄자니아 규정&#x27;을 Public Procurement Regulations 2025(GN No. 261) 기준으로 갱신할 것 — 입찰·이행보증 금액은 입찰서류 위임(reg.23(6), reg.29(2)), 하자보증은 유보금 방식으로 계약 위임(reg.329(2)), 하자담보기간도 계약에 정한 기간(reg.329(7)). 확정 값은 선금 30% 상한(reg.315(2))·지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐. 구 규정의 5%·10%·3%·1~2년 고정 비율과 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정 근거가 없으므로 삭제 또는 계약 위임으로 수정</div>
+
+</div>
+</div>
+</section>
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">PPRA·재정기획부 공식 사이트에서 현행 법령을 확인하고, Public Procurement Act 2023(103쪽)과 Public Procurement Regulations 2025 GN 261(292쪽) 영문 원문을 확보해 폐지 조항(§131), 보증 조항(reg.23·29), 선금(reg.315), 지체상금(reg.318), Third Schedule 보증 서식, 조달방식·전자조달·가격상한 조항을 조문 단위로 대조. 자료집이 든 구 규정(PPR 2013) 보증률과 새 규정 방식을 비교 확정.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">법률·규정의 교체(PPA 2011→2023, PPR 2013→2025), 보증 위임(입찰 reg.23(6)·이행 reg.29(2)·하자보증 유보금 reg.329(2)·하자담보기간 reg.329(7)), 선금 30% 상한(reg.315(2)), 지체상금 물품·공사·컨설팅 0.10~0.20%(reg.318(2)), force account 문턱(§76)·가격상한(§74) 신설을 원문에서 확인했다. 보증 관련은 전부 확정됐고, 자료집의 지체상금 &#x27;운송·보관 0.5%&#x27;만 새 규정에 대응이 없어 계약 특약 여부로 남겼다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-02-25</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">The Public Procurement Act, 2023 (Act No. 10 of 2023) — English Version</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §1(commencement), §8(PPRA), §74, §76, §81, §83~§86, §131(1)(2)(3)</span><span class="ar">확인 2026-07-23 · Public Procurement Regulatory Authority (PPRA)</span></li><li><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">The Public Procurement Regulations, 2025 (GN No. 261) — English Version</a><span class="badge plain muted" style="margin-left:6px">시행규칙</span><span class="ar">대조 조문 reg.23(1)~(7), reg.29(1)~(7), reg.30, reg.315(1)~(3), reg.318(2), reg.329(2)(7), Third Schedule FORM No.1·2</span><span class="ar">확인 2026-07-23 · Ministry of Finance, United Republic of Tanzania</span></li><li><a class="ref" href="https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024" target="_blank" rel="noopener">PPRA 새 조달법 시행 공지 (2024-06-17)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · PPRA</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">탄자니아 Public Procurement Act 2011은 PPA 2023 §131(1)로 폐지됐다. 새 법은 2023-09-29 대통령 재가, GN 455(2024-06-07)에 따라 2024-06-17 시행됐다. 자료집 발행일(2025-02-25)보다 8개월 앞선다 — 즉 자료집은 발행 시점에 이미 폐지된 법을 참조했다.</p><p class="note">PPA 2023 §131(3)은 새 법과 배치되지 않는 기존 하위규정은 대체·폐지 전까지 유효하게 남긴다. 다만 규정도 PPR 2025(GN 261)로 교체됐다.</p><p class="note">보증률 대조 결과 — 새 규정은 보증 비율을 규정에 고정하지 않고 위임한다. 입찰보증(reg.23(6))·이행보증(reg.29(2))은 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 자료집의 고정 %(입찰 5%·계약 10%·하자 3%)와 하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이다. 규정에 확정 값이 있는 것은 선금 계약가 30% 상한(reg.315(2), 자료집 &#x27;20~30%&#x27;와 정합)과 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐이다 — 자료집의 제조 0.15%는 이 범위 안이나 &#x27;운송·보관 0.5%&#x27;는 새 규정에 대응 항목이 없다. Third Schedule은 보증 서식(FORM)만 담고 %는 없으며, 입찰보증선언 만료를 &#x27;입찰 만료 후 28일&#x27;로 정해 자료집의 &#x27;마감+28일&#x27;과 대응한다.</p><p class="note">새 법의 주요 변경 — 조달 소요기간 단축, force account 사용 조건 강화(문턱 설정, §76), PPRA의 가격상한 설정 권한 신설(§74), 국가전자조달시스템(NeST) 전 조달 의무화, 지역업체·현지생산품 우대 강화.</p><p class="note">새 법은 스와힐리어로 제정됐고 영문본은 공식 번역이다. 해석이 갈리면 스와힐리어본이 우선한다.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>탄자니아 조달법·규정 스와힐리어 원본 <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">새 법은 스와힐리어로 제정됐고 영문본은 공식 번역이다. 해석이 갈리는 조항은 스와힐리어본이 우선한다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — force account 문턱(§76)·가격상한(§74) 등 해석 민감 조항은 스와힐리어본과 대조한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "조달계획·방식 선택", "lane": "발주 공공기관", "stage": "G0 준비", "type": "gateway", "status": "done", "actor": "발주 공공기관", "action": "경쟁입찰 원칙. force account는 §76 문턱 이내에서만.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§76, §81", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P02": {"id": "P02", "name": "표준입찰서류 작성", "lane": "발주 공공기관", "stage": "G0 준비", "type": "task", "status": "done", "actor": "발주 공공기관", "action": "PPRA 표준입찰서류 사용. 보증 금액·형태·조건을 입찰서류에 명시.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Regulations, 2025 (GN No. 261 of 2025)", "article": "reg.23(6)", "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"}]}, "P03": {"id": "P03", "name": "NeST 전자공고", "lane": "발주 공공기관", "stage": "G1 공고", "type": "notice", "status": "current", "actor": "발주 공공기관", "action": "국가전자조달시스템(NeST)을 통해 공고. 전 조달 전자처리 의무.", "confidence": 0.8, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§83", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P04": {"id": "P04", "name": "NeST 등록·입찰서류 수령", "lane": "입찰자", "stage": "G1 공고", "type": "task", "status": "waiting", "actor": "입찰자", "action": "NeST 시스템 등록 후 전자로 입찰서류를 받는다.", "blocker": "시스템 미등록 시 참여 불가", "confidence": 0.75}, "P05": {"id": "P05", "name": "입찰보증 확보", "lane": "PPRA·보증기관", "stage": "G2 입찰", "type": "task", "status": "risk", "actor": "은행·보험사", "action": "입찰서류가 정한 금액·형태로 입찰보증 또는 입찰보증선언을 확보. 인증수표·신용장·은행지급보증·보험증서.", "blocker": "금액이 규정 고정이 아니라 입찰서류 위임이라 건마다 다름", "confidence": 0.8, "legal_basis": [{"law": "Public Procurement Regulations, 2025 (GN No. 261 of 2025)", "article": "reg.23", "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"}]}, "P06": {"id": "P06", "name": "입찰서 전자제출", "lane": "입찰자", "stage": "G2 입찰", "type": "task", "status": "waiting", "actor": "입찰자", "action": "NeST로 입찰서·보증·자격서류를 제출.", "output_documents": ["입찰서", "입찰보증", "BRELA·TIN·세금 인증서"], "confidence": 0.8}, "P07": {"id": "P07", "name": "개찰·접수", "lane": "발주 공공기관", "stage": "G3 평가", "type": "task", "status": "waiting", "actor": "발주 공공기관", "confidence": 0.8, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§88", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P08": {"id": "P08", "name": "평가·비교", "lane": "발주 공공기관", "stage": "G3 평가", "type": "task", "status": "waiting", "actor": "평가위원회", "action": "평가기준에 따라 평가·비교. 지역업체·현지생산품 우대 반영.", "output_documents": ["평가보고서"], "confidence": 0.75, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§87, §89", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P09": {"id": "P09", "name": "가격상한 점검", "lane": "PPRA·보증기관", "stage": "G3 평가", "type": "gateway", "status": "risk", "actor": "PPRA", "action": "PPRA가 설정한 가격상한(price cap) 범위 내인지 확인. 신설 제도.", "confidence": 0.7, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§74", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P10": {"id": "P10", "name": "낙찰 결정·통지", "lane": "발주 공공기관", "stage": "G4 계약", "type": "gateway", "status": "waiting", "actor": "발주 공공기관", "output_documents": ["낙찰통지서"], "confidence": 0.8}, "P11": {"id": "P11", "name": "이행보증 제출·계약", "lane": "입찰자", "stage": "G4 계약", "type": "task", "status": "waiting", "actor": "낙찰자", "action": "이행보증 제출 후 계약 체결. 선금 수령 시 선금보증(30% 상한), 하자는 유보금(retention money)으로 계약이 정한 비율만큼 유보되고 계약에 정한 하자담보기간 경과 후 최종 대금·이행보증이 해제된다.", "output_documents": ["이행보증", "조달계약서"], "confidence": 0.8, "legal_basis": [{"law": "Public Procurement Regulations, 2025 (GN No. 261 of 2025)", "article": "reg.29", "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"}, {"law": "Public Procurement Regulations, 2025 (GN No. 261 of 2025)", "article": "reg.329(2)(7)", "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"}]}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "sequence"}, {"id": "E03", "source": "P03", "target": "P04", "type": "message", "label": "전자공고"}, {"id": "E04", "source": "P04", "target": "P06", "type": "sequence"}, {"id": "E05", "source": "P05", "target": "P06", "type": "message", "label": "보증 첨부"}, {"id": "E06", "source": "P06", "target": "P07", "type": "sequence"}, {"id": "E07", "source": "P07", "target": "P08", "type": "sequence"}, {"id": "E08", "source": "P08", "target": "P09", "type": "sequence"}, {"id": "E09", "source": "P09", "target": "P10", "type": "sequence"}, {"id": "E10", "source": "P10", "target": "P11", "type": "sequence"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>
