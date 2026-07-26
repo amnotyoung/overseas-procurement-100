@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네팔 ODA 사업 발굴·형성 절차 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline" selected>03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system">13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" href="../nepal-procurement-governance/index.html" style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../koica-bidding-system/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">3/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 03</span>
+    <span class="badge plain muted">네팔 · Nepal</span>
+    <span class="badge plain muted">ODA 사업형성</span>
+    <span class="badge ok">조문 대조 완료</span>
+    <span class="badge bad">불일치 5건</span>
+  </div>
+  <h1>네팔 ODA 사업 발굴·형성 절차</h1>
+  <p class="one">재무부를 단일 관문으로 하는 수원체계에서 N-2년 PCP 제출부터 RoD·MoU 체결까지 이어지는 무상원조 사업 형성 파이프라인</p>
+  <div class="tiles">
+    <div class="tile"><b>14</b><span>절차 노드</span></div>
+    <div class="tile"><b>4</b><span>행위 레인</span></div>
+    <div class="tile"><b>5</b><span>게이트</span></div>
+    <div class="tile ok"><b>13</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>5</b><span>불일치 (높음 2)</span></div>
+    <div class="tile warn"><b>6</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">사전승인</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">발굴·PCP</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">검토·예비조사</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">기획·심사</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">공식화</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">네팔 수원기관·소관부처</span></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G0 사전승인"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G1 발굴·PCP"><button class="node" data-id="P03" data-tone="key">
+  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="nm">사업 발굴·형성 협의</span></button><button class="node" data-id="P04" data-tone="key">
+  <span class="id">P04<span class="tag">핵심</span></span>
+  <span class="nm">PCP 작성</span></button></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G3 기획·심사"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G4 공식화"><button class="node" data-id="P12">
+  <span class="id">P12</span>
+  <span class="nm">협의의사록(RoD) 체결</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">네팔 재무부</span></div><div class="bcell" data-lane="네팔 재무부" data-stage="G0 사전승인"><button class="node" data-id="P01" data-tone="warn">
+  <span class="id">P01<span class="tag">유의</span></span>
+  <span class="nm">재무부 사전 승인 확보</span></button></div><div class="bcell" data-lane="네팔 재무부" data-stage="G1 발굴·PCP"><button class="node" data-id="P05">
+  <span class="id">P05</span>
+  <span class="nm">상급부처·재무부 검토</span></button><button class="node" data-id="P06">
+  <span class="id">P06</span>
+  <span class="nm">재무부 공한 첨부 PCP 제출</span></button></div><div class="bcell" data-lane="네팔 재무부" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="네팔 재무부" data-stage="G3 기획·심사"></div><div class="bcell" data-lane="네팔 재무부" data-stage="G4 공식화"><button class="node" data-id="P14" data-tone="warn">
+  <span class="id">P14<span class="tag">유의</span></span>
+  <span class="nm">사업수행 지원 — 비자·조세면제</span></button><button class="node" data-id="P15" data-tone="back">
+  <span class="id">P15<span class="tag">회귀</span></span>
+  <span class="nm">지역 개발파트너 회의·이행 점검</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">KOICA</span></div><div class="bcell" data-lane="KOICA" data-stage="G0 사전승인"></div><div class="bcell" data-lane="KOICA" data-stage="G1 발굴·PCP"></div><div class="bcell" data-lane="KOICA" data-stage="G2 검토·예비조사"><button class="node" data-id="P07">
+  <span class="id">P07</span>
+  <span class="nm">PCP 검토위원회</span></button><button class="node" data-id="P08">
+  <span class="id">P08</span>
+  <span class="nm">예비조사</span></button></div><div class="bcell" data-lane="KOICA" data-stage="G3 기획·심사"><button class="node" data-id="P09">
+  <span class="id">P09</span>
+  <span class="nm">기획조사</span></button><button class="node" data-id="P10">
+  <span class="id">P10</span>
+  <span class="nm">PD 작성 및 심사위원회</span></button></div><div class="bcell" data-lane="KOICA" data-stage="G4 공식화"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">대한민국 정부</span></div><div class="bcell" data-lane="대한민국 정부" data-stage="G0 사전승인"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G1 발굴·PCP"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G3 기획·심사"><button class="node" data-id="P11">
+  <span class="id">P11</span>
+  <span class="nm">예산요구</span></button></div><div class="bcell" data-lane="대한민국 정부" data-stage="G4 공식화"><button class="node" data-id="P13">
+  <span class="id">P13</span>
+  <span class="nm">양해각서(MoU) 체결</span></button></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">국가개발계획 우선순위에 따라 원조사업을 선정하고, 재무부를 단일 창구로 삼아 공여기관과의 접촉·협상·협정 체결을 일원화함으로써 수원국의 주인의식과 재원관리 책무성을 확보한다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>수원기관이 공여기관과 접촉하기 전 재무부의 사전 승인을 받는다 — 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결 모두 포함 (FAMP §3.3.2(k))</li><li>공여기관도 원조 동원에 앞서 재무부 승인을 받는다 (FAMP §3.3.5(b))</li><li>수원기관이 사업 준비성 체크리스트에 따라 재무부에 사업제안서 제출 — KOICA 사업은 PCP를 N-2년 기준으로 작성 (FAMP §3.3.2(b))</li><li>수원기관 상급부처 및 재무부 검토</li><li>재무부 공한과 함께 PCP를 KOICA 네팔사무소에 제출</li><li>KOICA 본부 PCP 검토위원회 심사 → 통과 시 예비조사 실시</li><li>예비조사 결과로 사업제안서 최종 승인 시 기획조사 실시</li><li>기획조사 산출물인 PD(Project Document) 도출 후 PD 심사위원회 심사</li><li>위원회 통과 시 대한민국 재정당국에 예산요구</li><li>소관부처와 협의의사록(RoD) 체결</li><li>주네팔 대한민국대사관 ↔ 네팔 재무부 간 양해각서(MoU) 체결 — 재무부가 정부를 대표해 서명 (FAMP §3.3.1(d))</li><li>MoU에 근거해 PMC 파견인력 비자·노동허가 지원, 조세면제는 개별 협정과 현행법에 따름 (FAMP §3.6.1)</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">네팔 정부가 수원하는 대외원조 전반에 적용된다. 무상원조는 원칙적으로 세금 납부에 사용할 수 없고, 차관 재원 사업에는 조세면제 조항을 원칙적으로 넣지 않으며, 국내에서 충분히 생산되는 물품의 수입에는 면제를 부여하지 않는다(FAMP §3.6.1). 현물 지원은 소관부처 추천을 받아 재무부가 현행법에 따라 조세면제를 부여할 수 있다. 2019년 정책의 &#x27;양허성 차관은 사업당 1천만 달러 초과만 수용&#x27; 문턱은 2025년 정책에서 삭제됐다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></span><span class="ar">§3.2, §3.3.1, §3.3.2, §3.3.5, §3.6.1, §3.7</span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div><div class="law"><span class="nm">Public Debt Management Act, 2079 (2022)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">Financial Procedure and Fiscal Accountability Act, 2076 (2019)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">협의의사록(Record of Discussion, RoD)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">양자합의</span></div><div class="law"><span class="nm">양해각서(Memorandum of Understanding, MoU) — 주네팔 대한민국대사관 ↔ 네팔 재무부</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">양자합의</span></div><div class="law"><span class="nm">KOICA 사업심사 가이드라인 및 PCP·PD 심사 일정</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://mof.gov.np/divisions/ierd/" target="_blank" rel="noopener">재무부(MoF) 국제경제관계국</a></b><span>대외원조 동원의 단일 창구(focal point). 개발파트너와의 서신·요청·협상·재정협정 서명을 정부를 대표해 수행. 차관 협상 전 내각의 원칙적 동의와 협상 권한을 확보. 현물 지원의 조세면제 승인. 자료집과 폐지된 2019년 정책은 &#x27;국제경제협력조정국(IECCD)&#x27;으로 표기</span></div><div class="auth"><b>수원기관 및 상급 소관부처</b><span>사업 발굴, 사업 준비성 체크리스트에 따른 제안서 제출, 협상 대표 지명, 사업책임자 임명, RoD 체결 당사자. 공여기관 접촉 전 재무부 사전 승인 필요</span></div><div class="auth"><b><a class="ref" href="https://npc.gov.np/" target="_blank" rel="noopener">국가계획위원회(NPC)</a></b><span>개발협력 조정기구의 위원으로 참여. 2019년 정책에 있던 &#x27;사업 제안 시 NPC 동의&#x27; 요건은 2025년 정책에서 삭제됨</span></div><div class="auth"><b><a class="ref" href="https://koica.go.kr/sites/nepal_kr/index.do" target="_blank" rel="noopener">KOICA 네팔사무소</a></b><span>PCP 접수, 현지 협의, 사업 형성 지원</span></div><div class="auth"><b><a class="ref" href="https://www.koica.go.kr/sites/koica_kr/index.do" target="_blank" rel="noopener">KOICA 본부</a></b><span>PCP 검토위원회·PD 심사위원회 운영, 예비조사·기획조사 실시 결정</span></div><div class="auth"><b><a class="ref" href="https://np.mofa.go.kr/np-ko/index.do" target="_blank" rel="noopener">주네팔 대한민국대사관</a></b><span>네팔 재무부와 MoU 체결 당사자</span></div><div class="auth"><b>주·지방정부</b><span>관할 구역 사업 발굴 및 소관부처를 거쳐 재무부에 제안. 협상 대표 지명, 현물 지원은 재무부 승인 필요</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">네팔 재무부(MoF) 국제경제관계국, 수원기관 및 상급 소관부처, 주·지방정부, 국가계획위원회(NPC), KOICA 네팔사무소, KOICA 본부, 주네팔 대한민국대사관, 대한민국 재정당국, 사업수행 PMC</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>수원기관·소관부처</b><div class="chips"><span class="chip">재무부 사전 승인 (공여기관 접촉·제안·협상·서신·MoU 체결 전, FAMP §3.3.2(k))</span><span class="chip">사업 준비성 체크리스트에 따른 사업제안서 (FAMP §3.3.2(b))</span><span class="chip">사업제안서(Project Concept Paper, PCP) — KOICA 사업</span><span class="chip">협상 대표 지명서 (FAMP §3.3.2(c))</span></div></div><div class="docset"><b>네팔 재무부</b><div class="chips"><span class="chip">PCP 송부 공한</span><span class="chip">재정협정(financing agreement) (FAMP §3.3.1(d))</span><span class="chip">차관 협상 전 내각 원칙동의·협상권한 (FAMP §3.3.1(e))</span><span class="chip">현물 지원 조세면제 승인 (FAMP §3.6.1(d))</span></div></div><div class="docset"><b>공여기관(개발파트너)</b><div class="chips"><span class="chip">원조 동원 전 재무부 승인 (FAMP §3.3.5(b))</span><span class="chip">향후 3~5년 지원 규모·중점분야 통보 (FAMP §3.3.5(c))</span><span class="chip">대외원조정보시스템 보고 (FAMP §3.3.5(i))</span></div></div><div class="docset"><b>KOICA</b><div class="chips"><span class="chip">PCP 검토위원회 결과</span><span class="chip">예비조사 보고서</span><span class="chip">기획조사 결과</span><span class="chip">사업기획문서(Project Document, PD)</span><span class="chip">PD 심사위원회 결과</span></div></div><div class="docset"><b>양국 정부</b><div class="chips"><span class="chip">협의의사록(RoD)</span><span class="chip">양해각서(MoU)</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>재무부 사전 승인 없이 수원기관과 먼저 접촉하면 정책 위반이 된다. 공여기관 역시 원조 동원에 앞서 재무부 승인을 받아야 한다 (FAMP §3.3.2(k), §3.3.5(b))</li><li>조세면제가 2019년 정책보다 좁아졌다. 무상원조는 원칙적으로 세금 납부에 쓸 수 없고, 국내에서 충분히 생산되는 물품 수입에는 면제가 없다 — 기자재 조달 시 원산지와 세부담을 사업비에 반영해야 한다 (FAMP §3.6.1(a)(c))</li><li>N-2년 PCP 제출 구조라 사업 착수까지 최소 2년 이상의 리드타임이 필요하다</li><li>PCP 검토위원회와 PD 심사위원회 두 개의 게이트를 모두 통과해야 예산요구로 넘어간다</li><li>연방제 시행·확산으로 사업 추진 책임과 권한이 지방으로 분산되면서 과도기적 비효율과 혼선이 발생. 재무부뿐 아니라 관련 중앙부처와 지방부처 모두와 협의해야 한다</li><li>기술협력 재원으로 차량·장비를 구매하거나 해외 연수·훈련에 참가하려면 재무부 사전 승인이 필요하다 (FAMP §3.3.2(j))</li><li>행정절차 지연, 환율 변동, 보수적인 비자 발급 운영</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>기업 진출 시 현지 파트너 협력이 사실상 필수 요건</li><li>2022년 부패인식지수(CPI) 35점/100점, 180개국 중 108위</li><li>연방제 전환에 따른 협의 대상 다변화로 이해관계자 파악 부담 증가</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>PCP 작성 주체 — 자료집 Ⅱ-1은 수원기관, Ⅲ은 재무부로 서술이 엇갈린다. 실제 운용 확인 필요</li><li>재무부 사전 승인(FAMP §3.3.2(k))이 KOICA 사업 형성 실무에서 어느 시점에 어떤 형식으로 이뤄지는지</li><li>FAMP §3.3.2(b)의 &#x27;사업 준비성 체크리스트(project readiness checklist)&#x27; 서식과 KOICA PCP의 관계</li><li>관세면제 마스터리스트 절차가 2025년 정책의 축소된 조세면제 기준(§3.6.1) 아래에서 어떻게 운용되는지 — 자료집의 &#x27;약 3개월&#x27; 소요는 2019년 정책 시기의 실무 경험치</li><li>정부 주도 포트폴리오 이행 점검 연 1회 개최 — 근거 규정 미확인(관행 서술). 2025년 정책은 지역 개발파트너 회의를 연 2회로 규정(§3.1.3)</li><li>수원 총괄부서 명칭 — 자료집과 폐지된 2019년 정책은 &#x27;국제경제협력조정국(IECCD)&#x27;이라 하나 현행 재무부 조직도에는 &#x27;국제경제관계국&#x27;으로 표기돼 있다. 동일 부서의 개칭인지 확인 필요</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a></div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes"><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">§3.7.1</a></span>
+    <span class="badge plain muted">Foreign Aid Mobilization Policy, 2025</span>
+  </div>
+  <div class="qtext">International Development Cooperation Policy, 2076 (2019 AD) has been repealed.</div>
+  <p class="qgist">자료집이 전제한 2019년 국제개발협력정책은 폐지됐다. 근거를 2025년 정책으로 봐야 한다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">국제개발협력정책 2076(2019년)은 폐지됐다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">§3.3.2(k)</a></span>
+    <span class="badge plain muted">Foreign Aid Mobilization Policy, 2025</span>
+  </div>
+  <div class="qtext">All government agencies at any level, constitutional bodies, state owned enterprises, and institutions or foundations operating under full or partial government grants must obtain prior approval from the Ministry before seeking foreign aid, making formal requests, presenting proposals, engaging in negotiations, sharing any information, corresponding with development partners with concept papers and proposals, or signing memorandums of understanding or agreements.</div>
+  <p class="qgist">정부기관은 원조를 구하거나 제안·협상·정보제공·개념서 서신교환·MoU 체결에 앞서 재무부 사전 승인을 받아야 한다 — 자료집의 &#x27;수원기관과 먼저 협의&#x27;보다 앞선 전제다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">모든 수준의 정부기관·헌법기관·공기업 및 정부 전액·일부 보조로 운영되는 기관·재단은, 대외원조를 구하거나 공식 요청·제안·협상·정보제공, 개발파트너와의 개념서·제안서 서신교환, MoU·협정 체결에 앞서 재무부의 사전 승인을 받아야 한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">§3.3.5(b)</a></span>
+    <span class="badge plain muted">Foreign Aid Mobilization Policy, 2025</span>
+  </div>
+  <div class="qtext">Obtain approval from the Ministry before mobilizing any kind of foreign aid.</div>
+  <p class="qgist">개발파트너(공여기관)도 어떤 형태의 원조를 동원하기 전에 재무부 승인을 받아야 한다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">어떤 형태의 대외원조든 동원하기 전에 재무부의 승인을 받는다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">§3.6.1</a></span>
+    <span class="badge plain muted">Foreign Aid Mobilization Policy, 2025</span>
+  </div>
+  <div class="qtext">(a) Foreign aid received as grants shall generally not be used for tax payments. (b) Tax exemption provisions shall generally not be included in loan-funded projects. (c) No tax exemptions shall be granted for the import of goods that are sufficiently produced within the country.</div>
+  <p class="qgist">조세면제가 좁아졌다 — 무상원조는 세금 납부에 못 쓰고, 차관사업엔 면제 조항이 없으며, 국내 생산이 충분한 물품 수입엔 면제가 없다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">(a) 무상으로 받은 대외원조는 원칙적으로 세금 납부에 사용하지 않는다. (b) 차관 재원 사업에는 원칙적으로 조세면제 조항을 포함하지 않는다. (c) 국내에서 충분히 생산되는 물품의 수입에는 조세면제를 부여하지 않는다.</p></details>
+</div></div>
+</section>
+
+<section class="blk">
+  <h2>자료집 ↔ 원문 불일치 5건</h2>
+  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
+    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 5건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge bad">심각도 높음</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D01</span>
+  </div>
+  <h3>canvas.procedure / 사업 발굴 착수 지점</h3>
+  <div class="quote src"><b>자료집</b>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성</div>
+  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.3.2(k) — 모든 수준의 정부기관·헌법기관·공기업과 정부 출연·보조 기관은 대외원조를 구하거나, 공식 요청·제안, 협상, 정보 제공, 개념서와 제안서에 관한 서신교환, MoU 또는 협정 체결에 앞서 재무부의 사전 승인을 받아야 한다. §3.3.5(b) — 개발파트너는 어떤 형태의 대외원조를 동원하기 전에도 재무부의 승인을 받아야 한다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(k), §3.3.5(b)</p>
+  <p class="impact">자료집대로 수원기관 부처와 먼저 협의를 시작하면, 해당 부처는 재무부 사전 승인 없이 정보를 제공하거나 협의할 수 없는 상태다. 절차의 출발점이 &#x27;수원기관 협의&#x27;가 아니라 &#x27;재무부 승인&#x27;이라는 점이 드러나지 않아, 사업 형성 초기 접촉이 정책 위반으로 지적되거나 뒤늦게 승인을 받느라 일정이 밀릴 수 있다. 이 요건은 자료집이 전제한 2019년 정책에도 있었고 2025년 정책에도 그대로 남았다.</p>
+  <div class="todo"><b>실무자가 할 일</b>사업 발굴을 위해 수원기관 부처에 먼저 연락하지 않는다. 재무부 국제경제관계국을 통한 접촉 경로를 먼저 확인하고, 수원기관이 재무부 사전 승인을 받았는지 확인한 뒤 협의를 진행한다. 공여기관 자신도 원조 동원 전 재무부 승인 대상이다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Where ODA project formation actually starts</p>
+    <p><b>The guide says</b> — The guide says grant projects are found through consultation between the donor agency and the line ministry.</p>
+    <p><b>The law says</b> — Foreign Aid Mobilization Policy 2025 §3.3.2(k) requires government agencies to obtain prior Ministry of Finance approval before seeking aid, making proposals, negotiating, sharing information, corresponding on concept papers, or signing MoUs; §3.3.5(b) requires development partners to obtain Ministry approval before mobilizing any aid.</p>
+    <p><b>Why it matters</b> — Starting with the line ministry skips the prerequisite: that ministry cannot share information or consult without prior MoF approval. Early contact may be flagged as a policy breach or delayed while approval is obtained.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Confirm the MoF (International Economic Relations Division) approval route before contacting a line ministry, and check the recipient agency has prior MoF approval. This applies to the donor agency itself too (§3.3.5(b)).</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — procedure 1~2단계에 재무부 사전 승인을 명시하고, 근거를 폐지된 IDCP §5.2.2에서 현행 FAMP §3.3.2(k)·§3.3.5(b)로 교체했다. 종전 D01에 포함했던 국가계획위원회(NPC) 동의 요건은 2025년 정책에서 삭제됐으므로 함께 제거했다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴·형성. 단, 네팔 정부기관은 대외원조에 관한 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결에 앞서 재무부의 사전 승인을 받아야 하며, 개발파트너도 원조 동원 전 재무부 승인이 필요함 [대외원조동원정책 2025 §3.3.2(k), §3.3.5(b)]</div>
+
+</div>
+</div><div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge bad">심각도 높음</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D02</span>
+  </div>
+  <h3>canvas.legalBasis / 근거 정책의 현행 여부</h3>
+  <div class="quote src"><b>자료집</b>(자료집 전반이 International Development Cooperation Policy 2019를 전제로 수원체계를 서술)</div>
+  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.7.1 — &quot;International Development Cooperation Policy, 2076 (2019 AD) has been repealed.&quot; 네팔 정부 승인일은 2025-04-21이다. §3.7.2는 종전 정책 아래 완료된 활동의 효력을 유지한다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.7.1, §3.7.2 (승인 2025-04-21)</p>
+  <p class="impact">자료집 발행일(2025-02-25) 기준으로는 2019년 정책이 유효했으므로 자료집 서술 자체는 당시로서 옳았다. 다만 2025-04-21 이후로는 근거 정책이 바뀌었고, 특히 양허성 차관 1천만 달러 문턱과 국가계획위원회 동의 요건이 사라졌으며 조세면제 범위가 좁아졌다. 자료집을 현행 기준으로 그대로 쓰면 없어진 요건을 준비하거나 면제받을 수 없는 세금을 사업비에서 누락하게 된다.</p>
+  <div class="todo"><b>실무자가 할 일</b>2025년 4월 이후 사업에는 자료집의 수원체계 서술을 그대로 적용하지 않는다. 특히 차관 최소 규모 문턱은 없어졌고, 조세면제는 무상원조의 세금 납부 사용 금지·차관사업 면제 배제·국내 생산품 수입 면제 배제로 좁아졌으므로 기자재 조달 예산을 다시 계산한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Whether the guide&#x27;s underlying aid policy is still in force</p>
+    <p><b>The guide says</b> — The guide describes Nepal&#x27;s aid-receiving system on the basis of the International Development Cooperation Policy 2019.</p>
+    <p><b>The law says</b> — Foreign Aid Mobilization Policy 2025 §3.7.1 repealed the 2019 policy; the new policy was approved on 21 April 2025.</p>
+    <p><b>Why it matters</b> — The 2019 policy was valid at the guide&#x27;s publication (25 Feb 2025) but has since been replaced. The USD 10 million concessional-loan threshold and the National Planning Commission consent requirement are gone, and tax exemption has narrowed. Applying the guide as-is prepares for requirements that no longer exist.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — For projects after April 2025, use the Foreign Aid Mobilization Policy 2025, not the 2019 policy. Recheck loan thresholds and tax-exemption assumptions against the new policy.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 본 레코드의 근거를 FAMP 2025로 전면 교체하고, 승계·삭제·축소·신설을 verification.notes에 항목별로 정리했다. 폐지된 2019년 정책은 대조 이력으로 sources에 남겼다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>차기 개정판에서 네팔 수원체계의 근거를 &#x27;대외원조동원정책 2025(Foreign Aid Mobilization Policy, 2025, 2025-04-21 승인)&#x27;로 교체할 것. 국제개발협력정책 2019는 동 정책 §3.7.1로 폐지됨. 반영이 필요한 주요 변경 — ① 양허성 차관 사업당 1천만 달러 문턱 삭제 ② 사업 제안 시 국가계획위원회 동의 요건 삭제 ③ 조세면제 축소(§3.6.1) ④ 차관 협상 전 내각 원칙동의 신설(§3.3.1(e))</div>
+
+</div>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D03</span>
+  </div>
+  <h3>canvas.procedure / PCP 작성 주체</h3>
+  <div class="quote src"><b>자료집</b>Ⅱ-1: &#x27;수원기관 협의를 기반으로 … PCP는 재무부 공한과 함께 KOICA 네팔사무소에 제출&#x27; / Ⅲ: &#x27;네팔 재무부(MoF)는 모든 분야별 사업에 대해 사업제안서(PCP)를 작성하여 N-2년에 KOICA에 제출함&#x27;</div>
+  <div class="quote act"><b>법령 원문</b>자료집 내부 두 곳의 서술이 엇갈린다. FAMP 2025 §3.3.2(a)(b)는 소관부처가 대외원조 대상 사업 목록을 작성하고 사업 준비성 체크리스트에 따라 재무부에 제안서를 제출하도록 규정한다. 제안서 작성 주체는 소관부처이고 재무부는 접수·검토·송부 창구다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(a), §3.3.2(b), §3.3.1(a)</p>
+  <p class="impact">PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달라진다. 초기 컨설팅·사업 형성 단계에서 접촉 대상을 잘못 잡으면 시간이 소모된다.</p>
+  <div class="todo"><b>실무자가 할 일</b>PCP 작성·협의 상대는 수원기관(소관부처)으로 보되, 송부는 재무부 공한을 거친다. 착수 시 KOICA 네팔사무소에 해당 사업의 준비성 체크리스트 서식과 제출 경로를 확인한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Who prepares the Project Concept Paper (PCP)</p>
+    <p><b>The guide says</b> — Two parts of the guide conflict: section II-1 says the line ministry prepares the PCP and sends it via a MoF letter; section III says the MoF itself prepares the PCP.</p>
+    <p><b>The law says</b> — FAMP 2025 §3.3.2(a)(b) has line ministries prepare a project list and submit proposals to the Ministry per a project readiness checklist; the Ministry receives, reviews and forwards. The preparer is the line ministry.</p>
+    <p><b>Why it matters</b> — It changes whether the counterpart for PCP consultation is the MoF or the line ministry. Approaching the wrong party at the formation stage wastes time.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Treat the line ministry as the PCP preparer; forwarding goes through a MoF letter. Confirm the readiness-checklist form and submission route with the KOICA Nepal office.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 절차상 정합적인 Ⅱ-1 서술(수원기관 작성 → 상급부처·재무부 검토 → 재무부 공한 첨부 송부)을 채택했다. 2025년 정책 §3.3.2(b)가 소관부처의 제안서 제출을 명시해 이 해석을 뒷받침한다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>Ⅱ-1과 Ⅲ의 PCP 작성 주체 서술을 일치시킬 것. 소관부처가 사업 준비성 체크리스트에 따라 제안서를 작성하고 재무부 검토를 거쳐 공한과 함께 KOICA에 제출하는 구조로 통일 권고 [대외원조동원정책 2025 §3.3.2(a)(b)]</div>
+
+</div>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D04</span>
+  </div>
+  <h3>canvas.bottlenecks / 조세·관세 면제 범위</h3>
+  <div class="quote src"><b>자료집</b>KOICA 관련 사업에서 관세 면제가 필요한 경우, 네팔 재무부 양식에 따른 마스터리스트(Master List)를 작성하여 네팔 정부의 승인을 받은 뒤 관세 면제를 신청해야 하며, 이 과정은 약 3개월이 소요됨</div>
+  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.6.1 — (a) 무상으로 받은 대외원조는 원칙적으로 세금 납부에 사용하지 않는다. (b) 차관 재원 사업에는 원칙적으로 조세면제 조항을 포함하지 않는다. (c) 국내에서 충분히 생산되는 물품의 수입에는 조세면제를 부여하지 않는다. (d) 현물 지원의 경우 소관부처 추천에 따라 재무부가 현행법에 따라 면제를 부여할 수 있다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.6.1(a)(b)(c)(d)</p>
+  <p class="impact">자료집은 마스터리스트 절차만 안내할 뿐 면제 자체가 제한된다는 점을 다루지 않는다. 2025년 정책에서는 국내 생산이 충분한 물품이면 마스터리스트를 제출해도 면제가 나오지 않을 수 있고, 차관 재원 사업은 애초에 면제 조항이 들어가지 않는다. 기자재 원산지에 따라 세부담이 사업비에 추가로 발생할 수 있다.</p>
+  <div class="todo"><b>실무자가 할 일</b>기자재 목록을 짤 때 네팔 국내에서 충분히 생산되는 품목인지 먼저 확인한다. 해당하면 면제를 전제로 예산을 잡지 않는다. 차관 연계 사업이면 면제 조항 자체가 없을 수 있으므로 협정문에서 확인한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Scope of tax and customs exemption</p>
+    <p><b>The guide says</b> — The guide explains only the master-list procedure for customs exemption (about 3 months), not any limit on the exemption itself.</p>
+    <p><b>The law says</b> — FAMP 2025 §3.6.1: (a) grants shall generally not be used for tax payments; (b) loan-funded projects shall generally not include tax-exemption provisions; (c) no exemption for importing goods sufficiently produced within Nepal.</p>
+    <p><b>Why it matters</b> — Under the new policy a master list may not yield exemption for locally-produced goods, and loan-linked projects may have no exemption clause at all. The equipment tax burden may fall outside the budget assumption.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — When listing equipment, check whether items are sufficiently produced in Nepal (no exemption). For loan-linked projects, check the financing agreement for any exemption clause.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — applicability와 bottlenecks에 면제 제한을 반영하고, 마스터리스트 소요기간(약 3개월)은 2019년 정책 시기 실무 경험치로 fieldVerification에 남겼다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>통관 항목에 조세면제의 한계를 추가할 것 — 무상원조는 원칙적으로 세금 납부에 사용 불가, 차관 재원 사업에는 면제 조항 미포함, 국내 생산이 충분한 물품의 수입에는 면제 미부여 [대외원조동원정책 2025 §3.6.1(a)(b)(c)]</div>
+
+</div>
+</div><div class="disc" data-sev="low">
+  <div class="top">
+    <span class="badge muted">심각도 낮음</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D05</span>
+  </div>
+  <h3>canvas.bottlenecks / 누락된 실무 제약</h3>
+  <div class="quote src"><b>자료집</b>(자료집에 해당 서술 없음)</div>
+  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.3.2(j) — 소관부처는 기술협력 재원을 차량·장비 구매나 해외 연수·훈련 참가에 사용하려면 재무부의 사전 승인을 받아야 한다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(j)</p>
+  <p class="impact">사업 수행기관이 관행적으로 진행하는 수원기관 공무원 초청연수·기자재 공장 실사 출장, 사업용 차량 구매가 재무부 사전 승인 대상이다. 자료집에 없어 일정과 예산 산정에서 누락되기 쉽다.</p>
+  <div class="todo"><b>실무자가 할 일</b>기술협력 재원으로 차량·장비를 사거나 연수·훈련 해외 파견을 계획하면 재무부 사전 승인 절차를 일정에 반영한다.</div>
+
+
+  <p class="act-row">이 데이터에 반영 — bottlenecks에 추가했다. 폐지된 2019년 정책 §5.2.4는 공여사업비·공급자 초청에 의한 공무원 해외출장 전반을 승인 대상으로 삼았으나, 2025년 정책은 기술협력 재원 사용으로 범위를 좁혔다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>진출 유의사항에 &#x27;기술협력 재원으로 차량·장비를 구매하거나 해외 연수·훈련에 참가하려면 재무부 사전 승인 필요 [대외원조동원정책 2025 §3.3.2(j)]&#x27; 추가</div>
+
+</div>
+</div>
+</section>
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">네팔 재무부가 게시한 Foreign Aid Mobilization Policy, 2025 영문본(43쪽)을 확보해, 폐지된 International Development Cooperation Policy 2019의 인용 조항이 승계·삭제·변경됐는지 조문 단위로 대조.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">FAMP 2025의 §3.2(법적 틀), §3.3.1(재무부 역할), §3.3.2(수원기관 역할), §3.3.5(개발파트너 역할), §3.6.1(조세면제·비자), §3.7(폐지·경과)을 원문에서 확인했다. KOICA 측 절차(PCP 검토위원회 → 예비조사 → 기획조사 → PD 심사위원회 → 예산요구)와 RoD·MoU 실무는 여전히 자료집 기재에만 근거한다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-04-21</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025 (वैदेशिक सहायता परिचालन नीति, २०८२) — English Translation</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2</span><span class="ar">확인 2026-07-23 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://giwmscdntwo.gov.np/media/pdf_upload/print_copy_IDCMP-2019_Eng-fullpage_20191107071739_ku6pxnl.pdf" target="_blank" rel="noopener">International Development Cooperation Policy, 2019 — FAMP 2025 §3.7.1로 폐지됨</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.2.11, §3.3.1, §3.4.2, §4.1.1, §5.2.1~§5.2.4 (대조 이력 보존용)</span><span class="ar">확인 2026-07-22 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://mof.gov.np/divisions/ierd/" target="_blank" rel="noopener">네팔 재무부 국제경제관계국 부서 페이지</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Finance, Government of Nepal</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">본 레코드는 2026-07-23 대조로 근거를 전면 교체했다. 종전 근거였던 International Development Cooperation Policy 2019는 Foreign Aid Mobilization Policy 2025 §3.7.1로 명시적으로 폐지됐다. 신규 정책의 네팔 정부 승인일은 2025-04-21로, 자료집 발행일(2025-02-25)보다 약 2개월 뒤다. 따라서 자료집이 2019년 정책을 전제로 서술한 것은 발행 시점에는 옳았다.</p><p class="note">승계된 것 — 재무부 단일 창구(§3.3.1(a)), 정부기관의 접촉 전 재무부 사전승인(§3.3.2(k), 종전 §5.2.2와 문언 거의 동일), 공여기관의 재무부 경유 의무(§3.3.5(b), 종전 §5.2.3 전단), 재무부의 협상·재정협정 서명(§3.3.1(d)).</p><p class="note">삭제된 것 — 정부기관 사업 제안 시 국가계획위원회(NPC) 동의 요건(종전 §5.2.3 후단), 양허성 차관 사업당 1천만 달러 문턱(종전 §3.4.2).</p><p class="note">축소된 것 — 조세면제. 종전에는 협정상 면제를 전제로 부담 주체를 정했으나, 2025년 정책은 무상원조를 세금 납부에 쓰지 않고 차관 사업에 면제 조항을 넣지 않으며 국내 생산이 충분한 물품 수입에 면제를 부여하지 않는다(§3.6.1(a)(b)(c)).</p><p class="note">신설된 것 — 차관 협상 전 내각(각료회의)의 원칙적 동의와 협상 권한 확보(§3.3.1(e)), 사업 준비성 체크리스트에 따른 제안서 제출(§3.3.2(b)), 외국인 근로자·자원봉사자 비자 및 노동허가 근거(§3.6.1(f)(g)).</p><p class="note">영문본은 번역본이며, 원문에 &#x27;영문본과 네팔어본이 충돌하면 네팔어본이 유효하다&#x27;는 단서가 붙어 있다.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1507/foreign-assistance-operations-policy--2082-new/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025 네팔어 원본</a> <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">본 레코드는 재무부가 함께 게시한 영문 번역본을 근거로 삼았다. 원문에 &#x27;영문본과 네팔어본이 충돌하면 네팔어본이 유효하다&#x27;는 단서가 있어, 조문 해석이 갈릴 경우 네팔어본이 우선한다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 해석이 문제되는 조항(§3.3.2(k) 사전승인 범위, §3.6.1 조세면제)은 네팔어본과 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3>사업 준비성 체크리스트(project readiness checklist) <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">FAMP §3.3.2(b)가 제안서 제출 기준으로 삼는 체크리스트의 서식과 항목을 확인하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 재무부가 §3.3.1(b)에 따라 마련할 표준운영절차(SOP)와 함께 공개되는지 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>KOICA PCP·PD 심사 가이드라인 <span class="badge plain muted">donor-internal</span></h3><p style="margin:0 0 8px;font-size:13.5px">PCP 검토위원회·PD 심사위원회의 심사 기준과 일정은 KOICA 내부 규정으로, 공개 원문을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — KOICA 사업 형성 관련 공개 지침 또는 사무소 안내를 통해 위원회 개최 주기와 제출 마감을 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>협의의사록(RoD)·양해각서(MoU) 표준 서식 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">개별 사업마다 체결되는 양자 문서로 표준 서식이 공개돼 있지 않다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 유사 사업의 RoD·MoU 사례를 통해 조세면제 조항이 FAMP §3.6.1 아래에서 어떻게 규정되는지 확인한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "재무부 사전 승인 확보", "lane": "네팔 재무부", "stage": "G0 사전승인", "type": "gateway", "status": "risk", "actor": "네팔 재무부", "action": "수원기관이 공여기관과 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결을 하기 전에 재무부 승인을 받아야 한다. 공여기관도 원조 동원 전 재무부 승인 대상이다.", "blocker": "자료집에 이 단계가 누락돼 있어 실무에서 건너뛰기 쉽다", "confidence": 0.95, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(k)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.5(b)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P03": {"id": "P03", "name": "사업 발굴·형성 협의", "lane": "네팔 수원기관·소관부처", "stage": "G1 발굴·PCP", "type": "task", "status": "current", "actor": "수원기관 · KOICA 네팔사무소", "action": "공여기관과 수원기관 부처가 협의해 사업을 발굴·형성한다. 소관부처는 대외원조가 필요한 사업 목록을 미리 작성해 둔다.", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(a)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P04": {"id": "P04", "name": "PCP 작성", "lane": "네팔 수원기관·소관부처", "stage": "G1 발굴·PCP", "type": "task", "status": "current", "actor": "수원기관", "action": "사업 준비성 체크리스트에 따라 제안서를 작성한다. KOICA 사업은 N-2년 기준으로 PCP를 작성한다.", "output_documents": ["사업제안서(PCP)", "사업 준비성 체크리스트"], "deadline": "사업 시행 2년 전(N-2년)", "confidence": 0.8, "blocker": "자료집 Ⅱ-1과 Ⅲ의 작성 주체 서술이 엇갈린다", "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(b)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P05": {"id": "P05", "name": "상급부처·재무부 검토", "lane": "네팔 재무부", "stage": "G1 발굴·PCP", "type": "gateway", "status": "waiting", "actor": "수원기관 상급부처 · 재무부", "action": "국가개발계획에 따른 우선순위 부합 여부를 검토한다. 주·지방정부 제안은 소관부처를 거쳐 재무부로 올라온다.", "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(e)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P06": {"id": "P06", "name": "재무부 공한 첨부 PCP 제출", "lane": "네팔 재무부", "stage": "G1 발굴·PCP", "type": "task", "status": "waiting", "actor": "네팔 재무부", "action": "PCP를 재무부 공한과 함께 KOICA 네팔사무소에 제출한다.", "output_documents": ["재무부 공한", "PCP"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.1(a)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P07": {"id": "P07", "name": "PCP 검토위원회", "lane": "KOICA", "stage": "G2 검토·예비조사", "type": "gateway", "status": "waiting", "actor": "KOICA 본부", "action": "본부 가이드라인 및 지정 일정에 따라 검토위원회를 개최한다.", "confidence": 0.85, "legal_basis": [{"law": "KOICA 사업심사 가이드라인", "article": "—", "url": ""}]}, "P08": {"id": "P08", "name": "예비조사", "lane": "KOICA", "stage": "G2 검토·예비조사", "type": "task", "status": "waiting", "actor": "KOICA", "action": "위원회 통과 시 실시한다.", "output_documents": ["예비조사 보고서"], "confidence": 0.9}, "P09": {"id": "P09", "name": "기획조사", "lane": "KOICA", "stage": "G3 기획·심사", "type": "task", "status": "waiting", "actor": "KOICA", "action": "본부에서 사업제안서를 승인하면 실시한다.", "confidence": 0.85}, "P10": {"id": "P10", "name": "PD 작성 및 심사위원회", "lane": "KOICA", "stage": "G3 기획·심사", "type": "gateway", "status": "waiting", "actor": "KOICA 본부", "action": "예비조사·기획조사를 바탕으로 사업 기획 주요 내용을 담은 PD를 도출하고 심사위원회를 거친다. 네팔 측 소관부처는 기술적 사항에 의견을 내고 사업문서를 확정한다.", "output_documents": ["사업기획문서(PD)"], "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P11": {"id": "P11", "name": "예산요구", "lane": "대한민국 정부", "stage": "G3 기획·심사", "type": "task", "status": "waiting", "actor": "KOICA → 대한민국 재정당국", "action": "위원회 통과 시 재정당국에 예산을 요구한다.", "confidence": 0.9}, "P12": {"id": "P12", "name": "협의의사록(RoD) 체결", "lane": "네팔 수원기관·소관부처", "stage": "G4 공식화", "type": "task", "status": "waiting", "actor": "KOICA · 네팔 소관부처", "action": "기획조사를 통해 확정된 사업 내용을 바탕으로 체결한다. 소관부처는 협상 대표를 지명한다.", "output_documents": ["협의의사록(RoD)"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(c)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P13": {"id": "P13", "name": "양해각서(MoU) 체결", "lane": "대한민국 정부", "stage": "G4 공식화", "type": "gateway", "status": "waiting", "actor": "주네팔 대한민국대사관 · 네팔 재무부", "action": "RoD 체결 이후 양국 정부 간 MoU를 체결한다. 네팔 측은 재무부가 정부를 대표해 서명한다.", "output_documents": ["양해각서(MoU)"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.1(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(k)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P14": {"id": "P14", "name": "사업수행 지원 — 비자·조세면제", "lane": "네팔 재무부", "stage": "G4 공식화", "type": "task", "status": "risk", "actor": "네팔 재무부 · PMC", "action": "협정과 현행법에 따라 파견인력의 비자·노동허가를 지원한다. 조세면제는 범위가 제한된다 — 무상원조는 원칙적으로 세금 납부에 쓸 수 없고, 차관 재원 사업에는 면제 조항을 넣지 않으며, 국내 생산이 충분한 물품 수입에는 면제가 없다. 현물 지원은 소관부처 추천으로 재무부가 면제를 부여할 수 있다.", "output_documents": ["마스터리스트(Master List)", "사업비자·노동허가"], "deadline": "관세면제 절차 약 3개월(2019년 정책 시기 실무 경험치)", "blocker": "면제 대상 자체가 좁아져, 국내 생산이 충분한 기자재는 마스터리스트를 내도 면제를 못 받을 수 있다", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.6.1(a)(b)(c)(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.6.1(f)(g)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}, "P15": {"id": "P15", "name": "지역 개발파트너 회의·이행 점검", "lane": "네팔 재무부", "stage": "G4 공식화", "type": "notice", "status": "loop", "actor": "네팔 정부 · 개발 파트너", "action": "지역 개발파트너 회의를 연 2회 또는 필요에 따라 열어 정책 이행과 현안을 조정한다. 개발파트너는 회계연도 종료 후 2개월 내 지원 실적을 대외원조정보시스템에 보고한다.", "deadline": "연 2회 · 보고는 회계연도 종료 후 2개월 내", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.1.3", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.5(i)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}]}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P03", "type": "sequence", "label": "승인 후 접촉"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence"}, {"id": "E04", "source": "P04", "target": "P05", "type": "sequence"}, {"id": "E05", "source": "P05", "target": "P06", "type": "sequence"}, {"id": "E06", "source": "P06", "target": "P07", "type": "message", "label": "PCP 접수"}, {"id": "E07", "source": "P07", "target": "P08", "type": "sequence", "label": "위원회 통과"}, {"id": "E08", "source": "P07", "target": "P04", "type": "loop", "label": "부결 시 재작성"}, {"id": "E09", "source": "P08", "target": "P09", "type": "sequence", "label": "본부 승인"}, {"id": "E10", "source": "P09", "target": "P10", "type": "sequence"}, {"id": "E11", "source": "P10", "target": "P11", "type": "sequence", "label": "심사 통과"}, {"id": "E12", "source": "P10", "target": "P09", "type": "loop", "label": "보완 요구"}, {"id": "E13", "source": "P11", "target": "P12", "type": "sequence"}, {"id": "E14", "source": "P12", "target": "P13", "type": "sequence"}, {"id": "E15", "source": "P13", "target": "P14", "type": "sequence"}, {"id": "E16", "source": "P14", "target": "P15", "type": "sequence"}, {"id": "E17", "source": "P15", "target": "P03", "type": "loop", "label": "차기 사업 발굴 환류"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>

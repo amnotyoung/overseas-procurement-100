@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>캄보디아 조달 거버넌스·감독체계 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline">03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance" selected>11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system">13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" href="../cambodia-bidding-system/index.html" style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../cambodia-oda-project-pipeline/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">11/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 11</span>
+    <span class="badge plain muted">캄보디아 · Cambodia</span>
+    <span class="badge plain muted">조달 거버넌스</span>
+    <span class="badge info">원문 링크 연결</span>
+    <span class="badge bad">불일치 1건</span>
+  </div>
+  <h1>캄보디아 조달 거버넌스·감독체계</h1>
+  <p class="one">경제재무부(MEF) 아래 국내재원은 공공조달국(GDPP), 외부재원은 국제협력차관관리국(GDICDM)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐</p>
+  <div class="tiles">
+    <div class="tile"><b>8</b><span>절차 노드</span></div>
+    <div class="tile"><b>3</b><span>행위 레인</span></div>
+    <div class="tile"><b>4</b><span>게이트</span></div>
+    <div class="tile ok"><b>0</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>1</b><span>불일치</span></div>
+    <div class="tile warn"><b>4</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(4,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">정책</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">재원구분</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">집행</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">감독</span></div></div><div class="brow" style="grid-template-columns:180px repeat(4,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">MEF·GDPP</span></div><div class="bcell" data-lane="MEF·GDPP" data-stage="G0 정책"><button class="node" data-id="P01">
+  <span class="id">P01</span>
+  <span class="nm">조달정책·법제도 수립</span></button><button class="node" data-id="P02">
+  <span class="id">P02</span>
+  <span class="nm">조달지침 제공</span></button></div><div class="bcell" data-lane="MEF·GDPP" data-stage="G1 재원구분"></div><div class="bcell" data-lane="MEF·GDPP" data-stage="G2 집행"></div><div class="bcell" data-lane="MEF·GDPP" data-stage="G3 감독"><button class="node" data-id="P07">
+  <span class="id">P07</span>
+  <span class="nm">GDPP 감독·감사</span></button><button class="node" data-id="P08" data-tone="warn">
+  <span class="id">P08<span class="tag">유의</span></span>
+  <span class="nm">MEF 사후검토·검사</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(4,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">발주 정부기관</span></div><div class="bcell" data-lane="발주 정부기관" data-stage="G0 정책"></div><div class="bcell" data-lane="발주 정부기관" data-stage="G1 재원구분"><button class="node" data-id="P03" data-tone="key">
+  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="nm">재원 구분</span></button></div><div class="bcell" data-lane="발주 정부기관" data-stage="G2 집행"><button class="node" data-id="P05" data-tone="key">
+  <span class="id">P05<span class="tag">핵심</span></span>
+  <span class="nm">직접조달(한도 내)</span></button></div><div class="bcell" data-lane="발주 정부기관" data-stage="G3 감독"></div></div><div class="brow" style="grid-template-columns:180px repeat(4,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">GDICDM·DP</span></div><div class="bcell" data-lane="GDICDM·DP" data-stage="G0 정책"></div><div class="bcell" data-lane="GDICDM·DP" data-stage="G1 재원구분"><button class="node" data-id="P04" data-tone="warn">
+  <span class="id">P04<span class="tag">유의</span></span>
+  <span class="nm">재정지원약정 체결</span></button></div><div class="bcell" data-lane="GDICDM·DP" data-stage="G2 집행"></div><div class="bcell" data-lane="GDICDM·DP" data-stage="G3 감독"><button class="node" data-id="P06">
+  <span class="id">P06</span>
+  <span class="nm">SOP 2019 준수 감독</span></button></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">재원에 따라 조달 관장기관을 나누어(국내재원 GDPP·외부재원 GDICDM), 조달정책·법제도를 중앙에서 수립하되 조달을 분권화해 정부기관·지방정부가 한도 내에서 직접 조달하도록 한다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>MEF가 조달정책·법제도를 총괄, GDPP가 국내재원 조달지침을 수립·제공</li><li>재원 구분 — 국내재원은 GDPP, 외부재원은 GDICDM 관할</li><li>(외부재원) 발주기관과 DP가 재정지원약정(Financing Agreement)을 체결해 방식·절차를 정함</li><li>GDICDM이 발주기관의 SOP 2019 준수를 감독하고 포트폴리오를 관리</li><li>조달 분권화 — 예산 출처별로 감독기관이 나뉨(중앙 GDPP·지방 GDPP·NCDD)</li><li>정부기관별 직접조달 한도 내에서 자체 조달</li><li>GDPP가 조달을 감독·감사, MEF가 사후검토·부정기 검사(신법 신설)</li><li>위반 시 신법의 강화된 벌칙(개인 징역·법인 벌금) 적용</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">캄보디아 정부의 모든 공공조달에 적용되며 재원에 따라 관장기관이 갈린다. 조달이 분권화돼 정부기관별 직접조달 한도가 있다 — 주정부 12.5만불, 내무부·국방부·대학병원 25만불, 교육청소년체육부·보건부 37.5만불, 광업에너지부 전력수자원공급 50만불, 전력청 70만불, 나머지 부처 20만불(USD). KOICA 무상사업은 외부재원으로 GDICDM·SOP 2019 관할이며, DP 자체 지침이 우선할 수 있다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">공공조달 시행규정(sub-decree·prakas) — 2012 프레임, 잠정 유효</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">표준문서</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a></b><span>공공조달 중심기관. 신법상 조달정책 총괄, 사후검토·부정기 검사권</span></div><div class="auth"><b><a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">공공조달국(GDPP)</a></b><span>국내재원(locally funded) 조달 관장. 조달정책·법제도 수립, 중앙·주·군/시 정부에 조달지침 제공, 감독·감사. 정부기관 행정·사무용품 및 시설운영 서비스 조달</span></div><div class="auth"><b>국제협력차관관리국(GDICDM)</b><span>외부재원(externally funded) 조달 관장. 발주기관의 SOP 2019 준수 감독, 사업 포트폴리오 관리, 절차 지침 제공</span></div><div class="auth"><b>내무부 지방국가민주적발전위원회(NCDD)</b><span>구(코뮨) 예산 집행 조달 감독</span></div><div class="auth"><b>개발협력파트너(DP)</b><span>외부재원 사업에서 발주기관과 재정지원약정 체결, 자체 조달지침 적용</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">경제재무부(MEF), 공공조달국(GDPP), 국제협력차관관리국(GDICDM), 중앙·주·군/시 정부, 내무부 산하 지방국가민주적발전위원회(NCDD), 개발협력파트너(DP), 산업별 발주부처(MPWT·MISTI·MoH·MoEYS)</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>GDPP</b><div class="chips"><span class="chip">조달지침(procurement guidelines)</span><span class="chip">감사 결과</span><span class="chip">표준입찰서류</span></div></div><div class="docset"><b>GDICDM</b><div class="chips"><span class="chip">SOP 2019 준수 점검 결과</span><span class="chip">사업 포트폴리오 관리 문서</span><span class="chip">절차 지침</span></div></div><div class="docset"><b>발주기관·DP</b><div class="chips"><span class="chip">재정지원약정(Financing Agreement)</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>재원별 이원 구조라 KOICA 무상사업(외부재원)은 GDPP가 아니라 GDICDM·SOP 2019 관할이다 — 국내재원 조달과 절차·감독기관이 다르다</li><li>조달이 분권화돼 예산 출처(중앙·주·군/시·구)마다 감독기관이 달라 관할 확인이 필요하다</li><li>외부재원 사업은 DP 자체 조달지침이 SOP에 우선할 수 있어, 캄보디아 공공조달 규율만으로는 절차를 특정할 수 없다</li><li>근거 법률이 2023 신법으로 교체돼 MEF 사후검토·검사권과 강화된 벌칙이 신설됐으나 자료집에 반영되지 않았다</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>정부기관별 직접조달 한도가 달라, 사업 규모에 따라 관할·방식이 갈림</li><li>분권화로 지방정부 조달은 지방 예산·절차를 별도 확인해야 함</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>정부기관별 직접조달 한도(주 12.5만·부처 20만·전력청 70만불 등) — 시행규정 기준. 신규정 제정 시 변경 여부</li><li>2023 신법에서 GDPP·GDICDM의 관할·권한이 변경됐는지 (크메르어 원문 대조 필요)</li><li>MEF 사후검토·부정기 검사권의 발동 요건·절차 — 신법 신설 조항</li><li>SOP 2019가 신법 하에서 개정·유지되는지</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../cambodia-oda-project-pipeline/index.html">캄보디아 ODA 사업 발굴·형성 절차</a></div></div>
+  </div>
+</section>
+
+
+
+<section class="blk">
+  <h2>자료집 ↔ 원문 불일치 1건</h2>
+  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
+    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 1건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">캄보디아</span>
+    <span class="badge plain muted">D01</span>
+  </div>
+  <h3>canvas.legalBasis / 감독체계 근거 법령 및 신설 권한</h3>
+  <div class="quote src"><b>자료집</b>(자료집 Ⅱ-2가 GDPP·GDICDM 이원 구조와 SOP 2019를 서술하나, 근거를 2012법 체계로 전제하고 신법의 MEF 검사권·강화 벌칙을 다루지 않음)</div>
+  <div class="quote act"><b>법령 원문</b>2023 신법이 MEF의 사후검토(post-review)·부정기 검사권을 신설하고 벌칙을 개인 징역·법인 벌금으로 강화했다. 조달 감독의 실체가 강해졌다. 다만 GDPP·GDICDM 이원 구조 자체는 자료집 서술과 부합한다.</div>
+  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</p>
+  <p class="impact">자료집의 이원 구조·SOP 2019 서술은 정확하나, 신법이 부여한 MEF 검사권과 강화된 벌칙이 드러나지 않아 조달 위반·감사 리스크를 과소평가할 수 있다.</p>
+  <div class="todo"><b>실무자가 할 일</b>GDPP(국내재원)·GDICDM(외부재원) 이원 구조는 자료집대로 이해하되, KOICA 무상사업은 GDICDM·SOP 2019 트랙임을 확인한다. 조달 위반 시 벌칙과 MEF 검사권은 2023 신법 기준으로 본다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Governance framework — new statute&#x27;s oversight powers</p>
+    <p><b>The guide says</b> — The guide describes the two-track structure (GDPP for locally funded, GDICDM for externally funded) and SOP 2019, on the 2012-law framework.</p>
+    <p><b>The law says</b> — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.</p>
+    <p><b>Why it matters</b> — The guide&#x27;s structural description is accurate, but it does not surface the new MEF inspection power or the stronger penalties, which may lead to underestimating audit and compliance risk.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Confirm KOICA grant projects fall under the GDICDM / SOP 2019 track (externally funded). Check penalties and MEF inspection powers against the 2023 law.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 이원 구조·직접조달 한도는 자료집 서술을 유지하고, 신법의 MEF 검사권·강화 벌칙을 authorities·bottlenecks·notes에 반영했다. 크메르어 원문이라 조문 대조는 못 해 law-linked로 둔다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>조직체계 서술에 근거 법령을 &#x27;2023 공공조달법&#x27;으로 갱신하고, MEF 사후검토·부정기 검사권과 강화된 벌칙(개인 징역·법인 벌금)을 추가할 것. GDPP·GDICDM 이원 구조와 SOP 2019 서술은 정확하므로 유지</div>
+
+</div>
+</div>
+</section>
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">GDPP 공식 사이트와 로펌 해설로 조달 관장기관·현행 법령을 확인. 재원별 이원화(GDPP·GDICDM)와 외부재원 SOP 2019, 분권화·직접조달 한도를 자료집에서 정리. 신법 원문이 크메르어 스캔본이라 조문 verbatim 대조는 미실시.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">MEF 산하 GDPP(국내재원)·GDICDM(외부재원) 이원 구조, SOP 2019 관할, 분권화 감독체계(중앙·지방 GDPP·NCDD), 정부기관별 직접조달 한도, 신법의 MEF 검사권·강화 벌칙을 확인했다. 신법 조문 대조와 직접조달 한도의 현행 규정 확인은 미완이다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-02-25</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://vdb-loi.com/kh_publications/new-developments-under-the-public-procurement-law-2023/" target="_blank" rel="noopener">New Developments under the Public Procurement Law 2023 (로펌 해설)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · VDB Loi</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">캄보디아 조달은 재원별로 이원화된다 — 국내재원(locally funded)은 GDPP, 외부재원(externally funded)은 GDICDM. KOICA 무상사업은 외부재원이라 GDICDM·SOP 2019 트랙이다.</p><p class="note">GDICDM은 발주기관이 &#x27;외부재원 프로젝트/프로그램 조달 표준운영절차(SOP, 2019)&#x27;를 준수하는지 감독하고 사업 포트폴리오를 관리한다. DP 재정지원약정의 특수조건이 SOP에 우선할 수 있다.</p><p class="note">근거 법률이 2023 신법으로 교체되며 MEF의 사후검토·부정기 검사권과 강화된 벌칙이 신설됐다. 시행규정은 2012 프레임이 잠정 유효라 직접조달 한도 등은 아직 구 규정을 따를 수 있다.</p><p class="note">신법 원문은 크메르어이며 공식 영문본을 확보하지 못했다.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>정부기관별 직접조달 한도 규정 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">직접조달 한도(주 12.5만·부처 20만불 등)의 근거 규정 원문을 특정하지 못했다. 시행규정은 2012 프레임 잠정유효이며 신규정 제정 시 변경될 수 있다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — GDPP의 조달 한도 관련 prakas/sub-decree를 확보해 한도를 대조하고, 신규정 제정 여부를 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3><a class="ref" href="https://data.opendevelopmentcambodia.net/laws_record/public-procurement" target="_blank" rel="noopener">Law on Public Procurement 2023 크메르어 원문</a> <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">신법 원문이 크메르어 스캔본이라 GDPP·GDICDM 권한·감독 조항을 verbatim 대조하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 공식 영문본 확보 시 감독·검사권 조항을 대조한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    원문 링크 연결 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "조달정책·법제도 수립", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "MEF · GDPP", "action": "MEF가 조달정책을 총괄하고 GDPP가 법제도·조달지침을 수립한다.", "confidence": 0.85, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "—", "url": ""}]}, "P02": {"id": "P02", "name": "조달지침 제공", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "GDPP", "action": "중앙·주·군/시 정부에 조달지침을 제공한다.", "output_documents": ["조달지침"], "confidence": 0.85}, "P03": {"id": "P03", "name": "재원 구분", "lane": "발주 정부기관", "stage": "G1 재원구분", "type": "gateway", "status": "current", "actor": "발주 정부기관", "action": "국내재원(GDPP)인지 외부재원(GDICDM)인지에 따라 관할·절차가 갈린다.", "confidence": 0.85}, "P04": {"id": "P04", "name": "재정지원약정 체결", "lane": "GDICDM·DP", "stage": "G1 재원구분", "type": "task", "status": "risk", "actor": "발주기관 · DP", "action": "외부재원 사업은 발주기관과 DP가 재정지원약정을 체결해 조달방식·절차를 정한다.", "output_documents": ["재정지원약정(Financing Agreement)"], "blocker": "DP 자체 지침이 SOP에 우선할 수 있다", "confidence": 0.8}, "P05": {"id": "P05", "name": "직접조달(한도 내)", "lane": "발주 정부기관", "stage": "G2 집행", "type": "task", "status": "current", "actor": "발주 정부기관", "action": "정부기관별 직접조달 한도 내에서 자체 조달한다(주 12.5만·부처 20만·전력청 70만불 등).", "confidence": 0.75, "legal_basis": [{"law": "공공조달 시행규정(sub-decree·prakas) — 2012 프레임, 잠정 유효", "article": "직접조달 한도", "url": ""}]}, "P06": {"id": "P06", "name": "SOP 2019 준수 감독", "lane": "GDICDM·DP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDICDM", "action": "GDICDM이 발주기관의 SOP 2019 준수를 감독하고 포트폴리오를 관리한다.", "confidence": 0.8, "legal_basis": [{"law": "외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)", "article": "—", "url": ""}]}, "P07": {"id": "P07", "name": "GDPP 감독·감사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDPP", "action": "국내재원 조달을 예산 출처별(중앙 GDPP·지방 GDPP·NCDD)로 감독·감사한다.", "confidence": 0.8}, "P08": {"id": "P08", "name": "MEF 사후검토·검사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "gateway", "status": "risk", "actor": "MEF", "action": "신법상 MEF가 사후검토와 부정기 검사를 실시한다. 위반 시 강화된 벌칙(개인 징역·법인 벌금).", "confidence": 0.7, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "검사·벌칙", "url": ""}]}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "message", "label": "지침 제공"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence", "label": "외부재원"}, {"id": "E04", "source": "P03", "target": "P05", "type": "sequence", "label": "국내재원"}, {"id": "E05", "source": "P04", "target": "P06", "type": "sequence"}, {"id": "E06", "source": "P05", "target": "P07", "type": "message", "label": "감사 대상"}, {"id": "E07", "source": "P06", "target": "P08", "type": "sequence"}, {"id": "E08", "source": "P07", "target": "P08", "type": "sequence"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>

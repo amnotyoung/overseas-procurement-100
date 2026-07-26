@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>자료집 정오표 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../index.html">제도 대장</a>
+    <a href="../verification/index.html">검증 대장</a>
+    <a href="../errata/index.html" aria-current="page">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+<div class="wrap hero" style="padding-bottom:24px">
+  <div class="eyebrow">발행처 전달용</div>
+  <h1>자료집 정오표</h1>
+  <p class="lede">법령 원문 대조에서 나온 항목 중 자료집 수정이 필요한 것을 모았습니다.</p>
+  <p class="meta">대상 · KOICA 2025 국가별 개발협력사업 참여전략 자료집(아시아·태평양) · 정정 요망 9건 / 보완 권고 8건</p>
+</div>
+
+<div class="statbar"><div class="wrap">
+  <div style="font-size:13px;color:var(--muted);max-width:70ch">
+    각 항목은 <b>현재 서술 → 수정 제안 → 근거 조문</b> 형태라 그대로 옮겨 전달할 수 있습니다.
+    <b>정정 요망</b>은 실무 손해로 이어지거나 자료집 안에서 서로 모순되는 것,
+    <b>보완 권고</b>는 서술은 맞으나 출처 표기·누락 보완이 필요한 것입니다.
+  </div>
+  <div class="stats">
+    <div class="stat bad"><b>9</b><span>정정 요망</span></div>
+    <div class="stat"><b>8</b><span>보완 권고</span></div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <section class="blk" style="border-top:0">
+    <div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge plain muted">01</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">11-13쪽 · Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>대리인이 네팔인인 경우, 대리인의 주민등록 등본과 입찰 위임장 제출</div>
+  <div class="quote act"><b>수정 제안</b>대리인이 네팔인인 경우, 대리인의 PAN(영구계좌번호) 등록증명서 인증등본과 대리인 수락서(letter of acceptance) 제출 [PPR 2007 r.39(1)(d)]</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(1)(d)</p>
+  <p class="impact">자료집대로 주민등록 등본을 준비하면 법정 요구서류인 PAN(영구계좌번호) 등록증명서 인증등본을 빠뜨리게 된다. PAN은 세무등록번호로 주민등록과 전혀 다른 서류이며, 누락 시 입찰서가 심사에서 제외될 수 있다. 또한 &#x27;입찰 위임장&#x27;은 원문상 &#x27;대리인 수락서(letter of acceptance)&#x27;로, 위임 방향이 반대인 문서다.</p>
+  <p class="act-row"><a href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a> · nepal-bidding-system-D01</p>
+</div><div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge plain muted">02</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">8쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성</div>
+  <div class="quote act"><b>수정 제안</b>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴·형성. 단, 네팔 정부기관은 대외원조에 관한 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결에 앞서 재무부의 사전 승인을 받아야 하며, 개발파트너도 원조 동원 전 재무부 승인이 필요함 [대외원조동원정책 2025 §3.3.2(k), §3.3.5(b)]</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(k), §3.3.5(b)</p>
+  <p class="impact">자료집대로 수원기관 부처와 먼저 협의를 시작하면, 해당 부처는 재무부 사전 승인 없이 정보를 제공하거나 협의할 수 없는 상태다. 절차의 출발점이 &#x27;수원기관 협의&#x27;가 아니라 &#x27;재무부 승인&#x27;이라는 점이 드러나지 않아, 사업 형성 초기 접촉이 정책 위반으로 지적되거나 뒤늦게 승인을 받느라 일정이 밀릴 수 있다. 이 요건은 자료집이 전제한 2019년 정책에도 있었고 2025년 정책에도 그대로 남았다.</p>
+  <p class="act-row"><a href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a> · nepal-oda-project-pipeline-D01</p>
+</div><div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge plain muted">03</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">8쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>(자료집 전반이 International Development Cooperation Policy 2019를 전제로 수원체계를 서술)</div>
+  <div class="quote act"><b>수정 제안</b>차기 개정판에서 네팔 수원체계의 근거를 &#x27;대외원조동원정책 2025(Foreign Aid Mobilization Policy, 2025, 2025-04-21 승인)&#x27;로 교체할 것. 국제개발협력정책 2019는 동 정책 §3.7.1로 폐지됨. 반영이 필요한 주요 변경 — ① 양허성 차관 사업당 1천만 달러 문턱 삭제 ② 사업 제안 시 국가계획위원회 동의 요건 삭제 ③ 조세면제 축소(§3.6.1) ④ 차관 협상 전 내각 원칙동의 신설(§3.3.1(e))</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.7.1, §3.7.2 (승인 2025-04-21)</p>
+  <p class="impact">자료집 발행일(2025-02-25) 기준으로는 2019년 정책이 유효했으므로 자료집 서술 자체는 당시로서 옳았다. 다만 2025-04-21 이후로는 근거 정책이 바뀌었고, 특히 양허성 차관 1천만 달러 문턱과 국가계획위원회 동의 요건이 사라졌으며 조세면제 범위가 좁아졌다. 자료집을 현행 기준으로 그대로 쓰면 없어진 요건을 준비하거나 면제받을 수 없는 세금을 사업비에서 누락하게 된다.</p>
+  <p class="act-row"><a href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a> · nepal-oda-project-pipeline-D02</p>
+</div><div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge plain muted">04</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">212-215쪽 · Ⅲ-1. 협력국 입찰 제도 / 탄자니아 입찰 관련 법규 / 보증 비교표</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>탄자니아 입찰 관련 법규 · Public Procurement Regulations 2013 — 물품·용역·공사에 대한 입찰절차, 자격, 계약관리 등에 대해 상세히 기술</div>
+  <div class="quote act"><b>수정 제안</b>탄자니아 입찰 관련 법규를 현행 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 교체할 것. Public Procurement Act 2011은 §131로 폐지됨. 반영 필요 사항 — ① 보증 금액의 입찰서류 위임(reg.23(6)) ② force account 문턱(§76) ③ 가격상한 신설(§74) ④ NeST 전자조달 의무 ⑤ 지역업체·현지생산품 우대 강화</div>
+  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §131(1); Public Procurement Regulations, 2025 (GN No. 261)</p>
+  <p class="impact">자료집 발행일(2025-02-25) 기준으로 이미 8개월 전에 새 법·규정이 시행됐다. 자료집을 그대로 따르면 폐지된 법(PPA 2011)과 구 규정(PPR 2013)의 조문·보증률을 적용하게 되고, 신설된 force account 문턱·가격상한·NeST 전자조달 의무·지역업체 우대를 놓친다. 특히 보증 금액이 입찰서류 위임으로 바뀌어, 자료집의 고정 비율을 전제로 예산·보증을 잡으면 실제 발주 조건과 어긋날 수 있다.</p>
+  <p class="act-row"><a href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a> · tanzania-bidding-system-D01</p>
+</div><div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge plain muted">05</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">210-211쪽 · Ⅱ-2. 협력국 조달관련 조직체계 / PPRA 조직도·부서별 기능</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>(자료집 Ⅱ-2가 PPRA 조직·부서 기능을 서술하나, 근거 법령을 Public Procurement Act 2011 체계로 전제)</div>
+  <div class="quote act"><b>수정 제안</b>PPRA의 근거 법령을 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 갱신할 것. PPA 2011은 폐지됨. 신설 반영 — 가격상한 설정 권한(§74), NeST 전자조달 의무, 지역업체 우대 강화</div>
+  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §8, §74, §131(1)</p>
+  <p class="impact">PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그대로 쓰면 신설된 가격상한·NeST 전자조달 의무·강화된 지역업체 우대를 놓치고, 폐지된 법의 조문 번호로 근거를 찾게 된다.</p>
+  <p class="act-row"><a href="../model/tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계</a> · tanzania-procurement-governance-D01</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">06</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">9쪽 · Ⅱ-2. 협력국 조달관련 조직체계</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>주요 산업별 입찰 공고 발표 기관 - 네팔 공공조달모니터링국(PPMO)에서 총괄</div>
+  <div class="quote act"><b>수정 제안</b>조달정보 통합 안내 — 네팔 공공조달모니터링국(PPMO)이 e-GP 포털(<a class="ref" href="https://bolpatra.gov.np" target="_blank" rel="noopener">bolpatra.gov.np</a>)을 운영하며 조달정보를 게시. 개별 입찰의 공고·계약 주체는 각 발주 공공기관이며, PPMO는 개별 조달절차에 관여하지 않음 [PPA 2007 §65(1)(f), §65(2)]</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(f), §65(2)</p>
+  <p class="impact">&#x27;PPMO가 공고를 총괄한다&#x27;로 읽으면 실제 발주처를 놓치고, 개별 입찰 민원을 PPMO에 제기하는 오류로 이어진다. PPMO는 그 민원을 처리할 법적 권한이 없다. 실제로 같은 자료집 부록의 네팔 발주정보는 발주처를 Jagdulla Hydropower Company Limited, Krishi Samagri Company Limited, Shahid Gangalal National Heart Centre, Tribhuvan International Airport Civil Aviation Office 등 개별 기관으로 적고 있어 본문 서술과 어긋난다.</p>
+  <p class="act-row"><a href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a> · nepal-procurement-governance-D01</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">07</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">8쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>Ⅱ-1: &#x27;수원기관 협의를 기반으로 … PCP는 재무부 공한과 함께 KOICA 네팔사무소에 제출&#x27; / Ⅲ: &#x27;네팔 재무부(MoF)는 모든 분야별 사업에 대해 사업제안서(PCP)를 작성하여 N-2년에 KOICA에 제출함&#x27;</div>
+  <div class="quote act"><b>수정 제안</b>Ⅱ-1과 Ⅲ의 PCP 작성 주체 서술을 일치시킬 것. 소관부처가 사업 준비성 체크리스트에 따라 제안서를 작성하고 재무부 검토를 거쳐 공한과 함께 KOICA에 제출하는 구조로 통일 권고 [대외원조동원정책 2025 §3.3.2(a)(b)]</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(a), §3.3.2(b), §3.3.1(a)</p>
+  <p class="impact">PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달라진다. 초기 컨설팅·사업 형성 단계에서 접촉 대상을 잘못 잡으면 시간이 소모된다.</p>
+  <p class="act-row"><a href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a> · nepal-oda-project-pipeline-D03</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">08</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">캄보디아</span>
+    <span class="badge plain muted">162-165쪽 · Ⅲ-1. 협력국 입찰 제도 / 유의사항 / 인허가 제도</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>공공조달법에서는 공개입찰을 권장하고 있으나, 이에 대한 규제나 유인책은 없으며 …(자료집이 &#x27;공공조달법&#x27;을 근거로 입찰제도를 서술하되 법령 연도를 명시하지 않음)</div>
+  <div class="quote act"><b>수정 제안</b>캄보디아 입찰제도의 근거 법령을 &#x27;Law on Public Procurement 2023(Royal Kram NS/RKM/0523/005, 2023-05-16 공포)&#x27;으로 명시할 것. 2012년 구법은 폐지됨. 시행규정은 초안 단계로 2012 프레임 규정이 잠정 유효하므로 금액구간·입찰방식은 유지하되, 신설된 컨설팅 조달·강화된 벌칙·MEF 검사권을 반영</div>
+  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); 구법 Law on Public Procurement, 2012 폐지</p>
+  <p class="impact">자료집의 입찰방식·금액구간은 규정 잠정유효로 아직 맞을 수 있으나, 법률 자체가 바뀌어 신설된 컨설팅 조달 규율·강화된 벌칙·MEF 검사권을 놓친다. 특히 벌칙이 개인 징역·법인 벌금으로 강화돼, 조달 위반 리스크가 커졌다.</p>
+  <p class="act-row"><a href="../model/cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a> · cambodia-bidding-system-D01</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">09</span>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">212-215쪽 · Ⅲ-1. 협력국 입찰 제도 / 탄자니아 입찰 관련 법규 / 보증 비교표</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>입찰보증 입찰금액의 5% 이상 / 계약보증 계약금액의 10% 이상 / 하자보증 계약금액의 3% 이상 / 하자담보기간 1~2년 / 지체상금 제조 0.15%·운송 0.5% (탄자니아 규정 = Public Procurement Regulations 2013)</div>
+  <div class="quote act"><b>수정 제안</b>보증 비교표의 &#x27;탄자니아 규정&#x27;을 Public Procurement Regulations 2025(GN No. 261) 기준으로 갱신할 것 — 입찰·이행보증 금액은 입찰서류 위임(reg.23(6), reg.29(2)), 하자보증은 유보금 방식으로 계약 위임(reg.329(2)), 하자담보기간도 계약에 정한 기간(reg.329(7)). 확정 값은 선금 30% 상한(reg.315(2))·지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐. 구 규정의 5%·10%·3%·1~2년 고정 비율과 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정 근거가 없으므로 삭제 또는 계약 위임으로 수정</div>
+  <p class="cite">근거 · Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule</p>
+  <p class="impact">자료집의 고정 보증률(입찰 5%·계약 10%·하자 3%)과 하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이다. 새 규정에서는 입찰·이행보증은 입찰서류가, 하자보증·하자담보기간은 계약이 정하므로, 자료집 비율을 전제로 보증·예산을 잡으면 실제 조건과 어긋난다. 확정 값(선금 30% 상한, 지체상금 물품 0.10~0.20%로 자료집 0.15% 포함)은 정합적이나, 자료집의 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정에 대응 항목이 없다.</p>
+  <p class="act-row"><a href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a> · tanzania-bidding-system-D03</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">10</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">11-13쪽 · Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>141 조항에 따라 해당 입찰자는 블랙리스트에 기재됨</div>
+  <div class="quote act"><b>수정 제안</b>공공조달규칙(Public Procurement Rules, 2064) 제141조에 따라 해당 입찰자는 블랙리스트에 기재됨 (실체 근거: 공공조달법 제63조)</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(3), r.141 / <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §63</p>
+  <p class="impact">자료집이 법령명을 밝히지 않고 &#x27;141 조항&#x27;만 표기했다. 같은 문단이 인용한 다른 조문은 모두 법(Act, 총 76조)이라 독자가 법 제141조를 찾게 되고, 존재하지 않으므로 근거 추적이 막힌다.</p>
+  <p class="act-row"><a href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a> · nepal-bidding-system-D02</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">11</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">8쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>KOICA 관련 사업에서 관세 면제가 필요한 경우, 네팔 재무부 양식에 따른 마스터리스트(Master List)를 작성하여 네팔 정부의 승인을 받은 뒤 관세 면제를 신청해야 하며, 이 과정은 약 3개월이 소요됨</div>
+  <div class="quote act"><b>수정 제안</b>통관 항목에 조세면제의 한계를 추가할 것 — 무상원조는 원칙적으로 세금 납부에 사용 불가, 차관 재원 사업에는 면제 조항 미포함, 국내 생산이 충분한 물품의 수입에는 면제 미부여 [대외원조동원정책 2025 §3.6.1(a)(b)(c)]</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.6.1(a)(b)(c)(d)</p>
+  <p class="impact">자료집은 마스터리스트 절차만 안내할 뿐 면제 자체가 제한된다는 점을 다루지 않는다. 2025년 정책에서는 국내 생산이 충분한 물품이면 마스터리스트를 제출해도 면제가 나오지 않을 수 있고, 차관 재원 사업은 애초에 면제 조항이 들어가지 않는다. 기자재 원산지에 따라 세부담이 사업비에 추가로 발생할 수 있다.</p>
+  <p class="act-row"><a href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a> · nepal-oda-project-pipeline-D04</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">12</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">캄보디아</span>
+    <span class="badge plain muted">158-161쪽 · Ⅱ-2. 협력국 조달관련 조직체계 / 재원별 이원 체계·직접조달 한도</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>(자료집 Ⅱ-2가 GDPP·GDICDM 이원 구조와 SOP 2019를 서술하나, 근거를 2012법 체계로 전제하고 신법의 MEF 검사권·강화 벌칙을 다루지 않음)</div>
+  <div class="quote act"><b>수정 제안</b>조직체계 서술에 근거 법령을 &#x27;2023 공공조달법&#x27;으로 갱신하고, MEF 사후검토·부정기 검사권과 강화된 벌칙(개인 징역·법인 벌금)을 추가할 것. GDPP·GDICDM 이원 구조와 SOP 2019 서술은 정확하므로 유지</div>
+  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</p>
+  <p class="impact">자료집의 이원 구조·SOP 2019 서술은 정확하나, 신법이 부여한 MEF 검사권과 강화된 벌칙이 드러나지 않아 조달 위반·감사 리스크를 과소평가할 수 있다.</p>
+  <p class="act-row"><a href="../model/cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계</a> · cambodia-procurement-governance-D01</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">13</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">212-215쪽 · Ⅲ-1. 협력국 입찰 제도 / 탄자니아 입찰 관련 법규 / 보증 비교표</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>(자료집은 입찰 절차를 서술하나 전자조달 시스템 의무화를 다루지 않음)</div>
+  <div class="quote act"><b>수정 제안</b>입찰 진행절차에 &#x27;전 조달은 국가전자조달시스템(NeST)으로 처리 의무화 [PPA 2023]. 사전 시스템 등록 필요&#x27; 추가</div>
+  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> (전자조달 규정) — PPRA 시행 공지</p>
+  <p class="impact">NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다. 자료집이 이를 다루지 않아, 종이 기반 절차를 전제로 준비하면 입찰이 불가능하다.</p>
+  <p class="act-row"><a href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a> · tanzania-bidding-system-D02</p>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge plain muted">14</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">탄자니아</span>
+    <span class="badge plain muted">208-209쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>국별협력 사업 및 다자지원사업의 경우 개별 부처 및 지방정부와 직접적인 사업발굴이 가능하되 탄자니아 재정기획부 측으로부터 최종 원조사업요청 승인 필요</div>
+  <div class="quote act"><b>수정 제안</b>수원체계 서술에서 &#x27;개별 부처 직접 발굴 가능&#x27;과 &#x27;재정기획부 최종 승인 필요&#x27;의 관계를 명확히 할 것 — 승인은 선택이 아니라 사업 공식화의 전제임을 표기 권고</div>
+  <p class="cite">근거 · 자료집 Ⅱ-1 수원체계 (탄자니아 재정기획부 원조사업요청 승인)</p>
+  <p class="impact">&#x27;직접 발굴 가능&#x27;만 보고 개별 부처와 사업을 진전시키면, 재정기획부 승인이 늦어져 사업 공식화(RD 체결)가 지연될 수 있다. 승인이 단서가 아니라 전제라는 점이 드러나야 한다.</p>
+  <p class="act-row"><a href="../model/tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a> · tanzania-oda-project-pipeline-D01</p>
+</div><div class="disc" data-sev="low">
+  <div class="top">
+    <span class="badge plain muted">15</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">11-13쪽 · Ⅲ-1. 협력국 입찰 제도 / 입찰 규정 / 건축 관련 입찰제도</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>제11(a)(b)조, 제13(b)조, 제8(a)(4)조, 제41(a)조~제41(f)조</div>
+  <div class="quote act"><b>수정 제안</b>조문 인용을 원문 체계에 맞춰 §8(1)(a)(4), §11(1)(a)(b), §41(1)(a)~(f)로 표기</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §8, §11, §13, §41</p>
+  <p class="impact">항(Sub-section) 단계가 생략돼 있어 원문에서 해당 조문을 바로 찾기 어렵다. 내용은 모두 일치한다.</p>
+  <p class="act-row"><a href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a> · nepal-bidding-system-D03</p>
+</div><div class="disc" data-sev="low">
+  <div class="top">
+    <span class="badge plain muted">16</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">9쪽 · Ⅱ-2. 협력국 조달관련 조직체계</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>주요 기능 — 공공조달 관련 정책 수립 / 공공조달 관련법 이행 모니터링 / 표준 입찰 양식 수립 / 정부 조달 정보 안내 등</div>
+  <div class="quote act"><b>수정 제안</b>주요 기능에 &#x27;블랙리스트 등재 결정 및 해제기준 수립·해제 [§65(1)(j), §63(6)]&#x27;, &#x27;검토위원회 사무국 및 예산 지원 [§65(3)]&#x27;, &#x27;입찰자·조달담당자 정기 교육 [§65(1)(i)]&#x27; 추가</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(a)~(n), §65(3)</p>
+  <p class="impact">블랙리스트 해제 창구가 PPMO라는 점이 드러나지 않아, 제재를 받은 기업이 구제 경로를 찾지 못할 수 있다.</p>
+  <p class="act-row"><a href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a> · nepal-procurement-governance-D02</p>
+</div><div class="disc" data-sev="low">
+  <div class="top">
+    <span class="badge plain muted">17</span>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">8쪽 · Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="quote src"><b>현재 자료집 서술</b>(자료집에 해당 서술 없음)</div>
+  <div class="quote act"><b>수정 제안</b>진출 유의사항에 &#x27;기술협력 재원으로 차량·장비를 구매하거나 해외 연수·훈련에 참가하려면 재무부 사전 승인 필요 [대외원조동원정책 2025 §3.3.2(j)]&#x27; 추가</div>
+  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(j)</p>
+  <p class="impact">사업 수행기관이 관행적으로 진행하는 수원기관 공무원 초청연수·기자재 공장 실사 출장, 사업용 차량 구매가 재무부 사전 승인 대상이다. 자료집에 없어 일정과 예산 산정에서 누락되기 쉽다.</p>
+  <p class="act-row"><a href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a> · nepal-oda-project-pipeline-D05</p>
+</div>
+  </section>
+  <section class="blk">
+    <h2>전달 상태</h2>
+    <p class="desc">전달 후 각 항목의 <code>upstream.state</code>를 갱신하면 이 표가 따라옵니다.</p>
+    <div class="panel"><table>
+      <thead><tr><th>항목</th><th>우선순위</th><th>상태</th></tr></thead>
+      <tbody><tr>
+        <td class="name" style="font-weight:600">canvas.submittedDocuments[외국인 입찰자].documents
+          <p>네팔 공공조달 입찰제도</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.procedure / 사업 발굴 착수 지점
+          <p>네팔 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis / 근거 정책의 현행 여부
+          <p>네팔 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis / 근거 법령의 현행 여부
+          <p>탄자니아 공공조달 입찰제도</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis / PPRA 근거 법령의 현행 여부
+          <p>탄자니아 조달 거버넌스·감독체계</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.authorities / 입찰공고 주체
+          <p>네팔 조달 거버넌스·감독체계</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.procedure / PCP 작성 주체
+          <p>네팔 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis / 근거 조달법의 현행 여부
+          <p>캄보디아 공공조달 입찰제도</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.applicability / 보증률
+          <p>탄자니아 공공조달 입찰제도</p></td>
+        <td><span class="badge bad">정정 요망</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.bottlenecks / 대리인 위반 시 제재 근거
+          <p>네팔 공공조달 입찰제도</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.bottlenecks / 조세·관세 면제 범위
+          <p>네팔 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
+          <p>캄보디아 조달 거버넌스·감독체계</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.applicability / 전자조달 시스템
+          <p>탄자니아 공공조달 입찰제도</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.procedure / 사업 발굴 착수 지점
+          <p>탄자니아 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.legalBasis.articles
+          <p>네팔 공공조달 입찰제도</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.authorities[PPMO].role
+          <p>네팔 조달 거버넌스·감독체계</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr><tr>
+        <td class="name" style="font-weight:600">canvas.bottlenecks / 누락된 실무 제약
+          <p>네팔 ODA 사업 발굴·형성 절차</p></td>
+        <td><span class="badge warn">보완 권고</span></td>
+        <td><span class="badge plain muted">미제보</span></td>
+      </tr></tbody>
+    </table></div>
+    <p style="margin:18px 0 0;font-size:12.5px;color:var(--muted)">
+      본 정오표는 법령 원문 대조 결과이며, 자료집 발행처의 공식 견해가 아닙니다.
+      전달 여부와 시점은 이 데이터셋 관리자가 판단합니다.
+    </p>
+  </section>
+</div>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+
+</body></html>

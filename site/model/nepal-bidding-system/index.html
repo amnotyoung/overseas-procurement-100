@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네팔 공공조달 입찰제도 | 그 나라 조달은 어떻게 할까</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+    --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+    --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+    --info:#7dd3fc; --info-bg:#10222e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --fg:#e8eaed; --muted:#9aa3af; --line:#272c36; --soft:#161a21;
+  --key:#4ade80; --key-bg:#12261a; --warn:#fbbf24; --warn-bg:#2a2113;
+  --back:#93b4fd; --back-bg:#161d33; --bad:#fca5a5; --bad-bg:#2b1618;
+  --info:#7dd3fc; --info-bg:#10222e;
+}
+:root[data-theme="light"]{
+  --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
+  --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
+  --back:#1d4ed8; --back-bg:#eef2ff; --bad:#b91c1c; --bad-bg:#fdeced;
+  --info:#0369a1; --info-bg:#e8f4fb;
+}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+/* 원문·공식 사이트로 나가는 링크. 화살표로 외부 이동임을 알린다. */
+a.ref{color:var(--info);text-decoration:none;border-bottom:1px solid transparent}
+a.ref:hover{border-bottom-color:currentColor}
+a.ref::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.65;vertical-align:1px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:16px}
+.brand-sub{color:var(--muted);font-size:12.5px}
+header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:13.5px}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
+.asof{color:var(--muted);font-size:12px}
+
+.hero{padding:44px 0 30px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
+h1{font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;margin:14px 0 12px;font-weight:800}
+.lede{font-size:clamp(15px,1.7vw,18px);color:var(--fg);max-width:70ch;margin:0;font-weight:600;letter-spacing:-.01em}
+.lede + .lede{margin-top:4px}
+.meta{color:var(--muted);font-size:13px;margin-top:14px}
+
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+.statbar .wrap{display:flex;gap:16px;align-items:center;padding-block:16px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.stat.ok b{color:var(--key)} .stat.bad b{color:var(--bad)}
+.search{flex:1;min-width:260px;display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.search label{font-size:12px;color:var(--muted);white-space:nowrap;padding-right:10px;border-right:1px solid var(--line)}
+.search input{flex:1;border:0;background:transparent;color:inherit;font:inherit;outline:none}
+.search .count{font-size:12px;color:var(--muted);white-space:nowrap}
+
+.cols{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:26px 0 60px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.side h3{font-size:12px;color:var(--muted);margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+.side button{display:flex;width:100%;align-items:center;gap:9px;background:none;border:0;color:inherit;
+  font:inherit;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left}
+.side button:hover{background:var(--soft)}
+.side button[aria-pressed="true"]{background:var(--key-bg);font-weight:700}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.side .n{margin-left:auto;color:var(--muted);font-size:12.5px}
+.side .grp{margin-bottom:22px}
+
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-hd{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+.panel-hd span{color:var(--muted);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--soft)}
+td.no{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;width:44px}
+td.name a{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+td.name a:hover{text-decoration:underline}
+td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.badge.plain::before{display:none}
+.badge.ok{background:var(--key-bg);color:var(--key)}
+.badge.info{background:var(--info-bg);color:var(--info)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.muted{background:var(--soft);color:var(--muted)}
+
+.subnav{border-bottom:1px solid var(--line);background:var(--soft)}
+.subnav .wrap{display:flex;align-items:center;gap:12px;padding-block:12px;flex-wrap:wrap}
+.subnav label{font-size:12px;color:var(--muted)}
+select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
+  border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn[disabled]{opacity:.4;cursor:default}
+.pos{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.dtl-hd{padding:26px 0 20px}
+.dtl-hd .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dtl-hd h1{font-size:clamp(24px,3.4vw,36px);margin:12px 0 8px}
+.dtl-hd .one{color:var(--muted);font-size:15.5px;max-width:78ch;margin:0}
+.tiles{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.tile{padding:14px 22px;border-right:1px solid var(--line);min-width:104px}
+.tile:last-child{border-right:0}
+.tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.tile span{font-size:11.5px;color:var(--muted)}
+.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+
+section.blk{padding:34px 0;border-top:1px solid var(--line)}
+section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
+section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.hd-row .legend{margin-left:auto}
+
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.board{position:relative;min-width:940px}
+.board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.brow{display:grid;border-bottom:1px solid var(--line)}
+.brow:last-child{border-bottom:0}
+.brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
+/* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
+.bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
+  display:flex;flex-direction:column;gap:26px;justify-content:center}
+.bcell:last-child{border-right:0}
+.brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
+.stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
+.stage-t{font-size:13px;font-weight:700}
+.lane-t{font-size:13px;font-weight:700;color:var(--muted)}
+.node{position:relative;z-index:2;background:var(--bg);border:1px solid var(--line);
+  border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  width:100%;display:block;transition:box-shadow .12s,border-color .12s}
+.node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
+.node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
+.node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
+.node[data-tone="key"] .tag{background:var(--key);color:var(--bg)}
+.node[data-tone="warn"]{border-color:var(--warn);background:var(--warn-bg)}
+.node[data-tone="warn"] .tag{background:var(--warn);color:var(--bg)}
+.node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
+.node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
+.node.dim{opacity:.34}
+
+.drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
+  max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
+.drawer[open]{display:block}
+.drawer::backdrop{background:rgba(0,0,0,.34)}
+.drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
+  border-left:1px solid var(--line);padding:24px;overflow:auto}
+.drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
+.drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px}
+.kv{margin:18px 0 0;font-size:13.5px}
+.kv dt{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:14px}
+.kv dd{margin:3px 0 0}
+.kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
+.card.span2{grid-column:span 2}
+@media (max-width:820px){.card.span2{grid-column:span 1}}
+ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
+ol.steps li{margin-bottom:5px}
+ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+ul.plain li{margin-bottom:6px}
+.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law:last-child{border-bottom:0}
+.law .nm{font-weight:600}
+.law .ar{color:var(--muted);font-size:12.5px}
+.docset{margin-bottom:13px}
+.docset b{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth:last-child{border-bottom:0}
+.auth b{flex:none;max-width:42%;font-size:13px}
+.auth span{color:var(--muted);font-size:12.5px}
+
+.disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
+.disc[data-sev="high"]{border-left-color:var(--bad)}
+.disc[data-sev="medium"]{border-left-color:var(--warn)}
+.disc[data-sev="low"]{border-left-color:var(--muted)}
+.disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
+.disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
+.disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
+.disc .quote.src{border-left:2px solid var(--muted)}
+.disc .quote.act{border-left:2px solid var(--key)}
+.disc .cite{font-size:12px;color:var(--muted);margin:8px 0 0}
+.disc .impact{font-size:13.5px;margin:11px 0 0;line-height:1.7}
+.disc .act-row{font-size:13px;margin:11px 0 0;padding-top:11px;border-top:1px dashed var(--line);color:var(--muted)}
+.review{margin:11px 0 0;border:1px solid var(--info);border-radius:8px;background:var(--info-bg)}
+.review summary{cursor:pointer;padding:9px 13px;font-size:12px;font-weight:700;color:var(--info);list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary::before{content:"▸ ";font-size:10px}
+.review[open] summary::before{content:"▾ "}
+.review .rv{padding:2px 13px 13px}
+.review .rv p{font-size:13px;line-height:1.65;margin:8px 0 0}
+.review .rv-topic{font-weight:700;font-size:13.5px}
+.review .rv-verify{padding:9px 11px;border-radius:6px;background:var(--bg);border:1px dashed var(--info)}
+.fieldcheck{margin:11px 0 0;padding:11px 13px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
+.fieldcheck .fc-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.fieldcheck .fc-find{font-size:13px;line-height:1.7;margin:0}
+.todo{margin:13px 0 0;padding:12px 14px;border-radius:9px;background:var(--key-bg);
+  border:1px solid var(--key);font-size:13.5px;line-height:1.7}
+.todo b{display:block;font-size:11px;color:var(--key);letter-spacing:.03em;margin-bottom:4px}
+.up{margin:11px 0 0;padding:12px 14px;border-radius:9px;background:var(--soft);border:1px solid var(--line)}
+.up .hd{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.up .hd b{font-size:11px;color:var(--muted);letter-spacing:.03em}
+.up .txt{font-size:13px;line-height:1.7;padding:9px 12px;border-radius:7px;background:var(--bg);
+  border:1px dashed var(--line)}
+.up .txt i{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+
+.quotes{display:flex;flex-direction:column;gap:14px}
+.qc{border:1px solid var(--line);border-left:3px solid var(--info);border-radius:9px;padding:15px 17px}
+.qc .qhd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.qc .qart{font-weight:700;font-size:13px}
+.qc .qtext{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;line-height:1.7;
+  background:var(--soft);border-radius:7px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.qc .qgist{font-size:13.5px;line-height:1.7;margin:10px 0 0}
+.qc details{margin:8px 0 0}
+.qc summary{font-size:12px;color:var(--muted);cursor:pointer;list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc summary::before{content:"▸ ";font-size:10px}
+.qc details[open] summary::before{content:"▾ "}
+.qc .qko{font-size:13px;line-height:1.7;color:var(--muted);margin:7px 0 0;padding-left:12px;border-left:1px solid var(--line)}
+.srcs{font-size:13.5px}
+.srcs li{margin-bottom:9px}
+.srcs a{color:var(--info)}
+.srcs .ar{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
+.note::before{content:"·";position:absolute;left:4px}
+
+footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
+footer.site a{color:var(--muted)}
+</style>
+<script>
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t) document.documentElement.setAttribute('data-theme',t);
+  window.__toggleTheme=function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur) cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var nx=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',nx);
+    localStorage.setItem('theme',nx);
+  };
+})();
+</script>
+</head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
+  <span class="brand-sub">협력국 조달제도 안내</span>
+  <nav>
+    <a href="../../index.html">제도 대장</a>
+    <a href="../../verification/index.html">검증 대장</a>
+    <a href="../../errata/index.html">정오표</a>
+    <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
+  </nav>
+</div></header>
+
+
+<div class="subnav"><div class="wrap">
+  <label for="sel">제도 선택</label>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system" selected>01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline">03 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">04 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">05 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">06 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="myanmar-bidding-system">07 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">08 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">09 · 미얀마 ODA 사업형성</option><option value="cambodia-bidding-system">10 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">11 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">12 · 캄보디아 ODA 사업형성</option><option value="tanzania-bidding-system">13 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">14 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">15 · 탄자니아 ODA 사업형성</option></select>
+  <a class="btn" disabled style="text-decoration:none">← 이전</a>
+  <a class="btn" href="../nepal-procurement-governance/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">1/15</span>
+</div></div>
+
+<div class="wrap dtl-hd">
+  <div class="row">
+    <span class="badge plain muted">NO 01</span>
+    <span class="badge plain muted">네팔 · Nepal</span>
+    <span class="badge plain muted">입찰제도</span>
+    <span class="badge ok">조문 대조 완료</span>
+    <span class="badge bad">불일치 3건</span>
+  </div>
+  <h1>네팔 공공조달 입찰제도</h1>
+  <p class="one">공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 PPMO가 표준을 관장하는 조달 체계</p>
+  <div class="tiles">
+    <div class="tile"><b>14</b><span>절차 노드</span></div>
+    <div class="tile"><b>3</b><span>행위 레인</span></div>
+    <div class="tile"><b>5</b><span>게이트</span></div>
+    <div class="tile ok"><b>14</b><span>대조 조문</span></div>
+    <div class="tile bad"><b>3</b><span>불일치 (높음 1)</span></div>
+    <div class="tile warn"><b>7</b><span>현장 검증</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section class="blk">
+  <div class="hd-row">
+    <div>
+      <h2>업무구조도</h2>
+      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--key)"></i>핵심 단계</span>
+      <span><i style="background:var(--warn)"></i>유의</span>
+      <span><i style="background:var(--back)"></i>보완 회귀</span>
+    </div>
+  </div>
+  <div class="boardwrap"><div class="board" id="board">
+    <svg class="edges" id="edges"></svg>
+    <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">사전준비</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">공고</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">입찰</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">개찰·평가</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">낙찰·계약</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">발주 공공기관</span></div><div class="bcell" data-lane="발주 공공기관" data-stage="G0 사전준비"><button class="node" data-id="P01">
+  <span class="id">P01</span>
+  <span class="nm">원가산정 및 조달계획 수립</span></button><button class="node" data-id="P02">
+  <span class="id">P02</span>
+  <span class="nm">조달방식 선택</span></button><button class="node" data-id="P03">
+  <span class="id">P03</span>
+  <span class="nm">사전자격심사 실시 여부 결정</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G1 공고"><button class="node" data-id="P04" data-tone="key">
+  <span class="id">P04<span class="tag">핵심</span></span>
+  <span class="nm">입찰서류 작성·승인 및 공고</span></button><button class="node" data-id="P13" data-tone="warn">
+  <span class="id">P13<span class="tag">유의</span></span>
+  <span class="nm">직접구매(경쟁 예외)</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G2 입찰"><button class="node" data-id="P14">
+  <span class="id">P14</span>
+  <span class="nm">2단계 입찰</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G3 개찰·평가"><button class="node" data-id="P09">
+  <span class="id">P09</span>
+  <span class="nm">개찰 및 심사</span></button><button class="node" data-id="P10">
+  <span class="id">P10</span>
+  <span class="nm">입찰 평가</span></button></div><div class="bcell" data-lane="발주 공공기관" data-stage="G4 낙찰·계약"><button class="node" data-id="P11">
+  <span class="id">P11</span>
+  <span class="nm">낙찰 결정 및 계약 체결</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">입찰자</span></div><div class="bcell" data-lane="입찰자" data-stage="G0 사전준비"></div><div class="bcell" data-lane="입찰자" data-stage="G1 공고"><button class="node" data-id="P05">
+  <span class="id">P05</span>
+  <span class="nm">입찰서류 구매</span></button></div><div class="bcell" data-lane="입찰자" data-stage="G2 입찰"><button class="node" data-id="P06" data-tone="warn">
+  <span class="id">P06<span class="tag">유의</span></span>
+  <span class="nm">현지 대리인 지정 및 명세 신고</span></button><button class="node" data-id="P08">
+  <span class="id">P08</span>
+  <span class="nm">입찰서 제출</span></button></div><div class="bcell" data-lane="입찰자" data-stage="G3 개찰·평가"></div><div class="bcell" data-lane="입찰자" data-stage="G4 낙찰·계약"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">은행·검토위원회</span></div><div class="bcell" data-lane="은행·검토위원회" data-stage="G0 사전준비"></div><div class="bcell" data-lane="은행·검토위원회" data-stage="G1 공고"></div><div class="bcell" data-lane="은행·검토위원회" data-stage="G2 입찰"><button class="node" data-id="P07" data-tone="warn">
+  <span class="id">P07<span class="tag">유의</span></span>
+  <span class="nm">입찰보증 확보</span></button></div><div class="bcell" data-lane="은행·검토위원회" data-stage="G3 개찰·평가"></div><div class="bcell" data-lane="은행·검토위원회" data-stage="G4 낙찰·계약"><button class="node" data-id="P12" data-tone="back">
+  <span class="id">P12<span class="tag">회귀</span></span>
+  <span class="nm">이의신청 및 재심</span></button></div></div>
+  </div></div>
+</section>
+
+<section class="blk">
+  <h2>한 장 캔버스</h2>
+  <p class="desc">공공기관(Public Entity)의 조달을 공개입찰 원칙으로 수행하여, 자격을 갖춘 입찰자에게 차별 없이 동등한 참여 기회를 보장하고 경쟁을 제한하는 분할발주를 금지한다.</p>
+  <div class="cards">
+    <div class="card span2"><h3>절차</h3><ol class="steps"><li>발주기관 원가산정(cost estimate) 및 조달계획 수립 (PPA §5, §6)</li><li>조달방식 선택 — 국제공개입찰·국내공개입찰·견적·직접구매·수요자위원회·직영 중 택일 (PPA §8(1)(a))</li><li>사전자격심사 실시 여부 결정 — 대규모·복잡 공사 또는 고가 물품이면 실시 (PPA §11(1), §12)</li><li>입찰서류 작성·승인 후 입찰공고 (PPA §13, §14)</li><li>입찰서류 판매 — 원가 구간별 법정 수수료 납부 (PPR r.48)</li><li>입찰서 제출 — 입찰금액의 2.5% 이상 입찰보증 동봉 (PPA §21, PPR r.53)</li><li>개찰 및 심사 — 미비 입찰서는 심사 제외 (PPA §22~§24)</li><li>입찰 평가 및 낙찰 결정 (PPA §25, §27)</li><li>계약 체결 — 계약이행보증 제출 후 (PPA §52)</li><li>불복 시 발주기관장 이의신청 → 검토위원회 재심 (PPA §47~§50)</li></ol></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">네팔 정부기관 발주 시 공사비 한도에 따라 계약서 종류와 입찰 범위가 갈린다. Large Contract 5억 네팔루피 초과 = 국제입찰(ICB), Medium Contract 3천만~5억 루피 = 국내입찰(NCB), Small Contract IA 6백만~3천만 루피 = 국내입찰, Small Contract IIA 1백만~6백만 루피 = 국내입찰, Sealed Quotation 15만~1백만 루피 = 국내입찰. 직접구매는 PPA §41(1) 각 호의 6개 사유에 해당할 때만 허용된다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a></span><span class="ar">§8(1)(a), §9, §11, §12, §13, §21, §28, §41, §63</span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a></span><span class="ar">r.39, r.48, r.53, r.54, r.141</span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">PPMO 표준입찰서류(Standard Bidding Documents)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">표준문서</span></div><div class="law"><span class="nm">RBBL Financial Administrative Regulation, 2011</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://ppmo.gov.np/" target="_blank" rel="noopener">공공조달모니터링국(PPMO)</a></b><span>표준 입찰양식 수립, 조달정책 수립, 법 이행 모니터링, 블랙리스트 결정</span></div><div class="auth"><b>발주 공공기관(Public Entity)</b><span>원가산정·입찰공고·개찰·평가·낙찰·계약 체결</span></div><div class="auth"><b>평가위원회(Evaluation Committee)</b><span>입찰서 심사 및 평가 (PPA §71)</span></div><div class="auth"><b>검토위원회(Review Committee)</b><span>발주기관장 결정에 대한 이의 재심 (PPA §48~§50)</span></div><div class="auth"><b>네팔 상업은행</b><span>입찰보증증권 발행. 외국은행 발행분은 네팔 소재 상업은행의 상호보증 필요</span></div></div>
+    <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">발주 공공기관(Public Entity), 국내외 입찰자, 공공조달모니터링국(PPMO), 입찰보증을 발행하는 네팔 상업은행, 외국 입찰자의 현지 대리인(agent), 이의제기를 심사하는 검토위원회(Review Committee)</p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>입찰자(공통)</b><div class="chips"><span class="chip">법인 설립증명서(Certificate of Incorporation)</span><span class="chip">사업자등록번호(VAT 등록증 및 PAN 등록증)</span><span class="chip">납세 완납 증명원(tax clearance certificate)</span><span class="chip">해당 입찰 자격을 갖추었음을 명시한 진술서</span><span class="chip">입찰보증(입찰금액의 2.5% 이상, 현금 또는 상업은행 발행 보증증권)</span><span class="chip">입찰서류 구매 수수료 영수증</span></div></div><div class="docset"><b>외국인 입찰자(현지 대리인 지정 시)</b><div class="chips"><span class="chip">대리인의 이름과 주소</span><span class="chip">대리인 수수료 금액·통화·지급방법</span><span class="chip">대리인과의 그 밖의 계약 조건</span><span class="chip">현지 대리인인 경우: 대리인의 PAN(영구계좌번호) 등록증명서 인증등본 및 대리인 수락서(letter of acceptance)</span></div></div><div class="docset"><b>발주 공공기관</b><div class="chips"><span class="chip">입찰공고문(notice of invitation to bids)</span><span class="chip">입찰서류(PPMO 표준양식, standard bidding documents)</span><span class="chip">사전자격심사서류(prequalification documents)</span><span class="chip">평가보고서(evaluation report)</span><span class="chip">낙찰통지서(letter of acceptance)</span><span class="chip">조달계약서(procurement contract)</span></div></div></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>입찰서 유효기간 내 계약이 체결되지 못하면 발주기관이 전 입찰자에게 연장 요청 공문을 보내야 하고, 연장에 응한 입찰자는 보증기간도 은행에서 다시 연장해 제출해야 한다 (PPR r.53(5)(6))</li><li>외국은행 발행 입찰보증증권은 네팔 소재 상업은행의 상호보증이 있어야 수리된다 — 현지 은행망이 없으면 보증 발급 단계에서 지연 (PPR r.53(4))</li><li>대리인 정보를 누락하거나 신고액보다 많은 수수료를 지급한 사실이 드러나면 발주기관이 블랙리스트 절차에 착수한다 (PPR r.39(3) → r.141)</li><li>블랙리스트 등재 시 최대 3년간 모든 공공기관 조달 참여가 차단된다 (PPA §63(1)(2))</li><li>직접구매 중 §41(1)(b)(e)(f) 사유는 중앙정부 기관의 경우 수석사무차관을 위원장으로 하는 위원회 권고와 내각 결정을 거쳐야 해 소요기간이 길다 (PPA §41(2))</li></ul></div>
+    <div class="card"><h3>진입장벽</h3><ul class="plain"><li>행정절차 지연 및 연방제 시행에 따른 협력 이해관계자 다변화</li><li>환율 변동</li><li>보수적인 비자 발급 운영</li><li>기업 진출 시 현지 파트너 협력이 사실상 필수 요건</li><li>2022년 부패인식지수(CPI) 35점/100점, 180개국 중 108위</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>설계·감리 동시 입찰 관행 및 설계비 공사비 3~5% 산정 기준 — 자료집이 &#x27;일반적으로&#x27;라 서술, 법령 근거 미확인</li><li>지체상금 1일 10만 루피·최대 공사비 10%, 조기착공 보너스 1일 5만 루피 — 표준계약조건(SBD) 원문 대조 필요</li><li>계약이행보증금 계약금액 5%, 설계용역의 유보금 5% 대체, 하자보수책임기간 1년 — PPR 원문 조문 미대조</li><li>선금 통상 10~20% 양자 합의 지급 — 관행 서술로 법령 근거 미확인</li><li>시공사 등급제(예: Class A) 지정 입찰의 근거 규정</li><li>계약서 종류별 공사비 한도액(Large/Medium/Small IA·IIA/Sealed Quotation)의 현행 개정 여부</li><li>자료집의 &#x27;제13(b)조&#x27; 인용 — 원문 §13은 항·호 체계가 달라 정확한 하위 호 특정 필요</li></ul></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a></div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2>법령 원문</h2>
+  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
+    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+  <div class="quotes"><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">§9</a></span>
+    <span class="badge plain muted">Public Procurement Act, 2063 (2007)</span>
+  </div>
+  <div class="qtext">Except as otherwise provided in this Act, a Public Entity making any procurement shall, to the extent possible, make by inviting open bids, and provide equal opportunity to qualified bidders to participate in such procurement process without any discrimination.</div>
+  <p class="qgist">공개입찰이 원칙이며, 자격을 갖춘 입찰자에게 차별 없이 동등한 기회를 준다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">이 법에 달리 정한 경우를 제외하고, 공공기관은 조달 시 가능한 한 공개입찰로 하며 자격을 갖춘 입찰자에게 차별 없이 동등한 참여 기회를 제공한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">§41(1)</a></span>
+    <span class="badge plain muted">Public Procurement Act, 2063 (2007)</span>
+  </div>
+  <div class="qtext">Notwithstanding anything contained elsewhere in this Act, goods or consultancy services or other services may be directly procured or construction work may be caused to be carried out directly in the following conditions:- (a) Low-value procurement valuing up to the prescribed amount, (b) If only one supplier or construction entrepreneur or consultant or service provider has the technical efficiency or capacity to fulfill the procurement requirement, (c) If only one supplier has the exclusive right to supply the goods to be procured and no other appropriate alternative is available, ...</div>
+  <p class="qgist">직접구매(경쟁 예외)는 저가·유일공급자·독점권 등 법정 6개 사유에만 허용된다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">이 법의 다른 규정에도 불구하고, 다음 각 경우에는 물품·컨설팅·기타 용역을 직접 조달하거나 공사를 직접 수행하게 할 수 있다 — (a) 규정 금액 이하의 저가 조달, (b) 요건을 충족할 기술·역량을 갖춘 공급자·시공자·컨설턴트가 단 하나뿐인 경우, (c) 조달 물품의 독점 공급권을 가진 공급자가 단 하나이고 다른 적절한 대안이 없는 경우 등.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">r.39(1)(d)</a></span>
+    <span class="badge plain muted">Public Procurement Rules, 2064 (2007)</span>
+  </div>
+  <div class="qtext">If he/she is a local agent, the attested copy of his/her Permanent Account Number Registration Certificate and a letter of acceptance by him/her to become an agent.</div>
+  <p class="qgist">현지 대리인은 PAN(영구계좌번호) 등록증명서 인증등본과 대리인 수락서를 낸다. 자료집의 &#x27;주민등록 등본&#x27;은 오기다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">현지 대리인인 경우, 그의 영구계좌번호(PAN) 등록증명서 인증등본과 대리인이 되겠다는 수락서.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">r.53(1)</a></span>
+    <span class="badge plain muted">Public Procurement Rules, 2064 (2007)</span>
+  </div>
+  <div class="qtext">A bidder shall have to submit along with a bid, a bid security of at least 2.5 percent of the quoted amount of his/her bid in cash or the bid security issued by a commercial bank equivalent to that amount.</div>
+  <p class="qgist">입찰보증은 입찰금액의 최소 2.5%를 현금 또는 상업은행 발행 보증으로 낸다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">입찰자는 입찰서와 함께 입찰금액의 최소 2.5%에 해당하는 입찰보증을 현금 또는 상업은행이 발행한 보증으로 제출해야 한다.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">r.54</a></span>
+    <span class="badge plain muted">Public Procurement Rules, 2064 (2007)</span>
+  </div>
+  <div class="qtext">(a) For a bid or proposal of consultancy service with cost estimate of up to one hundred million Rupees, - Ninety days (b) For a bid or proposal of a consultancy service with cost estimate whatsoever above one hundred million Rupees - One hundred and twenty days.</div>
+  <p class="qgist">입찰서 유효기간은 원가산정 1억 루피 이하 90일, 초과 120일이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">(a) 원가산정 1억 루피 이하의 입찰 또는 컨설팅 제안 — 90일, (b) 1억 루피 초과 — 120일.</p></details>
+</div><div class="qc">
+  <div class="qhd">
+    <span class="qart"><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">r.141(1)</a></span>
+    <span class="badge plain muted">Public Procurement Rules, 2064 (2007)</span>
+  </div>
+  <div class="qtext">If a Public Entity requires to blacklist a bidder, proponent, consultant, service provider, supplier, construction entrepreneur or other person, firm, organization or company pursuant to Section 63 of the Act, it shall have to request in writing with details of statement and reasons related thereto along with relevant document, to the Public Procurement Monitoring Office.</div>
+  <p class="qgist">자료집의 &#x27;141 조항&#x27;은 법(Act)이 아니라 규칙(Rules) r.141이며, 블랙리스트의 실체 근거는 법 §63이다.</p>
+  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">공공기관이 법 제63조에 따라 입찰자 등을 블랙리스트에 올리려면, 관련 진술·사유와 서류를 갖추어 공공조달모니터링국(PPMO)에 서면으로 요청해야 한다.</p></details>
+</div></div>
+</section>
+
+<section class="blk">
+  <h2>자료집 ↔ 원문 불일치 3건</h2>
+  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
+    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 3건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <div class="disc" data-sev="high">
+  <div class="top">
+    <span class="badge bad">심각도 높음</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D01</span>
+  </div>
+  <h3>canvas.submittedDocuments[외국인 입찰자].documents</h3>
+  <div class="quote src"><b>자료집</b>대리인이 네팔인인 경우, 대리인의 주민등록 등본과 입찰 위임장 제출</div>
+  <div class="quote act"><b>법령 원문</b>If he/she is a local agent, the attested copy of his/her Permanent Account Number Registration Certificate and a letter of acceptance by him/her to become an agent</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(1)(d)</p>
+  <p class="impact">자료집대로 주민등록 등본을 준비하면 법정 요구서류인 PAN(영구계좌번호) 등록증명서 인증등본을 빠뜨리게 된다. PAN은 세무등록번호로 주민등록과 전혀 다른 서류이며, 누락 시 입찰서가 심사에서 제외될 수 있다. 또한 &#x27;입찰 위임장&#x27;은 원문상 &#x27;대리인 수락서(letter of acceptance)&#x27;로, 위임 방향이 반대인 문서다.</p>
+  <div class="todo"><b>실무자가 할 일</b>네팔 입찰에 현지 대리인을 세운다면 대리인의 PAN 등록증명서 인증등본과 대리인 수락서를 준비한다. 주민등록 등본을 준비했다면 요구서류가 아니므로 다시 받아야 한다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Documents required from a foreign bidder&#x27;s local agent</p>
+    <p><b>The guide says</b> — The KOICA guide states that a Nepali (local) agent must submit a resident registration document and a power of attorney.</p>
+    <p><b>The law says</b> — Public Procurement Rules 2064 (2007) r.39(1)(d) requires the attested copy of the agent&#x27;s Permanent Account Number (PAN) Registration Certificate and a letter of acceptance to become an agent.</p>
+    <p><b>Why it matters</b> — PAN is a tax registration number, entirely different from a resident registration. Preparing per the guide omits a mandatory document and the bid may be excluded from evaluation. The &#x27;power of attorney&#x27; is in fact a &#x27;letter of acceptance&#x27; — a different document.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Check the procuring entity&#x27;s standard bidding documents against PPR r.39(1)(d): confirm a local agent must provide a PAN registration certificate and a letter of acceptance, not a resident registration document.</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 제출서류를 &#x27;PAN 등록증명서 인증등본 + 대리인 수락서&#x27;로 교정했다. 실무 준비 시 원문 r.39(1)(d)를 기준으로 삼을 것.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge bad">정정 요망</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>대리인이 네팔인인 경우, 대리인의 PAN(영구계좌번호) 등록증명서 인증등본과 대리인 수락서(letter of acceptance) 제출 [PPR 2007 r.39(1)(d)]</div>
+
+</div>
+</div><div class="disc" data-sev="medium">
+  <div class="top">
+    <span class="badge warn">심각도 보통</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D02</span>
+  </div>
+  <h3>canvas.bottlenecks / 대리인 위반 시 제재 근거</h3>
+  <div class="quote src"><b>자료집</b>141 조항에 따라 해당 입찰자는 블랙리스트에 기재됨</div>
+  <div class="quote act"><b>법령 원문</b>the Public Entity shall carry out proceedings to blacklist such a bidder according to Rule 141 — 여기서 141은 법(Act)이 아니라 규칙(Rules)의 조항이며, 블랙리스트의 실체 근거는 Act §63이다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(3), r.141 / <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §63</p>
+  <p class="impact">자료집이 법령명을 밝히지 않고 &#x27;141 조항&#x27;만 표기했다. 같은 문단이 인용한 다른 조문은 모두 법(Act, 총 76조)이라 독자가 법 제141조를 찾게 되고, 존재하지 않으므로 근거 추적이 막힌다.</p>
+  <div class="todo"><b>실무자가 할 일</b>실무 준비를 바꿀 필요는 없다. 다만 블랙리스트 근거를 확인해야 할 때 법(Act)에서 제141조를 찾지 말고 규칙(Rules) r.141과 법 §63을 본다.</div>
+  <details class="review">
+  <summary>Field verification (English)</summary>
+  <div class="rv">
+    <p class="rv-topic">Legal source cited for blacklisting an agent</p>
+    <p><b>The guide says</b> — The guide says a bidder is blacklisted &#x27;under provision 141&#x27;, without naming the instrument.</p>
+    <p><b>The law says</b> — Rule 141 belongs to the Public Procurement Rules 2064 (2007), not the Act; the substantive basis is Section 63 of the Public Procurement Act 2063 (2007). The Act has only 76 sections, so no Section 141 exists.</p>
+    <p><b>Why it matters</b> — A reader looking for Section 141 of the Act cannot find it and loses the trail. The guide&#x27;s substance is correct — only the source label is incomplete.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — No change to bid preparation. When citing the basis, use PPR r.141 (procedure) together with PPA §63 (substance).</p>
+  </div>
+</details>
+
+  <p class="act-row">이 데이터에 반영 — 출처를 &#x27;PPR 2007 r.141(절차) + PPA 2007 §63(실체 근거)&#x27;로 분리 표기했다. 자료집 서술 내용 자체는 정확하다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>공공조달규칙(Public Procurement Rules, 2064) 제141조에 따라 해당 입찰자는 블랙리스트에 기재됨 (실체 근거: 공공조달법 제63조)</div>
+
+</div>
+</div><div class="disc" data-sev="low">
+  <div class="top">
+    <span class="badge muted">심각도 낮음</span>
+    <span class="badge plain muted">네팔</span>
+    <span class="badge plain muted">D03</span>
+  </div>
+  <h3>canvas.legalBasis.articles</h3>
+  <div class="quote src"><b>자료집</b>제11(a)(b)조, 제13(b)조, 제8(a)(4)조, 제41(a)조~제41(f)조</div>
+  <div class="quote act"><b>법령 원문</b>원문은 Section — Sub-section — clause 3단 체계다. 각각 §11(1)(a)(b), §8(1)(a)(4), §41(1)(a)~(f)에 해당한다.</div>
+  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §8, §11, §13, §41</p>
+  <p class="impact">항(Sub-section) 단계가 생략돼 있어 원문에서 해당 조문을 바로 찾기 어렵다. 내용은 모두 일치한다.</p>
+  <div class="todo"><b>실무자가 할 일</b>원문에서 조문을 찾을 때 항(Sub-section) 단계를 넣어 §41(1)(a) 형태로 본다. 본 사이트의 인용은 이미 교정돼 있다.</div>
+
+
+  <p class="act-row">이 데이터에 반영 — legalBasis와 procedure의 인용을 원문 3단 체계로 교정했다.</p>
+  <div class="up">
+  <div class="hd"><b>자료집 정정 제안</b>
+    <span class="badge warn">보완 권고</span>
+    <span class="badge plain muted">미제보</span>
+  </div>
+  <div class="txt"><i>이렇게 고치면 됩니다</i>조문 인용을 원문 체계에 맞춰 §8(1)(a)(4), §11(1)(a)(b), §41(1)(a)~(f)로 표기</div>
+
+</div>
+</div>
+</section>
+
+<section class="blk">
+  <h2>검증</h2>
+  <p class="desc">자료집 인용 조문을 Public Procurement Act 2063(2007) 및 Public Procurement Rules 2064(2007) 영문 원문 PDF에서 조문 단위로 대조. 조문 제목·문언·수치를 1:1 확인.</p>
+  <div class="cards">
+    <div class="card span2"><h3>검증 범위</h3>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">canvas.legalBasis에 기재한 PPA §8·§9·§11·§12·§21·§28·§41·§63 및 PPR r.39·r.48·r.53·r.54·r.141 전부 조문 존재와 내용 일치를 확인했다. 건축 관련 입찰제도(설계비율·지체상금·보증금·하자담보)의 수치는 표준계약조건 소관으로 미대조 — fieldVerification 참조.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-22 · 자료집 기준일 2025-02-25</p>
+    </div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">The Public Procurement Act, 2063 (2007)</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §8(1)(a), §9, §11(1)(2)(3), §12, §13, §21, §28, §41(1)(2)(3), §63</span><span class="ar">확인 2026-07-22 · Government of Nepal (영문본 사본: NTNC 공개 게시)</span></li><li><a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">The Public Procurement Regulation, 2007</a><span class="badge plain muted" style="margin-left:6px">시행규칙</span><span class="ar">대조 조문 r.39(1)(2)(3), r.48(1)(2), r.53(1)~(8), r.54(a)(b), r.141(1)~(6)</span><span class="ar">확인 2026-07-22 · Government of Nepal (영문본 사본: NTNC 공개 게시)</span></li><li><a class="ref" href="https://ppmo.gov.np/category/acts-regulations" target="_blank" rel="noopener">Public Procurement Monitoring Office 법령 게시 페이지</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-22 · PPMO</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">PPMO 공식 사이트에 &#x27;सार्वजनिक खरिद (दोस्रो संशोधन) अध्यादेश, २०८३&#x27;(공공조달 제2차 개정 조례, BS 2083)가 게시되어 있다. 자료집 기준일(2025-02-25) 이후의 개정으로, 본 레코드의 조문 번호·금액 구간이 변경됐을 수 있다. 실제 입찰 전 현행본 재확인이 필요하다.</p><p class="note">PPA 2007 본문은 총 76개 조로 구성된다. 100번대 조문 인용을 만나면 법(Act)이 아니라 153개 조로 구성된 규칙(Rules)을 가리키는 것이므로 출처를 구분해야 한다.</p></div>
+  </div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>Public Procurement (Second Amendment) Ordinance, 2083 BS <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">PPMO 법령 페이지에 네팔어 제목으로만 게시돼 있고 영문본이 확인되지 않는다. 자료집 기준일 이후 개정이라 본 레코드의 조문 번호·금액 구간에 영향을 줄 수 있다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPMO 법령 페이지에서 개정 조례 원문을 내려받아 §41(직접구매)·§63(블랙리스트) 및 PPR r.48·r.53·r.54 금액 구간의 개정 여부를 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3>PPMO Standard Bidding Documents (표준계약조건) <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">지체상금·조기착공 보너스·계약이행보증·하자담보기간 수치의 근거는 표준입찰서류의 계약조건(GCC)에 있을 것으로 보이나, 자료집이 출처를 밝히지 않았고 해당 문서를 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPMO e-GP 포털에서 공사(Works) 표준입찰서류를 내려받아 GCC 조항과 자료집 수치를 대조한다.</p></div>
+  <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
+    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+  </p>
+</section>
+</div>
+
+<dialog class="drawer" id="dlg"><div class="pane">
+  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <div id="dbody"></div>
+</div></dialog>
+<footer class="site"><div class="wrap">
+  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
+  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+</div></footer>
+<script>
+var NODES={"P01": {"id": "P01", "name": "원가산정 및 조달계획 수립", "lane": "발주 공공기관", "stage": "G0 사전준비", "type": "task", "status": "done", "actor": "발주 공공기관", "output_documents": ["원가산정서(cost estimate)", "조달계획서"], "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§5", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§6", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P02": {"id": "P02", "name": "조달방식 선택", "lane": "발주 공공기관", "stage": "G0 사전준비", "type": "gateway", "status": "done", "actor": "발주 공공기관", "action": "국제공개입찰·국내공개입찰·견적·직접구매·수요자위원회·직영 중 택일. 경쟁을 제한하는 분할발주 금지.", "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§8(1)(a), §8(2)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P03": {"id": "P03", "name": "사전자격심사 실시 여부 결정", "lane": "발주 공공기관", "stage": "G0 사전준비", "type": "gateway", "status": "done", "actor": "발주 공공기관", "action": "PPMO가 수시로 정하는 대규모·복잡 공사 또는 산업플랜트 등 고가 물품이면 사전자격심사를 실시한다.", "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§11(1)(a)(b)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§12", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P04": {"id": "P04", "name": "입찰서류 작성·승인 및 공고", "lane": "발주 공공기관", "stage": "G1 공고", "type": "notice", "status": "current", "actor": "발주 공공기관", "action": "PPMO 표준양식으로 입찰서류를 작성해 승인받고 공고한다. 사전자격심사를 하지 않는 경우 입찰자 자격기준을 입찰서류에 포함해야 한다.", "output_documents": ["입찰공고문", "입찰서류"], "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§13", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§14", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Rules, 2064 (2007)", "article": "r.47", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P05": {"id": "P05", "name": "입찰서류 구매", "lane": "입찰자", "stage": "G1 공고", "type": "task", "status": "waiting", "actor": "입찰자", "action": "원가 구간별 법정 수수료를 납부하고 발주기관장 서명·직인이 있는 입찰서류를 수령한다. 100만~600만 루피 1,000루피, 600만~6,000만 3,000루피, 6,000만~1억 5,000루피, 1억~2.5억 6,000루피, 2.5억 초과 10,000루피.", "output_documents": ["수수료 영수증"], "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Rules, 2064 (2007)", "article": "r.48(1)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P06": {"id": "P06", "name": "현지 대리인 지정 및 명세 신고", "lane": "입찰자", "stage": "G2 입찰", "type": "task", "status": "risk", "actor": "외국인 입찰자", "action": "대리인 이름·주소, 수수료 금액·통화·지급방법, 기타 조건을 명시한다. 현지 대리인이면 PAN 등록증명서 인증등본과 대리인 수락서를 제출한다.", "output_documents": ["대리인 명세서", "PAN 등록증명서 인증등본", "대리인 수락서"], "blocker": "명세 누락 또는 신고액 초과 수수료 지급이 사후 확인되면 발주기관이 블랙리스트 절차에 착수한다 (r.39(3) → r.141)", "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Rules, 2064 (2007)", "article": "r.39(1)(2)(3)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P07": {"id": "P07", "name": "입찰보증 확보", "lane": "은행·검토위원회", "stage": "G2 입찰", "type": "task", "status": "risk", "actor": "네팔 상업은행", "action": "입찰금액의 2.5% 이상을 현금 또는 상업은행 발행 보증증권으로 확보한다. 보증 유효기간은 입찰서 유효기간보다 최소 30일 길어야 한다.", "output_documents": ["입찰보증증권"], "deadline": "입찰서 유효기간 + 30일 이상", "blocker": "외국은행 발행분은 네팔 소재 상업은행의 상호보증이 필요해 현지 은행망이 없으면 발급이 지연된다", "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§21(1)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Rules, 2064 (2007)", "article": "r.53(1)(2)(4)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P08": {"id": "P08", "name": "입찰서 제출", "lane": "입찰자", "stage": "G2 입찰", "type": "task", "status": "waiting", "actor": "입찰자", "action": "입찰서 유효기간은 원가산정 1억 루피 이하 90일, 초과 120일이다. 서류는 네팔어 또는 영어로 준비한다.", "output_documents": ["입찰서", "자격 진술서", "VAT·PAN 등록증", "납세 완납 증명원"], "deadline": "공고상 제출 마감일시", "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§18, §20", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Rules, 2064 (2007)", "article": "r.54(a)(b)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P09": {"id": "P09", "name": "개찰 및 심사", "lane": "발주 공공기관", "stage": "G3 개찰·평가", "type": "task", "status": "waiting", "actor": "발주 공공기관", "action": "마감 직후 공고된 시간·장소에서 개찰한다. 법정 미비사항이 있는 입찰서는 심사에서 제외된다.", "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§22", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§23, §24", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P10": {"id": "P10", "name": "입찰 평가", "lane": "발주 공공기관", "stage": "G3 개찰·평가", "type": "task", "status": "waiting", "actor": "평가위원회", "output_documents": ["평가보고서"], "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§25", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§71", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P11": {"id": "P11", "name": "낙찰 결정 및 계약 체결", "lane": "발주 공공기관", "stage": "G4 낙찰·계약", "type": "gateway", "status": "waiting", "actor": "발주 공공기관", "action": "입찰서 유효기간 내에 계약을 체결해야 한다. 계약 체결 후 3일 내에 몰수 대상이 아닌 입찰보증을 반환한다.", "output_documents": ["낙찰통지서", "조달계약서"], "deadline": "입찰서 유효기간 내", "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§27, §52", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Rules, 2064 (2007)", "article": "r.53(5)(8)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf"}]}, "P12": {"id": "P12", "name": "이의신청 및 재심", "lane": "은행·검토위원회", "stage": "G4 낙찰·계약", "type": "task", "status": "loop", "actor": "검토위원회", "action": "입찰자는 발주기관장에게 이의를 신청할 수 있고, 결과에 불복하면 검토위원회에 재심을 신청한다. 재심 통지를 받으면 조달절차는 중지된다.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§47, §48, §49, §50", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§51", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P13": {"id": "P13", "name": "직접구매(경쟁 예외)", "lane": "발주 공공기관", "stage": "G1 공고", "type": "gateway", "status": "risk", "actor": "발주 공공기관", "action": "저가조달, 유일 기술보유자, 독점공급권, 기존 공급자로부터의 전용품 추가조달, 최초계약 미포함 필수공사, 즉시 필요한 특정 컨설턴트 — 6개 사유에만 허용된다. 단일 공급자에게 서면으로 견적·제안을 요청하고 협상할 수 있다.", "blocker": "(b)(e)(f) 사유는 중앙정부 기관의 경우 수석사무차관 위원장 위원회의 권고와 내각 결정을 거쳐야 한다", "confidence": 0.95, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§41(1)(a)~(f)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§41(2), §41(3)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}, "P14": {"id": "P14", "name": "2단계 입찰", "lane": "발주 공공기관", "stage": "G2 입찰", "type": "gateway", "status": "waiting", "actor": "발주 공공기관", "action": "법정 요건에 해당하면 공개입찰을 2단계로 진행할 수 있다.", "confidence": 0.9, "legal_basis": [{"law": "Public Procurement Act, 2063 (2007)", "article": "§28(1)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}, {"law": "Public Procurement Act, 2063 (2007)", "article": "§11(2)(3)", "url": "https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf"}]}};
+var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "sequence"}, {"id": "E03", "source": "P02", "target": "P13", "type": "sequence", "label": "경쟁 예외 사유 해당"}, {"id": "E04", "source": "P03", "target": "P04", "type": "sequence"}, {"id": "E05", "source": "P04", "target": "P05", "type": "message", "label": "공고 게시"}, {"id": "E06", "source": "P05", "target": "P08", "type": "sequence"}, {"id": "E07", "source": "P06", "target": "P08", "type": "message", "label": "대리인 명세 첨부"}, {"id": "E08", "source": "P07", "target": "P08", "type": "message", "label": "보증증권 첨부"}, {"id": "E09", "source": "P04", "target": "P14", "type": "sequence", "label": "§28 요건 해당"}, {"id": "E10", "source": "P14", "target": "P08", "type": "sequence"}, {"id": "E11", "source": "P08", "target": "P09", "type": "sequence"}, {"id": "E12", "source": "P09", "target": "P10", "type": "sequence"}, {"id": "E13", "source": "P10", "target": "P11", "type": "sequence"}, {"id": "E14", "source": "P11", "target": "P12", "type": "message", "label": "불복 이의신청"}, {"id": "E15", "source": "P12", "target": "P10", "type": "loop", "label": "재심 결과 반영·절차 중지"}, {"id": "E16", "source": "P13", "target": "P11", "type": "sequence", "label": "협상 후 계약"}];
+
+var _sel=document.getElementById('sel');
+if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+
+/* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
+function draw(){
+  var board=document.getElementById('board'),svg=document.getElementById('edges');
+  if(!board||!svg)return;
+  var bb=board.getBoundingClientRect();
+  svg.setAttribute('viewBox','0 0 '+board.scrollWidth+' '+board.scrollHeight);
+  svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
+  var cs=getComputedStyle(document.documentElement);
+  var C={sequence:cs.getPropertyValue('--muted').trim(),
+         message:cs.getPropertyValue('--back').trim(),
+         loop:cs.getPropertyValue('--warn').trim()};
+  var d='<defs>';
+  ['sequence','message','loop'].forEach(function(t){
+    d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
+      +'<path d="M0 0 L8 4 L0 8 z" fill="'+C[t]+'"/></marker>';
+  });
+  d+='</defs>';
+  var GAP=5;
+  function rel(rc){return {x:rc.left-bb.left+board.scrollLeft, y:rc.top-bb.top+board.scrollTop,
+                            r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
+                            w:rc.width, h:rc.height};}
+  function box(id){
+    var el=board.querySelector('.node[data-id="'+id+'"]');
+    if(!el)return null; return rel(el.getBoundingClientRect());
+  }
+
+  /* 라우팅은 korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
+     핵심: 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로 우회한다.
+     DOM에서 노드·행·열을 실측할 수 있어, 여러 직교 경로 후보를 만들고
+     무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다. */
+
+  // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
+  var OB=[];
+  board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  var rowGut=[], colGut=[];
+  board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
+    rowGut.push(r.y+9); rowGut.push(r.b-9); });
+  var hc=board.querySelectorAll('.brow.head .bcell');
+  for(var i=1;i<hc.length;i++){ var r=rel(hc[i].getBoundingClientRect()); colGut.push(r.x+11); colGut.push(r.r-11); }
+
+  function segHit(ax,ay,bx,by,e1,e2){
+    var n=0, M=3;
+    for(var i=0;i<OB.length;i++){ var o=OB[i]; if(o.id===e1||o.id===e2) continue;
+      var L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+      if(Math.abs(ay-by)<0.5){ if(ay>T&&ay<B && Math.max(ax,bx)>L && Math.min(ax,bx)<R) n++; }
+      else { if(ax>L&&ax<R && Math.max(ay,by)>T && Math.min(ay,by)<B) n++; }
+    } return n;
+  }
+  function uniq(pts){ return pts.filter(function(p,i){ return i===0 || Math.abs(p.x-pts[i-1].x)>0.5 || Math.abs(p.y-pts[i-1].y)>0.5; }); }
+  function score(pts,e1,e2){ pts=uniq(pts); var p=0,l=0;
+    for(var i=0;i<pts.length-1;i++){ p+=segHit(pts[i].x,pts[i].y,pts[i+1].x,pts[i+1].y,e1,e2);
+      l+=Math.abs(pts[i].x-pts[i+1].x)+Math.abs(pts[i].y-pts[i+1].y); }
+    return {pts:pts,p:p,l:l}; }
+
+  function route(a,b,ed){
+    var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
+    var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
+    cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
+    rowGut.forEach(function(my){ if(my>Math.min(sp.y,tp.y)+6&&my<Math.max(sp.y,tp.y)-6)   // 행 거터 크로스
+      cs.push(score([sp,{x:sp.x,y:my},{x:tp.x,y:my},tg,tp],e1,e2)); });
+    colGut.forEach(function(gx){                                                          // 열 측면 탈출
+      var as={x:gx>acx?a.r:a.x,y:acy};
+      cs.push(score([as,{x:gx,y:acy},{x:gx,y:tg.y},tg,tp],e1,e2)); });
+    // 가로 계열 — a의 좌/우 변에서 나가 b의 좌/우 변으로
+    var right=bcx>acx, sp2={x:right?a.r:a.x,y:acy}, tp2={x:right?b.x:b.r,y:bcy}, tg2={x:tp2.x+(right?-GAP:GAP),y:tp2.y};
+    cs.push(score([sp2,{x:tg2.x,y:sp2.y},tg2,tp2],e1,e2));
+    colGut.forEach(function(mx){ if(mx>Math.min(sp2.x,tp2.x)+6&&mx<Math.max(sp2.x,tp2.x)-6)
+      cs.push(score([sp2,{x:mx,y:sp2.y},{x:mx,y:tp2.y},tg2,tp2],e1,e2)); });
+    rowGut.forEach(function(gy){                                                          // 행 거터 우회
+      var as={x:acx,y:gy>acy?a.b:a.y};
+      cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
+    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
+    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
+      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
+    cs=cs.filter(function(c){return c.pts.length>=2;});
+    cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
+    return cs[0];
+  }
+
+  function rnd(v){return Math.round(v*10)/10;}
+  function orthPath(pts){                    // 직교 경로 + 모서리 라운딩
+    pts=uniq(pts); if(pts.length<2)return '';
+    var d='M'+rnd(pts[0].x)+' '+rnd(pts[0].y);
+    for(var i=1;i<pts.length-1;i++){
+      var p=pts[i-1],c=pts[i],n=pts[i+1];
+      var d1=Math.hypot(c.x-p.x,c.y-p.y)||1, d2=Math.hypot(n.x-c.x,n.y-c.y)||1, r=Math.min(7,d1/2,d2/2);
+      d+=' L'+rnd(c.x-(c.x-p.x)/d1*r)+' '+rnd(c.y-(c.y-p.y)/d1*r);
+      d+=' Q'+rnd(c.x)+' '+rnd(c.y)+' '+rnd(c.x+(n.x-c.x)/d2*r)+' '+rnd(c.y+(n.y-c.y)/d2*r);
+    }
+    var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
+  }
+
+  EDGES.forEach(function(ed){
+    var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
+    var t=ed.type||'sequence', rt=route(a,b,ed);
+    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+      +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
+      +' marker-end="url(#m-'+t+')"/>';
+  });
+  svg.innerHTML=d;
+}
+
+var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
+function openNode(id){
+  var n=NODES[id]; if(!n)return;
+  var h='<span class="badge plain muted">'+n.id+'</span> '
+       +'<span class="badge plain muted">'+n.lane+'</span> '
+       +'<span class="badge plain muted">'+n.stage+'</span>';
+  h+='<h3>'+n.name+'</h3>';
+  h+='<dl class="kv">';
+  h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
+  if(n.output_documents&&n.output_documents.length)
+    h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
+  if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
+  if(n.legal_basis&&n.legal_basis.length){
+    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+      var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
+      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+  }
+  if(typeof n.confidence==='number'){
+    h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
+      +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
+  }
+  var ins=EDGES.filter(function(x){return x.target===id}),
+      outs=EDGES.filter(function(x){return x.source===id});
+  if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
+    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
+    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+  h+='</dl>';
+  document.getElementById('dbody').innerHTML=h;
+  document.getElementById('dlg').showModal();
+}
+
+document.querySelectorAll('.node').forEach(function(b){
+  b.addEventListener('click',function(){openNode(b.dataset.id)});
+  b.addEventListener('mouseenter',function(){
+    var id=b.dataset.id;
+    var rel={};rel[id]=1;
+    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
+  });
+  b.addEventListener('mouseleave',function(){
+    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
+  });
+});
+document.getElementById('dlg').addEventListener('click',function(ev){
+  if(ev.target===this) this.close();
+});
+
+addEventListener('load',draw); addEventListener('resize',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body></html>
