@@ -1,0 +1,40 @@
+name: Notify dependency consumers
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target:
+          - amnotyoung/country-report-skill
+    steps:
+      - name: Dispatch immutable source commit
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.DEPENDENCY_DISPATCH_TOKEN }}
+          script: |
+            const [owner, repo] = '${{ matrix.target }}'.split('/');
+            const run = context.payload.workflow_run;
+            await github.rest.repos.createDispatchEvent({
+              owner,
+              repo,
+              event_type: 'dependency-updated',
+              client_payload: {
+                source_repo: run.head_repository.full_name,
+                source_sha: run.head_sha,
+                source_ref: run.head_branch,
+                change_type: 'procurement-model-contract'
+              }
+            });
