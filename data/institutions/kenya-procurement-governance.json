@@ -117,17 +117,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·의회·조달규제기관 공식 법령과 조직 페이지에서 현행 법령명, 기관 권한, 전자조달 및 대외재원 조정체계를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관 역할과 공개된 제도변경을 확인했다. 정량요건·모든 예외·개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "Kenya Law의 PPADA Cap.412C와 Legal Notice 69/2020 현행 통합본에서 National Treasury, PPRA, PPARB, 발주기관 권한과 방식·금액·기한·보증·이의·예외를 조문별로 대조했다.",
+    "scope": "PPADA ss.7~44의 정책·규제·심사·집행 분장과 ss.53~175의 핵심 절차, Regulations의 위원회·기준금액·보증·행정심사 조항 및 제2별표를 확인했다.",
     "notes": [
-      "공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다."
+      "National Treasury는 정책, PPRA는 규제·감독, PPARB는 행정심사, 회계책임자와 발주기관은 집행을 담당한다.",
+      "Legal Notice 180/2025는 규정 대체가 아닌 개별 debarment 공고이므로 2020 규정 통합본이 현행 일반 하위규정이다.",
+      "e-GPS 전환은 법정 기관분장을 변경하지 않고 전자 공고·집행 채널을 변경한다."
     ],
     "sources": [
       {
@@ -141,24 +142,93 @@
         "law": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
         "kind": "act",
         "publisher": "Public Procurement Regulatory Authority",
-        "officialUrl": "https://ppra.go.ke/ppda/",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "ss.1~44, 53~64, 73~114, 134~158, 167~175, 182; 특히 ss.7~10, 27~29, 44, 61, 91~108, 142~145, 167~175"
       },
       {
         "law": "Public Procurement and Asset Disposal Regulations 2020",
         "kind": "regulation",
         "publisher": "Public Procurement Regulatory Authority",
-        "officialUrl": "https://ppra.go.ke/standard-tender-documents/",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "rr.1~46, 74, 82~93, 135, 155, 164~165, 203~210; Second Schedule"
       },
       {
         "law": "PPRA Circular 02/2025 — transition to the Electronic Government Procurement System",
         "kind": "directive",
         "publisher": "Public Procurement Regulatory Authority",
         "officialUrl": "https://ppra.go.ke/ppra-circular-02-2025/",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "e-GPS 전환·등록·공고 채널에 관한 PPRA Circular 02/2025 본문"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement and Asset Disposal Act, Cap.412C",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Commenced 2016-01-07; latest consolidated version 2022-12-31 includes Act No.32 of 2022",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+          "finding": "Kenya Law marks this as the latest version and incorporates the 2022 amendments defining the current institutional and review framework."
+        },
+        {
+          "instrument": "Public Procurement and Asset Disposal Regulations, Legal Notice 69 of 2020",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Commenced 2020-04-30; consolidated version 2022-12-31",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31",
+          "finding": "The consolidated regulations remain operative; Legal Notice 180/2025 merely notifies one debarment under the 2020 Regulations."
+        },
+        {
+          "instrument": "Public Procurement and Disposal Act, 2005",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed by PPADA 2015 s.182",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+          "finding": "Section 182 repeals the former statute subject to its transitional savings."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Act ss.91~108; Regulations rr.26, 89~93 and Second Schedule",
+          "finding": "RFQ ceilings are KES 3m goods, KES 5m works and KES 3m services; low-value ceilings are KES 50,000 goods/services and KES 100,000 works. Restricted tender under s.102(1)(b) is capped at KES 30m goods/works and KES 20m services; direct procurement has no monetary ceiling when statutory conditions are met.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Act ss.80, 94, 97, 125, 135, 167, 171; Regulations rr.83, 86~89, 203~205",
+          "finding": "Open national/county and international tenders have a seven-day minimum; prequalification allows 14 days, tender evaluation at most 30 days, and proposal evaluation at most 21 days. Contract signature waits 14 days; review filing and decision windows are 14 and 21 days.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Act s.61; Regulations rr.45~46, 155",
+          "finding": "Tender security, where required, is an absolute amount capped at 2% and must use an authorized form. Reserved SME and disadvantaged-group tenders use the statutory securing declaration instead.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Act ss.142~145; Regulations r.135",
+          "finding": "Performance security is capped at 10% and applies above KES 5m for goods, works and non-consultancy services. Consultant professional-indemnity coverage substitutes for it, and disadvantaged-group security is capped at 1%.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Act ss.27~29, 167~175; Regulations rr.203~210",
+          "finding": "PPARB receives review requests within 14 days, normally with a 15% refundable deposit or KES 200,000 when the tender sum is indeterminable, and must decide within 21 days. High Court review follows within 14 days.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Act ss.6, 61(5), 63, 90, 103, 142(3), 167(4); Regulations rr.84, 90, 135, 155",
+          "finding": "Treaty obligations prevail on conflict; classified procurement uses an approved dual list; direct procurement requires statutory grounds and approval. Reserved procurement and specified contracts receive security exceptions, while method choice, lawful termination and signed contracts are outside PPARB review.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -186,15 +256,7 @@
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [

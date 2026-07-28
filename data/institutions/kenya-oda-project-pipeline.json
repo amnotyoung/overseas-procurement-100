@@ -96,17 +96,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·의회·조달규제기관 공식 법령과 조직 페이지에서 현행 법령명, 기관 권한, 전자조달 및 대외재원 조정체계를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관 역할과 공개된 제도변경을 확인했다. 정량요건·모든 예외·개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "Legal Notice 54/2022 공공투자관리규정 33개 조문과 9개 별표를 대조해 사업발굴·PCN·사전타당성·타당성·예산·개발파트너 금융협정·PIMIS 관문을 확인하고, PPADA 및 2020 조달규정의 정량요건도 함께 검증했다.",
+    "scope": "PIM Regulations rr.1~33과 Second~Fourth·Ninth Schedules, PPADA ss.6, 61, 91~108, 135, 142~145, 167~175 및 Procurement Regulations의 제2별표를 확인했다.",
     "notes": [
-      "공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다."
+      "모든 재원방식의 사업은 PCN이 필요하고, 5억 KES 초과 중·대·메가사업은 사전타당성 및 타당성조사가 의무다.",
+      "개발파트너 금융협정은 승인되어 PIMIS 사업파이프라인에 올라간 사업에만 체결할 수 있다.",
+      "국가정부는 FY2023/24, 지방정부는 FY2024/25까지 규정 전면 시행기한이 도래했으므로 과도기 미결사항은 해소됐다."
     ],
     "sources": [
       {
@@ -114,7 +115,8 @@
         "kind": "donor-rule",
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "PFM Act 대외차입·무상원조 근거와 External Resources Estimates Handbook의 ODA 재원·예산 반영 설명"
       },
       {
         "law": "Public Finance Management Act and Kenya External Resources Policy framework",
@@ -128,9 +130,92 @@
         "kind": "directive",
         "publisher": "The National Treasury",
         "officialUrl": "https://www.treasury.go.ke/index.php/resource-mobilization",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "외부차입·무상원조·보증·개발파트너 임무 조정 및 자원동원부 기능"
+      },
+      {
+        "law": "Public Finance Management (Public Investment Management) Regulations, 2022, Legal Notice 54",
+        "kind": "regulation",
+        "publisher": "Kenya Law / The National Treasury",
+        "officialUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/54/eng%402022-04-01",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "rr.1~33 전체; 특히 rr.2, 5, 9~21, 27~30, 33 및 Second~Fourth·Ninth Schedules"
+      },
+      {
+        "law": "Public Procurement and Asset Disposal Act, Cap.412C and Regulations, Legal Notice 69 of 2020",
+        "kind": "act",
+        "publisher": "Kenya Law",
+        "officialUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Act ss.6, 61, 91~108, 135, 142~145, 167~175; Regulations rr.26, 45~46, 83~93, 135, 203~210 and Second Schedule"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Finance Management (Public Investment Management) Regulations, 2022, Legal Notice 54",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Commenced 2022-04-01; full implementation deadlines FY2023/24 national and FY2024/25 county",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/54/eng%402022-04-01",
+          "finding": "Kenya Law lists the 33-regulation instrument as current; Ninth Schedule transition deadlines have elapsed and Treasury operates PIMIS under it."
+        },
+        {
+          "instrument": "Public Procurement and Asset Disposal Act, Cap.412C",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Commenced 2016-01-07; latest consolidated version 2022-12-31",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+          "finding": "The current procurement statute applies when approved public-investment projects enter procurement, subject to treaty conflict under s.6."
+        },
+        {
+          "instrument": "Public Procurement and Disposal Act, 2005",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed by PPADA 2015 s.182",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31",
+          "finding": "The prior procurement statute is expressly repealed and is not the basis for new ODA procurement."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PIM Regulations rr.2, 18~20; Procurement Regulations Second Schedule",
+          "finding": "Small projects are at or below KES 500m and normally need only a PCN; medium projects exceed KES 500m to 1bn, large exceed KES 1bn to 5bn, and mega exceed KES 5bn, all requiring pre-feasibility and feasibility studies. Procurement RFQ ceilings are KES 3m goods/services and KES 5m works.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/54/eng%402022-04-01"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PIM Regulations rr.16, 18~21, 33 and Ninth Schedule; PPADA ss.135, 167, 171",
+          "finding": "Project Committee and Treasury concurrence steps are generally due within 30 days; projects must be pipelined by 30 June of the preceding financial year. Procurement contracts wait 14 days after award notice, review is filed within 14 days and decided within 21 days.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/54/eng%402022-04-01"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPADA s.61; Procurement Regulations rr.45~46, 155",
+          "finding": "Tender security, where required after project approval, is an absolute amount capped at 2%. Reserved SME and disadvantaged-group procurements use a Tender Securing Declaration rather than a security.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPADA ss.142~145; Procurement Regulations r.135",
+          "finding": "Performance security is capped at 10% and required above KES 5m for goods, works and non-consultancy services; consultant professional indemnity substitutes and disadvantaged-group security is capped at 1%.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPADA ss.167~175; Procurement Regulations rr.203~210",
+          "finding": "A procurement review is filed with PPARB within 14 days, normally with a 15% refundable tender-sum deposit or KES 200,000 if indeterminable; PPARB decides within 21 days and High Court review is sought within 14 days.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PIM Regulations rr.5, 21(6), 24, 30; PPADA ss.6, 90, 103, 167(4)",
+          "finding": "Classified security projects are excluded unless expressly included or directed; exceptional PIM exemption requires Treasury approval. Development-partner financing agreements require an approved pipelined project, treaty terms prevail on procurement conflict, and direct procurement remains limited to statutory grounds.",
+          "evidenceUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/54/eng%402022-04-01"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "medium",
@@ -153,15 +238,7 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
