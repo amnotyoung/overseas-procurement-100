@@ -8,7 +8,7 @@ entity. Each item below records a current legal basis used in the output. Your j
 
 - As of: 2026-07-29
 - Countries: Azerbaijan, Bangladesh, Bolivia, Cambodia, Cameroon, Colombia, Côte d'Ivoire, Democratic Republic of the Congo, Dominican Republic, Ecuador, Egypt, El Salvador, Ethiopia, Fiji, Ghana, Guatemala, Indonesia, Jordan, Kenya, Kyrgyzstan, Lao People's Democratic Republic, Mongolia, Morocco, Mozambique, Myanmar, Nepal, Nigeria, Pakistan, Palestine, Paraguay, Peru, Philippines, Republic of Korea (KOICA), Rwanda, Senegal, Sri Lanka, Tajikistan, Tanzania, Thailand, Timor-Leste, Tunisia, Uganda, Ukraine, Uzbekistan, Viet Nam
-- Items needing field check: **161** (HIGH 125) · returned by office: **0/161**
+- Items needing field check: **164** (HIGH 128) · returned by office: **0/164**
 
 HIGH = verify first because the point can affect bid eligibility, documents, or procedure.
 
@@ -1945,6 +1945,23 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ### 110. [HIGH] Current legal basis check
 
+- Institution: Thailand — Bidding system
+- Legal basis: Act Arts.7, 55~56, 62, 66, 114~119; Regulation cls.28~32, 51~54, 166~170
+- KOICA guide: p.129-147
+
+**Current legal basis** — Act Arts.55~56, 66, 114~119와 Regulation cls.28~32, 51, 166~170이 현행 방식·기간·보증·불복을 정하고 Act Art.7이 협정상 다른 조달규칙을 우선시한다.
+
+**✔ Verify** — Check the live e-GP notice, current CGD circulars, financing agreement and project coordination record.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
+### 111. [HIGH] Current legal basis check
+
 - Institution: Thailand — ODA project pipeline
 - Legal basis: TICA official mandate and ODA institutional overview
 - KOICA guide: p.129-147
@@ -1960,9 +1977,43 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
+### 112. [HIGH] Current legal basis check
+
+- Institution: Thailand — ODA project pipeline
+- Legal basis: TICA Mandate items 1~8 and ODA Overview; Procurement Act Art.7(4)~(5)
+- KOICA guide: p.129-147
+
+**Current legal basis** — TICA는 국제개발협력 조정·집행 및 태국에 대한 외국 ODA 지출을 담당할 수 있지만, 공식 ODA 개요는 기관의 직접 기술협력 요청도 허용한다. Act Art.7은 원조협정이 다른 조달규칙을 정하면 그 규칙을 적용한다.
+
+**✔ Verify** — Check the live e-GP notice, current CGD circulars, financing agreement and project coordination record.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
+### 113. [HIGH] Current legal basis check
+
+- Institution: Thailand — Procurement governance
+- Legal basis: Act Arts.24~45, 66, 114~119; Regulation No.3 (2026) cls.1~6 and 180~181
+- KOICA guide: p.129-147
+
+**Current legal basis** — 발주기관이 7영업일 내 1차 판단하고 불인정 사건은 항소심사위원회가 30일(15일씩 최대 2회 연장) 내 심사한다. 2026년 제3차 개정은 건설업자 성과평가 체계를 교체했다.
+
+**✔ Verify** — Check the live e-GP notice, current CGD circulars, financing agreement and project coordination record.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
 ## Timor-Leste
 
-### 111. [HIGH] Current legal basis check
+### 114. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Bidding system
 - Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
@@ -1979,7 +2030,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 112. [HIGH] Current legal basis check
+### 115. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — ODA project pipeline
 - Legal basis: Ministry of Finance Aid Transparency Portal mandate
@@ -1996,7 +2047,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 113. [HIGH] Current legal basis check
+### 116. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Procurement governance
 - Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
@@ -2015,7 +2066,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Tunisia
 
-### 114. [HIGH] Current legal basis check
+### 117. [HIGH] Current legal basis check
 
 - Institution: Tunisia — ODA project pipeline
 - Legal basis: Ministry of Economy and Planning bilateral cooperation; Ministry of Finance DGGDPCF mandate
@@ -2034,7 +2085,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Uganda
 
-### 115. [HIGH] Current legal basis check
+### 118. [HIGH] Current legal basis check
 
 - Institution: Uganda — Bidding system
 - Legal basis: PPDA Act Cap.205; PPDA official legal-update notice
@@ -2051,7 +2102,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 116. [HIGH] Current legal basis check
+### 119. [HIGH] Current legal basis check
 
 - Institution: Uganda — Procurement governance
 - Legal basis: PPDA Act Cap.205; PPDA official legal-update notice
@@ -2070,7 +2121,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Ukraine
 
-### 117. [HIGH] Current legal basis check
+### 120. [HIGH] Current legal basis check
 
 - Institution: Ukraine — Bidding system
 - Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
@@ -2087,7 +2138,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 118. [HIGH] Current legal basis check
+### 121. [HIGH] Current legal basis check
 
 - Institution: Ukraine — ODA project pipeline
 - Legal basis: Cabinet Resolution 153/2002, current revision and official translation
@@ -2104,7 +2155,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 119. [HIGH] Current legal basis check
+### 122. [HIGH] Current legal basis check
 
 - Institution: Ukraine — Procurement governance
 - Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
@@ -2123,7 +2174,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Uzbekistan
 
-### 120. [HIGH] Current legal basis check
+### 123. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — Bidding system
 - Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
@@ -2140,7 +2191,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 121. [HIGH] Current legal basis check
+### 124. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — ODA project pipeline
 - Legal basis: MIIT official mandate; Law ZRU-684 art.2
@@ -2157,7 +2208,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 122. [HIGH] Current legal basis check
+### 125. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — Procurement governance
 - Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
@@ -2176,7 +2227,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Viet Nam
 
-### 123. [HIGH] Current legal basis check
+### 126. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Bidding system
 - Legal basis: Law 22/2023/QH15; Decree 24/2024; Ministry of Finance functions and 2025 bidding regulations
@@ -2193,7 +2244,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 124. [HIGH] Current legal basis check
+### 127. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — ODA project pipeline
 - Legal basis: Decrees 114/2021, 20/2023, 29/2025 and 166/2025; Directive 27/CT-TTg (2026)
@@ -2210,7 +2261,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 125. [HIGH] Current legal basis check
+### 128. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Procurement governance
 - Legal basis: Law 22/2023/QH15; Decree 24/2024; Ministry of Finance functions and 2025 bidding regulations
@@ -2229,7 +2280,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Azerbaijan
 
-### 126. [MEDIUM] Current legal basis check
+### 129. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — Bidding system
 - Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
@@ -2246,7 +2297,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 127. [MEDIUM] Current legal basis check
+### 130. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — ODA project pipeline
 - Legal basis: Ministry of Economy, Decree No. 388; Grant agreements registration page
@@ -2263,7 +2314,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 128. [MEDIUM] Current legal basis check
+### 131. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — Procurement governance
 - Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
@@ -2282,7 +2333,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Bangladesh
 
-### 129. [MEDIUM] Current legal basis check
+### 132. [MEDIUM] Current legal basis check
 
 - Institution: Bangladesh — ODA project pipeline
 - Legal basis: ERD Allocation of Business; Planning Commission Handbook for DPP
@@ -2301,7 +2352,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Bolivia
 
-### 130. [MEDIUM] Current legal basis check
+### 133. [MEDIUM] Current legal basis check
 
 - Institution: Bolivia — Bidding system
 - Legal basis: MEFP, DS 0181 compiled text; SICOES official portal
@@ -2318,7 +2369,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 131. [MEDIUM] Current legal basis check
+### 134. [MEDIUM] Current legal basis check
 
 - Institution: Bolivia — Procurement governance
 - Legal basis: MEFP, DS 0181 compiled text; SICOES official portal
@@ -2337,7 +2388,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Cambodia
 
-### 132. [MEDIUM] Current legal basis check
+### 135. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — Bidding system
 - Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page
@@ -2354,7 +2405,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 133. [MEDIUM] Current legal basis check
+### 136. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — ODA project pipeline
 - Legal basis: CDC ODA Database; MEF public-investment framework
@@ -2371,7 +2422,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 134. [MEDIUM] Current legal basis check
+### 137. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — Procurement governance
 - Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department
@@ -2390,7 +2441,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Cameroon
 
-### 135. [MEDIUM] Current legal basis check
+### 138. [MEDIUM] Current legal basis check
 
 - Institution: Cameroon — Bidding system
 - Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal
@@ -2407,7 +2458,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 136. [MEDIUM] Current legal basis check
+### 139. [MEDIUM] Current legal basis check
 
 - Institution: Cameroon — Procurement governance
 - Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal
@@ -2426,7 +2477,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Ethiopia
 
-### 137. [MEDIUM] Current legal basis check
+### 140. [MEDIUM] Current legal basis check
 
 - Institution: Ethiopia — ODA project pipeline
 - Legal basis: Ministry of Finance bilateral and IFI cooperation directorate mandates
@@ -2445,7 +2496,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Fiji
 
-### 138. [MEDIUM] Current legal basis check
+### 141. [MEDIUM] Current legal basis check
 
 - Institution: Fiji — ODA project pipeline
 - Legal basis: Ministry of Finance core responsibilities
@@ -2464,7 +2515,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Ghana
 
-### 139. [MEDIUM] Current legal basis check
+### 142. [MEDIUM] Current legal basis check
 
 - Institution: Ghana — ODA project pipeline
 - Legal basis: MoF ERM overview and functions; PFM Act 921; Constitution art.181
@@ -2483,7 +2534,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Indonesia
 
-### 140. [MEDIUM] Current legal basis check
+### 143. [MEDIUM] Current legal basis check
 
 - Institution: Indonesia — ODA project pipeline
 - Legal basis: Bappenas Regulation 2/2025 arts.273–274
@@ -2502,7 +2553,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Kenya
 
-### 141. [MEDIUM] Current legal basis check
+### 144. [MEDIUM] Current legal basis check
 
 - Institution: Kenya — ODA project pipeline
 - Legal basis: National Treasury Resource Mobilization mandate; External Resources Estimates Handbook
@@ -2521,7 +2572,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Kyrgyzstan
 
-### 142. [MEDIUM] Current legal basis check
+### 145. [MEDIUM] Current legal basis check
 
 - Institution: Kyrgyzstan — ODA project pipeline
 - Legal basis: Cabinet and Ministry of Finance official mandates
@@ -2540,7 +2591,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Lao People's Democratic Republic
 
-### 143. [MEDIUM] Current legal basis check
+### 146. [MEDIUM] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — ODA project pipeline
 - Legal basis: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials
@@ -2559,7 +2610,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Morocco
 
-### 144. [MEDIUM] Current legal basis check
+### 147. [MEDIUM] Current legal basis check
 
 - Institution: Morocco — ODA project pipeline
 - Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
@@ -2578,7 +2629,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Nepal
 
-### 145. [MEDIUM] Current legal basis check
+### 148. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — Bidding system
 - Legal basis: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63
@@ -2595,7 +2646,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 146. [MEDIUM] Current legal basis check
+### 149. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — ODA project pipeline
 - Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a)
@@ -2612,7 +2663,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 147. [MEDIUM] Current legal basis check
+### 150. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — ODA project pipeline
 - Legal basis: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d)
@@ -2629,7 +2680,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 148. [MEDIUM] Current legal basis check
+### 151. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — Procurement governance
 - Legal basis: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2)
@@ -2648,7 +2699,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Pakistan
 
-### 149. [MEDIUM] Current legal basis check
+### 152. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — Bidding system
 - Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
@@ -2665,7 +2716,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 150. [MEDIUM] Current legal basis check
+### 153. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — ODA project pipeline
 - Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
@@ -2682,7 +2733,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 151. [MEDIUM] Current legal basis check
+### 154. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — Procurement governance
 - Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
@@ -2701,7 +2752,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Paraguay
 
-### 152. [MEDIUM] Current legal basis check
+### 155. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — Bidding system
 - Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
@@ -2718,7 +2769,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 153. [MEDIUM] Current legal basis check
+### 156. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — ODA project pipeline
 - Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
@@ -2735,7 +2786,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 154. [MEDIUM] Current legal basis check
+### 157. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — Procurement governance
 - Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
@@ -2754,7 +2805,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Tanzania
 
-### 155. [MEDIUM] Current legal basis check
+### 158. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
@@ -2771,7 +2822,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 156. [MEDIUM] Current legal basis check
+### 159. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
@@ -2790,7 +2841,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Thailand
 
-### 157. [MEDIUM] Current legal basis check
+### 160. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Bidding system
 - Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
@@ -2807,7 +2858,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 158. [MEDIUM] Current legal basis check
+### 161. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Procurement governance
 - Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
@@ -2826,7 +2877,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Tunisia
 
-### 159. [MEDIUM] Current legal basis check
+### 162. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Bidding system
 - Legal basis: Decrees 2014-1039 and 2013-5096; 2018 TUNEPS manual
@@ -2843,7 +2894,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 160. [MEDIUM] Current legal basis check
+### 163. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Procurement governance
 - Legal basis: Decrees 2014-1039 and 2013-5096; 2018 TUNEPS manual
@@ -2862,7 +2913,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Uganda
 
-### 161. [MEDIUM] Current legal basis check
+### 164. [MEDIUM] Current legal basis check
 
 - Institution: Uganda — ODA project pipeline
 - Legal basis: MoFPED DARC mandate; Development Policy and Performance Portal
