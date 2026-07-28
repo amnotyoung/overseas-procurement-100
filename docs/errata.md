@@ -5,6 +5,8 @@
 외부 공식 자료로 확인해 산출물에 반영한 현행 기준과 출처를 모았다.
 각 항목은 `현행 기준 → 확인 출처 → 산출물 반영` 순으로 정리한다.
 
+- 대상: Circular Ref. 59780/S.2/B/532
+- 대상: Finance Act 2020
 - 대상: KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)
 - 대상: KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)
 - 대상: KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)
@@ -14,8 +16,9 @@
 - 대상: Myanmar National Portal — Tender
 - 대상: Office of the State Administration Council Directive No. 1/2022 (unofficial English translation)
 - 대상: President’s Office Directive No. 1/2017 (unofficial English translation)
+- 대상: Public Procurement Act 2007, Official Gazette No.65
 - 작성 기준일: 2026-07-29
-- 결과: **공식 출처 연결 116건**
+- 결과: **공식 출처 연결 117건**
 
 > 이 문서는 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아니다.
 > 대조에 쓴 원문은 각 항목의 근거 링크와 `sources/laws/`에서 확인할 수 있다.
@@ -158,41 +161,58 @@
 
 ---
 
-## 09. canvas.authorities·legalBasis / 현행 기관·법령
+## 09. 현행법·기준금액·공고기한·보증·불복·예외
 
-**필수 확인** · 나이지리아 · 기준자료 31-41쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
+**필수 확인** · 나이지리아 · 기준자료 A203~A249쪽 (ss.2, 5~6, 15~26, 35~43, 54 and 60)
 
 **현행 기준**
 
-> Public Procurement Act 2007은 NCPP·BPP·조달기관의 역할을 구분한다. No Objection은 BPP의 기준금액 이상 사전인증 기능이고 NOCOPO는 정보포털이다.
+> Finance Act 2020은 PPA 적용범위·공개경쟁·공고·선급금·이행보증을 2021-01-01부터 개정했고, 2025-05-27 공문은 NNPC 특별기준 외 종전 운영기준을 대체해 ₦1bn/₦5bn 경쟁입찰 기준과 NCB 91일·ICB 107일·컨설팅 128일 및 14일 정지기간을 시행했다.
 
 **산출물 반영**
 
-> 기능·법령의 기관 오인을 제거하고 NCPP·BPP·조달기관·NOCOPO 역할을 분리했다.
+> 2020년 대체조문과 2025년 현행 공문을 우선 적용하고 2022년 금액기준을 superseded로 표시했으며 6개 요구영역을 조문별로 확정했다.
 
-**근거** — Public Procurement Act 2007 arts.1–6, 17–22; BPP functions
+**근거** — Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
 
 
 ---
 
-## 10. canvas.authorities·legalBasis / 현행 기관·법령
+## 10. 현행법·기준금액·공고기한·보증·불복·예외
 
-**필수 확인** · 나이지리아 · 기준자료 31-41쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
+**필수 확인** · 나이지리아 · 기준자료 A203~A249쪽 (ss.2, 5~6, 15~26, 35~43, 54 and 60)
 
 **현행 기준**
 
-> Public Procurement Act 2007은 NCPP·BPP·조달기관의 역할을 구분한다. No Objection은 BPP의 기준금액 이상 사전인증 기능이고 NOCOPO는 정보포털이다.
+> Finance Act 2020은 PPA 적용범위·공개경쟁·공고·선급금·이행보증을 2021-01-01부터 개정했고, 2025-05-27 공문은 NNPC 특별기준 외 종전 운영기준을 대체해 ₦1bn/₦5bn 경쟁입찰 기준과 NCB 91일·ICB 107일·컨설팅 128일 및 14일 정지기간을 시행했다.
 
 **산출물 반영**
 
-> 기능·법령의 기관 오인을 제거하고 NCPP·BPP·조달기관·NOCOPO 역할을 분리했다.
+> 2020년 대체조문과 2025년 현행 공문을 우선 적용하고 2022년 금액기준을 superseded로 표시했으며 6개 요구영역을 조문별로 확정했다.
 
-**근거** — Public Procurement Act 2007 arts.1–6, 17–22; BPP functions
+**근거** — Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
 
 
 ---
 
-## 11. canvas.submittedDocuments[외국인 입찰자].documents
+## 11. 현행법·기준금액·공고기한·보증·불복·예외
+
+**필수 확인** · 나이지리아 · 기준자료 A203~A249쪽 (ss.2, 5~6, 15~26, 35~43, 54 and 60)
+
+**현행 기준**
+
+> Finance Act 2020은 PPA 적용범위·공개경쟁·공고·선급금·이행보증을 2021-01-01부터 개정했고, 2025-05-27 공문은 NNPC 특별기준 외 종전 운영기준을 대체해 ₦1bn/₦5bn 경쟁입찰 기준과 NCB 91일·ICB 107일·컨설팅 128일 및 14일 정지기간을 시행했다.
+
+**산출물 반영**
+
+> 2020년 대체조문과 2025년 현행 공문을 우선 적용하고 2022년 금액기준을 superseded로 표시했으며 6개 요구영역을 조문별로 확정했다.
+
+**근거** — Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+
+
+---
+
+## 12. canvas.submittedDocuments[외국인 입찰자].documents
 
 **필수 확인** · 네팔 · 기준자료 11-13쪽 (Ⅲ-2. 협력국 입찰 제도 / 입찰 규정 / 수원국 인허가 제도)
 
@@ -209,7 +229,7 @@
 
 ---
 
-## 12. canvas.procedure / 사업 발굴 착수 지점
+## 13. canvas.procedure / 사업 발굴 착수 지점
 
 **필수 확인** · 네팔 · 기준자료 8쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -226,7 +246,7 @@
 
 ---
 
-## 13. canvas.legalBasis·procedure / 2026년 법체계 전환
+## 14. canvas.legalBasis·procedure / 2026년 법체계 전환
 
 **필수 확인** · 도미니카공화국 · 기준자료 19-39쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -243,7 +263,7 @@
 
 ---
 
-## 14. canvas.legalBasis·procedure / 2026년 법체계 전환
+## 15. canvas.legalBasis·procedure / 2026년 법체계 전환
 
 **필수 확인** · 도미니카공화국 · 기준자료 19-39쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -260,7 +280,7 @@
 
 ---
 
-## 15. canvas.authorities / 무상협력 총괄기관
+## 16. canvas.authorities / 무상협력 총괄기관
 
 **필수 확인** · 도미니카공화국 · 기준자료 19-39쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -277,7 +297,7 @@
 
 ---
 
-## 16. canvas.authorities·legalBasis / 현행 기관·법령
+## 17. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 동티모르 · 기준자료 21-29쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -294,7 +314,7 @@
 
 ---
 
-## 17. canvas.authorities·legalBasis / 현행 기관·법령
+## 18. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 동티모르 · 기준자료 21-29쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -311,7 +331,7 @@
 
 ---
 
-## 18. canvas.authorities·legalBasis / 현행 기관·법령
+## 19. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 동티모르 · 기준자료 21-29쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -328,7 +348,7 @@
 
 ---
 
-## 19. canvas.authorities·legalBasis / 현행 기관·법령
+## 20. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 라오스 · 기준자료 31-45쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -345,7 +365,7 @@
 
 ---
 
-## 20. canvas.authorities·legalBasis / 현행 기관·법령
+## 21. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 라오스 · 기준자료 31-45쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -362,7 +382,7 @@
 
 ---
 
-## 21. canvas.authorities·legalBasis / 현행 기관·법령
+## 22. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 르완다 · 기준자료 43-57쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -379,7 +399,7 @@
 
 ---
 
-## 22. canvas.authorities·legalBasis / 현행 기관·법령
+## 23. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 르완다 · 기준자료 43-57쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -396,7 +416,7 @@
 
 ---
 
-## 23. canvas.authorities·legalBasis / 현행 기관·법령
+## 24. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 르완다 · 기준자료 43-57쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -413,7 +433,7 @@
 
 ---
 
-## 24. canvas.authorities·legalBasis / 현행 기관·법령
+## 25. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 모로코 · 기준자료 59-71쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -430,7 +450,7 @@
 
 ---
 
-## 25. canvas.authorities·legalBasis / 현행 기관·법령
+## 26. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 모로코 · 기준자료 59-71쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -447,7 +467,7 @@
 
 ---
 
-## 26. canvas.legalBasis·procedure / 현행법·정량요건
+## 27. canvas.legalBasis·procedure / 현행법·정량요건
 
 **필수 확인** · 모잠비크 · 기준자료 73-83쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -464,7 +484,7 @@
 
 ---
 
-## 27. canvas.legalBasis·procedure / 현행법·정량요건
+## 28. canvas.legalBasis·procedure / 현행법·정량요건
 
 **필수 확인** · 모잠비크 · 기준자료 73-83쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -481,7 +501,7 @@
 
 ---
 
-## 28. canvas.legalBasis·procedure / 현행법·정량요건
+## 29. canvas.legalBasis·procedure / 현행법·정량요건
 
 **필수 확인** · 모잠비크 · 기준자료 73-83쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -498,7 +518,7 @@
 
 ---
 
-## 29. canvas.legalBasis·procedure / 현행 조달법·정량절차
+## 30. canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 **필수 확인** · 몽골 · 기준자료 5-23쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -515,7 +535,7 @@
 
 ---
 
-## 30. canvas.legalBasis·procedure / 현행 조달법·정량절차
+## 31. canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 **필수 확인** · 몽골 · 기준자료 5-23쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -532,7 +552,7 @@
 
 ---
 
-## 31. canvas.legalBasis·procedure / 현행 조달법·정량절차
+## 32. canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 **필수 확인** · 몽골 · 기준자료 5-23쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -549,7 +569,7 @@
 
 ---
 
-## 32. verification / 공식 원문·현행성·정량요건
+## 33. verification / 공식 원문·현행성·정량요건
 
 **필수 확인** · 미얀마 · 기준자료 1-8쪽 (¶¶1-16, 25-28 — 조달방식·금액구간·공고·우선적용)
 
@@ -566,7 +586,7 @@
 
 ---
 
-## 33. verification / 공식 원문·현행성·정량요건
+## 34. verification / 공식 원문·현행성·정량요건
 
 **필수 확인** · 미얀마 · 기준자료 2-8쪽 (¶¶2(l), 3-10, 14-16, 25-28 — 입찰위원회·상위승인·계약관리·우선적용)
 
@@ -583,7 +603,7 @@
 
 ---
 
-## 34. verification / 공식 원문·현행성·정량요건
+## 35. verification / 공식 원문·현행성·정량요건
 
 **필수 확인** · 미얀마 · 기준자료 웹페이지쪽 (FERD functions, Asia and America Division, Development Management and Coordination Division, Legal Section)
 
@@ -600,7 +620,7 @@
 
 ---
 
-## 35. verification / 현행 조달규칙 및 canvas.authorities
+## 36. verification / 현행 조달규칙 및 canvas.authorities
 
 **필수 확인** · 방글라데시 · 기준자료 47-59쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -617,7 +637,7 @@
 
 ---
 
-## 36. verification / 현행 조달규칙 및 canvas.authorities
+## 37. verification / 현행 조달규칙 및 canvas.authorities
 
 **필수 확인** · 방글라데시 · 기준자료 47-59쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -634,7 +654,7 @@
 
 ---
 
-## 37. canvas.authorities·legalBasis / 현행 기관·법령
+## 38. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 베트남 · 기준자료 61-79쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -651,7 +671,7 @@
 
 ---
 
-## 38. canvas.authorities·legalBasis / 현행 기관·법령
+## 39. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 베트남 · 기준자료 61-79쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -668,7 +688,7 @@
 
 ---
 
-## 39. canvas.authorities·legalBasis / 현행 기관·법령
+## 40. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 베트남 · 기준자료 61-79쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -685,7 +705,7 @@
 
 ---
 
-## 40. canvas.authorities / 수원총괄기관 및 process
+## 41. canvas.authorities / 수원총괄기관 및 process
 
 **필수 확인** · 볼리비아 · 기준자료 41-55쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -702,7 +722,7 @@
 
 ---
 
-## 41. canvas.authorities·legalBasis / 현행 기관·법령
+## 42. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 세네갈 · 기준자료 85-93쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -719,7 +739,7 @@
 
 ---
 
-## 42. canvas.authorities·legalBasis / 현행 기관·법령
+## 43. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 세네갈 · 기준자료 85-93쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -736,7 +756,7 @@
 
 ---
 
-## 43. canvas.authorities·legalBasis / 현행 기관·법령
+## 44. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 세네갈 · 기준자료 85-93쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -753,7 +773,7 @@
 
 ---
 
-## 44. canvas.authorities·legalBasis / 현행 기관·법령
+## 45. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 스리랑카 · 기준자료 81-91쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -770,7 +790,7 @@
 
 ---
 
-## 45. canvas.authorities·legalBasis / 현행 기관·법령
+## 46. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 스리랑카 · 기준자료 81-91쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -787,7 +807,7 @@
 
 ---
 
-## 46. canvas.authorities·legalBasis / 현행 기관·법령
+## 47. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 스리랑카 · 기준자료 81-91쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -804,7 +824,7 @@
 
 ---
 
-## 47. canvas.authorities·legalBasis / 현행 기관·법령
+## 48. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 에콰도르 · 기준자료 57-69쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -821,7 +841,7 @@
 
 ---
 
-## 48. canvas.authorities·legalBasis / 현행 기관·법령
+## 49. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 에콰도르 · 기준자료 57-69쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -838,7 +858,7 @@
 
 ---
 
-## 49. canvas.authorities·legalBasis / 현행 기관·법령
+## 50. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 에콰도르 · 기준자료 57-69쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -855,7 +875,7 @@
 
 ---
 
-## 50. canvas.authorities·legalBasis / 현행 기관·법령
+## 51. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 에티오피아 · 기준자료 95-115쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -872,7 +892,7 @@
 
 ---
 
-## 51. canvas.authorities·legalBasis / 현행 기관·법령
+## 52. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 에티오피아 · 기준자료 95-115쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -889,7 +909,7 @@
 
 ---
 
-## 52. canvas.authorities·legalBasis / 현행 기관·법령
+## 53. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 엘살바도르 · 기준자료 71-79쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -906,7 +926,7 @@
 
 ---
 
-## 53. canvas.authorities·legalBasis / 현행 기관·법령
+## 54. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 엘살바도르 · 기준자료 71-79쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -923,7 +943,7 @@
 
 ---
 
-## 54. canvas.authorities·legalBasis / 현행 기관·법령
+## 55. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 엘살바도르 · 기준자료 71-79쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -940,7 +960,7 @@
 
 ---
 
-## 55. canvas.authorities·legalBasis / 현행 기관·법령
+## 56. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 요르단 · 기준자료 41-55쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -957,7 +977,7 @@
 
 ---
 
-## 56. canvas.authorities·legalBasis / 현행 기관·법령
+## 57. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 요르단 · 기준자료 41-55쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -974,7 +994,7 @@
 
 ---
 
-## 57. canvas.authorities·legalBasis / 현행 기관·법령
+## 58. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 요르단 · 기준자료 41-55쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -991,7 +1011,7 @@
 
 ---
 
-## 58. canvas.authorities·legalBasis / 현행 기관·법령
+## 59. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우간다 · 기준자료 117-131쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1008,7 +1028,7 @@
 
 ---
 
-## 59. canvas.authorities·legalBasis / 현행 기관·법령
+## 60. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우간다 · 기준자료 117-131쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1025,7 +1045,7 @@
 
 ---
 
-## 60. canvas.authorities·legalBasis / 현행 기관·법령
+## 61. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우즈베키스탄 · 기준자료 57-71쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1042,7 +1062,7 @@
 
 ---
 
-## 61. canvas.authorities·legalBasis / 현행 기관·법령
+## 62. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우즈베키스탄 · 기준자료 57-71쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1059,7 +1079,7 @@
 
 ---
 
-## 62. canvas.authorities·legalBasis / 현행 기관·법령
+## 63. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우즈베키스탄 · 기준자료 57-71쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1076,7 +1096,7 @@
 
 ---
 
-## 63. canvas.authorities·legalBasis / 현행 기관·법령
+## 64. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우크라이나 · 기준자료 73-83쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1093,7 +1113,7 @@
 
 ---
 
-## 64. canvas.authorities·legalBasis / 현행 기관·법령
+## 65. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우크라이나 · 기준자료 73-83쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1110,7 +1130,7 @@
 
 ---
 
-## 65. canvas.authorities·legalBasis / 현행 기관·법령
+## 66. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 우크라이나 · 기준자료 73-83쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1127,7 +1147,7 @@
 
 ---
 
-## 66. canvas.authorities·legalBasis / 현행 기관·법령
+## 67. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 이집트 · 기준자료 133-147쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1144,7 +1164,7 @@
 
 ---
 
-## 67. canvas.authorities·legalBasis / 현행 기관·법령
+## 68. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 이집트 · 기준자료 133-147쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1161,7 +1181,7 @@
 
 ---
 
-## 68. canvas.authorities·legalBasis / 현행 기관·법령
+## 69. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 이집트 · 기준자료 133-147쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1178,7 +1198,7 @@
 
 ---
 
-## 69. canvas.authorities·legalBasis / 현행 기관·법령
+## 70. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 인도네시아 · 기준자료 93-107쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1195,7 +1215,7 @@
 
 ---
 
-## 70. canvas.authorities·legalBasis / 현행 기관·법령
+## 71. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 인도네시아 · 기준자료 93-107쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1212,7 +1232,7 @@
 
 ---
 
-## 71. process / 외부재원 사업 조정기관
+## 72. process / 외부재원 사업 조정기관
 
 **필수 확인** · 카메룬 · 기준자료 149-159쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1229,7 +1249,7 @@
 
 ---
 
-## 72. canvas.authorities·legalBasis / 현행 기관·법령
+## 73. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 케냐 · 기준자료 161-173쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1246,7 +1266,7 @@
 
 ---
 
-## 73. canvas.authorities·legalBasis / 현행 기관·법령
+## 74. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 케냐 · 기준자료 161-173쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1263,7 +1283,7 @@
 
 ---
 
-## 74. canvas.authorities·legalBasis / 조달기관과 법령
+## 75. canvas.authorities·legalBasis / 조달기관과 법령
 
 **필수 확인** · 코트디부아르 · 기준자료 175-185쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1280,7 +1300,7 @@
 
 ---
 
-## 75. canvas.authorities·legalBasis / 조달기관과 법령
+## 76. canvas.authorities·legalBasis / 조달기관과 법령
 
 **필수 확인** · 코트디부아르 · 기준자료 175-185쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1297,7 +1317,7 @@
 
 ---
 
-## 76. canvas.authorities / 개발협력 조정기관
+## 77. canvas.authorities / 개발협력 조정기관
 
 **필수 확인** · 코트디부아르 · 기준자료 175-185쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1314,7 +1334,7 @@
 
 ---
 
-## 77. canvas.legalBasis·authorities / 현행 조달법·기관
+## 78. canvas.legalBasis·authorities / 현행 조달법·기관
 
 **필수 확인** · 콜롬비아 · 기준자료 81-97쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1331,7 +1351,7 @@
 
 ---
 
-## 78. canvas.legalBasis·authorities / 현행 조달법·기관
+## 79. canvas.legalBasis·authorities / 현행 조달법·기관
 
 **필수 확인** · 콜롬비아 · 기준자료 81-97쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1348,7 +1368,7 @@
 
 ---
 
-## 79. canvas.authorities / 국제협력 총괄기관
+## 80. canvas.authorities / 국제협력 총괄기관
 
 **필수 확인** · 콜롬비아 · 기준자료 81-97쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1365,7 +1385,7 @@
 
 ---
 
-## 80. canvas.authorities·legalBasis / 현행 기관·법령
+## 81. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 키르기스스탄 · 기준자료 85-97쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1382,7 +1402,7 @@
 
 ---
 
-## 81. canvas.authorities·legalBasis / 현행 기관·법령
+## 82. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 키르기스스탄 · 기준자료 85-97쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1399,7 +1419,7 @@
 
 ---
 
-## 82. canvas.authorities·legalBasis / 현행 기관·법령
+## 83. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 타지키스탄 · 기준자료 99-117쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1416,7 +1436,7 @@
 
 ---
 
-## 83. canvas.authorities·legalBasis / 현행 기관·법령
+## 84. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 타지키스탄 · 기준자료 99-117쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1433,7 +1453,7 @@
 
 ---
 
-## 84. canvas.authorities·legalBasis / 현행 기관·법령
+## 85. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 타지키스탄 · 기준자료 99-117쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1450,7 +1470,7 @@
 
 ---
 
-## 85. canvas.legalBasis / 근거 법령의 현행 여부
+## 86. canvas.legalBasis / 근거 법령의 현행 여부
 
 **필수 확인** · 탄자니아 · 기준자료 193-194쪽 (Ⅲ-2. 탄자니아 입찰 관련 법규)
 
@@ -1467,7 +1487,7 @@
 
 ---
 
-## 86. canvas.legalBasis / PPRA 근거 법령의 현행 여부
+## 87. canvas.legalBasis / PPRA 근거 법령의 현행 여부
 
 **필수 확인** · 탄자니아 · 기준자료 192쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1484,7 +1504,7 @@
 
 ---
 
-## 87. canvas.authorities·legalBasis / 현행 기관·법령
+## 88. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 탄자니아 · 기준자료 190-191쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -1501,7 +1521,7 @@
 
 ---
 
-## 88. canvas.authorities·legalBasis / 현행 기관·법령
+## 89. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 태국 · 기준자료 129-147쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1518,7 +1538,7 @@
 
 ---
 
-## 89. canvas.authorities·legalBasis / 현행 기관·법령
+## 90. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 튀니지 · 기준자료 205-213쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1535,7 +1555,7 @@
 
 ---
 
-## 90. canvas.authorities·legalBasis / 현행 기관·법령
+## 91. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 파라과이 · 기준자료 99-113쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1552,7 +1572,7 @@
 
 ---
 
-## 91. canvas.authorities·legalBasis / 현행 기관·법령
+## 92. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 파라과이 · 기준자료 99-113쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1569,7 +1589,7 @@
 
 ---
 
-## 92. canvas.authorities·legalBasis / 현행 기관·법령
+## 93. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 파라과이 · 기준자료 99-113쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1586,7 +1606,7 @@
 
 ---
 
-## 93. canvas.authorities·legalBasis / 현행 기관·법령
+## 94. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1603,7 +1623,7 @@
 
 ---
 
-## 94. canvas.authorities·legalBasis / 현행 기관·법령
+## 95. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1620,7 +1640,7 @@
 
 ---
 
-## 95. canvas.authorities·legalBasis / 현행 기관·법령
+## 96. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1637,7 +1657,7 @@
 
 ---
 
-## 96. canvas.authorities·legalBasis / 현행 기관·법령
+## 97. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1654,7 +1674,7 @@
 
 ---
 
-## 97. canvas.authorities·legalBasis / 현행 기관·법령
+## 98. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1671,7 +1691,7 @@
 
 ---
 
-## 98. canvas.authorities·legalBasis / 현행 기관·법령
+## 99. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1688,7 +1708,7 @@
 
 ---
 
-## 99. canvas.authorities·legalBasis / 현행 기관·법령
+## 100. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1705,7 +1725,7 @@
 
 ---
 
-## 100. canvas.authorities·legalBasis / 현행 기관·법령
+## 101. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1722,7 +1742,7 @@
 
 ---
 
-## 101. canvas.authorities·legalBasis / 현행 기관·법령
+## 102. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 피지 · 기준자료 165-175쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1739,7 +1759,7 @@
 
 ---
 
-## 102. canvas.authorities·legalBasis / 현행 기관·법령
+## 103. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 피지 · 기준자료 165-175쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1756,7 +1776,7 @@
 
 ---
 
-## 103. canvas.authorities·legalBasis / 현행 기관·법령
+## 104. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1773,7 +1793,7 @@
 
 ---
 
-## 104. canvas.authorities·legalBasis / 현행 기관·법령
+## 105. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1790,7 +1810,7 @@
 
 ---
 
-## 105. canvas.authorities·legalBasis / 현행 기관·법령
+## 106. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1807,7 +1827,7 @@
 
 ---
 
-## 106. canvas.authorities / 입찰공고 주체
+## 107. canvas.authorities / 입찰공고 주체
 
 **추가 확인** · 네팔 · 기준자료 10쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1824,7 +1844,7 @@
 
 ---
 
-## 107. canvas.procedure / PCP 작성 주체
+## 108. canvas.procedure / PCP 작성 주체
 
 **추가 확인** · 네팔 · 기준자료 8쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -1841,7 +1861,7 @@
 
 ---
 
-## 108. canvas.legalBasis / 근거 조달법의 현행 여부
+## 109. canvas.legalBasis / 근거 조달법의 현행 여부
 
 **추가 확인** · 캄보디아 · 기준자료 117쪽 (Ⅲ-2. 캄보디아 입찰 제도)
 
@@ -1858,7 +1878,7 @@
 
 ---
 
-## 109. canvas.applicability / 보증률
+## 110. canvas.applicability / 보증률
 
 **추가 확인** · 탄자니아 · 기준자료 193-194쪽 (Ⅲ-2. 보증 비교표)
 
@@ -1875,7 +1895,7 @@
 
 ---
 
-## 110. canvas.bottlenecks / 대리인 위반 시 제재 근거
+## 111. canvas.bottlenecks / 대리인 위반 시 제재 근거
 
 **추가 확인** · 네팔 · 기준자료 11-13쪽 (Ⅲ-2. 협력국 입찰 제도 / 입찰 규정 / 수원국 인허가 제도)
 
@@ -1892,7 +1912,7 @@
 
 ---
 
-## 111. canvas.bottlenecks / 조세·관세 면제 범위
+## 112. canvas.bottlenecks / 조세·관세 면제 범위
 
 **추가 확인** · 네팔 · 기준자료 14쪽 (Ⅲ. 통관 등 관련 사항(시공/기자재))
 
@@ -1909,7 +1929,7 @@
 
 ---
 
-## 112. canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
+## 113. canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
 
 **추가 확인** · 캄보디아 · 기준자료 114-116쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1926,7 +1946,7 @@
 
 ---
 
-## 113. canvas.applicability / 전자조달 시스템
+## 114. canvas.applicability / 전자조달 시스템
 
 **추가 확인** · 탄자니아 · 기준자료 195쪽 (Ⅲ-2. 입찰 진행절차)
 
@@ -1943,7 +1963,7 @@
 
 ---
 
-## 114. canvas.legalBasis.articles
+## 115. canvas.legalBasis.articles
 
 **참고** · 네팔 · 기준자료 11-13쪽 (Ⅲ-2. 협력국 입찰 제도 / 입찰 규정 / 수원국 인허가 제도)
 
@@ -1960,7 +1980,7 @@
 
 ---
 
-## 115. canvas.authorities[PPMO].role
+## 116. canvas.authorities[PPMO].role
 
 **참고** · 네팔 · 기준자료 10쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1977,7 +1997,7 @@
 
 ---
 
-## 116. canvas.bottlenecks / 누락된 실무 제약
+## 117. canvas.bottlenecks / 누락된 실무 제약
 
 **참고** · 네팔 · 기준자료 16-17쪽 (Ⅲ-3. 협력국 조달시장 진출 전략 / 제약사항 및 유의사항)
 
@@ -2009,14 +2029,14 @@
 | 06 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 07 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 08 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 09 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 10 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 11 canvas.submittedDocuments[외국인 입찰자].documents | 정정 요망 | 미제보 |
-| 12 canvas.procedure / 사업 발굴 착수 지점 | 정정 요망 | 미제보 |
-| 13 canvas.legalBasis·procedure / 2026년 법체계 전환 | 정정 요망 | 미제보 |
+| 09 현행법·기준금액·공고기한·보증·불복·예외 | 정정 요망 | 미제보 |
+| 10 현행법·기준금액·공고기한·보증·불복·예외 | 정정 요망 | 미제보 |
+| 11 현행법·기준금액·공고기한·보증·불복·예외 | 정정 요망 | 미제보 |
+| 12 canvas.submittedDocuments[외국인 입찰자].documents | 정정 요망 | 미제보 |
+| 13 canvas.procedure / 사업 발굴 착수 지점 | 정정 요망 | 미제보 |
 | 14 canvas.legalBasis·procedure / 2026년 법체계 전환 | 정정 요망 | 미제보 |
-| 15 canvas.authorities / 무상협력 총괄기관 | 정정 요망 | 미제보 |
-| 16 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 15 canvas.legalBasis·procedure / 2026년 법체계 전환 | 정정 요망 | 미제보 |
+| 16 canvas.authorities / 무상협력 총괄기관 | 정정 요망 | 미제보 |
 | 17 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 18 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 19 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
@@ -2026,22 +2046,22 @@
 | 23 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 24 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 25 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 26 canvas.legalBasis·procedure / 현행법·정량요건 | 정정 요망 | 미제보 |
+| 26 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 27 canvas.legalBasis·procedure / 현행법·정량요건 | 정정 요망 | 미제보 |
 | 28 canvas.legalBasis·procedure / 현행법·정량요건 | 정정 요망 | 미제보 |
-| 29 canvas.legalBasis·procedure / 현행 조달법·정량절차 | 정정 요망 | 미제보 |
+| 29 canvas.legalBasis·procedure / 현행법·정량요건 | 정정 요망 | 미제보 |
 | 30 canvas.legalBasis·procedure / 현행 조달법·정량절차 | 정정 요망 | 미제보 |
 | 31 canvas.legalBasis·procedure / 현행 조달법·정량절차 | 정정 요망 | 미제보 |
-| 32 verification / 공식 원문·현행성·정량요건 | 정정 요망 | 미제보 |
+| 32 canvas.legalBasis·procedure / 현행 조달법·정량절차 | 정정 요망 | 미제보 |
 | 33 verification / 공식 원문·현행성·정량요건 | 정정 요망 | 미제보 |
 | 34 verification / 공식 원문·현행성·정량요건 | 정정 요망 | 미제보 |
-| 35 verification / 현행 조달규칙 및 canvas.authorities | 정정 요망 | 미제보 |
+| 35 verification / 공식 원문·현행성·정량요건 | 정정 요망 | 미제보 |
 | 36 verification / 현행 조달규칙 및 canvas.authorities | 정정 요망 | 미제보 |
-| 37 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 37 verification / 현행 조달규칙 및 canvas.authorities | 정정 요망 | 미제보 |
 | 38 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 39 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 40 canvas.authorities / 수원총괄기관 및 process | 정정 요망 | 미제보 |
-| 41 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 40 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 41 canvas.authorities / 수원총괄기관 및 process | 정정 요망 | 미제보 |
 | 42 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 43 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 44 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
@@ -2071,23 +2091,23 @@
 | 68 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 69 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 70 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 71 process / 외부재원 사업 조정기관 | 정정 요망 | 미제보 |
-| 72 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 71 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 72 process / 외부재원 사업 조정기관 | 정정 요망 | 미제보 |
 | 73 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 74 canvas.authorities·legalBasis / 조달기관과 법령 | 정정 요망 | 미제보 |
+| 74 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 75 canvas.authorities·legalBasis / 조달기관과 법령 | 정정 요망 | 미제보 |
-| 76 canvas.authorities / 개발협력 조정기관 | 정정 요망 | 미제보 |
-| 77 canvas.legalBasis·authorities / 현행 조달법·기관 | 정정 요망 | 미제보 |
+| 76 canvas.authorities·legalBasis / 조달기관과 법령 | 정정 요망 | 미제보 |
+| 77 canvas.authorities / 개발협력 조정기관 | 정정 요망 | 미제보 |
 | 78 canvas.legalBasis·authorities / 현행 조달법·기관 | 정정 요망 | 미제보 |
-| 79 canvas.authorities / 국제협력 총괄기관 | 정정 요망 | 미제보 |
-| 80 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 79 canvas.legalBasis·authorities / 현행 조달법·기관 | 정정 요망 | 미제보 |
+| 80 canvas.authorities / 국제협력 총괄기관 | 정정 요망 | 미제보 |
 | 81 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 82 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 83 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 84 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 85 canvas.legalBasis / 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
-| 86 canvas.legalBasis / PPRA 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
-| 87 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 85 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 86 canvas.legalBasis / 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
+| 87 canvas.legalBasis / PPRA 근거 법령의 현행 여부 | 정정 요망 | 미제보 |
 | 88 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 89 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 90 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
@@ -2106,17 +2126,18 @@
 | 103 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 104 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 105 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 106 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
-| 107 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
-| 108 canvas.legalBasis / 근거 조달법의 현행 여부 | 정정 요망 | 미제보 |
-| 109 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
-| 110 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
-| 111 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
-| 112 canvas.legalBasis / 감독체계 근거 법령 및 신설 권한 | 보완 권고 | 미제보 |
-| 113 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
-| 114 canvas.legalBasis.articles | 보완 권고 | 미제보 |
-| 115 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
-| 116 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
+| 106 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 107 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
+| 108 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
+| 109 canvas.legalBasis / 근거 조달법의 현행 여부 | 정정 요망 | 미제보 |
+| 110 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
+| 111 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
+| 112 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
+| 113 canvas.legalBasis / 감독체계 근거 법령 및 신설 권한 | 보완 권고 | 미제보 |
+| 114 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
+| 115 canvas.legalBasis.articles | 보완 권고 | 미제보 |
+| 116 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
+| 117 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
 
 상태값: `not-reported`(미제보) · `reported`(제보함) · `acknowledged`(발행처 확인) · `fixed`(개정판 반영) · `declined`(정정 불요 회신)
 
