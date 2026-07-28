@@ -92,17 +92,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "Decreto 4152/2011의 30개 조문에서 APC-Colombia의 식별·형성·승인·협상·실행·모니터링·평가 권한을 전수 대조하고, Ley 1150 art.20과 현행 조달법령에서 국제협력재원 조달의 금액·기한·보증·이의·예외를 교차검증했다.",
+    "scope": "Decreto 4152 arts.1~30 전체, 특히 arts.5~6, 10, 12~16, 26, 30; Ley 1150 arts.2, 7, 20, 31~33; Ley 80 arts.24, 30, 77; Decreto 1082의 mínima cuantía·보증 조문을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "APC-Colombia는 비상환 기술·재정협력의 국가 조정기관이며 수요 식별, 사업형성, 협상, 승인·비이의, 실행지원, 추적·평가를 담당한다.",
+      "Decreto 4152는 APC 사업형성에 획일적인 사업금액·처리기한·보증률을 두지 않으므로 해당 공여기관 조건과 사업별 일정이 적용된다.",
+      "국가재원이 포함된 후속 조달은 국제협력재원 비율 50%를 경계로 국제기구 규칙 또는 Ley 80 체계를 적용하고 SECOP·재정통제를 유지한다."
     ],
     "sources": [
       {
@@ -115,19 +116,102 @@
       {
         "law": "APC-Colombia statutory role and functions",
         "kind": "regulation",
-        "publisher": "APC-Colombia",
-        "officialUrl": "https://www.apccolombia.gov.co/quienes-somos",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Departamento Administrativo de la Función Pública",
+        "officialUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Decreto 4152/2011 arts.1~30 전체; 특히 arts.5~6, 10, 12~16, 26, 30"
       },
       {
-        "law": "APC-Colombia Director General functions",
-        "kind": "regulation",
+        "law": "Herramientas para la formulación de proyectos de cooperación internacional",
+        "kind": "directive",
         "publisher": "APC-Colombia",
-        "officialUrl": "https://www.apccolombia.gov.co/la-directora/funciones",
-        "retrievedOn": "2026-07-28",
-        "articlesChecked": "무상 기술·재정협력 계획·프로그램·사업 승인 및 조정"
+        "officialUrl": "https://www.apccolombia.gov.co/Herramientas-para-la-formulacion-de-proyectos-de-cooperacion-internacional",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "사업주기, 프로젝트 프로필, 논리모형, 형성·모니터링·평가 방법론"
+      },
+      {
+        "law": "Ley 80 de 1993, Ley 1150 de 2007 and Decreto 1082 de 2015 — internationally funded procurement",
+        "kind": "act",
+        "publisher": "Departamento Administrativo de la Función Pública",
+        "officialUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Ley 1150 arts.2, 7, 20, 31~33; Ley 80 arts.24, 30, 77; Decreto 1082 mínima cuantía·보증 조문"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Decreto 4152 de 2011 — APC-Colombia",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published in Diario Oficial 48.242 and effective 2011-11-03; art.12 modified by Decreto 2324 de 2013",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688",
+          "finding": "2026-07-28 생성 통합본은 APC-Colombia의 현행 목적·조직·사업관리 기능을 제공하고 art.12의 2013 개정 주석을 표시하며 폐지 표시는 없다."
+        },
+        {
+          "instrument": "Ley 1150 de 2007 art.20 international-cooperation procurement rule",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Ley generally effective six months after 2007-07-16 promulgation under art.33",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686",
+          "finding": "현행 통합본에서 50% 재원규칙, SECOP·통제기관 보고 및 현물출자 화폐환산·재정통제 조문을 확인했다."
+        },
+        {
+          "instrument": "Decreto 1082 de 2015 procurement regulations",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Effective 2015-05-26; modified by Decreto 287 de 2026 effective 2026-03-20",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=273496",
+          "finding": "2026 개정은 장애인 참여 우대 조문에 한정되어 국제협력재원·기준금액·보증 조문에는 영향이 없다."
+        },
+        {
+          "instrument": "Former Acción Social international-cooperation coordination mandate",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Functions transferred to APC-Colombia from 2011-11-03 under Decreto 4152 arts.1, 23~29",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688",
+          "finding": "Decreto 4152가 Acción Social에서 국제협력 기능을 분리하고 art.26이 기존 법령의 관련 명칭을 APC-Colombia로 읽도록 정한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Decreto 4152 arts.5~6, 12~16; Ley 1150 art.2(2)(b), art.2(5) and art.20",
+          "finding": "APC 사업형성 자체에는 획일적 금액 문턱이 없다. 국가 후속조달의 menor cuantía는 기관예산별 280~1,000 SMMLV, mínima cuantía는 그 10%이며 국제협력재원 50% 이상은 국제기구 규칙 선택의 경계다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Decreto 4152 arts.6, 12~16; Ley 80 art.30; Decreto 1082 arts.2.2.1.1.2.1.4 and 2.2.1.2.1.5.2",
+          "finding": "APC 법령은 형성·승인·비이의의 단일 처리기한을 정하지 않아 공여기관·사업 일정이 지배한다. 국내조달 시 초안 의견 10/5영업일, 공개입찰 평가의견 5영업일, mínima cuantía 각 최소 1영업일을 적용한다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=77653"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Ley 1150 arts.7 and 20; Decreto 1082 arts.2.2.1.2.3.1.6 and 2.2.1.2.3.1.9",
+          "finding": "APC 사업승인 단계에는 입찰보증이 비적용이다. 후속 국내조달은 원칙적으로 제안가 최소 10%이고 초대형·mínima cuantía 예외가 있으며, 50% 이상 국제협력재원은 공여기관 규칙이 달리 정할 수 있다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=77653"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Ley 1150 arts.7 and 20; Decreto 1082 arts.2.2.1.2.3.1.7 and 2.2.1.2.3.1.12~17",
+          "finding": "사업형성에는 계약이행보증이 비적용이다. 국내 후속계약은 원칙적으로 계약가 최소 10%이고 초대형 계약은 하향구간, 직접·최소금액은 면제 가능하며 공여기관 규칙 우선 가능성을 별도로 확인한다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=77653"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Decreto 4152 arts.6, 12~16; Ley 80 arts.24, 30 and 77",
+          "finding": "APC 협력사업의 승인·비이의는 협력기관별 협의경로를 따르고 Decreto 4152에는 별도 입찰불복 절차가 없다. 국내조달은 평가의견 절차를 거치며 계약행정행위는 원칙적으로 reposición 대상이지만 낙찰행위는 취소·권리회복 소송으로 다툰다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Decreto 4152 arts.5~6 and 15; Ley 1150 art.20",
+          "finding": "APC의 핵심 관할은 비상환 기술·재정협력이고 국방·안보 협력은 art.6(3)에서 제외된다. 국제협력재원이 총액의 50% 이상이면 해당 기구 규칙을 적용할 수 있고 그 미만이면 Ley 80 절차를 적용한다.",
+          "evidenceUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686"
+        }
+      }
+    },
     "discrepancies": [
       {
         "field": "canvas.authorities / 국제협력 총괄기관",
@@ -155,15 +239,7 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
