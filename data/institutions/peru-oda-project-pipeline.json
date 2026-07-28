@@ -101,13 +101,16 @@
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 조직개편·경과규정과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "OECE의 Law 32069·시행령 현행 통합본에서 조달기준·기한·보증·불복·예외와 폐지·경과규정을 조문 단위로 대조하고, MRE·APCI 공식 현행 페이지와 2026 APCI 통합 ROF로 ODA 경로를 교차확인했다.",
+    "scope": "Law 32069 Arts.1~15, 30~35, 45~61, 72~75, 85 및 경과·폐지조항; Regulation Arts.53~100, 113~119, 138~139, 302~310; Law 27692 Arts.1~4; Law 28875 Arts.1~5 및 현행 SINDCINR 역할; RDE 006-2026/APCI-DE.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "Law 32069와 DS 009-2025-EF는 2025년 4월 22일부터 시행 중이며 DS 001-2026-EF 개정은 2026년 1월 14일 발효했다.",
+      "구 Law 30225는 원칙적으로 폐지됐지만 2025년 4월 22일 전 공고된 절차에는 공고 당시 법령이 경과 적용된다.",
+      "8 UIT 이하 계약 menor는 경쟁절차 면제이지만 OECE 감독과 PLADICOP 공개 대상이다.",
+      "현행 SINDCINR에서 MRE가 총괄기관이고 APCI가 집행사무국이며, APCI의 2026 통합 ROF가 현행 조직을 정한다.",
+      "실제 조달에서는 공고일 UIT, PLADICOP 표준입찰서와 국제조약·공여협정의 특별규칙을 최종 확인한다."
     ],
     "sources": [
       {
@@ -115,28 +118,56 @@
         "kind": "donor-rule",
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "페루 조달기관·절차 및 MRE–APCI 사업형성 설명"
       },
       {
-        "law": "Ley n.º 27692 — Ley de creación de APCI",
+        "law": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
         "kind": "act",
-        "publisher": "Agencia Peruana de Cooperación Internacional",
-        "officialUrl": "https://www.gob.pe/institucion/apci/institucional",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Organismo Especializado para las Contrataciones Públicas Eficientes",
+        "officialUrl": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Arts.1~15, 30~35, 45~61, 72~75, 85 and complementary/derogatory provisions; scope, authorities, minor contracts, methods, exceptions, contract securities, appeals, transition and repeal"
       },
       {
-        "law": "Ley n.º 28875 and SINDCINR institutional framework",
+        "law": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
+        "kind": "regulation",
+        "publisher": "Organismo Especializado para las Contrataciones Públicas Eficientes",
+        "officialUrl": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Arts.53~90, 93~100, 113~119, 138~139 and 302~310; procedure timetable, offers, contract formation, methods, guarantees, exemptions and appeals"
+      },
+      {
+        "law": "OECE current Law 32069 compendium and DS 001-2026-EF commencement notice",
+        "kind": "regulation",
+        "publisher": "Organismo Especializado para las Contrataciones Públicas Eficientes",
+        "officialUrl": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Current consolidated-law dates; DS 009-2025-EF commencement on 2025-04-22; DS 001-2026-EF publication and commencement on 2026-01-14; DL 1715/2026 amendment notice"
+      },
+      {
+        "law": "Ley N.º 27692 — Ley de Creación de la APCI, as amended",
+        "kind": "act",
+        "publisher": "Congreso de la República del Perú",
+        "officialUrl": "https://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/7e1812336c5963630525799f005ed9c1/%24file/3.ley_n_27692_de_creacion_de_la_apci_y_sus_modificatorias.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Arts.1~4; APCI creation, attachment to MRE, purpose, governing role under the amended framework and functions including annual planning and channeling central-government requests"
+      },
+      {
+        "law": "Ley N.º 28875 and current SINDCINR institutional framework",
         "kind": "regulation",
         "publisher": "Ministerio de Relaciones Exteriores",
-        "officialUrl": "https://www.gob.pe/31107",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://www.gob.pe/31107-sistema-nacional-descentralizado-de-cooperacion-internacional-no-reembolsable-sindcinr",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Arts.1~5 as amended and current institutional guidance; system composition, MRE governing role, APCI executive secretariat and national/subnational cooperation units"
       },
       {
-        "law": "APCI integrated organization and functions regulation 2026",
-        "kind": "regulation",
+        "law": "Resolución Directoral Ejecutiva N.º 006-2026/APCI-DE — integrated APCI ROF",
+        "kind": "directive",
         "publisher": "Agencia Peruana de Cooperación Internacional",
         "officialUrl": "https://www.gob.pe/institucion/apci/normas-legales/7633504-006-2026-apci-de",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Resolution Art.1 and integrated ROF Arts.1~55; approval on 2026-01-12 of APCI's current organization, functions and organigram"
       }
     ],
     "discrepancies": [
@@ -164,17 +195,124 @@
           "state": "not-reported",
           "suggestedText": "수원총괄기관을 MRE–APCI 체계로 명시하고 중앙·지방 실행기관 역할을 분리했다."
         }
+      },
+      {
+        "severity": "high",
+        "field": "현행 법령·정량요건·구제절차",
+        "sourceText": "기존 모델은 Law 32069와 DS 009-2025-EF의 원문 링크만 연결하고 금액·기한·보증·불복·예외와 개정 시행일을 미결로 남겼다.",
+        "actualText": "OECE 현행 통합본과 DS 001-2026-EF 시행기록으로 8 UIT 계약 menor, 22/7/3영업일 기한, 10% 이행보증, 5/8영업일 항소와 비경쟁 사유를 조문별 확정했다.",
+        "citation": "Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium",
+        "impact": "링크 수준 데이터만으로는 폐지된 구법이나 개정 전 기한·보증을 실제 공고에 잘못 적용할 수 있다.",
+        "action": "현행성·경과규정과 6개 정량·절차 영역을 조문 단위로 대조하고 unresolved를 해소했다.",
+        "userAction": "실제 참여 시 공고일 UIT, PLADICOP 공고·표준입찰서, 자금협정의 특별조달규칙을 최종 확인한다.",
+        "review": {
+          "topic": "Current Peru procurement rules and quantitative requirements",
+          "guideSays": "The earlier model linked the law and regulation but left current commencement, thresholds, deadlines, securities, review and exceptions unresolved.",
+          "lawSays": "Law 32069 and the regulation as amended through DS 001-2026-EF establish the current methods, deadlines, performance security and appeal route.",
+          "impact": "A link-only record can apply a repealed regime or a pre-amendment deadline or security rule.",
+          "verify": "Confirm the call-date UIT, live PLADICOP notice, standard bidding document and any financing-agreement special rule."
+        },
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "현행 통합법·시행령의 개정 시행일과 정량·불복 요건을 조문별 반영했다."
+        },
+        "id": "peru-oda-project-pipeline-D02"
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Ley N.º 32069 — Ley General de Contrataciones Públicas",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Effective 2025-04-22; official consolidated text through 2025-12-05, with DL 1715 Art.85.1(e) amendment effective 2026-02-05",
+          "evidenceUrl": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de",
+          "finding": "신규 공공조달의 현행 기본법이다. OECE 현행 법령집에서 2025년 12월 5일까지 통합된 본문과 2026년 DL 1715의 제85조 개정을 확인했다."
+        },
+        {
+          "instrument": "Ley N.º 30225 — former State Procurement Law",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed from Law 32069 commencement on 2025-04-22, subject to the express residual and transitional provisions",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184",
+          "finding": "Law 32069의 단일 폐지조항으로 원칙적으로 폐지됐다. 다만 신법 시행 전 공고된 절차는 제4 경과조항에 따라 공고 당시 법령을 계속 적용한다."
+        },
+        {
+          "instrument": "DS N.º 009-2025-EF — Regulation of Law 32069",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Effective 2025-04-22; amended by DS 001-2026-EF effective 2026-01-14",
+          "evidenceUrl": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de",
+          "finding": "현행 시행령이다. OECE 통합본은 2026년 1월 9일까지의 개정을 담고 있으며 DS 001-2026-EF 개정은 표준입찰서 개정결의 다음 날인 2026년 1월 14일 발효했다."
+        },
+        {
+          "instrument": "Ley N.º 27692 — APCI creation law",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2002-04-12 and in force as amended, including the later SINDCINR allocation of roles",
+          "evidenceUrl": "https://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/7e1812336c5963630525799f005ed9c1/%24file/3.ley_n_27692_de_creacion_de_la_apci_y_sus_modificatorias.pdf",
+          "finding": "APCI를 MRE 산하 공공기관으로 설치하고 국제협력의 수요·공급 연계, 연차계획, 중앙정부 요청의 채널링 등 기능을 부여하는 현행 조직 근거다."
+        },
+        {
+          "instrument": "Ley N.º 28875 — SINDCINR law",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2006-08-15; current role allocation reflects DL 1451 and DS 027-2019-RE",
+          "evidenceUrl": "https://www.gob.pe/31107-sistema-nacional-descentralizado-de-cooperacion-internacional-no-reembolsable-sindcinr",
+          "finding": "현행 체계에서는 MRE가 SINDCINR의 총괄기관이고 APCI가 집행사무국이다. 중앙·지방정부와 민간 협력기관은 각 협력부서를 통해 기능적으로 연결된다."
+        },
+        {
+          "instrument": "RDE N.º 006-2026/APCI-DE — integrated APCI ROF",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Approved and published 2026-01-12",
+          "evidenceUrl": "https://www.gob.pe/institucion/apci/normas-legales/7633504-006-2026-apci-de",
+          "finding": "APCI의 2026년 현행 통합 조직·기능규정으로 55개 조문과 조직도를 승인했다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Law 32069 Arts.34, 50, 53~55; Regulation Arts.53, 93~100",
+          "finding": "8 UIT 이하 계약은 제34조의 계약 menor로서 경쟁절차를 요구하지 않지만 OECE 감독과 PLADICOP 공개 대상이다. 이를 넘는 조달은 물품·공사 공개입찰, 서비스 공개경쟁을 기본으로 하고, 세부 절차·약식방식은 목적·금액·표준입찰서에 따라 정한다. 절차 회피 목적의 분할은 금지된다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Regulation Arts.64, 66~68, 82~83, 90 and 304",
+          "finding": "일반 경쟁절차의 공고부터 제안서 제출까지는 원칙적으로 최소 22영업일이다. 통합입찰서 공개 후 제출은 일반 7영업일, 약식 3영업일 이상이고, 질의·이의 단계가 없으면 공고 후 6영업일(가격비교 3영업일) 이상이다. 낙찰자는 원칙적으로 8영업일 안에 계약서류를 내며, 낙찰 불복은 일반 8영업일·약식/전문가선정/가격비교 5영업일이다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+        },
+        "bidSecurity": {
+          "status": "not-applicable",
+          "articles": "Law 32069 Arts.60~61; Regulation Arts.69 and 113~119",
+          "finding": "현행 법·시행령의 입찰제안서 최소내용과 보증체계에는 일반적인 입찰보증(bid security)이 없다. 법정 보증은 계약이행·부대급부·선급금 및 불복보증으로 구성되므로 개별 표준입찰서가 별도 요구하는지 공고별 확인한다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Law 32069 Arts.60~61; Regulation Arts.113~119 and 138~139",
+          "finding": "낙찰자는 계약 체결 요건으로 원계약금액의 10% 이행보증을 낸다. 신탁·금융보증·보험·지급유보를 사용할 수 있으며, 물품·서비스 50 UIT 이하 등 제139조 사유에는 이행보증을 요구하지 않는다. 금융성 보증은 무조건·연대·취소불능·자동집행이어야 하고 최대 3영업일 안에 지급된다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Law 32069 Arts.72~75; Regulation Arts.302~310",
+          "finding": "50 UIT 초과 절차와 전자카탈로그는 TCP가, 그 밖에는 발주기관 행정책임자가 항소를 심리한다. 일반 경쟁절차는 낙찰 통지 후 8영업일, 약식·전문가선정·가격비교는 5영업일 안에 항소한다. 항소는 해당 절차를 정지시키며 보증은 원칙적으로 다툼 금액의 3%(MYPE 0.5%)다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Law 32069 Arts.7, 50 and 55; Regulation Arts.100~102",
+          "finding": "비경쟁 직접계약은 기관 간 계약, 재난·긴급, 공급부족, 독점·전속권, 특정 개인서비스, 부동산, 공식 법률방어, 계약잔여분, 일정 교육, 국가기밀·군사·치안 등 제55조의 열거 사유와 승인·기록을 요구한다. 국제조약·공여협정의 별도 조달규칙과 법 제7조 적용제외도 사업별로 우선 확인한다.",
+          "evidenceUrl": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
