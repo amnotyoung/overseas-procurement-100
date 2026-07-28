@@ -5,7 +5,7 @@
   "axis": "bidding",
   "type": "경쟁조달형",
   "priority": 1,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "요르단",
@@ -111,19 +111,20 @@
       "status": "confirmed"
     },
     {
-      "item": "금액·기한·보증·제출서류와 개별 공고",
-      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "기준금액·기한·입찰/이행보증·불복·예외",
+      "question": "현행 기본규정·개정령·절차지침의 6개 핵심요건과 개정·폐지·경과·시행 상태를 조문 단위로 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·의회·조달규제기관의 공식 법령 및 기관 페이지에서 현행 법령명, 담당기관, 전자시스템과 공개된 승인·조정 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 기준금액·기한·보증·제출서류와 모든 예외의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "요르단 총리실 관보의 Government Procurement By-law 8/2022, 개정 By-law 15/2022, 2022 조달절차지침 원문과 GPD·JONEPS 현행 법령목록을 직접 대조해 적용조문·시행·개정·폐지와 기준금액·기한·보증·불복·예외를 검증했다.",
+    "scope": "By-law arts.1, 3, 21, 24, 27~29, 36, 39~46, 50~53, 59~67, 82~92, 112~115; Amendment 15/2022 arts.1~7; Procedure Instructions arts.1, 6~19, 23, 78~84와 관련 부속서를 확인했다.",
     "notes": [
-      "공식 정부·법령·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 공고 적용은 공고일 기준 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "기존 출처 URL의 2023.pdf는 조달법령이 아니라 GTD 예산자료였으므로 총리실 관보 제5769호 원문으로 정정했다.",
+      "By-law 8/2022는 폐지되지 않았고 By-law 15/2022와 함께 적용된다. 개정령은 군·보안조달 arts.94~111을 추가하고 종전 arts.94~97을 arts.112~115로 재번호화했다.",
+      "종전 By-law 28/2019와 2019 절차지침은 각각 현행 규정에 의해 폐지됐다. 외부재원 조달은 공여·융자기관 또는 국제협정의 요구규칙을 개별 협정·공고에서 함께 확인해야 한다."
     ],
     "sources": [
       {
@@ -134,18 +135,36 @@
         "retrievedOn": "2026-07-28"
       },
       {
-        "law": "Government Procurement By-law No. 8 of 2022",
+        "law": "Government Procurement By-law No. 8 of 2022, as amended",
         "kind": "regulation",
-        "publisher": "Government Tenders Department",
-        "officialUrl": "https://www.gtd.gov.jo/ebv4.0/root_storage/ar/eb_list_page/2023.pdf",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Prime Ministry — Official Gazette No. 5769",
+        "officialUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1, 3, 21, 24, 27~29, 36, 39~46, 50~53, 59~67, 82~92 and current arts.112~115; Annexes 1 and 4"
       },
       {
-        "law": "Jordan Online E-Procurement System (JONEPS)",
+        "law": "Amending Government Procurement By-law No. 15 of 2022",
+        "kind": "regulation",
+        "publisher": "Prime Ministry — Official Gazette No. 5774",
+        "officialUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5774",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~7, especially arts.2~4 and 7 adding defence/security procurement arts.94~111 and renumbering former arts.94~97 as arts.112~115"
+      },
+      {
+        "law": "Instructions for Regulating Government Procurement Procedures of 2022",
         "kind": "directive",
-        "publisher": "Government Tenders Department",
-        "officialUrl": "https://www.gtd.gov.jo/",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Prime Ministry — Official Gazette No. 5772",
+        "officialUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5772",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1, 6~19, 23, 78~84, especially arts.15~17 on securities and art.84 repeal"
+      },
+      {
+        "law": "Current Government Procurement By-law and Instructions register",
+        "kind": "directive",
+        "publisher": "Government Procurement Department",
+        "officialUrl": "https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Current register entries for By-law 8/2022, amending By-law 15/2022 and 2022 Procedure Instructions"
       }
     ],
     "discrepancies": [
@@ -175,15 +194,89 @@
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Government Procurement By-law No. 8 of 2022",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2022-01-16; effective 30 days after publication under art.1 (2022-02-15); amended by By-law No.15/2022",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769",
+          "finding": "관보 제5769호의 원문 art.1은 공포 30일 후 시행을 정한다. 2022-03-01 시행된 제15호 개정령과 단일 규정으로 읽으며, 현재 조달부 공식 목록에도 기본규정·개정령·절차지침이 함께 등재되어 있다."
+        },
+        {
+          "instrument": "Amending Government Procurement By-law No. 15 of 2022",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2022-03-01",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5774",
+          "finding": "관보 제5774호(2022-03-01) 원문 art.1은 공포일부터 시행하도록 한다. arts.2~6은 군·보안기관 조달체계를 추가하고 art.7은 기본규정의 종전 arts.94~97을 현행 arts.112~115로 재번호화했다."
+        },
+        {
+          "instrument": "Instructions for Regulating Government Procurement Procedures of 2022",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2022-02-16",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5772",
+          "finding": "관보 제5772호 원문 art.1이 공포일부터 시행을 정한다. 입찰·계약 보증, 제출·평가·계약관리 세부절차를 확인했고 art.84가 2019년 절차지침을 명시 폐지한다."
+        },
+        {
+          "instrument": "Government Procurement By-law No. 28 of 2019",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed from 2022-02-15 by By-law No.8/2022 current art.115 (original art.97 before renumbering)",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769",
+          "finding": "기본규정의 종전 art.97이 2019년 제28호 규정을 폐지했고, 제15호 개정령 art.7에 따라 이 폐지조항은 현행 art.115가 됐다. 종전 하위결정은 폐지·개정·대체될 때까지만 경과적으로 유지된다."
+        },
+        {
+          "instrument": "Instructions for Regulating Government Procurement Procedures of 2019",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed from 2022-02-16 by the 2022 Procedure Instructions art.84",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5772",
+          "finding": "2022년 절차지침 art.84가 2019년 절차지침을 명시 폐지하고, 그에 따른 결정만 폐지·개정·대체될 때까지 경과적으로 유지한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "By-law arts.39(e), 59 and 61~67",
+          "finding": "일반적으로 공개입찰이 원칙이지만 물품가액이 JOD10,000 이하이면 art.39(e)의 제한입찰 사유가 된다. 정부기관에서는 사무총장이 건별 JOD5,000 이하, 국장급이 JOD1,000 이하를 적절한 방식으로 구매할 수 있고, 물품·컨설팅 하위위원회는 JOD20,000 이하, 주위원회는 JOD60,000 이하, 중앙위원회는 금액 제한 없이 관할한다. 독립 정부단위의 하위위원회 한도는 JOD60,000이며 주위원회는 금액 제한이 없다. 이는 계약분할을 허용하는 기준이 아니라 방식·위원회 권한 기준이다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "By-law arts.27~28, 36, 51 and 53",
+          "finding": "공개입찰 제안서 제출 최소기간은 국내 21일, 국제 30일이며 필요·조달성격상 단축할 수 있으나 충분한 준비시간을 보장해야 한다. 문서에 달리 정하지 않으면 제안 유효기간은 제출일부터 90일이고 연장요청은 만료 최소 10영업일 전에 한다. 잠정낙찰 공고기간은 5~7영업일이다. 조달문서 이의는 공고 후 5영업일 이내이면서 제안마감 전, 이의결정 후 PCC 불만은 5영업일 이내이고 PCC는 접수 후 30영업일 이내 결정한다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "By-law arts.24(9), 28~29 and 35(b)(2); 2022 Procedure Instructions arts.13 and 15~16",
+          "finding": "공개입찰에는 입찰보증이 원칙이고, 다른 방식은 발주기관이 면제할 수 있다. 금액은 제안총액 또는 예정가격의 1~3%로 조달문서에 정하며, 요르단 내 은행의 보증서 또는 인증수표로 낸다. 유효기간은 제안 유효기간 이상이어야 하고 제안 연장 시 함께 연장한다. 철회·산술오류 정정 거부·허위정보 등의 경우 전부 또는 일부 몰수할 수 있다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "By-law art.36(d); 2022 Procedure Instructions arts.15(c)~(f) and 17",
+          "finding": "조달문서가 요구하면 낙찰자는 요르단 내 은행의 보증서 또는 인증수표로 이행보증을 제출하며, 2022 지침 art.15(c)는 낙찰총액 또는 발주기관 산정액의 최소 10%로 정한다. 물품 유지·공사 하자보증은 3~5%, 선급금보증은 선급금 전액이다. 이행보증은 계약조건 완료와 필요한 유지·하자보증 제출 후 서면 해제요청에 따라 반환한다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5772"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "By-law arts.50~53",
+          "finding": "2단계 구제절차로 먼저 발주기관·구매위원회에 이의하고 이후 Procurement Complaints Review Committee(PCC)에 불만을 제기한다. 문서·공고 이의는 5영업일 이내, 공사·기술용역 이의결정은 최대 7영업일, 물품·컨설팅 관련 구매위원회 결정은 최대 14영업일이다. 이의결정 불복은 통지 후 5영업일, 제재결정은 승인통지 후 10영업일 내 PCC에 제기하며 수수료는 JOD500이다. PCC는 30영업일 내 구속력 있는 시정·낙찰취소·재절차 결정을 할 수 있다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "By-law arts.3, 23, 39~46 and 64",
+          "finding": "art.3은 투자·전략비축·성지순례·일부 사회보장투자 조달을 범위에서 제외하고, 공여·융자기관 또는 국제협정이 요구한 조달규칙을 우선 적용한다. 제한입찰은 공급자 제한·비용비례·긴급·재입찰 실패·JOD10,000 이하 물품 등에, 단일원천은 유일공급·독점권·긴급·호환성·연구개발·추가공사·법정가격 등 art.44의 열거 사유에 한한다. art.45의 직접시행과 art.64의 특정 프로젝트 특별위원회도 각각 법정 사유·승인에 따른다.",
+          "evidenceUrl": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
