@@ -879,12 +879,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 49. [HIGH] Current legal basis check
 
 - Institution: Morocco — Bidding system
-- Legal basis: Decree 2-22-431 of 8 March 2023 and implementing orders
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
 - KOICA guide: p.59-71
 
-**Current legal basis** — Decree 2-22-431 took effect in September 2023, with TGR and CNCP supporting the framework and contracting authorities executing procurement.
+**Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
 
-**✔ Verify** — Check the portal notice and entity rules for method, publication period, preference and complaint route.
+**✔ Verify** — Check the live notice, applicable CCAG/CPS, electronic deadline and financing-agreement exception.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -896,12 +896,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 50. [HIGH] Current legal basis check
 
 - Institution: Morocco — Procurement governance
-- Legal basis: Decree 2-22-431 of 8 March 2023 and implementing orders
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
 - KOICA guide: p.59-71
 
-**Current legal basis** — Decree 2-22-431 took effect in September 2023, with TGR and CNCP supporting the framework and contracting authorities executing procurement.
+**Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
 
-**✔ Verify** — Check the portal notice and entity rules for method, publication period, preference and complaint route.
+**✔ Verify** — Check the live notice, applicable CCAG/CPS, electronic deadline and financing-agreement exception.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -2171,12 +2171,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 121. [MEDIUM] Current legal basis check
 
 - Institution: Morocco — ODA project pipeline
-- Legal basis: MEF DTFE and Budget Directorate official mandates
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
 - KOICA guide: p.59-71
 
-**Current legal basis** — DTFE coordinates external-financing strategy and negotiations while the Budget Directorate mobilizes and tracks project financing and sector entities implement.
+**Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
 
-**✔ Verify** — Confirm the financing desk, budget inclusion, state guarantee and sector-agency readiness.
+**✔ Verify** — Check the live notice, applicable CCAG/CPS, electronic deadline and financing-agreement exception.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
