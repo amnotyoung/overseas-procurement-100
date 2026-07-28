@@ -124,3 +124,14 @@ python3 -m http.server 8765 --directory site
 | `needs-review` | 현지어·비공개 자료 등 추가 확인 필요 |
 
 `article-verified`는 조문의 존재와 문언을 확인했다는 뜻이다. 개별 입찰에 대한 법률 자문이나 해당국 정부·KOICA의 공식 해석을 대신하지 않는다. 실제 참여 전에는 발주처 공고문과 현행 법령을 다시 확인해야 한다.
+
+## 소비자 저장소 업데이트 알림
+
+`main`의 검증·보드 검사·사이트 빌드가 모두 성공하면 불변 커밋 SHA를
+`country-report-skill`에 `dependency-updated` 이벤트로 전달한다. 소비자
+저장소는 파이프라인·조달 거버넌스 데이터 계약을 다시 검증한 뒤 잠금파일
+갱신 PR을 만든다.
+
+저장소 관리자는 `country-report-skill`의 **Contents: write**만 허용한
+fine-grained personal access token을 Actions secret
+`DEPENDENCY_DISPATCH_TOKEN`으로 등록해야 한다.
