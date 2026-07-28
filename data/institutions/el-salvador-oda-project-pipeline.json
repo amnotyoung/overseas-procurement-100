@@ -5,7 +5,7 @@
   "axis": "pipeline",
   "type": "사업형성형",
   "priority": 3,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "엘살바도르",
@@ -28,6 +28,26 @@
       },
       {
         "law": "Sistema Integrado de Información de la Cooperación Internacional",
+        "kind": "directive"
+      },
+      {
+        "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas, as amended through Decreto n.º 502 of 2026",
+        "lawKo": "공공조달법(입법령 652/2023, 입법령 502/2026까지의 개정 반영)",
+        "kind": "act"
+      },
+      {
+        "law": "Decreto Ejecutivo n.º 1 de 2024 — Reglamento de la Ley de Compras Públicas, as amended by Decreto Ejecutivo n.º 14 de 2025",
+        "lawKo": "공공조달법 시행령(행정령 1/2024, 행정령 14/2025 개정 반영)",
+        "kind": "regulation"
+      },
+      {
+        "law": "Decreto Legislativo n.º 653 — Ley de Creación de la DINAC",
+        "lawKo": "국가공공조달국 설립법",
+        "kind": "act"
+      },
+      {
+        "law": "Política Anual de Compras Públicas 2026",
+        "lawKo": "2026년 연간 공공조달정책",
         "kind": "directive"
       }
     ],
@@ -90,19 +110,21 @@
       "status": "confirmed"
     },
     {
-      "item": "금액·기한·보증·제출서류와 개별 공고",
-      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "기준금액·기한·입찰/이행보증·불복·예외",
+      "question": "현행 법률·시행령·2026 정책과 개정·폐지·경과규정의 6개 핵심 요건을 조문 단위로 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "국회·DINAC·사법부·노동부의 공식 원문에서 LCP 652/2023, 시행령 1/2024, 2023·2025·2026 개정과 2026 연간정책을 확인하고 관보 스캔을 OCR·페이지 이미지로 교차대조해 기준금액·기한·입찰보증·이행보증·불복·예외를 조문 단위로 검증했다.",
+    "scope": "LCP arts.2~3, 10, 17, 22, 38~44, 89~90, 119~126, 188, 191~192; 시행령 arts.1~7, 39~47, 66~79, 96; 입법령 689·732·291·502와 행정령 14/2025 및 2026 정책을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "LCP는 2023-03-10 시행됐고 종전 LACAP을 폐지했으나, 신법 전 개시·체결 절차는 제188조 경과규정에 따라 종전법을 적용한다.",
+      "현재 240배 경계는 상업부문 월 최저임금 USD 408.80을 적용한 USD 98,112이며, 임금 변경 시 자동으로 달라진다.",
+      "2025년 체육단체 적용제외와 시행령 개정, 2026년 문화부 예술강사 적용제외 및 2026 연간정책까지 현행성 검토에 반영했다.",
+      "입찰 제출기간은 고정 최소일수가 아니라 조달의 가액·규모·복잡성에 따른 충분한 기간을 공고별로 정하는 구조다."
     ],
     "sources": [
       {
@@ -125,6 +147,78 @@
         "publisher": "Agencia de El Salvador para la Cooperación Internacional",
         "officialUrl": "https://portal.esco.gob.sv/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+        "kind": "act",
+        "publisher": "Asamblea Legislativa de la República de El Salvador",
+        "officialUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.2~3, 10, 17, 22, 38~44, 89~90, 119~126, 188 and 191~192"
+      },
+      {
+        "law": "Decreto Ejecutivo n.º 1 de 2024 — Reglamento de la Ley de Compras Públicas",
+        "kind": "regulation",
+        "publisher": "Dirección Nacional de Compras Públicas",
+        "officialUrl": "https://dinac.gob.sv/download/reglamento-ley-de-compras-publicas-2/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~6, 39~47, 66~79 and 96"
+      },
+      {
+        "law": "Decreto Legislativo n.º 689 of 2023 — reforms to the Ley de Compras Públicas",
+        "kind": "act",
+        "publisher": "Asamblea Legislativa de la República de El Salvador",
+        "officialUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/84215ACD-6778-4583-8C2B-B34A86D3E1B2.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~3; amendments to LCP arts.2 and 25"
+      },
+      {
+        "law": "Decreto Legislativo n.º 732 of 2023 — TACOP terminology reforms",
+        "kind": "act",
+        "publisher": "Asamblea Legislativa de la República de El Salvador",
+        "officialUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/2744AFE6-8BC4-44D1-B248-49AAB82A6543.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~5; amendments to LCP arts.120~122 and 177"
+      },
+      {
+        "law": "Decreto Legislativo n.º 291 of 2025 — exclusion for recognized sports bodies",
+        "kind": "act",
+        "publisher": "Asamblea Legislativa de la República de El Salvador",
+        "officialUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/04522699-E3ED-471D-AD52-0B220ADEB0A3.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~3; addition of LCP art.3(o), retroactivity and entry into force"
+      },
+      {
+        "law": "Decreto Legislativo n.º 502 of 2026 — cultural teaching exclusion",
+        "kind": "act",
+        "publisher": "Asamblea Legislativa de la República de El Salvador",
+        "officialUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E2C8C565-D7DB-4154-914E-889CD7556977.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~2; addition of LCP art.3(p) and entry into force"
+      },
+      {
+        "law": "Decreto Ejecutivo n.º 14 of 2025 — reforms to the Reglamento de la Ley de Compras Públicas",
+        "kind": "regulation",
+        "publisher": "Órgano Judicial de El Salvador, Centro de Documentación Judicial",
+        "officialUrl": "https://www.jurisprudencia.gob.sv/DocumentosBoveda/R/2/2020-2029/2024/01/10A713.HTML?embedded=true",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~6; amendments to regulation arts.6~7, 9 and 22"
+      },
+      {
+        "law": "Política Anual de Compras Públicas 2026",
+        "kind": "directive",
+        "publisher": "Dirección Nacional de Compras Públicas",
+        "officialUrl": "https://dinac.gob.sv/download/politica-anual-de-compras-publicas-2026-6/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "sections III, V.1.1~1.6, VIII and IX; effective-date clause"
+      },
+      {
+        "law": "Salario mínimo del sector comercio, industria y servicios effective 1 June 2025",
+        "kind": "directive",
+        "publisher": "Ministerio de Trabajo y Previsión Social",
+        "officialUrl": "https://www.mtps.gob.sv/2025/05/27/aprueban-incremento-del-12-al-salario-minimo-solicitado-por-el-gobierno-del-presidente-nayib-bukele/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "official wage table and effective date; USD 408.80 monthly"
       }
     ],
     "discrepancies": [
@@ -154,15 +248,121 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Decreto Legislativo n.º 652 — Ley de Compras Públicas, as amended",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2023-03-10, eight days after publication in Diario Oficial n.º 43 on 2023-03-02",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf",
+          "finding": "제192조의 시행일, 제188조의 경과규정과 제191조의 종전 LACAP 명시 폐지를 확인했다. 2023년 입법령 689·732, 2025년 입법령 291, 2026년 입법령 502의 개정을 대조했다."
+        },
+        {
+          "instrument": "Decreto Ejecutivo n.º 1 of 2024 — Reglamento de la Ley de Compras Públicas, as amended",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2024-01-26, eight days after publication in Diario Oficial n.º 12 on 2024-01-18",
+          "evidenceUrl": "https://dinac.gob.sv/download/reglamento-ley-de-compras-publicas-2/",
+          "finding": "제96조의 시행일을 확인했고, 행정령 14/2025가 전략적 공익사업의 적용제외·공개 및 최종수익자 관련 시행령 제6·7·9·22조를 개정했다."
+        },
+        {
+          "instrument": "Decreto Legislativo n.º 689 of 2023",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2023-03-31, eight days after publication on 2023-03-23",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/84215ACD-6778-4583-8C2B-B34A86D3E1B2.pdf",
+          "finding": "LCP 제2조에 FOPROMID·FOSEP 조달을 추가하고 제25조의 DOM 참여법인 관련 제한을 개정했다."
+        },
+        {
+          "instrument": "Decreto Legislativo n.º 732 of 2023",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2023-06-01, eight days after publication on 2023-05-24",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/2744AFE6-8BC4-44D1-B248-49AAB82A6543.pdf",
+          "finding": "공공조달항소재판소 명칭을 TACOP 설립법과 일치시키도록 LCP 제120~122·177조를 개정했으며 재심·항소 기간 자체는 변경하지 않았다."
+        },
+        {
+          "instrument": "Decreto Legislativo n.º 291 of 2025",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2025-05-13, with effects retroactive to 2023-03-11 under art.2",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/04522699-E3ED-471D-AD52-0B220ADEB0A3.pdf",
+          "finding": "LCP 제3조 o호를 신설해 INDES 인정 체육단체·올림픽위원회·패럴림픽위원회의 조달을 적용제외했다."
+        },
+        {
+          "instrument": "Decreto Legislativo n.º 502 of 2026",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2026-01-31, eight days after publication in Diario Oficial n.º 15 on 2026-01-23",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E2C8C565-D7DB-4154-914E-889CD7556977.pdf",
+          "finding": "LCP 제3조 p호를 신설해 본직 의무에 지장이 없는 범위의 문화부 전문인력 예술교육 시간강사 계약을 적용제외했다."
+        },
+        {
+          "instrument": "Decreto Ejecutivo n.º 14 of 2025",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2025-06-13, eight days after publication in Diario Oficial n.º 104 on 2025-06-05",
+          "evidenceUrl": "https://www.jurisprudencia.gob.sv/DocumentosBoveda/R/2/2020-2029/2024/01/10A713.HTML?embedded=true",
+          "finding": "전략적 공익사업 적용제외의 예외성·내각 승인·COMPRASAL 공개 항목을 강화하고 법인 최종수익자 식별을 추가했다."
+        },
+        {
+          "instrument": "Ley de Adquisiciones y Contrataciones de la Administración Pública — Decreto Legislativo n.º 868 of 2000",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed when the Ley de Compras Públicas entered into force on 2023-03-10",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf",
+          "finding": "LCP 제191조가 종전 LACAP을 명시 폐지한다. 다만 LCP 제188조는 신법 시행 전에 체결되거나 개시된 조달은 종료까지 종전법을 적용하고, 시행 후 계약변경에는 신법을 적용한다."
+        },
+        {
+          "instrument": "Política Anual de Compras Públicas 2026",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2026-01-01 under section IX",
+          "evidenceUrl": "https://dinac.gob.sv/download/politica-anual-de-compras-publicas-2026-6/",
+          "finding": "2025-12-19 국무회의 승인을 거쳐 2026-01-01부터 적용되는 정책 원문에서 경쟁입찰·가격비교·직접계약·저액조달 및 컨설팅 방법의 현행 운용을 확인했다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "LCP arts.39~44; Reglamento arts.39~41; 2026 Policy section V.1; current commerce-sector minimum wage",
+          "finding": "경쟁입찰은 상업부문 월 최저임금 240배 초과, 가격비교는 240배 이하에 적용한다. 2025-06-01부터 월 최저임금이 USD 408.80이므로 현재 경계는 USD 98,112다. 직접계약은 제41조 법정사유가 있으면 금액상한이 없고, 저액조달은 국가 공통액이 아니라 기관 최고권자가 매년 소액현금·회전기금 한도를 승인한다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "LCP arts.22 and 89~90; Reglamento arts.46~47",
+          "finding": "입찰서 제출에는 전국 공통 최소일수가 없고 계약가액·규모·복잡성 등을 고려한 충분한 기간과 마감일을 PIP·요청서류에 정한다. 평가는 경쟁입찰·컨설팅 15영업일, 가격비교·직접계약·역경매 8영업일이며 불가항력 시 최대 15영업일 연장할 수 있다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+        },
+        "bidSecurity": {
+          "status": "not-applicable",
+          "articles": "LCP arts.123~124",
+          "finding": "현행 LCP의 열거된 보증은 선급금·계약이행·하자보수·서비스/물품품질 보증이며 별도 입찰유지보증은 두지 않는다. 요청서류가 그 밖의 의무확보 수단을 정할 수 있으므로 개별 공고는 별도 확인한다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "LCP arts.123~126; Reglamento arts.66~68",
+          "finding": "공사 계약이행보증은 계약금액의 10% 이상, 물품·용역·컨설팅은 최대 10%다. 즉시 인도(15영업일 이하) 등은 예외가 가능하고 온라인·저액조달은 의무가 아니며, 금액·제출·유효기간은 요청서류에 명시한다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "LCP arts.119~122 as amended by Decreto 732; Reglamento arts.69~79",
+          "finding": "선정결과 등에 대한 재심은 통지 다음 영업일부터 2영업일 내 제기하고 최고권자는 수리 후 최대 10영업일 내 결정한다. 그 결정의 항소는 다음 영업일부터 3영업일 내 TACOP에 제기하며 TACOP는 수리 후 최대 12영업일 내 결정한다. 저액조달·직접계약·온라인구매·단일출처 등 제122조 사유에는 재심·항소가 제한된다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/2744AFE6-8BC4-44D1-B248-49AAB82A6543.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "LCP arts.3 and 41~44, including Decreto 291 art.1 and Decreto 502 art.1; Reglamento arts.6~7 as amended by Decreto 14",
+          "finding": "국제협정이 별도 절차를 정한 조달, 기관 간 협약, 특정 금융·국외공관·공익전략사업·DOM·인정 체육단체 및 제한된 문화부 예술강사 계약 등은 제3조 적용제외다. 직접계약은 제41조의 한정 사유와 이유 있는 결정이 필요하며, 전략적 공익사업은 2025년 개정 시행령의 예외성·내각승인·COMPRASAL 공개요건을 따른다.",
+          "evidenceUrl": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E2C8C565-D7DB-4154-914E-889CD7556977.pdf"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
