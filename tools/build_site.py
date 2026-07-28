@@ -78,6 +78,25 @@ def e(s) -> str:
     return html.escape(str(s if s is not None else ""))
 
 
+COUNTRY_SORT_ALIAS = {
+    # 내부 데이터 키는 DR콩고를 유지하되 가나다순에서는 정식 국명으로 정렬한다.
+    "DR콩고": "콩고민주공화국",
+}
+COUNTRY_DISPLAY_ALIAS = {
+    "DR콩고": "콩고민주공화국(DR콩고)",
+}
+
+
+def country_name_sort_key(name: str) -> str:
+    """국가 표시명을 한글 가나다순으로 정렬하기 위한 키."""
+    return COUNTRY_SORT_ALIAS.get(name, name)
+
+
+def country_display_name(name: str) -> str:
+    """목록에서는 한글 정식 국명을 우선 표시한다."""
+    return COUNTRY_DISPLAY_ALIAS.get(name, name)
+
+
 def country_slug(d: dict) -> str:
     """제도 slug에서 국가 식별자를 얻는다.
 
@@ -545,8 +564,9 @@ def build_index(items: list[dict]) -> str:
 </tr>""")
 
     side_c = "".join(
-        f'<button aria-pressed="false" data-f="c" data-v="{e(k)}"><i class="dot"></i>{e(k)}<span class="n">{n}</span></button>'
-        for k, n in sorted(countries.items(), key=lambda x: -x[1]))
+        f'<button aria-pressed="false" data-f="c" data-v="{e(k)}"><i class="dot"></i>{e(country_display_name(k))}<span class="n">{n}</span></button>'
+        for k, n in sorted(countries.items(), key=lambda x: country_name_sort_key(x[0]))
+    )
     side_a = "".join(
         f'<button aria-pressed="false" data-f="a" data-v="{e(k)}"><i class="dot"></i>{e(AXIS_LABEL[k])}<span class="n">{n}</span></button>'
         for k, n in axes.items())
@@ -643,7 +663,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     opts = "".join(
         f'<option value="{e(x["slug"])}"{" selected" if x is d else ""}>'
-        f'{i:02d} · {e(x["country"]["name"])} {e(AXIS_LABEL[x["axis"]])}</option>'
+        f'{i:02d} · {e(country_display_name(x["country"]["name"]))} {e(AXIS_LABEL[x["axis"]])}</option>'
         for i, x in enumerate(items, 1))
 
     # 업무구조도 그리드
@@ -1227,7 +1247,7 @@ def main() -> int:
     items = []
     for f in sorted(INST_DIR.glob("*.json")):
         items.append(json.loads(f.read_text(encoding="utf-8")))
-    items.sort(key=lambda d: (d["country"]["name"], d["priority"]))
+    items.sort(key=lambda d: (country_name_sort_key(d["country"]["name"]), d["priority"]))
     if not items:
         print("제도 데이터가 없습니다.")
         return 1
