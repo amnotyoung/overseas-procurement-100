@@ -5,7 +5,7 @@
   "axis": "pipeline",
   "type": "사업형성형",
   "priority": 3,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "과테말라",
@@ -32,6 +32,18 @@
       },
       {
         "law": "Guía Orientadora de Programas y Proyectos de Cooperación Internacional No Reembolsable, 6th ed.",
+        "kind": "directive"
+      },
+      {
+        "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
+        "kind": "act"
+      },
+      {
+        "law": "Acuerdo Gubernativo Número 122-2016 — Reglamento, texto vigente con reformas",
+        "kind": "regulation"
+      },
+      {
+        "law": "Resolución Número 001-2022 — Normas para el uso de GUATECOMPRAS",
         "kind": "directive"
       }
     ],
@@ -95,19 +107,20 @@
       "status": "confirmed"
     },
     {
-      "item": "금액·기한·보증·제출서류와 개별 공고",
-      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "기준금액·기한·입찰/이행보증·불복·예외",
+      "question": "현행 기본법·시행규칙의 6개 핵심 요건과 개정·폐지·경과·시행 조항을 조문 단위로 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "MINFIN/DIFODA가 2025년 갱신한 Decreto 57-92 및 Acuerdo 122-2016 현행 조문 데이터, 2021 시행규칙 개정 관보, Congreso의 Decreto 9-2024 관보와 DIGAE Resolución 001-2022 원문을 직접 대조해 기준금액·기한·보증·불복·예외와 개정·폐지·경과·시행 상태를 검증했다.",
+    "scope": "Ley arts.1, 17, 23, 35, 38~39, 41, 43~44, 47, 64~65, 69~70, 99~102 and 107~108; Reglamento arts.17, 22~23 Bis, 26~32, 53~56, 80 and 83~84; Acuerdo 147-2021 arts.1~31; Decreto 9-2024 arts.13 and 15; Resolución 001-2022 arts.1~3, 22~23 and 39~44를 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "기존 Decreto 57-92 출처 URL이 잘못 연결된 Resolución 001-2022 PDF였으므로 현행 법률 조문 페이지로 정정했다.",
+      "Decreto 57-92는 폐지되지 않았고 후속 개정이 누적 적용되며, 최신 확인 개정인 Decreto 9-2024는 2024-05-04 시행됐다.",
+      "외부차관·원조 조달은 공여기관 규칙이 특별법으로 우선하지만 GUATECOMPRAS 공개와 법정 보완규칙을 함께 확인해야 한다."
     ],
     "sources": [
       {
@@ -138,6 +151,46 @@
         "publisher": "SEGEPLAN",
         "officialUrl": "https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/02/Guia-Orientadora-Programas-y-Proyectos-de-Cooperacion-Internacional-No-Reembolsable-6ta.-edic.pdf",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
+        "kind": "act",
+        "publisher": "Ministerio de Finanzas Públicas — DIFODA",
+        "officialUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1, 17, 23, 35, 38~39, 41, 43~44, 47, 64~65, 69~70, 99~102 and 107~108"
+      },
+      {
+        "law": "Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas",
+        "kind": "regulation",
+        "publisher": "Ministerio de Finanzas Públicas — DIFODA",
+        "officialUrl": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.17, 22~23 Bis, 26~32, 53~56, 80 and 83~84"
+      },
+      {
+        "law": "Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento",
+        "kind": "regulation",
+        "publisher": "Ministerio de Finanzas Públicas",
+        "officialUrl": "https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~31, especially arts.12~15, 20 and 28~31"
+      },
+      {
+        "law": "Decreto Número 9-2024 — reforma que adiciona la literal h) al art.44 de la Ley de Contrataciones del Estado",
+        "kind": "act",
+        "publisher": "Congreso de la República de Guatemala",
+        "officialUrl": "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/6a541-09-2024.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.13 and 15"
+      },
+      {
+        "law": "Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS",
+        "kind": "directive",
+        "publisher": "Dirección General de Adquisiciones del Estado",
+        "officialUrl": "https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~3, 22~23 and 39~44"
       }
     ],
     "discrepancies": [
@@ -167,15 +220,97 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 1992-10-27 and effective 15 days later under art.108 (1992-11-11); current official text includes later amendments through Decreto 9-2024",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/",
+          "finding": "MINFIN/DIFODA의 2025-12-01 갱신 현행 조문본에서 Decreto 57-92가 폐지되지 않고 계속 적용됨을 확인했다. arts.1, 23, 35, 38~39, 43~44, 64~65, 99~102와 art.108의 시행조항을 대조했으며 art.44(h)는 Decreto 9-2024로 추가됐다."
+        },
+        {
+          "instrument": "Decreto Número 9-2024 — latest amendment affecting art.44(h)",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2024-05-04",
+          "evidenceUrl": "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/6a541-09-2024.pdf",
+          "finding": "2024-04-26 관보 게재 후 2024-05-04 시행됐다. 제13조가 조달법 제44조에 IRTRA의 자체재원 직접계약 예외인 literal h)를 추가했고 제15조가 시행일을 정한다."
+        },
+        {
+          "instrument": "Acuerdo Gubernativo Número 122-2016 — Reglamento, as amended",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2016-06-16 and effective eight days later under art.84 (2016-06-24); amended by Acuerdos 147-2016, 172-2017 and 147-2021",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/",
+          "finding": "DIFODA 현행 시행규칙 조문본에서 보증·불복·특수조달 조항과 각 개정 주석을 대조했다. art.83은 종전 Acuerdo 1056-92를 폐지하고 art.84는 공포 8일 후 시행을 정한다."
+        },
+        {
+          "instrument": "Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2021-07-14 and effective 2021-07-22 under art.31",
+          "evidenceUrl": "https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf",
+          "finding": "제31조의 공포 8일 후 시행과 제30조의 경과규정을 확인했다. 시행 전 시작된 조달은 당시 법령을 따르고, 이후 절차에는 개정 규칙이 적용된다."
+        },
+        {
+          "instrument": "Resolución Número 001-2022 — Normas para el uso de GUATECOMPRAS",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2022-01-11 and effective 2022-01-12 under art.44",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf",
+          "finding": "제44조의 공포 다음 날 시행, 제43조의 Resoluciones 18-2019·19-2019 및 Resolución 28-2020 art.8 폐지를 확인했다. 현행 NOG/NPG와 공개 문서 규칙이다."
+        },
+        {
+          "instrument": "Acuerdo Gubernativo Número 1056-92 — former procurement regulation",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed from 2016-06-24 by Acuerdo 122-2016 art.83",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/",
+          "finding": "현행 Reglamento art.83이 종전 Acuerdo Gubernativo 1056-92를 명시 폐지한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Ley arts.17, 38 and 43(a)~(b); Reglamento arts.26~27",
+          "finding": "Q25,000 이하는 baja cuantía, Q25,000 초과~Q90,000은 GUATECOMPRAS 전자제안 방식의 compra directa, Q90,000 초과~Q900,000은 cotización, Q900,000 초과는 licitación pública가 원칙이다. 계약분할로 방식 기준을 회피할 수 없고 contrato abierto 등 법정 특수방식·예외는 별도 요건을 따른다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Ley arts.23, 35, 39, 41, 43(b)~(c), 47 and 101; Reglamento arts.22~23 Bis and 53",
+          "finding": "licitación은 GUATECOMPRAS 공고부터 제출·접수일까지 최소 40일(달력일), cotización은 최소 8영업일, compra directa는 최소 1영업일이다. proveedor único 관심표명은 최종 공고 후 최대 5영업일이다. inconformidad와 답변은 각각 5일(달력일), revocatoria/reposición은 통지 후 10영업일 내이며 계약은 최종 낙찰 후 10일 내 체결하고 이행보증은 서명 후 15일 내 제출한다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Ley arts.64 and 69; Reglamento arts.53~54",
+          "finding": "입찰유지보증은 계약금액의 1% 이상 5% 이하이며 현금예치 또는 인가기관의 fianza로 제공한다. 개찰부터 낙찰 승인까지를 보장하고 원칙적 유효기간은 120일이다. 낙찰자가 제안을 유지하지 않거나 정해진 기간에 계약·이행보증을 제출하지 않으면 실행되며, subasta electrónica inversa에는 적용하지 않는다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Ley arts.65 and 69; Reglamento arts.53, 55~56",
+          "finding": "물품·공급품·서비스와 공사 모두 계약금액의 10%를 이행보증으로 제공하며 더 높은 보증도 거절할 수 없다. 계약 서명 후 15일 내 제출한다. 물품·용역은 품질·작동보증 수령 또는 서비스 완료까지, 공사는 하자보수보증 수령까지 유효하며 부분검수 시 계약문서에 따라 조정할 수 있다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Ley arts.35 and 99~102; Reglamento arts.22~23 Bis",
+          "finding": "절차 위반에 대한 inconformidad는 GUATECOMPRAS에서 대상 행정행위 공고 후 5일(달력일) 내 제기하고 기관은 접수 후 5일 내 이유를 붙여 답한다. 상급자가 있는 기관의 결정에는 revocatoria, 장관·최고행정기관 결정에는 reposición을 통지 후 10영업일 내 제기한다. 행정구제를 소진한 뒤 Tribunal de lo Contencioso Administrativo에 다툴 수 있다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Ley arts.1, 43~45; Reglamento arts.26~32 and 80",
+          "finding": "baja cuantía·compra directa·proveedor único·임대 등 art.43의 특정방식과 비상사태, 지정 국제보건기구 구매, 국외조달, 중앙은행 특수조달, 개인 기술·전문용역, 선거조달, 기본 공공서비스 및 IRTRA 자체재원 조달 등 art.44의 열거 예외를 확인했다. 외부차관·원조는 공여자 규칙이 특별법으로 우선하되 GUATECOMPRAS 사용과 차관 경쟁절차는 유지한다.",
+          "evidenceUrl": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
