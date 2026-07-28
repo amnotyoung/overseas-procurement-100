@@ -2332,12 +2332,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 132. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Bidding system
-- Legal basis: Law 22/2023/QH15; Decree 24/2024; Ministry of Finance functions and 2025 bidding regulations
+- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
 - KOICA guide: p.61-79
 
-**Current legal basis** — Law 22/2023/QH15 and Decree 24/2024 govern bidding; after the 2025 merger, the integrated Ministry of Finance administers bidding and VNEPS remains the electronic system.
+**Current legal basis** — Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.
 
-**✔ Verify** — Check the notice date, current Ministry of Finance rule, electronic form and any donor-agreement priority.
+**✔ Verify** — Check the notice date, financing agreement, package type and value, and the applicable VNEPS documents.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -2349,12 +2349,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 133. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — ODA project pipeline
-- Legal basis: Decrees 114/2021, 20/2023, 29/2025 and 166/2025; Directive 27/CT-TTg (2026)
+- Legal basis: Decree 242/2025 Arts.8, 12~47 and 99
 - KOICA guide: p.61-79
 
-**Current legal basis** — The integrated Ministry of Finance now covers planning, public investment, debt, foreign aid and bidding, while Decree 114/2021 as amended governs ODA project procedures.
+**Current legal basis** — Decree 242/2025가 2025년 9월 10일부터 구 Decrees 114/2021·20/2023을 대체하며 통합 재무부가 ODA·양허성차관 협정·재정 경로를 담당한다.
 
-**✔ Verify** — Confirm project class, investment-policy authority, Ministry of Finance financing route and implementing-agency readiness.
+**✔ Verify** — Check the notice date, financing agreement, package type and value, and the applicable VNEPS documents.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -2366,12 +2366,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 134. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Procurement governance
-- Legal basis: Law 22/2023/QH15; Decree 24/2024; Ministry of Finance functions and 2025 bidding regulations
+- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
 - KOICA guide: p.61-79
 
-**Current legal basis** — Law 22/2023/QH15 and Decree 24/2024 govern bidding; after the 2025 merger, the integrated Ministry of Finance administers bidding and VNEPS remains the electronic system.
+**Current legal basis** — Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.
 
-**✔ Verify** — Check the notice date, current Ministry of Finance rule, electronic form and any donor-agreement priority.
+**✔ Verify** — Check the notice date, financing agreement, package type and value, and the applicable VNEPS documents.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
