@@ -5,7 +5,7 @@
   "axis": "bidding",
   "type": "경쟁조달형",
   "priority": 1,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "우간다",
@@ -113,13 +113,15 @@
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·의회·조달규제기관 공식 법령과 조직 페이지에서 현행 법령명, 기관 권한, 전자조달 및 대외재원 조정체계를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관 역할과 공개된 제도변경을 확인했다. 정량요건·모든 예외·개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "PPDA Act Cap.205 재번호화본, 2023 규정 묶음, 2025 현행 금액기준과 2026 보증지침 원문을 조문·조항별 대조하고 PPDA FAQ·MoFPED 권한자료로 재원예외와 사업경로를 교차확인했다.",
+    "scope": "PPDA Act Cap.205 procurement methods and review parts; 2023 Rules/Methods, Consultancy, Contracts and Administrative Review Regulations; Guidelines 1/2025 and 3/2026; PPDA FAQ; MoFPED DARC mandate.",
     "notes": [
-      "공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다."
+      "2024 제7차 개정판부터 공식 인용은 Cap.205이며 구 2003 조문번호를 그대로 사용하면 안 된다.",
+      "2025 기준지침이 2024 기준을 폐지했고 2026 보증지침이 2025 보증지침을 폐지했다.",
+      "자료집의 800M UGX 공개기준은 공사에만 해당하며 물품·비컨설팅·컨설팅회사는 400M, 개인컨설턴트는 200M 초과부터 공개방식이다.",
+      "개발파트너 협정이 별도 규칙을 정하면 충돌 범위에서 협정이 우선한다."
     ],
     "sources": [
       {
@@ -127,21 +129,48 @@
         "kind": "donor-rule",
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "우간다 설명을 Cap.205, 2023 규정, 2025 기준 및 2026 보증지침과 대조"
       },
       {
-        "law": "Public Procurement and Disposal of Public Assets Act, Cap. 205",
+        "law": "PPDA Act, Cap.205 — 7th Revised Edition",
         "kind": "act",
-        "publisher": "Public Procurement and Disposal of Public Assets Authority",
-        "officialUrl": "https://www.ppda.go.ug/about-us/",
-        "retrievedOn": "2026-07-28"
+        "publisher": "PPDA / Uganda Law Reform Commission",
+        "officialUrl": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화"
       },
       {
-        "law": "PPDA legal update on the 7th Revised Edition and Cap. 205 citation",
+        "law": "PPDA Regulations, 2023",
+        "kind": "regulation",
+        "publisher": "PPDA",
+        "officialUrl": "https://www.ppda.go.ug/ppda-regulations/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Rules/Methods regs.6 and 63; Consultancy regs.6, 42 and 47; Contracts regs.11~12 and 43; Administrative Review regs.4~10"
+      },
+      {
+        "law": "Guideline No.1/2025 — Thresholds",
         "kind": "directive",
-        "publisher": "Public Procurement and Disposal of Public Assets Authority",
-        "officialUrl": "https://www.ppda.go.ug/download/Newsletter-July-September-2025.pdf",
-        "retrievedOn": "2026-07-28"
+        "publisher": "PPDA",
+        "officialUrl": "https://www.ppda.go.ug/?dl=4172",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "cls.1~4; all works, supplies, non-consultancy, firm and individual-consultant method thresholds, repeal and transition"
+      },
+      {
+        "law": "Guideline No.3/2026 — Securities",
+        "kind": "directive",
+        "publisher": "PPDA",
+        "officialUrl": "https://www.ppda.go.ug/?dl=7092",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "cls.1~5; bid guarantee/bond/declaration, performance/ESHS/advance security, repeal"
+      },
+      {
+        "law": "PPDA official FAQ and MoFPED DARC mandate",
+        "kind": "directive",
+        "publisher": "PPDA / MoFPED",
+        "officialUrl": "https://www.ppda.go.ug/faqs/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "FAQ 17,19,27 and DARC external-finance coordination mandate"
       }
     ],
     "discrepancies": [
@@ -171,15 +200,89 @@
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement and Disposal of Public Assets Act, Cap.205",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "7th Revised Edition commenced 1 July 2024",
+          "evidenceUrl": "https://www.ppda.go.ug/download-reports/legal/",
+          "finding": "2024년 제7차 법령개정판이 2023년 말까지 개정을 통합·재번호화했으며 공식 인용은 PPDA Act Cap.205이다."
+        },
+        {
+          "instrument": "PPDA Regulations, 2023 package",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "5 February 2024",
+          "evidenceUrl": "https://www.ppda.go.ug/ppda-regulations/",
+          "finding": "조달계획·방식·컨설팅·평가·계약·행정심사 등 2023 규정이 2024년 2월 5일부터 시행됐고 구 지방정부 규정은 폐지됐다."
+        },
+        {
+          "instrument": "PPDA Guideline No.1/2025 on thresholds",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "15 September 2025",
+          "evidenceUrl": "https://www.ppda.go.ug/?dl=4172",
+          "finding": "현행 방식별 금액기준을 정하고 2024 제1호 기준지침을 폐지하되 이미 초청장이 발행된 절차는 구 기준으로 계속한다."
+        },
+        {
+          "instrument": "PPDA Guideline No.3/2026 on bid, performance and advance-payment securities",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "1 July 2026",
+          "evidenceUrl": "https://www.ppda.go.ug/?dl=7092",
+          "finding": "입찰보증·이행보증·ESHS·선급금보증의 현행 형태와 상한을 정하고 2025 제4호 지침을 폐지한다."
+        },
+        {
+          "instrument": "MoFPED Development Assistance and Regional Cooperation mandate",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Current mandate checked 29 July 2026",
+          "evidenceUrl": "https://archive.finance.go.ug/node/6",
+          "finding": "DARC가 대외재원 동원, 개발파트너 조정, 양자·다자 협상·협정을 담당한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPDA Act Cap.205 ss.82~90 and 131; Rules and Methods Regulations 2023 reg.6(2); Consultancy Regulations 2023 reg.6(2); Guideline 1/2025 cls.1~4",
+          "finding": "2025년 9월 15일 현행 기준은 공사: 800M UGX 초과 공개, 400M 초과~800M 제한, 20M 초과~400M 견적, 20M 이하 소액이다. 물품·비컨설팅·컨설팅회사: 400M 초과 공개, 200M 초과~400M 제한, 10M 초과~200M 견적, 10M 이하 소액이다. 개인컨설턴트는 200M 초과 공개, 100M 초과~200M 제한, 10M 초과~100M 견적, 10M 이하 소액이다. 이 지침은 2024 지침을 폐지한다.",
+          "evidenceUrl": "https://www.ppda.go.ug/?dl=4172"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Rules and Methods Regulations 2023 bidding provisions; Consultancy Regulations 2023 reg.42; Administrative Review Regulations 2023 regs.4~9",
+          "finding": "컨설팅 제안 최소기간은 개인 10영업일, 회사 15영업일이며 직접조달·긴급은 예외다. 낙찰예정자 공지는 원칙상 10영업일 게시한다. 이의는 인지 후 10영업일, 회계책임자 결정은 접수 후 10일, Tribunal 진행 의사는 결정 또는 결정기한 만료 후 5영업일 안에 통지한다.",
+          "evidenceUrl": "https://www.ppda.go.ug/ppda-regulations/"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Rules and Methods Regulations 2023 reg.63(2); Consultancy Regulations 2023 reg.47(2); Guideline 3/2026 cls.2~2.3",
+          "finding": "2026년 7월 1일부터 공개 국내·국제 물품·공사·비컨설팅은 은행보증(예정가 1% 이하) 또는 보험 bid bond(1~2%)를 요구한다. 제한·견적·직접방식은 bid-securing declaration, 모든 컨설팅은 proposal-securing declaration을 사용하며 지역업체 유보 공개입찰도 declaration을 적용한다.",
+          "evidenceUrl": "https://www.ppda.go.ug/?dl=7092"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Contracts Regulations 2023 regs.11~12; Guideline 3/2026 cls.3~4",
+          "finding": "비지역 공급자는 모든 방식에서 은행 이행보증 또는 보험 performance bond를 적용하며 계약가의 5%를 넘지 않는다. 지역 공급자는 performance-securing declaration으로 대체한다. 고위험 ESHS 보증은 1~2%이고 일반 이행보증과 합계 5% 이하이다. 선급금은 지급 전 은행보증 또는 보험보증을 받아야 한다.",
+          "evidenceUrl": "https://www.ppda.go.ug/?dl=7092"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPDA Act Cap.205 ss.100~115 (renumbered review provisions); Administrative Review Regulations 2023 regs.4~10",
+          "finding": "입찰자는 위반 인지 후 10영업일 안에 수수료와 함께 회계책임자에게 서면 이의하고 즉시 절차가 정지된다. 회계책임자는 10일 안에 서면 결정하며, 미결정·불복 시 5영업일 안에 Tribunal 진행 의사를 통지한다. Tribunal 결정 전에는 계약을 체결할 수 없다.",
+          "evidenceUrl": "https://www.ppda.go.ug/download/THE-PUBLIC-PROCUREMENT-DISPOSAL-OF-PUBLIC-ASSETS-ADMINISTRATIVE-REVIEW-REGULATIONS-2023.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPDA Act Cap.205 scope and alternative-procedure provisions; PPDA FAQ Nos.17, 19 and 27",
+          "finding": "개발파트너 재원도 금융협정이 PPDA 적용을 정하면 국내법을 적용하지만, 협정이 파트너 규칙을 정한 경우 충돌 범위에서 협정이 우선한다. 긴급조달은 10영업일 낙찰예정자 게시의 예외다. 예외적 필요가 있는 기관은 PPDA가 승인한 대체절차를 사용할 수 있으나 일반적인 방식 일탈 면제는 없다.",
+          "evidenceUrl": "https://www.ppda.go.ug/faqs/"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
