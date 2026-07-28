@@ -85,13 +85,14 @@
     "기관 간 실제 결재·이의·공식요청 인계"
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "총리령 No.2018/4992/PM 공식 원문 42개 조문을 전수 대조해 사업 구상·실행준비·부지·운영·유지관리·정부사업은행·성숙도비자·기관별 심사금액을 확인하고, Code 2018/366의 외부재원 조달요건도 함께 대조했다.",
+    "scope": "공공투자 사업성숙화령 arts.1~42 전체와 공공계약법의 적용범위·금액·기한·보증·이의·외부재원 예외를 확인해 ODA 사업 발굴부터 성숙도비자, 외부재원 탐색 및 조달로 이어지는 법적 관문을 검증했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
-      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
+      "사업성숙화령 제23조는 CDMT·예산 편성 전에 성숙도비자를 요구하고, 제24조제3항은 내부·외부재원 탐색도 비자 취득 전에는 시작할 수 없게 한다.",
+      "1억 CFA 미만은 내부위원회가 비자를 발급하고, 1억 이상은 MINEPAT의 부처간전문가위원회가 심사하며, 100억 이상 복잡·전략사업은 의무 재검증 대상이다.",
+      "2025 IMF 문서는 기후요소 통합을 위한 2018/4992 개정을 향후 조치로 제시하므로, 조사일 현재 기존 영은 현행 기준이다."
     ],
     "sources": [
       {
@@ -113,10 +114,92 @@
         "kind": "directive",
         "publisher": "Prime Minister's Office / MINEPAT legal compilation",
         "officialUrl": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf",
-        "retrievedOn": "2026-07-28",
+        "retrievedOn": "2026-07-29",
         "articlesChecked": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무"
+      },
+      {
+        "law": "Décret No.2018/4992/PM du 21 juin 2018 fixant les règles régissant le processus de maturation des projets d'investissement public",
+        "kind": "regulation",
+        "publisher": "Services du Premier Ministre",
+        "officialUrl": "https://www.spm.gov.cm/site/sites/default/files/text%20PM_0.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~42 전체; 특히 arts.4~18, 20~25, 27~39, 41~42"
+      },
+      {
+        "law": "Décret No.2018/366 du 20 juin 2018 portant Code des Marchés Publics",
+        "kind": "regulation",
+        "publisher": "Présidence de la République / MINFI",
+        "officialUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.4~5, 27~31, 72, 77, 89~90, 108~113, 137~142, 158, 170~177, 206~208"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Décret No.2018/4992/PM du 21 juin 2018 on public-investment project maturation",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2018-06-21; published by urgent procedure under art.42",
+          "evidenceUrl": "https://www.spm.gov.cm/site/sites/default/files/text%20PM_0.pdf",
+          "finding": "The Prime Minister's official 42-article text governs project preparation and maturity visas. A 2025 IMF report describes revision as a future reform, confirming the decree remains the operative baseline."
+        },
+        {
+          "instrument": "Décret No.2018/366 du 20 juin 2018 portant Code des Marchés Publics",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2018-06-20; published by urgent procedure under art.208",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf",
+          "finding": "The Code governs procurement after project formation and defers to inconsistent external financing-agreement rules under art.4."
+        },
+        {
+          "instrument": "Décret No.2004/275 and prior tender-board rules",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed by Code 2018/366 art.207",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf",
+          "finding": "The current Code expressly repeals the former Code and listed prior tender-board instruments."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Maturation Decree arts.33~37; Code arts.4~5, 27~31",
+          "finding": "An internal commission issues maturity visas below CFA 100m; projects at or above CFA 100m go to MINEPAT's interministerial expert committee, and complex/strategic projects at or above CFA 10bn require counter-expertise. Procurement excludes purchases below CFA 5m and treats CFA 5m to below CFA 50m as jobbing orders.",
+          "evidenceUrl": "https://www.spm.gov.cm/site/sites/default/files/text%20PM_0.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Maturation Decree arts.20~24; Code arts.77, 89, 107, 175~176",
+          "finding": "Maturation and Government Project Bank updating run continuously; the decree imposes sequence gates rather than a universal number of days. Once procurement starts, the Code provides 15~21/21~30 working days for restricted national/international calls and 25~50 working days generally, with stated urgency and complexity adjustments.",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.85~86, 90~93",
+          "finding": "The tender documents set the bid-bond amount and its validity must exceed bid validity by 30 days; enumerated national SME/civil-society substitutes are allowed and a required missing bond causes rejection.",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.137~142",
+          "finding": "The final execution bond is 2~5% and due within 20 calendar days and before first payment. Retention/performance security may not exceed 10%; intellectual services are exempt and jobbing-order holders may be exempted.",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Code arts.49, 170~177, 186~187",
+          "finding": "Procurement petitions run through the Project Owner and Petitions Review Committee with ARMP review. Filing windows vary by stage: five working days around prequalification, fourteen before opening for tender documents, three around opening/technical results and five after award publication.",
+          "evidenceUrl": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Maturation Decree arts.9, 23~24, 36, 39; Code arts.4, 71~72, 108~113, 142, 158, 206",
+          "finding": "Site release and compensation precede maturity and financing searches; no internal or external financing search may start before the maturity visa. Development partners may support maturation, while financing-agreement procurement rules prevail where inconsistent and direct contracting remains confined to statutory grounds.",
+          "evidenceUrl": "https://www.spm.gov.cm/site/sites/default/files/text%20PM_0.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -144,15 +227,7 @@
         "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차"
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
-        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
