@@ -23,23 +23,16 @@
         "kind": "donor-rule"
       },
       {
-        "law": "경제적 자유에 관한 기본법",
+        "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 2023)",
+        "lawKo": "국가·지방재원 물품·공사·서비스 조달법(2023년 전면개정)",
         "kind": "act"
       },
       {
-        "law": "조달에 대한 법률",
-        "kind": "act"
+        "law": "Government Resolution No.02 of 2024 on procurement budget-cost ceilings",
+        "kind": "directive"
       },
       {
-        "law": "지역 단위 조달 관련 법률",
-        "kind": "act"
-      },
-      {
-        "law": "Law on Procurement of Goods, Works and Services with State and Local Funds",
-        "kind": "act"
-      },
-      {
-        "law": "Government Procurement Agency legal and control functions",
+        "law": "Minister of Finance Order A/105 of 2025 on standard service tender documents",
         "kind": "directive"
       }
     ],
@@ -109,17 +102,17 @@
     {
       "item": "정량요건·하위규정·공여조건·개별 공고",
       "question": "최신 규정과 실제 공고에서 세부요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "Legalinfo의 2023년 전면개정 조달법 현행 통합본문, 2024년 기준금액 결의, 2025년 최신 표준입찰문서 명령을 직접 대조해 적용범위·기준금액·기한·보증·불복·예외와 폐지·개정 상태를 조문 단위로 확인했다.",
+    "scope": "2023 Procurement Law arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~43, 48, 54~60, 62; Government Resolution No.02/2024; Ministerial Order A/105/2025를 확인했다.",
     "notes": [
-      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
+      "기존에 연결된 2005년 법률 영문본은 2024-01-01 시행된 2023년 전면개정법으로 대체했다. 현행 통합본문은 2026-05-01 개정까지 반영한다.",
+      "실제 참여 시에는 해당 공고의 재원협정, lot별 예산가, 최신 표준문서와 전자조달 공고를 함께 확인한다."
     ],
     "sources": [
       {
@@ -130,36 +123,46 @@
         "retrievedOn": "2026-07-28"
       },
       {
-        "law": "Law on Procurement of Goods, Works and Services with State and Local Funds",
+        "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
         "kind": "act",
-        "publisher": "Legalinfo",
-        "officialUrl": "https://legalinfo.mn/en/edtl/16532200414011",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Legalinfo — Ministry of Justice and Home Affairs",
+        "officialUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01"
       },
       {
-        "law": "Government Procurement Agency legal and control functions",
+        "law": "Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement",
         "kind": "directive",
-        "publisher": "Government Procurement Agency",
-        "officialUrl": "https://www.e-tender.mn/en/n/450/",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Government of Mongolia — Legalinfo",
+        "officialUrl": "https://legalinfo.mn/mn/detail?lawId=17047839105111",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "resolution clauses 1~3 and attached threshold schedule authority under Procurement Law art.10.12"
+      },
+      {
+        "law": "Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents",
+        "kind": "directive",
+        "publisher": "Ministry of Finance — Legalinfo",
+        "officialUrl": "https://legalinfo.mn/mn/detail?lawId=16960768160991",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Order A/105 clauses 1~3; superseding Order A/260 of 2023 under Procurement Law arts.11.14 and 55.1.3"
       }
     ],
     "discrepancies": [
       {
         "severity": "high",
-        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
-        "sourceText": "자료집은 조달청 하나만 제시하고 외환규정 등 무관한 문구를 조달 법적 근거로 포함한다.",
-        "actualText": "국가·지방재원 조달법이 기본법이며 외국 원조·차관도 국제협정이 달리 정하지 않으면 적용되고 재무부·조달청·발주기관이 역할을 나눈다.",
-        "citation": "State and Local Funds Procurement Law arts.2–3; Government Procurement Agency",
+        "field": "canvas.legalBasis·procedure / 현행 조달법·정량절차",
+        "sourceText": "자료집과 기존 모델은 2005년 구법·불명확한 법률명을 섞고, 현행 기준금액·기한·보증·불복기한을 확정하지 않았다.",
+        "actualText": "2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.",
+        "citation": "Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025",
         "impact": "잘못된 법령·기관 또는 적용범위는 승인·조달경로와 사업일정을 실질적으로 왜곡할 수 있다.",
-        "action": "무관한 법적 근거를 제거하고 적용범위와 재무부·조달청·발주기관 역할을 반영했다.",
-        "userAction": "Check the current e-tender notice, treaty exception, method, deadline, evaluation and complaint route.",
+        "action": "구법 링크와 모호한 법률명을 제거하고 현행법·최신 표준문서 및 정량 절차를 조문 단위로 반영했다.",
+        "userAction": "공고일의 lot별 예산가, 재원협정상 예외, 전자조달 제출기한과 최신 표준문서를 확인한다.",
         "review": {
           "topic": "Current procurement law and authorities",
-          "guideSays": "자료집은 조달청 하나만 제시하고 외환규정 등 무관한 문구를 조달 법적 근거로 포함한다.",
-          "lawSays": "국가·지방재원 조달법이 기본법이며 외국 원조·차관도 국제협정이 달리 정하지 않으면 적용되고 재무부·조달청·발주기관이 역할을 나눈다.",
+          "guideSays": "자료집과 기존 모델은 2005년 구법·불명확한 법률명을 섞고, 현행 기준금액·기한·보증·불복기한을 확정하지 않았다.",
+          "lawSays": "2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.",
           "impact": "Incorrect law, authority or scope can materially misroute approval and procurement.",
-          "verify": "Check the current e-tender notice, treaty exception, method, deadline, evaluation and complaint route."
+          "verify": "Check the lot budget, treaty or financing-agreement exception, electronic deadline, and current standard document for the live notice."
         },
         "id": "mongolia-procurement-governance-D01",
         "sourcePage": "",
@@ -167,19 +170,85 @@
         "upstream": {
           "priority": "정정 요망",
           "state": "not-reported",
-          "suggestedText": "무관한 법적 근거를 제거하고 적용범위와 재무부·조달청·발주기관 역할을 반영했다."
+          "suggestedText": "구법 링크와 모호한 법률명을 제거하고 현행법·최신 표준문서 및 정량 절차를 조문 단위로 반영했다."
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Article 62.1: effective from 2024-01-01; consolidated Legalinfo text includes amendments through 2026-05-01",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351",
+          "finding": "Legalinfo의 현행 통합본문은 2023년 전면개정법을 2024-01-01부터 시행한다고 정하고, 2024년 개정과 2026-05-01 개정(국유 연구기관에 대한 arts.14.9·42.10 예외)을 반영한다. 기존 모델의 2005년 법률 영문 링크는 신규 조달의 현행 근거가 아니므로 교체했다."
+        },
+        {
+          "instrument": "Government Resolution No.02 of 3 January 2024",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2024-01-03 under Procurement Law art.10.12",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=17047839105111",
+          "finding": "결의 제1조는 직접·비교방식에 적용할 예산상한을 부속표로 정하고, 제3조는 종전 2021년 결의 제124호를 폐지한다. Legalinfo는 이 결의를 현행 법령으로 제공한다."
+        },
+        {
+          "instrument": "Minister of Finance Order A/105 of 26 May 2025",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2025-05-26 under Procurement Law arts.11.14 and 55.1.3",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16960768160991",
+          "finding": "2025년 A/105호가 서비스 조달 표준입찰문서를 다시 승인하고 2023년 A/260호를 폐지했다. 따라서 A/260 또는 2021년 146호 표준문서는 현행본으로 사용하지 않는다."
+        },
+        {
+          "instrument": "Procurement Law of 1 December 2005 / old English consolidation",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Superseded for procurements governed by the revised law effective 2024-01-01",
+          "evidenceUrl": "https://legalinfo.mn/en/edtl/16532200414011",
+          "finding": "기존 데이터가 연결한 2005년 법률은 2023년 전면개정법 시행 전 체계다. 현행 정량요건과 절차는 2023년 신법 통합본문 및 그 하위규정으로 대조했다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.8.3, 10.2, 10.12~10.13, 14.1~14.2 and 42.1~42.2; Government Resolution No.02/2024 clauses 1~3",
+          "finding": "외국인 참여를 금지할 수 없는 기준은 공사 300억 MNT, 물품 10억 MNT, 서비스 3억 MNT 초과다(art.8.3). 입찰·이행보증은 예산가 또는 해당 lot가 1억 MNT를 초과할 때 적용한다(arts.14.1, 42.1). 직접·비교조달 상한은 art.10.12에 따라 정부 결의 제02/2024 부속표가 정하며, 결의는 종전 제124/2021호를 명시적으로 폐지했다.",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=17047839105111"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.19.1~19.2, 20.1~20.7, 23.1, 24.1~24.3, 32.3 and 34.4",
+          "finding": "공개입찰 접수기간은 원칙적으로 최소 15영업일, art.8.3 국제참여 규모는 최소 20영업일이다(art.32.3). 가격경매는 초청 후 최소 5영업일 뒤 시작해 최소 2시간 진행한다(art.34.4). 발주자는 개찰 후 15영업일 내 결정하며 특정 협상계약은 5영업일, 법정 사유 시 15영업일까지 1회 연장할 수 있다(art.24).",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.14.1~14.9, 18.3.8, 22.7 and 23.2.5~23.3",
+          "finding": "예산가 또는 lot가 1억 MNT를 초과하면 원칙적으로 입찰보증을 요구하고, 금액은 예산가의 0.5%다(arts.14.1~14.2). 은행·정부증권·몽골 보험자 보증을 허용하며 외국은행 보증은 입찰문서 절차를 따른다. 전자시스템으로 제출하지 않으면 개찰 거절 사유가 된다(arts.22.7, 23.3). 2026년 신설 art.14.9는 국유 연구기관을 예외로 둔다.",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.39.3.4 and 42.1~42.10",
+          "finding": "예산가 1억 MNT 초과 입찰은 이행보증을 요구하고, 금액은 해당 회계연도 조달재원의 3%다(arts.42.1~42.2). 계약에는 선급금·이행보증 금액을 기재하며(art.39.3.4), 다년도 사업은 만료 전 갱신한다. 일반계약 방식은 arts.38.6에 따라 입찰·이행보증을 요구하지 않고, 2026년 신설 art.42.10은 국유 연구기관을 예외로 둔다.",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.57.1~57.4, 58.1~58.6, 59.1~59.12 and 60",
+          "finding": "법 위반을 안 날부터 5영업일 내 발주자에게 서면 이의할 수 있고(art.57.1), 경쟁제한 입찰문서 이의는 공개입찰 개찰 최소 5영업일 전, 기타 방식은 최소 3영업일 전에 경쟁당국이 접수해 10영업일 내 처리한다(art.58). 낙찰결정 불복은 결정 후 5영업일 내 재무·예산 중앙행정기관에 제기하며(art.59.1), 이후 행정법원 경로가 열린다(art.60).",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Procurement Law arts.2.2, 3.2~3.4, 10.3~10.10, 32.5, 35~38 and 42.10",
+          "finding": "국제조약이 다르면 조약이 우선하고(art.2.2), 외국·국제기구 원조·차관도 조약이 달리 정하지 않으면 국내법을 적용한다(art.3.2). 국가기밀·안보, 중앙은행 통화정책, 일정 금융시장·선거·재외공관·문화유산·감사전문가 조달은 art.3.3에서 제외한다. 협상·단일공급자·특수 의약품 및 재난 등은 arts.35~36의 제한사유에 한하며, 일반계약 방식은 보증 예외다(art.38.6).",
+          "evidenceUrl": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
