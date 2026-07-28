@@ -540,10 +540,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 30. [HIGH] Current legal basis check
 
 - Institution: Ghana — Bidding system
-- Legal basis: Public Procurement Act 663 as amended by Act 914; PPA GHANEPS directive
+- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
 - KOICA guide: p.17-29
 
-**Current legal basis** — Act 663 as amended by Act 914 governs the system; PPA regulates, entity bodies execute, and GHANEPS is mandatory.
+**Current legal basis** — Act 663 as amended by Acts 914 and 1139 governs the system; L.I. 2516 supplies the current thresholds, PPA regulates, entity bodies execute, and GHANEPS is mandatory.
 
 **✔ Verify** — Check the GHANEPS notice for current threshold, approval authority, competition or preference rule and complaint deadline.
 
@@ -557,10 +557,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 31. [HIGH] Current legal basis check
 
 - Institution: Ghana — Procurement governance
-- Legal basis: Public Procurement Act 663 as amended by Act 914; PPA GHANEPS directive
+- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
 - KOICA guide: p.17-29
 
-**Current legal basis** — Act 663 as amended by Act 914 governs the system; PPA regulates, entity bodies execute, and GHANEPS is mandatory.
+**Current legal basis** — Act 663 as amended by Acts 914 and 1139 governs the system; L.I. 2516 supplies the current thresholds, PPA regulates, entity bodies execute, and GHANEPS is mandatory.
 
 **✔ Verify** — Check the GHANEPS notice for current threshold, approval authority, competition or preference rule and complaint deadline.
 
@@ -576,10 +576,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 32. [HIGH] Current legal basis check
 
 - Institution: Guatemala — Bidding system
-- Legal basis: Decreto 57-92 art.15; Acuerdo 122-2016; Resolución 001-2022
+- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
 - KOICA guide: p.5-17
 
-**Current legal basis** — Decree 57-92 and Agreement 122-2016 are the core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
+**Current legal basis** — Decree 57-92 and amended Agreement 122-2016 are the current core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
 
 **✔ Verify** — Check the notice identifier, RGAE status, selection method and deadlines in GUATECOMPRAS.
 
@@ -610,10 +610,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 34. [HIGH] Current legal basis check
 
 - Institution: Guatemala — Procurement governance
-- Legal basis: Decreto 57-92 art.15; Acuerdo 122-2016; Resolución 001-2022
+- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
 - KOICA guide: p.5-17
 
-**Current legal basis** — Decree 57-92 and Agreement 122-2016 are the core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
+**Current legal basis** — Decree 57-92 and amended Agreement 122-2016 are the current core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
 
 **✔ Verify** — Check the notice identifier, RGAE status, selection method and deadlines in GUATECOMPRAS.
 

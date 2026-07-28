@@ -76,13 +76,13 @@
 
 **현행 기준**
 
-> Act 663은 Act 914로 개정됐고 PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.
+> Act 663은 Acts 914 and 1139로 개정됐고 L.I. 2516이 2026-02-04부터 종전 기준금액 부속표를 대체했다. PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.
 
 **산출물 반영**
 
 > 지역 정보창구의 기관 오인을 제거하고 개정법·PPA·조달기관·GHANEPS 역할을 반영했다.
 
-**근거** — Public Procurement Act 663 as amended by Act 914; PPA GHANEPS directive
+**근거** — Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
 
 
 ---
@@ -93,13 +93,13 @@
 
 **현행 기준**
 
-> Act 663은 Act 914로 개정됐고 PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.
+> Act 663은 Acts 914 and 1139로 개정됐고 L.I. 2516이 2026-02-04부터 종전 기준금액 부속표를 대체했다. PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.
 
 **산출물 반영**
 
 > 지역 정보창구의 기관 오인을 제거하고 개정법·PPA·조달기관·GHANEPS 역할을 반영했다.
 
-**근거** — Public Procurement Act 663 as amended by Act 914; PPA GHANEPS directive
+**근거** — Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
 
 
 ---
@@ -110,13 +110,13 @@
 
 **현행 기준**
 
-> Decreto 57-92와 Acuerdo 122-2016이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.
+> Decreto 57-92의 현행 개정본과 Acuerdo 122-2016의 현행 개정본이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.
 
 **산출물 반영**
 
 > DIGAE·발주기관·RGAE 역할을 분리하고 GUATECOMPRAS의 시스템 성격과 정확한 법령명을 반영했다.
 
-**근거** — Decreto 57-92 art.15; Acuerdo 122-2016; Resolución 001-2022
+**근거** — Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
 
 
 ---
@@ -127,13 +127,13 @@
 
 **현행 기준**
 
-> Decreto 57-92와 Acuerdo 122-2016이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.
+> Decreto 57-92의 현행 개정본과 Acuerdo 122-2016의 현행 개정본이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.
 
 **산출물 반영**
 
 > DIGAE·발주기관·RGAE 역할을 분리하고 GUATECOMPRAS의 시스템 성격과 정확한 법령명을 반영했다.
 
-**근거** — Decreto 57-92 art.15; Acuerdo 122-2016; Resolución 001-2022
+**근거** — Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
 
 
 ---
