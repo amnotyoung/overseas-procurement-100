@@ -5,7 +5,7 @@
   "axis": "pipeline",
   "type": "사업형성형",
   "priority": 3,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "에콰도르",
@@ -95,19 +95,20 @@
       "status": "confirmed"
     },
     {
-      "item": "금액·기한·보증·제출서류와 개별 공고",
-      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "기준금액·기한·입찰/이행보증·불복·예외",
+      "question": "현행 법률·시행령의 6개 정량·절차 항목과 경과규정을 조문 단위로 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "SERCOP·Registro Oficial·정부기관의 현행 원문에서 2025 LOSNCP, Decreto 193 시행령, 2026 Decreto 356 개정과 구 시행령 폐지를 대조하고, 기준금액·기한·입찰보증·이행보증·불복·예외를 조문 단위로 확인했다.",
+    "scope": "COPLAFIP arts.65~69의 비상환 협력 경로와 LOSNCP arts.1~2, 38, 42~50, 58~60, 84~87, 115~116, Reglamento arts.91·96, COA art.224를 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "2025년 개정 LOSNCP와 Decreto 193 시행령 및 2026년 Decreto 356 개정을 현행 체계로 반영하고, 2022년 Decreto 458 시행령의 폐지를 확인했다.",
+      "일반 국내절차에는 별도 입찰보증이 없고, 계약이행보증은 원칙적으로 계약금액의 5%다.",
+      "국제협력·외부금융 협정이 별도 조달절차나 보증을 정하면 LOSNCP 제2조에 따라 해당 협정이 우선한다."
     ],
     "sources": [
       {
@@ -138,6 +139,38 @@
         "publisher": "Ministerio de Relaciones Exteriores y Movilidad Humana",
         "officialUrl": "https://www.cancilleria.gob.ec/2020/07/30/certificado-de-registro-de-programas-y-proyectos-de-cooperacion-internacional-no-reembolsable/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
+        "kind": "act",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~2, 29, 33, 38, 42~50, 58~60, 84~87, 115~116; disposiciones transitorias primera, tercera y cuarta; disposición final"
+      },
+      {
+        "law": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
+        "kind": "regulation",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.8~9, 25, 91, 96, 437; disposición derogatoria y disposición final; notas de reforma por Decreto 356"
+      },
+      {
+        "law": "Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP",
+        "kind": "regulation",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~13; disposición derogatoria y vigencia"
+      },
+      {
+        "law": "Código Orgánico Administrativo (COA)",
+        "kind": "act",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/cat_normativas/COA",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.218 and 224; recurso de apelación y plazo de diez días"
       }
     ],
     "discrepancies": [
@@ -167,15 +200,81 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Latest reform published and effective 2025-10-07 under the final provision",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf",
+          "finding": "현행 통합본과 SERCOP 법령목록을 대조했다. 최종규정은 법률의 개정·폐지 조항을 Registro Oficial 공포일부터 시행하고, 경과규정은 개정 전 시작된 준비·입찰·불복·계약에 개시·제기·체결 당시 법을 보존한다."
+        },
+        {
+          "instrument": "Reglamento General de la LOSNCP — Decreto Ejecutivo 193, as amended",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published and effective 2025-10-28; current consolidated text incorporates Decree 356 from 2026-04-08",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf",
+          "finding": "SERCOP의 207쪽 현행 통합본에서 Decreto 356의 개정 주석과 현행 조문을 확인했다. Decreto 193은 2025-10-28 Registro Oficial 제153호 제9부록 공포일부터 시행됐다."
+        },
+        {
+          "instrument": "Decreto Ejecutivo 356 — amendments to the General Regulation",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published and effective 2026-04-08 in Registro Oficial Suplemento 260",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356",
+          "finding": "SERCOP 원문은 2026-04-07 서명, Registro Oficial 공포일부터 시행 및 현행(Vigente)임을 표시한다. 현행 시행령 통합본은 2026-04-08 개정을 조문별로 반영한다."
+        },
+        {
+          "instrument": "Reglamento General issued by Decreto Ejecutivo 458 of 2022",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed when Decreto Ejecutivo 193 was published on 2025-10-28",
+          "evidenceUrl": "https://www.registroficial.gob.ec/noveno-suplemento-no-153/",
+          "finding": "Decreto 193의 단일 폐지규정이 2022년 Registro Oficial 제87호 제2부록에 공포된 종전 Reglamento General과 그 개정을 명시 폐지한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "LOSNCP arts.42~50, especially arts.42, 43~48 and 50",
+          "finding": "USD 10,000 이하는 전자카탈로그에 없는 물품·용역·컨설팅·공사의 ínfima cuantía이고, 컨설팅은 이를 초과하면 concurso público다. 카탈로그 품목은 전자카탈로그가 우선이며, 비카탈로그 표준 물품·용역은 역경매, 공사와 역경매가 부적합한 비카탈로그 물품·용역은 licitación을 적용한다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Reglamento General arts.91 and 96",
+          "finding": "질문 최소기간은 공고일부터 USD 10,000 초과~100,000은 2일, 100,000 초과~500,000은 4일, 500,000 초과는 6일이다. 답변은 질문마감 뒤 2~6일이며, 답변마감 뒤 제안서 최소기간은 10,000 초과~100,000 2일, 100,000 초과~500,000 4일, 500,000 초과~1,000,000 6일, 1,000,000 이상 10일이다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
+        },
+        "bidSecurity": {
+          "status": "not-applicable",
+          "articles": "LOSNCP arts.29, 33 and 84~89",
+          "finding": "현행 LOSNCP의 보증 장은 일반 국내절차의 입찰보증 또는 입찰유지보증을 두지 않는다. 제29조는 입찰서 유효기간을 입찰서류로 정하고, 제33조는 낙찰자의 계약 미체결을 RUP 제재로 다룬다. 다만 제2조의 국제금융·협력협정이 별도 보증을 정하면 그 협정 규칙이 우선한다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "LOSNCP arts.84~87, especially arts.85~86",
+          "finding": "계약이행보증은 계약금액의 5%다. 낙찰가가 기준가격보다 10% 이상 낮은 일정 공사·용역에는 그 차액의 20%를 추가한다. 부동산 취득, 지급 시 인도되는 동산, 계약금액이 국가초기예산의 0.000002 미만인 계약은 이행보증이 면제되고, 선급금 보증은 선급금 전액이다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "LOSNCP arts.115~116; COA arts.218 and 224",
+          "finding": "직접 이해관계인은 각 단계 종료 뒤 3영업일 내 포털로 SERCOP에 이의를 제기한다. SERCOP는 징후가 있으면 최대 7일 내 계약기관에 통지하고, 기관 답변 7일 뒤 최대 15일 내 결정하며 잠정정지할 수 있다. 행정항고는 COA를 따르고 제224조상 행정행위 통지일부터 10일 내 제기한다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "LOSNCP arts.1~2, 38 and 58~60",
+          "finding": "국제금융·정부간·국제협력 재원은 협정이 정한 절차를 우선한다. 특별체계에는 보건전략물자, 국방·안보, 정부홍보, 법률대리, 부품, 공공기관 간 계약, 공공금융·보험, 중앙은행 및 관광홍보가 포함된다. 비상조달은 사유 있는 선언과 직접 관련된 필요 조달로 한정되며 선언은 최대 60일이다.",
+          "evidenceUrl": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
