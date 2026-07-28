@@ -53,8 +53,8 @@
 | [몽골 공공조달 입찰제도](../data/institutions/mongolia-bidding-system.json) | 몽골 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [몽골 조달 거버넌스·감독체계](../data/institutions/mongolia-procurement-governance.json) | 몽골 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [몽골 ODA 사업 발굴·형성 절차](../data/institutions/mongolia-oda-project-pipeline.json) | 몽골 | 원문 링크 연결 | 1건 | 0/1 | 2026-07-28 |
-| [미얀마 공공조달 입찰제도](../data/institutions/myanmar-bidding-system.json) | 미얀마 | 조문 대조 완료 | 0건 | — | 2026-07-26 |
-| [미얀마 조달 거버넌스·감독체계](../data/institutions/myanmar-procurement-governance.json) | 미얀마 | 조문 대조 완료 | 0건 | — | 2026-07-26 |
+| [미얀마 공공조달 입찰제도](../data/institutions/myanmar-bidding-system.json) | 미얀마 | 원문 링크 연결 | 0건 | — | 2026-07-26 |
+| [미얀마 조달 거버넌스·감독체계](../data/institutions/myanmar-procurement-governance.json) | 미얀마 | 원문 링크 연결 | 0건 | — | 2026-07-26 |
 | [미얀마 ODA 사업 발굴·형성 절차](../data/institutions/myanmar-oda-project-pipeline.json) | 미얀마 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [방글라데시 공공조달 입찰제도](../data/institutions/bangladesh-bidding-system.json) | 방글라데시 | 조문 대조 완료 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [방글라데시 조달 거버넌스·감독체계](../data/institutions/bangladesh-procurement-governance.json) | 방글라데시 | 조문 대조 완료 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
