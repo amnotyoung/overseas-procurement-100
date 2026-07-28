@@ -21,20 +21,24 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "Republic Act n.º 8182, as amended — Official Development Assistance Act",
+        "kind": "act"
+      },
+      {
+        "law": "2025 DEPDev/ICC Guidelines for review and approval of programs and projects",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "수원 체계는 국가경제개발청(NEDA, National Economic Development Authority)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "경제기획개발부(DEPDev)·투자조정위원회(ICC)",
+        "role": "ODA 사업의 경제·사회·재정 타당성을 심사하고 승인·재심사가 필요한 사업을 조정한다."
       },
       {
-        "name": "재무부(DOF, Department of Finance)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
-      },
-      {
-        "name": "재무부(DOF)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무부(DOF)·사업 주관기관",
+        "role": "차관·재정조건 및 사업제안·기술준비·실행을 담당한다."
       }
     ],
     "procedure": [
@@ -82,18 +86,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 조직개편·경과규정과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -102,16 +112,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Republic Act n.º 8182, as amended — Official Development Assistance Act",
+        "kind": "act",
+        "publisher": "Department of Economy, Planning, and Development",
+        "officialUrl": "https://www.depdev.gov.ph/wp-content/uploads/2025/08/0812025_2024-ODA-Report.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "2025 DEPDev/ICC Guidelines for review and approval of programs and projects",
+        "kind": "directive",
+        "publisher": "Department of Economy, Planning, and Development",
+        "officialUrl": "https://depdev.gov.ph/wp-content/uploads/2025/10/Guidelines-and-Procedures-on-the-Review-and-Approval-of-New-and-Ongoing-Programs-and-Projects-Requiring-Economy-and-Development-Council-Investment-Coordination-Committee-Action.pdf",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 NEDA와 DOF를 중심으로 설명하지만 2025년 이후 기관명과 최신 ICC 심사기준을 반영하지 않는다.",
+        "actualText": "구 NEDA는 DEPDev로 개편됐고 DEPDev/ICC의 2025 지침이 ODA 차관·무상 사업의 심사·승인·재심사 경로를 규율한다. DOF와 주관기관은 재정·사업준비 역할을 분담한다.",
+        "citation": "DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review",
+        "impact": "Using the former institution or old criteria can misroute approval and reappraisal.",
+        "action": "NEDA를 DEPDev/ICC 현행 체계로 갱신하고 DOF·주관기관 역할을 분리했다.",
+        "userAction": "ODA 사업은 DEPDev/ICC 최신 심사대상·승인수준과 DOF 차관조건 및 주관기관 준비요건을 확인한다.",
+        "review": {
+          "topic": "Current ODA project review authority",
+          "guideSays": "The guide uses the former NEDA name and does not reflect the 2025 ICC review guidelines.",
+          "lawSays": "DEPDev succeeded NEDA and the 2025 DEPDev/ICC guidelines govern review, approval and reappraisal of covered ODA programs and projects.",
+          "impact": "Using the former institution or old criteria can misroute approval and reappraisal.",
+          "verify": "Confirm current DEPDev/ICC coverage, approval level, DOF loan conditions and implementing-agency readiness."
+        },
+        "id": "philippines-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "NEDA를 DEPDev/ICC 현행 체계로 갱신하고 DOF·주관기관 역할을 분리했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },

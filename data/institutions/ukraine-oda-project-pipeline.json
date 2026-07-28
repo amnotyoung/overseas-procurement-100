@@ -21,20 +21,28 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "Cabinet Resolution No. 153 of 15 February 2002 — international technical assistance system, current revision",
+        "kind": "regulation"
+      },
+      {
+        "law": "Official English translation of Resolution No. 153 procedure",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "연수사업의 경우 공무원 인사혁신처(National Agency of Ukraine on Civil Service)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "우크라이나 내각사무처",
+        "role": "국제기술원조의 공식 요청, 등록·재등록, 조정·모니터링과 정보시스템을 담당한다."
       },
       {
-        "name": "유상원조의 경우 경제부 (Ministry of Economy)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "수혜 중앙·지방기관 및 실행기관",
+        "role": "사업제안·수혜확인·기술준비·실행·모니터링 자료 제출을 담당한다."
       },
       {
-        "name": "인프라부 및 수원기관이 참여하는 전략투자위원회(Strategic Investment Council)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "경제부·재무부 및 관련 투자심사기구",
+        "role": "유상재원·공공투자·재정조건과 사업별 경제·재정 심사를 분담한다."
       }
     ],
     "procedure": [
@@ -82,18 +90,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·의회·조달규제기관의 공식 법령 및 기관 페이지에서 현행 법령명, 담당기관, 전자시스템과 공개된 승인·조정 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 기준금액·기한·보증·제출서류와 모든 예외의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 공고 적용은 공고일 기준 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -102,16 +116,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Cabinet Resolution No. 153 of 15 February 2002 — international technical assistance system, current revision",
+        "kind": "regulation",
+        "publisher": "Verkhovna Rada of Ukraine",
+        "officialUrl": "https://zakon.rada.gov.ua/laws/show/153-2002-%D0%BF?lang=en",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Official English translation of Resolution No. 153 procedure",
+        "kind": "directive",
+        "publisher": "Cabinet of Ministers of Ukraine",
+        "officialUrl": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 연수·유상원조·투자심사기관을 병렬로 제시하지만 무상 국제기술원조의 공식 조정·등록기관을 명확히 하지 않는다.",
+        "actualText": "Resolution 153의 현행 절차는 내각사무처를 국제기술원조의 공식 요청·등록·조정·모니터링 기관으로 두며 수혜기관과 실행기관이 사업자료를 제출·이행한다.",
+        "citation": "Cabinet Resolution 153/2002, current revision and official translation",
+        "impact": "Mixing aid types can omit mandatory registration or send a grant project through a loan route.",
+        "action": "원조유형별 기관을 구분하고 무상 국제기술원조의 내각사무처 법정 경로를 반영했다.",
+        "userAction": "사업이 국제기술원조·차관·공공투자 중 어디에 해당하는지 판정한 뒤 등록, 재정·투자심사와 수혜기관 승인 경로를 확인한다.",
+        "review": {
+          "topic": "International technical assistance registration route",
+          "guideSays": "The guide lists training, loan and investment bodies without identifying the statutory technical-assistance coordinator.",
+          "lawSays": "Resolution 153 assigns official requests, registration, coordination and monitoring of international technical assistance to the Secretariat of the Cabinet of Ministers.",
+          "impact": "Mixing aid types can omit mandatory registration or send a grant project through a loan route.",
+          "verify": "Classify the financing type and confirm registration, fiscal or investment review, and beneficiary approval."
+        },
+        "id": "ukraine-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "원조유형별 기관을 구분하고 무상 국제기술원조의 내각사무처 법정 경로를 반영했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },

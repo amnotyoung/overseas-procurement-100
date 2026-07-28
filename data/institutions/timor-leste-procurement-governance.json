@@ -21,20 +21,36 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "Decree-Law No.1/2025 of 8 January — Procurement and Public Contracts Code",
+        "kind": "act"
+      },
+      {
+        "law": "Current procurement legal regime and standard documents",
+        "kind": "directive"
+      },
+      {
+        "law": "Government implementation notice for the new Code",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "인프라기금관리위원회 (CAFI/Council for Administration of the Infrastructure Fund)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "국가조달위원회(CNA/NPC)",
+        "role": "중앙조달·전문지원과 조달포털·표준문서 운영을 담당한다."
       },
       {
-        "name": "국가개발기관(National Development Agency)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "재무부",
+        "role": "Procurement and Public Contracts Code의 정책·시행규정·표준문서와 공공재정 연계를 담당한다."
       },
       {
-        "name": "조달청(National Procurement Commission)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "계약기관·조달책임자·평가주체",
+        "role": "권한·위임에 따라 계획·절차개시·공고·평가·낙찰·계약관리를 수행한다."
+      },
+      {
+        "name": "CAFI·계획투자기관",
+        "role": "인프라기금 및 공공투자 대상 사업의 계획·재정·승인을 담당하되 일반 조달규제기관은 아니다."
       }
     ],
     "procedure": [
@@ -81,18 +97,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본규정·핵심 적용경로",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "하위규정·정량요건·개별 협정·공고",
+      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
     ],
     "sources": [
       {
@@ -101,16 +123,63 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decree-Law No.1/2025 of 8 January — Procurement and Public Contracts Code",
+        "kind": "act",
+        "publisher": "Jornal da República",
+        "officialUrl": "https://mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Current procurement legal regime and standard documents",
+        "kind": "directive",
+        "publisher": "National Procurement Commission",
+        "officialUrl": "https://www.cna.gov.tl/en/documents-and-forms/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Government implementation notice for the new Code",
+        "kind": "directive",
+        "publisher": "Government of Timor-Leste",
+        "officialUrl": "https://timor-leste.gov.tl/?lang=en&p=46605",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 CAFI·국가개발기관·CNA를 병렬 조달기관으로 제시하고 2026년 시행된 신조달법전을 반영하지 않는다.",
+        "actualText": "Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.",
+        "citation": "Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice",
+        "impact": "잘못된 법령·기관·시행시점은 승인·조달·대외재원 경로를 실질적으로 왜곡할 수 있다.",
+        "action": "현행 신법과 시행일을 반영하고 조달규제·집행·공공투자 승인 역할을 분리했다.",
+        "userAction": "Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route.",
+        "review": {
+          "topic": "Current procurement framework",
+          "guideSays": "자료집은 CAFI·국가개발기관·CNA를 병렬 조달기관으로 제시하고 2026년 시행된 신조달법전을 반영하지 않는다.",
+          "lawSays": "Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.",
+          "impact": "Incorrect law, authority or effective date can materially misroute the process.",
+          "verify": "Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route."
+        },
+        "id": "timor-leste-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "현행 신법과 시행일을 반영하고 조달규제·집행·공공투자 승인 역할을 분리했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
+        "nextStep": "Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route."
       }
     ]
   },

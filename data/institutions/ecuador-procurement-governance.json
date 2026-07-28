@@ -25,20 +25,24 @@
       {
         "law": "공공조달 관련 법률",
         "kind": "act"
+      },
+      {
+        "law": "Ley Orgánica del Sistema Nacional de Contratación Pública — reforma vigente de 7 de octubre de 2025",
+        "kind": "act"
+      },
+      {
+        "law": "Reglamento General de la LOSNCP — Decreto Ejecutivo 193 de 27 de octubre de 2025, reformado por Decreto 356",
+        "kind": "regulation"
       }
     ],
     "authorities": [
       {
-        "name": "에콰도르 공공조달청 (SERCOP)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "국가공공조달서비스청(SERCOP)",
+        "role": "국가공공조달시스템(SNCP)의 규제기관으로 규범·전자도구·통제와 공급자 등록을 총괄한다."
       },
       {
-        "name": "전자공공조달시스템(SOCE)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
-      },
-      {
-        "name": "국가 공공조달 시스템 기본법(LOSNCP)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "개별 계약기관",
+        "role": "필요성·예산·입찰서류를 준비하고 공고·평가·낙찰·계약관리를 수행한다."
       }
     ],
     "procedure": [
@@ -85,18 +89,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -105,16 +115,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Ley Orgánica del Sistema Nacional de Contratación Pública — reforma vigente de 7 de octubre de 2025",
+        "kind": "act",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/cat_normativas/losncp",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Reglamento General de la LOSNCP — Decreto Ejecutivo 193 de 27 de octubre de 2025, reformado por Decreto 356",
+        "kind": "regulation",
+        "publisher": "Servicio Nacional de Contratación Pública",
+        "officialUrl": "https://portal.compraspublicas.gob.ec/sercop/cat_normativas/reglamento",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집 추출본은 SOCE 시스템과 LOSNCP 법률을 SERCOP과 나란히 담당기관으로 배열하고 2025년 개정 전 체계를 전제로 한다.",
+        "actualText": "SERCOP가 SNCP의 규제기관이고 SOCE는 전자시스템, LOSNCP는 법률이다. 2025년 10월 개정 LOSNCP와 Decreto 193 규정 및 2026년 Decreto 356 개정이 현행 체계를 이룬다.",
+        "citation": "SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356",
+        "impact": "Conflating an authority, system and statute obscures responsibility and may apply superseded rules.",
+        "action": "SOCE·LOSNCP 기관 오인을 제거하고 2025–2026 현행 법령 및 SERCOP·계약기관 역할을 반영했다.",
+        "userAction": "개별 공고의 게시일과 경과규정을 확인해 적용 LOSNCP·규정·SERCOP 2차규범을 결정한다.",
+        "review": {
+          "topic": "Current procurement framework and responsible authority",
+          "guideSays": "The extraction lists the SOCE platform and LOSNCP statute as if they were authorities and predates the 2025 reform.",
+          "lawSays": "SERCOP is the governing body; SOCE is an electronic system and LOSNCP is the statute. The October 2025 LOSNCP and Decree 193, as amended in 2026, form the current framework.",
+          "impact": "Conflating an authority, system and statute obscures responsibility and may apply superseded rules.",
+          "verify": "Check the notice date and transitional rules before selecting the applicable statute, regulation and secondary rule."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "SOCE·LOSNCP 기관 오인을 제거하고 2025–2026 현행 법령 및 SERCOP·계약기관 역할을 반영했다."
+        },
+        "id": "ecuador-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -149,7 +199,7 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "에콰도르 공공조달청 (SERCOP)",
+        "actor": "국가공공조달서비스청(SERCOP)",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
         "confidence": 0.65
       },
@@ -160,7 +210,7 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "에콰도르 공공조달청 (SERCOP)",
+        "actor": "국가공공조달서비스청(SERCOP)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
         "confidence": 0.65
       },
@@ -182,7 +232,7 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "에콰도르 공공조달청 (SERCOP)",
+        "actor": "국가공공조달서비스청(SERCOP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
         "confidence": 0.65
       },
@@ -193,7 +243,7 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "에콰도르 공공조달청 (SERCOP)",
+        "actor": "국가공공조달서비스청(SERCOP)",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
         "confidence": 0.65
       },

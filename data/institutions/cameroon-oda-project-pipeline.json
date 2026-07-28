@@ -25,16 +25,16 @@
     ],
     "authorities": [
       {
-        "name": "유상원조의 경우 재무부(MINFI/Ministry of Finance)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "경제기획국토개발부(MINEPAT)",
+        "role": "국제·양자 파트너 조정, 차관협약의 발굴·협상·최종화, 국가 사업은행과 공공투자 프로그램을 담당한다."
       },
       {
-        "name": "경제기획부(MINEPAT)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "수원부처·사업주관기관",
+        "role": "사업을 발굴해 외부재원 탐색 단계부터 정부에 보고하고 기술·행정·재정 실행책임을 갖는다."
       },
       {
-        "name": "국가채무관리위원회(NDMC/National Debt Management Committee)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무부(MINFI)·국가채무 관련 심사기구",
+        "role": "차입·채무·재정조건이 수반되는 사업의 재정·부채심사를 담당한다."
       }
     ],
     "procedure": [
@@ -80,19 +80,18 @@
     "cameroon-procurement-governance"
   ],
   "fieldVerification": [
-    {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
-      "status": "pending"
-    }
+    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
+    "금액기준·공고기간·보증·제출서류",
+    "기관 간 실제 결재·이의·공식요청 인계"
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
+      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -101,16 +100,57 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "MINEPAT Directorate General of Economy functions",
+        "kind": "regulation",
+        "publisher": "MINEPAT",
+        "officialUrl": "https://minepat.gov.cm/dg-conomie/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
+        "kind": "directive",
+        "publisher": "Prime Minister's Office / MINEPAT legal compilation",
+        "officialUrl": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "process / 외부재원 사업 조정기관",
+        "sourceText": "자료집 구조화본은 유상원조의 경우 MINFI를 첫 수원총괄기관으로 배치한다.",
+        "actualText": "MINEPAT 공식 기능에는 국제파트너 조정, 차관협약 발굴·협상·최종화, 국가 사업은행과 공공투자 프로그램 관리가 포함된다. 1999 총리실 회람은 외부재원 탐색이나 기술지원 요청 전부터 정부 보고를 요구한다. MINFI·채무심사는 차입의 재정조건에 관여하지만 모든 외부원조의 단일 첫 관문으로 확인되지는 않았다.",
+        "citation": "MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999)",
+        "impact": "MINFI 중심의 단일 흐름은 MINEPAT의 사업·협력 조정과 초기 보고의무를 누락한다.",
+        "action": "MINEPAT을 외부재원·사업 조정축으로 반영하고 MINFI·채무심사는 차입 재정심사 역할로 제한했다.",
+        "userAction": "사업 발굴 초기부터 MINEPAT에 보고하고, 차입사업이면 MINFI·채무심사 절차를 별도로 확인한다.",
+        "review": {
+          "topic": "External-finance coordination authority",
+          "guideSays": "The simplified flow places MINFI first for loan-financed aid.",
+          "lawSays": "MINEPAT coordinates international partners, loan agreements and the project bank; an official circular requires reporting from the financing-search stage.",
+          "impact": "A MINFI-only route can omit project coordination and early reporting through MINEPAT.",
+          "verify": "Route the project through MINEPAT from the financing-search stage and add MINFI/debt review where borrowing is involved."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "카메룬 외부재원 사업의 초기 조정기관으로 MINEPAT을 명시하고, 외부재원 탐색·기술지원 요청 전 보고 의무(총리실 회람 004/CAB/PM, 1999)와 차입사업의 MINFI·채무심사를 분리해 반영할 것."
+        },
+        "id": "cameroon-oda-project-pipeline-D01",
+        "sourcePage": "149-159",
+        "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차"
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
+        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -156,7 +196,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "유상원조의 경우 재무부(MINFI/Ministry of Finance)",
+        "actor": "경제기획국토개발부(MINEPAT)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -167,7 +207,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "유상원조의 경우 재무부(MINFI/Ministry of Finance)",
+        "actor": "경제기획국토개발부(MINEPAT)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -200,7 +240,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "유상원조의 경우 재무부(MINFI/Ministry of Finance)",
+        "actor": "경제기획국토개발부(MINEPAT)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

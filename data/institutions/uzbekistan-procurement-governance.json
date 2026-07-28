@@ -29,16 +29,32 @@
       {
         "law": "우즈베키스탄 AI 기반 법률",
         "kind": "act"
+      },
+      {
+        "law": "Law No. ZRU-684 of 22 April 2021 On Public Procurement (current edition)",
+        "kind": "act"
+      },
+      {
+        "law": "Ministry of Economy and Finance public procurement mandate",
+        "kind": "directive"
+      },
+      {
+        "law": "Public Procurement Strategy 2025–2027 under Cabinet Resolution No.865 of 20 December 2024",
+        "kind": "regulation"
       }
     ],
     "authorities": [
       {
-        "name": "우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "경제재정부",
+        "role": "공공조달 국가규제·정책·감독과 특별정보포털 제도운영을 담당한다."
       },
       {
-        "name": "우즈베키스탄의 통관은 관세위원회(State Customs Committee of the Republic of Uzbekistan)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "국가발주기관·조달위원회",
+        "role": "계획·절차선정·공고·평가·낙찰·계약을 수행한다."
+      },
+      {
+        "name": "전자조달시스템 운영자",
+        "role": "전자절차와 정보서비스를 제공하며 규제기관이 아니다."
       }
     ],
     "procedure": [
@@ -85,18 +101,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본법·핵심 적용범위",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "정량요건·하위규정·공여조건·개별 공고",
+      "question": "최신 규정과 실제 공고에서 세부요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
     ],
     "sources": [
       {
@@ -105,16 +127,63 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Law No. ZRU-684 of 22 April 2021 On Public Procurement (current edition)",
+        "kind": "act",
+        "publisher": "LexUZ",
+        "officialUrl": "https://lex.uz/docs/5382983",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Ministry of Economy and Finance public procurement mandate",
+        "kind": "directive",
+        "publisher": "Government Portal",
+        "officialUrl": "https://gov.uz/en/imv/pages/vazirlik-haqida",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Public Procurement Strategy 2025–2027 under Cabinet Resolution No.865 of 20 December 2024",
+        "kind": "regulation",
+        "publisher": "Government Portal",
+        "officialUrl": "https://gov.uz/en/activity_page/economy",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 관세위원회를 조달기관으로 두고 'AI 기반 법률' 같은 비법령 문구를 법적 근거로 포함한다.",
+        "actualText": "ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.",
+        "citation": "Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024",
+        "impact": "잘못된 법령·기관 또는 적용범위는 승인·조달경로와 사업일정을 실질적으로 왜곡할 수 있다.",
+        "action": "기관·법령 추출 오류를 제거하고 현행 법률·정책·집행주체를 반영했다.",
+        "userAction": "Check the special portal notice, current amendment, method, threshold, deadline, evaluation and complaint route.",
+        "review": {
+          "topic": "Current procurement law and authorities",
+          "guideSays": "자료집은 관세위원회를 조달기관으로 두고 'AI 기반 법률' 같은 비법령 문구를 법적 근거로 포함한다.",
+          "lawSays": "ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.",
+          "impact": "Incorrect law, authority or scope can materially misroute approval and procurement.",
+          "verify": "Check the special portal notice, current amendment, method, threshold, deadline, evaluation and complaint route."
+        },
+        "id": "uzbekistan-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "기관·법령 추출 오류를 제거하고 현행 법률·정책·집행주체를 반영했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -149,7 +218,7 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF)",
+        "actor": "경제재정부",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
         "confidence": 0.65
       },
@@ -160,7 +229,7 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF)",
+        "actor": "경제재정부",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
         "confidence": 0.65
       },
@@ -182,7 +251,7 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF)",
+        "actor": "경제재정부",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
         "confidence": 0.65
       },
@@ -193,7 +262,7 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF)",
+        "actor": "경제재정부",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
         "confidence": 0.65
       },

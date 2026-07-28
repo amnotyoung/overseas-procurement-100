@@ -33,20 +33,28 @@
       {
         "law": "National Building (Building Standards) Code",
         "kind": "act"
+      },
+      {
+        "law": "Public Procurement and Disposal of Public Assets Act, Cap. 205",
+        "kind": "act"
+      },
+      {
+        "law": "PPDA legal update on the 7th Revised Edition and Cap. 205 citation",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "우간다 공공조달청 (PPDA: Public Procurement and Disposal",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "공공조달·공공자산처분청(PPDA)",
+        "role": "PPDA Act Cap.205에 따른 국가 공공조달·자산처분의 규제·준수감독·시정조치를 담당한다."
       },
       {
-        "name": "국가 조달법(PPDA Act)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "조달·처분기관의 회계책임자·계약위원회·조달부서",
+        "role": "기관별 계획·입찰·평가·승인·계약관리를 수행한다."
       },
       {
-        "name": "조달 (Legal and Board Affairs)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "전자정부조달시스템(eGP)",
+        "role": "조달절차를 처리·공개하는 전자시스템이며 담당기관이 아니다."
       }
     ],
     "procedure": [
@@ -94,18 +102,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·의회·조달규제기관 공식 법령과 조직 페이지에서 현행 법령명, 기관 권한, 전자조달 및 대외재원 조정체계를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 원문으로 기본법·핵심 기관 역할과 공개된 제도변경을 확인했다. 정량요건·모든 예외·개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다."
     ],
     "sources": [
       {
@@ -114,16 +128,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Public Procurement and Disposal of Public Assets Act, Cap. 205",
+        "kind": "act",
+        "publisher": "Public Procurement and Disposal of Public Assets Authority",
+        "officialUrl": "https://www.ppda.go.ug/about-us/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "PPDA legal update on the 7th Revised Edition and Cap. 205 citation",
+        "kind": "directive",
+        "publisher": "Public Procurement and Disposal of Public Assets Authority",
+        "officialUrl": "https://www.ppda.go.ug/download/Newsletter-July-September-2025.pdf",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 PPDA Act와 내부 법무 기능을 담당기관으로 추출하고 현행 개정법의 공식 인용명 Cap.205를 반영하지 않는다.",
+        "actualText": "2024년 7차 법령개정판 이후 공식 인용은 PPDA Act Cap.205이며 PPDA는 규제기관, 각 기관의 회계책임자·계약위원회·조달부서는 집행주체, eGP는 시스템이다.",
+        "citation": "PPDA Act Cap.205; PPDA official legal-update notice",
+        "impact": "Outdated citation and actor confusion can misstate authority, threshold and review procedures.",
+        "action": "법령·내부기능의 기관 오인을 제거하고 최신 인용명과 규제·집행·전자시스템 역할을 반영했다.",
+        "userAction": "공고일 기준 Cap.205·하위규정, 중앙·지방 관할, 기준금액·방식·행정심사 기한을 확인한다.",
+        "review": {
+          "topic": "Current PPDA Act citation and actor roles",
+          "guideSays": "The extraction treats the Act and internal legal functions as authorities and uses the former 2003 citation.",
+          "lawSays": "The revised statute is cited as PPDA Act Cap.205; PPDA regulates, entity organs execute and eGP is the electronic system.",
+          "impact": "Outdated citation and actor confusion can misstate authority, threshold and review procedures.",
+          "verify": "Check notice-date Cap.205 rules, central or local jurisdiction, threshold, method and review deadline."
+        },
+        "id": "uganda-bidding-system-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "법령·내부기능의 기관 오인을 제거하고 최신 인용명과 규제·집행·전자시스템 역할을 반영했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -191,7 +245,7 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "우간다 공공조달청 (PPDA: Public Procurement and Disposal",
+        "actor": "공공조달·공공자산처분청(PPDA)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
         "confidence": 0.65
       },
@@ -202,7 +256,7 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "우간다 공공조달청 (PPDA: Public Procurement and Disposal",
+        "actor": "공공조달·공공자산처분청(PPDA)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
         "confidence": 0.65
       },

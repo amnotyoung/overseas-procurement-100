@@ -21,12 +21,24 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "DGCOD official functions",
+        "kind": "regulation"
+      },
+      {
+        "law": "Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires",
+        "kind": "regulation"
       }
     ],
     "authorities": [
       {
-        "name": "코트디부아르 수원총괄기관",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "기획개발부 개발협력총국(DGCOD)",
+        "role": "개발협력 전략조정, 개발파트너 협력틀, 차관·무상협정 협상 준비와 모니터링을 담당한다."
+      },
+      {
+        "name": "외교부·재무관계기관·부문 실행기관",
+        "role": "외교공한, 재정조건·협정 및 기술 사업형성을 각 권한에 따라 수행한다."
       }
     ],
     "procedure": [
@@ -73,18 +85,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -93,16 +111,57 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "DGCOD official functions",
+        "kind": "regulation",
+        "publisher": "Ministère du Plan et du Développement",
+        "officialUrl": "https://www.plan.gouv.ci/detail_structure/66",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "개발협력 전략조정, 개발파트너 협력틀, 차관·무상협정 협상"
+      },
+      {
+        "law": "Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires",
+        "kind": "regulation",
+        "publisher": "Direction Générale des Marchés Publics",
+        "officialUrl": "https://www.marchespublics.ci/reglementation",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "field": "canvas.authorities / 개발협력 조정기관",
+        "sourceText": "자료집 구조화본은 일관된 수원절차가 없다고 설명하며 수원총괄기관을 익명으로 둔다.",
+        "actualText": "기획개발부 DGCOD에는 개발협력 전략조정, 협력틀 관리, 차관·무상협정 협상 준비·참여의 공식 기능이 있다. 다만 개별 한국 무상원조 제안의 외교공한 경로는 별도 실무확인이 필요하다.",
+        "citation": "Ministry of Plan DGCOD official functions; Décret 2015-475 as amended",
+        "impact": "공식 조정축을 누락하면 부문기관·외교부·재정기관 사이의 역할을 하나의 비공식 경로로 오인한다.",
+        "action": "DGCOD를 개발협력 조정축으로 명시하고 외교·재정·실행기관 역할을 분리했다.",
+        "userAction": "제안 초기 DGCOD 조정 여부와 함께 해당 공여기관이 요구하는 외교공한·재정승인 경로를 확인한다.",
+        "severity": "high",
+        "review": {
+          "topic": "Development-cooperation coordination route",
+          "guideSays": "The model says there is no consistent recipient route and leaves the coordinating authority unnamed.",
+          "lawSays": "The Ministry of Plan's DGCOD has formal responsibility for development-cooperation coordination, partner frameworks and preparation of loan and grant negotiations.",
+          "impact": "Omitting the formal coordination axis blurs the separate roles of sector, diplomatic and financial authorities.",
+          "verify": "Confirm DGCOD coordination together with the diplomatic-note and financial-approval route required by the specific partner."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "DGCOD를 개발협력 조정축으로 명시하고 외교·재정·실행기관 역할을 분리했다."
+        },
+        "id": "cote-divoire-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -148,7 +207,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "코트디부아르 수원총괄기관",
+        "actor": "기획개발부 개발협력총국(DGCOD)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -159,7 +218,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "코트디부아르 수원총괄기관",
+        "actor": "기획개발부 개발협력총국(DGCOD)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -192,7 +251,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "코트디부아르 수원총괄기관",
+        "actor": "기획개발부 개발협력총국(DGCOD)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

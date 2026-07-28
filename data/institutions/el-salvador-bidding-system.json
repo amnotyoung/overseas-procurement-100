@@ -33,20 +33,28 @@
       {
         "law": "엘살바도르의 공공조달제도를 총괄적으로 규율하기 위한 기본 법률",
         "kind": "act"
+      },
+      {
+        "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+        "kind": "act"
+      },
+      {
+        "law": "Decreto Legislativo n.º 653 — Ley de Creación de la DINAC",
+        "kind": "act"
+      },
+      {
+        "law": "COMPRASAL public procurement portal",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "엘살바도르 국가조달청(Dirección Nacional de Compras, DINAC)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "국가공공구매국(DINAC)",
+        "role": "공공구매의 국가 규제기관으로 규범·감독·통제·현대화와 COMPRASAL 운영을 담당한다."
       },
       {
-        "name": "국가조달청(DINAC)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
-      },
-      {
-        "name": "전자공공조달 시스템(COMPRASAL)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "개별 공공기관 계약단위",
+        "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다."
       }
     ],
     "procedure": [
@@ -94,18 +102,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -114,16 +128,63 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+        "kind": "act",
+        "publisher": "Dirección Nacional de Compras Públicas",
+        "officialUrl": "https://dinac.gob.sv/download/ley-de-compras-publicas/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto Legislativo n.º 653 — Ley de Creación de la DINAC",
+        "kind": "act",
+        "publisher": "Dirección Nacional de Compras Públicas",
+        "officialUrl": "https://dinac.gob.sv/download/ley-de-creacion-dinac/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "COMPRASAL public procurement portal",
+        "kind": "directive",
+        "publisher": "Dirección Nacional de Compras Públicas",
+        "officialUrl": "https://www.comprasal.gob.sv/procesos-oportunidades",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집 추출본은 DINAC을 중복 기재하고 COMPRASAL 전자시스템을 담당기관처럼 배열하며 법률명을 일반적인 '공공조달법'으로 표시한다.",
+        "actualText": "Decreto 652의 Ley de Compras Públicas와 Decreto 653의 DINAC 설립법이 2023년 체계를 구성한다. DINAC은 규제기관이고 COMPRASAL은 전자조달시스템이며 계약기관이 절차를 집행한다.",
+        "citation": "Decretos Legislativos 652 and 653; DINAC official institutional page",
+        "impact": "Duplicated and misclassified actors obscure who regulates, publishes and decides.",
+        "action": "DINAC 중복과 COMPRASAL 기관 오인을 제거하고 법률·규제기관·계약기관 역할을 분리했다.",
+        "userAction": "COMPRASAL 공고와 DINAC 현행 규범에서 선정방식·기한·공급자 요건을 확인한다.",
+        "review": {
+          "topic": "Procurement statute, regulator and electronic system",
+          "guideSays": "The extraction duplicates DINAC, treats COMPRASAL as an authority and uses only a generic law title.",
+          "lawSays": "Legislative Decrees 652 and 653 establish the 2023 framework; DINAC is the regulator, COMPRASAL is the platform, and contracting entities execute procedures.",
+          "impact": "Duplicated and misclassified actors obscure who regulates, publishes and decides.",
+          "verify": "Use the COMPRASAL notice and current DINAC rules to confirm method, deadlines and supplier requirements."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "DINAC 중복과 COMPRASAL 기관 오인을 제거하고 법률·규제기관·계약기관 역할을 분리했다."
+        },
+        "id": "el-salvador-bidding-system-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -191,7 +252,7 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "엘살바도르 국가조달청(Dirección Nacional de Compras, DINAC)",
+        "actor": "국가공공구매국(DINAC)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
         "confidence": 0.65
       },
@@ -202,7 +263,7 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "엘살바도르 국가조달청(Dirección Nacional de Compras, DINAC)",
+        "actor": "국가공공구매국(DINAC)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
         "confidence": 0.65
       },

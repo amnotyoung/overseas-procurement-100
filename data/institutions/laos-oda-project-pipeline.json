@@ -25,12 +25,28 @@
       {
         "law": "라오스는 공적개발원조에 관한 법률",
         "kind": "directive"
+      },
+      {
+        "law": "Public Procurement Law art.3 government-fund definition and Project Owner roles",
+        "kind": "act"
+      },
+      {
+        "law": "Ministry of Finance official institutional portal",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "라오스 수원총괄기관",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무부",
+        "role": "국가예산, 정부가 받은 외국 무상원조·차관과 공공투자 재정을 관리한다."
+      },
+      {
+        "name": "부문부처·기관·지방정부(Project Owner)",
+        "role": "사업을 제안·준비하고 승인된 재원으로 조달·실행한다."
+      },
+      {
+        "name": "정부·국회",
+        "role": "법령·협정과 법정 중요 공공투자·재정사항을 승인한다."
       }
     ],
     "procedure": [
@@ -77,18 +93,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본법·핵심 적용범위",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "정량요건·하위규정·공여조건·개별 공고",
+      "question": "최신 규정과 실제 공고에서 세부요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
     ],
     "sources": [
       {
@@ -97,16 +119,51 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Public Procurement Law art.3 government-fund definition and Project Owner roles",
+        "kind": "act",
+        "publisher": "Ministry of Finance PPMD",
+        "officialUrl": "https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Ministry of Finance official institutional portal",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.mof.gov.la/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "medium",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 수원총괄기관을 익명으로 두고 재무부 동의와 사업주체 역할의 법적 연결이 약하다.",
+        "actualText": "공공조달법상 정부자금에는 정부가 받은 외국 무상원조·차관이 포함되고 재무부와 각 Project Owner가 재정·사업집행 역할을 나눈다.",
+        "citation": "Law 30/NA art.3; Ministry of Finance official portal",
+        "impact": "잘못된 법령·기관 또는 적용범위는 승인·조달경로와 사업일정을 실질적으로 왜곡할 수 있다.",
+        "action": "외부재원의 법 적용과 재무부·사업주체·정부 승인 역할을 명시했다.",
+        "userAction": "Confirm the financing agreement, finance approval, project-owner mandate and any donor-procedure exception.",
+        "review": {
+          "topic": "External-finance coordination",
+          "guideSays": "자료집은 수원총괄기관을 익명으로 두고 재무부 동의와 사업주체 역할의 법적 연결이 약하다.",
+          "lawSays": "공공조달법상 정부자금에는 정부가 받은 외국 무상원조·차관이 포함되고 재무부와 각 Project Owner가 재정·사업집행 역할을 나눈다.",
+          "impact": "Incorrect law, authority or scope can materially misroute approval and procurement.",
+          "verify": "Confirm the financing agreement, finance approval, project-owner mandate and any donor-procedure exception."
+        },
+        "id": "laos-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -152,7 +209,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "라오스 수원총괄기관",
+        "actor": "재무부",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -163,7 +220,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "라오스 수원총괄기관",
+        "actor": "재무부",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -196,7 +253,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "라오스 수원총괄기관",
+        "actor": "재무부",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

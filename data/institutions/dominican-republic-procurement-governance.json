@@ -33,20 +33,28 @@
       {
         "law": "l 그러나 법률",
         "kind": "act"
+      },
+      {
+        "law": "Ley núm. 47-25 de Contrataciones Públicas",
+        "kind": "act"
+      },
+      {
+        "law": "Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25",
+        "kind": "regulation"
+      },
+      {
+        "law": "Resolución PNP-01-2026 — implementación de Ley 47-25",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "공공조달청2) (Dirección General de Contrataciones Públicas",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "공공계약총국(DGCP)",
+        "role": "국가공공계약시스템의 규제기관으로 정책·규범·전자조달시스템(SECP)과 감독을 총괄한다."
       },
       {
-        "name": "재무부(Ministerio de Hacienda)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
-      },
-      {
-        "name": "산하 공공조달청(DGCP)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "개별 계약기관의 구매·계약 단위",
+        "role": "계획·사전연구·공고·평가·낙찰·계약관리를 수행한다."
       }
     ],
     "procedure": [
@@ -94,18 +102,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -114,16 +128,65 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Ley núm. 47-25 de Contrataciones Públicas",
+        "kind": "act",
+        "publisher": "Dirección General de Contrataciones Públicas",
+        "officialUrl": "https://www.dgcp.gob.do/sobre-nosotros/marco-legal/leyes-y-decretos/",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "공포 후 180일 경과 효력 및 신규 국가공공계약 체계"
+      },
+      {
+        "law": "Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25",
+        "kind": "regulation",
+        "publisher": "Dirección General de Contrataciones Públicas",
+        "officialUrl": "https://www.dgcp.gob.do/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Resolución PNP-01-2026 — implementación de Ley 47-25",
+        "kind": "directive",
+        "publisher": "Dirección General de Contrataciones Públicas",
+        "officialUrl": "https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "2026-01-29 전후 절차의 경과 적용"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "field": "canvas.legalBasis·procedure / 2026년 법체계 전환",
+        "sourceText": "자료집 구조화본은 Ley 340-06과 Decreto 416-23을 현행 기본체계로 설명하고 제한입찰을 현행 방식으로 제시한다.",
+        "actualText": "Ley 47-25와 Decreto 52-26이 2026년 1월 29일부터 시행되었고 신규 절차는 새 체계를 따른다. 그 이전 개시 절차·계약·청산에는 종전 Ley 340-06 체계가 경과 적용되며, 제한입찰은 새 체계에서 폐지됐다.",
+        "citation": "DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26",
+        "impact": "구법만 적용하면 선정방식·전자시스템·경과규정을 잘못 판단할 위험이 크다.",
+        "action": "현행 법률·시행령과 전환일을 반영하고 DGCP와 계약기관 역할을 분리했다.",
+        "userAction": "절차 개시일이 2026-01-29 전인지 먼저 확인해 구법·신법 중 적용 체계를 결정한다.",
+        "severity": "high",
+        "review": {
+          "topic": "Transition to the 2026 procurement framework",
+          "guideSays": "The extracted guide treats Law 340-06 and Decree 416-23 as the current general framework and presents restricted tendering as current.",
+          "lawSays": "Law 47-25 and Decree 52-26 apply from 29 January 2026; procedures begun earlier remain under the former regime, and restricted tendering was removed from the new framework.",
+          "impact": "Using only the former law can produce the wrong method, system rule and transitional treatment.",
+          "verify": "Determine whether the procedure began before 29 January 2026, then apply the correct former or current framework."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "현행 법률·시행령과 전환일을 반영하고 DGCP와 계약기관 역할을 분리했다."
+        },
+        "id": "dominican-republic-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -158,7 +221,7 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달청2) (Dirección General de Contrataciones Públicas",
+        "actor": "공공계약총국(DGCP)",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
         "confidence": 0.65
       },
@@ -169,7 +232,7 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공조달청2) (Dirección General de Contrataciones Públicas",
+        "actor": "공공계약총국(DGCP)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
         "confidence": 0.65
       },
@@ -191,7 +254,7 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "공공조달청2) (Dirección General de Contrataciones Públicas",
+        "actor": "공공계약총국(DGCP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
         "confidence": 0.65
       },
@@ -202,7 +265,7 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공조달청2) (Dirección General de Contrataciones Públicas",
+        "actor": "공공계약총국(DGCP)",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
         "confidence": 0.65
       },

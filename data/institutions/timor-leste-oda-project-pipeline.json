@@ -29,20 +29,32 @@
       {
         "law": "개발원조에 있어서 리더십의 역할 강화 등을 위해 해외원조정책",
         "kind": "directive"
+      },
+      {
+        "law": "Aid Transparency Portal mandate and methodology",
+        "kind": "directive"
+      },
+      {
+        "law": "Aid Transparency Portal current public repository",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "해외원조정책(Foreign Aid Policy)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무부 대외재원동원관리국·개발파트너관리단위(DPMU)",
+        "role": "비차관 원조를 조정·기록하고 Aid Transparency Portal을 관리한다."
       },
       {
-        "name": "해외원조정책(Foreign Aid Policy, 2019)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무부 부채·재정 담당부서",
+        "role": "차관·예산·공공재정과 정부 재원협정을 관리한다."
       },
       {
-        "name": "해외원조정책(Aid Policy, 2019)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "계획전략투자부·부문 실행기관",
+        "role": "국가개발계획과 공공투자 우선순위에 맞춰 사업을 제안·준비·실행한다."
+      },
+      {
+        "name": "개발파트너",
+        "role": "사업·재원정보를 ATP에 제공하고 정부와 설계·협정·이행을 협의한다."
       }
     ],
     "procedure": [
@@ -89,18 +101,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본규정·핵심 적용경로",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "하위규정·정량요건·개별 협정·공고",
+      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
     ],
     "sources": [
       {
@@ -109,16 +127,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Aid Transparency Portal mandate and methodology",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.aidtransparency.gov.tl/portal/node/1",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Aid Transparency Portal current public repository",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.aidtransparency.gov.tl/portal/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 2019 Foreign Aid Policy 문서 자체를 세 번 기관으로 배열하고 실제 ODA 조정기관을 누락한다.",
+        "actualText": "재무부의 대외재원동원관리국·DPMU가 비차관 원조와 ATP를 관리하고 재무·계획·부문기관이 차관·투자계획·사업실행을 분담한다.",
+        "citation": "Ministry of Finance Aid Transparency Portal mandate",
+        "impact": "잘못된 법령·기관·시행시점은 승인·조달·대외재원 경로를 실질적으로 왜곡할 수 있다.",
+        "action": "정책문서의 기관 오인을 제거하고 현행 DPMU·재무·계획·실행 역할을 반영했다.",
+        "userAction": "Confirm DPMU/ATP registration, grant or loan route, plan and budget alignment, agreement and implementing entity.",
+        "review": {
+          "topic": "External-finance coordination",
+          "guideSays": "자료집은 2019 Foreign Aid Policy 문서 자체를 세 번 기관으로 배열하고 실제 ODA 조정기관을 누락한다.",
+          "lawSays": "재무부의 대외재원동원관리국·DPMU가 비차관 원조와 ATP를 관리하고 재무·계획·부문기관이 차관·투자계획·사업실행을 분담한다.",
+          "impact": "Incorrect law, authority or effective date can materially misroute the process.",
+          "verify": "Confirm DPMU/ATP registration, grant or loan route, plan and budget alignment, agreement and implementing entity."
+        },
+        "id": "timor-leste-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "정책문서의 기관 오인을 제거하고 현행 DPMU·재무·계획·실행 역할을 반영했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
+        "nextStep": "Confirm DPMU/ATP registration, grant or loan route, plan and budget alignment, agreement and implementing entity."
       }
     ]
   },
@@ -164,7 +222,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "해외원조정책(Foreign Aid Policy)",
+        "actor": "재무부 대외재원동원관리국·개발파트너관리단위(DPMU)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -175,7 +233,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "해외원조정책(Foreign Aid Policy)",
+        "actor": "재무부 대외재원동원관리국·개발파트너관리단위(DPMU)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -208,7 +266,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "해외원조정책(Foreign Aid Policy)",
+        "actor": "재무부 대외재원동원관리국·개발파트너관리단위(DPMU)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

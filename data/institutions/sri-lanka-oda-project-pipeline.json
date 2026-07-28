@@ -21,12 +21,28 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "External Resources Department mandate",
+        "kind": "directive"
+      },
+      {
+        "law": "ERD circulars on engagement with development partners and donor assistance",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "재경부 내의 기획국(National Planning Department, NPD)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "재무기획경제개발부 대외자원국(ERD)",
+        "role": "외부재원을 동원·협상하고 재무부서·부문부처·실행기관의 사용을 조정한다."
+      },
+      {
+        "name": "국가기획국(NPD)",
+        "role": "국가개발·공공투자 우선순위와 사업개념·계획 정합성을 심사한다."
+      },
+      {
+        "name": "부문부처·실행기관",
+        "role": "사업을 발굴·준비하고 승인된 외부재원을 집행·모니터링한다."
       }
     ],
     "procedure": [
@@ -73,18 +89,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본규정·핵심 적용경로",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "하위규정·정량요건·개별 협정·공고",
+      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
     ],
     "sources": [
       {
@@ -93,16 +115,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "External Resources Department mandate",
+        "kind": "directive",
+        "publisher": "Department of External Resources",
+        "officialUrl": "https://www.erd.gov.lk/index.php?Itemid=101&id=35&lang=en&limitstart=4&option=com_content&view=category",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "ERD circulars on engagement with development partners and donor assistance",
+        "kind": "directive",
+        "publisher": "Department of External Resources",
+        "officialUrl": "https://www.erd.gov.lk/index.php?Itemid=219&id=55&lang=en&option=com_content&view=article",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 NPD만 수원총괄기관으로 제시해 외부재원 동원·협상·조정의 ERD 역할을 누락한다.",
+        "actualText": "ERD가 외부재원 동원·개발파트너 협의·실행기관 지원의 정점기관이고 NPD는 국가계획·사업우선순위를 담당한다.",
+        "citation": "ERD official mandate and circulars",
+        "impact": "잘못된 법령·기관·시행시점은 승인·조달·대외재원 경로를 실질적으로 왜곡할 수 있다.",
+        "action": "ERD·NPD·부문 실행기관의 외부재원·계획·집행 역할을 분리했다.",
+        "userAction": "Confirm the ERD engagement circular, NPD project approval, financing agreement and executing-agency readiness.",
+        "review": {
+          "topic": "External-finance coordination",
+          "guideSays": "자료집은 NPD만 수원총괄기관으로 제시해 외부재원 동원·협상·조정의 ERD 역할을 누락한다.",
+          "lawSays": "ERD가 외부재원 동원·개발파트너 협의·실행기관 지원의 정점기관이고 NPD는 국가계획·사업우선순위를 담당한다.",
+          "impact": "Incorrect law, authority or effective date can materially misroute the process.",
+          "verify": "Confirm the ERD engagement circular, NPD project approval, financing agreement and executing-agency readiness."
+        },
+        "id": "sri-lanka-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "ERD·NPD·부문 실행기관의 외부재원·계획·집행 역할을 분리했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
+        "nextStep": "Confirm the ERD engagement circular, NPD project approval, financing agreement and executing-agency readiness."
       }
     ]
   },
@@ -148,7 +210,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "재경부 내의 기획국(National Planning Department, NPD)",
+        "actor": "재무기획경제개발부 대외자원국(ERD)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -159,7 +221,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "재경부 내의 기획국(National Planning Department, NPD)",
+        "actor": "재무기획경제개발부 대외자원국(ERD)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -192,7 +254,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재경부 내의 기획국(National Planning Department, NPD)",
+        "actor": "재무기획경제개발부 대외자원국(ERD)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

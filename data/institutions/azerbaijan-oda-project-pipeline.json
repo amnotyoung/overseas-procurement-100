@@ -29,12 +29,12 @@
     ],
     "authorities": [
       {
-        "name": "원조 수원 총괄책임은 총리실(Cabinet of Ministries)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "경제부(Ministry of Economy)",
+        "role": "국제금융기관·공여기관 협력과 상업·공법인 관련 보조금 협약 등록을 담당한다."
       },
       {
-        "name": "경제부(Ministry of Economy)",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "내각(Cabinet of Ministers)",
+        "role": "기술지원·보조금 협약의 체결·승인 규칙과 정부 차원의 공식화를 담당한다."
       }
     ],
     "procedure": [
@@ -81,19 +81,18 @@
     "azerbaijan-procurement-governance"
   ],
   "fieldVerification": [
-    {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
-      "status": "pending"
-    }
+    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
+    "금액기준·공고기간·보증·제출서류",
+    "기관 간 실제 결재·이의·공식요청 인계"
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
+      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -102,16 +101,51 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decree No. 388 on Rules for Concluding and Approving Technical Assistance and Grant Agreements",
+        "kind": "regulation",
+        "publisher": "Ministry of Economy, Republic of Azerbaijan",
+        "officialUrl": "https://economy.gov.az/en/page/ganunvericilik/fermanlar",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Grant agreements registration",
+        "kind": "directive",
+        "publisher": "Ministry of Economy, Republic of Azerbaijan",
+        "officialUrl": "https://www.economy.gov.az/en/page/sahibkarliq/qrant-muqavileleri",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "medium",
+        "field": "canvas.authorities / 보조금·기술지원 공식화",
+        "sourceText": "자료집 추출본은 내각을 수원 총괄기관으로 단정하고 경제부와의 구체 역할을 구분하지 않는다.",
+        "actualText": "경제부 공식 법령 목록은 기술지원·보조금 협약 체결·승인 규칙(Decree No. 388)을 제시하고, 경제부는 일정 보조금 협약 등록을 수행한다. 모든 KOICA 무상원조 요청의 단일 창구가 내각이라는 공개 근거는 확인하지 못했다.",
+        "citation": "Ministry of Economy, Decree No. 388; Grant agreements registration page",
+        "impact": "사업유형과 상대기관에 따라 경제부 등록 및 내각 승인 관계가 달라질 수 있다.",
+        "action": "경제부와 내각의 확인된 역할만 표시하고 단일 총괄창구 단정은 제한했다.",
+        "userAction": "제안 전 경제부와 소관부처에 협약 등록·승인 경로를 확인하고, KOICA 공식요청 경로는 외교공한 기준으로 재확인한다.",
+        "review": {
+          "topic": "Aid agreement approval route",
+          "guideSays": "The extracted guide treats the Cabinet as the single aid-coordination authority.",
+          "lawSays": "Official sources confirm Cabinet rules for technical-assistance and grant agreements and Ministry of Economy registration functions, but not one universal KOICA request route.",
+          "impact": "The required approval and registration route may vary by agreement and counterpart.",
+          "verify": "Confirm the responsible ministry, Cabinet approval and Ministry registration requirements for the specific grant agreement."
+        },
+        "id": "azerbaijan-oda-project-pipeline-D01",
+        "sourcePage": "25-39",
+        "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차"
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
+        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -157,7 +191,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "원조 수원 총괄책임은 총리실(Cabinet of Ministries)",
+        "actor": "경제부(Ministry of Economy)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -168,7 +202,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "원조 수원 총괄책임은 총리실(Cabinet of Ministries)",
+        "actor": "경제부(Ministry of Economy)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -201,7 +235,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "원조 수원 총괄책임은 총리실(Cabinet of Ministries)",
+        "actor": "경제부(Ministry of Economy)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

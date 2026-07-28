@@ -33,20 +33,28 @@
       {
         "law": "키르기스스탄 공공조달법",
         "kind": "act"
+      },
+      {
+        "law": "Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition)",
+        "kind": "act"
+      },
+      {
+        "law": "Unified public procurement portal",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "정부 및 공공조달은 재무부 산하의 국가조달국(Department of Public Procurement)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "재무부 공공조달 담당부서",
+        "role": "공공조달 정책·규정, 통합 전자조달포털과 조달기관 지원·감독을 담당한다."
       },
       {
-        "name": "키르기스스탄 공공조달법(Law on Public Procurement)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "조달기관·조달위원회",
+        "role": "계획·공고·평가·낙찰·계약관리를 수행한다."
       },
       {
-        "name": "키르기스 공화국 공공조달 포털(Zakupki.gov.kg)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "통합 공공조달포털(zakupki.gov.kg)",
+        "role": "공고·전자절차·계약정보를 제공하는 시스템이며 담당기관이 아니다."
       }
     ],
     "procedure": [
@@ -94,18 +102,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본법·핵심 적용범위",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "정량요건·하위규정·공여조건·개별 공고",
+      "question": "최신 규정과 실제 공고에서 세부요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
     ],
     "sources": [
       {
@@ -114,16 +128,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition)",
+        "kind": "act",
+        "publisher": "Ministry of Justice Central Legal Database",
+        "officialUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Unified public procurement portal",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://zakupki.gov.kg/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 조달법과 전자포털을 기관으로 배열하고 절차 링크를 zakupki.gov.kr로 잘못 표기한다.",
+        "actualText": "Law No.27/2022가 현행 기본법이며 재무부와 조달기관이 담당하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.",
+        "citation": "Law No.27/2022; unified procurement portal",
+        "impact": "잘못된 법령·기관 또는 적용범위는 승인·조달경로와 사업일정을 실질적으로 왜곡할 수 있다.",
+        "action": "법령·포털의 기관 오인과 도메인 오기를 정정하고 재무부·조달기관 역할을 분리했다.",
+        "userAction": "Check the live portal notice for the method, deadline, security, preference and complaint route.",
+        "review": {
+          "topic": "Current procurement law and authorities",
+          "guideSays": "자료집은 조달법과 전자포털을 기관으로 배열하고 절차 링크를 zakupki.gov.kr로 잘못 표기한다.",
+          "lawSays": "Law No.27/2022가 현행 기본법이며 재무부와 조달기관이 담당하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.",
+          "impact": "Incorrect law, authority or scope can materially misroute approval and procurement.",
+          "verify": "Check the live portal notice for the method, deadline, security, preference and complaint route."
+        },
+        "id": "kyrgyzstan-bidding-system-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "법령·포털의 기관 오인과 도메인 오기를 정정하고 재무부·조달기관 역할을 분리했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -191,7 +245,7 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "정부 및 공공조달은 재무부 산하의 국가조달국(Department of Public Procurement)",
+        "actor": "재무부 공공조달 담당부서",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
         "confidence": 0.65
       },
@@ -202,7 +256,7 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "정부 및 공공조달은 재무부 산하의 국가조달국(Department of Public Procurement)",
+        "actor": "재무부 공공조달 담당부서",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
         "confidence": 0.65
       },

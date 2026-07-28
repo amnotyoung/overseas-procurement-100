@@ -37,16 +37,12 @@
     ],
     "authorities": [
       {
-        "name": "경제부(Ministry of Economy)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "경제부 산하 반독점·소비자시장통제청(State Service for Antimonopoly and Consumer Market Control)",
+        "role": "공공조달 정책 집행, 적법성·계약이행 감시, 분쟁 조사와 통합 조달포털 운영을 담당한다."
       },
       {
-        "name": "공공조달 (Public Procurement)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
-      },
-      {
-        "name": "국방 및 국가 안보 관련 조달 (Closed Tender)",
-        "role": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다."
+        "name": "구매기관(Procuring Entity)",
+        "role": "조달계획, 경쟁절차, 평가, 계약 체결과 이행관리를 담당한다."
       }
     ],
     "procedure": [
@@ -93,19 +89,18 @@
     "azerbaijan-oda-project-pipeline"
   ],
   "fieldVerification": [
-    {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
-      "status": "pending"
-    }
+    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
+    "금액기준·공고기간·보증·제출서류",
+    "기관 간 실제 결재·이의·공식요청 인계"
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
+      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -114,16 +109,53 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement",
+        "kind": "act",
+        "officialName": "Law of the Republic of Azerbaijan No. 988-VIQ of 14.07.2023 “On Public Procurement”",
+        "publisher": "State Service for Antimonopoly and Consumer Market Control",
+        "officialUrl": "https://competition.gov.az/en/page/qanunvericilik/qanunlar",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Public Procurement — regulator functions, portal and complaint route",
+        "kind": "directive",
+        "publisher": "State Service for Antimonopoly and Consumer Market Control",
+        "officialUrl": "https://competition.gov.az/en/page/home/dovlet-satinalmalari",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "공공조달 감독 기능, etender.gov.az 공고·계약 공개, 구매기관→State Service→법원 이의 경로"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "medium",
+        "field": "canvas.authorities / 조달 감독기관",
+        "sourceText": "자료집 추출본은 경제부, 'Public Procurement', 'Closed Tender'를 모두 기관처럼 배열한다.",
+        "actualText": "경제부 산하 반독점·소비자시장통제청이 공공조달 정책 집행, 경쟁조달·계약이행 감시, 분쟁 조사와 통합 포털 운영을 담당한다. 'Public Procurement'와 'Closed Tender'는 기관명이 아니다.",
+        "citation": "State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)",
+        "impact": "감독기관과 조달유형을 혼동하면 이의신청·포털 문의 대상이 잘못 지정된다.",
+        "action": "감독기관을 State Service로 정정하고 구매기관과 역할을 분리했다.",
+        "userAction": "공고는 etender.gov.az에서 확인하고, 구매기관의 결정에 불복할 경우 법정 기한 내 구매기관을 거쳐 State Service에 이의를 제기한다.",
+        "review": {
+          "topic": "Procurement regulator identity",
+          "guideSays": "The extracted guide lists the Ministry, 'Public Procurement' and 'Closed Tender' as authorities.",
+          "lawSays": "The State Service for Antimonopoly and Consumer Market Control under the Ministry of Economy implements procurement policy, monitors legality and contracts, investigates disputes and runs the unified portal.",
+          "impact": "A procurement category is not an authority; using it as one misroutes complaints and compliance checks.",
+          "verify": "Use the State Service and the procuring entity as the responsible institutions; confirm each notice on etender.gov.az."
+        },
+        "id": "azerbaijan-bidding-system-D01",
+        "sourcePage": "25-39",
+        "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도"
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
+        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -191,7 +223,7 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "경제부 산하 반독점·소비자시장통제청(State Service for Antimonopoly and Consumer Market Control)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
         "confidence": 0.65
       },
@@ -202,7 +234,7 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "경제부 산하 반독점·소비자시장통제청(State Service for Antimonopoly and Consumer Market Control)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
         "confidence": 0.65
       },

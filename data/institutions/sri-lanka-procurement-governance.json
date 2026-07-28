@@ -25,20 +25,32 @@
       {
         "law": "National Environmental Act",
         "kind": "act"
+      },
+      {
+        "law": "Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)",
+        "kind": "directive"
+      },
+      {
+        "law": "Procurement Manual 2024",
+        "kind": "directive"
+      },
+      {
+        "law": "National Procurement Commission current supplements",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "스리랑카의 공공조달은 국가조달지침(National Procurement Guidelines)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "국가조달위원회(NPC)",
+        "role": "헌법상 공공조달 원칙·지침을 마련하고 조달체계 준수와 제도개선을 감독한다."
       },
       {
-        "name": "국가조달위원회(National Procurement Commission, NPC)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "조달기관(PE)·조달위원회(PC)",
+        "role": "Procurement Guidelines 2024에 따라 계획·공고·평가·낙찰·계약을 수행한다."
       },
       {
-        "name": "와 조달위원회(Procurement Committees, PCs)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "조달항소위원회·항소기구",
+        "role": "적용 구간의 조달 불복을 심사한다."
       }
     ],
     "procedure": [
@@ -85,18 +97,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본규정·핵심 적용경로",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "하위규정·정량요건·개별 협정·공고",
+      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
     ],
     "sources": [
       {
@@ -105,16 +123,63 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)",
+        "kind": "directive",
+        "publisher": "National Procurement Commission",
+        "officialUrl": "https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Procurement Manual 2024",
+        "kind": "directive",
+        "publisher": "National Procurement Commission",
+        "officialUrl": "https://pla.chiefsec.wp.gov.lk/si/wp-content/uploads/2025/04/Goods_Manual_English_updated-on-01.01.2025-1.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "National Procurement Commission current supplements",
+        "kind": "directive",
+        "publisher": "National Procurement Commission",
+        "officialUrl": "https://nprocom.gov.lk/3d-flip-book/supplement-02-to-the-procurement-manual-for-goods-works-and-non-consulting-services-2024-english/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 국가조달지침 자체를 기관으로 배열하고 무관한 National Environmental Act를 조달 기본근거로 둔다.",
+        "actualText": "2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.",
+        "citation": "Gazette No.2412/01; Procurement Guidelines and Manual 2024",
+        "impact": "잘못된 법령·기관·시행시점은 승인·조달·대외재원 경로를 실질적으로 왜곡할 수 있다.",
+        "action": "법령·기관 추출 오류를 제거하고 2024 지침의 현행 시행일과 기관별 역할을 반영했다.",
+        "userAction": "Check current NPC supplements, procurement category, committee level, method, deadline and appeal route.",
+        "review": {
+          "topic": "Current procurement framework",
+          "guideSays": "자료집은 국가조달지침 자체를 기관으로 배열하고 무관한 National Environmental Act를 조달 기본근거로 둔다.",
+          "lawSays": "2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.",
+          "impact": "Incorrect law, authority or effective date can materially misroute the process.",
+          "verify": "Check current NPC supplements, procurement category, committee level, method, deadline and appeal route."
+        },
+        "id": "sri-lanka-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "법령·기관 추출 오류를 제거하고 2024 지침의 현행 시행일과 기관별 역할을 반영했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
+        "nextStep": "Check current NPC supplements, procurement category, committee level, method, deadline and appeal route."
       }
     ]
   },
@@ -149,7 +214,7 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "스리랑카의 공공조달은 국가조달지침(National Procurement Guidelines)",
+        "actor": "국가조달위원회(NPC)",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
         "confidence": 0.65
       },
@@ -160,7 +225,7 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "스리랑카의 공공조달은 국가조달지침(National Procurement Guidelines)",
+        "actor": "국가조달위원회(NPC)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
         "confidence": 0.65
       },
@@ -182,7 +247,7 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "스리랑카의 공공조달은 국가조달지침(National Procurement Guidelines)",
+        "actor": "국가조달위원회(NPC)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
         "confidence": 0.65
       },
@@ -193,7 +258,7 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "스리랑카의 공공조달은 국가조달지침(National Procurement Guidelines)",
+        "actor": "국가조달위원회(NPC)",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
         "confidence": 0.65
       },

@@ -21,12 +21,24 @@
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
+      },
+      {
+        "law": "Decreto Ejecutivo n.º 24 de 29 de junio de 2020 — creación de ESCO",
+        "kind": "regulation"
+      },
+      {
+        "law": "Sistema Integrado de Información de la Cooperación Internacional",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "엘살바도르 수원총괄기관",
-        "role": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다."
+        "name": "엘살바도르 국제협력청(ESCO)",
+        "role": "정부기관의 비상환 국제협력 수요를 조정·연계하고 사업 기획·형성·제출·승인과 실행 모니터링을 지원한다."
+      },
+      {
+        "name": "외교부(MRREE)·부문 실행기관",
+        "role": "외교망과 협력기관 관계를 연계하고 부문 사업의 기술 형성·실행을 담당한다."
       }
     ],
     "procedure": [
@@ -73,18 +85,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·법령 및 핵심 적용체계",
+      "question": "연결한 공식 법령·기관 역할이 현재 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "금액·기한·보증·제출서류와 개별 공고",
+      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 전자시스템과 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
+    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
+      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
     ],
     "sources": [
       {
@@ -93,16 +111,56 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto Ejecutivo n.º 24 de 29 de junio de 2020 — creación de ESCO",
+        "kind": "regulation",
+        "publisher": "Agencia de El Salvador para la Cooperación Internacional",
+        "officialUrl": "https://esco.gob.sv/marco-institucional/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Sistema Integrado de Información de la Cooperación Internacional",
+        "kind": "directive",
+        "publisher": "Agencia de El Salvador para la Cooperación Internacional",
+        "officialUrl": "https://portal.esco.gob.sv/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집 구조화본은 비상환 협력의 담당기관을 '엘살바도르 수원총괄기관'으로만 표시한다.",
+        "actualText": "ESCO는 대통령령 24(2020)에 따라 정부의 비상환 국제협력 수요를 조정·연계하고 사업 기획·형성·제출·승인 및 이행 감독을 지원한다.",
+        "citation": "ESCO official institutional framework and functions",
+        "impact": "An unnamed authority makes the official project route unclear.",
+        "action": "수원총괄기관을 ESCO로 명시하고 MRREE·부문 실행기관의 역할을 분리했다.",
+        "userAction": "정부기관 제안은 ESCO의 현행 사업형성·승인 절차와 MRREE 외교경로를 함께 확인한다.",
+        "review": {
+          "topic": "Non-reimbursable cooperation coordinating authority",
+          "guideSays": "The model names only a generic Salvadoran recipient-government authority.",
+          "lawSays": "ESCO coordinates and channels government cooperation needs and supports project planning, formulation, submission, approval and implementation oversight.",
+          "impact": "An unnamed authority makes the official project route unclear.",
+          "verify": "Confirm the current ESCO project route and the related foreign-ministry channel."
+        },
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "수원총괄기관을 ESCO로 명시하고 MRREE·부문 실행기관의 역할을 분리했다."
+        },
+        "id": "el-salvador-oda-project-pipeline-D01",
+        "sourcePage": "",
+        "sourceSection": ""
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
+        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
       }
     ]
   },
@@ -148,7 +206,7 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "엘살바도르 수원총괄기관",
+        "actor": "엘살바도르 국제협력청(ESCO)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
         "confidence": 0.65
       },
@@ -159,7 +217,7 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "엘살바도르 수원총괄기관",
+        "actor": "엘살바도르 국제협력청(ESCO)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
         "confidence": 0.65
       },
@@ -192,7 +250,7 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "엘살바도르 수원총괄기관",
+        "actor": "엘살바도르 국제협력청(ESCO)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
         "confidence": 0.65
       }

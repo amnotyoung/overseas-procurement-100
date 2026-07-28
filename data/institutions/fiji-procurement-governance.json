@@ -33,16 +33,32 @@
       {
         "law": "기타 상세 현지조달규정",
         "kind": "act"
+      },
+      {
+        "law": "Procurement Regulations 2010 (Legal Notice No.81)",
+        "kind": "regulation"
+      },
+      {
+        "law": "Fiji Procurement Office official functions",
+        "kind": "directive"
+      },
+      {
+        "law": "Financial Policy Assurance legal framework",
+        "kind": "directive"
       }
     ],
     "authorities": [
       {
-        "name": "피지 조달청 (Fiji Procurement Office)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "재무부 피지조달청(FPO)",
+        "role": "정부 조달정책·통합구매·입찰공고·평가 지원·계약관리와 전 정부 준수평가를 담당한다."
       },
       {
-        "name": "정부입찰 시 정부조달위원회(Government Tender Board)",
-        "role": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다."
+        "name": "정부입찰위원회(Government Tender Board)",
+        "role": "Procurement Regulations에 따른 대상 입찰의 평가·낙찰 결정을 수행한다."
+      },
+      {
+        "name": "각 정부기관 조달부서",
+        "role": "연간조달계획·사양·소액조달·계약이행을 담당한다."
       }
     ],
     "procedure": [
@@ -89,18 +105,24 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 절차·기관·금액·제출서류",
-      "question": "자료집 기재사항이 현재도 유효하며 실제 공고에 동일하게 적용되는가?",
+      "item": "현행 기관·기본규정·핵심 적용경로",
+      "question": "공식 원문이 모델의 핵심 경로와 일치하는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "하위규정·정량요건·개별 협정·공고",
+      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
       "status": "pending"
     }
   ],
   "verification": {
-    "status": "source-document",
+    "status": "law-linked",
     "verifiedAt": "2026-07-28",
-    "method": "KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지를 텍스트 추출하고, 수원체계·조달조직·입찰제도 섹션을 3축으로 구조화했다.",
-    "scope": "자료집 기재사항과 국가별 페이지 범위를 확인했다. 현행 법령 원문·조문 및 개별 발주기관의 실제 적용은 아직 대조하지 않았다.",
+    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
+    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
     "notes": [
-      "자료집 기반 1차 다이어그램이다. 현행성 검증 전에는 금액·기한·서류를 확정 기준으로 사용하지 않는다."
+      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
+      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
     ],
     "sources": [
       {
@@ -109,16 +131,63 @@
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Procurement Regulations 2010 (Legal Notice No.81)",
+        "kind": "regulation",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Fiji Procurement Office official functions",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.finance.gov.fj/fiji-procurement-office-staff/",
+        "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Financial Policy Assurance legal framework",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.finance.gov.fj/financial-policy-assurance-unit/",
+        "retrievedOn": "2026-07-28"
       }
     ],
-    "discrepancies": [],
+    "discrepancies": [
+      {
+        "severity": "high",
+        "field": "canvas.authorities·legalBasis / 현행 기관·법령",
+        "sourceText": "자료집은 '년에 제정된 조달법', 'FPO는 법률' 같은 손상된 문구를 법적 근거로 두고 FPO와 Tender Board 역할을 구분하지 않는다.",
+        "actualText": "Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.",
+        "citation": "Procurement Regulations 2010 regs.4–5",
+        "impact": "잘못된 법령·기관·시행시점은 승인·조달·대외재원 경로를 실질적으로 왜곡할 수 있다.",
+        "action": "손상된 법적 근거를 정정하고 FPO·Tender Board·기관 조달부서 역할을 구분했다.",
+        "userAction": "Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route.",
+        "review": {
+          "topic": "Current procurement framework",
+          "guideSays": "자료집은 '년에 제정된 조달법', 'FPO는 법률' 같은 손상된 문구를 법적 근거로 두고 FPO와 Tender Board 역할을 구분하지 않는다.",
+          "lawSays": "Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.",
+          "impact": "Incorrect law, authority or effective date can materially misroute the process.",
+          "verify": "Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route."
+        },
+        "id": "fiji-procurement-governance-D01",
+        "sourcePage": "",
+        "sourceSection": "",
+        "upstream": {
+          "priority": "정정 요망",
+          "state": "not-reported",
+          "suggestedText": "손상된 법적 근거를 정정하고 FPO·Tender Board·기관 조달부서 역할을 구분했다."
+        }
+      }
+    ],
     "unresolved": [
       {
-        "law": "해당 국가 현행 조달·개발협력 법령 및 시행규정",
-        "kind": "act",
-        "reasonCode": "title-needs-confirmation",
-        "reason": "이번 전수 작업은 자료집 전체 국가의 다이어그램 구축을 우선했으며 현행 법령 조문 대조는 수행하지 않았다.",
-        "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다."
+        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
+        "kind": "regulation",
+        "reasonCode": "local-language-only",
+        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
+        "nextStep": "Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route."
       }
     ]
   },
@@ -153,7 +222,7 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "피지 조달청 (Fiji Procurement Office)",
+        "actor": "재무부 피지조달청(FPO)",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
         "confidence": 0.65
       },
@@ -164,7 +233,7 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "피지 조달청 (Fiji Procurement Office)",
+        "actor": "재무부 피지조달청(FPO)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
         "confidence": 0.65
       },
@@ -186,7 +255,7 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "피지 조달청 (Fiji Procurement Office)",
+        "actor": "재무부 피지조달청(FPO)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
         "confidence": 0.65
       },
@@ -197,7 +266,7 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "피지 조달청 (Fiji Procurement Office)",
+        "actor": "재무부 피지조달청(FPO)",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
         "confidence": 0.65
       },
