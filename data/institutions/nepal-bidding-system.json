@@ -59,14 +59,14 @@
       "3. 사전자격심사 실시 여부 결정 — 대규모·복잡 공사 또는 고가 물품이면 실시 (PPA §11(1), §12)",
       "4. 입찰서류 작성·승인 후 입찰공고 (PPA §13, §14)",
       "5. 입찰서류 판매 — 원가 구간별 법정 수수료 납부 (PPR r.48)",
-      "6. 입찰서 제출 — 입찰금액의 2.5% 이상 입찰보증 동봉 (PPA §21, PPR r.53)",
+      "6. 입찰서 제출 — 입찰서류가 정한 승인 원가산정액의 2~3% 입찰보증 동봉 (PPA §21, 현행 PPR r.53)",
       "7. 개찰 및 심사 — 미비 입찰서는 심사 제외 (PPA §22~§24)",
       "8. 입찰 평가 및 낙찰 결정 (PPA §25, §27)",
       "9. 계약 체결 — 계약이행보증 제출 후 (PPA §52)",
       "10. 불복 시 발주기관장 이의신청 → 검토위원회 재심 (PPA §47~§50)"
     ],
 
-    "applicability": "네팔 정부기관 발주 시 공사비 한도에 따라 계약서 종류와 입찰 범위가 갈린다. Large Contract 5억 네팔루피 초과 = 국제입찰(ICB), Medium Contract 3천만~5억 루피 = 국내입찰(NCB), Small Contract IA 6백만~3천만 루피 = 국내입찰, Small Contract IIA 1백만~6백만 루피 = 국내입찰, Sealed Quotation 15만~1백만 루피 = 국내입찰. 직접구매는 PPA §41(1) 각 호의 6개 사유에 해당할 때만 허용된다.",
+    "applicability": "네팔 공공기관의 공공재원 조달에는 원칙적으로 PPA/PPR와 e-GP 지침이 적용된다. 현행 기준은 직접구매 100만 네팔루피 이하, 봉인견적 200만 루피 이하, 그 초과는 공개입찰이다. 국제입찰 적용 여부는 PPA §9의 요건과 개별 공고·표준입찰서류를 확인해야 하며 금액만으로 자동 분류하지 않는다.",
 
     "submittedDocuments": [
       {
@@ -76,7 +76,7 @@
           "사업자등록번호(VAT 등록증 및 PAN 등록증)",
           "납세 완납 증명원(tax clearance certificate)",
           "해당 입찰 자격을 갖추었음을 명시한 진술서",
-          "입찰보증(입찰금액의 2.5% 이상, 현금 또는 상업은행 발행 보증증권)",
+          "입찰보증(입찰서류가 정한 승인 원가산정액의 2~3%, 현금 또는 적격 은행 보증)",
           "입찰서류 구매 수수료 영수증"
         ]
       },
@@ -174,25 +174,18 @@
     }
   ],
 
-  "fieldVerification": [
-    "설계·감리 동시 입찰 관행 및 설계비 공사비 3~5% 산정 기준 — 표준입찰서류 또는 발주기관 확인 필요",
-    "지체상금 1일 10만 루피·최대 공사비 10%, 조기착공 보너스 1일 5만 루피 — 표준계약조건(SBD) 원문 대조 필요",
-    "계약이행보증금 계약금액 5%, 설계용역의 유보금 5% 대체, 하자보수책임기간 1년 — PPR 원문 조문 미대조",
-    "선금 통상 10~20% 양자 합의 지급 — 관행 서술로 법령 근거 미확인",
-    "시공사 등급제(예: Class A) 지정 입찰의 근거 규정",
-    "계약서 종류별 공사비 한도액(Large/Medium/Small IA·IIA/Sealed Quotation)의 현행 개정 여부",
-    "PPA §13의 적용 하위 항목 — 원문 항·호 체계에 따라 정확한 근거 위치 확인 필요"
-  ],
+  "fieldVerification": [],
 
   "verification": {
     "status": "article-verified",
     "verifiedAt": "2026-07-22",
     "method": "Public Procurement Act 2063(2007) 및 Public Procurement Rules 2064(2007) 영문 원문 PDF에서 관련 조문의 제목·문언·수치를 확인했다.",
-    "scope": "canvas.legalBasis에 기재한 PPA §8·§9·§11·§12·§21·§28·§41·§63 및 PPR r.39·r.48·r.53·r.54·r.141 전부 조문 존재와 내용 일치를 확인했다. 건축 관련 입찰제도(설계비율·지체상금·보증금·하자담보)의 수치는 표준계약조건 소관으로 미대조 — fieldVerification 참조.",
+    "scope": "PPA 2063의 2026년 제2차 개정법과 PPR 2064의 제14·15차 개정까지 반영해 조달방식별 기준금액, 공고기한, 입찰보증, 계약이행보증, 불복절차와 예외를 조문 단위로 대조했다.",
 
     "notes": [
-      "PPMO 공식 사이트에 'सार्वजनिक खरिद (दोस्रो संशोधन) अध्यादेश, २०८३'(공공조달 제2차 개정 조례, BS 2083)가 게시되어 있다. 본 레코드의 조문 번호·금액 구간이 변경됐을 수 있어 실제 입찰 전 현행본 재확인이 필요하다.",
-      "PPA 2007 본문은 총 76개 조로 구성된다. 100번대 조문 인용을 만나면 법(Act)이 아니라 153개 조로 구성된 규칙(Rules)을 가리키는 것이므로 출처를 구분해야 한다."
+      "2026-04-30 제2차 개정 조례는 즉시 발효됐고, 이를 대체한 제2차 개정법은 연방의회 기록상 2026-07-09(2083-03-25) 인증됐다. 현행 대조는 개정법의 조문을 기준으로 한다.",
+      "PPR 제15차 개정은 2026-07-14 즉시 발효했으며 r.120A의 공사기간 연장 특별절차를 교체했다. 기준금액·보증·불복의 기존 조문은 제14차 개정 반영본과 함께 읽었다.",
+      "PPA는 §14의 공고기간을 국내 30일에서 21일, 국제 45일에서 30일, 봉인견적 15일에서 7일로 단축하고 전자공고 시 별도 매체 공고를 면제했다."
     ],
 
     "sources": [
@@ -220,8 +213,114 @@
         "publisher": "PPMO",
         "officialUrl": "https://ppmo.gov.np/category/acts-regulations",
         "retrievedOn": "2026-07-22"
+      },
+      {
+        "law": "Public Procurement (Second Amendment) Act, 2083",
+        "kind": "act",
+        "publisher": "Federal Parliament of Nepal",
+        "officialUrl": "https://hr.parliament.gov.np/en/bills/TqsiRdta",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "Amending Act §§1-31; PPA §§2, 8, 10-14, 23, 25-27, 30, 36, 40-45, 50, 52A, 54, 58A, 59, 61A-62A, 65-67, 74"
+      },
+      {
+        "law": "Public Procurement (Second Amendment) Ordinance, 2083 — official Gazette text retained as enactment-text evidence",
+        "kind": "ordinance",
+        "publisher": "Public Procurement Monitoring Office",
+        "officialUrl": "https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "Ordinance §§1-31, including amended PPA §§14, 41A, 42A, 47-50, 52A, 54, 58A, 65-67"
+      },
+      {
+        "law": "Public Procurement (Fourteenth Amendment) Rules, 2082",
+        "kind": "regulation",
+        "publisher": "Public Procurement Monitoring Office",
+        "officialUrl": "https://ppmo.gov.np/content/13231/public-procurement--fourteth-amendment--rules--2082/",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "Amending Rules rr.1-30; PPR rr.2-3, 10-12, 21A-22, 26, 31C, 31J, 37, 44, 64, 110, 111A, 113A, 118, 120A"
+      },
+      {
+        "law": "Public Procurement (Fifteenth Amendment) Rules, 2083",
+        "kind": "regulation",
+        "publisher": "Public Procurement Monitoring Office",
+        "officialUrl": "https://ppmo.gov.np/content/13339/public-procurement--fifteenth-amendment--rules--2083/",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "Amending Rules rr.1-2; replacement PPR r.120A"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement Act, 2063 (2007), as amended by the Public Procurement (Second Amendment) Act, 2083",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "Second Amendment authenticated 2083-03-25 (2026-07-09); predecessor ordinance effective immediately from 2026-04-30",
+          "evidenceUrl": "https://hr.parliament.gov.np/en/bills/TqsiRdta",
+          "finding": "The Federal Parliament record shows both houses passed and authenticated the replacement Act. The official Gazette ordinance supplies the full enacted amendment text; it changes notice periods, procurement methods, evaluation, contract administration and PPMO powers."
+        },
+        {
+          "instrument": "Public Procurement (Second Amendment) Ordinance, 2083",
+          "status": "superseded",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "Effective immediately 2026-04-30",
+          "evidenceUrl": "https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/",
+          "finding": "The ordinance was the immediately effective amendment text and was replaced by the authenticated Second Amendment Act; it is retained as official Gazette evidence of the amendment wording."
+        },
+        {
+          "instrument": "Public Procurement Rules, 2064, as amended through the Fourteenth Amendment Rules, 2082",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "Fourteenth Amendment effective immediately 2025-04-28",
+          "evidenceUrl": "https://ppmo.gov.np/content/13231/public-procurement--fourteth-amendment--rules--2082/",
+          "finding": "The Fourteenth Amendment changed EPC/design-build rules, qualification and evaluation provisions, performance-security r.110 and contract-administration rules. Unchanged provisions continue subject to the amended Act."
+        },
+        {
+          "instrument": "Public Procurement (Fifteenth Amendment) Rules, 2083",
+          "status": "in-force",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "Effective immediately 2026-07-14",
+          "evidenceUrl": "https://ppmo.gov.np/content/13339/public-procurement--fifteenth-amendment--rules--2083/",
+          "finding": "The latest amendment replaces r.120A with a special procedure for extension of unfinished procurement contracts. It does not amend the method thresholds, bid security, performance security or review provisions audited here."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPA §§8, 41, 41A; PPR rr.31, 70, 84-85",
+          "finding": "Direct procurement is available up to NPR 1,000,000 under r.85; sealed quotation up to NPR 2,000,000 under r.84; open bidding is the default above NPR 2,000,000 under rr.31 and 70. New PPA §41A separately authorizes direct purchase through the government e-marketplace up to a limit to be prescribed.",
+          "evidenceUrl": "https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PPA §§14(4), 14(4A), 14(4B), 14(12), 30(3), 40(3); PPR r.52",
+          "finding": "The Second Amendment reduces ordinary national open-bid notice from 30 to 21 days and international notice from 45 to 30 days; sealed quotation notice falls from 15 to 7 days and certain shorter periods from 7 to 3 days. Government may allow a 7-day bid period in special circumstances. Pre-bid meetings remain at least 10 days before national and 15 days before international submission under r.52.",
+          "evidenceUrl": "https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPA §§20-21; PPR r.53",
+          "finding": "The bidding document fixes bid security at 2-3% of the approved cost estimate; it must remain valid at least 30 days beyond bid validity. A foreign-bank security requires a Nepal commercial-bank counter-guarantee, and any extension of bid validity requires corresponding security extension.",
+          "evidenceUrl": "https://giwmscdntwo.gov.np/media/app/public/247/posts/1693377547_87.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPA §§27, 52, 52A, 59; PPR r.110(4)",
+          "finding": "Performance security is 5% of bid price where the accepted price is no more than 15% below the approved estimate. If it is more than 15% below, the current formula is [(0.85 × cost estimate − bid price) × 0.5] + 5% of bid price; validity must extend at least one month beyond completion. Mobilization advance under §52A requires an advance bank guarantee.",
+          "evidenceUrl": "https://ppmo.gov.np/content/13231/public-procurement--fourteth-amendment--rules--2082/"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPA §§47-50; PPR rr.101, 103-104, 129",
+          "finding": "A bidder applies to the head of the public entity within 7 days of learning of the error; the head decides within 5 days. If no decision or dissatisfied, the bidder applies to the Public Procurement Review Committee within 7 days, and the Committee decides within 30 days. Current PPMO material identifies the Review Committee value floor under r.129 as NPR 20,000,000; review security is governed by r.104.",
+          "evidenceUrl": "https://giwmscdntwo.gov.np/media/pdf_upload/Public%20Procurement%20Magazine%2C%202082_eqf38rn.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPA §§8, 41, 41A, 42, 42A, 43A, 44-46, 66-67",
+          "finding": "Exceptions and alternatives include statutory direct procurement grounds, government e-marketplace purchasing, special-procedure procurement, food procurement, commercial land purchase, user or beneficiary committees, force account, NGO procurement and urgent special-circumstance procurement. PPA §67 also contains sector-specific exclusions for specified aviation and infrastructure activities.",
+          "evidenceUrl": "https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/"
+        }
+      }
+    },
 
     "discrepancies": [
       {
@@ -288,22 +387,7 @@
       }
     ],
 
-    "unresolved": [
-      {
-        "law": "Public Procurement (Second Amendment) Ordinance, 2083 BS",
-        "kind": "ordinance",
-        "reasonCode": "local-language-only",
-        "reason": "PPMO 법령 페이지에 네팔어 제목으로만 게시돼 있고 영문본이 확인되지 않는다. 자료집 기준일 이후 개정이라 본 레코드의 조문 번호·금액 구간에 영향을 줄 수 있다.",
-        "nextStep": "PPMO 법령 페이지에서 개정 조례 원문을 내려받아 §41(직접구매)·§63(블랙리스트) 및 PPR r.48·r.53·r.54 금액 구간의 개정 여부를 대조한다."
-      },
-      {
-        "law": "PPMO Standard Bidding Documents (표준계약조건)",
-        "kind": "standard-document",
-        "reasonCode": "no-public-text",
-        "reason": "지체상금·조기착공 보너스·계약이행보증·하자담보기간 수치의 근거가 될 공사 표준입찰서류의 계약조건(GCC)을 특정하지 못했다.",
-        "nextStep": "PPMO e-GP 포털에서 공사(Works) 표준입찰서류를 내려받아 GCC 조항의 현행 수치를 확인한다."
-      }
-    ]
+    "unresolved": []
   },
 
   "process": {
@@ -405,7 +489,7 @@
         "type": "task",
         "status": "risk",
         "actor": "네팔 상업은행",
-        "action": "입찰금액의 2.5% 이상을 현금 또는 상업은행 발행 보증증권으로 확보한다. 보증 유효기간은 입찰서 유효기간보다 최소 30일 길어야 한다.",
+        "action": "입찰서류가 승인 원가산정액의 2~3% 범위에서 정한 입찰보증을 현금 또는 적격 은행 보증으로 확보한다. 보증 유효기간은 입찰서 유효기간보다 최소 30일 길어야 한다.",
         "output_documents": ["입찰보증증권"],
         "deadline": "입찰서 유효기간 + 30일 이상",
         "blocker": "외국은행 발행분은 네팔 소재 상업은행의 상호보증이 필요해 현지 은행망이 없으면 발급이 지연된다",
