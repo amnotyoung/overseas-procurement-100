@@ -754,12 +754,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 42. [HIGH] Current legal basis check
 
 - Institution: Kyrgyzstan — Bidding system
-- Legal basis: Law No.27/2022; unified procurement portal
+- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
 - KOICA guide: p.85-97
 
-**Current legal basis** — Law No.27/2022가 현행 기본법이며 재무부와 조달기관이 담당하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.
+**Current legal basis** — Law No.27/2022, as amended through Law No.10/2026, assigns procurement and review roles and requires use of the official .kg portal.
 
-**✔ Verify** — Check the live portal notice for the method, deadline, security, preference and complaint route.
+**✔ Verify** — Check the live notice for the method, deadline, security and any treaty-based rule.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -771,12 +771,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 43. [HIGH] Current legal basis check
 
 - Institution: Kyrgyzstan — Procurement governance
-- Legal basis: Law No.27/2022; unified procurement portal
+- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
 - KOICA guide: p.85-97
 
-**Current legal basis** — Law No.27/2022가 현행 기본법이며 재무부와 조달기관이 담당하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.
+**Current legal basis** — Law No.27/2022, as amended through Law No.10/2026, assigns procurement and review roles and requires use of the official .kg portal.
 
-**✔ Verify** — Check the live portal notice for the method, deadline, security, preference and complaint route.
+**✔ Verify** — Check the live notice for the method, deadline, security and any treaty-based rule.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`

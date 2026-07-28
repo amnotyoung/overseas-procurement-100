@@ -101,13 +101,13 @@
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "키르기스공화국 법무부 법령정보은행의 Law No.27/2022 현행 편집본과 Law No.10/2026 개정법 원문을 직접 읽어 시행·개정·폐지 및 기준금액·제출기한·입찰보증·이행보증·불복·예외 조문을 대조하고 공식 전자조달 포털을 확인했다.",
+    "scope": "Law No.27/2022 arts.1~4, 8~10, 13~17, 19~29, 43~54와 Law No.10/2026 arts.1~2를 확인했다.",
     "notes": [
-      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
+      "Law No.27/2022는 폐지되지 않았고 법무부 현행 편집본에 2026-01-29 제10호까지 누적 개정이 반영되어 있다. 2015년 제72호 구 조달법은 현행법 art.54에 의해 폐지됐다.",
+      "법정 정량기준과 절차를 확인했으며 실제 참여 시에는 포털 공고의 조달방식·제안 유효기간·보증형식과 개별 국제협정의 우선규칙을 함께 적용해야 한다."
     ],
     "sources": [
       {
@@ -130,6 +130,30 @@
         "publisher": "Ministry of Finance",
         "officialUrl": "https://www.minfin.kg/",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)",
+        "kind": "act",
+        "publisher": "Ministry of Justice Central Legal Database",
+        "officialUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~4, 8~10, 13~17, 19~29, 43~54, especially arts.2, 13~17, 20, 22, 29, 43~45, 50 and 54"
+      },
+      {
+        "law": "Law No. 10 of 29 January 2026 amending the Law On Public Procurement",
+        "kind": "act",
+        "publisher": "Ministry of Justice Central Legal Database",
+        "officialUrl": "https://cbd.minjust.gov.kg/4-5701/edition/46464/ru",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~2; amendments to Law No.27/2022 arts.2, 4-1 and 17, plus publication and commencement clause"
+      },
+      {
+        "law": "Unified public procurement portal",
+        "kind": "directive",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://zakupki.gov.kg/",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Live official portal domain and procurement publication channel required by Law No.27/2022"
       }
     ],
     "discrepancies": [
@@ -154,15 +178,73 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2022-04-15; effective after the 30-calendar-day period prescribed by art.54; current edition dated 2026-01-29",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru",
+          "finding": "법무부 현행 편집본은 2023년 제19·147·165호, 2024년 제110호, 2025년 제126·137호와 2026년 제10호까지의 개정을 열거한다. art.54는 2022-04-15 관보 공포와 30일 후 시행을 정하며, 구 2015년 조달법과 그 개정법들을 명시 폐지한다."
+        },
+        {
+          "instrument": "Law No. 10 of 29 January 2026 amending the Law On Public Procurement",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Published 2026-01-30; effective after 10 days under art.2",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/4-5701/edition/46464/ru",
+          "finding": "최신 개정법은 국제 국가행사·정부과업 관련 적용 제외를 art.2(4)에 추가하고 art.4-1을 신설하며 art.17(3)(8)을 개정했다. 법무부 현행 편집본의 기준일도 2026-01-29로 표시된다."
+        },
+        {
+          "instrument": "Law of the Kyrgyz Republic No. 72 of 3 April 2015 On Public Procurement",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed when Law No.27/2022 entered into force under art.54(3)(2)",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru",
+          "finding": "Law No.27/2022 art.54(3)(2)은 2015년 제72호 조달법을 명시적으로 폐지하고, 같은 항의 후속 문단들은 종전 개정법도 함께 폐지한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.13~17, especially art.17(3)(1)~(3)",
+          "finding": "현행법은 공개형·견적요청·단일원천 방식을 둔다. 단일원천 추가구매는 종전 계약가의 10% 이내이고, 전자카탈로그를 통한 물품·공사·용역 구매는 승인 예산의 해당 지출항목별 연간 200,000솜까지 허용된다. 그 밖의 방식 선택은 금액만이 아니라 표준성·기술특성·경쟁가능성 및 art.17의 열거 사유로 판단한다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.20 and 29; arts.44~45 for review deadlines",
+          "finding": "제안서 최소 제출기간은 공개형 2봉투 10영업일, 협상형 공개방식 15영업일, 자격요건 있는 견적요청 3영업일, 없는 견적요청 2영업일이다. 낙찰자는 공개형 3영업일·견적요청 1영업일 내 확인하고, 계약은 원칙적으로 선택 공개 후 3영업일 이상 8영업일 이내 체결한다. 불복 관련 별도 기한은 arts.44~45가 정한다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.20(3) and 22",
+          "finding": "입찰보증은 현금 또는 은행보증으로 예정 조달가의 최대 2%이거나 입찰보증선언 방식이다. 보증은 제안 유효기간 종료 후 최소 10영업일까지 유효해야 하고, 반환사유 발생 후 7영업일 이내 반환한다. 제안 유효기간 연장에 동의한 공급자는 보증도 함께 연장한다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.29(3) and 50",
+          "finding": "발주기관은 계약이행보증을 요구하며, 금액은 계약상 최대 위약금보다 클 수 없고 계약금액의 10%를 초과할 수 없다. 계약·보증의무 완료 또는 불가항력 해지 시 확인 후 7영업일 이내 반환하며, 보증기간 중 유지액은 최초 이행보증의 50%를 넘을 수 없다. 표준 물품·명확한 용역에는 이행보증선언으로 대체할 수 있다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.43~46",
+          "finding": "공급자·컨설턴트는 포털에서 1차로 발주기관/Agent, 2차로 독립위원회에 불복한다. 방식·문서 이의는 제안마감 2영업일 전까지, 평가결과 등 행위 이의는 공개 후 3영업일 이내이며 발주기관은 3영업일 내 결정한다. 그 결정에 대한 행정불복은 공개 후 2영업일 이내이고 독립위원회는 3영업일 내 결정하며, 이후 법원에 제소할 수 있다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Law No.27/2022 arts.1~4 and 17; Law No.10/2026 art.1",
+          "finding": "국제조약이 다른 규칙·기한을 정하면 art.2(2)에 따라 조약이 우선한다. 국가기밀, 중앙은행, 특정 국제기금, 혈액투석, 특별지위 국립대학, 국·공기업, 일부 교과서, 국가급 국제행사와 정부과업 구매는 art.2(4)의 적용 제외다. 외국원조 자금도 원칙적으로 공공자금이나 협정이 다른 사용방식을 정하면 그 협정을 따른다. 긴급·독점·호환성·추가구매 등 단일원천은 art.17의 열거 사유에 한한다.",
+          "evidenceUrl": "https://cbd.minjust.gov.kg/112361/edition/1279682/ru"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
