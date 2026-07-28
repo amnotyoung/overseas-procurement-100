@@ -113,17 +113,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "Ordonnance 2019-679과 Décrets 2021-869·2021-870의 기관분리, 사전·사후통제, 승인, 이의 및 정량요건 조문을 직접 대조하고 DGMP·ANRMP의 현행 역할과 연결했다.",
+    "scope": "Code arts.2~20, 63, 75~83, 93~104, 143~159와 Décret 2021-869 arts.1~10, Décret 2021-870 arts.1~7을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "Code art.9에 따라 집행·통제·규제 기능은 분리되고 통제·규제는 독립적으로 수행된다.",
+      "낙찰제안의 DGMP 사전검증 기준은 지방정부 1억 CFA, 그 밖의 기관 3억 CFA이며 그 미만은 사후통제 대상이다.",
+      "ANRMP 이의경로와 발주기관·COJO·DGMP의 집행·평가·통제 역할을 구분했다."
     ],
     "sources": [
       {
@@ -131,7 +132,8 @@
         "kind": "donor-rule",
         "publisher": "한국국제협력단(KOICA)",
         "officialUrl": "https://www.koica.go.kr/",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.2~20, 63, 75~83, 93~104, 143~159"
       },
       {
         "law": "Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics",
@@ -141,20 +143,96 @@
         "retrievedOn": "2026-07-28"
       },
       {
-        "law": "DGMP official regulation catalogue",
+        "law": "Décret n°2021-869 du 15 décembre 2021 fixant les seuils",
         "kind": "regulation",
         "publisher": "Direction Générale des Marchés Publics",
-        "officialUrl": "https://www.marchespublics.ci/reglementation",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~10 전체"
+      },
+      {
+        "law": "Décret n°2021-870 du 15 décembre 2021 fixant les garanties",
+        "kind": "regulation",
+        "publisher": "Direction Générale des Marchés Publics",
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/GARANTIES_ET_REVOCATION_(1).pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~7 전체"
       },
       {
         "law": "Ordonnance n°2018-594 portant création, organisation et fonctionnement de l'ANRMP",
         "kind": "regulation",
         "publisher": "ANRMP",
         "officialUrl": "https://www.anrmp.ci/images/PDF/JO_L-ordonnance-N-2018-594-du-27-juin-2018.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "독립 규제·불복·제재 기능과 현행 기관 지위"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Ordonnance n°2019-679 portant Code des marchés publics",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2019-07-24; published and executed as law under art.159; ratified by Loi n°2020-629",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "DGMP 현행 법령목록과 현재 운영자료가 2019 Code를 기본법으로 적용한다."
+        },
+        {
+          "instrument": "Décrets n°2021-869 et n°2021-870",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2021-12-15; publication au Journal Officiel",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "현행 기준금액·보증 적용법령으로 DGMP가 공개하며 폐지·대체 표시는 없다."
+        },
+        {
+          "instrument": "Décret n°2009-259 portant ancien Code",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Superseded for new procedures by Ordonnance 2019-679; art.158 preserves only procedures already under way",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf",
+          "finding": "2009 Code는 2019 Code 시행 당시 진행 중 절차에만 경과적으로 남고 신규 조달의 현행법이 아니다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Code arts.5~6, 63, 75 and 83; Décret 2021-869 arts.1~9",
+          "finding": "정식절차 기준은 일반 1억 CFA·지방정부 3천만 CFA, 낙찰제안 사전검증 기준은 일반 3억 CFA·지방정부 1억 CFA다. 중앙정부·공공기관·프로젝트 3억 CFA 이상은 조달담당 장관 승인 대상이다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Code arts.20, 63~64, 70, 75~78, 144~145; Décret 2021-869 art.6",
+          "finding": "예산 통지 후 15일 내 조달계획, 서류검토 5영업일, 국내/국제 공고 최소 30/45일, 낙찰 후 계약 대기 7영업일 및 선행이의 7영업일을 확인했다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.95~96; Décret 2021-870 arts.2~5",
+          "finding": "입찰보증은 예정금액의 1%~1.5%이며 미낙찰자에게 최종낙찰 후 늦어도 15일 내 반환한다. 직접계약·지식서비스·허가된 면제는 별도다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.97~99; Décret 2021-870 arts.2~5",
+          "finding": "이행보증은 계약금액의 3%~5%, 유보금도 각 지급액의 3%~5%이며 지식서비스와 승인된 면제를 구분한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Code arts.143~148",
+          "finding": "선행이의는 7영업일 내 원결정기관에 제기하고, 5영업일 내 무응답·불리한 결정 후 5영업일 내 ANRMP로 간다. ANRMP는 접수가능성 10영업일, 본안은 그 결정 뒤 최대 15영업일 내 판단한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Code arts.4, 7, 60~61, 95.1, 97.1 and 97.5",
+          "finding": "대외재원 협정 우선, 안보비밀 제외, 제한·직접계약 사전승인, 법정 보증면제를 확인했다. 통제기준 미만 낙찰제안은 면제가 아니라 DGMP 사후통제 대상이다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "field": "canvas.authorities·legalBasis / 조달기관과 법령",
@@ -182,15 +260,7 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [

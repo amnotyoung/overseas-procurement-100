@@ -92,17 +92,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "PTF 재원·공동재원 사업의 준비·예산·조달·집행·감사·종료를 규율하는 Décret 2015-475의 49개 조문과 Décret 2019-299의 개정조문 17·19를 직접 대조하고 2019 Code 및 2021 기준금액·보증 시행령을 교차검증했다.",
+    "scope": "Décret 2015-475 arts.1~49 전체, 특히 arts.1~13, 16~25, 29~39, 43~49와 Décret 2019-299 arts.1~2, Code arts.4, 5~6, 64, 95~99, 143~148을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "PTF와 정부는 타당성조사·평가서·금융협정 초안을 협상하고, 연간활동계획과 조달계획은 PTF의 의견 또는 비이의 승인을 받아 국가예산·SIGFIP·SIGMAP에 연결한다.",
+      "국제금융협정과 PTF 지침은 국내 Code와 충돌하는 범위에서 우선하고, PTF 사전심사 대상은 비이의 승인 전 공고할 수 없다.",
+      "2019-299는 2015-475의 계약 서명·승인과 해지에 관한 arts.17·19를 개정했으므로 원문 구조를 그대로 현행 규칙으로 오인하지 않도록 반영했다."
     ],
     "sources": [
       {
@@ -124,10 +125,93 @@
         "law": "Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires",
         "kind": "regulation",
         "publisher": "Direction Générale des Marchés Publics",
-        "officialUrl": "https://www.marchespublics.ci/reglementation",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~49 전체; 특히 arts.1~13, 16~25, 29~39, 43~49"
+      },
+      {
+        "law": "Décret n°2019-299 du 3 avril 2019 modifiant le Décret n°2015-475",
+        "kind": "regulation",
+        "publisher": "Direction Générale des Marchés Publics",
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~2; 2015-475 arts.17·19 신문"
+      },
+      {
+        "law": "Ordonnance n°2019-679 portant Code des marchés publics et Décrets n°2021-869·870",
+        "kind": "act",
+        "publisher": "Direction Générale des Marchés Publics",
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Code arts.4~7, 63~64, 95~99, 143~148; Décret 2021-869 arts.1~9; Décret 2021-870 arts.1~7"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Décret n°2015-475 portant procédures et modalités de gestion des projets financés ou cofinancés par les PTF",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2015-07-01 and published au Journal Officiel; arts.17 and 19 amended 2019-04-03",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "DGMP 현행 법령목록이 2015-475와 그 개정령 2019-299를 함께 제공하며 폐지 표시는 없다."
+        },
+        {
+          "instrument": "Décret n°2019-299 modifiant le Décret n°2015-475",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2019-04-03; publication au Journal Officiel",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf",
+          "finding": "art.1이 2015-475의 계약 서명·승인 art.17과 해지 art.19를 신문으로 교체하고 art.2가 공포·집행을 명한다."
+        },
+        {
+          "instrument": "Ordonnance n°2019-679 and Décrets n°2021-869·870",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Code adopted 2019-07-24 and ratified by Loi n°2020-629; implementing decrees adopted 2021-12-15",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "PTF 사업이 국내 조달단계에 진입할 때 적용되는 현행 Code·기준금액·보증 법령이며 금융협정 충돌 시 Code art.4와 2015-475 art.9에 따라 협정 조건이 우선한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Décret 2019-299 art.1 (2015-475 arts.17·19 nouveaux); Code arts.5~6; Décret 2021-869 arts.1~9",
+          "finding": "개정 art.17은 프로젝트 조정자가 금액과 관계없이 계약에 서명하고, 10억 CFA를 초과하는 계약의 승인은 조달담당 장관 권한으로 둔다. 일반 조달절차 기준은 일반 1억 CFA·지방정부 3천만 CFA다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Décret 2015-475 arts.7~13, 20~24; Décret 2019-299 art.1; Code arts.64, 144~145",
+          "finding": "조달계획 수기작성 3영업일, SIGMAP 입력 2영업일, 국내 공고 최소 4주, PTF 지급요청 전달 7영업일을 확인했다. PTF 사업 이의는 5영업일 내 선행제기, 발주기관 2영업일 무응답 후 5영업일 내 ANRMP 제기 구조다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Décret 2015-475 arts.9, 13 and 20; Code arts.95~96; Décret 2021-870 arts.2~5",
+          "finding": "금융협정·PTF 지침이 우선하는 경우 그 입찰서류를 따르고, 국내 Code 적용 시 입찰보증은 예정금액의 1%~1.5%이며 법정 예외와 PTF 별도조건을 구분한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Décret 2015-475 arts.7~9, 16~18; Code arts.97~99; Décret 2021-870 arts.2~5",
+          "finding": "국내 Code 적용 시 이행보증은 계약금액의 3%~5%이고 지식서비스·승인면제가 가능하다. PTF 금융협정 또는 비이의 조건이 달리 정하면 충돌 범위에서 그 조건을 적용한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Décret 2015-475 art.20; Code arts.143~148",
+          "finding": "PTF 사업의 불복은 손해결정 공고·통지 후 5영업일 내 원결정기관에 제기하고 ANRMP에 사본을 보낸다. 2영업일 무응답 또는 불만족 답변 뒤 5영업일 내 ANRMP에 제기하며, 법원 제소 전 비사법 구제절차를 거쳐야 한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Décret 2015-475 arts.1~4, 9, 16, 47; Code arts.4 and 7",
+          "finding": "2015-475는 PTF 재원·공동재원 사업에 한정되며, 금융협정과 PTF 조달지침이 국내 Code와 충돌하는 범위에서 우선한다. 재양도 프로젝트는 금융·재양도협정과 내부절차가 별도 예외를 정할 수 있다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "field": "canvas.authorities / 개발협력 조정기관",
@@ -155,15 +239,7 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [

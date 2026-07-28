@@ -113,17 +113,18 @@
     {
       "item": "금액·기한·보증·제출서류와 개별 공고",
       "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트와 공식 법령 원문에서 현행 법령명, 담당기관, 적용체계와 공개 절차를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 금액기준·기한·보증·제출서류와 개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "DGMP가 공개한 Ordonnance 2019-679 공공조달법 159개 조문과 Décrets 2021-869·2021-870 원문을 직접 대조해 적용범위, 기준금액, 공고기한, 보증, 불복, 예외 및 개정·시행 상태를 검증했다.",
+    "scope": "Code arts.2~10, 20, 55~64, 68~83, 95~104, 143~159와 Décret 2021-869 arts.1~10, Décret 2021-870 arts.1~7을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령과 핵심 기관 역할을 확인했다.",
-      "정량 기준·예외·개별 발주 적용은 최신 하위규정과 실제 공고에서 다시 확인해야 한다."
+      "기준금액은 일반 발주기관 1억 CFA, 지방정부 3천만 CFA이며 그 미만은 간이절차 대상이다.",
+      "국내 공개입찰은 최소 30일, 국제 공개입찰은 최소 45일이고 낙찰통지 후 7영업일의 계약체결 대기기간이 적용된다.",
+      "입찰보증은 예정금액의 1~1.5%, 이행보증은 계약금액의 3~5%이며 법정 예외를 별도로 구분했다."
     ],
     "sources": [
       {
@@ -138,23 +139,100 @@
         "kind": "act",
         "publisher": "Direction Générale des Marchés Publics",
         "officialUrl": "https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.2~10, 20, 55~64, 68~83, 95~104, 143~159"
       },
       {
-        "law": "DGMP official regulation catalogue",
+        "law": "Décret n°2021-869 du 15 décembre 2021 fixant les seuils de référence, de validation et d'approbation",
         "kind": "regulation",
         "publisher": "Direction Générale des Marchés Publics",
-        "officialUrl": "https://www.marchespublics.ci/reglementation",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~10 전체"
+      },
+      {
+        "law": "Décret n°2021-870 du 15 décembre 2021 fixant les modalités de constitution des garanties",
+        "kind": "regulation",
+        "publisher": "Direction Générale des Marchés Publics",
+        "officialUrl": "https://www.marchespublics.ci/uploads/doc/GARANTIES_ET_REVOCATION_(1).pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~7 전체"
       },
       {
         "law": "Ordonnance n°2018-594 portant création, organisation et fonctionnement de l'ANRMP",
         "kind": "regulation",
         "publisher": "ANRMP",
         "officialUrl": "https://www.anrmp.ci/images/PDF/JO_L-ordonnance-N-2018-594-du-27-juin-2018.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "ANRMP의 독립 규제·불복·제재 권한과 시행 상태"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Ordonnance n°2019-679 portant Code des marchés publics",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2019-07-24; published and executed as law under art.159; ratified by Loi n°2020-629",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "DGMP의 현행 법령목록과 2025~2026 운영자료가 2019 Code를 현행 기본법으로 사용하며, 목록은 2020-629 비준법도 함께 제시한다."
+        },
+        {
+          "instrument": "Décrets n°2021-869 et n°2021-870 du 15 décembre 2021",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Adopted 2021-12-15; publication au Journal Officiel",
+          "evidenceUrl": "https://www.marchespublics.ci/reglementation",
+          "finding": "DGMP 현행 법령목록에서 기준금액 시행령과 보증 시행령을 2019 Code의 적용법령으로 제공하며 폐지·대체 표시는 없다."
+        },
+        {
+          "instrument": "Décret n°2009-259 portant ancien Code des marchés publics",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Superseded for new procedures by Ordonnance 2019-679; transitional preservation only for procedures already under way under art.158",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf",
+          "finding": "art.158은 2019 Code 시행 당시 진행 중이던 절차에만 2009 Code의 경과적 적용을 남기므로 신규 절차의 현행 근거가 아니다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Code arts.5~6; Décret 2021-869 arts.1~9",
+          "finding": "공공조달 정식절차 기준은 일반 발주기관 100,000,000 CFA, 지방정부 30,000,000 CFA다. 낙찰제안 사전검증은 지방정부 100,000,000 CFA, 그 밖의 기관 300,000,000 CFA 이상이다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Code arts.63~64, 70, 75~78, 144~145; Décret 2021-869 art.6",
+          "finding": "국내 공개입찰 공고기간은 최소 30일, 국제입찰은 최소 45일이다. 낙찰통지 뒤 계약 전 7영업일을 두며, 입찰서류 검증과 여러 서명·통지 단계의 3~5영업일 기한도 확인했다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.95~96; Décret 2021-870 arts.2~5",
+          "finding": "입찰보증은 원칙적으로 예정금액의 1%~1.5%이며 직접계약·지식서비스 등은 예외가 가능하다. 미낙찰자 보증은 최종낙찰 후 늦어도 15일 내 반환한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Code arts.97~99; Décret 2021-870 arts.2~5",
+          "finding": "이행보증은 최초 계약금액(변경계약 반영)의 3%~5%이고, 지식서비스는 원칙적으로 제외된다. 보증기간이 있는 계약의 유보금도 각 지급액의 3%~5%다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Code arts.143~148",
+          "finding": "발주결정 등에 대한 선행이의는 공고·통지·사실 발생 후 7영업일 내 제기하며 절차를 정지한다. 원결정기관이 5영업일 내 결정하지 않거나 불리한 결정을 하면 5영업일 내 ANRMP에 재심을 청구한다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Code arts.4, 7, 60~61, 95.1, 97.1 and 97.5",
+          "finding": "대외재원 협정 조건은 충돌 시 우선하고, 국가안보 비밀조달은 적용 제외다. 제한·직접계약은 열거된 사유와 사전승인이 필요하며 보증은 직접계약·지식서비스·허가된 개별면제 등에 예외가 있다.",
+          "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "field": "canvas.authorities·legalBasis / 조달기관과 법령",
@@ -182,15 +260,7 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
