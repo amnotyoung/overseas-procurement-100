@@ -203,7 +203,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 11. [HIGH] Current legal basis check
 
 - Institution: Democratic Republic of the Congo — Bidding system
-- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/22, 10/27 and 10/32
+- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
 - KOICA guide: p.5-15
 
 **Current legal basis** — Law 10/010 and its decrees separate ARMP regulation and review, DGCMP prior control, and procurement execution by the contracting authority's procurement unit.
@@ -237,7 +237,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 13. [HIGH] Current legal basis check
 
 - Institution: Democratic Republic of the Congo — Procurement governance
-- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/22, 10/27 and 10/32
+- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
 - KOICA guide: p.5-15
 
 **Current legal basis** — Law 10/010 and its decrees separate ARMP regulation and review, DGCMP prior control, and procurement execution by the contracting authority's procurement unit.
