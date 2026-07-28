@@ -140,23 +140,29 @@
   ],
 
   "fieldVerification": [
-    "PPRA 5개 부서(운영지원·역량강화자문·모니터링컴플라이언스·정보시스템·법무공보)의 현행 조직 구조 — 새 법 시행 후 개편 여부",
-    "공공조달상소청(PPAA)의 이의·상소 절차와 기한 — PPA 2023 상소 조항 대조 필요",
-    "가격상한(§74) 설정 대상·방법·공표 절차",
-    "NeST 운영 근거 규정과 의무 적용 범위"
+    {
+      "item": "PPRA·PPAA 권한과 현행 법령",
+      "question": "PPA 2023의 감독·이의·상소 조문과 폐지조항을 확인했는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "NeST·정량요건·보증·예외",
+      "question": "PPR 2024의 전자조달 의무, 부속표, 보증과 예외를 확인했는가?",
+      "status": "confirmed"
+    }
   ],
 
   "verification": {
-    "status": "law-linked",
+    "status": "article-verified",
     "verifiedAt": "2026-07-23",
-    "method": "PPRA 공식 사이트에서 기관 소속·현행 법령을 확인하고, PPA 2023 원문에서 §8(설립)·§9(목적)·§10(기능)·§38(회계책임관)·§74(가격상한)·§131(경과)을 확인했다.",
-    "scope": "PPRA의 법정 지위(재정기획부 산하 규제기관)와 §10 기능 14개 호, 가격상한 신설(§74), 회계책임관 책임(§38)을 원문에서 확인했다. PPAA 상소 절차와 NeST 운영 규정 세부는 미대조.",
+    "method": "PPRA·재무부 공식 공표본에서 PPA 2023과 PPR 2024의 시행·개정·폐지 상태, PPRA·PPAA 권한, NeST 의무, 정량요건·보증·이의·예외를 조문과 부속표 단위로 대조했다.",
+    "scope": "PPA 2023 §§1–5, 8–10, 38, 49–86, 112–125, 131과 PPR 2024 regs.1, 9–11, 23–30, 64–65, 78, 107–109, 150–166, 238 및 Sixth·Ninth–Eleventh Schedules를 확인했다.",
 
     "notes": [
       "PPRA는 PPA 2011에서 설립됐고 PPA 2023 §8은 '계속 존속한다(continue to exist)'로 승계했다. 근거 법률이 교체됐으나 기관 자체는 연속된다.",
       "PPA 2023 §10은 PPRA 기능을 (a)~(다수) 호로 규정하며, 5개 부서가 관련 기능을 조직적으로 나눠 수행한다.",
       "가격상한(§74)은 PPRA가 특정 물품·서비스의 최소·최대 가격을 정하는 제도다.",
-      "새 법은 스와힐리어 제정, 영문은 공식 번역이다."
+      "새 법은 스와힐리어 제정이지만 GN 813/2024는 Interpretation of Laws Act §84(4)에 따른 공식 영문 공표본이다."
     ],
 
     "sources": [
@@ -167,7 +173,16 @@
         "publisher": "Public Procurement Regulatory Authority (PPRA)",
         "officialUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf",
         "retrievedOn": "2026-07-28",
-        "articlesChecked": "§8(1)(2), §9, §10(a)~(i), §38, §74, §131"
+        "articlesChecked": "§§1–5, 8–10, 38, 49–86, 112–125, 131(1)–(3)"
+      },
+      {
+        "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
+        "kind": "regulation",
+        "officialName": "The Public Procurement Regulations, 2024 — English Version",
+        "publisher": "Ministry of Finance, United Republic of Tanzania",
+        "officialUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "regs.1, 9–11, 23–30, 64–65, 78, 107–109, 115, 125, 150–166, 238; Sixth, Ninth–Eleventh Schedules"
       },
       {
         "law": "PPRA 공식 사이트",
@@ -184,6 +199,64 @@
         "retrievedOn": "2026-07-28"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement Act, No. 10 of 2023",
+          "status": "in-force",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2024-06-17",
+          "evidenceUrl": "https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024",
+          "finding": "PPRA 시행 공지와 GN 813/2024를 확인했다. §131이 2011년법을 폐지하고 PPRA·PPAA를 현행 법체계로 승계한다."
+        },
+        {
+          "instrument": "Public Procurement Regulations, 2024",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2024-07-01; English version GN 261 published 2025-04-25",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf",
+          "finding": "reg.1과 GN 518/2024, GN 817/2024, GN 42/2025 개정표를 확인했으며 폐지 표시는 없다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPR Sixth and Ninth Schedules; regs.64–65, 150–166",
+          "finding": "조달방식 한도와 기관 규모별 Tender Board 승인선을 부속표에서 확인했다. 국내경쟁은 TZS 50bn 이하, shopping은 TZS 500m 이하이다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PPR Tenth and Eleventh Schedules; regs.78(3), 115(3)",
+          "finding": "비컨설팅 제출 최소기간은 방식별 1–50일, 컨설팅은 4–14일이며 재입찰의 제한적 경우에만 절반으로 줄일 수 있다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.23–28",
+          "finding": "입찰보증 금액·형태는 입찰서가 정하고 보증 유효기간은 입찰유효기간보다 최소 28일 길어야 한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.29–30",
+          "finding": "계약서명 전 이행보증을 제출하며 보편 고정비율은 없다. 계약금액 누적증가가 10%를 넘으면 추가보증을 요구한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPA §§119–125; PPR regs.107–109, 238",
+          "finding": "인지 후 5 근무일 이내 이의, 회계책임자 5일(독립패널 7일) 내 결정, 5 근무일 이내 PPAA 상소, PPAA 40일 내 결정이다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPA §§2(5), 4; PPR reg.9, regs.159–166",
+          "finding": "국제협정·보조협정 충돌, Cabinet 승인 전략사업, 단일공급·긴급조달 예외는 각각 법정 사유와 승인절차를 따른다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        }
+      }
+    },
 
     "discrepancies": [
       {
@@ -213,22 +286,7 @@
       }
     ],
 
-    "unresolved": [
-      {
-        "law": "공공조달상소청(PPAA) 상소 절차",
-        "kind": "act",
-        "reasonCode": "no-public-text",
-        "reason": "PPA 2023의 이의·상소 조항과 PPAA 절차·기한을 충분히 확인하지 못했다.",
-        "nextStep": "PPA 2023의 review·appeal 조항과 PPAA 규정을 확보해 이의제기 경로·기한을 확인한다."
-      },
-      {
-        "law": "NeST(국가전자조달시스템) 운영 규정",
-        "kind": "directive",
-        "reasonCode": "no-public-text",
-        "reason": "NeST 의무 적용 범위·등록 절차의 근거 규정을 특정하지 못했다.",
-        "nextStep": "PPRA의 NeST 관련 고시·가이드라인을 확인한다."
-      }
-    ]
+    "unresolved": []
   },
 
   "process": {

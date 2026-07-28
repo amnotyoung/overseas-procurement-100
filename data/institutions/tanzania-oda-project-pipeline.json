@@ -142,19 +142,19 @@
       "status": "confirmed"
     },
     {
-      "item": "하위규정·정량요건·개별 협정·공고",
-      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "현행 ODA 조달·정량요건·공여자 예외",
+      "question": "DCF와 현행 PPA/PPR에서 조달 기준·기한·보증·이의·공여협정 예외를 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
+    "status": "article-verified",
     "verifiedAt": "2026-07-28",
-    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
-    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "method": "재무부 DCF 원문과 공식 PPA 2023·PPR 2024 공표본에서 ODA의 예산·조달 적용경로, 시행·개정·폐지 상태, 정량요건·보증·이의·공여자 예외를 조문과 부속표 단위로 대조했다.",
+    "scope": "DCF Ch.2 및 Ch.4 §§4.1–4.6, PPA 2023 §§1–5, 49–86, 119–125, 131, PPR 2024 regs.1, 9–11, 23–30, 107–109, 150–166, 238과 Sixth·Tenth·Eleventh Schedules를 확인했다.",
     "notes": [
-      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
+      "DCF는 2022/23 개정되어 FY 2029/30까지 적용되는 정책틀이다. §4.6이 정부 조달시스템 사용을 정하지만 2011년법 인용은 PPA 2023 §131에 따라 현행법으로 대체해 읽어야 한다.",
+      "PPA §4와 PPR reg.9에 따라 공여협정과 국내법이 충돌하는 범위에서는 협정이 우선하고, 충돌하지 않는 내부 승인과 국내 절차는 계속 적용된다."
     ],
     "sources": [
       {
@@ -176,7 +176,8 @@
         "kind": "directive",
         "publisher": "Ministry of Finance",
         "officialUrl": "https://www.mof.go.tz/uploads/documents/en-1747807046-Development%20Cooperation%20Framework%20%28DCF%29.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "Ch.2 §§2.1–2.4; Ch.4 §§4.1–4.6; Ch.5 roles and responsibilities"
       },
       {
         "law": "External Finance Division and Debt Management Division official mandates",
@@ -191,8 +192,82 @@
         "publisher": "Ministry of Finance",
         "officialUrl": "https://repository.mof.go.tz/items/49afd5c3-5fc9-45a4-98d1-fcb99a9fe01d",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Public Procurement Act, No. 10 of 2023",
+        "kind": "act",
+        "publisher": "Public Procurement Regulatory Authority",
+        "officialUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "§§1–5, 49–86, 112–125, 131(1)–(3)"
+      },
+      {
+        "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
+        "kind": "regulation",
+        "publisher": "Ministry of Finance",
+        "officialUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "regs.1, 9–11, 23–30, 107–109, 150–166, 238; Sixth, Tenth and Eleventh Schedules"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Development Cooperation Framework 2017/18–2029/30",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "first adopted 2017; revised 2022/23; implementation horizon through FY 2029/30",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1747807046-Development%20Cooperation%20Framework%20%28DCF%29.pdf",
+          "finding": "서문과 적용기간을 확인했다. DCF는 현행 정책기간 안에 있으나 §4.6의 PPA 2011 인용은 PPA 2023 §131의 폐지·경과조항에 따라 현행법으로 대체된다."
+        },
+        {
+          "instrument": "Public Procurement Act, No. 10 of 2023 and Public Procurement Regulations, 2024",
+          "status": "in-force",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "PPA effective 2024-06-17; PPR effective 2024-07-01 and amended through GN 42/2025",
+          "evidenceUrl": "https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024",
+          "finding": "PPA §131의 구법 폐지와 PPR reg.1 및 개정표를 확인했다. DCF의 정부 조달시스템 원칙에는 이 현행 법령이 적용된다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPR Sixth Schedule; regs.150–166",
+          "finding": "ODA를 정부시스템으로 조달할 때 국내경쟁 TZS 50bn 이하, shopping TZS 500m 이하, 소액 물품·비컨설팅 TZS 50m/공사 TZS 100m 이하 등 현행 방식별 한도가 적용된다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PPR Tenth and Eleventh Schedules",
+          "finding": "비컨설팅 입찰 제출 최소기간은 방식별 1–50일, 컨설팅은 4–14일이며 공여협정이 달리 정하지 않는 한 국내 최소기간을 적용한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.23–28",
+          "finding": "입찰보증 형태·금액은 공여자 조건을 반영한 입찰서가 정하고 유효기간은 입찰유효기간보다 최소 28일 길어야 한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.29–30",
+          "finding": "계약서명 전 이행보증을 제출하며 고정비율은 입찰·계약문서에 위임된다. 계약금액 누적증가가 10%를 넘으면 추가보증이 필요하다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPA §§119–125; PPR regs.107–109, 238",
+          "finding": "정부 조달로 집행되는 ODA에도 5 근무일 이의, 5일 또는 7일 결정, 5 근무일 PPAA 상소, 40일 PPAA 결정 경로가 적용된다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPA §4; PPR reg.9; DCF §4.6",
+          "finding": "국제협정·국제금융기관 보조협정과 충돌하는 범위는 협정이 우선한다. 외부 승인이 필요한 경우에도 먼저 국내 승인기관의 승인을 받고, 충돌하지 않는 국내 승인은 유지된다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -220,15 +295,7 @@
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
-        "nextStep": "Classify grant or loan and confirm External Finance, debt review, budget inclusion, agreement and tax treatment."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
