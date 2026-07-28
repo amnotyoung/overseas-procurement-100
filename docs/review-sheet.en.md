@@ -273,12 +273,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 15. [HIGH] Current legal basis check
 
 - Institution: Dominican Republic — ODA project pipeline
-- Legal basis: MEPyD VIMICI official functions; Ley 496-06; Decreto 231-07
+- Legal basis: Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice
 - KOICA guide: p.19-39
 
-**Current legal basis** — MEPyD's VIMICI sets and administers the request, receipt, management and evaluation framework and coordinates proposal review and agreement negotiations; an R/D is a document, not an institution.
+**Current legal basis** — Law 45-25 abolished MEPyD and transferred non-reimbursable international-cooperation powers and legal succession of existing agreements to the Ministry of the Presidency; an R/D is a document, not an institution.
 
-**✔ Verify** — Confirm the current VIMICI, SINACID registration and no-objection route for the proposal.
+**✔ Verify** — Confirm the current Ministry of the Presidency unit, SINACID registration and no-objection route for the proposal.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
