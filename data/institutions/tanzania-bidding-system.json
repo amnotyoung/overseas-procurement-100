@@ -196,16 +196,23 @@
   ],
 
   "fieldVerification": [
-    "NeST 전자조달 의무의 적용 대상·예외 — PPA 2023 시행규정 확인 필요",
-    "force account(직영) 허용 문턱의 구체 금액 — PPA 2023 §76",
-    "지체상금 '운송·보관 0.5%'가 계약 특약으로 실제 쓰이는지 — 새 규정 reg.318에는 물품·공사만 있어 표준 근거가 없음(현장 계약서 확인)"
+    {
+      "item": "현행 법령·정량요건·이의·예외",
+      "question": "PPA 2023과 PPR 2024의 현행 조문·부속표에서 확인했는가?",
+      "status": "confirmed"
+    },
+    {
+      "item": "NeST 전자조달 의무",
+      "question": "PPR reg.11에서 전자조달시스템 사용 의무를 확인했는가?",
+      "status": "confirmed"
+    }
   ],
 
   "verification": {
     "status": "article-verified",
     "verifiedAt": "2026-07-23",
     "method": "PPRA·재정기획부 공식 사이트에서 현행 법령을 확인하고, Public Procurement Act 2023(103쪽)과 Public Procurement Regulations 2024 공식 영문본(GN 261/2025, 292쪽)을 확보해 폐지 조항(§131), 보증 조항(reg.23·29), 선금(reg.315), 지체상금(reg.318), Third Schedule 보증 서식, 조달방식·전자조달·가격상한 조항을 조문 단위로 대조했다.",
-    "scope": "현행 법률·규정(PPA 2023, PPR 2024), 보증 위임(입찰 reg.23(6)·이행 reg.29(2)·하자보증 유보금 reg.329(2)·하자담보기간 reg.329(7)), 선금 30% 상한(reg.315(2)), 지체상금 범위(reg.318(2)), force account 범위(§76)·가격상한(§74)을 원문에서 확인했다. 운송·보관 관련 지체상금은 계약 특약 여부를 별도 확인한다.",
+    "scope": "현행 법률·규정(PPA 2023, PPR 2024)의 시행·폐지 상태, Sixth Schedule 조달방식별 금액, Tenth·Eleventh Schedules 최소기간, 보증(regs.23–30), 이의·상소(PPA §§119–125; PPR regs.107–109, 238), 공여자·단일공급·긴급 예외를 조문 단위로 대조했다.",
 
     "notes": [
       "현행 근거인 Public Procurement Act 2023은 2023-09-29 대통령 재가 후 GN 455(2024-06-07)에 따라 2024-06-17 시행됐고, §131(1)이 2011년 법을 대체한다.",
@@ -223,7 +230,7 @@
         "publisher": "Public Procurement Regulatory Authority (PPRA)",
         "officialUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf",
         "retrievedOn": "2026-07-28",
-        "articlesChecked": "§1(commencement), §8(PPRA), §74, §76, §81, §83~§86, §131(1)(2)(3)"
+        "articlesChecked": "§§1–5, 8–10, 38, 49–86, 112–125, 131(1)–(3)"
       },
       {
         "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
@@ -232,7 +239,7 @@
         "publisher": "Ministry of Finance, United Republic of Tanzania",
         "officialUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf",
         "retrievedOn": "2026-07-28",
-        "articlesChecked": "reg.23(1)~(7), reg.29(1)~(7), reg.30, reg.315(1)~(3), reg.318(2), reg.329(2)(7), Third Schedule FORM No.1·2"
+        "articlesChecked": "regs.1, 9–11, 23–30, 64–65, 78, 107–109, 115, 125, 150–166, 238, 315, 318, 329; Sixth, Ninth–Eleventh Schedules; Third Schedule forms"
       },
       {
         "law": "PPRA 새 조달법 시행 공지 (2024-06-17)",
@@ -242,6 +249,64 @@
         "retrievedOn": "2026-07-28"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement Act, No. 10 of 2023",
+          "status": "in-force",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2024-06-17",
+          "evidenceUrl": "https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024",
+          "finding": "PPRA 시행 공지와 GN 813/2024 영문 공표본을 대조했다. §131이 2011년법을 폐지하며 2023년법은 시행 중이다."
+        },
+        {
+          "instrument": "Public Procurement Regulations, 2024",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2024-07-01; English version GN 261 published 2025-04-25",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf",
+          "finding": "reg.1과 GN 518/2024, GN 817/2024, GN 42/2025 개정표를 확인했으며 폐지 표시는 없다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPR Sixth Schedule; regs.35(3), 125(6), 150(2), 165–166",
+          "finding": "국내경쟁 TZS 50bn 이하, shopping TZS 500m 이하, 소액 물품·비컨설팅 TZS 50m/공사 TZS 100m 이하, micro 물품·비컨설팅 TZS 10m/공사 TZS 20m 이하이다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PPR Tenth and Eleventh Schedules; regs.78(3), 115(3)",
+          "finding": "물품·공사·비컨설팅 제출 최소기간은 국제 10일, 국내 7일, 제한국제 7일, 제한국내 5일, 국제/국내 shopping 4/3일, 대형공사 50일이며 컨설팅은 4–14일이다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.23–28; Third Schedule",
+          "finding": "발주기관이 입찰서에 형태·금액을 정하며 유효기간은 입찰유효기간보다 최소 28일 길어야 한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPR regs.29–30",
+          "finding": "낙찰자는 계약서명 전 입찰서가 정한 이행보증을 제출한다. 보편 고정비율은 없고 계약금액 누적증가가 10%를 넘으면 추가보증을 요구한다.",
+          "evidenceUrl": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPA §§119–125; PPR regs.107–109, 238(2)–(7)",
+          "finding": "인지 후 5 근무일 이내 이의, 5일 내 결정(독립패널 7일), 결정 후 5 근무일 이내 PPAA 상소, PPAA 40일 내 결정이다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPA §§2(5), 4; PPR reg.9, regs.159–166; Sixth Schedule",
+          "finding": "국제협정·국제기구 보조협정 충돌 시 협정이 우선하며 나머지는 국내법을 따른다. 전략사업, 단일공급, 긴급조달은 법정 사유와 승인절차가 필요하다.",
+          "evidenceUrl": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+        }
+      }
+    },
 
     "discrepancies": [
       {
@@ -321,15 +386,7 @@
       }
     ],
 
-    "unresolved": [
-      {
-        "law": "탄자니아 조달법·규정 스와힐리어 원본",
-        "kind": "act",
-        "reasonCode": "local-language-only",
-        "reason": "새 법은 스와힐리어로 제정됐고 영문본은 공식 번역이다. 해석이 갈리는 조항은 스와힐리어본이 우선한다.",
-        "nextStep": "force account 문턱(§76)·가격상한(§74) 등 해석 민감 조항은 스와힐리어본과 대조한다."
-      }
-    ]
+    "unresolved": []
   },
 
   "process": {

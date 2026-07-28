@@ -110,19 +110,19 @@
       "status": "confirmed"
     },
     {
-      "item": "하위규정·정량요건·개별 협정·공고",
-      "question": "실제 사업 시점의 세부요건과 예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "현행 정량요건·예외·불복경로",
+      "question": "기준금액·기한·보증·이의신청·예외를 현행 조문에서 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
+    "status": "article-verified",
     "verifiedAt": "2026-07-28",
-    "method": "공식 정부·법령·조달·대외재원 기관의 현행 원문에서 기본규정, 시행시점, 기관 권한과 적용경로를 확인해 구조화본과 대조했다.",
-    "scope": "공식 원문으로 핵심 법령·기관·제도변경을 확인했다. 모든 하위규정·정량요건·개별 협정·공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "method": "Laws of Fiji 현행 통합본에서 Procurement Regulations 2010의 기관 권한, 적용 조문·본문·개정주석을 직접 확인하고 기준금액, 기한, 보증, 불복, 예외를 대조했다.",
+    "scope": "Procurement Regulations 2010 regs.1–21, 25–32, 37, 40–51, 54–55와 LN 54 of 2012 및 LN 73 of 2020의 시행·개정 상태를 확인했다. FPO, Permanent Secretary, Government Tender Board의 권한과 금액별 결재선을 구분했다.",
     "notes": [
-      "공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다."
+      "원 규정은 2010-08-01 시행, $50,000 기준은 LN 54 of 2012로 2012-06-12부터 적용되며, Laws of Fiji 통합본에는 LN 73 of 2020까지 반영돼 있다.",
+      "입찰보증과 계약이행보증의 일률적 비율은 규정에 없으므로 실제 금액·형식은 해당 입찰서류와 계약조건에서 확인해야 한다."
     ],
     "sources": [
       {
@@ -135,9 +135,10 @@
       {
         "law": "Procurement Regulations 2010 (Legal Notice No.81)",
         "kind": "regulation",
-        "publisher": "Ministry of Finance",
-        "officialUrl": "https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf",
-        "retrievedOn": "2026-07-28"
+        "publisher": "Laws of Fiji",
+        "officialUrl": "https://laws.gov.fj/Acts/DisplayAct/2969",
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "regs.1–21, 25–32, 37(1)–(8), 40–51, 54–55; LN 54 of 2012 regs.3–5; LN 73 of 2020"
       },
       {
         "law": "Fiji Procurement Office official functions",
@@ -154,6 +155,56 @@
         "retrievedOn": "2026-07-28"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Procurement Regulations 2010 (Legal Notice No.81)",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2010-08-01; threshold amendment effective 2012-06-12; latest consolidated amendment effective 2020-08-06",
+          "evidenceUrl": "https://laws.gov.fj/Acts/DisplayAct/2969",
+          "finding": "Laws of Fiji의 현행 통합본과 개정표를 확인했다. LN 54 of 2012가 regs.27, 29, 30의 기준을 $50,000/$50,001로 바꾸었고 LN 73 of 2020까지 반영되어 있으며 폐지 표시는 없다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "regs.27(1), 29(1)–(3), 30(1)–(2)",
+          "finding": "Permanent Secretary 권한은 $50,000 이하, Government Tender Board는 $50,001 이상이다. $1,000–$50,000은 최소 3개 경쟁견적, $50,001 이상은 입찰 대상이다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/ViewSection/87312"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "reg.37(3), reg.40",
+          "finding": "입찰 공고일부터 응답기간은 최소 10일·최대 30 근무일이며 마감 뒤 도착한 입찰은 거절된다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/ViewSection/87322"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "reg.2 (tender deposit), reg.37(8)",
+          "finding": "Director가 환급 가능한 tender deposit을 요구할 수 있으나 규정은 일률적인 금액이나 비율을 정하지 않는다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/ViewSection/87283"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "reg.2 (performance bonds)",
+          "finding": "계약의 성실한 이행을 담보하는 보증으로 은행·보험사·모회사의 보증이 가능하지만 일률적 비율은 규정에 없다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/ViewSection/87283"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "regs.49–51, especially reg.50(1)–(5)",
+          "finding": "계약 발효 전 서면 이의를 사유 인지 후 20 근무일 이내 제출하며, 재무담당 Permanent Secretary는 접수 후 30일 이내 서면 결정한다. 이후 사법심사가 가능하다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/DisplayAct/2969"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "regs.29(3), 31–34, 48",
+          "finding": "단일 공급자, 연간계약, 원조기관 지정 공급자, 전문서비스, 긴급·재난 조달 등에 금액대별 예외·면제가 가능하며 Board 면제 승인은 서면이어야 한다.",
+          "evidenceUrl": "https://laws.gov.fj/Acts/ViewSection/87333"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -181,15 +232,7 @@
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·정량요건·개별 공여협정 및 실제 공고",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다.",
-        "nextStep": "Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
