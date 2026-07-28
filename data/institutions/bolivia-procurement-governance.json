@@ -1,11 +1,11 @@
 {
   "slug": "bolivia-procurement-governance",
   "name": "볼리비아 조달 거버넌스·감독체계",
-  "oneLiner": "볼리비아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램",
+  "oneLiner": "DS 0181 기준 MEFP·MAE·RPC/RPA·평가위원회·SICOES의 권한과 행정불복 체계",
   "axis": "governance",
   "type": "감독·집행형",
   "priority": 2,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "볼리비아",
@@ -23,16 +23,8 @@
         "kind": "donor-rule"
       },
       {
-        "law": "는 법률",
-        "kind": "act"
-      },
-      {
-        "law": "l 법률",
-        "kind": "act"
-      },
-      {
-        "law": "기타 법률",
-        "kind": "act"
+        "law": "Decreto Supremo No. 0181 — NB-SABS, texto compilado actualizado a 2025",
+        "kind": "regulation"
       }
     ],
     "authorities": [
@@ -92,19 +84,16 @@
     "bolivia-bidding-system",
     "bolivia-oda-project-pipeline"
   ],
-  "fieldVerification": [
-    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
-    "금액기준·공고기간·보증·제출서류",
-    "기관 간 실제 결재·이의·공식요청 인계"
-  ],
+  "fieldVerification": [],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "MEFP 공식 2025 NB-SABS 통합본의 주무기관·구매기관 역할, 공개·통지, 불복 조문과 개정주석을 직접 대조했다.",
+    "scope": "DS 0181 arts.9~11, 13~21, 32~51, 63~73, 90~111 및 현행성·폐지조항을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
-      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
+      "MEFP는 Órgano Rector이고 각 기관의 MAE·RPC/RPA·요청부서·행정부서·법무부서·평가위원회가 절차상 권한을 나눠 가진다.",
+      "SICOES와 RUPE는 기관이 아니라 각각 정보공개·전자절차 시스템과 공급업체 등록이다.",
+      "행정불복은 독립 중앙심사기관이 아니라 구매기관 MAE가 결정하며, 이후 사법경로가 열린다."
     ],
     "sources": [
       {
@@ -118,17 +107,77 @@
         "law": "Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023",
         "kind": "regulation",
         "publisher": "Ministerio de Economía y Finanzas Públicas",
-        "officialUrl": "https://economiayfinanzas.gob.bo/node/9745",
-        "retrievedOn": "2026-07-28"
+        "officialUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.9~11, 13~21, 32~51, 63~73, 90~111; amendment notes through DS 5423"
       },
       {
         "law": "Sistema de Contrataciones Estatales (SICOES)",
         "kind": "directive",
         "publisher": "Ministerio de Economía y Finanzas Públicas",
         "officialUrl": "https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "SICOES publication, notification and appeal records under arts.45, 49, 94, 96, 105~111"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Decreto Supremo No. 0181 — NB-SABS, consolidated through 2025",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2009-07-15",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf",
+          "finding": "The official MEFP compilation includes the institutional and procedural amendments through DS 5423 of 2025."
+        },
+        {
+          "instrument": "Decreto Supremo No. 27328 procurement regime cited by the guide",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Not current; DS 0181 effective from 2009-07-15",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf",
+          "finding": "The current governing text and all current MEFP forms are based on DS 0181 NB-SABS."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "arts.13, 52, 55, 59~60, 90",
+          "finding": "The RPA handles the lower bands: Menor through Bs50,000 and ANPE through Bs1 million; the RPC handles Licitación Pública above Bs1 million. Administrative challenge in ANPE is available only above Bs200,000.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "arts.15, 50, 57, 61, 92, 95, 97, 101",
+          "finding": "Proposal periods are 4/8 business days for ANPE and 15/20 days for national/international public tender, with international works at 15. RPC/RPA forwards appeals in 2 days; the MAE decides in 5 and notifies within 2.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "arts.20~21",
+          "finding": "The bidder chooses an authorized renewable, irrevocable, immediately executable form. Amount is 1% of reference price or 0.5% for consulting, valid 30 calendar days beyond proposal validity; ANPE may request it only above Bs200,000.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "art.21.I(b)~(e)",
+          "finding": "Performance security is 7%, with 7% retention substitution through Bs1 million and 3.5% treatment for qualifying small/producer organizations. Enumerated service and property categories are exempt; advance security is 100%.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "arts.90~104",
+          "finding": "RPC/RPA receives the challenge and sends it to the competent MAE; filing within 3 business days suspends the affected process. The MAE's 5-day decision exhausts administrative review and opens the judicial route; failure to decide produces positive administrative silence.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "arts.17, 63~73",
+          "finding": "The MAE authorizes exception procurement by a technically and legally reasoned resolution only for art.65 grounds. Disaster/emergency and direct procurement have distinct statutory triggers, while express external-financing agreement terms prevail.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "medium",
@@ -151,15 +200,7 @@
         "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계"
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
-        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [

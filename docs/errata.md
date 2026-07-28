@@ -11,7 +11,7 @@
 - 대상: KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)
 - 대상: MIFER official website — About FERD
 - 대상: Myanmar Development Assistance Policy, September 2020
-- 작성 기준일: 2026-07-28
+- 작성 기준일: 2026-07-29
 - 결과: **공식 출처 연결 112건**
 
 > 이 문서는 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아니다.

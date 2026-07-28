@@ -6,7 +6,7 @@ For the KOICA field-office officer verifying this dataset against current law an
 entity. Each item below records a current legal basis used in the output. Your job is the
 **Verify** line: confirm it against the original text or the procuring entity.
 
-- As of: 2026-07-28
+- As of: 2026-07-29
 - Countries: Azerbaijan, Bangladesh, Bolivia, Cambodia, Cameroon, Colombia, Côte d'Ivoire, Democratic Republic of the Congo, Dominican Republic, Ecuador, Egypt, El Salvador, Ethiopia, Fiji, Ghana, Guatemala, Indonesia, Jordan, Kenya, Kyrgyzstan, Lao People's Democratic Republic, Mongolia, Morocco, Mozambique, Myanmar, Nepal, Nigeria, Pakistan, Palestine, Paraguay, Peru, Philippines, Republic of Korea (KOICA), Rwanda, Senegal, Sri Lanka, Tajikistan, Tanzania, Thailand, Timor-Leste, Tunisia, Uganda, Ukraine, Uzbekistan, Viet Nam
 - Items needing field check: **135** (HIGH 101) · returned by office: **0/135**
 

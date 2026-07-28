@@ -1,11 +1,11 @@
 {
   "slug": "bolivia-oda-project-pipeline",
   "name": "볼리비아 ODA 사업 발굴·형성 절차",
-  "oneLiner": "볼리비아 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램",
+  "oneLiner": "VIPFE·SISIN의 사업등록·투자예산·외부재원 협상과 후속 NB-SABS 조달 절차",
   "axis": "pipeline",
   "type": "사업형성형",
   "priority": 3,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "볼리비아",
@@ -76,19 +76,16 @@
     "bolivia-bidding-system",
     "bolivia-procurement-governance"
   ],
-  "fieldVerification": [
-    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
-    "금액기준·공고기간·보증·제출서류",
-    "기관 간 실제 결재·이의·공식요청 인계"
-  ],
+  "fieldVerification": [],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "기획부 공식 SNIP 기본규범·VIPFE·SISIN 현행 페이지와 MEFP 2025 NB-SABS 통합본을 대조해 사업형성부터 외부재원·조달까지 연결했다.",
+    "scope": "RS 216768 arts.1~17, 22~31과 DS 0181 arts.13~21, 45~73, 90~104를 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
-      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
+      "SISIN 등록은 투자프로그램 편입의 선행조건이고, 연구·평가·MAE 의견·공동재원 확인이 필요하다(arts.24, 28).",
+      "VIPFE는 상환·무상 외부재원과 기술협력을 통합·협상·계약하고 공공기관에 배분하는 현행 담당기관이다(art.17 기능과 VIPFE 페이지).",
+      "외부재원 협정에 명시된 조달규칙은 DS 0181 art.17에 따라 NB-SABS보다 우선할 수 있다."
     ],
     "sources": [
       {
@@ -110,10 +107,76 @@
         "kind": "regulation",
         "publisher": "Ministerio de Planificación del Desarrollo y Medio Ambiente",
         "officialUrl": "https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf",
-        "retrievedOn": "2026-07-28",
-        "articlesChecked": "art.28 공공투자예산 편입요건; art.29 외부재원·중앙정부 공동재원 조건"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~17, 22~31; 특히 art.24 SISIN 등록, arts.28~29 투자예산·외부재원 조건, art.30 예외"
+      },
+      {
+        "law": "Decreto Supremo No. 0181 — NB-SABS, texto compilado actualizado a 2025",
+        "kind": "regulation",
+        "publisher": "Ministerio de Economía y Finanzas Públicas",
+        "officialUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.13~21, 45~73, 90~104; external-financing rule art.17 and amendments through DS 5423"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Resolución Suprema No. 216768 — Normas Básicas del Sistema Nacional de Inversión Pública",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "1996-06-18; officially published 1996-06-25",
+          "evidenceUrl": "https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf",
+          "finding": "The Ministry continues to publish the rule in its current legal catalogue, and the active SISIN implements the registration function described in arts.22~26."
+        },
+        {
+          "instrument": "Decreto Supremo No. 0181 — NB-SABS, consolidated through 2025",
+          "status": "amended",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2009-07-15",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf",
+          "finding": "The procurement stage uses the MEFP compilation amended through DS 5423 of 2025."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "SNIP arts.24, 28~29; NB-SABS arts.13, 52, 55, 59~60",
+          "finding": "All public investment projects must be registered in SISIN and satisfy art.28 before budget entry. At procurement stage, Menor applies through Bs50,000, ANPE through Bs1 million and Licitación Pública above Bs1 million; international publication ordinarily begins above Bs70 million.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "NB-SABS arts.15, 50, 57, 61, 95, 97, 101",
+          "finding": "Downstream ANPE allows at least 4 or 8 business days by value; public tender allows at least 15 days nationally, 20 internationally, or 15 for international works. Procurement challenge is due in 3 business days and decided in 5.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "NB-SABS arts.20~21",
+          "finding": "Downstream bid security is 1% of reference price or 0.5% for consulting, valid 30 calendar days beyond proposal validity; ANPE may require it only above Bs200,000.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "NB-SABS art.21.I(b)~(e)",
+          "finding": "Performance security is 7%, with value- and supplier-specific retention substitutes and exemptions; advance security equals the full advance.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "NB-SABS arts.90~104",
+          "finding": "Eligible procurement resolutions may be challenged within 3 business days before the procuring entity's MAE; filing suspends the affected process, and the MAE decision or expiry of its decision period exhausts administrative review.",
+          "evidenceUrl": "https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "SNIP art.30; NB-SABS arts.17, 63~73",
+          "finding": "SNIP art.30 limits investment-rule waivers to national-security armed-forces projects and legally declared emergencies. Express external-financing agreement provisions may govern procurement; other exception, disaster and direct procurement must fit the NB-SABS enumerated grounds.",
+          "evidenceUrl": "https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -141,15 +204,7 @@
         "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차"
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
-        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
