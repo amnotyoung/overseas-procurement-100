@@ -18,7 +18,7 @@
 - 대상: President’s Office Directive No. 1/2017 (unofficial English translation)
 - 대상: Public Procurement Act 2007, Official Gazette No.65
 - 작성 기준일: 2026-07-29
-- 결과: **공식 출처 연결 117건**
+- 결과: **공식 출처 연결 121건**
 
 > 이 문서는 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아니다.
 > 대조에 쓴 원문은 각 항목의 근거 링크와 `sources/laws/`에서 확인할 수 있다.
@@ -1606,41 +1606,58 @@
 
 ---
 
-## 94. canvas.authorities·legalBasis / 현행 기관·법령
+## 94. 현행 개정법·기준금액·기한·보증·불복·예외
 
 **필수 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
 **현행 기준**
 
-> PPRA Ordinance 2002와 Public Procurement Rules 2004가 연방체계의 근거이며 PPRA는 규제·모니터링, 각 조달기관은 집행, EPADS는 전자시스템이다.
+> PPRA 현행 통합규칙은 S.R.O. 763(I)/2025까지 반영하며, PPR 제12·13·25·39·42·48조와 E-Pak 제3·13·14조가 광고금액, 15/30일 응답, 5%/10% 보증상한, 전자조달, GRC·항소기한과 예외를 정한다.
 
 **산출물 반영**
 
-> 중복·절차문구 기관 오인을 제거하고 PPRA·조달기관·EPADS 역할을 분리했다.
+> 2025년까지의 개정문과 관보 규정을 기준으로 6개 영역을 조문별 확정하고 unresolved를 해소했다.
 
-**근거** — PPRA Ordinance 2002; Public Procurement Rules 2004; EPADS official page
+**근거** — PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
 
 
 ---
 
-## 95. canvas.authorities·legalBasis / 현행 기관·법령
+## 95. 현행 개정법·기준금액·기한·보증·불복·예외
 
 **필수 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
 **현행 기준**
 
-> PPRA Ordinance 2002와 Public Procurement Rules 2004가 연방체계의 근거이며 PPRA는 규제·모니터링, 각 조달기관은 집행, EPADS는 전자시스템이다.
+> PPRA 현행 통합규칙은 S.R.O. 763(I)/2025까지 반영하며, PPR 제12·13·25·39·42·48조와 E-Pak 제3·13·14조가 광고금액, 15/30일 응답, 5%/10% 보증상한, 전자조달, GRC·항소기한과 예외를 정한다.
 
 **산출물 반영**
 
-> 중복·절차문구 기관 오인을 제거하고 PPRA·조달기관·EPADS 역할을 분리했다.
+> 2025년까지의 개정문과 관보 규정을 기준으로 6개 영역을 조문별 확정하고 unresolved를 해소했다.
 
-**근거** — PPRA Ordinance 2002; Public Procurement Rules 2004; EPADS official page
+**근거** — PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
 
 
 ---
 
-## 96. canvas.authorities·legalBasis / 현행 기관·법령
+## 96. 현행 개정법·기준금액·기한·보증·불복·예외
+
+**필수 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
+
+**현행 기준**
+
+> PPRA 현행 통합규칙은 S.R.O. 763(I)/2025까지 반영하며, PPR 제12·13·25·39·42·48조와 E-Pak 제3·13·14조가 광고금액, 15/30일 응답, 5%/10% 보증상한, 전자조달, GRC·항소기한과 예외를 정한다.
+
+**산출물 반영**
+
+> 2025년까지의 개정문과 관보 규정을 기준으로 6개 영역을 조문별 확정하고 unresolved를 해소했다.
+
+**근거** — PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+
+
+---
+
+## 97. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1657,7 +1674,7 @@
 
 ---
 
-## 97. canvas.authorities·legalBasis / 현행 기관·법령
+## 98. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1674,7 +1691,7 @@
 
 ---
 
-## 98. canvas.authorities·legalBasis / 현행 기관·법령
+## 99. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 팔레스타인 · 기준자료 119-127쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1691,7 +1708,7 @@
 
 ---
 
-## 99. canvas.authorities·legalBasis / 현행 기관·법령
+## 100. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1708,7 +1725,7 @@
 
 ---
 
-## 100. canvas.authorities·legalBasis / 현행 기관·법령
+## 101. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1725,7 +1742,7 @@
 
 ---
 
-## 101. canvas.authorities·legalBasis / 현행 기관·법령
+## 102. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 페루 · 기준자료 115-127쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1742,7 +1759,7 @@
 
 ---
 
-## 102. canvas.authorities·legalBasis / 현행 기관·법령
+## 103. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 피지 · 기준자료 165-175쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1759,7 +1776,7 @@
 
 ---
 
-## 103. canvas.authorities·legalBasis / 현행 기관·법령
+## 104. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 피지 · 기준자료 165-175쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1776,7 +1793,7 @@
 
 ---
 
-## 104. canvas.authorities·legalBasis / 현행 기관·법령
+## 105. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
 
@@ -1793,7 +1810,7 @@
 
 ---
 
-## 105. canvas.authorities·legalBasis / 현행 기관·법령
+## 106. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
 
@@ -1810,7 +1827,7 @@
 
 ---
 
-## 106. canvas.authorities·legalBasis / 현행 기관·법령
+## 107. canvas.authorities·legalBasis / 현행 기관·법령
 
 **필수 확인** · 필리핀 · 기준자료 177-191쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
 
@@ -1827,7 +1844,7 @@
 
 ---
 
-## 107. canvas.authorities / 입찰공고 주체
+## 108. canvas.authorities / 입찰공고 주체
 
 **추가 확인** · 네팔 · 기준자료 10쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1844,7 +1861,7 @@
 
 ---
 
-## 108. canvas.procedure / PCP 작성 주체
+## 109. canvas.procedure / PCP 작성 주체
 
 **추가 확인** · 네팔 · 기준자료 8쪽 (Ⅱ-1. 협력국 수원 체계 / 개발협력사업 발굴 및 반영절차)
 
@@ -1861,7 +1878,7 @@
 
 ---
 
-## 109. canvas.legalBasis / 근거 조달법의 현행 여부
+## 110. canvas.legalBasis / 근거 조달법의 현행 여부
 
 **추가 확인** · 캄보디아 · 기준자료 117쪽 (Ⅲ-2. 캄보디아 입찰 제도)
 
@@ -1878,7 +1895,7 @@
 
 ---
 
-## 110. canvas.applicability / 보증률
+## 111. canvas.applicability / 보증률
 
 **추가 확인** · 탄자니아 · 기준자료 193-194쪽 (Ⅲ-2. 보증 비교표)
 
@@ -1895,7 +1912,58 @@
 
 ---
 
-## 111. canvas.bottlenecks / 대리인 위반 시 제재 근거
+## 112. 외자사업 발굴·승인·협상 경로
+
+**추가 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 협력국 입찰 제도)
+
+**현행 기준**
+
+> 2024 매뉴얼은 PCN 승인 후 사업준비, 필요 시 PC-II 타당성, PC-I와 권한별 DDWP/CDWP/ECNEC 승인을 요구한다. 외자사업은 donor commitment 전 concept clearance를 받고 EAD가 공여기관에 공식 요청·협상한다.
+
+**산출물 반영**
+
+> PCN·PC-II·PC-I 승인과 CCC/CDWP/ECNEC, EAD 공식요청·협상 역할을 분리했다.
+
+**근거** — Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+
+
+---
+
+## 113. 외자사업 발굴·승인·협상 경로
+
+**추가 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계)
+
+**현행 기준**
+
+> 2024 매뉴얼은 PCN 승인 후 사업준비, 필요 시 PC-II 타당성, PC-I와 권한별 DDWP/CDWP/ECNEC 승인을 요구한다. 외자사업은 donor commitment 전 concept clearance를 받고 EAD가 공여기관에 공식 요청·협상한다.
+
+**산출물 반영**
+
+> PCN·PC-II·PC-I 승인과 CCC/CDWP/ECNEC, EAD 공식요청·협상 역할을 분리했다.
+
+**근거** — Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+
+
+---
+
+## 114. 외자사업 발굴·승인·협상 경로
+
+**추가 확인** · 파키스탄 · 기준자료 149-163쪽 (Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차)
+
+**현행 기준**
+
+> 2024 매뉴얼은 PCN 승인 후 사업준비, 필요 시 PC-II 타당성, PC-I와 권한별 DDWP/CDWP/ECNEC 승인을 요구한다. 외자사업은 donor commitment 전 concept clearance를 받고 EAD가 공여기관에 공식 요청·협상한다.
+
+**산출물 반영**
+
+> PCN·PC-II·PC-I 승인과 CCC/CDWP/ECNEC, EAD 공식요청·협상 역할을 분리했다.
+
+**근거** — Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+
+
+---
+
+## 115. canvas.bottlenecks / 대리인 위반 시 제재 근거
 
 **추가 확인** · 네팔 · 기준자료 11-13쪽 (Ⅲ-2. 협력국 입찰 제도 / 입찰 규정 / 수원국 인허가 제도)
 
@@ -1912,7 +1980,7 @@
 
 ---
 
-## 112. canvas.bottlenecks / 조세·관세 면제 범위
+## 116. canvas.bottlenecks / 조세·관세 면제 범위
 
 **추가 확인** · 네팔 · 기준자료 14쪽 (Ⅲ. 통관 등 관련 사항(시공/기자재))
 
@@ -1929,7 +1997,7 @@
 
 ---
 
-## 113. canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
+## 117. canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
 
 **추가 확인** · 캄보디아 · 기준자료 114-116쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1946,7 +2014,7 @@
 
 ---
 
-## 114. canvas.applicability / 전자조달 시스템
+## 118. canvas.applicability / 전자조달 시스템
 
 **추가 확인** · 탄자니아 · 기준자료 195쪽 (Ⅲ-2. 입찰 진행절차)
 
@@ -1963,7 +2031,7 @@
 
 ---
 
-## 115. canvas.legalBasis.articles
+## 119. canvas.legalBasis.articles
 
 **참고** · 네팔 · 기준자료 11-13쪽 (Ⅲ-2. 협력국 입찰 제도 / 입찰 규정 / 수원국 인허가 제도)
 
@@ -1980,7 +2048,7 @@
 
 ---
 
-## 116. canvas.authorities[PPMO].role
+## 120. canvas.authorities[PPMO].role
 
 **참고** · 네팔 · 기준자료 10쪽 (Ⅲ-1. 협력국 조달관련 조직체계)
 
@@ -1997,7 +2065,7 @@
 
 ---
 
-## 117. canvas.bottlenecks / 누락된 실무 제약
+## 121. canvas.bottlenecks / 누락된 실무 제약
 
 **참고** · 네팔 · 기준자료 16-17쪽 (Ⅲ-3. 협력국 조달시장 진출 전략 / 제약사항 및 유의사항)
 
@@ -2114,9 +2182,9 @@
 | 91 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 92 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 93 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 94 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 95 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 96 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 94 현행 개정법·기준금액·기한·보증·불복·예외 | 정정 요망 | 미제보 |
+| 95 현행 개정법·기준금액·기한·보증·불복·예외 | 정정 요망 | 미제보 |
+| 96 현행 개정법·기준금액·기한·보증·불복·예외 | 정정 요망 | 미제보 |
 | 97 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 98 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 99 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
@@ -2127,17 +2195,21 @@
 | 104 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 105 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
 | 106 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
-| 107 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
-| 108 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
-| 109 canvas.legalBasis / 근거 조달법의 현행 여부 | 정정 요망 | 미제보 |
-| 110 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
-| 111 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
-| 112 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
-| 113 canvas.legalBasis / 감독체계 근거 법령 및 신설 권한 | 보완 권고 | 미제보 |
-| 114 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
-| 115 canvas.legalBasis.articles | 보완 권고 | 미제보 |
-| 116 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
-| 117 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
+| 107 canvas.authorities·legalBasis / 현행 기관·법령 | 정정 요망 | 미제보 |
+| 108 canvas.authorities / 입찰공고 주체 | 정정 요망 | 미제보 |
+| 109 canvas.procedure / PCP 작성 주체 | 정정 요망 | 미제보 |
+| 110 canvas.legalBasis / 근거 조달법의 현행 여부 | 정정 요망 | 미제보 |
+| 111 canvas.applicability / 보증률 | 정정 요망 | 미제보 |
+| 112 외자사업 발굴·승인·협상 경로 | 정정 요망 | 미제보 |
+| 113 외자사업 발굴·승인·협상 경로 | 정정 요망 | 미제보 |
+| 114 외자사업 발굴·승인·협상 경로 | 정정 요망 | 미제보 |
+| 115 canvas.bottlenecks / 대리인 위반 시 제재 근거 | 보완 권고 | 미제보 |
+| 116 canvas.bottlenecks / 조세·관세 면제 범위 | 보완 권고 | 미제보 |
+| 117 canvas.legalBasis / 감독체계 근거 법령 및 신설 권한 | 보완 권고 | 미제보 |
+| 118 canvas.applicability / 전자조달 시스템 | 보완 권고 | 미제보 |
+| 119 canvas.legalBasis.articles | 보완 권고 | 미제보 |
+| 120 canvas.authorities[PPMO].role | 보완 권고 | 미제보 |
+| 121 canvas.bottlenecks / 누락된 실무 제약 | 보완 권고 | 미제보 |
 
 상태값: `not-reported`(미제보) · `reported`(제보함) · `acknowledged`(발행처 확인) · `fixed`(개정판 반영) · `declined`(정정 불요 회신)
 
