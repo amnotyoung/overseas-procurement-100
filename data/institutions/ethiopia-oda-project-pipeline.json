@@ -5,7 +5,7 @@
   "axis": "pipeline",
   "type": "사업형성형",
   "priority": 3,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-29",
   "status": "full",
   "country": {
     "name": "에티오피아",
@@ -94,19 +94,20 @@
       "status": "confirmed"
     },
     {
-      "item": "금액·기한·보증·제출서류와 개별 공고",
-      "question": "최신 하위규정과 실제 공고에서 정량 요건·예외가 동일하게 적용되는가?",
-      "status": "pending"
+      "item": "기준금액·기한·입찰/이행보증·불복·예외",
+      "question": "현행 기본법·시행지침의 6개 핵심 요건과 폐지·경과·시행 조항을 조문 단위로 확인했는가?",
+      "status": "confirmed"
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "정부·의회·조달규제기관 공식 법령과 조직 페이지에서 현행 법령명, 기관 권한, 전자조달 및 대외재원 조정체계를 확인하고 KOICA 자료집 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관 역할과 공개된 제도변경을 확인했다. 정량요건·모든 예외·개별 공고 적용은 전 조문 대조 전이므로 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "FPPA가 공개한 Federal Negarit Gazette의 Proclamation No. 1333/2024 영문 병기 원문과 Directive No. 1073/2025 영문 병기 원문 244쪽을 직접 추출·대조해 기준금액·기한·입찰보증·이행보증·불복·예외와 폐지·경과·시행 조항을 검증했다.",
+    "scope": "Proclamation arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91; Directive arts.53~67, 109, 116, 136, 152~163 and 170~172; Annex 6을 확인했다.",
     "notes": [
-      "공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다."
+      "Proclamation No. 1333/2024는 2024-09-09 시행되어 649/2009를 폐지했고, 시행 전 계속 절차·분쟁은 종전법으로 종결한다.",
+      "Directive No. 1073/2025는 종전 연방조달·전자조달 지침을 폐지했으며 시행 전 절차·계약·민원에는 종전 지침을 적용한다.",
+      "국제협정상 의무와 연방법이 충돌하면 협정이 우선하므로 ODA 사업은 금융협정과 개별 공고를 함께 적용한다."
     ],
     "sources": [
       {
@@ -136,6 +137,22 @@
         "publisher": "Ministry of Finance",
         "officialUrl": "https://www.mofed.gov.et/media/filer_public/5f/be/5fbe0ea2-4c79-488d-9aa5-42517edd1b7a/annual_development_cooperation_report_of_ethiopia_efy_2016.pdf",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
+        "kind": "act",
+        "publisher": "Federal Public Procurement and Property Authority",
+        "officialUrl": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91"
+      },
+      {
+        "law": "Federal Government Public Procurement Directive No. 1073/2025",
+        "kind": "directive",
+        "publisher": "Federal Public Procurement and Property Authority",
+        "officialUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.53~67, 109, 116, 136, 152~163 and 170~172; Annex 6"
       }
     ],
     "discrepancies": [
@@ -160,15 +177,73 @@
         "sourceSection": ""
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "2024-09-09, the date of publication in Federal Negarit Gazette No. 66 under art.91",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf",
+          "finding": "제91조의 관보 게재일 시행, 제88조의 Proclamation No. 649/2009 명시 폐지와 비충돌 범위의 종전 하위규정 잠정 존속, 제89조의 종전 절차·분쟁 경과규정을 확인했다. FPPA 공식 원문에서 현행 기본법으로 공개되어 있다."
+        },
+        {
+          "instrument": "Federal Government Public Procurement Directive No. 1073/2025",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Effective upon publication on the Ministry of Finance official website after Ministry of Justice registration under art.172; the official FPPA copy was published in June 2025",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf",
+          "finding": "제170조가 종전 연방조달 시행지침과 그 개정(258/2013, 260/2013, 264/2013), 고등교육 식품조달 지침 221/2013, 전자조달·재산처분 지침 814/2013을 폐지한다. 제171조는 시행 전 개시된 절차·계약·민원을 종전 지침으로 종결하고 제172조는 등록 후 재무부 공식 웹사이트 게시일 시행으로 정한다."
+        },
+        {
+          "instrument": "Public Procurement and Property Administration Proclamation No. 649/2009",
+          "status": "repealed",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Repealed on 2024-09-09 by Proclamation No. 1333/2024 art.88(1), subject to art.89 transition",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf",
+          "finding": "Proclamation No. 1333/2024 제88조 제1항이 종전 649/2009를 명시 폐지했다. 다만 제89조에 따라 신법 시행 전에 개시되어 시행일 현재 계속 중인 조달·재산처분 절차와 분쟁은 종전법·지침으로 완료한다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Directive arts.53~55, 63~64; Proclamation arts.33 and 35",
+          "finding": "국내에서만 조달 가능한 경우 국내 공개입찰에 금액상한이 없다. 그 밖의 국내 공개입찰 상한/국제 공개입찰 경계는 공사 ETB 3,000,000,000, 물품 ETB 1,000,000,000, 컨설팅 ETB 90,000,000, 비컨설팅용역 ETB 250,000,000이다. 제한입찰 상한은 각각 ETB 60,000,000·12,000,000·7,000,000·9,000,000이며, RFQ 상한은 각각 ETB 2,000,000·800,000·500,000·600,000이다. 국내 경계 이하라도 외국 참여가 필수이면 국제 공개입찰을 쓸 수 있다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
+          "finding": "전자조달 공개입찰의 최소 제출기간은 공사 복잡/비복잡 국제 40/30일·국내 25/20일, 물품 30/25일·20/10일, 비컨설팅용역 40/25일·25/10일이다. 컨설팅 EOI는 복잡 10/7일, 비복잡 7/5일이고 제안서는 40/25일과 25/10일이다. RFQ는 단일공급자를 제외하고 최소 24시간이다. 민원은 인지 후 5영업일, 기관장 결정 7영업일, Board 항소 5영업일, 법률문제의 법원 항소 15영업일이다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Directive art.116; Proclamation art.52",
+          "finding": "공개·제한·2단계 입찰에는 원칙적으로 입찰보증을 요구하고 컨설팅·RFQ는 원칙적 예외이나 조달 성격상 컨설팅에도 요구할 수 있다. 금액은 추정총액의 0.5%~2%, 최대 ETB 2,000,000이며, 전자보증을 우선하고 인증 지급지시·무조건 은행보증·은행확인 신용장을 허용한다. 유효기간은 입찰가격 유효기간 종료 후 최소 28일이고 외국은행 보증은 에티오피아 국내은행의 확인이 필요하다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Directive art.136",
+          "finding": "RFQ, 공공기관 관리 부동산 임대, 비용상환 조달 및 직접구매의 특례를 제외한 조달계약에는 계약이행보증을 요구한다. 낙찰자는 원칙적으로 계약가격의 최소 10%를 입찰보증과 같은 허용 형식으로 제출하고, 보증은 계약기간 후 최소 28일까지 유효해야 한다. RFQ·임대·직접구매에는 Annex 8 확인서를 사용하며 국내 공사업자 등에는 제136조 제8항의 보증수단 특례가 있다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Proclamation arts.73~81; Directive arts.152~163",
+          "finding": "후보자·입찰자는 원칙적으로 계약 체결 전에 기관장에게 원인 인지 후 5영업일 내 민원을 내며 기관장은 절차를 정지하고 7영업일 내 서면결정한다. 미결정 또는 불복 시 결정 통지일/통지기한부터 5영업일 내 Board에 항소한다. 입찰서류 수정·해명 불복은 일정 요건에서 Board에 직접 항소할 수 있다. Board 결정의 법률문제는 15영업일 내 연방법원에 항소하며 행정·준사법 구제를 먼저 소진해야 한다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Proclamation arts.3, 33~35, 73 and 80; Directive arts.63~67",
+          "finding": "법은 연방 공공기관 조달에 적용하되 다른 국가 또는 국제기구와의 협정상 의무가 충돌하면 협정이 우선한다(제3조). 공개입찰이 기본이며 제한입찰·RFQ·직접구매는 법정 요건과 문서화된 사유가 필요하다. 직접구매는 단일공급원·독점권, 긴급상황, 호환성·추가납품, 연구·시험 등 제34조와 지침 제66조의 한정사유를 따른다. 계약 체결 후 민원은 제73조 제3항 사유 외에는 제한되고 제80조의 비심사 사항도 적용된다.",
+          "evidenceUrl": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [
