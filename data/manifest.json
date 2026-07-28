@@ -3,19 +3,31 @@
   "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋. 발주자(KOICA) 자신의 조달 규정도 같은 3축으로 정리해 협력국 제도와 대비한다.",
   "schemaVersion": "0.1",
   "updatedAt": "2026-07-28",
-
   "axes": [
-    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" },
-    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" },
-    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" }
+    {
+      "key": "bidding",
+      "suffix": "-bidding-system",
+      "name": "입찰제도",
+      "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인"
+    },
+    {
+      "key": "governance",
+      "suffix": "-procurement-governance",
+      "name": "조달 거버넌스",
+      "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인"
+    },
+    {
+      "key": "pipeline",
+      "suffix": "-oda-project-pipeline",
+      "name": "ODA 사업형성 절차",
+      "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인"
+    }
   ],
-
   "axisSelection": {
     "method": "KOICA 2026 자료집(아시아 및 태평양) 12개국 전수 섹션 조사. 아프리카(탄자니아)에서도 3축 존재 확인. 지역 자료집 미수록 보강국인 미얀마는 조달지침·개발원조정책 등 1차자료를 같은 3축으로 정규화했다.",
     "ration": "입찰제도·조달 거버넌스·ODA 사업형성의 3축을 공통 구조로 사용한다. 인허가·건축입찰·진출 유의사항처럼 국가별 편차가 있는 내용은 해당 국가의 canvas.entryBarriers·submittedDocuments·fieldVerification에 흡수한다.",
     "surveyedAt": "2026-07-28"
   },
-
   "sourceDocuments": [
     {
       "id": "koica-2026-asia-pacific",
@@ -71,18 +83,44 @@
       "note": "KOICA 2026 아시아 및 태평양 자료집 미수록 보강 국가. sources/laws/myanmar/에 영문본을 보관했다. 2017·2022 조달지침 영문본은 비공식 편의번역이다.",
       "status": "확보"
     },
-    { "id": "koica-regulations", "title": "KOICA 조달 관련 규정 4종 — 대외무상협력사업 조달·계약규정·시행세칙·국제조달규정·현지입찰 적격심사지침", "publisher": "한국국제협력단(KOICA)", "issuedOn": "2025-02-25", "note": "ALIO(공공기관 경영정보 공개시스템, apbaId=C0146, reportFormNo=21110) 공개본. 발주자 편의 근거. 자료집이 아니라 규정 원문 자체.", "status": "확보" }
+    {
+      "id": "koica-regulations",
+      "title": "KOICA 조달 관련 규정 4종 — 대외무상협력사업 조달·계약규정·시행세칙·국제조달규정·현지입찰 적격심사지침",
+      "publisher": "한국국제협력단(KOICA)",
+      "issuedOn": "2025-02-25",
+      "note": "ALIO(공공기관 경영정보 공개시스템, apbaId=C0146, reportFormNo=21110) 공개본. 발주자 편의 근거. 자료집이 아니라 규정 원문 자체.",
+      "status": "확보"
+    }
   ],
-
   "countries": [
     {
-      "slug": "nepal", "name": "네팔", "nameEn": "Nepal", "iso3": "NPL",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "5-18", "docPages": "5-18",
+      "slug": "nepal",
+      "name": "네팔",
+      "nameEn": "Nepal",
+      "iso3": "NPL",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "5-18",
+      "docPages": "5-18",
       "institutions": {
-        "bidding": { "slug": "nepal-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 3 },
-        "governance": { "slug": "nepal-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 2 },
-        "pipeline": { "slug": "nepal-oda-project-pipeline", "status": "done", "verification": "article-verified", "discrepancies": 4 }
+        "bidding": {
+          "slug": "nepal-bidding-system",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 3
+        },
+        "governance": {
+          "slug": "nepal-procurement-governance",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 2
+        },
+        "pipeline": {
+          "slug": "nepal-oda-project-pipeline",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 4
+        }
       },
       "primaryLaws": [
         "Public Procurement Act, 2063 (2007)",
@@ -95,13 +133,771 @@
       "notes": "파일럿 국가. 2026년판은 수원체계 근거로 Foreign Aid Mobilization Policy 2025를 반영했다. ODA 파이프라인과 조세·관세 범위는 해당 정책 원문 조문 기준으로 정리했다."
     },
     {
-      "slug": "tanzania", "name": "탄자니아", "nameEn": "Tanzania", "iso3": "TZA",
-      "region": "아프리카", "sourceDocument": "koica-2026-africa",
-      "pdfPages": "187-202", "docPages": "187-202",
+      "slug": "timor-leste",
+      "name": "동티모르",
+      "nameEn": "Timor-Leste",
+      "iso3": "TLS",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "21-29",
+      "docPages": "21-29",
       "institutions": {
-        "bidding": { "slug": "tanzania-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 3 },
-        "governance": { "slug": "tanzania-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
-        "pipeline": { "slug": "tanzania-oda-project-pipeline", "status": "done", "verification": "source-document", "discrepancies": 1 }
+        "bidding": {
+          "slug": "timor-leste-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "timor-leste-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "timor-leste-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션이 자료집에 없다. 현지 조달법 원문 확보가 선행돼야 한다. 투자청 SERVE(www.serve.gov.tl) 언급 있음."
+    },
+    {
+      "slug": "laos",
+      "name": "라오스",
+      "nameEn": "Lao People's Democratic Republic",
+      "iso3": "LAO",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "31-45",
+      "docPages": "31-45",
+      "institutions": {
+        "bidding": {
+          "slug": "laos-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "laos-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "laos-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "입찰제도·법규·규정·인허가 섹션이 모두 있어 네팔 다음으로 밀도가 높다."
+    },
+    {
+      "slug": "bangladesh",
+      "name": "방글라데시",
+      "nameEn": "Bangladesh",
+      "iso3": "BGD",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "47-59",
+      "docPages": "47-59",
+      "institutions": {
+        "bidding": {
+          "slug": "bangladesh-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "bangladesh-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "bangladesh-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. Public Procurement Act 2006 / Rules 2008 원문 대조 필요."
+    },
+    {
+      "slug": "vietnam",
+      "name": "베트남",
+      "nameEn": "Viet Nam",
+      "iso3": "VNM",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "61-79",
+      "docPages": "61-79",
+      "institutions": {
+        "bidding": {
+          "slug": "vietnam-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "vietnam-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "vietnam-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "자료집 최대 분량(19면). 입찰제도·법규·규정·인허가 전부 있음. Law on Bidding 2023(22/2023/QH15) 개정 반영 여부 확인 필요."
+    },
+    {
+      "slug": "sri-lanka",
+      "name": "스리랑카",
+      "nameEn": "Sri Lanka",
+      "iso3": "LKA",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "81-91",
+      "docPages": "81-91",
+      "institutions": {
+        "bidding": {
+          "slug": "sri-lanka-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "sri-lanka-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "sri-lanka-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "자료집 분량 최소 수준(5면). Procurement Guidelines 2006 원문 보강 필요."
+    },
+    {
+      "slug": "indonesia",
+      "name": "인도네시아",
+      "nameEn": "Indonesia",
+      "iso3": "IDN",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "93-107",
+      "docPages": "93-107",
+      "institutions": {
+        "bidding": {
+          "slug": "indonesia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "indonesia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "indonesia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. LKPP 및 Perpres 16/2018 계열 규정 확인 필요."
+    },
+    {
+      "slug": "cambodia",
+      "name": "캄보디아",
+      "nameEn": "Cambodia",
+      "iso3": "KHM",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "109-127",
+      "docPages": "109-127",
+      "institutions": {
+        "bidding": {
+          "slug": "cambodia-bidding-system",
+          "status": "done",
+          "verification": "law-linked",
+          "discrepancies": 1
+        },
+        "governance": {
+          "slug": "cambodia-procurement-governance",
+          "status": "done",
+          "verification": "law-linked",
+          "discrepancies": 1
+        },
+        "pipeline": {
+          "slug": "cambodia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "primaryLaws": [
+        "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)",
+        "외부재원 조달 표준운영절차(SOP, 2019)"
+      ],
+      "supersededLaws": [
+        "Law on Public Procurement, 2012 (Royal Kram NS/RKM/0112/004) — 2023 신법으로 폐지"
+      ],
+      "notes": "세 번째 국가. 2023 공공조달법과 경제재무부·GDPP 공식 공개정보를 기준으로 신법 사항을 반영했다. 공식 영문본과 신법 하위규정 전문은 확인하지 못해 금액구간·입찰방식은 현지 확인 대상으로 남겼다."
+    },
+    {
+      "slug": "thailand",
+      "name": "태국",
+      "nameEn": "Thailand",
+      "iso3": "THA",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "129-147",
+      "docPages": "129-147",
+      "institutions": {
+        "bidding": {
+          "slug": "thailand-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "thailand-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "thailand-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "2026년판 신규 조사 대상. 전자정부조달(e-GP), 외국 기업 참가요건, 설계·건축·감리 조달 구분을 현행 태국 법령 원문과 대조해야 한다."
+    },
+    {
+      "slug": "pakistan",
+      "name": "파키스탄",
+      "nameEn": "Pakistan",
+      "iso3": "PAK",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "149-163",
+      "docPages": "149-163",
+      "institutions": {
+        "bidding": {
+          "slug": "pakistan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "pakistan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "pakistan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "공고 게재 기준(30만 PKR 이상, 국내 15일·국제 30일)이 자료집에 명시돼 PPRA Rules 2004 대조 대상이 뚜렷하다. 연방·주별 PPRA가 분리돼 있어 관할 구분 주의."
+    },
+    {
+      "slug": "fiji",
+      "name": "피지",
+      "nameEn": "Fiji",
+      "iso3": "FJI",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "165-175",
+      "docPages": "165-175",
+      "institutions": {
+        "bidding": {
+          "slug": "fiji-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "fiji-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "fiji-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "자료집에 '피지 입찰 관련 법제도 환경' 표가 있다. 태평양 도서국 유일 사례."
+    },
+    {
+      "slug": "philippines",
+      "name": "필리핀",
+      "nameEn": "Philippines",
+      "iso3": "PHL",
+      "region": "아시아·태평양",
+      "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "177-191",
+      "docPages": "177-191",
+      "institutions": {
+        "bidding": {
+          "slug": "philippines-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "philippines-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "philippines-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      },
+      "notes": "사전 조달회의(pre-procurement conference) 언급 있음. RA 9184 → RA 12009(New Government Procurement Act, 2024) 전환 반영 여부 확인 필요."
+    },
+    {
+      "slug": "dr-congo",
+      "name": "DR콩고",
+      "nameEn": "Democratic Republic of the Congo",
+      "iso3": "COD",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "5-15",
+      "docPages": "5-15",
+      "institutions": {
+        "bidding": {
+          "slug": "dr-congo-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "dr-congo-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "dr-congo-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "ghana",
+      "name": "가나",
+      "nameEn": "Ghana",
+      "iso3": "GHA",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "17-29",
+      "docPages": "17-29",
+      "institutions": {
+        "bidding": {
+          "slug": "ghana-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "ghana-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "ghana-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "nigeria",
+      "name": "나이지리아",
+      "nameEn": "Nigeria",
+      "iso3": "NGA",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "31-41",
+      "docPages": "31-41",
+      "institutions": {
+        "bidding": {
+          "slug": "nigeria-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "nigeria-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "nigeria-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "rwanda",
+      "name": "르완다",
+      "nameEn": "Rwanda",
+      "iso3": "RWA",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "43-57",
+      "docPages": "43-57",
+      "institutions": {
+        "bidding": {
+          "slug": "rwanda-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "rwanda-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "rwanda-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "morocco",
+      "name": "모로코",
+      "nameEn": "Morocco",
+      "iso3": "MAR",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "59-71",
+      "docPages": "59-71",
+      "institutions": {
+        "bidding": {
+          "slug": "morocco-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "morocco-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "morocco-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "mozambique",
+      "name": "모잠비크",
+      "nameEn": "Mozambique",
+      "iso3": "MOZ",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "73-83",
+      "docPages": "73-83",
+      "institutions": {
+        "bidding": {
+          "slug": "mozambique-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "mozambique-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "mozambique-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "senegal",
+      "name": "세네갈",
+      "nameEn": "Senegal",
+      "iso3": "SEN",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "85-93",
+      "docPages": "85-93",
+      "institutions": {
+        "bidding": {
+          "slug": "senegal-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "senegal-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "senegal-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "ethiopia",
+      "name": "에티오피아",
+      "nameEn": "Ethiopia",
+      "iso3": "ETH",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "95-115",
+      "docPages": "95-115",
+      "institutions": {
+        "bidding": {
+          "slug": "ethiopia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "ethiopia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "ethiopia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "uganda",
+      "name": "우간다",
+      "nameEn": "Uganda",
+      "iso3": "UGA",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "117-131",
+      "docPages": "117-131",
+      "institutions": {
+        "bidding": {
+          "slug": "uganda-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "uganda-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "uganda-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "egypt",
+      "name": "이집트",
+      "nameEn": "Egypt",
+      "iso3": "EGY",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "133-147",
+      "docPages": "133-147",
+      "institutions": {
+        "bidding": {
+          "slug": "egypt-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "egypt-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "egypt-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "cameroon",
+      "name": "카메룬",
+      "nameEn": "Cameroon",
+      "iso3": "CMR",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "149-159",
+      "docPages": "149-159",
+      "institutions": {
+        "bidding": {
+          "slug": "cameroon-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "cameroon-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "cameroon-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "kenya",
+      "name": "케냐",
+      "nameEn": "Kenya",
+      "iso3": "KEN",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "161-173",
+      "docPages": "161-173",
+      "institutions": {
+        "bidding": {
+          "slug": "kenya-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "kenya-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "kenya-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "cote-divoire",
+      "name": "코트디부아르",
+      "nameEn": "Côte d'Ivoire",
+      "iso3": "CIV",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "175-185",
+      "docPages": "175-185",
+      "institutions": {
+        "bidding": {
+          "slug": "cote-divoire-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "cote-divoire-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "cote-divoire-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "tanzania",
+      "name": "탄자니아",
+      "nameEn": "Tanzania",
+      "iso3": "TZA",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "187-202",
+      "docPages": "187-202",
+      "institutions": {
+        "bidding": {
+          "slug": "tanzania-bidding-system",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 3
+        },
+        "governance": {
+          "slug": "tanzania-procurement-governance",
+          "status": "done",
+          "verification": "law-linked",
+          "discrepancies": 1
+        },
+        "pipeline": {
+          "slug": "tanzania-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 1
+        }
       },
       "primaryLaws": [
         "Public Procurement Act, No. 10 of 2023 (2024-06-17 시행)",
@@ -114,140 +910,541 @@
       "notes": "아프리카 첫 국가. 현행 PPA 2023과 PPR 2024 원문을 기준으로 보증·선금·지체상금·전자조달 요건을 반영했다. PPR 2024 공식 영문본은 Government Notice No. 261(2025-04-25)로 공표됐다."
     },
     {
-      "slug": "timor-leste", "name": "동티모르", "nameEn": "Timor-Leste", "iso3": "TLS",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "21-29", "docPages": "21-29",
+      "slug": "tunisia",
+      "name": "튀니지",
+      "nameEn": "Tunisia",
+      "iso3": "TUN",
+      "region": "아프리카",
+      "sourceDocument": "koica-2026-africa",
+      "pdfPages": "205-213",
+      "docPages": "205-213",
       "institutions": {
-        "bidding": { "slug": "timor-leste-bidding-system", "status": "pending" },
-        "governance": { "slug": "timor-leste-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "timor-leste-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "입찰 관련 법규·입찰 규정 섹션이 자료집에 없다. 현지 조달법 원문 확보가 선행돼야 한다. 투자청 SERVE(www.serve.gov.tl) 언급 있음."
+        "bidding": {
+          "slug": "tunisia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "tunisia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "tunisia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "laos", "name": "라오스", "nameEn": "Lao People's Democratic Republic", "iso3": "LAO",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "31-45", "docPages": "31-45",
+      "slug": "guatemala",
+      "name": "과테말라",
+      "nameEn": "Guatemala",
+      "iso3": "GTM",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "5-17",
+      "docPages": "5-17",
       "institutions": {
-        "bidding": { "slug": "laos-bidding-system", "status": "pending" },
-        "governance": { "slug": "laos-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "laos-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "입찰제도·법규·규정·인허가 섹션이 모두 있어 네팔 다음으로 밀도가 높다."
+        "bidding": {
+          "slug": "guatemala-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "guatemala-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "guatemala-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "bangladesh", "name": "방글라데시", "nameEn": "Bangladesh", "iso3": "BGD",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "47-59", "docPages": "47-59",
+      "slug": "dominican-republic",
+      "name": "도미니카공화국",
+      "nameEn": "Dominican Republic",
+      "iso3": "DOM",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "19-39",
+      "docPages": "19-39",
       "institutions": {
-        "bidding": { "slug": "bangladesh-bidding-system", "status": "pending" },
-        "governance": { "slug": "bangladesh-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "bangladesh-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. Public Procurement Act 2006 / Rules 2008 원문 대조 필요."
+        "bidding": {
+          "slug": "dominican-republic-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "dominican-republic-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "dominican-republic-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "vietnam", "name": "베트남", "nameEn": "Viet Nam", "iso3": "VNM",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "61-79", "docPages": "61-79",
+      "slug": "bolivia",
+      "name": "볼리비아",
+      "nameEn": "Bolivia",
+      "iso3": "BOL",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "41-55",
+      "docPages": "41-55",
       "institutions": {
-        "bidding": { "slug": "vietnam-bidding-system", "status": "pending" },
-        "governance": { "slug": "vietnam-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "vietnam-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "자료집 최대 분량(19면). 입찰제도·법규·규정·인허가 전부 있음. Law on Bidding 2023(22/2023/QH15) 개정 반영 여부 확인 필요."
+        "bidding": {
+          "slug": "bolivia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "bolivia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "bolivia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "sri-lanka", "name": "스리랑카", "nameEn": "Sri Lanka", "iso3": "LKA",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "81-91", "docPages": "81-91",
+      "slug": "ecuador",
+      "name": "에콰도르",
+      "nameEn": "Ecuador",
+      "iso3": "ECU",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "57-69",
+      "docPages": "57-69",
       "institutions": {
-        "bidding": { "slug": "sri-lanka-bidding-system", "status": "pending" },
-        "governance": { "slug": "sri-lanka-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "sri-lanka-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "자료집 분량 최소 수준(5면). Procurement Guidelines 2006 원문 보강 필요."
+        "bidding": {
+          "slug": "ecuador-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "ecuador-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "ecuador-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "indonesia", "name": "인도네시아", "nameEn": "Indonesia", "iso3": "IDN",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "93-107", "docPages": "93-107",
+      "slug": "el-salvador",
+      "name": "엘살바도르",
+      "nameEn": "El Salvador",
+      "iso3": "SLV",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "71-79",
+      "docPages": "71-79",
       "institutions": {
-        "bidding": { "slug": "indonesia-bidding-system", "status": "pending" },
-        "governance": { "slug": "indonesia-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "indonesia-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "입찰 관련 법규·입찰 규정 섹션 없음. LKPP 및 Perpres 16/2018 계열 규정 확인 필요."
+        "bidding": {
+          "slug": "el-salvador-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "el-salvador-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "el-salvador-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "cambodia", "name": "캄보디아", "nameEn": "Cambodia", "iso3": "KHM",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "109-127", "docPages": "109-127",
+      "slug": "colombia",
+      "name": "콜롬비아",
+      "nameEn": "Colombia",
+      "iso3": "COL",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "81-97",
+      "docPages": "81-97",
       "institutions": {
-        "bidding": { "slug": "cambodia-bidding-system", "status": "done", "verification": "law-linked", "discrepancies": 1 },
-        "governance": { "slug": "cambodia-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
-        "pipeline": { "slug": "cambodia-oda-project-pipeline", "status": "done", "verification": "source-document", "discrepancies": 0 }
-      },
-      "primaryLaws": [
-        "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)",
-        "외부재원 조달 표준운영절차(SOP, 2019)"
-      ],
-      "supersededLaws": [
-        "Law on Public Procurement, 2012 (Royal Kram NS/RKM/0112/004) — 2023 신법으로 폐지"
-      ],
-      "notes": "세 번째 국가. 2023 공공조달법과 경제재무부·GDPP 공식 공개정보를 기준으로 신법 사항을 반영했다. 공식 영문본과 신법 하위규정 전문은 확인하지 못해 금액구간·입찰방식은 현지 확인 대상으로 남겼다."
+        "bidding": {
+          "slug": "colombia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "colombia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "colombia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "thailand", "name": "태국", "nameEn": "Thailand", "iso3": "THA",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "129-147", "docPages": "129-147",
+      "slug": "paraguay",
+      "name": "파라과이",
+      "nameEn": "Paraguay",
+      "iso3": "PRY",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "99-113",
+      "docPages": "99-113",
       "institutions": {
-        "bidding": { "slug": "thailand-bidding-system", "status": "pending" },
-        "governance": { "slug": "thailand-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "thailand-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "2026년판 신규 조사 대상. 전자정부조달(e-GP), 외국 기업 참가요건, 설계·건축·감리 조달 구분을 현행 태국 법령 원문과 대조해야 한다."
+        "bidding": {
+          "slug": "paraguay-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "paraguay-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "paraguay-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "pakistan", "name": "파키스탄", "nameEn": "Pakistan", "iso3": "PAK",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "149-163", "docPages": "149-163",
+      "slug": "peru",
+      "name": "페루",
+      "nameEn": "Peru",
+      "iso3": "PER",
+      "region": "중남미",
+      "sourceDocument": "koica-2026-latin-america",
+      "pdfPages": "115-127",
+      "docPages": "115-127",
       "institutions": {
-        "bidding": { "slug": "pakistan-bidding-system", "status": "pending" },
-        "governance": { "slug": "pakistan-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "pakistan-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "공고 게재 기준(30만 PKR 이상, 국내 15일·국제 30일)이 자료집에 명시돼 PPRA Rules 2004 대조 대상이 뚜렷하다. 연방·주별 PPRA가 분리돼 있어 관할 구분 주의."
+        "bidding": {
+          "slug": "peru-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "peru-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "peru-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "fiji", "name": "피지", "nameEn": "Fiji", "iso3": "FJI",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "165-175", "docPages": "165-175",
+      "slug": "mongolia",
+      "name": "몽골",
+      "nameEn": "Mongolia",
+      "iso3": "MNG",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "5-23",
+      "docPages": "5-23",
       "institutions": {
-        "bidding": { "slug": "fiji-bidding-system", "status": "pending" },
-        "governance": { "slug": "fiji-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "fiji-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "자료집에 '피지 입찰 관련 법제도 환경' 표가 있다. 태평양 도서국 유일 사례."
+        "bidding": {
+          "slug": "mongolia-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "mongolia-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "mongolia-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "philippines", "name": "필리핀", "nameEn": "Philippines", "iso3": "PHL",
-      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
-      "pdfPages": "177-191", "docPages": "177-191",
+      "slug": "azerbaijan",
+      "name": "아제르바이잔",
+      "nameEn": "Azerbaijan",
+      "iso3": "AZE",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "25-39",
+      "docPages": "25-39",
       "institutions": {
-        "bidding": { "slug": "philippines-bidding-system", "status": "pending" },
-        "governance": { "slug": "philippines-procurement-governance", "status": "pending" },
-        "pipeline": { "slug": "philippines-oda-project-pipeline", "status": "pending" }
-      },
-      "notes": "사전 조달회의(pre-procurement conference) 언급 있음. RA 9184 → RA 12009(New Government Procurement Act, 2024) 전환 반영 여부 확인 필요."
+        "bidding": {
+          "slug": "azerbaijan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "azerbaijan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "azerbaijan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
     },
     {
-      "slug": "myanmar", "name": "미얀마", "nameEn": "Myanmar", "iso3": "MMR",
-      "region": "아시아·태평양", "sourceDocument": "myanmar-primary-sources",
+      "slug": "jordan",
+      "name": "요르단",
+      "nameEn": "Jordan",
+      "iso3": "JOR",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "41-55",
+      "docPages": "41-55",
       "institutions": {
-        "bidding": { "slug": "myanmar-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 0 },
-        "governance": { "slug": "myanmar-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 0 },
-        "pipeline": { "slug": "myanmar-oda-project-pipeline", "status": "done", "verification": "needs-review", "discrepancies": 0 }
+        "bidding": {
+          "slug": "jordan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "jordan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "jordan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "uzbekistan",
+      "name": "우즈베키스탄",
+      "nameEn": "Uzbekistan",
+      "iso3": "UZB",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "57-71",
+      "docPages": "57-71",
+      "institutions": {
+        "bidding": {
+          "slug": "uzbekistan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "uzbekistan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "uzbekistan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "ukraine",
+      "name": "우크라이나",
+      "nameEn": "Ukraine",
+      "iso3": "UKR",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "73-83",
+      "docPages": "73-83",
+      "institutions": {
+        "bidding": {
+          "slug": "ukraine-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "ukraine-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "ukraine-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "kyrgyzstan",
+      "name": "키르기스스탄",
+      "nameEn": "Kyrgyzstan",
+      "iso3": "KGZ",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "85-97",
+      "docPages": "85-97",
+      "institutions": {
+        "bidding": {
+          "slug": "kyrgyzstan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "kyrgyzstan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "kyrgyzstan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "tajikistan",
+      "name": "타지키스탄",
+      "nameEn": "Tajikistan",
+      "iso3": "TJK",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "99-117",
+      "docPages": "99-117",
+      "institutions": {
+        "bidding": {
+          "slug": "tajikistan-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "tajikistan-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "tajikistan-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "palestine",
+      "name": "팔레스타인",
+      "nameEn": "Palestine",
+      "iso3": "PSE",
+      "region": "중동·CIS",
+      "sourceDocument": "koica-2026-middle-east-cis",
+      "pdfPages": "119-127",
+      "docPages": "119-127",
+      "institutions": {
+        "bidding": {
+          "slug": "palestine-bidding-system",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "palestine-procurement-governance",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "palestine-oda-project-pipeline",
+          "status": "done",
+          "verification": "source-document",
+          "discrepancies": 0
+        }
+      }
+    },
+    {
+      "slug": "myanmar",
+      "name": "미얀마",
+      "nameEn": "Myanmar",
+      "iso3": "MMR",
+      "region": "아시아·태평양",
+      "sourceDocument": "myanmar-primary-sources",
+      "institutions": {
+        "bidding": {
+          "slug": "myanmar-bidding-system",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "myanmar-procurement-governance",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "myanmar-oda-project-pipeline",
+          "status": "done",
+          "verification": "needs-review",
+          "discrepancies": 0
+        }
       },
       "primaryLaws": [
         "Office of the State Administration Council Directive No. 1/2022 (2022-03-17)",
@@ -257,12 +1454,32 @@
       "notes": "KOICA 2026 아시아 및 태평양 자료집 미수록 보강국이다. Directive 1/2022가 충돌 범위에서 2017·2018·2020 지침보다 우선하므로 입찰 금액구간은 2천만/2억 MMK를 적용했다. 조달 2축은 비공식 영문 편의번역으로 조문 대조했으며, ODA 파이프라인은 2021년 이후 현행 최종 승인기관·서명권자 최신 SOP를 확보하지 못해 needs-review로 남겼다."
     },
     {
-      "slug": "koica", "name": "KOICA(발주자)", "nameEn": "Korea International Cooperation Agency", "iso3": "KOR",
-      "region": "공여기관", "sourceDocument": "koica-regulations", "isDonor": true,
+      "slug": "koica",
+      "name": "KOICA(발주자)",
+      "nameEn": "Korea International Cooperation Agency",
+      "iso3": "KOR",
+      "region": "공여기관",
+      "sourceDocument": "koica-regulations",
+      "isDonor": true,
       "institutions": {
-        "bidding": { "slug": "koica-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 0 },
-        "governance": { "slug": "koica-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 0 },
-        "pipeline": { "slug": "koica-oda-project-pipeline", "status": "done", "verification": "article-verified", "discrepancies": 0 }
+        "bidding": {
+          "slug": "koica-bidding-system",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 0
+        },
+        "governance": {
+          "slug": "koica-procurement-governance",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 0
+        },
+        "pipeline": {
+          "slug": "koica-oda-project-pipeline",
+          "status": "done",
+          "verification": "article-verified",
+          "discrepancies": 0
+        }
       },
       "primaryLaws": [
         "대외무상협력사업에 관한 조달 및 계약규정 (규정 제533호, 2025.02.25.)",
@@ -273,7 +1490,6 @@
       "notes": "발주자(KOICA) 편. 협력국 수원 제도가 아니라 KOICA 자신의 조달 규범을 같은 3축으로 정규화했다. 국제조달규정 제4장(수원국 조달시스템 이용)과 조달·계약규정 §39②(수원국 법령 준용 가능)가 이 데이터셋이 협력국 조달법을 정리하는 상위 근거다. 자료집↔원문 대조가 아니라 규정 원문 직접 정리라 discrepancy가 없다. 원문은 ALIO 공개본."
     }
   ],
-
   "progress": {
     "note": "KOICA 2026 자료집 4개 지역본을 확보했다. 아시아 및 태평양 12개국을 기본 조사대상으로 두고, 미얀마는 자료집 미수록 1차자료 보강국으로 관리한다. 발주자(KOICA) 편은 협력국과 별도로 집계한다.",
     "countriesDone": 4,
@@ -285,11 +1501,33 @@
     "discrepanciesLow": 3,
     "upstreamPending": 16,
     "byCountry": {
-      "nepal": { "institutions": 3, "discrepancies": 9, "high": 2 },
-      "tanzania": { "institutions": 3, "discrepancies": 5, "high": 2 },
-      "cambodia": { "institutions": 3, "discrepancies": 2, "high": 0 },
-      "myanmar": { "institutions": 3, "discrepancies": 0, "high": 0, "supplemental": true },
-      "koica": { "institutions": 3, "discrepancies": 0, "high": 0, "isDonor": true }
+      "nepal": {
+        "institutions": 3,
+        "discrepancies": 9,
+        "high": 2
+      },
+      "tanzania": {
+        "institutions": 3,
+        "discrepancies": 5,
+        "high": 2
+      },
+      "cambodia": {
+        "institutions": 3,
+        "discrepancies": 2,
+        "high": 0
+      },
+      "myanmar": {
+        "institutions": 3,
+        "discrepancies": 0,
+        "high": 0,
+        "supplemental": true
+      },
+      "koica": {
+        "institutions": 3,
+        "discrepancies": 0,
+        "high": 0,
+        "isDonor": true
+      }
     }
   }
 }

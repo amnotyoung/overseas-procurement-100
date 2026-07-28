@@ -33,6 +33,11 @@ def clean_generated_html(value: str) -> str:
 
 
 AXIS_LABEL = {"bidding": "입찰제도", "governance": "조달 거버넌스", "pipeline": "ODA 사업형성"}
+AXIS_SUFFIX = {
+    "bidding": "-bidding-system",
+    "governance": "-procurement-governance",
+    "pipeline": "-oda-project-pipeline",
+}
 VERIF_LABEL = {
     "article-verified": "조문 대조 완료",
     "law-linked": "원문 링크 연결",
@@ -71,6 +76,18 @@ SEV_TONE = {"high": "bad", "medium": "warn", "low": "muted"}
 
 def e(s) -> str:
     return html.escape(str(s if s is not None else ""))
+
+
+def country_slug(d: dict) -> str:
+    """제도 slug에서 국가 식별자를 얻는다.
+
+    영문 국명은 ``Viet Nam``/``vietnam``처럼 파일 slug와 다를 수 있으므로
+    배포 파일의 키로 사용하지 않는다.
+    """
+    suffix = AXIS_SUFFIX[d["axis"]]
+    if not d["slug"].endswith(suffix):
+        raise ValueError(f"제도 slug 접미사 불일치: {d['slug']}")
+    return d["slug"][:-len(suffix)]
 
 
 # 본문에 그대로 적힌 주소(포털·기관 사이트)도 눌러서 열 수 있어야 한다.
@@ -1119,14 +1136,14 @@ def build_errata(items: list[dict]) -> str:
 
 # ─────────────────────────────────────────────────────────── 배포용 단일 파일
 
-def build_bundle(country_slug: str, country_name: str, items: list[dict]) -> str:
+def build_bundle(country_key: str, country_name: str, items: list[dict]) -> str:
     """한 국가의 제도들을 네비게이션 없는 자족 단일 HTML로 묶는다.
 
     각 제도를 standalone HTML로 만들어 iframe srcdoc에 임베드한다 — iframe이
     JS 스코프를 격리하므로 여러 제도의 업무구조도·drawer가 서로 충돌하지 않는다.
     외부 리소스 요청이 전혀 없어(모두 인라인·srcdoc) 파일 하나로 오프라인에서 열린다.
     """
-    docs = [d for d in items if d["slug"].startswith(country_slug + "-")]
+    docs = [d for d in items if country_slug(d) == country_key]
     docs.sort(key=lambda d: d["priority"])
     if not docs:
         return ""
@@ -1247,13 +1264,13 @@ def main() -> int:
     dist.mkdir(exist_ok=True)
     countries = {}  # country_slug(= 제도 slug 접두) → 국가 한글명
     for d in items:
-        countries[d["country"]["nameEn"].lower().replace(" ", "-")] = d["country"]["name"]
+        countries[country_slug(d)] = d["country"]["name"]
     print("\n배포용 단일 파일 (dist/):")
-    for country_slug, country_name in sorted(countries.items()):
-        html_str = build_bundle(country_slug, country_name, items)
+    for country_key, country_name in sorted(countries.items()):
+        html_str = build_bundle(country_key, country_name, items)
         if not html_str:
             continue
-        out = dist / f"{country_slug}.html"
+        out = dist / f"{country_key}.html"
         out.write_text(clean_generated_html(html_str), encoding="utf-8")
         size_kb = len(html_str.encode("utf-8")) // 1024
         print(f"  {out}  ({size_kb}KB, 자족·오프라인)")

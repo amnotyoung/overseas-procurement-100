@@ -12,20 +12,22 @@
 
 ## 현재 범위
 
-- 협력국 4개국 12개 제도: 네팔, 캄보디아, 미얀마, 탄자니아
+- 2026 참여전략 자료집 수록 43개국 전수: 아시아·태평양 12, 아프리카 15, 중남미 8, 중동·CIS 8
+- 자료집 미수록 보강국 미얀마 3개 제도
 - 발주자(KOICA) 규정 3개 제도
+- 총 45개국·발주자, 135개 제도 다이어그램
 - 현행 기준 확인사항 16건
-- 아시아·태평양 2026 자료집 수록국 12개국의 페이지 범위 등록
+- 4개 지역판 43개국의 원문 추출본·페이지 범위 등록
 
-미얀마는 2026 아시아·태평양 자료집 미수록 보강국으로, 현지 지침·정책 원문을 직접 연결했다.
+자료집 전수 국가의 신규 다이어그램은 `source-document` 단계의 1차 구조화다. 기존
+네팔·캄보디아·탄자니아와 미얀마·KOICA 레코드는 공식 원문 확인 깊이에 따라
+`law-linked`·`article-verified` 상태를 유지한다.
 
-| 국가 | 입찰 | 거버넌스 | ODA 파이프라인 |
-|---|---|---|---|
-| 네팔 | `article-verified` | `article-verified` | `article-verified` |
-| 캄보디아 | `law-linked` | `law-linked` | `source-document` |
-| 미얀마 | `article-verified` | `article-verified` | `needs-review` |
-| 탄자니아 | `article-verified` | `law-linked` | `source-document` |
-| KOICA | `article-verified` | `article-verified` | `article-verified` |
+| 범위 | 국가 수 | 제도 수 | 검증 수준 |
+|---|---:|---:|---|
+| 자료집 수록국 | 43 | 129 | `source-document` 중심, 3개국 심화검증 |
+| 미얀마 보강 | 1 | 3 | `article-verified` 2, `needs-review` 1 |
+| KOICA(발주자) | 1 | 3 | `article-verified` |
 
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
@@ -41,7 +43,7 @@
 sources/koica-2026/
 ├── README.md
 ├── extract.sh
-└── {region}/pages/*.txt
+└── {region}/{country}.txt
 ```
 
 원본 PDF의 경로·페이지 수·SHA-256과 국가별 페이지 범위는 [data/manifest.json](data/manifest.json)에 기록한다. 추출 방식은 [sources/koica-2026/README.md](sources/koica-2026/README.md)에 정리돼 있다.
@@ -62,6 +64,7 @@ sources/koica-2026/
 │   └── laws/{country}/          법령·정책 원문
 ├── tools/
 │   ├── validate.py              스키마·참조 무결성 검증
+│   ├── generate_all_countries.py  4개 지역판 전수 추출·1차 다이어그램 생성
 │   ├── check_links.py           외부 링크 확인
 │   ├── build_docs.py            문서 생성
 │   └── build_site.py            정적 사이트·국가별 배포 파일 생성
@@ -74,6 +77,7 @@ sources/koica-2026/
 ## 빌드와 검증
 
 ```bash
+python3 tools/generate_all_countries.py  # PDF 전수 추출·미검증 국가 1차 다이어그램 생성
 python3 tools/validate.py
 python3 tools/build_docs.py
 python3 tools/build_site.py
