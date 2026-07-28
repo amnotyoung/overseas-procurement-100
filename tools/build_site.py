@@ -4,7 +4,7 @@
 원본 how-did-they-do-all-that-procurement의 화면 구성을 승계한다.
   /                    제도 대장 (검색·국가/축 필터·비교 선반)
   /model/{slug}/       한 장 요약 (업무구조도 + 캔버스 + 검증)
-  /verification/       검증 대장 (자료집↔원문 불일치)
+  /verification/       현행 기준 확인 대장
 
 의존성 없음. 빌드 후 site/를 그대로 열거나 정적 호스팅에 올리면 된다.
 
@@ -45,7 +45,7 @@ VERIF_TONE = {
     "source-document": "muted",
     "needs-review": "bad",
 }
-SEV_LABEL = {"high": "높음", "medium": "보통", "low": "낮음"}
+SEV_LABEL = {"high": "필수 확인", "medium": "추가 확인", "low": "참고"}
 NODE_TONE = {"current": "key", "risk": "warn", "loop": "back"}
 KIND_LABEL = {
     "act": "법률",
@@ -147,58 +147,37 @@ def _fieldcheck_html(fc: dict | None) -> str:
 
 
 def _review_html(rv: dict | None) -> str:
-    """불일치 카드 안의 현지 직원용 영어 검토 접기."""
+    """현행 기준 카드 안의 현지 직원용 영어 확인 접기."""
     if not rv:
         return ""
     return f"""<details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">{e(rv['topic'])}</p>
-    <p><b>The guide says</b> — {e(rv['guideSays'])}</p>
-    <p><b>The law says</b> — {e(rv['lawSays'])}</p>
-    <p><b>Why it matters</b> — {e(rv['impact'])}</p>
+    <p><b>Current legal basis</b> — {e(rv['lawSays'])}</p>
     <p class="rv-verify"><b>✔ Verify</b> — {e(rv['verify'])}</p>
   </div>
 </details>"""
 
 
 def disc_card(d: dict, x: dict, *, link: str = "") -> str:
-    """불일치 카드 하나. 상세·검증대장·정오표에서 공통으로 쓴다."""
-    up = x.get("upstream")
-    up_html = ""
-    if up:
-        up_html = f"""<div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge {'bad' if up['priority'] == '정정 요망' else 'warn'}">{e(up['priority'])}</span>
-    <span class="badge plain muted">{e(UP_STATE_LABEL.get(up['state'], up['state']))}</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>{e(up['suggestedText'])}</div>
-  {f'<p style="margin:8px 0 0;font-size:12.5px;color:var(--muted)">{e(up["note"])}</p>' if up.get("note") else ''}
-</div>"""
-    else:
-        up_html = ('<p class="act-row">자료집 발행처가 고칠 것은 없습니다 — '
-                   '본 데이터의 보완 사항입니다.</p>')
-
+    """현행 기준 반영 카드 하나. 상세·검증대장에서 공통으로 쓴다."""
     head_link = (f'<a class="badge plain muted" style="text-decoration:none" href="{link}">'
                  f'{e(d["name"])} →</a>' if link else
                  f'<span class="badge plain muted">{e(x["id"].rsplit("-", 1)[-1])}</span>')
 
     return f"""<div class="disc" data-sev="{e(x['severity'])}">
   <div class="top">
-    <span class="badge {SEV_TONE[x['severity']]}">심각도 {e(SEV_LABEL[x['severity']])}</span>
+    <span class="badge {SEV_TONE[x['severity']]}">{e(SEV_LABEL[x['severity']])}</span>
     <span class="badge plain muted">{e(d['country']['name'])}</span>
     {head_link}
   </div>
   <h3>{e(x['field'])}</h3>
-  <div class="quote src"><b>자료집</b>{e(x['sourceText'])}</div>
-  <div class="quote act"><b>법령 원문</b>{el(x['actualText'])}</div>
-  <p class="cite">근거 · {cite_link(d, x['citation'])}</p>
-  <p class="impact">{el(x['impact'])}</p>
-  <div class="todo"><b>실무자가 할 일</b>{el(x['userAction'])}</div>
+  <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
+  <p class="cite">확인 출처 · {cite_link(d, x['citation'])}</p>
+  <div class="todo"><b>실무 확인</b>{el(x['userAction'])}</div>
   {_review_html(x.get('review'))}
   {_fieldcheck_html(x.get('fieldCheck'))}
-  <p class="act-row">이 데이터에 반영 — {el(x['action'])}</p>
-  {up_html}
+  <p class="act-row">산출물 반영 — {el(x['action'])}</p>
 </div>"""
 
 
@@ -206,6 +185,7 @@ def disc_card(d: dict, x: dict, *, link: str = "") -> str:
 
 CSS = """
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -407,6 +387,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -489,7 +470,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
   <nav>
     <a href="{up}index.html"{' aria-current="page"' if nav == "list" else ''}>제도 대장</a>
     <a href="{up}verification/index.html"{' aria-current="page"' if nav == "verify" else ''}>검증 대장</a>
-    <a href="{up}errata/index.html"{' aria-current="page"' if nav == "errata" else ''}>정오표</a>
+    <a href="{up}errata/index.html"{' aria-current="page"' if nav == "errata" else ''}>반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>"""
@@ -506,7 +487,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 {f'<script>{extra_js}</script>' if extra_js else ''}
 </body></html>"""
@@ -532,7 +513,7 @@ def build_index(items: list[dict]) -> str:
         nd = len(d["verification"].get("discrepancies", []))
         hi = sum(1 for x in d["verification"].get("discrepancies", []) if x["severity"] == "high")
         disc_badge = (
-            f'<span class="badge {"bad" if hi else "warn"}">불일치 {nd}</span>' if nd else
+            f'<span class="badge {"bad" if hi else "warn"}">확인사항 {nd}</span>' if nd else
             '<span class="badge muted plain">—</span>'
         )
         rows.append(f"""<tr data-c="{e(d['country']['name'])}" data-a="{e(d['axis'])}"
@@ -573,7 +554,7 @@ def build_index(items: list[dict]) -> str:
     <div class="stat"><b>{len(countries)}</b><span>국가</span></div>
     <div class="stat"><b>{nodes}</b><span>절차 노드</span></div>
     <div class="stat ok"><b>{verified}</b><span>조문 대조 완료</span></div>
-    <div class="stat bad"><b>{discs}</b><span>불일치 발견</span></div>
+    <div class="stat bad"><b>{discs}</b><span>현행 기준 반영</span></div>
   </div>
 </div></div>
 
@@ -750,7 +731,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
     <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
-    {f'<span class="badge bad">불일치 {len(discs)}건</span>' if discs else ''}
+    {f'<span class="badge bad">확인사항 {len(discs)}건</span>' if discs else ''}
   </div>
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
@@ -759,7 +740,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="tile"><b>{len(lanes)}</b><span>행위 레인</span></div>
     <div class="tile"><b>{len(stages)}</b><span>게이트</span></div>
     <div class="tile ok"><b>{checked}</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>{len(discs)}</b><span>불일치{f' (높음 {hi})' if hi else ''}</span></div>
+    <div class="tile bad"><b>{len(discs)}</b><span>현행 기준{f' (필수 확인 {hi})' if hi else ''}</span></div>
     <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -808,9 +789,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 </section>''' if quotes else ''}
 
 {f'''<section class="blk">
-  <h2>자료집 ↔ 원문 불일치 {len(discs)}건</h2>
-  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
-    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 {n_up}건입니다{"" if standalone else ' — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다'}.</p>
+  <h2>현행 기준 반영 {len(discs)}건</h2>
+  <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
+    출처는 각 항목에 연결했으며{"" if standalone else ' <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다'}.</p>
   {disc_html}
 </section>''' if discs else ''}
 
@@ -1043,31 +1024,30 @@ def build_verification(items: list[dict]) -> str:
 
     body = f"""
 <div class="wrap hero" style="padding-bottom:24px">
-  <div class="eyebrow">공개 검증</div>
-  <h1>검증 대장</h1>
-  <p class="lede">자료집 서술을 각국 법령 원문과 대조한 결과를 모두 공개합니다.</p>
-  <p class="meta">불일치 {len(allд)}건 · 높음 {counts['high']} / 보통 {counts['medium']} / 낮음 {counts['low']}</p>
+  <div class="eyebrow">공식 원문 대조</div>
+  <h1>현행 기준 확인 대장</h1>
+  <p class="lede">각국 공식 법령·기관 원문으로 확인한 기준과 실무 확인사항을 공개합니다.</p>
+  <p class="meta">확인사항 {len(allд)}건 · 필수 확인 {counts['high']} / 추가 확인 {counts['medium']} / 참고 {counts['low']}</p>
 </div>
 
 <div class="statbar"><div class="wrap">
   <div style="font-size:13px;color:var(--muted);max-width:56ch">
-    자료집이 틀렸다고 적지 않습니다. 무엇이 어떻게 다르며 실무에 어떤 영향인지 적고,
-    <b>실무자가 할 일</b>과 <b>자료집 정정 제안</b>까지 붙입니다.
+    확인된 현행 기준을 산출물에 반영하고, 근거 원문과
+    <b>실무 확인사항</b>을 함께 제시합니다.
   </div>
   <div class="stats">
-    <div class="stat bad"><b>{counts['high']}</b><span>높음</span></div>
-    <div class="stat"><b>{counts['medium']}</b><span>보통</span></div>
-    <div class="stat"><b>{counts['low']}</b><span>낮음</span></div>
-    <div class="stat"><b>{n_fix}</b><span>정정 요망</span></div>
-    <div class="stat"><b>{n_up - n_fix}</b><span>보완 권고</span></div>
+    <div class="stat bad"><b>{counts['high']}</b><span>필수 확인</span></div>
+    <div class="stat"><b>{counts['medium']}</b><span>추가 확인</span></div>
+    <div class="stat"><b>{counts['low']}</b><span>참고</span></div>
+    <div class="stat"><b>{len(allд)}</b><span>출처 연결</span></div>
   </div>
 </div></div>
 
 <div class="wrap">
   <section class="blk" style="border-top:0">
-    <h2>불일치</h2>
-    <p class="desc">심각도 순. 높음은 그대로 따르면 입찰 자격 상실·서류 반려·절차 위반으로 이어지는 것입니다.
-      발행처 정정이 필요한 {n_up}건은 <a href="../errata/index.html">정오표</a>에 제안 문안까지 정리해 두었습니다.</p>
+    <h2>현행 기준 반영사항</h2>
+    <p class="desc">실무 확인 우선순위 순입니다. 필수 확인 항목은 입찰 자격·서류·절차에 직접 영향을 줄 수 있습니다.
+      공식 근거는 <a href="../errata/index.html">반영 출처</a>에서 한 번에 확인할 수 있습니다.</p>
     {cards}
   </section>
 
@@ -1083,10 +1063,10 @@ def build_verification(items: list[dict]) -> str:
     return page(f"검증 대장 | {SITE_TITLE}", body, depth=1, nav="verify")
 
 
-# ─────────────────────────────────────────────────────────── 정오표
+# ─────────────────────────────────────────────────────────── 반영 출처
 
 def build_errata(items: list[dict]) -> str:
-    """발행처에 전달할 수 있는 형태의 정오표. 그대로 복사해 보낼 수 있어야 한다."""
+    """현행 기준으로 반영한 내용과 공식 출처를 한곳에 모은다."""
     rows = []
     for d in items:
         for x in d["verification"].get("discrepancies", []):
@@ -1094,45 +1074,38 @@ def build_errata(items: list[dict]) -> str:
                 rows.append((d, x))
     rows.sort(key=lambda t: (0 if t[1]["upstream"]["priority"] == "정정 요망" else 1,
                              {"high": 0, "medium": 1, "low": 2}[t[1]["severity"]]))
-    n_fix = sum(1 for _, x in rows if x["upstream"]["priority"] == "정정 요망")
-    src = items[0]["sourceRefs"][0]["document"]
-
     blocks = []
     for i, (d, x) in enumerate(rows, 1):
-        up = x["upstream"]
         ref = next((r for r in d["sourceRefs"]), {})
         blocks.append(f"""<div class="disc" data-sev="{e(x['severity'])}">
   <div class="top">
     <span class="badge plain muted">{i:02d}</span>
-    <span class="badge {'bad' if up['priority'] == '정정 요망' else 'warn'}">{e(up['priority'])}</span>
+    <span class="badge {SEV_TONE[x['severity']]}">{e(SEV_LABEL[x['severity']])}</span>
     <span class="badge plain muted">{e(d['country']['name'])}</span>
     <span class="badge plain muted">{e(ref.get('pages', ''))}쪽 · {e(ref.get('section', ''))}</span>
-    <span class="badge plain muted">{e(UP_STATE_LABEL.get(up['state'], up['state']))}</span>
   </div>
-  <div class="quote src"><b>현재 자료집 서술</b>{e(x['sourceText'])}</div>
-  <div class="quote act"><b>수정 제안</b>{el(up['suggestedText'])}</div>
-  <p class="cite">근거 · {cite_link(d, x['citation'])}</p>
-  <p class="impact">{el(x['impact'])}</p>
+  <h3>{e(x['field'])}</h3>
+  <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
+  <p class="cite">확인 출처 · {cite_link(d, x['citation'])}</p>
+  <p class="act-row">산출물 반영 — {el(x['action'])}</p>
   <p class="act-row"><a href="../model/{e(d['slug'])}/index.html">{e(d['name'])}</a> · {e(x['id'])}</p>
 </div>""")
 
     body = f"""
 <div class="wrap hero" style="padding-bottom:24px">
-  <div class="eyebrow">발행처 전달용</div>
-  <h1>자료집 정오표</h1>
-  <p class="lede">법령 원문 대조에서 나온 항목 중 자료집 수정이 필요한 것을 모았습니다.</p>
-  <p class="meta">대상 · {e(src)} · 정정 요망 {n_fix}건 / 보완 권고 {len(rows) - n_fix}건</p>
+  <div class="eyebrow">공식 원문 대조</div>
+  <h1>현행 기준 반영 출처</h1>
+  <p class="lede">외부 공식 자료로 확인해 산출물에 반영한 기준과 출처를 모았습니다.</p>
+  <p class="meta">반영사항 {len(rows)}건 · 각 항목에서 공식 원문 확인 가능</p>
 </div>
 
 <div class="statbar"><div class="wrap">
   <div style="font-size:13px;color:var(--muted);max-width:70ch">
-    각 항목은 <b>현재 서술 → 수정 제안 → 근거 조문</b> 형태라 그대로 옮겨 전달할 수 있습니다.
-    <b>정정 요망</b>은 실무 손해로 이어지거나 자료집 안에서 서로 모순되는 것,
-    <b>보완 권고</b>는 서술은 맞으나 출처 표기·누락 보완이 필요한 것입니다.
+    각 항목은 <b>현행 기준 → 확인 출처 → 산출물 반영 내용</b> 순으로 정리했습니다.
+    실제 입찰에서는 연결된 공식 원문과 발주처 공고를 다시 확인해야 합니다.
   </div>
   <div class="stats">
-    <div class="stat bad"><b>{n_fix}</b><span>정정 요망</span></div>
-    <div class="stat"><b>{len(rows) - n_fix}</b><span>보완 권고</span></div>
+    <div class="stat ok"><b>{len(rows)}</b><span>출처 확인</span></div>
   </div>
 </div></div>
 
@@ -1140,25 +1113,8 @@ def build_errata(items: list[dict]) -> str:
   <section class="blk" style="border-top:0">
     {''.join(blocks)}
   </section>
-  <section class="blk">
-    <h2>전달 상태</h2>
-    <p class="desc">전달 후 각 항목의 <code>upstream.state</code>를 갱신하면 이 표가 따라옵니다.</p>
-    <div class="panel"><table>
-      <thead><tr><th>항목</th><th>우선순위</th><th>상태</th></tr></thead>
-      <tbody>{''.join(f'''<tr>
-        <td class="name" style="font-weight:600">{e(x['field'])}
-          <p>{e(d['name'])}</p></td>
-        <td><span class="badge {'bad' if x['upstream']['priority'] == '정정 요망' else 'warn'}">{e(x['upstream']['priority'])}</span></td>
-        <td><span class="badge plain muted">{e(UP_STATE_LABEL.get(x['upstream']['state'], x['upstream']['state']))}</span></td>
-      </tr>''' for d, x in rows)}</tbody>
-    </table></div>
-    <p style="margin:18px 0 0;font-size:12.5px;color:var(--muted)">
-      본 정오표는 법령 원문 대조 결과이며, 자료집 발행처의 공식 견해가 아닙니다.
-      전달 여부와 시점은 이 데이터셋 관리자가 판단합니다.
-    </p>
-  </section>
 </div>"""
-    return page(f"자료집 정오표 | {SITE_TITLE}", body, depth=1, nav="errata")
+    return page(f"현행 기준 반영 출처 | {SITE_TITLE}", body, depth=1, nav="errata")
 
 
 # ─────────────────────────────────────────────────────────── 배포용 단일 파일
@@ -1219,7 +1175,7 @@ body{{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo
 </head><body>
 <div class="top">
   <h1>{e(country_name)} 공공조달 제도</h1>
-  <p class="sub">KOICA 참여전략 자료집을 각국 법령 원문과 대조한 한 장 요약 · 자료집 기준일 {e(asof)}</p>
+  <p class="sub">KOICA 2026 참여전략 자료집과 각국 공식 원문을 바탕으로 정리한 한 장 요약 · 기준일 {e(asof)}</p>
   <div class="tabs">{''.join(tabs)}</div>
 </div>
 <div class="frames">{''.join(frames)}</div>

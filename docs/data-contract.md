@@ -16,7 +16,7 @@
 | `country` | 없음(전부 한국) | **신규 필수 블록** | 국가 비교·필터의 기준키 |
 | `LegalBasisKind` | 법률/대통령령/부령… | **법계 중립 8종** | 각국 법령 위계가 상이(Act/Rules/Ordinance/Directive…) |
 | `verification.status` | source-linked / article-verified / needs-review | **4단계로 확장** | 자료집만 있는 상태와 원문 링크 상태를 구분해야 함 |
-| `verification.discrepancies` | 없음 | **신규** | 자료집↔원문 불일치가 본 프로젝트의 핵심 산출물 |
+| `verification.discrepancies` | 없음 | **신규** | 기준자료와 현행 원문의 차이를 내부 추적 |
 | `sourceRefs` | 없음 | **신규 필수** | 모든 서술이 기준문서 어느 부분에서 왔는지 역추적 |
 
 > 원본의 `canvas` 9칸 구조와 `process`(lanes/stages/nodes/edges)는 **그대로 승계**한다.
@@ -44,10 +44,10 @@
 | `data/institutions/{slug}.json` | 제도별 원본 | 수동 |
 | `data/manifest.json` | 국가·제도 진행 대장 | 수동 |
 | `docs/data-contract.md` | 본 문서 | 수동 |
-| `docs/verification-log.md` | 검증 대장(불일치 공개) | `build_docs.py` |
-| `docs/errata.md` | 자료집 정오표 | `build_docs.py` |
+| `docs/verification-log.md` | 현행 기준 확인 대장 | `build_docs.py` |
+| `docs/errata.md` | 현행 기준 반영 출처 | `build_docs.py` |
 | `docs/review-sheet.en.md` | 현지 직원용 영어 검토 시트 | `build_docs.py` |
-| `sources/koica-2025-asia-pacific/` | 자료집 원문 추출 텍스트 | `extract.sh` |
+| `sources/koica-2026/` | 4개 지역판 원문 추출 텍스트 | `extract.sh` |
 | `sources/laws/{country}/` | 대조에 쓴 법령·정책 원문 | 수동 확보 |
 
 ---
@@ -157,7 +157,7 @@ interface DocSet { actor: string; documents: string[]; }
 
 ```ts
 sourceRefs: Array<{
-  document: string;   // 필수. "KOICA 2025 국가별 개발협력사업 참여전략 자료집(아시아·태평양)"
+  document: string;   // 필수. "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)"
   pages: string;      // 필수. 자료집 인쇄 쪽 번호. "10-13"
   pdfPages?: string;  // 선택. PDF 물리 페이지. "7-8"
   section: string;    // 필수. "Ⅲ-1. 협력국 입찰 제도"
@@ -228,7 +228,7 @@ KOICA 자료집에 없는 국가를 별도 보강할 때는 다음 규칙을 적
 | `source-document` | 자료집 기재만 확인. 법령 원문 미연결 | 회색 |
 | `law-linked` | 근거 법령 원문 URL 연결 완료. 조문 대조는 미실시 | 파랑 |
 | `article-verified` | 인용 조문을 원문에서 실제 확인 | 초록 |
-| `needs-review` | 불일치 발견 또는 근거 확인 불가 | 빨강 |
+| `needs-review` | 원문·현장 추가 확인 필요 | 빨강 |
 
 > `article-verified`는 **조문의 존재와 문언 일치**만 뜻한다.
 > 법적 해석·적용 타당성·현행 유효성(개정 반영 여부)은 별도 검토 대상이다.
@@ -314,8 +314,7 @@ upstream priority 기준
 | `userAction` | 입찰 준비자 | 내가 지금 무엇을 다르게 해야 하나 |
 | `upstream` | 자료집 발행처 | 다음 판에서 무엇을 고쳐야 하나 |
 
-`upstream`이 있는 항목은 `docs/errata.md`에 정오표로 모여 발행처에 전달할 수 있는 형태가 된다.
-전달 후에는 `state`를 갱신해 후속을 추적한다.
+`upstream`은 내부 추적용이다. 공개 산출물 `docs/errata.md`에는 현행 기준·확인 출처·산출물 반영 내용만 표시한다.
 
 ### review — 현지 직원이 검증하는 사람이다
 

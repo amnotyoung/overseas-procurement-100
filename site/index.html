@@ -5,6 +5,7 @@
 <title>그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,7 +281,7 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="index.html" aria-current="page">제도 대장</a>
     <a href="verification/index.html">검증 대장</a>
-    <a href="errata/index.html">정오표</a>
+    <a href="errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
@@ -303,7 +305,7 @@ footer.site a{color:var(--muted)}
     <div class="stat"><b>5</b><span>국가</span></div>
     <div class="stat"><b>168</b><span>절차 노드</span></div>
     <div class="stat ok"><b>9</b><span>조문 대조 완료</span></div>
-    <div class="stat bad"><b>17</b><span>불일치 발견</span></div>
+    <div class="stat bad"><b>16</b><span>현행 기준 반영</span></div>
   </div>
 </div></div>
 
@@ -333,7 +335,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">네팔</span></td>
   <td style="font-size:13px;color:var(--muted)">입찰제도</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
-  <td><span class="badge bad">불일치 3</span></td>
+  <td><span class="badge bad">확인사항 3</span></td>
 </tr><tr data-c="네팔" data-a="governance"
   data-s="네팔 조달 거버넌스·감독체계 총리실 산하 ppmo가 표준·정책·전자조달포털·블랙리스트를 관장하되 개별 조달에는 법적으로 관여하지 못하고, 분쟁은 독립 검토위원회가 다루는 이원 구조 nepal">
   <td class="no">02</td>
@@ -342,7 +344,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">네팔</span></td>
   <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
-  <td><span class="badge warn">불일치 2</span></td>
+  <td><span class="badge warn">확인사항 2</span></td>
 </tr><tr data-c="네팔" data-a="pipeline"
   data-s="네팔 oda 사업 발굴·형성 절차 재무부를 단일 관문으로 하는 수원체계에서 n-2년 pcp 제출부터 rod·mou 체결까지 이어지는 무상원조 사업 형성 파이프라인 nepal">
   <td class="no">03</td>
@@ -351,7 +353,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">네팔</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
-  <td><span class="badge bad">불일치 5</span></td>
+  <td><span class="badge bad">확인사항 4</span></td>
 </tr><tr data-c="대한민국(KOICA·발주자)" data-a="bidding"
   data-s="koica 현지입찰 시공자 선정(적격심사) 현지입찰 시설공사에서 예정가격 이하 최저가 입찰자부터 계약이행능력을 심사해 종합평점이 적격통과점수(95점, 100억원 이상 92점) 이상이면 낙찰자로 결정하는 발주자 측 적격심사 제도 republic of korea (koica)">
   <td class="no">04</td>
@@ -414,7 +416,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">캄보디아</span></td>
   <td style="font-size:13px;color:var(--muted)">입찰제도</td>
   <td><span class="badge info">원문 링크 연결</span></td>
-  <td><span class="badge warn">불일치 1</span></td>
+  <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="캄보디아" data-a="governance"
   data-s="캄보디아 조달 거버넌스·감독체계 경제재무부(mef) 아래 국내재원은 공공조달국(gdpp), 외부재원은 국제협력차관관리국(gdicdm)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐 cambodia">
   <td class="no">11</td>
@@ -423,7 +425,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">캄보디아</span></td>
   <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
   <td><span class="badge info">원문 링크 연결</span></td>
-  <td><span class="badge warn">불일치 1</span></td>
+  <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="캄보디아" data-a="pipeline"
   data-s="캄보디아 oda 사업 발굴·형성 절차 무상은 cdc/crdb, 유상은 경제재무부(mef)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 koica 예비조사·pd 심사로 형성되는 절차 cambodia">
   <td class="no">12</td>
@@ -441,7 +443,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">탄자니아</span></td>
   <td style="font-size:13px;color:var(--muted)">입찰제도</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
-  <td><span class="badge bad">불일치 3</span></td>
+  <td><span class="badge bad">확인사항 3</span></td>
 </tr><tr data-c="탄자니아" data-a="governance"
   data-s="탄자니아 조달 거버넌스·감독체계 재정기획부 산하 공공조달규제청(ppra)이 표준·정책·전자조달(nest)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함 tanzania">
   <td class="no">14</td>
@@ -450,7 +452,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">탄자니아</span></td>
   <td style="font-size:13px;color:var(--muted)">조달 거버넌스</td>
   <td><span class="badge info">원문 링크 연결</span></td>
-  <td><span class="badge bad">불일치 1</span></td>
+  <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="탄자니아" data-a="pipeline"
   data-s="탄자니아 oda 사업 발굴·형성 절차 재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, pcp 제출부터 예비·기획조사를 거쳐 재정기획부와 rd 체결로 공식화되는 사업 형성 절차 tanzania">
   <td class="no">15</td>
@@ -459,7 +461,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge plain muted">탄자니아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge muted">자료집 기재</span></td>
-  <td><span class="badge warn">불일치 1</span></td>
+  <td><span class="badge warn">확인사항 1</span></td>
 </tr></tbody>
     </table>
     <div class="empty" id="none" hidden>조건에 맞는 제도가 없습니다.</div>
@@ -468,7 +470,7 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 <script>
 var q=document.getElementById('q'),tb=document.getElementById('tb'),

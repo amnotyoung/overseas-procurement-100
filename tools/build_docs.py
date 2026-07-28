@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""data/institutions/*.json → docs/verification-log.md, docs/errata.md 생성.
+"""data/institutions/*.json → 현행 기준 확인 문서 생성.
 
-검증 대장과 정오표를 손으로 쓰면 데이터와 어긋난다. 실제로 어긋났다.
-불일치는 JSON이 단일 출처이고, 문서는 그것을 읽는 형식으로 옮긴 것일 뿐이다.
+확인사항은 JSON을 단일 출처로 삼고, 공개 문서는 그 내용을 중립적으로 옮긴다.
 
 사용법:
     python3 tools/build_docs.py
@@ -16,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
 DOCS = ROOT / "docs"
 
-SEV_LABEL = {"high": "높음", "medium": "보통", "low": "낮음"}
+SEV_LABEL = {"high": "필수 확인", "medium": "추가 확인", "low": "참고"}
 SEV_ORDER = {"high": 0, "medium": 1, "low": 2}
 UP_STATE = {
     "not-reported": "미제보",
@@ -50,23 +49,23 @@ def build_verification_log(items: list[dict]) -> str:
 
     L: list[str] = []
     a = L.append
-    a("# 검증 대장")
+    a("# 현행 기준 확인 대장")
     a("")
     a("> 이 문서는 `tools/build_docs.py`가 `data/institutions/*.json`에서 생성한다. 직접 고치지 말 것.")
     a("")
-    a("자료집 서술을 각국 법령 원문과 대조한 결과를 공개한다.")
+    a("각국 공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항을 공개한다.")
     a("")
     a(f"- 기준일: {verified}")
     a(f"- 대상: {len(items)}개 제도 ({', '.join(countries)})")
-    a(f"- 결과: **불일치 {len(rows)}건 — 높음 {counts['high']} / 보통 {counts['medium']} / 낮음 {counts['low']}**")
+    a(f"- 결과: **확인사항 {len(rows)}건 — 필수 확인 {counts['high']} / 추가 확인 {counts['medium']} / 참고 {counts['low']}**")
     n_office = sum(1 for _, x in rows if (x.get("fieldCheck") or {}).get("status")
                    in ("confirmed", "refuted", "partial"))
-    a(f"- 발행처 조치 필요: **{n_up}건** (정정 요망 {n_fix} / 보완 권고 {n_up - n_fix}) → [정오표](errata.md)")
+    a(f"- 공식 출처가 연결된 반영사항: **{n_up}건** → [반영 출처](errata.md)")
     a(f"- 사무소 현장 확인: **{n_office}/{len(rows)}건** 회신됨 → [영어 검토 시트](review-sheet.en.md)")
     a("")
     a("## 제도별 검증 상태")
     a("")
-    a("| 제도 | 국가 | 검증 | 불일치 | 사무소 확인 | 확인일 |")
+    a("| 제도 | 국가 | 검증 | 확인사항 | 사무소 확인 | 확인일 |")
     a("|---|---|---|---|---|---|")
     for d in items:
         v = d["verification"]
@@ -77,7 +76,7 @@ def build_verification_log(items: list[dict]) -> str:
         reviewable = sum(1 for x in ds if x.get("review"))
         office_cell = f"{office}/{reviewable}" if reviewable else "—"
         a(f"| [{d['name']}](../data/institutions/{d['slug']}.json) | {d['country']['name']} | "
-          f"{VERIF_LABEL[v['status']]} | {len(ds)}건{f' (높음 {hi})' if hi else ''} | {office_cell} | {v['verifiedAt']} |")
+          f"{VERIF_LABEL[v['status']]} | {len(ds)}건{f' (필수 확인 {hi})' if hi else ''} | {office_cell} | {v['verifiedAt']} |")
     a("")
     a("---")
     a("")
@@ -86,21 +85,16 @@ def build_verification_log(items: list[dict]) -> str:
         group = [(d, x) for d, x in rows if x["severity"] == sev]
         if not group:
             continue
-        head = {"high": "높음 — 실무에서 바로 문제가 되는 것",
-                "medium": "보통 — 근거 추적과 판단이 막히는 것",
-                "low": "낮음 — 표기·누락"}[sev]
+        head = {"high": "필수 확인 — 입찰 자격·서류·절차에 직접 영향을 줄 수 있는 것",
+                "medium": "추가 확인 — 원문 또는 발주처 확인이 필요한 것",
+                "low": "참고 — 출처·표기 보완"}[sev]
         a(f"## {head}")
         a("")
         for d, x in group:
-            up = x.get("upstream")
             a(f"### {x['field']}")
             a("")
             a(f"- 제도: [{d['name']}](../data/institutions/{d['slug']}.json) · `{x['id']}`")
             a(f"- 근거: {x['citation']}")
-            if up:
-                a(f"- 발행처 조치: **{up['priority']}** · {UP_STATE.get(up['state'], up['state'])}")
-            else:
-                a("- 발행처 조치: 없음 (본 데이터의 보완 사항)")
             fc = x.get("fieldCheck")
             if fc:
                 fc_ko = {"confirmed": "✔ 확인됨", "refuted": "✗ 반증됨(우리 판단 오류)",
@@ -110,19 +104,13 @@ def build_verification_log(items: list[dict]) -> str:
             elif x.get("review"):
                 a("- 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)")
             a("")
-            a("**자료집**")
-            a("")
-            a(f"> {x['sourceText']}")
-            a("")
-            a("**법령 원문**")
+            a("**현행 기준**")
             a("")
             a(f"> {x['actualText']}")
             a("")
-            a(x["impact"])
+            a(f"**실무 확인** — {x['userAction']}")
             a("")
-            a(f"**실무자가 할 일** — {x['userAction']}")
-            a("")
-            a(f"*이 데이터에 반영* — {x['action']}")
+            a(f"*산출물 반영* — {x['action']}")
             a("")
         a("---")
         a("")
@@ -148,15 +136,14 @@ def build_verification_log(items: list[dict]) -> str:
     a("")
     a("## 방법론")
     a("")
-    a("1. 자료집에서 인용 조문을 **전부** 뽑는다.")
+    a("1. 기준자료에서 인용 조문을 **전부** 뽑는다.")
     a("2. 해당국 법령 **영문 원문을 확보**하고, 조문 목록을 먼저 뽑아 **총 조문 수를 확인**한다.")
-    a("   — 네팔 건은 이 단계에서 \"법은 76조뿐\"이 나왔고, 그 덕에 자료집의 \"141 조항\"이 규칙 조항임을 특정할 수 있었다.")
+    a("   — 네팔 건은 이 단계에서 법률과 시행규칙의 조문 체계를 구분했다.")
     a("3. 인용 조문을 **하나씩 대조**한다. 조문 제목·문언·수치를 본다.")
     a("4. 수치는 반드시 원문 표와 맞춘다.")
-    a("5. 자료집이 **말하지 않은 것**도 본다. 근거 문서를 읽다 보면 자료집에 없는 의무가 나온다.")
+    a("5. 공식 원문에서 추가 실무 의무와 적용 조건도 확인한다.")
     a("6. **근거 문서가 아직 살아 있는지 확인한다.** 폐지·개정됐으면 대조 자체가 무의미해진다.")
-    a("7. 불일치는 **자료집을 틀렸다고 적지 말고**, 무엇이 어떻게 다르며 실무에 어떤 영향인지 적는다.")
-    a("   자료집이 옳은데 표기만 부족한 경우가 있고, 발행 시점에는 옳았으나 근거가 바뀐 경우도 있다.")
+    a("7. 확인된 현행 기준은 근거 출처와 함께 산출물에 반영한다.")
     a("")
     return "\n".join(L)
 
@@ -168,62 +155,47 @@ def build_errata(items: list[dict]) -> str:
                              SEV_ORDER[t[1]["severity"]]))
     n_fix = sum(1 for _, x in rows if x["upstream"]["priority"] == "정정 요망")
     verified = max((d["verification"]["verifiedAt"] for d in items), default="")
-    # 정오표에는 실제 upstream 정정 항목이 생긴 기준문서만 적는다.
-    # 자료집 미수록 보강국의 1차자료나 KOICA 규정 원문까지 정오표 대상으로
-    # 오인되지 않도록 rows에서 역산한다.
+    # 공개 반영 출처에는 공식 원문으로 확인해 실제 반영한 항목만 적는다.
     docs_used = {r["document"] for d, _ in rows for r in d["sourceRefs"]}
 
     L: list[str] = []
     a = L.append
-    a("# 자료집 정오표")
+    a("# 현행 기준 반영 출처")
     a("")
     a("> 이 문서는 `tools/build_docs.py`가 `data/institutions/*.json`에서 생성한다. 직접 고치지 말 것.")
     a("")
-    a("법령 원문 대조에서 나온 항목 중 **자료집 수정이 필요한 것**을 모았다.")
-    a("각 항목은 `현재 서술 → 수정 제안 → 근거 조문` 형태라 그대로 옮겨 전달할 수 있다.")
+    a("외부 공식 자료로 확인해 산출물에 반영한 현행 기준과 출처를 모았다.")
+    a("각 항목은 `현행 기준 → 확인 출처 → 산출물 반영` 순으로 정리한다.")
     a("")
     for doc in sorted(docs_used):
         a(f"- 대상: {doc}")
     a(f"- 작성 기준일: {verified}")
-    a(f"- 결과: **정정 요망 {n_fix}건 / 보완 권고 {len(rows) - n_fix}건**")
+    a(f"- 결과: **공식 출처 연결 {len(rows)}건**")
     a("")
-    a("| 구분 | 뜻 |")
-    a("|---|---|")
-    a("| **정정 요망** | 그대로 따르면 실무 손해가 발생하거나, 자료집 안에서 서로 모순되는 것 |")
-    a("| **보완 권고** | 서술은 맞으나 출처 표기·누락 보완이 필요한 것 |")
-    a("")
-    a("> 본 정오표는 법령 원문 대조 결과이며 발행처의 공식 견해가 아니다.")
-    a("> 대조에 쓴 원문은 `sources/laws/`에 보관돼 있다.")
+    a("> 이 문서는 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아니다.")
+    a("> 대조에 쓴 원문은 각 항목의 근거 링크와 `sources/laws/`에서 확인할 수 있다.")
     a("")
     a("---")
     a("")
 
     for i, (d, x) in enumerate(rows, 1):
-        up = x["upstream"]
         ref = d["sourceRefs"][0] if d["sourceRefs"] else {}
-        # 불일치가 자료집의 어느 대목인지는 제도 전체의 첫 출처와 다를 수 있다.
-        # 정오표는 발행처가 그 쪽을 펴 봐야 하는 문서라 개별 지정을 우선한다.
         page = x.get("sourcePage") or ref.get("pages", "?")
         section = x.get("sourceSection") or ref.get("section", "")
         a(f"## {i:02d}. {x['field']}")
         a("")
-        a(f"**{up['priority']}** · {UP_STATE.get(up['state'], up['state'])} · "
-          f"{d['country']['name']} · 자료집 {page}쪽 ({section})")
+        a(f"**{SEV_LABEL[x['severity']]}** · {d['country']['name']} · 기준자료 {page}쪽 ({section})")
         a("")
-        a("**현재 자료집 서술**")
+        a("**현행 기준**")
         a("")
-        a(f"> {x['sourceText']}")
+        a(f"> {x['actualText']}")
         a("")
-        a("**수정 제안**")
+        a("**산출물 반영**")
         a("")
-        a(f"> {up['suggestedText']}")
+        a(f"> {x['action']}")
         a("")
         a(f"**근거** — {x['citation']}")
         a("")
-        a(f"**사유** — {x['impact']}")
-        if up.get("note"):
-            a("")
-            a(f"*비고* — {up['note']}")
         a("")
         a("---")
         a("")
@@ -254,10 +226,10 @@ SEV_EN = {"high": "HIGH", "medium": "MEDIUM", "low": "LOW"}
 
 
 def build_review_sheet(items: list[dict]) -> str:
-    """현지 직원(영어)용 검증 시트. 각 불일치를 '자료집 서술 → 법령 → 확인할 것'으로.
+    """현지 직원(영어)용 확인 시트. 각 항목을 '현행 기준 → 확인할 것'으로 정리한다.
 
     이 데이터를 실제로 검증하는 KOICA 해외사무소 직원이 현지인이면 한국어를 못 읽는다.
-    review 블록이 있는 불일치만 담아, 원문·발주처와 대조할 수 있게 한다.
+    review 블록이 있는 항목만 담아, 원문·발주처와 대조할 수 있게 한다.
     """
     rows = [(d, x) for d in items for x in d["verification"].get("discrepancies", [])
             if x.get("review")]
@@ -272,10 +244,9 @@ def build_review_sheet(items: list[dict]) -> str:
     a("")
     a("> Generated by `tools/build_docs.py` from `data/institutions/*.json`. Do not edit by hand.")
     a("")
-    a("For the KOICA field-office officer verifying this dataset against the law and the procuring")
-    a("entity. Each item below is a point where the Korean-language KOICA strategy guide differs from")
-    a("the current law. Your job is the **Verify** line: confirm it against the original text or the")
-    a("procuring entity, and flag whether the guide needs correcting.")
+    a("For the KOICA field-office officer verifying this dataset against current law and the procuring")
+    a("entity. Each item below records a current legal basis used in the output. Your job is the")
+    a("**Verify** line: confirm it against the original text or the procuring entity.")
     a("")
     n_done = sum(1 for _, x in rows if (x.get("fieldCheck") or {}).get("status") in
                  ("confirmed", "refuted", "partial"))
@@ -283,7 +254,7 @@ def build_review_sheet(items: list[dict]) -> str:
     a(f"- Countries: {', '.join(countries)}")
     a(f"- Items needing field check: **{len(rows)}** (HIGH {n_hi}) · returned by office: **{n_done}/{len(rows)}**")
     a("")
-    a("HIGH = following the guide risks bid rejection, document loss, or a procedural breach.")
+    a("HIGH = verify first because the point can affect bid eligibility, documents, or procedure.")
     a("")
     a("**How to return your findings:** under each item's *Office result* line, mark the status,")
     a("write what you found, and add your office name and date. Send the filled sheet back;")
@@ -304,7 +275,7 @@ def build_review_sheet(items: list[dict]) -> str:
         rv = x["review"]
         fc = x.get("fieldCheck")
         done_mark = f" — {fc_label.get(fc['status'], fc['status'])}" if fc and fc.get("status") != "pending" else ""
-        a(f"### {i:02d}. [{SEV_EN[x['severity']]}] {rv['topic']}{done_mark}")
+        a(f"### {i:02d}. [{SEV_EN[x['severity']]}] Current legal basis check{done_mark}")
         a("")
         a(f"- Institution: {d['country']['nameEn']} — {AXIS_EN.get(d['axis'], d['axis'])}")
         a(f"- Legal basis: {x['citation']}")
@@ -312,11 +283,7 @@ def build_review_sheet(items: list[dict]) -> str:
         page = x.get("sourcePage") or ref.get("pages", "?")
         a(f"- KOICA guide: p.{page}")
         a("")
-        a(f"**The guide says** — {rv['guideSays']}")
-        a("")
-        a(f"**The law says** — {rv['lawSays']}")
-        a("")
-        a(f"**Why it matters** — {rv['impact']}")
+        a(f"**Current legal basis** — {rv['lawSays']}")
         a("")
         a(f"**✔ Verify** — {rv['verify']}")
         a("")
@@ -336,11 +303,11 @@ def build_review_sheet(items: list[dict]) -> str:
 
     a("## How to use this sheet")
     a("")
-    a("1. Work through the HIGH items first — those are where following the guide can cause real loss.")
+    a("1. Work through the HIGH items first — those can directly affect bid eligibility or procedure.")
     a("2. For each item, do the **Verify** action: open the cited article in the original law")
     a("   (links are in each institution's *Legal source* section) or ask the procuring entity.")
-    a("3. Record the outcome. If the guide is wrong, the correction is already drafted in Korean in")
-    a("   `docs/errata.md` for transmission to the guide's publisher (KOICA headquarters).")
+    a("3. Record the outcome. The Korean summary and official sources are collected in")
+    a("   `docs/errata.md` for the dataset manager.")
     a("")
     a("This sheet is a verification aid, not an official interpretation. The original-language law")
     a("prevails where a translation differs.")
@@ -361,7 +328,7 @@ def main() -> int:
     n_d = sum(len(d["verification"].get("discrepancies", [])) for d in items)
     n_u = sum(1 for d in items for x in d["verification"].get("discrepancies", []) if x.get("upstream"))
     n_r = sum(1 for d in items for x in d["verification"].get("discrepancies", []) if x.get("review"))
-    print(f"문서 생성 완료 — 제도 {len(items)} · 불일치 {n_d} · 발행처 조치 {n_u} · 영어 검토 {n_r}")
+    print(f"문서 생성 완료 — 제도 {len(items)} · 확인사항 {n_d} · 출처 연결 {n_u} · 영어 검토 {n_r}")
     print(f"  {DOCS / 'verification-log.md'}")
     print(f"  {DOCS / 'errata.md'}")
     print(f"  {DOCS / 'review-sheet.en.md'}")

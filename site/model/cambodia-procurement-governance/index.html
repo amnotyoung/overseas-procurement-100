@@ -5,6 +5,7 @@
 <title>캄보디아 조달 거버넌스·감독체계 | 그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,7 +281,7 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="../../index.html">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
-    <a href="../../errata/index.html">정오표</a>
+    <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
@@ -299,7 +301,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">캄보디아 · Cambodia</span>
     <span class="badge plain muted">조달 거버넌스</span>
     <span class="badge info">원문 링크 연결</span>
-    <span class="badge bad">불일치 1건</span>
+    <span class="badge bad">확인사항 1건</span>
   </div>
   <h1>캄보디아 조달 거버넌스·감독체계</h1>
   <p class="one">경제재무부(MEF) 아래 국내재원은 공공조달국(GDPP), 외부재원은 국제협력차관관리국(GDICDM)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐</p>
@@ -308,7 +310,7 @@ footer.site a{color:var(--muted)}
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>4</b><span>게이트</span></div>
     <div class="tile ok"><b>0</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>1</b><span>불일치</span></div>
+    <div class="tile bad"><b>1</b><span>현행 기준</span></div>
     <div class="tile warn"><b>4</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -354,13 +356,13 @@ footer.site a{color:var(--muted)}
   <div class="cards">
     <div class="card span2"><h3>절차</h3><ol class="steps"><li>MEF가 조달정책·법제도를 총괄, GDPP가 국내재원 조달지침을 수립·제공</li><li>재원 구분 — 국내재원은 GDPP, 외부재원은 GDICDM 관할</li><li>(외부재원) 발주기관과 DP가 재정지원약정(Financing Agreement)을 체결해 방식·절차를 정함</li><li>GDICDM이 발주기관의 SOP 2019 준수를 감독하고 포트폴리오를 관리</li><li>조달 분권화 — 예산 출처별로 감독기관이 나뉨(중앙 GDPP·지방 GDPP·NCDD)</li><li>정부기관별 직접조달 한도 내에서 자체 조달</li><li>GDPP가 조달을 감독·감사, MEF가 사후검토·부정기 검사(신법 신설)</li><li>위반 시 신법의 강화된 벌칙(개인 징역·법인 벌금) 적용</li></ol></div>
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">캄보디아 정부의 모든 공공조달에 적용되며 재원에 따라 관장기관이 갈린다. 조달이 분권화돼 정부기관별 직접조달 한도가 있다 — 주정부 12.5만불, 내무부·국방부·대학병원 25만불, 교육청소년체육부·보건부 37.5만불, 광업에너지부 전력수자원공급 50만불, 전력청 70만불, 나머지 부처 20만불(USD). KOICA 무상사업은 외부재원으로 GDICDM·SOP 2019 관할이며, DP 자체 지침이 우선할 수 있다.</p></div>
-    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">공공조달 시행규정(sub-decree·prakas) — 2012 프레임, 잠정 유효</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">표준문서</span></div></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://www.moj.gov.kh/en/law-regular/page-16/" target="_blank" rel="noopener">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</a></span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">공공조달 하위규정(sub-decree·prakas) — 현행 원문 확인 필요</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">표준문서</span></div></div>
     <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a></b><span>공공조달 중심기관. 신법상 조달정책 총괄, 사후검토·부정기 검사권</span></div><div class="auth"><b><a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">공공조달국(GDPP)</a></b><span>국내재원(locally funded) 조달 관장. 조달정책·법제도 수립, 중앙·주·군/시 정부에 조달지침 제공, 감독·감사. 정부기관 행정·사무용품 및 시설운영 서비스 조달</span></div><div class="auth"><b>국제협력차관관리국(GDICDM)</b><span>외부재원(externally funded) 조달 관장. 발주기관의 SOP 2019 준수 감독, 사업 포트폴리오 관리, 절차 지침 제공</span></div><div class="auth"><b>내무부 지방국가민주적발전위원회(NCDD)</b><span>구(코뮨) 예산 집행 조달 감독</span></div><div class="auth"><b>개발협력파트너(DP)</b><span>외부재원 사업에서 발주기관과 재정지원약정 체결, 자체 조달지침 적용</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">경제재무부(MEF), 공공조달국(GDPP), 국제협력차관관리국(GDICDM), 중앙·주·군/시 정부, 내무부 산하 지방국가민주적발전위원회(NCDD), 개발협력파트너(DP), 산업별 발주부처(MPWT·MISTI·MoH·MoEYS)</p></div>
     <div class="card"><h3>제출서류</h3><div class="docset"><b>GDPP</b><div class="chips"><span class="chip">조달지침(procurement guidelines)</span><span class="chip">감사 결과</span><span class="chip">표준입찰서류</span></div></div><div class="docset"><b>GDICDM</b><div class="chips"><span class="chip">SOP 2019 준수 점검 결과</span><span class="chip">사업 포트폴리오 관리 문서</span><span class="chip">절차 지침</span></div></div><div class="docset"><b>발주기관·DP</b><div class="chips"><span class="chip">재정지원약정(Financing Agreement)</span></div></div></div>
-    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>재원별 이원 구조라 KOICA 무상사업(외부재원)은 GDPP가 아니라 GDICDM·SOP 2019 관할이다 — 국내재원 조달과 절차·감독기관이 다르다</li><li>조달이 분권화돼 예산 출처(중앙·주·군/시·구)마다 감독기관이 달라 관할 확인이 필요하다</li><li>외부재원 사업은 DP 자체 조달지침이 SOP에 우선할 수 있어, 캄보디아 공공조달 규율만으로는 절차를 특정할 수 없다</li><li>근거 법률이 2023 신법으로 교체돼 MEF 사후검토·검사권과 강화된 벌칙이 신설됐으나 자료집에 반영되지 않았다</li></ul></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>재원별 이원 구조라 KOICA 무상사업(외부재원)은 GDPP가 아니라 GDICDM·SOP 2019 관할이다 — 국내재원 조달과 절차·감독기관이 다르다</li><li>조달이 분권화돼 예산 출처(중앙·주·군/시·구)마다 감독기관이 달라 관할 확인이 필요하다</li><li>외부재원 사업은 DP 자체 조달지침이 SOP에 우선할 수 있어, 캄보디아 공공조달 규율만으로는 절차를 특정할 수 없다</li><li>현행 근거는 2023 공공조달법이다. 공식 영문본과 현행 하위규정 전문은 확인하지 못했으므로 직접조달 한도와 세부 감독절차는 재확인해야 한다</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>정부기관별 직접조달 한도가 달라, 사업 규모에 따라 관할·방식이 갈림</li><li>분권화로 지방정부 조달은 지방 예산·절차를 별도 확인해야 함</li></ul></div>
-    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>정부기관별 직접조달 한도(주 12.5만·부처 20만·전력청 70만불 등) — 시행규정 기준. 신규정 제정 시 변경 여부</li><li>2023 신법에서 GDPP·GDICDM의 관할·권한이 변경됐는지 (크메르어 원문 대조 필요)</li><li>MEF 사후검토·부정기 검사권의 발동 요건·절차 — 신법 신설 조항</li><li>SOP 2019가 신법 하에서 개정·유지되는지</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>정부기관별 직접조달 한도(주 12.5만·부처 20만·전력청 70만불 등) — 현행 하위규정 확인 필요</li><li>2023법 아래 GDPP·GDICDM의 현행 관할·권한 — 크메르어 원문 대조 필요</li><li>MEF 사후검토·부정기 검사권의 발동 요건·절차 — 신법 신설 조항</li><li>SOP 2019가 신법 하에서 개정·유지되는지</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../cambodia-oda-project-pipeline/index.html">캄보디아 ODA 사업 발굴·형성 절차</a></div></div>
   </div>
 </section>
@@ -368,56 +370,43 @@ footer.site a{color:var(--muted)}
 
 
 <section class="blk">
-  <h2>자료집 ↔ 원문 불일치 1건</h2>
-  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
-    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 1건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <h2>현행 기준 반영 1건</h2>
+  <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
+    출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">캄보디아</span>
     <span class="badge plain muted">D01</span>
   </div>
   <h3>canvas.legalBasis / 감독체계 근거 법령 및 신설 권한</h3>
-  <div class="quote src"><b>자료집</b>(자료집 Ⅱ-2가 GDPP·GDICDM 이원 구조와 SOP 2019를 서술하나, 근거를 2012법 체계로 전제하고 신법의 MEF 검사권·강화 벌칙을 다루지 않음)</div>
-  <div class="quote act"><b>법령 원문</b>2023 신법이 MEF의 사후검토(post-review)·부정기 검사권을 신설하고 벌칙을 개인 징역·법인 벌금으로 강화했다. 조달 감독의 실체가 강해졌다. 다만 GDPP·GDICDM 이원 구조 자체는 자료집 서술과 부합한다.</div>
-  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</p>
-  <p class="impact">자료집의 이원 구조·SOP 2019 서술은 정확하나, 신법이 부여한 MEF 검사권과 강화된 벌칙이 드러나지 않아 조달 위반·감사 리스크를 과소평가할 수 있다.</p>
-  <div class="todo"><b>실무자가 할 일</b>GDPP(국내재원)·GDICDM(외부재원) 이원 구조는 자료집대로 이해하되, KOICA 무상사업은 GDICDM·SOP 2019 트랙임을 확인한다. 조달 위반 시 벌칙과 MEF 검사권은 2023 신법 기준으로 본다.</div>
+  <div class="quote act"><b>현행 기준</b>현행 근거는 2023 공공조달법(Royal Kram NS/RKM/0523/005)이다. GDPP 공식 페이지는 공사·서비스·컨설팅 조달의 입찰문서 검토, 개찰·협상 참여, 계약 제안 기술평가, 개발파트너 재원 조달 감독을 주요 기능으로 공개한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.moj.gov.kh/en/law-regular/page-16/" target="_blank" rel="noopener">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</a>; GDPP Works and Services Management Department</p>
+  <div class="todo"><b>실무 확인</b>KOICA 무상사업은 외부재원으로 분류해 GDICDM·SOP 2019 트랙을 확인하고, 세부 감독절차와 직접조달 한도는 발주기관에서 재확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Governance framework — new statute&#x27;s oversight powers</p>
-    <p><b>The guide says</b> — The guide describes the two-track structure (GDPP for locally funded, GDICDM for externally funded) and SOP 2019, on the 2012-law framework.</p>
-    <p><b>The law says</b> — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.</p>
-    <p><b>Why it matters</b> — The guide&#x27;s structural description is accurate, but it does not surface the new MEF inspection power or the stronger penalties, which may lead to underestimating audit and compliance risk.</p>
+    <p><b>Current legal basis</b> — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm KOICA grant projects fall under the GDICDM / SOP 2019 track (externally funded). Check penalties and MEF inspection powers against the 2023 law.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 이원 구조·직접조달 한도는 자료집 서술을 유지하고, 신법의 MEF 검사권·강화 벌칙을 authorities·bottlenecks·notes에 반영했다. 크메르어 원문이라 조문 대조는 못 해 law-linked로 둔다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>조직체계 서술에 근거 법령을 &#x27;2023 공공조달법&#x27;으로 갱신하고, MEF 사후검토·부정기 검사권과 강화된 벌칙(개인 징역·법인 벌금)을 추가할 것. GDPP·GDICDM 이원 구조와 SOP 2019 서술은 정확하므로 유지</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 2023 공공조달법과 GDPP 공식 공개기능을 근거로 감독체계를 정리하고, 하위규정 미확인 범위는 현지 확인사항으로 표시했다.</p>
 </div>
 </section>
 
 <section class="blk">
   <h2>검증</h2>
-  <p class="desc">GDPP 공식 사이트와 로펌 해설로 조달 관장기관·현행 법령을 확인. 재원별 이원화(GDPP·GDICDM)와 외부재원 SOP 2019, 분권화·직접조달 한도를 자료집에서 정리. 신법 원문이 크메르어 스캔본이라 조문 verbatim 대조는 미실시.</p>
+  <p class="desc">GDPP·MEF 공식 사이트에서 조달 관장기관과 공개 업무를 확인하고, 캄보디아 법무부 공식 목록에서 2023 공공조달법을 확인했다. 공식 영문본과 현행 하위규정 전문은 확보하지 못했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
-      <p style="margin:0;font-size:13.5px;line-height:1.7">MEF 산하 GDPP(국내재원)·GDICDM(외부재원) 이원 구조, SOP 2019 관할, 분권화 감독체계(중앙·지방 GDPP·NCDD), 정부기관별 직접조달 한도, 신법의 MEF 검사권·강화 벌칙을 확인했다. 신법 조문 대조와 직접조달 한도의 현행 규정 확인은 미완이다.</p>
-      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-02-25</p>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">MEF 산하 GDPP(국내재원)·GDICDM(외부재원) 이원 구조, SOP 2019 관할, 분권화 감독체계를 정리했다. 직접조달 한도와 2023법 세부 조문 확인은 미완이다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2026-02-23</p>
     </div>
-    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://vdb-loi.com/kh_publications/new-developments-under-the-public-procurement-law-2023/" target="_blank" rel="noopener">New Developments under the Public Procurement Law 2023 (로펌 해설)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · VDB Loi</span></li></ul></div>
-    <div class="card span2"><h3>주의</h3><p class="note">캄보디아 조달은 재원별로 이원화된다 — 국내재원(locally funded)은 GDPP, 외부재원(externally funded)은 GDICDM. KOICA 무상사업은 외부재원이라 GDICDM·SOP 2019 트랙이다.</p><p class="note">GDICDM은 발주기관이 &#x27;외부재원 프로젝트/프로그램 조달 표준운영절차(SOP, 2019)&#x27;를 준수하는지 감독하고 사업 포트폴리오를 관리한다. DP 재정지원약정의 특수조건이 SOP에 우선할 수 있다.</p><p class="note">근거 법률이 2023 신법으로 교체되며 MEF의 사후검토·부정기 검사권과 강화된 벌칙이 신설됐다. 시행규정은 2012 프레임이 잠정 유효라 직접조달 한도 등은 아직 구 규정을 따를 수 있다.</p><p class="note">신법 원문은 크메르어이며 공식 영문본을 확보하지 못했다.</p></div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.moj.gov.kh/en/law-regular/page-16/" target="_blank" rel="noopener">Law on Public Procurement (16.05.2023), Royal Kram NS/RKM/0523/005</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">확인 2026-07-28 · Ministry of Justice, Kingdom of Cambodia</span></li><li><a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-28 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-28 · Ministry of Economy and Finance, Cambodia</span></li><li><a class="ref" href="https://vdb-loi.com/kh_publications/new-developments-under-the-public-procurement-law-2023/" target="_blank" rel="noopener">New Developments under the Public Procurement Law 2023 (로펌 해설)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-28 · VDB Loi</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">캄보디아 조달은 재원별로 이원화된다 — 국내재원(locally funded)은 GDPP, 외부재원(externally funded)은 GDICDM. KOICA 무상사업은 외부재원이라 GDICDM·SOP 2019 트랙이다.</p><p class="note">GDICDM은 발주기관이 &#x27;외부재원 프로젝트/프로그램 조달 표준운영절차(SOP, 2019)&#x27;를 준수하는지 감독하고 사업 포트폴리오를 관리한다. DP 재정지원약정의 특수조건이 SOP에 우선할 수 있다.</p><p class="note">현행 근거 법률은 2023 공공조달법이다. GDPP 공식 페이지에서 공사·서비스·컨설팅 조달의 검토·감독 기능을 확인했다.</p><p class="note">공식 영문본과 현행 하위규정 전문은 확보하지 못했다. 직접조달 한도 등은 발주기관에 재확인한다.</p></div>
   </div>
-  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>정부기관별 직접조달 한도 규정 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">직접조달 한도(주 12.5만·부처 20만불 등)의 근거 규정 원문을 특정하지 못했다. 시행규정은 2012 프레임 잠정유효이며 신규정 제정 시 변경될 수 있다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — GDPP의 조달 한도 관련 prakas/sub-decree를 확보해 한도를 대조하고, 신규정 제정 여부를 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3><a class="ref" href="https://data.opendevelopmentcambodia.net/laws_record/public-procurement" target="_blank" rel="noopener">Law on Public Procurement 2023 크메르어 원문</a> <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">신법 원문이 크메르어 스캔본이라 GDPP·GDICDM 권한·감독 조항을 verbatim 대조하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 공식 영문본 확보 시 감독·검사권 조항을 대조한다.</p></div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>정부기관별 직접조달 한도 규정 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">직접조달 한도(주 12.5만·부처 20만불 등)의 현행 근거 규정 원문을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — GDPP의 현행 조달 한도 관련 prakas/sub-decree를 확보해 값을 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3><a class="ref" href="https://data.opendevelopmentcambodia.net/laws_record/public-procurement" target="_blank" rel="noopener">Law on Public Procurement 2023 크메르어 원문</a> <span class="badge plain muted">local-language-only</span></h3><p style="margin:0 0 8px;font-size:13.5px">신법 원문이 크메르어 스캔본이라 GDPP·GDICDM 권한·감독 조항을 verbatim 대조하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 공식 영문본 확보 시 감독·검사권 조항을 대조한다.</p></div>
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     원문 링크 연결 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
   </p>
@@ -431,10 +420,10 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 <script>
-var NODES={"P01": {"id": "P01", "name": "조달정책·법제도 수립", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "MEF · GDPP", "action": "MEF가 조달정책을 총괄하고 GDPP가 법제도·조달지침을 수립한다.", "confidence": 0.85, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "—", "url": ""}]}, "P02": {"id": "P02", "name": "조달지침 제공", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "GDPP", "action": "중앙·주·군/시 정부에 조달지침을 제공한다.", "output_documents": ["조달지침"], "confidence": 0.85}, "P03": {"id": "P03", "name": "재원 구분", "lane": "발주 정부기관", "stage": "G1 재원구분", "type": "gateway", "status": "current", "actor": "발주 정부기관", "action": "국내재원(GDPP)인지 외부재원(GDICDM)인지에 따라 관할·절차가 갈린다.", "confidence": 0.85}, "P04": {"id": "P04", "name": "재정지원약정 체결", "lane": "GDICDM·DP", "stage": "G1 재원구분", "type": "task", "status": "risk", "actor": "발주기관 · DP", "action": "외부재원 사업은 발주기관과 DP가 재정지원약정을 체결해 조달방식·절차를 정한다.", "output_documents": ["재정지원약정(Financing Agreement)"], "blocker": "DP 자체 지침이 SOP에 우선할 수 있다", "confidence": 0.8}, "P05": {"id": "P05", "name": "직접조달(한도 내)", "lane": "발주 정부기관", "stage": "G2 집행", "type": "task", "status": "current", "actor": "발주 정부기관", "action": "정부기관별 직접조달 한도 내에서 자체 조달한다(주 12.5만·부처 20만·전력청 70만불 등).", "confidence": 0.75, "legal_basis": [{"law": "공공조달 시행규정(sub-decree·prakas) — 2012 프레임, 잠정 유효", "article": "직접조달 한도", "url": ""}]}, "P06": {"id": "P06", "name": "SOP 2019 준수 감독", "lane": "GDICDM·DP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDICDM", "action": "GDICDM이 발주기관의 SOP 2019 준수를 감독하고 포트폴리오를 관리한다.", "confidence": 0.8, "legal_basis": [{"law": "외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)", "article": "—", "url": ""}]}, "P07": {"id": "P07", "name": "GDPP 감독·감사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDPP", "action": "국내재원 조달을 예산 출처별(중앙 GDPP·지방 GDPP·NCDD)로 감독·감사한다.", "confidence": 0.8}, "P08": {"id": "P08", "name": "MEF 사후검토·검사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "gateway", "status": "risk", "actor": "MEF", "action": "신법상 MEF가 사후검토와 부정기 검사를 실시한다. 위반 시 강화된 벌칙(개인 징역·법인 벌금).", "confidence": 0.7, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "검사·벌칙", "url": ""}]}};
+var NODES={"P01": {"id": "P01", "name": "조달정책·법제도 수립", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "MEF · GDPP", "action": "MEF가 조달정책을 총괄하고 GDPP가 법제도·조달지침을 수립한다.", "confidence": 0.85, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "—", "url": "https://www.moj.gov.kh/en/law-regular/page-16/"}]}, "P02": {"id": "P02", "name": "조달지침 제공", "lane": "MEF·GDPP", "stage": "G0 정책", "type": "task", "status": "done", "actor": "GDPP", "action": "중앙·주·군/시 정부에 조달지침을 제공한다.", "output_documents": ["조달지침"], "confidence": 0.85}, "P03": {"id": "P03", "name": "재원 구분", "lane": "발주 정부기관", "stage": "G1 재원구분", "type": "gateway", "status": "current", "actor": "발주 정부기관", "action": "국내재원(GDPP)인지 외부재원(GDICDM)인지에 따라 관할·절차가 갈린다.", "confidence": 0.85}, "P04": {"id": "P04", "name": "재정지원약정 체결", "lane": "GDICDM·DP", "stage": "G1 재원구분", "type": "task", "status": "risk", "actor": "발주기관 · DP", "action": "외부재원 사업은 발주기관과 DP가 재정지원약정을 체결해 조달방식·절차를 정한다.", "output_documents": ["재정지원약정(Financing Agreement)"], "blocker": "DP 자체 지침이 SOP에 우선할 수 있다", "confidence": 0.8}, "P05": {"id": "P05", "name": "직접조달(한도 내)", "lane": "발주 정부기관", "stage": "G2 집행", "type": "task", "status": "current", "actor": "발주 정부기관", "action": "정부기관별 직접조달 한도 내에서 자체 조달한다(주 12.5만·부처 20만·전력청 70만불 등).", "confidence": 0.75, "legal_basis": [{"law": "공공조달 하위규정(sub-decree·prakas) — 현행 원문 확인 필요", "article": "직접조달 한도", "url": ""}]}, "P06": {"id": "P06", "name": "SOP 2019 준수 감독", "lane": "GDICDM·DP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDICDM", "action": "GDICDM이 발주기관의 SOP 2019 준수를 감독하고 포트폴리오를 관리한다.", "confidence": 0.8, "legal_basis": [{"law": "외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)", "article": "—", "url": ""}]}, "P07": {"id": "P07", "name": "GDPP 감독·감사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "task", "status": "waiting", "actor": "GDPP", "action": "국내재원 조달을 예산 출처별(중앙 GDPP·지방 GDPP·NCDD)로 감독·감사한다.", "confidence": 0.8}, "P08": {"id": "P08", "name": "MEF 사후검토·검사", "lane": "MEF·GDPP", "stage": "G3 감독", "type": "gateway", "status": "risk", "actor": "MEF", "action": "신법상 MEF가 사후검토와 부정기 검사를 실시한다. 위반 시 강화된 벌칙(개인 징역·법인 벌금).", "confidence": 0.7, "legal_basis": [{"law": "Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)", "article": "검사·벌칙", "url": "https://www.moj.gov.kh/en/law-regular/page-16/"}]}};
 var EDGES=[{"id": "E01", "source": "P01", "target": "P02", "type": "sequence"}, {"id": "E02", "source": "P02", "target": "P03", "type": "message", "label": "지침 제공"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence", "label": "외부재원"}, {"id": "E04", "source": "P03", "target": "P05", "type": "sequence", "label": "국내재원"}, {"id": "E05", "source": "P04", "target": "P06", "type": "sequence"}, {"id": "E06", "source": "P05", "target": "P07", "type": "message", "label": "감사 대상"}, {"id": "E07", "source": "P06", "target": "P08", "type": "sequence"}, {"id": "E08", "source": "P07", "target": "P08", "type": "sequence"}];
 
 var _sel=document.getElementById('sel');

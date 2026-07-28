@@ -5,6 +5,7 @@
 <title>미얀마 공공조달 입찰제도 | 그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,7 +281,7 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="../../index.html">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
-    <a href="../../errata/index.html">정오표</a>
+    <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
@@ -308,7 +310,7 @@ footer.site a{color:var(--muted)}
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>5</b><span>게이트</span></div>
     <div class="tile ok"><b>7</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>0</b><span>불일치</span></div>
+    <div class="tile bad"><b>0</b><span>현행 기준</span></div>
     <div class="tile warn"><b>5</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -425,7 +427,7 @@ footer.site a{color:var(--muted)}
       <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-26 · 자료집 기준일 2026-07-26</p>
     </div>
     <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.lincolnmyanmar.com/wp-content/uploads/2023/02/SAC-Procurement-Directive.pdf" target="_blank" rel="noopener">Directive on public procurement, and on the disposal and lease of state-owned assets</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 ¶¶1-16, 25-28</span><span class="ar">확인 2026-07-26 · Office of the State Administration Council (English convenience translation by Lincoln Legal Services)</span></li><li><a class="ref" href="https://www.lincolnmyanmar.com/wp-content/uploads/2019/04/Tender-procedure-Presidents-Office-1-2017_NoCopy.pdf" target="_blank" rel="noopener">Tender procedures to be followed by government departments and organizations in construction, purchase, procurement of services, lease and sale</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 ¶¶3-12, 16-25, 37-48, 50</span><span class="ar">확인 2026-07-26 · President’s Office (English convenience translation by Lincoln Legal Services)</span></li><li><a class="ref" href="https://www.ahp.id/clientalert/2026-05-21_Guide-to-Procurement-of-Infrastructure-Projects-in-Southeast-Asia.pdf" target="_blank" rel="noopener">Guide to Procurement of Infrastructure Projects in Southeast Asia (2026)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 Myanmar chapter pp.39-44</span><span class="ar">확인 2026-07-26 · Rajah &amp; Tann Asia</span></li></ul></div>
-    <div class="card span2"><h3>주의</h3><p class="note">미얀마는 KOICA 2025 아시아·태평양 자료집 수록 11개국 밖의 보강 국가다. 따라서 자료집↔법령 불일치는 산출하지 않고, 1차 법규·정책 원문을 기준으로 직접 정규화했다.</p><p class="note">2017 지침은 1천만/1억 짯을 기준으로 했지만 2022 지침은 2천만/2억 짯으로 변경했다. 두 지침이 충돌하면 2022 지침이 우선한다(¶28).</p><p class="note">2022 지침은 종전 지침을 열거한 뒤 충돌 시 우선한다고만 규정한다. 종전 지침의 비충돌 규정은 보충적으로 남는 것으로 읽되, 실제 입찰서류를 최종 기준으로 삼아야 한다.</p><p class="note">2022·2017 지침 영문본은 Lincoln Legal Services의 비공식 편의번역이며 &#x27;accuracy not guaranteed&#x27;라고 표시돼 있다.</p></div>
+    <div class="card span2"><h3>주의</h3><p class="note">미얀마는 KOICA 2026 아시아 및 태평양 자료집 미수록 보강 국가다. 1차 법규·정책 원문을 기준으로 직접 정규화했다.</p><p class="note">2017 지침은 1천만/1억 짯을 기준으로 했지만 2022 지침은 2천만/2억 짯으로 변경했다. 두 지침이 충돌하면 2022 지침이 우선한다(¶28).</p><p class="note">2022 지침은 종전 지침을 열거한 뒤 충돌 시 우선한다고만 규정한다. 종전 지침의 비충돌 규정은 보충적으로 남는 것으로 읽되, 실제 입찰서류를 최종 기준으로 삼아야 한다.</p><p class="note">2022·2017 지침 영문본은 Lincoln Legal Services의 비공식 편의번역이며 &#x27;accuracy not guaranteed&#x27;라고 표시돼 있다.</p></div>
   </div>
   <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>Office of the State Administration Council Directive No. 1/2022 미얀마어 관보 원문 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">접근 가능한 영문본은 민간 로펌의 비공식 편의번역이며 미얀마어 관보 원문 URL을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 현지 사무소가 관보 원문을 확보해 금액구간·승인기관·적용 제외 문언을 대조한다.</p></div><div class="card" style="margin-bottom:12px"><h3>President’s Office Directive No. 7/2020 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">건설공사 입찰의 세부 절차를 정한 지침 원문을 저장소에 확보하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 건설공사 입찰을 준비할 때 Directive No. 7/2020 원문과 해당 부처 표준입찰서류를 추가 대조한다.</p></div>
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
@@ -441,7 +443,7 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 <script>
 var NODES={"P01": {"id": "P01", "name": "예산·조달계획 확인", "lane": "발주부서·입찰위원회", "stage": "G0 계획", "type": "task", "status": "done", "actor": "발주부서·입찰위원회", "action": "승인예산, 사업범위, 예상금액을 확인하고 조달계획을 세운다.", "output_documents": ["승인예산", "조달계획"], "confidence": 0.9, "legal_basis": [{"law": "President’s Office Directive No. 1/2017", "article": "¶¶17-19", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2019/04/Tender-procedure-Presidents-Office-1-2017_NoCopy.pdf"}]}, "P02": {"id": "P02", "name": "조달방식 선택", "lane": "발주부서·입찰위원회", "stage": "G1 방식·승인", "type": "gateway", "status": "current", "actor": "입찰위원회", "action": "가격제안요청·공개·제한·2단계·직접조달 중 요건에 맞는 방식을 정한다. 공개입찰이 원칙이다.", "confidence": 0.9, "legal_basis": [{"law": "Office of the State Administration Council Directive No. 1/2022", "article": "¶¶3-8", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2023/02/SAC-Procurement-Directive.pdf"}]}, "P03": {"id": "P03", "name": "제한·직접조달 승인", "lane": "승인기관", "stage": "G1 방식·승인", "type": "gateway", "status": "risk", "actor": "기관 관리위원회 · 국정관리평의회 의장 또는 연방정부", "action": "제한·직접조달은 1억 짯 미만 기관 관리위원회, 1억 짯 이상 상위 승인을 받는다.", "blocker": "상위 승인 전에는 제한·직접조달로 진행할 수 없음", "confidence": 0.85, "legal_basis": [{"law": "Office of the State Administration Council Directive No. 1/2022", "article": "¶9", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2023/02/SAC-Procurement-Directive.pdf"}]}, "P04": {"id": "P04", "name": "입찰서류 작성", "lane": "발주부서·입찰위원회", "stage": "G1 방식·승인", "type": "task", "status": "waiting", "actor": "발주부서·입찰위원회", "action": "공고, 사양, 지시사항, 평가계획, 계약조건을 작성한다.", "output_documents": ["입찰공고", "사양서", "평가기준", "계약조건"], "confidence": 0.85, "legal_basis": [{"law": "President’s Office Directive No. 1/2017", "article": "¶¶19-20", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2019/04/Tender-procedure-Presidents-Office-1-2017_NoCopy.pdf"}]}, "P05": {"id": "P05", "name": "금액별 공고", "lane": "발주부서·입찰위원회", "stage": "G2 공고·제출", "type": "notice", "status": "current", "actor": "입찰위원회", "action": "2천만~2억 짯은 게시판 7일, 2억 짯 초과는 국영신문 2회와 부처 웹사이트 14일 공고한다.", "confidence": 0.9, "legal_basis": [{"law": "Office of the State Administration Council Directive No. 1/2022", "article": "¶10", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2023/02/SAC-Procurement-Directive.pdf"}]}, "P06": {"id": "P06", "name": "입찰서 제출", "lane": "입찰자", "stage": "G2 공고·제출", "type": "task", "status": "waiting", "actor": "입찰자", "action": "입찰서류가 정한 형식·기한에 기술·가격·자격서류와 보증을 제출한다.", "output_documents": ["입찰서", "기술·가격제안", "자격증빙", "입찰보증(요구 시)"], "confidence": 0.8}, "P07": {"id": "P07", "name": "개찰·평가", "lane": "발주부서·입찰위원회", "stage": "G3 평가", "type": "task", "status": "waiting", "actor": "입찰위원회", "action": "공고된 기술·가격·자격 기준으로 평가하고 결과보고서를 작성한다.", "output_documents": ["개찰기록", "평가보고서"], "confidence": 0.85, "legal_basis": [{"law": "President’s Office Directive No. 1/2017", "article": "¶¶23-30", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2019/04/Tender-procedure-Presidents-Office-1-2017_NoCopy.pdf"}]}, "P08": {"id": "P08", "name": "낙찰·계약", "lane": "발주부서·입찰위원회", "stage": "G4 계약", "type": "gateway", "status": "waiting", "actor": "입찰위원회 · 낙찰자", "action": "낙찰을 통지하고 필요한 등록·이행보증을 확인한 뒤 계약을 체결한다.", "output_documents": ["낙찰통지", "이행보증", "계약서"], "confidence": 0.8}, "P09": {"id": "P09", "name": "계약관리", "lane": "발주부서·입찰위원회", "stage": "G4 계약", "type": "task", "status": "waiting", "actor": "발주부서·계약관리자", "action": "계약 발효부터 완료까지 납품·공정·지급·변경·분쟁을 관리한다.", "confidence": 0.85, "legal_basis": [{"law": "Office of the State Administration Council Directive No. 1/2022", "article": "¶¶14-16", "url": "https://www.lincolnmyanmar.com/wp-content/uploads/2023/02/SAC-Procurement-Directive.pdf"}]}};

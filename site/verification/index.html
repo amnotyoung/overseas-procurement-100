@@ -5,6 +5,7 @@
 <title>검증 대장 | 그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,554 +281,322 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="../index.html">제도 대장</a>
     <a href="../verification/index.html" aria-current="page">검증 대장</a>
-    <a href="../errata/index.html">정오표</a>
+    <a href="../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
 
 <div class="wrap hero" style="padding-bottom:24px">
-  <div class="eyebrow">공개 검증</div>
-  <h1>검증 대장</h1>
-  <p class="lede">자료집 서술을 각국 법령 원문과 대조한 결과를 모두 공개합니다.</p>
-  <p class="meta">불일치 17건 · 높음 5 / 보통 9 / 낮음 3</p>
+  <div class="eyebrow">공식 원문 대조</div>
+  <h1>현행 기준 확인 대장</h1>
+  <p class="lede">각국 공식 법령·기관 원문으로 확인한 기준과 실무 확인사항을 공개합니다.</p>
+  <p class="meta">확인사항 16건 · 필수 확인 4 / 추가 확인 9 / 참고 3</p>
 </div>
 
 <div class="statbar"><div class="wrap">
   <div style="font-size:13px;color:var(--muted);max-width:56ch">
-    자료집이 틀렸다고 적지 않습니다. 무엇이 어떻게 다르며 실무에 어떤 영향인지 적고,
-    <b>실무자가 할 일</b>과 <b>자료집 정정 제안</b>까지 붙입니다.
+    확인된 현행 기준을 산출물에 반영하고, 근거 원문과
+    <b>실무 확인사항</b>을 함께 제시합니다.
   </div>
   <div class="stats">
-    <div class="stat bad"><b>5</b><span>높음</span></div>
-    <div class="stat"><b>9</b><span>보통</span></div>
-    <div class="stat"><b>3</b><span>낮음</span></div>
-    <div class="stat"><b>9</b><span>정정 요망</span></div>
-    <div class="stat"><b>8</b><span>보완 권고</span></div>
+    <div class="stat bad"><b>4</b><span>필수 확인</span></div>
+    <div class="stat"><b>9</b><span>추가 확인</span></div>
+    <div class="stat"><b>3</b><span>참고</span></div>
+    <div class="stat"><b>16</b><span>출처 연결</span></div>
   </div>
 </div></div>
 
 <div class="wrap">
   <section class="blk" style="border-top:0">
-    <h2>불일치</h2>
-    <p class="desc">심각도 순. 높음은 그대로 따르면 입찰 자격 상실·서류 반려·절차 위반으로 이어지는 것입니다.
-      발행처 정정이 필요한 17건은 <a href="../errata/index.html">정오표</a>에 제안 문안까지 정리해 두었습니다.</p>
+    <h2>현행 기준 반영사항</h2>
+    <p class="desc">실무 확인 우선순위 순입니다. 필수 확인 항목은 입찰 자격·서류·절차에 직접 영향을 줄 수 있습니다.
+      공식 근거는 <a href="../errata/index.html">반영 출처</a>에서 한 번에 확인할 수 있습니다.</p>
     <div class="disc" data-sev="high">
   <div class="top">
-    <span class="badge bad">심각도 높음</span>
+    <span class="badge bad">필수 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.submittedDocuments[외국인 입찰자].documents</h3>
-  <div class="quote src"><b>자료집</b>대리인이 네팔인인 경우, 대리인의 주민등록 등본과 입찰 위임장 제출</div>
-  <div class="quote act"><b>법령 원문</b>If he/she is a local agent, the attested copy of his/her Permanent Account Number Registration Certificate and a letter of acceptance by him/her to become an agent</div>
-  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(1)(d)</p>
-  <p class="impact">자료집대로 주민등록 등본을 준비하면 법정 요구서류인 PAN(영구계좌번호) 등록증명서 인증등본을 빠뜨리게 된다. PAN은 세무등록번호로 주민등록과 전혀 다른 서류이며, 누락 시 입찰서가 심사에서 제외될 수 있다. 또한 &#x27;입찰 위임장&#x27;은 원문상 &#x27;대리인 수락서(letter of acceptance)&#x27;로, 위임 방향이 반대인 문서다.</p>
-  <div class="todo"><b>실무자가 할 일</b>네팔 입찰에 현지 대리인을 세운다면 대리인의 PAN 등록증명서 인증등본과 대리인 수락서를 준비한다. 주민등록 등본을 준비했다면 요구서류가 아니므로 다시 받아야 한다.</div>
+  <div class="quote act"><b>현행 기준</b>If he/she is a local agent, the attested copy of his/her Permanent Account Number Registration Certificate and a letter of acceptance by him/her to become an agent</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(1)(d)</p>
+  <div class="todo"><b>실무 확인</b>네팔 입찰에 현지 대리인을 세운다면 대리인의 PAN 등록증명서 인증등본과 대리인 수락서를 준비한다. 주민등록 등본을 준비했다면 요구서류가 아니므로 다시 받아야 한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Documents required from a foreign bidder&#x27;s local agent</p>
-    <p><b>The guide says</b> — The KOICA guide states that a Nepali (local) agent must submit a resident registration document and a power of attorney.</p>
-    <p><b>The law says</b> — Public Procurement Rules 2064 (2007) r.39(1)(d) requires the attested copy of the agent&#x27;s Permanent Account Number (PAN) Registration Certificate and a letter of acceptance to become an agent.</p>
-    <p><b>Why it matters</b> — PAN is a tax registration number, entirely different from a resident registration. Preparing per the guide omits a mandatory document and the bid may be excluded from evaluation. The &#x27;power of attorney&#x27; is in fact a &#x27;letter of acceptance&#x27; — a different document.</p>
+    <p><b>Current legal basis</b> — Public Procurement Rules 2064 (2007) r.39(1)(d) requires the attested copy of the agent&#x27;s Permanent Account Number (PAN) Registration Certificate and a letter of acceptance to become an agent.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Check the procuring entity&#x27;s standard bidding documents against PPR r.39(1)(d): confirm a local agent must provide a PAN registration certificate and a letter of acceptance, not a resident registration document.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 제출서류를 &#x27;PAN 등록증명서 인증등본 + 대리인 수락서&#x27;로 교정했다. 실무 준비 시 원문 r.39(1)(d)를 기준으로 삼을 것.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>대리인이 네팔인인 경우, 대리인의 PAN(영구계좌번호) 등록증명서 인증등본과 대리인 수락서(letter of acceptance) 제출 [PPR 2007 r.39(1)(d)]</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 제출서류를 &#x27;PAN 등록증명서 인증등본 + 대리인 수락서&#x27;로 교정했다. 실무 준비 시 원문 r.39(1)(d)를 기준으로 삼을 것.</p>
 </div><div class="disc" data-sev="high">
   <div class="top">
-    <span class="badge bad">심각도 높음</span>
+    <span class="badge bad">필수 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
   <h3>canvas.procedure / 사업 발굴 착수 지점</h3>
-  <div class="quote src"><b>자료집</b>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성</div>
-  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.3.2(k) — 모든 수준의 정부기관·헌법기관·공기업과 정부 출연·보조 기관은 대외원조를 구하거나, 공식 요청·제안, 협상, 정보 제공, 개념서와 제안서에 관한 서신교환, MoU 또는 협정 체결에 앞서 재무부의 사전 승인을 받아야 한다. §3.3.5(b) — 개발파트너는 어떤 형태의 대외원조를 동원하기 전에도 재무부의 승인을 받아야 한다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(k), §3.3.5(b)</p>
-  <p class="impact">자료집대로 수원기관 부처와 먼저 협의를 시작하면, 해당 부처는 재무부 사전 승인 없이 정보를 제공하거나 협의할 수 없는 상태다. 절차의 출발점이 &#x27;수원기관 협의&#x27;가 아니라 &#x27;재무부 승인&#x27;이라는 점이 드러나지 않아, 사업 형성 초기 접촉이 정책 위반으로 지적되거나 뒤늦게 승인을 받느라 일정이 밀릴 수 있다. 이 요건은 자료집이 전제한 2019년 정책에도 있었고 2025년 정책에도 그대로 남았다.</p>
-  <div class="todo"><b>실무자가 할 일</b>사업 발굴을 위해 수원기관 부처에 먼저 연락하지 않는다. 재무부 국제경제관계국을 통한 접촉 경로를 먼저 확인하고, 수원기관이 재무부 사전 승인을 받았는지 확인한 뒤 협의를 진행한다. 공여기관 자신도 원조 동원 전 재무부 승인 대상이다.</div>
+  <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(k) — 모든 수준의 정부기관·헌법기관·공기업과 정부 출연·보조 기관은 대외원조를 구하거나, 공식 요청·제안, 협상, 정보 제공, 개념서와 제안서에 관한 서신교환, MoU 또는 협정 체결에 앞서 재무부의 사전 승인을 받아야 한다. §3.3.5(b) — 개발파트너는 어떤 형태의 대외원조를 동원하기 전에도 재무부의 승인을 받아야 한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(k), §3.3.5(b)</p>
+  <div class="todo"><b>실무 확인</b>사업 발굴을 위해 수원기관 부처에 먼저 연락하지 않는다. 재무부 국제경제관계국을 통한 접촉 경로를 먼저 확인하고, 수원기관이 재무부 사전 승인을 받았는지 확인한 뒤 협의를 진행한다. 공여기관 자신도 원조 동원 전 재무부 승인 대상이다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Where ODA project formation actually starts</p>
-    <p><b>The guide says</b> — The guide says grant projects are found through consultation between the donor agency and the line ministry.</p>
-    <p><b>The law says</b> — Foreign Aid Mobilization Policy 2025 §3.3.2(k) requires government agencies to obtain prior Ministry of Finance approval before seeking aid, making proposals, negotiating, sharing information, corresponding on concept papers, or signing MoUs; §3.3.5(b) requires development partners to obtain Ministry approval before mobilizing any aid.</p>
-    <p><b>Why it matters</b> — Starting with the line ministry skips the prerequisite: that ministry cannot share information or consult without prior MoF approval. Early contact may be flagged as a policy breach or delayed while approval is obtained.</p>
+    <p><b>Current legal basis</b> — Foreign Aid Mobilization Policy 2025 §3.3.2(k) requires government agencies to obtain prior Ministry of Finance approval before seeking aid, making proposals, negotiating, sharing information, corresponding on concept papers, or signing MoUs; §3.3.5(b) requires development partners to obtain Ministry approval before mobilizing any aid.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm the MoF (International Economic Relations Division) approval route before contacting a line ministry, and check the recipient agency has prior MoF approval. This applies to the donor agency itself too (§3.3.5(b)).</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — procedure 1~2단계에 재무부 사전 승인을 명시하고, 근거를 폐지된 IDCP §5.2.2에서 현행 FAMP §3.3.2(k)·§3.3.5(b)로 교체했다. 종전 D01에 포함했던 국가계획위원회(NPC) 동의 요건은 2025년 정책에서 삭제됐으므로 함께 제거했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>무상개발협력사업 발굴은 공여기관이 해당 수원기관 부처와 협의를 통해 발굴·형성. 단, 네팔 정부기관은 대외원조에 관한 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결에 앞서 재무부의 사전 승인을 받아야 하며, 개발파트너도 원조 동원 전 재무부 승인이 필요함 [대외원조동원정책 2025 §3.3.2(k), §3.3.5(b)]</div>
-
-</div>
+  <p class="act-row">산출물 반영 — procedure 1~2단계에 재무부 사전 승인을 명시하고 근거를 현행 FAMP §3.3.2(k)·§3.3.5(b)로 반영했다.</p>
 </div><div class="disc" data-sev="high">
   <div class="top">
-    <span class="badge bad">심각도 높음</span>
-    <span class="badge plain muted">네팔</span>
-    <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
-  </div>
-  <h3>canvas.legalBasis / 근거 정책의 현행 여부</h3>
-  <div class="quote src"><b>자료집</b>(자료집 전반이 International Development Cooperation Policy 2019를 전제로 수원체계를 서술)</div>
-  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.7.1 — &quot;International Development Cooperation Policy, 2076 (2019 AD) has been repealed.&quot; 네팔 정부 승인일은 2025-04-21이다. §3.7.2는 종전 정책 아래 완료된 활동의 효력을 유지한다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.7.1, §3.7.2 (승인 2025-04-21)</p>
-  <p class="impact">자료집 발행일(2025-02-25) 기준으로는 2019년 정책이 유효했으므로 자료집 서술 자체는 당시로서 옳았다. 다만 2025-04-21 이후로는 근거 정책이 바뀌었고, 특히 양허성 차관 1천만 달러 문턱과 국가계획위원회 동의 요건이 사라졌으며 조세면제 범위가 좁아졌다. 자료집을 현행 기준으로 그대로 쓰면 없어진 요건을 준비하거나 면제받을 수 없는 세금을 사업비에서 누락하게 된다.</p>
-  <div class="todo"><b>실무자가 할 일</b>2025년 4월 이후 사업에는 자료집의 수원체계 서술을 그대로 적용하지 않는다. 특히 차관 최소 규모 문턱은 없어졌고, 조세면제는 무상원조의 세금 납부 사용 금지·차관사업 면제 배제·국내 생산품 수입 면제 배제로 좁아졌으므로 기자재 조달 예산을 다시 계산한다.</div>
-  <details class="review">
-  <summary>Field verification (English)</summary>
-  <div class="rv">
-    <p class="rv-topic">Whether the guide&#x27;s underlying aid policy is still in force</p>
-    <p><b>The guide says</b> — The guide describes Nepal&#x27;s aid-receiving system on the basis of the International Development Cooperation Policy 2019.</p>
-    <p><b>The law says</b> — Foreign Aid Mobilization Policy 2025 §3.7.1 repealed the 2019 policy; the new policy was approved on 21 April 2025.</p>
-    <p><b>Why it matters</b> — The 2019 policy was valid at the guide&#x27;s publication (25 Feb 2025) but has since been replaced. The USD 10 million concessional-loan threshold and the National Planning Commission consent requirement are gone, and tax exemption has narrowed. Applying the guide as-is prepares for requirements that no longer exist.</p>
-    <p class="rv-verify"><b>✔ Verify</b> — For projects after April 2025, use the Foreign Aid Mobilization Policy 2025, not the 2019 policy. Recheck loan thresholds and tax-exemption assumptions against the new policy.</p>
-  </div>
-</details>
-
-  <p class="act-row">이 데이터에 반영 — 본 레코드의 근거를 FAMP 2025로 전면 교체하고, 승계·삭제·축소·신설을 verification.notes에 항목별로 정리했다. 폐지된 2019년 정책은 대조 이력으로 sources에 남겼다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>차기 개정판에서 네팔 수원체계의 근거를 &#x27;대외원조동원정책 2025(Foreign Aid Mobilization Policy, 2025, 2025-04-21 승인)&#x27;로 교체할 것. 국제개발협력정책 2019는 동 정책 §3.7.1로 폐지됨. 반영이 필요한 주요 변경 — ① 양허성 차관 사업당 1천만 달러 문턱 삭제 ② 사업 제안 시 국가계획위원회 동의 요건 삭제 ③ 조세면제 축소(§3.6.1) ④ 차관 협상 전 내각 원칙동의 신설(§3.3.1(e))</div>
-
-</div>
-</div><div class="disc" data-sev="high">
-  <div class="top">
-    <span class="badge bad">심각도 높음</span>
+    <span class="badge bad">필수 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.legalBasis / 근거 법령의 현행 여부</h3>
-  <div class="quote src"><b>자료집</b>탄자니아 입찰 관련 법규 · Public Procurement Regulations 2013 — 물품·용역·공사에 대한 입찰절차, 자격, 계약관리 등에 대해 상세히 기술</div>
-  <div class="quote act"><b>법령 원문</b>PPA 2023 §131(1) — &quot;The Public Procurement Act of 2011 is hereby repealed.&quot; 새 법은 2024-06-17 시행(GN 455). 규정도 Public Procurement Regulations 2025(GN No. 261)로 교체됐다. 새 규정 reg.23(6)은 보증 금액을 규정에 고정하지 않고 입찰서류에 위임한다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §131(1); Public Procurement Regulations, 2025 (GN No. 261)</p>
-  <p class="impact">자료집 발행일(2025-02-25) 기준으로 이미 8개월 전에 새 법·규정이 시행됐다. 자료집을 그대로 따르면 폐지된 법(PPA 2011)과 구 규정(PPR 2013)의 조문·보증률을 적용하게 되고, 신설된 force account 문턱·가격상한·NeST 전자조달 의무·지역업체 우대를 놓친다. 특히 보증 금액이 입찰서류 위임으로 바뀌어, 자료집의 고정 비율을 전제로 예산·보증을 잡으면 실제 발주 조건과 어긋날 수 있다.</p>
-  <div class="todo"><b>실무자가 할 일</b>2024년 6월 이후 탄자니아 입찰에는 자료집의 PPR 2013 기준을 그대로 적용하지 않는다. 발주 건의 입찰서류에서 보증 금액·형태를 직접 확인하고, NeST 등록과 지역업체 우대 요건을 사전에 점검한다.</div>
+  <div class="quote act"><b>현행 기준</b>PPA 2023 §131(1)은 Public Procurement Act 2011을 폐지한다. 새 법은 2024-06-17 시행(GN 455)됐고, 현행 하위규정은 Public Procurement Regulations 2024다. 공식 영문본은 GN No. 261(2025-04-25)로 공표됐으며 reg.23(6)은 보증 금액을 입찰서류에 위임한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §131(1); <a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</a></p>
+  <div class="todo"><b>실무 확인</b>발주 건의 입찰서류에서 보증 금액·형태를 직접 확인하고, NeST 등록과 지역업체 우대 요건을 사전에 점검한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Whether the guide&#x27;s procurement law is still in force</p>
-    <p><b>The guide says</b> — The guide bases Tanzania&#x27;s bidding rules on the Public Procurement Regulations 2013 (and the 2011 Act).</p>
-    <p><b>The law says</b> — Public Procurement Act No. 10 of 2023 §131(1) repealed the 2011 Act; the new Act took effect on 17 June 2024 (GN 455), and the regulations were replaced by the Public Procurement Regulations 2025 (GN No. 261).</p>
-    <p><b>Why it matters</b> — The new Act and regulations took effect about eight months before the guide was published (25 Feb 2025) — the guide already cited repealed law. Following it applies the old fixed surety rates and misses the new force-account threshold, price cap, mandatory NeST e-procurement, and stronger local-supplier preference.</p>
-    <p class="rv-verify"><b>✔ Verify</b> — For tenders after June 2024, apply PPA 2023 and PPR 2025. Confirm surety amounts in each tender&#x27;s documents, and check NeST registration and local-preference requirements before bidding.</p>
+    <p><b>Current legal basis</b> — Public Procurement Act No. 10 of 2023 §131(1) repealed the 2011 Act; the new Act took effect on 17 June 2024 (GN 455). The current regulations are the Public Procurement Regulations 2024; their official English version was published as GN No. 261 of 2025.</p>
+    <p class="rv-verify"><b>✔ Verify</b> — Apply PPA 2023 and PPR 2024. Confirm surety amounts in each tender&#x27;s documents, and check NeST registration and local-preference requirements before bidding.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 근거를 PPA 2023 + PPR 2025로 교체하고, 자료집이 참조한 PPR 2013은 구 규정으로 legalBasis에 병기했다. 보증률 수치 대조는 새 규정 Third Schedule 정독이 필요해 fieldVerification·unresolved에 남겼다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>탄자니아 입찰 관련 법규를 현행 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 교체할 것. Public Procurement Act 2011은 §131로 폐지됨. 반영 필요 사항 — ① 보증 금액의 입찰서류 위임(reg.23(6)) ② force account 문턱(§76) ③ 가격상한 신설(§74) ④ NeST 전자조달 의무 ⑤ 지역업체·현지생산품 우대 강화</div>
-
-</div>
+  <p class="act-row">산출물 반영 — PPA 2023과 PPR 2024를 기준으로 입찰 절차와 보증 요건을 반영하고, 공식 영문본의 공표번호(GN 261/2025)를 함께 표시했다.</p>
 </div><div class="disc" data-sev="high">
   <div class="top">
-    <span class="badge bad">심각도 높음</span>
+    <span class="badge bad">필수 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계 →</a>
   </div>
   <h3>canvas.legalBasis / PPRA 근거 법령의 현행 여부</h3>
-  <div class="quote src"><b>자료집</b>(자료집 Ⅱ-2가 PPRA 조직·부서 기능을 서술하나, 근거 법령을 Public Procurement Act 2011 체계로 전제)</div>
-  <div class="quote act"><b>법령 원문</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §8, §74, §131(1)</p>
-  <p class="impact">PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그대로 쓰면 신설된 가격상한·NeST 전자조달 의무·강화된 지역업체 우대를 놓치고, 폐지된 법의 조문 번호로 근거를 찾게 된다.</p>
-  <div class="todo"><b>실무자가 할 일</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
+  <div class="quote act"><b>현행 기준</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §8, §74, §131(1)</p>
+  <div class="todo"><b>실무 확인</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Legal basis for PPRA&#x27;s mandate</p>
-    <p><b>The guide says</b> — The guide describes PPRA&#x27;s structure and functions on the basis of the 2011 Act framework.</p>
-    <p><b>The law says</b> — PPA 2023 §8 keeps PPRA in existence but under the new Act; it adds the power to set price caps (§74) and mandatory NeST e-procurement. The 2011 Act was repealed by §131(1).</p>
-    <p><b>Why it matters</b> — PPRA as an institution continues, but its governing framework changed. Using the guide as-is misses the new price cap, mandatory NeST, and stronger local-supplier preference, and points to section numbers from a repealed Act.</p>
+    <p><b>Current legal basis</b> — PPA 2023 §8 keeps PPRA in existence but under the new Act; it adds the power to set price caps (§74) and mandatory NeST e-procurement. The 2011 Act was repealed by §131(1).</p>
     <p class="rv-verify"><b>✔ Verify</b> — Use PPA 2023 as the reference. Check whether the estimated price is subject to a PPRA price cap, and whether the procuring entity is registered/operating on NeST.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 근거를 PPA 2023 + PPR 2025로 교체하고, PPRA 기능을 §10 기준으로 재기술했다. 가격상한(§74)을 프로세스와 bottlenecks에 신설로 반영했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>PPRA의 근거 법령을 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 갱신할 것. PPA 2011은 폐지됨. 신설 반영 — 가격상한 설정 권한(§74), NeST 전자조달 의무, 지역업체 우대 강화</div>
-
-</div>
+  <p class="act-row">산출물 반영 — PPA 2023과 PPR 2024를 기준으로 PPRA 기능을 §10에 맞춰 정리하고 가격상한(§74)과 NeST 전자조달 요건을 반영했다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.bottlenecks / 대리인 위반 시 제재 근거</h3>
-  <div class="quote src"><b>자료집</b>141 조항에 따라 해당 입찰자는 블랙리스트에 기재됨</div>
-  <div class="quote act"><b>법령 원문</b>the Public Entity shall carry out proceedings to blacklist such a bidder according to Rule 141 — 여기서 141은 법(Act)이 아니라 규칙(Rules)의 조항이며, 블랙리스트의 실체 근거는 Act §63이다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(3), r.141 / <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §63</p>
-  <p class="impact">자료집이 법령명을 밝히지 않고 &#x27;141 조항&#x27;만 표기했다. 같은 문단이 인용한 다른 조문은 모두 법(Act, 총 76조)이라 독자가 법 제141조를 찾게 되고, 존재하지 않으므로 근거 추적이 막힌다.</p>
-  <div class="todo"><b>실무자가 할 일</b>실무 준비를 바꿀 필요는 없다. 다만 블랙리스트 근거를 확인해야 할 때 법(Act)에서 제141조를 찾지 말고 규칙(Rules) r.141과 법 §63을 본다.</div>
+  <div class="quote act"><b>현행 기준</b>the Public Entity shall carry out proceedings to blacklist such a bidder according to Rule 141 — 여기서 141은 법(Act)이 아니라 규칙(Rules)의 조항이며, 블랙리스트의 실체 근거는 Act §63이다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> r.39(3), r.141 / <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §63</p>
+  <div class="todo"><b>실무 확인</b>실무 준비를 바꿀 필요는 없다. 다만 블랙리스트 근거를 확인해야 할 때 법(Act)에서 제141조를 찾지 말고 규칙(Rules) r.141과 법 §63을 본다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Legal source cited for blacklisting an agent</p>
-    <p><b>The guide says</b> — The guide says a bidder is blacklisted &#x27;under provision 141&#x27;, without naming the instrument.</p>
-    <p><b>The law says</b> — Rule 141 belongs to the Public Procurement Rules 2064 (2007), not the Act; the substantive basis is Section 63 of the Public Procurement Act 2063 (2007). The Act has only 76 sections, so no Section 141 exists.</p>
-    <p><b>Why it matters</b> — A reader looking for Section 141 of the Act cannot find it and loses the trail. The guide&#x27;s substance is correct — only the source label is incomplete.</p>
+    <p><b>Current legal basis</b> — Rule 141 belongs to the Public Procurement Rules 2064 (2007), not the Act; the substantive basis is Section 63 of the Public Procurement Act 2063 (2007). The Act has only 76 sections, so no Section 141 exists.</p>
     <p class="rv-verify"><b>✔ Verify</b> — No change to bid preparation. When citing the basis, use PPR r.141 (procedure) together with PPA §63 (substance).</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 출처를 &#x27;PPR 2007 r.141(절차) + PPA 2007 §63(실체 근거)&#x27;로 분리 표기했다. 자료집 서술 내용 자체는 정확하다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>공공조달규칙(Public Procurement Rules, 2064) 제141조에 따라 해당 입찰자는 블랙리스트에 기재됨 (실체 근거: 공공조달법 제63조)</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 출처를 &#x27;PPR 2007 r.141(절차) + PPA 2007 §63(실체 근거)&#x27;로 분리 표기했다. 자료집 서술 내용 자체는 정확하다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계 →</a>
   </div>
   <h3>canvas.authorities / 입찰공고 주체</h3>
-  <div class="quote src"><b>자료집</b>주요 산업별 입찰 공고 발표 기관 - 네팔 공공조달모니터링국(PPMO)에서 총괄</div>
-  <div class="quote act"><b>법령 원문</b>PPMO의 법정 권한은 조달 웹사이트의 &#x27;설치·운영&#x27;(§65(1)(f))이며, §65(2)는 &#x27;PPMO는 자기 사무소의 조달을 제외하고 다른 공공기관의 조달절차에 어떤 방식으로도 관여해서는 안 되며 그에 관해 발생한 분쟁을 해결해서도 안 된다&#x27;고 명시한다. 개별 입찰의 공고 주체는 각 발주 공공기관이다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(f), §65(2)</p>
-  <p class="impact">&#x27;PPMO가 공고를 총괄한다&#x27;로 읽으면 실제 발주처를 놓치고, 개별 입찰 민원을 PPMO에 제기하는 오류로 이어진다. PPMO는 그 민원을 처리할 법적 권한이 없다. 실제로 같은 자료집 부록의 네팔 발주정보는 발주처를 Jagdulla Hydropower Company Limited, Krishi Samagri Company Limited, Shahid Gangalal National Heart Centre, Tribhuvan International Airport Civil Aviation Office 등 개별 기관으로 적고 있어 본문 서술과 어긋난다.</p>
-  <div class="todo"><b>실무자가 할 일</b>입찰 공고는 e-GP 포털에서 찾되 계약 상대와 문의처는 개별 발주기관이다. 입찰 관련 이의는 PPMO가 아니라 발주기관장에게 7일 내 제기하고, 불복 시 검토위원회로 간다. PPMO에 제기하면 처리 권한이 없어 기한만 소진된다.</div>
+  <div class="quote act"><b>현행 기준</b>PPMO의 법정 권한은 조달 웹사이트의 &#x27;설치·운영&#x27;(§65(1)(f))이며, §65(2)는 &#x27;PPMO는 자기 사무소의 조달을 제외하고 다른 공공기관의 조달절차에 어떤 방식으로도 관여해서는 안 되며 그에 관해 발생한 분쟁을 해결해서도 안 된다&#x27;고 명시한다. 개별 입찰의 공고 주체는 각 발주 공공기관이다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(f), §65(2)</p>
+  <div class="todo"><b>실무 확인</b>입찰 공고는 e-GP 포털에서 찾되 계약 상대와 문의처는 개별 발주기관이다. 입찰 관련 이의는 PPMO가 아니라 발주기관장에게 7일 내 제기하고, 불복 시 검토위원회로 간다. PPMO에 제기하면 처리 권한이 없어 기한만 소진된다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Who publishes and handles tenders — PPMO vs procuring entities</p>
-    <p><b>The guide says</b> — The guide says PPMO &#x27;oversees&#x27; the publication of tenders by industry sector.</p>
-    <p><b>The law says</b> — PPA 2063 (2007) §65(1)(f) gives PPMO the power to set up and operate the procurement website; §65(2) bars PPMO from involving in any manner in other entities&#x27; procurement proceedings or resolving disputes. Individual tenders are published and contracted by each procuring entity.</p>
-    <p><b>Why it matters</b> — Reading &#x27;PPMO oversees tenders&#x27; leads a bidder to miss the actual procuring entity and to file complaints with PPMO, which has no power to handle them — wasting the 7-day complaint window.</p>
+    <p><b>Current legal basis</b> — PPA 2063 (2007) §65(1)(f) gives PPMO the power to set up and operate the procurement website; §65(2) bars PPMO from involving in any manner in other entities&#x27; procurement proceedings or resolving disputes. Individual tenders are published and contracted by each procuring entity.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm each tender&#x27;s issuing and contracting body is the individual procuring entity, not PPMO. Complaints go to the head of the procuring entity (§47), then the Review Committee (§49).</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — &#x27;PPMO는 포털 운영·표준 관장, 공고와 계약의 주체는 개별 발주기관&#x27;으로 역할을 분리 기재했다. 이의는 발주기관장(§47) → 검토위원회(§49) 경로로 제기해야 한다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>조달정보 통합 안내 — 네팔 공공조달모니터링국(PPMO)이 e-GP 포털(bolpatra.gov.np)을 운영하며 조달정보를 게시. 개별 입찰의 공고·계약 주체는 각 발주 공공기관이며, PPMO는 개별 조달절차에 관여하지 않음 [PPA 2007 §65(1)(f), §65(2)]</div>
-
-</div>
+  <p class="act-row">산출물 반영 — &#x27;PPMO는 포털 운영·표준 관장, 공고와 계약의 주체는 개별 발주기관&#x27;으로 역할을 분리 기재했다. 이의는 발주기관장(§47) → 검토위원회(§49) 경로로 제기해야 한다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
   <h3>canvas.procedure / PCP 작성 주체</h3>
-  <div class="quote src"><b>자료집</b>Ⅱ-1: &#x27;수원기관 협의를 기반으로 … PCP는 재무부 공한과 함께 KOICA 네팔사무소에 제출&#x27; / Ⅲ: &#x27;네팔 재무부(MoF)는 모든 분야별 사업에 대해 사업제안서(PCP)를 작성하여 N-2년에 KOICA에 제출함&#x27;</div>
-  <div class="quote act"><b>법령 원문</b>자료집 내부 두 곳의 서술이 엇갈린다. FAMP 2025 §3.3.2(a)(b)는 소관부처가 대외원조 대상 사업 목록을 작성하고 사업 준비성 체크리스트에 따라 재무부에 제안서를 제출하도록 규정한다. 제안서 작성 주체는 소관부처이고 재무부는 접수·검토·송부 창구다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(a), §3.3.2(b), §3.3.1(a)</p>
-  <p class="impact">PCP 협의 상대를 재무부로 잡을지 수원기관으로 잡을지가 달라진다. 초기 컨설팅·사업 형성 단계에서 접촉 대상을 잘못 잡으면 시간이 소모된다.</p>
-  <div class="todo"><b>실무자가 할 일</b>PCP 작성·협의 상대는 수원기관(소관부처)으로 보되, 송부는 재무부 공한을 거친다. 착수 시 KOICA 네팔사무소에 해당 사업의 준비성 체크리스트 서식과 제출 경로를 확인한다.</div>
+  <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(a)(b)는 소관부처가 대외원조 대상 사업 목록을 작성하고 사업 준비성 체크리스트에 따라 재무부에 제안서를 제출하도록 규정한다. 제안서 작성 주체는 소관부처이고 재무부는 접수·검토·송부 창구다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(a), §3.3.2(b), §3.3.1(a)</p>
+  <div class="todo"><b>실무 확인</b>PCP 작성·협의 상대는 수원기관(소관부처)으로 보되, 송부는 재무부 공한을 거친다. 착수 시 KOICA 네팔사무소에 해당 사업의 준비성 체크리스트 서식과 제출 경로를 확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Who prepares the Project Concept Paper (PCP)</p>
-    <p><b>The guide says</b> — Two parts of the guide conflict: section II-1 says the line ministry prepares the PCP and sends it via a MoF letter; section III says the MoF itself prepares the PCP.</p>
-    <p><b>The law says</b> — FAMP 2025 §3.3.2(a)(b) has line ministries prepare a project list and submit proposals to the Ministry per a project readiness checklist; the Ministry receives, reviews and forwards. The preparer is the line ministry.</p>
-    <p><b>Why it matters</b> — It changes whether the counterpart for PCP consultation is the MoF or the line ministry. Approaching the wrong party at the formation stage wastes time.</p>
+    <p><b>Current legal basis</b> — FAMP 2025 §3.3.2(a)(b) has line ministries prepare a project list and submit proposals to the Ministry per a project readiness checklist; the Ministry receives, reviews and forwards. The preparer is the line ministry.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Treat the line ministry as the PCP preparer; forwarding goes through a MoF letter. Confirm the readiness-checklist form and submission route with the KOICA Nepal office.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 절차상 정합적인 Ⅱ-1 서술(수원기관 작성 → 상급부처·재무부 검토 → 재무부 공한 첨부 송부)을 채택했다. 2025년 정책 §3.3.2(b)가 소관부처의 제안서 제출을 명시해 이 해석을 뒷받침한다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>Ⅱ-1과 Ⅲ의 PCP 작성 주체 서술을 일치시킬 것. 소관부처가 사업 준비성 체크리스트에 따라 제안서를 작성하고 재무부 검토를 거쳐 공한과 함께 KOICA에 제출하는 구조로 통일 권고 [대외원조동원정책 2025 §3.3.2(a)(b)]</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 절차상 정합적인 Ⅱ-1 서술(수원기관 작성 → 상급부처·재무부 검토 → 재무부 공한 첨부 송부)을 채택했다. 2025년 정책 §3.3.2(b)가 소관부처의 제안서 제출을 명시해 이 해석을 뒷받침한다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
   <h3>canvas.bottlenecks / 조세·관세 면제 범위</h3>
-  <div class="quote src"><b>자료집</b>KOICA 관련 사업에서 관세 면제가 필요한 경우, 네팔 재무부 양식에 따른 마스터리스트(Master List)를 작성하여 네팔 정부의 승인을 받은 뒤 관세 면제를 신청해야 하며, 이 과정은 약 3개월이 소요됨</div>
-  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.6.1 — (a) 무상으로 받은 대외원조는 원칙적으로 세금 납부에 사용하지 않는다. (b) 차관 재원 사업에는 원칙적으로 조세면제 조항을 포함하지 않는다. (c) 국내에서 충분히 생산되는 물품의 수입에는 조세면제를 부여하지 않는다. (d) 현물 지원의 경우 소관부처 추천에 따라 재무부가 현행법에 따라 면제를 부여할 수 있다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.6.1(a)(b)(c)(d)</p>
-  <p class="impact">자료집은 마스터리스트 절차만 안내할 뿐 면제 자체가 제한된다는 점을 다루지 않는다. 2025년 정책에서는 국내 생산이 충분한 물품이면 마스터리스트를 제출해도 면제가 나오지 않을 수 있고, 차관 재원 사업은 애초에 면제 조항이 들어가지 않는다. 기자재 원산지에 따라 세부담이 사업비에 추가로 발생할 수 있다.</p>
-  <div class="todo"><b>실무자가 할 일</b>기자재 목록을 짤 때 네팔 국내에서 충분히 생산되는 품목인지 먼저 확인한다. 해당하면 면제를 전제로 예산을 잡지 않는다. 차관 연계 사업이면 면제 조항 자체가 없을 수 있으므로 협정문에서 확인한다.</div>
+  <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.6.1 — (a) 무상으로 받은 대외원조는 원칙적으로 세금 납부에 사용하지 않는다. (b) 차관 재원 사업에는 원칙적으로 조세면제 조항을 포함하지 않는다. (c) 국내에서 충분히 생산되는 물품의 수입에는 조세면제를 부여하지 않는다. (d) 현물 지원의 경우 소관부처 추천에 따라 재무부가 현행법에 따라 면제를 부여할 수 있다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.6.1(a)(b)(c)(d)</p>
+  <div class="todo"><b>실무 확인</b>기자재 목록을 짤 때 네팔 국내에서 충분히 생산되는 품목인지 먼저 확인한다. 해당하면 면제를 전제로 예산을 잡지 않는다. 차관 연계 사업이면 면제 조항 자체가 없을 수 있으므로 협정문에서 확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Scope of tax and customs exemption</p>
-    <p><b>The guide says</b> — The guide explains only the master-list procedure for customs exemption (about 3 months), not any limit on the exemption itself.</p>
-    <p><b>The law says</b> — FAMP 2025 §3.6.1: (a) grants shall generally not be used for tax payments; (b) loan-funded projects shall generally not include tax-exemption provisions; (c) no exemption for importing goods sufficiently produced within Nepal.</p>
-    <p><b>Why it matters</b> — Under the new policy a master list may not yield exemption for locally-produced goods, and loan-linked projects may have no exemption clause at all. The equipment tax burden may fall outside the budget assumption.</p>
+    <p><b>Current legal basis</b> — FAMP 2025 §3.6.1: (a) grants shall generally not be used for tax payments; (b) loan-funded projects shall generally not include tax-exemption provisions; (c) no exemption for importing goods sufficiently produced within Nepal.</p>
     <p class="rv-verify"><b>✔ Verify</b> — When listing equipment, check whether items are sufficiently produced in Nepal (no exemption). For loan-linked projects, check the financing agreement for any exemption clause.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — applicability와 bottlenecks에 면제 제한을 반영하고, 마스터리스트 소요기간(약 3개월)은 2019년 정책 시기 실무 경험치로 fieldVerification에 남겼다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>통관 항목에 조세면제의 한계를 추가할 것 — 무상원조는 원칙적으로 세금 납부에 사용 불가, 차관 재원 사업에는 면제 조항 미포함, 국내 생산이 충분한 물품의 수입에는 면제 미부여 [대외원조동원정책 2025 §3.6.1(a)(b)(c)]</div>
-
-</div>
+  <p class="act-row">산출물 반영 — applicability와 bottlenecks에 면제 제한을 반영하고, 마스터리스트 소요기간(약 3개월)은 2019년 정책 시기 실무 경험치로 fieldVerification에 남겼다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">캄보디아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.legalBasis / 근거 조달법의 현행 여부</h3>
-  <div class="quote src"><b>자료집</b>공공조달법에서는 공개입찰을 권장하고 있으나, 이에 대한 규제나 유인책은 없으며 …(자료집이 &#x27;공공조달법&#x27;을 근거로 입찰제도를 서술하되 법령 연도를 명시하지 않음)</div>
-  <div class="quote act"><b>법령 원문</b>캄보디아 조달법이 2023년 신법(Royal Kram NS/RKM/0523/005)으로 교체됐고 2012년 구법은 폐지됐다. 신법은 컨설팅 조달·조달 이행절차·강화된 벌칙·MEF 사후검토 및 검사권을 신설했다. 다만 시행규정은 초안 단계라 2012 프레임 규정이 잠정 유효해, 금액구간·입찰방식 등 규정 소관 값은 아직 유효할 수 있다.</div>
-  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); 구법 Law on Public Procurement, 2012 폐지</p>
-  <p class="impact">자료집의 입찰방식·금액구간은 규정 잠정유효로 아직 맞을 수 있으나, 법률 자체가 바뀌어 신설된 컨설팅 조달 규율·강화된 벌칙·MEF 검사권을 놓친다. 특히 벌칙이 개인 징역·법인 벌금으로 강화돼, 조달 위반 리스크가 커졌다.</p>
-  <div class="todo"><b>실무자가 할 일</b>캄보디아 입찰 준비 시 입찰방식·금액구간은 자료집 값을 참고하되(규정 잠정유효), 조달 위반 벌칙과 컨설팅 조달 규율은 2023 신법 기준으로 확인한다. 신 시행규정이 제정되면 금액구간을 재확인한다.</div>
+  <div class="quote act"><b>현행 기준</b>캄보디아 법무부는 2023 공공조달법(Royal Kram NS/RKM/0523/005, 2023-05-16)을 공식 법령 목록에 게시하고 있다. GDPP 공식 페이지는 물품·공사·서비스와 컨설팅 조달을 관리 대상으로 명시한다. 공식 영문본과 현행 하위규정 전문은 확인하지 못했다.</div>
+  <p class="cite">확인 출처 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page</p>
+  <div class="todo"><b>실무 확인</b>캄보디아 입찰 준비 시 2023 공공조달법을 기본 근거로 삼고, 입찰방식·금액구간·보증 요건은 개별 공고와 발주기관에서 재확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Whether the guide&#x27;s procurement law is current</p>
-    <p><b>The guide says</b> — The guide describes the bidding system on the basis of &#x27;the public procurement law&#x27; without naming the year.</p>
-    <p><b>The law says</b> — Cambodia&#x27;s Law on Public Procurement 2012 was abrogated by the new Law on Public Procurement 2023 (Royal Kram NS/RKM/0523/005, promulgated 16 May 2023), which adds consulting-services procurement, implementation procedures, heavier penalties (imprisonment for individuals, fines up to KHR 100 million), and MEF post-review/inspection powers. Its implementing regulations are still in draft, so the 2012-era sub-decrees remain in force until replaced.</p>
-    <p><b>Why it matters</b> — The bidding methods and value thresholds in the guide are regulation-level and may still be valid (transitional provision), but the guide misses the new statute&#x27;s consulting-procurement rules and stronger penalties, raising compliance risk.</p>
+    <p><b>Current legal basis</b> — Cambodia&#x27;s Law on Public Procurement 2012 was abrogated by the new Law on Public Procurement 2023 (Royal Kram NS/RKM/0523/005, promulgated 16 May 2023), which adds consulting-services procurement, implementation procedures, heavier penalties (imprisonment for individuals, fines up to KHR 100 million), and MEF post-review/inspection powers. Its implementing regulations are still in draft, so the 2012-era sub-decrees remain in force until replaced.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Treat thresholds/methods as provisionally valid under the 2012-era regulations, but check penalties and consulting-procurement rules against the 2023 law. Recheck thresholds once the new sub-decrees are issued.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 근거를 2023 신법 + 2012 프레임 잠정유효 규정으로 표기하고, 폐지된 2012법을 병기했다. 신설사항을 notes·bottlenecks에 반영했다. 크메르어 원문이라 조문 대조는 못 해 status는 law-linked로 둔다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>캄보디아 입찰제도의 근거 법령을 &#x27;Law on Public Procurement 2023(Royal Kram NS/RKM/0523/005, 2023-05-16 공포)&#x27;으로 명시할 것. 2012년 구법은 폐지됨. 시행규정은 초안 단계로 2012 프레임 규정이 잠정 유효하므로 금액구간·입찰방식은 유지하되, 신설된 컨설팅 조달·강화된 벌칙·MEF 검사권을 반영</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 근거 법률을 2023 공공조달법으로 반영하고, 공식 영문본·하위규정 미확인 범위는 현지 확인사항으로 표시했다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">캄보디아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계 →</a>
   </div>
   <h3>canvas.legalBasis / 감독체계 근거 법령 및 신설 권한</h3>
-  <div class="quote src"><b>자료집</b>(자료집 Ⅱ-2가 GDPP·GDICDM 이원 구조와 SOP 2019를 서술하나, 근거를 2012법 체계로 전제하고 신법의 MEF 검사권·강화 벌칙을 다루지 않음)</div>
-  <div class="quote act"><b>법령 원문</b>2023 신법이 MEF의 사후검토(post-review)·부정기 검사권을 신설하고 벌칙을 개인 징역·법인 벌금으로 강화했다. 조달 감독의 실체가 강해졌다. 다만 GDPP·GDICDM 이원 구조 자체는 자료집 서술과 부합한다.</div>
-  <p class="cite">근거 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</p>
-  <p class="impact">자료집의 이원 구조·SOP 2019 서술은 정확하나, 신법이 부여한 MEF 검사권과 강화된 벌칙이 드러나지 않아 조달 위반·감사 리스크를 과소평가할 수 있다.</p>
-  <div class="todo"><b>실무자가 할 일</b>GDPP(국내재원)·GDICDM(외부재원) 이원 구조는 자료집대로 이해하되, KOICA 무상사업은 GDICDM·SOP 2019 트랙임을 확인한다. 조달 위반 시 벌칙과 MEF 검사권은 2023 신법 기준으로 본다.</div>
+  <div class="quote act"><b>현행 기준</b>현행 근거는 2023 공공조달법(Royal Kram NS/RKM/0523/005)이다. GDPP 공식 페이지는 공사·서비스·컨설팅 조달의 입찰문서 검토, 개찰·협상 참여, 계약 제안 기술평가, 개발파트너 재원 조달 감독을 주요 기능으로 공개한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.moj.gov.kh/en/law-regular/page-16/" target="_blank" rel="noopener">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</a>; GDPP Works and Services Management Department</p>
+  <div class="todo"><b>실무 확인</b>KOICA 무상사업은 외부재원으로 분류해 GDICDM·SOP 2019 트랙을 확인하고, 세부 감독절차와 직접조달 한도는 발주기관에서 재확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Governance framework — new statute&#x27;s oversight powers</p>
-    <p><b>The guide says</b> — The guide describes the two-track structure (GDPP for locally funded, GDICDM for externally funded) and SOP 2019, on the 2012-law framework.</p>
-    <p><b>The law says</b> — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.</p>
-    <p><b>Why it matters</b> — The guide&#x27;s structural description is accurate, but it does not surface the new MEF inspection power or the stronger penalties, which may lead to underestimating audit and compliance risk.</p>
+    <p><b>Current legal basis</b> — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm KOICA grant projects fall under the GDICDM / SOP 2019 track (externally funded). Check penalties and MEF inspection powers against the 2023 law.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 이원 구조·직접조달 한도는 자료집 서술을 유지하고, 신법의 MEF 검사권·강화 벌칙을 authorities·bottlenecks·notes에 반영했다. 크메르어 원문이라 조문 대조는 못 해 law-linked로 둔다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>조직체계 서술에 근거 법령을 &#x27;2023 공공조달법&#x27;으로 갱신하고, MEF 사후검토·부정기 검사권과 강화된 벌칙(개인 징역·법인 벌금)을 추가할 것. GDPP·GDICDM 이원 구조와 SOP 2019 서술은 정확하므로 유지</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 2023 공공조달법과 GDPP 공식 공개기능을 근거로 감독체계를 정리하고, 하위규정 미확인 범위는 현지 확인사항으로 표시했다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.applicability / 전자조달 시스템</h3>
-  <div class="quote src"><b>자료집</b>(자료집은 입찰 절차를 서술하나 전자조달 시스템 의무화를 다루지 않음)</div>
-  <div class="quote act"><b>법령 원문</b>PPA 2023은 전 조달을 국가전자조달시스템(NeST, National e-Procurement System of Tanzania)으로 처리하도록 의무화했다. 종전 TANePS를 대체하는 통합 시스템이다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> (전자조달 규정) — PPRA 시행 공지</p>
-  <p class="impact">NeST 등록·전자입찰 역량이 없으면 조달 참여 자체가 막힌다. 자료집이 이를 다루지 않아, 종이 기반 절차를 전제로 준비하면 입찰이 불가능하다.</p>
-  <div class="todo"><b>실무자가 할 일</b>탄자니아 입찰 참여 전 NeST(국가전자조달시스템) 등록을 완료하고 전자입찰 역량을 갖춘다. 종이 기반 절차를 전제로 준비하지 않는다.</div>
+  <div class="quote act"><b>현행 기준</b>PPA 2023은 전 조달을 국가전자조달시스템(NeST, National e-Procurement System of Tanzania)으로 처리하도록 의무화했다. 종전 TANePS를 대체하는 통합 시스템이다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> (전자조달 규정) — PPRA 시행 공지</p>
+  <div class="todo"><b>실무 확인</b>탄자니아 입찰 참여 전 NeST(국가전자조달시스템) 등록을 완료하고 전자입찰 역량을 갖춘다. 종이 기반 절차를 전제로 준비하지 않는다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Mandatory e-procurement (NeST)</p>
-    <p><b>The guide says</b> — The guide describes the bidding process but does not mention mandatory e-procurement.</p>
-    <p><b>The law says</b> — PPA 2023 mandates the National e-Procurement System of Tanzania (NeST) for all procurement, replacing the former TANePS.</p>
-    <p><b>Why it matters</b> — Without NeST registration and e-bidding capability, a firm cannot participate at all. Preparing for a paper-based process makes bidding impossible.</p>
+    <p><b>Current legal basis</b> — PPA 2023 mandates the National e-Procurement System of Tanzania (NeST) for all procurement, replacing the former TANePS.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm NeST registration is complete before any tender, and that the procuring entity runs the tender through NeST.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — applicability와 procedure에 NeST 전자조달 의무를 반영했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>입찰 진행절차에 &#x27;전 조달은 국가전자조달시스템(NeST)으로 처리 의무화 [PPA 2023]. 사전 시스템 등록 필요&#x27; 추가</div>
-
-</div>
+  <p class="act-row">산출물 반영 — applicability와 procedure에 NeST 전자조달 의무를 반영했다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.applicability / 보증률</h3>
-  <div class="quote src"><b>자료집</b>입찰보증 입찰금액의 5% 이상 / 계약보증 계약금액의 10% 이상 / 하자보증 계약금액의 3% 이상 / 하자담보기간 1~2년 / 지체상금 제조 0.15%·운송 0.5% (탄자니아 규정 = Public Procurement Regulations 2013)</div>
-  <div class="quote act"><b>법령 원문</b>PPR 2025는 보증 비율을 규정에 고정하지 않고 위임한다 — 입찰보증(reg.23(6))·이행보증(reg.29(2))은 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 확정 값이 있는 것은 선금 30% 상한(reg.315(2))과 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐이며, 지체상금에 &#x27;운송·보관&#x27; 항목은 없다.</div>
-  <p class="cite">근거 · Public Procurement Regulations, 2025 (GN No. 261) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule</p>
-  <p class="impact">자료집의 고정 보증률(입찰 5%·계약 10%·하자 3%)과 하자담보기간(1~2년)은 폐지된 구 규정(PPR 2013) 값이다. 새 규정에서는 입찰·이행보증은 입찰서류가, 하자보증·하자담보기간은 계약이 정하므로, 자료집 비율을 전제로 보증·예산을 잡으면 실제 조건과 어긋난다. 확정 값(선금 30% 상한, 지체상금 물품 0.10~0.20%로 자료집 0.15% 포함)은 정합적이나, 자료집의 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정에 대응 항목이 없다.</p>
-  <div class="todo"><b>실무자가 할 일</b>입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 자료집의 3%·1~2년을 전제로 하지 않는다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일이며 &#x27;운송·보관 0.5%&#x27;는 새 규정 근거가 없으므로 계약 특약 여부를 따로 확인한다.</div>
+  <div class="quote act"><b>현행 기준</b>PPR 2024는 보증 비율을 규정에 고정하지 않고 위임한다 — 입찰보증(reg.23(6))·이행보증(reg.29(2))은 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 확정 값이 있는 것은 선금 30% 상한(reg.315(2))과 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐이며, 지체상금에 &#x27;운송·보관&#x27; 항목은 없다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</a> reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule</p>
+  <div class="todo"><b>실무 확인</b>입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일을 적용하며 운송·보관 관련 항목은 계약 특약 여부를 따로 확인한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Surety rates (bid / performance / retention) and liquidated damages</p>
-    <p><b>The guide says</b> — The guide gives fixed rates: bid security 5%, performance security 10%, defect security 3%, defects-liability period 1-2 years, and liquidated damages of 0.15% (manufacturing) and 0.5% (transport/storage).</p>
-    <p><b>The law says</b> — PPR 2025 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is &#x27;the period specified in the contract&#x27; (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no &#x27;transport/storage&#x27; liquidated-damages category.</p>
-    <p><b>Why it matters</b> — The guide&#x27;s fixed rates come from the repealed 2013 regulations. Budgeting on them may not match the actual tender/contract terms. The 0.5% transport/storage rate has no basis in the new regulations.</p>
+    <p><b>Current legal basis</b> — PPR 2024 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is &#x27;the period specified in the contract&#x27; (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no &#x27;transport/storage&#x27; liquidated-damages category.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Read the bid and performance security amounts from each tender&#x27;s documents; read retention money and the defects-liability period from the contract. Do not assume 5% / 10% / 3% / 1-2 years. Check whether any &#x27;transport/storage&#x27; liquidated damages exist as a contract-specific special term.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>보증 비교표의 &#x27;탄자니아 규정&#x27;을 Public Procurement Regulations 2025(GN No. 261) 기준으로 갱신할 것 — 입찰·이행보증 금액은 입찰서류 위임(reg.23(6), reg.29(2)), 하자보증은 유보금 방식으로 계약 위임(reg.329(2)), 하자담보기간도 계약에 정한 기간(reg.329(7)). 확정 값은 선금 30% 상한(reg.315(2))·지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐. 구 규정의 5%·10%·3%·1~2년 고정 비율과 지체상금 &#x27;운송·보관 0.5%&#x27;는 새 규정 근거가 없으므로 삭제 또는 계약 위임으로 수정</div>
-
-</div>
+  <p class="act-row">산출물 반영 — 입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.</p>
 </div><div class="disc" data-sev="medium">
   <div class="top">
-    <span class="badge warn">심각도 보통</span>
+    <span class="badge warn">추가 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차 →</a>
   </div>
   <h3>canvas.procedure / 사업 발굴 착수 지점</h3>
-  <div class="quote src"><b>자료집</b>국별협력 사업 및 다자지원사업의 경우 개별 부처 및 지방정부와 직접적인 사업발굴이 가능하되 탄자니아 재정기획부 측으로부터 최종 원조사업요청 승인 필요</div>
-  <div class="quote act"><b>법령 원문</b>자료집이 &#x27;직접 발굴 가능&#x27;을 앞세우고 &#x27;재정기획부 승인 필요&#x27;를 단서로 붙였다. 실무 순서상 승인이 사업 형성의 전제이므로, 개별 부처와 먼저 협의를 진행하더라도 재정기획부 승인 경로를 함께 밟아야 한다.</div>
-  <p class="cite">근거 · 자료집 Ⅱ-1 수원체계 (탄자니아 재정기획부 원조사업요청 승인)</p>
-  <p class="impact">&#x27;직접 발굴 가능&#x27;만 보고 개별 부처와 사업을 진전시키면, 재정기획부 승인이 늦어져 사업 공식화(RD 체결)가 지연될 수 있다. 승인이 단서가 아니라 전제라는 점이 드러나야 한다.</p>
-  <div class="todo"><b>실무자가 할 일</b>개별 부처와 사업을 발굴하되, 재정기획부(원조조화부서)의 원조사업요청 승인 경로를 초기에 함께 확인한다. 승인 없이는 RD 체결로 넘어갈 수 없다.</div>
+  <div class="quote act"><b>현행 기준</b>개별 부처와 사업을 발굴하더라도 재정기획부의 원조사업요청 승인 경로를 함께 밟아야 한다.</div>
+  <p class="cite">확인 출처 · KOICA 2026 아프리카 자료집 Ⅱ-1 수원체계 · 탄자니아 재정기획부</p>
+  <div class="todo"><b>실무 확인</b>개별 부처와 사업을 발굴하되, 재정기획부(원조조화부서)의 원조사업요청 승인 경로를 초기에 함께 확인한다. 승인 없이는 RD 체결로 넘어갈 수 없다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Whether Ministry of Finance approval is a prerequisite for project formation</p>
-    <p><b>The guide says</b> — The guide says line ministries and local governments may identify projects directly, with MoF final approval added as a proviso.</p>
-    <p><b>The law says</b> — Per the guide&#x27;s own text, direct identification is possible only where the Ministry of Finance grants final approval of the aid-project request; the External Finance Department is the single gateway for aid mobilization.</p>
-    <p><b>Why it matters</b> — Reading &#x27;direct identification possible&#x27; and advancing with a line ministry alone can stall formalization (RD signing) while MoF approval is obtained. Approval is a prerequisite, not an option.</p>
+    <p><b>Current legal basis</b> — Per the guide&#x27;s own text, direct identification is possible only where the Ministry of Finance grants final approval of the aid-project request; the External Finance Department is the single gateway for aid mobilization.</p>
     <p class="rv-verify"><b>✔ Verify</b> — Confirm the MoF External Finance Department approval route at the outset. A Record of Discussion (RD) cannot be signed without it.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — procedure 1단계에 재정기획부 최종 승인을 명시하고, 프로세스에 승인 게이트(P01)를 두었다. 다만 이는 자료집 내부 서술의 강조 문제로, 원문 법령 대조 사안은 아니라 medium으로 둔다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>수원체계 서술에서 &#x27;개별 부처 직접 발굴 가능&#x27;과 &#x27;재정기획부 최종 승인 필요&#x27;의 관계를 명확히 할 것 — 승인은 선택이 아니라 사업 공식화의 전제임을 표기 권고</div>
-
-</div>
+  <p class="act-row">산출물 반영 — procedure 1단계와 프로세스 승인 게이트(P01)에 재정기획부 승인을 명시했다.</p>
 </div><div class="disc" data-sev="low">
   <div class="top">
-    <span class="badge muted">심각도 낮음</span>
+    <span class="badge muted">참고</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
   <h3>canvas.legalBasis.articles</h3>
-  <div class="quote src"><b>자료집</b>제11(a)(b)조, 제13(b)조, 제8(a)(4)조, 제41(a)조~제41(f)조</div>
-  <div class="quote act"><b>법령 원문</b>원문은 Section — Sub-section — clause 3단 체계다. 각각 §11(1)(a)(b), §8(1)(a)(4), §41(1)(a)~(f)에 해당한다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §8, §11, §13, §41</p>
-  <p class="impact">항(Sub-section) 단계가 생략돼 있어 원문에서 해당 조문을 바로 찾기 어렵다. 내용은 모두 일치한다.</p>
-  <div class="todo"><b>실무자가 할 일</b>원문에서 조문을 찾을 때 항(Sub-section) 단계를 넣어 §41(1)(a) 형태로 본다. 본 사이트의 인용은 이미 교정돼 있다.</div>
+  <div class="quote act"><b>현행 기준</b>원문은 Section — Sub-section — clause 3단 체계다. 각각 §11(1)(a)(b), §8(1)(a)(4), §41(1)(a)~(f)에 해당한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §8, §11, §13, §41</p>
+  <div class="todo"><b>실무 확인</b>원문에서 조문을 찾을 때 항(Sub-section) 단계를 넣어 §41(1)(a) 형태로 본다. 본 사이트의 인용은 이미 교정돼 있다.</div>
 
 
-  <p class="act-row">이 데이터에 반영 — legalBasis와 procedure의 인용을 원문 3단 체계로 교정했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>조문 인용을 원문 체계에 맞춰 §8(1)(a)(4), §11(1)(a)(b), §41(1)(a)~(f)로 표기</div>
-
-</div>
+  <p class="act-row">산출물 반영 — legalBasis와 procedure의 인용을 원문 3단 체계로 교정했다.</p>
 </div><div class="disc" data-sev="low">
   <div class="top">
-    <span class="badge muted">심각도 낮음</span>
+    <span class="badge muted">참고</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계 →</a>
   </div>
   <h3>canvas.authorities[PPMO].role</h3>
-  <div class="quote src"><b>자료집</b>주요 기능 — 공공조달 관련 정책 수립 / 공공조달 관련법 이행 모니터링 / 표준 입찰 양식 수립 / 정부 조달 정보 안내 등</div>
-  <div class="quote act"><b>법령 원문</b>§65(1)은 (a)~(n) 14개 호로 권한을 규정한다. 자료집이 옮기지 않은 권한 중 실무 영향이 큰 것은 블랙리스트 해제기준 수립 및 해제 결정((j)), 검토위원회 사무국 수행(§65(3)), 입찰자·조달담당자 정기 교육((i)), 조달 연차보고서 제출((m))이다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(a)~(n), §65(3)</p>
-  <p class="impact">블랙리스트 해제 창구가 PPMO라는 점이 드러나지 않아, 제재를 받은 기업이 구제 경로를 찾지 못할 수 있다.</p>
-  <div class="todo"><b>실무자가 할 일</b>블랙리스트에 등재됐다면 해제 창구는 PPMO다. PPMO가 정한 해제기준에 따라 신청한다. 검토위원회 재심의 사무국도 PPMO가 맡으므로 접수 경로를 여기서 확인한다.</div>
+  <div class="quote act"><b>현행 기준</b>§65(1)은 (a)~(n) 14개 호로 권한을 규정한다. 실무 영향이 큰 권한은 블랙리스트 해제기준 수립 및 해제 결정((j)), 검토위원회 사무국 수행(§65(3)), 입찰자·조달담당자 정기 교육((i)), 조달 연차보고서 제출((m))이다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a> §65(1)(a)~(n), §65(3)</p>
+  <div class="todo"><b>실무 확인</b>블랙리스트에 등재됐다면 해제 창구는 PPMO다. PPMO가 정한 해제기준에 따라 신청한다. 검토위원회 재심의 사무국도 PPMO가 맡으므로 접수 경로를 여기서 확인한다.</div>
 
 
-  <p class="act-row">이 데이터에 반영 — authorities의 PPMO 역할에 14개 호를 요약 반영하고, 블랙리스트 해제기준 수립·검토위원회 사무국 기능을 명시했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>주요 기능에 &#x27;블랙리스트 등재 결정 및 해제기준 수립·해제 [§65(1)(j), §63(6)]&#x27;, &#x27;검토위원회 사무국 및 예산 지원 [§65(3)]&#x27;, &#x27;입찰자·조달담당자 정기 교육 [§65(1)(i)]&#x27; 추가</div>
-
-</div>
+  <p class="act-row">산출물 반영 — authorities의 PPMO 역할에 14개 호를 요약 반영하고, 블랙리스트 해제기준 수립·검토위원회 사무국 기능을 명시했다.</p>
 </div><div class="disc" data-sev="low">
   <div class="top">
-    <span class="badge muted">심각도 낮음</span>
+    <span class="badge muted">참고</span>
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
   <h3>canvas.bottlenecks / 누락된 실무 제약</h3>
-  <div class="quote src"><b>자료집</b>(자료집에 해당 서술 없음)</div>
-  <div class="quote act"><b>법령 원문</b>FAMP 2025 §3.3.2(j) — 소관부처는 기술협력 재원을 차량·장비 구매나 해외 연수·훈련 참가에 사용하려면 재무부의 사전 승인을 받아야 한다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(j)</p>
-  <p class="impact">사업 수행기관이 관행적으로 진행하는 수원기관 공무원 초청연수·기자재 공장 실사 출장, 사업용 차량 구매가 재무부 사전 승인 대상이다. 자료집에 없어 일정과 예산 산정에서 누락되기 쉽다.</p>
-  <div class="todo"><b>실무자가 할 일</b>기술협력 재원으로 차량·장비를 사거나 연수·훈련 해외 파견을 계획하면 재무부 사전 승인 절차를 일정에 반영한다.</div>
+  <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(j) — 소관부처는 기술협력 재원을 차량·장비 구매나 해외 연수·훈련 참가에 사용하려면 재무부의 사전 승인을 받아야 한다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a> §3.3.2(j)</p>
+  <div class="todo"><b>실무 확인</b>기술협력 재원으로 차량·장비를 사거나 연수·훈련 해외 파견을 계획하면 재무부 사전 승인 절차를 일정에 반영한다.</div>
 
 
-  <p class="act-row">이 데이터에 반영 — bottlenecks에 추가했다. 폐지된 2019년 정책 §5.2.4는 공여사업비·공급자 초청에 의한 공무원 해외출장 전반을 승인 대상으로 삼았으나, 2025년 정책은 기술협력 재원 사용으로 범위를 좁혔다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge warn">보완 권고</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>진출 유의사항에 &#x27;기술협력 재원으로 차량·장비를 구매하거나 해외 연수·훈련에 참가하려면 재무부 사전 승인 필요 [대외원조동원정책 2025 §3.3.2(j)]&#x27; 추가</div>
-
-</div>
+  <p class="act-row">산출물 반영 — bottlenecks에 기술협력 재원 차량·장비 구매 및 해외 연수의 재무부 사전승인 요건을 반영했다.</p>
 </div>
   </section>
 
@@ -843,8 +613,8 @@ footer.site a{color:var(--muted)}
 </tr><tr>
   <td class="name" style="font-weight:600">PPMO Standard Bidding Documents (표준계약조건)</td>
   <td><span class="badge plain muted">네팔</span></td>
-  <td style="font-size:13px">지체상금·조기착공 보너스·계약이행보증·하자담보기간 수치의 근거는 표준입찰서류의 계약조건(GCC)에 있을 것으로 보이나, 자료집이 출처를 밝히지 않았고 해당 문서를 특정하지 못했다.</td>
-  <td style="font-size:13px;color:var(--muted)">PPMO e-GP 포털에서 공사(Works) 표준입찰서류를 내려받아 GCC 조항과 자료집 수치를 대조한다.</td>
+  <td style="font-size:13px">지체상금·조기착공 보너스·계약이행보증·하자담보기간 수치의 근거가 될 공사 표준입찰서류의 계약조건(GCC)을 특정하지 못했다.</td>
+  <td style="font-size:13px;color:var(--muted)">PPMO e-GP 포털에서 공사(Works) 표준입찰서류를 내려받아 GCC 조항의 현행 수치를 확인한다.</td>
 </tr><tr>
   <td class="name" style="font-weight:600">전자조달 시행 관보 고시(Nepal Gazette notice under §69)</td>
   <td><span class="badge plain muted">네팔</span></td>
@@ -943,13 +713,13 @@ footer.site a{color:var(--muted)}
 </tr><tr>
   <td class="name" style="font-weight:600">신 시행규정(sub-decree·prakas)</td>
   <td><span class="badge plain muted">캄보디아</span></td>
-  <td style="font-size:13px">신법의 시행규정이 초안 단계라 금액구간·공고기간·보증의 최종 값이 확정되지 않았다.</td>
-  <td style="font-size:13px;color:var(--muted)">신 시행규정 제정 시 금액구간·공고기간·적격심사 기준을 갱신한다.</td>
+  <td style="font-size:13px">경제재무부·GDPP 공식 공개 페이지에서 2023법 이후 현행 하위규정 전문을 특정하지 못했다.</td>
+  <td style="font-size:13px;color:var(--muted)">현행 하위규정 원문을 확보하면 금액구간·공고기간·적격심사 기준을 갱신한다.</td>
 </tr><tr>
   <td class="name" style="font-weight:600">정부기관별 직접조달 한도 규정</td>
   <td><span class="badge plain muted">캄보디아</span></td>
-  <td style="font-size:13px">직접조달 한도(주 12.5만·부처 20만불 등)의 근거 규정 원문을 특정하지 못했다. 시행규정은 2012 프레임 잠정유효이며 신규정 제정 시 변경될 수 있다.</td>
-  <td style="font-size:13px;color:var(--muted)">GDPP의 조달 한도 관련 prakas/sub-decree를 확보해 한도를 대조하고, 신규정 제정 여부를 확인한다.</td>
+  <td style="font-size:13px">직접조달 한도(주 12.5만·부처 20만불 등)의 현행 근거 규정 원문을 특정하지 못했다.</td>
+  <td style="font-size:13px;color:var(--muted)">GDPP의 현행 조달 한도 관련 prakas/sub-decree를 확보해 값을 대조한다.</td>
 </tr><tr>
   <td class="name" style="font-weight:600">Law on Public Procurement 2023 크메르어 원문</td>
   <td><span class="badge plain muted">캄보디아</span></td>
@@ -963,8 +733,8 @@ footer.site a{color:var(--muted)}
 </tr><tr>
   <td class="name" style="font-weight:600">일부 캄보디아 재원 동원 사업의 MEF 절차</td>
   <td><span class="badge plain muted">캄보디아</span></td>
-  <td style="font-size:13px">자료집 서술이 &#x27;MEF에…&#x27;에서 잘려 구체 절차를 확인하지 못했다.</td>
-  <td style="font-size:13px;color:var(--muted)">자료집 원문 또는 MEF 안내로 캄보디아 재원 연계 사업의 MEF 절차를 확인한다.</td>
+  <td style="font-size:13px">캄보디아 재원이 함께 투입되는 사업의 구체 MEF 절차를 공식 공개문서에서 확인하지 못했다.</td>
+  <td style="font-size:13px;color:var(--muted)">MEF 안내 또는 발주기관 확인으로 캄보디아 재원 연계 사업의 절차를 확인한다.</td>
 </tr><tr>
   <td class="name" style="font-weight:600">탄자니아 조달법·규정 스와힐리어 원본</td>
   <td><span class="badge plain muted">탄자니아</span></td>
@@ -973,7 +743,7 @@ footer.site a{color:var(--muted)}
 </tr><tr>
   <td class="name" style="font-weight:600">공공조달상소청(PPAA) 상소 절차</td>
   <td><span class="badge plain muted">탄자니아</span></td>
-  <td style="font-size:13px">PPA 2023의 이의·상소 조항과 PPAA 절차·기한을 정독하지 못했다. 자료집도 상소 절차를 다루지 않는다.</td>
+  <td style="font-size:13px">PPA 2023의 이의·상소 조항과 PPAA 절차·기한을 충분히 확인하지 못했다.</td>
   <td style="font-size:13px;color:var(--muted)">PPA 2023의 review·appeal 조항과 PPAA 규정을 확보해 이의제기 경로·기한을 확인한다.</td>
 </tr><tr>
   <td class="name" style="font-weight:600">NeST(국가전자조달시스템) 운영 규정</td>
@@ -997,7 +767,7 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 
 </body></html>

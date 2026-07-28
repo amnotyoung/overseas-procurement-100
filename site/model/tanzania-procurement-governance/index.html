@@ -5,6 +5,7 @@
 <title>탄자니아 조달 거버넌스·감독체계 | 그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,7 +281,7 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="../../index.html">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
-    <a href="../../errata/index.html">정오표</a>
+    <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
@@ -299,7 +301,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아 · Tanzania</span>
     <span class="badge plain muted">조달 거버넌스</span>
     <span class="badge info">원문 링크 연결</span>
-    <span class="badge bad">불일치 1건</span>
+    <span class="badge bad">확인사항 1건</span>
   </div>
   <h1>탄자니아 조달 거버넌스·감독체계</h1>
   <p class="one">재정기획부 산하 공공조달규제청(PPRA)이 표준·정책·전자조달(NeST)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함</p>
@@ -308,7 +310,7 @@ footer.site a{color:var(--muted)}
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>4</b><span>게이트</span></div>
     <div class="tile ok"><b>6</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>1</b><span>불일치 (높음 1)</span></div>
+    <div class="tile bad"><b>1</b><span>현행 기준 (필수 확인 1)</span></div>
     <div class="tile warn"><b>4</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -357,12 +359,12 @@ footer.site a{color:var(--muted)}
   <p class="desc">공공조달 정책·표준을 중앙에서 통일하고 법 이행을 모니터링하되, 규제기관(PPRA)이 개별 발주기관의 집행과 분리돼 자문·감독·데이터공표·점검을 수행함으로써 조달의 투명성과 책무성을 확보한다.</p>
   <div class="cards">
     <div class="card span2"><h3>절차</h3><ol class="steps"><li>PPRA가 조달·공급 원칙을 정부·지방정부·법정기관에 자문 (§10(a))</li><li>법무장관실·전문기관과 협력해 표준입찰서류·양식 제정·갱신·발급 (§10(d))</li><li>법 시행 가이드라인 발급 (§10(f))</li><li>국가전자조달시스템(NeST) 운영 — 조달기회·낙찰 데이터 공표 (§10(g))</li><li>발주기관이 NeST를 통해 조달 집행, 회계책임관이 결정 책임 (§38)</li><li>PPRA가 발주기관 기록·절차 정기 점검 (§10(h))</li><li>PPRA가 낙찰·이행을 모니터링해 공정·적법성 확보 (§10(i))</li><li>가격상한(price cap) 설정·적용 — 신설 권한 (§74)</li><li>입찰자 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 상소</li><li>PPRA가 조달 성과를 정부에 보고, 개선 자문 (§10(b))</li></ol></div>
-    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">탄자니아의 모든 공공기관 조달에 적용된다. PPRA는 규제·감독기관이지 집행기관이 아니며, 개별 조달의 집행은 발주기관과 회계책임관이 담당한다. 자료집이 소개한 PPRA 5개 부서(운영지원·역량강화자문·모니터링컴플라이언스·정보시스템·법무공보)는 이 기능을 나눠 수행한다.</p></div>
-    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></span><span class="ar">§8(PPRA 설립), §9(목적), §10(기능), §38(회계책임관), §74(가격상한), §131(폐지)</span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">Public Procurement Regulations, 2025 (GN No. 261 of 2025)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">국가전자조달시스템(NeST) 운영 근거</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div></div>
-    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">공공조달규제청(PPRA)</a></b><span>정부·지방정부·법정기관에 조달원칙 자문(§10(a)), 조달시스템 성과 모니터링·보고(§10(b)), 표준입찰서류 제정·발급(§10(d)), 가이드라인 발급(§10(f)), 조달기회·낙찰 데이터 공표(§10(g)), 발주기관 정기 점검(§10(h)), 낙찰·이행 모니터링(§10(i)), 가격상한 설정(§74)</span></div><div class="auth"><b><a class="ref" href="https://www.mof.go.tz/" target="_blank" rel="noopener">재정기획부(MoF)</a></b><span>PPRA 소관 부처. 조달 규정(PPR 2025) 제정</span></div><div class="auth"><b>발주 공공기관·회계책임관</b><span>조달 집행 책임. 회계책임관(accounting officer)이 조달 결정 책임 (§38)</span></div><div class="auth"><b>공공조달상소청(PPAA)</b><span>조달 관련 이의·상소 심리 (독립 상소기구)</span></div></div>
+    <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">탄자니아의 모든 공공기관 조달에 적용된다. PPRA는 규제·감독기관이며, 개별 조달의 집행은 발주기관과 회계책임관이 담당한다. PPRA의 운영지원·역량강화자문·모니터링컴플라이언스·정보시스템·법무공보 부서가 관련 기능을 나눠 수행한다.</p></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></span><span class="ar">§8(PPRA 설립), §9(목적), §10(기능), §38(회계책임관), §74(가격상한), §131(폐지)</span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">시행규칙</span></div><div class="law"><span class="nm">국가전자조달시스템(NeST) 운영 근거</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div></div>
+    <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">공공조달규제청(PPRA)</a></b><span>정부·지방정부·법정기관에 조달원칙 자문(§10(a)), 조달시스템 성과 모니터링·보고(§10(b)), 표준입찰서류 제정·발급(§10(d)), 가이드라인 발급(§10(f)), 조달기회·낙찰 데이터 공표(§10(g)), 발주기관 정기 점검(§10(h)), 낙찰·이행 모니터링(§10(i)), 가격상한 설정(§74)</span></div><div class="auth"><b><a class="ref" href="https://www.mof.go.tz/" target="_blank" rel="noopener">재정기획부(MoF)</a></b><span>PPRA 소관 부처. 조달 규정(PPR 2024) 제정</span></div><div class="auth"><b>발주 공공기관·회계책임관</b><span>조달 집행 책임. 회계책임관(accounting officer)이 조달 결정 책임 (§38)</span></div><div class="auth"><b>공공조달상소청(PPAA)</b><span>조달 관련 이의·상소 심리 (독립 상소기구)</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">공공조달규제청(PPRA), 재정기획부(MoF), 발주 공공기관(procuring entity)과 회계책임관(accounting officer), 산업별 발주 공기업(TANESCO·TANROADS·TPDC·DAWASA 등), 입찰자, 공공조달상소청(PPAA)</p></div>
     <div class="card"><h3>제출서류</h3><div class="docset"><b>PPRA</b><div class="chips"><span class="chip">표준입찰서류(standardised tendering documents, §10(d))</span><span class="chip">조달 가이드라인(guidelines, §10(f))</span><span class="chip">조달 성과 보고서(performance report, §10(b))</span><span class="chip">가격상한 고시(price cap, §74)</span><span class="chip">점검 결과(inspection findings, §10(h))</span></div></div><div class="docset"><b>발주 공공기관</b><div class="chips"><span class="chip">조달계획</span><span class="chip">조달 기록·절차 문서(정기 점검 대상)</span><span class="chip">NeST 등록 조달 데이터</span></div></div><div class="docset"><b>입찰자</b><div class="chips"><span class="chip">이의신청서(발주기관)</span><span class="chip">상소신청서(PPAA)</span></div></div></div>
-    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>PPRA의 근거가 Public Procurement Act 2011에서 PPA 2023으로 교체됐다(2024-06-17 시행). 자료집은 폐지된 법을 전제로 PPRA를 서술한다</li><li>PPRA는 개별 조달절차의 집행·분쟁해결 기관이 아니라 감독·자문기관이다. 개별 입찰 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 다뤄진다</li><li>가격상한(price cap) 설정 권한이 신설돼(§74), 발주 예정가가 PPRA 상한에 걸릴 수 있다 — 자료집에 없는 제도</li><li>전 조달의 NeST 처리가 의무화돼, 발주기관·입찰자 모두 시스템 등록·운영 역량이 필요하다</li><li>본토와 잔지바르 자치정부의 이원 행정으로 관할 확인이 필요하다</li></ul></div>
+    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>PPRA의 현행 근거는 2024-06-17 시행된 Public Procurement Act 2023이다</li><li>PPRA는 개별 조달절차의 집행·분쟁해결 기관이 아니라 감독·자문기관이다. 개별 입찰 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 다뤄진다</li><li>PPRA는 §74에 따라 특정 물품·공사·용역의 가격상한(price cap)을 설정할 수 있다</li><li>전 조달의 NeST 처리가 의무화돼, 발주기관·입찰자 모두 시스템 등록·운영 역량이 필요하다</li><li>본토와 잔지바르 자치정부의 이원 행정으로 관할 확인이 필요하다</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>PPRA 데이터 공표 시스템(NeST)이 조달기회 파악의 단일 창구 — 등록·모니터링 역량 필요</li><li>산업별 발주 공기업이 분산돼 있어(TANESCO·TANROADS·TPDC 등) 공고 채널을 개별 파악해야 함</li></ul></div>
     <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>PPRA 5개 부서(운영지원·역량강화자문·모니터링컴플라이언스·정보시스템·법무공보)의 현행 조직 구조 — 새 법 시행 후 개편 여부</li><li>공공조달상소청(PPAA)의 이의·상소 절차와 기한 — PPA 2023 상소 조항 대조 필요</li><li>가격상한(§74) 설정 대상·방법·공표 절차</li><li>NeST 운영 근거 규정과 의무 적용 범위</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a></div></div>
@@ -379,7 +381,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
   </div>
   <div class="qtext">There shall continue to exist an Authority known as the Public Procurement Regulatory Authority.</div>
-  <p class="qgist">PPRA는 새 법에서 폐지되지 않고 &#x27;계속 존속&#x27;한다 — 기관은 연속되나 근거 법률이 2023년 법으로 바뀌었다.</p>
+  <p class="qgist">PPRA는 PPA 2023 아래 계속 존속하며 현행 법정 기능을 수행한다.</p>
   <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">공공조달규제청(PPRA)이라는 기관을 계속 존속시킨다.</p></details>
 </div><div class="qc">
   <div class="qhd">
@@ -403,62 +405,49 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
   </div>
   <div class="qtext">&quot;price cap&quot; means an established minimum and maximum price which shall be charged for particular goods, works or services;</div>
-  <p class="qgist">가격상한은 PPRA가 특정 물품·공사·용역의 최소·최대 가격을 정하는 신설 제도다. 자료집에 없다.</p>
+  <p class="qgist">가격상한은 PPRA가 특정 물품·공사·용역의 최소·최대 가격을 정하는 제도다.</p>
   <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">&#x27;가격상한(price cap)&#x27;이란 특정 물품·공사·용역에 부과되는, 정해진 최소·최대 가격을 말한다.</p></details>
 </div></div>
 </section>
 
 <section class="blk">
-  <h2>자료집 ↔ 원문 불일치 1건</h2>
-  <p class="desc">자료집 서술을 법령 원문과 대조한 결과입니다. 건마다 <b>실무자가 할 일</b>과
-    <b>자료집 정정 제안</b>까지 붙였습니다. 정정이 필요한 것은 1건입니다 — <a href="../../errata/index.html">정오표</a>에 모아 두었습니다.</p>
+  <h2>현행 기준 반영 1건</h2>
+  <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
+    출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="high">
   <div class="top">
-    <span class="badge bad">심각도 높음</span>
+    <span class="badge bad">필수 확인</span>
     <span class="badge plain muted">탄자니아</span>
     <span class="badge plain muted">D01</span>
   </div>
   <h3>canvas.legalBasis / PPRA 근거 법령의 현행 여부</h3>
-  <div class="quote src"><b>자료집</b>(자료집 Ⅱ-2가 PPRA 조직·부서 기능을 서술하나, 근거 법령을 Public Procurement Act 2011 체계로 전제)</div>
-  <div class="quote act"><b>법령 원문</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
-  <p class="cite">근거 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §8, §74, §131(1)</p>
-  <p class="impact">PPRA 기관 자체는 연속되나 규율 틀이 바뀌었다. 자료집을 그대로 쓰면 신설된 가격상한·NeST 전자조달 의무·강화된 지역업체 우대를 놓치고, 폐지된 법의 조문 번호로 근거를 찾게 된다.</p>
-  <div class="todo"><b>실무자가 할 일</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
+  <div class="quote act"><b>현행 기준</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
+  <p class="cite">확인 출처 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> §8, §74, §131(1)</p>
+  <div class="todo"><b>실무 확인</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
   <details class="review">
   <summary>Field verification (English)</summary>
   <div class="rv">
-    <p class="rv-topic">Legal basis for PPRA&#x27;s mandate</p>
-    <p><b>The guide says</b> — The guide describes PPRA&#x27;s structure and functions on the basis of the 2011 Act framework.</p>
-    <p><b>The law says</b> — PPA 2023 §8 keeps PPRA in existence but under the new Act; it adds the power to set price caps (§74) and mandatory NeST e-procurement. The 2011 Act was repealed by §131(1).</p>
-    <p><b>Why it matters</b> — PPRA as an institution continues, but its governing framework changed. Using the guide as-is misses the new price cap, mandatory NeST, and stronger local-supplier preference, and points to section numbers from a repealed Act.</p>
+    <p><b>Current legal basis</b> — PPA 2023 §8 keeps PPRA in existence but under the new Act; it adds the power to set price caps (§74) and mandatory NeST e-procurement. The 2011 Act was repealed by §131(1).</p>
     <p class="rv-verify"><b>✔ Verify</b> — Use PPA 2023 as the reference. Check whether the estimated price is subject to a PPRA price cap, and whether the procuring entity is registered/operating on NeST.</p>
   </div>
 </details>
 
-  <p class="act-row">이 데이터에 반영 — 근거를 PPA 2023 + PPR 2025로 교체하고, PPRA 기능을 §10 기준으로 재기술했다. 가격상한(§74)을 프로세스와 bottlenecks에 신설로 반영했다.</p>
-  <div class="up">
-  <div class="hd"><b>자료집 정정 제안</b>
-    <span class="badge bad">정정 요망</span>
-    <span class="badge plain muted">미제보</span>
-  </div>
-  <div class="txt"><i>이렇게 고치면 됩니다</i>PPRA의 근거 법령을 &#x27;Public Procurement Act, No. 10 of 2023(2024-06-17 시행)&#x27;과 &#x27;Public Procurement Regulations, 2025(GN No. 261)&#x27;로 갱신할 것. PPA 2011은 폐지됨. 신설 반영 — 가격상한 설정 권한(§74), NeST 전자조달 의무, 지역업체 우대 강화</div>
-
-</div>
+  <p class="act-row">산출물 반영 — PPA 2023과 PPR 2024를 기준으로 PPRA 기능을 §10에 맞춰 정리하고 가격상한(§74)과 NeST 전자조달 요건을 반영했다.</p>
 </div>
 </section>
 
 <section class="blk">
   <h2>검증</h2>
-  <p class="desc">PPRA 공식 사이트에서 기관 소속·현행 법령을 확인하고, PPA 2023 원문에서 §8(설립)·§9(목적)·§10(기능)·§38(회계책임관)·§74(가격상한)·§131(폐지)을 대조. 자료집 p105-106의 PPRA 조직도·부서 기능과 대응.</p>
+  <p class="desc">PPRA 공식 사이트에서 기관 소속·현행 법령을 확인하고, PPA 2023 원문에서 §8(설립)·§9(목적)·§10(기능)·§38(회계책임관)·§74(가격상한)·§131(경과)을 확인했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
       <p style="margin:0;font-size:13.5px;line-height:1.7">PPRA의 법정 지위(재정기획부 산하 규제기관)와 §10 기능 14개 호, 가격상한 신설(§74), 회계책임관 책임(§38)을 원문에서 확인했다. PPAA 상소 절차와 NeST 운영 규정 세부는 미대조.</p>
-      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-02-25</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2026-02-23</p>
     </div>
-    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">The Public Procurement Act, 2023 (Act No. 10 of 2023) — English Version</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §8(1)(2), §9, §10(a)~(i), §38, §74, §131</span><span class="ar">확인 2026-07-23 · Public Procurement Regulatory Authority (PPRA)</span></li><li><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">PPRA 공식 사이트</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Public Procurement Regulatory Authority</span></li><li><a class="ref" href="https://www.mof.go.tz/" target="_blank" rel="noopener">재정기획부 공식 사이트</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Finance, Tanzania</span></li></ul></div>
-    <div class="card span2"><h3>주의</h3><p class="note">PPRA는 PPA 2011에서 설립됐고 PPA 2023 §8은 &#x27;계속 존속한다(continue to exist)&#x27;로 승계했다. 근거 법률이 교체됐으나 기관 자체는 연속된다.</p><p class="note">PPA 2023 §10은 PPRA 기능을 (a)~(다수) 호로 규정한다. 자료집의 5개 부서 기능(운영지원·역량강화·모니터링·정보시스템·법무공보)은 이 법정 기능을 조직으로 나눈 것이다.</p><p class="note">신설된 가격상한(§74)은 PPRA가 특정 물품·서비스의 최소·최대 가격을 정하는 제도로, 자료집에 없다.</p><p class="note">새 법은 스와힐리어 제정, 영문은 공식 번역이다.</p></div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">The Public Procurement Act, 2023 (Act No. 10 of 2023) — English Version</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §8(1)(2), §9, §10(a)~(i), §38, §74, §131</span><span class="ar">확인 2026-07-28 · Public Procurement Regulatory Authority (PPRA)</span></li><li><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">PPRA 공식 사이트</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-28 · Public Procurement Regulatory Authority</span></li><li><a class="ref" href="https://www.mof.go.tz/" target="_blank" rel="noopener">재정기획부 공식 사이트</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-28 · Ministry of Finance, Tanzania</span></li></ul></div>
+    <div class="card span2"><h3>주의</h3><p class="note">PPRA는 PPA 2011에서 설립됐고 PPA 2023 §8은 &#x27;계속 존속한다(continue to exist)&#x27;로 승계했다. 근거 법률이 교체됐으나 기관 자체는 연속된다.</p><p class="note">PPA 2023 §10은 PPRA 기능을 (a)~(다수) 호로 규정하며, 5개 부서가 관련 기능을 조직적으로 나눠 수행한다.</p><p class="note">가격상한(§74)은 PPRA가 특정 물품·서비스의 최소·최대 가격을 정하는 제도다.</p><p class="note">새 법은 스와힐리어 제정, 영문은 공식 번역이다.</p></div>
   </div>
-  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>공공조달상소청(PPAA) 상소 절차 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">PPA 2023의 이의·상소 조항과 PPAA 절차·기한을 정독하지 못했다. 자료집도 상소 절차를 다루지 않는다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPA 2023의 review·appeal 조항과 PPAA 규정을 확보해 이의제기 경로·기한을 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>NeST(국가전자조달시스템) 운영 규정 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">NeST 의무 적용 범위·등록 절차의 근거 규정을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPRA의 NeST 관련 고시·가이드라인을 확인한다.</p></div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>공공조달상소청(PPAA) 상소 절차 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">PPA 2023의 이의·상소 조항과 PPAA 절차·기한을 충분히 확인하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPA 2023의 review·appeal 조항과 PPAA 규정을 확보해 이의제기 경로·기한을 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>NeST(국가전자조달시스템) 운영 규정 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">NeST 의무 적용 범위·등록 절차의 근거 규정을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — PPRA의 NeST 관련 고시·가이드라인을 확인한다.</p></div>
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     원문 링크 연결 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
   </p>
@@ -472,7 +461,7 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 <script>
 var NODES={"P01": {"id": "P01", "name": "조달원칙 자문·가이드라인", "lane": "PPRA", "stage": "G0 표준·정책", "type": "task", "status": "done", "actor": "PPRA", "action": "정부·지방정부·법정기관에 조달원칙 자문, 가이드라인 발급.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(a), §10(f)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P02": {"id": "P02", "name": "표준입찰서류 제정", "lane": "PPRA", "stage": "G0 표준·정책", "type": "task", "status": "done", "actor": "PPRA", "action": "법무장관실·전문기관과 협력해 표준입찰서류·양식 제정·발급.", "output_documents": ["표준입찰서류"], "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(d)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P03": {"id": "P03", "name": "NeST 운영·데이터 공표", "lane": "PPRA", "stage": "G0 표준·정책", "type": "system", "status": "current", "actor": "PPRA", "action": "국가전자조달시스템(NeST) 운영, 조달기회·낙찰 데이터 공표.", "confidence": 0.75, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(g)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P04": {"id": "P04", "name": "발주기관 조달 집행", "lane": "발주 공공기관", "stage": "G1 집행", "type": "task", "status": "current", "actor": "발주 공공기관·회계책임관", "action": "NeST로 조달을 집행하고, 회계책임관이 조달 결정 책임을 진다.", "confidence": 0.8, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§38", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P05": {"id": "P05", "name": "가격상한 적용", "lane": "PPRA", "stage": "G1 집행", "type": "gateway", "status": "risk", "actor": "PPRA", "action": "특정 물품·서비스의 최소·최대 가격상한을 설정·적용. 신설 권한.", "confidence": 0.7, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§74", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P06": {"id": "P06", "name": "정기 점검", "lane": "PPRA", "stage": "G2 점검", "type": "task", "status": "waiting", "actor": "PPRA", "action": "발주기관 기록·절차를 정기 점검해 법 적용의 완전성·정확성 확인.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(h)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P07": {"id": "P07", "name": "낙찰·이행 모니터링", "lane": "PPRA", "stage": "G2 점검", "type": "task", "status": "waiting", "actor": "PPRA", "action": "낙찰·이행을 모니터링해 공정성·적법성 확보.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(i)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}, "P08": {"id": "P08", "name": "발주기관 이의신청", "lane": "입찰자·상소청", "stage": "G3 이의·상소", "type": "task", "status": "risk", "actor": "입찰자", "action": "입찰자가 발주기관에 이의를 신청한다.", "output_documents": ["이의신청서"], "confidence": 0.7}, "P09": {"id": "P09", "name": "공공조달상소청(PPAA) 상소", "lane": "입찰자·상소청", "stage": "G3 이의·상소", "type": "gateway", "status": "loop", "actor": "공공조달상소청", "action": "발주기관 결정에 불복 시 독립 상소기구(PPAA)에 상소한다.", "confidence": 0.7}, "P10": {"id": "P10", "name": "성과 보고·개선 자문", "lane": "PPRA", "stage": "G2 점검", "type": "notice", "status": "waiting", "actor": "PPRA", "action": "조달시스템 성과를 정부에 보고하고 개선을 자문한다.", "confidence": 0.85, "legal_basis": [{"law": "Public Procurement Act, No. 10 of 2023", "article": "§10(b)", "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"}]}};

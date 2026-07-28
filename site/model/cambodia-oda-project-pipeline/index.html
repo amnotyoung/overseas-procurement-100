@@ -5,6 +5,7 @@
 <title>캄보디아 ODA 사업 발굴·형성 절차 | 그 나라 조달은 어떻게 할까</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
 :root{
   --bg:#fff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb; --soft:#f7f8fa;
   --key:#157f3d; --key-bg:#eaf5ee; --warn:#b45309; --warn-bg:#fdf5e7;
@@ -206,6 +207,7 @@ ul.plain li{margin-bottom:6px}
 .disc[data-sev="medium"]{border-left-color:var(--warn)}
 .disc[data-sev="low"]{border-left-color:var(--muted)}
 .disc .top{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}
+.disc .top .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 .disc h3{margin:0;font-size:14.5px;letter-spacing:-.01em}
 .disc .quote{font-size:13px;margin:9px 0;padding:10px 13px;border-radius:8px;background:var(--soft);line-height:1.65}
 .disc .quote b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;letter-spacing:.02em}
@@ -279,7 +281,7 @@ footer.site a{color:var(--muted)}
   <nav>
     <a href="../../index.html">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
-    <a href="../../errata/index.html">정오표</a>
+    <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
   </nav>
 </div></header>
@@ -308,7 +310,7 @@ footer.site a{color:var(--muted)}
     <div class="tile"><b>4</b><span>행위 레인</span></div>
     <div class="tile"><b>4</b><span>게이트</span></div>
     <div class="tile ok"><b>0</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>0</b><span>불일치</span></div>
+    <div class="tile bad"><b>0</b><span>현행 기준</span></div>
     <div class="tile warn"><b>4</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -362,7 +364,7 @@ footer.site a{color:var(--muted)}
     <div class="card"><h3>제출서류</h3><div class="docset"><b>각 수원부처·기관</b><div class="chips"><span class="chip">협력사업 수요서</span><span class="chip">사업수요 공식 제출 서한</span><span class="chip">(유상) 사업요청서</span></div></div><div class="docset"><b>CDC/CRDB · MEF</b><div class="chips"><span class="chip">국가발전전략·우선순위 검토 결과</span><span class="chip">DP 앞 수요 전달</span></div></div><div class="docset"><b>KOICA</b><div class="chips"><span class="chip">사업제안서(Project Concept Paper, PCP)</span><span class="chip">예비조사 보고서</span><span class="chip">사업계획서(Project Document, PD)</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>무상·유상 수원총괄기관이 분리돼 있어(무상 CDC/CRDB·유상 MEF) 사업 성격에 따라 총괄 창구가 다르다</li><li>사업 형성(CDC/CRDB·MEF)과 조달 집행(외부재원 GDICDM·SOP 2019)의 주체가 달라, 형성 단계와 집행 단계에서 상대하는 기관이 바뀐다</li><li>부처별 사업 추진 선호방식이 상이해 태세가 다르다</li><li>일부 캄보디아 재원이 동원되면 수원부처가 MEF 절차를 추가로 밟아야 한다</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>부처별·재원별로 절차가 갈려 사업 초기에 총괄기관(무상 CDC/CRDB·유상 MEF)을 정확히 특정해야 함</li><li>수요제출 공식 서한이 형성 단계마다 확인되므로 문서 절차 관리가 중요</li></ul></div>
-    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>CDC/CRDB의 무상 수요 검토·전달 절차의 실제 소요기간과 형식</li><li>일부 캄보디아 재원 동원 사업에서 MEF 절차의 구체 내용 — 자료집 서술이 잘림</li><li>무상·유상 총괄 분리가 KOICA 무유상 연계사업에서 어떻게 조율되는지</li><li>CDC/CRDB의 국가발전전략 우선순위 검토 기준</li></ul></div>
+    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"><li>CDC/CRDB의 무상 수요 검토·전달 절차의 실제 소요기간과 형식</li><li>일부 캄보디아 재원 동원 사업에서 MEF 절차의 구체 내용</li><li>무상·유상 총괄 분리가 KOICA 무유상 연계사업에서 어떻게 조율되는지</li><li>CDC/CRDB의 국가발전전략 우선순위 검토 기준</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계</a></div></div>
   </div>
 </section>
@@ -373,16 +375,16 @@ footer.site a{color:var(--muted)}
 
 <section class="blk">
   <h2>검증</h2>
-  <p class="desc">자료집(아시아) 캄보디아 Ⅱ-1 수원체계·발굴절차를 정리하고 CDC·MEF 공식 사이트로 기관을 확인. 수원체계는 정책·관행 서술이 근거이고 조달제도와 달리 법령 원문 대조 대상이 아니라 status를 source-document로 둔다.</p>
+  <p class="desc">2026 아시아·태평양 기준자료의 캄보디아 수원체계·발굴절차를 정리하고 CDC·MEF 공식 사이트로 기관을 확인했다. 세부 수원 절차는 정책·관행에 근거해 status를 source-document로 둔다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
-      <p style="margin:0;font-size:13.5px;line-height:1.7">무상(CDC/CRDB)·유상(MEF) 수원총괄 분리, 무상·유상 발굴절차, KOICA PCP→예비조사→PD 심사 절차를 자료집에서 확인했다. 각 단계의 법적 근거나 공여기관 내부 규정 원문은 대조하지 않았다.</p>
-      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2025-02-25</p>
+      <p style="margin:0;font-size:13.5px;line-height:1.7">무상(CDC/CRDB)·유상(MEF) 수원총괄 분리, 무상·유상 발굴절차, KOICA PCP→예비조사→PD 심사 절차를 확인했다. 각 단계의 공식 지침 원문은 추가 확인이 필요하다.</p>
+      <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2026-02-23</p>
     </div>
     <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://cdc.gov.kh/" target="_blank" rel="noopener">캄보디아개발위원회(CDC)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Council for the Development of Cambodia</span></li><li><a class="ref" href="https://mef.gov.kh/" target="_blank" rel="noopener">경제재무부(MEF)</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Economy and Finance, Cambodia</span></li></ul></div>
     <div class="card span2"><h3>주의</h3><p class="note">본 제도는 법률이 아니라 정책·관행과 양자 절차 문서(PCP·PD·공식 서한), 공여기관 내부 절차가 근거라 조달제도 2건보다 낮은 source-document로 둔다.</p><p class="note">캄보디아 조달법이 2023년 교체됐으나 ODA 수원체계(CDC/CRDB·MEF)는 조달법과 별개 영역이라 그 교체의 직접 영향은 받지 않는다.</p><p class="note">사업 형성은 CDC/CRDB(무상)·MEF(유상)가 총괄하지만, 실제 조달 집행은 외부재원이면 GDICDM·SOP 2019 관할이다 — 형성과 집행의 주체가 다르다.</p></div>
   </div>
-  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>KOICA PCP·예비조사·PD 심사 가이드라인 <span class="badge plain muted">donor-internal</span></h3><p style="margin:0 0 8px;font-size:13.5px">PCP 검토위원회·PD 심사위원회의 심사 기준·일정은 KOICA 내부 규정으로 공개 원문을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — KOICA 사업 형성 공개 지침 또는 캄보디아사무소 안내로 단계별 기준을 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>일부 캄보디아 재원 동원 사업의 MEF 절차 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">자료집 서술이 &#x27;MEF에…&#x27;에서 잘려 구체 절차를 확인하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — 자료집 원문 또는 MEF 안내로 캄보디아 재원 연계 사업의 MEF 절차를 확인한다.</p></div>
+  <h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3><div class="card" style="margin-bottom:12px"><h3>KOICA PCP·예비조사·PD 심사 가이드라인 <span class="badge plain muted">donor-internal</span></h3><p style="margin:0 0 8px;font-size:13.5px">PCP 검토위원회·PD 심사위원회의 심사 기준·일정은 KOICA 내부 규정으로 공개 원문을 특정하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — KOICA 사업 형성 공개 지침 또는 캄보디아사무소 안내로 단계별 기준을 확인한다.</p></div><div class="card" style="margin-bottom:12px"><h3>일부 캄보디아 재원 동원 사업의 MEF 절차 <span class="badge plain muted">no-public-text</span></h3><p style="margin:0 0 8px;font-size:13.5px">캄보디아 재원이 함께 투입되는 사업의 구체 MEF 절차를 공식 공개문서에서 확인하지 못했다.</p><p style="margin:0;font-size:13px;color:var(--muted)">다음 조치 — MEF 안내 또는 발주기관 확인으로 캄보디아 재원 연계 사업의 절차를 확인한다.</p></div>
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     자료집 기재 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
   </p>
@@ -396,7 +398,7 @@ footer.site a{color:var(--muted)}
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2025 국가별 개발협력사업 참여전략 자료집 · 대조 근거는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
 </div></footer>
 <script>
 var NODES={"P01": {"id": "P01", "name": "수요 발굴·협의", "lane": "수원부처", "stage": "G1 수요", "type": "task", "status": "current", "actor": "수원부처 · DP", "action": "각 부처가 개발협력파트너와 협력사업 수요를 협의한다.", "confidence": 0.85}, "P02": {"id": "P02", "name": "수요 구체화·제출", "lane": "수원부처", "stage": "G1 수요", "type": "task", "status": "current", "actor": "수원부처", "action": "구체화된 수요를 총괄기관(무상 CDC/CRDB·유상 MEF)에 제출한다.", "output_documents": ["협력사업 수요서"], "confidence": 0.85}, "P03": {"id": "P03", "name": "국가전략 대조·DP 전달", "lane": "CDC/CRDB·MEF", "stage": "G2 검토·전달", "type": "gateway", "status": "waiting", "actor": "CDC/CRDB", "action": "국가발전전략·정책 우선순위를 검토하고 각 DP에 수요를 전달한다(필요 시 사전협의).", "confidence": 0.8}, "P04": {"id": "P04", "name": "PCP 작성·검토위원회", "lane": "KOICA", "stage": "G3 예비·심사", "type": "gateway", "status": "waiting", "actor": "KOICA", "action": "CDC/CRDB 수요 타당성을 검토해 PCP를 본부 검토위원회에 상정한다. 수요제출 공식 서한 확인.", "output_documents": ["사업제안서(PCP)"], "confidence": 0.8}, "P05": {"id": "P05", "name": "예비조사", "lane": "KOICA", "stage": "G3 예비·심사", "type": "task", "status": "waiting", "actor": "KOICA · 수원부처", "action": "검토위 통과 사업에 예비조사(문헌·현지답사·면담)를 실시하고 수원부처가 참여한다.", "output_documents": ["예비조사 보고서"], "confidence": 0.8}, "P06": {"id": "P06", "name": "PD 심사위원회", "lane": "KOICA", "stage": "G3 예비·심사", "type": "gateway", "status": "waiting", "actor": "KOICA", "action": "타당한 사업의 PD 초안을 본부 심사위원회에 상정해 예산당국 심사 대상을 선정한다.", "output_documents": ["사업계획서(PD)"], "confidence": 0.8}, "P07": {"id": "P07", "name": "유상 정책협의", "lane": "CDC/CRDB·MEF", "stage": "G2 검토·전달", "type": "task", "status": "waiting", "actor": "MEF", "action": "(유상) MEF가 부처 사업요청서를 취합해 유상 DP별 정책협의로 후보사업을 결정한다.", "confidence": 0.8}, "P08": {"id": "P08", "name": "한국 예산·확정", "lane": "대한민국 정부", "stage": "G4 공식화", "type": "task", "status": "waiting", "actor": "외교부·기재부·국무조정실·국회", "action": "시행기관 선정 후 주무부처·국무조정실·국회 심의로 사업을 확정한다.", "confidence": 0.85}, "P09": {"id": "P09", "name": "공식화", "lane": "CDC/CRDB·MEF", "stage": "G4 공식화", "type": "notice", "status": "waiting", "actor": "CDC/CRDB · 수원부처", "action": "캄보디아 정부는 PCP·PD 제출과 사업수요 공식 서한 발송으로 공식화한다.", "confidence": 0.8}};

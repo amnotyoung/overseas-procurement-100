@@ -2,37 +2,65 @@
   "project": "overseas-procurement-100",
   "description": "협력국 조달제도를 국가당 3축(입찰제도·조달 거버넌스·ODA 사업형성)으로 정규화한 데이터셋. 발주자(KOICA) 자신의 조달 규정도 같은 3축으로 정리해 협력국 제도와 대비한다.",
   "schemaVersion": "0.1",
-  "updatedAt": "2026-07-26",
+  "updatedAt": "2026-07-28",
 
   "axes": [
-    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "아시아 11/11 · 미얀마 1차자료 보강 · 탄자니아 확인" },
-    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "아시아 11/11 · 미얀마 1차자료 보강 · 탄자니아 확인" },
-    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "아시아 11/11 · 미얀마 1차자료 보강 · 탄자니아 확인" }
+    { "key": "bidding", "suffix": "-bidding-system", "name": "입찰제도", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" },
+    { "key": "governance", "suffix": "-procurement-governance", "name": "조달 거버넌스", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" },
+    { "key": "pipeline", "suffix": "-oda-project-pipeline", "name": "ODA 사업형성 절차", "coverage": "아시아·태평양 12/12 · 미얀마 1차자료 보강 · 탄자니아 확인" }
   ],
 
   "axisSelection": {
-    "method": "KOICA 2025 자료집(아시아·태평양) 11개국 전수 섹션 조사. 아프리카(탄자니아)에서도 3축 존재 확인. 자료집 미수록 보강국인 미얀마는 조달지침·개발원조정책 등 1차자료를 같은 3축으로 정규화했다.",
-    "ration": "3축만 11/11로 존재한다. 인허가(6/11)·건축입찰(1/11, 네팔만)·진출유의사항(7/11)은 축으로 삼으면 다른 대륙 확장 시 결측이 생기므로, 존재하는 국가에 한해 canvas.entryBarriers·submittedDocuments·fieldVerification으로 흡수한다. 탄자니아와 미얀마도 같은 3축 구조로 정규화됐다.",
-    "surveyedAt": "2026-07-26"
+    "method": "KOICA 2026 자료집(아시아 및 태평양) 12개국 전수 섹션 조사. 아프리카(탄자니아)에서도 3축 존재 확인. 지역 자료집 미수록 보강국인 미얀마는 조달지침·개발원조정책 등 1차자료를 같은 3축으로 정규화했다.",
+    "ration": "입찰제도·조달 거버넌스·ODA 사업형성의 3축을 공통 구조로 사용한다. 인허가·건축입찰·진출 유의사항처럼 국가별 편차가 있는 내용은 해당 국가의 canvas.entryBarriers·submittedDocuments·fieldVerification에 흡수한다.",
+    "surveyedAt": "2026-07-28"
   },
 
   "sourceDocuments": [
     {
-      "id": "koica-2025-asia-pacific",
-      "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아시아·태평양 지역",
+      "id": "koica-2026-asia-pacific",
+      "title": "2026 국가별 개발협력사업 참여전략 자료집 — 아시아 및 태평양 지역",
       "publisher": "한국국제협력단(KOICA)",
-      "issuedOn": "2025-02-25",
-      "pdfPages": 117,
-      "layout": "좌우 2면 스프레드(1228.82 × 841.89 pt). 단순 추출 시 좌우 페이지 텍스트가 섞이므로 sources/koica-2025-asia-pacific/extract.sh로 분할 추출한다.",
+      "edition": "2026",
+      "pdfMetadataCreatedOn": "2026-02-23",
+      "pdfPages": 192,
+      "path": "참여전략설명회 자료집/참여전략설명회 자료집(아시아 및 태평양지역).pdf",
+      "sha256": "3876f2b44ec5610ee7ef7147c5a1b20461060929288d92f072e9595bd737aaaf",
+      "layout": "612 × 858 pt 단면 조판. sources/koica-2026/extract.sh로 물리 면별 텍스트를 추출한다.",
       "status": "확보"
     },
     {
-      "id": "koica-2025-africa",
-      "title": "2025 국가별 개발협력사업 참여전략 자료집 — 아프리카 지역",
+      "id": "koica-2026-africa",
+      "title": "2026 국가별 개발협력사업 참여전략 자료집 — 아프리카 지역",
       "publisher": "한국국제협력단(KOICA)",
-      "issuedOn": "2025-02-25",
-      "pdfPages": 120,
-      "layout": "페이지마다 크기가 다르다 — 표지·간지는 A4(595pt), 국가 본문은 A3 스프레드(1190.55 × 841.89 pt)에 좌측 A4 영역으로 조판. pdfinfo가 첫 페이지만 봐서 A4로 오인하므로, 페이지별 폭을 개별 확인해 좌면(0~폭/2)을 추출한다.",
+      "edition": "2026",
+      "pdfMetadataCreatedOn": "2026-02-23",
+      "pdfPages": 214,
+      "path": "참여전략설명회 자료집/참여전략설명회 자료집(아프리카 지역).pdf",
+      "sha256": "a9dc775c856a18b5ee40953002f7b4406531337424c04d8de92f3f249fafb084",
+      "layout": "612 × 858 pt 단면 조판. sources/koica-2026/extract.sh로 물리 면별 텍스트를 추출한다.",
+      "status": "확보"
+    },
+    {
+      "id": "koica-2026-latin-america",
+      "title": "2026 국가별 개발협력사업 참여전략 자료집 — 중남미 지역",
+      "publisher": "한국국제협력단(KOICA)",
+      "edition": "2026",
+      "pdfMetadataCreatedOn": "2026-02-23",
+      "pdfPages": 135,
+      "path": "참여전략설명회 자료집/참여전략설명회 자료집(중남미 지역).pdf",
+      "sha256": "3eb4cce2692e8bcc226a57aacdb28225a7c58677acb83298b86460f0762d32e7",
+      "status": "확보"
+    },
+    {
+      "id": "koica-2026-middle-east-cis",
+      "title": "2026 국가별 개발협력사업 참여전략 자료집 — 중동·CIS 지역",
+      "publisher": "한국국제협력단(KOICA)",
+      "edition": "2026",
+      "pdfMetadataCreatedOn": "2026-02-23",
+      "pdfPages": 128,
+      "path": "참여전략설명회 자료집/참여전략설명회 자료집(중동,CIS 지역).pdf",
+      "sha256": "7a7f92c38bdf4e024247ae299ae05ca45e53c39163baf244a2e2c67872e98109",
       "status": "확보"
     },
     {
@@ -40,23 +68,21 @@
       "title": "미얀마 공공조달·개발원조 1차자료 묶음 — Directive 1/2017·Directive 1/2022·Development Assistance Policy 2020",
       "publisher": "President’s Office / Office of the State Administration Council / Ministry of Investment and Foreign Economic Relations",
       "issuedOn": "2022-03-17",
-      "note": "KOICA 2025 아시아·태평양 자료집 미수록 보강 국가. sources/laws/myanmar/에 영문본을 보관했다. 2017·2022 조달지침 영문본은 비공식 편의번역이다.",
+      "note": "KOICA 2026 아시아 및 태평양 자료집 미수록 보강 국가. sources/laws/myanmar/에 영문본을 보관했다. 2017·2022 조달지침 영문본은 비공식 편의번역이다.",
       "status": "확보"
     },
-    { "id": "koica-regulations", "title": "KOICA 조달 관련 규정 4종 — 대외무상협력사업 조달·계약규정·시행세칙·국제조달규정·현지입찰 적격심사지침", "publisher": "한국국제협력단(KOICA)", "issuedOn": "2025-02-25", "note": "ALIO(공공기관 경영정보 공개시스템, apbaId=C0146, reportFormNo=21110) 공개본. 발주자 편의 근거. 자료집이 아니라 규정 원문 자체.", "status": "확보" },
-    { "id": "koica-2025-latin-america", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중남미 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" },
-    { "id": "koica-2025-middle-east-cis", "title": "2025 국가별 개발협력사업 참여전략 자료집 — 중동·CIS 지역", "publisher": "한국국제협력단(KOICA)", "status": "미확보" }
+    { "id": "koica-regulations", "title": "KOICA 조달 관련 규정 4종 — 대외무상협력사업 조달·계약규정·시행세칙·국제조달규정·현지입찰 적격심사지침", "publisher": "한국국제협력단(KOICA)", "issuedOn": "2025-02-25", "note": "ALIO(공공기관 경영정보 공개시스템, apbaId=C0146, reportFormNo=21110) 공개본. 발주자 편의 근거. 자료집이 아니라 규정 원문 자체.", "status": "확보" }
   ],
 
   "countries": [
     {
       "slug": "nepal", "name": "네팔", "nameEn": "Nepal", "iso3": "NPL",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "5-14", "docPages": "6-25",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "5-18", "docPages": "5-18",
       "institutions": {
         "bidding": { "slug": "nepal-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 3 },
         "governance": { "slug": "nepal-procurement-governance", "status": "done", "verification": "article-verified", "discrepancies": 2 },
-        "pipeline": { "slug": "nepal-oda-project-pipeline", "status": "done", "verification": "article-verified", "discrepancies": 5 }
+        "pipeline": { "slug": "nepal-oda-project-pipeline", "status": "done", "verification": "article-verified", "discrepancies": 4 }
       },
       "primaryLaws": [
         "Public Procurement Act, 2063 (2007)",
@@ -66,12 +92,12 @@
       "supersededLaws": [
         "International Development Cooperation Policy, 2019 — Foreign Aid Mobilization Policy 2025 §3.7.1로 폐지"
       ],
-      "notes": "파일럿 국가. 자료집에 유일하게 건축 관련 입찰제도 섹션이 있다. 자료집이 전제한 수원체계 근거(IDCP 2019)가 발행 2개월 뒤 폐지돼, ODA 파이프라인은 신규 정책 기준으로 전면 재작성했다."
+      "notes": "파일럿 국가. 2026년판은 수원체계 근거로 Foreign Aid Mobilization Policy 2025를 반영했다. ODA 파이프라인과 조세·관세 범위는 해당 정책 원문 조문 기준으로 정리했다."
     },
     {
       "slug": "tanzania", "name": "탄자니아", "nameEn": "Tanzania", "iso3": "TZA",
-      "region": "아프리카", "sourceDocument": "koica-2025-africa",
-      "pdfPages": "102-112", "docPages": "205-225",
+      "region": "아프리카", "sourceDocument": "koica-2026-africa",
+      "pdfPages": "187-202", "docPages": "187-202",
       "institutions": {
         "bidding": { "slug": "tanzania-bidding-system", "status": "done", "verification": "article-verified", "discrepancies": 3 },
         "governance": { "slug": "tanzania-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
@@ -79,18 +105,18 @@
       },
       "primaryLaws": [
         "Public Procurement Act, No. 10 of 2023 (2024-06-17 시행)",
-        "Public Procurement Regulations, 2025 (GN No. 261 of 2025)"
+        "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)"
       ],
       "supersededLaws": [
         "Public Procurement Act, 2011 — PPA 2023 §131(1)로 폐지",
-        "Public Procurement Regulations, 2013 — PPR 2025로 교체"
+        "Public Procurement Regulations, 2013 — PPR 2024로 교체"
       ],
-      "notes": "아프리카 첫 국가. 자료집이 근거로 삼은 PPA 2011·PPR 2013이 자료집 발행 8개월 전(2024-06-17)에 이미 PPA 2023·PPR 2025로 교체됐다 — 네팔보다 이른 폐지. 입찰제도는 PPR 2025 원문(보증·선금·지체상금·Third Schedule)까지 대조해 article-verified 확정 — 자료집의 고정 보증률(5%/10%/3%)은 구 규정 값이고 새 규정은 입찰서류 위임임을 조문으로 확인. 자료집이 A3 스프레드라 좌면 추출 필요."
+      "notes": "아프리카 첫 국가. 현행 PPA 2023과 PPR 2024 원문을 기준으로 보증·선금·지체상금·전자조달 요건을 반영했다. PPR 2024 공식 영문본은 Government Notice No. 261(2025-04-25)로 공표됐다."
     },
     {
       "slug": "timor-leste", "name": "동티모르", "nameEn": "Timor-Leste", "iso3": "TLS",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "16-21", "docPages": "28-39",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "21-29", "docPages": "21-29",
       "institutions": {
         "bidding": { "slug": "timor-leste-bidding-system", "status": "pending" },
         "governance": { "slug": "timor-leste-procurement-governance", "status": "pending" },
@@ -100,8 +126,8 @@
     },
     {
       "slug": "laos", "name": "라오스", "nameEn": "Lao People's Democratic Republic", "iso3": "LAO",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "23-31", "docPages": "42-59",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "31-45", "docPages": "31-45",
       "institutions": {
         "bidding": { "slug": "laos-bidding-system", "status": "pending" },
         "governance": { "slug": "laos-procurement-governance", "status": "pending" },
@@ -111,8 +137,8 @@
     },
     {
       "slug": "bangladesh", "name": "방글라데시", "nameEn": "Bangladesh", "iso3": "BGD",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "33-42", "docPages": "62-81",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "47-59", "docPages": "47-59",
       "institutions": {
         "bidding": { "slug": "bangladesh-bidding-system", "status": "pending" },
         "governance": { "slug": "bangladesh-procurement-governance", "status": "pending" },
@@ -122,8 +148,8 @@
     },
     {
       "slug": "vietnam", "name": "베트남", "nameEn": "Viet Nam", "iso3": "VNM",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "44-62", "docPages": "84-121",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "61-79", "docPages": "61-79",
       "institutions": {
         "bidding": { "slug": "vietnam-bidding-system", "status": "pending" },
         "governance": { "slug": "vietnam-procurement-governance", "status": "pending" },
@@ -133,8 +159,8 @@
     },
     {
       "slug": "sri-lanka", "name": "스리랑카", "nameEn": "Sri Lanka", "iso3": "LKA",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "64-68", "docPages": "124-133",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "81-91", "docPages": "81-91",
       "institutions": {
         "bidding": { "slug": "sri-lanka-bidding-system", "status": "pending" },
         "governance": { "slug": "sri-lanka-procurement-governance", "status": "pending" },
@@ -144,8 +170,8 @@
     },
     {
       "slug": "indonesia", "name": "인도네시아", "nameEn": "Indonesia", "iso3": "IDN",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "70-78", "docPages": "136-153",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "93-107", "docPages": "93-107",
       "institutions": {
         "bidding": { "slug": "indonesia-bidding-system", "status": "pending" },
         "governance": { "slug": "indonesia-procurement-governance", "status": "pending" },
@@ -155,8 +181,8 @@
     },
     {
       "slug": "cambodia", "name": "캄보디아", "nameEn": "Cambodia", "iso3": "KHM",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "80-89", "docPages": "156-175",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "109-127", "docPages": "109-127",
       "institutions": {
         "bidding": { "slug": "cambodia-bidding-system", "status": "done", "verification": "law-linked", "discrepancies": 1 },
         "governance": { "slug": "cambodia-procurement-governance", "status": "done", "verification": "law-linked", "discrepancies": 1 },
@@ -169,12 +195,23 @@
       "supersededLaws": [
         "Law on Public Procurement, 2012 (Royal Kram NS/RKM/0112/004) — 2023 신법으로 폐지"
       ],
-      "notes": "세 번째 국가. 조달법이 2023년 신법으로 교체됐으나(구법 2012 폐지) 시행규정은 2012 프레임 잠정유효 — 자료집의 금액구간·입찰방식은 규정 소관이라 아직 유효, 신설 법률사항(컨설팅 조달·강화 벌칙·MEF 검사권)만 누락. 신법 원문이 크메르어 스캔본이라 조문 verbatim 대조 불가, law-linked에 머문다. 재원별 이원 조달(국내 GDPP·외부 GDICDM/SOP 2019), 무상·유상 수원총괄 분리(CDC/CRDB·MEF)가 특징. 페이지가 A3(1190pt)라 첫 페이지(1228) 기준 추출과 달라 개별 재추출 필요."
+      "notes": "세 번째 국가. 2023 공공조달법과 경제재무부·GDPP 공식 공개정보를 기준으로 신법 사항을 반영했다. 공식 영문본과 신법 하위규정 전문은 확인하지 못해 금액구간·입찰방식은 현지 확인 대상으로 남겼다."
+    },
+    {
+      "slug": "thailand", "name": "태국", "nameEn": "Thailand", "iso3": "THA",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "129-147", "docPages": "129-147",
+      "institutions": {
+        "bidding": { "slug": "thailand-bidding-system", "status": "pending" },
+        "governance": { "slug": "thailand-procurement-governance", "status": "pending" },
+        "pipeline": { "slug": "thailand-oda-project-pipeline", "status": "pending" }
+      },
+      "notes": "2026년판 신규 조사 대상. 전자정부조달(e-GP), 외국 기업 참가요건, 설계·건축·감리 조달 구분을 현행 태국 법령 원문과 대조해야 한다."
     },
     {
       "slug": "pakistan", "name": "파키스탄", "nameEn": "Pakistan", "iso3": "PAK",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "91-98", "docPages": "178-193",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "149-163", "docPages": "149-163",
       "institutions": {
         "bidding": { "slug": "pakistan-bidding-system", "status": "pending" },
         "governance": { "slug": "pakistan-procurement-governance", "status": "pending" },
@@ -184,8 +221,8 @@
     },
     {
       "slug": "fiji", "name": "피지", "nameEn": "Fiji", "iso3": "FJI",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "100-104", "docPages": "196-205",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "165-175", "docPages": "165-175",
       "institutions": {
         "bidding": { "slug": "fiji-bidding-system", "status": "pending" },
         "governance": { "slug": "fiji-procurement-governance", "status": "pending" },
@@ -195,8 +232,8 @@
     },
     {
       "slug": "philippines", "name": "필리핀", "nameEn": "Philippines", "iso3": "PHL",
-      "region": "아시아·태평양", "sourceDocument": "koica-2025-asia-pacific",
-      "pdfPages": "106-116", "docPages": "208-229",
+      "region": "아시아·태평양", "sourceDocument": "koica-2026-asia-pacific",
+      "pdfPages": "177-191", "docPages": "177-191",
       "institutions": {
         "bidding": { "slug": "philippines-bidding-system", "status": "pending" },
         "governance": { "slug": "philippines-procurement-governance", "status": "pending" },
@@ -217,7 +254,7 @@
         "President’s Office Directive No. 1/2017 (2017-04-10)",
         "Myanmar Development Assistance Policy (2020-09)"
       ],
-      "notes": "KOICA 2025 아시아·태평양 자료집에 없는 1차자료 보강국이라 자료집↔원문 discrepancy는 산정하지 않는다. Directive 1/2022가 충돌 범위에서 2017·2018·2020 지침보다 우선하므로 입찰 금액구간은 2천만/2억 MMK를 적용했다. 조달 2축은 비공식 영문 편의번역으로 조문 대조했으며, ODA 파이프라인은 2021년 이후 현행 최종 승인기관·서명권자 최신 SOP를 확보하지 못해 needs-review로 남겼다."
+      "notes": "KOICA 2026 아시아 및 태평양 자료집 미수록 보강국이다. Directive 1/2022가 충돌 범위에서 2017·2018·2020 지침보다 우선하므로 입찰 금액구간은 2천만/2억 MMK를 적용했다. 조달 2축은 비공식 영문 편의번역으로 조문 대조했으며, ODA 파이프라인은 2021년 이후 현행 최종 승인기관·서명권자 최신 SOP를 확보하지 못해 needs-review로 남겼다."
     },
     {
       "slug": "koica", "name": "KOICA(발주자)", "nameEn": "Korea International Cooperation Agency", "iso3": "KOR",
@@ -238,17 +275,17 @@
   ],
 
   "progress": {
-    "note": "KOICA 자료집 수록국은 아시아·태평양 11개국 기준이며, 미얀마는 자료집 미수록 1차자료 보강국이다. 아프리카 등 타 지역 국가 수는 자료집 확보 시 갱신한다. 발주자(KOICA) 편은 협력국과 별도로 집계한다.",
+    "note": "KOICA 2026 자료집 4개 지역본을 확보했다. 아시아 및 태평양 12개국을 기본 조사대상으로 두고, 미얀마는 자료집 미수록 1차자료 보강국으로 관리한다. 발주자(KOICA) 편은 협력국과 별도로 집계한다.",
     "countriesDone": 4,
     "donorDone": 1,
     "institutionsDone": 15,
-    "discrepanciesFound": 17,
-    "discrepanciesHigh": 5,
+    "discrepanciesFound": 16,
+    "discrepanciesHigh": 4,
     "discrepanciesMedium": 9,
     "discrepanciesLow": 3,
-    "upstreamPending": 17,
+    "upstreamPending": 16,
     "byCountry": {
-      "nepal": { "institutions": 3, "discrepancies": 10, "high": 3 },
+      "nepal": { "institutions": 3, "discrepancies": 9, "high": 2 },
       "tanzania": { "institutions": 3, "discrepancies": 5, "high": 2 },
       "cambodia": { "institutions": 3, "discrepancies": 2, "high": 0 },
       "myanmar": { "institutions": 3, "discrepancies": 0, "high": 0, "supplemental": true },

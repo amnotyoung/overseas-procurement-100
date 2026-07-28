@@ -1,347 +1,124 @@
 # overseas-procurement-100
 
-협력국 조달제도를 **국가당 3축**으로 정규화하고, 그 서술을 **각국 법령 원문과 대조해 검증**하는 데이터셋.
+협력국 공공조달과 ODA 사업형성 절차를 국가당 3축으로 정규화하고, 공식 원문과 출처를 연결하는 데이터셋이다.
 
-[how-did-they-do-all-that-procurement](https://github.com/Milkbuttercheese2/how-did-they-do-all-that-procurement)(국내 조달제도 100)의
-방법론 — 제도별 JSON 정규화(Canvas 9칸 + Process) → 조문 근거 표기 → 검증 배지 — 을 해외 조달제도에 적용했다.
+- `bidding`: 입찰제도
+- `governance`: 조달 거버넌스·감독체계
+- `pipeline`: ODA 사업 발굴·형성 절차
 
-| | 원본 | 본 프로젝트 |
-|---|---|---|
-| 대상 | 대한민국 1개국 × 제도 66개 | 협력국 33개국 내외 × 국가당 3개 |
-| 1차 출처 | 국가법령정보센터 | KOICA 국가별 개발협력사업 참여전략 자료집(2025) + 미수록 보강국 현지 1차자료 |
-| 검증 | 국가법령정보센터 Open API 기계 대조 | 각국 조달법·규칙 영문 원문 조문 단위 대조 |
-| 산출 | 제도 한 장 요약 | 제도 한 장 요약 **+ 자료집↔원문 불일치 대장** |
+기준자료는 **KOICA 2026 국가별 개발협력사업 참여전략 자료집 4개 지역판**이다. 법령·기관 공식 자료로 현행 기준을 확인할 수 있는 항목은 그 기준을 산출물에 반영하고 출처를 함께 표시한다.
 
----
+## 현재 범위
 
-## 지금 상태
+- 협력국 4개국 12개 제도: 네팔, 캄보디아, 미얀마, 탄자니아
+- 발주자(KOICA) 규정 3개 제도
+- 현행 기준 확인사항 16건
+- 아시아·태평양 2026 자료집 수록국 12개국의 페이지 범위 등록
 
-**협력국 4개국 12개 제도 + 발주자(KOICA) 3개 제도 완료** — 검증 통과,
-**불일치 17건(high 5 / medium 9 / low 3)**
+미얀마는 2026 아시아·태평양 자료집 미수록 보강국으로, 현지 지침·정책 원문을 직접 연결했다.
 
-네팔(아시아·태평양)
-
-| 제도 | 축 | 검증 상태 | 불일치 |
+| 국가 | 입찰 | 거버넌스 | ODA 파이프라인 |
 |---|---|---|---|
-| [네팔 공공조달 입찰제도](data/institutions/nepal-bidding-system.json) | bidding | `article-verified` | 3 |
-| [네팔 조달 거버넌스·감독체계](data/institutions/nepal-procurement-governance.json) | governance | `article-verified` | 2 |
-| [네팔 ODA 사업 발굴·형성 절차](data/institutions/nepal-oda-project-pipeline.json) | pipeline | `article-verified` | 5 |
+| 네팔 | `article-verified` | `article-verified` | `article-verified` |
+| 캄보디아 | `law-linked` | `law-linked` | `source-document` |
+| 미얀마 | `article-verified` | `article-verified` | `needs-review` |
+| 탄자니아 | `article-verified` | `law-linked` | `source-document` |
+| KOICA | `article-verified` | `article-verified` | `article-verified` |
 
-탄자니아(아프리카)
+자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
-| 제도 | 축 | 검증 상태 | 불일치 |
-|---|---|---|---|
-| [탄자니아 공공조달 입찰제도](data/institutions/tanzania-bidding-system.json) | bidding | `article-verified` | 3 |
-| [탄자니아 조달 거버넌스·감독체계](data/institutions/tanzania-procurement-governance.json) | governance | `law-linked` | 1 |
-| [탄자니아 ODA 사업 발굴·형성 절차](data/institutions/tanzania-oda-project-pipeline.json) | pipeline | `source-document` | 1 |
+## 출처
 
-캄보디아(아시아·태평양)
+```text
+참여전략설명회 자료집/
+├── 2026 KOICA 국가별 개발협력사업 참여전략 자료집_아시아 및 태평양.pdf
+├── 2026 KOICA 국가별 개발협력사업 참여전략 자료집_아프리카.pdf
+├── 2026 KOICA 국가별 개발협력사업 참여전략 자료집_중남미.pdf
+└── 2026 KOICA 국가별 개발협력사업 참여전략 자료집_중동 및 CIS.pdf
 
-| 제도 | 축 | 검증 상태 | 불일치 |
-|---|---|---|---|
-| [캄보디아 공공조달 입찰제도](data/institutions/cambodia-bidding-system.json) | bidding | `law-linked` | 1 |
-| [캄보디아 조달 거버넌스·감독체계](data/institutions/cambodia-procurement-governance.json) | governance | `law-linked` | 1 |
-| [캄보디아 ODA 사업 발굴·형성 절차](data/institutions/cambodia-oda-project-pipeline.json) | pipeline | `source-document` | 0 |
+sources/koica-2026/
+├── README.md
+├── extract.sh
+└── {region}/pages/*.txt
+```
 
-미얀마(아시아·태평양 · 자료집 미수록 1차자료 보강)
-
-| 제도 | 축 | 검증 상태 | 불일치 |
-|---|---|---|---|
-| [미얀마 공공조달 입찰제도](data/institutions/myanmar-bidding-system.json) | bidding | `article-verified` | 0 |
-| [미얀마 조달 거버넌스·감독체계](data/institutions/myanmar-procurement-governance.json) | governance | `article-verified` | 0 |
-| [미얀마 ODA 사업 발굴·형성 절차](data/institutions/myanmar-oda-project-pipeline.json) | pipeline | `needs-review` | 0 |
-
-미얀마는 KOICA 2025 아시아·태평양 자료집의 11개국에 포함되지 않아 현지 지침·정책 원문으로 별도 보강했다.
-조달 2축은 Directive 1/2022가 바꾼 **2천만/2억 MMK** 공고 구간과 2017 지침의 보충 절차를 함께 반영했다.
-ODA 파이프라인은 MIFER/FERD의 단일창구 기능과 2020 개발원조정책의 안정적인 단계만 담았고,
-2021년 이후 최종 승인기관·서명권자 최신 SOP를 확보하지 못해 `needs-review`로 남겼다.
-자료집과 대조할 원문이 없으므로 미얀마의 불일치는 0건이며, 이는 무오류 판정이 아니라 **대조 대상 없음**을 뜻한다.
-
-**자료집 수록 완료 3개국 모두에서 자료집이 근거로 삼은 법령이 이미 교체된 것**을 잡았다 — 네팔은 발행 2개월 뒤 폐지,
-탄자니아는 발행 **8개월 전**에 새 법(PPA 2023) 시행, 캄보디아도 2023년 신법으로 구법(2012) 폐지.
-근거 문서의 현행 여부 확인이 워크플로의 필수 단계임을 세 번 연속 확인했다.
-
-다만 자료집 수록 3개국의 대조 **깊이는 다르다** — 네팔·탄자니아는 영문 원문이 있어 조문 verbatim까지 확인(`article-verified`)했지만,
-캄보디아는 신법 원문이 크메르어 스캔본이라 조문 대조가 불가능해 `law-linked`에 머문다.
-게다가 캄보디아는 시행규정이 아직 초안이라 **2012 프레임 규정이 잠정 유효** — 자료집의 금액구간·입찰방식은 아직 맞고
-신설 법률사항(컨설팅 조달·강화 벌칙)만 누락되는, 앞선 두 나라와 또 다른 양상이다.
-
-발견한 것 중 실무에서 바로 문제가 되는 세 건:
-
-- **대리인 제출서류** — 자료집은 "주민등록 등본"이라 하지만 원문(PPR r.39(1)(d))은
-  **PAN(영구계좌번호) 등록증명서 인증등본 + 대리인 수락서**다. 세무등록번호와 주민등록은 다른 서류이고, 누락 시 입찰서가 심사에서 빠질 수 있다.
-- **ODA 사업 착수 지점** — 자료집은 "공여기관이 수원기관 부처와 협의해 발굴"이라 하지만,
-  네팔 정책은 그 접촉 자체에 **재무부 사전 승인**을 요구한다(FAMP §3.3.2(k)). 공여기관도 승인 대상이다(§3.3.5(b)).
-- **근거 정책이 폐지됨** — 자료집이 전제한 국제개발협력정책 2019는 **대외원조동원정책 2025**(2025-04-21 승인)
-  §3.7.1로 폐지됐다. 자료집 발행 2개월 뒤다. 차관 1천만 달러 문턱과 국가계획위원회 동의 요건이 사라졌고
-  조세면제가 좁아졌다 — 자료집을 현행 기준으로 그대로 쓰면 없어진 요건을 준비하거나
-  면제받을 수 없는 세금을 사업비에서 누락하게 된다.
-
-전체는 [검증 대장](docs/verification-log.md) 참조.
-
-**발견에서 끝내지 않는다.** 불일치마다 세 가지를 붙였다.
-
-| 필드 | 수신자 | 답하는 질문 |
-|---|---|---|
-| `action` | 이 데이터셋 | 우리 데이터는 어느 쪽을 따랐나 |
-| `userAction` | 입찰 준비자 | 내가 지금 무엇을 다르게 해야 하나 |
-| `upstream` | 자료집 발행처 | 다음 판에서 무엇을 고쳐야 하나 |
-
-`upstream`이 있는 항목은 [정오표](docs/errata.md)에 `현재 서술 → 수정 제안 → 근거 조문` 형태로 모여
-그대로 옮겨 전달할 수 있다. 전달 후 `upstream.state`를 갱신하면 문서와 화면이 따라온다. 자동 발송은 하지 않는다.
-
-**검증하는 사람은 현지 직원이다.** 이 데이터의 최종 검증자는 KOICA 해외사무소 직원이고,
-현지인이면 한국어를 못 읽는다. 그래서 `high`·`medium` 불일치마다 영어 검토 블록(`review`)을 달아,
-`자료집이 뭐라 했나 → 법이 뭐라 하나 → 현장에서 확인할 것(Verify)` 형태로 [영어 검토 시트](docs/review-sheet.en.md)를
-생성한다. 상세 페이지의 불일치 카드에도 "Field verification (English)" 접기로 붙는다.
-법령 원문(`actualText`)·조문(`citation`)은 이미 영어라, `review`는 그 사이의 한국어 간극만 메운다.
-
-**검증 결과는 데이터로 돌아온다 (회신 → 관리자 반영).** `review.verify`는 지시일 뿐이고,
-사무소가 확인한 결과는 `fieldCheck`가 받는다. 흐름은 —
-
-1. [영어 검토 시트](docs/review-sheet.en.md)를 사무소에 전달한다. 각 항목 끝에 **결과 회신 양식**(status/finding/date)이 붙어 있다.
-2. 사무소가 현장·원문 확인 후 양식을 채워 회신한다.
-3. **관리자**가 그 회신을 불일치의 `fieldCheck`에 옮긴다 — `confirmed`(확인됨) / `refuted`(우리 오류) / `partial`(부분) / `pending`.
-4. `build_docs`·`build_site`를 다시 돌리면 검토 시트·검증 대장·화면에 "사무소 확인" 상태가 반영된다.
-
-`refuted`(우리 판단이 틀림)는 지우지 않고 남긴다 — 무엇을 왜 틀렸는지가 다음 작성의 교훈이 되기 때문이다.
-자세한 반영 규칙은 [데이터 계약의 fieldCheck 절](docs/data-contract.md)에 있다.
-
----
-
-## 왜 3축인가
-
-자료집 11개국을 전수 조사한 결과다.
-
-| 섹션 | 존재 국가 | 축 채택 |
-|---|---|---|
-| 입찰제도 | 11/11 | ✅ `bidding` |
-| 조달 관련 조직체계 | 11/11 | ✅ `governance` |
-| 수원체계 · 사업 발굴·반영절차 | 11/11 | ✅ `pipeline` |
-| 진출 유의사항 | 7/11 | ❌ → `canvas.entryBarriers`로 흡수 |
-| 인허가 제도 | 6/11 | ❌ → `submittedDocuments`·`bottlenecks`로 흡수 |
-| 건축 관련 입찰제도 | 1/11 (네팔) | ❌ → `fieldVerification`으로 흡수 |
-
-결측이 있는 섹션을 축으로 삼으면 아프리카·중남미·중동CIS로 확장할 때 빈 레코드가 생긴다.
-11/11인 것만 축으로 두고 나머지는 있는 국가에 한해 하위 필드로 넣는다.
-
----
+원본 PDF의 경로·페이지 수·SHA-256과 국가별 페이지 범위는 [data/manifest.json](data/manifest.json)에 기록한다. 추출 방식은 [sources/koica-2026/README.md](sources/koica-2026/README.md)에 정리돼 있다.
 
 ## 구조
 
-```
+```text
 ├── data/
 │   ├── institutions/*.json      제도별 정규화 데이터
-│   └── manifest.json            국가·제도 진행 대장 (자료집 11개국 + 보강국 × 3축)
+│   └── manifest.json            출처·국가·진행 대장
 ├── docs/
-│   ├── data-contract.md         스키마 정의 — 작성 전 반드시 읽을 것
-│   ├── verification-log.md      검증 대장 (자동 생성)
-│   ├── errata.md                자료집 정오표 (자동 생성)
-│   └── review-sheet.en.md       현지 직원용 영어 검토 시트 (자동 생성)
+│   ├── data-contract.md         데이터 계약
+│   ├── verification-log.md      현행 기준 확인 대장
+│   ├── errata.md                현행 기준 반영 출처
+│   └── review-sheet.en.md       영어 현장 확인 시트
 ├── sources/
-│   ├── koica-2025-asia-pacific/
-│   │   ├── extract.sh           자료집 PDF → 국가별 텍스트
-│   │   └── pages/               추출된 원문 (117장 × 좌우 2면)
-│   └── laws/{country}/          대조에 쓴 법령·정책 원문 PDF
+│   ├── koica-2026/              2026 자료집 텍스트 추출본
+│   └── laws/{country}/          법령·정책 원문
 ├── tools/
-│   ├── validate.py              스키마 검증
-│   ├── check_links.py           외부 링크 생존 확인
-│   ├── build_docs.py            검증 대장·정오표 생성
-│   ├── build_site.py            정적 사이트 생성
-│   ├── board_adapter.mjs        process → korea100studio board-v1 변환
-│   ├── check_boards.mjs         프로세스 보드 품질 게이트 (audit)
-│   ├── board-baseline.json      보드 품질 기준선
-│   └── piercing-check.js        우리 렌더의 노드 관통 검사 (브라우저 콘솔)
-├── package.json                 Node 도구(게이트)의 devDependency
-└── site/                        생성된 화면 (빌드 산출물)
+│   ├── validate.py              스키마·참조 무결성 검증
+│   ├── check_links.py           외부 링크 확인
+│   ├── build_docs.py            문서 생성
+│   └── build_site.py            정적 사이트·국가별 배포 파일 생성
+├── site/                        정적 사이트
+└── dist/                        국가별 단일 HTML
 ```
 
-`docs/verification-log.md`와 `docs/errata.md`는 **손으로 고치지 않는다.**
-불일치는 JSON이 단일 출처이고 두 문서는 그것을 읽는 형식으로 옮긴 것이다.
-실제로 손으로 관리하던 동안 데이터와 어긋났고(문서 8건 vs 데이터 10건), 그래서 생성으로 바꿨다.
+`docs/verification-log.md`, `docs/errata.md`, `docs/review-sheet.en.md`, `site/`, `dist/`는 생성 산출물이다. 직접 수정하지 않고 `data/institutions/*.json`을 고친 뒤 다시 빌드한다.
 
----
-
-## 쓰는 법
-
-### 화면 만들기
+## 빌드와 검증
 
 ```bash
+python3 tools/validate.py
+python3 tools/build_docs.py
 python3 tools/build_site.py
 ```
 
-`data/institutions/*.json`에서 정적 HTML을 생성한다. 의존성 없음.
+선택 점검:
 
-| 경로 | 화면 |
+```bash
+python3 tools/check_links.py
+npm run check:boards
+```
+
+주요 화면:
+
+| 경로 | 내용 |
 |---|---|
-| `site/index.html` | 제도 대장 — 검색, 국가·축 필터, 검증 배지, 불일치 건수 |
-| `site/model/{slug}/index.html` | 한 장 요약 — 업무구조도 + 캔버스 + **법령 원문** + 불일치 + 검증 |
-| `site/verification/index.html` | 검증 대장 — 불일치 전체와 미확인 항목 |
-| `site/errata/index.html` | 정오표 — 발행처에 전달할 수정 제안과 그 상태 |
+| `site/index.html` | 국가·축 검색과 제도 대장 |
+| `site/model/{slug}/index.html` | 업무구조도, 캔버스, 원문, 현행 기준, 검증 |
+| `site/verification/index.html` | 현행 기준 확인 대장 |
+| `site/errata/index.html` | 현행 기준 반영 출처 |
+| `dist/{country}.html` | 국가별 오프라인 단일 파일 |
 
-**업무구조도**는 레인 × 게이트 그리드에 노드를 놓고 엣지를 SVG로 잇는다.
-원본 UI 규칙을 승계해 `current`(핵심)·`risk`(유의)·`loop`(회귀)만 강조하고 `done`·`waiting`은 중립으로 둔다.
-노드를 누르면 담당·기한·산출문서·근거조문·확신도가 열리고, 마우스를 올리면 연결된 노드만 남는다.
-
-엣지 라우팅은 **직교 + 거터 회피**다 — 카드를 지나야 하는 선은 카드가 없는 거터(행 하단·열 측면)로
-우회한다. 여러 직교 경로 후보를 만들어 무관한 카드를 가장 적게 관통하는(동수면 가장 짧은) 것을 고른다.
-korea100studio의 거터 라우팅을 우리 그리드에 이식한 것이다.
-초기 곡선 라우터는 노드 회피가 없어 입찰 보드에만 관통이 5건 있었는데(육안으로 놓쳤고 audit이 잡았다),
-직교 라우팅으로 세 보드 모두 관통 0이 됐다.
-
-우리 렌더의 관통은 브라우저에서 실측해야 정확하다([piercing-check.js](tools/piercing-check.js)를
-상세 페이지 콘솔에 붙여넣으면 검사한다). board-v1 audit과는 레이아웃이 달라 별개다.
-
-미리보기는 아무 정적 서버로나 띄운다.
+로컬 미리보기:
 
 ```bash
 python3 -m http.server 8765 --directory site
 ```
 
-빌드는 국가별 **배포용 단일 파일**도 `dist/`에 만든다 — `dist/cambodia.html` 하나에 그 나라
-제도 전부(캔버스·업무구조도·법령 원문·불일치·검증)가 탭으로 들어간다. 각 제도를 iframe으로
-격리해 JS 충돌이 없고, 외부 리소스 요청이 전혀 없어 **파일 하나로 오프라인에서 열린다** — 남에게
-그대로 보내면 된다. 사이트 내부로 나가는 메뉴·드롭다운은 없앴다(받는 사람에겐 그 파일들이 없으니까).
+## 다음 국가 추가
 
-| 공유 방법 | 쓸 것 |
-|---|---|
-| 한 나라를 통째로 남에게 | `dist/{country}.html` 파일 하나 |
-| 사이트 전체(국가 간 비교·검색) | `site/` 폴더를 압축 |
+1. `data/manifest.json`에서 지역판과 국가 페이지 범위를 확인한다.
+2. `sources/koica-2026/{region}/pages/`의 해당 텍스트를 읽는다.
+3. 입찰·거버넌스·ODA 파이프라인 3개 JSON을 작성한다.
+4. 인용 법령과 기관의 공식 원문을 확보하고 현행 여부를 확인한다.
+5. 금액·비율·기한·제출서류는 원문 조문과 표에서 대조한다.
+6. 확실히 확인된 현행 기준은 근거 출처와 함께 `action`·`userAction`에 반영한다.
+7. `validate.py`, `build_docs.py`, `build_site.py`를 실행한다.
 
-### 검증
+공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 
-```bash
-python3 tools/validate.py
-```
-
-스키마 계약(`docs/data-contract.md`)의 체크리스트를 기계적으로 확인한다.
-slug↔axis 규칙, `LegalBasisKind` 8종, `sourceRefs` 존재, 프로세스 노드/엣지 참조 무결성,
-`article-verified`인데 `articlesChecked`가 없는 경우, 선언만 하고 노드가 없는 빈 레인·게이트 등을 잡는다.
-
-### 링크 점검
-
-```bash
-python3 tools/check_links.py
-```
-
-법령 원문·기관 사이트 URL이 살아 있는지 확인한다. 근거를 검증하는 프로젝트에서
-근거 링크가 깨져 있으면 곤란하므로 주기적으로 돌린다.
-
-판정은 **정상 / 보류 / 죽음** 셋이다. 네팔 정부 사이트는 중간 인증서를 빠뜨려 보내는 곳이 많아
-파이썬 기본 검증으로는 실패하지만 브라우저에서는 열린다. 그런 경우를 죽었다고 단정하지 않고
-`curl`로 2차 확인한 뒤, 그래도 판정이 안 서면 **보류**로 남겨 사람이 보게 한다.
-죽었다고 단정하는 것은 서버가 4xx/5xx로 명확히 없다고 답했을 때뿐이다.
-
-### 프로세스 보드 품질 게이트 (선택)
-
-```bash
-npm install          # 최초 1회 — korea100studio(audit)를 설치
-npm run check:boards
-```
-
-[korea100studio](https://github.com/hosungseo/korea100studio)의 `audit`으로 업무구조도의
-구성 품질을 점검한다. 우리 `process`와 korea100studio의 board-v1 스키마는 거의 1:1이라
-([board_adapter.mjs](tools/board_adapter.mjs) 30줄로 변환) 우리 데이터를 그대로 채점할 수 있다.
-둘 다 korea100의 프로세스 렌더러에서 나왔기 때문이다.
-
-**절대 판정이 아니라 회귀 감지다.** audit은 korea100studio의 세로 스윔레인 레이아웃 기준으로
-채점하는데, 우리 화면([build_site.py](tools/build_site.py))은 가로 그리드라 배치가 다르다.
-그래서 `stretch`·`crossings` 같은 레이아웃 의존 지표를 절대 기준으로 강제하면 거짓 실패가 난다.
-대신 [baseline](tools/board-baseline.json)과 비교해 **이번 변경이 더 나쁘게 만들었는지**를 본다.
-
-- **hard fail** — 노드 관통(`nodePiercings`)이 늘거나, 새 렌더 실패(엣지 과밀 `collinear`)가 생김.
-  이 둘은 그래프 구조가 특정 지점에서 과밀하다는 렌더러 반중립 신호다.
-- **경고** — `score` 악화, 레이아웃 의존 예산 초과. 우리 렌더에는 무해할 수 있어 확인만 권한다.
-
-구조가 실제 제도 모습이라 불가피하면(예: 네팔 입찰의 P08은 4개 첨부요건 합류점) `npm run check:boards:update`로
-baseline을 갱신한다. **이 게이트는 개발용 선택 도구다** — 데이터 검증은 `validate.py`가 담당하고,
-배포 산출물에 Node는 들어가지 않는다.
-
-> audit이 실제로 잡은 것: 우리가 스크린샷으로 "괜찮다"고 넘긴 보드 3개 중,
-> 입찰제도는 P08 4중 합류로 board-v1 렌더 불가, ODA는 회귀 엣지 `E17`이 `P04`를 관통(우리 눈은 놓침)했다.
-> board-v1과 우리 렌더는 배치가 달라 우리 화면에는 그대로 나타나지 않지만,
-> "한 지점에 엣지가 몰린다"는 신호는 어느 렌더러에서든 유효하다.
-
-### 자료집에서 원문 뽑기
-
-```bash
-./sources/koica-2025-asia-pacific/extract.sh "자료집.pdf" pages
-```
-
-자료집은 좌우 2면 스프레드로 조판돼 있어 그냥 `pdftotext`를 돌리면 좌우 텍스트가 한 줄에 섞인다.
-이 스크립트는 페이지를 좌/우로 잘라 따로 추출한다. 국가별 페이지 범위는 `data/manifest.json`에 있다.
-
-표가 섞인 면은 연속 공백을 구분자로 바꾸면 열 구조가 보인다.
-
-```bash
-sed -e 's/[[:space:]]\{3,\}/ | /g' sources/koica-2025-asia-pacific/pages/p007_R.txt
-```
-
----
-
-## 다음 국가를 추가할 때
-
-1. `data/manifest.json`에서 해당 국가의 `pdfPages` 범위를 확인하고 `sources/.../pages/`의 해당 텍스트를 읽는다.
-   자료집 미수록 보강국이면 `sourceDocuments`에 1차자료 묶음을 등록하고, 그 사실을 국가 메모에 명시한다.
-2. **자료집이 인용한 조문을 전부 뽑는다.**
-3. 해당국 조달법·규칙 **영문 원문을 확보**한다. 먼저 조문 목록을 뽑아 **총 조문 수를 확인**한다.
-   — 네팔 건은 이 단계에서 "법은 76조뿐"이 나왔고, 덕분에 자료집의 "141 조항"이 규칙 조항임을 특정할 수 있었다.
-
-   ```bash
-   pdftotext -layout law.pdf law.txt
-   grep -nE "^[[:space:]]*[0-9]+\.[[:space:]]+[A-Z]" law.txt
-   ```
-4. 인용 조문을 하나씩 대조하고, 금액·비율·기한은 원문 표와 맞춘다.
-5. **자료집이 말하지 않은 것도 본다.** 근거 문서를 읽다 보면 자료집에 없는 의무가 나온다.
-   네팔 `high` 2건 중 1건이 여기서 나왔다.
-6. **근거 문서가 아직 살아 있는지 확인한다.** 폐지·개정됐으면 대조 자체가 무의미해진다.
-   네팔 건은 자료집이 전제한 정책이 발행 2개월 뒤 폐지된 것이 이 단계에서 드러났다.
-7. `docs/data-contract.md`에 맞춰 3개 JSON을 쓰고 `python3 tools/validate.py`를 통과시킨다.
-8. 불일치는 `verification.discrepancies`에 `action`·`userAction`·`upstream`까지 채워 넣는다.
-   자료집 미수록 보강국은 대조 대상이 없으므로 불일치를 만들지 않고 `sourceRefs`가 법령·정책 원문을 직접 가리키게 한다.
-9. `python3 tools/build_docs.py && python3 tools/build_site.py`로 문서와 화면을 다시 만든다.
-   국가·제도가 늘면 목록·필터·통계·정오표가 자동으로 따라온다.
-10. (선택) `npm run check:boards`로 새 프로세스 보드의 구성 품질이 회귀하지 않았는지 본다.
-    한 지점에 엣지가 몰리면(합류·전역 회귀) 여기서 잡힌다.
-
-작성 원칙은 [데이터 계약 §5](docs/data-contract.md)에 있다. 핵심은 하나다 —
-**불일치를 적을 때 자료집이 틀렸다고 쓰지 말고, 무엇이 어떻게 다르며 실무에 어떤 영향인지 쓴다.**
-"141 조항" 건처럼 자료집이 옳은데 표기만 부족한 경우가 있다.
-
----
-
-## 확장 계획
-
-| 지역 | 국가 수 | 자료집 | 상태 |
-|---|---|---|---|
-| 아시아·태평양 | 11 + 보강 1 | 확보 | 자료집 수록 네팔·캄보디아 완료, 9개국 대기 + 미얀마 별도 보강 |
-| 아프리카 | ? | 미확보 | — |
-| 중남미 | ? | 미확보 | — |
-| 중동·CIS | ? | 미확보 | — |
-
-국가당 3개 기준으로 자료집 수록 아시아·태평양만 33개이며, 미얀마 보강분 3개가 추가됐다.
-4개 지역을 합치면 100개 규모가 된다.
-
----
-
-## 검증 상태 배지
+## 검증 상태
 
 | 값 | 의미 |
 |---|---|
-| `source-document` | 자료집 기재만 확인. 법령 원문 미연결 |
-| `law-linked` | 근거 법령 원문 URL 연결 완료. 조문 대조는 미실시 |
-| `article-verified` | 인용 조문을 원문에서 실제 확인 |
-| `needs-review` | 불일치 발견 또는 근거 확인 불가 |
+| `source-document` | 기준자료 기재와 출처 범위를 확인 |
+| `law-linked` | 공식 원문 URL 연결 완료 |
+| `article-verified` | 관련 조문을 원문에서 확인 |
+| `needs-review` | 현지어·비공개 자료 등 추가 확인 필요 |
 
-`article-verified`는 **조문의 존재와 문언 일치**만 뜻한다.
-법적 해석·적용 타당성·현행 유효성(개정 반영 여부)은 별도 검토 대상이다.
-
----
-
-## 면책
-
-협력국 조달제도 이해를 위한 참고 자료다.
-개별 입찰 건의 법률 자문이나 해당국 정부·KOICA의 공식 해석을 대신하지 않는다.
-조달법은 개정이 잦다 — 실제 입찰 전 발주처 공고문과 현행 법령을 반드시 확인해야 한다.
-
-확인된 개정 감시 대상은 [검증 대장](docs/verification-log.md#개정-감시-대상)에 있다.
+`article-verified`는 조문의 존재와 문언을 확인했다는 뜻이다. 개별 입찰에 대한 법률 자문이나 해당국 정부·KOICA의 공식 해석을 대신하지 않는다. 실제 참여 전에는 발주처 공고문과 현행 법령을 다시 확인해야 한다.
