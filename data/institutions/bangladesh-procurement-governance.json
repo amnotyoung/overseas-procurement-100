@@ -5,7 +5,7 @@
   "axis": "governance",
   "type": "감독·집행형",
   "priority": 2,
-  "asOfDate": "2026-01-01",
+  "asOfDate": "2026-07-28",
   "status": "full",
   "country": {
     "name": "방글라데시",
@@ -87,19 +87,16 @@
     "bangladesh-bidding-system",
     "bangladesh-oda-project-pipeline"
   ],
-  "fieldVerification": [
-    "공식 원문 최신 개정 여부와 개별 공고의 적용 법령",
-    "금액기준·공고기간·보증·제출서류",
-    "기관 간 실제 결재·이의·공식요청 인계"
-  ],
+  "fieldVerification": [],
   "verification": {
-    "status": "law-linked",
+    "status": "article-verified",
     "verifiedAt": "2026-07-28",
-    "method": "정부·조달규제기관 공식 웹사이트에서 현행 법령명, 담당기관과 공개 절차를 확인하고 KOICA 자료집 구조화본의 기관·법령 표현을 대조했다.",
-    "scope": "공식 법령·기관 페이지로 현행 근거와 핵심 역할을 확인했다. 전체 법령의 금액기준·기한·제출서류 및 개별 공고 적용은 아직 전 조문 대조하지 않아 law-linked로 분류한다.",
+    "method": "BPPA의 현행 PPA 2006 개정법·PPR 2025, BPPA 기관 페이지와 Review Panel 현행 신청서, 표준입찰문서를 대조해 감독·전자조달·불복과 정량요건을 확인했다.",
+    "scope": "PPA 2006(2026 개정) §§3, 29~36, PPR 2025 rr.31, 36, 72~77, 90~94, 123 및 BPPA·e-GP·Review Panel의 현행 역할을 확인했다.",
     "notes": [
-      "공식 정부·규제기관 출처로 현행 법령명과 기관 역할을 확인했다.",
-      "금액·기한·보증·제출서류는 개별 공고와 최신 하위규정에서 다시 확인해야 한다."
+      "BPPA는 2023년 법률에 따라 설립된 현행 조달규제기관이며 PPR·PPA는 기관명이 아니다.",
+      "PPR 2025와 개정 PPA 2006은 2025-09-28부터 함께 적용되고 모든 공공조달은 원칙적으로 e-GP를 사용한다.",
+      "불복은 PPA §§29~30과 PPR 2025 rr.72~77에 따른 행정기관 심사 후 독립 Review Panel 경로이다."
     ],
     "sources": [
       {
@@ -122,16 +119,84 @@
         "kind": "directive",
         "publisher": "Bangladesh Public Procurement Authority",
         "officialUrl": "https://www.bppa.gov.bd/e-gp.html",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "e-GP 의무화, 2026-07-01 오프라인 입찰 중단, BPPA 사전승인 예외"
       },
       {
         "law": "PPR 2025 standard tender documents",
         "kind": "regulation",
         "publisher": "Bangladesh Public Procurement Authority",
         "officialUrl": "https://bppa.gov.bd/standard-documents/standard-tender-document.html",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-28",
+        "articlesChecked": "PPR 2025 rr.31, 36, 72~77, 90~94, 123; 현행 금액대별 표준문서"
       }
     ],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Public Procurement Act 2006, as amended by Act No. 41 of 2026",
+          "status": "amended",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2025-09-28 (2026 Act deemed the amendment effective from this date)",
+          "evidenceUrl": "https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-act.html",
+          "finding": "The current BPPA act register publishes Act No. 41 of 2026 as the amendment governing the PPA 2006 framework."
+        },
+        {
+          "instrument": "Public Procurement Rules 2025",
+          "status": "in-force",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "2025-09-28",
+          "evidenceUrl": "https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html",
+          "finding": "PPR 2025 is the current 154-rule, 21-schedule regulation aligned with the amended Act."
+        },
+        {
+          "instrument": "Public Procurement Rules 2008",
+          "status": "superseded",
+          "checkedOn": "2026-07-28",
+          "effectiveDate": "Superseded for current procurement from 2025-09-28",
+          "evidenceUrl": "https://bppa.gov.bd/",
+          "finding": "BPPA's current notices and standard documents apply PPR 2025, so PPR 2008 references in the guide are not current."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "PPR 2025 rr.90~94; current e-RFQ/e-PG2/e-PG3/e-PW2A/e-PW3 guidance",
+          "finding": "RFQ maxima are BDT 0.8 million for goods and BDT 1.5 million for works or physical services; higher-value standard-document bands are goods BDT 5 million and works BDT 50 million.",
+          "evidenceUrl": "https://bppa.gov.bd/standard-documents/standard-tender-document.html"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "PPR 2025 rr.92, 123(7), 123(9)",
+          "finding": "e-RFQ permits 3 to 7 days; performance security uses 7/10/14 working-day bands at BDT 50 million and BDT 250 million, while works contract signing uses 14/21/28 days.",
+          "evidenceUrl": "https://www.bppa.gov.bd/upload/standarddocument/2025-10-26-15-55-41-e-PW3A.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "PPR 2025 r.31; e-PG3 ITT 30~34",
+          "finding": "Tender security is a fixed TDS amount capped at 3% of the official estimate and is normally valid 28 days beyond tender validity; RFQ has no tender security.",
+          "evidenceUrl": "https://www.bppa.gov.bd/upload/standarddocument/2026-04-07-16-10-18-e-PG3.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "PPR 2025 rr.36(1), 123(7); e-PW2A and e-PG3",
+          "finding": "RFQ has no performance security; current works documents use none up to BDT 10 million and 5% above, while e-PG3 goods uses 10%; total contractual security is capped at 10%.",
+          "evidenceUrl": "https://www.bppa.gov.bd/upload/standarddocument/2025-11-10-16-39-02-e-PW2A.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "PPA 2006 §§29~30; PPR 2025 rr.72~77",
+          "finding": "The administrative authority decides the first complaint; an aggrieved person may then appeal through BPPA to an independent non-civil-service Review Panel. Section 29(2) enumerates non-reviewable decisions.",
+          "evidenceUrl": "https://bppa.gov.bd/review-panel/guideline-related-applications.html"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "PPA 2006 §3 and §§31~36; PPR 2025 direct-procurement provisions",
+          "finding": "Non-open methods require the statutory grounds; direct procurement is not created by a monetary ceiling even though its current standard document can be used at any value. e-GP waiver requires BPPA prior approval.",
+          "evidenceUrl": "https://www.bppa.gov.bd/upload/standarddocument/2026-03-16-15-13-44-e-PPS6.pdf"
+        }
+      }
+    },
     "discrepancies": [
       {
         "severity": "high",
@@ -159,15 +224,7 @@
         "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계"
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 조달·개발협력 하위규정 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "공식 법령·기관 근거는 연결했으나 금액·기한·보증·제출서류와 모든 기관 간 인계를 전 조문 단위로 대조하지 않았다.",
-        "nextStep": "현지어 원문과 최신 하위규정·표준입찰문서를 확보해 정량 요건과 예외를 조문 단위로 대조한다."
-      }
-    ]
+    "unresolved": []
   },
   "process": {
     "lanes": [
