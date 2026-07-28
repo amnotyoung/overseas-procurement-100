@@ -1004,6 +1004,7 @@ function openNode(id){{
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
   }}
+  if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
   var ins=EDGES.filter(function(x){{return x.target===id}}),
       outs=EDGES.filter(function(x){{return x.source===id}});
   if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){{

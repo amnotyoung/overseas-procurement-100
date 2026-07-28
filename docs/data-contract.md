@@ -398,7 +398,8 @@ interface ProcessNode {
   deadline?: string;
   blocker?: string | null;
   confidence?: number;   // 0~1. <0.8이면 UI에 "현장 검증 필요"
-  legal_basis?: Array<{ law: string; article: string }>;
+  confidence_reason?: string; // 점수의 증거 수준·불확실성 설명
+  legal_basis?: Array<{ law: string; article: string; url: string }>;
 }
 
 interface ProcessEdge {

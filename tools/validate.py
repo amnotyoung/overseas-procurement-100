@@ -272,6 +272,17 @@ def check(path: Path) -> None:
             c = n.get("confidence")
             if c is not None and not (0 <= c <= 1):
                 err(slug, f"노드 {nid}의 confidence가 0~1 밖: {c}")
+            if v.get("status") == "article-verified":
+                if not n.get("confidence_reason"):
+                    err(slug, f"article-verified 노드 {nid}에 confidence_reason 누락")
+                bases = n.get("legal_basis")
+                if not isinstance(bases, list) or not bases:
+                    err(slug, f"article-verified 노드 {nid}에 legal_basis 누락")
+                else:
+                    for j, basis in enumerate(bases):
+                        for field in ("law", "article", "url"):
+                            if not basis.get(field):
+                                err(slug, f"노드 {nid}.legal_basis[{j}].{field} 누락")
             if c is not None and c < 0.8 and nid not in {x.get("id") for x in process.get("nodes", []) if x.get("blocker")}:
                 pass  # confidence<0.8은 UI에서 '현장 검증 필요' 배지로 처리. 오류 아님.
 
