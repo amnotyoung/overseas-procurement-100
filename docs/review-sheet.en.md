@@ -8,7 +8,7 @@ entity. Each item below records a current legal basis used in the output. Your j
 
 - As of: 2026-07-29
 - Countries: Azerbaijan, Bangladesh, Bolivia, Cambodia, Cameroon, Colombia, Côte d'Ivoire, Democratic Republic of the Congo, Dominican Republic, Ecuador, Egypt, El Salvador, Ethiopia, Fiji, Ghana, Guatemala, Indonesia, Jordan, Kenya, Kyrgyzstan, Lao People's Democratic Republic, Mongolia, Morocco, Mozambique, Myanmar, Nepal, Nigeria, Pakistan, Palestine, Paraguay, Peru, Philippines, Republic of Korea (KOICA), Rwanda, Senegal, Sri Lanka, Tajikistan, Tanzania, Thailand, Timor-Leste, Tunisia, Uganda, Ukraine, Uzbekistan, Viet Nam
-- Items needing field check: **143** (HIGH 110) · returned by office: **0/143**
+- Items needing field check: **146** (HIGH 110) · returned by office: **0/146**
 
 HIGH = verify first because the point can affect bid eligibility, documents, or procedure.
 
@@ -1267,12 +1267,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 71. [HIGH] Current legal basis check
 
 - Institution: Paraguay — Bidding system
-- Legal basis: Ley 7021 arts.1–14, 33 and 158–159; Decreto 9823
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
 - KOICA guide: p.99-113
 
-**Current legal basis** — Law 7021/2022 and Decree 9823 govern the current integrated supply and procurement system; Law 2051/2003 was repealed, subject to transitional rules.
+**Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
 
-**✔ Verify** — Check the procedure start date, transitional rule, current PAC, SICP notice and applicable threshold.
+**✔ Verify** — Confirm the call-date daily minimum wage, live SICP PBC, STJE deadline and funding agreement.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -1284,12 +1284,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 72. [HIGH] Current legal basis check
 
 - Institution: Paraguay — ODA project pipeline
-- Legal basis: MEF VEP–DGCID official cooperation mandate and Mapa de Cooperantes
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
 - KOICA guide: p.99-113
 
-**Current legal basis** — MEF's VEP–DGCID now coordinates non-reimbursable cooperation with MRE and supports project formulation, approval, requests and monitoring.
+**Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
 
-**✔ Verify** — Confirm the current VEP–DGCID approval and request process together with the MRE diplomatic route.
+**✔ Verify** — Confirm the call-date daily minimum wage, live SICP PBC, STJE deadline and funding agreement.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -1301,12 +1301,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 73. [HIGH] Current legal basis check
 
 - Institution: Paraguay — Procurement governance
-- Legal basis: Ley 7021 arts.1–14, 33 and 158–159; Decreto 9823
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
 - KOICA guide: p.99-113
 
-**Current legal basis** — Law 7021/2022 and Decree 9823 govern the current integrated supply and procurement system; Law 2051/2003 was repealed, subject to transitional rules.
+**Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
 
-**✔ Verify** — Check the procedure start date, transitional rule, current PAC, SICP notice and applicable threshold.
+**✔ Verify** — Confirm the call-date daily minimum wage, live SICP PBC, STJE deadline and funding agreement.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -2444,9 +2444,62 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-## Tanzania
+## Paraguay
 
 ### 137. [MEDIUM] Current legal basis check
+
+- Institution: Paraguay — Bidding system
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- KOICA guide: p.99-113
+
+**Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
+
+**✔ Verify** — Confirm the DGCID form, MEF fiscal review, MRE route and instrument signatory.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
+### 138. [MEDIUM] Current legal basis check
+
+- Institution: Paraguay — ODA project pipeline
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- KOICA guide: p.99-113
+
+**Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
+
+**✔ Verify** — Confirm the DGCID form, MEF fiscal review, MRE route and instrument signatory.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
+### 139. [MEDIUM] Current legal basis check
+
+- Institution: Paraguay — Procurement governance
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- KOICA guide: p.99-113
+
+**Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
+
+**✔ Verify** — Confirm the DGCID form, MEF fiscal review, MRE route and instrument signatory.
+
+**Office result** *(fill and return)* —
+- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
+- Finding:
+- Checked by / date:
+
+---
+
+## Tanzania
+
+### 140. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
@@ -2463,7 +2516,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 138. [MEDIUM] Current legal basis check
+### 141. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
 - Legal basis: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
@@ -2482,7 +2535,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Thailand
 
-### 139. [MEDIUM] Current legal basis check
+### 142. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Bidding system
 - Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
@@ -2499,7 +2552,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 140. [MEDIUM] Current legal basis check
+### 143. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Procurement governance
 - Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
@@ -2518,7 +2571,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Tunisia
 
-### 141. [MEDIUM] Current legal basis check
+### 144. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Bidding system
 - Legal basis: Decrees 2014-1039 and 2013-5096; 2018 TUNEPS manual
@@ -2535,7 +2588,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ---
 
-### 142. [MEDIUM] Current legal basis check
+### 145. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Procurement governance
 - Legal basis: Decrees 2014-1039 and 2013-5096; 2018 TUNEPS manual
@@ -2554,7 +2607,7 @@ the dataset manager will record it. Items already returned show the result inlin
 
 ## Uganda
 
-### 143. [MEDIUM] Current legal basis check
+### 146. [MEDIUM] Current legal basis check
 
 - Institution: Uganda — ODA project pipeline
 - Legal basis: MoFPED DARC mandate; Development Policy and Performance Portal
