@@ -38,9 +38,9 @@
 | [동티모르 공공조달 입찰제도](../data/institutions/timor-leste-bidding-system.json) | 동티모르 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [동티모르 조달 거버넌스·감독체계](../data/institutions/timor-leste-procurement-governance.json) | 동티모르 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [동티모르 ODA 사업 발굴·형성 절차](../data/institutions/timor-leste-oda-project-pipeline.json) | 동티모르 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
-| [라오스 공공조달 입찰제도](../data/institutions/laos-bidding-system.json) | 라오스 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
-| [라오스 조달 거버넌스·감독체계](../data/institutions/laos-procurement-governance.json) | 라오스 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
-| [라오스 ODA 사업 발굴·형성 절차](../data/institutions/laos-oda-project-pipeline.json) | 라오스 | 원문 링크 연결 | 1건 | 0/1 | 2026-07-28 |
+| [라오스 공공조달 입찰제도](../data/institutions/laos-bidding-system.json) | 라오스 | 조문 대조 완료 | 1건 (필수 확인 1) | 0/1 | 2026-07-29 |
+| [라오스 조달 거버넌스·감독체계](../data/institutions/laos-procurement-governance.json) | 라오스 | 조문 대조 완료 | 1건 (필수 확인 1) | 0/1 | 2026-07-29 |
+| [라오스 ODA 사업 발굴·형성 절차](../data/institutions/laos-oda-project-pipeline.json) | 라오스 | 조문 대조 완료 | 1건 | 0/1 | 2026-07-29 |
 | [르완다 공공조달 입찰제도](../data/institutions/rwanda-bidding-system.json) | 르완다 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [르완다 조달 거버넌스·감독체계](../data/institutions/rwanda-procurement-governance.json) | 르완다 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
 | [르완다 ODA 사업 발굴·형성 절차](../data/institutions/rwanda-oda-project-pipeline.json) | 르완다 | 원문 링크 연결 | 1건 (필수 확인 1) | 0/1 | 2026-07-28 |
@@ -759,30 +759,30 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 공공조달 입찰제도](../data/institutions/laos-bidding-system.json) · `laos-bidding-system-D01`
-- 근거: Law 30/NA; Instruction 0477/MOF; Procurement Manual
+- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+> Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.
 
-**실무 확인** — Check the current PPMD documents and notice for method, threshold, timeline, security and review.
+**실무 확인** — 공고별 최신 기준금액·기한·보증과 공여협정의 별도 절차를 확인한다.
 
-*산출물 반영* — 중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다.
+*산출물 반영* — 중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다.
 
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 조달 거버넌스·감독체계](../data/institutions/laos-procurement-governance.json) · `laos-procurement-governance-D01`
-- 근거: Law 30/NA; Instruction 0477/MOF; Procurement Manual
+- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+> Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.
 
-**실무 확인** — Check the current PPMD documents and notice for method, threshold, timeline, security and review.
+**실무 확인** — 공고별 최신 기준금액·기한·보증과 공여협정의 별도 절차를 확인한다.
 
-*산출물 반영* — 중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다.
+*산출물 반영* — 중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다.
 
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
@@ -1813,16 +1813,16 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 ODA 사업 발굴·형성 절차](../data/institutions/laos-oda-project-pipeline.json) · `laos-oda-project-pipeline-D01`
-- 근거: Law 30/NA art.3; Ministry of Finance official portal
+- 근거: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 공공조달법상 정부자금에는 정부가 받은 외국 무상원조·차관이 포함되고 재무부와 각 Project Owner가 재정·사업집행 역할을 나눈다.
+> Law No.30/NA art.3은 정부가 받은 외국 무상원조·차관을 정부자금에 포함하고, Instruction clause 2는 공여협정이 특정 조달규칙을 정하면 이를 우선 적용하도록 한다.
 
-**실무 확인** — Confirm the financing agreement, finance approval, project-owner mandate and any donor-procedure exception.
+**실무 확인** — 재원협정의 조달부속서, 정부 승인, Project Owner 권한과 공여기관 사전승인을 확인한다.
 
-*산출물 반영* — 외부재원의 법 적용과 재무부·사업주체·정부 승인 역할을 명시했다.
+*산출물 반영* — 외부재원의 법 적용, 공여규칙 우선조건과 재무부·사업주체의 역할을 조문 단위로 명시했다.
 
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
@@ -2108,9 +2108,6 @@
 | 현행 하위규정·정량요건·개별 공여협정 및 실제 공고 | 동티모르 | 핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다. | Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route. |
 | 현행 하위규정·정량요건·개별 공여협정 및 실제 공고 | 동티모르 | 핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다. | Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route. |
 | 현행 하위규정·정량요건·개별 공여협정 및 실제 공고 | 동티모르 | 핵심 공식 근거와 기관은 확인했으나 비공개 SOP, 정량요건, 모든 예외와 실제 사업문서를 전 조문 대조하지 않았다. | Confirm DPMU/ATP registration, grant or loan route, plan and budget alignment, agreement and implementing entity. |
-| 현행 하위규정·정량요건·공여조건 및 개별 공고 적용 | 라오스 | 기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다. |
-| 현행 하위규정·정량요건·공여조건 및 개별 공고 적용 | 라오스 | 기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다. |
-| 현행 하위규정·정량요건·공여조건 및 개별 공고 적용 | 라오스 | 기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다. |
 | 현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용 | 르완다 | 공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다. |
 | 현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용 | 르완다 | 공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다. |
 | 현행 하위규정·기준금액·표준입찰문서 및 개별 공고 적용 | 르완다 | 공식 법령과 기관 권한은 연결했으나 금액·기한·보증·제출서류 및 모든 예외를 전 조문·공고 단위로 대조하지 않았다. | 최신 하위규정·표준입찰문서와 실제 공고를 확보해 정량 요건과 예외를 조문 단위로 대조한다. |
@@ -2242,12 +2239,12 @@
 - **동티모르 조달 거버넌스·감독체계** — 정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다.
 - **동티모르 ODA 사업 발굴·형성 절차** — 공식 정부·법령·담당기관 출처로 현행 근거와 핵심 역할을 확인했다.
 - **동티모르 ODA 사업 발굴·형성 절차** — 정량요건·하위규정·개별 공여협정·공고와 정치·제재 위험은 실제 사업 착수 전에 재확인해야 한다.
-- **라오스 공공조달 입찰제도** — 공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.
-- **라오스 공공조달 입찰제도** — 기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다.
-- **라오스 조달 거버넌스·감독체계** — 공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.
-- **라오스 조달 거버넌스·감독체계** — 기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다.
-- **라오스 ODA 사업 발굴·형성 절차** — 공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.
-- **라오스 ODA 사업 발굴·형성 절차** — 기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다.
+- **라오스 공공조달 입찰제도** — Law No.30/NA와 Instruction No.0477/MOF는 PPMD 현행 매뉴얼과 2026년 공식 조달공고에서 계속 적용되고 있다. Law art.90은 충돌 종전규정을 폐지하며 현행 매뉴얼은 2009년 4월 매뉴얼을 승계한다.
+- **라오스 공공조달 입찰제도** — 지침상 기준금액은 정기검토·물가상승에 따라 조정할 수 있으므로 실제 공고에서는 최신 PPMD 표준문서와 공여협정의 별도 절차를 함께 확인해야 한다.
+- **라오스 조달 거버넌스·감독체계** — Law No.30/NA와 Instruction No.0477/MOF는 PPMD 현행 매뉴얼과 2026년 공식 조달공고에서 계속 적용되고 있다. Law art.90은 충돌 종전규정을 폐지하며 현행 매뉴얼은 2009년 4월 매뉴얼을 승계한다.
+- **라오스 조달 거버넌스·감독체계** — 지침상 기준금액은 정기검토·물가상승에 따라 조정할 수 있으므로 실제 공고에서는 최신 PPMD 표준문서와 공여협정의 별도 절차를 함께 확인해야 한다.
+- **라오스 ODA 사업 발굴·형성 절차** — Law No.30/NA와 Instruction No.0477/MOF는 PPMD 현행 매뉴얼과 2026년 공식 조달공고에서 계속 적용되고 있다. Law art.90은 충돌 종전규정을 폐지하며 현행 매뉴얼은 2009년 4월 매뉴얼을 승계한다.
+- **라오스 ODA 사업 발굴·형성 절차** — 지침상 기준금액은 정기검토·물가상승에 따라 조정할 수 있으므로 실제 공고에서는 최신 PPMD 표준문서와 공여협정의 별도 절차를 함께 확인해야 한다.
 - **르완다 공공조달 입찰제도** — 공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.
 - **르완다 공공조달 입찰제도** — 기준금액·기한·보증·제출서류·예외는 공고일 기준 최신 규정과 실제 공고에서 재확인해야 한다.
 - **르완다 조달 거버넌스·감독체계** — 공식 정부·법령·규제기관 출처로 현행 근거와 핵심 역할을 확인했다.

@@ -331,13 +331,13 @@
 
 **현행 기준**
 
-> Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+> Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.
 
 **산출물 반영**
 
-> 중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다.
+> 중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다.
 
-**근거** — Law 30/NA; Instruction 0477/MOF; Procurement Manual
+**근거** — Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 
 
 ---
@@ -348,13 +348,13 @@
 
 **현행 기준**
 
-> Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+> Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.
 
 **산출물 반영**
 
-> 중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다.
+> 중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다.
 
-**근거** — Law 30/NA; Instruction 0477/MOF; Procurement Manual
+**근거** — Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 
 
 ---

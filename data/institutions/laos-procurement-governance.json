@@ -109,13 +109,13 @@
     }
   ],
   "verification": {
-    "status": "law-linked",
-    "verifiedAt": "2026-07-28",
-    "method": "공식 법령 데이터베이스와 정부·재무부·조달기관 페이지에서 현행 기본법, 기관 권한, 전자조달 및 대외재원 조정체계를 확인해 구조화본과 대조했다.",
-    "scope": "공식 원문으로 기본법·핵심 기관·중요 적용범위를 확인했다. 모든 하위규정·정량요건·개별 공고의 전 조문 대조는 완료하지 않아 law-linked로 분류한다.",
+    "status": "article-verified",
+    "verifiedAt": "2026-07-29",
+    "method": "라오스 재무부 PPMD의 Law No.30/NA, Instruction No.0477/MOF, 현행 조달매뉴얼과 2026년 공식 공고를 직접 대조하고 지침 PDF의 기준금액·공고기한·보증·불복·예외 조항을 페이지 단위로 렌더링해 확인했다.",
+    "scope": "Law arts.1~7, 17~18, 23, 29~34, 43~48, 67~72, 86~90; Instruction clauses 1~9, 15~19; Procurement Manual의 법령체계·방식별 흐름·불복 절차를 확인했다.",
     "notes": [
-      "공식 정부·법령·조달기관 출처로 현행 근거와 핵심 역할을 확인했다.",
-      "기준금액·기한·보증·서류·공여조건 예외는 공고일의 최신 하위규정과 실제 공고에서 재확인해야 한다."
+      "Law No.30/NA와 Instruction No.0477/MOF는 PPMD 현행 매뉴얼과 2026년 공식 조달공고에서 계속 적용되고 있다. Law art.90은 충돌 종전규정을 폐지하며 현행 매뉴얼은 2009년 4월 매뉴얼을 승계한다.",
+      "지침상 기준금액은 정기검토·물가상승에 따라 조정할 수 있으므로 실제 공고에서는 최신 PPMD 표준문서와 공여협정의 별도 절차를 함께 확인해야 한다."
     ],
     "sources": [
       {
@@ -128,23 +128,34 @@
       {
         "law": "Law on Public Procurement No. 30/NA of 2 November 2017",
         "kind": "act",
-        "publisher": "Ministry of Finance PPMD",
+        "publisher": "Ministry of Finance — Public Procurement Management Division",
         "officialUrl": "https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "arts.1~7, 17~18, 23, 29~34, 43~48, 67~72 and 86~90"
       },
       {
-        "law": "Instruction No. 0477/MOF of 13 February 2019 implementing the Public Procurement Law",
+        "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
         "kind": "directive",
         "publisher": "Ministry of Finance",
         "officialUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "clauses 1~9, 15~19 implementing Law arts.6~7, 17~18, 23, 31~34, 46~48 and 86; especially clauses 3.1~3.4, 4.1.3, 4.2.1~4.2.4, 6~9, 15~16 and final effectiveness clause"
       },
       {
-        "law": "Lao PDR Procurement Manual",
+        "law": "Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register",
         "kind": "directive",
-        "publisher": "Ministry of Finance PPMD",
+        "publisher": "Ministry of Finance — Public Procurement Management Division",
         "officialUrl": "https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf",
-        "retrievedOn": "2026-07-28"
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "Preface; Parts II §§2.1~2.3 and 3.1~3.2; Flowcharts 1~3; §§5.5.3, 8.1~8.6 and Part VI §§11.1~11.4; cross-checked against the current PPMD manual register"
+      },
+      {
+        "law": "2026 official PPMD procurement notice applying Law No.30/NA and Instruction No.0477/MOF",
+        "kind": "directive",
+        "publisher": "Ministry of Finance — Public Procurement Management Division",
+        "officialUrl": "https://ppmd.mof.gov.la/storage/177130072233.%20RFQ%20for%20Furniture_WSSISP-Signed%20by%20DG-DWS-10%20Feb%202026-2-Full.pdf",
+        "retrievedOn": "2026-07-29",
+        "articlesChecked": "RFQ legal-basis clause and award/security forms confirming continued application in 2026"
       }
     ],
     "discrepancies": [
@@ -152,17 +163,17 @@
         "severity": "high",
         "field": "canvas.authorities·legalBasis / 현행 기관·법령",
         "sourceText": "자료집은 경제기획기관을 조달기관에 중복 배치하고 정식 법률·시행지침을 연결하지 않는다.",
-        "actualText": "Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.",
-        "citation": "Law 30/NA; Instruction 0477/MOF; Procurement Manual",
+        "actualText": "Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.",
+        "citation": "Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual",
         "impact": "잘못된 법령·기관 또는 적용범위는 승인·조달경로와 사업일정을 실질적으로 왜곡할 수 있다.",
-        "action": "중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다.",
-        "userAction": "Check the current PPMD documents and notice for method, threshold, timeline, security and review.",
+        "action": "중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다.",
+        "userAction": "공고별 최신 기준금액·기한·보증과 공여협정의 별도 절차를 확인한다.",
         "review": {
           "topic": "Current procurement law and authorities",
           "guideSays": "자료집은 경제기획기관을 조달기관에 중복 배치하고 정식 법률·시행지침을 연결하지 않는다.",
-          "lawSays": "Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.",
+          "lawSays": "Law No.30/NA and Instruction No.0477/MOF remain the operative framework in current PPMD materials and 2026 notices.",
           "impact": "Incorrect law, authority or scope can materially misroute approval and procurement.",
-          "verify": "Check the current PPMD documents and notice for method, threshold, timeline, security and review."
+          "verify": "Check the live PPMD notice, current threshold, securities, complaint standstill and donor-specific rules."
         },
         "id": "laos-procurement-governance-D01",
         "sourcePage": "",
@@ -170,19 +181,85 @@
         "upstream": {
           "priority": "정정 요망",
           "state": "not-reported",
-          "suggestedText": "중복·기관 오인을 제거하고 현행 법률·시행지침 및 PPMD·사업주체 역할을 반영했다."
+          "suggestedText": "중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다."
         }
       }
     ],
-    "unresolved": [
-      {
-        "law": "현행 하위규정·정량요건·공여조건 및 개별 공고 적용",
-        "kind": "regulation",
-        "reasonCode": "local-language-only",
-        "reason": "기본법·기관·핵심 적용범위는 공식 원문으로 연결했으나 금액·기한·보증·서류·모든 예외를 조문·공고 단위로 대조하지 않았다.",
-        "nextStep": "최신 하위규정·표준문서·재원협정과 실제 공고를 확보해 정량요건과 예외를 조문 단위로 대조한다."
+    "unresolved": [],
+    "articleAudit": {
+      "instrumentStatus": [
+        {
+          "instrument": "Law on Public Procurement No. 30/NA of 2 November 2017",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Dated 2017-11-02; art.90 provides effectiveness from the Presidential promulgating decree and 15 days after Official Gazette notification",
+          "evidenceUrl": "https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf",
+          "finding": "art.90은 대통령 공포령과 관보 통지 후 15일을 시행요건으로 정하고 충돌하는 종전 규정을 폐지한다. PPMD의 현행 매뉴얼 목록과 2026년 공식 조달공고가 계속 Law No.30/NA를 법적 근거로 인용하므로 폐지·대체되지 않은 현행법으로 확인했다."
+        },
+        {
+          "instrument": "Instruction No. 0477/MOF of 13 February 2019",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Signed 2019-02-13; final clause provides effectiveness from signing and after 15 days of Official Gazette notification",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf",
+          "finding": "지침 말미의 시행조항을 확인했고, PPMD 현행 매뉴얼과 2026년 공식 공고가 Law No.30/NA와 함께 Instruction No.0477/MOF를 적용한다. 별도 폐지·대체 지침은 현행 PPMD 자료에서 확인되지 않았다."
+        },
+        {
+          "instrument": "Current Lao PDR Procurement Manual / revised 2022 state-funded procurement manual",
+          "status": "in-force",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Current PPMD register lists the English manual and the revised 2022 Lao edition",
+          "evidenceUrl": "https://ppmd.mof.gov.la/Procurement%20Manual",
+          "finding": "현행 PPMD 목록은 영문 매뉴얼과 2022년 개정 라오어 매뉴얼을 함께 제공한다. 영문 매뉴얼은 Law No.30/NA와 Instruction No.0477/MOF가 우선한다고 명시하고 금액기준·절차·불복 흐름을 재확인한다."
+        },
+        {
+          "instrument": "Procurement Manual dated April 2009",
+          "status": "superseded",
+          "checkedOn": "2026-07-29",
+          "effectiveDate": "Superseded by the current manual, whose Preface expressly states that it succeeds the April 2009 Procurement Manual",
+          "evidenceUrl": "https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf",
+          "finding": "현행 매뉴얼 서문이 2009년 4월 매뉴얼을 승계한다고 명시하므로 종전 매뉴얼은 신규 조달의 현행 기준으로 사용하지 않는다."
+        }
+      ],
+      "requirements": {
+        "thresholds": {
+          "status": "confirmed",
+          "articles": "Law arts.17~18 and 23; Instruction clauses 3.1~3.4; Procurement Manual Flowcharts 1~3",
+          "finding": "공사·유지보수·용역은 5억 LAK 이상 공개입찰, 미만 견적요청이며, 물품·서비스는 2억 LAK 이상 공개입찰, 미만 견적요청이다. 일상 행정목적 직접계약은 500만 LAK 이하이고 법정 예외도 가능하다. 컨설팅은 QCBS 10억 LAK 이상, QBS 10억 LAK 미만이다. 지침은 기준을 2년마다 검토하고 전년 대비 CPI가 25% 넘게 오르면 조정할 수 있게 하므로 공고일 최신 PPMD 기준도 함께 확인한다. 현행 매뉴얼의 RFQ 흐름도는 5억/2억 기준을 재확인한다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        },
+        "deadlines": {
+          "status": "confirmed",
+          "articles": "Instruction clause 4.1.3 and clause 16.2 implementing Law arts.18 and 47",
+          "finding": "공고·제안 준비 최소기간은 공개입찰 35일, 제한입찰 30일, 견적요청 15일이다. 컨설팅은 EOI 15일·제안 30일(QCBS/QBS/FBS/LCS), 자격기반선정은 EOI 20일·제안 30일이며 모두 달력일이다. 공개입찰 계약은 낙찰통지 후 14일이 지나야 체결한다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        },
+        "bidSecurity": {
+          "status": "confirmed",
+          "articles": "Law arts.30~31; Instruction clause 6",
+          "finding": "입찰보증은 현금예치·국내외 은행 또는 보험기관 보증으로 예정계약가의 최소 2% 또는 입찰문서의 특정액이며, 보증선언으로 대체할 수 있다. 유효기간은 입찰 유효기간보다 30일 길어야 한다. 낙찰·계약 후 미낙찰자 보증은 정해진 기간 내 반환하고 낙찰자 보증은 계약체결 후 반환한다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        },
+        "performanceSecurity": {
+          "status": "confirmed",
+          "articles": "Law arts.30 and 32~34; Instruction clauses 7~9",
+          "finding": "이행보증은 계약금액의 최소 10%로 정하되 계약금액·불이행위험에 따라 발주기관이 금액을 정하거나 면제하고 지급유보 등 대체수단을 둘 수 있다. 계약상 보증의무가 모두 이행되거나 귀책 없는 계약완료 시 반환한다. 선급금은 계약가의 30% 이내이고 동액 보증이 원칙이며, 공사 하자보증은 최소 10%·12개월, 물품·서비스 하자보증은 2~10%·최소 12개월이다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        },
+        "complaints": {
+          "status": "confirmed",
+          "articles": "Law arts.46 and 67~72; Instruction clause 15; Procurement Manual Part VI §§11.1~11.4",
+          "finding": "계약 전 위법·불공정·불투명·편파 행위는 발주기관·사업주체·입찰위원회에 서면 이의하며 계약체결 14일 전 제출이 요구된다. 발주기관은 접수 후 15일 내 처리하고, 미처리·불만족 시 재정부문 또는 임시위원회가 각 15일 내 검토한다. 이후 Law art.67의 협의·행정구제·경제분쟁중재·법원·국제분쟁해결 경로를 이용한다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        },
+        "exceptions": {
+          "status": "confirmed",
+          "articles": "Law arts.3 and 6~7; Instruction clauses 1~2 and 4.2.2~4.2.4",
+          "finding": "국가안보·안전 조달은 원칙적으로 법 적용 제외이나 해당 부문의 일상 행정용 물품·차량·건물·학교·병원 등은 법과 지침을 적용한다. 정부와 공여기관 협정이 특정 조달규칙을 정하면 그 규칙을 적용하고, 별도 규칙이 없으면 국내법·지침을 적용한다. 제한입찰은 공급자가 제한된 특수기술 사유에, 직접계약은 독점·지식재산·호환성, 원계약의 20% 이내 추가·연속업무, 오지·무응찰, 500만 LAK 이하 일상업무, 불가항력·재난 긴급사유 등에 한한다.",
+          "evidenceUrl": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+        }
       }
-    ]
+    }
   },
   "process": {
     "lanes": [

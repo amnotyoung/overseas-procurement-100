@@ -790,12 +790,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 44. [HIGH] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — Bidding system
-- Legal basis: Law 30/NA; Instruction 0477/MOF; Procurement Manual
+- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 - KOICA guide: p.31-45
 
-**Current legal basis** — Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+**Current legal basis** — Law No.30/NA and Instruction No.0477/MOF remain the operative framework in current PPMD materials and 2026 notices.
 
-**✔ Verify** — Check the current PPMD documents and notice for method, threshold, timeline, security and review.
+**✔ Verify** — Check the live PPMD notice, current threshold, securities, complaint standstill and donor-specific rules.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -807,12 +807,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 45. [HIGH] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — Procurement governance
-- Legal basis: Law 30/NA; Instruction 0477/MOF; Procurement Manual
+- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
 - KOICA guide: p.31-45
 
-**Current legal basis** — Law 30/NA(2017)와 Instruction 0477/MOF(2019)가 적용되며 PPMD가 제도를 관리하고 각 Project Owner가 조달을 집행한다.
+**Current legal basis** — Law No.30/NA and Instruction No.0477/MOF remain the operative framework in current PPMD materials and 2026 notices.
 
-**✔ Verify** — Check the current PPMD documents and notice for method, threshold, timeline, security and review.
+**✔ Verify** — Check the live PPMD notice, current threshold, securities, complaint standstill and donor-specific rules.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -2135,12 +2135,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 119. [MEDIUM] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — ODA project pipeline
-- Legal basis: Law 30/NA art.3; Ministry of Finance official portal
+- Legal basis: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials
 - KOICA guide: p.31-45
 
-**Current legal basis** — 공공조달법상 정부자금에는 정부가 받은 외국 무상원조·차관이 포함되고 재무부와 각 Project Owner가 재정·사업집행 역할을 나눈다.
+**Current legal basis** — Foreign grants and loans are government funds under art.3, while a donor agreement's specific procurement rules apply under Instruction clause 2.
 
-**✔ Verify** — Confirm the financing agreement, finance approval, project-owner mandate and any donor-procedure exception.
+**✔ Verify** — Confirm the financing agreement, approving authority, project-owner mandate and donor no-objection steps.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
