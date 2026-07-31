@@ -31,6 +31,12 @@
 
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
+## 원작
+
+이 저장소의 사이트 구조·빌드 도구·저작 방식은 [korea100](https://github.com/hosungseo/korea100)과
+[korea100studio](https://github.com/hosungseo/korea100studio)에서 가져왔다. 두 저장소 모두 MIT 라이선스이며,
+원저작권 표시는 [LICENSE](LICENSE)에 그대로 남겨 두었다.
+
 ## 출처
 
 ```text
@@ -139,3 +145,11 @@ python3 -m http.server 8765 --directory site
 저장소 관리자는 `country-report-skill`의 **Contents: write**만 허용한
 fine-grained personal access token을 Actions secret
 `DEPENDENCY_DISPATCH_TOKEN`으로 등록해야 한다.
+
+## 라이선스
+
+소스 코드·템플릿·도구는 [MIT 라이선스](LICENSE)를 따른다.
+
+**데이터는 별개다.** KOICA 참여전략 자료집, 각국 법령, 정부 간행물, 그 밖의 원문은 각 출처의
+조건을 그대로 유지한다. 이 저장소가 그 조건을 바꾸지 않는다. 재배포하거나 인용하기 전에
+`verification.sources`의 원출처와 그 이용 조건을 확인해야 한다.
