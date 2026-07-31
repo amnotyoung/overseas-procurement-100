@@ -34,8 +34,12 @@
 ## 원작
 
 이 저장소의 사이트 구조·빌드 도구·저작 방식은 [korea100](https://github.com/hosungseo/korea100)과
-[korea100studio](https://github.com/hosungseo/korea100studio)에서 가져왔다. 두 저장소 모두 MIT 라이선스이며,
-원저작권 표시는 [LICENSE](LICENSE)에 그대로 남겨 두었다.
+[korea100studio](https://github.com/hosungseo/korea100studio)에서 가져왔다.
+
+조달 도메인을 제도 구조도로 다루는 틀은 [how-did-they-do-all-that-procurement](https://github.com/Milkbuttercheese2/how-did-they-do-all-that-procurement)를
+따랐다. korea100을 공공조달로 옮긴 작업이며, 이 저장소는 그 접근을 국내 조달에서 협력국 조달로 확장한 것이다.
+
+세 저장소 모두 MIT 라이선스이며, 원저작권 표시는 [LICENSE](LICENSE)에 그대로 남겨 두었다.
 
 ## 출처
 
