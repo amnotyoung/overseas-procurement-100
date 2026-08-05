@@ -523,7 +523,8 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
 <footer class="site"><div class="wrap">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
   조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조<br>
+  제도 추가·정정 제안 · Threads <a href="https://www.threads.net/@amnotyoung.k" target="_blank" rel="me noopener noreferrer">@amnotyoung.k</a>
 </div></footer>
 {f'<script>{extra_js}</script>' if extra_js else ''}
 </body></html>"""
