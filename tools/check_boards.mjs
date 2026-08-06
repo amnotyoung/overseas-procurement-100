@@ -80,7 +80,27 @@ const constructionFiles = readdirSync(CONSTRUCTION_DIR)
 for (const f of constructionFiles) {
   const item = JSON.parse(readFileSync(join(CONSTRUCTION_DIR, f), "utf8"));
   if (!item.processBoard) continue;
-  results[`construction/${item.slug}`] = audit(item.processBoard);
+  const publicModels = item.publicModels || [];
+  if (!publicModels.length) {
+    results[`construction/${item.slug}`] = audit(item.processBoard);
+    continue;
+  }
+  for (const spec of publicModels) {
+    const nodeIds = new Set(spec.nodeIds);
+    const nodes = item.processBoard.nodes.filter((node) => nodeIds.has(node.id));
+    const usedLanes = new Set(nodes.map((node) => node.lane));
+    const usedStages = new Set(nodes.map((node) => node.stage));
+    results[`construction/${spec.slug}`] = audit({
+      schema_version: item.processBoard.schema_version,
+      profile: item.processBoard.profile,
+      title: spec.name,
+      subtitle: spec.oneLiner,
+      lanes: item.processBoard.lanes.filter((lane) => usedLanes.has(lane)),
+      stages: item.processBoard.stages.filter((stage) => usedStages.has(stage)),
+      nodes,
+      edges: spec.edges,
+    });
+  }
 }
 
 // --- baseline ---

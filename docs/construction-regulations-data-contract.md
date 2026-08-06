@@ -67,6 +67,7 @@
   pilotContext?: ProjectContext;
   verification: VerificationSummary;
   processBoard: ConstructionProcessBoard;
+  publicModels?: PublicConstructionModel[];
   authorities: Authority[];
   instruments: Instrument[];
   requirements: Requirement[];
@@ -79,6 +80,8 @@
 ```
 
 `pilotContext`는 특정 사업에 맞춘 적용 가설이다. 국가 공통 사실과 혼동하지 않도록 확인된 입력(`known`)과 미확정 입력(`unknown`)을 나눠 적는다.
+
+`publicModels`는 하나의 국가 원천을 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 세네갈 파일럿은 조달 3종과 균형을 맞춰 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 3종을 4~6번으로 공개한다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다.
 
 ## 5. 핵심 객체
 
@@ -198,10 +201,36 @@
 }
 ```
 
+### 5.6 공개 제도축 `PublicConstructionModel`
+
+```ts
+{
+  id: string;
+  slug: string;                     // ...-construction-regulations
+  priority: number;                 // 조달 1~3 뒤의 4 이상
+  name: string;
+  oneLiner: string;
+  purpose: string;
+  verificationScope: string;        // 이 공개축에서 실제로 노출하는 대조 범위
+  nodeIds: string[];                // 전체 processBoard.nodes 참조
+  requirementIds: string[];         // requirements 참조, 축 간 내용 혼입 방지
+  questionIds: string[];            // openQuestions 참조
+  conclusionIds: string[];          // reportReadyConclusions 참조
+  siteOverlayIds: string[];         // siteOverlays 참조, 없으면 빈 배열
+  fieldworkChecklistIds: string[];  // fieldworkChecklist 참조
+  edges: ConstructionProcessBoard["edges"];
+}
+```
+
+- 각 공개 제도축은 선택한 노드만으로 독립적으로 연결된 클릭형 구조도를 만든다.
+- 한 국가의 공개 제도축 전체를 합치면 원천 노드, 의무, Gate, 질문, 결론, 부지 특례와 현지조사 체크리스트가 빠짐없이 포괄돼야 한다. `requirementIds`는 각 의무를 한 축에만 배정해 선택 노드의 다른 주제가 섞이지 않게 한다.
+- 여러 제도에 공통인 법령·Gate·결론은 중복 표시할 수 있지만 원천 객체를 복제하지 않는다.
+- 공개 보드의 생애주기 단계는 `S0…`, 법정 인허가 절차는 `P1…`로 표시해 서로 다른 순번 체계를 구분한다.
+
 - `permitPath`는 일정·산출물 중심의 법정 Gate 대장이고, `processBoard`는 기관 간 인계·병렬협의·보완회귀를 보여주는 시각 모델이다. 서로 대체하지 않는다.
 - 모든 Gate 순번은 최소 한 개의 보드 노드 `gateOrders`에 연결한다.
 - 모든 노드는 근거 `refs`를 갖고 기존 법령 ID·요구사항·기관으로 역추적할 수 있어야 한다.
-- 공개 화면은 `build_site.py`가 `processBoard`를 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`로 배치하며, 기존 `/construction/{country}/` 주소는 새 model로 이동한다.
+- 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 첫 건축 model로 이동한다.
 - 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드 근거는 `processBoard.refs`와 연결된 모든 `requirements[].legalBasis`를 합쳐야 한다.
 - 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `note`를 보존한다. `pending` 법안과 `continuity_unverified` 안내자료는 현행 법적 근거 목록에 섞지 않고 검증 대장에서 상태 배지와 함께 표시한다.
 - `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.

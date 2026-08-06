@@ -39,36 +39,65 @@ let rendered = 0;
 for (const file of files) {
   const sourcePath = join(DATA_DIR, file);
   const data = JSON.parse(readFileSync(sourcePath, "utf8"));
-  const board = data.processBoard;
-  if (!board) fail(`${file} is missing processBoard`);
+  const sourceBoard = data.processBoard;
+  if (!sourceBoard) fail(`${file} is missing processBoard`);
 
-  const scratch = mkdtempSync(join(tmpdir(), "construction-board-"));
-  const boardPath = join(scratch, `${data.slug}.json`);
-  const outputPath = join(OUTPUT_DIR, `${data.slug}-construction.svg`);
-  try {
-    writeFileSync(boardPath, `${JSON.stringify(board, null, 2)}\n`);
-    execFileSync(
-      "node",
-      [BOARD_CLI, "validate", boardPath, "--strict", "--profile", "gov"],
-      { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
-    );
-    execFileSync(
-      "node",
-      [BOARD_CLI, "render", boardPath, "--out", outputPath, "--profile", "gov"],
-      { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
-    );
-    execFileSync("node", [BOARD_CLI, "check", outputPath], {
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "pipe"],
+  const publicModels = data.publicModels || [];
+  const targets = publicModels.length ? [] : [{
+    id: data.slug,
+    board: sourceBoard,
+    outputName: `${data.slug}-construction.svg`,
+  }];
+  for (const spec of publicModels) {
+    const nodeIds = new Set(spec.nodeIds);
+    const nodes = sourceBoard.nodes.filter((node) => nodeIds.has(node.id));
+    const usedLanes = new Set(nodes.map((node) => node.lane));
+    const usedStages = new Set(nodes.map((node) => node.stage));
+    targets.push({
+      id: spec.slug,
+      outputName: `${spec.slug}.svg`,
+      board: {
+        schema_version: sourceBoard.schema_version,
+        profile: sourceBoard.profile,
+        title: spec.name,
+        subtitle: spec.oneLiner,
+        lanes: sourceBoard.lanes.filter((lane) => usedLanes.has(lane)),
+        stages: sourceBoard.stages.filter((stage) => usedStages.has(stage)),
+        nodes,
+        edges: spec.edges,
+      },
     });
-  } catch (error) {
-    const detail = String(error.stderr || error.stdout || error.message || error).trim();
-    fail(`${data.slug}: korea100studio render failed\n${detail}`);
-  } finally {
-    rmSync(scratch, { recursive: true, force: true });
   }
-  rendered += 1;
-  console.log(`rendered ${data.slug}: ${outputPath}`);
+
+  for (const target of targets) {
+    const scratch = mkdtempSync(join(tmpdir(), "construction-board-"));
+    const boardPath = join(scratch, `${target.id}.json`);
+    const outputPath = join(OUTPUT_DIR, target.outputName);
+    try {
+      writeFileSync(boardPath, `${JSON.stringify(target.board, null, 2)}\n`);
+      execFileSync(
+        "node",
+        [BOARD_CLI, "validate", boardPath, "--strict", "--profile", "gov"],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+      );
+      execFileSync(
+        "node",
+        [BOARD_CLI, "render", boardPath, "--out", outputPath, "--profile", "gov"],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+      );
+      execFileSync("node", [BOARD_CLI, "check", outputPath], {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      });
+    } catch (error) {
+      const detail = String(error.stderr || error.stdout || error.message || error).trim();
+      fail(`${target.id}: korea100studio render failed\n${detail}`);
+    } finally {
+      rmSync(scratch, { recursive: true, force: true });
+    }
+    rendered += 1;
+    console.log(`rendered ${target.id}: ${outputPath}`);
+  }
 }
 
 console.log(`OK: ${rendered} construction board(s) rendered with korea100studio`);

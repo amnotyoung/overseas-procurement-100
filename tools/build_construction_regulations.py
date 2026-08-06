@@ -114,6 +114,22 @@ def build_country(data: dict[str, Any]) -> str:
             add(f"- {item}")
         add("")
 
+    if data.get("publicModels"):
+        questions = {item["id"]: item for item in data["openQuestions"]}
+        add(f"## 공개 건축 제도 {len(data['publicModels'])}종")
+        add("")
+        add("조달 1~3번 뒤에 다음 제도축을 4번부터 분리한다. 각 축은 같은 국가 원천과 법령 대장을 참조한다.")
+        add("")
+        add("| 번호 | 제도축 | 판단하려는 것 | 핵심 현장질문 |")
+        add("|---:|---|---|---|")
+        for model in data["publicModels"]:
+            model_questions = [questions[ident]["question"] for ident in model["questionIds"]]
+            add(
+                f"| {model['priority']:02d} | {esc(model['name'])} | "
+                f"{esc(model['purpose'])} | {join_items(model_questions)} |"
+            )
+        add("")
+
     add("## 보고서에 바로 쓸 수 있는 판단")
     add("")
     for item in data["reportReadyConclusions"]:

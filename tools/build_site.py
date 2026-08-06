@@ -156,6 +156,8 @@ def country_slug(d: dict) -> str:
     영문 국명은 ``Viet Nam``/``vietnam``처럼 파일 slug와 다를 수 있으므로
     배포 파일의 키로 사용하지 않는다.
     """
+    if d.get("countryKey"):
+        return d["countryKey"]
     suffix = AXIS_SUFFIX[d["axis"]]
     if not d["slug"].endswith(suffix):
         raise ValueError(f"제도 slug 접미사 불일치: {d['slug']}")
@@ -205,8 +207,10 @@ CONSTRUCTION_STATUS_CONFIDENCE = {
     "unresolved": 0.55,
 }
 SENEGAL_CONSTRUCTION_NODE_DEADLINE = {
+    "B02": "도시계획확인서(CU)는 완비신청 기준 8일, 유효기간 6개월. PUD 원본 확보와 필지 매칭 기간은 별도다.",
+    "B05": "검증된 최종 환경보고서 접수 후 임시 환경적합확인서는 15일. 스크리닝·평가작성·공공참여·기술위원회 검증의 전체기간 상한은 확인되지 않았다.",
     "B10": "완비서류 기준 단순 28근무일·복합 40근무일. 보완기간에는 심사시계가 중단되고 미착공 2년이면 허가가 실효될 수 있다.",
-    "B12": "의무 기술검사 대상의 굴착 개시허가는 완비서류 기준 10근무일.",
+    "B12": "의무 기술검사 대상의 굴착 개시허가는 완비서류 기준 15근무일.",
     "B16": "적합증명서는 완비된 접수 후 법정 18일. 무응답 간주절차는 후속 서면촉구가 필요하다.",
 }
 
@@ -238,18 +242,22 @@ def script_json(value) -> str:
     )
 
 
-def construction_presentation(d: dict) -> dict:
+def construction_presentation(d: dict, board: dict, *, segmented: bool = False) -> dict:
     """국가별 표시 보정과 일반 fallback을 분리한다.
 
     세네갈 법정기한이나 노드 ID가 다음 국가에 새어 나가지 않도록 국가별
     보정은 slug 아래에만 둔다. 새 데이터는 원천 board의 단계·노드 메타를
     그대로 표시하는 fallback으로도 빌드된다.
     """
-    board = d["processBoard"]
     stage_map = {}
     for index, stage in enumerate(board["stages"], start=1):
-        _, _, label = stage.partition(" ")
-        stage_map[stage] = f"G{index} {label or stage}"
+        code, _, label = stage.partition(" ")
+        if segmented and re.fullmatch(r"G\d+", code):
+            # 공개 보드의 생애주기 단계(S)는 permitPath의 인허가 절차(P)와
+            # 별도 체계다. 원래 단계 번호를 보존해 P1~P10과 혼동하지 않는다.
+            stage_map[stage] = f"S{code[1:]} {label or stage}"
+        else:
+            stage_map[stage] = f"G{index} {label or stage}"
     config = {
         "stage_map": stage_map,
         "stages": list(stage_map.values()),
@@ -259,12 +267,15 @@ def construction_presentation(d: dict) -> dict:
     }
     if d["slug"] == "senegal":
         config.update({
-            "stage_map": SENEGAL_CONSTRUCTION_DISPLAY_STAGE,
-            "stages": SENEGAL_CONSTRUCTION_DISPLAY_STAGES,
-            "gate_stage": SENEGAL_CONSTRUCTION_GATE_DISPLAY_STAGE,
             "deadlines": SENEGAL_CONSTRUCTION_NODE_DEADLINE,
             "question_nodes": SENEGAL_CONSTRUCTION_QUESTION_NODES,
         })
+        if not segmented:
+            config.update({
+                "stage_map": SENEGAL_CONSTRUCTION_DISPLAY_STAGE,
+                "stages": SENEGAL_CONSTRUCTION_DISPLAY_STAGES,
+                "gate_stage": SENEGAL_CONSTRUCTION_GATE_DISPLAY_STAGE,
+            })
     return config
 
 
@@ -280,20 +291,64 @@ def unique_strings(values) -> list[str]:
     return out
 
 
-def construction_to_model(d: dict) -> dict:
-    """건축 sidecar를 공개 사이트의 4번째 model view로 변환한다.
+def construction_model_board(d: dict, model_spec: dict | None) -> dict:
+    """전체 생애주기 보드에서 공개 제도축에 필요한 노드만 투영한다."""
+    if not model_spec:
+        return d["processBoard"]
+    source = d["processBoard"]
+    node_ids = set(model_spec["nodeIds"])
+    nodes = [item for item in source["nodes"] if item["id"] in node_ids]
+    used_lanes = {item["lane"] for item in nodes}
+    used_stages = {item["stage"] for item in nodes}
+    return {
+        "schema_version": source["schema_version"],
+        "profile": source["profile"],
+        "title": model_spec["name"],
+        "subtitle": model_spec["oneLiner"],
+        "lanes": [item for item in source["lanes"] if item in used_lanes],
+        "stages": [item for item in source["stages"] if item in used_stages],
+        "nodes": nodes,
+        "edges": model_spec["edges"],
+    }
 
-    원천 스키마와 검증기는 그대로 두고 표시 계층만 기존 조달 model 템플릿에
-    맞춘다. 따라서 같은 내용을 institutions 아래에 복제하지 않는다.
+
+def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
+    """건축 sidecar를 공개 사이트의 model view로 변환한다.
+
+    국가 원천 데이터는 하나로 유지하되 ``publicModels``가 있으면 도시계획,
+    인허가, 기술검사·준공처럼 독립된 제도축으로 투영한다.
     """
-    board = d["processBoard"]
+    board = construction_model_board(d, model_spec)
     instruments = {item["id"]: item for item in d["instruments"]}
     authorities = {item["id"]: item for item in d["authorities"]}
     requirements = {item["id"]: item for item in d["requirements"]}
     permit_path = {item["order"]: item for item in d["permitPath"]}
     questions = {item["id"]: item for item in d["openQuestions"]}
     context = d.get("pilotContext") or {}
-    presentation = construction_presentation(d)
+    presentation = construction_presentation(d, board, segmented=bool(model_spec))
+
+    selected_requirement_ids = set(
+        model_spec.get("requirementIds", [])
+        if model_spec else requirements
+    )
+    selected_question_ids = set(
+        model_spec.get("questionIds", []) if model_spec else questions
+    )
+    selected_gate_orders = {
+        order for node in board["nodes"] for order in node.get("gateOrders", [])
+    }
+    selected_conclusion_ids = set(
+        model_spec.get("conclusionIds", [])
+        if model_spec else (item["id"] for item in d.get("reportReadyConclusions", []))
+    )
+    selected_overlay_ids = set(
+        model_spec.get("siteOverlayIds", [])
+        if model_spec else (item["id"] for item in d.get("siteOverlays", []))
+    )
+    selected_checklist_ids = set(
+        model_spec.get("fieldworkChecklistIds", [])
+        if model_spec else (item["id"] for item in d.get("fieldworkChecklist", []))
+    )
 
     def law_name(instrument: dict) -> str:
         return instrument.get("titleKo") or instrument["title"]
@@ -302,7 +357,7 @@ def construction_to_model(d: dict) -> dict:
     for node in board["nodes"]:
         linked_requirements = [
             requirements[ident] for ident in node.get("requirementIds", [])
-            if ident in requirements
+            if ident in requirements and ident in selected_requirement_ids
         ]
         requirement_stages = {item["stage"] for item in linked_requirements}
         question_ids = list(node.get("questionIds", []))
@@ -314,8 +369,9 @@ def construction_to_model(d: dict) -> dict:
         if not question_ids and not presentation["question_nodes"]:
             question_ids = [
                 item["id"] for item in d["openQuestions"]
-                if item["stage"] in requirement_stages
+                if item["stage"] in requirement_stages and item["id"] in selected_question_ids
             ]
+        question_ids = [ident for ident in question_ids if ident in selected_question_ids]
         matching_questions = [questions[ident] for ident in question_ids if ident in questions]
         actor_names = unique_strings(
             authorities[ident]["nameKo"] for ident in node.get("authorityIds", [])
@@ -430,9 +486,38 @@ def construction_to_model(d: dict) -> dict:
             "gate_orders": [item["order"] for item in permit_gates],
         })
 
+    selected_instrument_ids = {
+        ref["instrumentId"]
+        for node in board["nodes"]
+        for ref in node.get("refs", [])
+    }
+    for ident in selected_requirement_ids:
+        selected_instrument_ids.update(
+            ref["instrumentId"] for ref in requirements[ident].get("legalBasis", [])
+        )
+    for item in d.get("reportReadyConclusions", []):
+        if item["id"] in selected_conclusion_ids:
+            selected_instrument_ids.update(item.get("basis", []))
+    for item in d.get("siteOverlays", []):
+        if item["id"] in selected_overlay_ids:
+            selected_instrument_ids.update(
+                ref["instrumentId"] for ref in item.get("legalBasis", [])
+            )
+
+    selected_authority_ids = {
+        ident for node in board["nodes"] for ident in node.get("authorityIds", [])
+    }
+    for ident in selected_requirement_ids:
+        selected_authority_ids.update(requirements[ident].get("authorityIds", []))
+    for ident in selected_question_ids:
+        if ident in questions:
+            selected_authority_ids.update(questions[ident].get("confirmWith", []))
+
     verification_sources = []
     legal_basis = []
     for instrument in d["instruments"]:
+        if instrument["id"] not in selected_instrument_ids:
+            continue
         name = law_name(instrument)
         kind = instrument["kind"]
         if instrument["status"] == "in_force":
@@ -465,14 +550,19 @@ def construction_to_model(d: dict) -> dict:
             "verification": item["verificationLevel"],
         }
         for item in d["authorities"]
+        if item["id"] in selected_authority_ids
     ]
 
     submitted_documents = [
         {"actor": f'{item["order"]:02d} {item["gate"]}', "documents": [item["output"]]}
         for item in d["permitPath"]
+        if item["order"] in selected_gate_orders
     ]
 
-    blocking_questions = [item for item in d["openQuestions"] if item.get("blocking")]
+    blocking_questions = [
+        item for item in d["openQuestions"]
+        if item.get("blocking") and item["id"] in selected_question_ids
+    ]
     bottlenecks = [
         f'{item["question"]} — {item["whyItMatters"]} '
         f'(필요 증빙: {", ".join(item["evidenceNeeded"])})'
@@ -486,6 +576,7 @@ def construction_to_model(d: dict) -> dict:
             "basis": [law_name(instruments[ident]) for ident in item.get("basis", []) if ident in instruments],
         }
         for item in d.get("reportReadyConclusions", [])
+        if item["id"] in selected_conclusion_ids
     ]
     site_overlays = [
         {
@@ -497,20 +588,25 @@ def construction_to_model(d: dict) -> dict:
             "consequence": item["consequence"],
         }
         for item in d.get("siteOverlays", [])
+        if item["id"] in selected_overlay_ids
     ]
     field_verification = [
         f'{item["phase"]}: {item["check"]} → {item["output"]}'
         for item in d["fieldworkChecklist"]
+        if item["id"] in selected_checklist_ids
     ]
     field_verification.extend(
         f'{item["id"]} {item["question"]} — 영향: {item["whyItMatters"]}; '
         f'담당 {item["owner"]}; 확인기관 {", ".join(authorities[x]["nameKo"] if x in authorities else x for x in item["confirmWith"])}; '
         f'필요 증빙 {", ".join(item["evidenceNeeded"])}'
         for item in d["openQuestions"]
+        if item["id"] in selected_question_ids
     )
 
     unresolved = []
     for item in d["requirements"]:
+        if item["id"] not in selected_requirement_ids:
+            continue
         if item["status"] != "unresolved":
             continue
         first_basis = item.get("legalBasis", [{}])[0]
@@ -535,15 +631,24 @@ def construction_to_model(d: dict) -> dict:
     ])
 
     country_key = d["slug"]
+    model_slug = (
+        model_spec["slug"] if model_spec
+        else f"{country_key}-construction-regulations"
+    )
+    related_construction = [
+        item["slug"] for item in d.get("publicModels", [])
+        if item["slug"] != model_slug
+    ]
     return {
         "schemaVersion": 1,
-        "slug": f"{country_key}-construction-regulations",
-        "name": f'{d["country"]["name"]} ODA 건축 인허가·검사·개장',
-        "priority": 4,
+        "slug": model_slug,
+        "countryKey": country_key,
+        "name": model_spec["name"] if model_spec else f'{d["country"]["name"]} ODA 건축 인허가·검사·개장',
+        "priority": model_spec["priority"] if model_spec else 4,
         "axis": "construction",
         "country": d["country"],
         "asOfDate": d["asOfDate"],
-        "oneLiner": board.get("subtitle") or d["purpose"],
+        "oneLiner": model_spec["oneLiner"] if model_spec else board.get("subtitle") or d["purpose"],
         "process": {
             "lanes": board["lanes"],
             "stages": presentation["stages"],
@@ -552,13 +657,17 @@ def construction_to_model(d: dict) -> dict:
             "warnings": d["verification"].get("limitations", []),
         },
         "canvas": {
-            "purpose": d["purpose"],
-            "stakeholders": ", ".join(item["nameKo"] for item in d["authorities"]),
+            "purpose": model_spec["purpose"] if model_spec else d["purpose"],
+            "stakeholders": ", ".join(
+                item["nameKo"] for item in d["authorities"]
+                if item["id"] in selected_authority_ids
+            ),
             "legalBasis": legal_basis,
             "authorities": authority_cards,
             "procedure": [
                 f'{item["order"]}. {item["gate"]} — {item["decision"]} / 산출물: {item["output"]}'
                 for item in d["permitPath"]
+                if item["order"] in selected_gate_orders
             ],
             "applicability": " · ".join(application_context),
             "submittedDocuments": submitted_documents,
@@ -572,19 +681,29 @@ def construction_to_model(d: dict) -> dict:
             f"{country_key}-bidding-system",
             f"{country_key}-procurement-governance",
             f"{country_key}-oda-project-pipeline",
+            *related_construction,
         ],
         "sourceQuotes": [],
         "verification": {
             "status": d["verification"]["status"],
             "verifiedAt": d["verification"]["verifiedAt"],
             "method": d["verification"]["method"],
-            "scope": d["verification"]["scope"],
+            "scope": model_spec.get("verificationScope", d["verification"]["scope"])
+            if model_spec else d["verification"]["scope"],
             "sources": verification_sources,
             "notes": notes,
             "unresolved": unresolved,
             "discrepancies": [],
         },
     }
+
+
+def construction_to_models(d: dict) -> list[dict]:
+    """국가 원천 하나를 공개 제도축 1개 이상으로 변환한다."""
+    specs = d.get("publicModels")
+    if not specs:
+        return [construction_to_model(d)]
+    return [construction_to_model(d, spec) for spec in specs]
 
 
 # 본문에 그대로 적힌 주소(포털·기관 사이트)도 눌러서 열 수 있어야 한다.
@@ -1144,9 +1263,7 @@ def build_index(items: list[dict]) -> str:
     verified = sum(1 for d in items if d["verification"]["status"] == "article-verified")
     asof = max(d["asOfDate"] for d in items)
     procurement_count = sum(1 for d in items if d["axis"] != "construction")
-    construction_countries = {
-        d["country"]["name"] for d in items if d["axis"] == "construction"
-    }
+    construction_count = sum(1 for d in items if d["axis"] == "construction")
 
     rows = []
     for d in items:
@@ -1182,7 +1299,7 @@ def build_index(items: list[dict]) -> str:
   <h1>{e(SITE_TITLE)}</h1>
   <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
   <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
-  <p class="meta">조달 제도 {procurement_count}개 · 건축 법·제도 {len(construction_countries)}개국 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
+  <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
 </div>
 
 <div class="statbar"><div class="wrap">
@@ -1275,14 +1392,15 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     opts = "".join(
         f'<option value="{e(x["slug"])}"{" selected" if x is d else ""}>'
-        f'{x["priority"]:02d} · {e(country_display_name(x["country"]["name"]))} {e(AXIS_LABEL[x["axis"]])}</option>'
+        f'{x["priority"]:02d} · {e(x["name"] if x["axis"] == "construction" else country_display_name(x["country"]["name"]) + " " + AXIS_LABEL[x["axis"]])}</option>'
         for x in same_country)
 
     # 업무구조도 그리드
     board_width = 180 + 190 * len(stages)
     grid_cols = f"180px repeat({len(stages)},minmax(190px,1fr))"
+    stage_heading = "레인 \\ 단계" if d["axis"] == "construction" else "레인 \\ 게이트"
     head = f'<div class="brow head" style="grid-template-columns:{grid_cols}">' \
-           f'<div class="bcell"><span class="lane-t">레인 \\ 게이트</span></div>'
+           f'<div class="bcell"><span class="lane-t">{e(stage_heading)}</span></div>'
     for s in stages:
         k, _, t = s.partition(" ")
         head += f'<div class="bcell"><span class="stage-k">{e(k)}</span><span class="stage-t">{e(t or s)}</span></div>'
@@ -1576,6 +1694,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             ev["label"] = e(ev["label"])
         edge_view.append(ev)
 
+    permit_prefix = "P" if d["axis"] == "construction" else "G"
+    permit_label = "연결 인허가 절차" if d["axis"] == "construction" else "연결 Gate"
+    prerequisite_label = "선행 절차" if d["axis"] == "construction" else "선행 Gate"
     js = f"""
 var NODES={script_json(node_view)};
 var EDGES={script_json(edge_view)};
@@ -1719,9 +1840,9 @@ function openNode(id){{
   if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
   if(n.report_use) h+='<dt>보고서 반영</dt><dd>'+n.report_use+'</dd>';
   if(n.permit_gates&&n.permit_gates.length){{
-    h+='<dt>연결 Gate</dt><dd>'+n.permit_gates.map(function(g){{
-      var dep=g.depends_on&&g.depends_on.length?' · 선행 Gate '+g.depends_on.join(', '):'';
-      return '<div style="margin-bottom:8px"><b>G'+g.order+' '+g.gate+'</b>'+dep
+    h+='<dt>{e(permit_label)}</dt><dd>'+n.permit_gates.map(function(g){{
+      var dep=g.depends_on&&g.depends_on.length?' · {e(prerequisite_label)} '+g.depends_on.map(function(x){{return '{e(permit_prefix)}'+x;}}).join(', '):'';
+      return '<div style="margin-bottom:8px"><b>{e(permit_prefix)}'+g.order+' '+g.gate+'</b>'+dep
         +'<div>'+g.decision+'</div><div style="color:var(--muted)">산출물 · '+g.output+'</div></div>';}}).join('')+'</dd>';
   }}
   if(n.open_questions&&n.open_questions.length){{
@@ -2262,9 +2383,12 @@ def build_bundle(country_key: str, country_name: str, items: list[dict]) -> str:
         inner = build_detail(d, items, standalone=True)
         srcdoc = html.escape(inner, quote=True)
         active = " active" if i == 0 else ""
+        tab_label = AXIS_LABEL[d["axis"]]
+        if d["axis"] == "construction":
+            tab_label = d["name"].removeprefix(f'{d["country"]["name"]} ')
         tabs.append(
             f'<button class="tab{active}" data-i="{i}" onclick="showTab({i})">'
-            f'{e(AXIS_LABEL[d["axis"]])}</button>')
+            f'{e(tab_label)}</button>')
         frames.append(
             f'<iframe class="fr{active}" data-i="{i}" title="{e(d["name"])}" '
             f'loading="{"eager" if i == 0 else "lazy"}" srcdoc="{srcdoc}"></iframe>')
@@ -2347,7 +2471,11 @@ def main() -> int:
         construction_items.append(json.loads(f.read_text(encoding="utf-8")))
     construction_items.sort(key=lambda d: country_name_sort_key(d["country"]["name"]))
 
-    construction_models = [construction_to_model(item) for item in construction_items]
+    construction_models = [
+        model
+        for item in construction_items
+        for model in construction_to_models(item)
+    ]
     items = procurement_items + construction_models
     items.sort(key=lambda d: (country_name_sort_key(d["country"]["name"]), d["priority"]))
 
@@ -2382,15 +2510,30 @@ def main() -> int:
             encoding="utf-8",
         )
         for d in construction_items:
+            country_models = [
+                item for item in construction_models if item["countryKey"] == d["slug"]
+            ]
+            primary_model = min(country_models, key=lambda item: item["priority"])
             out = SITE / "construction" / d["slug"]
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(
                 clean_generated_html(redirect_page(
-                    f'../../model/{d["slug"]}-construction-regulations/index.html',
+                    f'../../model/{primary_model["slug"]}/index.html',
                     f'{d["country"]["name"]} 건축 법·제도 | {SITE_TITLE}',
                 )),
                 encoding="utf-8",
             )
+            legacy_slug = f'{d["slug"]}-construction-regulations'
+            if legacy_slug != primary_model["slug"]:
+                legacy_out = SITE / "model" / legacy_slug
+                legacy_out.mkdir(parents=True, exist_ok=True)
+                (legacy_out / "index.html").write_text(
+                    clean_generated_html(redirect_page(
+                        f'../{primary_model["slug"]}/index.html',
+                        f'{d["country"]["name"]} 건축 법·제도 | {SITE_TITLE}',
+                    )),
+                    encoding="utf-8",
+                )
 
     n = len(list(SITE.rglob("*.html")))
     print(f"빌드 완료 — {n}개 페이지")
@@ -2399,7 +2542,7 @@ def main() -> int:
     if construction_items:
         print(f"  {SITE}/construction/index.html  (통합 대장으로 이동)")
         for d in construction_items:
-            print(f"  {SITE}/construction/{d['slug']}/index.html  (model로 이동)")
+            print(f"  {SITE}/construction/{d['slug']}/index.html  (첫 건축 model로 이동)")
     for d in items:
         print(f"  {SITE}/model/{d['slug']}/index.html")
 
