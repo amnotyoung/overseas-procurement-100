@@ -3666,6 +3666,509 @@
           "referenceLabel": "R-004 단계·최종검사"
         }
       }
+    },
+    {
+      "slug": "bolivia",
+      "name": "볼리비아",
+      "nameEn": "Bolivia",
+      "iso3": "BOL",
+      "region": "중남미",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "bol-municipality",
+          "name": "Competent Autonomous Municipal Government",
+          "nameKo": "관할 자치시정부(GAM)",
+          "role": "도시토지이용·지적·건축허가, 공사검사와 준공·as-built 절차를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://lapaz.bo/otorgacion-de-permiso-de-construccion-en-linea/"
+        },
+        {
+          "id": "bol-mopsv",
+          "name": "Ministry of Public Works, Services and Housing",
+          "nameKo": "공공사업·서비스·주택부(MOPSV)",
+          "role": "주택·도시정책과 국가 지진·지반 등 건설기술기준을 마련",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.oopp.gob.bo/"
+        },
+        {
+          "id": "bol-environment-authority",
+          "name": "Competent national or departmental environmental authority",
+          "nameKo": "관할 국가·주 환경당국(AAC)",
+          "role": "FNCA 환경분류, EEIA·PPM-PASA 등 IRAP와 환경 licence를 심사",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://snia.mmaya.gob.bo/"
+        },
+        {
+          "id": "bol-professionals",
+          "name": "Municipally accepted registered architects and engineers",
+          "nameKo": "시정부 인정 등록 건축사·기술자",
+          "role": "허가도서, 지반·구조설계, 공사책임·검사서류를 서명·봉인",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "BOL-LOCAL-LUSU-EXAMPLE",
+          "title": "Applicable municipal land-use and building regulations; La Paz LUSU and permit procedure as an official example",
+          "titleKo": "관할 시 토지이용·건축규정(라파스 LUSU·허가절차 공식 예시)",
+          "kind": "local-regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://lapaz.bo/otorgacion-de-permiso-de-construccion-en-linea/",
+          "verificationLevel": "source-linked",
+          "note": "라파스 LUSU·7일 안내·요율은 전국 공통이 아니다. 실제 GAM의 현행 법규·지도·수수료표를 적용한다."
+        },
+        {
+          "id": "BOL-NBDS-2023",
+          "title": "Norma Boliviana de Diseno Sismico 2023",
+          "titleKo": "볼리비아 내진설계기준(NBDS) 2023",
+          "kind": "standard",
+          "status": "continuity_unverified",
+          "issuedOn": "2023-11-01",
+          "officialUrl": "https://www.oopp.gob.bo/norma-boliviana-de-diseno-sismico/",
+          "officialPdfUrl": "https://www.oopp.gob.bo/wp-content/uploads/2024/02/NORMA-BOLIVIANA-DE-DISENO-SISMICO-2023.pdf",
+          "verificationLevel": "law-linked",
+          "note": "관할 시 조례에서의 채택·적용방식과 다른 재료·지반기준의 최신판을 허가 전에 확인한다."
+        },
+        {
+          "id": "BOL-ENV-LAW-1333-RPCA",
+          "title": "Environment Law No. 1333 and Prevention and Environmental Control Regulation under Supreme Decree No. 24176, as amended",
+          "titleKo": "환경법 제1333호·환경예방통제규정(RPCA), 최고령 제24176호(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1995-12-08",
+          "officialUrl": "https://snia.mmaya.gob.bo/",
+          "verificationLevel": "law-linked",
+          "note": "최고령 제3549호(2018), 제3856호(2019)와 최신 Annex A 보완을 함께 확인한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "관할 GAM의 토지이용지도·지적증명과 필지별 cartilla로 용도·형태·높이·주차를 확정한다.",
+          "summary": "볼리비아 도시계획·건축통제는 자치시정부별 법규가 핵심이다. 해당 GAM의 지적·linea municipal·토지이용 패턴과 필지 cartilla를 확보하고, 고도·사면·침수·지질·기반시설을 현장 조사한다. 라파스 LUSU는 절차 이해용 공식 예시일 뿐 전국값이 아니다.",
+          "applicability": "볼리비아 도시지역에서 신축·증축·용도변경 또는 토지개발을 추진하는 사업",
+          "authorityIds": ["bol-municipality"],
+          "basis": [
+            {"instrumentId": "BOL-LOCAL-LUSU-EXAMPLE", "provisions": ["municipal land-use pattern, cadastral line, building parameters and permit"]}
+          ],
+          "evidence": ["권원·certificado catastral·linea municipal·경계", "현행 토지이용지도·cartilla·문화재·servitude", "필지별 점유·연면적·높이·이격·주차", "지반·사면·지진·침수·배수·도로·상하수·전력 용량"],
+          "decisionQuestion": "사업지 GAM과 필지의 실제 용도·점유·연면적·높이·이격·주차·위험·기반시설 조건은 무엇인가?",
+          "conclusion": "도시마다 규정이 다르므로 GAM과 cadastral code를 먼저 고정하고 공식 cartilla·위험지도·현장조사를 개념설계 입력값으로 사용한다.",
+          "verificationScope": "라파스의 현행 지적·LUSU·건축허가 공식 서비스를 확인했다. 실제 사업지 규정과 필지 수치는 현지 확인 대상이다.",
+          "referenceLabel": "GAM 토지이용·지적"
+        },
+        "permit-environment": {
+          "oneLiner": "GAM 건축허가와 AAC의 FNCA 분류·IRAP·환경 licence를 입지·규모별로 연결한다.",
+          "summary": "건축허가는 관할 GAM이 권원·토지이용·전문도서를 심사한다. 환경절차는 FNCA와 현행 RPCA Annex에 따라 범주를 정하고 필요 시 EEIA, PPM-PASA 등 IRAP 승인과 환경 licence를 받아야 하므로 건축허가와의 선후관계를 관할 AAC에 확인한다.",
+          "applicability": "시 건축허가 대상 공사와 환경분류·licence 대상 활동·공사·프로젝트(AOP)",
+          "authorityIds": ["bol-municipality", "bol-environment-authority"],
+          "basis": [
+            {"instrumentId": "BOL-LOCAL-LUSU-EXAMPLE", "provisions": ["municipal construction permit and inspections"]},
+            {"instrumentId": "BOL-ENV-LAW-1333-RPCA", "provisions": ["FNCA categorization, IRAP review and environmental licence"]}
+          ],
+          "evidence": ["건축주·권원자·GAM 허가권자", "건축허가도서·지반·구조·설비·관계기관 의견", "FNCA 범주·EEIA/PPM-PASA·licence 또는 면제근거", "실제 수수료·보완관행·전체 인허가 기간"],
+          "decisionQuestion": "본 사업의 GAM 허가유형과 최신 RPCA 범주·IRAP·환경 licence의 관할·선행관계는 무엇인가?",
+          "conclusion": "GAM permit와 환경 licence는 별개이므로 FNCA 범주와 관할 AAC를 초기 확정해 두 승인조건을 통합 관리한다.",
+          "verificationScope": "MMAyA의 DS 24176·2018/2019 개정과 최신 환경접수 체계를 확인했다. 실제 범주·수수료·기간은 접수 시 재확인한다.",
+          "referenceLabel": "GAM 허가·FNCA 환경분류"
+        },
+        "control-completion": {
+          "oneLiner": "등록 전문가·NBDS 구조안전, GAM 동행검사와 승인 as-built·준공서류를 인계 Gate로 둔다.",
+          "summary": "허가도서는 관할 GAM이 인정하는 건축사·기술자가 서명하고 구조·지반설계에는 NBDS 2023과 시 규정을 적용한다. 공사 중 약정된 municipal inspection·시험·변경승인을 기록하고 완료 시 승인도면과 일치하는 as-built, cumplimiento/estabilidad 및 사용에 필요한 최종서류를 확보한다.",
+          "applicability": "전문설계·구조안전·시 검사와 준공도서가 요구되는 건축공사",
+          "authorityIds": ["bol-municipality", "bol-mopsv", "bol-professionals"],
+          "basis": [
+            {"instrumentId": "BOL-NBDS-2023", "provisions": ["seismic hazard, analysis and structural design"]},
+            {"instrumentId": "BOL-LOCAL-LUSU-EXAMPLE", "provisions": ["permit-accompaniment inspections and approved as-built process"]}
+          ],
+          "evidence": ["habilitado 건축사·기술자·공사책임자", "지반조사·NBDS 구조계산·재료시험", "GAM 단계검사·변경승인·소방·유틸리티 확인", "as-built·cumplimiento/estabilidad·최종 사용서류·비용"],
+          "decisionQuestion": "현지 전문가와 적용 구조기준, GAM 검사·as-built·최종사용 절차의 실제 비용·기간은 무엇인가?",
+          "conclusion": "시별 완료서류가 다르므로 검사 hold point와 as-built·사용승인 명칭을 입찰 전 확정하고 지급·인계조건에 넣는다.",
+          "verificationScope": "MOPSV NBDS 2023과 라파스의 동행검사·as-built 공식 절차를 확인했다. 사업지 GAM·보험·검사비는 현지 확인 대상이다.",
+          "referenceLabel": "NBDS·GAM 검사·as-built"
+        }
+      }
+    },
+    {
+      "slug": "ecuador",
+      "name": "에콰도르",
+      "nameEn": "Ecuador",
+      "iso3": "ECU",
+      "region": "중남미",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "ecu-municipal-gad",
+          "name": "Competent municipal or metropolitan Autonomous Decentralized Government",
+          "nameKo": "관할 시·광역 자치분권정부(GAD)",
+          "role": "PUGS·도시계획 조례, 건축 licence·검사와 완료·점유 관련 증명을 담당",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "ecu-miduvi",
+          "name": "Ministry of Urban Development and Housing",
+          "nameKo": "도시개발·주택부(MIDUVI)",
+          "role": "LOOTUGS 정책과 에콰도르 건축기준(NEC)을 총괄",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.habitatyvivienda.gob.ec/"
+        },
+        {
+          "id": "ecu-maate",
+          "name": "Ministry of Environment, Water and Ecological Transition or accredited environmental authority",
+          "nameKo": "환경·수자원·생태전환부(MAATE) 또는 인가 환경당국",
+          "role": "SUIA를 통한 환경 certificate·registro·licencia와 환경협의를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://maatecalidadambiental.ambiente.gob.ec/"
+        },
+        {
+          "id": "ecu-control-authorities",
+          "name": "Municipal control agency, fire brigade and registered responsible professionals",
+          "nameKo": "시 공사통제기관·소방대·등록 책임전문가",
+          "role": "공사 단계점검, 소방 점유승인과 최종 공사적합성 증빙을 수행",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=393"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "ECU-LOOTUGS-2016-2026",
+          "title": "Organic Law on Territorial Planning, Land Use and Management (LOOTUGS), as amended through 2026",
+          "titleKo": "국토계획·토지이용관리 기본법(LOOTUGS, 2026년 개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2016-07-05",
+          "officialUrl": "https://www.asambleanacional.gob.ec/es/multimedios-legislativos/61068-proyecto-de-ley-organica-reformatoria",
+          "verificationLevel": "law-linked",
+          "note": "2026년 7월 7일 관보 제320호 개정까지 반영한 최신 통합문과 시행경과를 허가 전에 확인한다."
+        },
+        {
+          "id": "ECU-LOCAL-PUGS",
+          "title": "Applicable cantonal PUGS, urban-planning ordinance and building-licensing rules",
+          "titleKo": "관할 cantón PUGS·도시계획조례·건축허가규정",
+          "kind": "local-regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.habitatyvivienda.gob.ec/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "ECU-NEC",
+          "title": "Norma Ecuatoriana de la Construccion (NEC), applicable chapters and amendments",
+          "titleKo": "에콰도르 건축기준(NEC) 적용 장·개정판",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.habitatyvivienda.gob.ec/wp-content/uploads/2023/03/7.-NEC-SE-GC-Geotecnia-y-Cimentaciones.pdf",
+          "verificationLevel": "law-linked",
+          "note": "NEC-15 구조안전 장과 이후 발행·개정된 화재·접근성·에너지·설비 장의 현행판을 분야별로 확인한다."
+        },
+        {
+          "id": "ECU-COA-RCOA",
+          "title": "Organic Environment Code and its Regulation, as amended",
+          "titleKo": "환경기본법전(COA)·시행규정(RCOA, 개정 포함)",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "officialUrl": "https://maatecalidadambiental.ambiente.gob.ec/index.php/normativa/",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "등기·지적과 관할 cantón의 PUGS·조례로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+          "summary": "LOOTUGS 아래 각 municipal/metropolitan GAD의 PDOT·PUGS와 조례가 토지분류·용도·건축형태를 구체화한다. 필지의 informe de regulación 또는 동등한 규제증명을 확보하고 지진·사면·화산·침수·배수·상하수·전력 조건을 별도 조사한다.",
+          "applicability": "에콰도르에서 신축·증축·용도변경 또는 urbanizacion을 추진하는 사업",
+          "authorityIds": ["ecu-municipal-gad", "ecu-miduvi"],
+          "basis": [
+            {"instrumentId": "ECU-LOOTUGS-2016-2026", "provisions": ["territorial planning, land classification and municipal land-use management"]},
+            {"instrumentId": "ECU-LOCAL-PUGS", "provisions": ["cantonal zoning, parcel parameters and local development rights"]}
+          ],
+          "evidence": ["등기·catastro·경계·권원자", "현행 PUGS·zoning·보호·servidumbre", "필지별 COS/CUS·edificabilidad·높이·이격·주차", "지반·지진·사면·화산·침수·배수·상하수·전력 용량"],
+          "decisionQuestion": "사업지 GAD와 필지의 실제 용도·COS/CUS·높이·이격·주차·위험·기반시설 조건은 무엇인가?",
+          "conclusion": "Quito나 Guayaquil 수치를 전국값으로 쓰지 말고 해당 cantón의 PUGS·필지 규제증명과 현장조사를 개념설계 전에 확정한다.",
+          "verificationScope": "LOOTUGS와 GAD별 PUGS 집행구조를 확인했다. 2026 개정 시행경과·필지 수치·기반시설은 현지 확인 대상이다.",
+          "referenceLabel": "LOOTUGS·PUGS·필지규제"
+        },
+        "permit-environment": {
+          "oneLiner": "GAD 건축 licence와 SUIA의 certificate·registro·licencia 환경경로를 영향·입지별로 연결한다.",
+          "summary": "관할 GAD는 PUGS·조례와 NEC에 따라 건축·urbanistica licence를 심사한다. SUIA는 사업좌표·활동·영향을 바탕으로 비유의 영향 certificate, 저영향 registro, 중·고영향 licencia를 구분하고 보호지역 교차 여부와 환경협의 요건을 제시한다.",
+          "applicability": "지방 건축허가 대상 공사와 COA 환경정규화 대상 공공·민간 프로젝트",
+          "authorityIds": ["ecu-municipal-gad", "ecu-maate"],
+          "basis": [
+            {"instrumentId": "ECU-LOCAL-PUGS", "provisions": ["municipal building and urban-development licence"]},
+            {"instrumentId": "ECU-COA-RCOA", "provisions": ["COA Arts. 172-173; RCOA Arts. 421-427 and environmental regularization"]}
+          ],
+          "evidence": ["건축주·권원자·GAD 허가권자", "건축 licence·NEC 전문도서·관계기관 의견", "SUIA 좌표·intersección·영향분류·certificate/registro/licencia", "환경협의·실제 수수료·보완관행·전체 기간"],
+          "decisionQuestion": "본 사업의 GAD licence 유형과 SUIA 영향등급·환경승인·협의 및 선행관계는 무엇인가?",
+          "conclusion": "건축 licence와 환경정규화는 별개이므로 정확한 좌표와 활동코드로 SUIA 결과를 먼저 받아 일정·설계조건에 반영한다.",
+          "verificationScope": "COA/RCOA의 certificate·registro·licencia 구조와 현재 SUIA 서비스를 확인했다. 실제 분류·비용·기간은 접수 시 재확인한다.",
+          "referenceLabel": "GAD licence·SUIA 환경승인"
+        },
+        "control-completion": {
+          "oneLiner": "NEC 책임전문가·검사, 소방 점유허가와 GAD 최종 공사적합성 증명을 사용개시 Gate로 둔다.",
+          "summary": "설계·시공·감리 책임자는 NEC의 구조·지반·화재·접근성·설비 적용장을 확인하고 GAD 검사·시험·변경승인을 기록한다. 관할에 따라 bomberos permiso de ocupación과 certificado de conformidad de finalización 또는 동등한 준공·habitabilidad 문서를 발급받은 뒤 사용한다.",
+          "applicability": "NEC 준수와 시·소방 검사·완료승인이 필요한 건축공사",
+          "authorityIds": ["ecu-municipal-gad", "ecu-miduvi", "ecu-control-authorities"],
+          "basis": [
+            {"instrumentId": "ECU-NEC", "provisions": ["structural safety, geotechnics, fire, accessibility and applicable building chapters"]},
+            {"instrumentId": "ECU-LOCAL-PUGS", "provisions": ["local inspections and completion or occupancy control"]}
+          ],
+          "evidence": ["등록 설계자·constructor·fiscalizador·책임서명", "지반·NEC 구조계산·재료·설비시험", "GAD 단계검사·변경승인·bomberos 점유허가", "as-built·CCF/준공·habitabilidad·실제 비용"],
+          "decisionQuestion": "현지 전문가, 적용 NEC 장과 GAD·소방 검사·최종 점유서류의 실제 비용·기간은 무엇인가?",
+          "conclusion": "Quito CCF 같은 명칭을 전국에 일반화하지 말고 해당 GAD의 검사·소방·완료증빙을 입찰과 인계 Gate로 확정한다.",
+          "verificationScope": "MIDUVI NEC와 Quito의 공식 CCF·소방점유 선행 예시를 확인했다. 사업지 절차·전문가·보험·비용은 현지 확인 대상이다.",
+          "referenceLabel": "NEC·소방·GAD 준공"
+        }
+      }
+    },
+    {
+      "slug": "el-salvador",
+      "name": "엘살바도르",
+      "nameEn": "El Salvador",
+      "iso3": "SLV",
+      "region": "중남미",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "slv-permit-authority",
+          "name": "Ministry of Housing, competent municipal technical office or OPAMSS",
+          "nameKo": "주택부·관할 시 기술사무소 또는 OPAMSS",
+          "role": "사업지 관할에 따라 입지·도로·배수 검토, parcelacion·건축허가와 obra recepción을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://vivienda.gob.sv/servicios/urbanismo-y-construccion/"
+        },
+        {
+          "id": "slv-marn",
+          "name": "Ministry of Environment and Natural Resources",
+          "nameKo": "환경천연자원부(MARN)",
+          "role": "SEA에서 2025 환경분류 N1·N2·N3와 입지·건설·운영 환경허가를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.ambiente.gob.sv/servicios/permisoambiental/"
+        },
+        {
+          "id": "slv-professional-registry",
+          "name": "National Registry of Architects, Engineers, Designers and Builders",
+          "nameKo": "국가 건축사·기술자·설계자·시공자 등록부",
+          "role": "건축·도시개발 도서와 공사책임을 맡을 전문가·시공자의 법정 등록을 관리",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://rdp.vivienda.gob.sv/web/"
+        },
+        {
+          "id": "slv-fire-utilities",
+          "name": "Competent fire, water, drainage, electricity and municipal operating authorities",
+          "nameKo": "관할 소방·상하수·배수·전력·영업 기관",
+          "role": "소방·피난·기반시설 접속과 사용·영업 전 최종 동의를 담당",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "SLV-URBAN-CONSTRUCTION-LAW",
+          "title": "Urban Planning and Construction Law and its Regulation, as amended",
+          "titleKo": "도시계획·건설법 및 시행규정(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://vivienda.gob.sv/ley-de-urbanismo-construccion-y-su-reglamento/",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "SLV-AMSS-LDOT-REGS",
+          "title": "Law and Regulation on Territorial Development and Planning of the San Salvador Metropolitan Area, current compilation",
+          "titleKo": "산살바도르 광역권 국토개발·계획법 및 시행규정 현행본",
+          "kind": "local-regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://opamss.org.sv/wp-content/uploads/2024/02/RLDOTAMSS_CON_ANEXOS_AGOSTO_2023.pdf",
+          "officialPdfUrl": "https://opamss.org.sv/wp-content/uploads/2024/02/RLDOTAMSS_CON_ANEXOS_AGOSTO_2023.pdf",
+          "verificationLevel": "law-linked",
+          "note": "AMSS 내부에만 적용된다. 그 밖의 지역은 주택부·municipality 또는 위임 기술사무소의 현행 계획·조례를 확인한다."
+        },
+        {
+          "id": "SLV-ENV-LAW-CAT-2025",
+          "title": "Environment Law and Environmental Categorization of Projects 2025 — Executive Decree No. 3",
+          "titleKo": "환경법·프로젝트 환경분류 2025(행정령 제3호)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2025-04-28",
+          "officialUrl": "https://appsdec.ambiente.gob.sv/",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "관할기관의 calificación de lugar·linea de construcción·도로·배수·zoning으로 필지별 개발조건을 확정한다.",
+          "summary": "AMSS에서는 OPAMSS의 광역계획·RLDOTAMSS가 적용되고, 다른 지역은 주택부·municipality·위임 기술사무소의 계획과 조례를 확인한다. 권원·지적, calificación de lugar, línea, 도로·우수·상하수·전력 factibilidad를 확보하고 지진·사면·화산·침수 위험을 조사한다.",
+          "applicability": "엘살바도르에서 신축·증축·용도변경 또는 parcelacion을 추진하는 사업",
+          "authorityIds": ["slv-permit-authority"],
+          "basis": [
+            {"instrumentId": "SLV-URBAN-CONSTRUCTION-LAW", "provisions": ["site qualification, construction line, road and zoning review"]},
+            {"instrumentId": "SLV-AMSS-LDOT-REGS", "provisions": ["AMSS land-use plan, parcel and building parameters"]}
+          ],
+          "evidence": ["권원·catastro·경계·소유자", "calificación de lugar·línea·zoning·문화재 조건", "필지별 점유·밀도·높이·이격·주차", "지반·지진·사면·화산·침수·우수·상하수·전력 factibilidad"],
+          "decisionQuestion": "사업지가 AMSS인지와 실제 필지의 용도·밀도·높이·이격·주차·위험·기반시설 조건은 무엇인가?",
+          "conclusion": "OPAMSS 기준을 전국에 적용하지 말고 사업지 관할기관과 필지별 사전검토·factibilidad를 개념설계 전에 확정한다.",
+          "verificationScope": "주택부의 전국 관할 안내와 OPAMSS RLDOTAMSS 체계를 확인했다. 실제 필지 수치·위험·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "입지·도로·배수·zoning"
+        },
+        "permit-environment": {
+          "oneLiner": "관할 건축허가와 MARN SEA의 2025 N1·N2·N3 환경분류·허가를 하나의 일정으로 관리한다.",
+          "summary": "주택부·municipal office 또는 OPAMSS가 parcelacion·construction permit을 심사한다. MARN의 2025 분류는 활동·규모·입지로 N1 저영향, N2 경미영향, N3 중·고영향을 구분하며 N3은 EsIA와 관리프로그램이 필요하므로 위치·건설 환경허가와 운영허가의 적용을 SEA에서 확인한다.",
+          "applicability": "건축·parcelacion 허가와 MARN 환경평가 대상 활동·공사·프로젝트",
+          "authorityIds": ["slv-permit-authority", "slv-marn"],
+          "basis": [
+            {"instrumentId": "SLV-URBAN-CONSTRUCTION-LAW", "provisions": ["parceling and construction permit"]},
+            {"instrumentId": "SLV-AMSS-LDOT-REGS", "provisions": ["AMSS prior reviews and OPAMSS construction permit"]},
+            {"instrumentId": "SLV-ENV-LAW-CAT-2025", "provisions": ["N1, N2 and N3 categorization; environmental authorization"]}
+          ],
+          "evidence": ["건축주·권원자·실제 허가권자", "건축허가도서·factibilidad·관계기관 의견", "SEA N1/N2/N3 결과·EsIA/PMA·입지·건설 환경허가", "실제 수수료·보완관행·전체 인허가 기간"],
+          "decisionQuestion": "본 사업의 허가기관·permit 유형과 MARN N1·N2·N3 분류·환경허가·선행관계는 무엇인가?",
+          "conclusion": "건축허가와 환경허가는 서로 대체하지 않으므로 2025 SEA 분류를 먼저 확정해 양쪽 보완조건을 통합 관리한다.",
+          "verificationScope": "주택부·OPAMSS 허가구조와 MARN의 2025 현행 분류를 확인했다. 실제 유형·수수료·기간은 접수기관에 재확인한다.",
+          "referenceLabel": "건축 permit·MARN N1-N3"
+        },
+        "control-completion": {
+          "oneLiner": "국가등록 전문가·director de obra, 단계검사와 recepción de obra를 사용개시 Gate로 둔다.",
+          "summary": "설계자·기술자·proyectista·constructor는 주택부 국가등록의 유효범위를 갖춰야 한다. 공사 중 구조·설비·배수·소방 검사와 변경승인을 기록하고, 주택부·관할 기술사무소 또는 OPAMSS의 recepción de obra와 환경 운영허가·영업 선행승인을 완료한 뒤 사용한다.",
+          "applicability": "등록 전문가가 수행하며 공사검사·obra recepción·운영승인이 필요한 건축공사",
+          "authorityIds": ["slv-permit-authority", "slv-professional-registry", "slv-fire-utilities"],
+          "basis": [
+            {"instrumentId": "SLV-URBAN-CONSTRUCTION-LAW", "provisions": ["professional registration, construction control and project reception"]},
+            {"instrumentId": "SLV-AMSS-LDOT-REGS", "provisions": ["Art. VII.14; construction permit and recepción de obra in AMSS"]}
+          ],
+          "evidence": ["국가등록 건축사·기술자·director·constructor", "기초·구조·설비·우수·재료 시험·검사", "소방·상하수·전력·환경 운영 동의", "as-built·recepción de obra·사용/영업서류·비용"],
+          "decisionQuestion": "현지 등록 전문가와 검사기관, recepción de obra·운영승인의 실제 서류·비용·기간은 무엇인가?",
+          "conclusion": "공사 recepción은 허가의 부속절차가 아니라 개장 선행조건이므로 검사 hold point와 최종 승인증빙을 입찰·인계조건에 넣는다.",
+          "verificationScope": "주택부 국가전문가 등록과 permiso·recepción 서비스, OPAMSS 완료단계를 확인했다. 보험·검사비·현지 기간은 재확인한다.",
+          "referenceLabel": "등록전문가·recepción de obra"
+        }
+      }
+    },
+    {
+      "slug": "colombia",
+      "name": "콜롬비아",
+      "nameEn": "Colombia",
+      "iso3": "COL",
+      "region": "중남미",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "col-license-authority",
+          "name": "Urban curator or competent municipal or district planning authority",
+          "nameKo": "도시허가검사관(curador urbano) 또는 관할 시·구 계획기관",
+          "role": "POT와 건축기준에 따라 urbanización·parcelación·subdivisión·construction licence를 발급",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.minvivienda.gov.co/node/49068"
+        },
+        {
+          "id": "col-minvivienda",
+          "name": "Ministry of Housing, City and Territory and the seismic-code advisory commission",
+          "nameKo": "주택·도시·국토부·내진건축 상설자문위원회",
+          "role": "도시허가 단일령과 NSR-10·전문감리·기술점유증명 정책을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.minvivienda.gov.co/"
+        },
+        {
+          "id": "col-environment-authority",
+          "name": "ANLA or competent regional or urban environmental authority",
+          "nameKo": "국가환경허가청(ANLA) 또는 관할 지역·도시 환경당국",
+          "role": "법정대상 환경 licence와 물·산림·배출·점용 등 개별 환경허가를 심사",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.anla.gov.co/01_anla/normatividad/normas-ambientales/decretos"
+        },
+        {
+          "id": "col-control-supervisor",
+          "name": "Municipal urban-control authority and independent technical supervisor where required",
+          "nameKo": "시 공사통제기관·법정대상 독립 기술감리자",
+          "role": "공사통제와 NSR-10 독립감리, 기술점유증명서 발행·기록을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.minvivienda.gov.co/node/49525"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "COL-LAW-388-POT",
+          "title": "Law No. 388 of 1997 and the applicable territorial ordering plan (POT), as amended",
+          "titleKo": "법률 제388/1997호·관할 국토정비계획(POT, 개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1997-07-18",
+          "officialUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=339",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "COL-DECREE-1077-2015",
+          "title": "Single Regulatory Decree for the Housing, City and Territory Sector No. 1077 of 2015, consolidated through 27 April 2026",
+          "titleKo": "주택·도시·국토 부문 단일시행령 제1077/2015호(2026년 4월 27일 통합본)",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2015-05-25",
+          "officialUrl": "https://minvivienda.gov.co/normativa/decreto-unico-reglamentario-sector-vivienda-ciudad-y-territorio-decreto-1077-de-2015",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "COL-NSR10-LAWS-400-1796",
+          "title": "Colombian Seismic-Resistant Construction Regulation NSR-10, Law No. 400 of 1997 and Law No. 1796 of 2016, as amended",
+          "titleKo": "콜롬비아 내진건축기준 NSR-10·법률 제400/1997호·제1796/2016호(개정 포함)",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.minvivienda.gov.co/node/49525",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "COL-ENV-DECREE-1076-2015",
+          "title": "Single Regulatory Decree for the Environment and Sustainable Development Sector No. 1076 of 2015, as amended",
+          "titleKo": "환경·지속가능발전 부문 단일시행령 제1076/2015호(개정 포함)",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2015-05-26",
+          "officialUrl": "https://www.anla.gov.co/documentos/normativa/decretos/dec_1076_26052015.pdf",
+          "officialPdfUrl": "https://www.anla.gov.co/documentos/normativa/decretos/dec_1076_26052015.pdf",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "등기·지적과 관할 POT·부분계획·도시규정으로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+          "summary": "Law 388 아래 municipality/district의 POT와 이를 발전·보완하는 계획·도시규정이 토지분류, 처리구역, 용도와 건축가능범위를 정한다. matrícula inmobiliaria·catastro·필지규제와 위험·보호·공공부담을 확인하고 지반·침수·사면·유틸리티 용량을 조사한다.",
+          "applicability": "콜롬비아에서 신축·증축·용도변경·urbanización 또는 parcelación을 추진하는 사업",
+          "authorityIds": ["col-license-authority"],
+          "basis": [
+            {"instrumentId": "COL-LAW-388-POT", "provisions": ["POT hierarchy, urban actions and licence conformity"]},
+            {"instrumentId": "COL-DECREE-1077-2015", "provisions": ["urban licence classes and application requirements"]}
+          ],
+          "evidence": ["matrícula inmobiliaria·catastro·경계·권원자", "현행 POT·부분계획·처리·용도·보호·부담", "필지별 점유·edificabilidad·높이·이격·주차", "지반·지진·사면·침수·배수·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 필지의 현행 POT 규제와 실제 용도·edificabilidad·높이·이격·주차·위험·부담은 무엇인가?",
+          "conclusion": "Bogotá 등 다른 도시의 수치를 일반화하지 말고 관할 POT·필지 규제증명과 현장 기반시설 조사를 개념설계 전에 확정한다.",
+          "verificationScope": "Law 388·Decree 1077의 POT·도시허가 구조를 확인했다. 필지별 수치·부담·위험·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "POT·필지 도시규제"
+        },
+        "permit-environment": {
+          "oneLiner": "curador/시의 urbanística licence와 법정대상 환경 licence·개별 환경허가를 정확히 선별한다.",
+          "summary": "curador urbano가 있는 곳은 curador가, 없는 곳은 municipal/district authority가 urbanización·parcelación·subdivisión·construction licence를 발급한다. 일반 건물 모두가 국가 환경 licence 대상은 아니므로 Decree 1076의 열거사업 해당 여부와 지역 환경당국의 물·산림·배출·점용·소음 등 개별허가를 별도로 확인한다.",
+          "applicability": "urbanística licence 대상 공사와 환경 licence 또는 개별 환경허가 대상 프로젝트",
+          "authorityIds": ["col-license-authority", "col-environment-authority"],
+          "basis": [
+            {"instrumentId": "COL-DECREE-1077-2015", "provisions": ["construction and other urban licence classes, filing and decision"]},
+            {"instrumentId": "COL-ENV-DECREE-1076-2015", "provisions": ["Arts. 2.2.2.3.2.1 et seq.; enumerated projects subject to environmental licence"]}
+          ],
+          "evidence": ["건축주·권원자·curador/시 허가권자", "licence 종류·NSR 전문도서·관계기관 의견", "환경 licence 대상판정 또는 비대상 근거", "물·산림·배출·점용 허가와 실제 expensas·기간"],
+          "decisionQuestion": "본 사업의 urbanística licence 종류·허가권자와 환경 licence/개별허가 대상·관할·선행관계는 무엇인가?",
+          "conclusion": "환경 licence 비대상을 곧 환경절차 없음으로 해석하지 말고 프로젝트 구성·입지별 개별허가까지 통합 목록화한다.",
+          "verificationScope": "Minvivienda의 2026 통합 Decree 1077과 ANLA의 Decree 1076 열거체계를 확인했다. 실제 expensas·보완·기간은 관할기관에 확인한다.",
+          "referenceLabel": "urbanística licence·환경선별"
+        },
+        "control-completion": {
+          "oneLiner": "NSR-10 책임전문가·독립 기술감리와 certificado técnico de ocupación을 점유 Gate로 둔다.",
+          "summary": "NSR-10과 Law 1796은 대상 건축물에 독립 기술감리를 적용하고, 감리자는 허가된 구조·지반기준에 맞게 시공됐음을 certificado técnico de ocupación으로 증명한다. 시 공사통제, 소방·유틸리티·as-built와 증명서 등기·제출요건을 완료한 뒤 점유한다.",
+          "applicability": "NSR-10 설계·시공과 독립감리·기술점유증명 대상 건축공사",
+          "authorityIds": ["col-minvivienda", "col-control-supervisor", "col-license-authority"],
+          "basis": [
+            {"instrumentId": "COL-NSR10-LAWS-400-1796", "provisions": ["independent technical supervision and technical occupancy certificate"]},
+            {"instrumentId": "COL-DECREE-1077-2015", "provisions": ["urban control and licence compliance"]}
+          ],
+          "evidence": ["matrícula profesional·설계자·constructor·supervisor independiente", "지반·NSR 구조계산·재료·설비시험", "시 공사통제·변경승인·소방·유틸리티 확인", "as-built·certificado técnico de ocupación·등기/제출·비용"],
+          "decisionQuestion": "독립감리·기술점유증명 대상 여부와 현지 전문가·검사·증명 비용·기간은 무엇인가?",
+          "conclusion": "Law 1796 적용대상을 설계단계에 판정하고 독립성·검사기록·기술점유증명을 입찰·지급·인계조건에 명시한다.",
+          "verificationScope": "Minvivienda의 Law 1796·NSR-10 공식 해석과 기술점유증명 범위를 확인했다. 대상판정·현지 비용·보험은 재확인한다.",
+          "referenceLabel": "NSR-10·독립감리·점유증명"
+        }
+      }
     }
   ]
 }

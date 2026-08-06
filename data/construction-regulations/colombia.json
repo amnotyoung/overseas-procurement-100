@@ -1,0 +1,820 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "colombia",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "콜롬비아",
+    "nameEn": "Colombia",
+    "iso3": "COL",
+    "region": "중남미"
+  },
+  "purpose": "콜롬비아 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "법률 제388/1997호·관할 국토정비계획(POT, 개정 포함)·주택·도시·국토 부문 단일시행령 제1077/2015호(2026년 4월 27일 통합본)·환경·지속가능발전 부문 단일시행령 제1076/2015호(개정 포함)·콜롬비아 내진건축기준 NSR-10·법률 제400/1997호·제1796/2016호(개정 포함)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "콜롬비아 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "등기·지적과 관할 POT·부분계획·도시규정으로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+        "authorityIds": [
+          "col-license-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "POT·필지 도시규제",
+            "instrumentId": "COL-LAW-388-POT",
+            "provisions": [
+              "POT hierarchy, urban actions and licence conformity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 현행 POT 규제와 실제 용도·edificabilidad·높이·이격·주차·위험·부담은 무엇인가?",
+        "authorityIds": [
+          "col-license-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "POT·필지 도시규제",
+            "instrumentId": "COL-LAW-388-POT",
+            "provisions": [
+              "POT hierarchy, urban actions and licence conformity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "curador/시의 urbanística licence와 법정대상 환경 licence·개별 환경허가를 정확히 선별한다.",
+        "authorityIds": [
+          "col-license-authority",
+          "col-environment-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "urbanística licence·환경선별",
+            "instrumentId": "COL-DECREE-1077-2015",
+            "provisions": [
+              "construction and other urban licence classes, filing and decision"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 urbanística licence 종류·허가권자와 환경 licence/개별허가 대상·관할·선행관계는 무엇인가?",
+        "authorityIds": [
+          "col-license-authority",
+          "col-environment-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "urbanística licence·환경선별",
+            "instrumentId": "COL-DECREE-1077-2015",
+            "provisions": [
+              "construction and other urban licence classes, filing and decision"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "NSR-10 책임전문가·독립 기술감리와 certificado técnico de ocupación을 점유 Gate로 둔다.",
+        "authorityIds": [
+          "col-minvivienda",
+          "col-control-supervisor",
+          "col-license-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "NSR-10·독립감리·점유증명",
+            "instrumentId": "COL-NSR10-LAWS-400-1796",
+            "provisions": [
+              "independent technical supervision and technical occupancy certificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "독립감리·기술점유증명 대상 여부와 현지 전문가·검사·증명 비용·기간은 무엇인가?",
+        "authorityIds": [
+          "col-minvivienda",
+          "col-control-supervisor",
+          "col-license-authority"
+        ],
+        "requirementIds": [
+          "COL-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "NSR-10·독립감리·점유증명",
+            "instrumentId": "COL-NSR10-LAWS-400-1796",
+            "provisions": [
+              "independent technical supervision and technical occupancy certificate"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "colombia-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "콜롬비아 도시계획·부지규제",
+      "oneLiner": "등기·지적과 관할 POT·부분계획·도시규정으로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "Law 388·Decree 1077의 POT·도시허가 구조를 확인했다. 필지별 수치·부담·위험·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "COL-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "COL-BLD-Q-001",
+        "COL-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "COL-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "COL-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "COL-BLD-F-001",
+        "COL-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "colombia-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "콜롬비아 건축허가·환경심사",
+      "oneLiner": "curador/시의 urbanística licence와 법정대상 환경 licence·개별 환경허가를 정확히 선별한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Minvivienda의 2026 통합 Decree 1077과 ANLA의 Decree 1076 열거체계를 확인했다. 실제 expensas·보완·기간은 관할기관에 확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "COL-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "COL-BLD-Q-003",
+        "COL-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "COL-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "COL-BLD-F-003",
+        "COL-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "colombia-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "콜롬비아 기술검사·보험·준공제도",
+      "oneLiner": "NSR-10 책임전문가·독립 기술감리와 certificado técnico de ocupación을 점유 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "Minvivienda의 Law 1796·NSR-10 공식 해석과 기술점유증명 범위를 확인했다. 대상판정·현지 비용·보험은 재확인한다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "COL-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "COL-BLD-Q-005",
+        "COL-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "COL-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "COL-BLD-F-005",
+        "COL-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "col-license-authority",
+      "name": "Urban curator or competent municipal or district planning authority",
+      "nameKo": "도시허가검사관(curador urbano) 또는 관할 시·구 계획기관",
+      "role": "POT와 건축기준에 따라 urbanización·parcelación·subdivisión·construction licence를 발급",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.minvivienda.gov.co/node/49068"
+    },
+    {
+      "id": "col-minvivienda",
+      "name": "Ministry of Housing, City and Territory and the seismic-code advisory commission",
+      "nameKo": "주택·도시·국토부·내진건축 상설자문위원회",
+      "role": "도시허가 단일령과 NSR-10·전문감리·기술점유증명 정책을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.minvivienda.gov.co/"
+    },
+    {
+      "id": "col-environment-authority",
+      "name": "ANLA or competent regional or urban environmental authority",
+      "nameKo": "국가환경허가청(ANLA) 또는 관할 지역·도시 환경당국",
+      "role": "법정대상 환경 licence와 물·산림·배출·점용 등 개별 환경허가를 심사",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.anla.gov.co/01_anla/normatividad/normas-ambientales/decretos"
+    },
+    {
+      "id": "col-control-supervisor",
+      "name": "Municipal urban-control authority and independent technical supervisor where required",
+      "nameKo": "시 공사통제기관·법정대상 독립 기술감리자",
+      "role": "공사통제와 NSR-10 독립감리, 기술점유증명서 발행·기록을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.minvivienda.gov.co/node/49525"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "COL-LAW-388-POT",
+      "title": "Law No. 388 of 1997 and the applicable territorial ordering plan (POT), as amended",
+      "titleKo": "법률 제388/1997호·관할 국토정비계획(POT, 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1997-07-18",
+      "officialUrl": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=339",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "COL-DECREE-1077-2015",
+      "title": "Single Regulatory Decree for the Housing, City and Territory Sector No. 1077 of 2015, consolidated through 27 April 2026",
+      "titleKo": "주택·도시·국토 부문 단일시행령 제1077/2015호(2026년 4월 27일 통합본)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2015-05-25",
+      "officialUrl": "https://minvivienda.gov.co/normativa/decreto-unico-reglamentario-sector-vivienda-ciudad-y-territorio-decreto-1077-de-2015",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "COL-NSR10-LAWS-400-1796",
+      "title": "Colombian Seismic-Resistant Construction Regulation NSR-10, Law No. 400 of 1997 and Law No. 1796 of 2016, as amended",
+      "titleKo": "콜롬비아 내진건축기준 NSR-10·법률 제400/1997호·제1796/2016호(개정 포함)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.minvivienda.gov.co/node/49525",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "COL-ENV-DECREE-1076-2015",
+      "title": "Single Regulatory Decree for the Environment and Sustainable Development Sector No. 1076 of 2015, as amended",
+      "titleKo": "환경·지속가능발전 부문 단일시행령 제1076/2015호(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2015-05-26",
+      "officialUrl": "https://www.anla.gov.co/documentos/normativa/decretos/dec_1076_26052015.pdf",
+      "officialPdfUrl": "https://www.anla.gov.co/documentos/normativa/decretos/dec_1076_26052015.pdf",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "COL-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "콜롬비아에서 신축·증축·용도변경·urbanización 또는 parcelación을 추진하는 사업",
+      "requirement": "Law 388 아래 municipality/district의 POT와 이를 발전·보완하는 계획·도시규정이 토지분류, 처리구역, 용도와 건축가능범위를 정한다. matrícula inmobiliaria·catastro·필지규제와 위험·보호·공공부담을 확인하고 지반·침수·사면·유틸리티 용량을 조사한다.",
+      "authorityIds": [
+        "col-license-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COL-LAW-388-POT",
+          "provisions": [
+            "POT hierarchy, urban actions and licence conformity"
+          ]
+        },
+        {
+          "instrumentId": "COL-DECREE-1077-2015",
+          "provisions": [
+            "urban licence classes and application requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "matrícula inmobiliaria·catastro·경계·권원자",
+        "현행 POT·부분계획·처리·용도·보호·부담",
+        "필지별 점유·edificabilidad·높이·이격·주차",
+        "지반·지진·사면·침수·배수·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "COL-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "urbanística licence 대상 공사와 환경 licence 또는 개별 환경허가 대상 프로젝트",
+      "requirement": "curador urbano가 있는 곳은 curador가, 없는 곳은 municipal/district authority가 urbanización·parcelación·subdivisión·construction licence를 발급한다. 일반 건물 모두가 국가 환경 licence 대상은 아니므로 Decree 1076의 열거사업 해당 여부와 지역 환경당국의 물·산림·배출·점용·소음 등 개별허가를 별도로 확인한다.",
+      "authorityIds": [
+        "col-license-authority",
+        "col-environment-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COL-DECREE-1077-2015",
+          "provisions": [
+            "construction and other urban licence classes, filing and decision"
+          ]
+        },
+        {
+          "instrumentId": "COL-ENV-DECREE-1076-2015",
+          "provisions": [
+            "Arts. 2.2.2.3.2.1 et seq.; enumerated projects subject to environmental licence"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·권원자·curador/시 허가권자",
+        "licence 종류·NSR 전문도서·관계기관 의견",
+        "환경 licence 대상판정 또는 비대상 근거",
+        "물·산림·배출·점용 허가와 실제 expensas·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "COL-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "NSR-10 설계·시공과 독립감리·기술점유증명 대상 건축공사",
+      "requirement": "NSR-10과 Law 1796은 대상 건축물에 독립 기술감리를 적용하고, 감리자는 허가된 구조·지반기준에 맞게 시공됐음을 certificado técnico de ocupación으로 증명한다. 시 공사통제, 소방·유틸리티·as-built와 증명서 등기·제출요건을 완료한 뒤 점유한다.",
+      "authorityIds": [
+        "col-minvivienda",
+        "col-control-supervisor",
+        "col-license-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COL-NSR10-LAWS-400-1796",
+          "provisions": [
+            "independent technical supervision and technical occupancy certificate"
+          ]
+        },
+        {
+          "instrumentId": "COL-DECREE-1077-2015",
+          "provisions": [
+            "urban control and licence compliance"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "matrícula profesional·설계자·constructor·supervisor independiente",
+        "지반·NSR 구조계산·재료·설비시험",
+        "시 공사통제·변경승인·소방·유틸리티 확인",
+        "as-built·certificado técnico de ocupación·등기/제출·비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 현행 POT 규제와 실제 용도·edificabilidad·높이·이격·주차·위험·부담은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 urbanística licence 종류·허가권자와 환경 licence/개별허가 대상·관할·선행관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "독립감리·기술점유증명 대상 여부와 현지 전문가·검사·증명 비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "COL-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "COL-LAW-388-POT",
+          "provisions": [
+            "POT hierarchy, urban actions and licence conformity"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "COL-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 현행 POT 규제와 실제 용도·edificabilidad·높이·이격·주차·위험·부담은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "matrícula inmobiliaria·catastro·경계·권원자",
+        "현행 POT·부분계획·처리·용도·보호·부담",
+        "필지별 점유·edificabilidad·높이·이격·주차",
+        "지반·지진·사면·침수·배수·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "col-license-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COL-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "col-license-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COL-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 urbanística licence 종류·허가권자와 환경 licence/개별허가 대상·관할·선행관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·권원자·curador/시 허가권자",
+        "licence 종류·NSR 전문도서·관계기관 의견",
+        "환경 licence 대상판정 또는 비대상 근거",
+        "물·산림·배출·점용 허가와 실제 expensas·기간"
+      ],
+      "confirmWith": [
+        "col-license-authority",
+        "col-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COL-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "col-license-authority",
+        "col-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COL-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "독립감리·기술점유증명 대상 여부와 현지 전문가·검사·증명 비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "matrícula profesional·설계자·constructor·supervisor independiente",
+        "지반·NSR 구조계산·재료·설비시험",
+        "시 공사통제·변경승인·소방·유틸리티 확인",
+        "as-built·certificado técnico de ocupación·등기/제출·비용"
+      ],
+      "confirmWith": [
+        "col-minvivienda",
+        "col-control-supervisor",
+        "col-license-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COL-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "col-minvivienda",
+        "col-control-supervisor",
+        "col-license-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "COL-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "COL-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "COL-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "COL-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "COL-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "COL-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "COL-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Bogotá 등 다른 도시의 수치를 일반화하지 말고 관할 POT·필지 규제증명과 현장 기반시설 조사를 개념설계 전에 확정한다.",
+      "basis": [
+        "COL-LAW-388-POT",
+        "COL-DECREE-1077-2015"
+      ]
+    },
+    {
+      "id": "COL-BLD-C-002",
+      "confidence": "conditional",
+      "text": "환경 licence 비대상을 곧 환경절차 없음으로 해석하지 말고 프로젝트 구성·입지별 개별허가까지 통합 목록화한다.",
+      "basis": [
+        "COL-DECREE-1077-2015",
+        "COL-ENV-DECREE-1076-2015"
+      ]
+    },
+    {
+      "id": "COL-BLD-C-003",
+      "confidence": "conditional",
+      "text": "Law 1796 적용대상을 설계단계에 판정하고 독립성·검사기록·기술점유증명을 입찰·지급·인계조건에 명시한다.",
+      "basis": [
+        "COL-NSR10-LAWS-400-1796",
+        "COL-DECREE-1077-2015"
+      ]
+    }
+  ]
+}
