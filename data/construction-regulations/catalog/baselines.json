@@ -2591,6 +2591,507 @@
           "referenceLabel": "National Building Code·occupation permit"
         }
       }
+    },
+    {
+      "slug": "egypt",
+      "name": "이집트",
+      "nameEn": "Egypt",
+      "iso3": "EGY",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "local-admin-nuca",
+          "name": "Competent local administrative unit or New Urban Communities Authority city authority",
+          "nameKo": "관할 지방행정단위 또는 신도시청(NUCA) 도시기관",
+          "role": "상세계획·토지조건에 따라 건축도서·허가, 공사통제와 점유 적합성 절차를 집행",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.newcities.gov.eg/english/"
+        },
+        {
+          "id": "mohuc",
+          "name": "Ministry of Housing, Utilities and Urban Communities",
+          "nameKo": "주택·유틸리티·도시공동체부",
+          "role": "통합건축법·시행규칙, 도시계획·건축기술정책을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.newcities.gov.eg/"
+        },
+        {
+          "id": "eeaa-caa",
+          "name": "Egyptian Environmental Affairs Agency and competent administrative authority",
+          "nameKo": "환경청(EEAA)·관할 행정허가기관(CAA)",
+          "role": "CAA를 통한 A·B·C 환경분류·EIA 접수와 EEAA 검토·조건부 승인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.eeaa.gov.eg/Service/67/sub/171/index"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "EGY-BUILDING-LAW-119-2008",
+          "title": "Unified Building Law No. 119 of 2008, as amended",
+          "titleKo": "통합건축법 제119/2008호(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2008-05-11",
+          "officialUrl": "https://www.newcities.gov.eg/english/Advertising-Housing-Land/SecondBid2017/Third%20.aspx",
+          "verificationLevel": "source-linked",
+          "note": "도시계획·건축허가·시공감독·점유 적합성의 기본법이다. 2025~2026 개정과 간소화 조치를 접수 시 확인한다."
+        },
+        {
+          "id": "EGY-ER-144-2009",
+          "title": "Executive Regulations of Unified Building Law — Ministerial Decree No. 144 of 2009, as amended",
+          "titleKo": "통합건축법 시행규칙 장관령 제144/2009호(개정 포함)",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2009-01-01",
+          "officialUrl": "https://www.newcities.gov.eg/english/Advertising-Housing-Land/SecondBid2017/Third%20.aspx",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "EGY-ENV-LAW-4-1994",
+          "title": "Environmental Law No. 4 of 1994, as amended, and its Executive Regulations",
+          "titleKo": "환경법 제4/1994호(개정 포함)·시행규칙",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1994-02-03",
+          "officialUrl": "https://www.eeaa.gov.eg/Service/67/sub/171/index",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "EGY-EIA-GUIDE",
+          "title": "EEAA Guidelines of Principles and Procedures for Environmental Impact Assessment",
+          "titleKo": "EEAA 환경영향평가 원칙·절차 지침",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.eeaa.gov.eg/Uploads/Service/Files/20221214102438750.pdf",
+          "officialPdfUrl": "https://www.eeaa.gov.eg/Uploads/Service/Files/20221214102438750.pdf",
+          "verificationLevel": "source-linked",
+          "note": "A·B·C 분류와 CAA-EEAA 심사구조를 설명한다. EEAA의 최신 아랍어 분류목록과 2024~2025 시행규칙 개정을 우선한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지배정·등기와 관할 도시의 strategic/detailed plan·building requirements로 필지 수치를 확정한다.",
+          "summary": "통합건축법 체계에서 승인 도시계획과 상세계획, 토지배정 조건이 건축가능 용도와 규모를 정한다. 기존 도시인지 NUCA 신도시인지 관할을 먼저 가르고 필지별 coverage·FAR·높이·이격·주차, 도로·고고학·지반·침수·유틸리티 조건을 확인한다.",
+          "applicability": "이집트 기존 도시 또는 NUCA 신도시에서 신축·증축·용도변경을 추진하는 사업",
+          "authorityIds": ["local-admin-nuca", "mohuc"],
+          "basis": [
+            {"instrumentId": "EGY-BUILDING-LAW-119-2008", "provisions": ["urban planning and building licensing framework"]},
+            {"instrumentId": "EGY-ER-144-2009", "provisions": ["planning and parcel development controls"]}
+          ],
+          "evidence": ["토지배정·등기·경계측량", "승인 strategic/detailed plan·토지조건", "필지별 coverage·FAR·높이·이격·주차", "고고학·지반·침수·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상지가 기존 도시인지 NUCA 도시인지, 필지별 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+          "conclusion": "기존 도시와 NUCA 신도시의 토지·계획조건이 다르므로 국가법만으로 대상 필지 규모를 확정할 수 없다.",
+          "verificationScope": "통합건축법·시행규칙을 인용하는 NUCA 공식 자료와 EEAA 도시개발 분류를 확인했다. 필지 수치·토지조건·재해·유틸리티는 관할기관 확인 대상이다.",
+          "referenceLabel": "통합건축법·도시별 토지조건"
+        },
+        "permit-environment": {
+          "oneLiner": "지방·NUCA 건축허가와 CAA-EEAA의 A·B·C EIA 분류를 착공 전 통합 매핑한다.",
+          "summary": "관할 지방행정단위 또는 NUCA 도시기관이 건축허가를 처리한다. 환경법은 신설·확장·갱신사업의 EIA를 허가 선행조건으로 두며, 사업주는 관할 CAA에 자료를 제출하고 EEAA가 A·B·C 분류와 환경조건을 검토한다.",
+          "applicability": "통합건축법상 건축허가 대상과 환경법상 EIA 분류대상 사업",
+          "authorityIds": ["local-admin-nuca", "eeaa-caa"],
+          "basis": [
+            {"instrumentId": "EGY-BUILDING-LAW-119-2008", "provisions": ["building permit framework"]},
+            {"instrumentId": "EGY-ENV-LAW-4-1994", "provisions": ["EIA as precondition to licensing"]},
+            {"instrumentId": "EGY-EIA-GUIDE", "provisions": ["A, B and C classification; CAA and EEAA review"]}
+          ],
+          "evidence": ["건축주·신청엔지니어·허가권자", "허가도서·시설용도·재실인원", "CAA 접수·EEAA A/B/C 분류결정", "소방·민방위·고고학 등 동의와 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 건축허가권자와 EEAA 환경 Category, 소방·민방위·고고학 등 선행동의는 무엇인가?",
+          "conclusion": "CAA-EEAA 환경결정은 건축허가와 연결되므로 환경분류 없이 지방 또는 NUCA 허가기간만으로 착공일을 계산하지 않는다.",
+          "verificationScope": "EEAA의 2025년 현행 환경평가 서비스와 통합건축법 체계를 확인했다. 최신 분류목록·서식·수수료·실제 전체기간은 기관 확인 대상이다.",
+          "referenceLabel": "건축허가·EEAA A/B/C EIA"
+        },
+        "control-completion": {
+          "oneLiner": "등록 엔지니어, 감리·단계검사와 building fitness/occupancy 증명을 시설 개장 전 Gate로 둔다.",
+          "summary": "허가도서는 등록 건축·기술전문가가 작성·감독하고 승인도서와 구조·소방·설비기준 준수 여부를 관할기관이 확인한다. 준공 후 건물의 점유 적합성을 증명하는 서류와 유틸리티 영구연결 조건을 관할 지방 또는 NUCA 도시에서 확정한다.",
+          "applicability": "허가를 받아 시공하고 준공·점유 적합성 확인이 필요한 건축물",
+          "authorityIds": ["local-admin-nuca", "mohuc"],
+          "basis": [
+            {"instrumentId": "EGY-BUILDING-LAW-119-2008", "provisions": ["licensed professionals, construction control and occupancy fitness"]},
+            {"instrumentId": "EGY-ER-144-2009", "provisions": ["inspection and completion documentation"]}
+          ],
+          "evidence": ["등록 건축·구조·MEP 기술자·시공자", "착공·단계검사·시험기록", "민방위 소방·설비시운전·as-built", "점유 적합성증명·보험·영구 유틸리티 연결"],
+          "decisionQuestion": "관할의 전문자격·검사·보험과 준공·점유 적합성증명·영구 인입의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "공사완료만으로 개장할 수 있다고 가정하지 말고 점유 적합성 및 소방·영구 유틸리티 연결을 인계조건에 넣는다.",
+          "verificationScope": "통합건축법·시행규칙의 시공통제 틀을 연결했다. 2026년 개정절차와 현지 전문가·검사기관·보험사·비용은 관할에서 확인한다.",
+          "referenceLabel": "시공감독·점유 적합성"
+        }
+      }
+    },
+    {
+      "slug": "cameroon",
+      "name": "카메룬",
+      "nameEn": "Cameroon",
+      "iso3": "CMR",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "mayor",
+          "name": "Mayor of the competent commune",
+          "nameKo": "관할 코뮌 시장",
+          "role": "도시계획증명, 건축·입지허가, 현장방문과 준공적합증명 집행을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.minhdu.gov.cm/demarche-construire/"
+        },
+        {
+          "id": "minhdu-local",
+          "name": "Ministry of Housing and Urban Development and local urban services",
+          "nameKo": "주택·도시개발부(MINHDU)·지방 도시서비스",
+          "role": "도시계획·토지사용·건축 규정과 코뮌 기술의견·감독을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.minhdu.gov.cm/"
+        },
+        {
+          "id": "minepded",
+          "name": "Ministry of Environment, Nature Protection and Sustainable Development",
+          "nameKo": "환경·자연보호·지속가능개발부(MINEPDED)",
+          "role": "EIES·NIE 심사, CIE 의견과 환경적합성증명서(CCE) 발급을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://minepded.gov.cm/fr/services/evaluation-environnementale/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "CMR-URBAN-LAW-2004-003",
+          "title": "Loi n° 2004/003 du 21 avril 2004 regissant l'urbanisme au Cameroun",
+          "titleKo": "법률 제2004/003호 카메룬 도시계획법",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "2004-04-21",
+          "officialUrl": "https://www.minhdu.gov.cm/wp-content/uploads/2023/08/loi-no-2004-003-du-21-04-2004-regissant-l-urbanisme-au-Cameroun.pdf",
+          "officialPdfUrl": "https://www.minhdu.gov.cm/wp-content/uploads/2023/08/loi-no-2004-003-du-21-04-2004-regissant-l-urbanisme-au-Cameroun.pdf",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "CMR-LAND-USE-DECREE-2008",
+          "title": "Decret n° 2008/0739 du 23 avril 2008 fixant les regles d'utilisation du sol et de la construction",
+          "titleKo": "시행령 제2008/0739호 토지사용·건축규칙",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2008-04-23",
+          "officialUrl": "https://www.minhdu.gov.cm/demarche-construire/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "CMR-ENV-LAW-96-12",
+          "title": "Loi-cadre n° 96/12 du 5 aout 1996 relative a la gestion de l'environnement",
+          "titleKo": "환경관리 기본법 제96/12호",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "1996-08-05",
+          "officialUrl": "https://minepded.gov.cm/wp-content/uploads/2021/09/Loi-cadre-environnement.pdf",
+          "officialPdfUrl": "https://minepded.gov.cm/wp-content/uploads/2021/09/Loi-cadre-environnement.pdf",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "CMR-EIES-DECREE-2013-0171",
+          "title": "Decret n° 2013/0171/PM du 14 fevrier 2013 fixant les modalites de realisation des EIES",
+          "titleKo": "시행령 제2013/0171/PM호 환경사회영향평가 절차",
+          "kind": "regulation",
+          "status": "in_force",
+          "issuedOn": "2013-02-14",
+          "officialUrl": "https://minepded.gov.cm/2020/01/24/decret-n20130171pm-du-14-fevrier-2013-fixant-les-modalites-de-realisation-des-etudes-dimpact-environnemental-et-social/",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "소유권과 certificat d'urbanisme로 필지 계획·servitude·공공시설 및 실제 개발수치를 확정한다.",
+          "summary": "도시계획증명서는 필지에 적용되는 계획규칙·행정상 servitude와 기존·예정 공공시설을 알려주며 모든 토지사용 신청에 첨부된다. 코뮌 계획에 따라 허용용도·건폐율·용적률·높이·이격·주차, 도로·배수·침수·지반·유틸리티를 확인한다.",
+          "applicability": "카메룬에서 토지거래·신축·증축·용도변경 또는 입지허가를 추진하는 사업",
+          "authorityIds": ["mayor", "minhdu-local"],
+          "basis": [
+            {"instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["Arts. 101-102; certificat d'urbanisme"]},
+            {"instrumentId": "CMR-LAND-USE-DECREE-2008", "provisions": ["land-use and construction controls"]}
+          ],
+          "evidence": ["소유권증명·지적도·경계측량", "certificat d'urbanisme·승인 계획문서", "필지별 용도·밀도·높이·이격·주차", "도로·배수·침수·지반·상하수·전력 용량"],
+          "decisionQuestion": "대상 필지의 도시계획증명상 허용용도·밀도·높이·이격·주차와 servitude·재해·기반시설 조건은 무엇인가?",
+          "conclusion": "도시계획증명이 토지사용 신청의 핵심 선행문서이므로 코뮌별 필지수치 확인 없이 설계규모를 확정하지 않는다.",
+          "verificationScope": "MINHDU 공식 법률 원문과 현행 건축허가 안내에서 도시계획증명 역할을 확인했다. 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "도시계획법·certificat d'urbanisme"
+        },
+        "permit-environment": {
+          "oneLiner": "시장 건축허가와 MINEPDED의 NIE·간이/상세 EIES·CCE를 별도 Gate로 연결한다.",
+          "summary": "토지소유자 또는 대리인은 등록 건축사 책임도서와 도시계획증명·소유권증명을 코뮌에 제출해 permis de construire를 받는다. 환경법은 사업유형·규모·입지에 따라 NIE, 간이 또는 상세 EIES를 요구하고 CIE 의견 후 MINEPDED가 CCE를 발급한다.",
+          "applicability": "건축허가 대상 공사와 NIE·EIES·CCE 분류대상 사업",
+          "authorityIds": ["mayor", "minhdu-local", "minepded"],
+          "basis": [
+            {"instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["building permit and registered architect framework"]},
+            {"instrumentId": "CMR-ENV-LAW-96-12", "provisions": ["Art. 17; environmental impact assessment"]},
+            {"instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["EIES approval and environmental conformity certificate"]}
+          ],
+          "evidence": ["건축주·토지소유자·시장 관할", "등록 건축사 도서·건축허가 체크리스트", "NIE·간이/상세 EIES·CCE 결정", "현행 수수료·접수·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 건축허가권자와 NIE·간이/상세 EIES 유형, CCE의 선행 여부는 무엇인가?",
+          "conclusion": "EIES 승인과 CCE 발급은 구분되는 환경 Gate이므로 두 결정을 모두 일정·책임표에 반영한다.",
+          "verificationScope": "MINHDU 허가 안내와 MINEPDED의 2026년 현행 환경평가 서비스·법령을 확인했다. 실제 수수료·접수관행·기간은 관할기관 확인 대상이다.",
+          "referenceLabel": "permis de construire·NIE/EIES/CCE"
+        },
+        "control-completion": {
+          "oneLiner": "등록 건축사·기술자, 코뮌 현장방문·완료신고와 certificat de conformite를 개장조건으로 둔다.",
+          "summary": "허가도서는 Ordre 등록 건축사가 책임지고 관할기관은 공사 중 방문·통제를 할 수 있다. 완료 후 declaration d'achevement와 certificat de conformite 절차를 거쳐 승인도서 준수를 증명하며 소방·설비·시험·보험·하자조건을 함께 확인한다.",
+          "applicability": "건축허가를 받아 시공하고 준공적합성 확인이 필요한 건축물",
+          "authorityIds": ["mayor", "minhdu-local"],
+          "basis": [
+            {"instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["site inspection and completion conformity framework"]},
+            {"instrumentId": "CMR-LAND-USE-DECREE-2008", "provisions": ["construction supervision and completion documentation"]}
+          ],
+          "evidence": ["Ordre 등록 건축사·기술자·시공자", "착공·현장방문·시험·변경승인 기록", "소방·설비시운전·as-built", "완료신고·certificat de conformite·보험·비용"],
+          "decisionQuestion": "현지 전문자격·보험·검사와 완료신고·certificat de conformite의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "공사완료와 준공적합성 확인을 구분해 certificat de conformite를 ODA 시설 인계·개장 Gate로 관리한다.",
+          "verificationScope": "MINHDU 공식 법령대장이 완료신고·적합증명 서식을 제공함을 확인했다. 현지 업체·검사·보험사·비용은 시장조사 대상이다.",
+          "referenceLabel": "완료신고·certificat de conformite"
+        }
+      }
+    },
+    {
+      "slug": "kenya",
+      "name": "케냐",
+      "nameEn": "Kenya",
+      "iso3": "KEN",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "county-government",
+          "name": "Competent county government",
+          "nameKo": "관할 카운티 정부",
+          "role": "physical planning·development permission, 건축도서 심사·검사와 occupation certificate를 담당",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "nca-kenya",
+          "name": "National Construction Authority",
+          "nameKo": "국가건설청(NCA)",
+          "role": "National Building Code, 시공자·프로젝트 등록과 품질·현장 준수감독을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.nca.go.ke/"
+        },
+        {
+          "id": "nema-kenya",
+          "name": "National Environment Management Authority",
+          "nameKo": "국가환경관리청(NEMA)",
+          "role": "SPR·CPR·EIA Study 분류와 EIA licence·사후 환경감사를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://nema.go.ke/services/environment-impact-assessment-eia/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "KEN-PPA-2019",
+          "title": "Physical and Land Use Planning Act, 2019",
+          "titleKo": "물리·토지이용계획법 2019",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2019-08-05",
+          "officialUrl": "https://new.kenyalaw.org/akn/ke/act/2019/13/eng@2022-12-31",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "KEN-NBC-2024",
+          "title": "National Building Code, 2024 — Legal Notice No. 47 of 2024",
+          "titleKo": "국가건축기준 2024(법정고시 제47호)",
+          "kind": "code",
+          "status": "in_force",
+          "issuedOn": "2024-03-01",
+          "officialUrl": "https://www.nca.go.ke/media/LN47_2024_NCAA-National_Building_Code_2024_1.pdf",
+          "officialPdfUrl": "https://www.nca.go.ke/media/LN47_2024_NCAA-National_Building_Code_2024_1.pdf",
+          "verificationLevel": "law-linked",
+          "note": "1년 전환 후 2025년 3월 1일부터 시행됐다고 NCA가 공식 확인했다."
+        },
+        {
+          "id": "KEN-NCA-ACT-REGS",
+          "title": "National Construction Authority Act and Regulations, 2014",
+          "titleKo": "국가건설청법·시행규칙 2014",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.nca.go.ke/statutory-documents",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "KEN-EMCA-EIA",
+          "title": "Environmental Management and Co-ordination Act and environmental assessment regulations",
+          "titleKo": "환경관리조정법(EMCA)·환경평가 시행규칙",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://nema.go.ke/services/environment-impact-assessment-eia/",
+          "verificationLevel": "law-linked",
+          "note": "NEMA의 2026년 서비스 안내가 SPR·CPR·EIA Study와 EIA licence 경로를 제공한다. 최신 2025 규정 적용을 접수 전에 확인한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지등기·survey와 카운티 physical/local plan·development permission으로 필지 수치를 확정한다.",
+          "summary": "토지이용·개발허가는 카운티가 Physical and Land Use Planning Act 및 승인계획에 따라 처리한다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 도로·riparian·홍수·지반·상하수·전력을 확인한다.",
+          "applicability": "케냐 카운티에서 신축·증축·용도변경 또는 개발행위를 추진하는 ODA 건축사업",
+          "authorityIds": ["county-government"],
+          "basis": [
+            {"instrumentId": "KEN-PPA-2019", "provisions": ["county development permission and planning framework"]},
+            {"instrumentId": "KEN-NBC-2024", "provisions": ["planning, site and building requirements"]}
+          ],
+          "evidence": ["토지등기·survey plan·경계", "카운티 physical/local plan·zoning", "필지별 plot ratio·coverage·높이·이격·주차", "riparian·홍수·지반·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 카운티 계획상 허용용도·plot ratio·coverage·높이·이격·주차·재해·인입조건은 무엇인가?",
+          "conclusion": "카운티별 계획과 조건이 실제 설계규모를 결정하므로 Nairobi 수치나 국가코드만으로 대상 필지를 확정할 수 없다.",
+          "verificationScope": "Kenya Law의 계획법과 NCA의 현행 National Building Code를 연결했다. 대상 카운티 필지수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "PLUPA·카운티 development permission"
+        },
+        "permit-environment": {
+          "oneLiner": "카운티 개발·건축허가와 NEMA의 SPR·CPR·EIA Study·licence 경로를 선행순서대로 확정한다.",
+          "summary": "카운티는 계획·건축도서를 심사하지만 EIA 필요사업에는 NEMA licence 없이 development permit을 발급할 수 없다. NEMA 등록 전문가가 위험도에 따라 SPR, CPR 또는 EIA Study를 작성하므로 공식 분류결정을 먼저 받는다.",
+          "applicability": "카운티 development/building approval 대상 및 EMCA 환경평가 대상 사업",
+          "authorityIds": ["county-government", "nema-kenya"],
+          "basis": [
+            {"instrumentId": "KEN-PPA-2019", "provisions": ["development permission framework"]},
+            {"instrumentId": "KEN-EMCA-EIA", "provisions": ["SPR, CPR, EIA Study and licence prior to development permit"]}
+          ],
+          "evidence": ["건축주·토지소유자·카운티 관할", "개발·건축허가 도서", "NEMA SPR/CPR/EIA Study 분류·licence", "소방·수자원·도로 등 동의와 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 카운티 허가유형과 NEMA SPR·CPR·EIA Study 유형, EIA licence 선행조건은 무엇인가?",
+          "conclusion": "NEMA licence가 필요한 경우 카운티 허가의 선행조건이므로 두 기관의 보완·심사기간을 통합 일정에 반영한다.",
+          "verificationScope": "NEMA의 2026년 환경평가 서비스·수수료 안내와 카운티 계획법을 확인했다. 최신 규정판·실제 처리기간은 접수기관 확인 대상이다.",
+          "referenceLabel": "카운티 허가·NEMA 환경 licence"
+        },
+        "control-completion": {
+          "oneLiner": "NCA 프로젝트·시공자 등록, NBC 2024 검사와 카운티 occupation certificate를 인계 Gate로 둔다.",
+          "summary": "공공·민간 건설프로젝트는 NCA에 등록하고 유효한 NCA 시공자와 등록 전문가를 사용한다. NBC 2024와 승인도서에 따른 검사·시험, 소방·설비 확인 후 카운티의 occupation certificate 또는 준공사용 확인을 받아야 한다.",
+          "applicability": "NCA 등록과 카운티 검사·점유통제 대상 건축공사",
+          "authorityIds": ["nca-kenya", "county-government"],
+          "basis": [
+            {"instrumentId": "KEN-NCA-ACT-REGS", "provisions": ["project and contractor registration"]},
+            {"instrumentId": "KEN-NBC-2024", "provisions": ["construction inspection, completion and occupation framework"]}
+          ],
+          "evidence": ["NCA 등록 시공자·프로젝트·전문가", "착공·단계검사·재료시험 기록", "소방·설비시운전·as-built", "카운티 occupation certificate·보험·비용"],
+          "decisionQuestion": "NCA·카운티의 등록·검사와 occupation certificate, 전문책임·보험의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "NCA 프로젝트 등록과 카운티 점유승인은 서로 대체하지 않으므로 둘 다 조달·시공·인계 조건에 반영한다.",
+          "verificationScope": "NCA의 2026년 프로젝트 등록서비스와 시행 중인 NBC 2024를 확인했다. 카운티 점유절차·현지 보험사·실제 비용은 현지 확인 대상이다.",
+          "referenceLabel": "NCA 등록·NBC 2024·occupation certificate"
+        }
+      }
+    },
+    {
+      "slug": "cote-divoire",
+      "name": "코트디부아르",
+      "nameEn": "Côte d'Ivoire",
+      "iso3": "CIV",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "gupc-ministry-mayor",
+          "name": "Guichet Unique du Permis de Construire, competent Ministry or Mayor",
+          "nameKo": "건축허가 원스톱창구(GUPC)·관할 장관 또는 시장",
+          "role": "허가분류에 따라 도시계획·건축·소방 의견을 통합해 건축허가를 발급",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.guichet.construction.gouv.ci/GUPC/"
+        },
+        {
+          "id": "mulcv",
+          "name": "Ministry of Urban Planning, Housing and Living Environment",
+          "nameKo": "도시계획·주택·생활환경부(MULCV)",
+          "role": "도시토지·계획·건축 규정, ACD·허가·적합성증명 정책과 집행을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://web.construction.gouv.ci/"
+        },
+        {
+          "id": "ande",
+          "name": "Agence Nationale de l'Environnement",
+          "nameKo": "국가환경청(ANDE)",
+          "role": "환경사회평가 원스톱창구로 EIES·CIES·배제결정을 심사",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.environnement.gouv.ci/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "CIV-CONSTRUCTION-CODE-2019-576",
+          "title": "Loi n° 2019-576 du 26 juin 2019 instituant Code de la Construction et de l'Habitat, as amended",
+          "titleKo": "법률 제2019-576호 건설·주택법전(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2019-06-26",
+          "officialUrl": "https://web.construction.gouv.ci/index.php/services",
+          "verificationLevel": "law-linked",
+          "note": "건축허가·공사통제·보험·certificat de conformite의 기본법이다. 2025년 개정안의 최종 공포·시행내용을 확인한다."
+        },
+        {
+          "id": "CIV-URBAN-CODE-2020-624",
+          "title": "Loi n° 2020-624 du 14 aout 2020 instituant Code de l'Urbanisme et du Domaine Foncier Urbain, as amended",
+          "titleKo": "법률 제2020-624호 도시계획·도시토지법전(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2020-08-14",
+          "officialUrl": "https://web.construction.gouv.ci/actualite/5",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "CIV-ENV-DECREE-96-894",
+          "title": "Decret n° 96-894 du 8 novembre 1996 relatif aux etudes d'impact environnemental",
+          "titleKo": "시행령 제96-894호 환경영향평가 절차",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "1996-11-08",
+          "officialUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
+          "officialPdfUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
+          "verificationLevel": "law-linked",
+          "note": "Annex I·II·III에 따른 EIES·CIES·민감입지 분류의 기초다. 최신 환경법전·후속규정과 함께 적용한다."
+        },
+        {
+          "id": "CIV-GUPC-SERVICE",
+          "title": "Official GUPC integrated building-permit service",
+          "titleKo": "GUPC 통합 건축허가 공식 서비스",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.guichet.construction.gouv.ci/GUPC/",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "ACD·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다.",
+          "summary": "도시토지는 ACD 등 적법한 권원과 승인 lotissement·도시계획문서에 부합해야 한다. SIGFU·관할 도시서비스에서 필지별 허용용도·COS/CES·높이·이격·주차, 도로·배수·침수·지반·상하수·전력 조건을 확인한다.",
+          "applicability": "코트디부아르 도시지역에서 신축·증축·용도변경 또는 부지개발을 추진하는 사업",
+          "authorityIds": ["mulcv", "gupc-ministry-mayor"],
+          "basis": [
+            {"instrumentId": "CIV-URBAN-CODE-2020-624", "provisions": ["urban planning and urban land framework"]},
+            {"instrumentId": "CIV-CONSTRUCTION-CODE-2019-576", "provisions": ["urban and construction compliance"]}
+          ],
+          "evidence": ["ACD·토지식별자·지적도·경계측량", "승인 도시계획·lotissement·servitude", "필지별 COS/CES·높이·이격·주차", "침수·배수·지반·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 필지 ACD와 계획상 허용용도·COS/CES·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+          "conclusion": "Abidjan이나 다른 도시의 수치를 일반화하지 말고 ACD·승인계획과 필지별 규제표를 개념설계 전에 확정해야 한다.",
+          "verificationScope": "MULCV의 현행 ACD·도시계획 업무와 2020 도시법전 체계를 확인했다. 필지 수치·권원·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "ACD·도시계획법전"
+        },
+        "permit-environment": {
+          "oneLiner": "GUPC 건축허가와 ANDE의 EIES·CIES·배제결정을 유형·입지별로 연결한다.",
+          "summary": "GUPC는 도시계획·건축·공학·소방 적합성을 통합검토하고 허가등급에 따라 장관 또는 시장이 permit을 발급한다. 환경분류는 Annex I EIES, Annex II CIES, Annex III 민감입지 또는 categorical exclusion 경로를 ANDE에서 확인한다.",
+          "applicability": "건축허가 대상 공사와 ANDE 환경사회평가 분류대상 개발사업",
+          "authorityIds": ["gupc-ministry-mayor", "mulcv", "ande"],
+          "basis": [
+            {"instrumentId": "CIV-CONSTRUCTION-CODE-2019-576", "provisions": ["Arts. 11-30; construction authorizations"]},
+            {"instrumentId": "CIV-ENV-DECREE-96-894", "provisions": ["Annexes I, II and III; environmental assessment"]},
+            {"instrumentId": "CIV-GUPC-SERVICE", "provisions": ["integrated permit submission"]}
+          ],
+          "evidence": ["건축주·ACD 보유자·허가권자", "GUPC 허가등급·전문설계도서", "ANDE EIES·CIES·배제결정", "소방·위생·유틸리티 동의와 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 GUPC 허가등급·서명권자와 ANDE EIES·CIES·배제 유형 및 선행관계는 무엇인가?",
+          "conclusion": "GUPC 접수와 ANDE 환경결정은 서로 대체하지 않으므로 두 경로의 완비·보완·승인조건을 통합 관리한다.",
+          "verificationScope": "2026년 GUPC·MULCV 공식 서비스와 환경부의 현행 ANDE 원스톱 역할을 확인했다. 최신 환경법전·수수료·실제 기간은 기관 확인 대상이다.",
+          "referenceLabel": "GUPC·ANDE 환경평가"
+        },
+        "control-completion": {
+          "oneLiner": "등록 전문가·기술검사, chantier 보험·10년 책임과 certificat de conformite를 개장 Gate로 둔다.",
+          "summary": "건설·주택법전은 공사통제, 안전보건조정, certificat de conformite와 보험책임을 규정한다. 착공 전 tous risques chantier, 설계·시공자의 책임과 decennale 요구의 최신 개정상태를 확인하고 최종 적합성증명 없이 사용하지 않는다.",
+          "applicability": "허가를 받아 시공하며 공사통제·보험·적합성증명 대상인 건축물",
+          "authorityIds": ["mulcv", "gupc-ministry-mayor"],
+          "basis": [
+            {"instrumentId": "CIV-CONSTRUCTION-CODE-2019-576", "provisions": ["Arts. 31-74; construction control, safety, conformity and reception"]},
+            {"instrumentId": "CIV-GUPC-SERVICE", "provisions": ["permit and completion administration"]}
+          ],
+          "evidence": ["등록 건축사·기술자·시공자·검사기관", "착공·단계검사·시험·안전기록", "tous risques chantier·decennale 보험", "소방·as-built·certificat de conformite·비용"],
+          "decisionQuestion": "현지 전문가·검사와 공사·10년책임 보험, certificat de conformite의 최신 서류·비용·기간은 무엇인가?",
+          "conclusion": "보험과 적합성증명은 조달 후 부가업무가 아니라 착공·인계 선행조건이므로 입찰서와 공정표에 명시한다.",
+          "verificationScope": "건설·주택법전 구조와 MULCV의 2026년 적합성증명 소관, 2025년 보험개정 추진을 확인했다. 최종 개정문·현지 보험사·검사비는 재확인한다.",
+          "referenceLabel": "공사보험·certificat de conformite"
+        }
+      }
     }
   ]
 }

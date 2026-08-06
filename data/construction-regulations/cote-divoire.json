@@ -1,0 +1,826 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "cote-divoire",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "코트디부아르",
+    "nameEn": "Côte d'Ivoire",
+    "iso3": "CIV",
+    "region": "아프리카"
+  },
+  "purpose": "코트디부아르 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "법률 제2020-624호 도시계획·도시토지법전(개정 포함)·법률 제2019-576호 건설·주택법전(개정 포함)·시행령 제96-894호 환경영향평가 절차·GUPC 통합 건축허가 공식 서비스의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "코트디부아르 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "ACD·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다.",
+        "authorityIds": [
+          "mulcv",
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "ACD·도시계획법전",
+            "instrumentId": "CIV-URBAN-CODE-2020-624",
+            "provisions": [
+              "urban planning and urban land framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지 ACD와 계획상 허용용도·COS/CES·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "mulcv",
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "ACD·도시계획법전",
+            "instrumentId": "CIV-URBAN-CODE-2020-624",
+            "provisions": [
+              "urban planning and urban land framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "GUPC 건축허가와 ANDE의 EIES·CIES·배제결정을 유형·입지별로 연결한다.",
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv",
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "GUPC·ANDE 환경평가",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Arts. 11-30; construction authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 GUPC 허가등급·서명권자와 ANDE EIES·CIES·배제 유형 및 선행관계는 무엇인가?",
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv",
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "GUPC·ANDE 환경평가",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Arts. 11-30; construction authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 전문가·기술검사, chantier 보험·10년 책임과 certificat de conformite를 개장 Gate로 둔다.",
+        "authorityIds": [
+          "mulcv",
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "공사보험·certificat de conformite",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Arts. 31-74; construction control, safety, conformity and reception"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 전문가·검사와 공사·10년책임 보험, certificat de conformite의 최신 서류·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "mulcv",
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "공사보험·certificat de conformite",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Arts. 31-74; construction control, safety, conformity and reception"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "cote-divoire-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "코트디부아르 도시계획·부지규제",
+      "oneLiner": "ACD·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "MULCV의 현행 ACD·도시계획 업무와 2020 도시법전 체계를 확인했다. 필지 수치·권원·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "CIV-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "CIV-BLD-Q-001",
+        "CIV-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "CIV-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "CIV-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "CIV-BLD-F-001",
+        "CIV-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "cote-divoire-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "코트디부아르 건축허가·환경심사",
+      "oneLiner": "GUPC 건축허가와 ANDE의 EIES·CIES·배제결정을 유형·입지별로 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "2026년 GUPC·MULCV 공식 서비스와 환경부의 현행 ANDE 원스톱 역할을 확인했다. 최신 환경법전·수수료·실제 기간은 기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "CIV-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "CIV-BLD-Q-003",
+        "CIV-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "CIV-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "CIV-BLD-F-003",
+        "CIV-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "cote-divoire-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "코트디부아르 기술검사·보험·준공제도",
+      "oneLiner": "등록 전문가·기술검사, chantier 보험·10년 책임과 certificat de conformite를 개장 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "건설·주택법전 구조와 MULCV의 2026년 적합성증명 소관, 2025년 보험개정 추진을 확인했다. 최종 개정문·현지 보험사·검사비는 재확인한다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "CIV-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "CIV-BLD-Q-005",
+        "CIV-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "CIV-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "CIV-BLD-F-005",
+        "CIV-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "gupc-ministry-mayor",
+      "name": "Guichet Unique du Permis de Construire, competent Ministry or Mayor",
+      "nameKo": "건축허가 원스톱창구(GUPC)·관할 장관 또는 시장",
+      "role": "허가분류에 따라 도시계획·건축·소방 의견을 통합해 건축허가를 발급",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.guichet.construction.gouv.ci/GUPC/"
+    },
+    {
+      "id": "mulcv",
+      "name": "Ministry of Urban Planning, Housing and Living Environment",
+      "nameKo": "도시계획·주택·생활환경부(MULCV)",
+      "role": "도시토지·계획·건축 규정, ACD·허가·적합성증명 정책과 집행을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://web.construction.gouv.ci/"
+    },
+    {
+      "id": "ande",
+      "name": "Agence Nationale de l'Environnement",
+      "nameKo": "국가환경청(ANDE)",
+      "role": "환경사회평가 원스톱창구로 EIES·CIES·배제결정을 심사",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.environnement.gouv.ci/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "CIV-CONSTRUCTION-CODE-2019-576",
+      "title": "Loi n° 2019-576 du 26 juin 2019 instituant Code de la Construction et de l'Habitat, as amended",
+      "titleKo": "법률 제2019-576호 건설·주택법전(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2019-06-26",
+      "officialUrl": "https://web.construction.gouv.ci/index.php/services",
+      "verificationLevel": "law-linked",
+      "note": "건축허가·공사통제·보험·certificat de conformite의 기본법이다. 2025년 개정안의 최종 공포·시행내용을 확인한다."
+    },
+    {
+      "id": "CIV-URBAN-CODE-2020-624",
+      "title": "Loi n° 2020-624 du 14 aout 2020 instituant Code de l'Urbanisme et du Domaine Foncier Urbain, as amended",
+      "titleKo": "법률 제2020-624호 도시계획·도시토지법전(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2020-08-14",
+      "officialUrl": "https://web.construction.gouv.ci/actualite/5",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "CIV-ENV-DECREE-96-894",
+      "title": "Decret n° 96-894 du 8 novembre 1996 relatif aux etudes d'impact environnemental",
+      "titleKo": "시행령 제96-894호 환경영향평가 절차",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "1996-11-08",
+      "officialUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
+      "officialPdfUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
+      "verificationLevel": "law-linked",
+      "note": "Annex I·II·III에 따른 EIES·CIES·민감입지 분류의 기초다. 최신 환경법전·후속규정과 함께 적용한다."
+    },
+    {
+      "id": "CIV-GUPC-SERVICE",
+      "title": "Official GUPC integrated building-permit service",
+      "titleKo": "GUPC 통합 건축허가 공식 서비스",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.guichet.construction.gouv.ci/GUPC/",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "CIV-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "코트디부아르 도시지역에서 신축·증축·용도변경 또는 부지개발을 추진하는 사업",
+      "requirement": "도시토지는 ACD 등 적법한 권원과 승인 lotissement·도시계획문서에 부합해야 한다. SIGFU·관할 도시서비스에서 필지별 허용용도·COS/CES·높이·이격·주차, 도로·배수·침수·지반·상하수·전력 조건을 확인한다.",
+      "authorityIds": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "CIV-URBAN-CODE-2020-624",
+          "provisions": [
+            "urban planning and urban land framework"
+          ]
+        },
+        {
+          "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+          "provisions": [
+            "urban and construction compliance"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "ACD·토지식별자·지적도·경계측량",
+        "승인 도시계획·lotissement·servitude",
+        "필지별 COS/CES·높이·이격·주차",
+        "침수·배수·지반·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "CIV-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "건축허가 대상 공사와 ANDE 환경사회평가 분류대상 개발사업",
+      "requirement": "GUPC는 도시계획·건축·공학·소방 적합성을 통합검토하고 허가등급에 따라 장관 또는 시장이 permit을 발급한다. 환경분류는 Annex I EIES, Annex II CIES, Annex III 민감입지 또는 categorical exclusion 경로를 ANDE에서 확인한다.",
+      "authorityIds": [
+        "gupc-ministry-mayor",
+        "mulcv",
+        "ande"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+          "provisions": [
+            "Arts. 11-30; construction authorizations"
+          ]
+        },
+        {
+          "instrumentId": "CIV-ENV-DECREE-96-894",
+          "provisions": [
+            "Annexes I, II and III; environmental assessment"
+          ]
+        },
+        {
+          "instrumentId": "CIV-GUPC-SERVICE",
+          "provisions": [
+            "integrated permit submission"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·ACD 보유자·허가권자",
+        "GUPC 허가등급·전문설계도서",
+        "ANDE EIES·CIES·배제결정",
+        "소방·위생·유틸리티 동의와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "CIV-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "허가를 받아 시공하며 공사통제·보험·적합성증명 대상인 건축물",
+      "requirement": "건설·주택법전은 공사통제, 안전보건조정, certificat de conformite와 보험책임을 규정한다. 착공 전 tous risques chantier, 설계·시공자의 책임과 decennale 요구의 최신 개정상태를 확인하고 최종 적합성증명 없이 사용하지 않는다.",
+      "authorityIds": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+          "provisions": [
+            "Arts. 31-74; construction control, safety, conformity and reception"
+          ]
+        },
+        {
+          "instrumentId": "CIV-GUPC-SERVICE",
+          "provisions": [
+            "permit and completion administration"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "등록 건축사·기술자·시공자·검사기관",
+        "착공·단계검사·시험·안전기록",
+        "tous risques chantier·decennale 보험",
+        "소방·as-built·certificat de conformite·비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지 ACD와 계획상 허용용도·COS/CES·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 GUPC 허가등급·서명권자와 ANDE EIES·CIES·배제 유형 및 선행관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 전문가·검사와 공사·10년책임 보험, certificat de conformite의 최신 서류·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "CIV-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "CIV-URBAN-CODE-2020-624",
+          "provisions": [
+            "urban planning and urban land framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "CIV-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지 ACD와 계획상 허용용도·COS/CES·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "ACD·토지식별자·지적도·경계측량",
+        "승인 도시계획·lotissement·servitude",
+        "필지별 COS/CES·높이·이격·주차",
+        "침수·배수·지반·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "CIV-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "CIV-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 GUPC 허가등급·서명권자와 ANDE EIES·CIES·배제 유형 및 선행관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·ACD 보유자·허가권자",
+        "GUPC 허가등급·전문설계도서",
+        "ANDE EIES·CIES·배제결정",
+        "소방·위생·유틸리티 동의와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "gupc-ministry-mayor",
+        "mulcv",
+        "ande"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "CIV-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "gupc-ministry-mayor",
+        "mulcv",
+        "ande"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "CIV-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 전문가·검사와 공사·10년책임 보험, certificat de conformite의 최신 서류·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "등록 건축사·기술자·시공자·검사기관",
+        "착공·단계검사·시험·안전기록",
+        "tous risques chantier·decennale 보험",
+        "소방·as-built·certificat de conformite·비용"
+      ],
+      "confirmWith": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "CIV-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "mulcv",
+        "gupc-ministry-mayor"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "CIV-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "CIV-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "CIV-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "CIV-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "CIV-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "CIV-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "CIV-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Abidjan이나 다른 도시의 수치를 일반화하지 말고 ACD·승인계획과 필지별 규제표를 개념설계 전에 확정해야 한다.",
+      "basis": [
+        "CIV-URBAN-CODE-2020-624",
+        "CIV-CONSTRUCTION-CODE-2019-576"
+      ]
+    },
+    {
+      "id": "CIV-BLD-C-002",
+      "confidence": "conditional",
+      "text": "GUPC 접수와 ANDE 환경결정은 서로 대체하지 않으므로 두 경로의 완비·보완·승인조건을 통합 관리한다.",
+      "basis": [
+        "CIV-CONSTRUCTION-CODE-2019-576",
+        "CIV-ENV-DECREE-96-894",
+        "CIV-GUPC-SERVICE"
+      ]
+    },
+    {
+      "id": "CIV-BLD-C-003",
+      "confidence": "conditional",
+      "text": "보험과 적합성증명은 조달 후 부가업무가 아니라 착공·인계 선행조건이므로 입찰서와 공정표에 명시한다.",
+      "basis": [
+        "CIV-CONSTRUCTION-CODE-2019-576",
+        "CIV-GUPC-SERVICE"
+      ]
+    }
+  ]
+}

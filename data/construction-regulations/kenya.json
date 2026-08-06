@@ -1,0 +1,807 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "kenya",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "케냐",
+    "nameEn": "Kenya",
+    "iso3": "KEN",
+    "region": "아프리카"
+  },
+  "purpose": "케냐 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "물리·토지이용계획법 2019·국가건축기준 2024(법정고시 제47호)·환경관리조정법(EMCA)·환경평가 시행규칙·국가건설청법·시행규칙 2014의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "케냐 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지등기·survey와 카운티 physical/local plan·development permission으로 필지 수치를 확정한다.",
+        "authorityIds": [
+          "county-government"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "PLUPA·카운티 development permission",
+            "instrumentId": "KEN-PPA-2019",
+            "provisions": [
+              "county development permission and planning framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 카운티 계획상 허용용도·plot ratio·coverage·높이·이격·주차·재해·인입조건은 무엇인가?",
+        "authorityIds": [
+          "county-government"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "PLUPA·카운티 development permission",
+            "instrumentId": "KEN-PPA-2019",
+            "provisions": [
+              "county development permission and planning framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "카운티 개발·건축허가와 NEMA의 SPR·CPR·EIA Study·licence 경로를 선행순서대로 확정한다.",
+        "authorityIds": [
+          "county-government",
+          "nema-kenya"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "카운티 허가·NEMA 환경 licence",
+            "instrumentId": "KEN-PPA-2019",
+            "provisions": [
+              "development permission framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 카운티 허가유형과 NEMA SPR·CPR·EIA Study 유형, EIA licence 선행조건은 무엇인가?",
+        "authorityIds": [
+          "county-government",
+          "nema-kenya"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "카운티 허가·NEMA 환경 licence",
+            "instrumentId": "KEN-PPA-2019",
+            "provisions": [
+              "development permission framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "NCA 프로젝트·시공자 등록, NBC 2024 검사와 카운티 occupation certificate를 인계 Gate로 둔다.",
+        "authorityIds": [
+          "nca-kenya",
+          "county-government"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "NCA 등록·NBC 2024·occupation certificate",
+            "instrumentId": "KEN-NCA-ACT-REGS",
+            "provisions": [
+              "project and contractor registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "NCA·카운티의 등록·검사와 occupation certificate, 전문책임·보험의 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "nca-kenya",
+          "county-government"
+        ],
+        "requirementIds": [
+          "KEN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "NCA 등록·NBC 2024·occupation certificate",
+            "instrumentId": "KEN-NCA-ACT-REGS",
+            "provisions": [
+              "project and contractor registration"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "kenya-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "케냐 도시계획·부지규제",
+      "oneLiner": "토지등기·survey와 카운티 physical/local plan·development permission으로 필지 수치를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "Kenya Law의 계획법과 NCA의 현행 National Building Code를 연결했다. 대상 카운티 필지수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "KEN-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "KEN-BLD-Q-001",
+        "KEN-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "KEN-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "KEN-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "KEN-BLD-F-001",
+        "KEN-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "kenya-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "케냐 건축허가·환경심사",
+      "oneLiner": "카운티 개발·건축허가와 NEMA의 SPR·CPR·EIA Study·licence 경로를 선행순서대로 확정한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "NEMA의 2026년 환경평가 서비스·수수료 안내와 카운티 계획법을 확인했다. 최신 규정판·실제 처리기간은 접수기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "KEN-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "KEN-BLD-Q-003",
+        "KEN-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "KEN-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "KEN-BLD-F-003",
+        "KEN-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "kenya-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "케냐 기술검사·보험·준공제도",
+      "oneLiner": "NCA 프로젝트·시공자 등록, NBC 2024 검사와 카운티 occupation certificate를 인계 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "NCA의 2026년 프로젝트 등록서비스와 시행 중인 NBC 2024를 확인했다. 카운티 점유절차·현지 보험사·실제 비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "KEN-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "KEN-BLD-Q-005",
+        "KEN-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "KEN-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "KEN-BLD-F-005",
+        "KEN-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "county-government",
+      "name": "Competent county government",
+      "nameKo": "관할 카운티 정부",
+      "role": "physical planning·development permission, 건축도서 심사·검사와 occupation certificate를 담당",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "nca-kenya",
+      "name": "National Construction Authority",
+      "nameKo": "국가건설청(NCA)",
+      "role": "National Building Code, 시공자·프로젝트 등록과 품질·현장 준수감독을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.nca.go.ke/"
+    },
+    {
+      "id": "nema-kenya",
+      "name": "National Environment Management Authority",
+      "nameKo": "국가환경관리청(NEMA)",
+      "role": "SPR·CPR·EIA Study 분류와 EIA licence·사후 환경감사를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://nema.go.ke/services/environment-impact-assessment-eia/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "KEN-PPA-2019",
+      "title": "Physical and Land Use Planning Act, 2019",
+      "titleKo": "물리·토지이용계획법 2019",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2019-08-05",
+      "officialUrl": "https://new.kenyalaw.org/akn/ke/act/2019/13/eng@2022-12-31",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "KEN-NBC-2024",
+      "title": "National Building Code, 2024 — Legal Notice No. 47 of 2024",
+      "titleKo": "국가건축기준 2024(법정고시 제47호)",
+      "kind": "code",
+      "status": "in_force",
+      "issuedOn": "2024-03-01",
+      "officialUrl": "https://www.nca.go.ke/media/LN47_2024_NCAA-National_Building_Code_2024_1.pdf",
+      "officialPdfUrl": "https://www.nca.go.ke/media/LN47_2024_NCAA-National_Building_Code_2024_1.pdf",
+      "verificationLevel": "law-linked",
+      "note": "1년 전환 후 2025년 3월 1일부터 시행됐다고 NCA가 공식 확인했다."
+    },
+    {
+      "id": "KEN-NCA-ACT-REGS",
+      "title": "National Construction Authority Act and Regulations, 2014",
+      "titleKo": "국가건설청법·시행규칙 2014",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.nca.go.ke/statutory-documents",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "KEN-EMCA-EIA",
+      "title": "Environmental Management and Co-ordination Act and environmental assessment regulations",
+      "titleKo": "환경관리조정법(EMCA)·환경평가 시행규칙",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://nema.go.ke/services/environment-impact-assessment-eia/",
+      "verificationLevel": "law-linked",
+      "note": "NEMA의 2026년 서비스 안내가 SPR·CPR·EIA Study와 EIA licence 경로를 제공한다. 최신 2025 규정 적용을 접수 전에 확인한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "KEN-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "케냐 카운티에서 신축·증축·용도변경 또는 개발행위를 추진하는 ODA 건축사업",
+      "requirement": "토지이용·개발허가는 카운티가 Physical and Land Use Planning Act 및 승인계획에 따라 처리한다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 도로·riparian·홍수·지반·상하수·전력을 확인한다.",
+      "authorityIds": [
+        "county-government"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KEN-PPA-2019",
+          "provisions": [
+            "county development permission and planning framework"
+          ]
+        },
+        {
+          "instrumentId": "KEN-NBC-2024",
+          "provisions": [
+            "planning, site and building requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지등기·survey plan·경계",
+        "카운티 physical/local plan·zoning",
+        "필지별 plot ratio·coverage·높이·이격·주차",
+        "riparian·홍수·지반·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "KEN-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "카운티 development/building approval 대상 및 EMCA 환경평가 대상 사업",
+      "requirement": "카운티는 계획·건축도서를 심사하지만 EIA 필요사업에는 NEMA licence 없이 development permit을 발급할 수 없다. NEMA 등록 전문가가 위험도에 따라 SPR, CPR 또는 EIA Study를 작성하므로 공식 분류결정을 먼저 받는다.",
+      "authorityIds": [
+        "county-government",
+        "nema-kenya"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KEN-PPA-2019",
+          "provisions": [
+            "development permission framework"
+          ]
+        },
+        {
+          "instrumentId": "KEN-EMCA-EIA",
+          "provisions": [
+            "SPR, CPR, EIA Study and licence prior to development permit"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지소유자·카운티 관할",
+        "개발·건축허가 도서",
+        "NEMA SPR/CPR/EIA Study 분류·licence",
+        "소방·수자원·도로 등 동의와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "KEN-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "NCA 등록과 카운티 검사·점유통제 대상 건축공사",
+      "requirement": "공공·민간 건설프로젝트는 NCA에 등록하고 유효한 NCA 시공자와 등록 전문가를 사용한다. NBC 2024와 승인도서에 따른 검사·시험, 소방·설비 확인 후 카운티의 occupation certificate 또는 준공사용 확인을 받아야 한다.",
+      "authorityIds": [
+        "nca-kenya",
+        "county-government"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KEN-NCA-ACT-REGS",
+          "provisions": [
+            "project and contractor registration"
+          ]
+        },
+        {
+          "instrumentId": "KEN-NBC-2024",
+          "provisions": [
+            "construction inspection, completion and occupation framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "NCA 등록 시공자·프로젝트·전문가",
+        "착공·단계검사·재료시험 기록",
+        "소방·설비시운전·as-built",
+        "카운티 occupation certificate·보험·비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 카운티 계획상 허용용도·plot ratio·coverage·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 카운티 허가유형과 NEMA SPR·CPR·EIA Study 유형, EIA licence 선행조건은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "NCA·카운티의 등록·검사와 occupation certificate, 전문책임·보험의 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "KEN-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "KEN-PPA-2019",
+          "provisions": [
+            "county development permission and planning framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "KEN-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 카운티 계획상 허용용도·plot ratio·coverage·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지등기·survey plan·경계",
+        "카운티 physical/local plan·zoning",
+        "필지별 plot ratio·coverage·높이·이격·주차",
+        "riparian·홍수·지반·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "county-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KEN-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "county-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KEN-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 카운티 허가유형과 NEMA SPR·CPR·EIA Study 유형, EIA licence 선행조건은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지소유자·카운티 관할",
+        "개발·건축허가 도서",
+        "NEMA SPR/CPR/EIA Study 분류·licence",
+        "소방·수자원·도로 등 동의와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "county-government",
+        "nema-kenya"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KEN-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "county-government",
+        "nema-kenya"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KEN-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "NCA·카운티의 등록·검사와 occupation certificate, 전문책임·보험의 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "NCA 등록 시공자·프로젝트·전문가",
+        "착공·단계검사·재료시험 기록",
+        "소방·설비시운전·as-built",
+        "카운티 occupation certificate·보험·비용"
+      ],
+      "confirmWith": [
+        "nca-kenya",
+        "county-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KEN-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "nca-kenya",
+        "county-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "KEN-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "KEN-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "KEN-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "KEN-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "KEN-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "KEN-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "KEN-BLD-C-001",
+      "confidence": "conditional",
+      "text": "카운티별 계획과 조건이 실제 설계규모를 결정하므로 Nairobi 수치나 국가코드만으로 대상 필지를 확정할 수 없다.",
+      "basis": [
+        "KEN-PPA-2019",
+        "KEN-NBC-2024"
+      ]
+    },
+    {
+      "id": "KEN-BLD-C-002",
+      "confidence": "conditional",
+      "text": "NEMA licence가 필요한 경우 카운티 허가의 선행조건이므로 두 기관의 보완·심사기간을 통합 일정에 반영한다.",
+      "basis": [
+        "KEN-PPA-2019",
+        "KEN-EMCA-EIA"
+      ]
+    },
+    {
+      "id": "KEN-BLD-C-003",
+      "confidence": "conditional",
+      "text": "NCA 프로젝트 등록과 카운티 점유승인은 서로 대체하지 않으므로 둘 다 조달·시공·인계 조건에 반영한다.",
+      "basis": [
+        "KEN-NCA-ACT-REGS",
+        "KEN-NBC-2024"
+      ]
+    }
+  ]
+}
