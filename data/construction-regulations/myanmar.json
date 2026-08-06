@@ -1,0 +1,871 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "myanmar",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "미얀마",
+    "nameEn": "Myanmar",
+    "iso3": "MMR",
+    "region": "아시아·태평양"
+  },
+  "purpose": "미얀마 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "미얀마 국가건축기준 2025 제1·2부(계획·건축행정 및 건축·도시설계)·양곤도시개발위원회 개발허가 규정 2022·환경보전법 2012 및 환경보전규칙 고시 제50/2014호·환경영향평가절차 고시 제616/2015호·미얀마 국가건축기준 2025 제6·7부(재료·시공관리·안전·유지관리)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "미얀마 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권리·지역 zoning과 planning/development permit 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-construction-ministry"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "MNBC 계획허가·지역 zoning",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Secs. 1.3.1.1-1.3.1.7",
+              "Part 2 zoning and urban-design provisions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 실제 관할당국·토지권리·zoning과 허용용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-construction-ministry"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "MNBC 계획허가·지역 zoning",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Secs. 1.3.1.1-1.3.1.7",
+              "Part 2 zoning and urban-design provisions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "관할 planning/building permit와 ECD의 Non-IEE/EIA·IEE·EIA 스크리닝 및 ECC를 병행한다.",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-construction-ministry",
+          "mmr-ecd",
+          "mmr-professionals-fire"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "building permit·EIA/IEE·ECC",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Secs. 1.3.1 and 1.3.2",
+              "Sec. 1.3.3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 실제 planning/building permit 권자와 적용 코드, ECD 환경분류·ECC 및 소방 등 선행동의의 정확한 순서·기간은 무엇인가?",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-construction-ministry",
+          "mmr-ecd",
+          "mmr-professionals-fire"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "building permit·EIA/IEE·ECC",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Secs. 1.3.1 and 1.3.2",
+              "Sec. 1.3.3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록전문가·승인검사기관·소방검사 기록을 누적해 Building Completion Certificate와 점유조건을 닫는다.",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-professionals-fire",
+          "mmr-construction-ministry"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "MNBC 검사·준공·점유증명",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Sec. 1.3.2.11",
+              "Secs. 1.3.4.1-1.3.4.7",
+              "Sec. 1.3.5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 등록전문가·검사기관·소방·보험과 Building Completion/occupancy certificate의 실제 서류·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "mmr-local-building-authority",
+          "mmr-professionals-fire",
+          "mmr-construction-ministry"
+        ],
+        "requirementIds": [
+          "MMR-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "MNBC 검사·준공·점유증명",
+            "instrumentId": "MMR-MNBC-2025-PART-1-2",
+            "provisions": [
+              "Sec. 1.3.2.11",
+              "Secs. 1.3.4.1-1.3.4.7",
+              "Sec. 1.3.5"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "myanmar-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "미얀마 도시계획·부지규제",
+      "oneLiner": "토지권리·지역 zoning과 planning/development permit 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "건설부 공식 MNBC 2025 제1부의 planning permit·zoning·필지지표·인프라 요구와 YCDC 개발허가 규정을 확인했다. 지역별 법적 효력·실제 수치·인프라는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "MMR-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "MMR-BLD-Q-001",
+        "MMR-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "MMR-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "MMR-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "MMR-BLD-F-001",
+        "MMR-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "myanmar-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "미얀마 건축허가·환경심사",
+      "oneLiner": "관할 planning/building permit와 ECD의 Non-IEE/EIA·IEE·EIA 스크리닝 및 ECC를 병행한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "MNBC 2025의 planning/building permit와 ECD 공식 설명의 3단계 스크리닝·ECC를 확인했다. 지역별 법적 효력·담당창구·수수료·실제 기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "MMR-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "MMR-BLD-Q-003",
+        "MMR-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "MMR-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MMR-BLD-F-003",
+        "MMR-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "myanmar-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "미얀마 기술검사·보험·준공제도",
+      "oneLiner": "등록전문가·승인검사기관·소방검사 기록을 누적해 Building Completion Certificate와 점유조건을 닫는다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "MNBC 2025 제1부의 등록전문가·검사·Building Completion Certificate·점유·유틸리티 조항과 제7부의 시공관리를 확인했다. 지역 집행·보험·비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "MMR-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "MMR-BLD-Q-005",
+        "MMR-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "MMR-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MMR-BLD-F-005",
+        "MMR-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "mmr-construction-ministry",
+      "name": "Ministry of Construction",
+      "nameKo": "건설부",
+      "role": "Myanmar National Building Code와 국가 건축·도시 기술기준을 발간",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.myanmar.gov.mm/web/guest/construction/document"
+    },
+    {
+      "id": "mmr-local-building-authority",
+      "name": "Relevant Development Planning and Building Authority or city/development committee",
+      "nameKo": "관할 개발계획·건축당국 또는 도시/개발위원회",
+      "role": "지역 법에 따라 planning/development permit, building permit, 검사와 준공·점유증명을 집행",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "mmr-ecd",
+      "name": "Environmental Conservation Department under MONREC",
+      "nameKo": "천연자원환경보전부 환경보전국(ECD)",
+      "role": "Project Proposal 스크리닝, IEE/EIA 검토와 Environmental Compliance Certificate를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.ecd.gov.mm/"
+    },
+    {
+      "id": "mmr-professionals-fire",
+      "name": "Registered professional councils, approved inspection agencies and Fire Services Department",
+      "nameKo": "등록전문가 심의기관·승인검사기관·소방국",
+      "role": "설계·감리 전문자격, 시험·검사와 건축물 화재안전 확인을 담당",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "MMR-MNBC-2025-PART-1-2",
+      "title": "Myanmar National Building Code 2025, Parts 1 and 2 — Administration of Planning, Building and Built Environment; Architecture and Urban Design",
+      "titleKo": "미얀마 국가건축기준 2025 제1·2부(계획·건축행정 및 건축·도시설계)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "officialUrl": "https://myanmar.gov.mm/documents/20143/0/PART%2B1%2B%26%2B2%2B%28English%29.pdf/5fd95195-d191-e6fa-a37a-61599bbbd611?t=1752644199338",
+      "officialPdfUrl": "https://myanmar.gov.mm/documents/20143/0/PART%2B1%2B%26%2B2%2B%28English%29.pdf/5fd95195-d191-e6fa-a37a-61599bbbd611?t=1752644199338",
+      "verificationLevel": "law-linked",
+      "note": "건설부 공식 포털의 2025 영문본이다. 제1.3.3절은 지역·주/도·연방 법을 배제하지 않으므로 관할별 채택·집행상태를 확인한다."
+    },
+    {
+      "id": "MMR-MNBC-2025-PART-6-7",
+      "title": "Myanmar National Building Code 2025, Parts 6 and 7 — Building Materials; Construction Management, Practices, Safety and Maintenance",
+      "titleKo": "미얀마 국가건축기준 2025 제6·7부(재료·시공관리·안전·유지관리)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.myanmar.gov.mm/documents/20143/0/PART%2B6%2C7.pdf/2843a6c7-6d90-bec0-00a3-638202a1709d?t=1752567164166",
+      "officialPdfUrl": "https://www.myanmar.gov.mm/documents/20143/0/PART%2B6%2C7.pdf/2843a6c7-6d90-bec0-00a3-638202a1709d?t=1752567164166",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "MMR-ENV-CONSERVATION-LAW-RULES",
+      "title": "Environmental Conservation Law of 30 March 2012 and Environmental Conservation Rules, Notification No. 50/2014",
+      "titleKo": "환경보전법 2012 및 환경보전규칙 고시 제50/2014호",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2012-03-30",
+      "officialUrl": "https://www.ecd.gov.mm/legal-structure-of-eia/",
+      "verificationLevel": "law-linked",
+      "note": "ECD 공식 페이지가 환경보전법·규칙·EIA 절차의 법적 구조를 설명한다."
+    },
+    {
+      "id": "MMR-EIA-PROCEDURE-616-2015",
+      "title": "Environmental Impact Assessment Procedure, Notification No. 616/2015",
+      "titleKo": "환경영향평가절차 고시 제616/2015호",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2015-12-29",
+      "officialUrl": "https://www.ecd.gov.mm/introduction-of-the-eia-system-in-myanmar/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "MMR-YCDC-DEVELOPMENT-PERMIT-2022",
+      "title": "Yangon City Development Committee Development Permit Rules and Regulations, 2022",
+      "titleKo": "양곤도시개발위원회 개발허가 규정 2022",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "officialUrl": "https://myanmar.gov.mm/documents/20143/0/Development_Permit_YUDM_Eng.pdf/aaa7b292-4b00-3a1e-bd18-f9eee0f139e0?t=1661236227833",
+      "officialPdfUrl": "https://myanmar.gov.mm/documents/20143/0/Development_Permit_YUDM_Eng.pdf/aaa7b292-4b00-3a1e-bd18-f9eee0f139e0?t=1661236227833",
+      "verificationLevel": "source-linked",
+      "note": "양곤 관할 예시이며 다른 도시·지역에 그대로 적용하지 않는다. 문서의 정확한 발효일·최신 개정은 YCDC에서 재확인한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "MMR-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "미얀마에서 신축·증축·개축·용도변경 또는 주요 토지개발을 추진하는 ODA 건축사업",
+      "requirement": "MNBC 2025 제1부는 주요 토지개발에 planning permit과 zoning 적합성을 요구하고, 신청자료에 plot ratio, built-up ratio, 높이·주차·인프라와 주변환경을 포함한다. 그러나 실제 당국과 수치는 YCDC·MCDC·Nay Pyi Taw 또는 관할 development affairs 체계와 지역계획에 따라 달라지므로 토지유형·전용 가능성, 지진·단층·연약지반·침수·사이클론·배수와 유틸리티 용량을 필지별로 확인한다.",
+      "authorityIds": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MMR-MNBC-2025-PART-1-2",
+          "provisions": [
+            "Secs. 1.3.1.1-1.3.1.7",
+            "Part 2 zoning and urban-design provisions"
+          ]
+        },
+        {
+          "instrumentId": "MMR-YCDC-DEVELOPMENT-PERMIT-2022",
+          "provisions": [
+            "Yangon-only development-permit framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권리·토지유형·전용승인·지적/경계측량",
+        "관할기관·zoning/local plan·planning/development permit 사전회신",
+        "실제 plot ratio·built-up ratio·높이·이격·주차·도로/문화유산 조건",
+        "지진·단층·지반·침수·사이클론·배수와 상하수·전력·통신 용량확약"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "MMR-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "관할 지역법상 planning/building permit 대상 공사 및 EIA Procedure 스크리닝 대상 프로젝트",
+      "requirement": "MNBC 2025 제1부는 major development의 planning permit와 신축·증축·수선·이전·철거·용도변경의 building permit 경로를 제시한다. EIA Procedure 616/2015에 따라 사업제안서를 ECD에 제출하면 Non-IEE/EIA, IEE 또는 EIA로 스크리닝되고, IEE/EIA 승인 시 MONREC의 Environmental Compliance Certificate 조건을 이행해야 한다. 코드의 지역 채택상태, 건축주·허가권자·소방협의와 환경분류를 서면 확정한다.",
+      "authorityIds": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry",
+        "mmr-ecd",
+        "mmr-professionals-fire"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MMR-MNBC-2025-PART-1-2",
+          "provisions": [
+            "Secs. 1.3.1 and 1.3.2",
+            "Sec. 1.3.3"
+          ]
+        },
+        {
+          "instrumentId": "MMR-ENV-CONSERVATION-LAW-RULES",
+          "provisions": [
+            "Environmental Conservation Law Sec. 7(m)"
+          ]
+        },
+        {
+          "instrumentId": "MMR-EIA-PROCEDURE-616-2015",
+          "provisions": [
+            "Arts. 25 and 28",
+            "Annex A screening"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지권리자·실제 planning/building authority",
+        "현지 적용 MNBC 판·지역 건축법·등록전문가 서명도서",
+        "ECD Project Proposal·Non-IEE/EIA/IEE/EIA 결정·승인 TOR/보고서·ECC",
+        "소방·문화유산·보건·유틸리티 등 선행동의",
+        "공식 최신 서식·수수료·보완정지·접수관행·전체 실제 기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "MMR-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "관할 building permit를 받아 공사하며 검사·준공증명·점유통제를 적용받는 건축물",
+      "requirement": "MNBC 2025는 건축·구조·설비 등 qualified person의 등록, 승인도서 변경승인, 예비·필수·최종검사와 Building Completion Certificate를 규정한다. 준공검사 후 certificate of occupancy에 허가번호·소유자·용도분류·코드판을 기록하며, 지역법과 소방확인·영구 유틸리티 연결이 추가된다. 실제 자격기관·검사주체·보험 의무와 비용은 지역 감독기관 및 시장에서 확인한다.",
+      "authorityIds": [
+        "mmr-local-building-authority",
+        "mmr-professionals-fire",
+        "mmr-construction-ministry"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MMR-MNBC-2025-PART-1-2",
+          "provisions": [
+            "Sec. 1.3.2.11",
+            "Secs. 1.3.4.1-1.3.4.7",
+            "Sec. 1.3.5"
+          ]
+        },
+        {
+          "instrumentId": "MMR-MNBC-2025-PART-6-7",
+          "provisions": [
+            "Part 7 construction management, practices, safety and maintenance"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 등록 건축사·구조/설비기술자·시공자·검사기관 자격",
+        "착공통지·검사요청·현장일지·재료/구조/MEP 시험·변경승인",
+        "소방설계 확인·현장검사·영구 유틸리티 release",
+        "as-built·building completion application·Building Completion/occupancy certificate",
+        "공사·전문배상 등 보험의 법적/계약 근거와 현지 전문가·검사기관·보험사 견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 실제 관할당국·토지권리·zoning과 허용용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 실제 planning/building permit 권자와 적용 코드, ECD 환경분류·ECC 및 소방 등 선행동의의 정확한 순서·기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 등록전문가·검사기관·소방·보험과 Building Completion/occupancy certificate의 실제 서류·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "MMR-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "MMR-MNBC-2025-PART-1-2",
+          "provisions": [
+            "Secs. 1.3.1.1-1.3.1.7",
+            "Part 2 zoning and urban-design provisions"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "MMR-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 실제 관할당국·토지권리·zoning과 허용용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권리·토지유형·전용승인·지적/경계측량",
+        "관할기관·zoning/local plan·planning/development permit 사전회신",
+        "실제 plot ratio·built-up ratio·높이·이격·주차·도로/문화유산 조건",
+        "지진·단층·지반·침수·사이클론·배수와 상하수·전력·통신 용량확약"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MMR-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MMR-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 실제 planning/building permit 권자와 적용 코드, ECD 환경분류·ECC 및 소방 등 선행동의의 정확한 순서·기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지권리자·실제 planning/building authority",
+        "현지 적용 MNBC 판·지역 건축법·등록전문가 서명도서",
+        "ECD Project Proposal·Non-IEE/EIA/IEE/EIA 결정·승인 TOR/보고서·ECC",
+        "소방·문화유산·보건·유틸리티 등 선행동의",
+        "공식 최신 서식·수수료·보완정지·접수관행·전체 실제 기간"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry",
+        "mmr-ecd",
+        "mmr-professionals-fire"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MMR-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-construction-ministry",
+        "mmr-ecd",
+        "mmr-professionals-fire"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MMR-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 등록전문가·검사기관·소방·보험과 Building Completion/occupancy certificate의 실제 서류·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "현지 등록 건축사·구조/설비기술자·시공자·검사기관 자격",
+        "착공통지·검사요청·현장일지·재료/구조/MEP 시험·변경승인",
+        "소방설계 확인·현장검사·영구 유틸리티 release",
+        "as-built·building completion application·Building Completion/occupancy certificate",
+        "공사·전문배상 등 보험의 법적/계약 근거와 현지 전문가·검사기관·보험사 견적"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-professionals-fire",
+        "mmr-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MMR-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "mmr-local-building-authority",
+        "mmr-professionals-fire",
+        "mmr-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "MMR-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "MMR-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "MMR-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "MMR-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "MMR-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "MMR-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "MMR-BLD-C-001",
+      "confidence": "conditional",
+      "text": "MNBC의 신청항목은 공통 체크리스트로 쓰되 양곤 규정을 전국 수치로 일반화하지 말고, 관할 법·계획·허가당국과 현장 위험·공급용량을 먼저 확정한다.",
+      "basis": [
+        "MMR-MNBC-2025-PART-1-2",
+        "MMR-YCDC-DEVELOPMENT-PERMIT-2022"
+      ]
+    },
+    {
+      "id": "MMR-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축허가와 ECD 환경 스크리닝을 동시에 착수하되, 지역법상 코드 효력과 IEE/EIA·ECC 조건을 서면으로 잠그기 전 입찰·착공일을 확정하지 않는다.",
+      "basis": [
+        "MMR-MNBC-2025-PART-1-2",
+        "MMR-ENV-CONSERVATION-LAW-RULES",
+        "MMR-EIA-PROCEDURE-616-2015"
+      ]
+    },
+    {
+      "id": "MMR-BLD-C-003",
+      "confidence": "conditional",
+      "text": "MNBC의 법정검사와 준공증명 구조를 품질계획에 반영하되, 관할 지역법이 요구하는 소방·보험·유틸리티·점유조건을 최종지급과 개장 전 별도 Gate로 관리한다.",
+      "basis": [
+        "MMR-MNBC-2025-PART-1-2",
+        "MMR-MNBC-2025-PART-6-7"
+      ]
+    }
+  ]
+}
