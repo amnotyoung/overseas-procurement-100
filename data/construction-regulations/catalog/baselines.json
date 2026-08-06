@@ -1549,6 +1549,547 @@
           "referenceLabel": "FSIC·Certificate of Occupancy"
         }
       }
+    },
+    {
+      "slug": "dr-congo",
+      "name": "DR콩고",
+      "nameEn": "Democratic Republic of the Congo",
+      "iso3": "COD",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "gupec",
+          "name": "Guichet Unique de Delivrance du Permis de Construire",
+          "nameKo": "건축허가 원스톱창구(GUPEC)",
+          "role": "운영 지역에서 건축·철거허가 접수와 적합성증명서 발급을 통합하며 지방 기술서비스를 조정",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://gupec-rdc.com/"
+        },
+        {
+          "id": "urbanisme-local",
+          "name": "Provincial and local urban planning, land and cadastral services",
+          "nameKo": "관할 주·지방 도시계획·토지·지적기관",
+          "role": "필지 권원·지적·계획·도로·용도와 GUPEC 미운영 지역의 건축허가 집행을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.investindrc.cd/fr/Permis-de-construire"
+        },
+        {
+          "id": "aced",
+          "name": "Agence Congolaise de l'Environnement",
+          "nameKo": "콩고 환경청(ACE)",
+          "role": "환경·사회영향평가와 환경승인·모니터링을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://medd.gouv.cd/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "COD-GUPEC-ORDER-058-2022",
+          "title": "Arrete ministeriel n° CAB/MIN.ATUHITPR/007/2022 du 13 juin 2022 relatif au GUPEC",
+          "titleKo": "2022년 6월 13일 장관령 제058호 GUPEC 운영체계",
+          "kind": "order",
+          "status": "continuity_unverified",
+          "issuedOn": "2022-06-13",
+          "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/AM.058013.06.2022.html",
+          "verificationLevel": "law-linked",
+          "note": "GUPEC의 통합업무와 지방 전개 근거다. 2026년 기관 사이트는 Kinshasa와 7개 시범 주 운영을 명시하므로 대상지의 실제 창구를 확인한다."
+        },
+        {
+          "id": "COD-BUILDING-ORDER-2014",
+          "title": "Arrete ministeriel n° CAB/MIN-ATUHITPR/006/2014 portant reglementation de l'octroi du permis de construire",
+          "titleKo": "2014년 장관령 건축허가 발급 규정",
+          "kind": "order",
+          "status": "continuity_unverified",
+          "issuedOn": "2014-04-04",
+          "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/AM.006.2010.04.04.2014.htm",
+          "verificationLevel": "law-linked",
+          "note": "필지·계획조건, 설계자와 허가 원칙을 확인하는 기초 법원이다. 후속 2016·2018년 개정 및 2022년 GUPEC 개편과 함께 적용조문을 재확인한다."
+        },
+        {
+          "id": "COD-ENV-LAW-11-009",
+          "title": "Loi n° 11/009 du 09 juillet 2011 portant principes fondamentaux relatifs a la protection de l'environnement",
+          "titleKo": "법률 제11/009호 환경보호 기본원칙법",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2011-07-09",
+          "officialUrl": "https://medd.gouv.cd/loi-n-11-009-du-09-juillet-2011-portant-principes-fondamentaux-relatifs-a-la-protection-de-lenvironnement/",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "COD-PERMIT-MANUAL",
+          "title": "Manuel des procedures d'octroi du permis de construire",
+          "titleKo": "건축허가 절차 매뉴얼",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/Manuel.26.06.2013.htm",
+          "verificationLevel": "source-linked",
+          "note": "토지·설계·접수·심사·적합성증명 구조를 보여주는 과거 공식 절차다. 기재 처리기한은 현행 GUPEC의 실제 일정으로 대체 확인한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원·지적경계와 관할 계획·도로·지역별 건축처방을 확인해 필지 규제표를 확정한다.",
+          "summary": "건축허가 신청은 토지 이용권과 지적·배치 자료, 관할 도시계획 조건을 전제로 한다. 실제 허용용도·건폐율·용적률·높이·이격·주차와 도로·침수·지반·유틸리티 조건은 대상 주·도시의 계획문서와 필지별 처방으로 확인해야 한다.",
+          "applicability": "DR콩고에서 신축·증축·철거·용도변경 또는 부지개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["urbanisme-local", "gupec"],
+          "basis": [
+            {"instrumentId": "COD-BUILDING-ORDER-2014", "provisions": ["site and planning dossier framework"]},
+            {"instrumentId": "COD-PERMIT-MANUAL", "provisions": ["land availability and design dossier stages"]}
+          ],
+          "evidence": ["토지권원·지적도·경계측량", "관할 도시계획·도로·servitude 확인", "필지별 용도·밀도·높이·이격·주차", "지반·침수·배수·전력·상수 용량"],
+          "decisionQuestion": "대상 필지의 적법한 권원·지적경계와 현행 계획상 허용용도·밀도·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
+          "conclusion": "DR콩고의 중앙 허가체계만으로 필지 수치를 확정할 수 없으므로 관할 주·도시의 계획문서와 토지·지적 확인을 개념설계 선행 Gate로 둔다.",
+          "verificationScope": "건축허가 규정과 공식 절차 매뉴얼에서 토지·계획자료 요구구조를 확인했다. 대상지 계획의 현행성·필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "건축허가 규정·필지계획 확인"
+        },
+        "permit-environment": {
+          "oneLiner": "대상지의 GUPEC 운영 여부와 최종 허가권자, 환경·사회영향평가 유형을 함께 확정한다.",
+          "summary": "GUPEC는 운영 지역에서 건축·철거허가와 적합성증명 업무를 통합하지만 전국 실제 전개는 진행 중이다. 건축허가와 별도로 환경법 및 시행체계에 따라 ACE의 환경·사회영향평가 또는 환경승인 경로를 분류하고 선후관계를 확인해야 한다.",
+          "applicability": "건축허가가 필요한 공사와 환경·사회영향평가 또는 환경승인 대상 개발사업",
+          "authorityIds": ["gupec", "urbanisme-local", "aced"],
+          "basis": [
+            {"instrumentId": "COD-GUPEC-ORDER-058-2022", "provisions": ["GUPEC implementation framework"]},
+            {"instrumentId": "COD-ENV-LAW-11-009", "provisions": ["environmental and social assessment framework"]}
+          ],
+          "evidence": ["건축주·신청인·토지권리자 관계", "GUPEC 운영지역·최종 허가권자 회신", "ACE 환경 스크리닝·승인유형", "현행 서식·수수료·보완정지·실제 전체기간"],
+          "decisionQuestion": "대상지에서 GUPEC 또는 어느 지방기관이 허가하며 ACE 환경심사의 유형·선행조건·실제 접수경로는 무엇인가?",
+          "conclusion": "GUPEC 명칭만 보고 전국 단일창구로 가정하면 안 되며 대상지 운영상태와 ACE 환경결정을 함께 받아야 착공일정을 산정할 수 있다.",
+          "verificationScope": "2026년 GUPEC 공식 사이트와 2022년 운영 장관령, 환경부의 환경법 원문을 연결했다. 실제 관할·수수료·접수관행·전체기간은 대상지에서 확인한다.",
+          "referenceLabel": "GUPEC·환경법 제11/009호"
+        },
+        "control-completion": {
+          "oneLiner": "현지 자격기술자, GUPEC·관할기관의 단계검사와 적합성증명서를 사용개시 전 Gate로 관리한다.",
+          "summary": "허가도서는 적격 건축사·기술자가 작성하고 승인내용대로 시공되어야 하며 관할기관의 현장통제와 준공확인이 뒤따른다. GUPEC 운영지역에서는 certificat de conformite 발급 여부를 확인하고, 책임보험·공사보험·검사기관·시험·인계조건은 계약 전에 서면화한다.",
+          "applicability": "허가를 받아 시공하며 준공 적합성 확인이 필요한 건축공사",
+          "authorityIds": ["gupec", "urbanisme-local"],
+          "basis": [
+            {"instrumentId": "COD-GUPEC-ORDER-058-2022", "provisions": ["permit and conformity-certificate functions"]},
+            {"instrumentId": "COD-BUILDING-ORDER-2014", "provisions": ["qualified design and construction-control framework"]}
+          ],
+          "evidence": ["현지 건축사·기술자·시공자 자격", "착공통지·단계검사·시험계획", "as-built·설비시운전·소방 확인", "적합성증명서·보험증권·비용견적"],
+          "decisionQuestion": "필요 전문자격·검사기관·보험과 착공·중간검사·적합성증명서의 절차·비용·실제 기간은 무엇인가?",
+          "conclusion": "공사완료와 적법한 사용은 구분해야 하므로 적합성증명서와 필요한 안전·설비 확인을 ODA 시설 인계·개장 조건에 넣는다.",
+          "verificationScope": "GUPEC의 현행 업무와 기존 건축허가 법체계에서 시공통제·적합성증명 구조를 확인했다. 현지 전문가·검사기관·보험사와 비용은 시장조사 대상이다.",
+          "referenceLabel": "GUPEC 적합성증명"
+        }
+      }
+    },
+    {
+      "slug": "ghana",
+      "name": "가나",
+      "nameEn": "Ghana",
+      "iso3": "GHA",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "mmda",
+          "name": "Metropolitan, Municipal or District Assembly",
+          "nameKo": "관할 광역·시·군 의회(MMDA)",
+          "role": "지역계획에 따른 개발·건축허가, 현장검사와 사용·거주 적합성 확인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.amma.gov.gh/services/development-building-permit/"
+        },
+        {
+          "id": "luspa",
+          "name": "Land Use and Spatial Planning Authority",
+          "nameKo": "토지이용·공간계획청(LUSPA)",
+          "role": "국가 공간계획체계와 지역 개발관리·허가의 법정 프레임을 감독",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://luspa.gov.gh/"
+        },
+        {
+          "id": "epa-ghana",
+          "name": "Environmental Protection Authority",
+          "nameKo": "환경보호청(EPA Ghana)",
+          "role": "환경평가·환경허가와 사후 준수관리를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.client.epa.gov.gh/"
+        },
+        {
+          "id": "gsa",
+          "name": "Ghana Standards Authority",
+          "nameKo": "가나표준청(GSA)",
+          "role": "Ghana Building Code 등 국가표준을 제정·공표",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://gsa.gov.gh/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "GHA-LUSP-ACT-925",
+          "title": "Land Use and Spatial Planning Act, 2016 (Act 925)",
+          "titleKo": "토지이용·공간계획법 2016(법률 제925호)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2016-01-01",
+          "officialUrl": "https://luspa.gov.gh/wp-content/uploads/2023/11/ACT-925-LUSP.pdf",
+          "officialPdfUrl": "https://luspa.gov.gh/wp-content/uploads/2023/11/ACT-925-LUSP.pdf",
+          "verificationLevel": "law-linked",
+          "note": "MMDA의 개발허가와 등록 건축사·기술자 참여의 기본 틀이다. 정확한 공포일과 최신 개정은 LUSPA 법령대장에서 재확인한다."
+        },
+        {
+          "id": "GHA-LUSP-LI-2384",
+          "title": "Land Use and Spatial Planning Regulations, 2019 (L.I. 2384)",
+          "titleKo": "토지이용·공간계획 시행규칙 2019(L.I. 2384)",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://luspa.gov.gh/law/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "GHA-ENV-ACT-1124",
+          "title": "Environmental Protection Act, 2025 (Act 1124)",
+          "titleKo": "환경보호법 2025(법률 제1124호)",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "2025-01-06",
+          "officialUrl": "https://repository.parliament.gh/items/18878a2b-4e4a-4e36-ba0b-a576b028d896",
+          "verificationLevel": "law-linked",
+          "note": "EPA의 현행 공개 허가대장은 Act 1124와 L.I. 2504를 적용근거로 표시한다."
+        },
+        {
+          "id": "GHA-BUILDING-CODE-2018",
+          "title": "Ghana Building Code GS 1207:2018",
+          "titleKo": "가나 건축기준 GS 1207:2018",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "officialUrl": "https://gsa.gov.gh/ghana-building-code-2018/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "GHA-MMDA-PERMIT-GUIDE",
+          "title": "MMDA development and building permit official service guide",
+          "titleKo": "MMDA 개발·건축허가 공식 서비스 안내",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.amma.gov.gh/services/development-building-permit/",
+          "verificationLevel": "source-linked",
+          "note": "Ayawaso Manya의 공식 절차는 MMDA 집행 예시다. 대상 MMDA의 조례·수수료·서식을 우선한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 관할 MMDA의 구조·지역계획 및 zoning으로 필지별 개발기준을 확정한다.",
+          "summary": "Act 925 체계에서 MMDA는 승인된 공간계획과 개발관리 기준에 따라 개발허가를 처리한다. 필지 권원·경계, 허용용도, plot coverage·FAR·높이·이격·주차, 도로·배수·홍수·유틸리티는 대상 MMDA의 계획·zoning과 공식 부지검토로 확정한다.",
+          "applicability": "가나 MMDA 관할에서 신축·증축·용도변경·부지개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["mmda", "luspa"],
+          "basis": [
+            {"instrumentId": "GHA-LUSP-ACT-925", "provisions": ["District Assembly development-permit framework"]},
+            {"instrumentId": "GHA-LUSP-LI-2384", "provisions": ["spatial planning and development-control regulations"]}
+          ],
+          "evidence": ["토지권원·title search·cadastral plan", "관할 구조·지역계획과 zoning", "필지별 coverage·FAR·높이·이격·주차", "soil test·홍수·수문·도로·유틸리티 용량"],
+          "decisionQuestion": "대상 MMDA 계획상 허용용도와 필지별 coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+          "conclusion": "가나의 개발허가는 MMDA별 계획·조례로 집행되므로 다른 도시의 수치나 국가 건축기준만으로 대상 필지 규모를 확정할 수 없다.",
+          "verificationScope": "Act 925·L.I. 2384의 공식 LUSPA 대장과 MMDA 허가 안내를 연결했다. 필지 수치·권원·재해·유틸리티는 대상 MMDA에서 확인한다.",
+          "referenceLabel": "Act 925·MMDA 개발허가"
+        },
+        "permit-environment": {
+          "oneLiner": "MMDA 개발·건축허가와 EPA 환경허가, 소방·교통·수문 등 조건부 clearance를 통합 매핑한다.",
+          "summary": "관할 MMDA는 토지·계획·전문설계 도서를 심사해 개발·건축허가를 발급한다. 사업 규모·용도·입지에 따라 EPA 환경허가와 소방, 교통영향, 수문·지반 등 관계기관 확인이 요구될 수 있으므로 건축허가와 환경승인의 선후관계를 확정한다.",
+          "applicability": "MMDA 개발·건축허가와 Act 1124·L.I. 2504상 환경심사 대상 사업",
+          "authorityIds": ["mmda", "epa-ghana"],
+          "basis": [
+            {"instrumentId": "GHA-LUSP-ACT-925", "provisions": ["development permit and professional submission framework"]},
+            {"instrumentId": "GHA-ENV-ACT-1124", "provisions": ["environmental assessment and permitting framework"]},
+            {"instrumentId": "GHA-MMDA-PERMIT-GUIDE", "provisions": ["official permit dossier and conditional clearances"]}
+          ],
+          "evidence": ["건축주·신청인·MMDA 관할", "개발·건축허가 제출도서", "EPA 스크리닝·permit 결정", "소방·TIA·수문·지반 조건과 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 MMDA 허가유형과 EPA 환경결정, 소방·교통·수문 등 선행승인의 정확한 조합은 무엇인가?",
+          "conclusion": "MMDA 허가와 EPA 환경허가는 별도 Gate이므로 한 기관의 명목 처리기한을 전체 인허가기간으로 사용하지 않는다.",
+          "verificationScope": "현행 Act 1124의 의회 원문, EPA 허가포털과 MMDA 공식 허가서류 예시를 확인했다. 실제 수수료·접수관행·전체기간은 관할기관에 확인한다.",
+          "referenceLabel": "MMDA 허가·EPA 환경허가"
+        },
+        "control-completion": {
+          "oneLiner": "GS 1207:2018, 등록 전문가, MMDA 검사와 Certificate of Habitation을 인계 전 필수조건으로 둔다.",
+          "summary": "설계·시공은 Ghana Building Code와 승인도서를 따라야 하고 등록 건축사·기술자가 책임도서를 작성한다. MMDA 단계·최종검사, 소방·설비 확인과 Certificate of Habitation 또는 점유승인 요구를 확인하며 전문책임·공사보험·시험·하자조건을 계약에 반영한다.",
+          "applicability": "Ghana Building Code와 MMDA 검사·점유통제 대상 건축물",
+          "authorityIds": ["mmda", "gsa"],
+          "basis": [
+            {"instrumentId": "GHA-BUILDING-CODE-2018", "provisions": ["minimum building design and construction standards"]},
+            {"instrumentId": "GHA-LUSP-ACT-925", "provisions": ["registered professionals and enforcement framework"]}
+          ],
+          "evidence": ["등록 건축사·기술자·시공자 자격", "적용 코드·검사·시험계획", "소방·설비·as-built·최종검사", "Certificate of Habitation·보험·실제 비용"],
+          "decisionQuestion": "현지 전문자격·검사·보험과 Certificate of Habitation 발급의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "가나에서는 공사완료와 합법적 점유를 구분해 MMDA의 최종검사와 거주·사용증명을 준공 인계조건으로 관리해야 한다.",
+          "verificationScope": "GSA의 공식 Building Code 페이지, Act 925와 MMDA의 공식 준공·거주증명 안내를 연결했다. 현지 전문가·검사기관·보험사는 시장조사 대상이다.",
+          "referenceLabel": "GS 1207:2018·Certificate of Habitation"
+        }
+      }
+    },
+    {
+      "slug": "nigeria",
+      "name": "나이지리아",
+      "nameEn": "Nigeria",
+      "iso3": "NGA",
+      "region": "아프리카",
+      "verificationStatus": "source-linked",
+      "authorities": [
+        {
+          "id": "state-planning-authority",
+          "name": "Competent State or FCT planning permit authority",
+          "nameKo": "관할 주 또는 연방수도지구 계획허가기관",
+          "role": "주법·계획에 따라 토지이용·개발·계획허가를 발급",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://epp.lagosstate.gov.ng/Home/About"
+        },
+        {
+          "id": "state-building-control",
+          "name": "Competent State building control authority",
+          "nameKo": "관할 주 건축통제기관",
+          "role": "착공승인, 단계검사, 보험 확인과 준공·사용적합성 증명을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://lasbca.lagosstate.gov.ng/"
+        },
+        {
+          "id": "fmenv-ead",
+          "name": "Federal Ministry of Environment — Environmental Assessment Department",
+          "nameKo": "연방환경부 환경평가국(EAD)",
+          "role": "연방 EIA법에 따른 사업등록·스크리닝·평가·허가와 사후 모니터링을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://ead.gov.ng/"
+        },
+        {
+          "id": "fmhud",
+          "name": "Federal Ministry of Housing and Urban Development",
+          "nameKo": "연방주택·도시개발부",
+          "role": "National Building Code의 국가 벤치마크와 자문체계를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.fmhud.gov.ng/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "NGA-NBC-2006",
+          "title": "National Building Code of Nigeria, 2006",
+          "titleKo": "나이지리아 국가건축기준 2006",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "issuedOn": "2006-01-01",
+          "officialUrl": "https://fmhud.gov.ng/themes/front_end_themes_01/images/download/25080529456.pdf",
+          "officialPdfUrl": "https://fmhud.gov.ng/themes/front_end_themes_01/images/download/25080529456.pdf",
+          "verificationLevel": "source-linked",
+          "note": "연방부는 2025년 이를 국가 최소기준 벤치마크로 재확인했으나 실제 채택·집행은 주별 법·규정과 관할기관에서 확인한다."
+        },
+        {
+          "id": "NGA-EIA-ACT-CAP-E12",
+          "title": "Environmental Impact Assessment Act, Cap E12 LFN 2010 (originally Decree No. 86 of 1992)",
+          "titleKo": "환경영향평가법 Cap E12 LFN 2010(1992년 제86호)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1992-12-10",
+          "officialUrl": "https://ead.gov.ng/environmental-impact-assessment-division/",
+          "verificationLevel": "law-linked",
+          "note": "EAD가 사업등록·현장확인·screening/scoping·TOR·심사·EIA permit을 현행 업무로 명시한다."
+        },
+        {
+          "id": "NGA-LAGOS-PLANNING-LAW-2010",
+          "title": "Lagos State Urban and Regional Planning and Development Law, 2010, as amended",
+          "titleKo": "라고스주 도시·지역계획·개발법 2010(개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://lasbca.lagosstate.gov.ng/resources/",
+          "verificationLevel": "source-linked",
+          "note": "라고스주의 공식 지방 집행 예시다. 대상 주·FCT의 자체 법률·계획·기관을 대체하지 않는다."
+        },
+        {
+          "id": "NGA-LAGOS-PERMIT-CONTROL",
+          "title": "Lagos State e-Planning Permit and LASBCA building-control procedures",
+          "titleKo": "라고스주 전자 계획허가·건축통제 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://epp.lagosstate.gov.ng/Home/Checklist",
+          "verificationLevel": "source-linked",
+          "note": "계획허가, 착공 전 Form C, 단계검사, 보험과 Certificate of Completion and Fitness for Habitation의 주 단위 집행 사례다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "대상 주·FCT의 계획법·개발계획과 필지 권원으로 용도·밀도·높이·이격·주차를 확정한다.",
+          "summary": "토지이용·계획허가는 연방 단일 창구가 아니라 주·FCT 법과 지방 계획으로 집행된다. 따라서 토지권원·survey plan, operative development plan과 zoning을 확인해 필지별 허용용도·plot coverage·FAR·높이·이격·주차, 홍수·배수·도로·유틸리티 조건을 확정한다.",
+          "applicability": "나이지리아에서 신축·증축·용도변경 또는 개발허가를 추진하는 ODA 건축사업",
+          "authorityIds": ["state-planning-authority"],
+          "basis": [
+            {"instrumentId": "NGA-LAGOS-PLANNING-LAW-2010", "provisions": ["state planning and development-control example"]},
+            {"instrumentId": "NGA-LAGOS-PERMIT-CONTROL", "provisions": ["planning permit and site dossier example"]}
+          ],
+          "evidence": ["토지권원·survey plan·경계확인", "대상 주·FCT 계획법·개발계획·zoning", "필지별 coverage·FAR·높이·이격·주차", "홍수·배수·지반·도로·전력·상수 용량"],
+          "decisionQuestion": "대상 주·FCT의 관할 계획과 필지별 허용용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+          "conclusion": "라고스 수치나 국가건축기준을 전국에 일반화할 수 없으므로 대상 주·FCT의 계획허가권자와 필지 규제표를 먼저 확정해야 한다.",
+          "verificationScope": "연방 건축기준과 라고스주의 공식 계획허가 체계를 지방 집행 예시로 연결했다. 대상 주의 법·계획·필지 수치는 현지 확인 대상이다.",
+          "referenceLabel": "주·FCT 계획허가"
+        },
+        "permit-environment": {
+          "oneLiner": "주·FCT 계획·건축허가와 연방 EAD의 EIA 등록·스크리닝·permit 경로를 분리해 연결한다.",
+          "summary": "개발·계획허가는 관할 주·FCT 기관이 처리하고, EIA Act 적용사업은 연방환경부 EAD에서 등록·현장확인·screening/scoping·평가서 심사와 EIA permit을 거친다. 주 환경승인과 소방·항공·교통 등 추가 clearance 여부도 사업유형·입지별로 확인한다.",
+          "applicability": "주·FCT 계획허가가 필요한 사업 및 EIA Act·주 환경법 적용 가능 사업",
+          "authorityIds": ["state-planning-authority", "fmenv-ead"],
+          "basis": [
+            {"instrumentId": "NGA-EIA-ACT-CAP-E12", "provisions": ["project registration, screening, scoping, review and permit"]},
+            {"instrumentId": "NGA-LAGOS-PERMIT-CONTROL", "provisions": ["state planning-permit example"]}
+          ],
+          "evidence": ["건축주·신청인·주/FCT 관할", "계획·건축허가 체크리스트", "EAD 등록·screening·EIA 결정", "주 환경·소방 등 선행동의와 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 주·FCT 허가와 연방 EIA 유형, 주 환경·소방 등 추가승인의 선후관계는 무엇인가?",
+          "conclusion": "주 계획허가와 연방 EIA는 관할과 절차가 다르므로 각각의 완비일·보완·승인조건을 통합 일정으로 관리한다.",
+          "verificationScope": "EAD의 2026년 현행 업무·접수안내와 라고스 공식 계획허가 예시를 확인했다. 대상 주의 추가 승인·수수료·접수관행은 현지 확인 대상이다.",
+          "referenceLabel": "주 계획허가·연방 EIA"
+        },
+        "control-completion": {
+          "oneLiner": "주별 코드 채택, 등록 전문가, 착공·단계검사·보험과 사용적합성증명을 계약·인계 Gate로 둔다.",
+          "summary": "National Building Code는 국가 기술 벤치마크지만 법적 채택과 집행은 주별로 달라질 수 있다. 라고스 예시에서는 계획허가 후 착공승인, 단계검사, 일정 규모의 보험 확인, 최종 Certificate of Completion and Fitness for Habitation을 요구하므로 대상 주의 대응 절차를 확인한다.",
+          "applicability": "관할 주의 건축통제·검사·준공 또는 사용적합성 절차 대상 공사",
+          "authorityIds": ["state-building-control", "fmhud"],
+          "basis": [
+            {"instrumentId": "NGA-NBC-2006", "provisions": ["pre-design, design, construction and post-construction benchmark"]},
+            {"instrumentId": "NGA-LAGOS-PERMIT-CONTROL", "provisions": ["commencement, stage inspection, insurance and fitness certificate example"]}
+          ],
+          "evidence": ["대상 주의 코드 채택·적용판", "등록 건축사·기술자·시공자·검사자", "착공승인·단계검사·시험기록", "공사보험·준공·사용적합성 증명과 실제 비용"],
+          "decisionQuestion": "대상 주에서 적용되는 코드·전문자격·보험·단계검사와 준공·사용증명의 정확한 절차는 무엇인가?",
+          "conclusion": "국가건축기준의 존재만으로 준공요건을 확정하지 말고 주별 채택·검사·보험·사용증명 조건을 입찰·인계 문서에 고정해야 한다.",
+          "verificationScope": "연방부의 공식 National Building Code와 LASBCA의 착공·검사·보험·사용적합성 절차를 확인했다. 다른 주의 대응기관·보험사·검사비용은 현지 확인 대상이다.",
+          "referenceLabel": "National Building Code·주 건축통제"
+        }
+      }
+    },
+    {
+      "slug": "rwanda",
+      "name": "르완다",
+      "nameEn": "Rwanda",
+      "iso3": "RWA",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "district-osc",
+          "name": "City of Kigali or District One Stop Centre",
+          "nameKo": "키갈리시 또는 관할 District 원스톱센터(OSC)",
+          "role": "계획검토, 건축허가, 현장검사와 점유허가를 BPMIS로 처리",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.bpmis.gov.rw/"
+        },
+        {
+          "id": "rha",
+          "name": "Rwanda Housing Authority",
+          "nameKo": "르완다 주택청(RHA)",
+          "role": "건축기준·산업규제, 지방 집행감독과 Category 4·5 건축허가 기술검토를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.rha.gov.rw/2/regulation-of-construction-industry"
+        },
+        {
+          "id": "rdb-rema",
+          "name": "Rwanda Development Board and Rwanda Environment Management Authority",
+          "nameKo": "르완다개발청(RDB)·환경관리청(REMA)",
+          "role": "환경영향평가·환경승인 및 환경법·지침 운영",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.rema.gov.rw/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "RWA-URBAN-BUILDING-REG-2019",
+          "title": "Ministerial Order determining urban planning and building regulations, Official Gazette 16 April 2019",
+          "titleKo": "2019년 도시계획·건축 규정 장관령",
+          "kind": "regulation",
+          "status": "in_force",
+          "issuedOn": "2019-04-16",
+          "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+          "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+          "verificationLevel": "law-linked",
+          "note": "도시계획 기준, 건축물 Category, 건축허가·점유허가의 국가 절차를 규정한다."
+        },
+        {
+          "id": "RWA-BUILDING-CODE-2019",
+          "title": "Rwanda Building Code, 2019",
+          "titleKo": "르완다 건축기준 2019",
+          "kind": "code",
+          "status": "in_force",
+          "issuedOn": "2019-04-16",
+          "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+          "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "RWA-BUILDING-CONTROL-2E",
+          "title": "Rwanda Building Control Regulations, 2nd Edition",
+          "titleKo": "르완다 건축통제규정 제2판",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
+          "officialPdfUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
+          "verificationLevel": "source-linked",
+          "note": "OSC의 허가·검사·점유허가 운영기준이다. 2019 규정과 함께 적용되는 최신판인지 사업 시점에 확인한다."
+        },
+        {
+          "id": "RWA-ENV-LAW-48-2018",
+          "title": "Law No. 48/2018 of 13 August 2018 on Environment",
+          "titleKo": "환경법 제48/2018호",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "2018-08-13",
+          "officialUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
+          "officialPdfUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "RWA-BPMIS",
+          "title": "Electronic Building Permit Management Information System",
+          "titleKo": "전자 건축허가관리시스템(BPMIS)",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.bpmis.gov.rw/",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "국가·지방 도시계획과 필지 zoning을 BPMIS·OSC에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
+          "summary": "2019 도시계획·건축 규정과 관할 Master Plan·detailed plan이 필지 개발 가능성을 결정한다. 토지권원·parcel ID와 zoning을 기준으로 허용용도, plot coverage·FAR·높이·이격·주차, 경사지·배수·재해·유틸리티 조건을 OSC에 서면 확인한다.",
+          "applicability": "르완다에서 신축·증축·용도변경 또는 부지개발을 추진하는 건축사업",
+          "authorityIds": ["district-osc", "rha"],
+          "basis": [
+            {"instrumentId": "RWA-URBAN-BUILDING-REG-2019", "provisions": ["urban planning and site-development controls"]},
+            {"instrumentId": "RWA-BPMIS", "provisions": ["OSC planning and permit workflow"]}
+          ],
+          "evidence": ["토지권원·parcel ID·경계측량", "현행 Master Plan·detailed plan·zoning", "필지별 coverage·FAR·높이·이격·주차", "경사지·지반·침수·배수·전력·상수 용량"],
+          "decisionQuestion": "대상 필지 zoning의 허용용도·coverage·FAR·높이·이격·주차와 경사지·재해·기반시설 조건은 무엇인가?",
+          "conclusion": "국가 규정의 일반기준만으로 대상 필지 수치를 확정할 수 없으므로 parcel별 계획확인과 OSC 회신을 개념설계 전제조건으로 둔다.",
+          "verificationScope": "2019 공식 관보 규정, BPMIS와 Kigali OSC의 계획·허가 역할을 확인했다. 대상 District의 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "2019 도시계획·건축 규정"
+        },
+        "permit-environment": {
+          "oneLiner": "건축물 Category와 OSC·RHA 허가권, 환경법상 EIA 분류를 BPMIS 접수 전에 확정한다.",
+          "summary": "2019 규정은 건축물 Category와 신축·수선·철거·용도변경·점유허가 유형을 정하며 OSC가 BPMIS로 처리한다. RHA는 Category 4·5 기술검토 권한을 가진다. 환경법과 현행 장관령 목록에 따라 EIA 필요성·승인기관·선행관계를 별도로 확인한다.",
+          "applicability": "BPMIS 건축허가 대상 및 환경법상 EIA·환경승인 분류대상 사업",
+          "authorityIds": ["district-osc", "rha", "rdb-rema"],
+          "basis": [
+            {"instrumentId": "RWA-URBAN-BUILDING-REG-2019", "provisions": ["Arts. 10 onward; building categories and permits"]},
+            {"instrumentId": "RWA-ENV-LAW-48-2018", "provisions": ["environmental assessment framework"]},
+            {"instrumentId": "RWA-BPMIS", "provisions": ["online permit and inspection services"]}
+          ],
+          "evidence": ["건축주·신청건축사·OSC 관할", "시설용도·면적·층수·재실인원별 Category", "RDB·REMA 환경 스크리닝·EIA 결정", "BPMIS 최신 서류·수수료·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 건축물 Category·허가권자와 환경평가 유형·승인기관·선행조건은 무엇인가?",
+          "conclusion": "건축물 Category와 EIA 유형이 허가권자·도서·기간을 바꾸므로 설계 착수 전에 OSC·RHA와 환경기관의 서면 분류를 받아야 한다.",
+          "verificationScope": "2019 관보 규정의 허가유형, RHA의 Category 4·5 역할, BPMIS와 환경법 원문을 확인했다. 최신 EIA 목록·수수료·실제 기간은 기관 확인 대상이다.",
+          "referenceLabel": "BPMIS 건축허가·환경법 제48/2018호"
+        },
+        "control-completion": {
+          "oneLiner": "등록 전문가, 코드 준수, BPMIS 검사통지와 최종 Occupancy Permit을 개장 전 Gate로 둔다.",
+          "summary": "Rwanda Building Code와 Building Control Regulations는 등록 설계·기술자, 승인도서, 현장검사·통지와 최종 점유검사를 연결한다. OSC의 최종검사 후 Occupancy Permit을 받아야 하며 전문책임·공사보험·시험·소방·설비·as-built 조건을 계약에 반영한다.",
+          "applicability": "건축허가를 받아 시공하고 BPMIS Occupancy Permit이 필요한 건축물",
+          "authorityIds": ["district-osc", "rha"],
+          "basis": [
+            {"instrumentId": "RWA-BUILDING-CODE-2019", "provisions": ["design, construction, safety and occupancy minimum requirements"]},
+            {"instrumentId": "RWA-BUILDING-CONTROL-2E", "provisions": ["Part 5 final inspection and occupation permit"]},
+            {"instrumentId": "RWA-BPMIS", "provisions": ["inspection notice and occupancy permit services"]}
+          ],
+          "evidence": ["등록 건축사·기술자·시공자 자격", "검사통지·현장기록·시험계획", "소방·설비시운전·as-built", "Occupancy Permit·보험·현지 비용견적"],
+          "decisionQuestion": "필요 전문자격·보험·검사통지와 최종검사·Occupancy Permit의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "르완다에서는 건축허가와 점유허가가 별도 서비스이므로 Occupancy Permit을 시설 인계·운영개시의 명시적 선행조건으로 관리한다.",
+          "verificationScope": "RHA 공식 코드·통제규정과 BPMIS의 검사·점유허가 서비스를 확인했다. 현지 전문가·검사기관·보험사·실제 비용은 시장조사 대상이다.",
+          "referenceLabel": "Rwanda Building Code·Occupancy Permit"
+        }
+      }
     }
   ]
 }

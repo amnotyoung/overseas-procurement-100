@@ -1,0 +1,819 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "dr-congo",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "DR콩고",
+    "nameEn": "Democratic Republic of the Congo",
+    "iso3": "COD",
+    "region": "아프리카"
+  },
+  "purpose": "DR콩고 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "2014년 장관령 건축허가 발급 규정·건축허가 절차 매뉴얼·2022년 6월 13일 장관령 제058호 GUPEC 운영체계·법률 제11/009호 환경보호 기본원칙법의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "DR콩고 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권원·지적경계와 관할 계획·도로·지역별 건축처방을 확인해 필지 규제표를 확정한다.",
+        "authorityIds": [
+          "urbanisme-local",
+          "gupec"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "건축허가 규정·필지계획 확인",
+            "instrumentId": "COD-BUILDING-ORDER-2014",
+            "provisions": [
+              "site and planning dossier framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 적법한 권원·지적경계와 현행 계획상 허용용도·밀도·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
+        "authorityIds": [
+          "urbanisme-local",
+          "gupec"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "건축허가 규정·필지계획 확인",
+            "instrumentId": "COD-BUILDING-ORDER-2014",
+            "provisions": [
+              "site and planning dossier framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "대상지의 GUPEC 운영 여부와 최종 허가권자, 환경·사회영향평가 유형을 함께 확정한다.",
+        "authorityIds": [
+          "gupec",
+          "urbanisme-local",
+          "aced"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "GUPEC·환경법 제11/009호",
+            "instrumentId": "COD-GUPEC-ORDER-058-2022",
+            "provisions": [
+              "GUPEC implementation framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "대상지에서 GUPEC 또는 어느 지방기관이 허가하며 ACE 환경심사의 유형·선행조건·실제 접수경로는 무엇인가?",
+        "authorityIds": [
+          "gupec",
+          "urbanisme-local",
+          "aced"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "GUPEC·환경법 제11/009호",
+            "instrumentId": "COD-GUPEC-ORDER-058-2022",
+            "provisions": [
+              "GUPEC implementation framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "현지 자격기술자, GUPEC·관할기관의 단계검사와 적합성증명서를 사용개시 전 Gate로 관리한다.",
+        "authorityIds": [
+          "gupec",
+          "urbanisme-local"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "GUPEC 적합성증명",
+            "instrumentId": "COD-GUPEC-ORDER-058-2022",
+            "provisions": [
+              "permit and conformity-certificate functions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "필요 전문자격·검사기관·보험과 착공·중간검사·적합성증명서의 절차·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "gupec",
+          "urbanisme-local"
+        ],
+        "requirementIds": [
+          "COD-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "GUPEC 적합성증명",
+            "instrumentId": "COD-GUPEC-ORDER-058-2022",
+            "provisions": [
+              "permit and conformity-certificate functions"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "dr-congo-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "DR콩고 도시계획·부지규제",
+      "oneLiner": "토지권원·지적경계와 관할 계획·도로·지역별 건축처방을 확인해 필지 규제표를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "건축허가 규정과 공식 절차 매뉴얼에서 토지·계획자료 요구구조를 확인했다. 대상지 계획의 현행성·필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "COD-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "COD-BLD-Q-001",
+        "COD-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "COD-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "COD-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "COD-BLD-F-001",
+        "COD-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "dr-congo-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "DR콩고 건축허가·환경심사",
+      "oneLiner": "대상지의 GUPEC 운영 여부와 최종 허가권자, 환경·사회영향평가 유형을 함께 확정한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "2026년 GUPEC 공식 사이트와 2022년 운영 장관령, 환경부의 환경법 원문을 연결했다. 실제 관할·수수료·접수관행·전체기간은 대상지에서 확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "COD-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "COD-BLD-Q-003",
+        "COD-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "COD-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "COD-BLD-F-003",
+        "COD-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "dr-congo-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "DR콩고 기술검사·보험·준공제도",
+      "oneLiner": "현지 자격기술자, GUPEC·관할기관의 단계검사와 적합성증명서를 사용개시 전 Gate로 관리한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "GUPEC의 현행 업무와 기존 건축허가 법체계에서 시공통제·적합성증명 구조를 확인했다. 현지 전문가·검사기관·보험사와 비용은 시장조사 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "COD-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "COD-BLD-Q-005",
+        "COD-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "COD-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "COD-BLD-F-005",
+        "COD-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "gupec",
+      "name": "Guichet Unique de Delivrance du Permis de Construire",
+      "nameKo": "건축허가 원스톱창구(GUPEC)",
+      "role": "운영 지역에서 건축·철거허가 접수와 적합성증명서 발급을 통합하며 지방 기술서비스를 조정",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://gupec-rdc.com/"
+    },
+    {
+      "id": "urbanisme-local",
+      "name": "Provincial and local urban planning, land and cadastral services",
+      "nameKo": "관할 주·지방 도시계획·토지·지적기관",
+      "role": "필지 권원·지적·계획·도로·용도와 GUPEC 미운영 지역의 건축허가 집행을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.investindrc.cd/fr/Permis-de-construire"
+    },
+    {
+      "id": "aced",
+      "name": "Agence Congolaise de l'Environnement",
+      "nameKo": "콩고 환경청(ACE)",
+      "role": "환경·사회영향평가와 환경승인·모니터링을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://medd.gouv.cd/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "COD-GUPEC-ORDER-058-2022",
+      "title": "Arrete ministeriel n° CAB/MIN.ATUHITPR/007/2022 du 13 juin 2022 relatif au GUPEC",
+      "titleKo": "2022년 6월 13일 장관령 제058호 GUPEC 운영체계",
+      "kind": "order",
+      "status": "continuity_unverified",
+      "issuedOn": "2022-06-13",
+      "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/AM.058013.06.2022.html",
+      "verificationLevel": "law-linked",
+      "note": "GUPEC의 통합업무와 지방 전개 근거다. 2026년 기관 사이트는 Kinshasa와 7개 시범 주 운영을 명시하므로 대상지의 실제 창구를 확인한다."
+    },
+    {
+      "id": "COD-BUILDING-ORDER-2014",
+      "title": "Arrete ministeriel n° CAB/MIN-ATUHITPR/006/2014 portant reglementation de l'octroi du permis de construire",
+      "titleKo": "2014년 장관령 건축허가 발급 규정",
+      "kind": "order",
+      "status": "continuity_unverified",
+      "issuedOn": "2014-04-04",
+      "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/AM.006.2010.04.04.2014.htm",
+      "verificationLevel": "law-linked",
+      "note": "필지·계획조건, 설계자와 허가 원칙을 확인하는 기초 법원이다. 후속 2016·2018년 개정 및 2022년 GUPEC 개편과 함께 적용조문을 재확인한다."
+    },
+    {
+      "id": "COD-ENV-LAW-11-009",
+      "title": "Loi n° 11/009 du 09 juillet 2011 portant principes fondamentaux relatifs a la protection de l'environnement",
+      "titleKo": "법률 제11/009호 환경보호 기본원칙법",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2011-07-09",
+      "officialUrl": "https://medd.gouv.cd/loi-n-11-009-du-09-juillet-2011-portant-principes-fondamentaux-relatifs-a-la-protection-de-lenvironnement/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "COD-PERMIT-MANUAL",
+      "title": "Manuel des procedures d'octroi du permis de construire",
+      "titleKo": "건축허가 절차 매뉴얼",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.leganet.cd/Legislation/Droit%20administratif/Urbanismevoiries/Manuel.26.06.2013.htm",
+      "verificationLevel": "source-linked",
+      "note": "토지·설계·접수·심사·적합성증명 구조를 보여주는 과거 공식 절차다. 기재 처리기한은 현행 GUPEC의 실제 일정으로 대체 확인한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "COD-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "DR콩고에서 신축·증축·철거·용도변경 또는 부지개발을 추진하는 ODA 건축사업",
+      "requirement": "건축허가 신청은 토지 이용권과 지적·배치 자료, 관할 도시계획 조건을 전제로 한다. 실제 허용용도·건폐율·용적률·높이·이격·주차와 도로·침수·지반·유틸리티 조건은 대상 주·도시의 계획문서와 필지별 처방으로 확인해야 한다.",
+      "authorityIds": [
+        "urbanisme-local",
+        "gupec"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COD-BUILDING-ORDER-2014",
+          "provisions": [
+            "site and planning dossier framework"
+          ]
+        },
+        {
+          "instrumentId": "COD-PERMIT-MANUAL",
+          "provisions": [
+            "land availability and design dossier stages"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·지적도·경계측량",
+        "관할 도시계획·도로·servitude 확인",
+        "필지별 용도·밀도·높이·이격·주차",
+        "지반·침수·배수·전력·상수 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "COD-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "건축허가가 필요한 공사와 환경·사회영향평가 또는 환경승인 대상 개발사업",
+      "requirement": "GUPEC는 운영 지역에서 건축·철거허가와 적합성증명 업무를 통합하지만 전국 실제 전개는 진행 중이다. 건축허가와 별도로 환경법 및 시행체계에 따라 ACE의 환경·사회영향평가 또는 환경승인 경로를 분류하고 선후관계를 확인해야 한다.",
+      "authorityIds": [
+        "gupec",
+        "urbanisme-local",
+        "aced"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COD-GUPEC-ORDER-058-2022",
+          "provisions": [
+            "GUPEC implementation framework"
+          ]
+        },
+        {
+          "instrumentId": "COD-ENV-LAW-11-009",
+          "provisions": [
+            "environmental and social assessment framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·토지권리자 관계",
+        "GUPEC 운영지역·최종 허가권자 회신",
+        "ACE 환경 스크리닝·승인유형",
+        "현행 서식·수수료·보완정지·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "COD-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "허가를 받아 시공하며 준공 적합성 확인이 필요한 건축공사",
+      "requirement": "허가도서는 적격 건축사·기술자가 작성하고 승인내용대로 시공되어야 하며 관할기관의 현장통제와 준공확인이 뒤따른다. GUPEC 운영지역에서는 certificat de conformite 발급 여부를 확인하고, 책임보험·공사보험·검사기관·시험·인계조건은 계약 전에 서면화한다.",
+      "authorityIds": [
+        "gupec",
+        "urbanisme-local"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "COD-GUPEC-ORDER-058-2022",
+          "provisions": [
+            "permit and conformity-certificate functions"
+          ]
+        },
+        {
+          "instrumentId": "COD-BUILDING-ORDER-2014",
+          "provisions": [
+            "qualified design and construction-control framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 건축사·기술자·시공자 자격",
+        "착공통지·단계검사·시험계획",
+        "as-built·설비시운전·소방 확인",
+        "적합성증명서·보험증권·비용견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 적법한 권원·지적경계와 현행 계획상 허용용도·밀도·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "대상지에서 GUPEC 또는 어느 지방기관이 허가하며 ACE 환경심사의 유형·선행조건·실제 접수경로는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "필요 전문자격·검사기관·보험과 착공·중간검사·적합성증명서의 절차·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "COD-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "COD-BUILDING-ORDER-2014",
+          "provisions": [
+            "site and planning dossier framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "COD-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 적법한 권원·지적경계와 현행 계획상 허용용도·밀도·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·지적도·경계측량",
+        "관할 도시계획·도로·servitude 확인",
+        "필지별 용도·밀도·높이·이격·주차",
+        "지반·침수·배수·전력·상수 용량"
+      ],
+      "confirmWith": [
+        "urbanisme-local",
+        "gupec"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COD-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "urbanisme-local",
+        "gupec"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COD-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "대상지에서 GUPEC 또는 어느 지방기관이 허가하며 ACE 환경심사의 유형·선행조건·실제 접수경로는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·토지권리자 관계",
+        "GUPEC 운영지역·최종 허가권자 회신",
+        "ACE 환경 스크리닝·승인유형",
+        "현행 서식·수수료·보완정지·실제 전체기간"
+      ],
+      "confirmWith": [
+        "gupec",
+        "urbanisme-local",
+        "aced"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COD-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "gupec",
+        "urbanisme-local",
+        "aced"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COD-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "필요 전문자격·검사기관·보험과 착공·중간검사·적합성증명서의 절차·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "현지 건축사·기술자·시공자 자격",
+        "착공통지·단계검사·시험계획",
+        "as-built·설비시운전·소방 확인",
+        "적합성증명서·보험증권·비용견적"
+      ],
+      "confirmWith": [
+        "gupec",
+        "urbanisme-local"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "COD-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "gupec",
+        "urbanisme-local"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "COD-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "COD-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "COD-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "COD-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "COD-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "COD-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "COD-BLD-C-001",
+      "confidence": "conditional",
+      "text": "DR콩고의 중앙 허가체계만으로 필지 수치를 확정할 수 없으므로 관할 주·도시의 계획문서와 토지·지적 확인을 개념설계 선행 Gate로 둔다.",
+      "basis": [
+        "COD-BUILDING-ORDER-2014",
+        "COD-PERMIT-MANUAL"
+      ]
+    },
+    {
+      "id": "COD-BLD-C-002",
+      "confidence": "conditional",
+      "text": "GUPEC 명칭만 보고 전국 단일창구로 가정하면 안 되며 대상지 운영상태와 ACE 환경결정을 함께 받아야 착공일정을 산정할 수 있다.",
+      "basis": [
+        "COD-GUPEC-ORDER-058-2022",
+        "COD-ENV-LAW-11-009"
+      ]
+    },
+    {
+      "id": "COD-BLD-C-003",
+      "confidence": "conditional",
+      "text": "공사완료와 적법한 사용은 구분해야 하므로 적합성증명서와 필요한 안전·설비 확인을 ODA 시설 인계·개장 조건에 넣는다.",
+      "basis": [
+        "COD-GUPEC-ORDER-058-2022",
+        "COD-BUILDING-ORDER-2014"
+      ]
+    }
+  ]
+}
