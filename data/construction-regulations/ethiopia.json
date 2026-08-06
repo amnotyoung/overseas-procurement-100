@@ -1,0 +1,820 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "ethiopia",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "에티오피아",
+    "nameEn": "Ethiopia",
+    "iso3": "ETH",
+    "region": "아프리카"
+  },
+  "purpose": "에티오피아 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "에티오피아 건축법 포고령 제1356/2024호·도시계획·토지이용 법체계 공식 대장·환경영향평가 포고령 제299/2002호·에티오피아 비즈니스포털 건축허가 절차의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "에티오피아 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다.",
+        "authorityIds": [
+          "city-building-authority",
+          "mui-eca"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "건축법 제1356/2024호·plan agreement",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "plan agreement and construction-permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 토지권리와 계획상 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+        "authorityIds": [
+          "city-building-authority",
+          "mui-eca"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "건축법 제1356/2024호·plan agreement",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "plan agreement and construction-permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다.",
+        "authorityIds": [
+          "city-building-authority",
+          "epa-regional-env"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "설계·건축허가·EIA 관할",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "design approval, building category and construction permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건물 Category·설계승인·허가권자와 연방 또는 지역 EIA 유형·승인기관은 무엇인가?",
+        "authorityIds": [
+          "city-building-authority",
+          "epa-regional-env"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "설계·건축허가·EIA 관할",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "design approval, building category and construction permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "EBCS와 등록 전문가·시공자, 현장감독·책임보험 및 building use permit을 인계 Gate로 둔다.",
+        "authorityIds": [
+          "city-building-authority",
+          "mui-eca"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "EBCS·building use permit",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "mandatory building codes, supervision, professional liability and use permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "건물 Category별 전문자격·책임보험·검사와 building use permit의 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "city-building-authority",
+          "mui-eca"
+        ],
+        "requirementIds": [
+          "ETH-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "EBCS·building use permit",
+            "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+            "provisions": [
+              "mandatory building codes, supervision, professional liability and use permit"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "ethiopia-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "에티오피아 도시계획·부지규제",
+      "oneLiner": "도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "신 건축법 원문과 공식 도시 건축허가 포털을 확인했다. 대상 도시 계획·필지수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "ETH-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "ETH-BLD-Q-001",
+        "ETH-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "ETH-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "ETH-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "ETH-BLD-F-001",
+        "ETH-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "ethiopia-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "에티오피아 건축허가·환경심사",
+      "oneLiner": "설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "신 건축법, 연방 EIA법과 Addis Ababa 공식 절차 예시를 연결했다. 하위규정 과도기·지역 절차·수수료·기간은 현지 확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "ETH-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "ETH-BLD-Q-003",
+        "ETH-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "ETH-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "ETH-BLD-F-003",
+        "ETH-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "ethiopia-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "에티오피아 기술검사·보험·준공제도",
+      "oneLiner": "EBCS와 등록 전문가·시공자, 현장감독·책임보험 및 building use permit을 인계 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "포고령 제1356/2024호와 건설청·공식 도시절차를 확인했다. 하위규정·검사횟수·현지 전문가·보험사·비용은 대상지 조사사항이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "ETH-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "ETH-BLD-Q-005",
+        "ETH-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "ETH-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "ETH-BLD-F-005",
+        "ETH-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "city-building-authority",
+      "name": "Competent city or regional building construction licensing and supervision institution",
+      "nameKo": "관할 도시·지역 건축허가·감독기관",
+      "role": "도시계획 적합, 설계승인, 건축허가·현장감독과 건물사용허가를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://new.business.gov.et/Construction%20Permits"
+    },
+    {
+      "id": "mui-eca",
+      "name": "Ministry of Urban and Infrastructure and Ethiopian Construction Authority",
+      "nameKo": "도시·인프라부 및 에티오피아 건설청",
+      "role": "건축법·EBCS, 건설업·전문가 등록과 국가 품질감독을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.eca.gov.et/"
+    },
+    {
+      "id": "epa-regional-env",
+      "name": "Ethiopian Environmental Protection Authority or competent regional environmental agency",
+      "nameKo": "에티오피아 환경보호청 또는 관할 지역 환경기관",
+      "role": "연방·지역 관할에 따라 환경영향평가와 환경승인을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://cleanethiopia.epa.gov.et/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "ETH-BUILDING-PROC-1356-2024",
+      "title": "Ethiopian Building Proclamation No. 1356/2024",
+      "titleKo": "에티오피아 건축법 포고령 제1356/2024호",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.ffic.gov.et/Portals/0/1356-2017.pdf",
+      "officialPdfUrl": "https://www.ffic.gov.et/Portals/0/1356-2017.pdf",
+      "verificationLevel": "law-linked",
+      "note": "구 포고령 제624/2009호를 대체하고 설계승인·건축허가·감독·사용허가·전문책임을 규정한다. 2026년 현재 하위규정의 과도기 적용을 확인한다."
+    },
+    {
+      "id": "ETH-URBAN-PLAN-PROC",
+      "title": "Urban Plans and land-use legal framework — official ministry collection",
+      "titleKo": "도시계획·토지이용 법체계 공식 대장",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://mui.gov.et/proclamations/",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ETH-EIA-PROC-299-2002",
+      "title": "Environmental Impact Assessment Proclamation No. 299/2002",
+      "titleKo": "환경영향평가 포고령 제299/2002호",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2002-12-03",
+      "officialUrl": "https://www.fsc.gov.et/Digital-Law-Library/Federal-Laws/ArtMID/1179/ArticleID/632/Environmental-Impact-Assessment-Proclamation-No-2992002",
+      "verificationLevel": "law-linked",
+      "note": "허가기관이 투자·영업허가 전 환경요건 이행을 확인하도록 하는 기본법이다. 연방·지역별 최신 절차와 대체입법 여부를 확인한다."
+    },
+    {
+      "id": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+      "title": "Ethiopian Business Portal — Construction Permits",
+      "titleKo": "에티오피아 비즈니스포털 건축허가 절차",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://new.business.gov.et/Construction%20Permits",
+      "verificationLevel": "source-linked",
+      "note": "Addis Ababa의 토지정보·설계승인·건축허가·유틸리티 연결을 보여주는 공식 도시 집행 예시다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "ETH-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "에티오피아의 적용 도시 및 도시 밖 공공·산업 등 법정 대상 건축물",
+      "requirement": "건축법은 건축허가 전 도시계획과 설계의 일치를 요구하며 토지권리·cadastral 자료가 선행된다. 지역·도시별 계획에 따라 허용용도·site coverage·FAR·높이·이격·주차, 도로·침수·지반·유틸리티를 확인한다.",
+      "authorityIds": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+          "provisions": [
+            "plan agreement and construction-permit framework"
+          ]
+        },
+        {
+          "instrumentId": "ETH-URBAN-PLAN-PROC",
+          "provisions": [
+            "urban plan and land-use framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "임차권·토지보유 증서·지적도",
+        "관할 구조·지역계획과 plan agreement",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "지반·침수·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "ETH-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "신 건축법상 허가대상과 연방·지역 EIA법 적용 가능 사업",
+      "requirement": "관할 도시·지역기관이 설계승인과 construction permit을 발급하며 신 건축법의 건물 Category와 적용범위를 확인해야 한다. 환경영향평가는 사업 위치·사업주체·영향규모에 따라 연방 EPA 또는 지역기관이 담당하므로 EIA 유형과 건축허가 선행관계를 서면화한다.",
+      "authorityIds": [
+        "city-building-authority",
+        "epa-regional-env"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+          "provisions": [
+            "design approval, building category and construction permit"
+          ]
+        },
+        {
+          "instrumentId": "ETH-EIA-PROC-299-2002",
+          "provisions": [
+            "prior environmental authorization framework"
+          ]
+        },
+        {
+          "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+          "provisions": [
+            "city design approval and permit workflow example"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·도시/지역 관할",
+        "건물 Category·설계승인·허가도서",
+        "연방/지역 환경관할·EIA 결정",
+        "현행 수수료·접수·보완·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "ETH-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "포고령 제1356/2024호의 건축기준·감독·사용허가 적용대상 공사",
+      "requirement": "신 건축법은 Ethiopian Building Codes의 강제적용, 적격 설계자·컨설턴트·시공자, 공사감독과 building use permit을 규정한다. 건물 Category별 검사·전문책임·보험·시험·소방·as-built 요구와 하위규정 과도기를 관할기관에 확인한다.",
+      "authorityIds": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+          "provisions": [
+            "mandatory building codes, supervision, professional liability and use permit"
+          ]
+        },
+        {
+          "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+          "provisions": [
+            "construction control and utility-connection workflow example"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "EBCS 적용판·설계기준 목록",
+        "등록 건축사·기술자·컨설턴트·시공자",
+        "착공·검사·시험·소방·as-built",
+        "building use permit·책임보험·현지 비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 토지권리와 계획상 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건물 Category·설계승인·허가권자와 연방 또는 지역 EIA 유형·승인기관은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "건물 Category별 전문자격·책임보험·검사와 building use permit의 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "ETH-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "ETH-BUILDING-PROC-1356-2024",
+          "provisions": [
+            "plan agreement and construction-permit framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "ETH-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 토지권리와 계획상 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "임차권·토지보유 증서·지적도",
+        "관할 구조·지역계획과 plan agreement",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "지반·침수·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "ETH-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "ETH-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건물 Category·설계승인·허가권자와 연방 또는 지역 EIA 유형·승인기관은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·도시/지역 관할",
+        "건물 Category·설계승인·허가도서",
+        "연방/지역 환경관할·EIA 결정",
+        "현행 수수료·접수·보완·실제 전체기간"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "epa-regional-env"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "ETH-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "epa-regional-env"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "ETH-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "건물 Category별 전문자격·책임보험·검사와 building use permit의 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "EBCS 적용판·설계기준 목록",
+        "등록 건축사·기술자·컨설턴트·시공자",
+        "착공·검사·시험·소방·as-built",
+        "building use permit·책임보험·현지 비용"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "ETH-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "city-building-authority",
+        "mui-eca"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "ETH-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "ETH-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "ETH-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "ETH-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "ETH-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "ETH-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "ETH-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Addis Ababa의 수치나 국가 건축법만으로 다른 도시 필지의 개발가능 규모를 확정할 수 없으므로 관할 plan agreement를 선행한다.",
+      "basis": [
+        "ETH-BUILDING-PROC-1356-2024",
+        "ETH-URBAN-PLAN-PROC"
+      ]
+    },
+    {
+      "id": "ETH-BLD-C-002",
+      "confidence": "conditional",
+      "text": "연방·지역 권한이 갈릴 수 있으므로 건축허가와 EIA 관할을 대상지에서 확정하기 전에는 전체 인허가 일정을 고정하지 않는다.",
+      "basis": [
+        "ETH-BUILDING-PROC-1356-2024",
+        "ETH-EIA-PROC-299-2002",
+        "ETH-CONSTRUCTION-PERMIT-PORTAL"
+      ]
+    },
+    {
+      "id": "ETH-BLD-C-003",
+      "confidence": "conditional",
+      "text": "신 건축법은 공사완료와 건물사용을 구분하므로 use permit과 적용 EBCS·검사증빙을 개장·인계 조건에 포함한다.",
+      "basis": [
+        "ETH-BUILDING-PROC-1356-2024",
+        "ETH-CONSTRUCTION-PERMIT-PORTAL"
+      ]
+    }
+  ]
+}

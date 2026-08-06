@@ -2090,6 +2090,507 @@
           "referenceLabel": "Rwanda Building Code·Occupancy Permit"
         }
       }
+    },
+    {
+      "slug": "morocco",
+      "name": "모로코",
+      "nameEn": "Morocco",
+      "iso3": "MAR",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "commune",
+          "name": "President of the competent communal council",
+          "nameKo": "관할 코뮌 의회 의장",
+          "role": "건축허가와 준공 후 주거허가 또는 적합성증명서를 발급",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://aut.gov.ma/reglement/"
+        },
+        {
+          "id": "urban-agency",
+          "name": "Competent Urban Agency",
+          "nameKo": "관할 도시계획청(Agence urbaine)",
+          "role": "도시계획문서 작성·정보제공, 허가도서 적합의견과 공사 준수점검을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://aut.gov.ma/"
+        },
+        {
+          "id": "environment-department",
+          "name": "Department of Sustainable Development and competent environmental evaluation committee",
+          "nameKo": "지속가능개발부서·관할 환경평가위원회",
+          "role": "EIE·NIE 등 환경평가와 환경수용성 결정을 전자서비스로 처리",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://e-services.environnement.gov.ma/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "MAR-URBAN-LAW-12-90",
+          "title": "Loi n° 12-90 relative a l'urbanisme, as amended by Loi n° 66-12",
+          "titleKo": "도시계획법 제12-90호(제66-12호 개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1992-06-17",
+          "officialUrl": "https://aut.gov.ma/s/website/rapports/11.pdf",
+          "officialPdfUrl": "https://aut.gov.ma/s/website/rapports/11.pdf",
+          "verificationLevel": "law-linked",
+          "note": "허가·현장관리·permis d'habiter·certificat de conformite의 기본법이며 후속 규정과 함께 적용한다."
+        },
+        {
+          "id": "MAR-RGC-2-18-577",
+          "title": "Decret n° 2-18-577 du 12 juin 2019 approuvant le reglement general de construction",
+          "titleKo": "시행령 제2-18-577호 일반 건축절차규정",
+          "kind": "regulation",
+          "status": "in_force",
+          "issuedOn": "2019-06-12",
+          "officialUrl": "https://aut.gov.ma/reglement/",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "MAR-ENV-LAW-49-17",
+          "title": "Loi n° 49-17 relative a l'evaluation environnementale",
+          "titleKo": "환경평가법 제49-17호",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://e-services.environnement.gov.ma/?lang=en",
+          "verificationLevel": "law-linked",
+          "note": "EIE·NIE·전략환경평가·환경감사의 틀이다. 현재 대상목록과 과도기 적용은 전자서비스에서 확인한다."
+        },
+        {
+          "id": "MAR-TECHNICAL-CODES",
+          "title": "Official collection of Moroccan general construction regulations",
+          "titleKo": "모로코 일반 건축기술규정 공식 대장",
+          "kind": "code",
+          "status": "continuity_unverified",
+          "officialUrl": "https://aut.gov.ma/reglement/",
+          "verificationLevel": "source-linked",
+          "note": "내진 RPS, 화재·패닉, 에너지효율, 접근성 규정의 공식 목록이며 대상 건물에 적용되는 최신판을 확정한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지등기와 관할 도시계획청의 note de renseignements urbanistiques로 필지별 계획수치를 확정한다.",
+          "summary": "법률 제12-90호와 승인된 SDAU·plan d'amenagement·농촌개발계획이 토지이용과 건축가능성을 정한다. 토지권원과 경계를 확인하고 관할 도시계획청에서 허용용도·COS/CUS·높이·이격·주차, 도로·servitude·재해·기반시설 조건을 필지별로 확인한다.",
+          "applicability": "모로코에서 신축·증축·용도변경·택지개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["urban-agency", "commune"],
+          "basis": [
+            {"instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["planning documents and building-control framework"]},
+            {"instrumentId": "MAR-RGC-2-18-577", "provisions": ["planning information and authorization dossier"]}
+          ],
+          "evidence": ["토지등기·지적도·경계측량", "승인 도시계획문서·urbanistic information note", "필지별 용도·COS/CUS·높이·이격·주차", "지반·침수·도로·상하수·전력 인입조건"],
+          "decisionQuestion": "대상 필지의 유효한 계획문서와 허용용도·COS/CUS·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+          "conclusion": "도시별 계획문서가 실제 건축규모를 결정하므로 다른 코뮌의 수치나 국가 기술규정만으로 대상 필지 규모를 확정할 수 없다.",
+          "verificationScope": "공식 도시계획청의 법령대장과 승인계획·정보서비스를 확인했다. 필지 수치·권원·재해·유틸리티는 대상 관할에서 확인한다.",
+          "referenceLabel": "법률 제12-90호·도시계획정보"
+        },
+        "permit-environment": {
+          "oneLiner": "코뮌 건축허가와 EIE·NIE 환경수용성 결정을 분리해 선후관계·서류·기간을 확정한다.",
+          "summary": "코뮌은 도시계획청과 관계기관 의견을 받아 autorisation de construire를 발급하며 2019 RGC가 제출·심사방식을 규정한다. 사업 성격·규모·입지에 따라 환경평가법의 EIE 또는 NIE와 환경수용성 결정이 선행될 수 있다.",
+          "applicability": "건축허가 대상 공사와 법률 제49-17호·관련 목록상 환경평가 대상 사업",
+          "authorityIds": ["commune", "urban-agency", "environment-department"],
+          "basis": [
+            {"instrumentId": "MAR-RGC-2-18-577", "provisions": ["building authorization procedure and required documents"]},
+            {"instrumentId": "MAR-ENV-LAW-49-17", "provisions": ["EIE and NIE framework"]}
+          ],
+          "evidence": ["건축주·신청건축사·관할 코뮌", "건축허가 도서·관계기관 의견", "EIE·NIE·비대상 공식 결정", "최신 수수료·완비일·보완정지·실제 전체기간"],
+          "decisionQuestion": "본 사업의 건축허가권자와 EIE·NIE 유형, 환경수용성 결정의 선행 여부와 실제 처리경로는 무엇인가?",
+          "conclusion": "건축허가와 환경수용성은 별도 법정 판단이므로 환경분류 전에는 전체 인허가 일정·비용을 확정하지 않는다.",
+          "verificationScope": "2019 RGC와 환경부 전자서비스의 현행 EIE·NIE 안내를 확인했다. 대상목록 적용·서류·수수료·실제 기간은 관할기관 확인 대상이다.",
+          "referenceLabel": "RGC 건축허가·환경평가법"
+        },
+        "control-completion": {
+          "oneLiner": "등록 건축사·기술자, 착공·현장기록·기술검사와 비주거 certificat de conformite를 개장 Gate로 둔다.",
+          "summary": "대상 공사는 등록 건축사·전문기술자가 설계·추적하고 착공·종료신고, chantier 기록과 승인도서 준수확인이 필요하다. 완료 후 주거는 permis d'habiter, 비주거는 certificat de conformite를 코뮌에서 받아야 사용 가능하며 내진·화재·에너지 등 적용 기술규정을 확인한다.",
+          "applicability": "허가를 받아 시공하며 준공 후 사용허가 또는 적합성증명이 필요한 건축물",
+          "authorityIds": ["commune", "urban-agency"],
+          "basis": [
+            {"instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Arts. 54-1, 54-2 and 55"]},
+            {"instrumentId": "MAR-TECHNICAL-CODES", "provisions": ["seismic, fire, energy and accessibility code collection"]}
+          ],
+          "evidence": ["Ordre 등록 건축사·기술자·시공자", "착공·종료신고와 cahier de chantier", "기술검사·시험·소방·as-built", "certificat de conformite·보험·검사비용"],
+          "decisionQuestion": "현지 전문가·검사·보험과 비주거 적합성증명 발급의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "비주거 ODA 시설은 공사완료만으로 사용할 수 없으므로 certificat de conformite를 인계·개장 선행조건으로 계약에 반영한다.",
+          "verificationScope": "공식 기술법령집에서 착공·현장기록·완료신고와 비주거 적합성증명 요건을 확인했다. 현지 업체·검사기관·보험사·비용은 시장조사 대상이다.",
+          "referenceLabel": "착공관리·certificat de conformite"
+        }
+      }
+    },
+    {
+      "slug": "mozambique",
+      "name": "모잠비크",
+      "nameEn": "Mozambique",
+      "iso3": "MOZ",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "municipality-district",
+          "name": "Competent municipality or district administration",
+          "nameKo": "관할 지방자치단체 또는 지구 행정기관",
+          "role": "지역계획·도시토지·민간건축 허가, 검사와 사용허가를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.portaldogoverno.gov.mz/"
+        },
+        {
+          "id": "moph",
+          "name": "Ministry of Public Works, Housing and Water Resources",
+          "nameKo": "공공사업·주택·수자원부",
+          "role": "건축·공공시설·기술규정과 중앙 품질정책을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://portaldogoverno.gov.mz/ministerios/ministerio-das-obras-publicas-habitacao-e-recursos-hidricos/"
+        },
+        {
+          "id": "environment-authority",
+          "name": "National Directorate of Environment and Provincial Environmental Services",
+          "nameKo": "국가환경국·주 환경서비스(SPA)",
+          "role": "A+, A, B, C 사전분류와 환경평가·환경허가를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://sgla.mta.gov.mz/contact/arquivos_list1"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "MOZ-RLOP-2-2004",
+          "title": "Decreto n.º 2/2004 — Regime de Licenciamento de Obras Particulares",
+          "titleKo": "시행령 제2/2004호 민간건축공사 허가제도",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2004-03-31",
+          "officialUrl": "https://www.portaldogoverno.gov.mz/por/content/download/11502/91354/version/1/file/BR_112_III_SERIE_2019.pdf",
+          "verificationLevel": "law-linked",
+          "note": "지방 계획문서가 인용하는 국가 허가체계다. 대상 지방정부의 후속 조례와 현행 적용판을 확인한다."
+        },
+        {
+          "id": "MOZ-MAPUTO-BYLAW-2018",
+          "title": "Municipal Building and Urbanisation Regulation — Maputo official example",
+          "titleKo": "마푸투시 건축·도시화 규정(지방 집행 예시)",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.portaldogoverno.gov.mz/por/content/download/9467/72978/version/1/file/BR_136_III_SE%CC%81RIE_2018.pdf",
+          "officialPdfUrl": "https://www.portaldogoverno.gov.mz/por/content/download/9467/72978/version/1/file/BR_136_III_SE%CC%81RIE_2018.pdf",
+          "verificationLevel": "source-linked",
+          "note": "건축허가·책임기술자·검사·licenca de utilizacao의 마푸투 집행 예시로만 사용한다."
+        },
+        {
+          "id": "MOZ-ENV-DECREE-54-2015",
+          "title": "Decreto n.º 54/2015 — Regulamento sobre o Processo de Avaliacao do Impacto Ambiental",
+          "titleKo": "시행령 제54/2015호 환경영향평가 절차규정",
+          "kind": "regulation",
+          "status": "continuity_unverified",
+          "issuedOn": "2015-12-31",
+          "officialUrl": "https://www.inm.gov.mz/pt-br/content/conselho-de-ministros-suplemento-n%C2%BA-28-de-311215-pag-794-469-504-br-n%C2%BA-104-boletim-da",
+          "verificationLevel": "law-linked",
+          "note": "A+, A, B, C 분류와 환경평가·허가의 국가체계다. 2016 정정과 최신 후속지침을 함께 확인한다."
+        },
+        {
+          "id": "MOZ-ENV-LAW-20-97",
+          "title": "Lei do Ambiente n.º 20/97, de 1 de Outubro",
+          "titleKo": "환경법 제20/97호",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1997-10-01",
+          "officialUrl": "https://sgla.mta.gov.mz/contact/arquivos_list1",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "DUAT·지적경계와 관할 도시계획·토지이용계획으로 필지별 개발지표와 인입조건을 확정한다.",
+          "summary": "건축허가와 환경신청은 적법한 DUAT와 필지자료를 전제로 하며 실제 토지이용·높이·배치·이격·주차는 지방 plan de estrutura·PGU·세부규정이 정한다. 침수·사이클론·배수·지반과 상하수·전력 인입능력을 함께 확인한다.",
+          "applicability": "모잠비크에서 신축·증축·용도변경 또는 도시개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["municipality-district", "moph"],
+          "basis": [
+            {"instrumentId": "MOZ-RLOP-2-2004", "provisions": ["private works and municipal authorization framework"]},
+            {"instrumentId": "MOZ-MAPUTO-BYLAW-2018", "provisions": ["local urban indices and permit example"]}
+          ],
+          "evidence": ["DUAT·지적도·경계측량", "관할 구조계획·PGU·토지이용분류", "필지별 지표·높이·이격·주차", "사이클론·침수·배수·지반·유틸리티 용량"],
+          "decisionQuestion": "대상 필지 DUAT와 관할계획상 허용용도·개발지표·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
+          "conclusion": "마푸투 규정이나 국가 일반체계를 다른 지방에 일반화하지 말고 대상 지방정부의 계획·DUAT·필지수치를 먼저 확정해야 한다.",
+          "verificationScope": "국가 허가체계와 공식 지방계획·마푸투 집행 예시를 확인했다. 대상지 DUAT·계획수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "DUAT·지방 도시계획"
+        },
+        "permit-environment": {
+          "oneLiner": "지방 건축허가와 A+·A·B·C 환경분류·licenca ambiental을 별도 Gate로 연결한다.",
+          "summary": "관할 지방정부는 projeto de arquitectura·기술도서와 책임기술자를 심사해 공사허가를 발급한다. 시행령 제54/2015호는 모든 잠재영향 사업을 사전평가해 A+·A·B·C로 분류하고 유형별 연구·공공참여·환경허가를 요구한다.",
+          "applicability": "지방 건축허가가 필요한 공사와 환경 사전평가·licenca ambiental 대상 사업",
+          "authorityIds": ["municipality-district", "environment-authority"],
+          "basis": [
+            {"instrumentId": "MOZ-RLOP-2-2004", "provisions": ["building works licensing framework"]},
+            {"instrumentId": "MOZ-ENV-DECREE-54-2015", "provisions": ["Arts. 4, 7 and 8; A+, A, B, C categorisation"]}
+          ],
+          "evidence": ["건축주·DUAT 보유자·허가권자", "건축·기술도서·책임자 신고", "SPA 환경분류·평가·licenca 결정", "현행 수수료·접수·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 지방 건축허가와 A+·A·B·C 환경유형, 환경허가의 선행관계·서류·실제 기간은 무엇인가?",
+          "conclusion": "환경 Category에 따라 연구범위와 승인기관이 달라지므로 SPA 분류 없이 건축허가 일정만으로 착공일을 산정하지 않는다.",
+          "verificationScope": "국가 관보의 시행령 제54/2015호, 환경 전자대장과 지방 허가 예시를 연결했다. 실제 수수료·서식·기간은 대상 SPA·지방정부에서 확인한다.",
+          "referenceLabel": "건축허가·환경 Category A+~C"
+        },
+        "control-completion": {
+          "oneLiner": "등록 책임기술자·시공자, 지방검사와 licenca de utilizacao를 시설 인계 전 조건으로 관리한다.",
+          "summary": "허가대상 공사는 관할에 등록된 적정 전문등급의 책임기술자가 지휘하고 승인도서 변경은 사전승인을 받아야 한다. 지방정부의 현장·최종검사와 licenca de utilizacao 요구를 확인하며 시험·소방·설비·as-built·보험·하자조건을 계약에 포함한다.",
+          "applicability": "허가를 받아 시공하고 사용허가 또는 준공확인이 필요한 건축물",
+          "authorityIds": ["municipality-district", "moph"],
+          "basis": [
+            {"instrumentId": "MOZ-MAPUTO-BYLAW-2018", "provisions": ["Arts. 97 onward; licensed works, technical responsibility and use licence"]},
+            {"instrumentId": "MOZ-RLOP-2-2004", "provisions": ["works supervision and completion framework"]}
+          ],
+          "evidence": ["현지 설계자·기술자·시공자 등록", "착공·중간검사·승인변경 기록", "시험·소방·설비시운전·as-built", "licenca de utilizacao·보험·비용견적"],
+          "decisionQuestion": "대상 지방의 전문자격·검사·보험과 준공·licenca de utilizacao의 절차·비용·실제 기간은 무엇인가?",
+          "conclusion": "공사완료와 적법한 사용개시는 별개이므로 대상 지방의 사용허가를 인계·개장 Hold Point로 명시한다.",
+          "verificationScope": "마푸투 공식 규정에서 책임기술자·검사·사용허가 구조를 확인했다. 대상 지방의 절차와 현지 전문가·보험사·비용은 별도 확인한다.",
+          "referenceLabel": "책임기술자·licenca de utilizacao"
+        }
+      }
+    },
+    {
+      "slug": "ethiopia",
+      "name": "에티오피아",
+      "nameEn": "Ethiopia",
+      "iso3": "ETH",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "city-building-authority",
+          "name": "Competent city or regional building construction licensing and supervision institution",
+          "nameKo": "관할 도시·지역 건축허가·감독기관",
+          "role": "도시계획 적합, 설계승인, 건축허가·현장감독과 건물사용허가를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://new.business.gov.et/Construction%20Permits"
+        },
+        {
+          "id": "mui-eca",
+          "name": "Ministry of Urban and Infrastructure and Ethiopian Construction Authority",
+          "nameKo": "도시·인프라부 및 에티오피아 건설청",
+          "role": "건축법·EBCS, 건설업·전문가 등록과 국가 품질감독을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.eca.gov.et/"
+        },
+        {
+          "id": "epa-regional-env",
+          "name": "Ethiopian Environmental Protection Authority or competent regional environmental agency",
+          "nameKo": "에티오피아 환경보호청 또는 관할 지역 환경기관",
+          "role": "연방·지역 관할에 따라 환경영향평가와 환경승인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://cleanethiopia.epa.gov.et/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "ETH-BUILDING-PROC-1356-2024",
+          "title": "Ethiopian Building Proclamation No. 1356/2024",
+          "titleKo": "에티오피아 건축법 포고령 제1356/2024호",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.ffic.gov.et/Portals/0/1356-2017.pdf",
+          "officialPdfUrl": "https://www.ffic.gov.et/Portals/0/1356-2017.pdf",
+          "verificationLevel": "law-linked",
+          "note": "구 포고령 제624/2009호를 대체하고 설계승인·건축허가·감독·사용허가·전문책임을 규정한다. 2026년 현재 하위규정의 과도기 적용을 확인한다."
+        },
+        {
+          "id": "ETH-URBAN-PLAN-PROC",
+          "title": "Urban Plans and land-use legal framework — official ministry collection",
+          "titleKo": "도시계획·토지이용 법체계 공식 대장",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://mui.gov.et/proclamations/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "ETH-EIA-PROC-299-2002",
+          "title": "Environmental Impact Assessment Proclamation No. 299/2002",
+          "titleKo": "환경영향평가 포고령 제299/2002호",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2002-12-03",
+          "officialUrl": "https://www.fsc.gov.et/Digital-Law-Library/Federal-Laws/ArtMID/1179/ArticleID/632/Environmental-Impact-Assessment-Proclamation-No-2992002",
+          "verificationLevel": "law-linked",
+          "note": "허가기관이 투자·영업허가 전 환경요건 이행을 확인하도록 하는 기본법이다. 연방·지역별 최신 절차와 대체입법 여부를 확인한다."
+        },
+        {
+          "id": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+          "title": "Ethiopian Business Portal — Construction Permits",
+          "titleKo": "에티오피아 비즈니스포털 건축허가 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://new.business.gov.et/Construction%20Permits",
+          "verificationLevel": "source-linked",
+          "note": "Addis Ababa의 토지정보·설계승인·건축허가·유틸리티 연결을 보여주는 공식 도시 집행 예시다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다.",
+          "summary": "건축법은 건축허가 전 도시계획과 설계의 일치를 요구하며 토지권리·cadastral 자료가 선행된다. 지역·도시별 계획에 따라 허용용도·site coverage·FAR·높이·이격·주차, 도로·침수·지반·유틸리티를 확인한다.",
+          "applicability": "에티오피아의 적용 도시 및 도시 밖 공공·산업 등 법정 대상 건축물",
+          "authorityIds": ["city-building-authority", "mui-eca"],
+          "basis": [
+            {"instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["plan agreement and construction-permit framework"]},
+            {"instrumentId": "ETH-URBAN-PLAN-PROC", "provisions": ["urban plan and land-use framework"]}
+          ],
+          "evidence": ["임차권·토지보유 증서·지적도", "관할 구조·지역계획과 plan agreement", "필지별 coverage·FAR·높이·이격·주차", "지반·침수·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 필지의 토지권리와 계획상 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+          "conclusion": "Addis Ababa의 수치나 국가 건축법만으로 다른 도시 필지의 개발가능 규모를 확정할 수 없으므로 관할 plan agreement를 선행한다.",
+          "verificationScope": "신 건축법 원문과 공식 도시 건축허가 포털을 확인했다. 대상 도시 계획·필지수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "건축법 제1356/2024호·plan agreement"
+        },
+        "permit-environment": {
+          "oneLiner": "설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다.",
+          "summary": "관할 도시·지역기관이 설계승인과 construction permit을 발급하며 신 건축법의 건물 Category와 적용범위를 확인해야 한다. 환경영향평가는 사업 위치·사업주체·영향규모에 따라 연방 EPA 또는 지역기관이 담당하므로 EIA 유형과 건축허가 선행관계를 서면화한다.",
+          "applicability": "신 건축법상 허가대상과 연방·지역 EIA법 적용 가능 사업",
+          "authorityIds": ["city-building-authority", "epa-regional-env"],
+          "basis": [
+            {"instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["design approval, building category and construction permit"]},
+            {"instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["prior environmental authorization framework"]},
+            {"instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["city design approval and permit workflow example"]}
+          ],
+          "evidence": ["건축주·신청인·도시/지역 관할", "건물 Category·설계승인·허가도서", "연방/지역 환경관할·EIA 결정", "현행 수수료·접수·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 건물 Category·설계승인·허가권자와 연방 또는 지역 EIA 유형·승인기관은 무엇인가?",
+          "conclusion": "연방·지역 권한이 갈릴 수 있으므로 건축허가와 EIA 관할을 대상지에서 확정하기 전에는 전체 인허가 일정을 고정하지 않는다.",
+          "verificationScope": "신 건축법, 연방 EIA법과 Addis Ababa 공식 절차 예시를 연결했다. 하위규정 과도기·지역 절차·수수료·기간은 현지 확인한다.",
+          "referenceLabel": "설계·건축허가·EIA 관할"
+        },
+        "control-completion": {
+          "oneLiner": "EBCS와 등록 전문가·시공자, 현장감독·책임보험 및 building use permit을 인계 Gate로 둔다.",
+          "summary": "신 건축법은 Ethiopian Building Codes의 강제적용, 적격 설계자·컨설턴트·시공자, 공사감독과 building use permit을 규정한다. 건물 Category별 검사·전문책임·보험·시험·소방·as-built 요구와 하위규정 과도기를 관할기관에 확인한다.",
+          "applicability": "포고령 제1356/2024호의 건축기준·감독·사용허가 적용대상 공사",
+          "authorityIds": ["city-building-authority", "mui-eca"],
+          "basis": [
+            {"instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["mandatory building codes, supervision, professional liability and use permit"]},
+            {"instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["construction control and utility-connection workflow example"]}
+          ],
+          "evidence": ["EBCS 적용판·설계기준 목록", "등록 건축사·기술자·컨설턴트·시공자", "착공·검사·시험·소방·as-built", "building use permit·책임보험·현지 비용"],
+          "decisionQuestion": "건물 Category별 전문자격·책임보험·검사와 building use permit의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "신 건축법은 공사완료와 건물사용을 구분하므로 use permit과 적용 EBCS·검사증빙을 개장·인계 조건에 포함한다.",
+          "verificationScope": "포고령 제1356/2024호와 건설청·공식 도시절차를 확인했다. 하위규정·검사횟수·현지 전문가·보험사·비용은 대상지 조사사항이다.",
+          "referenceLabel": "EBCS·building use permit"
+        }
+      }
+    },
+    {
+      "slug": "uganda",
+      "name": "우간다",
+      "nameEn": "Uganda",
+      "iso3": "UGA",
+      "region": "아프리카",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "building-committee",
+          "name": "Competent local government Building Committee",
+          "nameKo": "관할 지방정부 건축위원회",
+          "role": "건축도서 심사, building permit, 현장검사와 occupation permit을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://nbrb.go.ug/what-you-need-to-know-about-the-building-committees/"
+        },
+        {
+          "id": "nbrb",
+          "name": "National Building Review Board",
+          "nameKo": "국가건축심의위원회(NBRB)",
+          "role": "건축법·National Building Code 집행감독, 지방위원회 지원과 이의절차를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://nbrb.go.ug/"
+        },
+        {
+          "id": "nema-uganda",
+          "name": "National Environment Management Authority",
+          "nameKo": "국가환경관리청(NEMA)",
+          "role": "Project Brief·ESIA·환경결정과 사후준수관리를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.nema.go.ug/en/esia/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "UGA-BUILDING-CONTROL-ACT",
+          "title": "Building Control Act, Cap. 136, as amended in 2026",
+          "titleKo": "건축통제법 Cap. 136(2026년 개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://nbrb.go.ug/the-building-control-amendment-act-2026-what-it-means-for-you/",
+          "verificationLevel": "law-linked",
+          "note": "2026년 개정으로 허가·점유허가 결정기한과 이의구조가 변경됐다. 사업 접수 시 개정문과 시행일을 확인한다."
+        },
+        {
+          "id": "UGA-NBC-2019",
+          "title": "National Building Code, 2019",
+          "titleKo": "국가건축기준 2019",
+          "kind": "code",
+          "status": "in_force",
+          "issuedOn": "2019-01-01",
+          "officialUrl": "https://nbrb.go.ug/the-legal-regime-for-the-building-sector/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "UGA-BCR-2020",
+          "title": "Building Control Regulations, 2020",
+          "titleKo": "건축통제 시행규칙 2020",
+          "kind": "regulation",
+          "status": "in_force",
+          "issuedOn": "2020-11-06",
+          "officialUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
+          "officialPdfUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "UGA-NEA-CAP-181",
+          "title": "National Environment Act, Cap. 181 and Environmental and Social Assessment Regulations, 2020",
+          "titleKo": "국가환경법 Cap. 181·환경사회평가 시행규칙 2020",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
+          "officialPdfUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다.",
+          "summary": "Building Committee는 토지이용 변경·환경훼손·인접영향을 포함해 허가를 심사하며 계획동의와 토지자료가 선행된다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 습지·홍수·경사·도로·유틸리티를 지방계획기관에서 확인한다.",
+          "applicability": "우간다 지방정부 관할에서 신축·증축·용도변경을 추진하는 ODA 건축사업",
+          "authorityIds": ["building-committee", "nbrb"],
+          "basis": [
+            {"instrumentId": "UGA-BUILDING-CONTROL-ACT", "provisions": ["building-plan scrutiny and land-use compliance framework"]},
+            {"instrumentId": "UGA-BCR-2020", "provisions": ["site, plan and application requirements"]}
+          ],
+          "evidence": ["토지권원·cadastral survey", "지방 physical development plan·planning consent", "필지별 plot ratio·coverage·높이·이격·주차", "습지·홍수·지반·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 지방계획상 허용용도·plot ratio·coverage·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+          "conclusion": "국가건축기준만으로 필지의 계획수치를 확정할 수 없으므로 지방 planning consent와 부지조건 확인을 먼저 완료해야 한다.",
+          "verificationScope": "NBRB의 현행 건축법·시행규칙 안내를 확인했다. 대상 지방계획·필지수치·습지·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "지방계획·Building Committee"
+        },
+        "permit-environment": {
+          "oneLiner": "Building Committee 건축허가와 NEMA Project Brief·ESIA 유형을 분류해 선행조건을 연결한다.",
+          "summary": "건축주는 등록 건축사·기술자의 서명도서와 계획동의·수수료 증빙을 Building Committee에 제출한다. NEMA는 환경법 Schedule 4·5·10·11에 따라 Project Brief, ESIA 또는 면제경로를 결정하므로 환경결정과 건축허가의 선후관계를 확정한다.",
+          "applicability": "building permit 대상 공사와 NEMA 환경·사회평가 분류대상 사업",
+          "authorityIds": ["building-committee", "nema-uganda"],
+          "basis": [
+            {"instrumentId": "UGA-BUILDING-CONTROL-ACT", "provisions": ["building permit and registered professional framework"]},
+            {"instrumentId": "UGA-NEA-CAP-181", "provisions": ["Schedules 4, 5, 10 and 11; Project Brief and ESIA"]}
+          ],
+          "evidence": ["건축주·토지소유자·관할 위원회", "건축허가·전문가 서명도서", "NEMA Project Brief·ESIA·면제 결정", "소방·습지 등 추가동의와 최신 수수료·실제 기간"],
+          "decisionQuestion": "본 사업의 건축허가와 Project Brief·ESIA·면제 유형, NEMA 결정의 선행관계는 무엇인가?",
+          "conclusion": "건축위원회와 NEMA는 별도 결정을 내리므로 환경유형이 확정되기 전에는 전체 착공일정과 평가비용을 확정하지 않는다.",
+          "verificationScope": "NBRB 건축허가 안내와 NEMA의 현행 Schedule·ELMIS 절차를 확인했다. 2026년 개정기한·지방 수수료·실제 기간은 기관 확인 대상이다.",
+          "referenceLabel": "building permit·NEMA Project Brief/ESIA"
+        },
+        "control-completion": {
+          "oneLiner": "등록 전문가, 국가코드·단계검사와 occupation permit을 시설 사용 전 법정 Gate로 둔다.",
+          "summary": "National Building Code와 2020 Regulations는 승인도서 준수·현장안전·검사를 요구한다. 완료 후 소유자는 Building Committee에 occupation permit을 신청해야 하며, 위원회는 검사 후 적합 여부를 결정한다. 2026년 개정기한과 보험·시험·소방요건을 확인한다.",
+          "applicability": "건축허가를 받아 시공하고 occupation permit이 필요한 건축물",
+          "authorityIds": ["building-committee", "nbrb"],
+          "basis": [
+            {"instrumentId": "UGA-NBC-2019", "provisions": ["national design and construction standards"]},
+            {"instrumentId": "UGA-BCR-2020", "provisions": ["Reg. 34 and occupation-permit forms"]},
+            {"instrumentId": "UGA-BUILDING-CONTROL-ACT", "provisions": ["inspection, occupation permit and 2026 amendment framework"]}
+          ],
+          "evidence": ["등록 건축사·기술자·시공자", "착공통지·단계검사·시험기록", "소방·설비시운전·as-built", "occupation permit·보험·검사비용"],
+          "decisionQuestion": "현지 전문자격·보험·검사와 occupation permit의 최신 서류·법정·실제 기간은 무엇인가?",
+          "conclusion": "우간다에서는 occupation permit 없는 사용이 위법이므로 이를 ODA 시설 인계·개장의 명시적 선행조건으로 관리한다.",
+          "verificationScope": "NBRB의 2026년 개정 안내, 2019 Code와 2020 Regulations의 검사·점유허가 절차를 확인했다. 현지 업체·보험사·비용은 시장조사 대상이다.",
+          "referenceLabel": "National Building Code·occupation permit"
+        }
+      }
     }
   ]
 }
