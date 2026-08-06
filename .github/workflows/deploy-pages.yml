@@ -27,7 +27,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate data
-        run: python3 tools/validate.py
+        run: |
+          python3 tools/validate.py
+          python3 tools/validate_construction_regulations.py
 
       - name: Build static site
         run: python3 tools/build_site.py

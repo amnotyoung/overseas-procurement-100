@@ -1,0 +1,1518 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "senegal",
+  "asOfDate": "2026-08-06",
+  "country": {
+    "name": "세네갈",
+    "nameEn": "Senegal",
+    "iso3": "SEN",
+    "region": "아프리카"
+  },
+  "purpose": "ODA 건축사업의 부지 적법성, 현지 설계자 자격, 환경·건축·소방 인허가, 기술검사·보험, 준공·개장 조건을 사업 단계별로 확인하기 위한 실무 데이터팩",
+  "pilotContext": {
+    "projectName": "Diamniadio AI Transition Center",
+    "projectType": "공공 교육·연구·혁신시설로 가정한 ODA 건축사업",
+    "location": "Diamniadio, Dakar Region",
+    "sourceNote": "사용자가 제시한 Gate 1 승인팩은 조사 범위 설정에만 사용했다. 법적 결론은 세네갈 공식 법령 원문에서 별도로 확인했다.",
+    "known": [
+      "예정지는 Diamniadio로 제시돼 있다.",
+      "공공 교육·연구·혁신 기능을 가진 센터가 계획돼 있다.",
+      "신축공사, ICT 인프라, 운영 준비를 함께 검토해야 한다."
+    ],
+    "unknown": [
+      "정확한 필지번호·NICAD·등기 또는 사용권원",
+      "Diamniadio PUD상 필지 용도지역·건폐율·용적률·높이·이격거리·주차 기준",
+      "연면적·층수·지하층·최대 재실인원·세부 실 구성",
+      "건축주·허가신청인·운영기관의 법적 주체",
+      "환경평가 분류와 필요한 평가 유형",
+      "전력·통신·상수·오수·우수 인입조건과 확약",
+      "현지 등록 건축사·기술검사기관·보험 구조"
+    ]
+  },
+  "verification": {
+    "status": "article-verified",
+    "verifiedAt": "2026-08-06",
+    "method": "Vie-Publique Sénégal의 관보·법령 PDF를 확보해 OCR한 뒤 관련 조문을 원문 페이지와 육안 대조했다. 기관·절차 안내는 세네갈 정부 공식 웹페이지로 보조 확인했다.",
+    "scope": "2023 도시계획법·건설법, 2025 도시계획 시행령, 2024 건설 시행령, 2021 건축사법, 2023 환경법과 Diamniadio PUD 승인령의 핵심 조문을 확인했다. 필지별 PUD 도면·규정, 환경법 최신 시행령·부령, 수수료·전자접수 관행과 사업별 기관 판단은 현지 확인 대상이다.",
+    "limitations": [
+      "프랑스어 원문을 기준으로 한 비공식 한국어 요약이며 공식 번역이 아니다.",
+      "법정 처리기간은 완비된 신청의 규정상 기간이다. 보완, 기관협의, 비공식 사전검토, 현장 여건에 따른 실제 기간을 보장하지 않는다.",
+      "공식 민원 안내 페이지 일부가 2025년 도시계획 시행령 이전의 서류·수수료 정보를 유지하고 있어 신법 우선 원칙으로 정리했다.",
+      "특정 사업의 ERP 분류, 국가사업 여부, 환경평가 유형과 보험면제 여부는 관할기관의 서면 확인 전까지 확정하지 않는다."
+    ]
+  },
+  "authorities": [
+    {
+      "id": "urbanism-minister",
+      "name": "Ministre chargé de l’Urbanisme",
+      "nameKo": "도시계획 담당 장관",
+      "role": "국가·공공서비스·공익 또는 경제·환경상 중요 사업 등의 건축허가권자이자 도시계획법상 중앙 관할기관",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "competent-mayor",
+      "name": "Maire territorialement compétent",
+      "nameKo": "관할 시장",
+      "role": "일반 건축허가의 법정 발급권자. 관할 도시계획 부서의 심사와 국가대표자의 승인을 거친다.",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "urbanism-service",
+      "name": "Service de l’Urbanisme territorialement compétent",
+      "nameKo": "관할 도시계획 행정서비스",
+      "role": "건축허가 서류 접수·심사, Cadastre·Domaines·Hygiène 등 관계기관 협의",
+      "officialUrl": "https://www.urbanisme.gouv.sn/services-aux-usagers/demande-dune-autorisation-de-construire",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "state-representative",
+      "name": "Représentant de l’État",
+      "nameKo": "국가대표자",
+      "role": "일반 건축허가의 집행가능성을 위한 승인과 일부 무응답 절차의 증명",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "dgpu",
+      "name": "Délégation générale à la Promotion des Pôles urbains de Diamniadio et du Lac Rose",
+      "nameKo": "Diamniadio·Lac Rose 도시거점개발총국(DGPU)",
+      "role": "Diamniadio PUD의 운영적 시행과 도시거점 개발 조정. 필지별 PUD 자료와 개발조건 확인의 핵심 창구",
+      "officialUrl": "https://www.vie-publique.sn/conseil-des-ministres/71/conseil-des-ministres-du-08-janvier-2025",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "cadastre-domains",
+      "name": "Services du Cadastre et des Domaines",
+      "nameKo": "지적·국유재산 담당부서",
+      "role": "NICAD·지적도·권원 검토와 건축허가 협의",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "civil-protection",
+      "name": "Protection civile / Commission de protection civile",
+      "nameKo": "민방위·소방안전 당국 및 안전위원회",
+      "role": "ERP 건축허가 의견, 소방·피난 안전검사, 개장 전 접수·승인",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "environment-authority",
+      "name": "Ministère chargé de l’Environnement",
+      "nameKo": "환경 담당 부처",
+      "role": "환경평가 심사와 환경적합 확인서·인증서 발급, 필요 시 ICPE 절차",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "construction-minister",
+      "name": "Ministre chargé de la Construction",
+      "nameKo": "건설 담당 장관",
+      "role": "기술검사기관·기술설계사무소 인가, 건설법 시행·감독",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "odas",
+      "name": "Ordre des Architectes du Sénégal (ODAS)",
+      "nameKo": "세네갈 건축사협회",
+      "role": "건축사 등록, 외국 건축사의 일시·상시 업무와 장관 승인에 필요한 직역 의견",
+      "officialUrl": "https://www.vie-publique.sn/etat-senegal/ordre-des-architectes-du-senegal",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "mines-authority",
+      "name": "Administration des Mines",
+      "nameKo": "광업행정 당국",
+      "role": "깊이 10m를 초과하는 시추·기초 굴착의 별도 승인",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "hygiene-service",
+      "name": "Service de l’Hygiène",
+      "nameKo": "위생 담당부서",
+      "role": "건축허가 심사 시 위생 의견",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "labor-inspectorate",
+      "name": "Inspection du Travail",
+      "nameKo": "노동감독기관",
+      "role": "현장 노동·산업안전보건 준수 확인. 건설현장 세부 시행규정은 착수 전 재확인 필요",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "utilities",
+      "name": "Opérateurs de réseaux compétents",
+      "nameKo": "관할 전력·통신·상수·하수 사업자",
+      "role": "인입 용량, 접속조건, 외부 기반시설 분담과 서비스 개통 확인",
+      "verificationLevel": "needs-review"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "SEN-URB-L-2023-20",
+      "title": "Loi n° 2023-20 du 29 décembre 2023 portant Code de l’Urbanisme",
+      "titleKo": "2023년 도시계획법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2023-12-29",
+      "publishedOn": "2024-01-17",
+      "officialUrl": "https://www.vie-publique.sn/documents/441/code-urbanisme-senegal",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/71b0befa-738a-4e6e-8d4e-3124d492a710/code-urbanisme-senegal.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "L.277-L.285",
+        "L.333"
+      ],
+      "note": "L.333이 2008년 도시계획법을 폐지·대체한다."
+    },
+    {
+      "id": "SEN-URB-D-2025-1194",
+      "title": "Décret n° 2025-1194 du 17 juillet 2025 portant partie réglementaire du Code de l’Urbanisme",
+      "titleKo": "2025년 도시계획법 시행령",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2025-07-17",
+      "publishedOn": "2025-08-30",
+      "officialUrl": "https://www.vie-publique.sn/documents/5172/JO-7846-du-30-aout-2025",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/fceb932a-0efe-414e-86e9-9fba87a92448/JO-7846-du-30-aout-2025.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "R.405-R.435",
+        "R.439-R.441",
+        "R.518-R.533",
+        "R.591-R.596"
+      ],
+      "note": "R.596이 2009년 시행령과 2020년 개정령을 폐지한다."
+    },
+    {
+      "id": "SEN-CON-L-2023-21",
+      "title": "Loi n° 2023-21 du 29 décembre 2023 portant Code de la Construction",
+      "titleKo": "2023년 건설법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2023-12-29",
+      "publishedOn": "2024-01-18",
+      "officialUrl": "https://www.vie-publique.sn/documents/440/code-construction-senegal",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/ce23ee17-0972-4f38-bbe9-a5391b4a7b84/code-construction-senegal.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "L.11-L.14",
+        "L.18-L.25",
+        "L.28",
+        "L.32",
+        "L.35-L.36",
+        "L.47-L.60",
+        "L.63",
+        "L.67-L.80",
+        "L.83-L.95",
+        "L.210-L.211"
+      ],
+      "note": "L.211이 2009년 건설법을 포함한 종전 반대 규정을 폐지한다."
+    },
+    {
+      "id": "SEN-CON-D-2024-1495",
+      "title": "Décret n° 2024-1495 du 30 juillet 2024 portant partie réglementaire du Code de la Construction",
+      "titleKo": "2024년 건설법 시행령",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2024-07-30",
+      "publishedOn": "2024-09-28",
+      "officialUrl": "https://www.vie-publique.sn/documents/605/JO-7767-du-28-septembre-2024",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/99a632ff-14e4-4a5d-87ac-54eaa3d56cf1/JO-7767-du-28-septembre-2024.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "R.34-R.36",
+        "R.79-R.92",
+        "R.137-R.149",
+        "R.293-R.301"
+      ],
+      "note": "R.301이 2010년 건설법 시행령을 폐지한다."
+    },
+    {
+      "id": "SEN-ARCH-L-2021-22",
+      "title": "Loi n° 2021-22 du 2 mars 2021 relative à l’Architecture et à l’exercice de la Profession d’architecte",
+      "titleKo": "2021년 건축 및 건축사 직업법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2021-03-02",
+      "publishedOn": "2021-03-20",
+      "officialUrl": "https://www.vie-publique.sn/docs/ed4c09cd-2250-4092-aedc-122bd8df05cc/JO-7409-du-20-mars-2021.pdf",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/ed4c09cd-2250-4092-aedc-122bd8df05cc/JO-7409-du-20-mars-2021.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "Art. 7",
+        "Art. 9-Art. 10",
+        "Art. 12",
+        "Art. 16",
+        "Art. 18-Art. 19",
+        "Art. 26-Art. 27",
+        "Art. 32",
+        "Art. 35"
+      ],
+      "note": "비UEMOA 국적 건축사의 업무는 상호주의와 별도 승인 조건을 확인해야 한다."
+    },
+    {
+      "id": "SEN-ENV-L-2023-15",
+      "title": "Loi n° 2023-15 du 2 août 2023 portant Code de l’Environnement",
+      "titleKo": "2023년 환경법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2023-08-02",
+      "publishedOn": "2023-08-17",
+      "officialUrl": "https://www.vie-publique.sn/documents/7949/loi-n-2023-15-du-02-aout-2023-portant-code-de-l-environnement-7949",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/267a3345-cac1-4eba-aa0a-022a6a0d27ca/loi-n-2023-15-du-02-aout-2023-portant-code-de-l-environnement-7949.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "Art. 20-Art. 27",
+        "Art. 52",
+        "Art. 64",
+        "Art. 254-Art. 255"
+      ],
+      "note": "환경평가는 다른 승인·허가보다 먼저 수행해야 한다. 2001년 환경법은 폐지됐으나 현행 세부분류·시행령은 관할기관 확인이 필요하다."
+    },
+    {
+      "id": "SEN-DIAM-PUD-D-2021-698",
+      "title": "Décret n° 2021-698 du 4 juin 2021 approuvant et rendant exécutoire le Plan d’Urbanisme de Détails de Diamniadio",
+      "titleKo": "Diamniadio 상세도시계획(PUD) 승인·시행령",
+      "kind": "plan",
+      "status": "in_force",
+      "issuedOn": "2021-06-04",
+      "publishedOn": "2021-08-07",
+      "officialUrl": "https://www.vie-publique.sn/documents/900/JO-7447-du-07-ao%C3%BBt-2021",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/b26df381-c650-4d3d-bb08-f30d181b5a51/JO-7447-du-07-ao%C3%BBt-2021.pdf",
+      "verificationLevel": "article-verified",
+      "articlesChecked": [
+        "Décret, exposé des motifs",
+        "Art. 1-Art. 3"
+      ],
+      "note": "약 1,644ha의 PUD 승인·집행가능성은 확인했으나 관보 PDF에는 발표보고서, 1:5,000 도면과 용도지역 규정이 수록되지 않았다."
+    },
+    {
+      "id": "SEN-DIAM-LAND-D-2017-2306",
+      "title": "Décret n° 2017-2306 du 27 décembre 2017 relatif à la gestion foncière dans les pôles urbains de Diamniadio et du Lac Rose",
+      "titleKo": "Diamniadio·Lac Rose 도시거점 토지관리령",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2017-12-27",
+      "publishedOn": "2018-01-27",
+      "officialUrl": "https://www.vie-publique.sn/documents/1196/JO-7070-du-27-janvier-2018",
+      "officialPdfUrl": "https://www.vie-publique.sn/docs/7d8dd608-b3d2-4341-a1fb-93384ba9bfac/JO-7070-du-27-janvier-2018.pdf",
+      "verificationLevel": "law-linked",
+      "note": "필지배정·권원·개발의무에 대한 사업별 적용 조문은 토지문서와 함께 추가 대조한다."
+    },
+    {
+      "id": "SEN-DISABILITY-L-2010-15",
+      "title": "Loi d’orientation sociale n° 2010-15 du 6 juillet 2010 relative à la promotion et à la protection des droits des personnes handicapées",
+      "titleKo": "2010년 장애인 권리증진·보호 기본법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2010-07-06",
+      "officialUrl": "https://www.vie-publique.sn/documents/6298/loi-d-orientation-sociale-relative-a-la-promotion-et-la-protection-des-droits-des-personnes-handica-6298",
+      "verificationLevel": "law-linked",
+      "note": "기본법의 일부 시행령 미비가 2025년 국회 질의에서도 지적됐다. 건축 접근성은 2023년 건설법의 직접 의무를 우선 적용한다."
+    },
+    {
+      "id": "SEN-LABOR-L-1997-17",
+      "title": "Loi n° 97-17 du 1er décembre 1997 portant Code du Travail",
+      "titleKo": "1997년 노동법",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "1997-12-01",
+      "officialUrl": "https://www.vie-publique.sn/documents/437/code-travail-senegal",
+      "verificationLevel": "law-linked",
+      "note": "2026년 신노동법안은 심의 중이므로 기준일 현재 이 법을 현행 기준으로 둔다. 건설현장 안전보건 시행령·부령 목록은 착수 전에 추가 확인한다."
+    },
+    {
+      "id": "SEN-LABOR-DRAFT-2026",
+      "title": "Projet de loi portant Code du Travail, réforme 2026",
+      "titleKo": "2026년 노동법 개정안",
+      "kind": "draft",
+      "status": "pending",
+      "officialUrl": "https://www.vie-publique.sn/dossiers/code-du-travail-senegal-reforme-2026",
+      "verificationLevel": "source-linked",
+      "note": "2026-06-22 위원회 재회부 상태로 확인돼 현행법으로 사용하지 않는다."
+    },
+    {
+      "id": "SEN-STATE-D-2026-1133",
+      "title": "Décret n° 2026-1133 portant répartition des services de l’État et du contrôle des établissements publics et sociétés à participation publique",
+      "titleKo": "2026년 국가행정·공공기관 관할 배분령",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2026-06-01",
+      "officialUrl": "https://www.vie-publique.sn/documents/13836/decret-2026-1133-repartition-services-etat-controle-etablissements-publics-societes-participation-publique",
+      "verificationLevel": "law-linked",
+      "note": "현행 조직명·감독관계 확인용이다. 인허가 권한은 각 실체법 조문을 우선한다."
+    },
+    {
+      "id": "SEN-PERMIT-GUIDANCE-URBANISM",
+      "title": "Demande d’une autorisation de construire — Ministère de l’Urbanisme",
+      "titleKo": "도시계획부 건축허가 민원안내",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.urbanisme.gouv.sn/services-aux-usagers/demande-dune-autorisation-de-construire",
+      "verificationLevel": "source-linked",
+      "note": "실무 접수자료로 참고하되 2025년 시행령과 다른 서류·수수료·처리정보는 신법과 관할서비스의 서면 안내를 우선한다."
+    },
+    {
+      "id": "SEN-PERMIT-GUIDANCE-SERVICEPUBLIC",
+      "title": "Demander une autorisation de construire — Service public Sénégal",
+      "titleKo": "세네갈 행정서비스 건축허가 안내",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.servicepublic.gouv.sn/demarche/demander-une-autorisation-de-construire-permis-de-construire",
+      "verificationLevel": "source-linked",
+      "note": "TéléDac와 민원 흐름 참고용이다. 2025년 시행령 반영 여부를 접수 전에 재확인한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "SEN-BLD-REQ-001",
+      "stage": "site-and-land",
+      "topic": "필지 권원·NICAD·도시계획 적합성",
+      "status": "confirmed",
+      "applicability": "모든 신축·증축·용도변경 건축허가",
+      "requirement": "허가 신청자는 토지 점유·사용 권원, 지적도와 NICAD, 배치도 등으로 신청 적격과 계획 적합성을 입증해야 한다. 허가 심사에는 계획·공공지역권·자연재해·침수위험·주변 안전이 포함된다.",
+      "authorityIds": [
+        "urbanism-service",
+        "cadastre-domains",
+        "competent-mayor",
+        "urbanism-minister"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-L-2023-20",
+          "provisions": [
+            "L.277-L.278"
+          ]
+        },
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.409",
+            "R.423-R.424"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "등기·사용권·배정결정 등 권원 원본과 유효기간",
+        "NICAD가 표시된 최신 지적도",
+        "경계·레벨·인접도로를 포함한 측량성과",
+        "권리제한·공공지역권·분쟁·담보 확인서"
+      ],
+      "reportUse": "부지 적법성 Gate와 토지 인도조건, 수원국 분담사항에 연결한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-002",
+      "stage": "site-and-land",
+      "topic": "Diamniadio PUD 적용",
+      "status": "unresolved",
+      "applicability": "대상 필지가 2021년 승인된 Diamniadio PUD 경계 안에 있는 경우",
+      "requirement": "PUD의 발표보고서, 1:5,000 도면과 용도지역 규정은 집행 가능한 계획의 일부다. 그러나 공개 관보에는 그 부속자료가 없어 필지별 개발밀도와 이격·주차·높이 기준을 확인할 수 없다.",
+      "authorityIds": [
+        "dgpu",
+        "urbanism-service",
+        "cadastre-domains"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-DIAM-PUD-D-2021-698",
+          "provisions": [
+            "Art. 1-Art. 3"
+          ]
+        },
+        {
+          "instrumentId": "SEN-DIAM-LAND-D-2017-2306",
+          "provisions": []
+        }
+      ],
+      "evidenceToObtain": [
+        "DGPU 또는 관할 도시계획 서비스가 확인한 PUD 전체본",
+        "대상 필지의 용도지역·용도허용표·건폐율·용적률·높이·이격·주차·조경 기준",
+        "필지배정 조건과 기한·환수·개발의무",
+        "도시계획확인서(certificat d’urbanisme) 또는 동등한 서면"
+      ],
+      "reportUse": "확보 전에는 규모·층수·배치 대안을 확정하지 않고 Gate 1 차단조건으로 둔다."
+    },
+    {
+      "id": "SEN-BLD-REQ-003",
+      "stage": "design",
+      "topic": "현지 등록 건축사와 외국 건축사 자격",
+      "status": "confirmed",
+      "applicability": "건축물 신축·변경과 건축허가 도서 작성",
+      "requirement": "건축허가에 첨부하는 건축계획은 세네갈에서 업무할 자격이 있는 건축사가 작성·서명해야 한다. 한국 등 비UEMOA 건축사의 독립 업무는 상호주의와 장관 승인·ODAS 절차를 충족했다는 확인 없이는 가정할 수 없다.",
+      "authorityIds": [
+        "odas",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-ARCH-L-2021-22",
+          "provisions": [
+            "Art. 9-Art. 12",
+            "Art. 16",
+            "Art. 18-Art. 19",
+            "Art. 26-Art. 27"
+          ]
+        },
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.406-R.407"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.59"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 책임건축사의 ODAS 등록·업무자격 확인서",
+        "직업배상책임보험 증명",
+        "한국 건축사의 역할·저작권·서명권·현지 파트너 책임을 정한 계약",
+        "필요 시 비UEMOA 업무 승인 또는 ODAS의 서면 판단"
+      ],
+      "reportUse": "설계용역 조달전략과 과업분담표에 ‘세네갈 책임건축사’를 명시한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-004",
+      "stage": "design",
+      "topic": "접근성·피난·공중이용시설 설계",
+      "status": "conditional",
+      "applicability": "공중이용시설(ERP) 또는 활동을 수용하는 건축물. 센터의 교육·회의·전시·서비스 공간은 ERP 분류 가능성이 높으나 공식 분류 필요",
+      "requirement": "ERP 허가와 개장에는 이동약자의 접근성, 민방위 당국의 적합 의견, 소방·피난·위생 요건을 설계와 검사에 반영해야 한다.",
+      "authorityIds": [
+        "civil-protection",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.11-L.14",
+            "L.93-L.95"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.137-R.149"
+          ]
+        },
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.518-R.533"
+          ]
+        },
+        {
+          "instrumentId": "SEN-DISABILITY-L-2010-15",
+          "provisions": []
+        }
+      ],
+      "evidenceToObtain": [
+        "시설별 ERP 해당 여부와 카테고리·유형 서면",
+        "최대 재실인원과 피난계산",
+        "접근성·피난·소방 개념도에 대한 Protection Civile 사전의견",
+        "성별·장애·연령을 고려한 화장실, 수직이동, 유도·경보 계획"
+      ],
+      "reportUse": "공간프로그램과 설계기준, 소방·접근성 예산, 준공 전 개장조건에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-005",
+      "stage": "environment",
+      "topic": "환경평가 선행",
+      "status": "confirmed",
+      "applicability": "환경에 영향을 줄 수 있는 계획·프로젝트. 평가 유형은 카테고리와 현행 분류기준에 따라 결정",
+      "requirement": "환경평가는 사업 승인·허가보다 먼저 수행해야 하며, 유형에 따라 EIES 또는 초기 환경분석 등과 환경적합 확인서·인증서가 요구된다. 건축물의 정확한 분류는 관할 환경기관의 스크리닝으로 확정한다.",
+      "authorityIds": [
+        "environment-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-ENV-L-2023-15",
+          "provisions": [
+            "Art. 20-Art. 27",
+            "Art. 52",
+            "Art. 64"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "프로젝트 설명서와 위치도를 제출한 공식 스크리닝 결과",
+        "요구 평가 유형·승인절차·유효기간·공개협의 조건",
+        "인가된 환경평가 기관의 자격",
+        "환경관리계획과 인허가 증서",
+        "데이터센터·발전기·연료저장·폐기물 등 ICPE 해당 여부"
+      ],
+      "reportUse": "환경평가를 건축허가의 선행 Gate로 일정·예산·조달계획에 넣고, 분류 미확정은 차단질문으로 둔다."
+    },
+    {
+      "id": "SEN-BLD-REQ-006",
+      "stage": "permit",
+      "topic": "건축허가권자와 신청서류",
+      "status": "conditional",
+      "applicability": "모든 신축·변경. 공공사업·국가서비스·공익·경제·환경상 중요 사업은 중앙장관 허가 대상일 수 있음",
+      "requirement": "일반 건축허가는 관할 시장이 발급하되 도시계획 서비스 심사와 국가대표자 승인을 거친다. 국가·공공서비스·공익 또는 중요 사업은 도시계획 담당 장관이 발급한다. 신청에는 권원, NICAD 지적도, 배치·평면·단면·입면, 설명서·면적·공사비, 오수·우수·VRD 자료 등이 포함된다.",
+      "authorityIds": [
+        "urbanism-minister",
+        "competent-mayor",
+        "urbanism-service",
+        "state-representative",
+        "cadastre-domains",
+        "hygiene-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-L-2023-20",
+          "provisions": [
+            "L.277-L.285"
+          ]
+        },
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.405-R.415",
+            "R.419-R.424"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "법적 건축주·신청인과 사업의 공공사업 해당성에 대한 서면 판단",
+        "관할 허가권자와 공식 접수창구·TéléDac 사용 여부",
+        "2025년 시행령 기준 최신 서류목록·부수·수수료",
+        "완비서류 접수증과 관계기관 협의목록"
+      ],
+      "reportUse": "RD 역할분담표에 신청주체·서명주체·허가비용·자료제공자를 지정한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-007",
+      "stage": "permit",
+      "topic": "건축허가 법정 처리기간과 유효기간",
+      "status": "conditional",
+      "applicability": "완비된 건축허가 신청",
+      "requirement": "법정 심사기간은 단순서류 28근무일, 복합서류 40근무일이다. 보완 요청 시 신청자에게 10일 또는 15근무일이 주어지고 심사시계가 중단된다. 미착공 2년이면 허가가 실효된다. 무응답 간주허가는 별도 서면 촉구와 추가기간을 거치는 예외 절차이므로 기본 일정으로 가정하지 않는다.",
+      "authorityIds": [
+        "urbanism-service",
+        "competent-mayor",
+        "urbanism-minister",
+        "state-representative"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.408",
+            "R.411-R.420"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "단순·복합 분류와 ERP·ICPE 등 관계기관 협의 여부",
+        "완비서류 판단일과 접수증",
+        "보완요구·회신 기록",
+        "허가일과 착공기한 관리대장"
+      ],
+      "reportUse": "일정에는 사전협의·보완·환경평가를 별도 두고 28/40일을 총 인허가기간으로 오인하지 않는다."
+    },
+    {
+      "id": "SEN-BLD-REQ-008",
+      "stage": "pre-construction",
+      "topic": "의무 기술검사",
+      "status": "conditional",
+      "applicability": "모든 ERP, 지상 4개층 이상(RDC+3), 산업·상업시설, 5세대 초과 주거, 특정 장스팬·캔틸레버·굴착·옹벽·기초 조건 등",
+      "requirement": "위험도가 높은 건축물과 모든 ERP에는 독립 기술검사가 의무다. 검사기관은 법정 인가와 보험·자격요건을 갖춰야 하며 구조 안정성과 법규 준수를 설계·시공 중 확인한다.",
+      "authorityIds": [
+        "construction-minister"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.76-L.80"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.79-R.89"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축물 분류·층수·구조형식에 따른 의무판정",
+        "인가된 기술검사기관 명부와 인가서·보험",
+        "검사 범위, 설계검토·현장검사·최종보고서가 포함된 계약",
+        "검사 수수료와 발주주체"
+      ],
+      "reportUse": "기술검사 용역을 설계·시공 패키지에서 독립 비용과 일정으로 편성한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-009",
+      "stage": "pre-construction",
+      "topic": "지반조사·구조설계",
+      "status": "conditional",
+      "applicability": "RDC+3 이상·지하층·불량 또는 위험지반·3m 이상 굴착·500㎡ 초과 건축면적·의무 기술검사 대상 등",
+      "requirement": "해당 문턱을 넘으면 지반조사가 의무이며, 지하층·증축·구조개수·용도변경·옹벽·기초보강·기술검사 대상 등에는 구조기술연구가 요구된다.",
+      "authorityIds": [
+        "construction-minister",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.90-R.92"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "승인 측량성과와 지반조사 과업범위",
+        "시추로그·지하수·지지력·침하·액상화·부식성·우기 조건",
+        "현지 기준에 따른 구조계산서와 도면",
+        "기술검사기관의 설계 비자"
+      ],
+      "reportUse": "예비조사에서 지반조사 예산·기간·우기 접근성을 확보하고 기초형식은 조사 전 확정하지 않는다."
+    },
+    {
+      "id": "SEN-BLD-REQ-010",
+      "stage": "pre-construction",
+      "topic": "굴착 개시허가",
+      "status": "conditional",
+      "applicability": "의무 기술검사 대상 건축현장. 별도로 깊이 10m 초과 시추·기초 굴착은 광업행정 승인 대상",
+      "requirement": "의무 기술검사 대상 현장은 건축허가 후 굴착 개시허가를 받아야 하며 허가서, 기술검사계약, 구조도서 비자, 지반보고서와 공사위험보험 등을 제출한다. 법정 결정기간은 10근무일이다.",
+      "authorityIds": [
+        "construction-minister",
+        "mines-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.32",
+            "L.80"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.34-R.36"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축허가와 승인도서",
+        "기술검사계약·구조 비자·지반보고서",
+        "공사위험보험 증명",
+        "10m 초과 굴착 여부와 필요 시 Mines 승인"
+      ],
+      "reportUse": "착공 선행조건 목록에 넣고 건축허가와 착공을 같은 날짜로 계획하지 않는다."
+    },
+    {
+      "id": "SEN-BLD-REQ-011",
+      "stage": "design",
+      "topic": "에너지·음향 성능",
+      "status": "conditional",
+      "applicability": "신축 건축물. 공공서비스용 건축물의 연면적이 500㎡를 초과하면 에너지성능 인증 의무가 적용될 수 있음",
+      "requirement": "건축 설계는 생물기후적 설계, 에너지효율, 물관리와 재생에너지 고려를 포함해야 한다. 일정 규모 공공서비스 건축물은 에너지성능 인증 대상이며, 준공 시 음향규정 준수 확인이 요구된다.",
+      "authorityIds": [
+        "construction-minister",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-L-2023-20",
+          "provisions": [
+            "L.282",
+            "L.285"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.18-L.25",
+            "L.28"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "연면적·용도 기준의 에너지인증 대상 여부",
+        "현행 적용기준·계산도구·인증기관·관련 부령",
+        "외피·차양·자연환기·냉방·태양광·계측 성능목표",
+        "교육·회의·서버 공간의 음향기준과 준공 확인 방식"
+      ],
+      "reportUse": "설계기준서와 MEP·ICT 부하, 생애주기비용, 준공시험 예산에 연결한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-012",
+      "stage": "pre-construction",
+      "topic": "건설보험·책임",
+      "status": "conditional",
+      "applicability": "신축 ERP, 의무 기술검사 대상, 특정 기초보강·인접 옹벽 공사 등. 국가가 자기 명의로 직접 건축하는 경우 일부 보험의 법정면제 가능성 있음",
+      "requirement": "적용대상에는 직업·제3자 책임, 공사종합위험, 손해보험 등 법정 건설보험 구조와 10년 책임이 연결된다. 국가 자체건설 면제는 KOICA·MESRI·시공사 관계에 자동 적용되지 않으므로 서면 법률·보험 확인이 필요하다.",
+      "authorityIds": [
+        "construction-minister"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.47-L.55",
+            "L.67-L.68",
+            "L.83-L.92"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·발주자·소유자·운영자의 법적 지위",
+        "설계자·기술검사·시공사별 보험증권과 담보한도",
+        "공사종합위험·제3자책임·손해보험 적용표",
+        "국가면제 주장 시 관할기관·보험자의 서면 근거",
+        "인수·하자·10년 책임과 분쟁해결 조항"
+      ],
+      "reportUse": "예산·입찰자격·계약특수조건과 수원국/공여국 위험분담에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-013",
+      "stage": "construction",
+      "topic": "현장 표시·승인도서·변경관리",
+      "status": "confirmed",
+      "applicability": "건축허가를 받은 공사",
+      "requirement": "착공 전부터 현장에 허가번호·사업·수익자·참여자·예정기간을 표시한 80cm 이상 표지를 설치해야 한다. 허가도서와 다른 변경은 적법한 변경승인 여부를 확인해야 한다.",
+      "authorityIds": [
+        "urbanism-service",
+        "competent-mayor",
+        "urbanism-minister"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.415-R.419"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현장 허가표지 사진",
+        "승인도서·시공도서·변경승인 대장",
+        "검사·회의·품질시험 기록"
+      ],
+      "reportUse": "CM 과업과 시공사 제출물, 변경통제 절차에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-014",
+      "stage": "construction",
+      "topic": "건설폐기물·해체 진단",
+      "status": "confirmed",
+      "applicability": "건설·개보수·해체공사. 300㎡ 초과 해체 또는 중대한 개보수는 PEMD 진단 대상",
+      "requirement": "건축주와 시공 관계자는 폐기물 발생량·처리방법·목적지·비용을 계획·내역에 반영하고 추적문서를 관리해야 한다. 일정 규모 해체·대수선은 자재·장비·제품·폐기물(PEMD) 진단이 필요하다.",
+      "authorityIds": [
+        "construction-minister",
+        "environment-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.293-R.299"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "폐기물관리계획과 수량·처리비 내역",
+        "허가된 운반·처리 경로와 인계서",
+        "해체·대수선 시 PEMD 진단",
+        "최소 3년 보존할 추적대장"
+      ],
+      "reportUse": "공사내역·환경관리계획·시공사 의무와 준공서류에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-015",
+      "stage": "construction",
+      "topic": "노동·산업안전보건",
+      "status": "unresolved",
+      "applicability": "건설현장과 고용관계 전반",
+      "requirement": "1997년 노동법이 기준일 현재 현행이며 2026년 개정안은 아직 법이 아니다. 현장 안전보건계획, 신고, 노동시간, 보호구, 사고보고와 외국인 근로 등 세부 요건은 현행 시행령·부령과 노동감독기관 요구를 착수 전에 대조해야 한다.",
+      "authorityIds": [
+        "labor-inspectorate"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-LABOR-L-1997-17",
+          "provisions": []
+        },
+        {
+          "instrumentId": "SEN-LABOR-DRAFT-2026",
+          "provisions": []
+        }
+      ],
+      "evidenceToObtain": [
+        "현행 건설현장 안전보건 시행령·부령 목록",
+        "노동감독기관 신고·승인·정기검사 요건",
+        "시공사 HSE 계획·책임자·교육·비상대응·사고보고 체계",
+        "입찰·계약에 반영할 핵심 노동조건"
+      ],
+      "reportUse": "법령번호를 추정하지 말고 현지 법률검토 후 입찰 HSE 요건과 공사비에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-016",
+      "stage": "construction",
+      "topic": "지하수·문화재 우연발견",
+      "status": "conditional",
+      "applicability": "깊은 굴착, 지하수 영향, 유물·유구 발견 가능성이 있는 공사",
+      "requirement": "굴착 중 문화재를 발견하면 신고·보존 의무가 발생하며, 10m 초과 시추·기초 굴착은 Mines 승인 대상이다. 지반·지하수 계획에 중지·통보 절차를 포함한다.",
+      "authorityIds": [
+        "mines-authority",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.32",
+            "L.35-L.36"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "예상 굴착깊이와 지하수 저감계획",
+        "필요 시 Mines 승인",
+        "우연발견 절차와 연락망",
+        "시공사 중지·보존·보고 의무"
+      ],
+      "reportUse": "시방서·환경사회관리계획·공정 위험등록부에 반영한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-017",
+      "stage": "design",
+      "topic": "상하수·우수·외부 기반시설",
+      "status": "conditional",
+      "applicability": "신축과 대규모 개발",
+      "requirement": "건축계획은 상수, 배수, 우수·오수 처리와 도로·주차 등 기반시설을 도시계획·기술기준에 맞춰야 한다. 오수계획과 필요 시 VRD는 건축허가 도서에 포함된다.",
+      "authorityIds": [
+        "urbanism-service",
+        "hygiene-service",
+        "utilities",
+        "dgpu"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.409",
+            "R.417-R.418",
+            "R.439-R.441"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "전력·통신·상수·오수·우수 용량과 접속점",
+        "사업자별 접속조건·비용·인도일 확약",
+        "부지외 공사 범위와 토지·도로 굴착권",
+        "우기 침수·저류·방류 조건과 유지관리 책임"
+      ],
+      "reportUse": "건축공사와 수원국 부담 외부공사의 경계를 RD·예산·일정에 명시한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-018",
+      "stage": "completion",
+      "topic": "준공신고·적합증명",
+      "status": "confirmed",
+      "applicability": "건축허가를 받은 공사의 완료",
+      "requirement": "공사 완료 후 준공신고와 적합증명서를 신청해야 한다. 허가서, 승인도서, 필요 시 준공도면, 세금증빙과 준공신고서를 제출하며 법정 발급기간은 접수 후 18일이다. 무응답 간주절차는 후속 서면촉구가 필요하므로 기본 일정으로 보지 않는다.",
+      "authorityIds": [
+        "urbanism-service",
+        "competent-mayor",
+        "urbanism-minister",
+        "state-representative"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.591-R.595"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "준공신고와 접수증",
+        "승인도서 대비 준공도면·변경승인",
+        "기술검사·시험성적·세금 증빙",
+        "적합증명서 원본"
+      ],
+      "reportUse": "준공·인수·최종지급의 선행조건과 책임주체를 계약에 명시한다."
+    },
+    {
+      "id": "SEN-BLD-REQ-019",
+      "stage": "completion",
+      "topic": "ERP 개장 승인",
+      "status": "conditional",
+      "applicability": "공중이용시설(ERP)로 분류되는 공간",
+      "requirement": "ERP는 공사 완료만으로 개장할 수 없으며 안전위원회의 접수검사, 적합·소방·위생 확인과 공중개방 승인이 필요하다.",
+      "authorityIds": [
+        "civil-protection",
+        "urbanism-service"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.12-L.14",
+            "L.93-L.95"
+          ]
+        },
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.524-R.533"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.137-R.149"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "안전위원회 접수검사 신청·회의록",
+        "소방·피난·비상조명·접근성 시험과 결함조치",
+        "적합증명서와 공중개방 승인",
+        "운영자 비상계획·교육·점검대장"
+      ],
+      "reportUse": "개관일을 공사준공일과 분리하고 시운전·검사·교육 기간을 운영준비계획에 둔다."
+    },
+    {
+      "id": "SEN-BLD-REQ-020",
+      "stage": "operation",
+      "topic": "운영단계 법정점검·시설관리",
+      "status": "unresolved",
+      "applicability": "ERP, 승강기·소방·전기·발전기·냉방·서버설비 등 설치 시설",
+      "requirement": "ERP의 안전·위생 유지와 시설별 정기검사·보험·점검 의무를 운영자에게 이관해야 한다. 설비별 주기와 자격기관은 최종 설계·장비 목록에 따라 현행 부령·기술기준을 확인한다.",
+      "authorityIds": [
+        "civil-protection",
+        "construction-minister",
+        "utilities"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-CON-L-2023-21",
+          "provisions": [
+            "L.79",
+            "L.93-L.95"
+          ]
+        },
+        {
+          "instrumentId": "SEN-CON-D-2024-1495",
+          "provisions": [
+            "R.137-R.149"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "자산·설비별 법정검사 목록·주기·검사기관",
+        "운영예산·예비품·서비스계약",
+        "소방·비상·보안·데이터 운영절차와 책임자",
+        "보증·보험·하자·10년 책임 문서 인계"
+      ],
+      "reportUse": "O&M 조직·연간예산·교육·인수인계 조건에 반영하고 미확정 주기는 임의로 쓰지 않는다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "부지권원·PUD 확인",
+      "decision": "정확한 필지, NICAD, 권원과 필지별 PUD 조건을 서면 확보한다.",
+      "dependsOn": [],
+      "output": "부지 적법성 메모, PUD 규제표, 승인 측량도"
+    },
+    {
+      "order": 2,
+      "gate": "프로젝트 법적 분류",
+      "decision": "건축주·신청인, 공공사업 여부, ERP·ICPE 가능성, 층수·면적·굴착 문턱을 잠정 분류한다.",
+      "dependsOn": [
+        1
+      ],
+      "output": "인허가 매트릭스와 관할기관 사전협의 요청서"
+    },
+    {
+      "order": 3,
+      "gate": "현지 책임설계자 선임",
+      "decision": "ODAS 등록 건축사와 현지 자격 BET·기술검사기관의 역할을 정하고 외국 전문가의 법적 지위를 확인한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "자격증빙, 설계·서명·책임 RACI"
+    },
+    {
+      "order": 4,
+      "gate": "환경 스크리닝",
+      "decision": "환경기관이 요구한 평가 유형과 ICPE 여부를 확정하고 필요한 환경증서를 취득한다.",
+      "dependsOn": [
+        1,
+        2
+      ],
+      "output": "공식 스크리닝과 환경적합 확인서·인증서"
+    },
+    {
+      "order": 5,
+      "gate": "설계·기술 사전검토",
+      "decision": "지반조사, 구조·MEP, 접근성, 소방, 에너지, 배수, 기술검사 요구를 허가도서에 통합한다.",
+      "dependsOn": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "output": "허가설계와 관계기관 사전의견"
+    },
+    {
+      "order": 6,
+      "gate": "건축허가",
+      "decision": "관할 허가권자에게 완비서류를 접수하고 승인도서·조건을 확보한다.",
+      "dependsOn": [
+        4,
+        5
+      ],
+      "output": "건축허가, 승인도서, 조건목록"
+    },
+    {
+      "order": 7,
+      "gate": "착공 선행조건",
+      "decision": "기술검사계약, 구조 비자, 지반보고서, 보험과 필요 시 굴착 개시·Mines 승인을 확보한다.",
+      "dependsOn": [
+        6
+      ],
+      "output": "착공 승인팩과 현장 허가표지"
+    },
+    {
+      "order": 8,
+      "gate": "시공·변경·검사",
+      "decision": "승인도서, 기술검사, 품질·HSE·폐기물, 변경승인과 관계기관 검사 기록을 유지한다.",
+      "dependsOn": [
+        7
+      ],
+      "output": "검사·변경·품질·HSE 대장"
+    },
+    {
+      "order": 9,
+      "gate": "준공 적합",
+      "decision": "준공신고, 준공도면, 시험·검사 자료를 제출해 적합증명서를 취득한다.",
+      "dependsOn": [
+        8
+      ],
+      "output": "적합증명서"
+    },
+    {
+      "order": 10,
+      "gate": "ERP 개장·운영인계",
+      "decision": "해당 시 안전위원회 접수검사와 공중개방 승인을 받고 법정점검·보험·O&M 체계를 운영자에게 인계한다.",
+      "dependsOn": [
+        9
+      ],
+      "output": "개장승인, 운영허가·점검대장, 인수인계팩"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "SEN-DIAM-OVERLAY-001",
+      "area": "Diamniadio PUD 약 1,644ha",
+      "status": "unresolved",
+      "rule": "2021년 PUD는 승인·집행 가능하지만 필지별 용도지역과 수치 기준은 부속 도면·규정 없이는 판정할 수 없다.",
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-DIAM-PUD-D-2021-698",
+          "provisions": [
+            "Art. 1-Art. 3"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "PUD 발표보고서",
+        "1:5,000 계획도",
+        "용도지역 규정",
+        "대상필지 도시계획확인서"
+      ],
+      "consequence": "건폐율·용적률·높이·이격·주차·허용용도를 숫자로 제시하지 않는다."
+    },
+    {
+      "id": "SEN-DIAM-OVERLAY-002",
+      "area": "Diamniadio 도시거점 토지관리구역",
+      "status": "unresolved",
+      "rule": "필지배정·권원·개발의무는 도시거점 토지관리령과 개별 배정문서에 따라 달라질 수 있다.",
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-DIAM-LAND-D-2017-2306",
+          "provisions": []
+        }
+      ],
+      "missingEvidence": [
+        "필지배정 결정",
+        "임대·양여·사용권 계약",
+        "개발기한·환수·양도제한",
+        "토지 인도·경계 확인서"
+      ],
+      "consequence": "권원과 개발기한이 닫히기 전에는 부지확보를 수원국 확정기여로 평가하지 않는다."
+    },
+    {
+      "id": "SEN-DIAM-OVERLAY-003",
+      "area": "대상 필지와 인접 기반시설",
+      "status": "unresolved",
+      "rule": "침수·배수·지반·공공지역권 위험은 허가 거절 또는 설계조건이 될 수 있으므로 현장자료로 판정한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "SEN-URB-D-2025-1194",
+          "provisions": [
+            "R.423-R.424",
+            "R.439-R.441"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "우기 현장조사·과거 침수자료",
+        "기존·계획 우수관망과 방류점",
+        "지반·지하수 조사",
+        "도로·TER·전력·관로 지역권"
+      ],
+      "consequence": "토공·기초·외부인입·우수공사 예비비와 일정 위험을 별도 관리한다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "SEN-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 NICAD, 경계, 권원 종류·유효기간과 건축 권한은 무엇인가?",
+      "whyItMatters": "허가 신청 적격, 부지분쟁, 토지 인도와 수원국 기여 확정에 직접 영향을 준다.",
+      "evidenceNeeded": [
+        "권원 원본",
+        "NICAD 지적도",
+        "배정·인도 결정",
+        "법률검토 의견"
+      ],
+      "confirmWith": [
+        "cadastre-domains",
+        "dgpu"
+      ],
+      "owner": "수원기관·DGPU·현지 법률전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 Diamniadio PUD 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차·조경 기준은 무엇인가?",
+      "whyItMatters": "공간프로그램과 건물규모·배치의 법적 상한을 결정한다.",
+      "evidenceNeeded": [
+        "PUD 도면·규정",
+        "도시계획확인서",
+        "DGPU 확인공문"
+      ],
+      "confirmWith": [
+        "dgpu",
+        "urbanism-service"
+      ],
+      "owner": "수원기관·현지 건축사"
+    },
+    {
+      "id": "SEN-BLD-Q-003",
+      "blocking": true,
+      "stage": "programming",
+      "question": "연면적, 층수·지하층, 시설별 최대 재실인원과 운영시간은 얼마인가?",
+      "whyItMatters": "ERP, 기술검사, 지반조사, 에너지인증, 피난·소방·주차와 공사비 적용 문턱을 결정한다.",
+      "evidenceNeeded": [
+        "승인 공간프로그램",
+        "면적표",
+        "재실·운영 시나리오"
+      ],
+      "confirmWith": [
+        "urbanism-service",
+        "civil-protection"
+      ],
+      "owner": "사업총괄·건축·ICT·성과관리 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "법적 건축주·허가신청인은 누구이며 이 ODA 사업의 건축허가권자는 시장인가 도시계획 담당 장관인가?",
+      "whyItMatters": "신청서 서명, 권원, 수수료, 책임과 일정 경로가 달라진다.",
+      "evidenceNeeded": [
+        "사업·건축주 법적 지위",
+        "관할 도시계획 서비스의 서면 판단"
+      ],
+      "confirmWith": [
+        "urbanism-service",
+        "urbanism-minister",
+        "competent-mayor"
+      ],
+      "owner": "수원기관·현지 법률전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-005",
+      "blocking": true,
+      "stage": "design",
+      "question": "세네갈 책임건축사는 누구이며 한국 건축전문가의 설계·서명·감리 역할은 어떤 승인과 계약구조로 허용되는가?",
+      "whyItMatters": "허가도서 유효성과 전문직 책임·보험·저작권을 결정한다.",
+      "evidenceNeeded": [
+        "ODAS 등록증",
+        "직업보험",
+        "외국인 업무 승인 또는 ODAS 의견",
+        "RACI·용역계약"
+      ],
+      "confirmWith": [
+        "odas",
+        "urbanism-service"
+      ],
+      "owner": "건축전문가·조달전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-006",
+      "blocking": true,
+      "stage": "environment",
+      "question": "환경법상 프로젝트 카테고리, 평가 유형, ICPE 여부와 선행 인증은 무엇인가?",
+      "whyItMatters": "건축허가 전에 닫혀야 하는 법정 선행절차와 조사기간·예산을 결정한다.",
+      "evidenceNeeded": [
+        "공식 스크리닝",
+        "현행 분류표·시행령",
+        "환경평가 ToR",
+        "환경증서"
+      ],
+      "confirmWith": [
+        "environment-authority"
+      ],
+      "owner": "환경사회·건축 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-007",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "우기 침수, 지하수, 지반지지력, 오염·부식성과 방류조건은 어떠한가?",
+      "whyItMatters": "배치·바닥고·기초·토공·우수·서버 및 전기실 안전과 예비비를 결정한다.",
+      "evidenceNeeded": [
+        "지형측량",
+        "지반·지하수조사",
+        "우기 침수이력",
+        "우수망·방류 승인"
+      ],
+      "confirmWith": [
+        "dgpu",
+        "urbanism-service",
+        "utilities"
+      ],
+      "owner": "건축·토목·기자재 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-008",
+      "blocking": true,
+      "stage": "design",
+      "question": "전력·통신·상수·오수의 가용용량, 접속점, 외부공사비와 인도일은 확약됐는가?",
+      "whyItMatters": "AI·ICT 부하, 냉방, UPS·발전기, 급배수 설계와 건축공사/수원국 부담 경계를 결정한다.",
+      "evidenceNeeded": [
+        "사업자별 용량·접속 확약",
+        "접속도면",
+        "비용·공기·책임표"
+      ],
+      "confirmWith": [
+        "utilities",
+        "dgpu"
+      ],
+      "owner": "수원기관·기자재·건축 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-009",
+      "blocking": false,
+      "stage": "pre-construction",
+      "question": "현지에서 인가된 기술검사기관·BET·시험소의 최신 명부와 조달 가능성은 어떠한가?",
+      "whyItMatters": "설계검토 독립성, 착공조건, 시험·검사비와 조달일정을 결정한다.",
+      "evidenceNeeded": [
+        "인가명부",
+        "보험·자격",
+        "시장견적·조달기간"
+      ],
+      "confirmWith": [
+        "construction-minister"
+      ],
+      "owner": "건축·조달 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-010",
+      "blocking": true,
+      "stage": "pre-construction",
+      "question": "법정 건설보험별 피보험자·계약자·보장한도와 국가 자체건설 면제 적용 여부는 무엇인가?",
+      "whyItMatters": "입찰자격, 계약조건, 위험분담과 예산 누락을 막는다.",
+      "evidenceNeeded": [
+        "보험법률검토",
+        "보험사 견적",
+        "면제 여부 서면",
+        "담보 매트릭스"
+      ],
+      "confirmWith": [
+        "construction-minister"
+      ],
+      "owner": "조달·법률·건축 전문가"
+    },
+    {
+      "id": "SEN-BLD-Q-011",
+      "blocking": false,
+      "stage": "permit",
+      "question": "2025년 시행령 기준 실제 접수창구, TéléDac 사용, 최신 수수료·부수·양식과 사전협의 관행은 무엇인가?",
+      "whyItMatters": "공식 안내 페이지의 구정보와 신법 차이로 인한 반려·지연을 예방한다.",
+      "evidenceNeeded": [
+        "관할서비스 최신 체크리스트",
+        "양식·수수료표",
+        "전자접수 안내",
+        "최근 유사사례 일정"
+      ],
+      "confirmWith": [
+        "urbanism-service",
+        "dgpu"
+      ],
+      "owner": "현지 건축사"
+    },
+    {
+      "id": "SEN-BLD-Q-012",
+      "blocking": false,
+      "stage": "operation",
+      "question": "준공 후 소방·승강기·전기·발전기·냉방·서버설비의 법정점검 주기와 연간 O&M 비용은 얼마인가?",
+      "whyItMatters": "운영기관의 인력·예산·서비스계약과 지속가능성을 결정한다.",
+      "evidenceNeeded": [
+        "설비별 법정점검표",
+        "현지 유지관리 견적",
+        "운영인력·예산 확약"
+      ],
+      "confirmWith": [
+        "civil-protection",
+        "construction-minister",
+        "utilities"
+      ],
+      "owner": "운영기관·건축·기자재 전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "SEN-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·NICAD·PUD·측량·지반·기반시설·기존 PD/RD/TAG 원본을 문서번호와 발급기관까지 포함해 요청한다.",
+      "output": "자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "SEN-BLD-F-002",
+      "phase": "출국 전",
+      "check": "현지 책임건축사·기술검사기관·환경평가기관 후보의 등록·인가·보험을 사전조회한다.",
+      "output": "전문기관 적격성 대장"
+    },
+    {
+      "id": "SEN-BLD-F-003",
+      "phase": "기관협의",
+      "check": "DGPU·도시계획 서비스에 필지 PUD 조건과 허가권자·최신 제출체계를 서면 질문한다.",
+      "output": "회의록, PUD 규제표, 기관 확인공문"
+    },
+    {
+      "id": "SEN-BLD-F-004",
+      "phase": "기관협의",
+      "check": "환경기관에 프로젝트 설명서로 스크리닝을 요청하고 평가유형·ICPE·인증 선행관계를 확인한다.",
+      "output": "환경 스크리닝 결정"
+    },
+    {
+      "id": "SEN-BLD-F-005",
+      "phase": "기관협의",
+      "check": "Protection Civile과 ERP 분류, 피난·소방·접근성, 사전검토·접수검사·개장승인 경로를 협의한다.",
+      "output": "소방·ERP 사전협의 메모"
+    },
+    {
+      "id": "SEN-BLD-F-006",
+      "phase": "현장조사",
+      "check": "필지 경계·좌표·레벨·접근도로·지역권·인접시설·침수흔적·우수 흐름·인입점을 공동 확인한다.",
+      "output": "지오태그 사진, 측량 기준점, 현장 제약도"
+    },
+    {
+      "id": "SEN-BLD-F-007",
+      "phase": "현장조사",
+      "check": "우기 조건을 반영한 지반·지하수·배수 조사 과업과 시험 위치를 확정한다.",
+      "output": "승인 조사계획과 견적"
+    },
+    {
+      "id": "SEN-BLD-F-008",
+      "phase": "설계협의",
+      "check": "공간·재실·ICT 부하 시나리오별 ERP·기술검사·에너지·구조·주차 문턱을 대조한다.",
+      "output": "대안별 법규·비용·일정 비교표"
+    },
+    {
+      "id": "SEN-BLD-F-009",
+      "phase": "조달협의",
+      "check": "현지 건축사, BET, 기술검사, 환경평가, 보험, 시험소를 어떤 패키지와 책임구조로 조달할지 정한다.",
+      "output": "조달패키지와 RACI"
+    },
+    {
+      "id": "SEN-BLD-F-010",
+      "phase": "보고서 확정",
+      "check": "법령 사실, 사업 적용판단, 미확정 가정, 기관확인 결과를 별도 열로 분리하고 기준일을 표기한다.",
+      "output": "근거대장·가정대장·위험등록부"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "SEN-BLD-C-001",
+      "confidence": "confirmed",
+      "text": "세네갈의 현행 건축 법체계는 2023년 도시계획법·건설법과 2025년·2024년 각 시행령을 중심으로 갱신됐다. 2008/2009년 도시계획법·시행령과 2009/2010년 건설법·시행령에만 의존한 기존 체크리스트는 현행화가 필요하다.",
+      "basis": [
+        "SEN-URB-L-2023-20",
+        "SEN-URB-D-2025-1194",
+        "SEN-CON-L-2023-21",
+        "SEN-CON-D-2024-1495"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-002",
+      "confidence": "confirmed",
+      "text": "건축허가는 모든 공공주체에도 적용되며, 국가·공공서비스·공익 또는 중요 사업이면 일반 시장 경로가 아니라 도시계획 담당 장관이 허가권자가 될 수 있다.",
+      "basis": [
+        "SEN-URB-L-2023-20",
+        "SEN-URB-D-2025-1194"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-003",
+      "confidence": "conditional",
+      "text": "AI Transition Center가 ERP로 분류되면 복합 건축허가, 민방위·소방 의견, 의무 기술검사, 건설보험, 준공 후 개장승인이 연쇄 적용된다. 최종 ERP 유형·카테고리는 공간별 용도와 재실인원으로 확인해야 한다.",
+      "basis": [
+        "SEN-URB-D-2025-1194",
+        "SEN-CON-L-2023-21",
+        "SEN-CON-D-2024-1495"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-004",
+      "confidence": "confirmed",
+      "text": "건축허가 도서는 세네갈에서 업무할 자격이 있는 건축사가 작성·서명해야 한다. 비UEMOA 전문가의 독립 서명권은 상호주의·승인 확인 없이는 전제할 수 없으므로 현지 책임건축사 조달이 필요하다.",
+      "basis": [
+        "SEN-ARCH-L-2021-22",
+        "SEN-URB-D-2025-1194",
+        "SEN-CON-L-2023-21"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-005",
+      "confidence": "confirmed",
+      "text": "환경평가는 다른 사업 승인·허가에 선행해야 한다. 다만 센터의 환경평가 카테고리와 ICPE 여부는 공식 스크리닝 전에는 확정할 수 없다.",
+      "basis": [
+        "SEN-ENV-L-2023-15"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-006",
+      "confidence": "unresolved",
+      "text": "Diamniadio PUD의 승인·집행가능성은 확인되지만 공개 관보에 부속 도면·규정이 없어 대상필지의 개발밀도·높이·이격·주차 기준은 아직 확인되지 않았다. DGPU 또는 관할 도시계획 서비스의 PUD 원본·도시계획확인서가 Gate 1 차단자료다.",
+      "basis": [
+        "SEN-DIAM-PUD-D-2021-698"
+      ]
+    },
+    {
+      "id": "SEN-BLD-C-007",
+      "confidence": "conditional",
+      "text": "건축허가의 28/40근무일, 굴착 개시허가의 10근무일, 적합증명서의 18일은 완비서류 접수 후 법정기간이다. 환경평가·사전협의·보완·기술검사·개장승인을 합친 전체 인허가기간으로 사용해서는 안 된다.",
+      "basis": [
+        "SEN-URB-D-2025-1194",
+        "SEN-CON-D-2024-1495"
+      ]
+    }
+  ]
+}

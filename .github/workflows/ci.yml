@@ -29,10 +29,14 @@ jobs:
       - name: Validate institution records
         run: python tools/validate.py
 
+      - name: Validate construction regulation records
+        run: python tools/validate_construction_regulations.py
+
       - name: Check process boards
         run: npm run check:boards
 
       - name: Build documentation and site
         run: |
           python tools/build_docs.py
+          python tools/build_construction_regulations.py
           python tools/build_site.py
