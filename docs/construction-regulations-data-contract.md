@@ -1,6 +1,6 @@
 # 국가별 건축 법·제도 데이터 계약 v0.1
 
-`data/construction-regulations/{country}.json`은 ODA 건축사업의 조사·설계·인허가·시공·준공·운영 단계에서 확인할 법과 제도를 국가별로 정규화한 단일 진실 원천이다. 기존 조달 3축(`bidding`, `governance`, `pipeline`)과 목적이 다르므로 별도 사이드카로 관리한다.
+`data/construction-regulations/{country}.json`은 ODA 건축사업의 조사·설계·인허가·시공·준공·운영 단계에서 확인할 법과 제도를 국가별로 정규화한 단일 진실 원천이다. 원천 스키마와 검증은 기존 조달 3축(`bidding`, `governance`, `pipeline`)과 분리하지만, 공개 사이트에서는 같은 국가의 조달 1~3번 뒤에 `construction` 4번부터로 통합한다.
 
 > 이 데이터는 사업기획과 현지조사를 돕는 검증 대장이다. 법률자문, 관할기관의 유권해석, 개별 사업의 인허가를 대신하지 않는다.
 
@@ -24,7 +24,7 @@
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
 | `tools/build_construction_boards.mjs` | `processBoard`를 korea100studio SVG로 렌더 | 수동 |
-| `tools/check_construction_site.py` | 생성 페이지·SVG 연결 확인 | 수동 |
+| `tools/check_construction_site.py` | 통합 model·클릭 구조도·이전 URL·감사용 SVG 확인 | 수동 |
 
 생성 문서는 직접 고치지 않는다. 원천 JSON을 수정한 뒤 다시 빌드한다.
 
@@ -201,7 +201,11 @@
 - `permitPath`는 일정·산출물 중심의 법정 Gate 대장이고, `processBoard`는 기관 간 인계·병렬협의·보완회귀를 보여주는 시각 모델이다. 서로 대체하지 않는다.
 - 모든 Gate 순번은 최소 한 개의 보드 노드 `gateOrders`에 연결한다.
 - 모든 노드는 근거 `refs`를 갖고 기존 법령 ID·요구사항·기관으로 역추적할 수 있어야 한다.
-- SVG는 `npm run build:construction-boards`로 만들며 `korea100studio validate --strict`, `render`, `check`를 모두 통과해야 한다.
+- 공개 화면은 `build_site.py`가 `processBoard`를 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`로 배치하며, 기존 `/construction/{country}/` 주소는 새 model로 이동한다.
+- 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드 근거는 `processBoard.refs`와 연결된 모든 `requirements[].legalBasis`를 합쳐야 한다.
+- 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `note`를 보존한다. `pending` 법안과 `continuity_unverified` 안내자료는 현행 법적 근거 목록에 섞지 않고 검증 대장에서 상태 배지와 함께 표시한다.
+- `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.
+- `npm run build:construction-boards`의 SVG는 공개 본문 이미지가 아니라 `korea100studio validate --strict`, `render`, `check`를 위한 구성 감사 산출물이다.
 
 ## 6. 참조 무결성 규칙
 
