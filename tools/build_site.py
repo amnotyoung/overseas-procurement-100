@@ -1974,8 +1974,8 @@ def build_construction_index(items: list[dict]) -> str:
     <p class="desc">법령 사실과 개별 사업 적용판단을 분리해 근거 없는 수치·일정을 막습니다.</p>
     <div class="cards">
       <div class="card"><h3>1 · 현행 법령</h3><p style="margin:0;font-size:13.5px">폐지·대체·심의 중인 문서를 나누고 실제 확인한 조문을 표시합니다.</p></div>
-      <div class="card"><h3>2 · 사업 적용</h3><p style="margin:0;font-size:13.5px">층수·면적·ERP·발주주체처럼 입력에 따라 달라지는 의무는 조건부로 둡니다.</p></div>
-      <div class="card"><h3>3 · Gate 자료요청</h3><p style="margin:0;font-size:13.5px">필지·PUD·환경분류·현지 자격처럼 답이 없으면 설계를 멈춰야 할 질문을 분리합니다.</p></div>
+      <div class="card"><h3>2 · 사업 적용</h3><p style="margin:0;font-size:13.5px">층수·면적·시설의 용도·위험 분류·발주주체처럼 입력에 따라 달라지는 의무는 조건부로 둡니다.</p></div>
+      <div class="card"><h3>3 · Gate 자료요청</h3><p style="margin:0;font-size:13.5px">필지별 개발규제, 지반·침수, 환경분류, 실제 수수료·기간, 현지 설계·검사·보험기관처럼 사업별로 확인할 항목을 분리합니다.</p></div>
     </div>
   </section>
 </main>"""
