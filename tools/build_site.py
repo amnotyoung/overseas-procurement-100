@@ -26,7 +26,7 @@ INST_DIR = ROOT / "data" / "institutions"
 CONSTRUCTION_DIR = ROOT / "data" / "construction-regulations"
 SITE = ROOT / "site"
 
-SITE_TITLE = "그 나라, ODA 사업은 어떻게 추진할까?"
+SITE_TITLE = "그 나라, 조달하고 건축하려면?"
 SITE_SUB = "협력국 조달·건축 법·제도 안내"
 
 
@@ -706,10 +706,10 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
 
     body = f"""
 <div class="wrap hero">
-  <div class="eyebrow">사업기획에서 실행까지</div>
+  <div class="eyebrow">조달 절차와 건축 법·제도</div>
   <h1>{e(SITE_TITLE)}</h1>
-  <p class="lede">협력국에서 ODA 사업을 처음 기획·추진하더라도 괜찮습니다.</p>
-  <p class="lede">조달 절차와 건축 법·제도를 담당기관·서류·기한·의사결정이 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+  <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
+  <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
   <p class="meta">조달 제도 {len(items)}개 · 조달 {len(countries)}개국 · 건축 법·제도 {len(construction_items)}개국 · 조문 대조 완료 {verified}개 · 자료집 기준일 {e(asof)}</p>
 </div>
 
