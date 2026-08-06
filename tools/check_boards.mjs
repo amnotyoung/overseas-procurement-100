@@ -27,6 +27,7 @@ import { toBoard } from "./board_adapter.mjs";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = dirname(HERE);
 const INST_DIR = join(ROOT, "data", "institutions");
+const CONSTRUCTION_DIR = join(ROOT, "data", "construction-regulations");
 const BASELINE = join(HERE, "board-baseline.json");
 const BOARD_CLI = join(ROOT, "node_modules", "korea100studio", "scripts", "board.mjs");
 
@@ -73,6 +74,15 @@ for (const f of files) {
   results[inst.slug] = audit(toBoard(inst));
 }
 
+const constructionFiles = readdirSync(CONSTRUCTION_DIR)
+  .filter((f) => f.endsWith(".json") && f !== "manifest.json")
+  .sort();
+for (const f of constructionFiles) {
+  const item = JSON.parse(readFileSync(join(CONSTRUCTION_DIR, f), "utf8"));
+  if (!item.processBoard) continue;
+  results[`construction/${item.slug}`] = audit(item.processBoard);
+}
+
 // --- baseline ---
 if (UPDATE) {
   writeFileSync(BASELINE, JSON.stringify(results, null, 2) + "\n");
@@ -103,7 +113,7 @@ for (const [slug, r] of Object.entries(results)) {
     // 렌더 실패. baseline에도 같은 실패가 있으면 알려진 상태, 새로 생기면 hard fail.
     const known = b && !b.ok;
     status = known ? `알려진 렌더한계(${r.renderError.split(":")[0]})` : `!! 신규 렌더실패: ${r.renderError}`;
-    if (!known && b) { hardFail = true; }
+    if (!known) { hardFail = true; }
     console.log(P(slug, 34) + P("—", 10) + P("—", 11) + P("—", 9) + P("—", 8) + status);
     continue;
   }
@@ -114,7 +124,8 @@ for (const [slug, r] of Object.entries(results)) {
     flags.push(`piercing↑ ${b.nodePiercings}→${r.nodePiercings}`);
     hardFail = true;
   } else if (r.nodePiercings > 0) {
-    flags.push(`piercing ${r.nodePiercings}(기존)`);
+    flags.push(b ? `piercing ${r.nodePiercings}(기존)` : `신규 piercing ${r.nodePiercings}`);
+    if (!b) hardFail = true;
   }
   // warn: score 악화
   if (b && b.ok && b.score != null && r.score > b.score + 0.5) {
@@ -123,8 +134,13 @@ for (const [slug, r] of Object.entries(results)) {
   }
   // warn: 레이아웃 의존 예산 초과 (절대 실패는 아님)
   for (const [k, lim] of Object.entries(budgets)) {
-    if (r[k] > lim) { flags.push(`${k} ${r[k]}>${lim}`); warn = true; }
+    if (r[k] > lim) {
+      flags.push(`${k} ${r[k]}>${lim}`);
+      if (b) warn = true;
+      else hardFail = true;
+    }
   }
+  if (!b && !flags.length) status = "신규 보드 · strict clean";
   if (flags.length) status = flags.join(", ");
 
   console.log(

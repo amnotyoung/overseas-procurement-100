@@ -37,7 +37,8 @@
 
 - 공개 화면: [건축 법·제도 국가 대장](https://amnotyoung.github.io/overseas-procurement-100/construction/) → [세네갈 전문가 브리프](https://amnotyoung.github.io/overseas-procurement-100/construction/senegal/)
 - 생성 문서: [세네갈 건축 법·제도 브리프](docs/construction-regulations/senegal.md)
-- 범위: 법령·공식자료 14종·관할기관 14개·생애주기 의무 20건·미확정 질문 12건
+- 범위: 법령·공식자료 14종·관할기관 14개·생애주기 의무 20건·미확정 질문 12건·제도 구조도 18노드
+- 구조도: [`korea100studio`](https://github.com/amnotyoung/korea100studio) `gov` 프로필로 행위주체 × 단계 × 업무·보완회귀 SVG를 생성하고 구성 품질을 검사한다.
 - 사업 적용: Diamniadio AI Transition Center의 Gate 1 자료요청, 인허가 경로, 현지 책임건축사, ERP·소방, 환경평가, 기술검사·보험, 준공·개장 조건
 - 원칙: 법령의 현행·폐지·개정예고를 구분하고, 조문 확인과 사업 적용판단을 분리하며, 필지·면적·용도처럼 받지 못한 정보는 ‘해당 없음’으로 처리하지 않는다.
 
@@ -104,6 +105,7 @@ sources/koica-2026/
 ## 빌드와 검증
 
 ```bash
+npm ci
 python3 tools/generate_all_countries.py  # PDF 전수 추출·미검증 국가 1차 다이어그램 생성
 python3 tools/validate.py
 python3 tools/build_docs.py
@@ -115,6 +117,8 @@ python3 tools/build_site.py
 ```bash
 python3 tools/validate_construction_regulations.py
 python3 tools/build_construction_regulations.py
+npm run build:construction-boards
+python3 tools/check_construction_site.py
 ```
 
 선택 점검:
@@ -130,7 +134,7 @@ npm run check:boards
 |---|---|
 | `site/index.html` | 국가·축 검색과 제도 대장 |
 | `site/construction/index.html` | ODA 건축 법·제도 국가 대장 |
-| `site/construction/{country}/index.html` | 국가별 생애주기 의무·Gate 질문·인허가 경로·법령 원문 |
+| `site/construction/{country}/index.html` | korea100studio 업무구조도·생애주기 의무·Gate 질문·인허가 경로·법령 원문 |
 | `site/model/{slug}/index.html` | 업무구조도, 캔버스, 원문, 현행 기준, 검증 |
 | `site/verification/index.html` | 현행 기준 확인 대장 |
 | `site/errata/index.html` | 현행 기준 반영 출처 |

@@ -26,7 +26,7 @@ INST_DIR = ROOT / "data" / "institutions"
 CONSTRUCTION_DIR = ROOT / "data" / "construction-regulations"
 SITE = ROOT / "site"
 
-SITE_TITLE = "그 나라, ODA 사업은 어떻게 추진할까?"
+SITE_TITLE = "그 나라, 조달하고 건축하려면?"
 SITE_SUB = "협력국 조달·건축 법·제도 안내"
 
 
@@ -538,6 +538,24 @@ ul.plain li{margin-bottom:6px}
 .country-card .metrics b{display:block;font-size:18px;line-height:1.2}
 .country-card .metrics span{font-size:11px;color:var(--muted)}
 .country-card .btn{display:inline-flex;text-decoration:none;color:var(--key);font-weight:700}
+.studio-preview{margin:18px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.studio-preview .viewport{height:330px;overflow:hidden;position:relative}
+.studio-preview .viewport::after{content:"";position:absolute;inset:auto 0 0;height:80px;
+  background:linear-gradient(transparent,#fff);pointer-events:none}
+.studio-preview img{display:block;width:100%;min-width:720px;height:auto}
+.studio-preview .caption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:10px 12px;border-top:1px solid var(--line);color:#3d4048;font-size:11.5px}
+.studio-preview .caption b{font-size:12px;color:#191b20}
+.studio-board-shell{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.studio-board-view{overflow:auto;background:#fff}
+.studio-board-view img{display:block;width:100%;min-width:1120px;height:auto}
+.studio-board-shell figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  flex-wrap:wrap;margin:0;padding:11px 14px;border-top:1px solid #d9dbe1;color:#51545d;font-size:12px}
+.studio-board-shell figcaption a{color:#3157a4}
+@media (max-width:760px){
+  .studio-preview .viewport{height:280px}.studio-preview img{min-width:660px}
+  .studio-board-view img{min-width:980px}
+}
 
 .decision-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px}
 .decision{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:16px 17px}
@@ -706,10 +724,10 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
 
     body = f"""
 <div class="wrap hero">
-  <div class="eyebrow">사업기획에서 실행까지</div>
+  <div class="eyebrow">조달 절차와 건축 법·제도</div>
   <h1>{e(SITE_TITLE)}</h1>
-  <p class="lede">협력국에서 ODA 사업을 처음 기획·추진하더라도 괜찮습니다.</p>
-  <p class="lede">조달 절차와 건축 법·제도를 담당기관·서류·기한·의사결정이 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+  <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
+  <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
   <p class="meta">조달 제도 {len(items)}개 · 조달 {len(countries)}개국 · 건축 법·제도 {len(construction_items)}개국 · 조문 대조 완료 {verified}개 · 자료집 기준일 {e(asof)}</p>
 </div>
 
@@ -1206,10 +1224,12 @@ def build_construction_index(items: list[dict]) -> str:
     n_requirements = sum(len(d["requirements"]) for d in items)
     n_blockers = sum(1 for d in items for q in d["openQuestions"] if q["blocking"])
     n_verified = sum(1 for d in items if d["verification"]["status"] == "article-verified")
+    n_board_nodes = sum(len(d["processBoard"]["nodes"]) for d in items)
     asof = max(d["asOfDate"] for d in items)
 
     cards = []
     for d in items:
+        board = d["processBoard"]
         counts = {state: sum(1 for r in d["requirements"] if r["status"] == state)
                   for state in ("confirmed", "conditional", "unresolved")}
         blockers = sum(1 for q in d["openQuestions"] if q["blocking"])
@@ -1228,8 +1248,14 @@ def build_construction_index(items: list[dict]) -> str:
     <span><b>{blockers}</b>Gate 차단 질문</span>
     <span><b>{len(d['instruments'])}</b>법령·공식자료</span>
     <span><b>{counts['confirmed']}/{counts['conditional']}/{counts['unresolved']}</b>확정/조건부/미확정</span>
+    <span><b>{len(board['nodes'])}</b>구조도 노드</span>
   </div>
-  <a class="btn" href="{e(d['slug'])}/index.html">전문가 브리프 보기 →</a>
+  <div class="studio-preview">
+    <div class="viewport"><img src="../boards/{e(d['slug'])}-construction.svg"
+      alt="{e(d['country']['name'])} 건축 인허가 업무구조도 미리보기" loading="lazy"></div>
+    <div class="caption"><b>korea100studio 구조도</b><span>{len(board['lanes'])}개 행위주체 · {len(board['stages'])}단계 · {len(board['edges'])}개 연결</span></div>
+  </div>
+  <a class="btn" href="{e(d['slug'])}/index.html">구조도·전문가 브리프 보기 →</a>
 </article>""")
 
     body = f"""
@@ -1248,6 +1274,7 @@ def build_construction_index(items: list[dict]) -> str:
     <div class="stat"><b>{len(items)}</b><span>국가</span></div>
     <div class="stat ok"><b>{n_sources}</b><span>법령·공식자료</span></div>
     <div class="stat"><b>{n_requirements}</b><span>생애주기 의무</span></div>
+    <div class="stat"><b>{n_board_nodes}</b><span>구조도 노드</span></div>
     <div class="stat bad"><b>{n_blockers}</b><span>Gate 차단 질문</span></div>
   </div>
 </div></div>
@@ -1272,6 +1299,7 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
     instruments = {x["id"]: x for x in d["instruments"]}
     authorities = {x["id"]: x for x in d["authorities"]}
     requirements = d["requirements"]
+    board = d["processBoard"]
     blockers = [q for q in d["openQuestions"] if q["blocking"]]
     non_blockers = [q for q in d["openQuestions"] if not q["blocking"]]
     context = d.get("pilotContext") or {}
@@ -1406,12 +1434,13 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
   <div class="tiles">
     <div class="tile"><b>{len(d['instruments'])}</b><span>법령·공식자료</span></div>
     <div class="tile"><b>{len(requirements)}</b><span>생애주기 의무</span></div>
+    <div class="tile"><b>{len(board['nodes'])}</b><span>구조도 노드</span></div>
     <div class="tile ok"><b>{counts['confirmed']}</b><span>확정</span></div>
     <div class="tile warn"><b>{counts['conditional']}</b><span>조건부</span></div>
     <div class="tile bad"><b>{len(blockers)}</b><span>Gate 차단 질문</span></div>
   </div>
   <div class="anchor-row">
-    <a href="#decisions">핵심 판단</a><a href="#blockers">Gate 질문</a><a href="#permit-path">인허가 경로</a>
+    <a href="#process-board">업무구조도</a><a href="#decisions">핵심 판단</a><a href="#blockers">Gate 질문</a><a href="#permit-path">인허가 경로</a>
     <a href="#requirements">단계별 의무</a><a href="#site-overlays">부지 특례</a><a href="#sources">법령 원문</a>
   </div>
 </div>
@@ -1426,6 +1455,28 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
       <div class="card"><h3>확인된 입력</h3><ul class="plain">{known}</ul></div>
       <div class="card span2"><h3>아직 받지 못한 핵심 입력</h3><ul class="plain">{unknown}</ul></div>
     </div>
+  </section>
+
+  <section class="blk" id="process-board">
+    <div class="hd-row">
+      <div>
+        <h2>건축 인허가 업무구조도</h2>
+        <p class="desc">행위주체 × 단계 × 업무와 보완 회귀를 한 판에 표시했습니다. 각 카드의 조문은 아래 단계별 요구사항·법령 원문 대장으로 추적됩니다.</p>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--key)"></i>핵심</span>
+        <span><i style="background:var(--warn)"></i>병목</span>
+        <span><i style="background:var(--back)"></i>보완 회귀</span>
+      </div>
+    </div>
+    <figure class="studio-board-shell">
+      <div class="studio-board-view"><img src="../../boards/{e(d['slug'])}-construction.svg"
+        alt="{e(board['title'])}: {len(board['lanes'])}개 행위주체와 {len(board['stages'])}단계의 업무구조도"></div>
+      <figcaption>
+        <span>{len(board['lanes'])}개 행위주체 · {len(board['stages'])}단계 · {len(board['nodes'])}개 업무 · {len(board['edges'])}개 연결</span>
+        <span><a href="https://github.com/amnotyoung/korea100studio" target="_blank" rel="noopener">korea100studio</a> gov 프로필 · <a href="../../boards/{e(d['slug'])}-construction.svg" target="_blank">SVG 크게 보기</a></span>
+      </figcaption>
+    </figure>
   </section>
 
   <section class="blk" id="decisions">
