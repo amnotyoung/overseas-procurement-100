@@ -1,0 +1,832 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "kyrgyzstan",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "키르기스스탄",
+    "nameEn": "Kyrgyzstan",
+    "iso3": "KGZ",
+    "region": "중동·CIS"
+  },
+  "purpose": "키르기스스탄 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "도시계획·건축법 제1372-XII/1994호 및 도시계획입법기본법 제95/2011호(개정 포함)·설계·건설서류 및 완공시설 적합성평가에 관한 내각결정 제114/2021호(개정 포함)·내진건설 설계기준 SN KR 20-02:2024·환경전문심사법 제54/1999호 및 국가환경전문심사규칙 정부결정 제248/2014호(개정 포함)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "키르기스스탄 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권리·지적과 승인계획·토지이용규칙, 도시계획결론으로 실제 필지조건을 확정한다.",
+        "authorityIds": [
+          "kgz-architecture-authority"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "도시계획결론·내진·기술조건",
+            "instrumentId": "KGZ-URBAN-ARCHITECTURE-LAWS",
+            "provisions": [
+              "urban-planning documents, land use, architecture and development control"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 권리·승인계획·도시계획결론상 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "kgz-architecture-authority"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "도시계획결론·내진·기술조건",
+            "instrumentId": "KGZ-URBAN-ARCHITECTURE-LAWS",
+            "provisions": [
+              "urban-planning documents, land use, architecture and development control"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "도시계획결론·설계협의/전문심사·공사등록과 OVOS·I–III 국가환경전문심사를 연계한다.",
+        "authorityIds": [
+          "kgz-architecture-authority",
+          "kgz-construction-control",
+          "kgz-environment-ministry"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "설계협의·공사등록·OVOS/GEE",
+            "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+            "provisions": [
+              "urban-planning conclusion, project coordination/expertise and construction registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 설계협의·전문심사·공사등록과 OVOS 위험범주·환경심사권자·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "kgz-architecture-authority",
+          "kgz-construction-control",
+          "kgz-environment-ministry"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "설계협의·공사등록·OVOS/GEE",
+            "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+            "provisions": [
+              "urban-planning conclusion, project coordination/expertise and construction registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "면허·자격전문가와 국가·설계자·기술감리, 완공 적합성평가·사용인수를 인계 Gate로 둔다.",
+        "authorityIds": [
+          "kgz-construction-control",
+          "kgz-licensed-participants",
+          "kgz-architecture-authority"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "면허·3중 감리·사용인수",
+            "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+            "provisions": [
+              "construction supervision, completion documents and conformity assessment for operation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 면허·자격·감리·보험과 준공 적합성평가·사용인수의 실제 서류·위원회·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "kgz-construction-control",
+          "kgz-licensed-participants",
+          "kgz-architecture-authority"
+        ],
+        "requirementIds": [
+          "KGZ-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "면허·3중 감리·사용인수",
+            "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+            "provisions": [
+              "construction supervision, completion documents and conformity assessment for operation"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "kyrgyzstan-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "키르기스스탄 도시계획·부지규제",
+      "oneLiner": "토지권리·지적과 승인계획·토지이용규칙, 도시계획결론으로 실제 필지조건을 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "공식 e-license의 urban-planning conclusion과 2024 내진기준을 확인했다. 필지수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "KGZ-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "KGZ-BLD-Q-001",
+        "KGZ-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "KGZ-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "KGZ-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "KGZ-BLD-F-001",
+        "KGZ-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "kyrgyzstan-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "키르기스스탄 건축허가·환경심사",
+      "oneLiner": "도시계획결론·설계협의/전문심사·공사등록과 OVOS·I–III 국가환경전문심사를 연계한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Resolution 114의 설계/착공 구조와 e-license의 I–III 환경전문심사 관할을 확인했다. 최신 개정·수수료·실제 기간은 재확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "KGZ-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "KGZ-BLD-Q-003",
+        "KGZ-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "KGZ-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "KGZ-BLD-F-003",
+        "KGZ-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "kyrgyzstan-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "키르기스스탄 기술검사·보험·준공제도",
+      "oneLiner": "면허·자격전문가와 국가·설계자·기술감리, 완공 적합성평가·사용인수를 인계 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "공식 면허포털과 Resolution 114의 감리·적합성평가 구조를 확인했다. 최신 단계명칭·위원회·보험·비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "KGZ-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "KGZ-BLD-Q-005",
+        "KGZ-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "KGZ-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "KGZ-BLD-F-005",
+        "KGZ-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "kgz-architecture-authority",
+      "name": "Ministry of Construction, Architecture and Housing and Communal Services and territorial bodies",
+      "nameKo": "건설·건축·주택공공서비스부와 지역기관",
+      "role": "도시계획결론, 설계협의·전문심사, 공사등록과 기술기준을 관장",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://minstroy.gov.kg/ru"
+    },
+    {
+      "id": "kgz-construction-control",
+      "name": "Department of State Architectural and Construction Control",
+      "nameKo": "국가건축·건설통제국",
+      "role": "책임등급별 국가건축건설감독과 준공 적합성평가·사용인수를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://mkk.gov.kg/ru/2024/05/21/%D0%B4%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D1%82-3/"
+    },
+    {
+      "id": "kgz-environment-ministry",
+      "name": "Ministry of Natural Resources, Ecology and Technical Supervision",
+      "nameKo": "천연자원·생태·기술감독부",
+      "role": "OVOS 자료와 I–III 위험범주별 국가환경전문심사를 처리",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.mnr.gov.kg/ru/page/examination"
+    },
+    {
+      "id": "kgz-licensed-participants",
+      "name": "Licensed design/survey and construction organizations, certified specialists and author/technical supervisors",
+      "nameKo": "면허 설계·조사·시공기관과 자격전문가·설계자/기술감리",
+      "role": "I–III 책임등급별 설계·시공, 전문검토·감리와 준공 증빙을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.elicense.gov.kg/license/id/303"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "KGZ-URBAN-ARCHITECTURE-LAWS",
+      "title": "Law No. 1372-XII of 1994 on Urban Planning and Architecture and Law No. 95 of 2011 on the Fundamentals of Urban-Planning Legislation, as amended",
+      "titleKo": "도시계획·건축법 제1372-XII/1994호 및 도시계획입법기본법 제95/2011호(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://mkk.gov.kg/ru/2024/05/21/%D0%B4%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D1%82-3/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "KGZ-CONSTRUCTION-REG-114-2021",
+      "title": "Cabinet of Ministers Resolution No. 114 of 6 August 2021 on design/construction documents and conformity assessment of completed facilities, as amended",
+      "titleKo": "설계·건설서류 및 완공시설 적합성평가에 관한 내각결정 제114/2021호(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2021-08-06",
+      "officialUrl": "https://www.gov.kg/ky/npa/s/3243",
+      "verificationLevel": "law-linked",
+      "note": "2024년 이후 개정안이 공개된 바 있어 계약 시점의 통합 현행본과 단계 명칭을 반드시 재확인한다."
+    },
+    {
+      "id": "KGZ-SEISMIC-CODE-20-02-2024",
+      "title": "Construction Norm SN KR 20-02:2024 on Earthquake-Resistant Construction",
+      "titleKo": "내진건설 설계기준 SN KR 20-02:2024",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "issuedOn": "2024-03-14",
+      "officialUrl": "https://minstroy.gov.kg/ru/document/84/show",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "KGZ-ENV-EXPERTISE-LAW-54-1999",
+      "title": "Law No. 54 of 1999 on Environmental Expertise and Government Resolution No. 248 of 2014, as amended",
+      "titleKo": "환경전문심사법 제54/1999호 및 국가환경전문심사규칙 정부결정 제248/2014호(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1999-06-16",
+      "officialUrl": "https://cbd.minjust.gov.kg/219/edition/638848/ru",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "KGZ-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "키르기스스탄에서 신축·재건축·용도전환 또는 부지개발을 추진하는 사업",
+      "requirement": "territorial architecture body는 토지권리와 도시계획문서·land-use/building rules를 대조해 разрешенный вид использования와 설계조건을 담은 urban-planning conclusion을 발급한다. 지진·사면·산사태·홍수·토석류, 지반과 난방·상하수·전력 기술조건을 조사한다.",
+      "authorityIds": [
+        "kgz-architecture-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KGZ-URBAN-ARCHITECTURE-LAWS",
+          "provisions": [
+            "urban-planning documents, land use, architecture and development control"
+          ]
+        },
+        {
+          "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+          "provisions": [
+            "urban-planning conclusion and design conditions"
+          ]
+        },
+        {
+          "instrumentId": "KGZ-SEISMIC-CODE-20-02-2024",
+          "provisions": [
+            "site and structural seismic-design requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지소유·임대/사용권·cadastre·경계",
+        "general/detailed plan·토지이용/건축규칙·도시계획결론",
+        "필지별 용도·밀도·높이·이격·주차·보호조건",
+        "지진·단층·지반·사면·산사태·홍수/토석류·난방·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "KGZ-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "설계협의·전문심사·공사등록 대상 공사와 환경영향 가능 건설·재건축 프로젝트",
+      "requirement": "Resolution 114 체계는 도시계획결론과 general plan·architectural solutions 협의, 필요 시 설계전문심사 후 공사등록·착공으로 이어진다. 영향 가능 사업은 OVOS를 작성하고 Law 54/1999·Resolution 248/2014에 따라 I범주는 중앙, II·III범주는 관할 지역기관의 국가환경전문심사를 받는다.",
+      "authorityIds": [
+        "kgz-architecture-authority",
+        "kgz-construction-control",
+        "kgz-environment-ministry"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+          "provisions": [
+            "urban-planning conclusion, project coordination/expertise and construction registration"
+          ]
+        },
+        {
+          "instrumentId": "KGZ-ENV-EXPERTISE-LAW-54-1999",
+          "provisions": [
+            "mandatory OVOS/state environmental expertise and I-III hazard jurisdiction"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지권리·관할 지역 건축/통제기관",
+        "도시계획결론·general plan/architectural solutions·설계전문심사",
+        "OVOS·I/II/III 위험범주·중앙/지역 국가환경전문심사 결론",
+        "소방·위생·유산·유틸리티 조건과 실제 수수료·보완·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "KGZ-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "국가·설계자·기술감리와 완공시설 적합성평가가 필요한 건축공사",
+      "requirement": "I–III 책임등급에 맞는 면허 설계·조사·시공기관과 국가자격전문가를 선임하고 state architectural-construction, author, technical supervision 기록을 유지한다. 공정 act·시험·as-built와 관계기관 확인을 모아 완공시설 적합성평가와 acceptance into operation을 완료한다.",
+      "authorityIds": [
+        "kgz-construction-control",
+        "kgz-licensed-participants",
+        "kgz-architecture-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "KGZ-CONSTRUCTION-REG-114-2021",
+          "provisions": [
+            "construction supervision, completion documents and conformity assessment for operation"
+          ]
+        },
+        {
+          "instrumentId": "KGZ-URBAN-ARCHITECTURE-LAWS",
+          "provisions": [
+            "state architectural-construction control and participant responsibility"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "I–III 책임등급 면허·GAP/GIP·기술감리 자격·시공자",
+        "국가/설계자/기술감리 일지·은폐공정 act·재료·구조·MEP 시험",
+        "변경승인·as-built·소방·위생·유틸리티 확인",
+        "완공 적합성결론·acceptance into operation·기술여권·보험·비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 권리·승인계획·도시계획결론상 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 설계협의·전문심사·공사등록과 OVOS 위험범주·환경심사권자·실제 기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 면허·자격·감리·보험과 준공 적합성평가·사용인수의 실제 서류·위원회·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "KGZ-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "KGZ-URBAN-ARCHITECTURE-LAWS",
+          "provisions": [
+            "urban-planning documents, land use, architecture and development control"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "KGZ-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 권리·승인계획·도시계획결론상 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지소유·임대/사용권·cadastre·경계",
+        "general/detailed plan·토지이용/건축규칙·도시계획결론",
+        "필지별 용도·밀도·높이·이격·주차·보호조건",
+        "지진·단층·지반·사면·산사태·홍수/토석류·난방·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "kgz-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KGZ-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "kgz-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KGZ-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 설계협의·전문심사·공사등록과 OVOS 위험범주·환경심사권자·실제 기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지권리·관할 지역 건축/통제기관",
+        "도시계획결론·general plan/architectural solutions·설계전문심사",
+        "OVOS·I/II/III 위험범주·중앙/지역 국가환경전문심사 결론",
+        "소방·위생·유산·유틸리티 조건과 실제 수수료·보완·기간"
+      ],
+      "confirmWith": [
+        "kgz-architecture-authority",
+        "kgz-construction-control",
+        "kgz-environment-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KGZ-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "kgz-architecture-authority",
+        "kgz-construction-control",
+        "kgz-environment-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KGZ-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 면허·자격·감리·보험과 준공 적합성평가·사용인수의 실제 서류·위원회·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "I–III 책임등급 면허·GAP/GIP·기술감리 자격·시공자",
+        "국가/설계자/기술감리 일지·은폐공정 act·재료·구조·MEP 시험",
+        "변경승인·as-built·소방·위생·유틸리티 확인",
+        "완공 적합성결론·acceptance into operation·기술여권·보험·비용"
+      ],
+      "confirmWith": [
+        "kgz-construction-control",
+        "kgz-licensed-participants",
+        "kgz-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "KGZ-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "kgz-construction-control",
+        "kgz-licensed-participants",
+        "kgz-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "KGZ-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "KGZ-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "KGZ-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "KGZ-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "KGZ-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "KGZ-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "KGZ-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Bishkek 또는 다른 지역의 수치를 일반화하지 말고 관할기관의 도시계획결론·기술조건과 현장 지반·재해조사를 개념설계 전에 확정한다.",
+      "basis": [
+        "KGZ-URBAN-ARCHITECTURE-LAWS",
+        "KGZ-CONSTRUCTION-REG-114-2021",
+        "KGZ-SEISMIC-CODE-20-02-2024"
+      ]
+    },
+    {
+      "id": "KGZ-BLD-C-002",
+      "confidence": "conditional",
+      "text": "도시계획결론 단계부터 환경·소방·위생·유틸리티 조건을 수집하고 긍정 설계·환경심사 결과를 착공 전 단일 체크리스트로 관리한다.",
+      "basis": [
+        "KGZ-CONSTRUCTION-REG-114-2021",
+        "KGZ-ENV-EXPERTISE-LAW-54-1999"
+      ]
+    },
+    {
+      "id": "KGZ-BLD-C-003",
+      "confidence": "conditional",
+      "text": "책임등급별 면허와 감리기록을 공사 중 누적하고 적합성평가·사용인수를 최종지급·영구 유틸리티·개장 전 Gate로 둔다.",
+      "basis": [
+        "KGZ-CONSTRUCTION-REG-114-2021",
+        "KGZ-URBAN-ARCHITECTURE-LAWS"
+      ]
+    }
+  ]
+}
