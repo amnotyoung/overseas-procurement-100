@@ -3,10 +3,10 @@
 
 원본 how-did-they-do-all-that-procurement의 화면 구성을 승계한다.
   /                    제도 대장 (검색·국가/축 필터·비교 선반)
-  /model/{slug}/       한 장 요약 (업무구조도 + 캔버스 + 검증)
+  /model/{slug}/       국가별 제도 한 장 요약 (조달 1~3 + 건축 4~)
   /verification/       현행 기준 확인 대장
-  /construction/       ODA 건축 법·제도 국가 대장
-  /construction/{slug}/국가별 건축 법·제도 전문가 브리프
+  /construction/       이전 주소 호환용 리디렉션
+  /construction/{slug}/이전 주소 호환용 리디렉션
 
 의존성 없음. 빌드 후 site/를 그대로 열거나 정적 호스팅에 올리면 된다.
 
@@ -35,21 +35,29 @@ def clean_generated_html(value: str) -> str:
     return "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
 
 
-AXIS_LABEL = {"bidding": "입찰제도", "governance": "조달 거버넌스", "pipeline": "ODA 사업형성"}
+AXIS_LABEL = {
+    "bidding": "입찰제도",
+    "governance": "조달 거버넌스",
+    "pipeline": "ODA 사업형성",
+    "construction": "건축 법·제도",
+}
 AXIS_SUFFIX = {
     "bidding": "-bidding-system",
     "governance": "-procurement-governance",
     "pipeline": "-oda-project-pipeline",
+    "construction": "-construction-regulations",
 }
 VERIF_LABEL = {
     "article-verified": "조문 대조 완료",
     "law-linked": "원문 링크 연결",
+    "source-linked": "공식자료 연결",
     "source-document": "자료집 기재",
     "needs-review": "재검토 필요",
 }
 VERIF_TONE = {
     "article-verified": "ok",
     "law-linked": "info",
+    "source-linked": "info",
     "source-document": "muted",
     "needs-review": "bad",
 }
@@ -64,6 +72,11 @@ KIND_LABEL = {
     "treaty-agreement": "양자합의",
     "donor-rule": "공여기관 규정",
     "practice": "현장 관행",
+    "decree": "시행령·명령",
+    "order": "부령",
+    "plan": "도시계획",
+    "official-guidance": "공식 안내",
+    "draft": "법안",
 }
 
 
@@ -147,6 +160,431 @@ def country_slug(d: dict) -> str:
     if not d["slug"].endswith(suffix):
         raise ValueError(f"제도 slug 접미사 불일치: {d['slug']}")
     return d["slug"][:-len(suffix)]
+
+
+SENEGAL_CONSTRUCTION_DISPLAY_STAGE = {
+    "G0 부지·권원": "G1 부지확정",
+    "G1 사업분류·책임체계": "G2 분류·책임",
+    "G2 환경·기본설계": "G2 분류·책임",
+    "G3 관계기관 사전협의": "G3 설계·사전협의",
+    "G4 건축허가": "G4 허가·착공",
+    "G5 착공 선행조건": "G4 허가·착공",
+    "G6 시공·변경·검사": "G5 시공·변경",
+    "G7 준공·적합": "G6 준공·개장·인계",
+    "G8 개장·운영인계": "G6 준공·개장·인계",
+}
+SENEGAL_CONSTRUCTION_DISPLAY_STAGES = [
+    "G1 부지확정",
+    "G2 분류·책임",
+    "G3 설계·사전협의",
+    "G4 허가·착공",
+    "G5 시공·변경",
+    "G6 준공·개장·인계",
+]
+SENEGAL_CONSTRUCTION_GATE_DISPLAY_STAGE = {
+    1: "G1 부지확정",
+    2: "G2 분류·책임",
+    3: "G2 분류·책임",
+    4: "G2 분류·책임",
+    5: "G3 설계·사전협의",
+    6: "G4 허가·착공",
+    7: "G4 허가·착공",
+    8: "G5 시공·변경",
+    9: "G6 준공·개장·인계",
+    10: "G6 준공·개장·인계",
+}
+CONSTRUCTION_EMPHASIS_TO_STATUS = {
+    "lead": "current",
+    "key": "current",
+    "bottleneck": "risk",
+    "normal": "waiting",
+}
+CONSTRUCTION_STATUS_CONFIDENCE = {
+    "confirmed": 0.9,
+    "conditional": 0.75,
+    "unresolved": 0.55,
+}
+SENEGAL_CONSTRUCTION_NODE_DEADLINE = {
+    "B10": "완비서류 기준 단순 28근무일·복합 40근무일. 보완기간에는 심사시계가 중단되고 미착공 2년이면 허가가 실효될 수 있다.",
+    "B12": "의무 기술검사 대상의 굴착 개시허가는 완비서류 기준 10근무일.",
+    "B16": "적합증명서는 완비된 접수 후 법정 18일. 무응답 간주절차는 후속 서면촉구가 필요하다.",
+}
+
+SENEGAL_CONSTRUCTION_QUESTION_NODES = {
+    "SEN-BLD-Q-001": ["B01"],
+    "SEN-BLD-Q-002": ["B02"],
+    "SEN-BLD-Q-003": ["B03"],
+    "SEN-BLD-Q-004": ["B09", "B10"],
+    "SEN-BLD-Q-005": ["B04"],
+    "SEN-BLD-Q-006": ["B05"],
+    "SEN-BLD-Q-007": ["B01", "B06"],
+    "SEN-BLD-Q-008": ["B06"],
+    "SEN-BLD-Q-009": ["B11"],
+    "SEN-BLD-Q-010": ["B11"],
+    "SEN-BLD-Q-011": ["B09"],
+    "SEN-BLD-Q-012": ["B18"],
+}
+
+
+def script_json(value) -> str:
+    """JSON을 inline script에서 안전하게 쓸 수 있게 직렬화한다."""
+    return (
+        json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+        .replace("&", "\\u0026")
+        .replace("\u2028", "\\u2028")
+        .replace("\u2029", "\\u2029")
+    )
+
+
+def construction_presentation(d: dict) -> dict:
+    """국가별 표시 보정과 일반 fallback을 분리한다.
+
+    세네갈 법정기한이나 노드 ID가 다음 국가에 새어 나가지 않도록 국가별
+    보정은 slug 아래에만 둔다. 새 데이터는 원천 board의 단계·노드 메타를
+    그대로 표시하는 fallback으로도 빌드된다.
+    """
+    board = d["processBoard"]
+    stage_map = {}
+    for index, stage in enumerate(board["stages"], start=1):
+        _, _, label = stage.partition(" ")
+        stage_map[stage] = f"G{index} {label or stage}"
+    config = {
+        "stage_map": stage_map,
+        "stages": list(stage_map.values()),
+        "gate_stage": {},
+        "deadlines": {},
+        "question_nodes": {},
+    }
+    if d["slug"] == "senegal":
+        config.update({
+            "stage_map": SENEGAL_CONSTRUCTION_DISPLAY_STAGE,
+            "stages": SENEGAL_CONSTRUCTION_DISPLAY_STAGES,
+            "gate_stage": SENEGAL_CONSTRUCTION_GATE_DISPLAY_STAGE,
+            "deadlines": SENEGAL_CONSTRUCTION_NODE_DEADLINE,
+            "question_nodes": SENEGAL_CONSTRUCTION_QUESTION_NODES,
+        })
+    return config
+
+
+def unique_strings(values) -> list[str]:
+    """순서를 보존해 빈 문자열과 중복을 제거한다."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = str(value or "").strip()
+        if text and text not in seen:
+            seen.add(text)
+            out.append(text)
+    return out
+
+
+def construction_to_model(d: dict) -> dict:
+    """건축 sidecar를 공개 사이트의 4번째 model view로 변환한다.
+
+    원천 스키마와 검증기는 그대로 두고 표시 계층만 기존 조달 model 템플릿에
+    맞춘다. 따라서 같은 내용을 institutions 아래에 복제하지 않는다.
+    """
+    board = d["processBoard"]
+    instruments = {item["id"]: item for item in d["instruments"]}
+    authorities = {item["id"]: item for item in d["authorities"]}
+    requirements = {item["id"]: item for item in d["requirements"]}
+    permit_path = {item["order"]: item for item in d["permitPath"]}
+    questions = {item["id"]: item for item in d["openQuestions"]}
+    context = d.get("pilotContext") or {}
+    presentation = construction_presentation(d)
+
+    def law_name(instrument: dict) -> str:
+        return instrument.get("titleKo") or instrument["title"]
+
+    process_nodes = []
+    for node in board["nodes"]:
+        linked_requirements = [
+            requirements[ident] for ident in node.get("requirementIds", [])
+            if ident in requirements
+        ]
+        requirement_stages = {item["stage"] for item in linked_requirements}
+        question_ids = list(node.get("questionIds", []))
+        if not question_ids:
+            question_ids = [
+                ident for ident, node_ids in presentation["question_nodes"].items()
+                if node["id"] in node_ids
+            ]
+        if not question_ids and not presentation["question_nodes"]:
+            question_ids = [
+                item["id"] for item in d["openQuestions"]
+                if item["stage"] in requirement_stages
+            ]
+        matching_questions = [questions[ident] for ident in question_ids if ident in questions]
+        actor_names = unique_strings(
+            authorities[ident]["nameKo"] for ident in node.get("authorityIds", [])
+            if ident in authorities
+        )
+        action_parts = [node.get("note", "")]
+        action_parts.extend(
+            f'{item["topic"]}: {item["requirement"]}' for item in linked_requirements
+        )
+        output_documents = []
+        for item in linked_requirements:
+            output_documents.extend(item.get("evidenceToObtain", []))
+        for order in node.get("gateOrders", []):
+            if order in permit_path:
+                output_documents.append(permit_path[order]["output"])
+
+        basis_refs = list(node.get("refs", []))
+        for item in linked_requirements:
+            basis_refs.extend(item.get("legalBasis", []))
+        basis_by_instrument: dict[str, dict] = {}
+        for ref in basis_refs:
+            instrument_id = ref.get("instrumentId")
+            instrument = instruments.get(instrument_id)
+            if not instrument:
+                continue
+            basis = basis_by_instrument.setdefault(instrument_id, {
+                "instrument_id": instrument_id,
+                "law": law_name(instrument),
+                "provisions": [],
+                "sources": [],
+                "url": instrument.get("officialUrl", ""),
+                "kind": instrument["kind"],
+                "status": instrument["status"],
+                "verification_level": instrument["verificationLevel"],
+                "note": instrument.get("note", ""),
+            })
+            basis["provisions"].extend(ref.get("provisions", []))
+            if ref.get("source"):
+                basis["sources"].append(ref["source"])
+        legal_basis = []
+        for basis in basis_by_instrument.values():
+            provisions = unique_strings(basis.pop("provisions"))
+            sources = unique_strings(basis.pop("sources"))
+            basis["article"] = ", ".join(provisions or sources) or "세부 조문·사업 적용 확인 필요"
+            legal_basis.append(basis)
+
+        states = [item["status"] for item in linked_requirements]
+        confidence = min(
+            (CONSTRUCTION_STATUS_CONFIDENCE.get(state, 0.7) for state in states),
+            default=0.8,
+        )
+        display_stage = next(
+            (
+                presentation["gate_stage"][order]
+                for order in node.get("gateOrders", [])
+                if order in presentation["gate_stage"]
+            ),
+            presentation["stage_map"].get(node["stage"], node["stage"]),
+        )
+        permit_gates = [permit_path[order] for order in node.get("gateOrders", []) if order in permit_path]
+        process_nodes.append({
+            "id": node["id"],
+            "name": node["label"],
+            "lane": node["lane"],
+            "stage": display_stage,
+            "type": "gateway" if node["emphasis"] == "bottleneck" else "task",
+            "status": CONSTRUCTION_EMPHASIS_TO_STATUS.get(node["emphasis"], "waiting"),
+            "actor": node["lane"],
+            "consulted_authorities": " · ".join(actor_names),
+            "action": " ".join(unique_strings(action_parts)),
+            "deadline": node.get("deadline") or presentation["deadlines"].get(node["id"], ""),
+            "output_documents": unique_strings(output_documents),
+            "blocker": " · ".join(
+                item["question"] for item in matching_questions if item.get("blocking")
+            ),
+            "legal_basis": legal_basis,
+            "confidence": confidence,
+            "confidence_reason": "연결된 법·제도 요구사항 상태: "
+            + ", ".join(unique_strings(CONSTRUCTION_STATUS_LABEL.get(x, x) for x in states)),
+            "applicability": " · ".join(unique_strings(
+                item.get("applicability", "") for item in linked_requirements
+            )),
+            "report_use": " · ".join(unique_strings(
+                item.get("reportUse", "") for item in linked_requirements
+            )),
+            "open_questions": [
+                {
+                    "id": item["id"],
+                    "blocking": item["blocking"],
+                    "question": item["question"],
+                    "why": item["whyItMatters"],
+                    "evidence": item["evidenceNeeded"],
+                    "confirm_with": unique_strings(
+                        authorities[ident]["nameKo"] if ident in authorities else ident
+                        for ident in item["confirmWith"]
+                    ),
+                }
+                for item in matching_questions
+            ],
+            "permit_gates": [
+                {
+                    "order": item["order"],
+                    "gate": item["gate"],
+                    "decision": item["decision"],
+                    "depends_on": item.get("dependsOn", []),
+                    "output": item["output"],
+                }
+                for item in permit_gates
+            ],
+            "requirement_ids": [item["id"] for item in linked_requirements],
+            "question_ids": [item["id"] for item in matching_questions],
+            "gate_orders": [item["order"] for item in permit_gates],
+        })
+
+    verification_sources = []
+    legal_basis = []
+    for instrument in d["instruments"]:
+        name = law_name(instrument)
+        kind = instrument["kind"]
+        if instrument["status"] == "in_force":
+            legal_basis.append({
+                "law": name,
+                "kind": kind,
+                "url": instrument.get("officialUrl"),
+                "articles": ", ".join(instrument.get("articlesChecked", [])),
+            })
+        if instrument.get("officialUrl"):
+            verification_sources.append({
+                "id": instrument["id"],
+                "law": name,
+                "officialName": instrument["title"],
+                "officialUrl": instrument["officialUrl"],
+                "kind": kind,
+                "articlesChecked": ", ".join(instrument.get("articlesChecked", [])),
+                "retrievedOn": d["verification"]["verifiedAt"],
+                "status": instrument["status"],
+                "verificationLevel": instrument["verificationLevel"],
+                "note": instrument.get("note", ""),
+            })
+
+    authority_cards = [
+        {
+            "id": item["id"],
+            "name": item["nameKo"],
+            "role": item["role"],
+            "url": item.get("officialUrl"),
+            "verification": item["verificationLevel"],
+        }
+        for item in d["authorities"]
+    ]
+
+    submitted_documents = [
+        {"actor": f'{item["order"]:02d} {item["gate"]}', "documents": [item["output"]]}
+        for item in d["permitPath"]
+    ]
+
+    blocking_questions = [item for item in d["openQuestions"] if item.get("blocking")]
+    bottlenecks = [
+        f'{item["question"]} — {item["whyItMatters"]} '
+        f'(필요 증빙: {", ".join(item["evidenceNeeded"])})'
+        for item in blocking_questions
+    ]
+    key_findings = [
+        {
+            "id": item["id"],
+            "status": item["confidence"],
+            "text": item["text"],
+            "basis": [law_name(instruments[ident]) for ident in item.get("basis", []) if ident in instruments],
+        }
+        for item in d.get("reportReadyConclusions", [])
+    ]
+    site_overlays = [
+        {
+            "id": item["id"],
+            "area": item["area"],
+            "status": item["status"],
+            "rule": item["rule"],
+            "missing_evidence": item["missingEvidence"],
+            "consequence": item["consequence"],
+        }
+        for item in d.get("siteOverlays", [])
+    ]
+    field_verification = [
+        f'{item["phase"]}: {item["check"]} → {item["output"]}'
+        for item in d["fieldworkChecklist"]
+    ]
+    field_verification.extend(
+        f'{item["id"]} {item["question"]} — 영향: {item["whyItMatters"]}; '
+        f'담당 {item["owner"]}; 확인기관 {", ".join(authorities[x]["nameKo"] if x in authorities else x for x in item["confirmWith"])}; '
+        f'필요 증빙 {", ".join(item["evidenceNeeded"])}'
+        for item in d["openQuestions"]
+    )
+
+    unresolved = []
+    for item in d["requirements"]:
+        if item["status"] != "unresolved":
+            continue
+        first_basis = item.get("legalBasis", [{}])[0]
+        instrument = instruments.get(first_basis.get("instrumentId"), {})
+        unresolved.append({
+            "law": law_name(instrument) if instrument else item["topic"],
+            "url": instrument.get("officialUrl") if instrument else None,
+            "reasonCode": "no-public-text",
+            "reason": item["requirement"],
+            "nextStep": item["reportUse"] + " 필요 증빙: "
+            + ", ".join(item.get("evidenceToObtain", [])),
+        })
+
+    notes = list(d["verification"].get("limitations", []))
+    if context.get("sourceNote"):
+        notes.append(context["sourceNote"])
+    application_context = unique_strings([
+        context.get("projectName", ""),
+        context.get("location", ""),
+        context.get("projectType", ""),
+        *context.get("known", []),
+    ])
+
+    country_key = d["slug"]
+    return {
+        "schemaVersion": 1,
+        "slug": f"{country_key}-construction-regulations",
+        "name": f'{d["country"]["name"]} ODA 건축 인허가·검사·개장',
+        "priority": 4,
+        "axis": "construction",
+        "country": d["country"],
+        "asOfDate": d["asOfDate"],
+        "oneLiner": board.get("subtitle") or d["purpose"],
+        "process": {
+            "lanes": board["lanes"],
+            "stages": presentation["stages"],
+            "nodes": process_nodes,
+            "edges": board["edges"],
+            "warnings": d["verification"].get("limitations", []),
+        },
+        "canvas": {
+            "purpose": d["purpose"],
+            "stakeholders": ", ".join(item["nameKo"] for item in d["authorities"]),
+            "legalBasis": legal_basis,
+            "authorities": authority_cards,
+            "procedure": [
+                f'{item["order"]}. {item["gate"]} — {item["decision"]} / 산출물: {item["output"]}'
+                for item in d["permitPath"]
+            ],
+            "applicability": " · ".join(application_context),
+            "submittedDocuments": submitted_documents,
+            "bottlenecks": bottlenecks,
+            "entryBarriers": [],
+            "keyFindings": key_findings,
+            "siteOverlays": site_overlays,
+        },
+        "fieldVerification": unique_strings(field_verification),
+        "related": [
+            f"{country_key}-bidding-system",
+            f"{country_key}-procurement-governance",
+            f"{country_key}-oda-project-pipeline",
+        ],
+        "sourceQuotes": [],
+        "verification": {
+            "status": d["verification"]["status"],
+            "verifiedAt": d["verification"]["verifiedAt"],
+            "method": d["verification"]["method"],
+            "scope": d["verification"]["scope"],
+            "sources": verification_sources,
+            "notes": notes,
+            "unresolved": unresolved,
+            "discrepancies": [],
+        },
+    }
 
 
 # 본문에 그대로 적힌 주소(포털·기관 사이트)도 눌러서 열 수 있어야 한다.
@@ -312,7 +750,6 @@ header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
   header.site nav{width:100%;margin-left:0;gap:14px;overflow-x:auto;padding:2px 0 4px}
   header.site nav a{white-space:nowrap}
 }
-
 .hero{padding:44px 0 30px}
 .eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
@@ -398,7 +835,8 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .hd-row .legend{margin-left:auto}
 
-.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
 .board{position:relative;min-width:940px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .brow{display:grid;border-bottom:1px solid var(--line)}
@@ -408,6 +846,8 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
   display:flex;flex-direction:column;gap:26px;justify-content:center}
 .bcell:last-child{border-right:0}
+.brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
+.brow.head .bcell:first-child{z-index:5;background:var(--soft)}
 .brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
 .stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
 .stage-t{font-size:13px;font-weight:700}
@@ -416,6 +856,7 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
   border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
   width:100%;display:block;transition:box-shadow .12s,border-color .12s}
 .node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node:focus-visible{outline:3px solid color-mix(in srgb,var(--key) 35%,transparent);outline-offset:2px}
 .node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
   display:flex;justify-content:space-between;align-items:center;gap:8px}
 .node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
@@ -610,6 +1051,13 @@ ul.plain li{margin-bottom:6px}
 .data-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
 .data-table-wrap table{min-width:780px}
 
+@media (max-width:360px){
+  .wrap{padding-inline:16px}
+  .cards,.decision-list,.overlay-grid,.blocker-grid,.country-cards{grid-template-columns:minmax(0,1fr)}
+  .card,.decision,.overlay,.blocker,.country-card{min-width:0}
+  .subnav select{max-width:100%}
+}
+
 footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
 footer.site a{color:var(--muted)}
 """
@@ -641,7 +1089,6 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
   <span class="brand-sub">{e(SITE_SUB)}</span>
   <nav>
     <a href="{up}index.html"{' aria-current="page"' if nav == "list" else ''}>제도 대장</a>
-    <a href="{up}construction/index.html"{' aria-current="page"' if nav == "construction" else ''}>건축 법·제도</a>
     <a href="{up}verification/index.html"{' aria-current="page"' if nav == "verify" else ''}>검증 대장</a>
     <a href="{up}errata/index.html"{' aria-current="page"' if nav == "errata" else ''}>반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -667,9 +1114,25 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
 </body></html>"""
 
 
+def redirect_page(target: str, title: str) -> str:
+    """과거 공개 URL을 통합 model 경로로 보내는 작은 호환 페이지."""
+    target_js = script_json(target)
+    return f"""<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0;url={e(target)}">
+<link rel="canonical" href="{e(target)}">
+<title>{e(title)}</title>
+</head><body>
+<p>국가별 통합 제도 페이지로 이동했습니다. <a href="{e(target)}">계속하기</a></p>
+<script>location.replace({target_js}+location.hash);</script>
+</body></html>"""
+
+
 # ─────────────────────────────────────────────────────────── 목록
 
-def build_index(items: list[dict], construction_items: list[dict]) -> str:
+def build_index(items: list[dict]) -> str:
     countries: dict[str, int] = {}
     axes: dict[str, int] = {}
     for d in items:
@@ -680,9 +1143,13 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
     discs = sum(len(d["verification"].get("discrepancies", [])) for d in items)
     verified = sum(1 for d in items if d["verification"]["status"] == "article-verified")
     asof = max(d["asOfDate"] for d in items)
+    procurement_count = sum(1 for d in items if d["axis"] != "construction")
+    construction_countries = {
+        d["country"]["name"] for d in items if d["axis"] == "construction"
+    }
 
     rows = []
-    for i, d in enumerate(items, 1):
+    for d in items:
         v = d["verification"]["status"]
         nd = len(d["verification"].get("discrepancies", []))
         hi = sum(1 for x in d["verification"].get("discrepancies", []) if x["severity"] == "high")
@@ -692,7 +1159,7 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
         )
         rows.append(f"""<tr data-c="{e(d['country']['name'])}" data-a="{e(d['axis'])}"
   data-s="{e((d['name'] + ' ' + d['oneLiner'] + ' ' + d['country']['nameEn']).lower())}">
-  <td class="no">{i:02d}</td>
+  <td class="no">{d['priority']:02d}</td>
   <td class="name"><a href="model/{e(d['slug'])}/index.html">{e(d['name'])}</a>
     <p>{e(d['oneLiner'])}</p></td>
   <td><span class="badge plain muted">{e(d['country']['name'])}</span></td>
@@ -709,26 +1176,13 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
         f'<button aria-pressed="false" data-f="a" data-v="{e(k)}"><i class="dot"></i>{e(AXIS_LABEL[k])}<span class="n">{n}</span></button>'
         for k, n in axes.items())
 
-    construction_cta = ""
-    if construction_items:
-        reqs = sum(len(d["requirements"]) for d in construction_items)
-        blockers = sum(1 for d in construction_items for qn in d["openQuestions"] if qn["blocking"])
-        construction_cta = f"""
-<div class="wrap">
-  <a class="feature-callout" href="construction/index.html">
-    <span><b>ODA 건축 법·제도도 함께 봅니다</b>
-      <p>{len(construction_items)}개국 파일럿 · 생애주기 의무 {reqs}건 · Gate 차단 질문 {blockers}건 — 부지부터 준공·개장까지</p></span>
-    <span class="go">건축 법·제도 보기 →</span>
-  </a>
-</div>"""
-
     body = f"""
 <div class="wrap hero">
   <div class="eyebrow">조달 절차와 건축 법·제도</div>
   <h1>{e(SITE_TITLE)}</h1>
   <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
   <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
-  <p class="meta">조달 제도 {len(items)}개 · 조달 {len(countries)}개국 · 건축 법·제도 {len(construction_items)}개국 · 조문 대조 완료 {verified}개 · 자료집 기준일 {e(asof)}</p>
+  <p class="meta">조달 제도 {procurement_count}개 · 건축 법·제도 {len(construction_countries)}개국 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
 </div>
 
 <div class="statbar"><div class="wrap">
@@ -745,8 +1199,6 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
     <div class="stat bad"><b>{discs}</b><span>현행 기준 반영</span></div>
   </div>
 </div></div>
-
-{construction_cta}
 
 <div class="wrap cols">
   <aside class="side">
@@ -794,18 +1246,23 @@ document.querySelectorAll('.side button').forEach(function(b){
     apply();
   });
 });
+var initialAxis=new URLSearchParams(location.search).get('axis');
+if(initialAxis){
+  var initialButton=document.querySelector('.side button[data-f="a"][data-v="'+initialAxis+'"]');
+  if(initialButton) initialButton.click();
+}
 """
     return page(SITE_TITLE, body, nav="list", extra_js=js)
 
 
 # ─────────────────────────────────────────────────────────── 상세
 
-def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
-                 construction_slugs: set[str] | None = None) -> str:
-    construction_slugs = construction_slugs or set()
-    idx = items.index(d)
-    prev = items[idx - 1] if idx > 0 else None
-    nxt = items[idx + 1] if idx < len(items) - 1 else None
+def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str:
+    same_country = [item for item in items if country_slug(item) == country_slug(d)]
+    same_country.sort(key=lambda item: item["priority"])
+    idx = same_country.index(d)
+    prev = same_country[idx - 1] if idx > 0 else None
+    nxt = same_country[idx + 1] if idx < len(same_country) - 1 else None
     c, v, p = d["canvas"], d["verification"], d.get("process") or {}
     lanes, stages = p.get("lanes", []), p.get("stages", [])
     nodes, edges = p.get("nodes", []), p.get("edges", [])
@@ -818,10 +1275,11 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
 
     opts = "".join(
         f'<option value="{e(x["slug"])}"{" selected" if x is d else ""}>'
-        f'{i:02d} · {e(country_display_name(x["country"]["name"]))} {e(AXIS_LABEL[x["axis"]])}</option>'
-        for i, x in enumerate(items, 1))
+        f'{x["priority"]:02d} · {e(country_display_name(x["country"]["name"]))} {e(AXIS_LABEL[x["axis"]])}</option>'
+        for x in same_country)
 
     # 업무구조도 그리드
+    board_width = 180 + 190 * len(stages)
     grid_cols = f"180px repeat({len(stages)},minmax(190px,1fr))"
     head = f'<div class="brow head" style="grid-template-columns:{grid_cols}">' \
            f'<div class="bcell"><span class="lane-t">레인 \\ 게이트</span></div>'
@@ -855,7 +1313,12 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
         f'<span class="badge plain muted" style="margin-left:auto">{e(KIND_LABEL.get(l["kind"], l["kind"]))}</span></div>'
         for l in c["legalBasis"])
     auths = "".join(
-        f'<div class="auth"><b>{link(e(a["name"]), a.get("url"))}</b><span>{el(a["role"])}</span></div>'
+        f'<div class="auth"><b>{link(e(a["name"]), a.get("url"))}</b>'
+        f'<span>{el(a["role"])}'
+        + (f' <span class="badge {VERIF_TONE.get(a["verification"], "muted")}">'
+           f'{e(VERIF_LABEL.get(a["verification"], a["verification"]))}</span>'
+           if a.get("verification") else "")
+        + '</span></div>'
         for a in c["authorities"])
     steps = "".join(f"<li>{el(s.split('. ', 1)[-1] if s[:2].rstrip('.').isdigit() else s)}</li>"
                     for s in c["procedure"])
@@ -866,19 +1329,48 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
     bott = "".join(f"<li>{el(x)}</li>" for x in c["bottlenecks"])
     barr = "".join(f"<li>{el(x)}</li>" for x in c.get("entryBarriers", []))
     fv = "".join(f"<li>{el(x)}</li>" for x in d["fieldVerification"])
+    findings = "".join(
+        f'<div class="decision" data-state="{e(x["status"])}">'
+        f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(x["status"], "muted")}">'
+        f'{e(CONSTRUCTION_STATUS_LABEL.get(x["status"], x["status"]))}</span>'
+        f'<span class="badge plain muted" style="margin-left:6px">{e(x["id"])}</span>'
+        f'<p>{el(x["text"])}</p>'
+        f'<div class="sources">근거 · {e(" · ".join(x.get("basis", [])))}</div></div>'
+        for x in c.get("keyFindings", []))
+    overlays = "".join(
+        f'<div class="overlay"><span class="badge {CONSTRUCTION_STATUS_TONE.get(x["status"], "muted")}">'
+        f'{e(CONSTRUCTION_STATUS_LABEL.get(x["status"], x["status"]))}</span>'
+        f'<span class="badge plain muted" style="margin-left:6px">{e(x["id"])}</span>'
+        f'<h3>{e(x["area"])}</h3><p>{el(x["rule"])}</p>'
+        f'<p class="missing"><b>결측 증빙</b> · {e(" · ".join(x.get("missing_evidence", [])))}</p>'
+        f'<p><b>사업 영향</b> · {el(x["consequence"])}</p></div>'
+        for x in c.get("siteOverlays", []))
     # 관련 제도 — standalone(단독 파일)에서는 그 파일이 없으므로 링크 대신 이름만.
+    related_slugs = list(d["related"])
+    related_slugs.extend(
+        item["slug"] for item in same_country
+        if item["slug"] != d["slug"] and item["slug"] not in related_slugs
+    )
     rel = "".join(
         (f'<span class="chip">{e(next((y["name"] for y in items if y["slug"] == r), r))}</span>'
          if standalone else
          f'<a class="chip" style="text-decoration:none" href="../{e(r)}/index.html">{e(next((y["name"] for y in items if y["slug"] == r), r))}</a>')
-        for r in d["related"])
+        for r in related_slugs)
 
     # 검증
     srcs = "".join(
         f'<li><a class="ref" href="{e(s["officialUrl"])}" target="_blank" rel="noopener">{e(s.get("officialName") or s["law"])}</a>'
         f'<span class="badge plain muted" style="margin-left:6px">{e(KIND_LABEL.get(s["kind"], s["kind"]))}</span>'
+        + (f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(s["status"], "muted")}" style="margin-left:6px">'
+           f'{e(CONSTRUCTION_STATUS_LABEL.get(s["status"], s["status"]))}</span>'
+           if s.get("status") else "")
+        + (f'<span class="badge {VERIF_TONE.get(s["verificationLevel"], "muted")}" style="margin-left:6px">'
+           f'{e(VERIF_LABEL.get(s["verificationLevel"], s["verificationLevel"]))}</span>'
+           if s.get("verificationLevel") else "")
         + (f'<span class="ar">대조 조문 {e(s["articlesChecked"])}</span>' if s.get("articlesChecked") else "")
-        + f'<span class="ar">확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span></li>'
+        + f'<span class="ar">확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span>'
+        + (f'<span class="ar">{el(s["note"])}</span>' if s.get("note") else "")
+        + '</li>'
         for s in v.get("sources", []))
     notes = "".join(f'<p class="note">{el(x)}</p>' for x in v.get("notes", []))
     unres = "".join(
@@ -905,19 +1397,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
 </div>"""
         for q in quotes)
 
-    construction_button = (
-        f'<a class="btn" href="../../construction/{e(country_slug(d))}/index.html" '
-        f'style="text-decoration:none;color:var(--key);font-weight:700">건축 법·제도 →</a>'
-        if country_slug(d) in construction_slugs else ""
-    )
     subnav = "" if standalone else f"""
 <div class="subnav"><div class="wrap">
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px">{opts}</select>
   <a class="btn" {'href="../' + e(prev["slug"]) + '/index.html"' if prev else 'disabled'} style="text-decoration:none">← 이전</a>
   <a class="btn" {'href="../' + e(nxt["slug"]) + '/index.html"' if nxt else 'disabled'} style="text-decoration:none">다음 →</a>
-  <span class="pos">{idx + 1}/{len(items)}</span>
-  {construction_button}
+  <span class="pos">이 국가의 제도 {idx + 1}/{len(same_country)}</span>
 </div></div>"""
 
     body = f"""
@@ -925,7 +1411,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
 
 <div class="wrap dtl-hd">
   <div class="row">
-    <span class="badge plain muted">NO {idx + 1:02d}</span>
+    <span class="badge plain muted">NO {d['priority']:02d}</span>
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
     <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
@@ -956,7 +1442,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
       <span><i style="background:var(--back)"></i>보완 회귀</span>
     </div>
   </div>
-  <div class="boardwrap"><div class="board" id="board">
+  <div class="boardwrap"><div class="board" id="board" style="min-width:{board_width}px">
     <svg class="edges" id="edges"></svg>
     {head}{rows}
   </div></div>
@@ -978,6 +1464,18 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
   </div>
 </section>
+
+{f'''<section class="blk">
+  <h2>핵심 적용판단</h2>
+  <p class="desc">확인된 법령 사실과 사업별 조건부·미확정 판단을 분리해 표시합니다.</p>
+  <div class="decision-list">{findings}</div>
+</section>''' if findings else ''}
+
+{f'''<section class="blk">
+  <h2>부지·특구 적용조건</h2>
+  <p class="desc">공개 법령만으로 확정할 수 없는 필지별 규칙과 필요한 원자료입니다.</p>
+  <div class="overlay-grid">{overlays}</div>
+</section>''' if overlays else ''}
 
 {f'''<section class="blk">
   <h2>법령 원문</h2>
@@ -1012,7 +1510,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
 </div>
 
 <dialog class="drawer" id="dlg"><div class="pane">
-  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <button class="close" aria-label="상세 닫기" onclick="document.getElementById('dlg').close()">×</button>
   <div id="dbody"></div>
 </div></dialog>"""
 
@@ -1020,21 +1518,67 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False,
     node_view = {}
     for n in nodes:
         nv = dict(n)
-        for k in ("name", "actor", "action", "deadline", "blocker", "lane", "stage"):
+        nv["id"] = e(nv["id"])
+        for k in (
+            "name", "actor", "action", "deadline", "blocker", "lane", "stage",
+            "applicability", "report_use", "consulted_authorities", "confidence_reason",
+        ):
             if nv.get(k):
                 nv[k] = el(nv[k])
         if nv.get("output_documents"):
             nv["output_documents"] = [e(x) for x in nv["output_documents"]]
         if nv.get("legal_basis"):
             nv["legal_basis"] = [
-                {"law": e(lb["law"]), "article": e(lb["article"]), "url": surl.get(lb["law"], "")}
+                {
+                    "law": e(lb["law"]),
+                    "article": e(lb["article"]),
+                    "url": e(lb.get("url") or surl.get(lb["law"], "")),
+                    "kind": e(KIND_LABEL.get(lb.get("kind"), lb.get("kind", ""))),
+                    "status": e(CONSTRUCTION_STATUS_LABEL.get(lb.get("status"), lb.get("status", ""))),
+                    "status_tone": e(CONSTRUCTION_STATUS_TONE.get(lb.get("status"), "muted")),
+                    "verification": e(VERIF_LABEL.get(
+                        lb.get("verification_level"), lb.get("verification_level", "")
+                    )),
+                    "verification_tone": e(VERIF_TONE.get(lb.get("verification_level"), "muted")),
+                    "note": el(lb.get("note", "")),
+                }
                 for lb in nv["legal_basis"]
+            ]
+        if nv.get("open_questions"):
+            nv["open_questions"] = [
+                {
+                    "id": e(item["id"]),
+                    "blocking": bool(item["blocking"]),
+                    "question": el(item["question"]),
+                    "why": el(item["why"]),
+                    "evidence": [e(value) for value in item["evidence"]],
+                    "confirm_with": [e(value) for value in item["confirm_with"]],
+                }
+                for item in nv["open_questions"]
+            ]
+        if nv.get("permit_gates"):
+            nv["permit_gates"] = [
+                {
+                    "order": item["order"],
+                    "gate": e(item["gate"]),
+                    "decision": el(item["decision"]),
+                    "depends_on": item["depends_on"],
+                    "output": e(item["output"]),
+                }
+                for item in nv["permit_gates"]
             ]
         node_view[n["id"]] = nv
 
+    edge_view = []
+    for edge in edges:
+        ev = dict(edge)
+        if ev.get("label"):
+            ev["label"] = e(ev["label"])
+        edge_view.append(ev)
+
     js = f"""
-var NODES={json.dumps(node_view, ensure_ascii=False)};
-var EDGES={json.dumps(edges, ensure_ascii=False)};
+var NODES={script_json(node_view)};
+var EDGES={script_json(edge_view)};
 
 var _sel=document.getElementById('sel');
 if(_sel) _sel.addEventListener('change',function(){{ location.href='../'+this.value+'/index.html'; }});
@@ -1061,7 +1605,9 @@ function draw(){{
                             r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
                             w:rc.width, h:rc.height}};}}
   function box(id){{
-    var el=board.querySelector('.node[data-id="'+id+'"]');
+    var el=Array.prototype.find.call(
+      board.querySelectorAll('.node'),function(node){{return node.dataset.id===id;}}
+    );
     if(!el)return null; return rel(el.getBoundingClientRect());
   }}
 
@@ -1142,7 +1688,6 @@ function draw(){{
   svg.innerHTML=d;
 }}
 
-var KIND={json.dumps(KIND_LABEL, ensure_ascii=False)};
 function openNode(id){{
   var n=NODES[id]; if(!n)return;
   var h='<span class="badge plain muted">'+n.id+'</span> '
@@ -1151,7 +1696,9 @@ function openNode(id){{
   h+='<h3>'+n.name+'</h3>';
   h+='<dl class="kv">';
   h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.consulted_authorities) h+='<dt>협의·관할기관</dt><dd>'+n.consulted_authorities+'</dd>';
   if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.applicability) h+='<dt>적용 조건</dt><dd>'+n.applicability+'</dd>';
   if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
   if(n.output_documents&&n.output_documents.length)
     h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
@@ -1159,13 +1706,32 @@ function openNode(id){{
   if(n.legal_basis&&n.legal_basis.length){{
     h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){{
       var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
-      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}}).join('')+'</dd>';
+      var meta=(l.kind?' <span class="badge plain muted">'+l.kind+'</span>':'')
+        +(l.status?' <span class="badge '+l.status_tone+'">'+l.status+'</span>':'')
+        +(l.verification?' <span class="badge '+l.verification_tone+'">'+l.verification+'</span>':'');
+      return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
+        +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}}).join('')+'</dd>';
   }}
   if(typeof n.confidence==='number'){{
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
   }}
   if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
+  if(n.report_use) h+='<dt>보고서 반영</dt><dd>'+n.report_use+'</dd>';
+  if(n.permit_gates&&n.permit_gates.length){{
+    h+='<dt>연결 Gate</dt><dd>'+n.permit_gates.map(function(g){{
+      var dep=g.depends_on&&g.depends_on.length?' · 선행 Gate '+g.depends_on.join(', '):'';
+      return '<div style="margin-bottom:8px"><b>G'+g.order+' '+g.gate+'</b>'+dep
+        +'<div>'+g.decision+'</div><div style="color:var(--muted)">산출물 · '+g.output+'</div></div>';}}).join('')+'</dd>';
+  }}
+  if(n.open_questions&&n.open_questions.length){{
+    h+='<dt>현장 확인질문</dt><dd>'+n.open_questions.map(function(q){{
+      return '<div style="margin-bottom:10px"><span class="badge '+(q.blocking?'bad':'muted')+'">'
+        +(q.blocking?'Gate 차단':'추가 확인')+'</span> <code>'+q.id+'</code><div>'+q.question+'</div>'
+        +'<div style="color:var(--muted)">영향 · '+q.why+'</div>'
+        +'<div style="color:var(--muted)">확인기관 · '+q.confirm_with.join(' · ')+'</div>'
+        +'<div style="color:var(--muted)">증빙 · '+q.evidence.join(' · ')+'</div></div>';}}).join('')+'</dd>';
+  }}
   var ins=EDGES.filter(function(x){{return x.target===id}}),
       outs=EDGES.filter(function(x){{return x.source===id}});
   if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){{
@@ -1678,6 +2244,18 @@ def build_bundle(country_key: str, country_name: str, items: list[dict]) -> str:
     docs.sort(key=lambda d: d["priority"])
     if not docs:
         return ""
+    has_construction = any(d["axis"] == "construction" for d in docs)
+    bundle_label = "조달·건축 제도" if has_construction else "공공조달 제도"
+    bundle_subtitle = (
+        "조달 1~3번과 건축 4번부터를 같은 형식으로 정리한 한 장 요약"
+        if has_construction else
+        "KOICA 2026 참여전략 자료집과 각국 공식 원문을 바탕으로 정리한 한 장 요약"
+    )
+    bundle_warning = (
+        "조달·건축 법령은 개정이 잦으므로 실제 입찰·설계·인허가 전 발주처 공고문과 현행 법령을 확인해야 합니다."
+        if has_construction else
+        "조달법은 개정이 잦으므로 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다."
+    )
 
     tabs, frames = [], []
     for i, d in enumerate(docs):
@@ -1696,7 +2274,7 @@ def build_bundle(country_key: str, country_name: str, items: list[dict]) -> str:
 <html lang="ko"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(country_name)} 공공조달 제도 | {e(SITE_TITLE)}</title>
+<title>{e(country_name)} {e(bundle_label)} | {e(SITE_TITLE)}</title>
 <style>
 *,*::before,*::after{{box-sizing:border-box}}
 :root{{color-scheme:light dark}}
@@ -1722,14 +2300,14 @@ body{{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo
 </style>
 </head><body>
 <div class="top">
-  <h1>{e(country_name)} 공공조달 제도</h1>
-  <p class="sub">KOICA 2026 참여전략 자료집과 각국 공식 원문을 바탕으로 정리한 한 장 요약 · 기준일 {e(asof)}</p>
+  <h1>{e(country_name)} {e(bundle_label)}</h1>
+  <p class="sub">{e(bundle_subtitle)} · 기준일 {e(asof)}</p>
   <div class="tabs">{''.join(tabs)}</div>
 </div>
 <div class="frames">{''.join(frames)}</div>
 <div class="foot">
   자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.
-  조달법은 개정이 잦으므로 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.
+  {e(bundle_warning)}
 </div>
 <script>
 function fit(fr){{ try{{ fr.style.height=(fr.contentWindow.document.body.scrollHeight+20)+'px'; }}catch(e){{}} }}
@@ -1755,11 +2333,10 @@ addEventListener('resize', function(){{ var a=document.querySelector('.fr.active
 # ─────────────────────────────────────────────────────────── main
 
 def main() -> int:
-    items = []
+    procurement_items = []
     for f in sorted(INST_DIR.glob("*.json")):
-        items.append(json.loads(f.read_text(encoding="utf-8")))
-    items.sort(key=lambda d: (country_name_sort_key(d["country"]["name"]), d["priority"]))
-    if not items:
+        procurement_items.append(json.loads(f.read_text(encoding="utf-8")))
+    if not procurement_items:
         print("제도 데이터가 없습니다.")
         return 1
 
@@ -1770,6 +2347,10 @@ def main() -> int:
         construction_items.append(json.loads(f.read_text(encoding="utf-8")))
     construction_items.sort(key=lambda d: country_name_sort_key(d["country"]["name"]))
 
+    construction_models = [construction_to_model(item) for item in construction_items]
+    items = procurement_items + construction_models
+    items.sort(key=lambda d: (country_name_sort_key(d["country"]["name"]), d["priority"]))
+
     if SITE.exists():
         shutil.rmtree(SITE)
     (SITE / "model").mkdir(parents=True)
@@ -1778,7 +2359,7 @@ def main() -> int:
     (SITE / "construction").mkdir(parents=True)
 
     (SITE / "index.html").write_text(
-        clean_generated_html(build_index(items, construction_items)), encoding="utf-8"
+        clean_generated_html(build_index(items)), encoding="utf-8"
     )
     (SITE / "verification" / "index.html").write_text(
         clean_generated_html(build_verification(items)), encoding="utf-8"
@@ -1790,19 +2371,24 @@ def main() -> int:
         out = SITE / "model" / d["slug"]
         out.mkdir(parents=True, exist_ok=True)
         (out / "index.html").write_text(
-            clean_generated_html(build_detail(
-                d, items, construction_slugs={x["slug"] for x in construction_items}
-            )), encoding="utf-8"
+            clean_generated_html(build_detail(d, items)), encoding="utf-8"
         )
     if construction_items:
         (SITE / "construction" / "index.html").write_text(
-            clean_generated_html(build_construction_index(construction_items)), encoding="utf-8"
+            clean_generated_html(redirect_page(
+                "../index.html?axis=construction",
+                f"건축 법·제도 | {SITE_TITLE}",
+            )),
+            encoding="utf-8",
         )
         for d in construction_items:
             out = SITE / "construction" / d["slug"]
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(
-                clean_generated_html(build_construction_detail(d, construction_items, items)),
+                clean_generated_html(redirect_page(
+                    f'../../model/{d["slug"]}-construction-regulations/index.html',
+                    f'{d["country"]["name"]} 건축 법·제도 | {SITE_TITLE}',
+                )),
                 encoding="utf-8",
             )
 
@@ -1811,9 +2397,9 @@ def main() -> int:
     print(f"  {SITE}/index.html")
     print(f"  {SITE}/verification/index.html")
     if construction_items:
-        print(f"  {SITE}/construction/index.html")
+        print(f"  {SITE}/construction/index.html  (통합 대장으로 이동)")
         for d in construction_items:
-            print(f"  {SITE}/construction/{d['slug']}/index.html")
+            print(f"  {SITE}/construction/{d['slug']}/index.html  (model로 이동)")
     for d in items:
         print(f"  {SITE}/model/{d['slug']}/index.html")
 
