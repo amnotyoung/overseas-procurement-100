@@ -1,0 +1,832 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "indonesia",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "인도네시아",
+    "nameEn": "Indonesia",
+    "iso3": "IDN",
+    "region": "아시아·태평양"
+  },
+  "purpose": "인도네시아 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "OSS RDTR 기반 공간이용 적합확인(KKPR) 안내·건축법 시행 정부규정 제16/2021호·건축물관리정보시스템 SIMBG·환경보호·관리 정부규정 제22/2021호의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "인도네시아 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권원과 RDTR·RTRW 기반 KKPR를 먼저 확보하고 필지의 KDB·KLB·높이·이격·주차·재해조건을 확정한다.",
+        "authorityIds": [
+          "spatial-authority-oss",
+          "local-building-government"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "OSS 공간이용 적합확인(KKPR)",
+            "instrumentId": "IDN-OSS-KKPR",
+            "provisions": [
+              "RDTR-based KKPR spatial conformity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 KKPR·RDTR상 용도와 KDB·KLB·높이·이격·주차 및 재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "spatial-authority-oss",
+          "local-building-government"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "OSS 공간이용 적합확인(KKPR)",
+            "instrumentId": "IDN-OSS-KKPR",
+            "provisions": [
+              "RDTR-based KKPR spatial conformity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "PBG 기술승인과 AMDAL·UKL-UPL·SPPL 환경분류·환경승인을 별도 선행조건으로 연결한다.",
+        "authorityIds": [
+          "local-building-government",
+          "pu-simbg",
+          "environmental-authority"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "PBG·환경승인",
+            "instrumentId": "IDN-PP-16-2021",
+            "provisions": [
+              "PBG framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 PBG 기술심사 경로와 AMDAL·UKL-UPL·SPPL 유형, 환경승인의 선행 여부·실제 기간·비용은 무엇인가?",
+        "authorityIds": [
+          "local-building-government",
+          "pu-simbg",
+          "environmental-authority"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "PBG·환경승인",
+            "instrumentId": "IDN-PP-16-2021",
+            "provisions": [
+              "PBG framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록전문가·단계검사·시험과 SLF를 준공·사용개시의 법정 Gate로 관리한다.",
+        "authorityIds": [
+          "local-building-government",
+          "pu-simbg"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "기능적합증명서(SLF)",
+            "instrumentId": "IDN-PP-16-2021",
+            "provisions": [
+              "construction, inspection and SLF framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "필요 전문자격·검사기관·보험과 단계검사, SLF 발급의 정확한 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "local-building-government",
+          "pu-simbg"
+        ],
+        "requirementIds": [
+          "IDN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "기능적합증명서(SLF)",
+            "instrumentId": "IDN-PP-16-2021",
+            "provisions": [
+              "construction, inspection and SLF framework"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "indonesia-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "인도네시아 도시계획·부지규제",
+      "oneLiner": "토지권원과 RDTR·RTRW 기반 KKPR를 먼저 확보하고 필지의 KDB·KLB·높이·이격·주차·재해조건을 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "공식 OSS의 현행 KKPR 안내와 BPK 법령데이터베이스의 PP 16/2021을 확인했다. 필지별 RDTR 수치와 재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "IDN-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "IDN-BLD-Q-001",
+        "IDN-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "IDN-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "IDN-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "IDN-BLD-F-001",
+        "IDN-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "indonesia-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "인도네시아 건축허가·환경심사",
+      "oneLiner": "PBG 기술승인과 AMDAL·UKL-UPL·SPPL 환경분류·환경승인을 별도 선행조건으로 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "공공사업부 SIMBG와 BPK의 PP 16/2021·PP 22/2021 현행 상태를 확인했다. 프로젝트 분류, 지방 재부과금과 실제 접수관행은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "IDN-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "IDN-BLD-Q-003",
+        "IDN-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "IDN-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "IDN-BLD-F-003",
+        "IDN-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "indonesia-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "인도네시아 기술검사·보험·준공제도",
+      "oneLiner": "등록전문가·단계검사·시험과 SLF를 준공·사용개시의 법정 Gate로 관리한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "PP 16/2021의 현행 상태와 SIMBG의 PBG·SLF 처리구조를 확인했다. 현지 전문가·검사기관·보험사와 실제 비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "IDN-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "IDN-BLD-Q-005",
+        "IDN-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "IDN-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "IDN-BLD-F-005",
+        "IDN-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "local-building-government",
+      "name": "Regency or city technical agency and one-stop licensing agency",
+      "nameKo": "군·시 건축기술부서·원스톱 허가부서",
+      "role": "SIMBG를 통해 PBG와 SLF를 기술심사·처리하고 지방 재부과금을 산정",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://simbg.pu.go.id/"
+    },
+    {
+      "id": "spatial-authority-oss",
+      "name": "Competent spatial-planning authority through OSS",
+      "nameKo": "OSS 연계 관할 공간계획기관",
+      "role": "RDTR·RTRW에 따른 KKPR 공간이용 적합성 확인을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://oss.go.id/id/panduan/6912a8491840c90a6543f398"
+    },
+    {
+      "id": "environmental-authority",
+      "name": "Competent central or regional environmental authority",
+      "nameKo": "관할 중앙·지방 환경기관",
+      "role": "AMDAL·UKL-UPL·SPPL 분류와 환경승인을 사업권한에 따라 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://peraturan.bpk.go.id/Details/161852/pp-no-22-tahun-2021"
+    },
+    {
+      "id": "pu-simbg",
+      "name": "Ministry of Public Works — SIMBG",
+      "nameKo": "공공사업부 SIMBG",
+      "role": "PBG·SLF·SBKBG·RTB·건축물대장의 국가 전자관리체계를 운영",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://simbg.pu.go.id/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "IDN-PP-16-2021",
+      "title": "Government Regulation No. 16 of 2021 implementing the Building Law",
+      "titleKo": "건축법 시행 정부규정 제16/2021호",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2021-02-02",
+      "officialUrl": "https://peraturan.bpk.go.id/Details/161846/pp-no-16",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "IDN-SIMBG",
+      "title": "Building Management Information System (SIMBG)",
+      "titleKo": "건축물관리정보시스템 SIMBG",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://simbg.pu.go.id/",
+      "verificationLevel": "source-linked",
+      "note": "공공사업부가 PBG·SLF 신청, 지방처리기관과 재부과금 계산 안내를 제공한다."
+    },
+    {
+      "id": "IDN-OSS-KKPR",
+      "title": "OSS guide for Confirmation of Conformity of Spatial Utilization Activities (KKPR) against RDTR",
+      "titleKo": "OSS RDTR 기반 공간이용 적합확인(KKPR) 안내",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://oss.go.id/id/panduan/6912a8491840c90a6543f398",
+      "verificationLevel": "source-linked",
+      "note": "2025년 PP 28 전환 안내가 포함된 현행 OSS 절차다. 비사업·공공사업 경로와 최신 지방 RDTR는 별도 확인한다."
+    },
+    {
+      "id": "IDN-PP-22-2021",
+      "title": "Government Regulation No. 22 of 2021 on Environmental Protection and Management",
+      "titleKo": "환경보호·관리 정부규정 제22/2021호",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2021-02-02",
+      "officialUrl": "https://peraturan.bpk.go.id/Details/161852/pp-no-22-tahun-2021",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "IDN-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "인도네시아에서 토지를 이용해 신축·증축·용도변경하는 ODA 건축사업",
+      "requirement": "사업 입지는 OSS의 KKPR를 통해 RDTR 또는 상위 공간계획과의 적합성을 확인하며, 세부 건축수치는 해당 지방 RDTR·zoning과 PBG 기술요건에서 결정된다. 지진·화산·홍수·연약지반과 유틸리티 용량도 필지조사의 핵심이다.",
+      "authorityIds": [
+        "spatial-authority-oss",
+        "local-building-government"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "IDN-OSS-KKPR",
+          "provisions": [
+            "RDTR-based KKPR spatial conformity"
+          ]
+        },
+        {
+          "instrumentId": "IDN-PP-16-2021",
+          "provisions": [
+            "site and building technical standards framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·지적좌표",
+        "KKPR와 적용 RDTR·RTRW",
+        "필지별 KDB·KLB·높이·이격·주차",
+        "지반·지진·홍수·화산·배수·전력·상수 확인"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "IDN-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "PP 16/2021상 PBG 대상 건축물과 PP 22/2021상 환경승인 대상 사업",
+      "requirement": "기존 IMB를 대체한 PBG는 SIMBG에서 지방 군·시 기술부서와 원스톱 허가부서가 처리한다. 환경규정에 따라 AMDAL, UKL-UPL 또는 SPPL과 환경승인 경로를 사업유형·규모·입지로 분류하고 OSS·SIMBG의 선후관계를 확인해야 한다.",
+      "authorityIds": [
+        "local-building-government",
+        "pu-simbg",
+        "environmental-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "IDN-PP-16-2021",
+          "provisions": [
+            "PBG framework"
+          ]
+        },
+        {
+          "instrumentId": "IDN-SIMBG",
+          "provisions": [
+            "PBG application and local processing"
+          ]
+        },
+        {
+          "instrumentId": "IDN-PP-22-2021",
+          "provisions": [
+            "environmental approval framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·부지 지방정부 확정",
+        "PBG 기술도서·TPA/TPT 검토경로",
+        "AMDAL·UKL-UPL·SPPL 결정과 환경승인",
+        "지방 재부과금·완비일·보완·실제 처리기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "IDN-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "PBG를 받아 시공하고 SLF가 필요한 신축·변경 건축물",
+      "requirement": "건축물은 승인된 PBG와 기술기준에 맞게 시공하고 공사감독·시험·검사 기록을 갖춰야 한다. 사용 전 기능적합증명서 SLF를 SIMBG로 신청하며, 지방 기술부서가 서류와 현장 적합성을 확인한다.",
+      "authorityIds": [
+        "local-building-government",
+        "pu-simbg"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "IDN-PP-16-2021",
+          "provisions": [
+            "construction, inspection and SLF framework"
+          ]
+        },
+        {
+          "instrumentId": "IDN-SIMBG",
+          "provisions": [
+            "SLF application and local processing"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "설계·감리·시공자 SKK/SBU 등 자격증빙",
+        "단계검사·시험·as-built 기록",
+        "소방·설비·환경 완료확인",
+        "SLF·SBKBG·건축물대장·보험 체크리스트"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 KKPR·RDTR상 용도와 KDB·KLB·높이·이격·주차 및 재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 PBG 기술심사 경로와 AMDAL·UKL-UPL·SPPL 유형, 환경승인의 선행 여부·실제 기간·비용은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "필요 전문자격·검사기관·보험과 단계검사, SLF 발급의 정확한 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "IDN-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "IDN-OSS-KKPR",
+          "provisions": [
+            "RDTR-based KKPR spatial conformity"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "IDN-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 KKPR·RDTR상 용도와 KDB·KLB·높이·이격·주차 및 재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·지적좌표",
+        "KKPR와 적용 RDTR·RTRW",
+        "필지별 KDB·KLB·높이·이격·주차",
+        "지반·지진·홍수·화산·배수·전력·상수 확인"
+      ],
+      "confirmWith": [
+        "spatial-authority-oss",
+        "local-building-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "IDN-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "spatial-authority-oss",
+        "local-building-government"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "IDN-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 PBG 기술심사 경로와 AMDAL·UKL-UPL·SPPL 유형, 환경승인의 선행 여부·실제 기간·비용은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·부지 지방정부 확정",
+        "PBG 기술도서·TPA/TPT 검토경로",
+        "AMDAL·UKL-UPL·SPPL 결정과 환경승인",
+        "지방 재부과금·완비일·보완·실제 처리기간"
+      ],
+      "confirmWith": [
+        "local-building-government",
+        "pu-simbg",
+        "environmental-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "IDN-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "local-building-government",
+        "pu-simbg",
+        "environmental-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "IDN-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "필요 전문자격·검사기관·보험과 단계검사, SLF 발급의 정확한 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "설계·감리·시공자 SKK/SBU 등 자격증빙",
+        "단계검사·시험·as-built 기록",
+        "소방·설비·환경 완료확인",
+        "SLF·SBKBG·건축물대장·보험 체크리스트"
+      ],
+      "confirmWith": [
+        "local-building-government",
+        "pu-simbg"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "IDN-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "local-building-government",
+        "pu-simbg"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "IDN-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "IDN-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "IDN-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "IDN-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "IDN-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "IDN-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "IDN-BLD-C-001",
+      "confidence": "conditional",
+      "text": "인도네시아의 건축가능 규모는 전국 SIMBG 화면이 아니라 필지에 적용되는 KKPR·RDTR와 지방 기술요건에서 확정해야 한다.",
+      "basis": [
+        "IDN-OSS-KKPR",
+        "IDN-PP-16-2021"
+      ]
+    },
+    {
+      "id": "IDN-BLD-C-002",
+      "confidence": "conditional",
+      "text": "인도네시아에서는 PBG와 환경승인이 별도 제도이므로 SIMBG 신청만으로 착공 가능하다고 보지 말고 두 경로의 완료조건을 통합 일정에 반영해야 한다.",
+      "basis": [
+        "IDN-PP-16-2021",
+        "IDN-SIMBG",
+        "IDN-PP-22-2021"
+      ]
+    },
+    {
+      "id": "IDN-BLD-C-003",
+      "confidence": "conditional",
+      "text": "인도네시아에서 공사완료는 사용허가가 아니므로 SLF 발급과 필요한 후속 등록을 개장·인계의 선행조건으로 둬야 한다.",
+      "basis": [
+        "IDN-PP-16-2021",
+        "IDN-SIMBG"
+      ]
+    }
+  ]
+}

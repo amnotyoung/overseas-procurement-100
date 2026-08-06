@@ -1,0 +1,816 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "mongolia",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "몽골",
+    "nameEn": "Mongolia",
+    "iso3": "MNG",
+    "region": "중동·CIS"
+  },
+  "purpose": "몽골 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "도시개발법 2008 전부개정판(개정 포함)·건설법 2016 전부개정판(개정 포함)·환경영향평가법 2012 전부개정판(개정 포함)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "몽골 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권리·지적과 승인 총괄·부분계획, 위치결정·기술조건으로 부지 개발가능성을 확정한다.",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "도시계획·위치·기술조건",
+            "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+            "provisions": [
+              "Arts. 3, 11, 19 and 25; plans, zoning, land use and urban-development cadastre"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 토지권리와 승인계획·zoning·기술조건상 실제 용도·밀도·높이·이격·주차·유틸리티 한계는 무엇인가?",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "도시계획·위치·기술조건",
+            "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+            "provisions": [
+              "Arts. 3, 11, 19 and 25; plans, zoning, land use and urban-development cadastre"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "건축물 등급별 설계검증·공사허가와 일반·상세 환경영향평가 결정을 연계한다.",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry",
+          "mng-environment-authority"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "공사허가·일반/상세 EIA",
+            "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+            "provisions": [
+              "Arts. 18-30; licences, design certification and construction-work permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "건축물 등급·허가권자·설계검증 범위와 일반/상세 EIA 대상·선행관계·실제 처리기간은 무엇인가?",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry",
+          "mng-environment-authority"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "공사허가·일반/상세 EIA",
+            "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+            "provisions": [
+              "Arts. 18-30; licences, design certification and construction-work permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "건축주 기술감리·설계자 검토·국가검사와 commissioning·occupancy certificate를 사용 Gate로 둔다.",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry",
+          "mng-licensed-participants"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "기술통제·commissioning·점유증명",
+            "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+            "provisions": [
+              "Arts. 40-49; participant control, state inspection, commissioning and occupancy certificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 면허·감리·보험과 commissioning group 구성, 점유증명 제출서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "mng-local-governor",
+          "mng-construction-ministry",
+          "mng-licensed-participants"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "기술통제·commissioning·점유증명",
+            "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+            "provisions": [
+              "Arts. 40-49; participant control, state inspection, commissioning and occupancy certificate"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "mongolia-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "몽골 도시계획·부지규제",
+      "oneLiner": "토지권리·지적과 승인 총괄·부분계획, 위치결정·기술조건으로 부지 개발가능성을 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "Urban Development Law의 계획·지적 구조와 Construction Law의 위치·기술조건 연계를 확인했다. 필지수치·동토·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "MNG-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "MNG-BLD-Q-001",
+        "MNG-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "MNG-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "MNG-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "MNG-BLD-F-001",
+        "MNG-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "mongolia-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "몽골 건축허가·환경심사",
+      "oneLiner": "건축물 등급별 설계검증·공사허가와 일반·상세 환경영향평가 결정을 연계한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Construction Law Arts. 26-29와 EIA Law의 일반·상세평가 구조를 확인했다. 최신 분류·관할·수수료·접수기간은 현지에서 재확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "MNG-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "MNG-BLD-Q-003",
+        "MNG-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "MNG-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MNG-BLD-F-003",
+        "MNG-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "mongolia-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "몽골 기술검사·보험·준공제도",
+      "oneLiner": "건축주 기술감리·설계자 검토·국가검사와 commissioning·occupancy certificate를 사용 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "Construction Law Arts. 47-49의 검사·commissioning·점유증명을 확인했다. 기관구성·보험·비용·실제 관행은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "MNG-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "MNG-BLD-Q-005",
+        "MNG-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "MNG-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MNG-BLD-F-005",
+        "MNG-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "mng-local-governor",
+      "name": "Competent aimag or capital-city Governor and local urban-development authority",
+      "nameKo": "관할 아이막·수도지사와 지방 도시개발기관",
+      "role": "일반 건축물의 위치·기술조건, 공사허가와 commissioning을 관할",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230949269721"
+    },
+    {
+      "id": "mng-construction-ministry",
+      "name": "State central administrative body in charge of construction",
+      "nameKo": "건설 담당 중앙행정기관",
+      "role": "건설정책·BNbD 등 기술규정, 전문사업면허·등록, 국가대상 허가·검사와 점유증명을 관장",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230949269721"
+    },
+    {
+      "id": "mng-environment-authority",
+      "name": "Competent central or local environmental assessment authority",
+      "nameKo": "관할 중앙·지방 환경영향평가기관",
+      "role": "법정 대상 프로젝트의 일반환경평가와 필요 시 상세환경영향평가를 심사",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230948947641"
+    },
+    {
+      "id": "mng-licensed-participants",
+      "name": "Licensed designer, contractor, client technical supervisor and author supervisor",
+      "nameKo": "면허 설계자·시공자·건축주 기술감리·설계자 감리",
+      "role": "설계검증, 공정별 내부기술통제·설계자 검토와 commissioning 증빙을 작성",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230949269721"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+      "title": "Law on Urban Development, revised edition of 2008, as amended",
+      "titleKo": "도시개발법 2008 전부개정판(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2008-05-29",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16532709880941",
+      "verificationLevel": "law-linked",
+      "note": "영문은 Legalinfo의 비공식 번역이므로 몽골어 현행본과 조문번호를 현지 법률검토에서 대조한다."
+    },
+    {
+      "id": "MNG-CONSTRUCTION-LAW-2016",
+      "title": "Law on Construction, revised edition of 2016, as amended",
+      "titleKo": "건설법 2016 전부개정판(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2016-02-05",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230949269721",
+      "verificationLevel": "law-linked",
+      "note": "영문은 Legalinfo의 비공식 번역이며 2022년까지 표시된 개정이 포함돼 있다. 계약 시점 몽골어 통합본을 재확인한다."
+    },
+    {
+      "id": "MNG-EIA-LAW-2012",
+      "title": "Environmental Impact Assessment Law, revised version of 2012, as amended",
+      "titleKo": "환경영향평가법 2012 전부개정판(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2012-05-17",
+      "officialUrl": "https://legalinfo.mn/en/edtl/16230948947641",
+      "verificationLevel": "law-linked",
+      "note": "영문은 Legalinfo의 비공식 번역이므로 대상목록·관할·최신 개정은 몽골어 현행본과 대조한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "MNG-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "몽골에서 도시·정주지역 건축 또는 기반시설 연결을 추진하는 사업",
+      "requirement": "Urban Development Law는 도시·촌락 토지를 승인 도시개발문서와 zoning·기술규정에 따라 이용하도록 하고, 도시개발지적에 지질·수문·토지·건축·도로·유틸리티 정보를 포함한다. 토지권리·용도, general/partial plan, 위치·model drawing·utility technical conditions를 대조한다.",
+      "authorityIds": [
+        "mng-local-governor",
+        "mng-construction-ministry"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+          "provisions": [
+            "Arts. 3, 11, 19 and 25; plans, zoning, land use and urban-development cadastre"
+          ]
+        },
+        {
+          "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+          "provisions": [
+            "Arts. 22-23 and 28-29; technical conditions, design basis and permit data"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지소유·점유/사용권·지적·경계",
+        "승인 general/partial plan·zoning·위치결정",
+        "필지별 용도·밀도·높이·이격·주차·BNbD",
+        "동토·지반·지진·홍수·배수·난방·상하수·전력·통신 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "MNG-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "Construction Law상 공사허가 대상 건축물과 EIA Law 대상 도시개발·건축·기반시설 프로젝트",
+      "requirement": "Construction Law는 건축물 복잡도 등급, 인증된 종합설계, 설계자·시공자 면허, 감리계획과 필요 시 환경평가 결과를 공사허가 신청에 묶는다. EIA Law에 따라 관할기관의 general assessment를 거쳐 조건부 승인·반려 또는 detailed EIA 요구를 확정한다.",
+      "authorityIds": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-environment-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+          "provisions": [
+            "Arts. 18-30; licences, design certification and construction-work permit"
+          ]
+        },
+        {
+          "instrumentId": "MNG-EIA-LAW-2012",
+          "provisions": [
+            "general assessment, detailed assessment and listed projects"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지권리·국가/지방 허가권자",
+        "건축물 등급·위치·model drawing·technical conditions",
+        "인증 종합설계·설계검증·면허 설계자/시공자·감리계획",
+        "general EIA decision·detailed EIA/management plan·실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "MNG-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "공사허가를 받아 시공하고 commissioning·occupancy certificate가 필요한 건축물",
+      "requirement": "Construction Law는 건축주·설계자·시공자의 내부기술통제와 국가 기술검사를 두고, 허가조건대로 완성됐는지 commissioning group이 확인하도록 한다. 공정기록, 지상·지하공사 act, 설계자·기술감리 종합의견, 유틸리티 연결과 장비시험을 제출해 점유증명을 받아야 한다.",
+      "authorityIds": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-licensed-participants"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+          "provisions": [
+            "Arts. 40-49; participant control, state inspection, commissioning and occupancy certificate"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "면허·등록 설계자·시공자·기술감리·설계자 감리",
+        "공정기록·은폐/지하공사 act·재료·장비시험",
+        "설계변경·설계자/건축주 기술감리 종합의견",
+        "유틸리티 연결·commissioning finding·occupancy certificate·보험·비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 토지권리와 승인계획·zoning·기술조건상 실제 용도·밀도·높이·이격·주차·유틸리티 한계는 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "건축물 등급·허가권자·설계검증 범위와 일반/상세 EIA 대상·선행관계·실제 처리기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 면허·감리·보험과 commissioning group 구성, 점유증명 제출서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "MNG-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+          "provisions": [
+            "Arts. 3, 11, 19 and 25; plans, zoning, land use and urban-development cadastre"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "MNG-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 토지권리와 승인계획·zoning·기술조건상 실제 용도·밀도·높이·이격·주차·유틸리티 한계는 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지소유·점유/사용권·지적·경계",
+        "승인 general/partial plan·zoning·위치결정",
+        "필지별 용도·밀도·높이·이격·주차·BNbD",
+        "동토·지반·지진·홍수·배수·난방·상하수·전력·통신 용량"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MNG-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MNG-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "건축물 등급·허가권자·설계검증 범위와 일반/상세 EIA 대상·선행관계·실제 처리기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지권리·국가/지방 허가권자",
+        "건축물 등급·위치·model drawing·technical conditions",
+        "인증 종합설계·설계검증·면허 설계자/시공자·감리계획",
+        "general EIA decision·detailed EIA/management plan·실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MNG-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MNG-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 면허·감리·보험과 commissioning group 구성, 점유증명 제출서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "면허·등록 설계자·시공자·기술감리·설계자 감리",
+        "공정기록·은폐/지하공사 act·재료·장비시험",
+        "설계변경·설계자/건축주 기술감리 종합의견",
+        "유틸리티 연결·commissioning finding·occupancy certificate·보험·비용"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MNG-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "mng-local-governor",
+        "mng-construction-ministry",
+        "mng-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "MNG-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "MNG-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "MNG-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "MNG-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "MNG-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "MNG-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "MNG-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Ulaanbaatar 또는 다른 지역의 수치를 일반화하지 말고 관할 승인계획·위치결정·유틸리티 기술조건과 현장 지반조사를 설계 전 확정한다.",
+      "basis": [
+        "MNG-URBAN-DEVELOPMENT-LAW-2008",
+        "MNG-CONSTRUCTION-LAW-2016"
+      ]
+    },
+    {
+      "id": "MNG-BLD-C-002",
+      "confidence": "conditional",
+      "text": "환경평가 필요 여부와 건축물 등급을 초기에 판정하고 설계검증·면허·감리계획·EIA 결과를 하나의 공사허가 제출팩으로 관리한다.",
+      "basis": [
+        "MNG-CONSTRUCTION-LAW-2016",
+        "MNG-EIA-LAW-2012"
+      ]
+    },
+    {
+      "id": "MNG-BLD-C-003",
+      "confidence": "conditional",
+      "text": "commissioning 증빙을 시공 중 누적하고 occupancy certificate를 최종지급·유틸리티 영구연결·개장 전 계약 Gate로 설정한다.",
+      "basis": [
+        "MNG-CONSTRUCTION-LAW-2016"
+      ]
+    }
+  ]
+}

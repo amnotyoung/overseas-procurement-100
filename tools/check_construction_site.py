@@ -87,8 +87,8 @@ def main() -> int:
             actual_model_slugs = {item["slug"] for item in models}
             if actual_model_slugs != expected_model_slugs:
                 errors.append(f"{slug} public construction model slugs differ")
-        if slug == "senegal" and len(models) != 3:
-            errors.append(f"senegal must expose three construction models, got {len(models)}")
+        if len(models) != 3:
+            errors.append(f"{slug} must expose three construction models, got {len(models)}")
         conclusion_ids = {item["id"] for item in data["reportReadyConclusions"]}
         model_conclusion_ids = {
             item["id"] for model in models for item in model["canvas"]["keyFindings"]

@@ -1,0 +1,819 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "morocco",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "모로코",
+    "nameEn": "Morocco",
+    "iso3": "MAR",
+    "region": "아프리카"
+  },
+  "purpose": "모로코 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "도시계획법 제12-90호(제66-12호 개정 포함)·시행령 제2-18-577호 일반 건축절차규정·환경평가법 제49-17호·모로코 일반 건축기술규정 공식 대장의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "모로코 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지등기와 관할 도시계획청의 note de renseignements urbanistiques로 필지별 계획수치를 확정한다.",
+        "authorityIds": [
+          "urban-agency",
+          "commune"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "법률 제12-90호·도시계획정보",
+            "instrumentId": "MAR-URBAN-LAW-12-90",
+            "provisions": [
+              "planning documents and building-control framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 유효한 계획문서와 허용용도·COS/CUS·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "urban-agency",
+          "commune"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "법률 제12-90호·도시계획정보",
+            "instrumentId": "MAR-URBAN-LAW-12-90",
+            "provisions": [
+              "planning documents and building-control framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "코뮌 건축허가와 EIE·NIE 환경수용성 결정을 분리해 선후관계·서류·기간을 확정한다.",
+        "authorityIds": [
+          "commune",
+          "urban-agency",
+          "environment-department"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "RGC 건축허가·환경평가법",
+            "instrumentId": "MAR-RGC-2-18-577",
+            "provisions": [
+              "building authorization procedure and required documents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축허가권자와 EIE·NIE 유형, 환경수용성 결정의 선행 여부와 실제 처리경로는 무엇인가?",
+        "authorityIds": [
+          "commune",
+          "urban-agency",
+          "environment-department"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "RGC 건축허가·환경평가법",
+            "instrumentId": "MAR-RGC-2-18-577",
+            "provisions": [
+              "building authorization procedure and required documents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 건축사·기술자, 착공·현장기록·기술검사와 비주거 certificat de conformite를 개장 Gate로 둔다.",
+        "authorityIds": [
+          "commune",
+          "urban-agency"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "착공관리·certificat de conformite",
+            "instrumentId": "MAR-URBAN-LAW-12-90",
+            "provisions": [
+              "Arts. 54-1, 54-2 and 55"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 전문가·검사·보험과 비주거 적합성증명 발급의 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "commune",
+          "urban-agency"
+        ],
+        "requirementIds": [
+          "MAR-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "착공관리·certificat de conformite",
+            "instrumentId": "MAR-URBAN-LAW-12-90",
+            "provisions": [
+              "Arts. 54-1, 54-2 and 55"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "morocco-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "모로코 도시계획·부지규제",
+      "oneLiner": "토지등기와 관할 도시계획청의 note de renseignements urbanistiques로 필지별 계획수치를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "공식 도시계획청의 법령대장과 승인계획·정보서비스를 확인했다. 필지 수치·권원·재해·유틸리티는 대상 관할에서 확인한다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "MAR-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "MAR-BLD-Q-001",
+        "MAR-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "MAR-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "MAR-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "MAR-BLD-F-001",
+        "MAR-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "morocco-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "모로코 건축허가·환경심사",
+      "oneLiner": "코뮌 건축허가와 EIE·NIE 환경수용성 결정을 분리해 선후관계·서류·기간을 확정한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "2019 RGC와 환경부 전자서비스의 현행 EIE·NIE 안내를 확인했다. 대상목록 적용·서류·수수료·실제 기간은 관할기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "MAR-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "MAR-BLD-Q-003",
+        "MAR-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "MAR-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MAR-BLD-F-003",
+        "MAR-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "morocco-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "모로코 기술검사·보험·준공제도",
+      "oneLiner": "등록 건축사·기술자, 착공·현장기록·기술검사와 비주거 certificat de conformite를 개장 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "공식 기술법령집에서 착공·현장기록·완료신고와 비주거 적합성증명 요건을 확인했다. 현지 업체·검사기관·보험사·비용은 시장조사 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "MAR-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "MAR-BLD-Q-005",
+        "MAR-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "MAR-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "MAR-BLD-F-005",
+        "MAR-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "commune",
+      "name": "President of the competent communal council",
+      "nameKo": "관할 코뮌 의회 의장",
+      "role": "건축허가와 준공 후 주거허가 또는 적합성증명서를 발급",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://aut.gov.ma/reglement/"
+    },
+    {
+      "id": "urban-agency",
+      "name": "Competent Urban Agency",
+      "nameKo": "관할 도시계획청(Agence urbaine)",
+      "role": "도시계획문서 작성·정보제공, 허가도서 적합의견과 공사 준수점검을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://aut.gov.ma/"
+    },
+    {
+      "id": "environment-department",
+      "name": "Department of Sustainable Development and competent environmental evaluation committee",
+      "nameKo": "지속가능개발부서·관할 환경평가위원회",
+      "role": "EIE·NIE 등 환경평가와 환경수용성 결정을 전자서비스로 처리",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://e-services.environnement.gov.ma/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "MAR-URBAN-LAW-12-90",
+      "title": "Loi n° 12-90 relative a l'urbanisme, as amended by Loi n° 66-12",
+      "titleKo": "도시계획법 제12-90호(제66-12호 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1992-06-17",
+      "officialUrl": "https://aut.gov.ma/s/website/rapports/11.pdf",
+      "officialPdfUrl": "https://aut.gov.ma/s/website/rapports/11.pdf",
+      "verificationLevel": "law-linked",
+      "note": "허가·현장관리·permis d'habiter·certificat de conformite의 기본법이며 후속 규정과 함께 적용한다."
+    },
+    {
+      "id": "MAR-RGC-2-18-577",
+      "title": "Decret n° 2-18-577 du 12 juin 2019 approuvant le reglement general de construction",
+      "titleKo": "시행령 제2-18-577호 일반 건축절차규정",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2019-06-12",
+      "officialUrl": "https://aut.gov.ma/reglement/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "MAR-ENV-LAW-49-17",
+      "title": "Loi n° 49-17 relative a l'evaluation environnementale",
+      "titleKo": "환경평가법 제49-17호",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://e-services.environnement.gov.ma/?lang=en",
+      "verificationLevel": "law-linked",
+      "note": "EIE·NIE·전략환경평가·환경감사의 틀이다. 현재 대상목록과 과도기 적용은 전자서비스에서 확인한다."
+    },
+    {
+      "id": "MAR-TECHNICAL-CODES",
+      "title": "Official collection of Moroccan general construction regulations",
+      "titleKo": "모로코 일반 건축기술규정 공식 대장",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "officialUrl": "https://aut.gov.ma/reglement/",
+      "verificationLevel": "source-linked",
+      "note": "내진 RPS, 화재·패닉, 에너지효율, 접근성 규정의 공식 목록이며 대상 건물에 적용되는 최신판을 확정한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "MAR-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "모로코에서 신축·증축·용도변경·택지개발을 추진하는 ODA 건축사업",
+      "requirement": "법률 제12-90호와 승인된 SDAU·plan d'amenagement·농촌개발계획이 토지이용과 건축가능성을 정한다. 토지권원과 경계를 확인하고 관할 도시계획청에서 허용용도·COS/CUS·높이·이격·주차, 도로·servitude·재해·기반시설 조건을 필지별로 확인한다.",
+      "authorityIds": [
+        "urban-agency",
+        "commune"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MAR-URBAN-LAW-12-90",
+          "provisions": [
+            "planning documents and building-control framework"
+          ]
+        },
+        {
+          "instrumentId": "MAR-RGC-2-18-577",
+          "provisions": [
+            "planning information and authorization dossier"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지등기·지적도·경계측량",
+        "승인 도시계획문서·urbanistic information note",
+        "필지별 용도·COS/CUS·높이·이격·주차",
+        "지반·침수·도로·상하수·전력 인입조건"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "MAR-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "건축허가 대상 공사와 법률 제49-17호·관련 목록상 환경평가 대상 사업",
+      "requirement": "코뮌은 도시계획청과 관계기관 의견을 받아 autorisation de construire를 발급하며 2019 RGC가 제출·심사방식을 규정한다. 사업 성격·규모·입지에 따라 환경평가법의 EIE 또는 NIE와 환경수용성 결정이 선행될 수 있다.",
+      "authorityIds": [
+        "commune",
+        "urban-agency",
+        "environment-department"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MAR-RGC-2-18-577",
+          "provisions": [
+            "building authorization procedure and required documents"
+          ]
+        },
+        {
+          "instrumentId": "MAR-ENV-LAW-49-17",
+          "provisions": [
+            "EIE and NIE framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청건축사·관할 코뮌",
+        "건축허가 도서·관계기관 의견",
+        "EIE·NIE·비대상 공식 결정",
+        "최신 수수료·완비일·보완정지·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "MAR-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "허가를 받아 시공하며 준공 후 사용허가 또는 적합성증명이 필요한 건축물",
+      "requirement": "대상 공사는 등록 건축사·전문기술자가 설계·추적하고 착공·종료신고, chantier 기록과 승인도서 준수확인이 필요하다. 완료 후 주거는 permis d'habiter, 비주거는 certificat de conformite를 코뮌에서 받아야 사용 가능하며 내진·화재·에너지 등 적용 기술규정을 확인한다.",
+      "authorityIds": [
+        "commune",
+        "urban-agency"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "MAR-URBAN-LAW-12-90",
+          "provisions": [
+            "Arts. 54-1, 54-2 and 55"
+          ]
+        },
+        {
+          "instrumentId": "MAR-TECHNICAL-CODES",
+          "provisions": [
+            "seismic, fire, energy and accessibility code collection"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "Ordre 등록 건축사·기술자·시공자",
+        "착공·종료신고와 cahier de chantier",
+        "기술검사·시험·소방·as-built",
+        "certificat de conformite·보험·검사비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 유효한 계획문서와 허용용도·COS/CUS·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축허가권자와 EIE·NIE 유형, 환경수용성 결정의 선행 여부와 실제 처리경로는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 전문가·검사·보험과 비주거 적합성증명 발급의 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "MAR-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "MAR-URBAN-LAW-12-90",
+          "provisions": [
+            "planning documents and building-control framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "MAR-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 유효한 계획문서와 허용용도·COS/CUS·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지등기·지적도·경계측량",
+        "승인 도시계획문서·urbanistic information note",
+        "필지별 용도·COS/CUS·높이·이격·주차",
+        "지반·침수·도로·상하수·전력 인입조건"
+      ],
+      "confirmWith": [
+        "urban-agency",
+        "commune"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MAR-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "urban-agency",
+        "commune"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MAR-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축허가권자와 EIE·NIE 유형, 환경수용성 결정의 선행 여부와 실제 처리경로는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청건축사·관할 코뮌",
+        "건축허가 도서·관계기관 의견",
+        "EIE·NIE·비대상 공식 결정",
+        "최신 수수료·완비일·보완정지·실제 전체기간"
+      ],
+      "confirmWith": [
+        "commune",
+        "urban-agency",
+        "environment-department"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MAR-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "commune",
+        "urban-agency",
+        "environment-department"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MAR-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 전문가·검사·보험과 비주거 적합성증명 발급의 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "Ordre 등록 건축사·기술자·시공자",
+        "착공·종료신고와 cahier de chantier",
+        "기술검사·시험·소방·as-built",
+        "certificat de conformite·보험·검사비용"
+      ],
+      "confirmWith": [
+        "commune",
+        "urban-agency"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "MAR-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "commune",
+        "urban-agency"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "MAR-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "MAR-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "MAR-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "MAR-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "MAR-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "MAR-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "MAR-BLD-C-001",
+      "confidence": "conditional",
+      "text": "도시별 계획문서가 실제 건축규모를 결정하므로 다른 코뮌의 수치나 국가 기술규정만으로 대상 필지 규모를 확정할 수 없다.",
+      "basis": [
+        "MAR-URBAN-LAW-12-90",
+        "MAR-RGC-2-18-577"
+      ]
+    },
+    {
+      "id": "MAR-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축허가와 환경수용성은 별도 법정 판단이므로 환경분류 전에는 전체 인허가 일정·비용을 확정하지 않는다.",
+      "basis": [
+        "MAR-RGC-2-18-577",
+        "MAR-ENV-LAW-49-17"
+      ]
+    },
+    {
+      "id": "MAR-BLD-C-003",
+      "confidence": "conditional",
+      "text": "비주거 ODA 시설은 공사완료만으로 사용할 수 없으므로 certificat de conformite를 인계·개장 선행조건으로 계약에 반영한다.",
+      "basis": [
+        "MAR-URBAN-LAW-12-90",
+        "MAR-TECHNICAL-CODES"
+      ]
+    }
+  ]
+}

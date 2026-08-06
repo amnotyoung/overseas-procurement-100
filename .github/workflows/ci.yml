@@ -30,7 +30,9 @@ jobs:
         run: python tools/validate.py
 
       - name: Validate construction regulation records
-        run: python tools/validate_construction_regulations.py
+        run: |
+          python tools/build_construction_baselines.py --check
+          python tools/validate_construction_regulations.py
 
       - name: Check process boards
         run: npm run check:boards

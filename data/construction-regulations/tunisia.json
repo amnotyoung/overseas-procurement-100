@@ -1,0 +1,846 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "tunisia",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "튀니지",
+    "nameEn": "Tunisia",
+    "iso3": "TUN",
+    "region": "아프리카"
+  },
+  "purpose": "튀니지 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "국토정비·도시계획법전(CATU), 법률 제94-122호(개정 포함)·일반도시계획규정(RGU), 시행령 제99-2253호(개정 포함)·2007년 4월 17일 건축허가 서류·유효기간·갱신·기술위원회 명령·환경영향평가·대상시설 시행령 제2005-1991호·기술검사·10년책임보험 법률 제94-9·94-10호 및 시행령의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "튀니지 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "권원·PAU와 RGU를 대조해 필지별 용도·밀도·높이·이격·주차를 확정한다.",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "CATU·PAU·RGU",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "territorial and urban planning; land-use authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 현행 PAU 구역과 실제 COS/CUF·높이·이격·주차·보호·기반시설 조건은 무엇인가?",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "CATU·PAU·RGU",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "territorial and urban planning; land-use authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "commune의 permis de bâtir와 ANPE의 EIE 또는 환경 cahier des charges를 유형·입지별로 연결한다.",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-anpe",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "permis de bâtir·ANPE",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "building and land-use authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 commune 건축허가 서류·허가권자와 ANPE EIE/cahier des charges 유형·선행관계는 무엇인가?",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-anpe",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "permis de bâtir·ANPE",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "building and land-use authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 건축사·기술검사와 법정 10년책임보험, récolement·permis d'occuper를 인계 Gate로 둔다.",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat",
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "기술검사·10년책임·점유",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "technical control and mandatory decennial-liability insurance; exemptions by implementing decree"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "본 건물의 기술검사·10년책임보험 대상 여부와 récolement·permis d'occuper의 현행 서류·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat",
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "기술검사·10년책임·점유",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "technical control and mandatory decennial-liability insurance; exemptions by implementing decree"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "tunisia-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "튀니지 도시계획·부지규제",
+      "oneLiner": "권원·PAU와 RGU를 대조해 필지별 용도·밀도·높이·이격·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "MEHAT의 CATU·RGU·PAU 공식 체계를 확인했다. 필지별 지표·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "TUN-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "TUN-BLD-Q-001",
+        "TUN-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "TUN-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "TUN-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "TUN-BLD-F-001",
+        "TUN-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "tunisia-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "튀니지 건축허가·환경심사",
+      "oneLiner": "commune의 permis de bâtir와 ANPE의 EIE 또는 환경 cahier des charges를 유형·입지별로 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "MEHAT 허가규정 목록과 환경부의 2005 환경평가 체계를 확인했다. 최신 개정·수수료·실제 기간은 접수기관에 재확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "TUN-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "TUN-BLD-Q-003",
+        "TUN-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "TUN-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "TUN-BLD-F-003",
+        "TUN-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "tunisia-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "튀니지 기술검사·보험·준공제도",
+      "oneLiner": "등록 건축사·기술검사와 법정 10년책임보험, récolement·permis d'occuper를 인계 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "MEHAT의 현행 기술검사·10년책임보험 법령목록과 인가서비스를 확인했다. 완료서류 명칭·절차와 보험비는 commune·검사기관·보험사에 확인한다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "TUN-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "TUN-BLD-Q-005",
+        "TUN-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "TUN-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "TUN-BLD-F-005",
+        "TUN-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "tun-municipality",
+      "name": "Competent municipality and its technical commission",
+      "nameKo": "관할 지방자치단체·건축허가 기술위원회",
+      "role": "도시계획문서 집행, 토지점용·건축·철거허가와 완료·점유 절차를 담당",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "tun-mehat",
+      "name": "Ministry of Equipment and Housing",
+      "nameKo": "설비·주택부(MEHAT)",
+      "role": "국토·도시계획, 일반도시계획규정, 건축허가 서류와 건축기술·전문업무 제도를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.mehat.gov.tn/fr/"
+    },
+    {
+      "id": "tun-anpe",
+      "name": "Agence Nationale de Protection de l'Environnement",
+      "nameKo": "국가환경보호청(ANPE)",
+      "role": "환경영향평가(EIE)와 환경 cahier des charges 접수·검토를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://anpe.nat.tn/"
+    },
+    {
+      "id": "tun-technical-control",
+      "name": "Approved technical controllers and construction insurers",
+      "nameKo": "인가 기술검사기관·건설보험사",
+      "role": "법정대상 공사의 기술검사와 10년책임보험 인수·증빙을 수행",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/batiments-civils/guide-des-services-batiments-civils/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "TUN-CATU-94-122",
+      "title": "Code de l'Amenagement du Territoire et de l'Urbanisme — Law No. 94-122 of 28 November 1994, as amended",
+      "titleKo": "국토정비·도시계획법전(CATU), 법률 제94-122호(개정 포함)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "issuedOn": "1994-11-28",
+      "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/amenagement-du-territoire/reglementation-damenagement-du-territoire/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "TUN-RGU-99-2253",
+      "title": "Reglement general d'urbanisme — Decree No. 99-2253, as amended",
+      "titleKo": "일반도시계획규정(RGU), 시행령 제99-2253호(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/urbanisme/reglementation-urbanisme/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "TUN-PERMIT-ORDER-2007",
+      "title": "Order of 17 April 2007 on building-permit files, validity, renewal and technical commissions",
+      "titleKo": "2007년 4월 17일 건축허가 서류·유효기간·갱신·기술위원회 명령",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2007-04-17",
+      "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/habitat/reglementation-habitat/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "TUN-EIA-DECREE-2005-1991",
+      "title": "Decree No. 2005-1991 of 11 July 2005 on environmental impact assessment and listed units",
+      "titleKo": "환경영향평가·대상시설 시행령 제2005-1991호",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2005-07-11",
+      "officialUrl": "https://environnement.gov.tn/ministere/cadre-juridique-et-institutionnel",
+      "verificationLevel": "law-linked",
+      "note": "Annex I EIE와 Annex II 환경 cahier des charges 경로의 기본 규정이다. 환경부는 개정 필요성을 공표하고 있으므로 접수 시 최신 문안을 확인한다."
+    },
+    {
+      "id": "TUN-TECH-CONTROL-INSURANCE-1994",
+      "title": "Laws No. 94-9 and 94-10 of 31 January 1994 and implementing decrees on technical control and decennial insurance",
+      "titleKo": "기술검사·10년책임보험 법률 제94-9·94-10호 및 시행령",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1994-01-31",
+      "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/batiments-civils/reglementation-batiments-civils/",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TUN-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "튀니지에서 신축·증축·용도변경 또는 lotissement를 추진하는 사업",
+      "requirement": "CATU 아래 지방자치단체의 plan d'amenagement urbain(PAU)과 일반도시계획규정(RGU)이 부지 개발조건을 정한다. 등기·지적·servitude와 해당 PAU 도면·규정표를 확보하고 지반·침수·배수·도로·ONAS·수도·전력 용량은 별도 실사한다.",
+      "authorityIds": [
+        "tun-municipality",
+        "tun-mehat"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TUN-CATU-94-122",
+          "provisions": [
+            "territorial and urban planning; land-use authorizations"
+          ]
+        },
+        {
+          "instrumentId": "TUN-RGU-99-2253",
+          "provisions": [
+            "general urban-planning rules where applicable"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "titre foncier·plan cadastral·경계·servitude",
+        "현행 PAU·구역규정·보호구역 의견",
+        "필지별 COS/CUF·높이·이격·주차",
+        "지반·침수·배수·도로·ONAS·수도·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "TUN-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "permis de bâtir 대상 공사와 ANPE 환경절차 대상 개발사업",
+      "requirement": "건축허가는 관할 commune의 기술위원회가 권원, 도시계획·건축도서와 관계기관 의견을 심사한다. 환경절차는 시행령 제2005-1991호의 Annex I 대상이면 EIE, Annex II 대상이면 해당 cahier des charges 경로를 적용하므로 사업유형·규모·입지로 ANPE에 사전분류를 확인한다.",
+      "authorityIds": [
+        "tun-municipality",
+        "tun-anpe",
+        "tun-mehat"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TUN-CATU-94-122",
+          "provisions": [
+            "building and land-use authorizations"
+          ]
+        },
+        {
+          "instrumentId": "TUN-PERMIT-ORDER-2007",
+          "provisions": [
+            "permit dossier, validity, renewal and technical commission"
+          ]
+        },
+        {
+          "instrumentId": "TUN-EIA-DECREE-2005-1991",
+          "provisions": [
+            "Annex I EIE and Annex II cahiers des charges"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·권원자·commune 허가권자",
+        "허가도서·등록 건축사 서명·위원회 의견",
+        "ANPE EIE 승인 또는 해당 cahier des charges",
+        "소방·위생·문화재·유틸리티 동의와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "TUN-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "전문설계·기술검사·보험 또는 완료·점유승인이 요구되는 건축공사",
+      "requirement": "법률 제94-9·94-10호 체계는 대상 공사의 승인 기술검사와 10년책임보험을 연결한다. 현장검사·시험·변경승인을 축적하고 commune의 procès-verbal de récolement와 permis d'occuper 등 실제 완료·점유서류를 발급받은 뒤 사용한다.",
+      "authorityIds": [
+        "tun-municipality",
+        "tun-mehat",
+        "tun-technical-control"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+          "provisions": [
+            "technical control and mandatory decennial-liability insurance; exemptions by implementing decree"
+          ]
+        },
+        {
+          "instrumentId": "TUN-CATU-94-122",
+          "provisions": [
+            "construction control and municipal completion enforcement"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "Ordre 등록 건축사·기술자·인가 contrôleur technique",
+        "기초·구조·설비·소방 검사와 시험성적",
+        "대상판정·police décennale·보험증권",
+        "as-built·récolement·permis d'occuper·인계비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 현행 PAU 구역과 실제 COS/CUF·높이·이격·주차·보호·기반시설 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 commune 건축허가 서류·허가권자와 ANPE EIE/cahier des charges 유형·선행관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "본 건물의 기술검사·10년책임보험 대상 여부와 récolement·permis d'occuper의 현행 서류·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "TUN-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "TUN-CATU-94-122",
+          "provisions": [
+            "territorial and urban planning; land-use authorizations"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "TUN-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 현행 PAU 구역과 실제 COS/CUF·높이·이격·주차·보호·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "titre foncier·plan cadastral·경계·servitude",
+        "현행 PAU·구역규정·보호구역 의견",
+        "필지별 COS/CUF·높이·이격·주차",
+        "지반·침수·배수·도로·ONAS·수도·전력 용량"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-mehat"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TUN-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-mehat"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TUN-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 commune 건축허가 서류·허가권자와 ANPE EIE/cahier des charges 유형·선행관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·권원자·commune 허가권자",
+        "허가도서·등록 건축사 서명·위원회 의견",
+        "ANPE EIE 승인 또는 해당 cahier des charges",
+        "소방·위생·문화재·유틸리티 동의와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-anpe",
+        "tun-mehat"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TUN-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-anpe",
+        "tun-mehat"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TUN-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "본 건물의 기술검사·10년책임보험 대상 여부와 récolement·permis d'occuper의 현행 서류·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "Ordre 등록 건축사·기술자·인가 contrôleur technique",
+        "기초·구조·설비·소방 검사와 시험성적",
+        "대상판정·police décennale·보험증권",
+        "as-built·récolement·permis d'occuper·인계비용"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-mehat",
+        "tun-technical-control"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TUN-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "tun-municipality",
+        "tun-mehat",
+        "tun-technical-control"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "TUN-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "TUN-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "TUN-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "TUN-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "TUN-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "TUN-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "TUN-BLD-C-001",
+      "confidence": "conditional",
+      "text": "RGU의 일반값이나 타 도시 수치를 대입하지 말고 해당 commune의 PAU 도면·규정표와 필지 권원을 개념설계 전에 확정한다.",
+      "basis": [
+        "TUN-CATU-94-122",
+        "TUN-RGU-99-2253"
+      ]
+    },
+    {
+      "id": "TUN-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축허가와 ANPE 환경절차는 별개이므로 환경분류를 초기 설계에 반영하고 두 승인조건을 하나의 인허가 일정으로 관리한다.",
+      "basis": [
+        "TUN-CATU-94-122",
+        "TUN-PERMIT-ORDER-2007",
+        "TUN-EIA-DECREE-2005-1991"
+      ]
+    },
+    {
+      "id": "TUN-BLD-C-003",
+      "confidence": "conditional",
+      "text": "기술검사와 보험 적용제외를 추정하지 말고 설계단계에 판정해 입찰·보험·검사·점유 Gate를 계약서에 반영한다.",
+      "basis": [
+        "TUN-TECH-CONTROL-INSURANCE-1994",
+        "TUN-CATU-94-122"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,820 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "uganda",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "우간다",
+    "nameEn": "Uganda",
+    "iso3": "UGA",
+    "region": "아프리카"
+  },
+  "purpose": "우간다 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "건축통제법 Cap. 136(2026년 개정 포함)·건축통제 시행규칙 2020·국가환경법 Cap. 181·환경사회평가 시행규칙 2020·국가건축기준 2019의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "우간다 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다.",
+        "authorityIds": [
+          "building-committee",
+          "nbrb"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "지방계획·Building Committee",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "building-plan scrutiny and land-use compliance framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 지방계획상 허용용도·plot ratio·coverage·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+        "authorityIds": [
+          "building-committee",
+          "nbrb"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "지방계획·Building Committee",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "building-plan scrutiny and land-use compliance framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "Building Committee 건축허가와 NEMA Project Brief·ESIA 유형을 분류해 선행조건을 연결한다.",
+        "authorityIds": [
+          "building-committee",
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "building permit·NEMA Project Brief/ESIA",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "building permit and registered professional framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축허가와 Project Brief·ESIA·면제 유형, NEMA 결정의 선행관계는 무엇인가?",
+        "authorityIds": [
+          "building-committee",
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "building permit·NEMA Project Brief/ESIA",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "building permit and registered professional framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 전문가, 국가코드·단계검사와 occupation permit을 시설 사용 전 법정 Gate로 둔다.",
+        "authorityIds": [
+          "building-committee",
+          "nbrb"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "National Building Code·occupation permit",
+            "instrumentId": "UGA-NBC-2019",
+            "provisions": [
+              "national design and construction standards"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 전문자격·보험·검사와 occupation permit의 최신 서류·법정·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "building-committee",
+          "nbrb"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "National Building Code·occupation permit",
+            "instrumentId": "UGA-NBC-2019",
+            "provisions": [
+              "national design and construction standards"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "uganda-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "우간다 도시계획·부지규제",
+      "oneLiner": "토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "NBRB의 현행 건축법·시행규칙 안내를 확인했다. 대상 지방계획·필지수치·습지·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "UGA-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "UGA-BLD-Q-001",
+        "UGA-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "UGA-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "UGA-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "UGA-BLD-F-001",
+        "UGA-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "uganda-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "우간다 건축허가·환경심사",
+      "oneLiner": "Building Committee 건축허가와 NEMA Project Brief·ESIA 유형을 분류해 선행조건을 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "NBRB 건축허가 안내와 NEMA의 현행 Schedule·ELMIS 절차를 확인했다. 2026년 개정기한·지방 수수료·실제 기간은 기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "UGA-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "UGA-BLD-Q-003",
+        "UGA-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "UGA-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "UGA-BLD-F-003",
+        "UGA-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "uganda-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "우간다 기술검사·보험·준공제도",
+      "oneLiner": "등록 전문가, 국가코드·단계검사와 occupation permit을 시설 사용 전 법정 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "NBRB의 2026년 개정 안내, 2019 Code와 2020 Regulations의 검사·점유허가 절차를 확인했다. 현지 업체·보험사·비용은 시장조사 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "UGA-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "UGA-BLD-Q-005",
+        "UGA-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "UGA-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "UGA-BLD-F-005",
+        "UGA-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "building-committee",
+      "name": "Competent local government Building Committee",
+      "nameKo": "관할 지방정부 건축위원회",
+      "role": "건축도서 심사, building permit, 현장검사와 occupation permit을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://nbrb.go.ug/what-you-need-to-know-about-the-building-committees/"
+    },
+    {
+      "id": "nbrb",
+      "name": "National Building Review Board",
+      "nameKo": "국가건축심의위원회(NBRB)",
+      "role": "건축법·National Building Code 집행감독, 지방위원회 지원과 이의절차를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://nbrb.go.ug/"
+    },
+    {
+      "id": "nema-uganda",
+      "name": "National Environment Management Authority",
+      "nameKo": "국가환경관리청(NEMA)",
+      "role": "Project Brief·ESIA·환경결정과 사후준수관리를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.nema.go.ug/en/esia/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "UGA-BUILDING-CONTROL-ACT",
+      "title": "Building Control Act, Cap. 136, as amended in 2026",
+      "titleKo": "건축통제법 Cap. 136(2026년 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://nbrb.go.ug/the-building-control-amendment-act-2026-what-it-means-for-you/",
+      "verificationLevel": "law-linked",
+      "note": "2026년 개정으로 허가·점유허가 결정기한과 이의구조가 변경됐다. 사업 접수 시 개정문과 시행일을 확인한다."
+    },
+    {
+      "id": "UGA-NBC-2019",
+      "title": "National Building Code, 2019",
+      "titleKo": "국가건축기준 2019",
+      "kind": "code",
+      "status": "in_force",
+      "issuedOn": "2019-01-01",
+      "officialUrl": "https://nbrb.go.ug/the-legal-regime-for-the-building-sector/",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "UGA-BCR-2020",
+      "title": "Building Control Regulations, 2020",
+      "titleKo": "건축통제 시행규칙 2020",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2020-11-06",
+      "officialUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
+      "officialPdfUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "UGA-NEA-CAP-181",
+      "title": "National Environment Act, Cap. 181 and Environmental and Social Assessment Regulations, 2020",
+      "titleKo": "국가환경법 Cap. 181·환경사회평가 시행규칙 2020",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
+      "officialPdfUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "UGA-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "우간다 지방정부 관할에서 신축·증축·용도변경을 추진하는 ODA 건축사업",
+      "requirement": "Building Committee는 토지이용 변경·환경훼손·인접영향을 포함해 허가를 심사하며 계획동의와 토지자료가 선행된다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 습지·홍수·경사·도로·유틸리티를 지방계획기관에서 확인한다.",
+      "authorityIds": [
+        "building-committee",
+        "nbrb"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+          "provisions": [
+            "building-plan scrutiny and land-use compliance framework"
+          ]
+        },
+        {
+          "instrumentId": "UGA-BCR-2020",
+          "provisions": [
+            "site, plan and application requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·cadastral survey",
+        "지방 physical development plan·planning consent",
+        "필지별 plot ratio·coverage·높이·이격·주차",
+        "습지·홍수·지반·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "UGA-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "building permit 대상 공사와 NEMA 환경·사회평가 분류대상 사업",
+      "requirement": "건축주는 등록 건축사·기술자의 서명도서와 계획동의·수수료 증빙을 Building Committee에 제출한다. NEMA는 환경법 Schedule 4·5·10·11에 따라 Project Brief, ESIA 또는 면제경로를 결정하므로 환경결정과 건축허가의 선후관계를 확정한다.",
+      "authorityIds": [
+        "building-committee",
+        "nema-uganda"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+          "provisions": [
+            "building permit and registered professional framework"
+          ]
+        },
+        {
+          "instrumentId": "UGA-NEA-CAP-181",
+          "provisions": [
+            "Schedules 4, 5, 10 and 11; Project Brief and ESIA"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지소유자·관할 위원회",
+        "건축허가·전문가 서명도서",
+        "NEMA Project Brief·ESIA·면제 결정",
+        "소방·습지 등 추가동의와 최신 수수료·실제 기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "UGA-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "건축허가를 받아 시공하고 occupation permit이 필요한 건축물",
+      "requirement": "National Building Code와 2020 Regulations는 승인도서 준수·현장안전·검사를 요구한다. 완료 후 소유자는 Building Committee에 occupation permit을 신청해야 하며, 위원회는 검사 후 적합 여부를 결정한다. 2026년 개정기한과 보험·시험·소방요건을 확인한다.",
+      "authorityIds": [
+        "building-committee",
+        "nbrb"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "UGA-NBC-2019",
+          "provisions": [
+            "national design and construction standards"
+          ]
+        },
+        {
+          "instrumentId": "UGA-BCR-2020",
+          "provisions": [
+            "Reg. 34 and occupation-permit forms"
+          ]
+        },
+        {
+          "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+          "provisions": [
+            "inspection, occupation permit and 2026 amendment framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "등록 건축사·기술자·시공자",
+        "착공통지·단계검사·시험기록",
+        "소방·설비시운전·as-built",
+        "occupation permit·보험·검사비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 지방계획상 허용용도·plot ratio·coverage·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축허가와 Project Brief·ESIA·면제 유형, NEMA 결정의 선행관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 전문자격·보험·검사와 occupation permit의 최신 서류·법정·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "UGA-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+          "provisions": [
+            "building-plan scrutiny and land-use compliance framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "UGA-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 지방계획상 허용용도·plot ratio·coverage·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·cadastral survey",
+        "지방 physical development plan·planning consent",
+        "필지별 plot ratio·coverage·높이·이격·주차",
+        "습지·홍수·지반·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nbrb"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "UGA-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nbrb"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "UGA-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축허가와 Project Brief·ESIA·면제 유형, NEMA 결정의 선행관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지소유자·관할 위원회",
+        "건축허가·전문가 서명도서",
+        "NEMA Project Brief·ESIA·면제 결정",
+        "소방·습지 등 추가동의와 최신 수수료·실제 기간"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nema-uganda"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "UGA-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nema-uganda"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "UGA-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 전문자격·보험·검사와 occupation permit의 최신 서류·법정·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "등록 건축사·기술자·시공자",
+        "착공통지·단계검사·시험기록",
+        "소방·설비시운전·as-built",
+        "occupation permit·보험·검사비용"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nbrb"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "UGA-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "building-committee",
+        "nbrb"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "UGA-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "UGA-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "UGA-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "UGA-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "UGA-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "UGA-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "UGA-BLD-C-001",
+      "confidence": "conditional",
+      "text": "국가건축기준만으로 필지의 계획수치를 확정할 수 없으므로 지방 planning consent와 부지조건 확인을 먼저 완료해야 한다.",
+      "basis": [
+        "UGA-BUILDING-CONTROL-ACT",
+        "UGA-BCR-2020"
+      ]
+    },
+    {
+      "id": "UGA-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축위원회와 NEMA는 별도 결정을 내리므로 환경유형이 확정되기 전에는 전체 착공일정과 평가비용을 확정하지 않는다.",
+      "basis": [
+        "UGA-BUILDING-CONTROL-ACT",
+        "UGA-NEA-CAP-181"
+      ]
+    },
+    {
+      "id": "UGA-BLD-C-003",
+      "confidence": "conditional",
+      "text": "우간다에서는 occupation permit 없는 사용이 위법이므로 이를 ODA 시설 인계·개장의 명시적 선행조건으로 관리한다.",
+      "basis": [
+        "UGA-NBC-2019",
+        "UGA-BCR-2020",
+        "UGA-BUILDING-CONTROL-ACT"
+      ]
+    }
+  ]
+}

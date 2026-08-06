@@ -1,0 +1,849 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "tajikistan",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "타지키스탄",
+    "nameEn": "Tajikistan",
+    "iso3": "TJK",
+    "region": "중동·CIS"
+  },
+  "purpose": "타지키스탄 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "타지키스탄 도시계획법전 제933/2012호(2026년 2월 16일 개정 포함)·환경전문심사법 제818/2012호(개정 포함)·건축물·시설물의 독립 사용인수 절차 명령 제564/2019호의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "타지키스탄 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지사용권·지적과 승인 도시계획문서를 대조해 필지의 실제 개발조건과 재해·기반시설 한계를 확정한다.",
+        "authorityIds": [
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "도시계획법전·필지조건",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Arts. 27-28",
+              "Arts. 29-54"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 토지권리와 승인계획상 실제 용도·밀도·높이·이격·주차, 재해·지반·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "도시계획법전·필지조건",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Arts. 27-28",
+              "Arts. 29-54"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "면허 설계도서의 국가전문심사·착공허가 경로와 EIA·국가환경전문심사를 병행 분류한다.",
+        "authorityIds": [
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority",
+          "tjk-state-expertise-control",
+          "tjk-environment-authority",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "설계 국가전문심사·환경전문심사",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Art. 63",
+              "Art. 64",
+              "project approval and construction-start permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축주·허가권자, 설계 국가전문심사·착공허가와 EIA·국가환경전문심사의 정확한 범위·순서·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority",
+          "tjk-state-expertise-control",
+          "tjk-environment-authority",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "설계 국가전문심사·환경전문심사",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Art. 63",
+              "Art. 64",
+              "project approval and construction-start permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "면허 참여자·국가통제·설계자/기술감리 기록을 누적해 법정 사용인수와 재산등록까지 닫는다.",
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "국가통제·감리·사용인수",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Arts. 19 and 22-25",
+              "Art. 73"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "적용되는 면허·국가검사·설계자/기술감리·보험과 사용인수의 실제 서류·책임자·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-architecture-committee",
+          "tjk-local-architecture-authority",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "국가통제·감리·사용인수",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Arts. 19 and 22-25",
+              "Art. 73"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "tajikistan-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "타지키스탄 도시계획·부지규제",
+      "oneLiner": "토지사용권·지적과 승인 도시계획문서를 대조해 필지의 실제 개발조건과 재해·기반시설 한계를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "법무부 ADLIA의 2026년 개정 통합 도시계획법전에서 도시계획문서·cadastre·토지이용 통제의 법적 틀을 확인했다. 필지별 수치와 공급용량은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "TJK-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "TJK-BLD-Q-001",
+        "TJK-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "TJK-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "TJK-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "TJK-BLD-F-001",
+        "TJK-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "tajikistan-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "타지키스탄 건축허가·환경심사",
+      "oneLiner": "면허 설계도서의 국가전문심사·착공허가 경로와 EIA·국가환경전문심사를 병행 분류한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "도시계획법전 제63·64조의 설계·국가전문심사와 환경전문심사법 제10~14조의 신청·기간·결론 구조를 확인했다. 세부 분류·수수료·실제 접수기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "TJK-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "TJK-BLD-Q-003",
+        "TJK-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "TJK-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "TJK-BLD-F-003",
+        "TJK-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "tajikistan-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "타지키스탄 기술검사·보험·준공제도",
+      "oneLiner": "면허 참여자·국가통제·설계자/기술감리 기록을 누적해 법정 사용인수와 재산등록까지 닫는다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "도시계획법전의 국가통제·기술/설계자감리·사용인수와 명령 제564/2019호의 독립 인수 절차를 연결했다. 대상별 인수방식·보험·현지 비용은 재확인한다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "TJK-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "TJK-BLD-Q-005",
+        "TJK-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "TJK-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "TJK-BLD-F-005",
+        "TJK-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "tjk-architecture-committee",
+      "name": "Committee for Architecture and Construction under the Government of the Republic of Tajikistan",
+      "nameKo": "정부 산하 건축·건설위원회",
+      "role": "도시계획정책·기준, 국가전문심사와 국가건축·도시계획통제 체계를 관장",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "tjk-local-architecture-authority",
+      "name": "Competent local executive authority and territorial architecture body",
+      "nameKo": "관할 지방행정기관·지역 건축기관",
+      "role": "필지 배치·도시계획조건, 지역 승인·협의와 기반시설 조건을 처리",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "tjk-state-expertise-control",
+      "name": "State urban-planning expertise and architectural-construction control bodies",
+      "nameKo": "국가 도시계획전문심사·건축건설통제기관",
+      "role": "설계도서 국가전문심사, 착공 전 통제와 공사 품질·법정검사를 담당",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "tjk-environment-authority",
+      "name": "Committee for Environmental Protection under the Government of the Republic of Tajikistan",
+      "nameKo": "정부 산하 환경보호위원회",
+      "role": "환경영향평가 자료와 국가환경전문심사 결론을 담당",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "tjk-licensed-participants",
+      "name": "Licensed designers, surveyors and contractors with author and technical supervisors",
+      "nameKo": "면허 설계·조사·시공기관과 설계자·기술감리",
+      "role": "공학조사·설계·시공과 author/technical supervision 및 준공증빙을 수행",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "TJK-URBAN-PLANNING-CODE-933-2012",
+      "title": "Urban Planning Code of the Republic of Tajikistan No. 933 of 28 December 2012, as amended through 16 February 2026",
+      "titleKo": "타지키스탄 도시계획법전 제933/2012호(2026년 2월 16일 개정 포함)",
+      "kind": "code",
+      "status": "in_force",
+      "issuedOn": "2012-12-28",
+      "officialUrl": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=118679",
+      "verificationLevel": "law-linked",
+      "note": "법무부 ADLIA 통합본이 2026년 법률 제2241호 개정까지 표시한다."
+    },
+    {
+      "id": "TJK-ENV-EXPERTISE-LAW-818-2012",
+      "title": "Law of the Republic of Tajikistan No. 818 of 16 April 2012 on Environmental Expertise, as amended",
+      "titleKo": "환경전문심사법 제818/2012호(개정 포함)",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2012-04-16",
+      "officialUrl": "https://mmk.tj/node/587",
+      "verificationLevel": "law-linked",
+      "note": "공식 법령센터 본문에 2024년 법률 제2101호 개정과 국가환경전문심사 기간·결론 유효기간이 반영돼 있다."
+    },
+    {
+      "id": "TJK-COMPLETION-ORDER-564-2019",
+      "title": "Procedure for independent acceptance into operation of buildings and structures, Order No. 564 of 1 November 2019",
+      "titleKo": "건축물·시설물의 독립 사용인수 절차 명령 제564/2019호",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2019-11-01",
+      "officialUrl": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=135102",
+      "verificationLevel": "law-linked",
+      "note": "도시계획법전 제73조 제2항에 근거한 사용인수 절차다. 대상별 국가위원회 인수 여부와 최신 서식은 재확인한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "TJK-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "타지키스탄에서 신축·재건축·대수선 또는 토지이용 변경을 추진하는 ODA 건축사업",
+      "requirement": "도시계획법전은 토지이용 유형, 도시계획문서·cadastre와 건축기준을 국가·지역 통제의 기초로 둔다. 대상 필지의 허용용도, 건폐율·용적률·높이·이격·주차와 보호구역은 관할 계획문서·건축조건으로, 지진·사면·산사태·토석류·홍수·지반과 상하수·전력·열 공급은 현장조사와 공급기관 기술조건으로 확정한다.",
+      "authorityIds": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+          "provisions": [
+            "Arts. 27-28",
+            "Arts. 29-54"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지사용권·지적등록·경계측량",
+        "general plan·상세계획·도시계획 cadastre·필지별 건축조건",
+        "실제 용도·건폐율·용적률·높이·이격·주차·보호구역 확인",
+        "지진·지반·사면·산사태·토석류·홍수 및 상하수·전력·열·통신 용량확약"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "TJK-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "국가전문심사·착공허가 대상 공사 및 환경영향을 유발할 수 있는 계획·건설 프로젝트",
+      "requirement": "면허 있는 설계자가 공학조사와 설계도서를 작성하고, 원칙적으로 도시계획법전 제64조의 국가전문심사에서 긍정 결론을 받은 뒤 대상·관할에 맞는 착공허가를 확보한다. 환경영향 가능 사업은 EIA 자료를 포함해 국가환경전문심사를 신청하므로, 건축주·허가권자·면제 여부·환경평가 범위와 두 심사의 선후관계를 서면 확정한다.",
+      "authorityIds": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-state-expertise-control",
+        "tjk-environment-authority",
+        "tjk-licensed-participants"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+          "provisions": [
+            "Art. 63",
+            "Art. 64",
+            "project approval and construction-start permit framework"
+          ]
+        },
+        {
+          "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+          "provisions": [
+            "Arts. 10-14"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·토지사용자와 허가권자 확정",
+        "면허 설계·공학조사 계약과 설계과업서",
+        "국가 설계전문심사 대상·면제·긍정결론 및 착공허가",
+        "EIA 범위·국가환경전문심사 신청·결론",
+        "소방·위생·문화재·유틸리티 협의와 실제 수수료·보완·처리기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "TJK-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "도시계획법전상 국가통제·감리와 완공시설 사용인수가 필요한 건축공사",
+      "requirement": "건축주는 승인설계와 기술규정 준수에 대한 기술감리와 설계자감리를 보장하고, 국가건축·도시계획통제기관의 검사·시정에 대응한다. 공정검사·시험·as-built·소방·유틸리티 자료를 모아 적용되는 제73조 사용인수 절차와 등록을 완료하며, 면허·검사기관·보험·비용은 계약 전 현지 시장과 감독기관에서 확인한다.",
+      "authorityIds": [
+        "tjk-state-expertise-control",
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-licensed-participants"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+          "provisions": [
+            "Arts. 19 and 22-25",
+            "Art. 73"
+          ]
+        },
+        {
+          "instrumentId": "TJK-COMPLETION-ORDER-564-2019",
+          "provisions": [
+            "independent acceptance into operation procedure"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 설계·조사·시공 면허와 설계자/기술감리 자격",
+        "국가검사·감리일지·은폐공정 act·재료·구조·MEP 시험",
+        "변경승인·as-built·소방·위생·유틸리티 연결확인",
+        "사용인수 act·재산등록·보험증권과 현지 기관·전문가 비용견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 토지권리와 승인계획상 실제 용도·밀도·높이·이격·주차, 재해·지반·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축주·허가권자, 설계 국가전문심사·착공허가와 EIA·국가환경전문심사의 정확한 범위·순서·실제 기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "적용되는 면허·국가검사·설계자/기술감리·보험과 사용인수의 실제 서류·책임자·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "TJK-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+          "provisions": [
+            "Arts. 27-28",
+            "Arts. 29-54"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "TJK-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 토지권리와 승인계획상 실제 용도·밀도·높이·이격·주차, 재해·지반·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지사용권·지적등록·경계측량",
+        "general plan·상세계획·도시계획 cadastre·필지별 건축조건",
+        "실제 용도·건폐율·용적률·높이·이격·주차·보호구역 확인",
+        "지진·지반·사면·산사태·토석류·홍수 및 상하수·전력·열·통신 용량확약"
+      ],
+      "confirmWith": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TJK-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TJK-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·허가권자, 설계 국가전문심사·착공허가와 EIA·국가환경전문심사의 정확한 범위·순서·실제 기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·토지사용자와 허가권자 확정",
+        "면허 설계·공학조사 계약과 설계과업서",
+        "국가 설계전문심사 대상·면제·긍정결론 및 착공허가",
+        "EIA 범위·국가환경전문심사 신청·결론",
+        "소방·위생·문화재·유틸리티 협의와 실제 수수료·보완·처리기간"
+      ],
+      "confirmWith": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-state-expertise-control",
+        "tjk-environment-authority",
+        "tjk-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TJK-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-state-expertise-control",
+        "tjk-environment-authority",
+        "tjk-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TJK-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "적용되는 면허·국가검사·설계자/기술감리·보험과 사용인수의 실제 서류·책임자·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "현지 설계·조사·시공 면허와 설계자/기술감리 자격",
+        "국가검사·감리일지·은폐공정 act·재료·구조·MEP 시험",
+        "변경승인·as-built·소방·위생·유틸리티 연결확인",
+        "사용인수 act·재산등록·보험증권과 현지 기관·전문가 비용견적"
+      ],
+      "confirmWith": [
+        "tjk-state-expertise-control",
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "TJK-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "tjk-state-expertise-control",
+        "tjk-architecture-committee",
+        "tjk-local-architecture-authority",
+        "tjk-licensed-participants"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "TJK-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "TJK-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "TJK-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "TJK-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "TJK-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "TJK-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "TJK-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Dushanbe나 타 지역의 일반 수치를 복사하지 말고, 관할기관의 필지별 도시계획조건과 공학·재해조사 및 공급기관 기술조건을 개념설계 전 Gate로 둔다.",
+      "basis": [
+        "TJK-URBAN-PLANNING-CODE-933-2012"
+      ]
+    },
+    {
+      "id": "TJK-BLD-C-002",
+      "confidence": "conditional",
+      "text": "설계전문심사 긍정결론과 국가환경전문심사 결론을 별도 승인으로 추적하고, 면제·관할·착공 가능시점을 기관 서면 없이 가정하지 않는다.",
+      "basis": [
+        "TJK-URBAN-PLANNING-CODE-933-2012",
+        "TJK-ENV-EXPERTISE-LAW-818-2012"
+      ]
+    },
+    {
+      "id": "TJK-BLD-C-003",
+      "confidence": "conditional",
+      "text": "공사 중 검사·감리 증빙을 누적하고 적용되는 사용인수 act와 재산등록을 최종지급·영구 유틸리티·개장 전 Gate로 둔다.",
+      "basis": [
+        "TJK-URBAN-PLANNING-CODE-933-2012",
+        "TJK-COMPLETION-ORDER-564-2019"
+      ]
+    }
+  ]
+}

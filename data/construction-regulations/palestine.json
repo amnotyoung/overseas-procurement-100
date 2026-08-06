@@ -1,0 +1,882 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "palestine",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "팔레스타인",
+    "nameEn": "Palestine",
+    "iso3": "PSE",
+    "region": "중동·CIS"
+  },
+  "purpose": "팔레스타인 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "임시 도시·마을·건축물 계획법 제79/1966호(2022년 개정 포함)·도시계획법 제28/1936호와 가자지구 관련 계획규정·팔레스타인 지방정부법 제1/1997호(개정 포함)·지방정부 건축·계획규정 내각결정 제6/2011호(제15/2020호 개정 포함)·계획규정 개정 내각결정 제15/2020호·환경법 제7/1999호(2013·2021년 개정 포함)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "팔레스타인 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "부지의 실제 통제권자와 적용 계획법부터 확정한 뒤 구조·상세계획의 필지 수치와 위험·기반시설을 확인한다.",
+        "authorityIds": [
+          "pse-planning-authorities",
+          "pse-local-authority"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "관할·구조계획·지방건축권한",
+            "instrumentId": "PSE-TOWN-PLANNING-LAW-79-1966",
+            "provisions": [
+              "Art. 3",
+              "Arts. 14-25"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 실제 통제·허가권자는 누구이며 어느 계획법·계획도가 적용되고 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+        "authorityIds": [
+          "pse-planning-authorities",
+          "pse-local-authority"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "관할·구조계획·지방건축권한",
+            "instrumentId": "PSE-TOWN-PLANNING-LAW-79-1966",
+            "provisions": [
+              "Art. 3",
+              "Arts. 14-25"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "관할 위원회의 건축·착공허가와 EQA의 EIA 유형·사전 환경승인을 하나의 선행조건표로 묶는다.",
+        "authorityIds": [
+          "pse-planning-authorities",
+          "pse-local-authority",
+          "pse-eqa",
+          "pse-engineers-civil-defence"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "건축·착공허가와 EQA 사전승인",
+            "instrumentId": "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+            "provisions": [
+              "Art. 15(2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 필지의 건축주·허가권자와 시설분류, EQA 환경평가 유형·사전승인, 관계기관 동의의 순서·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "pse-planning-authorities",
+          "pse-local-authority",
+          "pse-eqa",
+          "pse-engineers-civil-defence"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "건축·착공허가와 EQA 사전승인",
+            "instrumentId": "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+            "provisions": [
+              "Art. 15(2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 감리·공정별 타설검사·민방위 확인과 적합증명을 모아 점유허가 전 사용을 차단한다.",
+        "authorityIds": [
+          "pse-local-authority",
+          "pse-engineers-civil-defence",
+          "pse-planning-authorities"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "타설검사·적합증명·점유허가",
+            "instrumentId": "PSE-BUILDING-REG-6-2011",
+            "provisions": [
+              "engineering-office supervision and enforcement framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "현지 등록 설계·감리·시공자, 공정별 검사·민방위·보험과 적합증명·점유허가의 실제 비용·기간은 무엇인가?",
+        "authorityIds": [
+          "pse-local-authority",
+          "pse-engineers-civil-defence",
+          "pse-planning-authorities"
+        ],
+        "requirementIds": [
+          "PSE-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "타설검사·적합증명·점유허가",
+            "instrumentId": "PSE-BUILDING-REG-6-2011",
+            "provisions": [
+              "engineering-office supervision and enforcement framework"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "palestine-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "팔레스타인 도시계획·부지규제",
+      "oneLiner": "부지의 실제 통제권자와 적용 계획법부터 확정한 뒤 구조·상세계획의 필지 수치와 위험·기반시설을 확인한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "공식 관보의 서안 관련 제79/1966호 통합본, 가자 관련 제28/1936호 계획규정과 지방정부법의 계획·건축허가 권한을 확인했다. 실제 통제권·필지수치·접근성과 서비스 가능성은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "PSE-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "PSE-BLD-Q-001",
+        "PSE-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "PSE-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "PSE-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "PSE-BLD-F-001",
+        "PSE-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "palestine-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "팔레스타인 건축허가·환경심사",
+      "oneLiner": "관할 위원회의 건축·착공허가와 EQA의 EIA 유형·사전 환경승인을 하나의 선행조건표로 묶는다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "공식 관보에서 지방정부의 건축허가권, 2011/2020 건축규정의 등록도서·착공허가와 환경법 제45~48조의 EIA·사전 환경승인을 확인했다. 유형·수수료·실제 기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "PSE-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "PSE-BLD-Q-003",
+        "PSE-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "PSE-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PSE-BLD-F-003",
+        "PSE-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "palestine-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "팔레스타인 기술검사·보험·준공제도",
+      "oneLiner": "등록 감리·공정별 타설검사·민방위 확인과 적합증명을 모아 점유허가 전 사용을 차단한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "2020년 개정규정 제11·12조에서 적합증명·기술사회 인증·점유허가와 타설 전 검사를 확인했다. 민방위 범위·보험 의무·현지 비용은 용도와 관할별 재확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "PSE-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "PSE-BLD-Q-005",
+        "PSE-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "PSE-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PSE-BLD-F-005",
+        "PSE-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "pse-planning-authorities",
+      "name": "Ministry of Local Government, Higher Planning Council and competent regional/local planning committee",
+      "nameKo": "지방정부부·최고계획위원회·관할 지역/지방계획위원회",
+      "role": "계획구역·구조계획·상세계획과 관할별 계획·건축 결정을 담당",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "pse-local-authority",
+      "name": "Competent municipality or local authority engineering department",
+      "nameKo": "관할 지방정부·공학부서",
+      "role": "관할 안의 건축허가·착공/타설검사·점유허가와 현장통제를 집행",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "pse-eqa",
+      "name": "Environment Quality Authority",
+      "nameKo": "환경품질청(EQA)",
+      "role": "환경 스크리닝·EIA와 사전 환경승인 및 이행점검을 담당",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "pse-engineers-civil-defence",
+      "name": "Engineers Association and Palestinian Civil Defence",
+      "nameKo": "팔레스타인 기술사회·민방위",
+      "role": "등록 엔지니어·설계/감리 적합증명과 용도별 화재안전 심사·검사를 담당",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "PSE-TOWN-PLANNING-LAW-79-1966",
+      "title": "Temporary Towns, Villages and Buildings Planning Law No. 79 of 1966, as amended through Decree-Law No. 49 of 2022",
+      "titleKo": "임시 도시·마을·건축물 계획법 제79/1966호(2022년 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/50/",
+      "verificationLevel": "law-linked",
+      "note": "공식 관보 통합본이 2017·2020·2021·2022년 개정을 연결한다. 대상 필지에 이 법체계가 적용되는지 먼저 확인한다."
+    },
+    {
+      "id": "PSE-GAZA-PLANNING-LAW-28-1936",
+      "title": "Town Planning Law No. 28 of 1936 and Gaza planning instruments made under it",
+      "titleKo": "도시계획법 제28/1936호와 가자지구 관련 계획규정",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://mjr.ogb.gov.ps/Decrees/ViewText/31951/",
+      "verificationLevel": "law-linked",
+      "note": "공식 관보는 가자지구 중앙계획위원회의 구조·상세계획 및 토지분할 규정을 이 법에 연결한다. 현행 집행 가능성과 관할은 별도 확인한다."
+    },
+    {
+      "id": "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+      "title": "Palestinian Local Authorities Law No. 1 of 1997, as amended",
+      "titleKo": "팔레스타인 지방정부법 제1/1997호(개정 포함)",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "1997-10-12",
+      "officialUrl": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/60/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PSE-BUILDING-REG-6-2011",
+      "title": "Council of Ministers Decision No. 6 of 2011 on Building and Planning Regulations for Local Authorities, as amended by Decision No. 15 of 2020",
+      "titleKo": "지방정부 건축·계획규정 내각결정 제6/2011호(제15/2020호 개정 포함)",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2011-05-17",
+      "officialUrl": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/141/",
+      "verificationLevel": "law-linked",
+      "note": "2020년 개정은 등록 설계사무소·기술사회 인증, 착공/타설검사, 적합증명과 점유허가를 추가했다."
+    },
+    {
+      "id": "PSE-BUILDING-AMENDMENT-15-2020",
+      "title": "Council of Ministers Decision No. 15 of 2020 amending the Building and Planning Regulations for Local Authorities",
+      "titleKo": "지방정부 건축·계획규정 개정 내각결정 제15/2020호",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2020-10-12",
+      "officialUrl": "https://mjr.ogb.gov.ps/Decrees/ViewText/31742/",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PSE-ENV-LAW-7-1999",
+      "title": "Environment Law No. 7 of 1999, as amended in 2013 and 2021",
+      "titleKo": "환경법 제7/1999호(2013·2021년 개정 포함)",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "1999-12-28",
+      "officialUrl": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/66/",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "PSE-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "팔레스타인에서 부지개발·신축·증축·용도변경을 추진하는 사업. 단, 적용 법·집행기관은 필지 관할 판정이 선행돼야 한다.",
+      "requirement": "팔레스타인 건축사업은 필지 위치에 따라 적용 계획법과 실제 심사기관이 달라질 수 있으므로 West Bank/Gaza, 지방정부 경계, 계획구역·구역등급과 별도 통제구역 여부를 먼저 판정한다. 그 다음 등기·지적, 유효한 구조·상세계획과 지방규정에서 용도·건폐율·용적률·높이·이격·주차를 확인하고 지반·침수·접근도로·상하수·전력 용량을 실측·서면확약한다.",
+      "authorityIds": [
+        "pse-planning-authorities",
+        "pse-local-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PSE-TOWN-PLANNING-LAW-79-1966",
+          "provisions": [
+            "Art. 3",
+            "Arts. 14-25"
+          ]
+        },
+        {
+          "instrumentId": "PSE-GAZA-PLANNING-LAW-28-1936",
+          "provisions": [
+            "Gaza structural/detailed planning and subdivision framework"
+          ]
+        },
+        {
+          "instrumentId": "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+          "provisions": [
+            "Art. 15(1)-(2) and (12)"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지등기·지적·경계와 처분/사용권",
+        "West Bank/Gaza·지방정부·계획구역·별도 통제구역 관할확인",
+        "유효 구조/상세계획·용도·건폐율·용적률·높이·이격·주차 확인서",
+        "지반·침수/홍수·잔존위험물·접근도로와 상하수·전력·통신 용량확약"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "PSE-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "관할 지방정부·계획위원회의 건축허가 대상 공사 및 환경법상 사전 환경승인·EIA 대상 사업",
+      "requirement": "지방정부 건축·계획규정에 따라 등록 설계사무소가 기술도서를 작성하고 기술사회 인증을 거쳐 관할 공학부서·계획위원회의 건축 및 착공허가를 받는다. 환경법 제45~48조는 대상사업 목록·EIA 절차와 허가 전 사전 환경승인을 규정하므로, 사업규모·용도·입지에 따른 EIA 또는 기타 환경결정과 승인권자를 EQA에서 확정한다.",
+      "authorityIds": [
+        "pse-planning-authorities",
+        "pse-local-authority",
+        "pse-eqa",
+        "pse-engineers-civil-defence"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+          "provisions": [
+            "Art. 15(2)"
+          ]
+        },
+        {
+          "instrumentId": "PSE-BUILDING-REG-6-2011",
+          "provisions": [
+            "building permit and local planning requirements"
+          ]
+        },
+        {
+          "instrumentId": "PSE-BUILDING-AMENDMENT-15-2020",
+          "provisions": [
+            "Art. 3 adding Art. 5 bis"
+          ]
+        },
+        {
+          "instrumentId": "PSE-ENV-LAW-7-1999",
+          "provisions": [
+            "Arts. 45-48"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·토지권리와 실제 허가위원회",
+        "등록 설계사무소·기술사회 인증도서·시설/위험분류",
+        "EQA 스크리닝·EIA/환경결정·사전 환경승인",
+        "민방위·보건·문화재·유틸리티 선행동의",
+        "최신 서식·수수료·보완정지·접수관행·전체 실제 기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "PSE-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "지방정부 건축·계획규정의 공사감독·타설검사·적합증명·점유허가 대상 건축공사",
+      "requirement": "등록 설계사무소가 공사를 감독하고, 2020년 개정규정에 따라 기초·슬래브·기둥 등 타설 전 관할 공학부서의 현장확인을 받는다. 준공 후 감독자가 발행하고 기술사회가 인증한 적합증명으로 관할 위원회의 점유허가를 받아야 하며, 민방위·유틸리티·시설별 운영허가와 보험은 용도·계약·관할별로 추가 확정한다.",
+      "authorityIds": [
+        "pse-local-authority",
+        "pse-engineers-civil-defence",
+        "pse-planning-authorities"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PSE-BUILDING-REG-6-2011",
+          "provisions": [
+            "engineering-office supervision and enforcement framework"
+          ]
+        },
+        {
+          "instrumentId": "PSE-BUILDING-AMENDMENT-15-2020",
+          "provisions": [
+            "Art. 11 adding Art. 93 bis",
+            "Art. 12 adding Art. 93 bis (1)"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 등록 설계사무소·감리자·시공자 자격과 책임범위",
+        "착공·기초·슬래브·기둥 타설검사 신청·현장확인 기록",
+        "재료·구조·MEP 시험·변경승인·as-built",
+        "감독자 적합증명·기술사회 인증·민방위/유틸리티 확인·점유허가",
+        "보험 법적 근거·증권, 현지 전문가·검사기관·보험사 비용견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 실제 통제·허가권자는 누구이며 어느 계획법·계획도가 적용되고 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 필지의 건축주·허가권자와 시설분류, EQA 환경평가 유형·사전승인, 관계기관 동의의 순서·실제 기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "현지 등록 설계·감리·시공자, 공정별 검사·민방위·보험과 적합증명·점유허가의 실제 비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "PSE-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "PSE-TOWN-PLANNING-LAW-79-1966",
+          "provisions": [
+            "Art. 3",
+            "Arts. 14-25"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "PSE-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 실제 통제·허가권자는 누구이며 어느 계획법·계획도가 적용되고 실제 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지등기·지적·경계와 처분/사용권",
+        "West Bank/Gaza·지방정부·계획구역·별도 통제구역 관할확인",
+        "유효 구조/상세계획·용도·건폐율·용적률·높이·이격·주차 확인서",
+        "지반·침수/홍수·잔존위험물·접근도로와 상하수·전력·통신 용량확약"
+      ],
+      "confirmWith": [
+        "pse-planning-authorities",
+        "pse-local-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PSE-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "pse-planning-authorities",
+        "pse-local-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PSE-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 필지의 건축주·허가권자와 시설분류, EQA 환경평가 유형·사전승인, 관계기관 동의의 순서·실제 기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·토지권리와 실제 허가위원회",
+        "등록 설계사무소·기술사회 인증도서·시설/위험분류",
+        "EQA 스크리닝·EIA/환경결정·사전 환경승인",
+        "민방위·보건·문화재·유틸리티 선행동의",
+        "최신 서식·수수료·보완정지·접수관행·전체 실제 기간"
+      ],
+      "confirmWith": [
+        "pse-planning-authorities",
+        "pse-local-authority",
+        "pse-eqa",
+        "pse-engineers-civil-defence"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PSE-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "pse-planning-authorities",
+        "pse-local-authority",
+        "pse-eqa",
+        "pse-engineers-civil-defence"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PSE-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 등록 설계·감리·시공자, 공정별 검사·민방위·보험과 적합증명·점유허가의 실제 비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "현지 등록 설계사무소·감리자·시공자 자격과 책임범위",
+        "착공·기초·슬래브·기둥 타설검사 신청·현장확인 기록",
+        "재료·구조·MEP 시험·변경승인·as-built",
+        "감독자 적합증명·기술사회 인증·민방위/유틸리티 확인·점유허가",
+        "보험 법적 근거·증권, 현지 전문가·검사기관·보험사 비용견적"
+      ],
+      "confirmWith": [
+        "pse-local-authority",
+        "pse-engineers-civil-defence",
+        "pse-planning-authorities"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PSE-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "pse-local-authority",
+        "pse-engineers-civil-defence",
+        "pse-planning-authorities"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "PSE-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "PSE-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "PSE-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "PSE-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "PSE-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "PSE-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "PSE-BLD-C-001",
+      "confidence": "conditional",
+      "text": "팔레스타인 전국에 단일 계획수치를 적용하지 말고, 부지 관할·적용법과 유효 구조/상세계획을 먼저 잠근 뒤 현장조사와 공급기관 확약으로 설계 가능성을 확정한다.",
+      "basis": [
+        "PSE-TOWN-PLANNING-LAW-79-1966",
+        "PSE-GAZA-PLANNING-LAW-28-1936",
+        "PSE-LOCAL-AUTHORITY-LAW-1-1997"
+      ]
+    },
+    {
+      "id": "PSE-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축허가와 환경승인을 별도 Gate로 추적하되, EQA 사전승인이 필요한 사업은 건축허가 발급 전 완료되도록 관할기관의 서면 절차도를 확보한다.",
+      "basis": [
+        "PSE-LOCAL-AUTHORITY-LAW-1-1997",
+        "PSE-BUILDING-REG-6-2011",
+        "PSE-BUILDING-AMENDMENT-15-2020",
+        "PSE-ENV-LAW-7-1999"
+      ]
+    },
+    {
+      "id": "PSE-BLD-C-003",
+      "confidence": "conditional",
+      "text": "타설 전 검사와 변경승인 기록을 공사 중 누적하고, 인증 적합증명과 점유허가를 최종지급·영구 유틸리티·개장 전 필수 Gate로 둔다.",
+      "basis": [
+        "PSE-BUILDING-REG-6-2011",
+        "PSE-BUILDING-AMENDMENT-15-2020"
+      ]
+    }
+  ]
+}

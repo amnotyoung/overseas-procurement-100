@@ -16,19 +16,19 @@
 - 2026 참여전략 자료집 수록 43개국 전수: 아시아·태평양 12, 아프리카 15, 중남미 8, 중동·CIS 8
 - 자료집 미수록 보강국 미얀마 3개 제도
 - 발주자(KOICA) 규정 3개 제도
-- 총 45개국·발주자, 조달 135개 + 건축 1개 제도 다이어그램
+- 협력국 44개국·KOICA 발주자, 조달 135개 + 건축 132개 제도 다이어그램
 - 현행 기준 확인사항 16건
 - 4개 지역판 43개국의 원문 추출본·페이지 범위 등록
 
-자료집 전수 국가의 신규 다이어그램은 `source-document` 단계의 1차 구조화다. 기존
-네팔·캄보디아·탄자니아와 미얀마·KOICA 레코드는 공식 원문 확인 깊이에 따라
-`law-linked`·`article-verified` 상태를 유지한다.
+조달 다이어그램은 자료집 전수 국가를 `source-document` 단계로 1차 구조화하고 일부
+국가는 공식 원문으로 심화검증했다. 건축 다이어그램은 44개 협력국 모두 공식 법령·정부
+자료를 연결한 `law-linked` 기본판이며, 세네갈은 조문 대조 상세판이다.
 
 | 범위 | 국가 수 | 제도 수 | 검증 수준 |
 |---|---:|---:|---|
-| 자료집 수록국 | 43 | 129 | `source-document` 중심, 3개국 심화검증 |
-| 미얀마 보강 | 1 | 3 | `article-verified` 2, `needs-review` 1 |
-| KOICA(발주자) | 1 | 3 | `article-verified` |
+| 자료집 수록국 | 43 | 조달 129 + 건축 129 | 조달 `source-document` 중심, 건축 `law-linked` 중심 |
+| 미얀마 보강 | 1 | 조달 3 + 건축 3 | 공식 법령·정부자료 연결, 일부 추가검증 필요 |
+| KOICA(발주자) | 1 | 조달 3 | `article-verified` |
 
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
@@ -36,7 +36,7 @@
 
 원천 데이터와 검증 계약은 조달 3축과 분리하되, 공개 사이트에서는 같은 국가의 1~3번 조달 제도 뒤에 4번부터 이어서 보여준다. ODA 건축 전문가가 사업기획·현지조사·설계·인허가·시공·준공·운영 단계에서 사용할 국가별 법·제도 데이터팩이다.
 
-- 공개 화면: [통합 제도 대장](https://amnotyoung.github.io/overseas-procurement-100/?axis=construction) → [세네갈 04 건축 법·제도](https://amnotyoung.github.io/overseas-procurement-100/model/senegal-construction-regulations/)
+- 공개 화면: [통합 제도 대장](https://amnotyoung.github.io/overseas-procurement-100/?axis=construction) → [세네갈 04 도시계획·부지규제](https://amnotyoung.github.io/overseas-procurement-100/model/senegal-site-urban-construction-regulations/)
 - 생성 문서: [세네갈 건축 법·제도 브리프](docs/construction-regulations/senegal.md)
 - 범위: 법령·공식자료 14종·관할기관 14개·생애주기 의무 20건·미확정 질문 12건·제도 구조도 18노드
 - 구조도: [`korea100studio`](https://github.com/amnotyoung/korea100studio) `gov` 프로필로 구성 품질을 검사하고, 공개 화면은 기존 model 템플릿의 선명한 HTML 카드·동적 연결선·클릭 상세 패널로 렌더링한다.
@@ -116,6 +116,7 @@ python3 tools/build_site.py
 건축 법·제도 원천 데이터와 통합 model:
 
 ```bash
+python3 tools/build_construction_baselines.py --check
 python3 tools/validate_construction_regulations.py
 python3 tools/build_construction_regulations.py
 python3 tools/build_site.py
@@ -135,7 +136,7 @@ npm run check:boards
 | 경로 | 내용 |
 |---|---|
 | `site/index.html` | 국가·축 검색과 제도 대장 |
-| `site/model/{slug}-construction-regulations/index.html` | 국가별 04+ 건축 제도축: HTML 업무구조도, 클릭 상세, 법령·증빙·현장검증 |
+| `site/model/{country}-{site-urban\|permit-environment\|control-completion}-construction-regulations/index.html` | 국가별 04~06 건축 제도축: HTML 업무구조도, 클릭 상세, 법령·증빙·현장검증 |
 | `site/construction/…` | 기존 공개 주소를 통합 model로 보내는 호환 리디렉션 |
 | `site/model/{slug}/index.html` | 국가별 01~ 제도 업무구조도, 캔버스, 원문, 현행 기준, 검증 |
 | `site/verification/index.html` | 현행 기준 확인 대장 |
@@ -166,7 +167,11 @@ python3 -m http.server 8765 --directory site
 4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적고, 공개 제도축은 `publicModels`에서 같은 원천을 참조해 나눈다.
 5. 법정 처리기간은 완비서류 접수 후 기간으로 기록하고 전체 인허가기간과 구분한다.
 6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
-7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 건축 model을 4번부터 자동 배치한다. 세네갈 파일럿은 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종으로 공개한다.
+7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종을 4~6번으로 자동 배치한다.
+
+조문까지 대조한 상세판은 국가 JSON을 직접 관리한다. 전체 국가 기본판은
+`data/construction-regulations/catalog/baselines.json`에 국가별 공식 출처·기관·판단만 기록하고
+`python3 tools/build_construction_baselines.py`로 같은 3축 계약의 국가 JSON을 생성한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 

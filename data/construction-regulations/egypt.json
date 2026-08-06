@@ -1,0 +1,821 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "egypt",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "이집트",
+    "nameEn": "Egypt",
+    "iso3": "EGY",
+    "region": "아프리카"
+  },
+  "purpose": "이집트 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "통합건축법 제119/2008호(개정 포함)·통합건축법 시행규칙 장관령 제144/2009호(개정 포함)·환경법 제4/1994호(개정 포함)·시행규칙·EEAA 환경영향평가 원칙·절차 지침의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "이집트 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지배정·등기와 관할 도시의 strategic/detailed plan·building requirements로 필지 수치를 확정한다.",
+        "authorityIds": [
+          "local-admin-nuca",
+          "mohuc"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "통합건축법·도시별 토지조건",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "urban planning and building licensing framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상지가 기존 도시인지 NUCA 도시인지, 필지별 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+        "authorityIds": [
+          "local-admin-nuca",
+          "mohuc"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "통합건축법·도시별 토지조건",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "urban planning and building licensing framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "지방·NUCA 건축허가와 CAA-EEAA의 A·B·C EIA 분류를 착공 전 통합 매핑한다.",
+        "authorityIds": [
+          "local-admin-nuca",
+          "eeaa-caa"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "건축허가·EEAA A/B/C EIA",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "building permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축허가권자와 EEAA 환경 Category, 소방·민방위·고고학 등 선행동의는 무엇인가?",
+        "authorityIds": [
+          "local-admin-nuca",
+          "eeaa-caa"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "건축허가·EEAA A/B/C EIA",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "building permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 엔지니어, 감리·단계검사와 building fitness/occupancy 증명을 시설 개장 전 Gate로 둔다.",
+        "authorityIds": [
+          "local-admin-nuca",
+          "mohuc"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "시공감독·점유 적합성",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "licensed professionals, construction control and occupancy fitness"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "관할의 전문자격·검사·보험과 준공·점유 적합성증명·영구 인입의 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "local-admin-nuca",
+          "mohuc"
+        ],
+        "requirementIds": [
+          "EGY-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "시공감독·점유 적합성",
+            "instrumentId": "EGY-BUILDING-LAW-119-2008",
+            "provisions": [
+              "licensed professionals, construction control and occupancy fitness"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "egypt-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "이집트 도시계획·부지규제",
+      "oneLiner": "토지배정·등기와 관할 도시의 strategic/detailed plan·building requirements로 필지 수치를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "통합건축법·시행규칙을 인용하는 NUCA 공식 자료와 EEAA 도시개발 분류를 확인했다. 필지 수치·토지조건·재해·유틸리티는 관할기관 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "EGY-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "EGY-BLD-Q-001",
+        "EGY-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "EGY-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "EGY-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "EGY-BLD-F-001",
+        "EGY-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "egypt-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "이집트 건축허가·환경심사",
+      "oneLiner": "지방·NUCA 건축허가와 CAA-EEAA의 A·B·C EIA 분류를 착공 전 통합 매핑한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "EEAA의 2025년 현행 환경평가 서비스와 통합건축법 체계를 확인했다. 최신 분류목록·서식·수수료·실제 전체기간은 기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "EGY-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "EGY-BLD-Q-003",
+        "EGY-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "EGY-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "EGY-BLD-F-003",
+        "EGY-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "egypt-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "이집트 기술검사·보험·준공제도",
+      "oneLiner": "등록 엔지니어, 감리·단계검사와 building fitness/occupancy 증명을 시설 개장 전 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "통합건축법·시행규칙의 시공통제 틀을 연결했다. 2026년 개정절차와 현지 전문가·검사기관·보험사·비용은 관할에서 확인한다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "EGY-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "EGY-BLD-Q-005",
+        "EGY-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "EGY-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "EGY-BLD-F-005",
+        "EGY-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "local-admin-nuca",
+      "name": "Competent local administrative unit or New Urban Communities Authority city authority",
+      "nameKo": "관할 지방행정단위 또는 신도시청(NUCA) 도시기관",
+      "role": "상세계획·토지조건에 따라 건축도서·허가, 공사통제와 점유 적합성 절차를 집행",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.newcities.gov.eg/english/"
+    },
+    {
+      "id": "mohuc",
+      "name": "Ministry of Housing, Utilities and Urban Communities",
+      "nameKo": "주택·유틸리티·도시공동체부",
+      "role": "통합건축법·시행규칙, 도시계획·건축기술정책을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.newcities.gov.eg/"
+    },
+    {
+      "id": "eeaa-caa",
+      "name": "Egyptian Environmental Affairs Agency and competent administrative authority",
+      "nameKo": "환경청(EEAA)·관할 행정허가기관(CAA)",
+      "role": "CAA를 통한 A·B·C 환경분류·EIA 접수와 EEAA 검토·조건부 승인을 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.eeaa.gov.eg/Service/67/sub/171/index"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "EGY-BUILDING-LAW-119-2008",
+      "title": "Unified Building Law No. 119 of 2008, as amended",
+      "titleKo": "통합건축법 제119/2008호(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2008-05-11",
+      "officialUrl": "https://www.newcities.gov.eg/english/Advertising-Housing-Land/SecondBid2017/Third%20.aspx",
+      "verificationLevel": "source-linked",
+      "note": "도시계획·건축허가·시공감독·점유 적합성의 기본법이다. 2025~2026 개정과 간소화 조치를 접수 시 확인한다."
+    },
+    {
+      "id": "EGY-ER-144-2009",
+      "title": "Executive Regulations of Unified Building Law — Ministerial Decree No. 144 of 2009, as amended",
+      "titleKo": "통합건축법 시행규칙 장관령 제144/2009호(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2009-01-01",
+      "officialUrl": "https://www.newcities.gov.eg/english/Advertising-Housing-Land/SecondBid2017/Third%20.aspx",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "EGY-ENV-LAW-4-1994",
+      "title": "Environmental Law No. 4 of 1994, as amended, and its Executive Regulations",
+      "titleKo": "환경법 제4/1994호(개정 포함)·시행규칙",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1994-02-03",
+      "officialUrl": "https://www.eeaa.gov.eg/Service/67/sub/171/index",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "EGY-EIA-GUIDE",
+      "title": "EEAA Guidelines of Principles and Procedures for Environmental Impact Assessment",
+      "titleKo": "EEAA 환경영향평가 원칙·절차 지침",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.eeaa.gov.eg/Uploads/Service/Files/20221214102438750.pdf",
+      "officialPdfUrl": "https://www.eeaa.gov.eg/Uploads/Service/Files/20221214102438750.pdf",
+      "verificationLevel": "source-linked",
+      "note": "A·B·C 분류와 CAA-EEAA 심사구조를 설명한다. EEAA의 최신 아랍어 분류목록과 2024~2025 시행규칙 개정을 우선한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "EGY-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "이집트 기존 도시 또는 NUCA 신도시에서 신축·증축·용도변경을 추진하는 사업",
+      "requirement": "통합건축법 체계에서 승인 도시계획과 상세계획, 토지배정 조건이 건축가능 용도와 규모를 정한다. 기존 도시인지 NUCA 신도시인지 관할을 먼저 가르고 필지별 coverage·FAR·높이·이격·주차, 도로·고고학·지반·침수·유틸리티 조건을 확인한다.",
+      "authorityIds": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "EGY-BUILDING-LAW-119-2008",
+          "provisions": [
+            "urban planning and building licensing framework"
+          ]
+        },
+        {
+          "instrumentId": "EGY-ER-144-2009",
+          "provisions": [
+            "planning and parcel development controls"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지배정·등기·경계측량",
+        "승인 strategic/detailed plan·토지조건",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "고고학·지반·침수·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "EGY-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "통합건축법상 건축허가 대상과 환경법상 EIA 분류대상 사업",
+      "requirement": "관할 지방행정단위 또는 NUCA 도시기관이 건축허가를 처리한다. 환경법은 신설·확장·갱신사업의 EIA를 허가 선행조건으로 두며, 사업주는 관할 CAA에 자료를 제출하고 EEAA가 A·B·C 분류와 환경조건을 검토한다.",
+      "authorityIds": [
+        "local-admin-nuca",
+        "eeaa-caa"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "EGY-BUILDING-LAW-119-2008",
+          "provisions": [
+            "building permit framework"
+          ]
+        },
+        {
+          "instrumentId": "EGY-ENV-LAW-4-1994",
+          "provisions": [
+            "EIA as precondition to licensing"
+          ]
+        },
+        {
+          "instrumentId": "EGY-EIA-GUIDE",
+          "provisions": [
+            "A, B and C classification; CAA and EEAA review"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청엔지니어·허가권자",
+        "허가도서·시설용도·재실인원",
+        "CAA 접수·EEAA A/B/C 분류결정",
+        "소방·민방위·고고학 등 동의와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "EGY-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "허가를 받아 시공하고 준공·점유 적합성 확인이 필요한 건축물",
+      "requirement": "허가도서는 등록 건축·기술전문가가 작성·감독하고 승인도서와 구조·소방·설비기준 준수 여부를 관할기관이 확인한다. 준공 후 건물의 점유 적합성을 증명하는 서류와 유틸리티 영구연결 조건을 관할 지방 또는 NUCA 도시에서 확정한다.",
+      "authorityIds": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "EGY-BUILDING-LAW-119-2008",
+          "provisions": [
+            "licensed professionals, construction control and occupancy fitness"
+          ]
+        },
+        {
+          "instrumentId": "EGY-ER-144-2009",
+          "provisions": [
+            "inspection and completion documentation"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "등록 건축·구조·MEP 기술자·시공자",
+        "착공·단계검사·시험기록",
+        "민방위 소방·설비시운전·as-built",
+        "점유 적합성증명·보험·영구 유틸리티 연결"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상지가 기존 도시인지 NUCA 도시인지, 필지별 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축허가권자와 EEAA 환경 Category, 소방·민방위·고고학 등 선행동의는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "관할의 전문자격·검사·보험과 준공·점유 적합성증명·영구 인입의 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "EGY-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "EGY-BUILDING-LAW-119-2008",
+          "provisions": [
+            "urban planning and building licensing framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "EGY-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상지가 기존 도시인지 NUCA 도시인지, 필지별 허용용도·coverage·FAR·높이·이격·주차·재해·인입조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지배정·등기·경계측량",
+        "승인 strategic/detailed plan·토지조건",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "고고학·지반·침수·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "EGY-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "EGY-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축허가권자와 EEAA 환경 Category, 소방·민방위·고고학 등 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청엔지니어·허가권자",
+        "허가도서·시설용도·재실인원",
+        "CAA 접수·EEAA A/B/C 분류결정",
+        "소방·민방위·고고학 등 동의와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "eeaa-caa"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "EGY-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "eeaa-caa"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "EGY-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "관할의 전문자격·검사·보험과 준공·점유 적합성증명·영구 인입의 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "등록 건축·구조·MEP 기술자·시공자",
+        "착공·단계검사·시험기록",
+        "민방위 소방·설비시운전·as-built",
+        "점유 적합성증명·보험·영구 유틸리티 연결"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "EGY-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "local-admin-nuca",
+        "mohuc"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "EGY-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "EGY-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "EGY-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "EGY-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "EGY-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "EGY-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "EGY-BLD-C-001",
+      "confidence": "conditional",
+      "text": "기존 도시와 NUCA 신도시의 토지·계획조건이 다르므로 국가법만으로 대상 필지 규모를 확정할 수 없다.",
+      "basis": [
+        "EGY-BUILDING-LAW-119-2008",
+        "EGY-ER-144-2009"
+      ]
+    },
+    {
+      "id": "EGY-BLD-C-002",
+      "confidence": "conditional",
+      "text": "CAA-EEAA 환경결정은 건축허가와 연결되므로 환경분류 없이 지방 또는 NUCA 허가기간만으로 착공일을 계산하지 않는다.",
+      "basis": [
+        "EGY-BUILDING-LAW-119-2008",
+        "EGY-ENV-LAW-4-1994",
+        "EGY-EIA-GUIDE"
+      ]
+    },
+    {
+      "id": "EGY-BLD-C-003",
+      "confidence": "conditional",
+      "text": "공사완료만으로 개장할 수 있다고 가정하지 말고 점유 적합성 및 소방·영구 유틸리티 연결을 인계조건에 넣는다.",
+      "basis": [
+        "EGY-BUILDING-LAW-119-2008",
+        "EGY-ER-144-2009"
+      ]
+    }
+  ]
+}

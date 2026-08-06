@@ -1,0 +1,823 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "thailand",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "태국",
+    "nameEn": "Thailand",
+    "iso3": "THA",
+    "region": "아시아·태평양"
+  },
+  "purpose": "태국 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "source-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "도시계획법 B.E. 2562(2019)·건축물관리법 B.E. 2522(1979, 개정 포함)·방콕시 건축·변경·철거·이전 허가 서비스·ONEP Smart EIA Plus·사업유형별 환경평가 고시·방콕시 사용통제 건축물 공사완료 증명 서비스의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "태국 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지권원과 적용 comprehensive plan·용도지역·지방조례로 용도·FAR·높이·공지를 먼저 확정한다.",
+        "authorityIds": [
+          "local-official",
+          "dpt-planning"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "도시계획법·건축물관리법",
+            "instrumentId": "THA-TOWN-PLANNING-ACT-2019",
+            "provisions": [
+              "comprehensive planning and land-use control framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지에 적용되는 계획·지방조례와 허용용도·FAR·높이·이격·주차·도로·재해조건은 무엇인가?",
+        "authorityIds": [
+          "local-official",
+          "dpt-planning"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "도시계획법·건축물관리법",
+            "instrumentId": "THA-TOWN-PLANNING-ACT-2019",
+            "provisions": [
+              "comprehensive planning and land-use control framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "지방 건축허가와 ONEP의 IEE·EIA·EHIA 대상판정을 별도 Gate로 병행한다.",
+        "authorityIds": [
+          "local-official",
+          "onep-eia"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "ONEP IEE·EIA·EHIA",
+            "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+            "provisions": [
+              "Sections 21-27"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 관할 건축허가와 IEE·EIA·EHIA 유형, 승인기관·전문협의의 정확한 선후관계는 무엇인가?",
+        "authorityIds": [
+          "local-official",
+          "onep-eia"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "ONEP IEE·EIA·EHIA",
+            "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+            "provisions": [
+              "Sections 21-27"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "면허 전문자·공사검사와 통제용도 건축물의 완료증명을 사용개시 Gate로 관리한다.",
+        "authorityIds": [
+          "local-official"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "건축물 공사완료 증명",
+            "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+            "provisions": [
+              "Sections 26 and 32"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "본 시설은 controlled-use 또는 정기검사 대상인가, 필요한 전문면허·검사·완료증명의 비용과 실제 기간은 무엇인가?",
+        "authorityIds": [
+          "local-official"
+        ],
+        "requirementIds": [
+          "THA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "건축물 공사완료 증명",
+            "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+            "provisions": [
+              "Sections 26 and 32"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "thailand-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "태국 도시계획·부지규제",
+      "oneLiner": "토지권원과 적용 comprehensive plan·용도지역·지방조례로 용도·FAR·높이·공지를 먼저 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "방콕시 현행 허가서비스가 인용하는 건축물관리법·도시계획법을 확인했다. 대상지 계획도·조례·수치와 유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "THA-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "THA-BLD-Q-001",
+        "THA-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "THA-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "THA-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "THA-BLD-F-001",
+        "THA-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "thailand-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "태국 건축허가·환경심사",
+      "oneLiner": "지방 건축허가와 ONEP의 IEE·EIA·EHIA 대상판정을 별도 Gate로 병행한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "방콕시 공식 허가서비스와 ONEP Smart EIA 대장을 확인했다. 최신 대상 고시·비방콕 접수관행·실제 비용과 기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "THA-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "THA-BLD-Q-003",
+        "THA-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "THA-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "THA-BLD-F-003",
+        "THA-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "thailand-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "태국 기술검사·보험·준공제도",
+      "oneLiner": "면허 전문자·공사검사와 통제용도 건축물의 완료증명을 사용개시 Gate로 관리한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "방콕시의 제32조 기반 완료증명 서비스와 건축허가 서비스의 전문자 요건을 확인했다. 비방콕 절차·검사기관·보험은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "THA-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "THA-BLD-Q-005",
+        "THA-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "THA-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "THA-BLD-F-005",
+        "THA-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "local-official",
+      "name": "Competent local official or local government",
+      "nameKo": "관할 지방공무원·지방정부",
+      "role": "Building Control Act에 따라 건축·변경·철거 허가와 사용통제·현장검사를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3"
+    },
+    {
+      "id": "dpt-planning",
+      "name": "Department of Public Works and Town & Country Planning and competent planning authority",
+      "nameKo": "공공사업·도시농촌계획국(DPT)·관할 계획기관",
+      "role": "도시계획법과 지역 종합계획·용도지역 규제를 관리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.dpt.go.th/"
+    },
+    {
+      "id": "onep-eia",
+      "name": "Office of Natural Resources and Environmental Policy and Planning and competent permitting agency",
+      "nameKo": "천연자원환경정책계획국(ONEP)·관할 허가기관",
+      "role": "IEE·EIA·EHIA 대상판정, 전문심사와 승인연계를 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://eia.onep.go.th/site/eia"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "THA-BUILDING-CONTROL-ACT-1979",
+      "title": "Building Control Act B.E. 2522 (1979), as amended",
+      "titleKo": "건축물관리법 B.E. 2522(1979, 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+      "verificationLevel": "law-linked",
+      "note": "방콕시의 현행 공식 민원서비스가 제21·22·25·26·27조와 2021년 장관규칙을 적용한다. 통합 원문과 관할별 조례는 대상지에서 재확인한다."
+    },
+    {
+      "id": "THA-TOWN-PLANNING-ACT-2019",
+      "title": "Town Planning Act B.E. 2562 (2019)",
+      "titleKo": "도시계획법 B.E. 2562(2019)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+      "verificationLevel": "source-linked",
+      "note": "방콕시 건축허가 서비스가 현행 관련법으로 명시한다. 실제 comprehensive plan·지역조례는 별도 확보한다."
+    },
+    {
+      "id": "THA-ONEP-EIA",
+      "title": "ONEP Smart EIA Plus and current project-type EIA notification",
+      "titleKo": "ONEP Smart EIA Plus·사업유형별 환경평가 고시",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://eia.onep.go.th/site/eia",
+      "verificationLevel": "source-linked",
+      "note": "ONEP의 현행 EIA 대장과 건축물·토지개발 대상 고시를 연결한다. 프로젝트 유형별 최신 문턱은 원문 고시로 재확인한다."
+    },
+    {
+      "id": "THA-BMA-PERMIT",
+      "title": "Bangkok construction, alteration, demolition or relocation permit service",
+      "titleKo": "방콕시 건축·변경·철거·이전 허가 서비스",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+      "verificationLevel": "source-linked",
+      "note": "방콕에만 적용되는 공식 예시다. 다른 지방정부의 서식·수수료·처리관행으로 일반화하지 않는다."
+    },
+    {
+      "id": "THA-BMA-CERTIFICATE",
+      "title": "Bangkok certificate for completed controlled-use buildings",
+      "titleKo": "방콕시 사용통제 건축물 공사완료 증명 서비스",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=c6b38376-cccb-49eb-9dab-b116abe94672",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "THA-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "태국에서 신축·증축·변경·철거·용도변경을 계획하는 ODA 건축사업",
+      "requirement": "건축허가는 도시계획법상 적용 계획과 Building Control Act·장관규칙·지방조례를 함께 충족해야 한다. 필지별 용도, FAR, 건축면적, 높이, setback, 도로폭, 주차·배수는 해당 지방정부의 유효한 계획도와 조례에서 확인한다.",
+      "authorityIds": [
+        "local-official",
+        "dpt-planning"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "THA-TOWN-PLANNING-ACT-2019",
+          "provisions": [
+            "comprehensive planning and land-use control framework"
+          ]
+        },
+        {
+          "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+          "provisions": [
+            "building siting and local-control framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·지적도",
+        "유효 comprehensive plan·zoning map",
+        "필지별 FAR·높이·이격·주차·도로조건",
+        "침수·지반·배수·전력·상수 확인"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "THA-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "Building Control Act상 허가대상 공사와 환경평가 고시의 대상 사업",
+      "requirement": "건축·변경·이전에는 관할 지방공무원의 허가가 필요하고, 법정 유형·규모·민감입지에 해당하면 IEE·EIA 또는 EHIA 심사를 받아야 한다. 방콕의 45일 안내는 보완·연장과 지역차를 포함한 전체기간이 아니다.",
+      "authorityIds": [
+        "local-official",
+        "onep-eia"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+          "provisions": [
+            "Sections 21-27"
+          ]
+        },
+        {
+          "instrumentId": "THA-BMA-PERMIT",
+          "provisions": [
+            "complete-dossier review and statutory time guidance"
+          ]
+        },
+        {
+          "instrumentId": "THA-ONEP-EIA",
+          "provisions": [
+            "IEE, EIA and EHIA project screening"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·토지소유자·관할 확정",
+        "건축·변경·철거·용도허가 분류",
+        "IEE·EIA·EHIA 적용결정",
+        "외부 NOC·수수료·완비일·보완·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "THA-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "허가공사와 Building Control Act상 controlled-use·정기검사 대상 건축물",
+      "requirement": "통제 건축·공학·건축사 업무는 적정 면허자가 책임져야 하고, 지방공무원은 승인도서 적합성을 검사한다. Building Control Act 제32조의 사용통제 건축물은 공사완료 증명을 받아야 하며 정기검사 대상 여부도 별도 확인한다.",
+      "authorityIds": [
+        "local-official"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+          "provisions": [
+            "Sections 26 and 32"
+          ]
+        },
+        {
+          "instrumentId": "THA-BMA-CERTIFICATE",
+          "provisions": [
+            "completion certificate for controlled-use building"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "현지 건축사·기술자 면허",
+        "착공·단계검사·시험·변경승인 기록",
+        "소방·설비 완료확인",
+        "완료증명·정기검사·보험 견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지에 적용되는 계획·지방조례와 허용용도·FAR·높이·이격·주차·도로·재해조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 관할 건축허가와 IEE·EIA·EHIA 유형, 승인기관·전문협의의 정확한 선후관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "본 시설은 controlled-use 또는 정기검사 대상인가, 필요한 전문면허·검사·완료증명의 비용과 실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "THA-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "THA-TOWN-PLANNING-ACT-2019",
+          "provisions": [
+            "comprehensive planning and land-use control framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "THA-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지에 적용되는 계획·지방조례와 허용용도·FAR·높이·이격·주차·도로·재해조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·지적도",
+        "유효 comprehensive plan·zoning map",
+        "필지별 FAR·높이·이격·주차·도로조건",
+        "침수·지반·배수·전력·상수 확인"
+      ],
+      "confirmWith": [
+        "local-official",
+        "dpt-planning"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "THA-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "local-official",
+        "dpt-planning"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "THA-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 관할 건축허가와 IEE·EIA·EHIA 유형, 승인기관·전문협의의 정확한 선후관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·토지소유자·관할 확정",
+        "건축·변경·철거·용도허가 분류",
+        "IEE·EIA·EHIA 적용결정",
+        "외부 NOC·수수료·완비일·보완·실제 전체기간"
+      ],
+      "confirmWith": [
+        "local-official",
+        "onep-eia"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "THA-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "local-official",
+        "onep-eia"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "THA-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "본 시설은 controlled-use 또는 정기검사 대상인가, 필요한 전문면허·검사·완료증명의 비용과 실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "현지 건축사·기술자 면허",
+        "착공·단계검사·시험·변경승인 기록",
+        "소방·설비 완료확인",
+        "완료증명·정기검사·보험 견적"
+      ],
+      "confirmWith": [
+        "local-official"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "THA-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "local-official"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "THA-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "THA-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "THA-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "THA-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "THA-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "THA-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "THA-BLD-C-001",
+      "confidence": "conditional",
+      "text": "태국은 국가 건축물관리법 위에 지역 종합계획과 지방조례가 작동하므로 방콕 기준이나 중앙 장관규칙만으로 대상지 수치를 확정할 수 없다.",
+      "basis": [
+        "THA-TOWN-PLANNING-ACT-2019",
+        "THA-BUILDING-CONTROL-ACT-1979"
+      ]
+    },
+    {
+      "id": "THA-BLD-C-002",
+      "confidence": "conditional",
+      "text": "태국 건축허가와 환경평가는 별도 판단이므로 환경분류를 닫기 전 건축허가 처리기한만으로 착공일을 약속해서는 안 된다.",
+      "basis": [
+        "THA-BUILDING-CONTROL-ACT-1979",
+        "THA-BMA-PERMIT",
+        "THA-ONEP-EIA"
+      ]
+    },
+    {
+      "id": "THA-BLD-C-003",
+      "confidence": "conditional",
+      "text": "태국에서는 공사완료와 합법적 사용개시를 구분하고, 통제용도 분류와 완료증명을 개장·인계 선행조건으로 둬야 한다.",
+      "basis": [
+        "THA-BUILDING-CONTROL-ACT-1979",
+        "THA-BMA-CERTIFICATE"
+      ]
+    }
+  ]
+}

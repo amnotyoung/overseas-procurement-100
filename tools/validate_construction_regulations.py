@@ -16,6 +16,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "construction-regulations"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
+COUNTRY_MANIFEST_PATH = ROOT / "data" / "manifest.json"
 
 STAGES = {
     "site-and-land",
@@ -612,8 +613,8 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 f"priorities must be contiguous from 4: expected {sorted(expected_priorities)}, "
                 f"got {sorted(priorities)}",
             )
-        if slug == "senegal" and public_model_count != 3:
-            result.error(f"{rel}.publicModels", "Senegal must expose exactly three models")
+        if public_model_count != 3:
+            result.error(f"{rel}.publicModels", "every construction country must expose exactly three models")
 
         expected_nodes = set(source_nodes)
         expected_requirements = set(requirements)
@@ -677,6 +678,44 @@ def main() -> int:
         if item.get("verification") not in VERIFICATION_LEVELS:
             result.error(where, "unknown verification level")
         validate_date(item.get("asOfDate"), f"{where}.asOfDate", result)
+
+    country_manifest = read_json(COUNTRY_MANIFEST_PATH, result)
+    portfolio_countries: dict[str, dict[str, Any]] = {}
+    if country_manifest is not None:
+        for index, item in enumerate(country_manifest.get("countries", [])):
+            where = f"data/manifest.json.countries[{index}]"
+            if not isinstance(item, dict) or item.get("isDonor") is True:
+                continue
+            slug = item.get("slug")
+            if not isinstance(slug, str) or not slug:
+                result.error(where, "non-donor country is missing a slug")
+                continue
+            if slug in portfolio_countries:
+                result.error(where, f"duplicate non-donor slug {slug!r}")
+                continue
+            portfolio_countries[slug] = item
+
+        missing_coverage = set(portfolio_countries) - set(manifest_countries)
+        unexpected_coverage = set(manifest_countries) - set(portfolio_countries)
+        for slug in sorted(missing_coverage):
+            result.error(
+                "manifest.countries",
+                f"procurement country {slug!r} has no construction-regulation coverage",
+            )
+        for slug in sorted(unexpected_coverage):
+            result.error(
+                "manifest.countries",
+                f"construction country {slug!r} is not a non-donor procurement country",
+            )
+        for slug in sorted(set(portfolio_countries) & set(manifest_countries)):
+            portfolio_item = portfolio_countries[slug]
+            construction_item = manifest_countries[slug]
+            for field in ("name", "nameEn", "iso3"):
+                if portfolio_item.get(field) != construction_item.get(field):
+                    result.error(
+                        f"manifest.countries[{slug}]",
+                        f"{field} does not match data/manifest.json",
+                    )
 
     country_paths = sorted(path for path in DATA_DIR.glob("*.json") if path.name != "manifest.json")
     file_slugs = {path.stem for path in country_paths}

@@ -1,0 +1,845 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "rwanda",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "르완다",
+    "nameEn": "Rwanda",
+    "iso3": "RWA",
+    "region": "아프리카"
+  },
+  "purpose": "르완다 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "2019년 도시계획·건축 규정 장관령·전자 건축허가관리시스템(BPMIS)·환경법 제48/2018호·르완다 건축기준 2019·르완다 건축통제규정 제2판의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "르완다 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "국가·지방 도시계획과 필지 zoning을 BPMIS·OSC에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "2019 도시계획·건축 규정",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "urban planning and site-development controls"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지 zoning의 허용용도·coverage·FAR·높이·이격·주차와 경사지·재해·기반시설 조건은 무엇인가?",
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "2019 도시계획·건축 규정",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "urban planning and site-development controls"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "건축물 Category와 OSC·RHA 허가권, 환경법상 EIA 분류를 BPMIS 접수 전에 확정한다.",
+        "authorityIds": [
+          "district-osc",
+          "rha",
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "BPMIS 건축허가·환경법 제48/2018호",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Arts. 10 onward; building categories and permits"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축물 Category·허가권자와 환경평가 유형·승인기관·선행조건은 무엇인가?",
+        "authorityIds": [
+          "district-osc",
+          "rha",
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "BPMIS 건축허가·환경법 제48/2018호",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Arts. 10 onward; building categories and permits"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "등록 전문가, 코드 준수, BPMIS 검사통지와 최종 Occupancy Permit을 개장 전 Gate로 둔다.",
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "Rwanda Building Code·Occupancy Permit",
+            "instrumentId": "RWA-BUILDING-CODE-2019",
+            "provisions": [
+              "design, construction, safety and occupancy minimum requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "필요 전문자격·보험·검사통지와 최종검사·Occupancy Permit의 서류·비용·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "Rwanda Building Code·Occupancy Permit",
+            "instrumentId": "RWA-BUILDING-CODE-2019",
+            "provisions": [
+              "design, construction, safety and occupancy minimum requirements"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "rwanda-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "르완다 도시계획·부지규제",
+      "oneLiner": "국가·지방 도시계획과 필지 zoning을 BPMIS·OSC에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "2019 공식 관보 규정, BPMIS와 Kigali OSC의 계획·허가 역할을 확인했다. 대상 District의 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "RWA-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "RWA-BLD-Q-001",
+        "RWA-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "RWA-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "RWA-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "RWA-BLD-F-001",
+        "RWA-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "rwanda-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "르완다 건축허가·환경심사",
+      "oneLiner": "건축물 Category와 OSC·RHA 허가권, 환경법상 EIA 분류를 BPMIS 접수 전에 확정한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "2019 관보 규정의 허가유형, RHA의 Category 4·5 역할, BPMIS와 환경법 원문을 확인했다. 최신 EIA 목록·수수료·실제 기간은 기관 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "RWA-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "RWA-BLD-Q-003",
+        "RWA-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "RWA-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "RWA-BLD-F-003",
+        "RWA-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "rwanda-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "르완다 기술검사·보험·준공제도",
+      "oneLiner": "등록 전문가, 코드 준수, BPMIS 검사통지와 최종 Occupancy Permit을 개장 전 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "RHA 공식 코드·통제규정과 BPMIS의 검사·점유허가 서비스를 확인했다. 현지 전문가·검사기관·보험사·실제 비용은 시장조사 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "RWA-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "RWA-BLD-Q-005",
+        "RWA-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "RWA-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "RWA-BLD-F-005",
+        "RWA-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "district-osc",
+      "name": "City of Kigali or District One Stop Centre",
+      "nameKo": "키갈리시 또는 관할 District 원스톱센터(OSC)",
+      "role": "계획검토, 건축허가, 현장검사와 점유허가를 BPMIS로 처리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.bpmis.gov.rw/"
+    },
+    {
+      "id": "rha",
+      "name": "Rwanda Housing Authority",
+      "nameKo": "르완다 주택청(RHA)",
+      "role": "건축기준·산업규제, 지방 집행감독과 Category 4·5 건축허가 기술검토를 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.rha.gov.rw/2/regulation-of-construction-industry"
+    },
+    {
+      "id": "rdb-rema",
+      "name": "Rwanda Development Board and Rwanda Environment Management Authority",
+      "nameKo": "르완다개발청(RDB)·환경관리청(REMA)",
+      "role": "환경영향평가·환경승인 및 환경법·지침 운영",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.rema.gov.rw/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "RWA-URBAN-BUILDING-REG-2019",
+      "title": "Ministerial Order determining urban planning and building regulations, Official Gazette 16 April 2019",
+      "titleKo": "2019년 도시계획·건축 규정 장관령",
+      "kind": "regulation",
+      "status": "in_force",
+      "issuedOn": "2019-04-16",
+      "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+      "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+      "verificationLevel": "law-linked",
+      "note": "도시계획 기준, 건축물 Category, 건축허가·점유허가의 국가 절차를 규정한다."
+    },
+    {
+      "id": "RWA-BUILDING-CODE-2019",
+      "title": "Rwanda Building Code, 2019",
+      "titleKo": "르완다 건축기준 2019",
+      "kind": "code",
+      "status": "in_force",
+      "issuedOn": "2019-04-16",
+      "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+      "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "RWA-BUILDING-CONTROL-2E",
+      "title": "Rwanda Building Control Regulations, 2nd Edition",
+      "titleKo": "르완다 건축통제규정 제2판",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
+      "officialPdfUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
+      "verificationLevel": "source-linked",
+      "note": "OSC의 허가·검사·점유허가 운영기준이다. 2019 규정과 함께 적용되는 최신판인지 사업 시점에 확인한다."
+    },
+    {
+      "id": "RWA-ENV-LAW-48-2018",
+      "title": "Law No. 48/2018 of 13 August 2018 on Environment",
+      "titleKo": "환경법 제48/2018호",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "2018-08-13",
+      "officialUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
+      "officialPdfUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "RWA-BPMIS",
+      "title": "Electronic Building Permit Management Information System",
+      "titleKo": "전자 건축허가관리시스템(BPMIS)",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.bpmis.gov.rw/",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "RWA-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "르완다에서 신축·증축·용도변경 또는 부지개발을 추진하는 건축사업",
+      "requirement": "2019 도시계획·건축 규정과 관할 Master Plan·detailed plan이 필지 개발 가능성을 결정한다. 토지권원·parcel ID와 zoning을 기준으로 허용용도, plot coverage·FAR·높이·이격·주차, 경사지·배수·재해·유틸리티 조건을 OSC에 서면 확인한다.",
+      "authorityIds": [
+        "district-osc",
+        "rha"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+          "provisions": [
+            "urban planning and site-development controls"
+          ]
+        },
+        {
+          "instrumentId": "RWA-BPMIS",
+          "provisions": [
+            "OSC planning and permit workflow"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·parcel ID·경계측량",
+        "현행 Master Plan·detailed plan·zoning",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "경사지·지반·침수·배수·전력·상수 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "RWA-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "BPMIS 건축허가 대상 및 환경법상 EIA·환경승인 분류대상 사업",
+      "requirement": "2019 규정은 건축물 Category와 신축·수선·철거·용도변경·점유허가 유형을 정하며 OSC가 BPMIS로 처리한다. RHA는 Category 4·5 기술검토 권한을 가진다. 환경법과 현행 장관령 목록에 따라 EIA 필요성·승인기관·선행관계를 별도로 확인한다.",
+      "authorityIds": [
+        "district-osc",
+        "rha",
+        "rdb-rema"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+          "provisions": [
+            "Arts. 10 onward; building categories and permits"
+          ]
+        },
+        {
+          "instrumentId": "RWA-ENV-LAW-48-2018",
+          "provisions": [
+            "environmental assessment framework"
+          ]
+        },
+        {
+          "instrumentId": "RWA-BPMIS",
+          "provisions": [
+            "online permit and inspection services"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청건축사·OSC 관할",
+        "시설용도·면적·층수·재실인원별 Category",
+        "RDB·REMA 환경 스크리닝·EIA 결정",
+        "BPMIS 최신 서류·수수료·보완·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "RWA-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "건축허가를 받아 시공하고 BPMIS Occupancy Permit이 필요한 건축물",
+      "requirement": "Rwanda Building Code와 Building Control Regulations는 등록 설계·기술자, 승인도서, 현장검사·통지와 최종 점유검사를 연결한다. OSC의 최종검사 후 Occupancy Permit을 받아야 하며 전문책임·공사보험·시험·소방·설비·as-built 조건을 계약에 반영한다.",
+      "authorityIds": [
+        "district-osc",
+        "rha"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "RWA-BUILDING-CODE-2019",
+          "provisions": [
+            "design, construction, safety and occupancy minimum requirements"
+          ]
+        },
+        {
+          "instrumentId": "RWA-BUILDING-CONTROL-2E",
+          "provisions": [
+            "Part 5 final inspection and occupation permit"
+          ]
+        },
+        {
+          "instrumentId": "RWA-BPMIS",
+          "provisions": [
+            "inspection notice and occupancy permit services"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "등록 건축사·기술자·시공자 자격",
+        "검사통지·현장기록·시험계획",
+        "소방·설비시운전·as-built",
+        "Occupancy Permit·보험·현지 비용견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지 zoning의 허용용도·coverage·FAR·높이·이격·주차와 경사지·재해·기반시설 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축물 Category·허가권자와 환경평가 유형·승인기관·선행조건은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "필요 전문자격·보험·검사통지와 최종검사·Occupancy Permit의 서류·비용·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "RWA-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+          "provisions": [
+            "urban planning and site-development controls"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "RWA-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지 zoning의 허용용도·coverage·FAR·높이·이격·주차와 경사지·재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·parcel ID·경계측량",
+        "현행 Master Plan·detailed plan·zoning",
+        "필지별 coverage·FAR·높이·이격·주차",
+        "경사지·지반·침수·배수·전력·상수 용량"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "RWA-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "RWA-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축물 Category·허가권자와 환경평가 유형·승인기관·선행조건은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청건축사·OSC 관할",
+        "시설용도·면적·층수·재실인원별 Category",
+        "RDB·REMA 환경 스크리닝·EIA 결정",
+        "BPMIS 최신 서류·수수료·보완·실제 전체기간"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha",
+        "rdb-rema"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "RWA-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha",
+        "rdb-rema"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "RWA-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "필요 전문자격·보험·검사통지와 최종검사·Occupancy Permit의 서류·비용·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "등록 건축사·기술자·시공자 자격",
+        "검사통지·현장기록·시험계획",
+        "소방·설비시운전·as-built",
+        "Occupancy Permit·보험·현지 비용견적"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "RWA-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "district-osc",
+        "rha"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "RWA-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "RWA-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "RWA-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "RWA-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "RWA-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "RWA-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "RWA-BLD-C-001",
+      "confidence": "conditional",
+      "text": "국가 규정의 일반기준만으로 대상 필지 수치를 확정할 수 없으므로 parcel별 계획확인과 OSC 회신을 개념설계 전제조건으로 둔다.",
+      "basis": [
+        "RWA-URBAN-BUILDING-REG-2019",
+        "RWA-BPMIS"
+      ]
+    },
+    {
+      "id": "RWA-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축물 Category와 EIA 유형이 허가권자·도서·기간을 바꾸므로 설계 착수 전에 OSC·RHA와 환경기관의 서면 분류를 받아야 한다.",
+      "basis": [
+        "RWA-URBAN-BUILDING-REG-2019",
+        "RWA-ENV-LAW-48-2018",
+        "RWA-BPMIS"
+      ]
+    },
+    {
+      "id": "RWA-BLD-C-003",
+      "confidence": "conditional",
+      "text": "르완다에서는 건축허가와 점유허가가 별도 서비스이므로 Occupancy Permit을 시설 인계·운영개시의 명시적 선행조건으로 관리한다.",
+      "basis": [
+        "RWA-BUILDING-CODE-2019",
+        "RWA-BUILDING-CONTROL-2E",
+        "RWA-BPMIS"
+      ]
+    }
+  ]
+}
