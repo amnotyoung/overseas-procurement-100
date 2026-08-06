@@ -1,0 +1,858 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "peru",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "페루",
+    "nameEn": "Peru",
+    "iso3": "PER",
+    "region": "중남미"
+  },
+  "purpose": "페루 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "도시개발·건축 규제법 제29090호 통합본(DS 006-2017-VIVIENDA 승인, 개정 포함)·건축허가 규칙 DS 029-2019-VIVIENDA(개정 포함)·국가건축규정(RNE, DS 011-2006-VIVIENDA 승인·수시 개정)·국가환경영향평가시스템법 제27446호 및 시행령 DS 019-2009-MINAM(개정 포함)·건축물안전기술검사(ITSE) 규칙 DS 002-2018-PCM(개정 포함)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "페루 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "등기·지적과 관할 계획·Certificado de Parámetros로 필지별 용도·건축가능 수치를 고정한다.",
+        "authorityIds": [
+          "per-municipality",
+          "per-mvcs"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "필지규제증명·RNE",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "municipal competence and urban-development/building procedures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지의 권원과 Certificado de Parámetros상 실제 용도·높이·면적·이격·주차·위험·기반시설 조건은 무엇인가?",
+        "authorityIds": [
+          "per-municipality",
+          "per-mvcs"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "필지규제증명·RNE",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "municipal competence and urban-development/building procedures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "municipality의 A–D licence 모드와 SEIA Category I·II·III 환경인증을 대상별로 연결한다.",
+        "authorityIds": [
+          "per-municipality",
+          "per-environment-authority"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "A–D 건축허가·SEIA",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "licence modalities, actors, construction control and completion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 licence 모드·기술심사자와 SEIA 범주·환경허가권자·선행관계·실제 처리기간은 무엇인가?",
+        "authorityIds": [
+          "per-municipality",
+          "per-environment-authority"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "A–D 건축허가·SEIA",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "licence modalities, actors, construction control and completion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "RNE 책임전문가·시 공사통제와 conformidad·declaratoria, 용도별 ITSE를 점유·개장 Gate로 둔다.",
+        "authorityIds": [
+          "per-municipality",
+          "per-control-professionals"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "RNE 검사·준공적합·ITSE",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "construction inspection, conformity of works and building declaration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "책임전문가·시 검사와 conformidad/declaratoria, ITSE 대상·순서·비용·기간은 무엇인가?",
+        "authorityIds": [
+          "per-municipality",
+          "per-control-professionals"
+        ],
+        "requirementIds": [
+          "PER-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "RNE 검사·준공적합·ITSE",
+            "instrumentId": "PER-TUO-LAW-29090",
+            "provisions": [
+              "construction inspection, conformity of works and building declaration"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "peru-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "페루 도시계획·부지규제",
+      "oneLiner": "등기·지적과 관할 계획·Certificado de Parámetros로 필지별 용도·건축가능 수치를 고정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "Law 29090·DS 029-2019과 RNE의 전국 구조를 확인했다. 필지별 계획수치·재해위험·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "PER-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "PER-BLD-Q-001",
+        "PER-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "PER-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "PER-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "PER-BLD-F-001",
+        "PER-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "peru-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "페루 건축허가·환경심사",
+      "oneLiner": "municipality의 A–D licence 모드와 SEIA Category I·II·III 환경인증을 대상별로 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Law 29090·DS 029-2019과 SEIA Category I–III 구조를 확인했다. 최신 포함목록·권한이관·수수료·기간은 SENACE/MVCS와 시에 확인한다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "PER-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "PER-BLD-Q-003",
+        "PER-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "PER-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PER-BLD-F-003",
+        "PER-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "peru-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "페루 기술검사·보험·준공제도",
+      "oneLiner": "RNE 책임전문가·시 공사통제와 conformidad·declaratoria, 용도별 ITSE를 점유·개장 Gate로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "Law 29090·RNE의 준공체계와 DS 002-2018의 ITSE를 확인했다. 전문가 비용·검사일정·보험·운영용도별 적용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "PER-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "PER-BLD-Q-005",
+        "PER-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "PER-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PER-BLD-F-005",
+        "PER-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "per-municipality",
+      "name": "Competent district or provincial municipality",
+      "nameKo": "관할 구·주 지방정부(municipalidad)",
+      "role": "도시계획·필지규제증명, habilitación urbana·edificación licence와 공사검사·conformidad를 처리",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://sinia.minam.gob.pe/normas/aprueba-texto-unico-ordenado-ley-ndeg-29090-ley-regulacion"
+    },
+    {
+      "id": "per-mvcs",
+      "name": "Ministry of Housing, Construction and Sanitation",
+      "nameKo": "주택·건설·위생부(MVCS)",
+      "role": "Law 29090 시행체계, 국토·도시계획 규칙과 의무기술기준 RNE를 관장",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.gob.pe/institucion/vivienda"
+    },
+    {
+      "id": "per-environment-authority",
+      "name": "SENACE, MVCS or competent transferred environmental authority",
+      "nameKo": "SENACE·MVCS 또는 권한이 이관된 관할 환경당국",
+      "role": "SEIA 대상판정과 Category I·II·III 환경인증을 사업유형·이관범위에 따라 심사",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.gob.pe/105365-consultar-el-simulador-de-clasificacion-de-proyectos-a-cargo-del-senace"
+    },
+    {
+      "id": "per-control-professionals",
+      "name": "Municipal works-control authority, responsible professionals and ITSE authority",
+      "nameKo": "시 공사통제기관·책임전문가·ITSE 관할기관",
+      "role": "RNE 적합 시공·검사, 준공적합·건축물선언과 용도별 건축물안전검사를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.gob.pe/institucion/pcm/normas-legales/tipos/9-decreto-supremo?filter%5Bend_date%5D=2025-01-24&sheet=28"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "PER-TUO-LAW-29090",
+      "title": "Consolidated Law No. 29090 on Urban Development and Building Regulation, approved by Supreme Decree No. 006-2017-VIVIENDA, as amended",
+      "titleKo": "도시개발·건축 규제법 제29090호 통합본(DS 006-2017-VIVIENDA 승인, 개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2017-02-27",
+      "officialUrl": "https://sinia.minam.gob.pe/normas/aprueba-texto-unico-ordenado-ley-ndeg-29090-ley-regulacion",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PER-LICENCE-REG-029-2019",
+      "title": "Regulation of Urban Development and Building Licences, Supreme Decree No. 029-2019-VIVIENDA, as amended",
+      "titleKo": "도시개발·건축허가 규칙 DS 029-2019-VIVIENDA(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2019-11-06",
+      "officialUrl": "https://www.gob.pe/institucion/vivienda/normas-legales/354318-029-2019-vivienda",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PER-RNE-2006-CURRENT",
+      "title": "National Building Regulations (RNE), approved by Supreme Decree No. 011-2006-VIVIENDA and periodically amended",
+      "titleKo": "국가건축규정(RNE, DS 011-2006-VIVIENDA 승인·수시 개정)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "issuedOn": "2006-05-05",
+      "officialUrl": "https://www.gob.pe/institucion/vivienda/informes-publicaciones/2309793-reglamentonacional-de-edificaciones-rne",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PER-SEIA-27446-019-2009",
+      "title": "Law No. 27446 on the National Environmental Impact Assessment System and Supreme Decree No. 019-2009-MINAM, as amended",
+      "titleKo": "국가환경영향평가시스템법 제27446호 및 시행령 DS 019-2009-MINAM(개정 포함)",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2001-04-23",
+      "officialUrl": "https://www.gob.pe/institucion/minam/normas-legales/317422-019-2009-minam",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "PER-ITSE-002-2018",
+      "title": "Building Safety Technical Inspection Regulation, Supreme Decree No. 002-2018-PCM, as amended",
+      "titleKo": "건축물안전기술검사(ITSE) 규칙 DS 002-2018-PCM(개정 포함)",
+      "kind": "regulation",
+      "status": "continuity_unverified",
+      "issuedOn": "2018-01-04",
+      "officialUrl": "https://www.gob.pe/institucion/pcm/normas-legales/tipos/9-decreto-supremo?filter%5Bend_date%5D=2025-01-24&sheet=28",
+      "verificationLevel": "law-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "PER-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "페루에서 habilitación urbana·신축·증축·개조·용도변경을 추진하는 사업",
+      "requirement": "municipality의 도시계획·용도지역과 Certificado de Parámetros Urbanísticos y Edificatorios가 용도, altura, área libre, retiro, estacionamiento 등 설계입력을 제공한다. SUNARP 권원·지적과 문화유산·재해위험을 대조하고 RNE의 지반·내진·접근성 기준 및 실제 유틸리티 용량을 조사한다.",
+      "authorityIds": [
+        "per-municipality",
+        "per-mvcs"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PER-TUO-LAW-29090",
+          "provisions": [
+            "municipal competence and urban-development/building procedures"
+          ]
+        },
+        {
+          "instrumentId": "PER-LICENCE-REG-029-2019",
+          "provisions": [
+            "urban and building parameters and licence documentation"
+          ]
+        },
+        {
+          "instrumentId": "PER-RNE-2006-CURRENT",
+          "provisions": [
+            "mandatory national minimum technical requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "SUNARP partida·catastro·경계·건축권원",
+        "현행 계획·용도지역·Certificado de Parámetros",
+        "필지별 용도·높이·면적·이격·주차·건축선",
+        "지반·내진·침수/huayco·배수·도로·상하수·전력 용량"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "PER-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "도시개발·건축 licence 대상 공사와 SEIA 포함목록 또는 환경분류 대상 프로젝트",
+      "requirement": "Law 29090과 DS 029-2019는 habilitación urbana·edificación licence를 프로젝트 위험·복잡도에 따라 Modalidad A–D로 구분하고 municipality 또는 심사위원회·도시검증자 역할을 정한다. SEIA 대상이면 활동·입지·규모와 권한이관에 따라 DIA(Category I), EIA-sd(Category II), EIA-d(Category III)와 SENACE·MVCS·관할기관을 확정한다.",
+      "authorityIds": [
+        "per-municipality",
+        "per-environment-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PER-TUO-LAW-29090",
+          "provisions": [
+            "licence modalities, actors, construction control and completion"
+          ]
+        },
+        {
+          "instrumentId": "PER-LICENCE-REG-029-2019",
+          "provisions": [
+            "filing, technical review and licence procedures"
+          ]
+        },
+        {
+          "instrumentId": "PER-SEIA-27446-019-2009",
+          "provisions": [
+            "Categories I-III, prior environmental certification and competent authority"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·건축권원·관할 municipality",
+        "Modalidad A–D 판정·FUE·전문도서·RNE 검토",
+        "SEIA 포함·선분류 확인·EVAP·DIA/EIA-sd/EIA-d",
+        "문화재·수자원·소방·유틸리티 협의와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "PER-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "준공적합·건축물선언과 운영 전 ITSE가 적용될 수 있는 건축공사",
+      "requirement": "허가모드에 맞는 responsable de obra·전문설계자와 시 검사기록으로 RNE 적합성을 입증한다. 완공 후 licence 발급 municipality에서 Conformidad de Obra y Declaratoria de Edificación을 받고, 운영용도·위험등급상 필요한 경우 ITSE certificate와 영업허가 절차를 별도로 완료한다.",
+      "authorityIds": [
+        "per-municipality",
+        "per-control-professionals"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PER-TUO-LAW-29090",
+          "provisions": [
+            "construction inspection, conformity of works and building declaration"
+          ]
+        },
+        {
+          "instrumentId": "PER-LICENCE-REG-029-2019",
+          "provisions": [
+            "completion documents and conformity procedures"
+          ]
+        },
+        {
+          "instrumentId": "PER-RNE-2006-CURRENT",
+          "provisions": [
+            "professional responsibilities and technical compliance"
+          ]
+        },
+        {
+          "instrumentId": "PER-ITSE-002-2018",
+          "provisions": [
+            "risk-based building-safety inspection and certificate"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "CAP/CIP habilitación vigente·설계자·responsable de obra·검사자",
+        "공정·변경·재료·구조·MEP 시험과 검사기록",
+        "as-built·Conformidad de Obra·Declaratoria de Edificación",
+        "ITSE 위험분류·certificate·영업허가·보험·현지 비용"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지의 권원과 Certificado de Parámetros상 실제 용도·높이·면적·이격·주차·위험·기반시설 조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 licence 모드·기술심사자와 SEIA 범주·환경허가권자·선행관계·실제 처리기간은 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "책임전문가·시 검사와 conformidad/declaratoria, ITSE 대상·순서·비용·기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "PER-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "PER-TUO-LAW-29090",
+          "provisions": [
+            "municipal competence and urban-development/building procedures"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "PER-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 권원과 Certificado de Parámetros상 실제 용도·높이·면적·이격·주차·위험·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "SUNARP partida·catastro·경계·건축권원",
+        "현행 계획·용도지역·Certificado de Parámetros",
+        "필지별 용도·높이·면적·이격·주차·건축선",
+        "지반·내진·침수/huayco·배수·도로·상하수·전력 용량"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-mvcs"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PER-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-mvcs"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PER-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 licence 모드·기술심사자와 SEIA 범주·환경허가권자·선행관계·실제 처리기간은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·건축권원·관할 municipality",
+        "Modalidad A–D 판정·FUE·전문도서·RNE 검토",
+        "SEIA 포함·선분류 확인·EVAP·DIA/EIA-sd/EIA-d",
+        "문화재·수자원·소방·유틸리티 협의와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PER-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-environment-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PER-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "책임전문가·시 검사와 conformidad/declaratoria, ITSE 대상·순서·비용·기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "CAP/CIP habilitación vigente·설계자·responsable de obra·검사자",
+        "공정·변경·재료·구조·MEP 시험과 검사기록",
+        "as-built·Conformidad de Obra·Declaratoria de Edificación",
+        "ITSE 위험분류·certificate·영업허가·보험·현지 비용"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-control-professionals"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PER-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "per-municipality",
+        "per-control-professionals"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "PER-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "PER-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "PER-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "PER-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "PER-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "PER-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "PER-BLD-C-001",
+      "confidence": "conditional",
+      "text": "Lima나 다른 도시의 수치를 일반화하지 말고 사업지 municipality의 최신 계획·필지증명과 현장 지반·재해·유틸리티 조사를 설계기준으로 확정한다.",
+      "basis": [
+        "PER-TUO-LAW-29090",
+        "PER-LICENCE-REG-029-2019",
+        "PER-RNE-2006-CURRENT"
+      ]
+    },
+    {
+      "id": "PER-BLD-C-002",
+      "confidence": "conditional",
+      "text": "건축 licence와 환경인증을 각각 대상판정하고, 환경인증이 필요한 사업은 설계·입찰 전에 승인순서와 보완기간을 공정표에 반영한다.",
+      "basis": [
+        "PER-TUO-LAW-29090",
+        "PER-LICENCE-REG-029-2019",
+        "PER-SEIA-27446-019-2009"
+      ]
+    },
+    {
+      "id": "PER-BLD-C-003",
+      "confidence": "conditional",
+      "text": "건축 준공적합과 운영안전·영업절차를 혼동하지 말고 각각을 지급·인계·개장 전 독립 Gate로 계약문서에 명시한다.",
+      "basis": [
+        "PER-TUO-LAW-29090",
+        "PER-LICENCE-REG-029-2019",
+        "PER-RNE-2006-CURRENT",
+        "PER-ITSE-002-2018"
+      ]
+    }
+  ]
+}
