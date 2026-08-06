@@ -26,8 +26,8 @@ INST_DIR = ROOT / "data" / "institutions"
 CONSTRUCTION_DIR = ROOT / "data" / "construction-regulations"
 SITE = ROOT / "site"
 
-SITE_TITLE = "그 나라 조달은 어떻게 할까"
-SITE_SUB = "협력국 조달·건축 제도 안내"
+SITE_TITLE = "그 나라, ODA 사업은 어떻게 추진할까?"
+SITE_SUB = "협력국 조달·건축 법·제도 안내"
 
 
 def clean_generated_html(value: str) -> str:
@@ -706,11 +706,11 @@ def build_index(items: list[dict], construction_items: list[dict]) -> str:
 
     body = f"""
 <div class="wrap hero">
-  <div class="eyebrow">자료집에서 원문으로</div>
-  <h1>그 나라 조달은 어떻게 할까?</h1>
-  <p class="lede">협력국 입찰에 처음 들어가더라도 괜찮습니다.</p>
-  <p class="lede">자료집에 흩어진 절차를 담당자·서류·기한이 보이는 한 장으로 정리하고, 근거는 각국 법령 원문까지 대조했습니다.</p>
-  <p class="meta">제도 {len(items)}개 · {len(countries)}개국 · 조문 대조 완료 {verified}개 · 자료집 기준일 {e(asof)}</p>
+  <div class="eyebrow">사업기획에서 실행까지</div>
+  <h1>{e(SITE_TITLE)}</h1>
+  <p class="lede">협력국에서 ODA 사업을 처음 기획·추진하더라도 괜찮습니다.</p>
+  <p class="lede">조달 절차와 건축 법·제도를 담당기관·서류·기한·의사결정이 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+  <p class="meta">조달 제도 {len(items)}개 · 조달 {len(countries)}개국 · 건축 법·제도 {len(construction_items)}개국 · 조문 대조 완료 {verified}개 · 자료집 기준일 {e(asof)}</p>
 </div>
 
 <div class="statbar"><div class="wrap">

@@ -2,7 +2,7 @@
 
 **공개 페이지:** [https://amnotyoung.github.io/overseas-procurement-100/](https://amnotyoung.github.io/overseas-procurement-100/)
 
-협력국 공공조달과 ODA 사업형성 절차를 국가당 3축으로 정규화하고, 공식 원문과 출처를 연결하는 데이터셋이다.
+협력국 공공조달과 ODA 사업형성 절차, ODA 건축사업의 법·제도를 구조화하고 공식 원문과 출처를 연결하는 데이터셋이다.
 
 - `bidding`: 입찰제도
 - `governance`: 조달 거버넌스·감독체계
