@@ -612,8 +612,8 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 f"priorities must be contiguous from 4: expected {sorted(expected_priorities)}, "
                 f"got {sorted(priorities)}",
             )
-        if slug == "senegal" and public_model_count != 3:
-            result.error(f"{rel}.publicModels", "Senegal must expose exactly three models")
+        if public_model_count != 3:
+            result.error(f"{rel}.publicModels", "every construction country must expose exactly three models")
 
         expected_nodes = set(source_nodes)
         expected_requirements = set(requirements)

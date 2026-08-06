@@ -116,6 +116,7 @@ python3 tools/build_site.py
 건축 법·제도 원천 데이터와 통합 model:
 
 ```bash
+python3 tools/build_construction_baselines.py --check
 python3 tools/validate_construction_regulations.py
 python3 tools/build_construction_regulations.py
 python3 tools/build_site.py
@@ -166,7 +167,11 @@ python3 -m http.server 8765 --directory site
 4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적고, 공개 제도축은 `publicModels`에서 같은 원천을 참조해 나눈다.
 5. 법정 처리기간은 완비서류 접수 후 기간으로 기록하고 전체 인허가기간과 구분한다.
 6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
-7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 건축 model을 4번부터 자동 배치한다. 세네갈 파일럿은 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종으로 공개한다.
+7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종을 4~6번으로 자동 배치한다.
+
+조문까지 대조한 상세판은 국가 JSON을 직접 관리한다. 전체 국가 기본판은
+`data/construction-regulations/catalog/baselines.json`에 국가별 공식 출처·기관·판단만 기록하고
+`python3 tools/build_construction_baselines.py`로 같은 3축 계약의 국가 JSON을 생성한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 

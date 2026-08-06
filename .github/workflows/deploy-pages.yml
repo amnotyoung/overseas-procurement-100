@@ -37,6 +37,7 @@ jobs:
       - name: Validate data
         run: |
           python3 tools/validate.py
+          python3 tools/build_construction_baselines.py --check
           python3 tools/validate_construction_regulations.py
           npm run check:boards
 

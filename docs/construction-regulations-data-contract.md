@@ -19,6 +19,8 @@
 |---|---|---|
 | `data/construction-regulations/manifest.json` | 스키마·대상국·진행 상태 | 수동 |
 | `data/construction-regulations/{country}.json` | 국가별 원천 데이터 | 수동 |
+| `data/construction-regulations/catalog/baselines.json` | 전체 국가 기본판의 공식 출처·기관·3축 판단 | 수동 |
+| `tools/build_construction_baselines.py` | 기본판을 표준 국가 JSON으로 확장 | 수동 |
 | `docs/construction-regulations-data-contract.md` | 이 데이터 계약 | 수동 |
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
@@ -81,7 +83,9 @@
 
 `pilotContext`는 특정 사업에 맞춘 적용 가설이다. 국가 공통 사실과 혼동하지 않도록 확인된 입력(`known`)과 미확정 입력(`unknown`)을 나눠 적는다.
 
-`publicModels`는 하나의 국가 원천을 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 세네갈 파일럿은 조달 3종과 균형을 맞춰 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 3종을 4~6번으로 공개한다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다.
+`publicModels`는 하나의 국가 원천을 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 모든 협력국은 조달 3종과 균형을 맞춰 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 3종을 4~6번으로 공개한다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다.
+
+국가 기본판(`generatedFrom` 존재)은 공식 법령·정부 서비스의 진입경로와 핵심 의사결정만 확인한 `law-linked` 또는 `source-linked` 자료다. 세네갈처럼 조문을 대조한 상세판과 같은 깊이로 오인하지 않도록 검증상태와 한계를 화면에 그대로 노출한다. 기본판의 생성 JSON은 직접 고치지 않고 catalog를 수정한다.
 
 ## 5. 핵심 객체
 
@@ -223,6 +227,7 @@
 ```
 
 - 각 공개 제도축은 선택한 노드만으로 독립적으로 연결된 클릭형 구조도를 만든다.
+- 모든 건축 국가 파일은 정확히 3개 공개 제도축과 연속 우선순위 4·5·6을 가져야 한다.
 - 한 국가의 공개 제도축 전체를 합치면 원천 노드, 의무, Gate, 질문, 결론, 부지 특례와 현지조사 체크리스트가 빠짐없이 포괄돼야 한다. `requirementIds`는 각 의무를 한 축에만 배정해 선택 노드의 다른 주제가 섞이지 않게 한다.
 - 여러 제도에 공통인 법령·Gate·결론은 중복 표시할 수 있지만 원천 객체를 복제하지 않는다.
 - 공개 보드의 생애주기 단계는 `S0…`, 법정 인허가 절차는 `P1…`로 표시해 서로 다른 순번 체계를 구분한다.

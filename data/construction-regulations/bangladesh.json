@@ -1,0 +1,854 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "bangladesh",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "방글라데시",
+    "nameEn": "Bangladesh",
+    "iso3": "BGD",
+    "region": "아시아·태평양"
+  },
+  "purpose": "방글라데시 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "건축건설법 1952(1953년 법률 제II호, 개정 포함)·RAJUK 전자 건축허가시스템·환경보전규칙 2023·방글라데시 국가건축기준 BNBC 2020·RAJUK 사용승인 서비스의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "방글라데시 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "권원과 Land Use Clearance, DAP·master plan 적합성을 먼저 닫고 필지별 수치를 확정한다.",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "Building Construction Act",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Sections 3 and 3A"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지는 어느 개발기관 관할이며 LUC·DAP·master plan상 허용용도와 밀도·높이·이격·주차는 무엇인가?",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "Building Construction Act",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Sections 3 and 3A"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "건축허가·대형특수사업 승인과 환경분류·환경허가를 별도 경로로 병행 관리한다.",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk",
+          "doe"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "RAJUK 전자 건축허가시스템",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Section 3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 관할 건축허가, Large/Special Project 여부, 환경분류와 외부 NOC의 선후관계는 무엇인가?",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk",
+          "doe"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "RAJUK 전자 건축허가시스템",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Section 3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "BNBC 2020, 등록 기술자·공사모니터링과 사용승인을 준공·개장 선행조건으로 둔다.",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk",
+          "mohpw"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "BNBC 2020",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Section 18A"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "적용 BNBC 판, 전문자격·공사검사·소방확인과 Occupancy Certificate의 서류·수수료·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "authorized-officer",
+          "rajuk",
+          "mohpw"
+        ],
+        "requirementIds": [
+          "BGD-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "BNBC 2020",
+            "instrumentId": "BGD-BUILDING-ACT-1953",
+            "provisions": [
+              "Section 18A"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "bangladesh-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "방글라데시 도시계획·부지규제",
+      "oneLiner": "권원과 Land Use Clearance, DAP·master plan 적합성을 먼저 닫고 필지별 수치를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "Laws of Bangladesh의 Building Construction Act와 RAJUK ECPS의 토지이용 서비스를 확인했다. 필지별 DAP 수치와 비RAJUK 관할은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "BGD-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "BGD-BLD-Q-001",
+        "BGD-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "BGD-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "BGD-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "BGD-BLD-F-001",
+        "BGD-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "bangladesh-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "방글라데시 건축허가·환경심사",
+      "oneLiner": "건축허가·대형특수사업 승인과 환경분류·환경허가를 별도 경로로 병행 관리한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Building Construction Act, RAJUK ECPS와 DoE의 환경보전규칙 2023 공식 페이지를 연결했다. 프로젝트 분류·수수료·보완기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "BGD-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "BGD-BLD-Q-003",
+        "BGD-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "BGD-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "BGD-BLD-F-003",
+        "BGD-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "bangladesh-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "방글라데시 기술검사·보험·준공제도",
+      "oneLiner": "BNBC 2020, 등록 기술자·공사모니터링과 사용승인을 준공·개장 선행조건으로 둔다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "Building Construction Act 제18A, 주택공공사업부 BNBC 2020 게시 페이지와 RAJUK 사용승인 서비스를 확인했다. 비RAJUK 관할 검사·사용승인과 보험은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "BGD-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "BGD-BLD-Q-005",
+        "BGD-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "BGD-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "BGD-BLD-F-005",
+        "BGD-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "authorized-officer",
+      "name": "Authorised Officer or competent local development authority",
+      "nameKo": "권한 있는 건축심사관·관할 개발기관",
+      "role": "Building Construction Act상 토지이용·건축승인과 위반통제를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://bdlaws.minlaw.gov.bd/act-print-254.html"
+    },
+    {
+      "id": "rajuk",
+      "name": "Rajdhani Unnayan Kartripakkha (RAJUK)",
+      "nameKo": "수도개발청(RAJUK)",
+      "role": "다카 관할의 토지이용허가, 건축허가, 공사모니터링과 사용승인을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://ecps.gov.bd/"
+    },
+    {
+      "id": "doe",
+      "name": "Department of Environment",
+      "nameKo": "환경부 환경국(DoE)",
+      "role": "환경분류와 환경입지·환경허가를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://doe.gov.bd/"
+    },
+    {
+      "id": "mohpw",
+      "name": "Ministry of Housing and Public Works",
+      "nameKo": "주택공공사업부",
+      "role": "Bangladesh National Building Code와 건축규정을 공표·관리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://mohpw.gov.bd/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "BGD-BUILDING-ACT-1953",
+      "title": "Building Construction Act, 1952 (Act No. II of 1953), as amended",
+      "titleKo": "건축건설법 1952(1953년 법률 제II호, 개정 포함)",
+      "kind": "act",
+      "status": "in_force",
+      "issuedOn": "1953-03-21",
+      "officialUrl": "https://bdlaws.minlaw.gov.bd/act-print-254.html",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "BGD-RAJUK-ECPS",
+      "title": "RAJUK Electronic Construction Permitting System",
+      "titleKo": "RAJUK 전자 건축허가시스템",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://ecps.gov.bd/",
+      "verificationLevel": "source-linked",
+      "note": "다카 RAJUK 관할에 적용되는 토지이용·건축허가·공사통지·사용승인 서비스다. 다른 지역은 관할기관을 별도 확인한다."
+    },
+    {
+      "id": "BGD-ECR-2023",
+      "title": "Environmental Conservation Rules, 2023",
+      "titleKo": "환경보전규칙 2023",
+      "kind": "decree",
+      "status": "in_force",
+      "issuedOn": "2023-04-05",
+      "officialUrl": "https://doe.gov.bd/pages/static-pages/6922e0a1933eb65569e27eba",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "BGD-BNBC-2020",
+      "title": "Bangladesh National Building Code 2020",
+      "titleKo": "방글라데시 국가건축기준 BNBC 2020",
+      "kind": "official-guidance",
+      "status": "in_force",
+      "issuedOn": "2021-02-11",
+      "officialUrl": "https://mohpw.gov.bd/pages/static-pages/694032c235ce18e1c0561e05",
+      "verificationLevel": "source-linked",
+      "note": "주택공공사업부의 공식 건축규정 페이지가 BNBC 2020을 게시한다. 공표일·적용판은 상세조사에서 재확인한다."
+    },
+    {
+      "id": "BGD-RAJUK-OCCUPANCY",
+      "title": "RAJUK ECPS Occupancy Certificate service",
+      "titleKo": "RAJUK 사용승인 서비스",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://ecps.gov.bd/permits/occupancy-certificate/",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "BGD-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "방글라데시에서 신축·재축·증축·용도변경을 추진하는 사업",
+      "requirement": "Building Construction Act는 허가 없는 건축과 승인용도 외 사용을 제한하고 master plan의 토지이용 적합성을 요구한다. 다카에서는 RAJUK ECPS의 Land Use Clearance와 DAP가 핵심이며, 다른 지역은 해당 개발기관·지방정부의 계획과 조례를 적용한다.",
+      "authorityIds": [
+        "authorized-officer",
+        "rajuk"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "BGD-BUILDING-ACT-1953",
+          "provisions": [
+            "Sections 3 and 3A"
+          ]
+        },
+        {
+          "instrumentId": "BGD-RAJUK-ECPS",
+          "provisions": [
+            "Land Use Clearance service"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "권원·mutation·지적도",
+        "Land Use Clearance 또는 동등 확인",
+        "DAP·master plan·용도지역표",
+        "필지별 FAR·MGC·높이·이격·주차·도로조건"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "BGD-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "건축승인 대상 사업과 환경보전규칙 2023의 분류대상 개발사업",
+      "requirement": "건축 전 관할기관의 승인을 받아야 하며 다카 RAJUK ECPS는 Planning/Land Use, Construction Permit와 Large and Special Project 절차를 제공한다. 환경보전규칙 2023에 따른 사업분류와 환경허가를 DoE와 확정하고, 소방·항공 등 외부 NOC의 적용을 별도로 확인한다.",
+      "authorityIds": [
+        "authorized-officer",
+        "rajuk",
+        "doe"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "BGD-BUILDING-ACT-1953",
+          "provisions": [
+            "Section 3"
+          ]
+        },
+        {
+          "instrumentId": "BGD-RAJUK-ECPS",
+          "provisions": [
+            "Construction Permit and external NOC workflow"
+          ]
+        },
+        {
+          "instrumentId": "BGD-ECR-2023",
+          "provisions": [
+            "project classification and environmental clearance"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·신청인·관할 확정서",
+        "Planning/Land Use 승인",
+        "환경분류·환경허가 결정",
+        "건축·소방·항공 등 NOC 체크리스트와 실제 수수료·기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "BGD-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "BNBC와 관할기관의 공사감독·준공·사용승인 대상 건축물",
+      "requirement": "Building Construction Act 제18A는 국가건축기준이 구조·화재·재료·시공·설비·용도변경 등을 규율하도록 하며, 주택공공사업부는 BNBC 2020을 게시한다. RAJUK 관할에서는 완공 후 사용 전에 Occupancy Certificate가 필요하고 기술자 확인서를 제출한다.",
+      "authorityIds": [
+        "authorized-officer",
+        "rajuk",
+        "mohpw"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "BGD-BUILDING-ACT-1953",
+          "provisions": [
+            "Section 18A"
+          ]
+        },
+        {
+          "instrumentId": "BGD-BNBC-2020",
+          "provisions": [
+            "official BNBC 2020 publication"
+          ]
+        },
+        {
+          "instrumentId": "BGD-RAJUK-OCCUPANCY",
+          "provisions": [
+            "Occupancy Certificate service"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "적용 BNBC·설계기준 목록",
+        "등록 설계자·시공자·검사자 증빙",
+        "착공통지·검사·시험기록",
+        "준공도서·기술자 확인서·Occupancy Certificate와 보험 견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지는 어느 개발기관 관할이며 LUC·DAP·master plan상 허용용도와 밀도·높이·이격·주차는 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 관할 건축허가, Large/Special Project 여부, 환경분류와 외부 NOC의 선후관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "적용 BNBC 판, 전문자격·공사검사·소방확인과 Occupancy Certificate의 서류·수수료·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "BGD-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "BGD-BUILDING-ACT-1953",
+          "provisions": [
+            "Sections 3 and 3A"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "BGD-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지는 어느 개발기관 관할이며 LUC·DAP·master plan상 허용용도와 밀도·높이·이격·주차는 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "권원·mutation·지적도",
+        "Land Use Clearance 또는 동등 확인",
+        "DAP·master plan·용도지역표",
+        "필지별 FAR·MGC·높이·이격·주차·도로조건"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "BGD-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "BGD-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 관할 건축허가, Large/Special Project 여부, 환경분류와 외부 NOC의 선후관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·신청인·관할 확정서",
+        "Planning/Land Use 승인",
+        "환경분류·환경허가 결정",
+        "건축·소방·항공 등 NOC 체크리스트와 실제 수수료·기간"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk",
+        "doe"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "BGD-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk",
+        "doe"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "BGD-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "적용 BNBC 판, 전문자격·공사검사·소방확인과 Occupancy Certificate의 서류·수수료·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "적용 BNBC·설계기준 목록",
+        "등록 설계자·시공자·검사자 증빙",
+        "착공통지·검사·시험기록",
+        "준공도서·기술자 확인서·Occupancy Certificate와 보험 견적"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk",
+        "mohpw"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "BGD-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "authorized-officer",
+        "rajuk",
+        "mohpw"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "BGD-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "BGD-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "BGD-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "BGD-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "BGD-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "BGD-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "BGD-BLD-C-001",
+      "confidence": "conditional",
+      "text": "방글라데시는 국가 건축법 위에 관할별 계획·건축규정이 적용되므로 RAJUK 기준을 전국 공통으로 확대하지 말고 필지의 개발기관과 계획문서를 먼저 확정해야 한다.",
+      "basis": [
+        "BGD-BUILDING-ACT-1953",
+        "BGD-RAJUK-ECPS"
+      ]
+    },
+    {
+      "id": "BGD-BLD-C-002",
+      "confidence": "conditional",
+      "text": "방글라데시의 건축허가와 환경허가는 별도 판단이며, 다카 외 지역의 관할과 외부 NOC가 달라질 수 있으므로 RAJUK 온라인 안내만으로 전체 기간을 일반화해서는 안 된다.",
+      "basis": [
+        "BGD-BUILDING-ACT-1953",
+        "BGD-RAJUK-ECPS",
+        "BGD-ECR-2023"
+      ]
+    },
+    {
+      "id": "BGD-BLD-C-003",
+      "confidence": "conditional",
+      "text": "방글라데시는 건축허가와 별도로 BNBC 준수와 사용승인을 관리하므로, 공사완료를 곧바로 개장 가능으로 보지 말고 기술자 확인과 Occupancy Certificate를 준공 Gate에 넣어야 한다.",
+      "basis": [
+        "BGD-BUILDING-ACT-1953",
+        "BGD-BNBC-2020",
+        "BGD-RAJUK-OCCUPANCY"
+      ]
+    }
+  ]
+}
