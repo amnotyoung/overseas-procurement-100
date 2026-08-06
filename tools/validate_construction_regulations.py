@@ -460,11 +460,189 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             if instrument_id not in instruments:
                 result.error(where, f"basis references unknown instrument {instrument_id!r}")
 
+    public_model_count = 0
+    public_raw = data.get("publicModels")
+    if public_raw is not None:
+        public_models = unique_ids(public_raw, "publicModels", rel, result)
+        public_model_count = len(public_models)
+        source_board = data.get("processBoard", {})
+        source_nodes = {
+            item.get("id"): item
+            for item in source_board.get("nodes", [])
+            if isinstance(item, dict) and item.get("id")
+        }
+        priorities: set[int] = set()
+        slugs: set[str] = set()
+        covered_nodes: set[str] = set()
+        covered_requirements: set[str] = set()
+        covered_questions: set[str] = set()
+        covered_gates: set[int] = set()
+        covered_conclusions: set[str] = set()
+        covered_overlays: set[str] = set()
+        covered_checklist: set[str] = set()
+        for ident, model in public_models.items():
+            where = f"{rel}.publicModels[{ident}]"
+            required(
+                model,
+                (
+                    "slug",
+                    "priority",
+                    "name",
+                    "oneLiner",
+                    "purpose",
+                    "verificationScope",
+                    "nodeIds",
+                    "requirementIds",
+                    "questionIds",
+                    "conclusionIds",
+                    "fieldworkChecklistIds",
+                    "edges",
+                ),
+                where,
+                result,
+            )
+            if "siteOverlayIds" not in model:
+                result.error(where, "missing required field 'siteOverlayIds'")
+            slug_value = model.get("slug")
+            if not isinstance(slug_value, str) or not slug_value.endswith("-construction-regulations"):
+                result.error(f"{where}.slug", "must end with '-construction-regulations'")
+            elif slug_value in slugs:
+                result.error(f"{where}.slug", f"duplicate public model slug {slug_value!r}")
+            else:
+                slugs.add(slug_value)
+            priority = model.get("priority")
+            if not isinstance(priority, int) or priority < 4:
+                result.error(f"{where}.priority", "must be an integer of 4 or greater")
+            elif priority in priorities:
+                result.error(f"{where}.priority", f"duplicate public model priority {priority}")
+            else:
+                priorities.add(priority)
+
+            node_ids = model.get("nodeIds")
+            if not isinstance(node_ids, list) or not node_ids:
+                result.error(f"{where}.nodeIds", "must be a non-empty array")
+                node_ids = []
+            elif len(node_ids) != len(set(node_ids)):
+                result.error(f"{where}.nodeIds", "must contain unique node IDs")
+            selected_nodes = []
+            for node_id in node_ids:
+                node = source_nodes.get(node_id)
+                if not node:
+                    result.error(f"{where}.nodeIds", f"unknown processBoard node {node_id!r}")
+                    continue
+                selected_nodes.append(node)
+                covered_nodes.add(node_id)
+                covered_gates.update(node.get("gateOrders", []))
+
+            available_requirements = {
+                requirement_id
+                for node in selected_nodes
+                for requirement_id in node.get("requirementIds", [])
+            }
+            requirement_ids = model.get("requirementIds")
+            if not isinstance(requirement_ids, list) or not requirement_ids:
+                result.error(f"{where}.requirementIds", "must be a non-empty array")
+            elif len(requirement_ids) != len(set(requirement_ids)):
+                result.error(f"{where}.requirementIds", "must contain unique requirement IDs")
+            else:
+                for requirement_id in requirement_ids:
+                    if requirement_id not in requirements:
+                        result.error(
+                            f"{where}.requirementIds",
+                            f"unknown ID {requirement_id!r}",
+                        )
+                    elif requirement_id not in available_requirements:
+                        result.error(
+                            f"{where}.requirementIds",
+                            f"{requirement_id!r} is not linked by a selected node",
+                        )
+                    elif requirement_id in covered_requirements:
+                        result.error(
+                            f"{where}.requirementIds",
+                            f"{requirement_id!r} is assigned to more than one public model",
+                        )
+                    else:
+                        covered_requirements.add(requirement_id)
+
+            def check_refs(field: str, known: dict[str, dict[str, Any]], covered: set[str]) -> None:
+                values = model.get(field)
+                if not isinstance(values, list):
+                    result.error(f"{where}.{field}", "must be an array")
+                    return
+                for value in values:
+                    if value not in known:
+                        result.error(f"{where}.{field}", f"unknown ID {value!r}")
+                    elif isinstance(value, str):
+                        covered.add(value)
+
+            check_refs("questionIds", questions, covered_questions)
+            check_refs("conclusionIds", conclusions, covered_conclusions)
+            check_refs("siteOverlayIds", overlays, covered_overlays)
+            check_refs("fieldworkChecklistIds", checklist, covered_checklist)
+
+            used_lanes = {item.get("lane") for item in selected_nodes}
+            used_stages = {item.get("stage") for item in selected_nodes}
+            model_board = {
+                "schema_version": source_board.get("schema_version"),
+                "profile": source_board.get("profile"),
+                "title": model.get("name"),
+                "subtitle": model.get("oneLiner"),
+                "lanes": [item for item in source_board.get("lanes", []) if item in used_lanes],
+                "stages": [item for item in source_board.get("stages", []) if item in used_stages],
+                "nodes": selected_nodes,
+                "edges": model.get("edges"),
+            }
+            model_gate_orders = {
+                order for item in selected_nodes for order in item.get("gateOrders", [])
+            }
+            validate_process_board(
+                model_board,
+                f"{where}.processBoard",
+                authorities,
+                instruments,
+                requirements,
+                model_gate_orders,
+                result,
+            )
+
+        expected_priorities = set(range(4, 4 + public_model_count))
+        if priorities != expected_priorities:
+            result.error(
+                f"{rel}.publicModels",
+                f"priorities must be contiguous from 4: expected {sorted(expected_priorities)}, "
+                f"got {sorted(priorities)}",
+            )
+        if slug == "senegal" and public_model_count != 3:
+            result.error(f"{rel}.publicModels", "Senegal must expose exactly three models")
+
+        expected_nodes = set(source_nodes)
+        expected_requirements = set(requirements)
+        expected_questions = set(questions)
+        expected_conclusions = set(conclusions)
+        expected_overlays = set(overlays)
+        expected_checklist = set(checklist)
+        for label, expected, actual in (
+            ("processBoard nodes", expected_nodes, covered_nodes),
+            ("requirements", expected_requirements, covered_requirements),
+            ("openQuestions", expected_questions, covered_questions),
+            ("permitPath gates", permit_orders, covered_gates),
+            ("reportReadyConclusions", expected_conclusions, covered_conclusions),
+            ("siteOverlays", expected_overlays, covered_overlays),
+            ("fieldworkChecklist", expected_checklist, covered_checklist),
+        ):
+            if actual != expected:
+                result.error(
+                    f"{rel}.publicModels",
+                    f"{label} coverage differs: missing {sorted(expected - actual)}, "
+                    f"extra {sorted(actual - expected)}",
+                )
+
     return {
         "authorities": len(authorities),
         "instruments": len(instruments),
         "requirements": len(requirements),
         "questions": len(questions),
+        "public_models": public_model_count,
         **board_counts,
     }
 
@@ -514,6 +692,7 @@ def main() -> int:
         "instruments": 0,
         "requirements": 0,
         "questions": 0,
+        "public_models": 0,
         "board_nodes": 0,
         "board_edges": 0,
     }
@@ -549,6 +728,7 @@ def main() -> int:
         f"{totals['instruments']} instruments, "
         f"{totals['requirements']} requirements, "
         f"{totals['questions']} open questions, "
+        f"{totals['public_models']} public construction models, "
         f"{totals['board_nodes']} board nodes, "
         f"{totals['board_edges']} board edges"
     )

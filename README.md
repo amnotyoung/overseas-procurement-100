@@ -118,6 +118,7 @@ python3 tools/build_site.py
 ```bash
 python3 tools/validate_construction_regulations.py
 python3 tools/build_construction_regulations.py
+python3 tools/build_site.py
 npm run build:construction-boards
 python3 tools/check_construction_site.py
 ```
@@ -134,7 +135,7 @@ npm run check:boards
 | 경로 | 내용 |
 |---|---|
 | `site/index.html` | 국가·축 검색과 제도 대장 |
-| `site/model/{country}-construction-regulations/index.html` | 국가별 04+ 건축 법·제도: HTML 업무구조도, 클릭 상세, 법령·증빙·현장검증 |
+| `site/model/{slug}-construction-regulations/index.html` | 국가별 04+ 건축 제도축: HTML 업무구조도, 클릭 상세, 법령·증빙·현장검증 |
 | `site/construction/…` | 기존 공개 주소를 통합 model로 보내는 호환 리디렉션 |
 | `site/model/{slug}/index.html` | 국가별 01~ 제도 업무구조도, 캔버스, 원문, 현행 기준, 검증 |
 | `site/verification/index.html` | 현행 기준 확인 대장 |
@@ -162,10 +163,10 @@ python3 -m http.server 8765 --directory site
 1. `data/construction-regulations/manifest.json`에 국가와 기준일을 등록한다.
 2. 도시계획, 건설, 건축사, 환경, 소방·ERP, 노동·HSE, 장애·접근성, 토지·특구의 현행 법령과 시행령을 공식 원문에서 찾는다.
 3. 폐지조항과 최근 개정일을 먼저 확인하고, 오래된 공식 민원안내와 충돌하면 법령을 우선한다.
-4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적는다.
+4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적고, 공개 제도축은 `publicModels`에서 같은 원천을 참조해 나눈다.
 5. 법정 처리기간은 완비서류 접수 후 기간으로 기록하고 전체 인허가기간과 구분한다.
 6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
-7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 건축 model을 4번부터 자동 배치한다.
+7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 건축 model을 4번부터 자동 배치한다. 세네갈 파일럿은 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종으로 공개한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 
