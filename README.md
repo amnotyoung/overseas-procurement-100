@@ -31,6 +31,18 @@
 
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
+### ODA 건축 법·제도 사이드카
+
+조달 3축과 별도로, ODA 건축 전문가가 사업기획·현지조사·설계·인허가·시공·준공·운영 단계에서 사용할 국가별 법·제도 데이터팩을 운영한다.
+
+- 공개 화면: [건축 법·제도 국가 대장](https://amnotyoung.github.io/overseas-procurement-100/construction/) → [세네갈 전문가 브리프](https://amnotyoung.github.io/overseas-procurement-100/construction/senegal/)
+- 생성 문서: [세네갈 건축 법·제도 브리프](docs/construction-regulations/senegal.md)
+- 범위: 법령·공식자료 14종·관할기관 14개·생애주기 의무 20건·미확정 질문 12건
+- 사업 적용: Diamniadio AI Transition Center의 Gate 1 자료요청, 인허가 경로, 현지 책임건축사, ERP·소방, 환경평가, 기술검사·보험, 준공·개장 조건
+- 원칙: 법령의 현행·폐지·개정예고를 구분하고, 조문 확인과 사업 적용판단을 분리하며, 필지·면적·용도처럼 받지 못한 정보는 ‘해당 없음’으로 처리하지 않는다.
+
+데이터 구조와 확장 규칙은 [국가별 건축 법·제도 데이터 계약](docs/construction-regulations-data-contract.md)에 정리돼 있다. 국가 파일 하나를 추가하면 검증기와 생성기가 같은 형식의 전문가 브리프를 만든다.
+
 ## 원작
 
 이 저장소의 사이트 구조·빌드 도구·저작 방식은 [korea100](https://github.com/hosungseo/korea100)과
@@ -62,13 +74,16 @@ sources/koica-2026/
 
 ```text
 ├── data/
-│   ├── institutions/*.json      제도별 정규화 데이터
-│   └── manifest.json            출처·국가·진행 대장
+│   ├── institutions/*.json              조달 제도별 정규화 데이터
+│   ├── construction-regulations/        국가별 ODA 건축 법·제도 원천 데이터
+│   └── manifest.json                    조달 출처·국가·진행 대장
 ├── docs/
-│   ├── data-contract.md         데이터 계약
-│   ├── verification-log.md      현행 기준 확인 대장
-│   ├── errata.md                현행 기준 반영 출처
-│   └── review-sheet.en.md       영어 현장 확인 시트
+│   ├── data-contract.md                 조달 데이터 계약
+│   ├── construction-regulations-data-contract.md
+│   ├── construction-regulations/        국가별 건축 법·제도 브리프
+│   ├── verification-log.md              현행 기준 확인 대장
+│   ├── errata.md                        현행 기준 반영 출처
+│   └── review-sheet.en.md               영어 현장 확인 시트
 ├── sources/
 │   ├── koica-2026/              2026 자료집 텍스트 추출본
 │   └── laws/{country}/          법령·정책 원문
@@ -77,12 +92,14 @@ sources/koica-2026/
 │   ├── generate_all_countries.py  4개 지역판 전수 추출·1차 다이어그램 생성
 │   ├── check_links.py           외부 링크 확인
 │   ├── build_docs.py            문서 생성
+│   ├── validate_construction_regulations.py  건축 법·제도 검증
+│   ├── build_construction_regulations.py     건축 법·제도 브리프 생성
 │   └── build_site.py            정적 사이트·국가별 배포 파일 생성
 ├── site/                        정적 사이트
 └── dist/                        국가별 단일 HTML
 ```
 
-`docs/verification-log.md`, `docs/errata.md`, `docs/review-sheet.en.md`, `site/`, `dist/`는 생성 산출물이다. 직접 수정하지 않고 `data/institutions/*.json`을 고친 뒤 다시 빌드한다.
+`docs/verification-log.md`, `docs/errata.md`, `docs/review-sheet.en.md`, `docs/construction-regulations/`, `site/`, `dist/`는 생성 산출물이다. 직접 수정하지 않고 해당 원천 JSON을 고친 뒤 다시 빌드한다.
 
 ## 빌드와 검증
 
@@ -91,6 +108,13 @@ python3 tools/generate_all_countries.py  # PDF 전수 추출·미검증 국가 1
 python3 tools/validate.py
 python3 tools/build_docs.py
 python3 tools/build_site.py
+```
+
+건축 법·제도 사이드카:
+
+```bash
+python3 tools/validate_construction_regulations.py
+python3 tools/build_construction_regulations.py
 ```
 
 선택 점검:
@@ -105,6 +129,8 @@ npm run check:boards
 | 경로 | 내용 |
 |---|---|
 | `site/index.html` | 국가·축 검색과 제도 대장 |
+| `site/construction/index.html` | ODA 건축 법·제도 국가 대장 |
+| `site/construction/{country}/index.html` | 국가별 생애주기 의무·Gate 질문·인허가 경로·법령 원문 |
 | `site/model/{slug}/index.html` | 업무구조도, 캔버스, 원문, 현행 기준, 검증 |
 | `site/verification/index.html` | 현행 기준 확인 대장 |
 | `site/errata/index.html` | 현행 기준 반영 출처 |
@@ -125,6 +151,15 @@ python3 -m http.server 8765 --directory site
 5. 금액·비율·기한·제출서류는 원문 조문과 표에서 대조한다.
 6. 확실히 확인된 현행 기준은 근거 출처와 함께 `action`·`userAction`에 반영한다.
 7. `validate.py`, `build_docs.py`, `build_site.py`를 실행한다.
+
+## 다음 건축 법·제도 국가 추가
+
+1. `data/construction-regulations/manifest.json`에 국가와 기준일을 등록한다.
+2. 도시계획, 건설, 건축사, 환경, 소방·ERP, 노동·HSE, 장애·접근성, 토지·특구의 현행 법령과 시행령을 공식 원문에서 찾는다.
+3. 폐지조항과 최근 개정일을 먼저 확인하고, 오래된 공식 민원안내와 충돌하면 법령을 우선한다.
+4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적는다.
+5. 법정 처리기간은 완비서류 접수 후 기간으로 기록하고 전체 인허가기간과 구분한다.
+6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 
