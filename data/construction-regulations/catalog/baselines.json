@@ -1022,6 +1022,533 @@
           "referenceLabel": "검사·인증 고시 제126호"
         }
       }
+    },
+    {
+      "slug": "thailand",
+      "name": "태국",
+      "nameEn": "Thailand",
+      "iso3": "THA",
+      "region": "아시아·태평양",
+      "verificationStatus": "source-linked",
+      "authorities": [
+        {
+          "id": "local-official",
+          "name": "Competent local official or local government",
+          "nameKo": "관할 지방공무원·지방정부",
+          "role": "Building Control Act에 따라 건축·변경·철거 허가와 사용통제·현장검사를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3"
+        },
+        {
+          "id": "dpt-planning",
+          "name": "Department of Public Works and Town & Country Planning and competent planning authority",
+          "nameKo": "공공사업·도시농촌계획국(DPT)·관할 계획기관",
+          "role": "도시계획법과 지역 종합계획·용도지역 규제를 관리",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.dpt.go.th/"
+        },
+        {
+          "id": "onep-eia",
+          "name": "Office of Natural Resources and Environmental Policy and Planning and competent permitting agency",
+          "nameKo": "천연자원환경정책계획국(ONEP)·관할 허가기관",
+          "role": "IEE·EIA·EHIA 대상판정, 전문심사와 승인연계를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://eia.onep.go.th/site/eia"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "THA-BUILDING-CONTROL-ACT-1979",
+          "title": "Building Control Act B.E. 2522 (1979), as amended",
+          "titleKo": "건축물관리법 B.E. 2522(1979, 개정 포함)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+          "verificationLevel": "law-linked",
+          "note": "방콕시의 현행 공식 민원서비스가 제21·22·25·26·27조와 2021년 장관규칙을 적용한다. 통합 원문과 관할별 조례는 대상지에서 재확인한다."
+        },
+        {
+          "id": "THA-TOWN-PLANNING-ACT-2019",
+          "title": "Town Planning Act B.E. 2562 (2019)",
+          "titleKo": "도시계획법 B.E. 2562(2019)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+          "verificationLevel": "source-linked",
+          "note": "방콕시 건축허가 서비스가 현행 관련법으로 명시한다. 실제 comprehensive plan·지역조례는 별도 확보한다."
+        },
+        {
+          "id": "THA-ONEP-EIA",
+          "title": "ONEP Smart EIA Plus and current project-type EIA notification",
+          "titleKo": "ONEP Smart EIA Plus·사업유형별 환경평가 고시",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://eia.onep.go.th/site/eia",
+          "verificationLevel": "source-linked",
+          "note": "ONEP의 현행 EIA 대장과 건축물·토지개발 대상 고시를 연결한다. 프로젝트 유형별 최신 문턱은 원문 고시로 재확인한다."
+        },
+        {
+          "id": "THA-BMA-PERMIT",
+          "title": "Bangkok construction, alteration, demolition or relocation permit service",
+          "titleKo": "방콕시 건축·변경·철거·이전 허가 서비스",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=e024f8d7-01bb-4b38-b696-63f04cb4d3f3",
+          "verificationLevel": "source-linked",
+          "note": "방콕에만 적용되는 공식 예시다. 다른 지방정부의 서식·수수료·처리관행으로 일반화하지 않는다."
+        },
+        {
+          "id": "THA-BMA-CERTIFICATE",
+          "title": "Bangkok certificate for completed controlled-use buildings",
+          "titleKo": "방콕시 사용통제 건축물 공사완료 증명 서비스",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://gov.bangkok.go.th/ServiceDetail?id=c6b38376-cccb-49eb-9dab-b116abe94672",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 적용 comprehensive plan·용도지역·지방조례로 용도·FAR·높이·공지를 먼저 확정한다.",
+          "summary": "건축허가는 도시계획법상 적용 계획과 Building Control Act·장관규칙·지방조례를 함께 충족해야 한다. 필지별 용도, FAR, 건축면적, 높이, setback, 도로폭, 주차·배수는 해당 지방정부의 유효한 계획도와 조례에서 확인한다.",
+          "applicability": "태국에서 신축·증축·변경·철거·용도변경을 계획하는 ODA 건축사업",
+          "authorityIds": ["local-official", "dpt-planning"],
+          "basis": [
+            {"instrumentId": "THA-TOWN-PLANNING-ACT-2019", "provisions": ["comprehensive planning and land-use control framework"]},
+            {"instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["building siting and local-control framework"]}
+          ],
+          "evidence": ["토지권원·지적도", "유효 comprehensive plan·zoning map", "필지별 FAR·높이·이격·주차·도로조건", "침수·지반·배수·전력·상수 확인"],
+          "decisionQuestion": "대상 필지에 적용되는 계획·지방조례와 허용용도·FAR·높이·이격·주차·도로·재해조건은 무엇인가?",
+          "conclusion": "태국은 국가 건축물관리법 위에 지역 종합계획과 지방조례가 작동하므로 방콕 기준이나 중앙 장관규칙만으로 대상지 수치를 확정할 수 없다.",
+          "verificationScope": "방콕시 현행 허가서비스가 인용하는 건축물관리법·도시계획법을 확인했다. 대상지 계획도·조례·수치와 유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "도시계획법·건축물관리법"
+        },
+        "permit-environment": {
+          "oneLiner": "지방 건축허가와 ONEP의 IEE·EIA·EHIA 대상판정을 별도 Gate로 병행한다.",
+          "summary": "건축·변경·이전에는 관할 지방공무원의 허가가 필요하고, 법정 유형·규모·민감입지에 해당하면 IEE·EIA 또는 EHIA 심사를 받아야 한다. 방콕의 45일 안내는 보완·연장과 지역차를 포함한 전체기간이 아니다.",
+          "applicability": "Building Control Act상 허가대상 공사와 환경평가 고시의 대상 사업",
+          "authorityIds": ["local-official", "onep-eia"],
+          "basis": [
+            {"instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Sections 21-27"]},
+            {"instrumentId": "THA-BMA-PERMIT", "provisions": ["complete-dossier review and statutory time guidance"]},
+            {"instrumentId": "THA-ONEP-EIA", "provisions": ["IEE, EIA and EHIA project screening"]}
+          ],
+          "evidence": ["건축주·토지소유자·관할 확정", "건축·변경·철거·용도허가 분류", "IEE·EIA·EHIA 적용결정", "외부 NOC·수수료·완비일·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 관할 건축허가와 IEE·EIA·EHIA 유형, 승인기관·전문협의의 정확한 선후관계는 무엇인가?",
+          "conclusion": "태국 건축허가와 환경평가는 별도 판단이므로 환경분류를 닫기 전 건축허가 처리기한만으로 착공일을 약속해서는 안 된다.",
+          "verificationScope": "방콕시 공식 허가서비스와 ONEP Smart EIA 대장을 확인했다. 최신 대상 고시·비방콕 접수관행·실제 비용과 기간은 현지 확인 대상이다.",
+          "referenceLabel": "ONEP IEE·EIA·EHIA"
+        },
+        "control-completion": {
+          "oneLiner": "면허 전문자·공사검사와 통제용도 건축물의 완료증명을 사용개시 Gate로 관리한다.",
+          "summary": "통제 건축·공학·건축사 업무는 적정 면허자가 책임져야 하고, 지방공무원은 승인도서 적합성을 검사한다. Building Control Act 제32조의 사용통제 건축물은 공사완료 증명을 받아야 하며 정기검사 대상 여부도 별도 확인한다.",
+          "applicability": "허가공사와 Building Control Act상 controlled-use·정기검사 대상 건축물",
+          "authorityIds": ["local-official"],
+          "basis": [
+            {"instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Sections 26 and 32"]},
+            {"instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["completion certificate for controlled-use building"]}
+          ],
+          "evidence": ["현지 건축사·기술자 면허", "착공·단계검사·시험·변경승인 기록", "소방·설비 완료확인", "완료증명·정기검사·보험 견적"],
+          "decisionQuestion": "본 시설은 controlled-use 또는 정기검사 대상인가, 필요한 전문면허·검사·완료증명의 비용과 실제 기간은 무엇인가?",
+          "conclusion": "태국에서는 공사완료와 합법적 사용개시를 구분하고, 통제용도 분류와 완료증명을 개장·인계 선행조건으로 둬야 한다.",
+          "verificationScope": "방콕시의 제32조 기반 완료증명 서비스와 건축허가 서비스의 전문자 요건을 확인했다. 비방콕 절차·검사기관·보험은 현지 확인 대상이다.",
+          "referenceLabel": "건축물 공사완료 증명"
+        }
+      }
+    },
+    {
+      "slug": "pakistan",
+      "name": "파키스탄",
+      "nameEn": "Pakistan",
+      "iso3": "PAK",
+      "region": "아시아·태평양",
+      "verificationStatus": "source-linked",
+      "authorities": [
+        {
+          "id": "local-development-authority",
+          "name": "Competent provincial, development or local building-control authority",
+          "nameKo": "관할 주·개발청·지방 건축통제기관",
+          "role": "대상지의 zoning·building regulations에 따라 계획승인·건축허가·현장검사·준공증명을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.cda.gov.pk/public/procedures"
+        },
+        {
+          "id": "provincial-epa",
+          "name": "Competent provincial or federal environmental protection agency",
+          "nameKo": "관할 주·연방 환경보호청(EPA)",
+          "role": "관할법에 따른 환경 스크리닝·IEE·EIA 승인과 이행감시를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.environment.gov.pk/Detail/MDUzMDI1OGItYWYzZC00NzQ0LTlhZWItZjYzY2RkOTkyZGVh"
+        },
+        {
+          "id": "pec-pcatp",
+          "name": "Pakistan Engineering Council and Pakistan Council of Architects and Town Planners",
+          "nameKo": "파키스탄공학위원회(PEC)·건축도시계획위원회(PCATP)",
+          "role": "국가 건축기준과 엔지니어·건축사·전문업 등록체계를 관리",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.pec.org.pk/thinktank/building-code-of-pakistan-thinktank/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "PAK-BCP-2021",
+          "title": "Building Code of Pakistan 2021",
+          "titleKo": "파키스탄 건축기준 2021",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf",
+          "officialPdfUrl": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf",
+          "verificationLevel": "source-linked",
+          "note": "PEC 공식 대장과 2021 코드 원문을 확인했다. 관할 건축규정의 채택·수정 여부와 후속 코드판은 현지 확인한다."
+        },
+        {
+          "id": "PAK-PEPA-1997",
+          "title": "Pakistan Environmental Protection Act 1997",
+          "titleKo": "파키스탄 환경보호법 1997",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1997-12-06",
+          "officialUrl": "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apqaZQ%3D%3D-sg-jjjjjjjjjjjjj",
+          "verificationLevel": "law-linked",
+          "note": "연방법 원문이다. 제18차 헌법개정 이후 환경권한이 주로 이양됐으므로 대상 주의 환경법·규칙을 우선 확인한다."
+        },
+        {
+          "id": "PAK-IEE-EIA-REG-2000",
+          "title": "Pakistan EPA (Review of IEE and EIA) Regulations 2000",
+          "titleKo": "파키스탄 EPA IEE·EIA 검토규정 2000",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.environment.gov.pk/Detail/MDUzMDI1OGItYWYzZC00NzQ0LTlhZWItZjYzY2RkOTkyZGVh",
+          "verificationLevel": "source-linked",
+          "note": "연방 EPA 공식 규정대장에 현행 규정으로 게시돼 있으나 대상 주별 환경규정과 관할을 별도 확인한다."
+        },
+        {
+          "id": "PAK-CDA-PROCEDURES",
+          "title": "Capital Development Authority building-plan and completion-certificate procedures",
+          "titleKo": "이슬라마바드 CDA 건축도면·준공증명 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.cda.gov.pk/public/procedures",
+          "verificationLevel": "source-linked",
+          "note": "이슬라마바드에만 적용되는 공식 예시다. 다른 주·도시의 규정으로 일반화하지 않는다."
+        },
+        {
+          "id": "PAK-ICT-BUILDING-REG-2020-2023",
+          "title": "Islamabad Capital Territory Building Control Regulations 2020, amended 2023",
+          "titleKo": "이슬라마바드 수도지역 건축통제규정 2020(2023 개정)",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "officialUrl": "https://cda.gov.pk/lawsAndRegulations",
+          "verificationLevel": "source-linked",
+          "note": "CDA 공식 법령대장의 지역 규정이다. 대상지가 ICT가 아니면 해당 개발청·지방정부 규정을 별도 확보한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "대상지 개발청·지방정부와 zoning·master plan을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
+          "summary": "파키스탄에는 전국 단일 필지규제가 아니라 주·개발청·지방정부별 master plan, zoning과 building regulations가 적용된다. 이슬라마바드 CDA 절차는 참고사례일 뿐이며 대상지의 권원·계획·도로·재해·유틸리티 자료로 별도 확정해야 한다.",
+          "applicability": "파키스탄에서 신축·증축·용도변경·단지개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["local-development-authority", "pec-pcatp"],
+          "basis": [
+            {"instrumentId": "PAK-ICT-BUILDING-REG-2020-2023", "provisions": ["Islamabad-only zoning and building-control example"]},
+            {"instrumentId": "PAK-BCP-2021", "provisions": ["national technical-code framework"]}
+          ],
+          "evidence": ["토지권원·allotment·possession 문서", "관할 master plan·zoning·building regulations", "필지별 FAR·coverage·높이·이격·주차", "지진·홍수·지반·도로·배수·전력·상수 확인"],
+          "decisionQuestion": "대상지의 최종 계획·건축통제기관과 적용 규정, 허용용도·FAR·높이·이격·주차·재해조건은 무엇인가?",
+          "conclusion": "파키스탄은 지방·개발청별 규제가 핵심이므로 CDA나 BCP를 전국의 부지 수치로 오인하지 말고 대상지 관할·계획부터 잠가야 한다.",
+          "verificationScope": "PEC 국가코드와 CDA의 현행 공식 지역절차를 연결했다. ICT 외 대상지 규정과 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "관할 zoning·building regulations"
+        },
+        "permit-environment": {
+          "oneLiner": "지방 건축도면 승인과 관할 EPA의 환경 스크리닝·IEE·EIA를 별도 경로로 매핑한다.",
+          "summary": "건축도면 승인·착공허가는 대상지 개발청 또는 지방정부가 처리하며, 환경승인은 주 환경법·규정이 우선한다. 연방 PEPA와 2000 규정은 ICT·연방관할 또는 기초 틀로만 보고, 대상 주 EPA의 최신 목록과 승인기관을 확인한다.",
+          "applicability": "관할 building regulations상 허가대상 공사와 주·연방 환경법상 스크리닝·IEE·EIA 대상 사업",
+          "authorityIds": ["local-development-authority", "provincial-epa"],
+          "basis": [
+            {"instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Islamabad-only building-plan approval dossier"]},
+            {"instrumentId": "PAK-PEPA-1997", "provisions": ["Section 12 baseline framework"]},
+            {"instrumentId": "PAK-IEE-EIA-REG-2000", "provisions": ["federal IEE and EIA schedules and review"]}
+          ],
+          "evidence": ["건축주·부지소유자·관할 확정", "건축도면·소방·유틸리티 NOC 목록", "주 EPA 환경분류·IEE·EIA 승인", "공식 수수료·완비일·보완·실제 전체기간"],
+          "decisionQuestion": "본 사업의 건축허가권자와 적용 주 환경법, 스크리닝·IEE·EIA 유형 및 NOC 선후관계는 무엇인가?",
+          "conclusion": "파키스탄에서는 건축허가와 환경승인 모두 관할 확인이 선행돼야 하며 연방 규정만으로 주 사업의 승인경로를 확정해서는 안 된다.",
+          "verificationScope": "Pakistan Code의 PEPA, 연방 EPA 규정대장과 CDA 예시를 확인했다. 대상 주 법령·수수료·접수관행과 전체기간은 현지 확인 대상이다.",
+          "referenceLabel": "주 EPA IEE·EIA·건축허가"
+        },
+        "control-completion": {
+          "oneLiner": "BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.",
+          "summary": "Building Code of Pakistan 2021은 구조·화재·접근성·특별검사·지반 등 기술틀을 제공하지만 집행은 관할 building regulations에 달려 있다. 승인 건축사·구조기술자의 서명, 현장검사와 준공도면을 거쳐 completion/occupancy certificate를 받아야 한다.",
+          "applicability": "관할 건축허가를 받아 수행하는 공사와 BCP·지방 준공통제 대상 건축물",
+          "authorityIds": ["local-development-authority", "pec-pcatp"],
+          "basis": [
+            {"instrumentId": "PAK-BCP-2021", "provisions": ["occupancy, structural, fire, accessibility, special inspection and soils chapters"]},
+            {"instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Islamabad completion-certificate dossier"]}
+          ],
+          "evidence": ["PEC·PCATP 등록 설계·구조·감리자", "적용 BCP·지역코드 목록", "단계검사·시험·소방·as-built 기록", "completion·occupancy certificate와 보험 견적"],
+          "decisionQuestion": "적용 코드판·전문자격·검사기관과 completion/occupancy certificate의 정확한 비용·서류·실제 기간은 무엇인가?",
+          "conclusion": "파키스탄에서는 국가 기술코드 준수와 지방 준공증명이 모두 필요하므로 공사완료를 곧바로 점유 가능으로 취급해서는 안 된다.",
+          "verificationScope": "PEC의 BCP 2021과 CDA의 건축도면·준공증명 서류를 확인했다. 대상지의 채택판·전문가·검사기관·보험과 비용은 현지 확인 대상이다.",
+          "referenceLabel": "BCP 2021·준공증명"
+        }
+      }
+    },
+    {
+      "slug": "fiji",
+      "name": "피지",
+      "nameEn": "Fiji",
+      "iso3": "FJI",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "dtcp-local-authority",
+          "name": "Department of Town and Country Planning and competent Local Authority",
+          "nameKo": "도시농촌계획국(DTCP)·관할 지방정부",
+          "role": "개발허가·건축도면 승인·건축허가, 현장검사와 점유증명을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.businessnow.gov.fj/construction-permits/"
+        },
+        {
+          "id": "doe",
+          "name": "Department of Environment and EIA Administrator",
+          "nameKo": "환경국·EIA 행정관",
+          "role": "EIA screening·분류·TOR·보고서 심사와 환경승인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://laws.gov.fj/Acts/DisplayAct/2578"
+        },
+        {
+          "id": "nfa",
+          "name": "National Fire Authority",
+          "nameKo": "국가소방청(NFA)",
+          "role": "구조적 화재안전 도면승인과 완공 화재검사를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.businessnow.gov.fj/construction-permits/resources/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "FJI-PH-BUILDING-REG-1959",
+          "title": "Public Health (Building) Regulations 1959",
+          "titleKo": "공중보건(건축)규정 1959",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.laws.gov.fj/Acts/DisplayAct/3077",
+          "verificationLevel": "law-linked",
+          "note": "Laws of Fiji 통합본에서 허가·검사·준공·점유와 적용지역을 확인했다. 도시별 Towns Regulations 및 최신 개정을 함께 확인한다."
+        },
+        {
+          "id": "FJI-NBC-REG-2004",
+          "title": "Public Health (National Building Code) Regulations 2004",
+          "titleKo": "공중보건(국가건축기준)규정 2004",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.laws.gov.fj/Acts/ViewSection/94602",
+          "verificationLevel": "law-linked",
+          "note": "현행 법령통합본은 National Building Code가 모든 점유등급에 적용되고 불일치하는 하위 규정보다 우선한다고 명시한다. 2023 개정안은 아직 초안이므로 적용하지 않는다."
+        },
+        {
+          "id": "FJI-EIA-REG-2007",
+          "title": "Environment Management (EIA Process) Regulations 2007",
+          "titleKo": "환경관리(EIA 절차)규정 2007",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "officialUrl": "https://laws.gov.fj/Acts/DisplayAct/2578",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "FJI-BPAS",
+          "title": "Building Permits and Approvals System (BPAS) — development, building and occupancy process",
+          "titleKo": "건축허가·승인시스템(BPAS) 개발·건축·점유 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.businessnow.gov.fj/construction-permits/",
+          "verificationLevel": "source-linked",
+          "note": "2026년 정부 온라인 플랫폼이 Development Permission, Building Plan Approval, Certificate of Occupancy 3단계를 안내한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 DTCP 개발허가·town planning·subdivision 적합성으로 용도·배치·도로·배수조건을 확정한다.",
+          "summary": "개발행위는 먼저 Development Permission을 받아야 하며 건축부지는 Town Planning·Subdivision 법체계와 지역 계획을 충족해야 한다. 필지별 용도·coverage·높이·이격·주차, cyclone·flood·coastal risk와 물·하수·전력 용량을 확인한다.",
+          "applicability": "피지에서 신축·증축·외관변경·용도변경·토공·도로개설을 추진하는 사업",
+          "authorityIds": ["dtcp-local-authority"],
+          "basis": [
+            {"instrumentId": "FJI-PH-BUILDING-REG-1959", "provisions": ["Regulations 29-47 and town-planning conformity"]},
+            {"instrumentId": "FJI-BPAS", "provisions": ["Stage 1 Development Permission"]}
+          ],
+          "evidence": ["freehold·lease·iTaukei 권원과 토지소유자 동의", "DTCP 계획·Development Permission", "필지별 coverage·높이·이격·주차·도로·배수", "cyclone·flood·coastal·지반·유틸리티 확인"],
+          "decisionQuestion": "대상 필지의 토지권원·적용 계획·Development Permission과 실제 건축수치·재해·유틸리티 조건은 무엇인가?",
+          "conclusion": "피지는 건축허가 전에 토지권원과 개발허가를 닫아야 하며, 국가 건축기준만으로 필지의 개발 가능 규모를 확정할 수 없다.",
+          "verificationScope": "Laws of Fiji 건축규정과 2026 BPAS 개발허가 경로를 확인했다. 필지 수치·권원·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "Development Permission·부지규제"
+        },
+        "permit-environment": {
+          "oneLiner": "개발허가·건축도면 승인과 EIA screening·처리를 BPAS에서 병행하고 소방·OHS·유틸리티 승인을 묶는다.",
+          "summary": "정부 BPAS는 개발허가, 건축도면 승인, 건축허가를 단계화하고 EIA screening, 환경처리, 소방·OHS·도로·물·전력 승인을 연결한다. EIA 규정에 따라 Part 1·2·3 분류와 처리기관·TOR·승인조건을 확정해야 한다.",
+          "applicability": "건축·개발허가 대상 공사와 환경영향 가능 개발제안",
+          "authorityIds": ["dtcp-local-authority", "doe", "nfa"],
+          "basis": [
+            {"instrumentId": "FJI-PH-BUILDING-REG-1959", "provisions": ["Regulations 15-26"]},
+            {"instrumentId": "FJI-EIA-REG-2007", "provisions": ["Parts 2-4"]},
+            {"instrumentId": "FJI-BPAS", "provisions": ["Stages 1-2 and inter-agency approvals"]}
+          ],
+          "evidence": ["개발주체·토지소유자·관할 확정", "Development·Building Plan·Building Permit 체크리스트", "EIA screening·분류·TOR·승인", "NFA·OHS·도로·물·전력 승인과 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 개발·건축허가와 EIA 분류·처리기관, 소방·OHS·유틸리티 승인 선후관계는 무엇인가?",
+          "conclusion": "피지는 개발허가·환경평가·건축허가가 연결되지만 서로 대체되지 않으므로 BPAS의 각 기관 완료조건을 통합 일정으로 관리해야 한다.",
+          "verificationScope": "정부 BPAS와 Laws of Fiji의 EIA 규정·건축규정을 연결했다. 사업분류·수수료·보완·실제 전체기간은 현지 확인 대상이다.",
+          "referenceLabel": "BPAS·EIA screening"
+        },
+        "control-completion": {
+          "oneLiner": "National Building Code, 단계검사·화재안전과 Certificate of Completion/Occupancy를 사용개시 Gate로 둔다.",
+          "summary": "National Building Code는 모든 점유등급의 최소 기술기준이고, 지방 building surveyor는 공사 중·완공 검사를 실시한다. 준공 후 Certificate of Completion and Permit to Occupy 또는 BPAS Certificate of Occupancy를 받아야 사용 가능하다.",
+          "applicability": "공중보건 건축규정과 National Building Code 적용대상 공사",
+          "authorityIds": ["dtcp-local-authority", "nfa"],
+          "basis": [
+            {"instrumentId": "FJI-NBC-REG-2004", "provisions": ["Regulation 3"]},
+            {"instrumentId": "FJI-PH-BUILDING-REG-1959", "provisions": ["Regulations 8, 12-13 and Form 2"]},
+            {"instrumentId": "FJI-BPAS", "provisions": ["Stage 3 Certificate of Occupancy"]}
+          ],
+          "evidence": ["적용 National Building Code·표준 목록", "현지 설계·구조·소방 qualified person", "foundation·structure·roof·completion 검사기록", "화재검사·Certificate of Occupancy·보험 견적"],
+          "decisionQuestion": "필요 qualified person·법정 단계검사·NFA 승인과 Certificate of Occupancy의 실제 비용·기간은 무엇인가?",
+          "conclusion": "피지에서는 공사완료와 점유허가가 별개이므로 단계검사와 화재안전·점유증명을 인계·개장 선행조건으로 둬야 한다.",
+          "verificationScope": "Laws of Fiji의 National Building Code·완공점유 조문과 정부 BPAS 3단계를 확인했다. 현지 전문가·검사·보험 비용은 현지 확인 대상이다.",
+          "referenceLabel": "National Building Code·Certificate of Occupancy"
+        }
+      }
+    },
+    {
+      "slug": "philippines",
+      "name": "필리핀",
+      "nameEn": "Philippines",
+      "iso3": "PHL",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "lgu-building-official",
+          "name": "Office of the Building Official of the competent LGU",
+          "nameKo": "관할 지방정부 건축공무원실(OBO)",
+          "role": "National Building Code와 지방 건축규정에 따라 건축·부대설비 허가, 검사와 점유허가를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://quezoncity.gov.ph/departments/department-of-the-building-official/"
+        },
+        {
+          "id": "lgu-zoning",
+          "name": "LGU Zoning Administrator or Planning Office",
+          "nameKo": "지방정부 도시계획·용도지역 담당부서",
+          "role": "지방 zoning ordinance에 따른 Locational Clearance·예외·특별용도 허가를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://quezoncity.gov.ph/departments/city-planning-and-development-department/"
+        },
+        {
+          "id": "emb-denr",
+          "name": "DENR Environmental Management Bureau",
+          "nameKo": "환경천연자원부 환경관리국(EMB)",
+          "role": "PEISS coverage screening, ECC·CNC와 환경평가 심사를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://eia.emb.gov.ph/"
+        },
+        {
+          "id": "bfp",
+          "name": "Bureau of Fire Protection",
+          "nameKo": "소방국(BFP)",
+          "role": "소방안전평가·공사검사와 점유허가 선행 FSIC를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.bfp.gov.ph/wp-content/uploads/2020/12/3-BFP-Citizens-Charter-Handbook-for-Printing.pdf"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "PHL-PD-1096",
+          "title": "Presidential Decree No. 1096 — National Building Code of the Philippines, with Revised IRR",
+          "titleKo": "대통령령 제1096호 필리핀 국가건축법·개정 시행규칙",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1977-02-19",
+          "officialUrl": "https://www.dpwh.gov.ph/DPWH/sites/default/files/issuances/DO_222_S2002.pdf",
+          "verificationLevel": "source-linked",
+          "note": "DPWH 공식 발령과 2023년 대법원 판결에서 계속 적용되는 국가 건축법·IRR을 확인했다. 최신 DPWH 개정·해석과 지방코드를 함께 확인한다."
+        },
+        {
+          "id": "PHL-LOCAL-ZONING",
+          "title": "LGU zoning ordinance and Locational Clearance system",
+          "titleKo": "지방정부 용도지역조례·입지확인(Locational Clearance) 제도",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://quezoncity.gov.ph/departments/city-planning-and-development-department/",
+          "verificationLevel": "source-linked",
+          "note": "Quezon City의 현행 공식 절차는 지방 집행 예시다. 대상 LGU의 CLUP·zoning ordinance·수수료를 별도 확보한다."
+        },
+        {
+          "id": "PHL-PD-1586-PEISS",
+          "title": "Presidential Decree No. 1586 and Philippine Environmental Impact Statement System",
+          "titleKo": "대통령령 제1586호·필리핀 환경영향평가제도(PEISS)",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "1978-06-11",
+          "officialUrl": "https://eia.emb.gov.ph/",
+          "verificationLevel": "law-linked",
+          "note": "EMB가 DAO 2003-30과 2026년까지의 현행 후속지침을 운영한다. 사업유형·입지별 최신 threshold를 확인한다."
+        },
+        {
+          "id": "PHL-RA-9514-FIRE",
+          "title": "Republic Act No. 9514 — Fire Code of the Philippines 2008 and Revised IRR",
+          "titleKo": "공화국법 제9514호 필리핀 소방법 2008·개정 시행규칙",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2008-12-19",
+          "officialUrl": "https://www.bfp.gov.ph/wp-content/uploads/2020/12/3-BFP-Citizens-Charter-Handbook-for-Printing.pdf",
+          "verificationLevel": "source-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 대상 LGU의 CLUP·zoning ordinance·Locational Clearance로 용도·밀도·높이·이격·주차를 확정한다.",
+          "summary": "National Building Code는 전국 최소기준이지만 토지이용·밀도·예외는 LGU의 CLUP와 zoning ordinance가 결정한다. Locational Clearance를 통해 용도적합성을 확인하고 필지별 PSO·FAR·BHL·setback·parking, road right-of-way와 hazard 조건을 확정한다.",
+          "applicability": "필리핀 LGU에서 신축·증축·수선·용도변경·개발을 추진하는 ODA 건축사업",
+          "authorityIds": ["lgu-zoning", "lgu-building-official"],
+          "basis": [
+            {"instrumentId": "PHL-LOCAL-ZONING", "provisions": ["Locational Clearance before Building Permit"]},
+            {"instrumentId": "PHL-PD-1096", "provisions": ["site, occupancy and building-control framework"]}
+          ],
+          "evidence": ["토지권원·tax declaration·lot plan", "LGU CLUP·zoning map·Locational Clearance", "필지별 PSO·FAR·높이·이격·주차·RROW", "지진·화산·홍수·산사태·배수·유틸리티 확인"],
+          "decisionQuestion": "대상 LGU의 zoning과 Locational Clearance상 허용용도·PSO·FAR·높이·이격·주차·재해조건은 무엇인가?",
+          "conclusion": "필리핀은 국가건축법과 지방 zoning이 결합되므로 Quezon City 수치나 국가 코드만으로 대상 필지의 설계 가능 규모를 확정할 수 없다.",
+          "verificationScope": "OBO·Quezon City의 공식 지방절차와 DPWH 국가건축법 집행자료를 확인했다. 대상 LGU 조례·필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "LGU Locational Clearance·국가건축법"
+        },
+        "permit-environment": {
+          "oneLiner": "LGU 건축·부대설비 허가와 EMB의 ECC·CNC coverage를 분류하고 BFP·전문기관 clearance를 연결한다.",
+          "summary": "OBO는 건축·전기·기계·위생 등 허가를 처리하며 zoning clearance가 선행된다. PEISS는 ECP·ECA 여부와 threshold로 ECC 또는 CNC 경로를 정하고, BFP 소방안전평가 등 전문승인을 추가한다.",
+          "applicability": "National Building Code상 허가대상 공사와 PEISS coverage screening 대상 사업",
+          "authorityIds": ["lgu-building-official", "lgu-zoning", "emb-denr", "bfp"],
+          "basis": [
+            {"instrumentId": "PHL-PD-1096", "provisions": ["building and ancillary permit framework"]},
+            {"instrumentId": "PHL-PD-1586-PEISS", "provisions": ["ECP, ECA, ECC and CNC framework"]},
+            {"instrumentId": "PHL-RA-9514-FIRE", "provisions": ["fire-safety evaluation and inspection framework"]}
+          ],
+          "evidence": ["건축주·소유자·OBO·zoning 관할 확정", "건축·부대설비·소방 허가목록", "EMB coverage·ECC·CNC 결정", "수수료·완비일·보완·실제 전체 인허가기간"],
+          "decisionQuestion": "본 사업의 Locational Clearance·건축허가와 ECC·CNC 유형, BFP·외부 clearance의 선후관계는 무엇인가?",
+          "conclusion": "필리핀의 건축허가·환경승인·소방승인은 별도 법정 Gate이므로 한 기관의 처리기한만으로 전체 착공일정을 산정해서는 안 된다.",
+          "verificationScope": "LGU OBO·zoning 공식 예시, EMB 현행 PEISS 대장과 BFP 시민헌장을 확인했다. 대상 LGU 실제 수수료·접수관행·전체기간은 현지 확인 대상이다.",
+          "referenceLabel": "OBO 건축허가·EMB ECC/CNC"
+        },
+        "control-completion": {
+          "oneLiner": "면허 설계·시공자, OBO·BFP 검사와 Certificate of Occupancy·FSIC를 사용개시 전 Gate로 둔다.",
+          "summary": "승인도서에 따라 면허 전문자가 공사를 수행·확인하고 OBO의 단계·최종검사와 BFP 소방검사를 받아야 한다. BFP의 FSIC는 OBO Certificate of Occupancy의 선행서류이며, 점유허가 전 사용해서는 안 된다.",
+          "applicability": "건축허가를 받아 시공하고 Certificate of Occupancy가 필요한 건축물",
+          "authorityIds": ["lgu-building-official", "bfp"],
+          "basis": [
+            {"instrumentId": "PHL-PD-1096", "provisions": ["inspection and Certificate of Occupancy framework"]},
+            {"instrumentId": "PHL-RA-9514-FIRE", "provisions": ["FSIC prerequisite for Certificate of Occupancy"]}
+          ],
+          "evidence": ["PRC 면허 건축사·기술자·PCAB 시공자", "착공통지·단계검사·시험·as-built", "BFP FSIC와 설비 시운전", "Certificate of Occupancy·보험·하자조건"],
+          "decisionQuestion": "필요 전문면허·OBO/BFP 검사와 FSIC·Certificate of Occupancy의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "필리핀에서는 공사완료와 합법적 점유가 다르므로 FSIC와 Certificate of Occupancy를 인계·개장 선행조건으로 계약에 반영해야 한다.",
+          "verificationScope": "DPWH 국가건축법 집행자료, OBO 공식 서비스와 BFP 시민헌장을 연결했다. 현지 전문자·검사·보험사와 비용은 대상 LGU에서 확인해야 한다.",
+          "referenceLabel": "FSIC·Certificate of Occupancy"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,831 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "pakistan",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "파키스탄",
+    "nameEn": "Pakistan",
+    "iso3": "PAK",
+    "region": "아시아·태평양"
+  },
+  "purpose": "파키스탄 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "source-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "이슬라마바드 수도지역 건축통제규정 2020(2023 개정)·파키스탄 건축기준 2021·이슬라마바드 CDA 건축도면·준공증명 절차·파키스탄 환경보호법 1997·파키스탄 EPA IEE·EIA 검토규정 2000의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "파키스탄 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "대상지 개발청·지방정부와 zoning·master plan을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
+        "authorityIds": [
+          "local-development-authority",
+          "pec-pcatp"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "관할 zoning·building regulations",
+            "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023",
+            "provisions": [
+              "Islamabad-only zoning and building-control example"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상지의 최종 계획·건축통제기관과 적용 규정, 허용용도·FAR·높이·이격·주차·재해조건은 무엇인가?",
+        "authorityIds": [
+          "local-development-authority",
+          "pec-pcatp"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "관할 zoning·building regulations",
+            "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023",
+            "provisions": [
+              "Islamabad-only zoning and building-control example"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "지방 건축도면 승인과 관할 EPA의 환경 스크리닝·IEE·EIA를 별도 경로로 매핑한다.",
+        "authorityIds": [
+          "local-development-authority",
+          "provincial-epa"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "주 EPA IEE·EIA·건축허가",
+            "instrumentId": "PAK-CDA-PROCEDURES",
+            "provisions": [
+              "Islamabad-only building-plan approval dossier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 건축허가권자와 적용 주 환경법, 스크리닝·IEE·EIA 유형 및 NOC 선후관계는 무엇인가?",
+        "authorityIds": [
+          "local-development-authority",
+          "provincial-epa"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "주 EPA IEE·EIA·건축허가",
+            "instrumentId": "PAK-CDA-PROCEDURES",
+            "provisions": [
+              "Islamabad-only building-plan approval dossier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.",
+        "authorityIds": [
+          "local-development-authority",
+          "pec-pcatp"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "BCP 2021·준공증명",
+            "instrumentId": "PAK-BCP-2021",
+            "provisions": [
+              "occupancy, structural, fire, accessibility, special inspection and soils chapters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "적용 코드판·전문자격·검사기관과 completion/occupancy certificate의 정확한 비용·서류·실제 기간은 무엇인가?",
+        "authorityIds": [
+          "local-development-authority",
+          "pec-pcatp"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "BCP 2021·준공증명",
+            "instrumentId": "PAK-BCP-2021",
+            "provisions": [
+              "occupancy, structural, fire, accessibility, special inspection and soils chapters"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "pakistan-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "파키스탄 도시계획·부지규제",
+      "oneLiner": "대상지 개발청·지방정부와 zoning·master plan을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "PEC 국가코드와 CDA의 현행 공식 지역절차를 연결했다. ICT 외 대상지 규정과 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "PAK-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "PAK-BLD-Q-001",
+        "PAK-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "PAK-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "PAK-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "PAK-BLD-F-001",
+        "PAK-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "pakistan-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "파키스탄 건축허가·환경심사",
+      "oneLiner": "지방 건축도면 승인과 관할 EPA의 환경 스크리닝·IEE·EIA를 별도 경로로 매핑한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Pakistan Code의 PEPA, 연방 EPA 규정대장과 CDA 예시를 확인했다. 대상 주 법령·수수료·접수관행과 전체기간은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "PAK-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "PAK-BLD-Q-003",
+        "PAK-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "PAK-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PAK-BLD-F-003",
+        "PAK-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "pakistan-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "파키스탄 기술검사·보험·준공제도",
+      "oneLiner": "BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "PEC의 BCP 2021과 CDA의 건축도면·준공증명 서류를 확인했다. 대상지의 채택판·전문가·검사기관·보험과 비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "PAK-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "PAK-BLD-Q-005",
+        "PAK-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "PAK-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "PAK-BLD-F-005",
+        "PAK-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "local-development-authority",
+      "name": "Competent provincial, development or local building-control authority",
+      "nameKo": "관할 주·개발청·지방 건축통제기관",
+      "role": "대상지의 zoning·building regulations에 따라 계획승인·건축허가·현장검사·준공증명을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.cda.gov.pk/public/procedures"
+    },
+    {
+      "id": "provincial-epa",
+      "name": "Competent provincial or federal environmental protection agency",
+      "nameKo": "관할 주·연방 환경보호청(EPA)",
+      "role": "관할법에 따른 환경 스크리닝·IEE·EIA 승인과 이행감시를 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://www.environment.gov.pk/Detail/MDUzMDI1OGItYWYzZC00NzQ0LTlhZWItZjYzY2RkOTkyZGVh"
+    },
+    {
+      "id": "pec-pcatp",
+      "name": "Pakistan Engineering Council and Pakistan Council of Architects and Town Planners",
+      "nameKo": "파키스탄공학위원회(PEC)·건축도시계획위원회(PCATP)",
+      "role": "국가 건축기준과 엔지니어·건축사·전문업 등록체계를 관리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.pec.org.pk/thinktank/building-code-of-pakistan-thinktank/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "PAK-BCP-2021",
+      "title": "Building Code of Pakistan 2021",
+      "titleKo": "파키스탄 건축기준 2021",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf",
+      "officialPdfUrl": "https://www.pec.org.pk/wp-content/uploads/2025/01/BCP-2021.pdf",
+      "verificationLevel": "source-linked",
+      "note": "PEC 공식 대장과 2021 코드 원문을 확인했다. 관할 건축규정의 채택·수정 여부와 후속 코드판은 현지 확인한다."
+    },
+    {
+      "id": "PAK-PEPA-1997",
+      "title": "Pakistan Environmental Protection Act 1997",
+      "titleKo": "파키스탄 환경보호법 1997",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "1997-12-06",
+      "officialUrl": "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apqaZQ%3D%3D-sg-jjjjjjjjjjjjj",
+      "verificationLevel": "law-linked",
+      "note": "연방법 원문이다. 제18차 헌법개정 이후 환경권한이 주로 이양됐으므로 대상 주의 환경법·규칙을 우선 확인한다."
+    },
+    {
+      "id": "PAK-IEE-EIA-REG-2000",
+      "title": "Pakistan EPA (Review of IEE and EIA) Regulations 2000",
+      "titleKo": "파키스탄 EPA IEE·EIA 검토규정 2000",
+      "kind": "decree",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.environment.gov.pk/Detail/MDUzMDI1OGItYWYzZC00NzQ0LTlhZWItZjYzY2RkOTkyZGVh",
+      "verificationLevel": "source-linked",
+      "note": "연방 EPA 공식 규정대장에 현행 규정으로 게시돼 있으나 대상 주별 환경규정과 관할을 별도 확인한다."
+    },
+    {
+      "id": "PAK-CDA-PROCEDURES",
+      "title": "Capital Development Authority building-plan and completion-certificate procedures",
+      "titleKo": "이슬라마바드 CDA 건축도면·준공증명 절차",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://www.cda.gov.pk/public/procedures",
+      "verificationLevel": "source-linked",
+      "note": "이슬라마바드에만 적용되는 공식 예시다. 다른 주·도시의 규정으로 일반화하지 않는다."
+    },
+    {
+      "id": "PAK-ICT-BUILDING-REG-2020-2023",
+      "title": "Islamabad Capital Territory Building Control Regulations 2020, amended 2023",
+      "titleKo": "이슬라마바드 수도지역 건축통제규정 2020(2023 개정)",
+      "kind": "decree",
+      "status": "continuity_unverified",
+      "officialUrl": "https://cda.gov.pk/lawsAndRegulations",
+      "verificationLevel": "source-linked",
+      "note": "CDA 공식 법령대장의 지역 규정이다. 대상지가 ICT가 아니면 해당 개발청·지방정부 규정을 별도 확보한다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "PAK-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "파키스탄에서 신축·증축·용도변경·단지개발을 추진하는 ODA 건축사업",
+      "requirement": "파키스탄에는 전국 단일 필지규제가 아니라 주·개발청·지방정부별 master plan, zoning과 building regulations가 적용된다. 이슬라마바드 CDA 절차는 참고사례일 뿐이며 대상지의 권원·계획·도로·재해·유틸리티 자료로 별도 확정해야 한다.",
+      "authorityIds": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023",
+          "provisions": [
+            "Islamabad-only zoning and building-control example"
+          ]
+        },
+        {
+          "instrumentId": "PAK-BCP-2021",
+          "provisions": [
+            "national technical-code framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지권원·allotment·possession 문서",
+        "관할 master plan·zoning·building regulations",
+        "필지별 FAR·coverage·높이·이격·주차",
+        "지진·홍수·지반·도로·배수·전력·상수 확인"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "PAK-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "관할 building regulations상 허가대상 공사와 주·연방 환경법상 스크리닝·IEE·EIA 대상 사업",
+      "requirement": "건축도면 승인·착공허가는 대상지 개발청 또는 지방정부가 처리하며, 환경승인은 주 환경법·규정이 우선한다. 연방 PEPA와 2000 규정은 ICT·연방관할 또는 기초 틀로만 보고, 대상 주 EPA의 최신 목록과 승인기관을 확인한다.",
+      "authorityIds": [
+        "local-development-authority",
+        "provincial-epa"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PAK-CDA-PROCEDURES",
+          "provisions": [
+            "Islamabad-only building-plan approval dossier"
+          ]
+        },
+        {
+          "instrumentId": "PAK-PEPA-1997",
+          "provisions": [
+            "Section 12 baseline framework"
+          ]
+        },
+        {
+          "instrumentId": "PAK-IEE-EIA-REG-2000",
+          "provisions": [
+            "federal IEE and EIA schedules and review"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·부지소유자·관할 확정",
+        "건축도면·소방·유틸리티 NOC 목록",
+        "주 EPA 환경분류·IEE·EIA 승인",
+        "공식 수수료·완비일·보완·실제 전체기간"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "PAK-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "관할 건축허가를 받아 수행하는 공사와 BCP·지방 준공통제 대상 건축물",
+      "requirement": "Building Code of Pakistan 2021은 구조·화재·접근성·특별검사·지반 등 기술틀을 제공하지만 집행은 관할 building regulations에 달려 있다. 승인 건축사·구조기술자의 서명, 현장검사와 준공도면을 거쳐 completion/occupancy certificate를 받아야 한다.",
+      "authorityIds": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "PAK-BCP-2021",
+          "provisions": [
+            "occupancy, structural, fire, accessibility, special inspection and soils chapters"
+          ]
+        },
+        {
+          "instrumentId": "PAK-CDA-PROCEDURES",
+          "provisions": [
+            "Islamabad completion-certificate dossier"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "PEC·PCATP 등록 설계·구조·감리자",
+        "적용 BCP·지역코드 목록",
+        "단계검사·시험·소방·as-built 기록",
+        "completion·occupancy certificate와 보험 견적"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상지의 최종 계획·건축통제기관과 적용 규정, 허용용도·FAR·높이·이격·주차·재해조건은 무엇인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 건축허가권자와 적용 주 환경법, 스크리닝·IEE·EIA 유형 및 NOC 선후관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "적용 코드판·전문자격·검사기관과 completion/occupancy certificate의 정확한 비용·서류·실제 기간은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "PAK-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023",
+          "provisions": [
+            "Islamabad-only zoning and building-control example"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "PAK-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상지의 최종 계획·건축통제기관과 적용 규정, 허용용도·FAR·높이·이격·주차·재해조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지권원·allotment·possession 문서",
+        "관할 master plan·zoning·building regulations",
+        "필지별 FAR·coverage·높이·이격·주차",
+        "지진·홍수·지반·도로·배수·전력·상수 확인"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PAK-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PAK-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축허가권자와 적용 주 환경법, 스크리닝·IEE·EIA 유형 및 NOC 선후관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·부지소유자·관할 확정",
+        "건축도면·소방·유틸리티 NOC 목록",
+        "주 EPA 환경분류·IEE·EIA 승인",
+        "공식 수수료·완비일·보완·실제 전체기간"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "provincial-epa"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PAK-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "provincial-epa"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PAK-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "적용 코드판·전문자격·검사기관과 completion/occupancy certificate의 정확한 비용·서류·실제 기간은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "PEC·PCATP 등록 설계·구조·감리자",
+        "적용 BCP·지역코드 목록",
+        "단계검사·시험·소방·as-built 기록",
+        "completion·occupancy certificate와 보험 견적"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "PAK-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "local-development-authority",
+        "pec-pcatp"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "PAK-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "PAK-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "PAK-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "PAK-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "PAK-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "PAK-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "PAK-BLD-C-001",
+      "confidence": "conditional",
+      "text": "파키스탄은 지방·개발청별 규제가 핵심이므로 CDA나 BCP를 전국의 부지 수치로 오인하지 말고 대상지 관할·계획부터 잠가야 한다.",
+      "basis": [
+        "PAK-ICT-BUILDING-REG-2020-2023",
+        "PAK-BCP-2021"
+      ]
+    },
+    {
+      "id": "PAK-BLD-C-002",
+      "confidence": "conditional",
+      "text": "파키스탄에서는 건축허가와 환경승인 모두 관할 확인이 선행돼야 하며 연방 규정만으로 주 사업의 승인경로를 확정해서는 안 된다.",
+      "basis": [
+        "PAK-CDA-PROCEDURES",
+        "PAK-PEPA-1997",
+        "PAK-IEE-EIA-REG-2000"
+      ]
+    },
+    {
+      "id": "PAK-BLD-C-003",
+      "confidence": "conditional",
+      "text": "파키스탄에서는 국가 기술코드 준수와 지방 준공증명이 모두 필요하므로 공사완료를 곧바로 점유 가능으로 취급해서는 안 된다.",
+      "basis": [
+        "PAK-BCP-2021",
+        "PAK-CDA-PROCEDURES"
+      ]
+    }
+  ]
+}
