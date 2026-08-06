@@ -1,0 +1,827 @@
+{
+  "schemaVersion": "0.1",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "slug": "vietnam",
+  "asOfDate": "2026-08-07",
+  "country": {
+    "name": "베트남",
+    "nameEn": "Viet Nam",
+    "iso3": "VNM",
+    "region": "아시아·태평양"
+  },
+  "purpose": "베트남 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "verification": {
+    "status": "law-linked",
+    "verifiedAt": "2026-08-07",
+    "method": "건설활동 관리에 관한 시행령 제175/2024/NĐ-CP호·국가공공서비스포털 건축허가 절차·환경보호법 제72/2020/QH14호·건설공사 품질·시공·유지관리 시행령 제06/2021/NĐ-CP호의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
+    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "limitations": [
+      "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+      "국가 기본판은 공식 원문·서비스를 연결한 law-linked 수준이다. 조문·시행규칙·최근 개정은 사업 착수 시 재확인한다.",
+      "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다."
+    ]
+  },
+  "processBoard": {
+    "schema_version": 1,
+    "profile": "gov",
+    "title": "베트남 건축 법·제도 3축 통합 흐름",
+    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "lanes": [
+      "사업주·현지조사팀",
+      "현지 설계·시공팀",
+      "도시계획·건축 당국",
+      "환경·안전·준공기관"
+    ],
+    "stages": [
+      "G0 부지·계획조건",
+      "G1 분류·설계책임",
+      "G2 건축·환경허가",
+      "G3 시공·품질관리",
+      "G4 준공·사용승인"
+    ],
+    "nodes": [
+      {
+        "id": "B01",
+        "lane": "사업주·현지조사팀",
+        "stage": "G0 부지·계획조건",
+        "label": "필지·계획자료 제출",
+        "emphasis": "lead",
+        "note": "토지사용권과 승인 계획·건축관리규정에 맞춰 필지의 용도·규모·접도·기반시설 조건을 먼저 잠근다.",
+        "authorityIds": [
+          "competent-permit-authority",
+          "construction-specialized-agency"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "시행령 제175/2024/NĐ-CP호",
+            "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+            "provisions": [
+              "construction planning, project and permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0 부지·계획조건",
+        "label": "필지별 도시계획·부지조건 확인",
+        "emphasis": "bottleneck",
+        "note": "대상 필지에 적용되는 승인 계획과 지방 건축관리규정은 무엇이며 허용용도·밀도·높이·이격·주차·기반시설 수치는 얼마인가?",
+        "authorityIds": [
+          "competent-permit-authority",
+          "construction-specialized-agency"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-004"
+        ],
+        "gateOrders": [
+          2
+        ],
+        "refs": [
+          {
+            "source": "시행령 제175/2024/NĐ-CP호",
+            "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+            "provisions": [
+              "construction planning, project and permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "사업주·현지조사팀",
+        "stage": "G1 분류·설계책임",
+        "label": "사업·시설·환경유형 분류",
+        "emphasis": "lead",
+        "note": "사업·공사 등급에 따른 설계심사·건축허가와 환경분류·환경허가를 별도 경로로 매핑한다.",
+        "authorityIds": [
+          "competent-permit-authority",
+          "construction-specialized-agency",
+          "environmental-approval-authority"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          3
+        ],
+        "refs": [
+          {
+            "source": "국가공공서비스포털 건축허가",
+            "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+            "provisions": [
+              "project appraisal and construction-permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "환경·안전·준공기관",
+        "stage": "G2 건축·환경허가",
+        "label": "환경결정·건축허가 심사",
+        "emphasis": "bottleneck",
+        "note": "본 사업의 현행 건축허가권자·면제 여부와 환경평가·환경허가 유형, 전문협의의 정확한 선후관계는 무엇인가?",
+        "authorityIds": [
+          "competent-permit-authority",
+          "construction-specialized-agency",
+          "environmental-approval-authority"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-005"
+        ],
+        "gateOrders": [
+          4
+        ],
+        "refs": [
+          {
+            "source": "국가공공서비스포털 건축허가",
+            "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+            "provisions": [
+              "project appraisal and construction-permit framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공팀",
+        "stage": "G3 시공·품질관리",
+        "label": "자격·검사·보험·품질계획 확정",
+        "emphasis": "lead",
+        "note": "자격 있는 설계·감리·시공자, 품질검사와 준공인수·사용조건을 계약 Hold Point로 관리한다.",
+        "authorityIds": [
+          "construction-specialized-agency",
+          "competent-permit-authority"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          5
+        ],
+        "refs": [
+          {
+            "source": "품질관리 시행령 제06/2021/NĐ-CP호",
+            "instrumentId": "VNM-QUALITY-DECREE-6-2021",
+            "provisions": [
+              "quality, construction, acceptance and maintenance framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "환경·안전·준공기관",
+        "stage": "G4 준공·사용승인",
+        "label": "준공검사·소방·사용승인",
+        "emphasis": "bottleneck",
+        "note": "본 공사의 전문자격, 법정 검사·시험, 준공인수·국가검사와 사용개시 조건 및 보험비용은 무엇인가?",
+        "authorityIds": [
+          "construction-specialized-agency",
+          "competent-permit-authority"
+        ],
+        "requirementIds": [
+          "VNM-BLD-REQ-006"
+        ],
+        "gateOrders": [
+          6
+        ],
+        "refs": [
+          {
+            "source": "품질관리 시행령 제06/2021/NĐ-CP호",
+            "instrumentId": "VNM-QUALITY-DECREE-6-2021",
+            "provisions": [
+              "quality, construction, acceptance and maintenance framework"
+            ]
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "BE01",
+        "source": "B01",
+        "target": "B02",
+        "type": "sequence"
+      },
+      {
+        "id": "BL04",
+        "source": "B02",
+        "target": "B01",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence"
+      },
+      {
+        "id": "BL05",
+        "source": "B04",
+        "target": "B03",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      },
+      {
+        "id": "BE04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence"
+      },
+      {
+        "id": "BE05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence"
+      },
+      {
+        "id": "BL06",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "자료·설계 보완"
+      }
+    ]
+  },
+  "publicModels": [
+    {
+      "id": "site-urban",
+      "slug": "vietnam-site-urban-construction-regulations",
+      "priority": 4,
+      "name": "베트남 도시계획·부지규제",
+      "oneLiner": "토지사용권과 승인 계획·건축관리규정에 맞춰 필지의 용도·규모·접도·기반시설 조건을 먼저 잠근다.",
+      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
+      "verificationScope": "정부의 현행 건설활동 시행령과 국가공공서비스포털의 허가서류를 연결했다. 필지별 계획수치와 2025년 이후 지방 권한배분은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B01",
+        "B02"
+      ],
+      "requirementIds": [
+        "VNM-BLD-REQ-004"
+      ],
+      "questionIds": [
+        "VNM-BLD-Q-001",
+        "VNM-BLD-Q-002"
+      ],
+      "conclusionIds": [
+        "VNM-BLD-C-001"
+      ],
+      "siteOverlayIds": [
+        "VNM-LOCAL-OVERLAY-001"
+      ],
+      "fieldworkChecklistIds": [
+        "VNM-BLD-F-001",
+        "VNM-BLD-F-002"
+      ],
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-L01",
+          "source": "B02",
+          "target": "B01",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "permit-environment",
+      "slug": "vietnam-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "베트남 건축허가·환경심사",
+      "oneLiner": "사업·공사 등급에 따른 설계심사·건축허가와 환경분류·환경허가를 별도 경로로 매핑한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "국가공공서비스포털과 정부 시행령, 국가법령데이터베이스의 환경보호법을 확인했다. 2025년 분권개정·통합조문·지방 수수료와 접수관행은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B03",
+        "B04"
+      ],
+      "requirementIds": [
+        "VNM-BLD-REQ-005"
+      ],
+      "questionIds": [
+        "VNM-BLD-Q-003",
+        "VNM-BLD-Q-004"
+      ],
+      "conclusionIds": [
+        "VNM-BLD-C-002"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "VNM-BLD-F-003",
+        "VNM-BLD-F-004"
+      ],
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence"
+        },
+        {
+          "id": "M05-L01",
+          "source": "B04",
+          "target": "B03",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    },
+    {
+      "id": "control-completion",
+      "slug": "vietnam-control-completion-construction-regulations",
+      "priority": 6,
+      "name": "베트남 기술검사·보험·준공제도",
+      "oneLiner": "자격 있는 설계·감리·시공자, 품질검사와 준공인수·사용조건을 계약 Hold Point로 관리한다.",
+      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
+      "verificationScope": "공식 국가법령데이터베이스의 품질관리 시행령과 정부의 2024년 건설활동 시행령을 연결했다. 현행 통합조문·검사대상·보험과 실제 비용은 현지 확인 대상이다.",
+      "nodeIds": [
+        "B05",
+        "B06"
+      ],
+      "requirementIds": [
+        "VNM-BLD-REQ-006"
+      ],
+      "questionIds": [
+        "VNM-BLD-Q-005",
+        "VNM-BLD-Q-006"
+      ],
+      "conclusionIds": [
+        "VNM-BLD-C-003"
+      ],
+      "siteOverlayIds": [],
+      "fieldworkChecklistIds": [
+        "VNM-BLD-F-005",
+        "VNM-BLD-F-006"
+      ],
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence"
+        },
+        {
+          "id": "M06-L01",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "자료·설계 보완"
+        }
+      ]
+    }
+  ],
+  "authorities": [
+    {
+      "id": "competent-permit-authority",
+      "name": "Competent construction-permit authority",
+      "nameKo": "관할 건축허가기관",
+      "role": "사업 위치·공사등급·현행 지방 권한배분에 따라 건축허가를 심사·발급",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.002498"
+    },
+    {
+      "id": "construction-specialized-agency",
+      "name": "State agency specialized in construction",
+      "nameKo": "건설 전문 국가기관",
+      "role": "투자건설사업·설계 심사, 공사품질·준공검사와 건설전문자격을 관할 범위에서 관리",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://vanban.chinhphu.vn/?classid=1&docid=212166&pageid=27160"
+    },
+    {
+      "id": "environmental-approval-authority",
+      "name": "Competent environmental approval authority",
+      "nameKo": "관할 환경승인기관",
+      "role": "사업의 환경분류, 환경영향평가와 환경허가를 현행 분권 규정에 따라 담당",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://vbpl.vn/tw/Pages/vbpq-thuoctinh.aspx?ItemID=146609"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "VNM-CONSTRUCTION-DECREE-175-2024",
+      "title": "Decree No. 175/2024/ND-CP detailing the Construction Law on management of construction activities",
+      "titleKo": "건설활동 관리에 관한 시행령 제175/2024/NĐ-CP호",
+      "kind": "decree",
+      "status": "continuity_unverified",
+      "issuedOn": "2024-12-30",
+      "officialUrl": "https://vanban.chinhphu.vn/?classid=1&docid=212166&pageid=27160",
+      "verificationLevel": "law-linked",
+      "note": "정부 법령 페이지에서 원문을 확인했다. 2025년 분권·분급 법령이 일부 조항을 개정했으므로 프로젝트 시점의 허가권자를 다시 확인한다."
+    },
+    {
+      "id": "VNM-PERMIT-SERVICE",
+      "title": "National Public Service Portal — construction permit for special-grade works",
+      "titleKo": "국가공공서비스포털 건축허가 절차",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "officialUrl": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.002498",
+      "verificationLevel": "source-linked",
+      "note": "완비서류 기준 처리기한과 기관협의 구조를 보여 주는 중앙 행정절차다. 실제 사업 등급·지방 권한배분·수수료는 별도 확인한다."
+    },
+    {
+      "id": "VNM-ENV-LAW-2020",
+      "title": "Law on Environmental Protection No. 72/2020/QH14",
+      "titleKo": "환경보호법 제72/2020/QH14호",
+      "kind": "act",
+      "status": "continuity_unverified",
+      "issuedOn": "2020-11-17",
+      "officialUrl": "https://vbpl.vn/tw/Pages/vbpq-thuoctinh.aspx?ItemID=146609",
+      "verificationLevel": "law-linked",
+      "note": "국가법령데이터베이스가 2026년 현재 일부 효력상실로 표시하므로 통합·개정 조문과 시행령을 프로젝트 시점에 재확인한다."
+    },
+    {
+      "id": "VNM-QUALITY-DECREE-6-2021",
+      "title": "Decree No. 06/2021/ND-CP on quality management, construction and maintenance of construction works",
+      "titleKo": "건설공사 품질·시공·유지관리 시행령 제06/2021/NĐ-CP호",
+      "kind": "decree",
+      "status": "continuity_unverified",
+      "issuedOn": "2021-01-26",
+      "officialUrl": "https://vbpl.vn/TW/Pages/vbpq-thuoctinh.aspx?ItemID=147597",
+      "verificationLevel": "law-linked",
+      "note": "국가법령데이터베이스가 일부 효력상실로 표시한다. 2025년 개정·분권 규정까지 반영한 적용조문 확인이 필요하다."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "VNM-BLD-REQ-004",
+      "stage": "site-and-land",
+      "topic": "필지 권원·도시계획·부지조건",
+      "status": "conditional",
+      "applicability": "베트남에서 신축·증축·개축·용도변경을 추진하는 ODA 건축사업",
+      "requirement": "건축허가 서류는 합법적 토지사용권과 승인된 계획·건축관리 요구의 충족을 전제로 한다. 실제 필지의 용도, 건축밀도, 토지이용계수, 높이, 이격, 주차·소방접근과 유틸리티 조건은 해당 성·시의 계획도와 건축관리규정에서 확정해야 한다.",
+      "authorityIds": [
+        "competent-permit-authority",
+        "construction-specialized-agency"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+          "provisions": [
+            "construction planning, project and permit framework"
+          ]
+        },
+        {
+          "instrumentId": "VNM-PERMIT-SERVICE",
+          "provisions": [
+            "land-use-right and approved-design dossier requirements"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "토지사용권·지적경계",
+        "관할 계획도·건축관리규정",
+        "필지별 밀도·용적·높이·이격·주차 확인",
+        "소방접근·배수·전력·상수 인입확약"
+      ],
+      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
+    },
+    {
+      "id": "VNM-BLD-REQ-005",
+      "stage": "permit",
+      "topic": "사업분류·건축허가·환경심사",
+      "status": "conditional",
+      "applicability": "건축허가 또는 면제통보가 필요한 공사와 환경보호법의 분류대상 투자사업",
+      "requirement": "건축허가 대상·면제와 허가권자는 사업 유형, 공사등급, 위치와 현행 분권규정에 따라 달라진다. 동시에 환경보호법상 환경영향평가·환경허가 여부와 승인기관을 결정하고, 소방·문화재·항공 등 전문협의를 별도 확인해야 한다.",
+      "authorityIds": [
+        "competent-permit-authority",
+        "construction-specialized-agency",
+        "environmental-approval-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+          "provisions": [
+            "project appraisal and construction-permit framework"
+          ]
+        },
+        {
+          "instrumentId": "VNM-PERMIT-SERVICE",
+          "provisions": [
+            "complete-dossier review and inter-agency consultation"
+          ]
+        },
+        {
+          "instrumentId": "VNM-ENV-LAW-2020",
+          "provisions": [
+            "environmental classification, EIA and environmental permit framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "건축주·투자결정권자 확정",
+        "사업군·공사등급·허가면제 검토",
+        "환경분류·EIA·환경허가 결정",
+        "전문협의·수수료·완비일·보완정지 기록"
+      ],
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
+    },
+    {
+      "id": "VNM-BLD-REQ-006",
+      "stage": "completion",
+      "topic": "기술기준·검사·보험·준공·사용승인",
+      "status": "conditional",
+      "applicability": "베트남 건설법상 품질관리·시공·유지관리와 준공인수 대상 공사",
+      "requirement": "건설공사 품질관리는 투자자·시공자·감리자와 전문기관의 책임, 자재·시험·검사기록, 준공인수와 필요 시 국가검사를 포함한다. 적용 기술규정, 전문자격, 소방·환경 완료조건, 준공인수와 자산인계 서류를 입찰 전에 확정한다.",
+      "authorityIds": [
+        "construction-specialized-agency",
+        "competent-permit-authority"
+      ],
+      "legalBasis": [
+        {
+          "instrumentId": "VNM-QUALITY-DECREE-6-2021",
+          "provisions": [
+            "quality, construction, acceptance and maintenance framework"
+          ]
+        },
+        {
+          "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+          "provisions": [
+            "construction capability and professional practice framework"
+          ]
+        }
+      ],
+      "evidenceToObtain": [
+        "적용 QCVN·TCVN·설계기준 목록",
+        "현지 설계·감리·시공 자격증빙",
+        "검사시험계획·품질기록",
+        "준공인수·국가검사·사용개시·보험 체크리스트"
+      ],
+      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+    }
+  ],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·계획자료 제출",
+      "decision": "도시계획·부지규제 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [],
+      "output": "도시계획·부지규제 입력·증빙 대장"
+    },
+    {
+      "order": 2,
+      "gate": "필지별 도시계획·부지조건 확인",
+      "decision": "대상 필지에 적용되는 승인 계획과 지방 건축관리규정은 무엇이며 허용용도·밀도·높이·이격·주차·기반시설 수치는 얼마인가?",
+      "dependsOn": [
+        1
+      ],
+      "output": "도시계획·부지규제 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 3,
+      "gate": "사업·시설·환경유형 분류",
+      "decision": "건축허가·환경심사 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·환경심사 입력·증빙 대장"
+    },
+    {
+      "order": 4,
+      "gate": "환경결정·건축허가 심사",
+      "decision": "본 사업의 현행 건축허가권자·면제 여부와 환경평가·환경허가 유형, 전문협의의 정확한 선후관계는 무엇인가?",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가·환경심사 기관 확인결과와 보고서 반영표"
+    },
+    {
+      "order": 5,
+      "gate": "자격·검사·보험·품질계획 확정",
+      "decision": "기술검사·보험·준공제도 판단에 필요한 사업 입력과 공식 증빙을 제출한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "기술검사·보험·준공제도 입력·증빙 대장"
+    },
+    {
+      "order": 6,
+      "gate": "준공검사·소방·사용승인",
+      "decision": "본 공사의 전문자격, 법정 검사·시험, 준공인수·국가검사와 사용개시 조건 및 보험비용은 무엇인가?",
+      "dependsOn": [
+        5
+      ],
+      "output": "기술검사·보험·준공제도 기관 확인결과와 보고서 반영표"
+    }
+  ],
+  "siteOverlays": [
+    {
+      "id": "VNM-LOCAL-OVERLAY-001",
+      "area": "대상 필지의 관할 지방정부·계획구역·특구",
+      "status": "unresolved",
+      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
+      "legalBasis": [
+        {
+          "instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024",
+          "provisions": [
+            "construction planning, project and permit framework"
+          ]
+        }
+      ],
+      "missingEvidence": [
+        "필지 식별정보",
+        "현행 계획도·조례",
+        "관할기관의 필지별 규제확인서"
+      ],
+      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "VNM-BLD-Q-001",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지에 적용되는 승인 계획과 지방 건축관리규정은 무엇이며 허용용도·밀도·높이·이격·주차·기반시설 수치는 얼마인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "토지사용권·지적경계",
+        "관할 계획도·건축관리규정",
+        "필지별 밀도·용적·높이·이격·주차 확인",
+        "소방접근·배수·전력·상수 인입확약"
+      ],
+      "confirmWith": [
+        "competent-permit-authority",
+        "construction-specialized-agency"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "VNM-BLD-Q-002",
+      "blocking": true,
+      "stage": "site-and-land",
+      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
+      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "evidenceNeeded": [
+        "필지 권원·지적도·경계측량",
+        "현행 토지이용계획·용도지역 확인서",
+        "필지별 개발기준표와 기반시설 인입확약"
+      ],
+      "confirmWith": [
+        "competent-permit-authority",
+        "construction-specialized-agency"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "VNM-BLD-Q-003",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 현행 건축허가권자·면제 여부와 환경평가·환경허가 유형, 전문협의의 정확한 선후관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "건축주·투자결정권자 확정",
+        "사업군·공사등급·허가면제 검토",
+        "환경분류·EIA·환경허가 결정",
+        "전문협의·수수료·완비일·보완정지 기록"
+      ],
+      "confirmWith": [
+        "competent-permit-authority",
+        "construction-specialized-agency",
+        "environmental-approval-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "VNM-BLD-Q-004",
+      "blocking": true,
+      "stage": "permit",
+      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
+      "evidenceNeeded": [
+        "관할기관 사전분류 회신",
+        "현지 책임건축사·기술자 자격증빙",
+        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
+      ],
+      "confirmWith": [
+        "competent-permit-authority",
+        "construction-specialized-agency",
+        "environmental-approval-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "VNM-BLD-Q-005",
+      "blocking": true,
+      "stage": "completion",
+      "question": "본 공사의 전문자격, 법정 검사·시험, 준공인수·국가검사와 사용개시 조건 및 보험비용은 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "적용 QCVN·TCVN·설계기준 목록",
+        "현지 설계·감리·시공 자격증빙",
+        "검사시험계획·품질기록",
+        "준공인수·국가검사·사용개시·보험 체크리스트"
+      ],
+      "confirmWith": [
+        "construction-specialized-agency",
+        "competent-permit-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    },
+    {
+      "id": "VNM-BLD-Q-006",
+      "blocking": true,
+      "stage": "completion",
+      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
+      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
+      "evidenceNeeded": [
+        "전문가·시공자·검사기관 등록증과 보험증권",
+        "검사계획·시험성적서·변경승인 기록",
+        "준공·소방·사용승인 체크리스트와 실제 견적"
+      ],
+      "confirmWith": [
+        "construction-specialized-agency",
+        "competent-permit-authority"
+      ],
+      "owner": "수원기관·현지 건축전문가"
+    }
+  ],
+  "fieldworkChecklist": [
+    {
+      "id": "VNM-BLD-F-001",
+      "phase": "출국 전",
+      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
+      "output": "부지 자료 인벤토리와 결측대장"
+    },
+    {
+      "id": "VNM-BLD-F-002",
+      "phase": "기관협의",
+      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
+      "output": "필지 규제표와 기관 확인공문"
+    },
+    {
+      "id": "VNM-BLD-F-003",
+      "phase": "출국 전",
+      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
+      "output": "사업분류표와 기관 질의서"
+    },
+    {
+      "id": "VNM-BLD-F-004",
+      "phase": "기관협의",
+      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
+      "output": "인허가 일정·비용 매트릭스"
+    },
+    {
+      "id": "VNM-BLD-F-005",
+      "phase": "시장조사",
+      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
+      "output": "적격기관·보험 대장"
+    },
+    {
+      "id": "VNM-BLD-F-006",
+      "phase": "기관협의",
+      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
+      "output": "검사·준공·개장 Hold Point 표"
+    }
+  ],
+  "reportReadyConclusions": [
+    {
+      "id": "VNM-BLD-C-001",
+      "confidence": "conditional",
+      "text": "베트남은 중앙 건설법 체계와 지방 계획·건축관리규정이 결합되므로 중앙 허가절차만으로 필지의 설계 가능 규모를 확정할 수 없다.",
+      "basis": [
+        "VNM-CONSTRUCTION-DECREE-175-2024",
+        "VNM-PERMIT-SERVICE"
+      ]
+    },
+    {
+      "id": "VNM-BLD-C-002",
+      "confidence": "conditional",
+      "text": "베트남에서는 건축허가와 환경승인이 서로 대체되지 않으며, 최근 분권개정 때문에 중앙 처리기한을 지방의 실제 전체기간으로 일반화해서는 안 된다.",
+      "basis": [
+        "VNM-CONSTRUCTION-DECREE-175-2024",
+        "VNM-PERMIT-SERVICE",
+        "VNM-ENV-LAW-2020"
+      ]
+    },
+    {
+      "id": "VNM-BLD-C-003",
+      "confidence": "conditional",
+      "text": "베트남에서는 공사완료와 합법적 인수·사용개시를 분리해 관리해야 하며, 일부 개정된 품질관리 시행령의 현행 조문을 계약 전에 잠가야 한다.",
+      "basis": [
+        "VNM-QUALITY-DECREE-6-2021",
+        "VNM-CONSTRUCTION-DECREE-175-2024"
+      ]
+    }
+  ]
+}

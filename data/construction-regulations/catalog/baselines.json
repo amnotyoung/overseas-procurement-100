@@ -491,6 +491,537 @@
           "referenceLabel": "BNBC 2020"
         }
       }
+    },
+    {
+      "slug": "vietnam",
+      "name": "베트남",
+      "nameEn": "Viet Nam",
+      "iso3": "VNM",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "competent-permit-authority",
+          "name": "Competent construction-permit authority",
+          "nameKo": "관할 건축허가기관",
+          "role": "사업 위치·공사등급·현행 지방 권한배분에 따라 건축허가를 심사·발급",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.002498"
+        },
+        {
+          "id": "construction-specialized-agency",
+          "name": "State agency specialized in construction",
+          "nameKo": "건설 전문 국가기관",
+          "role": "투자건설사업·설계 심사, 공사품질·준공검사와 건설전문자격을 관할 범위에서 관리",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://vanban.chinhphu.vn/?classid=1&docid=212166&pageid=27160"
+        },
+        {
+          "id": "environmental-approval-authority",
+          "name": "Competent environmental approval authority",
+          "nameKo": "관할 환경승인기관",
+          "role": "사업의 환경분류, 환경영향평가와 환경허가를 현행 분권 규정에 따라 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://vbpl.vn/tw/Pages/vbpq-thuoctinh.aspx?ItemID=146609"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "VNM-CONSTRUCTION-DECREE-175-2024",
+          "title": "Decree No. 175/2024/ND-CP detailing the Construction Law on management of construction activities",
+          "titleKo": "건설활동 관리에 관한 시행령 제175/2024/NĐ-CP호",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "issuedOn": "2024-12-30",
+          "officialUrl": "https://vanban.chinhphu.vn/?classid=1&docid=212166&pageid=27160",
+          "verificationLevel": "law-linked",
+          "note": "정부 법령 페이지에서 원문을 확인했다. 2025년 분권·분급 법령이 일부 조항을 개정했으므로 프로젝트 시점의 허가권자를 다시 확인한다."
+        },
+        {
+          "id": "VNM-PERMIT-SERVICE",
+          "title": "National Public Service Portal — construction permit for special-grade works",
+          "titleKo": "국가공공서비스포털 건축허가 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.002498",
+          "verificationLevel": "source-linked",
+          "note": "완비서류 기준 처리기한과 기관협의 구조를 보여 주는 중앙 행정절차다. 실제 사업 등급·지방 권한배분·수수료는 별도 확인한다."
+        },
+        {
+          "id": "VNM-ENV-LAW-2020",
+          "title": "Law on Environmental Protection No. 72/2020/QH14",
+          "titleKo": "환경보호법 제72/2020/QH14호",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2020-11-17",
+          "officialUrl": "https://vbpl.vn/tw/Pages/vbpq-thuoctinh.aspx?ItemID=146609",
+          "verificationLevel": "law-linked",
+          "note": "국가법령데이터베이스가 2026년 현재 일부 효력상실로 표시하므로 통합·개정 조문과 시행령을 프로젝트 시점에 재확인한다."
+        },
+        {
+          "id": "VNM-QUALITY-DECREE-6-2021",
+          "title": "Decree No. 06/2021/ND-CP on quality management, construction and maintenance of construction works",
+          "titleKo": "건설공사 품질·시공·유지관리 시행령 제06/2021/NĐ-CP호",
+          "kind": "decree",
+          "status": "continuity_unverified",
+          "issuedOn": "2021-01-26",
+          "officialUrl": "https://vbpl.vn/TW/Pages/vbpq-thuoctinh.aspx?ItemID=147597",
+          "verificationLevel": "law-linked",
+          "note": "국가법령데이터베이스가 일부 효력상실로 표시한다. 2025년 개정·분권 규정까지 반영한 적용조문 확인이 필요하다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지사용권과 승인 계획·건축관리규정에 맞춰 필지의 용도·규모·접도·기반시설 조건을 먼저 잠근다.",
+          "summary": "건축허가 서류는 합법적 토지사용권과 승인된 계획·건축관리 요구의 충족을 전제로 한다. 실제 필지의 용도, 건축밀도, 토지이용계수, 높이, 이격, 주차·소방접근과 유틸리티 조건은 해당 성·시의 계획도와 건축관리규정에서 확정해야 한다.",
+          "applicability": "베트남에서 신축·증축·개축·용도변경을 추진하는 ODA 건축사업",
+          "authorityIds": ["competent-permit-authority", "construction-specialized-agency"],
+          "basis": [
+            {"instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024", "provisions": ["construction planning, project and permit framework"]},
+            {"instrumentId": "VNM-PERMIT-SERVICE", "provisions": ["land-use-right and approved-design dossier requirements"]}
+          ],
+          "evidence": ["토지사용권·지적경계", "관할 계획도·건축관리규정", "필지별 밀도·용적·높이·이격·주차 확인", "소방접근·배수·전력·상수 인입확약"],
+          "decisionQuestion": "대상 필지에 적용되는 승인 계획과 지방 건축관리규정은 무엇이며 허용용도·밀도·높이·이격·주차·기반시설 수치는 얼마인가?",
+          "conclusion": "베트남은 중앙 건설법 체계와 지방 계획·건축관리규정이 결합되므로 중앙 허가절차만으로 필지의 설계 가능 규모를 확정할 수 없다.",
+          "verificationScope": "정부의 현행 건설활동 시행령과 국가공공서비스포털의 허가서류를 연결했다. 필지별 계획수치와 2025년 이후 지방 권한배분은 현지 확인 대상이다.",
+          "referenceLabel": "시행령 제175/2024/NĐ-CP호"
+        },
+        "permit-environment": {
+          "oneLiner": "사업·공사 등급에 따른 설계심사·건축허가와 환경분류·환경허가를 별도 경로로 매핑한다.",
+          "summary": "건축허가 대상·면제와 허가권자는 사업 유형, 공사등급, 위치와 현행 분권규정에 따라 달라진다. 동시에 환경보호법상 환경영향평가·환경허가 여부와 승인기관을 결정하고, 소방·문화재·항공 등 전문협의를 별도 확인해야 한다.",
+          "applicability": "건축허가 또는 면제통보가 필요한 공사와 환경보호법의 분류대상 투자사업",
+          "authorityIds": ["competent-permit-authority", "construction-specialized-agency", "environmental-approval-authority"],
+          "basis": [
+            {"instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024", "provisions": ["project appraisal and construction-permit framework"]},
+            {"instrumentId": "VNM-PERMIT-SERVICE", "provisions": ["complete-dossier review and inter-agency consultation"]},
+            {"instrumentId": "VNM-ENV-LAW-2020", "provisions": ["environmental classification, EIA and environmental permit framework"]}
+          ],
+          "evidence": ["건축주·투자결정권자 확정", "사업군·공사등급·허가면제 검토", "환경분류·EIA·환경허가 결정", "전문협의·수수료·완비일·보완정지 기록"],
+          "decisionQuestion": "본 사업의 현행 건축허가권자·면제 여부와 환경평가·환경허가 유형, 전문협의의 정확한 선후관계는 무엇인가?",
+          "conclusion": "베트남에서는 건축허가와 환경승인이 서로 대체되지 않으며, 최근 분권개정 때문에 중앙 처리기한을 지방의 실제 전체기간으로 일반화해서는 안 된다.",
+          "verificationScope": "국가공공서비스포털과 정부 시행령, 국가법령데이터베이스의 환경보호법을 확인했다. 2025년 분권개정·통합조문·지방 수수료와 접수관행은 현지 확인 대상이다.",
+          "referenceLabel": "국가공공서비스포털 건축허가"
+        },
+        "control-completion": {
+          "oneLiner": "자격 있는 설계·감리·시공자, 품질검사와 준공인수·사용조건을 계약 Hold Point로 관리한다.",
+          "summary": "건설공사 품질관리는 투자자·시공자·감리자와 전문기관의 책임, 자재·시험·검사기록, 준공인수와 필요 시 국가검사를 포함한다. 적용 기술규정, 전문자격, 소방·환경 완료조건, 준공인수와 자산인계 서류를 입찰 전에 확정한다.",
+          "applicability": "베트남 건설법상 품질관리·시공·유지관리와 준공인수 대상 공사",
+          "authorityIds": ["construction-specialized-agency", "competent-permit-authority"],
+          "basis": [
+            {"instrumentId": "VNM-QUALITY-DECREE-6-2021", "provisions": ["quality, construction, acceptance and maintenance framework"]},
+            {"instrumentId": "VNM-CONSTRUCTION-DECREE-175-2024", "provisions": ["construction capability and professional practice framework"]}
+          ],
+          "evidence": ["적용 QCVN·TCVN·설계기준 목록", "현지 설계·감리·시공 자격증빙", "검사시험계획·품질기록", "준공인수·국가검사·사용개시·보험 체크리스트"],
+          "decisionQuestion": "본 공사의 전문자격, 법정 검사·시험, 준공인수·국가검사와 사용개시 조건 및 보험비용은 무엇인가?",
+          "conclusion": "베트남에서는 공사완료와 합법적 인수·사용개시를 분리해 관리해야 하며, 일부 개정된 품질관리 시행령의 현행 조문을 계약 전에 잠가야 한다.",
+          "verificationScope": "공식 국가법령데이터베이스의 품질관리 시행령과 정부의 2024년 건설활동 시행령을 연결했다. 현행 통합조문·검사대상·보험과 실제 비용은 현지 확인 대상이다.",
+          "referenceLabel": "품질관리 시행령 제06/2021/NĐ-CP호"
+        }
+      }
+    },
+    {
+      "slug": "sri-lanka",
+      "name": "스리랑카",
+      "nameEn": "Sri Lanka",
+      "iso3": "LKA",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "uda-local-authority",
+          "name": "Urban Development Authority and relevant Local Authority",
+          "nameKo": "도시개발청(UDA)·관할 지방정부",
+          "role": "개발허가·건축허가, 현장검사와 적합증명서 발급을 관할구역·위임에 따라 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.uda.gov.lk/"
+        },
+        {
+          "id": "cea-paa",
+          "name": "Central Environmental Authority and designated Project Approving Agency",
+          "nameKo": "중앙환경청(CEA)·지정 사업승인기관(PAA)",
+          "role": "prescribed project 판정, IEE/EIA 절차와 환경승인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://cea.lk/web/en/2013-05-07-07-51-07/environmental-management-and-assessment-division/19-implementation-of-the-eia"
+        },
+        {
+          "id": "nbro",
+          "name": "National Building Research Organisation",
+          "nameKo": "국가건축연구기구(NBRO)",
+          "role": "해당 고층·특수건축물의 지반조사·기초설계·공사단계 지반기술 적합확인을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://nbri.gov.lk/index.php?Itemid=519&catid=9&id=521%3Ageotechnical-clearences&lang=en&option=com_content&view=article"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "LKA-UDA-REG-2021",
+          "title": "Urban Development Authority Planning and Development Regulations 2021 — Gazette Extraordinary No. 2235/54",
+          "titleKo": "UDA 계획·개발규정 2021(관보 제2235/54호)",
+          "kind": "decree",
+          "status": "in_force",
+          "issuedOn": "2021-07-08",
+          "officialUrl": "https://documents.gov.lk/view/egz/egz_2021.html",
+          "verificationLevel": "law-linked",
+          "note": "정부 관보목록과 UDA 안내에서 확인했다. 해당 필지의 UDA 선언구역·개발계획·지방조례를 함께 적용해야 한다."
+        },
+        {
+          "id": "LKA-UDA-APPROVAL-INSTRUCTIONS",
+          "title": "UDA development approval instructions",
+          "titleKo": "UDA 개발승인 공식 안내",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.uda.gov.lk/attachments/help/Instructions%20Webpage-%20PDF%20Upload%20Version.pdf",
+          "officialPdfUrl": "https://www.uda.gov.lk/attachments/help/Instructions%20Webpage-%20PDF%20Upload%20Version.pdf",
+          "verificationLevel": "source-linked",
+          "note": "개발허가 제출·외부승인과 공사완료 후 Certificate of Conformity를 안내한다."
+        },
+        {
+          "id": "LKA-NEA-EIA",
+          "title": "National Environmental Act No. 47 of 1980, as amended, and prescribed-project EIA framework",
+          "titleKo": "국가환경법 제47/1980호(개정 포함)·prescribed project 환경평가 체계",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "1980-05-26",
+          "officialUrl": "https://cea.lk/web/en/law-policy-and-institutional-arrangement-for-eia-in-sri-lanka",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "LKA-NBRO-GEOTECH",
+          "title": "NBRO geotechnical clearance procedure under UDA Regulations 2021",
+          "titleKo": "NBRO 지반기술 적합확인 절차",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://nbri.gov.lk/index.php?Itemid=519&catid=9&id=521%3Ageotechnical-clearences&lang=en&option=com_content&view=article",
+          "verificationLevel": "source-linked",
+          "note": "UDA 규정 제57(3)(c)에 연결된 고층건축물 지반조사·설계·시공단계 3종 clearance를 안내한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "UDA 선언구역·지방계획과 필지권원·street line·building line·재해조건으로 개발 가능 규모를 확정한다.",
+          "summary": "UDA 계획·개발규정은 개발허가를 토지이용·구역·접근도로·공간·주차·배수 등 계획기준과 연결한다. 필지별 허용용도, plot coverage, floor area ratio, 높이·이격·주차는 적용 개발계획과 관할 지방정부의 planning certificate에서 확인해야 한다.",
+          "applicability": "스리랑카 UDA 선언구역 또는 관할 지방정부에서 신축·증축·용도변경·토지분할을 추진하는 사업",
+          "authorityIds": ["uda-local-authority", "nbro"],
+          "basis": [
+            {"instrumentId": "LKA-UDA-REG-2021", "provisions": ["planning and development control framework"]},
+            {"instrumentId": "LKA-NBRO-GEOTECH", "provisions": ["Regulation 57(3)(c) geotechnical clearance"]}
+          ],
+          "evidence": ["권원·측량도", "UDA 선언·적용 개발계획", "street line·building line·필지별 계획수치", "지반·산사태·침수·배수·유틸리티 확인"],
+          "decisionQuestion": "대상 필지는 어느 UDA·지방정부 계획을 적용받으며 실제 용도·plot coverage·FAR·높이·이격·주차와 재해조건은 무엇인가?",
+          "conclusion": "스리랑카의 전국 UDA 규정만으로 필지 수치를 확정할 수 없으며, 선언구역·개발계획·지방정부 확인과 필요 시 NBRO 지반검토가 선행돼야 한다.",
+          "verificationScope": "정부 관보의 UDA 규정과 NBRO 공식 지반기술 절차를 확인했다. 대상 필지의 개발계획 수치·지반·침수·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "UDA 계획·개발규정 2021"
+        },
+        "permit-environment": {
+          "oneLiner": "UDA·지방정부 개발허가와 CEA의 prescribed project·IEE/EIA 판정을 병행하고 외부 clearance를 묶는다.",
+          "summary": "건축·개발은 관할 UDA 또는 지방정부의 승인과 지정 전문기관의 clearance가 필요할 수 있다. National Environmental Act상 prescribed project이면 CEA가 적정 PAA를 정하고 IEE 또는 EIA를 요구하므로 BIQ 단계에서 분류를 확정해야 한다.",
+          "applicability": "개발허가·건축허가 대상 사업과 NEA상 prescribed project 또는 환경민감입지 사업",
+          "authorityIds": ["uda-local-authority", "cea-paa", "nbro"],
+          "basis": [
+            {"instrumentId": "LKA-UDA-REG-2021", "provisions": ["development permit and agency clearance framework"]},
+            {"instrumentId": "LKA-UDA-APPROVAL-INSTRUCTIONS", "provisions": ["development approval submission and clearances"]},
+            {"instrumentId": "LKA-NEA-EIA", "provisions": ["Part IV C prescribed-project IEE/EIA framework"]}
+          ],
+          "evidence": ["건축주·신청인·관할 확정", "개발허가·건축허가 체크리스트", "CEA BIQ·prescribed project·PAA·IEE/EIA 결정", "소방·NBRO·해안·야생동물 등 clearance와 실제 수수료·기간"],
+          "decisionQuestion": "본 사업의 개발·건축허가권자와 prescribed project 여부, IEE/EIA·PAA 및 외부 clearance의 선후관계는 무엇인가?",
+          "conclusion": "스리랑카 개발허가와 환경승인은 별도 절차이며, 환경민감입지에서는 사업규모와 무관하게 환경평가가 요구될 수 있어 초기 BIQ 확인이 필요하다.",
+          "verificationScope": "UDA 공식 승인안내와 CEA의 현행 EIA 안내·국가환경법 체계를 확인했다. 관할별 수수료·접수관행·전체기간은 현지 확인 대상이다.",
+          "referenceLabel": "CEA prescribed-project EIA 체계"
+        },
+        "control-completion": {
+          "oneLiner": "qualified person의 공사감독, 단계검사·NBRO 적합확인과 Certificate of Conformity를 사용개시 전 Gate로 둔다.",
+          "summary": "승인도서대로 공사를 감독한 qualified person의 확인과 관할기관 검사를 거쳐 완공 후 Certificate of Conformity를 받아야 합법적 사용으로 이어진다. 해당 고층건축물은 NBRO의 지반조사·기초설계·시공단계 clearance를 단계별로 관리한다.",
+          "applicability": "UDA·지방정부 개발허가를 받아 시공하는 건축물과 NBRO 지반기술 검토대상 공사",
+          "authorityIds": ["uda-local-authority", "nbro"],
+          "basis": [
+            {"instrumentId": "LKA-UDA-REG-2021", "provisions": ["qualified persons, supervision and Certificate of Conformity"]},
+            {"instrumentId": "LKA-UDA-APPROVAL-INSTRUCTIONS", "provisions": ["Certificate of Conformity before occupation"]},
+            {"instrumentId": "LKA-NBRO-GEOTECH", "provisions": ["three-stage geotechnical clearance"]}
+          ],
+          "evidence": ["qualified person 등록·보험", "착공·단계검사·변경승인 기록", "NBRO·소방·시험성적서", "준공도서·Certificate of Conformity·사용개시 체크리스트"],
+          "decisionQuestion": "어떤 qualified person·검사기관·보험이 필요하며 단계검사와 Certificate of Conformity의 실제 비용·기간은 무엇인가?",
+          "conclusion": "스리랑카에서는 공사완료와 합법적 점유가 같지 않으므로 Certificate of Conformity와 필요한 전문기관 clearance를 준공·개장 선행조건으로 계약에 반영해야 한다.",
+          "verificationScope": "UDA 규정·공식 승인안내와 NBRO 지반기술 절차를 연결했다. 현지 등록전문가·검사기관·보험사와 실제 비용은 현지 확인 대상이다.",
+          "referenceLabel": "Certificate of Conformity"
+        }
+      }
+    },
+    {
+      "slug": "indonesia",
+      "name": "인도네시아",
+      "nameEn": "Indonesia",
+      "iso3": "IDN",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "local-building-government",
+          "name": "Regency or city technical agency and one-stop licensing agency",
+          "nameKo": "군·시 건축기술부서·원스톱 허가부서",
+          "role": "SIMBG를 통해 PBG와 SLF를 기술심사·처리하고 지방 재부과금을 산정",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://simbg.pu.go.id/"
+        },
+        {
+          "id": "spatial-authority-oss",
+          "name": "Competent spatial-planning authority through OSS",
+          "nameKo": "OSS 연계 관할 공간계획기관",
+          "role": "RDTR·RTRW에 따른 KKPR 공간이용 적합성 확인을 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://oss.go.id/id/panduan/6912a8491840c90a6543f398"
+        },
+        {
+          "id": "environmental-authority",
+          "name": "Competent central or regional environmental authority",
+          "nameKo": "관할 중앙·지방 환경기관",
+          "role": "AMDAL·UKL-UPL·SPPL 분류와 환경승인을 사업권한에 따라 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://peraturan.bpk.go.id/Details/161852/pp-no-22-tahun-2021"
+        },
+        {
+          "id": "pu-simbg",
+          "name": "Ministry of Public Works — SIMBG",
+          "nameKo": "공공사업부 SIMBG",
+          "role": "PBG·SLF·SBKBG·RTB·건축물대장의 국가 전자관리체계를 운영",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://simbg.pu.go.id/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "IDN-PP-16-2021",
+          "title": "Government Regulation No. 16 of 2021 implementing the Building Law",
+          "titleKo": "건축법 시행 정부규정 제16/2021호",
+          "kind": "decree",
+          "status": "in_force",
+          "issuedOn": "2021-02-02",
+          "officialUrl": "https://peraturan.bpk.go.id/Details/161846/pp-no-16",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "IDN-SIMBG",
+          "title": "Building Management Information System (SIMBG)",
+          "titleKo": "건축물관리정보시스템 SIMBG",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://simbg.pu.go.id/",
+          "verificationLevel": "source-linked",
+          "note": "공공사업부가 PBG·SLF 신청, 지방처리기관과 재부과금 계산 안내를 제공한다."
+        },
+        {
+          "id": "IDN-OSS-KKPR",
+          "title": "OSS guide for Confirmation of Conformity of Spatial Utilization Activities (KKPR) against RDTR",
+          "titleKo": "OSS RDTR 기반 공간이용 적합확인(KKPR) 안내",
+          "kind": "official-guidance",
+          "status": "continuity_unverified",
+          "officialUrl": "https://oss.go.id/id/panduan/6912a8491840c90a6543f398",
+          "verificationLevel": "source-linked",
+          "note": "2025년 PP 28 전환 안내가 포함된 현행 OSS 절차다. 비사업·공공사업 경로와 최신 지방 RDTR는 별도 확인한다."
+        },
+        {
+          "id": "IDN-PP-22-2021",
+          "title": "Government Regulation No. 22 of 2021 on Environmental Protection and Management",
+          "titleKo": "환경보호·관리 정부규정 제22/2021호",
+          "kind": "decree",
+          "status": "in_force",
+          "issuedOn": "2021-02-02",
+          "officialUrl": "https://peraturan.bpk.go.id/Details/161852/pp-no-22-tahun-2021",
+          "verificationLevel": "law-linked"
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 RDTR·RTRW 기반 KKPR를 먼저 확보하고 필지의 KDB·KLB·높이·이격·주차·재해조건을 확정한다.",
+          "summary": "사업 입지는 OSS의 KKPR를 통해 RDTR 또는 상위 공간계획과의 적합성을 확인하며, 세부 건축수치는 해당 지방 RDTR·zoning과 PBG 기술요건에서 결정된다. 지진·화산·홍수·연약지반과 유틸리티 용량도 필지조사의 핵심이다.",
+          "applicability": "인도네시아에서 토지를 이용해 신축·증축·용도변경하는 ODA 건축사업",
+          "authorityIds": ["spatial-authority-oss", "local-building-government"],
+          "basis": [
+            {"instrumentId": "IDN-OSS-KKPR", "provisions": ["RDTR-based KKPR spatial conformity"]},
+            {"instrumentId": "IDN-PP-16-2021", "provisions": ["site and building technical standards framework"]}
+          ],
+          "evidence": ["토지권원·지적좌표", "KKPR와 적용 RDTR·RTRW", "필지별 KDB·KLB·높이·이격·주차", "지반·지진·홍수·화산·배수·전력·상수 확인"],
+          "decisionQuestion": "대상 필지의 KKPR·RDTR상 용도와 KDB·KLB·높이·이격·주차 및 재해·유틸리티 조건은 무엇인가?",
+          "conclusion": "인도네시아의 건축가능 규모는 전국 SIMBG 화면이 아니라 필지에 적용되는 KKPR·RDTR와 지방 기술요건에서 확정해야 한다.",
+          "verificationScope": "공식 OSS의 현행 KKPR 안내와 BPK 법령데이터베이스의 PP 16/2021을 확인했다. 필지별 RDTR 수치와 재해·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "OSS 공간이용 적합확인(KKPR)"
+        },
+        "permit-environment": {
+          "oneLiner": "PBG 기술승인과 AMDAL·UKL-UPL·SPPL 환경분류·환경승인을 별도 선행조건으로 연결한다.",
+          "summary": "기존 IMB를 대체한 PBG는 SIMBG에서 지방 군·시 기술부서와 원스톱 허가부서가 처리한다. 환경규정에 따라 AMDAL, UKL-UPL 또는 SPPL과 환경승인 경로를 사업유형·규모·입지로 분류하고 OSS·SIMBG의 선후관계를 확인해야 한다.",
+          "applicability": "PP 16/2021상 PBG 대상 건축물과 PP 22/2021상 환경승인 대상 사업",
+          "authorityIds": ["local-building-government", "pu-simbg", "environmental-authority"],
+          "basis": [
+            {"instrumentId": "IDN-PP-16-2021", "provisions": ["PBG framework"]},
+            {"instrumentId": "IDN-SIMBG", "provisions": ["PBG application and local processing"]},
+            {"instrumentId": "IDN-PP-22-2021", "provisions": ["environmental approval framework"]}
+          ],
+          "evidence": ["건축주·신청인·부지 지방정부 확정", "PBG 기술도서·TPA/TPT 검토경로", "AMDAL·UKL-UPL·SPPL 결정과 환경승인", "지방 재부과금·완비일·보완·실제 처리기간"],
+          "decisionQuestion": "본 사업의 PBG 기술심사 경로와 AMDAL·UKL-UPL·SPPL 유형, 환경승인의 선행 여부·실제 기간·비용은 무엇인가?",
+          "conclusion": "인도네시아에서는 PBG와 환경승인이 별도 제도이므로 SIMBG 신청만으로 착공 가능하다고 보지 말고 두 경로의 완료조건을 통합 일정에 반영해야 한다.",
+          "verificationScope": "공공사업부 SIMBG와 BPK의 PP 16/2021·PP 22/2021 현행 상태를 확인했다. 프로젝트 분류, 지방 재부과금과 실제 접수관행은 현지 확인 대상이다.",
+          "referenceLabel": "PBG·환경승인"
+        },
+        "control-completion": {
+          "oneLiner": "등록전문가·단계검사·시험과 SLF를 준공·사용개시의 법정 Gate로 관리한다.",
+          "summary": "건축물은 승인된 PBG와 기술기준에 맞게 시공하고 공사감독·시험·검사 기록을 갖춰야 한다. 사용 전 기능적합증명서 SLF를 SIMBG로 신청하며, 지방 기술부서가 서류와 현장 적합성을 확인한다.",
+          "applicability": "PBG를 받아 시공하고 SLF가 필요한 신축·변경 건축물",
+          "authorityIds": ["local-building-government", "pu-simbg"],
+          "basis": [
+            {"instrumentId": "IDN-PP-16-2021", "provisions": ["construction, inspection and SLF framework"]},
+            {"instrumentId": "IDN-SIMBG", "provisions": ["SLF application and local processing"]}
+          ],
+          "evidence": ["설계·감리·시공자 SKK/SBU 등 자격증빙", "단계검사·시험·as-built 기록", "소방·설비·환경 완료확인", "SLF·SBKBG·건축물대장·보험 체크리스트"],
+          "decisionQuestion": "필요 전문자격·검사기관·보험과 단계검사, SLF 발급의 정확한 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "인도네시아에서 공사완료는 사용허가가 아니므로 SLF 발급과 필요한 후속 등록을 개장·인계의 선행조건으로 둬야 한다.",
+          "verificationScope": "PP 16/2021의 현행 상태와 SIMBG의 PBG·SLF 처리구조를 확인했다. 현지 전문가·검사기관·보험사와 실제 비용은 현지 확인 대상이다.",
+          "referenceLabel": "기능적합증명서(SLF)"
+        }
+      }
+    },
+    {
+      "slug": "cambodia",
+      "name": "캄보디아",
+      "nameEn": "Cambodia",
+      "iso3": "KHM",
+      "region": "아시아·태평양",
+      "verificationStatus": "law-linked",
+      "authorities": [
+        {
+          "id": "mlmupc",
+          "name": "Ministry of Land Management, Urban Planning and Construction",
+          "nameKo": "국토관리·도시계획·건설부(MLMUPC)",
+          "role": "대상 규모·유형의 건설허가, 건설기술규정·전문업 등록과 중앙 감독을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://mlmupc.gov.kh/general-department-of-construction/"
+        },
+        {
+          "id": "subnational-administration",
+          "name": "Competent capital, provincial, municipal, district or khan administration",
+          "nameKo": "관할 수도·주·시·군·구 행정청",
+          "role": "법정 위임범위의 건설허가·현장통제·사용증명 절차를 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://mlmupc.gov.kh/general-department-of-construction/"
+        },
+        {
+          "id": "moe-environment",
+          "name": "Ministry of Environment and competent environmental authority",
+          "nameKo": "환경부·관할 환경기관",
+          "role": "환경분류·환경영향평가와 환경승인을 담당",
+          "verificationLevel": "law-linked",
+          "officialUrl": "https://www.moe.gov.kh/wp-content/uploads/2024/07/Code-on-Environment-and-Natural-Resources.pdf"
+        },
+        {
+          "id": "licensed-certifier",
+          "name": "Licensed construction inspection and certification professional or company",
+          "nameKo": "허가받은 건설검사·인증 전문자·회사",
+          "role": "법정 대상 공사의 검사·적합확인과 사용증명 근거자료를 작성",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://mlmupc.gov.kh/licenses/"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "KHM-CONSTRUCTION-LAW-2019",
+          "title": "Law on Construction, promulgated by Royal Kram No. NS/RKM/1119/019",
+          "titleKo": "건설법 2019(왕령 NS/RKM/1119/019)",
+          "kind": "act",
+          "status": "in_force",
+          "issuedOn": "2019-11-02",
+          "officialUrl": "https://mlmupc.gov.kh/2023/05/16/law-on-construction/",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "KHM-URBAN-LAW-OFFICIAL",
+          "title": "Law on Land Management, Urban Planning and Construction",
+          "titleKo": "국토관리·도시계획·건설법",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://mlmupc.gov.kh/laws/",
+          "verificationLevel": "source-linked",
+          "note": "MLMUPC 법령대장에 게시된 도시계획 기본법이다. 적용 master plan·land-use plan과 후속 규정의 현행성은 대상지별로 확인한다."
+        },
+        {
+          "id": "KHM-PRAKAS-013-2022",
+          "title": "Prakas No. 013 on forms and procedures for construction permits issued by the MLMUPC Minister",
+          "titleKo": "MLMUPC 장관 건설허가 양식·절차 고시 제013호",
+          "kind": "order",
+          "status": "in_force",
+          "issuedOn": "2022-01-20",
+          "officialUrl": "https://mlmupc.gov.kh/general-department-of-construction/",
+          "verificationLevel": "source-linked",
+          "note": "MLMUPC 건설총국의 시행 규정목록에서 2022년 고시와 후속 제096호 개정을 확인했다."
+        },
+        {
+          "id": "KHM-PRAKAS-126-2021",
+          "title": "Prakas No. 126 on inspection and certification of architectural and structural construction and demolition works",
+          "titleKo": "건축·구조 공사 및 철거 검사·인증 고시 제126호",
+          "kind": "order",
+          "status": "in_force",
+          "issuedOn": "2021-12-30",
+          "officialUrl": "https://mlmupc.gov.kh/general-department-of-construction/",
+          "verificationLevel": "source-linked"
+        },
+        {
+          "id": "KHM-ENV-CODE-2023",
+          "title": "Code on Environment and Natural Resources 2023",
+          "titleKo": "환경·천연자원법전 2023",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "issuedOn": "2023-06-29",
+          "officialUrl": "https://www.moe.gov.kh/wp-content/uploads/2024/07/Code-on-Environment-and-Natural-Resources.pdf",
+          "officialPdfUrl": "https://www.moe.gov.kh/wp-content/uploads/2024/07/Code-on-Environment-and-Natural-Resources.pdf",
+          "verificationLevel": "law-linked",
+          "note": "환경부 공식 영문본을 연결했다. 발효·경과조치와 사업별 환경평가 시행규정은 프로젝트 시점에 재확인한다."
+        }
+      ],
+      "systems": {
+        "site-urban": {
+          "oneLiner": "토지권원과 적용 master plan·land-use plan·지역규정으로 용도·배치·높이·이격·주차·인프라 조건을 먼저 확정한다.",
+          "summary": "건설허가는 적법한 토지권원과 국토·도시계획 문서에 맞아야 한다. 실제 필지의 허용용도, coverage·FAR, 높이, 이격, 주차, 도로·배수·유틸리티 조건은 적용 master plan·land-use plan과 관할 행정청의 서면 회신으로 확인해야 한다.",
+          "applicability": "캄보디아에서 신축·증축·개축·용도변경을 추진하는 건축사업",
+          "authorityIds": ["mlmupc", "subnational-administration"],
+          "basis": [
+            {"instrumentId": "KHM-URBAN-LAW-OFFICIAL", "provisions": ["land management and urban-planning framework"]},
+            {"instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["site and construction-permit framework"]}
+          ],
+          "evidence": ["토지소유·사용권·경계도", "적용 master plan·land-use plan", "필지별 coverage·FAR·높이·이격·주차", "도로·배수·침수·지반·전력·상수 인입확약"],
+          "decisionQuestion": "대상 필지에 적용되는 계획과 관할기관은 무엇이며 실제 용도·coverage·FAR·높이·이격·주차·인프라 수치는 얼마인가?",
+          "conclusion": "캄보디아 건설법은 전국 허가틀을 제공하지만 필지의 설계 가능 규모는 현지 계획문서와 관할 행정청 확인 없이는 확정할 수 없다.",
+          "verificationScope": "MLMUPC의 건설법·도시계획법 공식 대장을 확인했다. 대상지 계획도·수치·권원·침수·유틸리티는 현지 확인 대상이다.",
+          "referenceLabel": "국토관리·도시계획·건설법"
+        },
+        "permit-environment": {
+          "oneLiner": "규모·용도별 건설허가권자와 환경평가·환경승인 유형을 분류하고 실제 접수·수수료·기간을 확인한다.",
+          "summary": "2019년 건설법과 후속 고시는 건설허가·수리·철거 절차와 중앙·지방 권한을 규율한다. 환경법전에 따른 환경평가·승인 경로와 소방·문화재·민간항공 등 전문협의를 별도로 분류해야 한다.",
+          "applicability": "건설허가 또는 사전통지 대상 공사와 환경평가·승인 대상 개발사업",
+          "authorityIds": ["mlmupc", "subnational-administration", "moe-environment"],
+          "basis": [
+            {"instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["construction-permit and authority framework"]},
+            {"instrumentId": "KHM-PRAKAS-013-2022", "provisions": ["ministerial construction-permit forms and procedure"]},
+            {"instrumentId": "KHM-ENV-CODE-2023", "provisions": ["environmental assessment and approval framework"]}
+          ],
+          "evidence": ["건축주·신청인·최종 허가권자 확정", "공사 규모·용도·허가·사전통지 분류", "환경평가·승인기관 결정", "전문협의·공식 수수료·완비일·보완·실제 기간"],
+          "decisionQuestion": "본 사업의 최종 건설허가권자와 환경평가·승인 유형, 외부협의의 선후관계·실제 비용·전체기간은 무엇인가?",
+          "conclusion": "캄보디아에서는 건설허가와 환경승인이 별도 제도이고 중앙·지방 권한이 규모에 따라 달라질 수 있으므로 관할 사전판정이 일정산정의 선행조건이다.",
+          "verificationScope": "MLMUPC의 건설법·후속 고시 목록과 환경부의 2023년 환경법전 영문본을 연결했다. 발효·경과조치, 세부 분류·수수료·접수관행은 현지 확인 대상이다.",
+          "referenceLabel": "건설법 2019·환경법전 2023"
+        },
+        "control-completion": {
+          "oneLiner": "허가받은 설계·시공·검사주체, 공사검사·인증과 사용증명을 준공·개장 Gate로 묶는다.",
+          "summary": "건설법과 고시 제126호는 대상 공사의 검사·인증을 허가받은 전문자 또는 회사와 연결하며, 완공 후 사용증명 절차가 적용될 수 있다. 설계·시공자 등록, 제3자 검사, 현장 책임보험, 준공도서·사용증명과 하자책임을 계약 전에 확정한다.",
+          "applicability": "건설법상 검사·인증 또는 사용증명이 필요한 신축·변경 건축물",
+          "authorityIds": ["mlmupc", "subnational-administration", "licensed-certifier"],
+          "basis": [
+            {"instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["construction professionals, inspection, certification and occupancy framework"]},
+            {"instrumentId": "KHM-PRAKAS-126-2021", "provisions": ["inspection and certification procedure"]}
+          ],
+          "evidence": ["설계·시공·검사자 면허", "착공통지·단계검사·시험기록", "현장 책임보험·검사기관 견적", "준공도서·검사인증·사용증명·하자조건"],
+          "decisionQuestion": "본 공사에 필요한 현지 전문면허·검사인증·보험과 사용증명의 서류·비용·실제 기간은 무엇인가?",
+          "conclusion": "캄보디아는 허가받은 검사·인증 주체와 사용증명 체계를 두므로 공사완료만으로 시설을 개장하지 말고 인증·사용조건을 인계 Gate에 넣어야 한다.",
+          "verificationScope": "MLMUPC 건설총국의 법령·고시 목록과 공식 면허서비스를 확인했다. 적용대상 분류, 현지 검사기관·보험사와 비용은 현지 확인 대상이다.",
+          "referenceLabel": "검사·인증 고시 제126호"
+        }
+      }
     }
   ]
 }
