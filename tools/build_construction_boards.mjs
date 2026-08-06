@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+// Render construction processBoard records with the actual korea100studio CLI.
+
+import { execFileSync } from "node:child_process";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = dirname(HERE);
+const DATA_DIR = join(ROOT, "data", "construction-regulations");
+const OUTPUT_DIR = join(ROOT, "site", "boards");
+const BOARD_CLI = join(ROOT, "node_modules", "korea100studio", "scripts", "board.mjs");
+
+function fail(message) {
+  console.error(`ERROR: ${message}`);
+  process.exit(1);
+}
+
+if (!existsSync(BOARD_CLI)) {
+  fail("korea100studio is not installed; run `npm ci` first");
+}
+
+mkdirSync(OUTPUT_DIR, { recursive: true });
+const files = readdirSync(DATA_DIR)
+  .filter((name) => name.endsWith(".json") && name !== "manifest.json")
+  .sort();
+
+let rendered = 0;
+for (const file of files) {
+  const sourcePath = join(DATA_DIR, file);
+  const data = JSON.parse(readFileSync(sourcePath, "utf8"));
+  const board = data.processBoard;
+  if (!board) fail(`${file} is missing processBoard`);
+
+  const scratch = mkdtempSync(join(tmpdir(), "construction-board-"));
+  const boardPath = join(scratch, `${data.slug}.json`);
+  const outputPath = join(OUTPUT_DIR, `${data.slug}-construction.svg`);
+  try {
+    writeFileSync(boardPath, `${JSON.stringify(board, null, 2)}\n`);
+    execFileSync(
+      "node",
+      [BOARD_CLI, "validate", boardPath, "--strict", "--profile", "gov"],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+    );
+    execFileSync(
+      "node",
+      [BOARD_CLI, "render", boardPath, "--out", outputPath, "--profile", "gov"],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+    );
+    execFileSync("node", [BOARD_CLI, "check", outputPath], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch (error) {
+    const detail = String(error.stderr || error.stdout || error.message || error).trim();
+    fail(`${data.slug}: korea100studio render failed\n${detail}`);
+  } finally {
+    rmSync(scratch, { recursive: true, force: true });
+  }
+  rendered += 1;
+  console.log(`rendered ${data.slug}: ${outputPath}`);
+}
+
+console.log(`OK: ${rendered} construction board(s) rendered with korea100studio`);

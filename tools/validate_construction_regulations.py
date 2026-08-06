@@ -33,6 +33,8 @@ VERIFICATION_LEVELS = {"article-verified", "law-linked", "source-linked", "needs
 REQUIREMENT_STATUSES = {"confirmed", "conditional", "unresolved"}
 OVERLAY_STATUSES = {"confirmed", "conditional", "unresolved"}
 CONCLUSION_CONFIDENCE = {"confirmed", "conditional", "unresolved"}
+BOARD_EMPHASIS = {"lead", "key", "bottleneck", "loop", "normal"}
+BOARD_EDGE_TYPES = {"sequence", "message", "loop"}
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -130,6 +132,120 @@ def validate_basis(
             result.error(ref_where, "provisions must be an array")
 
 
+def validate_process_board(
+    board: Any,
+    where: str,
+    authorities: dict[str, dict[str, Any]],
+    instruments: dict[str, dict[str, Any]],
+    requirements: dict[str, dict[str, Any]],
+    permit_orders: set[int],
+    result: Validation,
+) -> dict[str, int]:
+    """Validate the embedded korea100studio board-v1 and its trace links."""
+    if not isinstance(board, dict):
+        result.error(where, "must be an object")
+        return {"board_nodes": 0, "board_edges": 0}
+    required(
+        board,
+        ("schema_version", "profile", "title", "subtitle", "lanes", "stages", "nodes", "edges"),
+        where,
+        result,
+    )
+    if board.get("schema_version") != 1:
+        result.error(f"{where}.schema_version", "must be board-v1 schema version 1")
+    if board.get("profile") != "gov":
+        result.error(f"{where}.profile", "construction boards must use the gov profile")
+
+    lanes = board.get("lanes")
+    stages = board.get("stages")
+    lane_set = set(lanes) if isinstance(lanes, list) and all(isinstance(x, str) for x in lanes) else set()
+    stage_set = set(stages) if isinstance(stages, list) and all(isinstance(x, str) for x in stages) else set()
+    if not lane_set or not isinstance(lanes, list) or len(lane_set) != len(lanes):
+        result.error(f"{where}.lanes", "must be a non-empty array of unique strings")
+    if not stage_set or not isinstance(stages, list) or len(stage_set) != len(stages):
+        result.error(f"{where}.stages", "must be a non-empty array of unique strings")
+
+    nodes = unique_ids(board.get("nodes"), "nodes", where, result)
+    used_lanes: set[str] = set()
+    used_stages: set[str] = set()
+    mapped_gates: set[int] = set()
+    for ident, node in nodes.items():
+        node_where = f"{where}.nodes[{ident}]"
+        required(node, ("lane", "stage", "label", "emphasis", "refs"), node_where, result)
+        lane = node.get("lane")
+        stage = node.get("stage")
+        if lane not in lane_set:
+            result.error(node_where, f"unknown lane {lane!r}")
+        else:
+            used_lanes.add(lane)
+        if stage not in stage_set:
+            result.error(node_where, f"unknown stage {stage!r}")
+        else:
+            used_stages.add(stage)
+        if node.get("emphasis") not in BOARD_EMPHASIS:
+            result.error(node_where, f"unknown emphasis {node.get('emphasis')!r}")
+        for authority_id in node.get("authorityIds", []):
+            if authority_id not in authorities:
+                result.error(node_where, f"authorityIds references unknown authority {authority_id!r}")
+        for requirement_id in node.get("requirementIds", []):
+            if requirement_id not in requirements:
+                result.error(node_where, f"requirementIds references unknown requirement {requirement_id!r}")
+        gate_orders = node.get("gateOrders", [])
+        if not isinstance(gate_orders, list):
+            result.error(node_where, "gateOrders must be an array")
+        else:
+            for gate_order in gate_orders:
+                if gate_order not in permit_orders:
+                    result.error(node_where, f"gateOrders references unknown permit order {gate_order!r}")
+                elif isinstance(gate_order, int):
+                    mapped_gates.add(gate_order)
+        refs = node.get("refs")
+        if not isinstance(refs, list) or not refs:
+            result.error(node_where, "refs must be a non-empty array")
+        else:
+            for index, ref in enumerate(refs):
+                ref_where = f"{node_where}.refs[{index}]"
+                if not isinstance(ref, dict):
+                    result.error(ref_where, "must be an object")
+                    continue
+                required(ref, ("source", "instrumentId", "provisions"), ref_where, result)
+                if ref.get("instrumentId") not in instruments:
+                    result.error(ref_where, f"unknown instrumentId {ref.get('instrumentId')!r}")
+                if not isinstance(ref.get("provisions"), list):
+                    result.error(ref_where, "provisions must be an array")
+
+    for lane in lane_set - used_lanes:
+        result.error(f"{where}.lanes", f"declared lane {lane!r} has no nodes")
+    for stage in stage_set - used_stages:
+        result.error(f"{where}.stages", f"declared stage {stage!r} has no nodes")
+    for order in permit_orders - mapped_gates:
+        result.error(f"{where}.nodes", f"permitPath order {order} is not mapped by any board node")
+
+    edges = unique_ids(board.get("edges"), "edges", where, result)
+    connected: set[str] = set()
+    for ident, edge in edges.items():
+        edge_where = f"{where}.edges[{ident}]"
+        required(edge, ("source", "target", "type"), edge_where, result)
+        source = edge.get("source")
+        target = edge.get("target")
+        if source not in nodes:
+            result.error(edge_where, f"unknown source node {source!r}")
+        else:
+            connected.add(source)
+        if target not in nodes:
+            result.error(edge_where, f"unknown target node {target!r}")
+        else:
+            connected.add(target)
+        if source == target:
+            result.error(edge_where, "self-referencing edges are not allowed")
+        if edge.get("type") not in BOARD_EDGE_TYPES:
+            result.error(edge_where, f"unknown edge type {edge.get('type')!r}")
+    for ident in set(nodes) - connected:
+        result.error(f"{where}.nodes[{ident}]", "isolated node has no incoming or outgoing edge")
+
+    return {"board_nodes": len(nodes), "board_edges": len(edges)}
+
+
 def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any], result: Validation) -> dict[str, int]:
     rel = str(path.relative_to(ROOT))
     required(
@@ -141,6 +257,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             "country",
             "purpose",
             "verification",
+            "processBoard",
             "authorities",
             "instruments",
             "requirements",
@@ -287,6 +404,16 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         if permit_orders and permit_orders != set(range(1, max(permit_orders) + 1)):
             result.error(f"{rel}.permitPath", "orders must be contiguous from 1")
 
+    board_counts = validate_process_board(
+        data.get("processBoard"),
+        f"{rel}.processBoard",
+        authorities,
+        instruments,
+        requirements,
+        permit_orders,
+        result,
+    )
+
     overlays = unique_ids(data.get("siteOverlays"), "siteOverlays", rel, result)
     for ident, overlay in overlays.items():
         where = f"{rel}.siteOverlays[{ident}]"
@@ -338,6 +465,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         "instruments": len(instruments),
         "requirements": len(requirements),
         "questions": len(questions),
+        **board_counts,
     }
 
 
@@ -381,7 +509,14 @@ def main() -> int:
     for slug in sorted(extra_files):
         result.error("manifest.countries", f"data file {slug!r} is not registered")
 
-    totals = {"authorities": 0, "instruments": 0, "requirements": 0, "questions": 0}
+    totals = {
+        "authorities": 0,
+        "instruments": 0,
+        "requirements": 0,
+        "questions": 0,
+        "board_nodes": 0,
+        "board_edges": 0,
+    }
     for path in country_paths:
         data = read_json(path, result)
         if data is None:
@@ -413,7 +548,9 @@ def main() -> int:
         f"{totals['authorities']} authorities, "
         f"{totals['instruments']} instruments, "
         f"{totals['requirements']} requirements, "
-        f"{totals['questions']} open questions"
+        f"{totals['questions']} open questions, "
+        f"{totals['board_nodes']} board nodes, "
+        f"{totals['board_edges']} board edges"
     )
     return 0
 

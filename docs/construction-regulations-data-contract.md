@@ -23,6 +23,8 @@
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
+| `tools/build_construction_boards.mjs` | `processBoard`를 korea100studio SVG로 렌더 | 수동 |
+| `tools/check_construction_site.py` | 생성 페이지·SVG 연결 확인 | 수동 |
 
 생성 문서는 직접 고치지 않는다. 원천 JSON을 수정한 뒤 다시 빌드한다.
 
@@ -64,6 +66,7 @@
   purpose: string;
   pilotContext?: ProjectContext;
   verification: VerificationSummary;
+  processBoard: ConstructionProcessBoard;
   authorities: Authority[];
   instruments: Instrument[];
   requirements: Requirement[];
@@ -157,6 +160,49 @@
 
 `blocking: true`는 답이 없으면 부지 적법성, 공간·구조·설비 개념, 비용, 일정 또는 조달전략을 확정할 수 없다는 뜻이다.
 
+### 5.5 제도 구조도 `ConstructionProcessBoard`
+
+`processBoard`는 [korea100studio board-v1](https://github.com/amnotyoung/korea100studio)의 `gov` 프로필 입력이다. 법령 목록을 단순 나열하지 않고 행위주체 × 단계 × 업무와 보완 회귀를 구조도로 만든다.
+
+```ts
+{
+  schema_version: 1;
+  profile: "gov";
+  title: string;
+  subtitle: string;
+  lanes: string[];                  // 행위주체
+  stages: string[];                 // G0, G1 … 순차 단계
+  nodes: Array<{
+    id: string;
+    lane: string;
+    stage: string;
+    label: string;
+    emphasis: "lead" | "key" | "bottleneck" | "loop" | "normal";
+    note?: string;
+    authorityIds?: string[];
+    requirementIds?: string[];
+    gateOrders?: number[];          // permitPath[].order
+    refs: Array<{
+      source: string;               // 구조도에 표시할 짧은 근거명
+      instrumentId: string;
+      provisions: string[];
+    }>;
+  }>;
+  edges: Array<{
+    id: string;
+    source: string;
+    target: string;
+    type: "sequence" | "message" | "loop";
+    label?: string;
+  }>;
+}
+```
+
+- `permitPath`는 일정·산출물 중심의 법정 Gate 대장이고, `processBoard`는 기관 간 인계·병렬협의·보완회귀를 보여주는 시각 모델이다. 서로 대체하지 않는다.
+- 모든 Gate 순번은 최소 한 개의 보드 노드 `gateOrders`에 연결한다.
+- 모든 노드는 근거 `refs`를 갖고 기존 법령 ID·요구사항·기관으로 역추적할 수 있어야 한다.
+- SVG는 `npm run build:construction-boards`로 만들며 `korea100studio validate --strict`, `render`, `check`를 모두 통과해야 한다.
+
 ## 6. 참조 무결성 규칙
 
 - 모든 `authorityIds`, `instrumentId`, `replaces`, `replacedBy`는 같은 파일 안의 ID를 가리켜야 한다.
@@ -166,6 +212,9 @@
 - `superseded` 법령은 `replacedBy`를, 대체 법령은 가능한 경우 `replaces`를 적는다.
 - 모든 차단 질문은 증빙과 확인 상대를 지정해야 한다.
 - 기준일보다 뒤 날짜의 법령은 `in_force`로 둘 수 없다.
+- `processBoard`의 lane·stage·node·edge ID는 유일해야 하고 모든 참조 대상이 존재해야 한다.
+- `processBoard`의 모든 노드는 연결돼 있어야 하며 모든 `permitPath` 순번을 포괄해야 한다.
+- 새 구조도는 korea100studio 감사에서 노드 관통 0건과 strict 구성예산을 충족해야 한다.
 
 ## 7. ODA 건축보고서 적용 순서
 
