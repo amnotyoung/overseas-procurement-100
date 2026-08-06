@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -50,12 +50,21 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload site artifact
+        id: upload
         uses: actions/upload-pages-artifact@v4
         with:
           path: site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        # deploy-pages@v4 cancels queued deployments after a hard 10-minute limit.
+        uses: actions/github-script@v9
+        timeout-minutes: 32
+        env:
+          PAGES_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+          PAGES_DEPLOY_TIMEOUT_MS: "1800000"
         with:
-          timeout: 1200000
+          github-token: ${{ github.token }}
+          script: |
+            const deploy = require('./tools/deploy_pages_long_wait.cjs')
+            await deploy({ github, context, core })
