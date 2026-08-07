@@ -190,6 +190,132 @@ def main() -> int:
             model_slug = model["slug"]
             spec = public_specs.get(model_slug)
             process = model["process"]
+            canvas = model["canvas"]
+            has_statutory_nodes = any(
+                node.get("workflow_kind") == "statutory"
+                for node in process["nodes"]
+            )
+            oda_only_model = not has_statutory_nodes
+            oda_only_permit_model = bool(
+                oda_only_model and spec and spec.get("id") == "permit-environment"
+            )
+            representative_two_gate_model = bool(
+                oda_only_permit_model
+                and model.get("countryKey") in {"pakistan", "fiji"}
+            )
+            procedure = canvas.get("procedure")
+            if not isinstance(procedure, list):
+                errors.append(f"{model_slug} canvas procedure must be a list")
+            else:
+                if len(procedure) != len(process["nodes"]):
+                    errors.append(
+                        f"{model_slug} canvas procedure count differs from process nodes: "
+                        f"expected {len(process['nodes'])}, got {len(procedure)}"
+                    )
+                if not 7 <= len(procedure) <= 8:
+                    errors.append(
+                        f"{model_slug} canvas procedure must contain 7-8 steps, "
+                        f"got {len(procedure)}"
+                    )
+                if oda_only_model and len(procedure) != 7:
+                    errors.append(
+                        f"{model_slug} ODA-only workflow must contain 7 steps, "
+                        f"got {len(procedure)}"
+                    )
+
+            selected_gate_orders = list(dict.fromkeys(
+                order
+                for node in process["nodes"]
+                for order in node.get("gate_orders", [])
+            ))
+            official_gates = canvas.get("officialGates")
+            if not isinstance(official_gates, list):
+                errors.append(f"{model_slug} canvas officialGates must be a list")
+            elif any(
+                not isinstance(item, dict)
+                or not isinstance(item.get("order"), int)
+                for item in official_gates
+            ):
+                errors.append(f"{model_slug} canvas officialGates contains an invalid Gate")
+            else:
+                actual_gate_orders = [item["order"] for item in official_gates]
+                if (
+                    len(actual_gate_orders) != len(selected_gate_orders)
+                    or set(actual_gate_orders) != set(selected_gate_orders)
+                ):
+                    errors.append(
+                        f"{model_slug} canvas official Gate orders differ: "
+                        f"expected unique {selected_gate_orders}, got {actual_gate_orders}"
+                    )
+                if representative_two_gate_model and len(official_gates) != 2:
+                    errors.append(
+                        f"{model_slug} representative permit workflow must expose 2 official Gates, "
+                        f"got {len(official_gates)}"
+                    )
+
+            if oda_only_permit_model:
+                gate_named_nodes = [
+                    node["id"]
+                    for node in process["nodes"]
+                    if "gate" in node.get("name", "").casefold()
+                ]
+                if gate_named_nodes:
+                    errors.append(
+                        f"{model_slug} ODA-only node names must not claim Gate status: "
+                        f"{gate_named_nodes}"
+                    )
+
+            if oda_only_model:
+                for edge in process["edges"]:
+                    if edge.get("type") != "loop":
+                        continue
+                    label = edge.get("label", "")
+                    forbidden_terms = [
+                        term for term in ("재접수", "불복") if term in label
+                    ]
+                    if forbidden_terms:
+                        errors.append(
+                            f"{model_slug} ODA-only loop edge {edge.get('id')} "
+                            f"claims an unverified official path: {forbidden_terms}"
+                        )
+
+            decision_branches = canvas.get("decisionBranches")
+            if not isinstance(decision_branches, list):
+                errors.append(f"{model_slug} canvas decisionBranches must be a list")
+            else:
+                branch_states = [
+                    item.get("state") if isinstance(item, dict) else None
+                    for item in decision_branches
+                ]
+                if len(decision_branches) != 3 or set(branch_states) != {
+                    "success", "rework", "reject"
+                }:
+                    errors.append(
+                        f"{model_slug} must expose success/rework/reject decision branches, "
+                        f"got {branch_states}"
+                    )
+
+            workflow_disclosure = canvas.get("workflowDisclosure")
+            if (
+                not isinstance(workflow_disclosure, str)
+                or not workflow_disclosure.strip()
+            ):
+                errors.append(f"{model_slug} canvas lacks a workflow disclosure")
+            legal_basis = canvas.get("legalBasis")
+            reference_basis = canvas.get("referenceBasis")
+            if not isinstance(legal_basis, list) or not isinstance(reference_basis, list):
+                errors.append(
+                    f"{model_slug} must separate legalBasis and referenceBasis lists"
+                )
+            else:
+                if any(item.get("status") != "in_force" for item in legal_basis):
+                    errors.append(
+                        f"{model_slug} legalBasis contains a non-current instrument"
+                    )
+                if any(item.get("status") == "in_force" for item in reference_basis):
+                    errors.append(
+                        f"{model_slug} referenceBasis contains an in-force instrument"
+                    )
             if not 7 <= len(process["nodes"]) <= 8:
                 errors.append(f"{model_slug} must render 7-8 nodes, got {len(process['nodes'])}")
             if len(process["lanes"]) < 3:
@@ -212,13 +338,72 @@ def main() -> int:
                 "현장 확인질문",
                 "보고서 반영",
                 "핵심 적용판단",
-                "업무 단계",
                 "근거 상태",
                 f'{model["priority"]:02d} · {model["name"]}',
-                "레인 \\ 단계",
+                "업무 구간",
+                "ODA 사업팀",
+                "<span>업무절차</span>",
+                "<span>국가별 공식 결정 Gate</span>",
+                "<span>업무 구간</span>",
+                'data-state="success"',
+                'data-state="rework"',
+                'data-state="reject"',
             ):
                 if marker not in detail_html:
                     errors.append(f"site/model/{model_slug}/index.html is missing {marker!r}")
+            if not re.search(r'class="[^"]*\bdecision-branches\b[^"]*"', detail_html):
+                errors.append(
+                    f"site/model/{model_slug}/index.html is missing the decision branch panel"
+                )
+            if not re.search(r'class="[^"]*\bedge-label\b[^"]*"', detail_html):
+                errors.append(
+                    f"site/model/{model_slug}/index.html is missing edge-label rendering"
+                )
+            if not re.search(r"if\s*\(\s*ed\.label\s*\)", detail_html):
+                errors.append(
+                    f"site/model/{model_slug}/index.html does not guard edge-label rendering"
+                )
+            if not re.search(
+                r"loop\s*:\s*cs\.getPropertyValue\(\s*['\"]--back['\"]\s*\)\.trim\(\)",
+                detail_html,
+            ):
+                errors.append(
+                    f"site/model/{model_slug}/index.html does not use --back for loop edges"
+                )
+            if not re.search(
+                r"if\s*\(\s*ed\.type\s*===\s*['\"]loop['\"]"
+                r"[^)]*ed\.label[^)]*\)\s*\{"
+                r".{0,1200}?return\s+loop\s*;",
+                detail_html,
+                re.DOTALL,
+            ):
+                errors.append(
+                    f"site/model/{model_slug}/index.html lacks fixed loop-route early return"
+                )
+            if isinstance(official_gates, list):
+                gate_count = len(official_gates)
+                gate_heading = f"국가별 공식 결정 Gate · {gate_count}개"
+                if gate_heading not in detail_html:
+                    errors.append(
+                        f"site/model/{model_slug}/index.html is missing "
+                        f"the official Gate-count heading {gate_heading!r}"
+                    )
+                for local_order in range(1, gate_count + 1):
+                    local_label = f"Gate {local_order}/{gate_count}"
+                    if local_label not in detail_html:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html is missing "
+                            f"local Gate label {local_label!r}"
+                        )
+            if isinstance(reference_basis, list) and reference_basis:
+                if "관련 공식자료·현행성 확인대상" not in detail_html:
+                    errors.append(
+                        f"site/model/{model_slug}/index.html does not separate unverified sources"
+                    )
+            if has_statutory_nodes and "법정절차" not in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html lacks the statutory-procedure badge"
+                )
             expected_ids = [node["id"] for node in model["process"]["nodes"]]
             node_buttons = re.findall(r'<button class="node" data-id="([^"]+)"', detail_html)
             if len(node_buttons) != len(expected_ids) or set(node_buttons) != set(expected_ids):
@@ -252,6 +437,22 @@ def main() -> int:
                             f"site/model/{model_slug}/index.html serialized edges differ: "
                             f"expected {expected_edge_ids}, got {actual_edge_ids}"
                         )
+                    loop_edges = [
+                        edge for edge in serialized_edges if edge.get("type") == "loop"
+                    ]
+                    if not loop_edges:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html has no conditional loop edge"
+                        )
+                    for edge in loop_edges:
+                        label = edge.get("label")
+                        if oda_only_model and (
+                            not isinstance(label, str) or "시" not in label
+                        ):
+                            errors.append(
+                                f"site/model/{model_slug}/index.html loop edge "
+                                f"{edge.get('id')} lacks a conditional label: {label!r}"
+                            )
                     for node_id, node in serialized_nodes.items():
                         if not node.get("action") or not node.get("output_documents"):
                             errors.append(
