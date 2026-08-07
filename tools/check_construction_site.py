@@ -79,10 +79,7 @@ def main() -> int:
                     errors.append(f"{slug} {ident} lacks dated currentness evidence")
                 if not item.get("scopeLabel"):
                     errors.append(f"{slug} {ident} lacks a separate scope label")
-            if slug == "fiji" and any(
-                "/Acts/" in item.get("officialUrl", "")
-                for item in data["instruments"]
-            ):
+            if slug == "fiji" and "/Acts/" in json.dumps(data, ensure_ascii=False):
                 errors.append("fiji still publishes a broken pre-2026 Laws of Fiji deep link")
 
         expected_requirement_ids = {item["id"] for item in data["requirements"]}

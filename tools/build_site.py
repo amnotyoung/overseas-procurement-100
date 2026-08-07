@@ -1405,7 +1405,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
 {body}
 <footer class="site"><div class="wrap">
   국가별 조달·ODA 건축 법제의 기준일 현재 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
-  실제 입찰·설계·인허가 전에는 발주처 공고문, 관할기관 판단과 현행 법령을 다시 확인해야 합니다.<br>
+  자료별 현행·운영 상태는 표시된 확인일과 판단근거로 사이트가 관리합니다. 실제 사업에서는 기준일 이후 변경사항과 해당 공고·대상지에 대한 관할기관의 최종 적용판정을 확인해야 합니다.<br>
   1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 및 각국 정부 공식 법령·관보<br>
   제도 추가·정정 제안 · Threads <a href="https://www.threads.net/@amnotyoung.k" target="_blank" rel="me noopener noreferrer">@amnotyoung.k</a>
 </div></footer>
@@ -2799,7 +2799,7 @@ def build_errata(items: list[dict]) -> str:
 <div class="statbar"><div class="wrap">
   <div style="font-size:13px;color:var(--muted);max-width:70ch">
     각 항목은 <b>현행 기준 → 확인 출처 → 산출물 반영 내용</b> 순으로 정리했습니다.
-    실제 입찰에서는 연결된 공식 원문과 발주처 공고를 다시 확인해야 합니다.
+    실제 입찰의 최종 조건은 해당 발주처 공고가 우선합니다.
   </div>
   <div class="stats">
     <div class="stat ok"><b>{len(rows)}</b><span>출처 확인</span></div>
