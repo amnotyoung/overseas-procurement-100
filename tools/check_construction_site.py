@@ -43,6 +43,48 @@ def main() -> int:
         public_specs = {item["slug"]: item for item in data.get("publicModels", [])}
         countries += 1
 
+        if slug in {"fiji", "pakistan"}:
+            instruments_by_id = {item["id"]: item for item in data["instruments"]}
+            expected_statuses = {
+                "fiji": {
+                    "FJI-BPAS": "current_official",
+                    "FJI-PH-BUILDING-REG-1959": "in_force",
+                    "FJI-NBC-REG-2004": "in_force",
+                    "FJI-EIA-REG-2007": "in_force",
+                    "FJI-TOWN-PLANNING-ACT": "in_force",
+                    "FJI-EMA-2005": "in_force",
+                    "FJI-NFS-ACT": "in_force",
+                    "FJI-HSW-ACT": "in_force",
+                    "FJI-GWC-REG-2003": "in_force",
+                },
+                "pakistan": {
+                    "PAK-BCP-2021": "in_force",
+                    "PAK-PEPA-1997": "in_force",
+                    "PAK-IEE-EIA-REG-2000": "in_force",
+                    "PAK-CDA-PROCEDURES": "current_official",
+                    "PAK-ICT-BUILDING-REG-2020-2023": "in_force",
+                },
+            }[slug]
+            actual_statuses = {
+                ident: instruments_by_id.get(ident, {}).get("status")
+                for ident in expected_statuses
+            }
+            if actual_statuses != expected_statuses:
+                errors.append(
+                    f"{slug} verified currentness statuses regressed: {actual_statuses}"
+                )
+            for ident in expected_statuses:
+                item = instruments_by_id.get(ident, {})
+                if item.get("statusCheckedOn") != "2026-08-07" or not item.get("statusBasis"):
+                    errors.append(f"{slug} {ident} lacks dated currentness evidence")
+                if not item.get("scopeLabel"):
+                    errors.append(f"{slug} {ident} lacks a separate scope label")
+            if slug == "fiji" and any(
+                "/Acts/" in item.get("officialUrl", "")
+                for item in data["instruments"]
+            ):
+                errors.append("fiji still publishes a broken pre-2026 Laws of Fiji deep link")
+
         expected_requirement_ids = {item["id"] for item in data["requirements"]}
         actual_requirement_ids = {
             ident
@@ -475,10 +517,40 @@ def main() -> int:
                     f"site/model/{model_slug}/index.html invents an official Gate card"
                 )
             if isinstance(reference_basis, list) and reference_basis:
-                if "관련 공식자료·현행성 확인대상" not in detail_html:
+                current_official_refs = [
+                    item for item in reference_basis
+                    if item.get("status") == "current_official"
+                ]
+                exception_refs = [
+                    item for item in reference_basis
+                    if item.get("status") != "current_official"
+                ]
+                if current_official_refs and "운영 중 공식자료" not in detail_html:
                     errors.append(
-                        f"site/model/{model_slug}/index.html does not separate unverified sources"
+                        f"site/model/{model_slug}/index.html does not separate active official sources"
                     )
+                if exception_refs and "사이트 검증 예외" not in detail_html:
+                    errors.append(
+                        f"site/model/{model_slug}/index.html does not separate currentness exceptions"
+                    )
+            if "현행성 재확인" in detail_html or "출처 현행성 재확인" in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html exposes the deprecated blanket currentness warning"
+                )
+            gate_markup = re.search(
+                r'<ol class="official-gates">(.*?)</ol>', detail_html, re.DOTALL
+            )
+            if gate_markup and any(
+                label in gate_markup.group(1)
+                for label in ("현행 확인", "운영 중 공식 안내", "최신 개정 확인 중")
+            ):
+                errors.append(
+                    f"site/model/{model_slug}/index.html repeats source currentness inside Gate cards"
+                )
+            if "l.status_tone" in detail_html or "l.status+'</span>" in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html repeats source currentness inside node drawers"
+                )
             expected_ids = [node["id"] for node in model["process"]["nodes"]]
             expected_display_ids = [
                 f"B{index:02d}" for index in range(1, len(expected_ids) + 1)
@@ -598,7 +670,7 @@ def main() -> int:
                         )
                     if (
                         model["verification"]["status"] != "article-verified"
-                        and "세부 조문의 문언 일치나 개별 사업 적용판정을 뜻하지 않습니다" not in detail_html
+                        and "개별 사업 적용판정은 ODA 적용 확인사항으로 따로 관리합니다" not in detail_html
                     ):
                         errors.append(
                             f"site/model/{model_slug}/index.html overstates non-article verification"

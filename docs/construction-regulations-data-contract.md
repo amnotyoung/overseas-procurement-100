@@ -7,7 +7,7 @@
 ## 1. 설계 원칙
 
 1. **법령 목록이 아니라 의사결정 자료로 만든다.** 모든 의무를 사업 생애주기와 Gate 질문에 연결한다.
-2. **현행·폐지·개정예고를 섞지 않는다.** `in_force`, `superseded`, `pending`, `continuity_unverified`를 구분한다.
+2. **법적 효력·공식 안내의 운영상태·적용 관할을 섞지 않는다.** 법령의 `in_force`, 공식 서비스의 `current_official`, 폐지·개정예고·검증 예외와 국가·지방 적용범위를 구분한다.
 3. **원문 확인 깊이를 드러낸다.** 링크만 연결한 근거와 조문까지 대조한 근거를 구분한다.
 4. **국가 공통 규칙과 부지 특례를 분리한다.** 도시계획구역, 특구, 문화재·연안·재해구역 등은 `siteOverlays`에 둔다.
 5. **미확정은 0이나 ‘해당 없음’으로 바꾸지 않는다.** `openQuestions`에 필요한 증빙, 확인기관, 보고서 영향을 남긴다.
@@ -33,14 +33,17 @@
 
 ## 3. 검증 상태
 
-### 3.1 법령 상태 `instruments[].status`
+### 3.1 법령·공식자료 상태 `instruments[].status`
 
 | 값 | 의미 |
 |---|---|
-| `in_force` | 기준일 현재 현행으로 확인 |
+| `in_force` | 법령·코드의 기준일 현재 법적 효력을 공식 근거로 확인 |
+| `current_official` | 법령이 아닌 정부 서비스·업무안내가 기준일 현재 운영·게시 중임을 확인 |
 | `superseded` | 폐지·대체 근거를 확인 |
 | `pending` | 의회·정부에서 심의 중이나 아직 현행이 아님 |
-| `continuity_unverified` | 구법 시행령 등 존속 범위를 원문만으로 확정하지 못함 |
+| `continuity_unverified` | 사이트가 개정·폐지 추적을 아직 끝내지 못한 예외. 사용자에게 일괄 재확인을 요구하는 뜻이 아님 |
+
+`statusCheckedOn`과 `statusBasis`는 현행·운영 판정일과 그 판단근거를 기록한다. `scope`와 `scopeLabel`은 `national`, `subnational`, `local`, `adoption-dependent`, `multi-level` 중 실제 관할·채택범위를 표시한다. 관할 한정이나 사업별 적용조건을 `continuity_unverified`로 바꾸지 않는다.
 
 ### 3.2 근거 확인 `verificationLevel`
 
@@ -102,7 +105,13 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
   kind: "act" | "code" | "decree" | "draft" | "local-regulation" |
         "official-guidance" | "order" | "ordinance" | "plan" |
         "regulation" | "standard";
-  status: "in_force" | "superseded" | "pending" | "continuity_unverified";
+  status: "in_force" | "current_official" | "superseded" | "pending" |
+          "continuity_unverified";
+  statusCheckedOn?: "YYYY-MM-DD";
+  statusBasis?: string;             // 현행·운영 판단에 쓴 공식 대장·통합본·서비스
+  scope?: "national" | "subnational" | "local" | "adoption-dependent" |
+          "multi-level";
+  scopeLabel?: string;              // 예: Islamabad Capital Territory (ICT)
   issuedOn?: "YYYY-MM-DD";
   publishedOn?: "YYYY-MM-DD";
   officialUrl: string;
@@ -115,7 +124,7 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
 }
 ```
 
-폐지된 법령도 지우지 않는다. 공식 포털의 오래된 안내를 걸러내고 과거 보고서의 인용을 진단하기 위한 대조표로 남긴다.
+폐지된 법령도 지우지 않는다. 공식 포털의 오래된 안내를 걸러내고 과거 보고서의 인용을 진단하기 위한 대조표로 남긴다. Gate와 절차 노드에는 관할·근거 깊이만 간결하게 표시하고, 현행·운영 상태와 확인일은 원문 검증대장에서 자료별로 한 번 표시한다.
 
 ### 5.2 생애주기 의무 `Requirement`
 
@@ -263,7 +272,7 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
 - `action`·`outputs`가 있으면 공개 카드 상세는 이를 우선 사용한다. `requirementIds`는 상태·적용조건·근거 추적을 유지하되 같은 축의 긴 요구사항과 증빙목록을 모든 카드에 반복하지 않는다.
 - 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 첫 건축 model로 이동한다.
 - 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드의 노드별 근거는 `processBoard.refs`를 우선하고, refs가 없는 구 계약에서만 연결된 `requirements[].legalBasis`를 대체 근거로 쓴다. 축 전체 근거는 캔버스 법적 근거에 별도로 유지한다.
-- 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `note`를 보존한다. `pending` 법안과 `continuity_unverified` 안내자료는 현행 법적 근거 목록에 섞지 않고 검증 대장에서 상태 배지와 함께 표시한다.
+- 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `scope`, `note`를 보존한다. `current_official`은 법적 근거가 아니라 운영 중 공식자료로 분리하고, `pending`·`superseded`·`continuity_unverified`는 사이트 검증 예외로 원문 대장에서 구체적 사유와 함께 표시한다.
 - `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.
 - `npm run build:construction-boards`의 SVG는 공개 본문 이미지가 아니라 `korea100studio validate --strict`, `render`, `check`를 위한 구성 감사 산출물이다.
 

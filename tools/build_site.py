@@ -122,19 +122,21 @@ CONSTRUCTION_STATUS_LABEL = {
     "confirmed": "확정",
     "conditional": "조건부",
     "unresolved": "미확정",
-    "in_force": "현행",
+    "in_force": "현행 확인",
+    "current_official": "운영 중 공식 안내",
     "superseded": "폐지·대체",
     "pending": "심의·예고",
-    "continuity_unverified": "현행성 재확인",
+    "continuity_unverified": "최신 개정 확인 중",
 }
 CONSTRUCTION_STATUS_TONE = {
     "confirmed": "ok",
     "conditional": "warn",
     "unresolved": "bad",
     "in_force": "ok",
+    "current_official": "info",
     "superseded": "muted",
     "pending": "warn",
-    "continuity_unverified": "bad",
+    "continuity_unverified": "warn",
 }
 CONSTRUCTION_VERIFY_LABEL = {
     "article-verified": "조문 대조 완료",
@@ -142,6 +144,22 @@ CONSTRUCTION_VERIFY_LABEL = {
     "source-linked": "공식자료 연결",
     "needs-review": "추가 확인",
 }
+
+CURRENT_CONSTRUCTION_SOURCE_STATUSES = {"in_force", "current_official"}
+
+
+def construction_scope_label(instrument: dict) -> str:
+    """Return the human-facing jurisdiction/adoption scope, if explicitly recorded."""
+    return instrument.get("scopeLabel", "")
+
+
+def construction_status_checked_on(instrument: dict, fallback: str = "") -> str:
+    """Return the date on which the publisher/currentness state was checked."""
+    if instrument.get("statusCheckedOn"):
+        return instrument["statusCheckedOn"]
+    if instrument.get("status") in CURRENT_CONSTRUCTION_SOURCE_STATUSES:
+        return fallback
+    return ""
 
 
 def e(s) -> str:
@@ -433,6 +451,11 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "kind": instrument["kind"],
                 "status": instrument["status"],
                 "verification_level": instrument["verificationLevel"],
+                "scope_label": construction_scope_label(instrument),
+                "status_checked_on": construction_status_checked_on(
+                    instrument, d.get("asOfDate", "")
+                ),
+                "status_basis": instrument.get("statusBasis", ""),
                 "note": instrument.get("note", ""),
             })
             basis["provisions"].extend(ref.get("provisions", []))
@@ -562,6 +585,11 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             "articles": ", ".join(instrument.get("articlesChecked", [])),
             "status": instrument["status"],
             "verificationLevel": instrument["verificationLevel"],
+            "scopeLabel": construction_scope_label(instrument),
+            "statusCheckedOn": construction_status_checked_on(
+                instrument, d.get("asOfDate", "")
+            ),
+            "statusBasis": instrument.get("statusBasis", ""),
         }
         if instrument["status"] == "in_force":
             legal_basis.append(basis_entry)
@@ -578,6 +606,11 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "retrievedOn": d["verification"]["verifiedAt"],
                 "status": instrument["status"],
                 "verificationLevel": instrument["verificationLevel"],
+                "scopeLabel": construction_scope_label(instrument),
+                "statusCheckedOn": construction_status_checked_on(
+                    instrument, d.get("asOfDate", "")
+                ),
+                "statusBasis": instrument.get("statusBasis", ""),
                 "note": instrument.get("note", ""),
             })
 
@@ -697,6 +730,8 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                     "kind": basis.get("kind", ""),
                     "status": basis.get("status", ""),
                     "verificationLevel": basis.get("verification_level", ""),
+                    "scopeLabel": basis.get("scope_label", ""),
+                    "statusCheckedOn": basis.get("status_checked_on", ""),
                 })
         authority_match = re.match(r"^(.+?)(?:이|가)\s", gate["decision"])
         official_gates.append({
@@ -1563,13 +1598,17 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     stage_metric_label = "절차 구간" if d["axis"] == "construction" else "게이트"
     node_metric_label = "절차 단계" if d["axis"] == "construction" else "절차 노드"
     if d["axis"] == "construction":
+        current_sources = sum(
+            1 for source in v.get("sources", [])
+            if source.get("status") in CURRENT_CONSTRUCTION_SOURCE_STATUSES
+        )
         currentness_issues = sum(
             1 for source in v.get("sources", [])
-            if source.get("status") != "in_force"
+            if source.get("status") == "continuity_unverified"
         )
-        status_metric = currentness_issues
-        status_metric_label = "출처 현행성 재확인"
-        status_metric_bad = bool(currentness_issues)
+        status_metric = f'{current_sources}/{len(v.get("sources", []))}'
+        status_metric_label = "현행·운영 확인"
+        status_metric_bad = False
     else:
         status_metric = len(discs)
         status_metric_label = "현행 확인사항" + (f" (필수 확인 {hi})" if hi else "")
@@ -1577,12 +1616,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     if v["status"] == "article-verified":
         verification_caveat = (
             f"{VERIF_LABEL[v['status']]} — 조문의 존재와 문언 일치만 뜻합니다. "
-            "법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다."
+            "관할·필지·시설에 따른 사업 적용판정은 별도입니다."
         )
     else:
         verification_caveat = (
             f"{VERIF_LABEL[v['status']]} — 공식 자료와 제도의 연결 수준을 뜻하며 "
-            "세부 조문의 문언 일치나 개별 사업 적용판정을 뜻하지 않습니다."
+            "자료의 현행·운영 상태는 위 원문 대장의 상태와 확인일로, "
+            "개별 사업 적용판정은 ODA 적용 확인사항으로 따로 관리합니다."
         )
 
     opts = "".join(
@@ -1624,14 +1664,16 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     # 캔버스 — 법령명은 verification.sources의 원문 URL과 자동으로 이어 붙인다
     surl = source_urls(d)
-    def render_law_list(items: list[dict]) -> str:
+    def render_law_list(items: list[dict], *, show_status: bool = False) -> str:
         return "".join(
             f'<div class="law"><span class="nm">{link(e(l["law"]), l.get("url") or surl.get(l["law"]))}</span>'
             f'<span class="ar">{e(l.get("articles") or "")}</span>'
             f'<span class="badge plain muted" style="margin-left:auto">{e(KIND_LABEL.get(l["kind"], l["kind"]))}</span>'
+            + (f'<span class="badge plain info">{e(l.get("scopeLabel"))}</span>'
+               if l.get("scopeLabel") else "")
             + (f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(l["status"], "muted")}">'
                f'{e(CONSTRUCTION_STATUS_LABEL.get(l["status"], l["status"]))}</span>'
-               if l.get("status") else "")
+               if show_status and l.get("status") else "")
             + (f'<span class="badge {VERIF_TONE.get(l["verificationLevel"], "muted")}">'
                f'{e(VERIF_LABEL.get(l["verificationLevel"], l["verificationLevel"]))}</span>'
                if l.get("verificationLevel") else "")
@@ -1640,15 +1682,33 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         )
 
     laws = render_law_list(c["legalBasis"])
-    reference_laws = render_law_list(c.get("referenceBasis", []))
+    reference_basis = c.get("referenceBasis", [])
+    current_references = [
+        item for item in reference_basis
+        if item.get("status") == "current_official"
+    ]
+    status_exceptions = [
+        item for item in reference_basis
+        if item.get("status") != "current_official"
+    ]
+    reference_laws = render_law_list(current_references)
+    exception_laws = render_law_list(status_exceptions)
     legal_basis_body = laws or (
         '<p style="margin:0;font-size:13px;line-height:1.65;color:var(--muted)">'
-        '현행 법적 근거로 확정된 자료가 없습니다. 아래 현행성 확인대상을 사업 착수 시 재검증해야 합니다.</p>'
+        '이 제도축은 현재 법령 직접근거보다 공식 서비스·기술자료를 중심으로 설명합니다. '
+        '자료별 상태와 확인일은 아래 검증 대장에 기록했습니다.</p>'
     )
     reference_basis_card = (
-        '<div class="card"><h3>관련 공식자료·현행성 확인대상</h3>'
+        '<div class="card"><h3>운영 중 공식자료</h3>'
         f'{reference_laws}</div>'
         if reference_laws else ""
+    )
+    status_exception_card = (
+        '<div class="card"><h3>사이트 검증 예외</h3>'
+        '<p class="workflow-disclosure">개정·폐지 추적이 아직 끝나지 않은 자료만 모았습니다. '
+        '관할·사업별 적용 확인과는 다른 항목이며, 사이트 검증 대장에서 해소합니다.</p>'
+        f'{exception_laws}</div>'
+        if exception_laws else ""
     )
     auths = "".join(
         f'<div class="auth"><b>{link(e(a["name"]), a.get("url"))}</b>'
@@ -1667,9 +1727,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             '<span class="gate-basis">'
             f'<span class="law-name">{link(e(item["law"]), item.get("url"))}</span>'
             f'<span class="badge plain muted">{e(KIND_LABEL.get(item.get("kind"), item.get("kind", "")))}</span>'
-            f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(item.get("status"), "muted")}">'
-            f'{e(CONSTRUCTION_STATUS_LABEL.get(item.get("status"), item.get("status", "")))}</span>'
-            f'<span class="badge {VERIF_TONE.get(item.get("verificationLevel"), "muted")}">'
+            + (f'<span class="badge plain info">{e(item.get("scopeLabel"))}</span>'
+               if item.get("scopeLabel") else "")
+            + f'<span class="badge {VERIF_TONE.get(item.get("verificationLevel"), "muted")}">'
             f'{e(VERIF_LABEL.get(item.get("verificationLevel"), item.get("verificationLevel", "")))}</span>'
             '</span>'
             for item in gate.get("legalBasis", [])
@@ -1714,8 +1774,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     official_gate_card = (
         f'<div class="card span2"><h3>공식 결정 Gate · {len(official_gate_data)}개</h3>'
         '<p class="workflow-disclosure">위 절차 중 관할기관이 공식 문서를 발급하거나 처분하는 '
-        '결정 지점만 분리했습니다. Gate 1/N은 이 페이지 안의 표시번호이며, 적용범위와 근거상태는 '
-        '각 Gate에서 확인해야 합니다.</p>'
+        '결정 지점만 분리했습니다. Gate 1/N은 이 페이지 안의 표시번호이며, 관할·사업별 적용조건과 '
+        '근거 수준은 각 Gate에서 확인합니다.</p>'
         f'<ol class="official-gates">{official_gates}</ol></div>'
         if d["axis"] == "construction" and official_gates else ""
     )
@@ -1765,6 +1825,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     srcs = "".join(
         f'<li><a class="ref" href="{e(s["officialUrl"])}" target="_blank" rel="noopener">{e(s.get("officialName") or s["law"])}</a>'
         f'<span class="badge plain muted" style="margin-left:6px">{e(KIND_LABEL.get(s["kind"], s["kind"]))}</span>'
+        + (f'<span class="badge plain info" style="margin-left:6px">{e(s.get("scopeLabel"))}</span>'
+           if s.get("scopeLabel") else "")
         + (f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(s["status"], "muted")}" style="margin-left:6px">'
            f'{e(CONSTRUCTION_STATUS_LABEL.get(s["status"], s["status"]))}</span>'
            if s.get("status") else "")
@@ -1772,7 +1834,10 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
            f'{e(VERIF_LABEL.get(s["verificationLevel"], s["verificationLevel"]))}</span>'
            if s.get("verificationLevel") else "")
         + (f'<span class="ar">대조 조문 {e(s["articlesChecked"])}</span>' if s.get("articlesChecked") else "")
-        + f'<span class="ar">확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span>'
+        + f'<span class="ar">원문 확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span>'
+        + (f'<span class="ar">상태 확인 {e(s["statusCheckedOn"])}'
+           f'{" · " + e(s["statusBasis"]) if s.get("statusBasis") else ""}</span>'
+           if s.get("statusCheckedOn") else "")
         + (f'<span class="ar">{el(s["note"])}</span>' if s.get("note") else "")
         + '</li>'
         for s in v.get("sources", []))
@@ -1830,7 +1895,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="tile"><b>{len(lanes)}</b><span>행위 레인</span></div>
     <div class="tile"><b>{len(stages)}</b><span>{e(stage_metric_label)}</span></div>
     <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
-    <div class="tile{' bad' if status_metric_bad else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
+    <div class="tile{' bad' if status_metric_bad else ' ok' if d['axis'] == 'construction' else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
+    {f'<div class="tile warn"><b>{currentness_issues}</b><span>사이트 최신성 검증 중</span></div>' if d['axis'] == 'construction' and currentness_issues else ''}
     <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>ODA 적용 확인</span></div>
   </div>
 </div>
@@ -1866,6 +1932,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['applicability'])}</p></div>
     <div class="card"><h3>법적 근거</h3>{legal_basis_body}</div>
     {reference_basis_card}
+    {status_exception_card}
     <div class="card"><h3>권한 기관</h3>{auths}</div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['stakeholders'])}</p></div>
     <div class="card"><h3>제출서류</h3>{docs}</div>
@@ -1948,8 +2015,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                     "article": e(lb["article"]),
                     "url": e(lb.get("url") or surl.get(lb["law"], "")),
                     "kind": e(KIND_LABEL.get(lb.get("kind"), lb.get("kind", ""))),
-                    "status": e(CONSTRUCTION_STATUS_LABEL.get(lb.get("status"), lb.get("status", ""))),
-                    "status_tone": e(CONSTRUCTION_STATUS_TONE.get(lb.get("status"), "muted")),
+                    "scope_label": e(lb.get("scope_label", "")),
                     "verification": e(VERIF_LABEL.get(
                         lb.get("verification_level"), lb.get("verification_level", "")
                     )),
@@ -2220,7 +2286,7 @@ function openNode(id){{
     h+='<dt>'+basisLabel+'</dt><dd>'+n.legal_basis.map(function(l){{
       var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
       var meta=(l.kind?' <span class="badge plain muted">'+l.kind+'</span>':'')
-        +(l.status?' <span class="badge '+l.status_tone+'">'+l.status+'</span>':'')
+        +(l.scope_label?' <span class="badge info">'+l.scope_label+'</span>':'')
         +(l.verification?' <span class="badge '+l.verification_tone+'">'+l.verification+'</span>':'');
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}}).join('')+'</dd>';
@@ -2477,13 +2543,15 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
     kind_label = {
         "act": "법률", "decree": "시행령·명령", "order": "부령", "plan": "도시계획",
-        "official-guidance": "공식 안내", "draft": "법안",
+        "official-guidance": "공식 안내", "draft": "법안", "code": "법전·코드",
     }
     instrument_rows = "".join(f"""<tr>
   <td class="name"><b>{construction_instrument_link(item)}</b><p>{e(item['title'])}</p></td>
   <td><span class="badge {CONSTRUCTION_STATUS_TONE[item['status']]}">{e(CONSTRUCTION_STATUS_LABEL[item['status']])}</span></td>
+  <td style="font-size:12.5px">{e(item.get('scopeLabel', '국가 기본범위'))}</td>
   <td style="font-size:12.5px">{e(kind_label.get(item['kind'], item['kind']))}</td>
   <td style="font-size:12.5px">{e(', '.join(item.get('articlesChecked', [])) or '—')}</td>
+  <td style="font-size:12.5px;color:var(--muted)">{e(item.get('statusCheckedOn', '—'))}{' · ' + e(item.get('statusBasis')) if item.get('statusBasis') else ''}</td>
   <td style="font-size:12.5px;color:var(--muted)">{e(item.get('note', '—'))}</td>
 </tr>""" for item in d["instruments"])
 
@@ -2606,8 +2674,8 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
   <section class="blk" id="sources">
     <h2>법령·공식자료 대장</h2>
-    <p class="desc">현행·심의 중·안내페이지를 섞지 않고 확인 깊이를 표시합니다.</p>
-    <div class="data-table-wrap"><table><thead><tr><th>자료</th><th>상태</th><th>종류</th><th>확인 조문</th><th>주의</th></tr></thead>
+    <p class="desc">법령의 효력, 공식 안내의 운영상태, 적용 관할과 확인일을 분리합니다.</p>
+    <div class="data-table-wrap"><table><thead><tr><th>자료</th><th>상태</th><th>적용 범위</th><th>종류</th><th>확인 조문</th><th>상태 확인</th><th>주의</th></tr></thead>
       <tbody>{instrument_rows}</tbody></table></div>
   </section>
 

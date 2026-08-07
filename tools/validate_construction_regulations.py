@@ -29,7 +29,20 @@ STAGES = {
     "completion",
     "operation",
 }
-INSTRUMENT_STATUSES = {"in_force", "superseded", "pending", "continuity_unverified"}
+INSTRUMENT_STATUSES = {
+    "in_force",
+    "current_official",
+    "superseded",
+    "pending",
+    "continuity_unverified",
+}
+INSTRUMENT_SCOPES = {
+    "national",
+    "subnational",
+    "local",
+    "adoption-dependent",
+    "multi-level",
+}
 INSTRUMENT_KINDS = {
     "act",
     "code",
@@ -393,10 +406,26 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         issued = None
         if "issuedOn" in instrument:
             issued = validate_date(instrument["issuedOn"], f"{where}.issuedOn", result)
-        if status == "in_force" and not issued:
-            result.error(where, "in_force instrument must have issuedOn")
+        status_checked = None
+        if "statusCheckedOn" in instrument:
+            status_checked = validate_date(
+                instrument["statusCheckedOn"], f"{where}.statusCheckedOn", result
+            )
+            if as_of and status_checked and status_checked > as_of:
+                result.error(where, "statusCheckedOn cannot be later than asOfDate")
+            if not instrument.get("statusBasis"):
+                result.error(where, "statusCheckedOn needs statusBasis")
+        if status in {"in_force", "current_official"} and not (issued or status_checked):
+            result.error(where, f"{status} instrument needs issuedOn or statusCheckedOn")
         if status == "in_force" and issued and as_of and issued > as_of:
             result.error(where, "future instrument cannot be in_force")
+        if status == "current_official" and instrument.get("kind") != "official-guidance":
+            result.error(where, "current_official is reserved for official-guidance")
+        scope = instrument.get("scope")
+        if scope is not None and scope not in INSTRUMENT_SCOPES:
+            result.error(where, f"unknown scope {scope!r}")
+        if scope in {"subnational", "local", "adoption-dependent", "multi-level"} and not instrument.get("scopeLabel"):
+            result.error(where, f"{scope} instrument needs scopeLabel")
         if level == "article-verified" and not instrument.get("articlesChecked"):
             result.error(where, "article-verified instrument needs articlesChecked")
         if status == "superseded" and not instrument.get("replacedBy"):

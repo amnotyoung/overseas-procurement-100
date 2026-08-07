@@ -31,10 +31,11 @@ STATUS_LABELS = {
     "confirmed": "확정",
     "conditional": "조건부",
     "unresolved": "미확정",
-    "in_force": "현행",
+    "in_force": "현행 확인",
+    "current_official": "운영 중 공식 안내",
     "superseded": "폐지·대체",
     "pending": "심의·예고",
-    "continuity_unverified": "현행성 재확인",
+    "continuity_unverified": "최신 개정 확인 중",
 }
 VERIFY_LABELS = {
     "article-verified": "조문 대조",
@@ -202,11 +203,19 @@ def build_country(data: dict[str, Any]) -> str:
 
     add("## 법령·공식자료 대장")
     add("")
-    add("| 자료 | 상태 | 확인 깊이 | 확인 조문 | 비고 |")
-    add("|---|---|---|---|---|")
+    add("| 자료 | 상태 | 적용 범위 | 확인 깊이 | 상태 확인 | 확인 조문 | 비고 |")
+    add("|---|---|---|---|---|---|---|")
     for item in data["instruments"]:
         checked = ", ".join(item.get("articlesChecked", [])) or "—"
-        add(f"| {instrument_link(item)} | {STATUS_LABELS[item['status']]} | {VERIFY_LABELS[item['verificationLevel']]} | {esc(checked)} | {esc(item.get('note', '—'))} |")
+        status_checked = item.get("statusCheckedOn", "—")
+        if item.get("statusBasis"):
+            status_checked += f" · {item['statusBasis']}"
+        add(
+            f"| {instrument_link(item)} | {STATUS_LABELS[item['status']]} | "
+            f"{esc(item.get('scopeLabel', '국가 기본범위'))} | "
+            f"{VERIFY_LABELS[item['verificationLevel']]} | {esc(status_checked)} | "
+            f"{esc(checked)} | {esc(item.get('note', '—'))} |"
+        )
     add("")
 
     add("## 검증범위와 한계")
