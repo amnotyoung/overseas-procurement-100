@@ -1597,11 +1597,19 @@ if(initialAxis){
 # ─────────────────────────────────────────────────────────── 상세
 
 def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str:
+    ordered_items = sorted(
+        items,
+        key=lambda item: (
+            country_name_sort_key(item["country"]["name"]),
+            item["priority"],
+        ),
+    )
+    global_idx = ordered_items.index(d)
+    prev = ordered_items[global_idx - 1] if global_idx > 0 else None
+    nxt = ordered_items[global_idx + 1] if global_idx < len(ordered_items) - 1 else None
     same_country = [item for item in items if country_slug(item) == country_slug(d)]
     same_country.sort(key=lambda item: item["priority"])
     idx = same_country.index(d)
-    prev = same_country[idx - 1] if idx > 0 else None
-    nxt = same_country[idx + 1] if idx < len(same_country) - 1 else None
     c, v, p = d["canvas"], d["verification"], d.get("process") or {}
     lanes, stages = p.get("lanes", []), p.get("stages", [])
     nodes, edges = p.get("nodes", []), p.get("edges", [])
@@ -1944,7 +1952,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <select id="sel" style="min-width:280px">{opts}</select>
   <a class="btn" {'href="../' + e(prev["slug"]) + '/index.html"' if prev else 'disabled'} style="text-decoration:none">← 이전</a>
   <a class="btn" {'href="../' + e(nxt["slug"]) + '/index.html"' if nxt else 'disabled'} style="text-decoration:none">다음 →</a>
-  <span class="pos">이 국가의 제도 {idx + 1}/{len(same_country)}</span>
+  <span class="pos">전체 제도 {global_idx + 1}/{len(ordered_items)} · 이 국가 {idx + 1}/{len(same_country)}</span>
 </div></div>"""
 
     body = f"""

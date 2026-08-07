@@ -10,10 +10,17 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from build_site import build_detail, construction_to_model, construction_to_models
+from build_site import (
+    build_detail,
+    construction_to_model,
+    construction_to_models,
+    country_name_sort_key,
+    country_slug,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "construction-regulations"
+INST_DIR = ROOT / "data" / "institutions"
 SITE = ROOT / "site"
 
 
@@ -33,6 +40,10 @@ def main() -> int:
     if "../index.html?axis=construction" not in legacy_index_html:
         errors.append("site/construction/index.html is not a construction-filter redirect")
 
+    navigation_items = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(INST_DIR.glob("*.json"))
+    ]
     countries = 0
     for path in sorted(DATA_DIR.glob("*.json")):
         if path.name == "manifest.json":
@@ -41,6 +52,7 @@ def main() -> int:
         slug = data["slug"]
         board = data["processBoard"]
         models = construction_to_models(data)
+        navigation_items.extend(models)
         public_specs = {item["slug"]: item for item in data.get("publicModels", [])}
         countries += 1
 
@@ -707,9 +719,58 @@ def main() -> int:
         pipeline_html = pipeline_path.read_text(encoding="utf-8") if pipeline_path.exists() else ""
         if (
             f'href="../{primary_slug}/index.html"' not in pipeline_html
-            or "이 국가의 제도 3/6" not in pipeline_html
+            or "이 국가 3/6" not in pipeline_html
         ):
             errors.append(f"{slug} model navigation does not continue from 03 to 04")
+
+    navigation_items.sort(
+        key=lambda item: (
+            country_name_sort_key(item["country"]["name"]),
+            item["priority"],
+        )
+    )
+    for index, item in enumerate(navigation_items):
+        detail_path = SITE / "model" / item["slug"] / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8") if detail_path.exists() else ""
+        subnav_match = re.search(
+            r'<div class="subnav"><div class="wrap">(.*?)</div></div>',
+            detail_html,
+            re.DOTALL,
+        )
+        if not subnav_match:
+            errors.append(f"site/model/{item['slug']}/index.html is missing global navigation")
+            continue
+        subnav = subnav_match.group(1)
+        previous = navigation_items[index - 1] if index > 0 else None
+        following = navigation_items[index + 1] if index < len(navigation_items) - 1 else None
+        expected_previous = (
+            f'href="../{previous["slug"]}/index.html"' if previous else "disabled"
+        )
+        expected_following = (
+            f'href="../{following["slug"]}/index.html"' if following else "disabled"
+        )
+        previous_link = re.search(r'<a class="btn" ([^>]*)>← 이전</a>', subnav)
+        following_link = re.search(r'<a class="btn" ([^>]*)>다음 →</a>', subnav)
+        if not previous_link or expected_previous not in previous_link.group(1):
+            errors.append(
+                f"{item['slug']} previous navigation does not follow the global model order"
+            )
+        if not following_link or expected_following not in following_link.group(1):
+            errors.append(
+                f"{item['slug']} next navigation does not follow the global model order"
+            )
+        same_country = [
+            candidate
+            for candidate in navigation_items
+            if country_slug(candidate) == country_slug(item)
+        ]
+        local_index = same_country.index(item)
+        expected_position = (
+            f"전체 제도 {index + 1}/{len(navigation_items)} · "
+            f"이 국가 {local_index + 1}/{len(same_country)}"
+        )
+        if expected_position not in subnav:
+            errors.append(f"{item['slug']} navigation position is not global and local")
 
     if errors:
         for error in errors:
