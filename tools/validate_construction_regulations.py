@@ -29,7 +29,20 @@ STAGES = {
     "completion",
     "operation",
 }
-INSTRUMENT_STATUSES = {"in_force", "superseded", "pending", "continuity_unverified"}
+INSTRUMENT_STATUSES = {
+    "in_force",
+    "current_official",
+    "superseded",
+    "pending",
+    "continuity_unverified",
+}
+INSTRUMENT_SCOPES = {
+    "national",
+    "subnational",
+    "local",
+    "adoption-dependent",
+    "multi-level",
+}
 INSTRUMENT_KINDS = {
     "act",
     "code",
@@ -167,6 +180,8 @@ def validate_process_board(
     requirements: dict[str, dict[str, Any]],
     permit_orders: set[int],
     result: Validation,
+    *,
+    allow_entry_only: bool = False,
 ) -> dict[str, int]:
     """Validate the embedded korea100studio board-v1 and its trace links."""
     if not isinstance(board, dict):
@@ -174,10 +189,12 @@ def validate_process_board(
         return {"board_nodes": 0, "board_edges": 0}
     required(
         board,
-        ("schema_version", "profile", "title", "subtitle", "lanes", "stages", "nodes", "edges"),
+        ("schema_version", "profile", "title", "subtitle", "lanes", "stages", "nodes"),
         where,
         result,
     )
+    if "edges" not in board or not isinstance(board.get("edges"), list):
+        result.error(where, "edges must be an array")
     if board.get("schema_version") != 1:
         result.error(f"{where}.schema_version", "must be board-v1 schema version 1")
     if board.get("profile") != "gov":
@@ -296,8 +313,10 @@ def validate_process_board(
             result.error(edge_where, f"unknown edge type {edge.get('type')!r}")
         if edge.get("type") == "loop" and not edge.get("label"):
             result.error(edge_where, "loop edges need a non-empty label")
-    for ident in set(nodes) - connected:
-        result.error(f"{where}.nodes[{ident}]", "isolated node has no incoming or outgoing edge")
+    isolated = set(nodes) - connected
+    if not (allow_entry_only and len(nodes) == 1 and not edges):
+        for ident in isolated:
+            result.error(f"{where}.nodes[{ident}]", "isolated node has no incoming or outgoing edge")
 
     return {"board_nodes": len(nodes), "board_edges": len(edges)}
 
@@ -317,7 +336,6 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             "authorities",
             "instruments",
             "requirements",
-            "permitPath",
             "siteOverlays",
             "openQuestions",
             "fieldworkChecklist",
@@ -327,6 +345,8 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         rel,
         result,
     )
+    if "permitPath" not in data:
+        result.error(rel, "missing required field 'permitPath'")
     if data.get("schemaVersion") != manifest.get("schemaVersion"):
         result.error(rel, "schemaVersion does not match manifest")
     slug = data.get("slug")
@@ -386,10 +406,26 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         issued = None
         if "issuedOn" in instrument:
             issued = validate_date(instrument["issuedOn"], f"{where}.issuedOn", result)
-        if status == "in_force" and not issued:
-            result.error(where, "in_force instrument must have issuedOn")
+        status_checked = None
+        if "statusCheckedOn" in instrument:
+            status_checked = validate_date(
+                instrument["statusCheckedOn"], f"{where}.statusCheckedOn", result
+            )
+            if as_of and status_checked and status_checked > as_of:
+                result.error(where, "statusCheckedOn cannot be later than asOfDate")
+            if not instrument.get("statusBasis"):
+                result.error(where, "statusCheckedOn needs statusBasis")
+        if status in {"in_force", "current_official"} and not (issued or status_checked):
+            result.error(where, f"{status} instrument needs issuedOn or statusCheckedOn")
         if status == "in_force" and issued and as_of and issued > as_of:
             result.error(where, "future instrument cannot be in_force")
+        if status == "current_official" and instrument.get("kind") != "official-guidance":
+            result.error(where, "current_official is reserved for official-guidance")
+        scope = instrument.get("scope")
+        if scope is not None and scope not in INSTRUMENT_SCOPES:
+            result.error(where, f"unknown scope {scope!r}")
+        if scope in {"subnational", "local", "adoption-dependent", "multi-level"} and not instrument.get("scopeLabel"):
+            result.error(where, f"{scope} instrument needs scopeLabel")
         if level == "article-verified" and not instrument.get("articlesChecked"):
             result.error(where, "article-verified instrument needs articlesChecked")
         if status == "superseded" and not instrument.get("replacedBy"):
@@ -566,11 +602,13 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     "questionIds",
                     "conclusionIds",
                     "fieldworkChecklistIds",
-                    "edges",
                 ),
                 where,
                 result,
             )
+            procedure_status = model.get("procedureStatus", "source-linked")
+            if "edges" not in model or not isinstance(model.get("edges"), list):
+                result.error(f"{where}.edges", "must be an array")
             if "siteOverlayIds" not in model:
                 result.error(where, "missing required field 'siteOverlayIds'")
             slug_value = model.get("slug")
@@ -605,11 +643,27 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 covered_gates.update(node.get("gateOrders", []))
             model_node_sets.append((ident, set(node_ids)))
 
-            if not 7 <= len(selected_nodes) <= 8:
+            if procedure_status != "detail-unverified" and len(selected_nodes) < 2:
                 result.error(
                     f"{where}.nodeIds",
-                    f"construction workflow must contain 7-8 nodes, got {len(selected_nodes)}",
+                    f"researched country procedure needs at least 2 nodes, got {len(selected_nodes)}",
                 )
+            if procedure_status == "detail-unverified" and len(selected_nodes) != 1:
+                result.error(
+                    f"{where}.nodeIds",
+                    f"unverified procedure fallback must expose one evidence entry, got {len(selected_nodes)}",
+                )
+            if procedure_status in {"official-source-linked", "article-verified"}:
+                internal_nodes = [
+                    item.get("id") for item in selected_nodes
+                    if item.get("kind") == "field-verification"
+                ]
+                if internal_nodes:
+                    result.error(
+                        f"{where}.nodeIds",
+                        "researched country procedure cannot publish ODA field-verification "
+                        f"nodes: {internal_nodes}",
+                    )
 
             available_requirements = {
                 requirement_id
@@ -659,10 +713,10 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
 
             used_lanes = {item.get("lane") for item in selected_nodes}
             used_stages = {item.get("stage") for item in selected_nodes}
-            if len(used_lanes) < 3:
-                result.error(f"{where}.nodeIds", f"must use at least 3 lanes, got {len(used_lanes)}")
-            if len(used_stages) < 4:
-                result.error(f"{where}.nodeIds", f"must use at least 4 stages, got {len(used_stages)}")
+            if procedure_status != "detail-unverified" and len(used_lanes) < 2:
+                result.error(f"{where}.nodeIds", f"country procedure must use at least 2 lanes, got {len(used_lanes)}")
+            if procedure_status != "detail-unverified" and len(used_stages) < 2:
+                result.error(f"{where}.nodeIds", f"country procedure must use at least 2 stages, got {len(used_stages)}")
 
             model_edges = model.get("edges") if isinstance(model.get("edges"), list) else []
             valid_model_edges = [edge for edge in model_edges if isinstance(edge, dict)]
@@ -695,8 +749,6 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     f"non-loop workflow cannot reach nodes {sorted(missing_reachable)} from {node_ids[0]!r}",
                 )
             loop_edges = [edge for edge in valid_model_edges if edge.get("type") == "loop"]
-            if not loop_edges:
-                result.error(f"{where}.edges", "must include at least one labelled correction loop")
             position = {node_id: index for index, node_id in enumerate(node_ids)}
             for edge in loop_edges:
                 source = edge.get("source")
@@ -736,10 +788,10 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                                 f"{where}.processBoard.nodes[{node.get('id')}]",
                                 f"generated workflow node needs {field}",
                             )
-                    if node.get("basisScope") != "axis":
+                    if procedure_status == "detail-unverified" and node.get("basisScope") != "axis":
                         result.error(
                             f"{where}.processBoard.nodes[{node.get('id')}]",
-                            "generated workflow node needs basisScope 'axis'",
+                            "unverified entry node needs basisScope 'axis'",
                         )
             model_board = {
                 "schema_version": source_board.get("schema_version"),
@@ -762,6 +814,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 requirements,
                 model_gate_orders,
                 result,
+                allow_entry_only=procedure_status == "detail-unverified",
             )
 
         expected_priorities = set(range(4, 4 + public_model_count))

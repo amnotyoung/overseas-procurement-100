@@ -82,11 +82,18 @@ KIND_LABEL = {
     "standard": "기술표준",
 }
 WORKFLOW_KIND_LABEL = {
-    "statutory": "법정",
+    "statutory": "법정절차",
     "official-guidance": "공식경로",
     "local-example": "지역사례",
     "field-verification": "현지확인",
     "project-control": "사업통제",
+}
+
+CONSTRUCTION_PROCEDURE_STATUS_LABEL = {
+    "article-verified": "조문 대조 절차",
+    "source-linked": "공식자료 연결 절차",
+    "official-source-linked": "공식자료 연결 절차",
+    "detail-unverified": "공식 절차 상세 미확인",
 }
 
 
@@ -115,19 +122,21 @@ CONSTRUCTION_STATUS_LABEL = {
     "confirmed": "확정",
     "conditional": "조건부",
     "unresolved": "미확정",
-    "in_force": "현행",
+    "in_force": "현행 확인",
+    "current_official": "운영 중 공식 안내",
     "superseded": "폐지·대체",
     "pending": "심의·예고",
-    "continuity_unverified": "현행성 재확인",
+    "continuity_unverified": "최신 개정 확인 중",
 }
 CONSTRUCTION_STATUS_TONE = {
     "confirmed": "ok",
     "conditional": "warn",
     "unresolved": "bad",
     "in_force": "ok",
+    "current_official": "info",
     "superseded": "muted",
     "pending": "warn",
-    "continuity_unverified": "bad",
+    "continuity_unverified": "warn",
 }
 CONSTRUCTION_VERIFY_LABEL = {
     "article-verified": "조문 대조 완료",
@@ -135,6 +144,22 @@ CONSTRUCTION_VERIFY_LABEL = {
     "source-linked": "공식자료 연결",
     "needs-review": "추가 확인",
 }
+
+CURRENT_CONSTRUCTION_SOURCE_STATUSES = {"in_force", "current_official"}
+
+
+def construction_scope_label(instrument: dict) -> str:
+    """Return the human-facing jurisdiction/adoption scope, if explicitly recorded."""
+    return instrument.get("scopeLabel", "")
+
+
+def construction_status_checked_on(instrument: dict, fallback: str = "") -> str:
+    """Return the date on which the publisher/currentness state was checked."""
+    if instrument.get("statusCheckedOn"):
+        return instrument["statusCheckedOn"]
+    if instrument.get("status") in CURRENT_CONSTRUCTION_SOURCE_STATUSES:
+        return fallback
+    return ""
 
 
 def e(s) -> str:
@@ -258,9 +283,9 @@ def construction_presentation(d: dict, board: dict, *, segmented: bool = False) 
     for index, stage in enumerate(board["stages"], start=1):
         code, _, label = stage.partition(" ")
         if segmented and re.fullmatch(r"G\d+[A-Z]?", code):
-            # 공개 보드의 생애주기 단계(S)는 permitPath의 인허가 절차(P)와
-            # 별도 체계다. 원래 단계 번호를 보존해 P1~P10과 혼동하지 않는다.
-            stage_map[stage] = f"S{code[1:]} {label or stage}"
+            # 각 공개 제도는 독립된 한 장 절차다. 원천 생애주기 번호(G4 등)는
+            # 내부 추적에 남기고 화면에서는 조달 보드처럼 G1부터 다시 시작한다.
+            stage_map[stage] = f"G{index} {label or stage}"
         else:
             stage_map[stage] = f"G{index} {label or stage}"
     config = {
@@ -324,6 +349,14 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     인허가, 기술검사·준공처럼 독립된 제도축으로 투영한다.
     """
     board = construction_model_board(d, model_spec)
+    model_id = model_spec.get("id", "") if model_spec else ""
+    procedure_status = (
+        model_spec.get("procedureStatus", "source-linked")
+        if model_spec else
+        ("article-verified" if any(
+            node.get("kind") == "statutory" for node in board["nodes"]
+        ) else "source-linked")
+    )
     instruments = {item["id"]: item for item in d["instruments"]}
     authorities = {item["id"]: item for item in d["authorities"]}
     requirements = {item["id"]: item for item in d["requirements"]}
@@ -331,6 +364,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     questions = {item["id"]: item for item in d["openQuestions"]}
     context = d.get("pilotContext") or {}
     presentation = construction_presentation(d, board, segmented=bool(model_spec))
+    decision_branches = list(model_spec.get("decisionBranches", []) if model_spec else [])
 
     selected_requirement_ids = set(
         model_spec.get("requirementIds", [])
@@ -417,6 +451,11 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "kind": instrument["kind"],
                 "status": instrument["status"],
                 "verification_level": instrument["verificationLevel"],
+                "scope_label": construction_scope_label(instrument),
+                "status_checked_on": construction_status_checked_on(
+                    instrument, d.get("asOfDate", "")
+                ),
+                "status_basis": instrument.get("statusBasis", ""),
                 "note": instrument.get("note", ""),
             })
             basis["provisions"].extend(ref.get("provisions", []))
@@ -445,6 +484,10 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         permit_gates = [permit_path[order] for order in node.get("gateOrders", []) if order in permit_path]
         process_nodes.append({
             "id": node["id"],
+            # 공개 제도축은 독립된 한 장 흐름이므로 화면 번호를 B01부터 다시
+            # 매긴다. 원천 생애주기 ID는 ``id``/data-id에 보존해 추적성과
+            # 엣지 연결을 유지한다.
+            "display_id": f"B{len(process_nodes) + 1:02d}" if model_spec else node["id"],
             "name": node["label"],
             "lane": node["lane"],
             "stage": display_stage,
@@ -529,18 +572,29 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
 
     verification_sources = []
     legal_basis = []
+    reference_basis = []
     for instrument in d["instruments"]:
         if instrument["id"] not in selected_instrument_ids:
             continue
         name = law_name(instrument)
         kind = instrument["kind"]
+        basis_entry = {
+            "law": name,
+            "kind": kind,
+            "url": instrument.get("officialUrl"),
+            "articles": ", ".join(instrument.get("articlesChecked", [])),
+            "status": instrument["status"],
+            "verificationLevel": instrument["verificationLevel"],
+            "scopeLabel": construction_scope_label(instrument),
+            "statusCheckedOn": construction_status_checked_on(
+                instrument, d.get("asOfDate", "")
+            ),
+            "statusBasis": instrument.get("statusBasis", ""),
+        }
         if instrument["status"] == "in_force":
-            legal_basis.append({
-                "law": name,
-                "kind": kind,
-                "url": instrument.get("officialUrl"),
-                "articles": ", ".join(instrument.get("articlesChecked", [])),
-            })
+            legal_basis.append(basis_entry)
+        else:
+            reference_basis.append(basis_entry)
         if instrument.get("officialUrl"):
             verification_sources.append({
                 "id": instrument["id"],
@@ -552,6 +606,11 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "retrievedOn": d["verification"]["verifiedAt"],
                 "status": instrument["status"],
                 "verificationLevel": instrument["verificationLevel"],
+                "scopeLabel": construction_scope_label(instrument),
+                "statusCheckedOn": construction_status_checked_on(
+                    instrument, d.get("asOfDate", "")
+                ),
+                "statusBasis": instrument.get("statusBasis", ""),
                 "note": instrument.get("note", ""),
             })
 
@@ -610,7 +669,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         if item["id"] in selected_checklist_ids
     ]
     field_verification.extend(
-        f'{item["id"]} {item["question"]} — 영향: {item["whyItMatters"]}; '
+        f'{item["question"]} — 영향: {item["whyItMatters"]}; '
         f'담당 {item["owner"]}; 확인기관 {", ".join(authorities[x]["nameKo"] if x in authorities else x for x in item["confirmWith"])}; '
         f'필요 증빙 {", ".join(item["evidenceNeeded"])}'
         for item in d["openQuestions"]
@@ -649,6 +708,52 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         *context.get("known", []),
     ])
 
+    official_gates = []
+    for gate in d["permitPath"]:
+        if gate["order"] not in selected_gate_orders:
+            continue
+        gate_nodes = [
+            node for node in process_nodes
+            if gate["order"] in node.get("gate_orders", [])
+        ]
+        gate_basis = []
+        seen_basis = set()
+        for node in gate_nodes:
+            for basis in node.get("legal_basis", []):
+                key = basis.get("instrument_id") or basis.get("law")
+                if key in seen_basis:
+                    continue
+                seen_basis.add(key)
+                gate_basis.append({
+                    "law": basis["law"],
+                    "url": basis.get("url", ""),
+                    "kind": basis.get("kind", ""),
+                    "status": basis.get("status", ""),
+                    "verificationLevel": basis.get("verification_level", ""),
+                    "scopeLabel": basis.get("scope_label", ""),
+                    "statusCheckedOn": basis.get("status_checked_on", ""),
+                })
+        authority_match = re.match(r"^(.+?)(?:이|가)\s", gate["decision"])
+        official_gates.append({
+            "order": gate["order"],
+            "sourceOrder": gate["order"],
+            "gate": gate["gate"],
+            "decision": gate["decision"],
+            "decisionAuthority": (
+                authority_match.group(1) if authority_match else "관할 결정기관 확인 필요"
+            ),
+            "applicability": " · ".join(unique_strings(
+                node.get("applicability", "") for node in gate_nodes
+            )) or "사업별 관할·적용조건 확인 필요",
+            "output": gate["output"],
+            "basisScope": (
+                "제도축 공통근거 · 세부 조문 미대조"
+                if any(node.get("basis_scope") == "axis" for node in gate_nodes)
+                else "노드 직접근거"
+            ),
+            "legalBasis": gate_basis,
+        })
+
     country_key = d["slug"]
     model_slug = (
         model_spec["slug"] if model_spec
@@ -677,17 +782,37 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         },
         "canvas": {
             "purpose": model_spec["purpose"] if model_spec else d["purpose"],
+            "workflowDisclosure": (
+                "국가별 공식 절차의 순서·행위·분기까지 확인되지 않아 가상의 7단계를 만들지 않았다. "
+                "현재 카드는 확인된 제도 진입점이며, 관할기관의 현행 절차도·신청서·체크리스트를 "
+                "확보해야 실제 업무구조도로 전환할 수 있다."
+                if procedure_status == "detail-unverified" else
+                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청·심사·보완·결정 절차를 "
+                "표시한다. 업무구조도와 노드 상세에는 국가 절차만 두고, ODA 조사팀의 사업별 "
+                "확인질문은 페이지 하단의 별도 접이식 목록으로 분리한다."
+            ),
+            "procedureStatus": procedure_status,
+            "procedureStatusLabel": CONSTRUCTION_PROCEDURE_STATUS_LABEL.get(
+                procedure_status, procedure_status
+            ),
+            "procedureScope": (
+                model_spec.get("procedureScope", "") if model_spec else
+                d["verification"].get("scope", "")
+            ),
             "stakeholders": ", ".join(
                 item["nameKo"] for item in d["authorities"]
                 if item["id"] in selected_authority_ids
             ),
             "legalBasis": legal_basis,
+            "referenceBasis": reference_basis,
             "authorities": authority_cards,
             "procedure": [
-                f'{item["order"]}. {item["gate"]} — {item["decision"]} / 산출물: {item["output"]}'
-                for item in d["permitPath"]
-                if item["order"] in selected_gate_orders
+                f'{item["display_id"]} {item["name"]} — {item["action"]} / 산출물: '
+                f'{" · ".join(item["output_documents"])}'
+                for item in process_nodes
             ],
+            "officialGates": official_gates,
+            "decisionBranches": decision_branches,
             "applicability": " · ".join(application_context),
             "submittedDocuments": submitted_documents,
             "bottlenecks": bottlenecks,
@@ -941,6 +1066,7 @@ td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
 .badge.ok{background:var(--key-bg);color:var(--key)}
 .badge.info{background:var(--info-bg);color:var(--info)}
 .badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.back{background:var(--back-bg);color:var(--back)}
 .badge.bad{background:var(--bad-bg);color:var(--bad)}
 .badge.muted{background:var(--soft);color:var(--muted)}
 
@@ -963,7 +1089,8 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile:last-child{border-right:0}
 .tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
 .tile span{font-size:11.5px;color:var(--muted)}
-.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+.tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
+.tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
@@ -977,12 +1104,29 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
   -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
 .board{position:relative;min-width:940px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.decision-branches{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
+.decision-branches .branch-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.decision-branches .branch-hd b{font-size:13px}
+.decision-branches .branch-hd span{font-size:12px;color:var(--muted)}
+.decision-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.decision-branch{display:grid;grid-template-columns:auto auto 1fr;gap:6px 8px;align-items:center;
+  padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);font-size:12.5px}
+.decision-branch .branch-arrow{grid-row:1 / span 2;font-size:21px;font-weight:800;line-height:1}
+.decision-branch b{font-size:13px}
+.decision-branch > span:last-child{grid-column:2 / -1;color:var(--muted);line-height:1.55}
+.decision-branch[data-state="success"]{border-color:var(--key)}
+.decision-branch[data-state="success"] .branch-arrow{color:var(--key)}
+.decision-branch[data-state="rework"]{border-color:var(--back)}
+.decision-branch[data-state="rework"] .branch-arrow{color:var(--back)}
+.decision-branch[data-state="reject"]{border-color:var(--bad)}
+.decision-branch[data-state="reject"] .branch-arrow{color:var(--bad)}
+@media (max-width:820px){.decision-branch-grid{grid-template-columns:1fr}}
 .brow{display:grid;border-bottom:1px solid var(--line)}
 .brow:last-child{border-bottom:0}
 .brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
 /* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
-  display:flex;flex-direction:column;gap:26px;justify-content:center}
+  display:flex;flex-direction:column;gap:32px;justify-content:center}
 .bcell:last-child{border-right:0}
 .brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
 .brow.head .bcell:first-child{z-index:5;background:var(--soft)}
@@ -1024,27 +1168,64 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .kv dd{margin:3px 0 0}
 .kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
+  gap:16px;align-items:start}
+.card{min-width:0;border:1px solid var(--line);border-radius:11px;padding:17px 19px}
 .card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
 .card.span2{grid-column:span 2}
 @media (max-width:820px){.card.span2{grid-column:span 1}}
 ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
 ol.steps li{margin-bottom:5px}
+.step-output{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.workflow-disclosure{margin:0 0 12px;padding:10px 12px;border-left:3px solid var(--info);
+  background:var(--info-bg);color:var(--fg);font-size:12.5px;line-height:1.65}
+.official-gates{list-style:none;padding:0;margin:0;counter-reset:none}
+.official-gate{padding:14px 0;border-bottom:1px dashed var(--line)}
+.official-gate:last-child{border-bottom:0;padding-bottom:0}
+.official-gate:first-child{padding-top:0}
+.official-gate .gate-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.official-gate .gate-title b{font-size:13.5px}
+.official-gate > p{margin:0 0 9px;font-size:13px;line-height:1.65}
+.gate-meta{display:grid;grid-template-columns:max-content 1fr;gap:5px 10px;margin:0;font-size:12.5px;line-height:1.55}
+.gate-meta dt{color:var(--muted);font-weight:700}.gate-meta dd{margin:0;min-width:0}
+.gate-basis{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gate-basis a,.gate-basis .law-name{min-width:0;font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.gate-basis .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
 ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
 ul.plain li{margin-bottom:6px}
-.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law{min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .law:last-child{border-bottom:0}
-.law .nm{font-weight:600}
-.law .ar{color:var(--muted);font-size:12.5px}
+.law-copy{min-width:0}
+.law .nm{display:block;min-width:0;font-weight:600;line-height:1.5;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar{display:block;min-width:0;margin-top:2px;color:var(--muted);font-size:12.5px;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar:empty{display:none}
+.law-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;margin-top:6px}
+.law-meta:empty{display:none}
+.law-meta .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+.law-meta .badge::before,.gate-basis .badge::before,.auth .badge::before{flex:none}
 .docset{margin-bottom:13px}
 .docset b{font-size:12.5px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
-.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);gap:10px;
+  align-items:start;min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .auth:last-child{border-bottom:0}
-.auth b{flex:none;max-width:42%;font-size:13px}
-.auth span{color:var(--muted);font-size:12.5px}
+.auth b{min-width:0;max-width:none;font-size:13px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+.auth span{min-width:0;color:var(--muted);font-size:12.5px;word-break:keep-all;overflow-wrap:anywhere}
+.auth .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+@media (max-width:620px){.auth{grid-template-columns:1fr;gap:4px}}
+.field-application{grid-column:1/-1;padding:0}
+.field-application summary{display:flex;align-items:center;gap:12px;min-width:0;padding:17px 19px;
+  cursor:pointer;list-style:none;font-size:13.5px;font-weight:700}
+.field-application summary::-webkit-details-marker{display:none}
+.field-application summary small{margin-left:auto;color:var(--muted);font-size:11.5px;font-weight:600}
+.field-application summary::after{content:"⌄";color:var(--muted);font-size:16px;line-height:1;
+  transition:transform .15s ease}
+.field-application[open] summary::after{transform:rotate(180deg)}
+.field-application .field-application-body{padding:0 19px 17px}
+.field-application .workflow-disclosure{margin-top:0}
 
 .disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
 .disc[data-sev="high"]{border-left-color:var(--bad)}
@@ -1247,7 +1428,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
 {body}
 <footer class="site"><div class="wrap">
   국가별 조달·ODA 건축 법제의 기준일 현재 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
-  실제 입찰·설계·인허가 전에는 발주처 공고문, 관할기관 판단과 현행 법령을 다시 확인해야 합니다.<br>
+  자료별 현행·운영 상태는 표시된 확인일과 판단근거로 사이트가 관리합니다. 실제 사업에서는 기준일 이후 변경사항과 해당 공고·대상지에 대한 관할기관의 최종 적용판정을 확인해야 합니다.<br>
   1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 및 각국 정부 공식 법령·관보<br>
   제도 추가·정정 제안 · Threads <a href="https://www.threads.net/@amnotyoung.k" target="_blank" rel="me noopener noreferrer">@amnotyoung.k</a>
 </div></footer>
@@ -1407,11 +1588,27 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     nodes, edges = p.get("nodes", []), p.get("edges", [])
     discs = v.get("discrepancies", [])
     hi = sum(1 for x in discs if x["severity"] == "high")
-    board_description = (
-        "결정적 단계와 보완 회귀를 표시합니다. 카드의 작은 배지는 법정·공식경로·현지확인·사업통제를 구분하며, 노드를 누르면 적용조건과 관련 제도 근거가 열립니다."
-        if d["axis"] == "construction"
-        else "제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다."
+    has_statutory_nodes = any(
+        node.get("workflow_kind") == "statutory" for node in nodes
     )
+    if d["axis"] == "construction":
+        board_title = "업무구조도"
+        if c.get("procedureStatus") == "detail-unverified":
+            board_description = (
+                "이 국가·제도축은 공식 진입점까지만 확인되어 상세 법정순서를 임의로 만들지 않았습니다. "
+                "관할기관의 현행 절차 원문이 확보되면 신청·심사·보완·결정 노드로 확장합니다."
+            )
+        else:
+            board_description = (
+                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청·심사·보완·결정 흐름입니다. "
+                "레인은 실제 행위주체이며, 노드를 누르면 적용범위·산출문서와 근거 수준이 열립니다."
+            )
+    else:
+        board_title = "업무구조도"
+        board_description = (
+            "제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. "
+            "노드를 누르면 근거 조문과 기한이 열립니다."
+        )
 
     # 조문 대조 수
     checked = sum(len([a for a in (s.get("articlesChecked") or "").split(",") if a.strip()])
@@ -1421,15 +1618,20 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     if d["axis"] == "construction" and not checked:
         evidence_metric = len(v.get("sources", []))
         evidence_metric_label = "공식 출처"
-    stage_metric_label = "업무 단계" if d["axis"] == "construction" else "게이트"
+    stage_metric_label = "절차 구간" if d["axis"] == "construction" else "게이트"
+    node_metric_label = "절차 단계" if d["axis"] == "construction" else "절차 노드"
     if d["axis"] == "construction":
+        current_sources = sum(
+            1 for source in v.get("sources", [])
+            if source.get("status") in CURRENT_CONSTRUCTION_SOURCE_STATUSES
+        )
         currentness_issues = sum(
             1 for source in v.get("sources", [])
-            if source.get("status") != "in_force"
+            if source.get("status") == "continuity_unverified"
         )
-        status_metric = currentness_issues
-        status_metric_label = "출처 현행성 재확인"
-        status_metric_bad = bool(currentness_issues)
+        status_metric = f'{current_sources}/{len(v.get("sources", []))}'
+        status_metric_label = "현행·운영 확인"
+        status_metric_bad = False
     else:
         status_metric = len(discs)
         status_metric_label = "현행 확인사항" + (f" (필수 확인 {hi})" if hi else "")
@@ -1437,12 +1639,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     if v["status"] == "article-verified":
         verification_caveat = (
             f"{VERIF_LABEL[v['status']]} — 조문의 존재와 문언 일치만 뜻합니다. "
-            "법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다."
+            "관할·필지·시설에 따른 사업 적용판정은 별도입니다."
         )
     else:
         verification_caveat = (
             f"{VERIF_LABEL[v['status']]} — 공식 자료와 제도의 연결 수준을 뜻하며 "
-            "세부 조문의 문언 일치나 개별 사업 적용판정을 뜻하지 않습니다."
+            "자료의 현행·운영 상태는 위 원문 대장의 상태와 확인일로, "
+            "개별 사업 적용판정은 ODA 적용 확인사항으로 따로 관리합니다."
         )
 
     opts = "".join(
@@ -1453,7 +1656,10 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     # 업무구조도 그리드
     board_width = 180 + 190 * len(stages)
     grid_cols = f"180px repeat({len(stages)},minmax(190px,1fr))"
-    stage_heading = "레인 \\ 단계" if d["axis"] == "construction" else "레인 \\ 게이트"
+    if d["axis"] == "construction":
+        stage_heading = "행위주체 \\ 절차 구간"
+    else:
+        stage_heading = "레인 \\ 게이트"
     head = f'<div class="brow head" style="grid-template-columns:{grid_cols}">' \
            f'<div class="bcell"><span class="lane-t">{e(stage_heading)}</span></div>'
     for s in stages:
@@ -1474,18 +1680,72 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 tag = {"key": "핵심", "warn": "유의", "back": "회귀"}.get(tone, "")
                 kind_tag = n.get("workflow_kind_label", "") if d["axis"] == "construction" else ""
                 cell += f"""<button class="node" data-id="{e(n['id'])}"{f' data-tone="{tone}"' if tone else ''}>
-  <span class="id"><span>{e(n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
+  <span class="id"><span>{e(n.get('display_id') or n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
   <span class="nm">{e(n['name'])}</span></button>"""
             rows += f'<div class="bcell" data-lane="{e(lane)}" data-stage="{e(st)}">{cell}</div>'
         rows += "</div>"
 
     # 캔버스 — 법령명은 verification.sources의 원문 URL과 자동으로 이어 붙인다
     surl = source_urls(d)
-    laws = "".join(
-        f'<div class="law"><span class="nm">{link(e(l["law"]), l.get("url") or surl.get(l["law"]))}</span>'
-        f'<span class="ar">{e(l.get("articles") or "")}</span>'
-        f'<span class="badge plain muted" style="margin-left:auto">{e(KIND_LABEL.get(l["kind"], l["kind"]))}</span></div>'
-        for l in c["legalBasis"])
+    def render_law_list(items: list[dict], *, show_status: bool = False) -> str:
+        rows: list[str] = []
+        for item in items:
+            badges = (
+                f'<span class="badge plain muted">'
+                f'{e(KIND_LABEL.get(item["kind"], item["kind"]))}</span>'
+            )
+            if item.get("scopeLabel"):
+                badges += f'<span class="badge plain info">{e(item["scopeLabel"])}</span>'
+            if show_status and item.get("status"):
+                badges += (
+                    f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(item["status"], "muted")}">'
+                    f'{e(CONSTRUCTION_STATUS_LABEL.get(item["status"], item["status"]))}</span>'
+                )
+            if item.get("verificationLevel"):
+                badges += (
+                    f'<span class="badge {VERIF_TONE.get(item["verificationLevel"], "muted")}">'
+                    f'{e(VERIF_LABEL.get(item["verificationLevel"], item["verificationLevel"]))}</span>'
+                )
+            rows.append(
+                '<div class="law">'
+                '<div class="law-copy">'
+                f'<span class="nm">{link(e(item["law"]), item.get("url") or surl.get(item["law"]))}</span>'
+                f'<span class="ar">{e(item.get("articles") or "")}</span>'
+                '</div>'
+                f'<div class="law-meta">{badges}</div>'
+                '</div>'
+            )
+        return "".join(rows)
+
+    laws = render_law_list(c["legalBasis"])
+    reference_basis = c.get("referenceBasis", [])
+    current_references = [
+        item for item in reference_basis
+        if item.get("status") == "current_official"
+    ]
+    status_exceptions = [
+        item for item in reference_basis
+        if item.get("status") != "current_official"
+    ]
+    reference_laws = render_law_list(current_references)
+    exception_laws = render_law_list(status_exceptions)
+    legal_basis_body = laws or (
+        '<p style="margin:0;font-size:13px;line-height:1.65;color:var(--muted)">'
+        '이 제도축은 현재 법령 직접근거보다 공식 서비스·기술자료를 중심으로 설명합니다. '
+        '자료별 상태와 확인일은 아래 검증 대장에 기록했습니다.</p>'
+    )
+    reference_basis_card = (
+        '<div class="card"><h3>운영 중 공식자료</h3>'
+        f'{reference_laws}</div>'
+        if reference_laws else ""
+    )
+    status_exception_card = (
+        '<div class="card"><h3>사이트 검증 예외</h3>'
+        '<p class="workflow-disclosure">개정·폐지 추적이 아직 끝나지 않은 자료만 모았습니다. '
+        '관할·사업별 적용 확인과는 다른 항목이며, 사이트 검증 대장에서 해소합니다.</p>'
+        f'{exception_laws}</div>'
+        if exception_laws else ""
+    )
     auths = "".join(
         f'<div class="auth"><b>{link(e(a["name"]), a.get("url"))}</b>'
         f'<span>{el(a["role"])}'
@@ -1496,6 +1756,72 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         for a in c["authorities"])
     steps = "".join(f"<li>{el(s.split('. ', 1)[-1] if s[:2].rstrip('.').isdigit() else s)}</li>"
                     for s in c["procedure"])
+    official_gate_data = c.get("officialGates", [])
+    official_gate_items = []
+    for gate_index, gate in enumerate(official_gate_data, start=1):
+        gate_basis = "".join(
+            '<span class="gate-basis">'
+            f'<span class="law-name">{link(e(item["law"]), item.get("url"))}</span>'
+            f'<span class="badge plain muted">{e(KIND_LABEL.get(item.get("kind"), item.get("kind", "")))}</span>'
+            + (f'<span class="badge plain info">{e(item.get("scopeLabel"))}</span>'
+               if item.get("scopeLabel") else "")
+            + f'<span class="badge {VERIF_TONE.get(item.get("verificationLevel"), "muted")}">'
+            f'{e(VERIF_LABEL.get(item.get("verificationLevel"), item.get("verificationLevel", "")))}</span>'
+            '</span>'
+            for item in gate.get("legalBasis", [])
+        ) or '<span class="badge warn">연결 근거 현지확인 필요</span>'
+        official_gate_items.append(
+            f'<li class="official-gate" data-source-order="{gate["sourceOrder"]}">'
+            '<div class="gate-title">'
+            f'<span class="badge info">Gate {gate_index}/{len(official_gate_data)}</span>'
+            f'<b>{e(gate["gate"])}</b></div>'
+            f'<p>{el(gate["decision"])}</p>'
+            '<dl class="gate-meta">'
+            f'<dt>결정기관</dt><dd>{e(gate["decisionAuthority"])}</dd>'
+            f'<dt>적용 관할·조건</dt><dd>{e(gate["applicability"])}</dd>'
+            f'<dt>산출물</dt><dd>{e(gate["output"])}</dd>'
+            f'<dt>근거 수준</dt><dd>{e(gate["basisScope"])}</dd>'
+            f'<dt>연결 근거</dt><dd>{gate_basis}</dd>'
+            '</dl></li>'
+        )
+    official_gates = "".join(official_gate_items)
+    branch_tone = {"success": "ok", "rework": "back", "reject": "bad"}
+    branch_label = {"success": "진행", "rework": "보완 회귀", "reject": "중단·재검토"}
+    decision_branches = "".join(
+        f'<div class="decision-branch" data-state="{e(x["state"])}">'
+        f'<span class="branch-arrow" aria-hidden="true">{("→" if x["state"] == "success" else "↺" if x["state"] == "rework" else "×")}</span>'
+        f'<span class="badge {branch_tone.get(x["state"], "muted")}">{e(branch_label.get(x["state"], x["state"]))}</span>'
+        f'<b>{e(x["label"])}</b><span>{el(x["action"])}</span></div>'
+        for x in c.get("decisionBranches", [])
+    )
+    procedure_heading = (
+        f'국가별 건축 인허가 절차 · {len(c.get("procedure", []))}단계'
+        if d["axis"] == "construction" else "절차"
+    )
+    disclosure = (
+        f'<p class="workflow-disclosure">{e(c.get("workflowDisclosure", ""))}</p>'
+        if d["axis"] == "construction" and c.get("workflowDisclosure") else ""
+    )
+    procedure_scope = (
+        '<p class="workflow-disclosure"><b>적용 범위</b> · '
+        f'{e(c.get("procedureScope", ""))}</p>'
+        if d["axis"] == "construction" and c.get("procedureScope") else ""
+    )
+    official_gate_card = (
+        f'<div class="card span2"><h3>공식 결정 Gate · {len(official_gate_data)}개</h3>'
+        '<p class="workflow-disclosure">위 절차 중 관할기관이 공식 문서를 발급하거나 처분하는 '
+        '결정 지점만 분리했습니다. Gate 1/N은 이 페이지 안의 표시번호이며, 관할·사업별 적용조건과 '
+        '근거 수준은 각 Gate에서 확인합니다.</p>'
+        f'<ol class="official-gates">{official_gates}</ol></div>'
+        if d["axis"] == "construction" and official_gates else ""
+    )
+    decision_branch_panel = (
+        '<div class="decision-branches"><div class="branch-hd">'
+        '<b>공식 결정 결과 분기</b>'
+        '<span>보완 회귀는 위 절차에 근거가 있는 경우만 표시합니다. 불복·재신청 경로와 기한은 별도 근거가 없으면 추정하지 않습니다.</span>'
+        f'</div><div class="decision-branch-grid">{decision_branches}</div></div>'
+        if d["axis"] == "construction" and decision_branches else ""
+    )
     docs = "".join(
         f'<div class="docset"><b>{e(x["actor"])}</b><div class="chips">'
         + "".join(f'<span class="chip">{e(t)}</span>' for t in x["documents"]) + "</div></div>"
@@ -1503,6 +1829,22 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     bott = "".join(f"<li>{el(x)}</li>" for x in c["bottlenecks"])
     barr = "".join(f"<li>{el(x)}</li>" for x in c.get("entryBarriers", []))
     fv = "".join(f"<li>{el(x)}</li>" for x in d["fieldVerification"])
+    bottleneck_card = (
+        f'<div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>'
+        if d["axis"] != "construction" and bott else ""
+    )
+    field_application_card = (
+        '<details class="card field-application">'
+        '<summary><span>ODA 사업별 적용 확인사항</span>'
+        f'<small>법정절차 외 체크리스트 · {len(d["fieldVerification"])}개</small></summary>'
+        '<div class="field-application-body">'
+        '<p class="workflow-disclosure">아래 항목은 해당 국가의 법정 절차가 아니라 대상 사업의 '
+        '관할·필지·시설 조건을 확정하기 위한 조사 체크리스트입니다. 업무구조도와 공식 결정 Gate에는 '
+        '포함하지 않습니다.</p>'
+        f'<ul class="plain">{fv}</ul></div></details>'
+        if d["axis"] == "construction" and fv else
+        (f'<div class="card"><h3>ODA 사업 적용 확인사항</h3><ul class="plain">{fv}</ul></div>' if fv else "")
+    )
     findings = "".join(
         f'<div class="decision" data-state="{e(x["status"])}">'
         f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(x["status"], "muted")}">'
@@ -1535,6 +1877,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     srcs = "".join(
         f'<li><a class="ref" href="{e(s["officialUrl"])}" target="_blank" rel="noopener">{e(s.get("officialName") or s["law"])}</a>'
         f'<span class="badge plain muted" style="margin-left:6px">{e(KIND_LABEL.get(s["kind"], s["kind"]))}</span>'
+        + (f'<span class="badge plain info" style="margin-left:6px">{e(s.get("scopeLabel"))}</span>'
+           if s.get("scopeLabel") else "")
         + (f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(s["status"], "muted")}" style="margin-left:6px">'
            f'{e(CONSTRUCTION_STATUS_LABEL.get(s["status"], s["status"]))}</span>'
            if s.get("status") else "")
@@ -1542,7 +1886,10 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
            f'{e(VERIF_LABEL.get(s["verificationLevel"], s["verificationLevel"]))}</span>'
            if s.get("verificationLevel") else "")
         + (f'<span class="ar">대조 조문 {e(s["articlesChecked"])}</span>' if s.get("articlesChecked") else "")
-        + f'<span class="ar">확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span>'
+        + f'<span class="ar">원문 확인 {e(s["retrievedOn"])}{" · " + e(s["publisher"]) if s.get("publisher") else ""}</span>'
+        + (f'<span class="ar">상태 확인 {e(s["statusCheckedOn"])}'
+           f'{" · " + e(s["statusBasis"]) if s.get("statusBasis") else ""}</span>'
+           if s.get("statusCheckedOn") else "")
         + (f'<span class="ar">{el(s["note"])}</span>' if s.get("note") else "")
         + '</li>'
         for s in v.get("sources", []))
@@ -1589,17 +1936,20 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
     <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
+    {f'<span class="badge {"warn" if c.get("procedureStatus") == "detail-unverified" else "info"}">{e(c.get("procedureStatusLabel", ""))}</span>' if d['axis'] == 'construction' and c.get('procedureStatusLabel') else ''}
     {f'<span class="badge bad">확인사항 {len(discs)}건</span>' if discs else ''}
   </div>
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
   <div class="tiles">
-    <div class="tile"><b>{len(nodes)}</b><span>절차 노드</span></div>
+    <div class="tile"><b>{len(nodes)}</b><span>{e(node_metric_label)}</span></div>
+    {f'<div class="tile info"><b>{len(c.get("officialGates", []))}</b><span>공식 결정 Gate</span></div>' if d['axis'] == 'construction' else ''}
     <div class="tile"><b>{len(lanes)}</b><span>행위 레인</span></div>
     <div class="tile"><b>{len(stages)}</b><span>{e(stage_metric_label)}</span></div>
     <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
-    <div class="tile{' bad' if status_metric_bad else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
-    <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>현장 검증</span></div>
+    <div class="tile{' bad' if status_metric_bad else ' ok' if d['axis'] == 'construction' else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
+    {f'<div class="tile warn"><b>{currentness_issues}</b><span>사이트 최신성 검증 중</span></div>' if d['axis'] == 'construction' and currentness_issues else ''}
+    <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>ODA 적용 확인</span></div>
   </div>
 </div>
 
@@ -1607,35 +1957,41 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 <section class="blk">
   <div class="hd-row">
     <div>
-      <h2>업무구조도</h2>
+      <h2>{e(board_title)}</h2>
       <p class="desc">{e(board_description)}</p>
     </div>
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
       <span><i style="background:var(--warn)"></i>유의</span>
-      <span><i style="background:var(--back)"></i>보완 회귀</span>
+      <span><i style="background:var(--muted)"></i>절차 순서</span>
+      <span><i style="background:var(--info)"></i>기관 간 입력</span>
+      <span><i style="background:var(--back)"></i>조건부 보완 회귀</span>
     </div>
   </div>
   <div class="boardwrap"><div class="board" id="board" style="min-width:{board_width}px">
     <svg class="edges" id="edges"></svg>
     {head}{rows}
   </div></div>
+  {decision_branch_panel}
 </section>
 
 <section class="blk">
   <h2>한 장 캔버스</h2>
   <p class="desc">{e(c['purpose'])}</p>
   <div class="cards">
-    <div class="card span2"><h3>절차</h3><ol class="steps">{steps}</ol></div>
+    <div class="card span2"><h3>{e(procedure_heading)}</h3>{disclosure}{procedure_scope}<ol class="steps">{steps}</ol></div>
+    {official_gate_card}
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['applicability'])}</p></div>
-    <div class="card"><h3>법적 근거</h3>{laws}</div>
+    <div class="card"><h3>법적 근거</h3>{legal_basis_body}</div>
+    {reference_basis_card}
+    {status_exception_card}
     <div class="card"><h3>권한 기관</h3>{auths}</div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['stakeholders'])}</p></div>
     <div class="card"><h3>제출서류</h3>{docs}</div>
-    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>
+    {bottleneck_card}
     {f'<div class="card"><h3>진입장벽</h3><ul class="plain">{barr}</ul></div>' if barr else ''}
-    <div class="card"><h3>현장 검증 필요</h3><ul class="plain">{fv}</ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
+    {field_application_card}
   </div>
 </section>
 
@@ -1692,7 +2048,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     node_view = {}
     for n in nodes:
         nv = dict(n)
+        if d["axis"] == "construction":
+            for internal_key in (
+                "blocker", "evidence_status", "report_use", "open_questions", "question_ids"
+            ):
+                nv.pop(internal_key, None)
         nv["id"] = e(nv["id"])
+        nv["display_id"] = e(nv.get("display_id") or nv["id"])
         for k in (
             "name", "actor", "action", "deadline", "blocker", "lane", "stage",
             "applicability", "report_use", "consulted_authorities", "confidence_reason",
@@ -1710,8 +2072,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                     "article": e(lb["article"]),
                     "url": e(lb.get("url") or surl.get(lb["law"], "")),
                     "kind": e(KIND_LABEL.get(lb.get("kind"), lb.get("kind", ""))),
-                    "status": e(CONSTRUCTION_STATUS_LABEL.get(lb.get("status"), lb.get("status", ""))),
-                    "status_tone": e(CONSTRUCTION_STATUS_TONE.get(lb.get("status"), "muted")),
+                    "scope_label": e(lb.get("scope_label", "")),
                     "verification": e(VERIF_LABEL.get(
                         lb.get("verification_level"), lb.get("verification_level", "")
                     )),
@@ -1771,8 +2132,9 @@ function draw(){{
   svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
   var cs=getComputedStyle(document.documentElement);
   var C={{sequence:cs.getPropertyValue('--muted').trim(),
-         message:cs.getPropertyValue('--back').trim(),
-         loop:cs.getPropertyValue('--warn').trim()}};
+         message:cs.getPropertyValue('--info').trim(),
+         loop:cs.getPropertyValue('--back').trim()}};
+  var BG=cs.getPropertyValue('--bg').trim();
   var d='<defs>';
   ['sequence','message','loop'].forEach(function(t){{
     d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
@@ -1820,6 +2182,14 @@ function draw(){{
 
   function route(a,b,ed){{
     var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 보완 회귀는 일반 최단경로와 경쟁시키지 않는다. source 오른쪽 거터로
+    // 빠져 target 오른쪽으로 되돌아가게 고정해 순방향 선과 시각적으로 분리한다.
+    if(ed.type==='loop'&&ed.label){{
+      var gx=Math.min(board.scrollWidth-12,Math.max(a.r,b.r)+28);
+      var loop=score([{{x:a.r,y:acy}},{{x:gx,y:acy}},{{x:gx,y:bcy}},{{x:b.r+GAP,y:bcy}},{{x:b.r,y:bcy}}],e1,e2);
+      loop.label={{x:(gx+b.r)/2,y:bcy-8}};
+      return loop;
+    }}
     // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
     var below=bcy>acy, sp={{x:acx,y:below?a.b:a.y}}, tp={{x:bcx,y:below?b.y:b.b}}, tg={{x:tp.x,y:tp.y+(below?-GAP:GAP)}};
     cs.push(score([sp,{{x:sp.x,y:tg.y}},tg,tp],e1,e2));                                   // 직선/L
@@ -1836,9 +2206,6 @@ function draw(){{
     rowGut.forEach(function(gy){{                                                          // 행 거터 우회
       var as={{x:acx,y:gy>acy?a.b:a.y}};
       cs.push(score([as,{{x:acx,y:gy}},{{x:tp2.x,y:gy}},tg2,tp2],e1,e2)); }});
-    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
-    if(ed.type==='loop'){{ var gy=Math.max(a.b,b.b)+26;
-      cs.push(score([{{x:acx,y:a.b}},{{x:acx,y:gy}},{{x:bcx,y:gy}},{{x:bcx,y:b.b+GAP}},{{x:bcx,y:b.b}}],e1,e2)); }}
     cs=cs.filter(function(c){{return c.pts.length>=2;}});
     cs.sort(function(x,y){{ return x.p-y.p || x.l-y.l; }});
     return cs[0];
@@ -1857,19 +2224,106 @@ function draw(){{
     var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
   }}
 
+  var labelJobs=[];
   EDGES.forEach(function(ed){{
     var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
     var t=ed.type||'sequence', rt=route(a,b,ed);
     d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
       +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
+    if(ed.label) labelJobs.push({{ed:ed,rt:rt,color:C[t]}});
   }});
   svg.innerHTML=d;
+
+  /* 라벨은 경로와 별도 2차 배치한다. 실제 글자 폭을 잰 뒤 카드·화살촉·
+     다른 라벨과 겹치지 않는 후보를 고르므로 세로선 중점에 긴 문구를
+     얹어 카드 뒤로 잘리던 문제를 막는다. */
+  var NS='http://www.w3.org/2000/svg', labelBoxes=[];
+  var arrowBoxes=labelJobs.map(function(job){{
+    var pts=uniq(job.rt.pts),p=pts[pts.length-1];
+    return {{x:p.x-11,y:p.y-11,r:p.x+11,b:p.y+11}};
+  }});
+  function overlaps(a,b){{return a.x<b.r&&a.r>b.x&&a.y<b.b&&a.b>b.y;}}
+  function overlapArea(a,b){{
+    return Math.max(0,Math.min(a.r,b.r)-Math.max(a.x,b.x))*
+           Math.max(0,Math.min(a.b,b.b)-Math.max(a.y,b.y));
+  }}
+  function labelCandidates(rt,w,h){{
+    var pts=uniq(rt.pts),segs=[],fractions=[.5,.33,.67,.2,.8];
+    for(var i=0;i<pts.length-1;i++){{
+      var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<.5;
+      var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
+      if(length>8) segs.push({{a:a,b:b,horizontal:horizontal,length:length}});
+    }}
+    segs.sort(function(a,b){{return (b.horizontal-a.horizontal)||b.length-a.length;}});
+    var out=[];
+    if(rt.label) out.push({{x:rt.label.x,y:rt.label.y,offset:0}});
+    segs.forEach(function(seg){{
+      fractions.forEach(function(f){{
+        var x=seg.a.x+(seg.b.x-seg.a.x)*f,y=seg.a.y+(seg.b.y-seg.a.y)*f;
+        if(seg.horizontal){{
+          [-(h/2+7),h/2+7,-(h/2+19),h/2+19].forEach(function(o){{
+            out.push({{x:x,y:y+o,offset:Math.abs(o)}});
+          }});
+        }}else{{
+          [-(w/2+8),w/2+8,-(w/2+20),w/2+20].forEach(function(o){{
+            out.push({{x:x+o,y:y,offset:Math.abs(o)}});
+          }});
+        }}
+      }});
+    }});
+    return out;
+  }}
+  function candidateBox(p,w,h){{
+    return {{x:p.x-w/2,y:p.y-h/2,r:p.x+w/2,b:p.y+h/2,w:w,h:h}};
+  }}
+  function labelPenalty(box,p){{
+    var score=p.offset||0;
+    if(box.x<4)score+=(4-box.x)*100000;
+    if(box.y<4)score+=(4-box.y)*100000;
+    if(box.r>board.scrollWidth-4)score+=(box.r-board.scrollWidth+4)*100000;
+    if(box.b>board.scrollHeight-4)score+=(box.b-board.scrollHeight+4)*100000;
+    OB.forEach(function(o){{
+      var padded={{x:o.x-6,y:o.y-6,r:o.r+6,b:o.b+6}};
+      if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
+    }});
+    arrowBoxes.forEach(function(o){{if(overlaps(box,o))score+=250000+overlapArea(box,o)*100;}});
+    labelBoxes.forEach(function(o){{if(overlaps(box,o))score+=750000+overlapArea(box,o)*1000;}});
+    return score;
+  }}
+  labelJobs.forEach(function(job){{
+    var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
+    var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
+    bg.setAttribute('rx','4'); bg.setAttribute('fill',BG); bg.setAttribute('fill-opacity','.96');
+    var txt=document.createElementNS(NS,'text'); txt.setAttribute('class','edge-label');
+    txt.setAttribute('x','0'); txt.setAttribute('y','0'); txt.setAttribute('text-anchor','middle');
+    txt.setAttribute('dominant-baseline','central'); txt.setAttribute('fill',job.color);
+    txt.setAttribute('font-size','10'); txt.setAttribute('font-weight','700');
+    txt.style.visibility='hidden'; txt.textContent=job.ed.label;
+    var title=document.createElementNS(NS,'title'); title.textContent=txt.textContent;
+    group.appendChild(bg); group.appendChild(txt); group.appendChild(title); svg.appendChild(group);
+    var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+10;
+    var h=Math.max(measured.height,12)+6,candidates=labelCandidates(job.rt,w,h);
+    var best=null,bestScore=Infinity;
+    candidates.forEach(function(p){{
+      var b=candidateBox(p,w,h),s=labelPenalty(b,p);
+      if(s<bestScore){{best={{p:p,box:b}};bestScore=s;}}
+    }});
+    if(!best){{
+      var first=uniq(job.rt.pts)[0]; best={{p:first,box:candidateBox(first,w,h)}};
+    }}
+    labelBoxes.push(best.box);
+    bg.setAttribute('x',rnd(best.box.x)); bg.setAttribute('y',rnd(best.box.y));
+    bg.setAttribute('width',rnd(w)); bg.setAttribute('height',rnd(h));
+    bg.setAttribute('stroke',job.color); bg.setAttribute('stroke-opacity','.18');
+    txt.setAttribute('x',rnd(best.p.x)); txt.setAttribute('y',rnd(best.p.y));
+    txt.style.visibility='visible';
+  }});
 }}
 
 function openNode(id){{
   var n=NODES[id]; if(!n)return;
-  var h='<span class="badge plain muted">'+n.id+'</span> '
+  var h='<span class="badge plain muted">'+(n.display_id||n.id)+'</span> '
        +'<span class="badge plain muted">'+n.lane+'</span> '
        +'<span class="badge plain muted">'+n.stage+'</span>'
        +(n.workflow_kind_label?' <span class="badge info">'+n.workflow_kind_label+'</span>':'');
@@ -1889,7 +2343,7 @@ function openNode(id){{
     h+='<dt>'+basisLabel+'</dt><dd>'+n.legal_basis.map(function(l){{
       var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
       var meta=(l.kind?' <span class="badge plain muted">'+l.kind+'</span>':'')
-        +(l.status?' <span class="badge '+l.status_tone+'">'+l.status+'</span>':'')
+        +(l.scope_label?' <span class="badge info">'+l.scope_label+'</span>':'')
         +(l.verification?' <span class="badge '+l.verification_tone+'">'+l.verification+'</span>':'');
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}}).join('')+'</dd>';
@@ -1943,6 +2397,7 @@ document.getElementById('dlg').addEventListener('click',function(ev){{
 }});
 
 addEventListener('load',draw); addEventListener('resize',draw);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 new MutationObserver(draw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
     return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone)
@@ -2145,13 +2600,15 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
     kind_label = {
         "act": "법률", "decree": "시행령·명령", "order": "부령", "plan": "도시계획",
-        "official-guidance": "공식 안내", "draft": "법안",
+        "official-guidance": "공식 안내", "draft": "법안", "code": "법전·코드",
     }
     instrument_rows = "".join(f"""<tr>
   <td class="name"><b>{construction_instrument_link(item)}</b><p>{e(item['title'])}</p></td>
   <td><span class="badge {CONSTRUCTION_STATUS_TONE[item['status']]}">{e(CONSTRUCTION_STATUS_LABEL[item['status']])}</span></td>
+  <td style="font-size:12.5px">{e(item.get('scopeLabel', '국가 기본범위'))}</td>
   <td style="font-size:12.5px">{e(kind_label.get(item['kind'], item['kind']))}</td>
   <td style="font-size:12.5px">{e(', '.join(item.get('articlesChecked', [])) or '—')}</td>
+  <td style="font-size:12.5px;color:var(--muted)">{e(item.get('statusCheckedOn', '—'))}{' · ' + e(item.get('statusBasis')) if item.get('statusBasis') else ''}</td>
   <td style="font-size:12.5px;color:var(--muted)">{e(item.get('note', '—'))}</td>
 </tr>""" for item in d["instruments"])
 
@@ -2274,8 +2731,8 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
   <section class="blk" id="sources">
     <h2>법령·공식자료 대장</h2>
-    <p class="desc">현행·심의 중·안내페이지를 섞지 않고 확인 깊이를 표시합니다.</p>
-    <div class="data-table-wrap"><table><thead><tr><th>자료</th><th>상태</th><th>종류</th><th>확인 조문</th><th>주의</th></tr></thead>
+    <p class="desc">법령의 효력, 공식 안내의 운영상태, 적용 관할과 확인일을 분리합니다.</p>
+    <div class="data-table-wrap"><table><thead><tr><th>자료</th><th>상태</th><th>적용 범위</th><th>종류</th><th>확인 조문</th><th>상태 확인</th><th>주의</th></tr></thead>
       <tbody>{instrument_rows}</tbody></table></div>
   </section>
 
@@ -2399,7 +2856,7 @@ def build_errata(items: list[dict]) -> str:
 <div class="statbar"><div class="wrap">
   <div style="font-size:13px;color:var(--muted);max-width:70ch">
     각 항목은 <b>현행 기준 → 확인 출처 → 산출물 반영 내용</b> 순으로 정리했습니다.
-    실제 입찰에서는 연결된 공식 원문과 발주처 공고를 다시 확인해야 합니다.
+    실제 입찰의 최종 조건은 해당 발주처 공고가 우선합니다.
   </div>
   <div class="stats">
     <div class="stat ok"><b>{len(rows)}</b><span>출처 확인</span></div>
