@@ -172,7 +172,7 @@ python3 -m http.server 8765 --directory site
 
 조문까지 대조한 상세판은 국가 JSON을 직접 관리한다. 전체 국가 기본판은
 `data/construction-regulations/catalog/baselines.json`에 국가별 공식 출처·기관·판단만 기록하고
-`python3 tools/build_construction_baselines.py`로 같은 3축 계약의 국가 JSON을 생성한다.
+`python3 tools/build_construction_baselines.py`로 같은 3축 계약의 국가 JSON을 생성한다. 각 축은 조달 기본판과 균형을 맞춘 7노드·3레인 이상·4단계 구조이며, 법정절차와 공식경로·현지확인·사업통제를 구분한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 

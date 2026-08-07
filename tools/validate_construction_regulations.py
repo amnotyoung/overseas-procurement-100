@@ -30,12 +30,36 @@ STAGES = {
     "operation",
 }
 INSTRUMENT_STATUSES = {"in_force", "superseded", "pending", "continuity_unverified"}
+INSTRUMENT_KINDS = {
+    "act",
+    "code",
+    "decree",
+    "draft",
+    "local-regulation",
+    "official-guidance",
+    "order",
+    "ordinance",
+    "plan",
+    "regulation",
+    "standard",
+}
 VERIFICATION_LEVELS = {"article-verified", "law-linked", "source-linked", "needs-review"}
 REQUIREMENT_STATUSES = {"confirmed", "conditional", "unresolved"}
 OVERLAY_STATUSES = {"confirmed", "conditional", "unresolved"}
 CONCLUSION_CONFIDENCE = {"confirmed", "conditional", "unresolved"}
 BOARD_EMPHASIS = {"lead", "key", "bottleneck", "loop", "normal"}
 BOARD_EDGE_TYPES = {"sequence", "message", "loop"}
+WORKFLOW_NODE_KINDS = {
+    "statutory",
+    "official-guidance",
+    "local-example",
+    "field-verification",
+    "project-control",
+}
+GENERIC_BASIS_PLACEHOLDERS = {
+    "현행 법체계·공식 대장",
+    "공식 적용경로(세부 조문 현지 확인)",
+}
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -131,6 +155,8 @@ def validate_basis(
         provisions = ref.get("provisions")
         if not isinstance(provisions, list):
             result.error(ref_where, "provisions must be an array")
+        elif any(value in GENERIC_BASIS_PLACEHOLDERS for value in provisions):
+            result.error(ref_where, "generic legal-basis placeholder is not allowed")
 
 
 def validate_process_board(
@@ -185,6 +211,22 @@ def validate_process_board(
             used_stages.add(stage)
         if node.get("emphasis") not in BOARD_EMPHASIS:
             result.error(node_where, f"unknown emphasis {node.get('emphasis')!r}")
+        if "kind" in node and node.get("kind") not in WORKFLOW_NODE_KINDS:
+            result.error(node_where, f"unknown workflow kind {node.get('kind')!r}")
+        if "basisScope" in node and node.get("basisScope") not in {"node", "axis"}:
+            result.error(node_where, f"unknown basisScope {node.get('basisScope')!r}")
+        if node.get("kind") == "statutory" and node.get("basisScope", "node") != "node":
+            result.error(node_where, "statutory nodes require basisScope 'node'")
+        if "action" in node and (not isinstance(node.get("action"), str) or not node["action"].strip()):
+            result.error(node_where, "action must be a non-empty string")
+        if "outputs" in node and (
+            not isinstance(node.get("outputs"), list)
+            or not node["outputs"]
+            or not all(isinstance(value, str) and value.strip() for value in node["outputs"])
+        ):
+            result.error(node_where, "outputs must be a non-empty array of strings")
+        if "questionIds" in node and not isinstance(node.get("questionIds"), list):
+            result.error(node_where, "questionIds must be an array")
         for authority_id in node.get("authorityIds", []):
             if authority_id not in authorities:
                 result.error(node_where, f"authorityIds references unknown authority {authority_id!r}")
@@ -209,11 +251,22 @@ def validate_process_board(
                 if not isinstance(ref, dict):
                     result.error(ref_where, "must be an object")
                     continue
-                required(ref, ("source", "instrumentId", "provisions"), ref_where, result)
+                required(ref, ("source", "instrumentId"), ref_where, result)
                 if ref.get("instrumentId") not in instruments:
                     result.error(ref_where, f"unknown instrumentId {ref.get('instrumentId')!r}")
-                if not isinstance(ref.get("provisions"), list):
+                provisions = ref.get("provisions")
+                if not isinstance(provisions, list):
                     result.error(ref_where, "provisions must be an array")
+                elif any(value in GENERIC_BASIS_PLACEHOLDERS for value in provisions):
+                    result.error(ref_where, "generic legal-basis placeholder is not allowed")
+                if node.get("kind") == "statutory":
+                    instrument = instruments.get(ref.get("instrumentId"), {})
+                    if instrument.get("status") != "in_force":
+                        result.error(ref_where, "statutory node basis must be in_force")
+                    if instrument.get("verificationLevel") != "article-verified":
+                        result.error(ref_where, "statutory node basis must be article-verified")
+                    if not isinstance(provisions, list) or not provisions:
+                        result.error(ref_where, "statutory node basis needs verified provisions")
 
     for lane in lane_set - used_lanes:
         result.error(f"{where}.lanes", f"declared lane {lane!r} has no nodes")
@@ -241,6 +294,8 @@ def validate_process_board(
             result.error(edge_where, "self-referencing edges are not allowed")
         if edge.get("type") not in BOARD_EDGE_TYPES:
             result.error(edge_where, f"unknown edge type {edge.get('type')!r}")
+        if edge.get("type") == "loop" and not edge.get("label"):
+            result.error(edge_where, "loop edges need a non-empty label")
     for ident in set(nodes) - connected:
         result.error(f"{where}.nodes[{ident}]", "isolated node has no incoming or outgoing edge")
 
@@ -267,6 +322,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             "openQuestions",
             "fieldworkChecklist",
             "reportReadyConclusions",
+            "publicModels",
         ),
         rel,
         result,
@@ -318,6 +374,8 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         )
         status = instrument.get("status")
         level = instrument.get("verificationLevel")
+        if instrument.get("kind") not in INSTRUMENT_KINDS:
+            result.error(where, f"unknown kind {instrument.get('kind')!r}")
         if status not in INSTRUMENT_STATUSES:
             result.error(where, f"unknown status {status!r}")
         if level not in VERIFICATION_LEVELS:
@@ -472,6 +530,16 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             for item in source_board.get("nodes", [])
             if isinstance(item, dict) and item.get("id")
         }
+        source_edge_signatures = {
+            (
+                item.get("source"),
+                item.get("target"),
+                item.get("type"),
+                item.get("label", ""),
+            )
+            for item in source_board.get("edges", [])
+            if isinstance(item, dict)
+        }
         priorities: set[int] = set()
         slugs: set[str] = set()
         covered_nodes: set[str] = set()
@@ -481,6 +549,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         covered_conclusions: set[str] = set()
         covered_overlays: set[str] = set()
         covered_checklist: set[str] = set()
+        model_node_sets: list[tuple[str, set[str]]] = []
         for ident, model in public_models.items():
             where = f"{rel}.publicModels[{ident}]"
             required(
@@ -534,6 +603,13 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 selected_nodes.append(node)
                 covered_nodes.add(node_id)
                 covered_gates.update(node.get("gateOrders", []))
+            model_node_sets.append((ident, set(node_ids)))
+
+            if not 7 <= len(selected_nodes) <= 8:
+                result.error(
+                    f"{where}.nodeIds",
+                    f"construction workflow must contain 7-8 nodes, got {len(selected_nodes)}",
+                )
 
             available_requirements = {
                 requirement_id
@@ -583,6 +659,88 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
 
             used_lanes = {item.get("lane") for item in selected_nodes}
             used_stages = {item.get("stage") for item in selected_nodes}
+            if len(used_lanes) < 3:
+                result.error(f"{where}.nodeIds", f"must use at least 3 lanes, got {len(used_lanes)}")
+            if len(used_stages) < 4:
+                result.error(f"{where}.nodeIds", f"must use at least 4 stages, got {len(used_stages)}")
+
+            model_edges = model.get("edges") if isinstance(model.get("edges"), list) else []
+            valid_model_edges = [edge for edge in model_edges if isinstance(edge, dict)]
+            for edge in valid_model_edges:
+                signature = (
+                    edge.get("source"),
+                    edge.get("target"),
+                    edge.get("type"),
+                    edge.get("label", ""),
+                )
+                if signature not in source_edge_signatures:
+                    result.error(
+                        f"{where}.edges",
+                        "public edge is not a projection of processBoard: "
+                        f"{signature!r}",
+                    )
+            forward_edges = [edge for edge in valid_model_edges if edge.get("type") != "loop"]
+            reachable = {node_ids[0]} if node_ids else set()
+            changed = True
+            while changed:
+                changed = False
+                for edge in forward_edges:
+                    if edge.get("source") in reachable and edge.get("target") not in reachable:
+                        reachable.add(edge.get("target"))
+                        changed = True
+            missing_reachable = set(node_ids) - reachable
+            if missing_reachable:
+                result.error(
+                    f"{where}.edges",
+                    f"non-loop workflow cannot reach nodes {sorted(missing_reachable)} from {node_ids[0]!r}",
+                )
+            loop_edges = [edge for edge in valid_model_edges if edge.get("type") == "loop"]
+            if not loop_edges:
+                result.error(f"{where}.edges", "must include at least one labelled correction loop")
+            position = {node_id: index for index, node_id in enumerate(node_ids)}
+            for edge in loop_edges:
+                source = edge.get("source")
+                target = edge.get("target")
+                if not edge.get("label"):
+                    result.error(f"{where}.edges", "correction loop needs a label")
+                if source in position and target in position and position[source] <= position[target]:
+                    result.error(
+                        f"{where}.edges",
+                        f"loop {source!r}->{target!r} must return to an earlier node",
+                    )
+
+            if data.get("generatedFrom"):
+                linked_questions = {
+                    question_id
+                    for item in selected_nodes
+                    for question_id in item.get("questionIds", [])
+                }
+                declared_questions = set(model.get("questionIds", []))
+                unknown_linked = linked_questions - set(questions)
+                if unknown_linked:
+                    result.error(
+                        f"{where}.processBoard",
+                        f"nodes reference unknown questions {sorted(unknown_linked)}",
+                    )
+                if linked_questions != declared_questions:
+                    result.error(
+                        f"{where}.processBoard",
+                        "node question coverage differs from public model: "
+                        f"missing {sorted(declared_questions - linked_questions)}, "
+                        f"extra {sorted(linked_questions - declared_questions)}",
+                    )
+                for node in selected_nodes:
+                    for field in ("kind", "action", "outputs"):
+                        if not node.get(field):
+                            result.error(
+                                f"{where}.processBoard.nodes[{node.get('id')}]",
+                                f"generated workflow node needs {field}",
+                            )
+                    if node.get("basisScope") != "axis":
+                        result.error(
+                            f"{where}.processBoard.nodes[{node.get('id')}]",
+                            "generated workflow node needs basisScope 'axis'",
+                        )
             model_board = {
                 "schema_version": source_board.get("schema_version"),
                 "profile": source_board.get("profile"),
@@ -615,6 +773,21 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             )
         if public_model_count != 3:
             result.error(f"{rel}.publicModels", "every construction country must expose exactly three models")
+        system_ids = ("site-urban", "permit-environment", "control-completion")
+        expected_model_ids = set(system_ids)
+        if set(public_models) != expected_model_ids:
+            result.error(
+                f"{rel}.publicModels",
+                f"model IDs must be {list(system_ids)}, got {sorted(public_models)}",
+            )
+        for index, (left_name, left_nodes) in enumerate(model_node_sets):
+            for right_name, right_nodes in model_node_sets[index + 1:]:
+                overlap = left_nodes & right_nodes
+                if overlap:
+                    result.error(
+                        f"{rel}.publicModels",
+                        f"{left_name} and {right_name} share workflow nodes {sorted(overlap)}",
+                    )
 
         expected_nodes = set(source_nodes)
         expected_requirements = set(requirements)

@@ -20,6 +20,18 @@ const ROOT = dirname(HERE);
 const DATA_DIR = join(ROOT, "data", "construction-regulations");
 const OUTPUT_DIR = join(ROOT, "site", "boards");
 const BOARD_CLI = join(ROOT, "node_modules", "korea100studio", "scripts", "board.mjs");
+const VERBOSE = process.argv.includes("--verbose");
+const shardArg = process.argv.find((value) => value.startsWith("--shard="));
+let shardIndex = 0;
+let shardCount = 1;
+if (shardArg) {
+  const match = shardArg.slice("--shard=".length).match(/^(\d+)\/(\d+)$/);
+  if (!match || Number(match[2]) < 1 || Number(match[1]) >= Number(match[2])) {
+    fail("--shard must use zero-based INDEX/COUNT, for example --shard=0/4");
+  }
+  shardIndex = Number(match[1]);
+  shardCount = Number(match[2]);
+}
 
 function fail(message) {
   console.error(`ERROR: ${message}`);
@@ -33,7 +45,8 @@ if (!existsSync(BOARD_CLI)) {
 mkdirSync(OUTPUT_DIR, { recursive: true });
 const files = readdirSync(DATA_DIR)
   .filter((name) => name.endsWith(".json") && name !== "manifest.json")
-  .sort();
+  .sort()
+  .filter((_, index) => index % shardCount === shardIndex);
 
 let rendered = 0;
 for (const file of files) {
@@ -96,8 +109,11 @@ for (const file of files) {
       rmSync(scratch, { recursive: true, force: true });
     }
     rendered += 1;
-    console.log(`rendered ${target.id}: ${outputPath}`);
+    if (VERBOSE) console.log(`rendered ${target.id}: ${outputPath}`);
   }
 }
 
-console.log(`OK: ${rendered} construction board(s) rendered with korea100studio`);
+console.log(
+  `OK: ${rendered} construction board(s) rendered with korea100studio` +
+  (shardCount > 1 ? ` (shard ${shardIndex}/${shardCount})` : ""),
+);

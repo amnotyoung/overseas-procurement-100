@@ -77,6 +77,16 @@ KIND_LABEL = {
     "plan": "도시계획",
     "official-guidance": "공식 안내",
     "draft": "법안",
+    "code": "법전·코드",
+    "local-regulation": "지방규정",
+    "standard": "기술표준",
+}
+WORKFLOW_KIND_LABEL = {
+    "statutory": "법정",
+    "official-guidance": "공식경로",
+    "local-example": "지역사례",
+    "field-verification": "현지확인",
+    "project-control": "사업통제",
 }
 
 
@@ -201,11 +211,6 @@ CONSTRUCTION_EMPHASIS_TO_STATUS = {
     "bottleneck": "risk",
     "normal": "waiting",
 }
-CONSTRUCTION_STATUS_CONFIDENCE = {
-    "confirmed": 0.9,
-    "conditional": 0.75,
-    "unresolved": 0.55,
-}
 SENEGAL_CONSTRUCTION_NODE_DEADLINE = {
     "B02": "도시계획확인서(CU)는 완비신청 기준 8일, 유효기간 6개월. PUD 원본 확보와 필지 매칭 기간은 별도다.",
     "B05": "검증된 최종 환경보고서 접수 후 임시 환경적합확인서는 15일. 스크리닝·평가작성·공공참여·기술위원회 검증의 전체기간 상한은 확인되지 않았다.",
@@ -252,7 +257,7 @@ def construction_presentation(d: dict, board: dict, *, segmented: bool = False) 
     stage_map = {}
     for index, stage in enumerate(board["stages"], start=1):
         code, _, label = stage.partition(" ")
-        if segmented and re.fullmatch(r"G\d+", code):
+        if segmented and re.fullmatch(r"G\d+[A-Z]?", code):
             # 공개 보드의 생애주기 단계(S)는 permitPath의 인허가 절차(P)와
             # 별도 체계다. 원래 단계 번호를 보존해 P1~P10과 혼동하지 않는다.
             stage_map[stage] = f"S{code[1:]} {label or stage}"
@@ -377,20 +382,26 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             authorities[ident]["nameKo"] for ident in node.get("authorityIds", [])
             if ident in authorities
         )
-        action_parts = [node.get("note", "")]
-        action_parts.extend(
-            f'{item["topic"]}: {item["requirement"]}' for item in linked_requirements
-        )
-        output_documents = []
-        for item in linked_requirements:
-            output_documents.extend(item.get("evidenceToObtain", []))
-        for order in node.get("gateOrders", []):
-            if order in permit_path:
-                output_documents.append(permit_path[order]["output"])
+        if node.get("action"):
+            action_parts = [node["action"]]
+        else:
+            action_parts = [node.get("note", "")]
+            action_parts.extend(
+                f'{item["topic"]}: {item["requirement"]}' for item in linked_requirements
+            )
+        explicit_outputs = list(node.get("outputs", []))
+        output_documents = list(explicit_outputs)
+        if not explicit_outputs:
+            for item in linked_requirements:
+                output_documents.extend(item.get("evidenceToObtain", []))
+            for order in node.get("gateOrders", []):
+                if order in permit_path:
+                    output_documents.append(permit_path[order]["output"])
 
         basis_refs = list(node.get("refs", []))
-        for item in linked_requirements:
-            basis_refs.extend(item.get("legalBasis", []))
+        if not basis_refs:
+            for item in linked_requirements:
+                basis_refs.extend(item.get("legalBasis", []))
         basis_by_instrument: dict[str, dict] = {}
         for ref in basis_refs:
             instrument_id = ref.get("instrumentId")
@@ -411,18 +422,18 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             basis["provisions"].extend(ref.get("provisions", []))
             if ref.get("source"):
                 basis["sources"].append(ref["source"])
+        basis_scope = node.get("basisScope", "node")
         legal_basis = []
         for basis in basis_by_instrument.values():
             provisions = unique_strings(basis.pop("provisions"))
             sources = unique_strings(basis.pop("sources"))
-            basis["article"] = ", ".join(provisions or sources) or "세부 조문·사업 적용 확인 필요"
+            if basis_scope == "axis":
+                basis["article"] = ", ".join(provisions) or "제도축 공통근거 · 세부 조문 미대조"
+            else:
+                basis["article"] = ", ".join(provisions or sources) or "세부 조문·사업 적용 확인 필요"
             legal_basis.append(basis)
 
         states = [item["status"] for item in linked_requirements]
-        confidence = min(
-            (CONSTRUCTION_STATUS_CONFIDENCE.get(state, 0.7) for state in states),
-            default=0.8,
-        )
         display_stage = next(
             (
                 presentation["gate_stage"][order]
@@ -439,6 +450,9 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             "stage": display_stage,
             "type": "gateway" if node["emphasis"] == "bottleneck" else "task",
             "status": CONSTRUCTION_EMPHASIS_TO_STATUS.get(node["emphasis"], "waiting"),
+            "workflow_kind": node.get("kind", ""),
+            "workflow_kind_label": WORKFLOW_KIND_LABEL.get(node.get("kind", ""), node.get("kind", "")),
+            "basis_scope": basis_scope,
             "actor": node["lane"],
             "consulted_authorities": " · ".join(actor_names),
             "action": " ".join(unique_strings(action_parts)),
@@ -448,9 +462,9 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 item["question"] for item in matching_questions if item.get("blocking")
             ),
             "legal_basis": legal_basis,
-            "confidence": confidence,
-            "confidence_reason": "연결된 법·제도 요구사항 상태: "
-            + ", ".join(unique_strings(CONSTRUCTION_STATUS_LABEL.get(x, x) for x in states)),
+            "evidence_status": ", ".join(
+                unique_strings(CONSTRUCTION_STATUS_LABEL.get(x, x) for x in states)
+            ),
             "applicability": " · ".join(unique_strings(
                 item.get("applicability", "") for item in linked_requirements
             )),
@@ -623,7 +637,12 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     notes = list(d["verification"].get("limitations", []))
     if context.get("sourceNote"):
         notes.append(context["sourceNote"])
+    requirement_applicability = [
+        item["applicability"] for item in d["requirements"]
+        if item["id"] in selected_requirement_ids
+    ]
     application_context = unique_strings([
+        *requirement_applicability,
         context.get("projectName", ""),
         context.get("location", ""),
         context.get("projectType", ""),
@@ -978,6 +997,9 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .node:focus-visible{outline:3px solid color-mix(in srgb,var(--key) 35%,transparent);outline-offset:2px}
 .node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
   display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .tags{display:flex;align-items:center;gap:4px;letter-spacing:0}
+.node .kind-tag{font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;
+  background:var(--soft);color:var(--muted);white-space:nowrap}
 .node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
 .node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
 .node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
@@ -1385,10 +1407,43 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     nodes, edges = p.get("nodes", []), p.get("edges", [])
     discs = v.get("discrepancies", [])
     hi = sum(1 for x in discs if x["severity"] == "high")
+    board_description = (
+        "결정적 단계와 보완 회귀를 표시합니다. 카드의 작은 배지는 법정·공식경로·현지확인·사업통제를 구분하며, 노드를 누르면 적용조건과 관련 제도 근거가 열립니다."
+        if d["axis"] == "construction"
+        else "제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다."
+    )
 
     # 조문 대조 수
     checked = sum(len([a for a in (s.get("articlesChecked") or "").split(",") if a.strip()])
                   for s in v.get("sources", []))
+    evidence_metric = checked
+    evidence_metric_label = "대조 조문"
+    if d["axis"] == "construction" and not checked:
+        evidence_metric = len(v.get("sources", []))
+        evidence_metric_label = "공식 출처"
+    stage_metric_label = "업무 단계" if d["axis"] == "construction" else "게이트"
+    if d["axis"] == "construction":
+        currentness_issues = sum(
+            1 for source in v.get("sources", [])
+            if source.get("status") != "in_force"
+        )
+        status_metric = currentness_issues
+        status_metric_label = "출처 현행성 재확인"
+        status_metric_bad = bool(currentness_issues)
+    else:
+        status_metric = len(discs)
+        status_metric_label = "현행 확인사항" + (f" (필수 확인 {hi})" if hi else "")
+        status_metric_bad = bool(discs)
+    if v["status"] == "article-verified":
+        verification_caveat = (
+            f"{VERIF_LABEL[v['status']]} — 조문의 존재와 문언 일치만 뜻합니다. "
+            "법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다."
+        )
+    else:
+        verification_caveat = (
+            f"{VERIF_LABEL[v['status']]} — 공식 자료와 제도의 연결 수준을 뜻하며 "
+            "세부 조문의 문언 일치나 개별 사업 적용판정을 뜻하지 않습니다."
+        )
 
     opts = "".join(
         f'<option value="{e(x["slug"])}"{" selected" if x is d else ""}>'
@@ -1417,8 +1472,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                     continue
                 tone = NODE_TONE.get(n["status"], "")
                 tag = {"key": "핵심", "warn": "유의", "back": "회귀"}.get(tone, "")
+                kind_tag = n.get("workflow_kind_label", "") if d["axis"] == "construction" else ""
                 cell += f"""<button class="node" data-id="{e(n['id'])}"{f' data-tone="{tone}"' if tone else ''}>
-  <span class="id">{e(n['id'])}{f'<span class="tag">{tag}</span>' if tag else ''}</span>
+  <span class="id"><span>{e(n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
   <span class="nm">{e(n['name'])}</span></button>"""
             rows += f'<div class="bcell" data-lane="{e(lane)}" data-stage="{e(st)}">{cell}</div>'
         rows += "</div>"
@@ -1540,9 +1596,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <div class="tiles">
     <div class="tile"><b>{len(nodes)}</b><span>절차 노드</span></div>
     <div class="tile"><b>{len(lanes)}</b><span>행위 레인</span></div>
-    <div class="tile"><b>{len(stages)}</b><span>게이트</span></div>
-    <div class="tile ok"><b>{checked}</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>{len(discs)}</b><span>현행 기준{f' (필수 확인 {hi})' if hi else ''}</span></div>
+    <div class="tile"><b>{len(stages)}</b><span>{e(stage_metric_label)}</span></div>
+    <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
+    <div class="tile{' bad' if status_metric_bad else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
     <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>현장 검증</span></div>
   </div>
 </div>
@@ -1552,7 +1608,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <div class="hd-row">
     <div>
       <h2>업무구조도</h2>
-      <p class="desc">제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. 노드를 누르면 근거 조문과 기한이 열립니다.</p>
+      <p class="desc">{e(board_description)}</p>
     </div>
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
@@ -1622,7 +1678,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   </div>
   {f'<h3 style="font-size:14px;margin:26px 0 12px">확인하지 못한 것</h3>{unres}' if unres else ''}
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
-    {e(VERIF_LABEL[v['status']])} — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+    {e(verification_caveat)}
   </p>
 </section>
 </div>
@@ -1640,6 +1696,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         for k in (
             "name", "actor", "action", "deadline", "blocker", "lane", "stage",
             "applicability", "report_use", "consulted_authorities", "confidence_reason",
+            "evidence_status",
+            "workflow_kind", "workflow_kind_label", "basis_scope",
         ):
             if nv.get(k):
                 nv[k] = el(nv[k])
@@ -1813,7 +1871,8 @@ function openNode(id){{
   var n=NODES[id]; if(!n)return;
   var h='<span class="badge plain muted">'+n.id+'</span> '
        +'<span class="badge plain muted">'+n.lane+'</span> '
-       +'<span class="badge plain muted">'+n.stage+'</span>';
+       +'<span class="badge plain muted">'+n.stage+'</span>'
+       +(n.workflow_kind_label?' <span class="badge info">'+n.workflow_kind_label+'</span>':'');
   h+='<h3>'+n.name+'</h3>';
   h+='<dl class="kv">';
   h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
@@ -1825,7 +1884,9 @@ function openNode(id){{
     h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
   if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
   if(n.legal_basis&&n.legal_basis.length){{
-    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){{
+    var basisLabel=n.basis_scope==='axis'?'축 전체 관련 제도 근거'
+      :(n.workflow_kind==='statutory'?'근거 조문':'관련 제도 근거');
+    h+='<dt>'+basisLabel+'</dt><dd>'+n.legal_basis.map(function(l){{
       var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
       var meta=(l.kind?' <span class="badge plain muted">'+l.kind+'</span>':'')
         +(l.status?' <span class="badge '+l.status_tone+'">'+l.status+'</span>':'')
@@ -1838,6 +1899,7 @@ function openNode(id){{
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
   }}
   if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
+  if(n.evidence_status) h+='<dt>근거 상태</dt><dd>'+n.evidence_status+'</dd>';
   if(n.report_use) h+='<dt>보고서 반영</dt><dd>'+n.report_use+'</dd>';
   if(n.permit_gates&&n.permit_gates.length){{
     h+='<dt>{e(permit_label)}</dt><dd>'+n.permit_gates.map(function(g){{
