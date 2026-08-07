@@ -141,6 +141,8 @@ npm run check:boards
 5. 사람이 미리보기를 확인하고 승인하기 전에는 병합하지 않는다. 승인·병합 후에만 기존 `Deploy GitHub Pages`가 운영 사이트를 배포한다.
 6. `Reconcile PR Previews`가 15분마다 열린 PR과 대조해 종료된 PR의 미리보기와 deployment를 정리한다.
 
+저장소 정책이 Actions bot의 PR 댓글 작성을 제한할 수 있으므로 댓글은 보조 기능이다. **View deployment**와 `Preview Published`의 실제 URL이 미리보기의 권위 있는 진입점이며, 댓글 실패가 게시·상태·정리를 막지 않는다.
+
 미리보기 게시 권한은 전용 저장소 한 곳에만 유효한 deploy key로 제한하고, 키는 `main`만 접근 가능한 `preview-publisher` Environment secret에 둔다. PR 빌드는 읽기 권한만 가지며, 게시기는 PR artifact를 정적 데이터로만 취급한다. 다운로드한 ZIP은 SHA-256, 경로, 파일형식, 개수, 압축·해제 용량을 검사한 뒤 신뢰된 게시기로만 푼다. 자동 미리보기는 같은 저장소에서 만든 PR만 대상으로 한다. 루트 상대 URL 검사는 `/pr-{번호}/` 하위경로 호환성을 위한 보조 검사이며 실행 코드의 완전한 보안 격리를 뜻하지 않는다.
 
 `main` 보호 규칙은 직접 push를 막고 `validate`와 `Preview Published`를 필수 상태로 요구한다. 승인 리뷰 수는 0이며, 화면 검토 완료 여부는 PR 체크리스트를 사람이 확인한 뒤 병합으로 확정한다.
