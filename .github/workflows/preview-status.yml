@@ -88,6 +88,6 @@ jobs:
               sha: process.env.HEAD_SHA,
               state: 'pending',
               context: 'Preview Published',
-              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}`,
+              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}?preview_event=${encodeURIComponent(process.env.PR_UPDATED_AT)}`,
               description: 'Waiting for a validated preview of this PR head'
             })

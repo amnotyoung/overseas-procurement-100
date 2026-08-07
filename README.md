@@ -147,7 +147,45 @@ npm run check:boards
 
 전용 저장소와 배포 경로는 운영 배포와 분리되지만 두 GitHub Pages URL은 모두 `amnotyoung.github.io` 아래라 웹 origin 자체는 같다. 따라서 이 미리보기는 로그인·쿠키·민감정보를 다루지 않는 공개 정적 사이트 검토용으로만 사용한다. origin 격리가 필요한 서비스에는 별도 도메인이나 별도 호스트를 사용해야 한다.
 
-최초 도입 PR에서는 `workflow_run` 게시기가 아직 `main`에 없으므로 자동 게시가 시작되지 않는다. 이 PR만 검증된 로컬 빌드를 전용 Preview Pages에 수동 게시하고 실제 URL 확인 뒤 `Preview Published` 상태를 1회 기록한다. 병합 후에는 별도 canary PR에서 자동 build → publish → 상태 갱신 → 정리 전 과정을 확인하며, 이후에는 수동 상태 기록을 사용하지 않는다. canary가 통과하면 branch protection의 `Preview Published` required check를 GitHub Actions App에서 생성된 상태로 고정해 같은 이름의 수동 상태가 gate를 대신하지 못하게 한다.
+최초 도입 PR에서는 `workflow_run` 게시기가 아직 `main`에 없으므로 자동 게시가 시작되지 않는다. 이 PR만 검증된 로컬 빌드를 전용 Preview Pages에 수동 게시하고 실제 URL 확인 뒤 `Preview Published` 상태를 1회 기록한다. 병합 후에는 별도 canary PR에서 자동 build → publish → 상태 갱신 → 정리 전 과정을 확인하며, 이후에는 수동 상태 기록을 사용하지 않는다.
+
+canary가 통과하면 branch protection의 `Preview Published` required check를 GitHub Actions App에서 생성된 상태로 고정해 같은 이름의 수동 상태가 gate를 대신하지 못하게 한다. 아래 명령은 이미 GitHub Actions App에 묶인 `validate` check의 App ID를 재사용하면서 기존 required check 목록을 보존한다. `canary_pr`만 실제 PR 번호로 바꿔 실행한다.
+
+```bash
+repo_slug=amnotyoung/overseas-procurement-100
+branch_name=main
+canary_pr=123
+
+required_checks="$(gh api "repos/$repo_slug/branches/$branch_name/protection/required_status_checks")"
+actions_app_id="$(jq -er '
+  [.checks[] | select(.context == "validate" and .app_id != null) | .app_id]
+  | unique
+  | if length == 1 then .[0] else error("validate App ID is not unique") end
+' <<< "$required_checks")"
+test "$(jq '[.checks[] | select(.context == "Preview Published")] | length' <<< "$required_checks")" = 1
+
+jq --argjson actions_app_id "$actions_app_id" '
+  {
+    strict: .strict,
+    checks: [
+      .checks[]
+      | if .context == "Preview Published"
+        then .app_id = $actions_app_id
+        else .
+        end
+    ]
+  }
+' <<< "$required_checks" \
+  | gh api --method PATCH \
+      "repos/$repo_slug/branches/$branch_name/protection/required_status_checks" \
+      --input -
+
+test "$(gh api "repos/$repo_slug/branches/$branch_name/protection/required_status_checks" \
+  --jq '.checks[] | select(.context == "Preview Published") | .app_id')" = "$actions_app_id"
+gh pr checks "$canary_pr" --repo "$repo_slug"
+```
+
+마지막 두 명령에서 App ID 비교가 성공하고 canary의 `Preview Published`가 통과해야 고정이 완료된 것이다. 이후 수동 상태 기록은 사용하지 않는다.
 
 주요 화면:
 

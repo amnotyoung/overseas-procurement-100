@@ -88,11 +88,7 @@ jobs:
                     --argjson pr "$pr_number" --arg source "$GITHUB_REPOSITORY" \
                     '.pullRequest == $pr and .sourceRepository == $source' \
                     "$manifest_path" >/dev/null; then
-                    public_sha="$(jq -r '.headSha // ""' "$manifest_path")"
-                    expected_sha="$(jq -r --arg pr "$pr_number" '.[$pr] // ""' <<< "$EXPECTED_PREVIEWS_JSON")"
-                    if [[ -z "$expected_sha" || "$public_sha" != "$expected_sha" ]]; then
-                      pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
-                    fi
+                    pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
                   elif [[ "$http_code" != 404 ]]; then
                     pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
                   fi
@@ -248,6 +244,51 @@ jobs:
 
               const previewUrl = `${previewBase}/pr-${prNumber}/`
               let isPubliclyCurrent = false
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: 'preview-build.yml',
+                branch: pull.data.head.ref,
+                event: 'pull_request',
+                per_page: 100
+              })
+              const newest = runs
+                .filter(run => run.head_sha === headSha)
+                .sort((left, right) => right.id - left.id)[0]
+              const commitStatuses = await github.rest.repos.listCommitStatusesForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: headSha,
+                per_page: 100
+              })
+              const latestPreviewStatus = commitStatuses.data.find(
+                status => status.context === 'Preview Published'
+              )
+              const eventPendingCreatedAt = Date.parse(latestPreviewStatus?.created_at || '')
+              let previewEventUpdatedAt = Number.NaN
+              try {
+                previewEventUpdatedAt = Date.parse(
+                  new URL(latestPreviewStatus?.target_url || '').searchParams.get('preview_event') || ''
+                )
+              } catch (error) {
+                core.debug(`Preview event marker is unavailable: ${error.message}`)
+              }
+              const newestRunCreatedAt = Date.parse(newest?.created_at || '')
+              const newestRunUpdatedAt = Date.parse(newest?.updated_at || '')
+              const initializerPending =
+                latestPreviewStatus?.state === 'pending' &&
+                latestPreviewStatus?.description === 'Waiting for a validated preview of this PR head'
+              const freshRunForEvent =
+                initializerPending &&
+                Number.isFinite(previewEventUpdatedAt) &&
+                Number.isFinite(newestRunCreatedAt) &&
+                newestRunCreatedAt >= previewEventUpdatedAt
+              const freshRunCompleted =
+                freshRunForEvent &&
+                newest?.status === 'completed' &&
+                Number.isFinite(eventPendingCreatedAt) &&
+                Number.isFinite(newestRunUpdatedAt) &&
+                newestRunUpdatedAt > eventPendingCreatedAt
               if (active.get(prNumber) === headSha) {
                 try {
                   const response = await fetch(
@@ -267,29 +308,6 @@ jobs:
                       }
                     )
                     const index = indexResponse.ok ? await indexResponse.text() : ''
-                    const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      workflow_id: 'preview-build.yml',
-                      branch: pull.data.head.ref,
-                      event: 'pull_request',
-                      per_page: 100
-                    })
-                    const newest = runs
-                      .filter(run => run.head_sha === headSha)
-                      .sort((left, right) => right.id - left.id)[0]
-                    const commitStatuses = await github.rest.repos.listCommitStatusesForRef({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      ref: headSha,
-                      per_page: 100
-                    })
-                    const latestPreviewStatus = commitStatuses.data.find(
-                      status => status.context === 'Preview Published'
-                    )
-                    const newerPendingExists =
-                      latestPreviewStatus?.state === 'pending' &&
-                      Date.parse(latestPreviewStatus.created_at) > Date.parse(newest?.updated_at || 0)
                     isPubliclyCurrent =
                       manifest.pullRequest === prNumber &&
                       manifest.headSha === headSha &&
@@ -297,7 +315,7 @@ jobs:
                       manifest.workflowRunId === newest?.id &&
                       manifest.workflowRunAttempt === newest?.run_attempt &&
                       newest?.conclusion === 'success' &&
-                      !newerPendingExists &&
+                      (!initializerPending || freshRunCompleted) &&
                       index.includes('pages-pr-preview-banner') &&
                       index.includes(headSha.slice(0, 12))
                   }
@@ -305,6 +323,15 @@ jobs:
                   core.notice(`Could not verify preview for PR #${prNumber}: ${error.message}`)
                 }
               }
+
+              const pendingAge = Date.now() - eventPendingCreatedAt
+              const waitingForFreshEvent =
+                initializerPending &&
+                (!freshRunCompleted || (
+                  newest?.conclusion === 'success' &&
+                  Date.now() - newestRunUpdatedAt < 20 * 60 * 1000
+                )) &&
+                (!Number.isFinite(pendingAge) || pendingAge < 2 * 60 * 60 * 1000)
 
               if (isPubliclyCurrent) {
                 verifiedActive.set(prNumber, headSha)
@@ -323,6 +350,12 @@ jobs:
                   '- 운영 배포와 분리된 전용 Preview Pages 저장소/경로입니다.',
                   '- **미리보기를 확인하고 승인받기 전에는 병합하지 않습니다.**'
                 ].join('\n'))
+              } else if (waitingForFreshEvent) {
+                core.notice(`PR #${prNumber} has a newer preview event; preserving its pending status.`)
+                await upsertPreviewComment(
+                  prNumber,
+                  `${marker}\n### GitHub Pages 미리보기\n\n현재 PR 이벤트에 대한 새 미리보기를 생성하고 있습니다.`
+                )
               } else {
                 await setPreviewStatus(headSha, {
                   state: 'error',

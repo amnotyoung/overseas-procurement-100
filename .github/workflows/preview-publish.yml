@@ -244,6 +244,9 @@ jobs:
           set -euo pipefail
           test -n "$PREVIEW_DEPLOY_KEY"
           [[ "$PREVIEW_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]]
+          [[ "$WORKFLOW_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          [[ "$WORKFLOW_RUN_ATTEMPT" =~ ^[1-9][0-9]*$ ]]
           case "$ACTION" in publish|invalidate) ;; *) exit 2 ;; esac
 
           key_path="$RUNNER_TEMP/preview-deploy-key-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
@@ -283,6 +286,35 @@ jobs:
               echo "A newer preview operation already won; treating this run as a no-op."
               completed=true
               break
+            fi
+            if [[ "$ACTION" == invalidate ]]; then
+              cleanup_file="$checkout/.preview-cleanups.json"
+              existing_cleanups='[]'
+              if [[ -f "$cleanup_file" && ! -L "$cleanup_file" ]]; then
+                existing_cleanups="$(jq -ce '
+                  .pullRequests
+                  | select(type == "array" and length <= 10000)
+                  | if all(.[]; type == "number" and . >= 1 and floor == .)
+                    then .
+                    else error("invalid cleanup PR number")
+                    end
+                ' "$cleanup_file")"
+              elif [[ -e "$cleanup_file" || -L "$cleanup_file" ]]; then
+                echo "Refusing unexpected cleanup state path." >&2
+                exit 1
+              fi
+              cleanup_temp="$RUNNER_TEMP/preview-cleanups-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$attempt.json"
+              jq -n \
+                --argjson existing "$existing_cleanups" \
+                --argjson pr "$PR_NUMBER" \
+                --arg cleanupAttempt "$WORKFLOW_RUN_ID-$WORKFLOW_RUN_ATTEMPT" \
+                '($existing + [$pr] | unique | sort) as $pullRequests
+                | if ($pullRequests | length) <= 10000
+                  then {pullRequests: $pullRequests, attempt: $cleanupAttempt}
+                  else error("cleanup PR list exceeds its limit")
+                  end' \
+                > "$cleanup_temp"
+              mv "$cleanup_temp" "$cleanup_file"
             fi
             git -C "$checkout" config user.name "github-actions[bot]"
             git -C "$checkout" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
