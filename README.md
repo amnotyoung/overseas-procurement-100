@@ -132,6 +132,23 @@ python3 tools/check_links.py
 npm run check:boards
 ```
 
+## PR 미리보기와 운영 배포
+
+1. 모든 변경은 `main` 대상 Pull Request로 올린다.
+2. `Build PR Preview`는 쓰기 권한 없이 PR을 검증·빌드하고 정적 artifact만 만든다.
+3. `main`에 고정된 `Publish PR Preview`가 artifact를 실행하지 않고 검사한 뒤 전용 공개 저장소 `amnotyoung/overseas-procurement-100-preview`의 `/pr-{번호}/`에 게시한다.
+4. 게시 URL에서 정확한 커밋 SHA를 확인한 뒤 PR에 미리보기 댓글, **View deployment**, `Preview Published` 상태가 표시된다.
+5. 사람이 미리보기를 확인하고 승인하기 전에는 병합하지 않는다. 승인·병합 후에만 기존 `Deploy GitHub Pages`가 운영 사이트를 배포한다.
+6. `Reconcile PR Previews`가 15분마다 열린 PR과 대조해 종료된 PR의 미리보기와 deployment를 정리한다.
+
+미리보기 게시 권한은 전용 저장소 한 곳에만 유효한 deploy key로 제한하고, 키는 `main`만 접근 가능한 `preview-publisher` Environment secret에 둔다. PR 빌드는 읽기 권한만 가지며, 게시기는 PR artifact를 정적 데이터로만 취급한다. 다운로드한 ZIP은 SHA-256, 경로, 파일형식, 개수, 압축·해제 용량을 검사한 뒤 신뢰된 게시기로만 푼다. 자동 미리보기는 같은 저장소에서 만든 PR만 대상으로 한다. 루트 상대 URL 검사는 `/pr-{번호}/` 하위경로 호환성을 위한 보조 검사이며 실행 코드의 완전한 보안 격리를 뜻하지 않는다.
+
+`main` 보호 규칙은 직접 push를 막고 `validate`와 `Preview Published`를 필수 상태로 요구한다. 승인 리뷰 수는 0이며, 화면 검토 완료 여부는 PR 체크리스트를 사람이 확인한 뒤 병합으로 확정한다.
+
+전용 저장소와 배포 경로는 운영 배포와 분리되지만 두 GitHub Pages URL은 모두 `amnotyoung.github.io` 아래라 웹 origin 자체는 같다. 따라서 이 미리보기는 로그인·쿠키·민감정보를 다루지 않는 공개 정적 사이트 검토용으로만 사용한다. origin 격리가 필요한 서비스에는 별도 도메인이나 별도 호스트를 사용해야 한다.
+
+최초 도입 PR에서는 `workflow_run` 게시기가 아직 `main`에 없으므로 자동 게시가 시작되지 않는다. 이 PR만 검증된 로컬 빌드를 전용 Preview Pages에 수동 게시하고 실제 URL 확인 뒤 `Preview Published` 상태를 1회 기록한다. 병합 후에는 별도 canary PR에서 자동 build → publish → 상태 갱신 → 정리 전 과정을 확인하며, 이후에는 수동 상태 기록을 사용하지 않는다. canary가 통과하면 branch protection의 `Preview Published` required check를 GitHub Actions App에서 생성된 상태로 고정해 같은 이름의 수동 상태가 gate를 대신하지 못하게 한다.
+
 주요 화면:
 
 | 경로 | 내용 |
