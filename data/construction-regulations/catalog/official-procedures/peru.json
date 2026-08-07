@@ -1,0 +1,758 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "peru",
+  "authorities": [],
+  "instruments": [
+    {
+      "id": "PER-TUO-LAW-29090",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "SINIA 공식 법령페이지에서 DS 006-2017-VIVIENDA가 승인한 Law 29090 통합본을 확인했으나, 이후 개정 전체와 기준일 현행 통합상태를 같은 문서에서 확인하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "PER-LICENCE-REG-029-2019",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "gob.pe 주택부 공식 법령페이지에서 DS 029-2019-VIVIENDA 원문·공개상태를 확인했으나, 이후 개정과 지방정부별 TUPA 집행을 하나의 현행 통합자료로 확정하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "PER-RNE-2006-CURRENT",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "gob.pe 주택부의 공식 RNE 간행물 페이지에서 현행 장별 자료가 계속 제공됨을 확인했으나, 수시 개정되는 모든 장의 동일 기준일 판본을 단일 통합본으로 확정하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "PER-SEIA-27446-019-2009",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "gob.pe MINAM 공식 법령페이지에서 DS 019-2009-MINAM과 SEIA 법적 절차를 확인했으나, 이후 개정·부문별 환경규정을 모두 반영한 단일 현행 통합본은 확인되지 않아 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "PER-ITSE-002-2018",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "PCM·CENEPRED 공식 자료에서 DS 002-2018-PCM의 ITSE 체계와 현행 검사운영을 대조했으나, 후속개정과 지방정부별 최신 TUPA·서식을 한 자료에서 확정하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "PER-GOB-CPUE-GUIDE",
+      "title": "Peru State Platform: Certificate of Urban and Building Parameters",
+      "titleKo": "페루 국가포털 도시·건축 파라미터 증명 안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "페루 정부 gob.pe가 CPUE 신청·심사·발급 서비스를 현행 절차로 게시",
+      "officialUrl": "https://www.gob.pe/23360-solicitar-certificado-de-parametros-urbanisticos",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "PER-SENACE-CLASSIFICATION-GUIDE",
+      "title": "SENACE official guidance on environmental classification and certification",
+      "titleKo": "SENACE 환경분류·환경인증 공식 안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "SENACE 공식 orientación이 환경사전분류·평가서·심사경로를 현재 게시",
+      "officialUrl": "https://www.senace.gob.pe/orientacion/",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "PER-GOB-CONFORMITY-GUIDE",
+      "title": "Peru State Platform: Certificate of Work Conformity and Building Declaration",
+      "titleKo": "페루 국가포털 공사적합증명·건축물선언 안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "gob.pe가 지방정부 Conformidad de Obra·Declaratoria de Edificación 현행 서비스를 게시",
+      "officialUrl": "https://www.gob.pe/23267-obtener-certificado-de-conformidad-de-obra-y-declaratoria-de-edificacion",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "PER-CENEPRED-ITSE-MANUAL",
+      "title": "CENEPRED Manual for Building Safety Technical Inspections",
+      "titleKo": "CENEPRED 건축물안전기술검사(ITSE) 시행매뉴얼",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "CENEPRED 공식 ITSE 실행매뉴얼과 현행 안전검사 체계를 대조",
+      "officialUrl": "https://cenepred.gob.pe/web/wp-content/uploads/Itse/decreto-supremo-n-002-2018-pcm%20y%20RJ-016-2018-CENEPRED-J/MANUAL%20DE%20EJECUCION%20DE%20ITSE.pdf",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "Law 29090·DS 029-2019의 전국 habilitación urbana 절차와 국가포털의 도시·건축 파라미터 증명 안내를 연결했다. 실질 도시기준과 수수료는 관할 municipality의 현행 계획·TUPA를 적용한다.",
+      "officialProcedure": {
+        "name": "페루 부지규제 확인·도시개발허가 절차",
+        "coverage": "official-source-linked",
+        "scope": "전국 Law 29090·DS 029-2019의 habilitación urbana 절차를 기준으로 하되, Certificado de Parámetros와 실질 심사는 사업지 district/provincial municipality가 현행 계획과 TUPA로 수행한다. 표시된 도시수치는 특정 Lima 구의 값이 아니다.",
+        "stages": [
+          "S1 필지규제증명",
+          "S2 도시개발 신청",
+          "S3 기술심사·보완",
+          "S4 공식결정"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "도시·건축 파라미터 증명 신청",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자 또는 적법한 신청인이 관할 municipality에 신청서, 필지 식별정보와 해당 지방정부가 공표한 서류를 제출해 Certificado de Parámetros Urbanísticos y Edificatorios를 신청한다.",
+            "output": "파라미터 증명 신청 접수증",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "국가포털 파라미터 증명 절차",
+                "instrumentId": "PER-GOB-CPUE-GUIDE",
+                "provisions": ["application to the competent municipality; parcel and location requirements"]
+              },
+              {
+                "source": "Law 29090 통합본",
+                "instrumentId": "PER-TUO-LAW-29090",
+                "provisions": ["Art. 14.2 Certificado de Parámetros Urbanísticos y Edificatorios"]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "계획·용도지역·필지조건 대조",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality가 현행 도시계획·용도지역과 필지기록을 대조해 용도, 높이, área libre, retiro, 주차와 그 밖의 도시·건축 파라미터를 확인한다.",
+            "output": "필지별 도시·건축 파라미터 검토기록",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "국가포털 파라미터 증명 내용",
+                "instrumentId": "PER-GOB-CPUE-GUIDE",
+                "provisions": ["uses, maximum height, minimum open area, parking and local planning rules"]
+              },
+              {
+                "source": "Law 29090 통합본",
+                "instrumentId": "PER-TUO-LAW-29090",
+                "provisions": ["Art. 14.2 content and 36-month validity of the certificate"]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "파라미터 증명 발급·통지",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality가 확인된 필지규제를 Certificado de Parámetros에 기재해 신청인에게 발급하거나 발급할 수 없는 사유를 통지한다. 이 증명은 허가 자체가 아니다.",
+            "output": "Certificado de Parámetros 또는 거부통지",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "국가포털 파라미터 증명 발급",
+                "instrumentId": "PER-GOB-CPUE-GUIDE",
+                "provisions": ["municipal issuance; 36-month validity"]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "habilitación urbana 모드·기술도서 작성",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "책임전문가가 사업유형과 복잡도에 맞는 habilitación urbana 승인모드를 판정하고 FHU, 권원, 도시설계, 도로·배수·상하수·전력 및 필요한 환경·문화재 자료를 작성·서명한다.",
+            "output": "서명된 FHU와 도시개발 기술도서",
+            "authorityIds": ["per-municipality", "per-mvcs"],
+            "refs": [
+              {
+                "source": "도시개발허가 규칙",
+                "instrumentId": "PER-LICENCE-REG-029-2019",
+                "provisions": ["Title II general requirements; Title III habilitación urbana modalities and documents"]
+              },
+              {
+                "source": "Law 29090 통합본",
+                "instrumentId": "PER-TUO-LAW-29090",
+                "provisions": ["licence modalities and habilitación urbana requirements"]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "도시개발허가 접수·권리금 납부",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 관할 municipality에 FHU와 완비 기술도서를 제출하고 지방 TUPA에 따른 심사·검증 비용을 납부해 정식 접수번호를 받는다.",
+            "output": "habilitación urbana 접수증·납부증빙",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "도시개발허가 규칙",
+                "instrumentId": "PER-LICENCE-REG-029-2019",
+                "provisions": ["filing, administrative verification and review payments for habilitación urbana"]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "행정·도시·기반시설 기술심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality와 적용되는 Comisión Técnica 또는 Revisor Urbano가 권원·계획적합성, 도로·공공공간·기반시설과 위험·환경조건을 심사해 dictamen을 작성한다.",
+            "output": "기술심사 dictamen 또는 통합 보완의견",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "도시개발허가 규칙",
+                "instrumentId": "PER-LICENCE-REG-029-2019",
+                "provisions": ["Title III prior evaluation by municipality, Comisión Técnica or Revisor Urbano"]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "관찰사항 보완·수정도서 재제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "심사에서 관찰사항이 통지되면 신청인과 책임전문가가 지적사항을 반영한 FHU·도시계획·기반시설 도서를 기한 내 재제출해 재심사를 받는다.",
+            "output": "보완도서 재접수증·재심사 dictamen",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "도시개발허가 규칙",
+                "instrumentId": "PER-LICENCE-REG-029-2019",
+                "provisions": ["observations, correction and renewed technical evaluation in habilitación procedures"]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "habilitación urbana 허가결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 municipality가 최종 dictamen과 적용 계획을 근거로 도시개발허가를 발급하거나 불허·절차종료를 공식 통지한다.",
+            "output": "habilitación urbana licence·승인도면·조건 또는 불허통지",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {
+                "source": "Law 29090 허가결정",
+                "instrumentId": "PER-TUO-LAW-29090",
+                "provisions": ["approval modalities and municipal licence decision"]
+              },
+              {
+                "source": "도시개발허가 규칙",
+                "instrumentId": "PER-LICENCE-REG-029-2019",
+                "provisions": ["Title III licence issuance and effects"]
+              }
+            ],
+            "permitGate": {
+              "key": "urban-development-decision",
+              "gate": "관할 municipality의 habilitación urbana 공식결정",
+              "decision": "municipality가 도시계획·기반시설 심사를 마치고 허가, 조건부 허가, 불허 또는 법정 절차종료를 결정한다.",
+              "output": "도시개발허가·승인도면·조건 또는 불허/종료 통지",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "필지정보"],
+          [1, 2, "sequence", "확정 파라미터"],
+          [2, 3, "sequence", "설계조건"],
+          [3, 4, "sequence", "서명도서"],
+          [4, 5, "sequence", "완비접수"],
+          [5, 7, "sequence", "적합 dictamen"],
+          [5, 6, "message", "관찰사항 통지 시"],
+          [6, 5, "loop", "보완도서 재심사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "도시개발허가", "action": "승인도면과 조건에 따라 토지조성·건축허가 단계로 진행"},
+          {"state": "rework", "label": "보완요구", "action": "통합 관찰사항을 수정해 기술심사 단계로 재제출"},
+          {"state": "reject", "label": "불허·절차종료", "action": "부적합 또는 미보완 사유에 따라 절차를 종료하고 공식 불복·재신청 경로를 확인"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "Law 29090·DS 029-2019의 건축허가 심사와 SEIA·SENACE의 EVAP–Category I/II/III–환경인증 경로를 분리·병렬 표시했다. 관할과 적용 환경수단은 사업부문·권한이관 범위에 따라 확정한다.",
+      "officialProcedure": {
+        "name": "페루 건축허가·SEIA 환경인증 절차",
+        "coverage": "official-source-linked",
+        "scope": "건축허가는 전국 Law 29090·DS 029-2019의 Modalidad A–D 체계이고, 실제 접수·수수료는 관할 municipality TUPA를 따른다. 환경경로는 SEIA 포함사업 중 사전분류가 없고 SENACE 또는 이관받은 관할기관이 심사하는 경우를 표시한다.",
+        "stages": [
+          "P1 허가모드·도서",
+          "P2 건축기술심사",
+          "P3 건축결정·SEIA 분류",
+          "P4 환경본심사",
+          "P5 환경 공식결정"
+        ],
+        "steps": [
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "Modalidad A–D 판정·FUE 허가도서 작성",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "책임건축사·기술자가 용도·규모·위험도에 따라 Modalidad A–D를 판정하고 FUE, 권원, 건축·구조·설비·지반 및 적용되는 환경·교통 자료를 작성·서명한다.",
+            "output": "허가모드 판정과 전문가 서명 FUE·기술도서",
+            "authorityIds": ["per-municipality", "per-mvcs"],
+            "refs": [
+              {"source": "Law 29090 건축허가", "instrumentId": "PER-TUO-LAW-29090", "provisions": ["Arts. 10 and 25; Modalidades A-D and building-licence documentation"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["Title IV building-licence modalities and technical documents"]},
+              {"source": "국가건축규정", "instrumentId": "PER-RNE-2006-CURRENT", "provisions": ["mandatory technical design requirements"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "건축허가 신청·완비접수",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 관할 municipality에 FUE·권원·전문도서와 해당 비용을 제출하고 행정검증을 거쳐 접수번호를 받는다.",
+            "output": "건축허가 접수증·납부증빙",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["filing and administrative verification of building-licence applications"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "도시·건축·구조·설비 기술심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Modalidad에 따라 municipality, Comisión Técnica 또는 Revisor Urbano가 파라미터·RNE·건축·구조·설비와 필요한 ad hoc 의견을 심사해 dictamen을 작성한다.",
+            "output": "전문분야 dictamen·통합 관찰사항 또는 적합의견",
+            "authorityIds": ["per-municipality", "per-mvcs"],
+            "refs": [
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["Title IV prior technical evaluation by municipality, Comisión Técnica or Revisor Urbano"]},
+              {"source": "국가건축규정", "instrumentId": "PER-RNE-2006-CURRENT", "provisions": ["applicable architectural, structural and installations chapters"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "관찰사항 통지",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "기술심사에서 불일치가 확인되면 심사기관이 분야별 관찰사항을 신청인에게 공식 통지하고 보완기한과 재검토 대상을 제시한다.",
+            "output": "건축허가 관찰사항·보완통지",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["technical observations and correction within the building-licence evaluation"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "수정도서 제출·재심사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인과 책임전문가가 통지된 관찰사항을 반영한 도서와 설명서를 재제출하고 해당 분야의 재심사를 받는다.",
+            "output": "수정도서 재접수증·재심사 dictamen",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["subsanación and renewed technical review"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "건축허가 발급·불허결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 municipality가 최종 dictamen과 허가모드에 따라 Licencia de Edificación, 조건·승인도면 또는 불허·절차종료를 공식 결정한다.",
+            "output": "Licencia de Edificación·승인도면·조건 또는 불허통지",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "Law 29090 허가결정", "instrumentId": "PER-TUO-LAW-29090", "provisions": ["Modalidades A-D; licence issuance and effects"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["Title IV building-licence decision"]}
+            ],
+            "permitGate": {
+              "key": "building-licence-decision",
+              "gate": "관할 municipality의 Licencia de Edificación 결정",
+              "decision": "municipality가 도시·건축·기술심사를 마치고 건축허가, 조건부 허가, 불허 또는 절차종료를 결정한다.",
+              "output": "건축허가·승인도면·조건 또는 불허/종료 통지",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "SEIA 포함·사전분류 여부 확인",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업시행자가 사업부문·입지·규모를 SEIA 포함목록과 사전분류 규정에 대조하고 관할이 SENACE인지 이관받은 부문기관인지 확인한다.",
+            "output": "SEIA 대상·관할·사전분류 판정",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 법·시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["SEIA inclusion, prior environmental certification and competent authority"]},
+              {"source": "SENACE 분류 안내", "instrumentId": "PER-SENACE-CLASSIFICATION-GUIDE", "provisions": ["advance classification versus EVAP review"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "EVAP·분류신청 제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사전분류가 없는 SEIA 대상사업이면 시행자가 EVAP, 분류신청, 참여계획과 수수료를 관할 환경기관에 제출한다.",
+            "output": "EVAP 분류신청 접수증",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["Arts. 41-45 project-classification application and evaluation"]},
+              {"source": "SENACE 분류 안내", "instrumentId": "PER-SENACE-CLASSIFICATION-GUIDE", "provisions": ["EVAP submission where no advance classification exists"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "EVAP 기술검토·관계기관 의견",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할기관이 EVAP의 완비성·영향·민감입지를 검토하고 필요한 관계기관 의견을 받아 Category I, II 또는 III 분류안을 마련한다.",
+            "output": "환경분류 기술검토·관계기관 의견",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["Arts. 42-45 dissemination, opinions and classification evaluation"]},
+              {"source": "SENACE 분류 기준", "instrumentId": "PER-SENACE-CLASSIFICATION-GUIDE", "provisions": ["Category I DIA, Category II EIA-sd, Category III EIA-d"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "분류결정·TOR 승인",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할기관이 Category I이면 EVAP를 DIA로 승인해 환경인증을 부여하고, Category II·III이면 범주와 적용 TOR를 승인하거나 분류신청을 불승인한다.",
+            "output": "Category I 환경인증 또는 Category II/III 분류·TOR 결정",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["classification resolution; Category I EVAP constitutes DIA; Terms of Reference for Categories II-III"]},
+              {"source": "SENACE 분류결정 안내", "instrumentId": "PER-SENACE-CLASSIFICATION-GUIDE", "provisions": ["contents of the classification resolution"]}
+            ],
+            "permitGate": {
+              "key": "environment-classification-decision",
+              "gate": "관할 환경기관의 SEIA 분류 공식결정",
+              "decision": "관할기관이 Category I 환경인증 또는 Category II/III 분류·TOR 승인, 보완 또는 불승인을 결정한다.",
+              "output": "분류결정문·Category I 인증 또는 Category II/III TOR",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "Category II·III 환경영향평가 제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Category II 또는 III로 분류된 경우 시행자가 승인 TOR에 따라 EIA-sd 또는 EIA-d와 참여자료를 작성해 관할기관에 제출한다.",
+            "output": "EIA-sd/EIA-d 본심사 접수증",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 법·시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["Category II and III environmental studies and certification procedure"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "EIA 본심사·참여·관찰사항 통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할기관이 EIA의 기술내용과 시민참여 결과를 심사하고 관계기관 의견을 취합해 한정된 관찰사항과 추가정보 요구를 시행자에게 통지한다.",
+            "output": "EIA 기술의견·참여기록·관찰사항",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 법·시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["environmental-study review, citizen participation, observations and opinions"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "EIA 관찰사항 보완·재제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "시행자가 통지된 관찰사항과 관계기관 의견을 반영한 수정 EIA와 응답표를 제출하고 관할기관이 보완내용을 재검토한다.",
+            "output": "수정 EIA·관찰사항 응답표·재검토 결과",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 법·시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["correction of observations and continued evaluation"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 4,
+            "label": "Category II·III 환경인증 결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할기관이 최종 EIA-sd/EIA-d를 평가해 환경인증, 조건부 승인 또는 불승인을 공식 결의하고 결정문을 통지한다.",
+            "output": "환경인증·승인조건 또는 불승인 결정문",
+            "authorityIds": ["per-environment-authority"],
+            "refs": [
+              {"source": "SEIA 법·시행령", "instrumentId": "PER-SEIA-27446-019-2009", "provisions": ["prior environmental certification and final decision on EIA-sd/EIA-d"]}
+            ],
+            "permitGate": {
+              "key": "environment-certification-decision",
+              "gate": "관할 환경기관의 환경인증 공식결정",
+              "decision": "Category II·III 사업의 EIA를 심사해 환경인증, 조건부 승인 또는 불승인을 결정한다.",
+              "output": "환경인증 결정문·승인조건 또는 불승인",
+              "dependsOn": ["environment-classification-decision"]
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "서명 허가도서"],
+          [1, 2, "sequence", "완비접수"],
+          [2, 5, "sequence", "적합 dictamen"],
+          [2, 3, "message", "관찰사항 발생 시"],
+          [3, 4, "sequence", "보완요구"],
+          [4, 2, "loop", "수정도서 재심사"],
+          [0, 6, "message", "병렬 SEIA 대상판정"],
+          [6, 7, "sequence", "EVAP 필요 시"],
+          [7, 8, "sequence", "분류신청"],
+          [8, 9, "sequence", "분류안"],
+          [9, 10, "message", "Category II·III"],
+          [10, 11, "sequence", "EIA 본심사"],
+          [11, 13, "sequence", "관찰사항 없음"],
+          [11, 12, "message", "관찰사항 통지 시"],
+          [12, 11, "loop", "수정 EIA 재검토"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "건축허가·환경인증", "action": "적용되는 두 결정의 승인도서와 환경조건을 충족해 착공 절차로 진행"},
+          {"state": "rework", "label": "공식 보완요구", "action": "건축도서는 기술심사로, 환경자료는 분류 또는 EIA 본심사로 재제출"},
+          {"state": "reject", "label": "불허·불승인", "action": "해당 신청을 종료하고 결정문에 따른 불복·재신청 가능성을 별도 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "Law 29090·DS 029-2019의 공사검증·Conformidad de Obra y Declaratoria de Edificación과 DS 002-2018·CENEPRED 매뉴얼의 고위험 ITSE 실제 보완회귀를 연결했다. ITSE는 건축준공과 별도의 운영안전 절차다.",
+      "officialProcedure": {
+        "name": "페루 공사검사·준공적합·ITSE 절차",
+        "coverage": "official-source-linked",
+        "scope": "전국 법정틀을 표시하며 실제 검사 횟수·수수료·접수창구는 관할 municipality의 허가모드와 TUPA를 따른다. ITSE 단계는 운영시설이 위험 alto 또는 muy alto로 분류되어 사전검사가 필요한 경우를 중심으로 한다.",
+        "stages": [
+          "C1 착공·공사검증",
+          "C2 준공적합 심사",
+          "C3 준공결정·ITSE 검사",
+          "C4 ITSE 공식결정"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "착공통지·책임자·검사일정 등록",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가권자가 승인한 모드에 따라 건축주가 responsable de obra, 검사일정, 보험·착공자료를 municipality에 제출하고 착공을 통지한다.",
+            "output": "착공통지 접수·책임자·검사일정",
+            "authorityIds": ["per-municipality", "per-control-professionals"],
+            "refs": [
+              {"source": "Law 29090 공사통제", "instrumentId": "PER-TUO-LAW-29090", "provisions": ["construction control and municipal technical verification"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["communication of commencement and technical-verification schedule"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 0,
+            "label": "공정별 시 기술검증·검사기록",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality 또는 위임 검사자가 승인도면·RNE·허가조건에 따라 예정된 현장방문과 공정검증을 수행하고 결과·변경·시험을 기록한다.",
+            "output": "검사 acta·시험기록·시정통지",
+            "authorityIds": ["per-municipality", "per-control-professionals"],
+            "refs": [
+              {"source": "Law 29090 공사검증", "instrumentId": "PER-TUO-LAW-29090", "provisions": ["municipal verification of authorized works"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["technical verification during construction"]},
+              {"source": "국가건축규정", "instrumentId": "PER-RNE-2006-CURRENT", "provisions": ["professional responsibility and applicable tests"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "Conformidad·Declaratoria 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "완공 후 소유자와 책임전문가가 FUE 준공부분, 승인도면과 일치하는 도면 또는 as-built, 책임선언과 필요한 검사자료를 허가 municipality에 제출한다.",
+            "output": "Conformidad de Obra·Declaratoria 신청 접수증",
+            "authorityIds": ["per-municipality", "per-control-professionals"],
+            "refs": [
+              {"source": "국가포털 준공적합 안내", "instrumentId": "PER-GOB-CONFORMITY-GUIDE", "provisions": ["FUE, responsible-professional signatures and approved/as-built plans"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["Conformidad de Obra y Declaratoria de Edificación procedures"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "준공도서·현장 적합성 심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality가 완공내용을 허가도서·허용된 비본질 변경과 대조하고 필요한 현장검사를 실시해 적합 또는 관찰사항을 판정한다.",
+            "output": "준공적합 심사결과·관찰사항",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "국가포털 준공적합 안내", "instrumentId": "PER-GOB-CONFORMITY-GUIDE", "provisions": ["municipal confirmation that completed work complies with the approved file"]},
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["completion review, inspection and non-substantial modifications"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "준공 관찰사항 보완·재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality가 도면 또는 현장 불일치를 통지하면 소유자와 책임전문가가 수정도서·시정증빙을 제출하고 재검사를 받는다.",
+            "output": "준공 보완재접수·재검사 결과",
+            "authorityIds": ["per-municipality", "per-control-professionals"],
+            "refs": [
+              {"source": "건축허가 규칙", "instrumentId": "PER-LICENCE-REG-029-2019", "provisions": ["completion observations, correction and renewed review"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "준공적합·건축물선언 결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "municipality가 공사적합과 건축물선언을 승인하거나 불승인 resolution을 발급하고 승인 FUE·도서를 교부한다.",
+            "output": "Conformidad de Obra y Declaratoria de Edificación 또는 불승인",
+            "authorityIds": ["per-municipality"],
+            "refs": [
+              {"source": "국가포털 준공적합 결정", "instrumentId": "PER-GOB-CONFORMITY-GUIDE", "provisions": ["municipal approval or disapproval resolution"]},
+              {"source": "Law 29090 준공", "instrumentId": "PER-TUO-LAW-29090", "provisions": ["conformity of works and building declaration"]}
+            ],
+            "permitGate": {
+              "key": "completion-conformity-decision",
+              "gate": "municipality의 준공적합·건축물선언 결정",
+              "decision": "완공물이 승인도서와 법정 허용범위에 부합하는지 심사해 Conformidad·Declaratoria를 승인 또는 불승인한다.",
+              "output": "준공적합증명·건축물선언 또는 불승인 resolution",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "ITSE 위험등급 판정·사전검사 신청",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "운영자가 Matriz de Riesgos로 시설을 분류하고 alto 또는 muy alto이면 도면·안전설비 시험자료와 신청서를 관할 municipality의 ITSE 집행기관에 제출한다.",
+            "output": "ITSE 위험등급표·신청 접수증",
+            "authorityIds": ["per-control-professionals", "per-municipality"],
+            "refs": [
+              {"source": "ITSE 규칙", "instrumentId": "PER-ITSE-002-2018", "provisions": ["risk classification and prior ITSE for high and very-high risk premises"]},
+              {"source": "CENEPRED ITSE 매뉴얼", "instrumentId": "PER-CENEPRED-ITSE-MANUAL", "provisions": ["risk matrix, application and inspector assignment"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "ITSE 현장검사·안전조건 판정",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "지정 검사단이 건축·구조·전기·피난·소방설비와 운영준비 상태를 현장에서 확인하고 ITSE 보고서 또는 Acta de Diligencia를 작성한다.",
+            "output": "ITSE 검사보고서·사진기록·검사 acta",
+            "authorityIds": ["per-control-professionals"],
+            "refs": [
+              {"source": "ITSE 규칙", "instrumentId": "PER-ITSE-002-2018", "provisions": ["Arts. 23-27 and high/very-high-risk inspection diligence"]},
+              {"source": "CENEPRED ITSE 매뉴얼", "instrumentId": "PER-CENEPRED-ITSE-MANUAL", "provisions": ["inspection execution and report"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "ITSE 보완사항·재검사일 통지",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "시정 가능한 안전불일치가 있으면 검사단이 한 번의 Acta에 관찰사항과 보완기한·재검사일을 기재해 운영자에게 통지한다.",
+            "output": "ITSE 관찰사항·보완기한·재검사일",
+            "authorityIds": ["per-control-professionals"],
+            "refs": [
+              {"source": "ITSE 규칙", "instrumentId": "PER-ITSE-002-2018", "provisions": ["subsanable observations, suspension and rescheduled diligence"]},
+              {"source": "CENEPRED ITSE 매뉴얼", "instrumentId": "PER-CENEPRED-ITSE-MANUAL", "provisions": ["Acta de Diligencia; observaciones subsanables and reinspection"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "안전결함 시정·ITSE 재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "운영자가 지정기한 내 안전결함을 시정하고 증빙을 제출하면 검사단이 재방문해 관찰사항 해소 여부를 확인한다.",
+            "output": "시정증빙·ITSE 재검사 보고서",
+            "authorityIds": ["per-control-professionals"],
+            "refs": [
+              {"source": "ITSE 규칙", "instrumentId": "PER-ITSE-002-2018", "provisions": ["verification of correction; denial when observations are not cured"]},
+              {"source": "CENEPRED ITSE 매뉴얼", "instrumentId": "PER-CENEPRED-ITSE-MANUAL", "provisions": ["resumption of diligence to verify subsanación"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "ITSE certificate·거부결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "ITSE 집행기관이 유리한 검사보고서이면 certificate를 발급하고, 중요결함·위험등급 오류·미보완이면 거부 resolution을 발급한다.",
+            "output": "ITSE certificate 또는 거부 resolution",
+            "authorityIds": ["per-control-professionals", "per-municipality"],
+            "refs": [
+              {"source": "ITSE 규칙", "instrumentId": "PER-ITSE-002-2018", "provisions": ["certificate after favorable report; denial cases and resolution"]},
+              {"source": "CENEPRED ITSE 매뉴얼", "instrumentId": "PER-CENEPRED-ITSE-MANUAL", "provisions": ["favorable/unfavorable report and certificate issuance"]}
+            ],
+            "permitGate": {
+              "key": "itse-decision",
+              "gate": "관할 ITSE 집행기관의 안전검사 공식결정",
+              "decision": "운영시설의 위험등급과 안전조건을 검사해 ITSE certificate 발급 또는 거부를 결정한다.",
+              "output": "ITSE certificate 또는 거부 resolution",
+              "dependsOn": ["completion-conformity-decision"]
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "착공·검사일정"],
+          [1, 2, "sequence", "완공 검사기록"],
+          [2, 3, "sequence", "준공신청"],
+          [3, 5, "sequence", "적합"],
+          [3, 4, "message", "관찰사항 발생 시"],
+          [4, 3, "loop", "보완 후 재검사"],
+          [5, 6, "sequence", "운영시설 ITSE"],
+          [6, 7, "sequence", "검사신청"],
+          [7, 10, "sequence", "관찰사항 없음"],
+          [7, 8, "message", "시정 가능 결함"],
+          [8, 9, "sequence", "보완기한"],
+          [9, 7, "loop", "ITSE 재검사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "준공적합·ITSE 발급", "action": "건축준공과 적용되는 운영안전 승인을 모두 확보해 인계·개장"},
+          {"state": "rework", "label": "준공·안전 보완", "action": "준공 불일치는 시 준공심사로, ITSE 결함은 검사단 재검사로 회귀"},
+          {"state": "reject", "label": "불승인·ITSE 거부", "action": "점유·운영을 보류하고 공식 결정사유에 따른 시정·재신청 또는 불복을 검토"}
+        ]
+      }
+    }
+  }
+}

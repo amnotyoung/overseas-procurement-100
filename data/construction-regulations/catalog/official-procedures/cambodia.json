@@ -1,0 +1,280 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "cambodia",
+  "authorities": [],
+  "instruments": [
+    {
+      "id": "KHM-URBAN-LAW-OFFICIAL",
+      "status": "continuity_unverified",
+      "statusBasis": "MLMUPC 공식 Laws 카탈로그의 ‘Law on Land Management, Urban Planning and Construction’ 게시본을 확인했다. 다만 카탈로그에는 통합 개정·폐지 이력이 없고 허가에 적용되는 master plan·land-use plan은 수도·주·시·군별이므로, 대상지의 현행 계획과 후속규정까지 전국 단일판으로 확정할 수 없다."
+    },
+    {
+      "id": "KHM-CONSTRUCTION-LAW-2019",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MLMUPC가 게시한 건설법 영문 공식본의 Articles 26-46, 54-61을 직접 대조",
+      "officialPdfUrl": "https://asset.cambodia.gov.kh/mlmupc/items/612020153529Law%20on%20Construction.pdf"
+    },
+    {
+      "id": "KHM-PRAKAS-013-2022",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MLMUPC 건설총국의 현행 법령·규정 목록에서 건설허가 양식·절차 고시로 게시"
+    },
+    {
+      "id": "KHM-PRAKAS-126-2021",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MLMUPC 건설총국의 현행 법령·규정 목록에서 건축·구조·철거 검사·인증 고시로 게시"
+    },
+    {
+      "id": "KHM-ENV-CODE-2023",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "환경부 공식 영문본의 Articles 654-668 및 시행조항 Article 865를 직접 대조"
+    },
+    {
+      "id": "KHM-MLMUPC-ESERVICE",
+      "title": "MLMUPC Construction Public Service Portal",
+      "titleKo": "MLMUPC 건설 공공서비스 전자신청 포털",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MLMUPC 공식 포털이 서비스 선택, 신청서 작성, 수수료 납부, 결과통지·수령의 현행 절차를 게시",
+      "officialUrl": "https://service.mlmupc.gov.kh/",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "건설법상 공간계획·도시계획 적합성은 건설허가 심사의 일부다. 아래 절차는 중앙 MLMUPC 또는 권한을 위임받은 수도·주·시·군·구 행정청의 대표 경로이며, 별도의 전국 단일 '입지허가'가 있다고 일반화하지 않는다.",
+      "officialProcedure": {
+        "name": "캄보디아 도시계획·부지규제 — 건설허가 내 공간계획 적합심사",
+        "coverage": "official-source-linked",
+        "scope": "건설법 Articles 26, 30, 32-34와 MLMUPC 전자서비스를 토대로 부지·공간계획 적합성이 건설허가 결정에 반영되는 법정 흐름을 재구성했다. 적용 관할과 수치기준은 필지 소재지의 승인 공간계획·토지이용계획으로 확정한다.",
+        "stages": ["G0 관할·부지자료", "G1 설계·적합성 인증", "G2 접수·보완", "G3 공식결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "관할·토지권리·필지계획 자료 확정", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "신청인이 사업 위치, 토지권리, 지적·필지자료와 제안 용도·규모를 정리하고 중앙 또는 권한을 위임받은 지방 건설허가권자를 확인한다.",
+            "output": "관할 확인·토지권리·필지·사업개요 자료",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 26 and 30; prior construction permission and competent authority procedure"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "등록 설계자의 계획·설계도서 작성·서명", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "법인·전문자 등록요건을 갖춘 설계자가 부지조건과 적용 공간·도시계획을 반영한 설계도서를 작성하고 서명한다.",
+            "output": "등록 설계자 서명 설계도서",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 12, 15 and 32; registration, licence and designer signature"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "공간계획·기술기준 적합성 검사·인증", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "허가받은 검사·인증 전문자가 설계도서를 공간계획·도시계획 및 건축 기술규정에 대조하고 적합성 인증자료를 작성한다.",
+            "output": "공간·도시계획 및 기술기준 적합성 인증자료",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Article 33; compliance with land management, urban planning and construction technical regulations and certification"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "건설허가 전자신청·수수료 납부", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "신청인이 MLMUPC 공공서비스에서 관할 서비스를 선택하고 신청서·권리·필지·서명설계·적합성 자료를 제출한 뒤 고지 수수료를 납부한다.",
+            "output": "건설허가 전자접수·납부증빙",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "MLMUPC 건설 공공서비스 포털", "instrumentId": "KHM-MLMUPC-ESERVICE", "provisions": ["select service; complete request form; pay service fee"]}, {"source": "건설허가 양식·절차 고시", "instrumentId": "KHM-PRAKAS-013-2022", "provisions": ["construction permit form and procedure"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "부지·공간계획·도시계획 적합성 심사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "관할 허가기관이 필지와 계획도서를 적용 토지관리·공간계획·도시계획 및 건설기술 규정에 대조하고 조건·미비사항을 기록한다.",
+            "output": "부지·공간계획 적합성 심사의견·보완요구",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 30 and 33; permit procedure and compliance with spatial and urban-planning regulations"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "필지·설계도서 보완 재제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "심사기관이 권리·필지자료 또는 공간계획 부적합사항의 수정·추가자료를 요구하면 신청인과 등록 설계자가 이를 보완해 같은 신청건으로 재제출한다.",
+            "output": "수정 필지자료·설계도서·보완답변",
+            "authorityIds": ["mlmupc", "subnational-administration", "licensed-certifier"],
+            "refs": [{"source": "건설허가 양식·절차 고시와 전자서비스", "instrumentId": "KHM-PRAKAS-013-2022", "provisions": ["application examination and completion under construction-permit procedure"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "공간계획 적합조건을 포함한 건설허가 결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "권한 있는 기관이 토지·공간·도시계획 적합성과 설계인증을 종합해 건설허가를 발급하거나 조건부 승인·거부하고 신청인에게 결과를 통지한다.",
+            "output": "건설허가·부지 및 공간계획 조건 또는 거부통지",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 26 and 30; prior permission and grant, suspend or revoke procedure"]}, {"source": "MLMUPC 건설 공공서비스 포털", "instrumentId": "KHM-MLMUPC-ESERVICE", "provisions": ["notification and collection of service result"]}],
+            "permitGate": {"key": "site-planning-decision", "gate": "관할 허가기관의 부지·공간계획 적합 공식결정", "decision": "관할 기관이 대상지의 토지관리·공간계획·도시계획 적합성을 건설허가 조건과 함께 공식 결정한다.", "output": "건설허가·입지조건 또는 거부통지", "dependsOn": []}
+          }
+        ],
+        "edges": [[0,1,"sequence","관할·필지 확정"],[1,2,"sequence","서명설계"],[2,3,"sequence","적합성 인증"],[3,4,"sequence","전자접수"],[4,6,"sequence","적합심사 완료"],[4,5,"message","보완요구"],[5,4,"loop","수정자료 재심사"]],
+        "decisionBranches": [
+          {"state":"success","label":"부지·공간계획 적합","action":"허가조건과 승인도서를 후속 건축·착공절차에 적용"},
+          {"state":"rework","label":"필지·계획도서 보완","action":"공식 보완요구에 따라 자료를 수정해 적합성 심사로 회귀"},
+          {"state":"reject","label":"공간계획 부적합·거부","action":"거부사유와 법정 이의·변경설계·재신청 가능성을 검토"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "환경영향평가는 전국 환경법전 체계이며 건설허가권자는 사업 규모·종류와 권한위임에 따라 MLMUPC 또는 지방행정청으로 달라진다. 환경평가 유형은 Full EIA, Initial EIA, Environmental Protection Agreement 중 법정 분류로 확정한다.",
+      "officialProcedure": {
+        "name": "캄보디아 건설허가·환경심사 — 환경승인 선행형",
+        "coverage": "official-source-linked",
+        "scope": "환경법전 Articles 654-668의 환경분류·검토·보완·결정과 건설법 Articles 26, 30, 32-34의 건설허가를 연결했다. 환경승인이 필요한 사업은 승인 전에 건설을 시작할 수 없다.",
+        "stages": ["G4 환경분류·작성", "G5 환경심사·결정", "G6 건설허가 접수", "G7 기술심사·결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "Full EIA·Initial EIA·EPA 적용유형 분류", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "사업자가 사업의 잠재 환경영향과 법정 사업목록을 대조해 Full EIA, Initial EIA 또는 Environmental Protection Agreement 경로를 확정한다.",
+            "output": "환경평가 적용유형·제출범위",
+            "authorityIds": ["moe-environment"],
+            "refs": [{"source": "환경·천연자원법전", "instrumentId": "KHM-ENV-CODE-2023", "provisions": ["Articles 654 and 656-657; prior environmental approval and three assessment pathways"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "등록 환경컨설턴트의 평가서 작성·제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "등록요건을 갖춘 환경컨설턴트가 적용유형에 맞는 평가서·관리계획과 신청자료를 작성해 환경부 또는 관할 환경기관에 제출한다.",
+            "output": "Full EIA·Initial EIA 보고서 또는 EPA 신청자료",
+            "authorityIds": ["moe-environment"],
+            "refs": [{"source": "환경·천연자원법전", "instrumentId": "KHM-ENV-CODE-2023", "provisions": ["Articles 658-659; preparation, submission and registered consultants"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "환경 전문심사·위원회·공중의견", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "관할 환경기관이 제출물을 전문심사하고 Full EIA는 전문가위원회 발표·심의와 공중의견 절차를 거쳐 영향·완화조치의 적정성을 검토한다.",
+            "output": "환경 전문심사의견·공중의견·위원회 권고",
+            "authorityIds": ["moe-environment"],
+            "refs": [{"source": "환경·천연자원법전", "instrumentId": "KHM-ENV-CODE-2023", "provisions": ["Articles 660-664; review periods", "Articles 661-662; expert committee, presentation and public comments"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "환경평가서 보완·재제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "환경기관이 수정사항을 통지하면 사업자와 환경컨설턴트가 지적사항을 반영해 평가서 또는 약정을 재제출하며 법정 검토기간은 해당 재제출일부터 다시 산정된다.",
+            "output": "수정 환경평가서·보완답변·재접수",
+            "authorityIds": ["moe-environment"],
+            "refs": [{"source": "환경·천연자원법전", "instrumentId": "KHM-ENV-CODE-2023", "provisions": ["Articles 660(2), 663(2), 664(2) and 665(4); correction and resubmission"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "환경승인·거부 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "권한 있는 환경기관이 평가서·약정을 승인하고 환경승인서를 발급하거나 보완·거부사유를 공식 통지한다.",
+            "output": "환경승인서·조건, 보완결정 또는 거부통지",
+            "authorityIds": ["moe-environment"],
+            "refs": [{"source": "환경·천연자원법전", "instrumentId": "KHM-ENV-CODE-2023", "provisions": ["Article 665; approve, reject or require correction and issue approval certificate", "Articles 654 and 668; approval before project approval and construction"]}],
+            "permitGate": {"key": "environmental-approval", "gate": "관할 환경기관의 환경승인 공식결정", "decision": "환경기관이 적용유형의 평가결과를 승인·보완·거부로 공식 결정한다.", "output": "환경승인서·조건 또는 거부통지", "dependsOn": []}
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "등록 설계자·인증자의 허가도서 완성", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "등록 설계자가 건축·구조·설비도서를 서명하고 허가받은 인증자가 공간계획·기술규정 적합성을 인증하며 환경승인 조건을 설계에 반영한다.",
+            "output": "서명·인증된 건설허가도서·환경조건 반영표",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 32-34; signed design, certified compliance and construction according to approved design"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "건설허가 신청·수수료 납부", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "신청인이 환경승인, 권리·필지자료, 서명·인증 설계도서를 관할 허가기관에 제출하고 공식 고지수수료를 납부한다.",
+            "output": "건설허가 접수·환경승인·납부증빙",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "건설허가 양식·절차 고시", "instrumentId": "KHM-PRAKAS-013-2022", "provisions": ["construction permit form and procedure"]}, {"source": "MLMUPC 공공서비스 포털", "instrumentId": "KHM-MLMUPC-ESERVICE", "provisions": ["request form and service-fee payment"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "허가도서·기술기준 전문심사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "관할 기관이 신청의 완비성, 전문자 자격, 공간계획, 구조·화재·기술규정과 환경승인 조건을 심사하고 미비사항을 공식 통지한다.",
+            "output": "건설허가 기술심사의견·보완요구",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 8-10; structure, fire and technical regulations", "Articles 30 and 33; permit procedure and certified compliance"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 3, "label": "허가도서 보완·재심사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "신청인과 등록 전문자가 심사의견에 따라 설계·인증·환경조건 반영자료를 수정해 관할 기관에 재제출한다.",
+            "output": "수정 허가도서·보완답변",
+            "authorityIds": ["licensed-certifier", "mlmupc", "subnational-administration"],
+            "refs": [{"source": "건설허가 양식·절차 고시", "instrumentId": "KHM-PRAKAS-013-2022", "provisions": ["construction permit examination and completion procedure"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "건설허가 승인·거부 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "권한 있는 허가기관이 완비·적합 신청을 승인해 허가와 조건을 발급하거나 법정 사유에 따라 거부·중지·취소 결정을 통지한다.",
+            "output": "건설허가·승인도서·조건 또는 거부통지",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 26 and 30; prior permission and grant, suspend or revoke procedure"]}],
+            "permitGate": {"key": "construction-permit", "gate": "관할 기관의 건설허가 공식결정", "decision": "관할 기관이 전문자·설계·기술·환경요건을 심사해 건설허가 또는 거부를 공식 결정한다.", "output": "건설허가·승인도서·조건 또는 거부통지", "dependsOn": ["environmental-approval"]}
+          }
+        ],
+        "edges": [[0,1,"sequence","환경유형 확정"],[1,2,"sequence","평가서 접수"],[2,4,"sequence","환경심사 완료"],[2,3,"message","환경 보완요구"],[3,2,"loop","수정 평가서 재심사"],[4,5,"sequence","환경승인 반영"],[5,6,"sequence","허가도서 완성"],[6,7,"sequence","건설허가 접수"],[7,9,"sequence","기술심사 완료"],[7,8,"message","허가도서 보완요구"],[8,7,"loop","수정도서 재심사"]],
+        "decisionBranches": [
+          {"state":"success","label":"환경승인·건설허가","action":"두 공식결정의 조건을 착공허가·시공도서에 반영"},
+          {"state":"rework","label":"환경평가서·허가도서 보완","action":"해당 공식 보완요구에 따라 수정자료를 제출하고 법정 심사로 회귀"},
+          {"state":"reject","label":"환경 또는 건설허가 거부","action":"거부사유에 따른 공식 이의·변경·재신청 경로 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "건설법이 전국의 착공허가·전문자 검사·행정검사·사용승인을 규정한다. 실제 검사주체와 서식은 MLMUPC 또는 권한을 위임받은 지방행정청, 프로젝트의 허가받은 검사·인증 전문자로 확정한다.",
+      "officialProcedure": {
+        "name": "캄보디아 기술검사·준공제도 — 착공허가부터 사용승인까지",
+        "coverage": "official-source-linked",
+        "scope": "건설법 Articles 36-46, 54-61과 검사·인증 고시 제126호의 법정 흐름이다. 공사 중 설계변경은 수정 건설허가 대상이 될 수 있다.",
+        "stages": ["G8 착공허가", "G9 시공·중간검사", "G10 시정·준공", "G11 사용승인"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "Construction Site Opening Permit 신청·확보", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "건설허가를 받은 소유자가 공사를 시작하기 전에 관할 기관에 건설현장 개설허가를 신청해 발급받는다.",
+            "output": "Construction Site Opening Permit·착공조건",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Article 38; permit before opening a construction site"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "허가받은 시공자의 승인도서 준수 시공", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "등록·허가받은 시공자가 건설허가, 승인설계와 기술규정에 따라 공사하고 설계변경이 필요한 경우 수정허가 절차를 적용한다.",
+            "output": "시공기록·승인도서 대조·변경허가 자료",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 34 and 36-37; approved design, modification permission and licensed builder"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "공정 보고·허가받은 인증자의 중간검사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "법정 공정 보고를 제출하고 허가받은 검사·인증 전문자가 공사 중 승인도서·기술규정 적합성을 검사해 보고서와 인증서를 작성한다.",
+            "output": "공정보고·중간검사보고서·적합성 인증",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 40-41; progress report and licensed inspection/certification"]}, {"source": "검사·인증 고시 제126호", "instrumentId": "KHM-PRAKAS-126-2021", "provisions": ["building and structural work inspection and certification"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "관할 건설관리기관의 현장검사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "관할 건설관리자·검사관이 현장과 문서를 검사하고 승인설계·기술규정 위반 여부를 확인해 계속공사, 수정, 중지 또는 철거조치 근거를 기록한다.",
+            "output": "행정 현장검사기록·시정 또는 중지명령",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Article 42; inspection and suspend, modify, halt or demolish powers", "Articles 57-61; construction inspectors"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "위반사항 시정·재검사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "검사에서 위반이 확인되면 소유자와 시공자가 공사를 중지하고 승인도서·기술규정에 맞게 수정하거나 필요한 변경허가를 받아 재검사를 요청한다.",
+            "output": "시정기록·수정승인·재검사 결과",
+            "authorityIds": ["mlmupc", "subnational-administration", "licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 42 and 54-56; halt, suspend, correct and demolish non-compliant work"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "준공검사·적합성 인증서 작성", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "허가받은 검사·인증 전문자가 완성된 건축물을 승인도서와 기술규정에 대조하고 준공 적합성 보고서·인증서를 작성한다.",
+            "output": "준공검사보고서·적합성 인증서",
+            "authorityIds": ["licensed-certifier"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 41 and 44; inspection certificate and compliance before occupancy application"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 3, "label": "사용승인 신청·준공자료 제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "소유자가 건축물을 사용하기 전에 준공 적합성 인증서와 요구도서를 첨부해 관할 기관에 사용승인을 신청한다.",
+            "output": "사용승인 신청·준공 인증자료",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Article 44; occupancy-certificate application before use"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Occupancy Certificate 승인·거부 결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "관할 기관이 준공자료와 검사·인증 결과를 심사해 정식 또는 해당되는 임시 사용승인을 발급하거나 보완·거부·중지·취소 결정을 통지한다.",
+            "output": "Occupancy Certificate·사용조건 또는 거부통지",
+            "authorityIds": ["mlmupc", "subnational-administration"],
+            "refs": [{"source": "캄보디아 건설법", "instrumentId": "KHM-CONSTRUCTION-LAW-2019", "provisions": ["Articles 44-46; occupancy, temporary occupancy and grant, suspend or revoke certificate"]}],
+            "permitGate": {"key": "occupancy-certificate", "gate": "관할 기관의 사용승인 공식결정", "decision": "관할 기관이 준공 적합성을 심사해 건축물 사용 가능 여부와 조건을 공식 결정한다.", "output": "Occupancy Certificate·조건 또는 거부통지", "dependsOn": []}
+          }
+        ],
+        "edges": [[0,1,"sequence","착공허가"],[1,2,"sequence","공정별 검사"],[2,3,"sequence","검사보고"],[3,5,"sequence","적합 확인"],[3,4,"message","시정·중지명령"],[4,2,"loop","시정 후 재검사"],[5,6,"sequence","준공인증"],[6,7,"sequence","사용승인 신청"]],
+        "decisionBranches": [
+          {"state":"success","label":"준공 적합·사용승인","action":"Occupancy Certificate 조건에 따라 건축물을 사용"},
+          {"state":"rework","label":"공사·준공자료 시정","action":"위반사항 또는 준공자료를 시정하고 공식 검사·심사로 회귀"},
+          {"state":"reject","label":"사용승인 거부·공사중지","action":"거부·중지·취소사유에 따른 시정, 변경허가 또는 법정 이의경로 검토"}
+        ]
+      }
+    }
+  }
+}

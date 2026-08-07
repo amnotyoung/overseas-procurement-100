@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "rwanda",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,26 +27,269 @@
     "title": "르완다 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "G0 사전계획·도서",
+      "G1 BPMIS 접수·완비",
+      "G2 계획기술심사·보완",
+      "G3 RHA 동의·허가결정",
+      "G0 환경분류·TOR",
+      "G1 EIA 작성·심사",
+      "G2 BPMIS 접수·기술심사",
+      "G3 환경·건축결정",
+      "G0 착공·검사통지",
+      "G1 공사단계 검사",
+      "G2 시정·최종검사",
+      "G3 점유허가 결정"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "2019 도시계획·건축 규정 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "lane": "건축주·신청인",
+        "stage": "G0 사전계획·도서",
+        "label": "주요 공공건축 사전계획 의견요청",
+        "emphasis": "normal",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "2019 도시계획·건축 규정과 관할 Master Plan·detailed plan이 필지 개발 가능성을 결정한다. 토지권원·parcel ID와 zoning을 기준으로 허용용도, plot coverage·FAR·높이·이격·주차, 경사지·배수·재해·유틸리티 조건을 OSC에 서면 확인한다.",
-        "action": "2019 도시계획·건축 규정과 관할 Master Plan·detailed plan이 필지 개발 가능성을 결정한다. 토지권원·parcel ID와 zoning을 기준으로 허용용도, plot coverage·FAR·높이·이격·주차, 경사지·배수·재해·유틸리티 조건을 OSC에 서면 확인한다.",
+        "note": "주요 공공건축이면 정식 신청 전에 OSC에 preliminary sketch·plan을 제출해 계획·공법의 규정적합성에 대한 서면의견을 요청할 수 있다.",
+        "action": "주요 공공건축이면 정식 신청 전에 OSC에 preliminary sketch·plan을 제출해 계획·공법의 규정적합성에 대한 서면의견을 요청할 수 있다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "OSC preliminary written comments"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "preliminary plans and enquiries",
+            "instrumentId": "RWA-BUILDING-CONTROL-2E",
+            "provisions": [
+              "Section 2.1.3.1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G0 사전계획·도서",
+        "label": "Zoning·site·services 신청도서 작성",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "등록전문가가 현행 zoning과 parcel 조건을 반영해 site plan, layout, 기존·계획 services 연결과 site drainage plan 등 허가도서를 작성한다.",
+        "action": "등록전문가가 현행 zoning과 parcel 조건을 반영해 site plan, layout, 기존·계획 services 연결과 site drainage plan 등 허가도서를 작성한다.",
+        "outputs": [
+          "zoning 적합 site·layout·services·drainage 도서"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "zoning and plan submittals",
+            "instrumentId": "RWA-BUILDING-CONTROL-2E",
+            "provisions": [
+              "Sections 2.1.1.5-2.1.1.6"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "건축주·신청인",
+        "stage": "G1 BPMIS 접수·완비",
+        "label": "BPMIS 건축허가 전자신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주 또는 권한 있는 등록전문가가 City of Kigali·District OSC를 선택해 신청서와 계획도서를 BPMIS로 업로드하고 결제증빙을 제출한다.",
+        "action": "건축주 또는 권한 있는 등록전문가가 City of Kigali·District OSC를 선택해 신청서와 계획도서를 BPMIS로 업로드하고 결제증빙을 제출한다.",
+        "outputs": [
+          "BPMIS 신청번호·전자도서"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "BPMIS proposal submission",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Submission of building proposals; payment evidence"
+            ]
+          },
+          {
+            "source": "building-permit filing",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G1 BPMIS 접수·완비",
+        "label": "OSC 신청완비 확인",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC 담당자가 신청인 또는 대리인과 확인해 신청파일의 완비 여부를 승인하며, 완비승인 뒤에 기술평가가 시작된다.",
+        "action": "OSC 담당자가 신청인 또는 대리인과 확인해 신청파일의 완비 여부를 승인하며, 완비승인 뒤에 기술평가가 시작된다.",
+        "outputs": [
+          "완비승인 또는 누락자료 의견"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "completeness review",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27 — consultation and confirmation of completeness"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G2 계획기술심사·보완",
+        "label": "Master Plan·zoning·site 기술평가",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC Development Control 담당자가 Master Plan·zoning, 부지배치·접근·배수·services와 해당 도시설계 기준을 신청도서에 대조해 의견을 입력한다.",
+        "action": "OSC Development Control 담당자가 Master Plan·zoning, 부지배치·접근·배수·services와 해당 도시설계 기준을 신청도서에 대조해 의견을 입력한다.",
+        "outputs": [
+          "계획·부지 기술검토 의견"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "technical assessment",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          },
+          {
+            "source": "zoning controls",
+            "instrumentId": "RWA-BUILDING-CONTROL-2E",
+            "provisions": [
+              "Sections 2.1.1.5-2.1.1.6"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 계획기술심사·보완",
+        "label": "OSC 의견반영·수정안 재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC가 BPMIS에서 신청을 amendments로 반려하면 등록전문가가 의견을 반영한 site·layout·services 도서를 다시 업로드한다.",
+        "action": "OSC가 BPMIS에서 신청을 amendments로 반려하면 등록전문가가 의견을 반영한 site·layout·services 도서를 다시 업로드한다.",
+        "outputs": [
+          "수정도서·BPMIS 재제출 기록"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "BPMIS return for amendments",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Reviewers provide comments and return proposals electronically for amendments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "환경·소방·검사기관",
+        "stage": "G3 RHA 동의·허가결정",
+        "label": "Category 4·5 RHA non-objection",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Category 4·5 건축물이면 RHA가 계획·기술요건과 현장을 심사해 non-objection 여부를 결정한다. non-objection 없는 District·City 허가는 무효다.",
+        "action": "Category 4·5 건축물이면 RHA가 계획·기술요건과 현장을 심사해 non-objection 여부를 결정한다. non-objection 없는 District·City 허가는 무효다.",
+        "outputs": [
+          "RHA non-objection 또는 부적합의견"
+        ],
+        "authorityIds": [
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "RHA non-objection",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          },
+          {
+            "source": "RHA category role",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Category 4 and 5 technical review context"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 RHA 동의·허가결정",
+        "label": "District·City 건축허가 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "완비일로부터 30일 안에 District 또는 City of Kigali가 계획·기술심사를 마치고 건축허가를 발급하거나 반려·거부하며 지연 시 사유를 서면통지한다.",
+        "action": "완비일로부터 30일 안에 District 또는 City of Kigali가 계획·기술심사를 마치고 건축허가를 발급하거나 반려·거부하며 지연 시 사유를 서면통지한다.",
+        "outputs": [
+          "건축허가·조건 또는 반려·거부·지연통지"
         ],
         "authorityIds": [
           "district-osc",
@@ -55,90 +298,486 @@
         "requirementIds": [
           "RWA-BLD-REQ-004"
         ],
-        "questionIds": [
-          "RWA-BLD-Q-001",
-          "RWA-BLD-Q-002",
-          "RWA-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "2019 도시계획·건축 규정",
+            "source": "permit assessment and timing",
             "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
             "provisions": [
-              "urban planning and site-development controls"
+              "Articles 27-28"
             ]
           },
           {
-            "source": "2019 도시계획·건축 규정",
+            "source": "BPMIS permit generation",
             "instrumentId": "RWA-BPMIS",
             "provisions": [
-              "OSC planning and permit workflow"
+              "Review, approval, return for amendments and generation of permits"
             ]
           }
+        ],
+        "gateOrders": [
+          1
         ]
       },
       {
-        "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "BPMIS 건축허가·환경법 제48/2018호 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "id": "B09",
+        "lane": "건축주·신청인",
+        "stage": "G0 환경분류·TOR",
+        "label": "Project Brief 제출·EIA 등록",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "2019 규정은 건축물 Category와 신축·수선·철거·용도변경·점유허가 유형을 정하며 OSC가 BPMIS로 처리한다. RHA는 Category 4·5 기술검토 권한을 가진다. 환경법과 현행 장관령 목록에 따라 EIA 필요성·승인기관·선행관계를 별도로 확인한다.",
-        "action": "2019 규정은 건축물 Category와 신축·수선·철거·용도변경·점유허가 유형을 정하며 OSC가 BPMIS로 처리한다. RHA는 Category 4·5 기술검토 권한을 가진다. 환경법과 현행 장관령 목록에 따라 EIA 필요성·승인기관·선행관계를 별도로 확인한다.",
+        "note": "사업시행자가 사업개요·입지·예상영향을 담은 Project Brief를 환경승인기관에 제출해 EIA 절차를 개시한다.",
+        "action": "사업시행자가 사업개요·입지·예상영향을 담은 Project Brief를 환경승인기관에 제출해 EIA 절차를 개시한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "환경신청 등록·Project Brief"
         ],
         "authorityIds": [
-          "district-osc",
-          "rha",
           "rdb-rema"
         ],
         "requirementIds": [
           "RWA-BLD-REQ-005"
         ],
-        "questionIds": [
-          "RWA-BLD-Q-004",
-          "RWA-BLD-Q-005",
-          "RWA-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "BPMIS 건축허가·환경법 제48/2018호",
-            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "source": "REMA project application",
+            "instrumentId": "RWA-REMA-EIA-GUIDE",
             "provisions": [
-              "Arts. 10 onward; building categories and permits"
+              "Section 2.1.1 — Project Application and Registration"
             ]
           },
           {
-            "source": "BPMIS 건축허가·환경법 제48/2018호",
+            "source": "환경법 EIA 의무",
             "instrumentId": "RWA-ENV-LAW-48-2018",
             "provisions": [
               "environmental assessment framework"
-            ]
-          },
-          {
-            "source": "BPMIS 건축허가·환경법 제48/2018호",
-            "instrumentId": "RWA-BPMIS",
-            "provisions": [
-              "online permit and inspection services"
             ]
           }
         ]
       },
       {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "Rwanda Building Code·Occupancy Permit · 절차 상세 미확인",
+        "id": "B10",
+        "lane": "환경·소방·검사기관",
+        "stage": "G0 환경분류·TOR",
+        "label": "Full·Partial EIA 분류",
         "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "Rwanda Building Code와 Building Control Regulations는 등록 설계·기술자, 승인도서, 현장검사·통지와 최종 점유검사를 연결한다. OSC의 최종검사 후 Occupancy Permit을 받아야 하며 전문책임·공사보험·시험·소방·설비·as-built 조건을 계약에 반영한다.",
-        "action": "Rwanda Building Code와 Building Control Regulations는 등록 설계·기술자, 승인도서, 현장검사·통지와 최종 점유검사를 연결한다. OSC의 최종검사 후 Occupancy Permit을 받아야 하며 전문책임·공사보험·시험·소방·설비·as-built 조건을 계약에 반영한다.",
+        "note": "환경승인기관이 장관령 목록과 Project Brief를 대조해 full EIA, partial EIA 또는 목록 밖 경로를 분류한다.",
+        "action": "환경승인기관이 장관령 목록과 Project Brief를 대조해 full EIA, partial EIA 또는 목록 밖 경로를 분류한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "EIA 분류·심사경로"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "EIA project lists",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Articles 3-5"
+            ]
+          },
+          {
+            "source": "REMA screening",
+            "instrumentId": "RWA-REMA-EIA-GUIDE",
+            "provisions": [
+              "Section 2.1.2 — Screening"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G0 환경분류·TOR",
+        "label": "EIA 전문가·TOR 확정",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "승인된 EIA 전문가가 제안한 TOR를 환경승인기관이 승인하거나 수정요구하고, 확정 TOR에 따라 평가범위를 정한다.",
+        "action": "승인된 EIA 전문가가 제안한 TOR를 환경승인기관이 승인하거나 수정요구하고, 확정 TOR에 따라 평가범위를 정한다.",
+        "outputs": [
+          "승인·수정된 EIA Terms of Reference"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "EIA terms of reference",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Article 6"
+            ]
+          },
+          {
+            "source": "REMA scoping",
+            "instrumentId": "RWA-REMA-EIA-GUIDE",
+            "provisions": [
+              "Section 2.1.3 — Scoping and Terms of Reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B12",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 EIA 작성·심사",
+        "label": "EIA 조사·이해관계자 의견반영",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "선정 전문가는 확정 TOR에 따라 환경·사회·경제영향과 저감책을 평가하고 모든 관련 이해관계자 의견을 반영한다.",
+        "action": "선정 전문가는 확정 TOR에 따라 환경·사회·경제영향과 저감책을 평가하고 모든 관련 이해관계자 의견을 반영한다.",
+        "outputs": [
+          "EIA Report·관리·저감계획"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "conduct of EIA",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Article 7"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B13",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 EIA 작성·심사",
+        "label": "EIA Report 전자제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "선정 전문가는 완료된 EIA Report를 Word·PDF 형식으로 환경승인기관에 제출하고 필요 시 addendum을 첨부한다.",
+        "action": "선정 전문가는 완료된 EIA Report를 Word·PDF 형식으로 환경승인기관에 제출하고 필요 시 addendum을 첨부한다.",
+        "outputs": [
+          "전자 EIA Report·addendum"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "submission of EIA report",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Article 8"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 EIA 작성·심사",
+        "label": "20일 본심사·추가정보·공중참여",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "환경승인기관이 TOR·지침 적합성을 심사해 20 working days 안에 수락 또는 추가정보를 요구하고, 필요한 경우 15 working days를 더해 공중참여를 실시한다.",
+        "action": "환경승인기관이 TOR·지침 적합성을 심사해 20 working days 안에 수락 또는 추가정보를 요구하고, 필요한 경우 15 working days를 더해 공중참여를 실시한다.",
+        "outputs": [
+          "EIA 심사의견·추가정보 요구·공중참여 기록"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "report analysis and additional information",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Articles 9-10"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 EIA 작성·심사",
+        "label": "환경 추가정보·Addendum 재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공식 추가정보 요구와 공중참여 의견을 반영해 수정 EIA Report 또는 addendum을 제출한다.",
+        "action": "공식 추가정보 요구와 공중참여 의견을 반영해 수정 EIA Report 또는 addendum을 제출한다.",
+        "outputs": [
+          "수정 EIA Report·추가정보"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "additional information and addendum",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Articles 8-9"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B16",
+        "lane": "환경·소방·검사기관",
+        "stage": "G3 환경·건축결정",
+        "label": "환경승인·EIA Certificate 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "환경승인기관이 검토완료 후 프로젝트를 조건부 또는 무조건 승인하거나 거부하고 승인 시 EIA Certificate of Authorization을 발급한다.",
+        "action": "환경승인기관이 검토완료 후 프로젝트를 조건부 또는 무조건 승인하거나 거부하고 승인 시 EIA Certificate of Authorization을 발급한다.",
+        "outputs": [
+          "EIA Certificate·조건 또는 거부결정"
+        ],
+        "authorityIds": [
+          "rdb-rema"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "REMA record of decision",
+            "instrumentId": "RWA-REMA-EIA-GUIDE",
+            "provisions": [
+              "Sections 2.1.6.5-2.1.6.8"
+            ]
+          },
+          {
+            "source": "2019 report review",
+            "instrumentId": "RWA-EIA-ORDER-001-2019",
+            "provisions": [
+              "Articles 9-10"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B17",
+        "lane": "건축주·신청인",
+        "stage": "G2 BPMIS 접수·기술심사",
+        "label": "BPMIS 건축허가 신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "해당 EIA Certificate·환경조건과 전문가 서명 건축·구조·설비도서를 BPMIS로 City of Kigali 또는 District OSC에 제출한다.",
+        "action": "해당 EIA Certificate·환경조건과 전문가 서명 건축·구조·설비도서를 BPMIS로 City of Kigali 또는 District OSC에 제출한다.",
+        "outputs": [
+          "BPMIS 건축허가 신청번호"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "building permit filing",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          },
+          {
+            "source": "BPMIS submission",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Submission of building proposals and payment evidence"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G2 BPMIS 접수·기술심사",
+        "label": "완비확인·기술평가",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC가 신청완비를 확인한 뒤 planning·architecture·structure·services와 환경조건을 기술평가한다.",
+        "action": "OSC가 신청완비를 확인한 뒤 planning·architecture·structure·services와 환경조건을 기술평가한다.",
+        "outputs": [
+          "완비확인·분야별 기술검토 의견"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "completeness and technical assessment",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 BPMIS 접수·기술심사",
+        "label": "BPMIS 수정도서 재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC·RHA가 전자반려한 분야별 의견과 환경조건을 반영해 수정 건축도서를 BPMIS에 다시 제출한다.",
+        "action": "OSC·RHA가 전자반려한 분야별 의견과 환경조건을 반영해 수정 건축도서를 BPMIS에 다시 제출한다.",
+        "outputs": [
+          "수정도서·BPMIS 재제출 기록"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "BPMIS amendments",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Reviewers comment, approve or return proposals for amendments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "환경·소방·검사기관",
+        "stage": "G2 BPMIS 접수·기술심사",
+        "label": "Category 4·5 RHA non-objection",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Category 4·5는 RHA가 모든 요구사항의 준수를 심사해 non-objection을 내야 District·City가 유효한 건축허가를 발급할 수 있다.",
+        "action": "Category 4·5는 RHA가 모든 요구사항의 준수를 심사해 non-objection을 내야 District·City가 유효한 건축허가를 발급할 수 있다.",
+        "outputs": [
+          "RHA non-objection 또는 보완·부적합의견"
+        ],
+        "authorityIds": [
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "mandatory RHA no-objection",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 27"
+            ]
+          },
+          {
+            "source": "RHA category review",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "building categories and review workflow"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 환경·건축결정",
+        "label": "건축허가 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC가 완비일로부터 30일 안에 건축허가를 승인·조건부 승인, amendments 반환 또는 거부하고 지연 시 사유를 서면통지한다.",
+        "action": "OSC가 완비일로부터 30일 안에 건축허가를 승인·조건부 승인, amendments 반환 또는 거부하고 지연 시 사유를 서면통지한다.",
+        "outputs": [
+          "BPMIS 건축허가·조건 또는 반려·거부통지"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "permit decision and time",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Articles 27-28"
+            ]
+          },
+          {
+            "source": "BPMIS permit generation",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Review and approval; return for amendments; generate permits"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B22",
+        "lane": "건축주·신청인",
+        "stage": "G0 착공·검사통지",
+        "label": "유효 건축허가·승인도서로 착공",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "유효한 BPMIS 건축허가와 승인도서를 확보하고 등록전문가·시공책임자 아래 허가조건에 맞춰 공사를 시작한다.",
+        "action": "유효한 BPMIS 건축허가와 승인도서를 확보하고 등록전문가·시공책임자 아래 허가조건에 맞춰 공사를 시작한다.",
+        "outputs": [
+          "건축허가·승인도서·현장책임자 기록"
         ],
         "authorityIds": [
           "district-osc",
@@ -147,50 +786,567 @@
         "requirementIds": [
           "RWA-BLD-REQ-006"
         ],
-        "questionIds": [
-          "RWA-BLD-Q-007",
-          "RWA-BLD-Q-008",
-          "RWA-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "Rwanda Building Code·Occupancy Permit",
-            "instrumentId": "RWA-BUILDING-CODE-2019",
+            "source": "permit types and validity",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
             "provisions": [
-              "design, construction, safety and occupancy minimum requirements"
+              "Articles 10, 29"
             ]
           },
           {
-            "source": "Rwanda Building Code·Occupancy Permit",
-            "instrumentId": "RWA-BUILDING-CONTROL-2E",
-            "provisions": [
-              "Part 5 final inspection and occupation permit"
-            ]
-          },
-          {
-            "source": "Rwanda Building Code·Occupancy Permit",
+            "source": "BPMIS permit service",
             "instrumentId": "RWA-BPMIS",
             "provisions": [
-              "inspection notice and occupancy permit services"
+              "Construction Permit service"
             ]
           }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G0 착공·검사통지",
+        "label": "BPMIS 검사통지·검사예약",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축물 Category와 공정단계에 맞춰 BPMIS Inspection Notice로 District/City inspector에게 검사를 통지한다.",
+        "action": "건축물 Category와 공정단계에 맞춰 BPMIS Inspection Notice로 District/City inspector에게 검사를 통지한다.",
+        "outputs": [
+          "BPMIS Inspection Notice·검사예약"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "BPMIS inspection service",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Inspection Notice; notify district office for site inspections"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 공사단계 검사",
+        "label": "착공 전·Site Mobilisation 검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC inspector가 permit·approved plans·zoning·현장기록을 대조해 site mobilisation, setting out, excavation·earthworks를 확인한다.",
+        "action": "OSC inspector가 permit·approved plans·zoning·현장기록을 대조해 site mobilisation, setting out, excavation·earthworks를 확인한다.",
+        "outputs": [
+          "착공 전·setting-out 검사기록"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "inspection stages and forms",
+            "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE",
+            "provisions": [
+              "Forms 1-2; before-construction inspection"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 공사단계 검사",
+        "label": "기초공사 단계검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "기초 은폐 전에 inspector가 foundation works를 승인도서·구조기준과 대조하고 검사결과와 지적사항을 기록한다.",
+        "action": "기초 은폐 전에 inspector가 foundation works를 승인도서·구조기준과 대조하고 검사결과와 지적사항을 기록한다.",
+        "outputs": [
+          "Foundation inspection report"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "foundation inspection",
+            "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE",
+            "provisions": [
+              "Form 3; during-construction foundation inspection"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 공사단계 검사",
+        "label": "시정 재검사·후속 공정 합동검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지적사항이 있으면 시정된 해당 공정을 먼저 재검사하고, 적합하면 Category·occupancy class에 따른 superstructure·설비·안전검사와 필요한 관계기관 joint site inspection을 계속한다.",
+        "action": "지적사항이 있으면 시정된 해당 공정을 먼저 재검사하고, 적합하면 Category·occupancy class에 따른 superstructure·설비·안전검사와 필요한 관계기관 joint site inspection을 계속한다.",
+        "outputs": [
+          "시정 재검사·Superstructure·joint inspection reports"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "construction inspections",
+            "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE",
+            "provisions": [
+              "Forms 4-5; mandatory and random inspections by category"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 시정·최종검사",
+        "label": "검사지적 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "검사에서 발견된 결함·불일치를 원인과 함께 시정하고 증빙을 제출해 해당 공정 검사를 다시 요청한다.",
+        "action": "검사에서 발견된 결함·불일치를 원인과 함께 시정하고 증빙을 제출해 해당 공정 검사를 다시 요청한다.",
+        "outputs": [
+          "시정완료 증빙·재검사 기록"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "corrective inspection",
+            "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE",
+            "provisions": [
+              "Inspector duties: detected defects, causes and corrective measures"
+            ]
+          },
+          {
+            "source": "BPMIS inspection records",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "capturing inspection data and follow-up"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "건축주·신청인",
+        "stage": "G2 시정·최종검사",
+        "label": "Occupancy Permit 전자신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공사완료 후 점유 전에 건축주가 BPMIS로 Occupancy Permit을 신청하고 승인도서·검사·준공자료를 제출한다.",
+        "action": "공사완료 후 점유 전에 건축주가 BPMIS로 Occupancy Permit을 신청하고 승인도서·검사·준공자료를 제출한다.",
+        "outputs": [
+          "BPMIS Occupancy Permit 신청번호"
+        ],
+        "authorityIds": [
+          "district-osc"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "BPMIS occupancy service",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Occupancy Permit Application"
+            ]
+          },
+          {
+            "source": "permit type",
+            "instrumentId": "RWA-URBAN-BUILDING-REG-2019",
+            "provisions": [
+              "Article 10(4)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B29",
+        "lane": "환경·소방·검사기관",
+        "stage": "G2 시정·최종검사",
+        "label": "OSC 준공·최종검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC housing officer가 Occupancy Permit 신청을 받은 뒤 발급 전에 완공건물의 최종검사를 실시하고 법령·승인도서·안전·설비 적합성을 확인한다.",
+        "action": "OSC housing officer가 Occupancy Permit 신청을 받은 뒤 발급 전에 완공건물의 최종검사를 실시하고 법령·승인도서·안전·설비 적합성을 확인한다.",
+        "outputs": [
+          "Final inspection report·시정요구 또는 적합의견"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "final inspection before occupancy",
+            "instrumentId": "RWA-BUILDING-CONTROL-2E",
+            "provisions": [
+              "Section 5.1.1.1"
+            ]
+          },
+          {
+            "source": "after-construction inspection",
+            "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE",
+            "provisions": [
+              "mandatory final inspection before occupation permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B30",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 점유허가 결정",
+        "label": "Occupancy Permit 발급결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "OSC가 최종검사 적합 시 Occupancy Permit을 발급하고, 미비하면 amendments·시정 후 재검사 또는 거부를 통지한다.",
+        "action": "OSC가 최종검사 적합 시 Occupancy Permit을 발급하고, 미비하면 amendments·시정 후 재검사 또는 거부를 통지한다.",
+        "outputs": [
+          "Occupancy Permit 또는 공식 시정·거부통지"
+        ],
+        "authorityIds": [
+          "district-osc",
+          "rha"
+        ],
+        "requirementIds": [
+          "RWA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "occupancy inspection and permit",
+            "instrumentId": "RWA-BUILDING-CONTROL-2E",
+            "provisions": [
+              "Part 5, Section 5.1.1.1"
+            ]
+          },
+          {
+            "source": "BPMIS occupancy permit",
+            "instrumentId": "RWA-BPMIS",
+            "provisions": [
+              "Occupancy Permit Application and permit generation"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "사전의견 반영"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "전자도서"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "BPMIS 접수"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "완비승인"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B07",
+        "type": "sequence",
+        "label": "Category 4·5 해당 시"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B05",
+        "target": "B08",
+        "type": "sequence",
+        "label": "일반 Category"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B05",
+        "target": "B06",
+        "type": "message",
+        "label": "수정의견 시"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B06",
+        "target": "B05",
+        "type": "loop",
+        "label": "수정안 재평가"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B07",
+        "target": "B08",
+        "type": "sequence",
+        "label": "RHA non-objection"
+      },
+      {
+        "id": "BX05",
+        "source": "B08",
+        "target": "B09",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B09",
+        "target": "B10",
+        "type": "sequence",
+        "label": "Project Brief"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B10",
+        "target": "B11",
+        "type": "sequence",
+        "label": "EIA 경로"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B11",
+        "target": "B12",
+        "type": "sequence",
+        "label": "승인 TOR"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "완료 보고서"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B13",
+        "target": "B14",
+        "type": "sequence",
+        "label": "전자제출"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B14",
+        "target": "B16",
+        "type": "sequence",
+        "label": "심사완료"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B14",
+        "target": "B15",
+        "type": "message",
+        "label": "추가정보 요구 시"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B15",
+        "target": "B14",
+        "type": "loop",
+        "label": "Addendum 재심사"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "EIA Certificate 첨부"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B17",
+        "target": "B18",
+        "type": "sequence",
+        "label": "완비접수"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B18",
+        "target": "B20",
+        "type": "sequence",
+        "label": "Category 4·5 해당 시"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B18",
+        "target": "B21",
+        "type": "sequence",
+        "label": "일반 Category"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B18",
+        "target": "B19",
+        "type": "message",
+        "label": "amendments 반환 시"
+      },
+      {
+        "id": "BS05-14",
+        "source": "B19",
+        "target": "B18",
+        "type": "loop",
+        "label": "수정도서 재평가"
+      },
+      {
+        "id": "BS05-15",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "RHA non-objection"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B21",
+        "target": "B22",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B22",
+        "target": "B23",
+        "type": "sequence",
+        "label": "공정별 검사계획"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B23",
+        "target": "B24",
+        "type": "sequence",
+        "label": "Inspection Notice"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B24",
+        "target": "B25",
+        "type": "sequence",
+        "label": "착공 전 적합"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B25",
+        "target": "B26",
+        "type": "sequence",
+        "label": "기초 적합"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B26",
+        "target": "B28",
+        "type": "sequence",
+        "label": "공사검사 적합"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B24",
+        "target": "B27",
+        "type": "message",
+        "label": "지적사항 시"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B25",
+        "target": "B27",
+        "type": "message",
+        "label": "지적사항 시"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B26",
+        "target": "B27",
+        "type": "message",
+        "label": "지적사항 시"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B27",
+        "target": "B26",
+        "type": "loop",
+        "label": "시정 재검사·후속검사 재개"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B28",
+        "target": "B29",
+        "type": "sequence",
+        "label": "준공검사 요청"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B29",
+        "target": "B30",
+        "type": "sequence",
+        "label": "최종검사 적합"
+      },
+      {
+        "id": "BS06-12",
+        "source": "B29",
+        "target": "B27",
+        "type": "loop",
+        "label": "최종검사 시정요구"
       }
     ]
   },
@@ -199,14 +1355,21 @@
       "id": "site-urban",
       "slug": "rwanda-site-urban-construction-regulations",
       "priority": 4,
-      "name": "르완다 도시계획·부지규제",
+      "name": "르완다 BPMIS 필지·도시계획 적합성 심사절차",
       "oneLiner": "국가·지방 도시계획과 필지 zoning을 BPMIS·OSC에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "2019 공식 관보 규정, BPMIS와 Kigali OSC의 계획·허가 역할을 확인했다. 대상 District의 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "2019 공식 관보 규정, BPMIS와 Kigali OSC의 계획·허가 역할을 확인했다. 대상 District의 필지 수치·재해·유틸리티는 현지 확인 대상이다.",
+      "verificationScope": "2019 도시계획·건축 장관령 제27~29조, Building Control Regulations 제2.1절과 BPMIS의 전자 반려·수정 기능을 연결했다. 르완다는 별도 zoning certificate보다 건축허가 기술심사에서 필지 계획적합성을 심사하는 구조다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "City of Kigali 또는 대상 District One Stop Centre의 건축허가 안에서 zoning·site·services·drainage 적합성을 심사하는 전국 절차다. 필지 수치와 Master Plan 세부기준은 해당 District/City plan을 적용한다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08"
       ],
       "requirementIds": [
         "RWA-BLD-REQ-004"
@@ -227,21 +1390,113 @@
         "RWA-BLD-F-002",
         "RWA-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "사전의견 반영"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "전자도서"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "BPMIS 접수"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "완비승인"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B07",
+          "type": "sequence",
+          "label": "Category 4·5 해당 시"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B05",
+          "target": "B08",
+          "type": "sequence",
+          "label": "일반 Category"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B05",
+          "target": "B06",
+          "type": "message",
+          "label": "수정의견 시"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B06",
+          "target": "B05",
+          "type": "loop",
+          "label": "수정안 재평가"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B07",
+          "target": "B08",
+          "type": "sequence",
+          "label": "RHA non-objection"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "계획적합·건축허가",
+          "action": "BPMIS 허가와 RHA 조건을 승인도서에 고정하고 유효기간 안에 착공"
+        },
+        {
+          "state": "rework",
+          "label": "Amendments 반환",
+          "action": "OSC·RHA 의견을 반영한 수정도서를 BPMIS에 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "부적합·허가거부",
+          "action": "계획·부지 부적합 사유에 따라 설계변경 또는 새 신청 검토"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "rwanda-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "르완다 건축허가·환경심사",
+      "name": "르완다 EIA·BPMIS 건축허가 법정절차",
       "oneLiner": "건축물 Category와 OSC·RHA 허가권, 환경법상 EIA 분류를 BPMIS 접수 전에 확정한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "2019 관보 규정의 허가유형, RHA의 Category 4·5 역할, BPMIS와 환경법 원문을 확인했다. 최신 EIA 목록·수수료·실제 기간은 기관 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "2019 관보 규정의 허가유형, RHA의 Category 4·5 역할, BPMIS와 환경법 원문을 확인했다. 최신 EIA 목록·수수료·실제 기간은 기관 확인 대상이다.",
+      "verificationScope": "환경 장관령 제001/2019호 제3~10조의 full/partial EIA, TOR, report, 추가정보·공중참여 절차와 건축 장관령 제27~28조·BPMIS 허가흐름을 연결했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "EIA 분류·심사는 장관령 제001/2019호의 전국 절차이고 건축허가는 City of Kigali 또는 대상 District OSC가 BPMIS로 처리한다. Category 4·5는 RHA non-objection이 추가된다.",
       "nodeIds": [
-        "B02"
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21"
       ],
       "requirementIds": [
         "RWA-BLD-REQ-005"
@@ -260,21 +1515,151 @@
         "RWA-BLD-F-005",
         "RWA-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B09",
+          "target": "B10",
+          "type": "sequence",
+          "label": "Project Brief"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B10",
+          "target": "B11",
+          "type": "sequence",
+          "label": "EIA 경로"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B11",
+          "target": "B12",
+          "type": "sequence",
+          "label": "승인 TOR"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "완료 보고서"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B13",
+          "target": "B14",
+          "type": "sequence",
+          "label": "전자제출"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B14",
+          "target": "B16",
+          "type": "sequence",
+          "label": "심사완료"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B14",
+          "target": "B15",
+          "type": "message",
+          "label": "추가정보 요구 시"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B15",
+          "target": "B14",
+          "type": "loop",
+          "label": "Addendum 재심사"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "EIA Certificate 첨부"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B17",
+          "target": "B18",
+          "type": "sequence",
+          "label": "완비접수"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B18",
+          "target": "B20",
+          "type": "sequence",
+          "label": "Category 4·5 해당 시"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B18",
+          "target": "B21",
+          "type": "sequence",
+          "label": "일반 Category"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B18",
+          "target": "B19",
+          "type": "message",
+          "label": "amendments 반환 시"
+        },
+        {
+          "id": "M05-E14",
+          "source": "B19",
+          "target": "B18",
+          "type": "loop",
+          "label": "수정도서 재평가"
+        },
+        {
+          "id": "M05-E15",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "RHA non-objection"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "EIA·건축허가 승인",
+          "action": "두 승인과 조건을 설계·착공조건에 통합"
+        },
+        {
+          "state": "rework",
+          "label": "추가정보·Amendments",
+          "action": "환경 addendum 또는 BPMIS 수정도서를 제출해 재심사"
+        },
+        {
+          "state": "reject",
+          "label": "환경·건축 거부",
+          "action": "거부사유에 따라 설계변경·재신청 또는 법정 불복 검토"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "rwanda-control-completion-construction-regulations",
       "priority": 6,
-      "name": "르완다 기술검사·보험·준공제도",
+      "name": "르완다 BPMIS 단계검사·Occupancy Permit 절차",
       "oneLiner": "등록 전문가, 코드 준수, BPMIS 검사통지와 최종 Occupancy Permit을 개장 전 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "RHA 공식 코드·통제규정과 BPMIS의 검사·점유허가 서비스를 확인했다. 현지 전문가·검사기관·보험사·실제 비용은 시장조사 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "RHA 공식 코드·통제규정과 BPMIS의 검사·점유허가 서비스를 확인했다. 현지 전문가·검사기관·보험사·실제 비용은 시장조사 대상이다.",
+      "verificationScope": "BPMIS 검사·점유서비스, Building Control Regulations 제5.1.1.1과 RHA 공식 Inspection Guideline의 착공 전·기초·공사중·최종검사를 연결했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "City of Kigali와 District OSC가 BPMIS로 검사통지와 Occupancy Permit을 처리하는 전국 절차다. 검사 횟수와 참여전문분야는 건축물 Category·occupancy class에 따라 달라진다.",
       "nodeIds": [
-        "B03"
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B30"
       ],
       "requirementIds": [
         "RWA-BLD-REQ-006"
@@ -293,8 +1678,109 @@
         "RWA-BLD-F-008",
         "RWA-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B22",
+          "target": "B23",
+          "type": "sequence",
+          "label": "공정별 검사계획"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B23",
+          "target": "B24",
+          "type": "sequence",
+          "label": "Inspection Notice"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B24",
+          "target": "B25",
+          "type": "sequence",
+          "label": "착공 전 적합"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B25",
+          "target": "B26",
+          "type": "sequence",
+          "label": "기초 적합"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B26",
+          "target": "B28",
+          "type": "sequence",
+          "label": "공사검사 적합"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B24",
+          "target": "B27",
+          "type": "message",
+          "label": "지적사항 시"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B25",
+          "target": "B27",
+          "type": "message",
+          "label": "지적사항 시"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B26",
+          "target": "B27",
+          "type": "message",
+          "label": "지적사항 시"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B27",
+          "target": "B26",
+          "type": "loop",
+          "label": "시정 재검사·후속검사 재개"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B28",
+          "target": "B29",
+          "type": "sequence",
+          "label": "준공검사 요청"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B29",
+          "target": "B30",
+          "type": "sequence",
+          "label": "최종검사 적합"
+        },
+        {
+          "id": "M06-E12",
+          "source": "B29",
+          "target": "B27",
+          "type": "loop",
+          "label": "최종검사 시정요구"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "검사적합·점유허가",
+          "action": "Occupancy Permit 발급 후 건물을 점유·운영"
+        },
+        {
+          "state": "rework",
+          "label": "시정·재검사",
+          "action": "해당 공정 또는 최종검사 지적사항을 시정하고 BPMIS로 재검사"
+        },
+        {
+          "state": "reject",
+          "label": "점유허가 거부",
+          "action": "점유를 금지하고 공식 거부사유에 따라 재시공·재검사 또는 불복 검토"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -334,7 +1820,9 @@
       "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
       "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
       "verificationLevel": "law-linked",
-      "note": "도시계획 기준, 건축물 Category, 건축허가·점유허가의 국가 절차를 규정한다."
+      "note": "도시계획 기준, 건축물 Category, 건축허가·점유허가의 국가 절차를 규정한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Rwanda Housing Authority 공식 서버가 2019 도시계획·건축 장관령 관보 PDF를 기준일 현재 제공하고, BPMIS가 그 장관령에 따른 전자 건축허가·검사 체계를 계속 운영하는 것을 대조했다."
     },
     {
       "id": "RWA-BUILDING-CODE-2019",
@@ -345,7 +1833,9 @@
       "issuedOn": "2019-04-16",
       "officialUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
       "officialPdfUrl": "https://www.rha.gov.rw/fileadmin/user_upload/RHA/Publications/Orders/New_building_and_Urban_planning_code.pdf",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Rwanda Housing Authority 공식 서버의 2019년 4월 16일 관보 PDF에서 Rwanda Building Code 2019를 확인하고, BPMIS가 동일한 국가 건축허가·검사 체계를 현행 서비스로 운영하는 것을 대조했다."
     },
     {
       "id": "RWA-BUILDING-CONTROL-2E",
@@ -356,7 +1846,9 @@
       "officialUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
       "officialPdfUrl": "https://www.bpmis.gov.rw/asset_uplds/files/Rwanda_Building_Control.pdf",
       "verificationLevel": "source-linked",
-      "note": "OSC의 허가·검사·점유허가 운영기준이다. 2019 규정과 함께 적용되는 최신판인지 사업 시점에 확인한다."
+      "note": "OSC의 허가·검사·점유허가 운영기준이다. 2019 규정과 함께 적용되는 최신판인지 사업 시점에 확인한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "BPMIS 공식 서버가 Rwanda Building Control Regulations, 2nd Edition PDF를 기준일 현재 직접 제공하는 것을 확인했다. 다만 2019 장관령 이후 최신판·대체 여부를 밝히는 공식 판차 기록이 없어 continuity_unverified를 유지한다."
     },
     {
       "id": "RWA-ENV-LAW-48-2018",
@@ -367,15 +1859,57 @@
       "issuedOn": "2018-08-13",
       "officialUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
       "officialPdfUrl": "https://rema.gov.rw/fileadmin/templates/Documents/Law_on_environment.pdf",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "기존 REMA Law 48/2018 PDF 경로는 기준일 현재 404였으나, REMA 공식 서버가 제공하는 Ministerial Order 001/2019 관보 원문과 2026년 REMA 환경자료가 Law 48/2018을 환경평가의 모법으로 계속 인용하는 것을 대조했다."
     },
     {
       "id": "RWA-BPMIS",
       "title": "Electronic Building Permit Management Information System",
       "titleKo": "전자 건축허가관리시스템(BPMIS)",
       "kind": "official-guidance",
-      "status": "continuity_unverified",
+      "status": "current_official",
       "officialUrl": "https://www.bpmis.gov.rw/",
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "르완다 정부 BPMIS 공식 서비스가 기준일 현재 응답하며 City of Kigali·District별 건축허가 신청, 도서 제출·검토·결정과 검사 기능을 운영하는 것을 확인했다."
+    },
+    {
+      "id": "RWA-EIA-ORDER-001-2019",
+      "title": "Ministerial Order No. 001/2019 of 15/04/2019 establishing the list and procedures for environmental impact assessment",
+      "titleKo": "환경영향평가 대상목록·절차 장관령 제001/2019호",
+      "kind": "regulation",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "REMA 공식 서버가 Ministerial Order 001/2019의 관보 PDF를 기준일 현재 직접 제공하고, 같은 원문의 대상목록·screening·보고서 심사절차가 REMA의 현행 환경평가 체계와 연결되는 것을 확인했다.",
+      "issuedOn": "2019-04-15",
+      "officialUrl": "https://www.rema.gov.rw/index.php?eID=dumpFile&f=137851&t=f&token=14cf1ae1661ed1ab4180777cc7f6d311ca044d36",
+      "officialPdfUrl": "https://www.rema.gov.rw/index.php?eID=dumpFile&f=137851&t=f&token=14cf1ae1661ed1ab4180777cc7f6d311ca044d36",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "RWA-REMA-EIA-GUIDE",
+      "title": "REMA General Guidelines and Procedures for Environmental Impact Assessment",
+      "titleKo": "REMA 환경영향평가 일반지침·절차",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "REMA 공식 2006 EIA 지침 PDF 경로를 확인했으나 기준일에는 404로 응답했고, Ministerial Order 001/2019 이후 대체·개정판과 지침의 계속 적용범위를 밝히는 공식 판차 이력도 찾지 못해 continuity_unverified를 유지한다.",
+      "officialUrl": "https://www.rema.gov.rw/fileadmin/user_upload/13-RW_EIA_Guidelines_Final_versionl_Nov_2006.pdf",
+      "officialPdfUrl": "https://www.rema.gov.rw/fileadmin/user_upload/13-RW_EIA_Guidelines_Final_versionl_Nov_2006.pdf",
+      "verificationLevel": "source-linked",
+      "note": "2019 장관령의 대상분류·보고서 심사 조문을 우선하고, 이 지침은 REMA가 공개한 운영상 신청·screening·decision·resubmission 경로를 보완한다."
+    },
+    {
+      "id": "RWA-BUILDING-INSPECTION-GUIDE",
+      "title": "Rwanda Building Construction Inspection Guideline",
+      "titleKo": "르완다 건축공사 검사 지침",
+      "kind": "official-guidance",
+      "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "BPMIS 공식 서버가 ‘Building Construction Inspection Guideline’ PDF를 기준일 현재 직접 제공하는 것을 확인했다. 다만 문서의 발행일·판차와 2019 도시계획·건축 장관령 이후 대체 여부를 확인할 공식 개정 이력이 없어 continuity_unverified를 유지한다.",
+      "officialUrl": "https://www.bpmis.gov.rw/asset_uplds/files/BUILDING_INSPECTION_GUIDELINE_Tools.pdf",
+      "officialPdfUrl": "https://www.bpmis.gov.rw/asset_uplds/files/BUILDING_INSPECTION_GUIDELINE_Tools.pdf",
       "verificationLevel": "source-linked"
     }
   ],
@@ -493,7 +2027,38 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "District·City의 계획적합 건축허가 결정",
+      "decision": "OSC가 zoning·site·기술요건과 해당 시 RHA non-objection을 확인해 건축허가, 보완 또는 거부를 공식 결정한다.",
+      "dependsOn": [],
+      "output": "BPMIS 건축허가·조건 또는 공식 반려·거부통지"
+    },
+    {
+      "order": 2,
+      "gate": "환경승인기관의 EIA 공식결정",
+      "decision": "환경승인기관이 EIA를 승인·조건부 승인, 추가정보 요구 또는 거부하고 Certificate 발급 여부를 결정한다.",
+      "dependsOn": [],
+      "output": "EIA Certificate·조건 또는 거부결정"
+    },
+    {
+      "order": 3,
+      "gate": "District·City 건축허가 공식결정",
+      "decision": "OSC가 환경승인과 기술심사, 해당 시 RHA non-objection을 토대로 건축허가·조건, 보완 또는 거부를 결정한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·승인조건 또는 공식 반려·거부통지"
+    },
+    {
+      "order": 4,
+      "gate": "District·City Occupancy Permit 결정",
+      "decision": "OSC가 최종검사 결과에 따라 점유허가 발급, 시정·재검사 또는 거부를 공식 결정한다.",
+      "dependsOn": [],
+      "output": "BPMIS Occupancy Permit 또는 공식 시정·거부통지"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "RWA-LOCAL-OVERLAY-001",

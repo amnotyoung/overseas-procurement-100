@@ -774,12 +774,19 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                         f"{where}.processBoard",
                         f"nodes reference unknown questions {sorted(unknown_linked)}",
                     )
-                if linked_questions != declared_questions:
+                if procedure_status == "detail-unverified":
+                    if linked_questions != declared_questions:
+                        result.error(
+                            f"{where}.processBoard",
+                            "unverified entry question coverage differs from public model: "
+                            f"missing {sorted(declared_questions - linked_questions)}, "
+                            f"extra {sorted(linked_questions - declared_questions)}",
+                        )
+                elif linked_questions:
                     result.error(
                         f"{where}.processBoard",
-                        "node question coverage differs from public model: "
-                        f"missing {sorted(declared_questions - linked_questions)}, "
-                        f"extra {sorted(linked_questions - declared_questions)}",
+                        "researched statutory procedure nodes must not expose ODA field questions: "
+                        f"{sorted(linked_questions)}",
                     )
                 for node in selected_nodes:
                     for field in ("kind", "action", "outputs"):

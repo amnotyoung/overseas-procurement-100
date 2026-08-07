@@ -1,0 +1,324 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "morocco",
+  "instruments": [
+    {
+      "id": "MAR-URBAN-LAW-12-90",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "탕헤르 도시계획청(AUT) 공식 법령대장의 Law 12-90 원문과 Law 66-12 개정 반영본을 대조하고, 같은 대장이 이를 도시계획 기본법으로 계속 게시하는 것을 확인했다."
+    },
+    {
+      "id": "MAR-RGC-2-18-577",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "다클라-우에드 에드다하브 도시계획청 공식 서버의 Decree 2-18-577 일반건축절차규정 PDF와 AUT 건축규정 대장을 대조했다."
+    },
+    {
+      "id": "MAR-ENV-LAW-49-17",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "환경부 공식 환경평가 전자서비스의 현행 FAQ가 Law 49-17에 따른 EIE·NIE 분류·제출·결정 경로를 운영 중인 것을 확인했다."
+    },
+    {
+      "id": "MAR-TECHNICAL-CODES",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "탕헤르 도시계획청(AUT) 공식 ‘Règlements’ 대장에서 내진 RPS, 화재·패닉, 에너지효율·접근성 기술규정 목록을 확인했다. 다만 대장은 각 규정의 최종 개정·폐지 이력과 대상 건물별 적용판을 통합 제시하지 않아 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "MAR-RGC-OFFICIAL-PDF",
+      "title": "Decree No. 2-18-577 approving the General Construction Regulation — official text",
+      "titleKo": "모로코 일반건축절차규정 제2-18-577호 공식문",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "다클라-우에드 에드다하브 도시계획청 공식 서버에서 Decree 2-18-577 일반건축절차규정 PDF가 기준일 현재 직접 제공되는 것을 확인했다.",
+      "officialUrl": "https://audakhla.ma/images/pdf/Decrets/Decret_2-18-577.pdf",
+      "officialPdfUrl": "https://audakhla.ma/images/pdf/Decrets/Decret_2-18-577.pdf",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "MAR-ENV-E-SERVICES",
+      "title": "Morocco environmental-evaluation e-services and official FAQ",
+      "titleKo": "모로코 환경평가 전자서비스·공식 FAQ",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "환경부 공식 환경평가 전자서비스의 EIE·NIE FAQ 페이지가 기준일 현재 응답하며 신청자료·공개조사·결정 상태조회 절차를 안내하는 것을 확인했다.",
+      "officialUrl": "https://e-services.environnement.gov.ma/faqA/2",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "MAR-EIE-REVIEW-MANUAL",
+      "title": "Official environmental-impact-study review reference",
+      "titleKo": "모로코 환경영향평가서 심사 공식 참고서",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "환경부 공식 환경평가 전자서비스가 제공하는 ‘Référentiel EIE’ 심사 참고서 경로를 확인했다. 이 자료는 심사항목 보조자료이며 Law 49-17과 현행 전자서비스 안내를 우선 적용한다.",
+      "officialUrl": "https://e-services.environnement.gov.ma/assets/file/Referentiel_EIE.pdf",
+      "officialPdfUrl": "https://e-services.environnement.gov.ma/assets/file/Referentiel_EIE.pdf",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "일반건축절차규정 제6~9조의 도시계획정보서, 제10~20조의 Guichet unique·위원회 경로, 제34~40조의 접수·완비·심사·결정을 실제 순서로 연결했다.",
+      "officialProcedure": {
+        "name": "모로코 도시계획정보·건축허가 절차",
+        "coverage": "official-source-linked",
+        "scope": "인구 5만 초과 commune은 Guichet unique, 그 밖의 commune은 prefectural/provincial committee 경로를 이용한다. 도시계획정보서는 필지 규제를 확인하는 공식 문서이나 허가의 원칙적 승인은 아니다.",
+        "stages": ["G0 도시계획정보", "G1 허가도서·접수", "G2 위원회 심사·보완", "G3 허가결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "도시계획정보서 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "소유자 또는 이해관계인이 대상필지와 계획용도를 표시해 관할 Urban Agency에 note de renseignements urbanistiques를 신청하고 접수증을 받는다.", "output": "도시계획정보서 신청 접수증",
+            "authorityIds": ["urban-agency"],
+            "refs": [{"source": "도시계획정보서 신청", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 6-7"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "필지별 계획규제 공식회신", "emphasis": "key", "kind": "official-guidance",
+            "action": "Urban Agency가 적용 계획문서, zoning·용도, 금지·조건부 용도, 최대 점유·이용수치, 이격·높이·도로·주차조건을 확인해 도시계획정보서를 발급한다.", "output": "Note de renseignements urbanistiques",
+            "authorityIds": ["urban-agency"],
+            "refs": [{"source": "정보서 내용·법적효과", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 8-9"]}],
+            "permitGate": {"key": "morocco-urban-information", "gate": "Urban Agency 도시계획정보 공식회신", "decision": "관할 Urban Agency가 필지에 적용되는 계획문서와 개발조건을 공식 확인한다. 이 회신 자체는 건축허가가 아니다.", "output": "Note de renseignements urbanistiques", "dependsOn": []}
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "주요 허가도서 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "도시계획정보와 적용 법규에 맞춰 건축도면·배치·권원·전문가 서명 등 접수 시 필수인 주요 도서를 작성한다.", "output": "서명된 주요 허가도서",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "허가신청 주요도서", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 34-37 and annexed document lists"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "Commune·Guichet unique 접수", "emphasis": "key", "kind": "official-guidance",
+            "action": "관할 commune 또는 Guichet unique에 주요 허가도서를 제출하고 번호·날짜가 기재된 접수증을 받는다. 접수기관은 주요도서 완비 여부를 확인한다.", "output": "번호·날짜가 있는 허가신청 접수증",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "접수·완비요건", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 34-37"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "주요도서 미비 보완·재접수", "emphasis": "normal", "kind": "official-guidance",
+            "action": "접수에 필수인 주요도서가 빠진 경우 누락자료를 보완해 다시 제출한다. 보충도서는 심사 중 제출할 수 있으며 접수단계 거부사유로 삼을 수 없다.", "output": "보완 주요도서·재접수 기록",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "주요·보충도서 구분", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 36-37"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "위원회 회부·관계기관 합동심사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "Guichet unique 또는 관할 위원회가 정해진 grand·petit project 경로로 신청을 회부하고 Urban Agency 등 관계기관의 의견·visa를 한 회의에서 취합한다.", "output": "위원회 심사의견·관계기관 visa",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "Guichet·위원회·심사경로", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 10-20, especially 18-19"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "심사결과·보완요구 공식기록", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "위원회가 의견을 서면·도면에 기록해 회의록을 작성하고, 수정·보완이 필요하면 신청인에게 요구사항을 통지한다. Urban Agency의 법정 의무의견은 허가결정에 반영된다.", "output": "위원회 회의록·공식 보완요구",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "위원회 의견·회의록", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 38-40"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "도서 수정·위원회 재심", "emphasis": "normal", "kind": "official-guidance",
+            "action": "공식 보완요구에 따라 건축·배치·기술도서를 수정하고 보충자료를 제출해 관계기관 의견과 위원회 심사를 다시 받는다.", "output": "수정도서·보완답변·재심기록",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "심사 중 보충·수정", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 37-40"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Commune President 허가결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "communal council president가 위원회 회의록과 관계기관 의견에 따라 건축허가를 발급하거나, 조건·보완을 부과하거나, 이유를 명시해 거부하고 신청인에게 통지한다.", "output": "건축허가·ne varietur 승인도서·조건 또는 이유부 거부통지",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "허가·거부 결정", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 38-40"]}],
+            "permitGate": {"key": "morocco-site-building-permit", "gate": "Commune President 건축허가 공식결정", "decision": "위원회 및 관계기관 의견을 토대로 허가·조건부 허가·보완 또는 이유부 거부를 결정한다.", "output": "건축허가·승인도서·조건 또는 거부통지", "dependsOn": ["morocco-urban-information"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "필지정보 조회"], [1, 2, "sequence", "계획조건"], [2, 3, "sequence", "주요도서"], [3, 5, "sequence", "완비접수"],
+          [3, 4, "message", "주요도서 미비"], [4, 3, "loop", "보완 재접수"], [5, 6, "sequence", "합동심사"], [6, 8, "sequence", "적합의견"],
+          [6, 7, "message", "수정·보완"], [7, 5, "loop", "수정안 재심"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "건축허가 발급", "action": "ne varietur 승인도서와 허가조건에 따라 착공 절차 이행"},
+          {"state": "rework", "label": "접수미비·위원회 보완", "action": "주요도서 또는 설계를 보완해 접수·위원회 심사로 회귀"},
+          {"state": "reject", "label": "이유부 거부", "action": "공식 거부사유에 따라 계획·설계를 변경해 재신청하거나 법정 불복 검토"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "환경부 공식 FAQ·전자서비스의 EIE/NIE 분류·제출·심사와 일반건축절차규정의 허가접수·관계기관 심사·commune 결정 경로를 두 개의 공식 Gate로 연결했다.",
+      "officialProcedure": {
+        "name": "모로코 환경평가·건축허가 통합 경로",
+        "coverage": "official-source-linked",
+        "scope": "법률 제49-17호상 EIE는 사업허가보다 먼저 결정되어야 한다. 비EIE 사업 중 경미한 부정영향 가능 사업은 NIE 경로를 따르며, 최종 건축허가는 관할 commune president가 결정한다.",
+        "stages": ["G0 환경경로 분류", "G1 EIE·NIE 작성", "G2 공개·기술심사", "G3 환경결정", "G4 건축허가 접수", "G5 건축허가 심사", "G6 건축허가 결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "EIE·NIE·비대상 경로 확인", "emphasis": "key", "kind": "official-guidance",
+            "action": "사업유형·규모·입지를 법률 제49-17호와 환경부 서비스 기준에 대조해 EIE, NIE 또는 비대상 경로와 관할 평가위원회를 확인한다.", "output": "환경평가 적용경로·제출기관",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "환경평가 유형", "instrumentId": "MAR-ENV-E-SERVICES", "provisions": ["FAQ — EIE, NIE, strategic assessment and audit"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "EIE·PSSE/CCE·공청자료 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "EIE 대상이면 환경영향평가서, 환경사회관리·감시계획(PSSE/CCE)과 public inquiry 요청자료를 작성해 전자서비스로 제출한다.", "output": "EIE 보고서·PSSE/CCE·public inquiry 요청서",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "EIE 제출자료", "instrumentId": "MAR-ENV-E-SERVICES", "provisions": ["FAQ — documents required for EIE submission"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "NIE 보고서 작성·제출", "emphasis": "normal", "kind": "official-guidance",
+            "action": "EIE 비대상이지만 경미한 부정영향이 예상되는 사업은 영향·저감조치를 담은 NIE 보고서를 작성해 관할 환경기관에 제출한다.", "output": "Notice d'impact sur l'environnement(NIE)",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "NIE 적용·제출", "instrumentId": "MAR-ENV-E-SERVICES", "provisions": ["FAQ — projects subject to NIE and required report"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "EIE public inquiry 실시", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "EIE 경로에서는 관할 절차에 따라 public inquiry를 실시해 사업영향에 대한 공중의견과 이의사항을 수렴하고 조사기록을 평가자료에 포함한다.", "output": "Public inquiry 기록·공중의견",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "EIE public inquiry", "instrumentId": "MAR-ENV-E-SERVICES", "provisions": ["FAQ — public inquiry request for EIE"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "환경위원회 기술심사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "관할 환경평가위원회가 EIE·NIE, PSSE/CCE, public inquiry 결과와 법규·기준·입지위험·대안을 심사해 수용성 또는 보완 필요성을 판단한다.", "output": "기술심사의견·보완요구 또는 결정권고",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "EIE 심사항목·수용성 판단", "instrumentId": "MAR-EIE-REVIEW-MANUAL", "provisions": ["EIE review procedure and acceptability criteria"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "환경보고서·저감계획 보완", "emphasis": "normal", "kind": "official-guidance",
+            "action": "심사에서 추가조사·대안·저감·공중의견 반영을 요구하면 EIE·NIE와 PSSE/CCE를 수정해 전자서비스로 재제출한다.", "output": "보완 EIE·NIE·PSSE/CCE",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "환경심사 보완", "instrumentId": "MAR-EIE-REVIEW-MANUAL", "provisions": ["review observations and non-acceptability conditions"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 3, "label": "환경수용성·NIE 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "관할 환경기관이 EIE의 환경수용성 또는 NIE 승인·조건·거부를 공식 결정하고 전자서비스에서 결정문과 이행조건을 통지한다.", "output": "환경수용성 결정·NIE 승인조건 또는 거부통지",
+            "authorityIds": ["environment-department"],
+            "refs": [{"source": "환경평가 결정", "instrumentId": "MAR-ENV-E-SERVICES", "provisions": ["EIE/NIE decision and electronic status tracking"]}],
+            "permitGate": {"key": "morocco-environmental-decision", "gate": "관할 환경기관 환경평가 공식결정", "decision": "EIE 또는 NIE를 심사해 수용·조건부 수용·보완 또는 거부하며, EIE 결정은 사업허가보다 선행한다.", "output": "환경수용성·NIE 결정문과 조건 또는 거부통지", "dependsOn": []}
+          },
+          {
+            "lane": "건축주·신청인", "stage": 4, "label": "환경결정 포함 건축허가 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "적용되는 환경결정과 주요 건축·권원도서를 관할 commune 또는 Guichet unique에 제출하고 번호·날짜가 있는 접수증을 받는다.", "output": "완비 건축허가 신청·접수증",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "건축허가 접수", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 34-37"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 5, "label": "Guichet·위원회 합동심사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "Guichet unique 또는 위원회가 환경결정, 도시계획, 건축·안전·기반시설 조건과 관계기관 visa를 함께 심사해 회의록을 작성한다.", "output": "위원회 회의록·관계기관 의견·보완요구",
+            "authorityIds": ["commune", "urban-agency", "environment-department"],
+            "refs": [{"source": "합동심사·회의록", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 10-20 and 38-40"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 5, "label": "허가도서 보완·재심", "emphasis": "normal", "kind": "official-guidance",
+            "action": "위원회의 수정·보완요구를 반영해 건축·기술도서와 필요한 관계기관 자료를 다시 제출하고 위원회 재심을 받는다.", "output": "수정 허가도서·보완답변",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "허가심사 보완", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 37-40"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 6, "label": "건축허가 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "communal council president가 환경결정과 위원회 의견을 토대로 허가·조건부 허가·보완 또는 이유부 거부를 공식 결정한다.", "output": "건축허가·승인도서·조건 또는 이유부 거부통지",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "허가결정", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 38-40"]}],
+            "permitGate": {"key": "morocco-environment-building-permit", "gate": "Commune President 건축허가 공식결정", "decision": "환경결정과 합동심사의견을 충족한 신청에 건축허가를 발급하거나 보완·거부한다.", "output": "건축허가·ne varietur 도서·조건 또는 거부통지", "dependsOn": ["morocco-environmental-decision"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "EIE 경로"], [0, 2, "sequence", "NIE 경로"], [1, 3, "sequence", "EIE 접수"], [3, 4, "sequence", "공중의견"],
+          [2, 4, "sequence", "NIE 접수"], [4, 6, "sequence", "적합권고"], [4, 5, "message", "추가자료·수정"], [5, 4, "loop", "환경 재심"],
+          [6, 7, "sequence", "환경결정"], [7, 8, "sequence", "허가접수"], [8, 10, "sequence", "적합의견"], [8, 9, "message", "설계보완"], [9, 8, "loop", "위원회 재심"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "환경결정·건축허가 승인", "action": "환경·허가조건과 승인도서를 시공·감리계획에 반영"},
+          {"state": "rework", "label": "환경·허가도서 보완", "action": "EIE/NIE 또는 건축도서를 수정해 해당 기술심사로 재제출"},
+          {"state": "reject", "label": "환경 또는 건축허가 거부", "action": "공식 사유에 따라 입지·설계를 변경해 재신청하거나 법정 불복 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "도시계획법 제54-1·54-2·55조의 착공신고·현장문서·건축사 공사대장·완공신고와 일반건축절차규정 제48~54조의 récolement·사용허가/적합증명 결정을 실제 순서로 연결했다.",
+      "officialProcedure": {
+        "name": "모로코 착공·공사통제·사용허가/적합증명",
+        "coverage": "official-source-linked",
+        "scope": "주거건축은 permis d'habiter, 비주거건축은 certificat de conformité를 받기 전 사용할 수 없다. 건축사가 공사를 지휘한 경우 법정 건축사 증명으로 récolement를 대체할 수 있는 경로가 있다.",
+        "stages": ["G0 착공신고", "G1 공사기록·검사", "G2 시정·완공", "G3 사용승인 신청", "G4 Récolement·시정", "G5 사용승인 결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "착공신고·현장표지", "emphasis": "key", "kind": "official-guidance",
+            "action": "공사 전에 건축사가 서명한 chantier opening 신고를 commune에 제출해 접수받고 현장 울타리·법정 표지를 설치한다.", "output": "착공신고 접수증·현장표지",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "착공신고·현장조치", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Article 54-1"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "승인도서·기술문서 현장비치", "emphasis": "normal", "kind": "official-guidance",
+            "action": "ne varietur 승인도서와 기술문서를 공사기간 동안 현장에 비치하고 허가조건에 따라 공사를 관리한다.", "output": "현장비치 승인도서·기술문서",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "현장문서 비치", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Article 54-1"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "건축사 Cahier de chantier 기록", "emphasis": "key", "kind": "official-guidance",
+            "action": "책임건축사가 사업·기업·착공 정보, 현장지시·회의록·방문일과 공정별 확인을 cahier de chantier에 연속 기록한다.", "output": "Cahier de chantier·현장지시·방문기록",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "공사대장 의무", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Article 54-2"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "공사현장 법규·허가준수 검사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "권한 있는 통제기관이 현장을 출입해 허가, 승인도서, 기술규정과 현장문서 준수를 확인하고 위반을 공식 기록한다.", "output": "현장검사 기록·적합 또는 위반통지",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "건축통제·위반확인", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Articles 64 et seq., as amended"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "위반 시 시정·중지조치", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "무허가 변경 또는 허가·규정 위반이 확인되면 관할기관이 시정·중지 등 법정 조치를 통지하고 적합화 여부를 재검사한다.", "output": "시정·중지통지 또는 공정 계속 확인",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "위반집행", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Articles 64 et seq., as amended by Law 66-12"]}],
+            "permitGate": {"key": "morocco-construction-compliance", "gate": "공사단계 법규·허가준수 판단", "decision": "통제기관이 허가·승인도서 준수 여부에 따라 공정 계속 또는 시정·중지를 결정한다.", "output": "공정 계속 확인 또는 시정·중지통지", "dependsOn": []}
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "위반 시정·재검사", "emphasis": "normal", "kind": "official-guidance",
+            "action": "지적된 시공·도서 불일치를 시정하고 필요한 변경승인을 확보한 뒤 증빙과 함께 관할기관 재검사를 받는다.", "output": "시정완료 자료·재검사 기록",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "시정·적합화", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Articles 64 et seq., as amended"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "건축사 완공·적합 신고", "emphasis": "key", "kind": "official-guidance",
+            "action": "공사완료 시 건축사가 허가·승인도서에 대한 적합성을 확인해 chantier closure·완공 신고와 적용 증명서를 작성한다.", "output": "건축사 완공·적합 신고서",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "완공신고", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Articles 54-1 and 54-2"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 3, "label": "사용허가·적합증명 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "주거는 permis d'habiter, 비주거는 certificat de conformité를 commune 또는 Guichet unique에 신청하고 번호·날짜가 있는 접수증을 받는다.", "output": "사용허가·적합증명 신청 접수증",
+            "authorityIds": ["commune"],
+            "refs": [
+              {"source": "점유 전 증명 의무", "instrumentId": "MAR-URBAN-LAW-12-90", "provisions": ["Article 55"]},
+              {"source": "신청·접수", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 48-49"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "Récolement·최종 적합검사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "commune 주관 위원회가 건축·기술 승인도서와 허가조건에 대한 완공 적합성을 현장에서 확인한다. 법정 요건을 충족한 건축사 증명이 있으면 해당 대체경로를 적용한다.", "output": "Récolement 회의록·건축사 적합증명·시정요구",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "Récolement·건축사 대체증명", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 48-52"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 4, "label": "최종검사 지적 시정·재검", "emphasis": "normal", "kind": "official-guidance",
+            "action": "récolement에서 확인된 허가·도면 불일치를 시정하고 수정자료와 함께 재검사를 요청한다.", "output": "시정완료 자료·재검사 회의록",
+            "authorityIds": ["commune", "urban-agency"],
+            "refs": [{"source": "완공 적합성 재확인", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 48-52"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 5, "label": "사용허가·적합증명 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "communal council president가 récolement 회의록 또는 적법한 건축사 증명에 따라 permis d'habiter·certificat de conformité를 발급하거나 시정·거부를 통지한다.", "output": "Permis d'habiter·certificat de conformité 또는 시정·거부통지",
+            "authorityIds": ["commune"],
+            "refs": [{"source": "완공결정·발급", "instrumentId": "MAR-RGC-OFFICIAL-PDF", "provisions": ["Articles 48-52"]}],
+            "permitGate": {"key": "morocco-occupancy-conformity", "gate": "Commune President 사용허가·적합증명 결정", "decision": "완공건물의 허가·승인도서 적합성을 확인해 사용허가 또는 적합증명을 발급하거나 시정·거부한다.", "output": "Permis d'habiter·certificat de conformité 또는 공식 시정·거부통지", "dependsOn": ["morocco-construction-compliance"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "착공접수"], [1, 2, "sequence", "현장관리"], [2, 3, "sequence", "검사기록"], [3, 4, "sequence", "준수판단"],
+          [4, 6, "sequence", "공정 적합"], [4, 5, "message", "시정·중지"], [5, 4, "loop", "시정 재검사 판단"], [6, 7, "sequence", "완공신고"],
+          [7, 8, "sequence", "최종검사"], [8, 10, "sequence", "적합"], [8, 9, "message", "최종 시정"], [9, 8, "loop", "시정 후 재검"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "사용허가·적합증명 발급", "action": "주거·비주거 용도에 맞는 증명을 받은 뒤 점유·사용"},
+          {"state": "rework", "label": "공사·최종검사 시정", "action": "허가·도면 불일치를 시정하고 해당 현장검사 또는 récolement 재검"},
+          {"state": "reject", "label": "증명 발급거부·공사중지", "action": "점유·공사를 중단하고 공식 사유에 따른 적합화·재신청 또는 불복 검토"}
+        ]
+      }
+    }
+  }
+}

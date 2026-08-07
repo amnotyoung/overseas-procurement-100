@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "tanzania",
+  "authorities": [],
+  "instruments": [
+    {
+      "id": "TZA-URBAN-PLANNING-ACT-2007",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Ministry of Lands currently publishes the Act in its official document repository and current 2024 ministry guidance continues to apply it with GN 93 of 2018."
+    },
+    {
+      "id": "TZA-PLANNING-BUILDING-REGS-2018",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Ministry of Lands currently publishes GN 80 of 2018, including Forms 1, 2 and 10, in its official document repository."
+    },
+    {
+      "id": "TZA-SPACE-STANDARDS-2018",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Ministry of Lands currently publishes GN 93 of 2018 and its 2024 regularisation manual expressly continues to apply those standards."
+    },
+    {
+      "id": "TZA-EIA-REGS-2005-2018",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NEMC's June 2026 official EIA procedure continues to operate the project categories and electronic application requirements established by the amended Regulations."
+    },
+    {
+      "id": "TZA-PROFESSIONAL-PROJECT-REGISTRATION",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "AQRB and CRB continue to publish the governing Act and active professional, contractor and project-registration services."
+    },
+    {
+      "id": "TZA-NEMC-EIA-2026",
+      "title": "NEMC steps for Environmental and Social Impact Assessment",
+      "titleKo": "NEMC 환경·사회영향평가 현행 절차 2026",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NEMC published the current online EIA procedure on 10 June 2026.",
+      "officialUrl": "https://www.nemc.or.tz/announcements/steps-to-follow-when-conducting-an-environmental-impact-assessment-eia",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TZA-NEMC-EIA-PROCEDURE",
+      "title": "NEMC official EIA procedure guide",
+      "titleKo": "NEMC EIA 단계별 공식 가이드",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NEMC continues to host the official EIA procedure guide and its 2026 online procedure confirms the same registration, screening, scoping, study and review route.",
+      "officialUrl": "https://nemc.or.tz/uploads/publications/sw-1576238362-EIA%20PROCEDURE.pdf",
+      "officialPdfUrl": "https://nemc.or.tz/uploads/publications/sw-1576238362-EIA%20PROCEDURE.pdf",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TZA-CRB-PROJECT-SERVICE",
+      "title": "CRB current project-registration service",
+      "titleKo": "CRB 현행 건설프로젝트 등록 서비스",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "CRB's current official service states the registration threshold, online submission, rectification, project number and completion-feedback procedure.",
+      "officialUrl": "https://www.crb.go.tz/CoreFunction/DevelopmentOfContractors",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TZA-CRB-SITE-RULES",
+      "title": "CRB current contractor and site rules",
+      "titleKo": "CRB 현행 시공자·현장 준수규칙",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "CRB's current regulation page lists registered-contractor, signboard, project-registration, enclosure, PPE, fire and hygiene duties.",
+      "officialUrl": "https://www.crb.go.tz/CoreFunction/RegulationOfContractors",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "Tanzania Mainland 계획구역에 적용되는 Urban Planning Act, GN 93 공간기준과 GN 80 Form 1·Form 2의 토지이용·구조 이중서명 경로를 실제 순서로 연결했다.",
+      "officialProcedure": {
+        "name": "탄자니아 본토 필지계획·건축계획 적합절차",
+        "coverage": "article-verified",
+        "scope": "Zanzibar를 제외한 Tanzania Mainland 계획구역에서 권원·용도·공간기준을 도서화해 planning authority의 Form 2 결정을 받는 절차다.",
+        "stages": ["S0 권원·계획구역", "S1 공간기준·도서", "S2 계획기관 심사", "S3 Form 2 결정"],
+        "steps": [
+          {"lane":"건축주·신청인","stage":0,"label":"Right of Occupancy·필지자료 준비","emphasis":"key","kind":"official-guidance","action":"신청인이 점유권·필지번호·block·도로·경계와 신청권한 자료를 준비한다.","output":"권원·지적·필지식별 자료","authorityIds":["tza-planning-authority","tza-lands-ministry"],"refs":[{"source":"Form 1 필지식별", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Fourth Schedule Form 1"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":0,"label":"계획구역·승인용도 특정","emphasis":"key","kind":"official-guidance","action":"planning authority가 대상지가 장관 고시 계획구역인지와 승인계획·용도지역상 제안용도를 특정한다.","output":"계획구역·승인용도 확인","authorityIds":["tza-planning-authority","tza-lands-ministry"],"refs":[{"source":"계획구역 적용", "instrumentId":"TZA-URBAN-PLANNING-ACT-2007","provisions":["planning areas under section 8"]},{"source":"건축규칙 적용", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 2"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"필지별 GN 93 공간기준 적용","emphasis":"normal","kind":"official-guidance","action":"등록 계획·설계전문가가 용도에 맞는 plot coverage·plot ratio·층수·높이·건축선·이격·주차·도로폭 기준을 배치안에 적용한다.","output":"필지 공간기준표·배치조건","authorityIds":["tza-planning-authority","tza-lands-ministry"],"refs":[{"source":"공간기준", "instrumentId":"TZA-SPACE-STANDARDS-2018","provisions":["Regulations 2-4 and Schedule"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"Form 1·평면·단면·입면 작성","emphasis":"normal","kind":"official-guidance","action":"설계자가 Form 1과 각 층 평면·단면·입면, 기초·구조, 급수·배수·위생·주차 자료를 명료한 축척으로 작성한다.","output":"Form 1·계획·건축·구조도서","authorityIds":["tza-planning-authority"],"refs":[{"source":"허가신청·도서", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 4, 6-7; Fourth Schedule Form 1"]}]},
+          {"lane":"건축주·신청인","stage":2,"label":"Planning authority에 신청 접수","emphasis":"key","kind":"official-guidance","action":"신청인이 Form 1과 요구 도서를 관할 planning authority에 접수한다.","output":"계획·건축허가 접수기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"Form 1 접수", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 4(1)(a)-(b)"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":2,"label":"토지이용·구조·도서 심사","emphasis":"bottleneck","kind":"official-guidance","action":"등록 town planner가 지정용도를, structural engineer가 구조품질을 심사하고 규칙·승인계획에 맞지 않으면 사유를 들어 보완·불승인한다.","output":"계획·구조 심사의견·보완 또는 불승인","authorityIds":["tza-planning-authority"],"refs":[{"source":"이중 기술심사", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 4(2), 8-9"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":2,"label":"계획·구조도서 보완·재심","emphasis":"normal","kind":"official-guidance","action":"불승인·유보 사유를 반영해 용도·배치·구조·배수도서를 수정하고 planning authority에 재제출한다.","output":"수정 Form 1 도서·재심 기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"도서 불승인·유보", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 8-9"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":3,"label":"Form 2 Building Permit 결정","emphasis":"key","kind":"official-guidance","action":"planning authority의 structural engineer와 registered town planner가 승인계획·토지용도·구조조건을 확인해 Form 2 허가에 서명하거나 불승인 사유를 통지한다.","output":"Form 2 Building Permit·승인도서 또는 불승인","authorityIds":["tza-planning-authority"],"refs":[{"source":"Form 2 공식결정", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 4(2); Fourth Schedule Form 2"]}],"permitGate":{"key":"tza-planning-building-permit","gate":"Planning authority Form 2 계획·건축결정","decision":"등록 town planner와 structural engineer가 지정용도·공간기준·구조 적합성을 심사해 Form 2 허가 또는 불승인을 결정한다.","output":"Form 2 허가·조건 또는 이유부 불승인","dependsOn":[]}}
+        ],
+        "edges":[[0,1,"sequence","계획구역"],[1,2,"sequence","적용기준"],[2,3,"sequence","신청도서"],[3,4,"sequence","Form 1"],[4,5,"sequence","이중심사"],[5,7,"sequence","적합"],[5,6,"message","보완·불승인"],[6,5,"loop","수정안 재심"]],
+        "decisionBranches":[
+          {"state":"success","label":"Form 2 허가","action":"승인도서·조건에 따라 환경승인 및 착공절차 진행"},
+          {"state":"rework","label":"계획·구조 보완","action":"용도·공간기준·구조도서를 수정해 planning authority 재심"},
+          {"state":"reject","label":"계획 불승인","action":"이유에 따라 입지·용도·규모를 변경해 새 Form 1 신청"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "NEMC 2026 현행 온라인 절차와 2018 개정 EIA 규칙의 A·B1·B2·Special 분류, Project Brief·Scoping/TOR·EIA·certificate 흐름을 GN 80 Form 1·2 허가와 별도 Gate로 연결했다.",
+      "officialProcedure": {
+        "name": "탄자니아 본토 NEMC EIA·LGA 건축허가",
+        "coverage": "article-verified",
+        "scope": "NEMC 환경분류·평가·EIA Certificate와 planning authority의 건축허가를 구분해 표시한다.",
+        "stages": ["S0 NEMC 등록·분류", "S1 Brief·Scoping", "S2 EIA 작성", "S3 환경심사·결정", "S4 건축허가 심사", "S5 Form 2 결정"],
+        "steps": [
+          {"lane":"건축주·신청인","stage":0,"label":"NEMC PMS 온라인 등록·수수료","emphasis":"key","kind":"official-guidance","action":"사업자가 NEMC 전자시스템에 등록양식·사업정보를 입력하고 등록수수료를 납부해 EIA 또는 환경감사 절차를 개시한다.","output":"NEMC 전자등록번호·납부기록","authorityIds":["tza-nemc"],"refs":[{"source":"2026 전자등록", "instrumentId":"TZA-NEMC-EIA-2026","provisions":["online PMS registration and registration fee"]}]},
+          {"lane":"환경·소방·검사기관","stage":0,"label":"A·B1·B2·Special 공식분류","emphasis":"key","kind":"official-guidance","action":"NEMC가 사업특성·규모·입지와 screening criteria를 적용해 A·B1·B2·Special 범주와 요구도서를 확정한다.","output":"NEMC 범주결정·요구도서 통지","authorityIds":["tza-nemc"],"refs":[{"source":"4개 범주", "instrumentId":"TZA-EIA-REGS-2005-2018","provisions":["Regulations 4A-6; First and Second Schedules"]}],"permitGate":{"key":"tza-eia-classification","gate":"NEMC 환경범주 공식결정","decision":"NEMC가 screening criteria에 따라 A·B1·B2·Special 범주와 Project Brief·Scoping·EIA 경로를 결정한다.","output":"환경범주·평가경로 통지","dependsOn":[]}},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"B2 Project Brief 작성·제출","emphasis":"normal","kind":"official-guidance","action":"B2 사업이면 등록 환경전문가가 건설·운영·폐쇄활동, 입지·설계·영향·완화내용을 Project Brief로 작성해 screening에 제출한다.","output":"B2 Project Brief·screening 접수","authorityIds":["tza-nemc"],"refs":[{"source":"B2 신청", "instrumentId":"TZA-EIA-REGS-2005-2018","provisions":["Regulations 6-10"]},{"source":"현행 B2 제출", "instrumentId":"TZA-NEMC-EIA-2026","provisions":["Project Brief for B2 projects"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"A 사업 Scoping Report·TOR 승인","emphasis":"normal","kind":"official-guidance","action":"A 범주이면 등록 환경전문가가 scoping report와 TOR을 작성해 본 EIA 전에 NEMC 승인을 받는다.","output":"NEMC 승인 Scoping Report·TOR","authorityIds":["tza-nemc"],"refs":[{"source":"Scoping·TOR", "instrumentId":"TZA-NEMC-EIA-PROCEDURE","provisions":["Step 3; scoping report and TOR approval"]},{"source":"현행 A 제출", "instrumentId":"TZA-NEMC-EIA-2026","provisions":["scoping report and terms of reference for Category A"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":2,"label":"등록 전문가 EIA·ESMP 작성","emphasis":"bottleneck","kind":"official-guidance","action":"등록 환경전문가가 승인 TOR에 따라 대안·기초환경·영향·공개협의·완화·ESMP를 포함한 EIA를 수행한다.","output":"EIA 보고서·ESMP","authorityIds":["tza-nemc"],"refs":[{"source":"EIA 수행", "instrumentId":"TZA-NEMC-EIA-PROCEDURE","provisions":["Step 4; assessment by consultant under approved TOR"]}]},
+          {"lane":"건축주·신청인","stage":2,"label":"EIA 보고서 전자제출","emphasis":"normal","kind":"official-guidance","action":"사업자가 완성된 EIA·ESMP와 요구 첨부자료를 NEMC PMS에 제출한다.","output":"EIA 보고서 접수·추적번호","authorityIds":["tza-nemc"],"refs":[{"source":"전자 EIA 관리", "instrumentId":"TZA-NEMC-EIA-2026","provisions":["electronic EIA project management and tracking"]}]},
+          {"lane":"환경·소방·검사기관","stage":3,"label":"NEMC 기술심사·공개참여","emphasis":"bottleneck","kind":"official-guidance","action":"NEMC가 보고서의 기술적 적정성과 이해관계자 의견을 심사하고 추가자료·수정 또는 승인권고를 확정한다.","output":"기술심사의견·공개참여 기록·보완요구","authorityIds":["tza-nemc"],"refs":[{"source":"EIA 심사", "instrumentId":"TZA-EIA-REGS-2005-2018","provisions":["review and public participation provisions"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":3,"label":"환경보고서 보완·재심","emphasis":"normal","kind":"official-guidance","action":"NEMC의 기술·공개참여 의견을 반영해 Brief·EIA·ESMP를 수정하고 재제출한다.","output":"수정 환경보고서·의견대응표","authorityIds":["tza-nemc"],"refs":[{"source":"환경심사 보완", "instrumentId":"TZA-EIA-REGS-2005-2018","provisions":["review and additional information requirements"]}]},
+          {"lane":"환경·소방·검사기관","stage":3,"label":"EIA Certificate 공식결정","emphasis":"key","kind":"official-guidance","action":"환경심사가 완료되면 관할 환경승인권자가 EIA Certificate·조건 또는 거부를 공식 결정하고 NEMC가 이행을 모니터링한다.","output":"EIA Certificate·조건 또는 거부결정","authorityIds":["tza-nemc"],"refs":[{"source":"EIA Certificate", "instrumentId":"TZA-EIA-REGS-2005-2018","provisions":["application and issuance of EIA Certificate"]}],"permitGate":{"key":"tza-eia-certificate","gate":"EIA Certificate 공식결정","decision":"NEMC 심사결과에 따라 환경승인권자가 EIA Certificate·조건부 승인 또는 거부를 결정한다.","output":"EIA Certificate·조건 또는 이유부 거부","dependsOn":["tza-eia-classification"]}},
+          {"lane":"현지 설계·시공 전문가","stage":4,"label":"환경조건 반영 Form 1 도서","emphasis":"normal","kind":"official-guidance","action":"등록 설계자가 EIA 조건을 평면·단면·입면·구조·급배수·위생·소방·부지계획에 통합한다.","output":"환경조건 반영 Form 1 허가도서","authorityIds":["tza-planning-authority"],"refs":[{"source":"건축허가 도서", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 4, 6-7"]}]},
+          {"lane":"건축주·신청인","stage":4,"label":"Planning authority 허가접수","emphasis":"key","kind":"official-guidance","action":"신청인이 Form 1과 환경승인·전문가 서명도서를 관할 planning authority에 제출한다.","output":"건축허가 접수기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"Form 1 신청", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 4(1); Fourth Schedule Form 1"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":4,"label":"토지이용·구조·위생 기술심사","emphasis":"bottleneck","kind":"official-guidance","action":"registered town planner와 structural engineer가 지정용도·승인계획·구조·배수·위생·환경조건을 심사한다.","output":"기술심사의견·보완 또는 불승인","authorityIds":["tza-planning-authority"],"refs":[{"source":"계획·구조 심사", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 4(2), 8-9"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":4,"label":"허가도서 보완·재심","emphasis":"normal","kind":"official-guidance","action":"planning authority의 불승인·유보 사유를 수정해 Form 1 도서를 재제출한다.","output":"수정 Form 1 도서·재심 기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"불승인·유보", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 8-9"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":5,"label":"Form 2 Building Permit 결정","emphasis":"key","kind":"official-guidance","action":"structural engineer와 registered town planner가 Form 2 허가에 서명해 승인도서·조건에 따른 공사를 허용하거나 불승인을 통지한다.","output":"Form 2 Building Permit·승인도서 또는 불승인","authorityIds":["tza-planning-authority"],"refs":[{"source":"Form 2", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 4(2); Fourth Schedule Form 2"]}],"permitGate":{"key":"tza-building-permit","gate":"Planning authority Form 2 건축허가 결정","decision":"계획기관이 토지이용·구조·환경조건 적합성을 심사해 Form 2 허가·조건 또는 불승인을 결정한다.","output":"Form 2 허가·승인도서·조건 또는 이유부 불승인","dependsOn":["tza-eia-certificate"]}}
+        ],
+        "edges":[[0,1,"sequence","환경분류"],[1,2,"message","B2 Brief"],[1,3,"message","A Scoping"],[2,4,"sequence","B2 평가"],[3,4,"sequence","A EIA"],[4,5,"sequence","보고서 제출"],[5,6,"sequence","환경심사"],[6,8,"sequence","승인권고"],[6,7,"message","환경보완"],[7,6,"loop","환경 재심"],[8,9,"sequence","환경조건"],[9,10,"sequence","허가접수"],[10,11,"sequence","기술심사"],[11,13,"sequence","적합"],[11,12,"message","허가보완"],[12,11,"loop","허가 재심"]],
+        "decisionBranches":[
+          {"state":"success","label":"EIA Certificate·Form 2","action":"환경조건과 승인도서에 따라 CRB 등록 후 착공"},
+          {"state":"rework","label":"환경·허가 보완","action":"NEMC 또는 planning authority 보완요구를 반영해 해당 심사단계로 재제출"},
+          {"state":"reject","label":"환경·허가 거부","action":"공식 사유에 따라 입지·규모·설계를 변경해 분류 또는 Form 1부터 재신청"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "GN 80 제10~21조의 착공·은폐 전 통지·검사·시정·완료·Form 10과 CRB의 현행 21일 내/착공 전 프로젝트 등록·14일 보완·번호 표지·완료 피드백을 연결했다.",
+      "officialProcedure": {
+        "name": "탄자니아 본토 CRB 등록·검사·Form 10",
+        "coverage": "article-verified",
+        "scope": "등록 전문가·시공자와 CRB 프로젝트 등록부터 planning authority 단계검사·시정·점유증명까지를 표시한다.",
+        "stages": ["S0 전문가·CRB 등록", "S1 착공·은폐검사", "S2 시정·재검사", "S3 완료검사", "S4 Form 10·CRB 종결"],
+        "steps": [
+          {"lane":"건축주·신청인","stage":0,"label":"등록 전문가·CRB 시공자 계약","emphasis":"key","kind":"official-guidance","action":"건축주가 AQRB·ERB 등록 설계·감리자와 공사종류·금액에 맞는 CRB 등록 시공자를 계약한다.","output":"전문자격·CRB 등록·계약 증빙","authorityIds":["tza-construction-boards"],"refs":[{"source":"등록 전문가·프로젝트", "instrumentId":"TZA-PROFESSIONAL-PROJECT-REGISTRATION","provisions":["professional and contractor registration"]},{"source":"등록시공자 의무", "instrumentId":"TZA-CRB-SITE-RULES","provisions":["construction works by a registered contractor"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":0,"label":"CRB 프로젝트 온라인 등록","emphasis":"key","kind":"official-guidance","action":"1천만 TSh 이상 프로젝트의 시공자·하도급자가 계약수락 후 21일 이내이면서 착공 전에 온라인 등록과 수수료납부를 완료한다.","output":"CRB 신청·납부 control number","authorityIds":["tza-construction-boards"],"refs":[{"source":"현행 등록시기·기준", "instrumentId":"TZA-CRB-PROJECT-SERVICE","provisions":["TSh 10m threshold; within 21 days and before works"]}]},
+          {"lane":"환경·소방·검사기관","stage":0,"label":"CRB 등록번호 발급·보완결정","emphasis":"key","kind":"official-guidance","action":"CRB가 납부 후 신청을 처리해 프로젝트 등록번호를 발급하거나 불승인 사유와 14일 보완기한을 통지한다.","output":"Project Registration Number 또는 보완통지","authorityIds":["tza-construction-boards"],"refs":[{"source":"CRB 처리·보완", "instrumentId":"TZA-CRB-PROJECT-SERVICE","provisions":["processing after payment; registration number; 14-day rectification"]}],"permitGate":{"key":"tza-crb-registration","gate":"CRB 프로젝트 등록 공식결정","decision":"CRB가 시공자·계약·프로젝트 신청을 심사해 등록번호를 발급하거나 보완·불승인을 결정한다.","output":"프로젝트 등록번호 또는 이유부 보완·불승인","dependsOn":[]}},
+          {"lane":"현지 설계·시공 전문가","stage":0,"label":"CRB 미비 보완·재신청","emphasis":"normal","kind":"official-guidance","action":"불승인 사유를 14일 안에 보완해 CRB 심사에 재제출한다.","output":"보완 CRB 신청","authorityIds":["tza-construction-boards"],"refs":[{"source":"14일 시정", "instrumentId":"TZA-CRB-PROJECT-SERVICE","provisions":["rectify shortfalls within 14 days"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"현장표지·안전시설 설치·착공통지","emphasis":"normal","kind":"official-guidance","action":"프로젝트 등록번호를 현장표지에 표시하고 가설울타리·PPE·소화·위생시설을 갖춘 뒤 planning authority에 신축 착공을 통지한다.","output":"현장표지·안전준비·착공통지","authorityIds":["tza-construction-boards","tza-planning-authority"],"refs":[{"source":"CRB 현장준수", "instrumentId":"TZA-CRB-SITE-RULES","provisions":["signboard, project number, enclosure, PPE, fire and hygiene"]},{"source":"착공통지", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 10"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":1,"label":"기초·배수 은폐 전 통지","emphasis":"key","kind":"official-guidance","action":"하수·배수·기초를 덮기 전에 planning authority에 통지해 검사 가능상태로 유지한다.","output":"은폐 전 검사통지·접수기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"은폐 전 통지", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 11"]}]},
+          {"lane":"환경·소방·검사기관","stage":1,"label":"Building inspector 단계검사","emphasis":"bottleneck","kind":"official-guidance","action":"building inspector가 허가도서·구조·기초·배수·위생을 검사하고 필요하면 은폐부를 열거나 철거해 확인한다.","output":"단계검사 기록·적합 또는 위반통지","authorityIds":["tza-planning-authority"],"refs":[{"source":"검사·개방명령", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 12, 18"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":2,"label":"공사계속·시정·중지 판정","emphasis":"key","kind":"official-guidance","action":"planning authority가 규칙·허가도서 위반을 확인해 계속공사 또는 시정·철거·중지를 명한다.","output":"단계 적합확인 또는 시정·중지명령","authorityIds":["tza-planning-authority"],"refs":[{"source":"위반 시정·무허가 공사", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 13, 19"]}],"permitGate":{"key":"tza-stage-inspection","gate":"Planning authority 시공단계 적합판정","decision":"building inspector와 planning authority가 허가·기술규칙 적합성을 판정해 계속공사 또는 시정·중지를 결정한다.","output":"단계 적합확인 또는 시정·중지명령","dependsOn":["tza-crb-registration"]}},
+          {"lane":"현지 설계·시공 전문가","stage":2,"label":"위반시정 완료통지·재검사","emphasis":"normal","kind":"official-guidance","action":"시공자가 위반사항을 바로잡고 rectification completion notice를 제출해 재검사를 받는다.","output":"시정완료 통지·재검사 기록","authorityIds":["tza-planning-authority"],"refs":[{"source":"시정·완료통지", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 13-14"]}]},
+          {"lane":"건축주·신청인","stage":3,"label":"공사완료 통지·점유검사 신청","emphasis":"key","kind":"official-guidance","action":"공사완료 후 건축주가 planning authority에 완료를 통지하고 신축건물 점유검사를 신청한다.","output":"완료통지·Form 10 검사신청","authorityIds":["tza-planning-authority"],"refs":[{"source":"공사완료", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 20"]}]},
+          {"lane":"환경·소방·검사기관","stage":3,"label":"최종 구조·위생·거주적합 검사","emphasis":"bottleneck","kind":"official-guidance","action":"planning authority가 완공건물이 허가도서·구조·배수·위생·인간거주 요건에 맞는지 최종 검사하고 보완사항을 통지한다.","output":"최종검사 보고·적합 또는 보완통지","authorityIds":["tza-planning-authority"],"refs":[{"source":"점유 적합성", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 20-21; Fourth Schedule Form 10"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":3,"label":"준공부적합 시정·재검사","emphasis":"normal","kind":"official-guidance","action":"최종검사 지적을 시정하고 수정도서·시험자료와 함께 재검사를 신청한다.","output":"시정 준공자료·재검사 보고","authorityIds":["tza-planning-authority"],"refs":[{"source":"시정의무", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulations 13-14, 20-21"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":4,"label":"Form 10 Occupation Certificate 발급","emphasis":"key","kind":"official-guidance","action":"planning authority가 건물이 모든 면에서 점유·인간거주에 적합하다고 판단하면 Form 10을 발급한다.","output":"Form 10 점유증명 또는 미발급통지","authorityIds":["tza-planning-authority"],"refs":[{"source":"Form 10", "instrumentId":"TZA-PLANNING-BUILDING-REGS-2018","provisions":["Regulation 21; Fourth Schedule Form 10"]}],"permitGate":{"key":"tza-occupation-certificate","gate":"Form 10 점유증명 공식결정","decision":"planning authority가 완공건물의 구조·위생·거주 적합성을 확인해 Form 10 발급·보완 또는 거부를 결정한다.","output":"Form 10 Occupation Certificate 또는 보완·거부통지","dependsOn":["tza-stage-inspection"]}},
+          {"lane":"현지 설계·시공 전문가","stage":4,"label":"CRB 완료 피드백·등록부 갱신","emphasis":"normal","kind":"official-guidance","action":"시공자가 프로젝트 완료 피드백을 CRB에 서면 제출해 프로젝트 등록부 상태를 갱신한다.","output":"CRB completion feedback·등록부 갱신","authorityIds":["tza-construction-boards"],"refs":[{"source":"CRB 완료통지", "instrumentId":"TZA-CRB-PROJECT-SERVICE","provisions":["written feedback on completion, extension, termination or suspension"]}]}
+        ],
+        "edges":[[0,1,"sequence","등록신청"],[1,2,"sequence","CRB 심사"],[2,4,"sequence","등록번호"],[2,3,"message","14일 보완"],[3,2,"loop","CRB 재심"],[4,5,"sequence","은폐통지"],[5,6,"sequence","단계검사"],[6,7,"sequence","적합판정"],[7,9,"sequence","공사완료"],[7,8,"message","시정명령"],[8,6,"loop","단계 재검사"],[9,10,"sequence","최종검사"],[10,12,"sequence","점유적합"],[10,11,"message","준공보완"],[11,10,"loop","최종 재검사"],[12,13,"sequence","CRB 종결"]],
+        "decisionBranches":[
+          {"state":"success","label":"Form 10 발급","action":"점유증명 수령 후 시설을 인계·사용하고 CRB 등록부 종결"},
+          {"state":"rework","label":"등록·검사 보완","action":"CRB 미비 또는 현장·준공 부적합을 시정해 해당 심사로 복귀"},
+          {"state":"reject","label":"등록거부·공사중지·점유불가","action":"등록·허가 위반을 해소하고 필요한 재허가·철거·재시공 뒤 다시 검사"}
+        ]
+      }
+    }
+  }
+}

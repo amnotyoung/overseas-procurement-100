@@ -21,8 +21,9 @@
 - 4개 지역판 43개국의 원문 추출본·페이지 범위 등록
 
 조달 다이어그램은 자료집 전수 국가를 `source-document` 단계로 1차 구조화하고 일부
-국가는 공식 원문으로 심화검증했다. 건축 다이어그램은 44개 협력국 모두 공식 법령·정부
-자료를 연결한 `law-linked` 기본판이며, 세네갈은 조문 대조 상세판이다.
+국가는 공식 원문으로 심화검증했다. 건축 다이어그램은 44개 협력국 모두 국가별로 따로
+검토한 3축 공식절차 오버레이를 사용한다. 신청·심사·보완·결정·검사·준공 순서와
+성공·보완·불허 분기를 공식 원문 범위 안에서 표시하고, 조문 직접 대조 여부는 별도 표지한다.
 
 | 범위 | 국가 수 | 제도 수 | 검증 수준 |
 |---|---:|---:|---|
@@ -46,7 +47,7 @@
 
 데이터 구조와 확장 규칙은 [국가별 건축 법·제도 데이터 계약](docs/construction-regulations-data-contract.md)에 정리돼 있다. 국가 파일 하나를 추가하면 검증기와 생성기가 같은 형식의 전문가 브리프를 만든다.
 
-공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 해당 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 보여준다. catalog에 공식 원문으로 확인한 `officialProcedure`가 없으면 공통 ODA 업무를 국가 절차처럼 채우지 않고, `공식 절차 상세 미확인` 1개 증거 진입 노드만 표시한다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다.
+공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 해당 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 보여준다. 43개 catalog 국가는 `catalog/official-procedures/{country}.json`에 3축 전용 절차를 두고, 세네갈은 수기 조문대조 상세판을 유지한다. 전용 절차가 하나라도 없으면 배포 품질 게이트가 실패하므로 공통 예시 흐름은 공개될 수 없다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업별 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다.
 
 ## 원작
 
@@ -81,6 +82,7 @@ sources/koica-2026/
 ├── data/
 │   ├── institutions/*.json              조달 제도별 정규화 데이터
 │   ├── construction-regulations/        국가별 ODA 건축 법·제도 원천 데이터
+│   │   └── catalog/official-procedures/  국가별 건축 3축 공식절차 오버레이
 │   └── manifest.json                    조달 출처·국가·진행 대장
 ├── docs/
 │   ├── data-contract.md                 조달 데이터 계약
@@ -98,6 +100,7 @@ sources/koica-2026/
 │   ├── check_links.py           외부 링크 확인
 │   ├── build_docs.py            문서 생성
 │   ├── validate_construction_regulations.py  건축 법·제도 검증
+│   ├── check_construction_procedure_coverage.py  44개국·132모델 절차·현행성 게이트
 │   ├── build_construction_regulations.py     건축 법·제도 브리프 생성
 │   └── build_site.py            정적 사이트·국가별 배포 파일 생성
 ├── site/                        정적 사이트
@@ -121,11 +124,14 @@ python3 tools/build_site.py
 ```bash
 python3 tools/build_construction_baselines.py --check
 python3 tools/validate_construction_regulations.py
+python3 tools/check_construction_procedure_coverage.py
 python3 tools/build_construction_regulations.py
 python3 tools/build_site.py
 npm run build:construction-boards
 python3 tools/check_construction_site.py
 ```
+
+건축 model의 기준 화면은 카드 클릭·상세 패널·동적 연결선을 제공하는 HTML 구조도다. `site/boards/*.svg`도 확대·다운로드와 `korea100studio` 구성 감사용으로 함께 배포하지만, 저화질·비클릭 정적 이미지를 model 본문 대신 사용하지 않는다.
 
 선택 점검:
 
@@ -229,9 +235,13 @@ python3 -m http.server 8765 --directory site
 6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
 7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종을 4~6번으로 자동 배치한다.
 
-조문까지 대조한 상세판은 국가 JSON을 직접 관리한다. 전체 국가 기본판은
-`data/construction-regulations/catalog/baselines.json`에 국가별 공식 출처·기관·판단만 기록하고
-`python3 tools/build_construction_baselines.py`로 같은 3축 계약의 국가 JSON을 생성한다. 공식 원문에서 절차 순서를 확인한 축은 catalog의 `officialProcedure`에 실제 단계·Gate·분기·보완회귀를 기록한다. 확인하지 못한 축은 노드 수를 맞추지 않고 `공식 절차 상세 미확인` 1노드로 남기며, ODA 준비·현지확인 항목은 별도 카드로 분리한다.
+세네갈 조문대조 상세판은 국가 JSON을 직접 관리한다. 나머지 국가는
+`data/construction-regulations/catalog/baselines.json`에 공식 출처·기관·판단을 두고,
+`data/construction-regulations/catalog/official-procedures/{country}.json`에 세 제도축의 실제
+단계·Gate·분기·보완회귀와 노드별 근거를 기록한다. `build_construction_baselines.py`가 이를
+표준 국가 JSON으로 생성한다. `check_construction_procedure_coverage.py`는 44개국·132개 모델,
+국가별 3축 전용절차, 직접 근거, 공식 결정, 3개 결과분기와 사이트 현행성 판단기록을 강제한다.
+ODA 준비·현지확인 항목은 절차 노드가 아니라 별도 접이식 카드로 분리한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.
 

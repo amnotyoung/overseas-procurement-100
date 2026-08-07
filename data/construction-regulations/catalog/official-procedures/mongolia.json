@@ -1,0 +1,1090 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "mongolia",
+  "instruments": [
+    {
+      "id": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "몽골 국가법령포털 Legalinfo의 현행 영문 통합본에서 도시계획문서·부분계획·zoning·지방관할 조문을 직접 대조했다.",
+      "articlesChecked": [
+        "Articles 7-14",
+        "Articles 22-24"
+      ],
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "MNG-CONSTRUCTION-LAW-2016",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "몽골 국가법령포털 Legalinfo의 현행 영문 통합본에서 설계인증·공사허가·감독·검사·사용승인 조문을 직접 대조했다.",
+      "articlesChecked": [
+        "Articles 10-16",
+        "Articles 22-30",
+        "Articles 35-40",
+        "Articles 46-49"
+      ],
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "MNG-EIA-LAW-2012",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "몽골 국가법령포털 Legalinfo의 현행 영문 통합본에서 일반·상세 환경영향평가, 기술심사·결정·재평가 조문을 직접 대조했다.",
+      "articlesChecked": [
+        "Articles 6-11",
+        "Articles 13-14"
+      ],
+      "verificationLevel": "article-verified"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "Urban Development Law와 Construction Law의 전국 법정기준이다. 실제 위치·토지·모형도면·기술조건 결정은 해당 aimag 또는 수도 Governor와 지방 도시개발기관이 한다.",
+      "officialProcedure": {
+        "name": "몽골 도시계획·부지규제 — 계획적합·위치·모형도면·기술조건 결정",
+        "coverage": "article-verified",
+        "scope": "Urban Development Law Articles 9-14와 Construction Law Articles 12, 22-23, 35의 승인 도시계획·부분계획·zoning, 토지결정, 엔지니어링조사, 위치·모형도면·기술조건 확정 절차다.",
+        "stages": [
+          "G0 도시계획·토지",
+          "G1 조사·모형도면",
+          "G2 계획·인프라 심사",
+          "G3 부지조건 결정"
+        ],
+        "steps": [
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "승인 general·partial plan·zoning 확인",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "지방 도시개발기관이 대상 필지를 승인된 도시·정착지 general plan, general partial plan과 주거·공공·산업·인프라 등 zoning에 대조한다.",
+            "output": "적용 도시계획문서·zoning·허용용도",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Urban Development Law",
+                "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+                "provisions": [
+                  "Articles 11.1.4-11.1.6 and 13-14; planning documents and zoning"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "부분계획·토지배분·필지목적 대조",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "Governor와 지방기관이 토지배분을 승인 partial plan·development project에 따라 처리하고 필지면적·목적·경계를 건축의도에 대조한다.",
+            "output": "토지위치·권리·목적 적합결론",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Urban Development Law",
+                "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+                "provisions": [
+                  "Articles 8.1.4-8.1.7 and 9.1.1; plan oversight and plan-based land allocation"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "지질·지반·측량·환경 엔지니어링조사",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "면허 전문가가 해당 부지의 지질·지반·수리지질·지진·환경·기상·경관·인프라·유틸리티 조건을 조사해 설계기초를 확정한다.",
+            "output": "엔지니어링조사·지질·측량·환경기초자료",
+            "authorityIds": [
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 4.1.34; engineering-survey scope",
+                  "Article 12.1.1; design based on land permit, specifications, technical conditions and survey"
+                ]
+              },
+              {
+                "source": "Urban Development Law",
+                "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+                "provisions": [
+                  "Articles 12.4.2 and 12.9; engineering, geological and environmental fundamentals"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "모형도면·배치·인프라 개념 작성",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "설계자가 주변건축·경관, 총괄배치, 녹지·주차, 접근·피난, 건축규모·형태와 유틸리티 공급개념을 담은 original model drawing을 작성한다.",
+            "output": "모형도면·배치·유틸리티 개념",
+            "authorityIds": [
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 4.1.43; contents of original model drawing",
+                  "Articles 12.1.4-12.1.8; access, parking, safety and surrounding context"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "위치·모형도면·기술조건 신청",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "건축주가 토지결정·권리, 조사결과와 모형도면을 해당 aimag 또는 수도의 one-stop 관할에 제출해 위치확정·모형도면 승인·기술조건을 신청한다.",
+            "output": "부지계획·기술조건 신청·접수기록",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 22-23; technical conditions and building design basis",
+                  "Article 35.1.3 and 35.1.8; local one-stop location, land, model drawing and technical conditions"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "계획·70% 상한·공공공간·기술조건 심사",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "지방기관이 모형도면을 general·partial plan, 필지목적·규모, zoning, 도로·소방이격·녹지·주차·유틸리티와 법정 건축면적 70% 상한 등에 대조한다.",
+            "output": "계획·입지·인프라 심사의견·보완목록",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Urban Development Law",
+                "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+                "provisions": [
+                  "Articles 12.5-12.8; partial plan, public participation, green/parking and 70-percent construction-area ceiling"
+                ]
+              },
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 7.1 and 12.1; third-party, planning and design requirements"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "입지·모형도면·연결계획 보완",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "계획·토지·공공공간·유틸리티 기준에 맞지 않으면 설계자가 규모·배치·진출입·녹지·주차·연결개념을 수정해 재신청한다.",
+            "output": "수정 모형도면·계획적합표·재접수",
+            "authorityIds": [
+              "mng-local-governor",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Urban Development Law",
+                "instrumentId": "MNG-URBAN-DEVELOPMENT-LAW-2008",
+                "provisions": [
+                  "Articles 12.5-12.8 and 14; mandatory planning and zoning requirements"
+                ]
+              },
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 7.1; permit review must protect planning and third-party interests"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "위치·모형도면 승인·기술조건 공식결정",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "aimag 또는 수도 Governor 관할이 계획적합한 위치·토지배분과 모형도면을 승인하고 유틸리티 기술조건을 발급하며, 부적합 시 사유를 제시해 거부한다.",
+            "output": "위치결정·승인 모형도면·기술조건 또는 거부",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 35.1.3; location, land, model drawing and technical conditions",
+                  "Article 35.1.8; one-stop request resolution"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "site-model-technical-decision",
+              "gate": "aimag·수도 Governor의 위치·모형도면·기술조건 공식결정",
+              "decision": "도시계획·토지·입지·인프라 적합성을 확인해 위치·모형도면·기술조건을 승인하거나 거부한다.",
+              "output": "위치결정·승인 모형도면·기술조건 또는 거부",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "적용계획"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "토지적합"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "조사기초"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "신청도서"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "부지심사"
+          ],
+          [
+            5,
+            7,
+            "sequence",
+            "계획적합"
+          ],
+          [
+            4,
+            6,
+            "message",
+            "자료보완"
+          ],
+          [
+            5,
+            6,
+            "message",
+            "계획보완"
+          ],
+          [
+            6,
+            4,
+            "loop",
+            "수정도면 재신청"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "위치·모형도면·기술조건 승인",
+            "action": "승인조건을 종합설계와 환경·공사허가에 반영"
+          },
+          {
+            "state": "rework",
+            "label": "입지·배치·연결 보완",
+            "action": "계획심사의견에 따라 수정해 재신청"
+          },
+          {
+            "state": "reject",
+            "label": "계획·토지 부적합",
+            "action": "대안입지·규모·용도 변경 또는 법정 불복"
+          }
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "EIA Law의 전국 일반·상세평가와 Construction Law의 설계인증·공사허가를 연결했다. 공사허가 발급주체는 해당 aimag 또는 수도 Governor다.",
+      "officialProcedure": {
+        "name": "몽골 건축허가·환경심사 — 일반·상세 EIA·설계인증·공사허가",
+        "coverage": "article-verified",
+        "scope": "EIA Law Articles 7-10의 14일 일반평가·3분기, 상세평가·EMP·지역공개·18일 심사·시행결정과 Construction Law Articles 25-28의 설계인증·10일 공사허가다.",
+        "stages": [
+          "G4 일반 EIA·지방의견",
+          "G5 상세 EIA 작성",
+          "G6 환경결정·설계인증",
+          "G7 공사허가·보완"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "타당성·설계·환경현황·지방의견 제출",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "사업자가 승인 타당성·설계, 사업지역 환경현황, soum·district Governor 의견과 법 부속서 자료를 중앙 또는 지방 환경기관에 제출한다.",
+            "output": "일반 EIA 신청·법정 첨부자료",
+            "authorityIds": [
+              "mng-environment-authority"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Articles 7.2-7.3; pre-project general assessment and submission documents"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 0,
+            "label": "14근무일 일반 EIA·3분기 결론",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "환경평가 전문가가 건설·증축·개보수 프로젝트를 14근무일 안에 심사해 반려·거부, 조건부 상세평가 면제 또는 상세 EIA 요구 중 하나를 결정한다.",
+            "output": "반려·조건부 면제·상세 EIA 요구 결론",
+            "authorityIds": [
+              "mng-environment-authority"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Articles 7.4.1-7.4.3; three general-assessment outcomes within 14 working days",
+                  "Article 7.5; one extension up to 14 days"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "general-eia-conclusion",
+              "gate": "환경기관의 일반 EIA 공식결론",
+              "decision": "프로젝트를 반려·조건부 면제 또는 상세 EIA 대상으로 공식 분류한다.",
+              "output": "일반 EIA 공식결론·조건·상세범위",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "공인기관 상세 EIA·EMP 작성",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "상세평가 대상은 허가된 몽골 평가기관이 일반평가 결론의 목적·범위·기간에 따라 영향·대안·위험·저감과 환경보호·모니터링 프로그램을 포함한 EMP를 작성한다.",
+            "output": "상세 EIA 보고서·EMP·현장기초자료",
+            "authorityIds": [
+              "mng-environment-authority",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Articles 8.1-8.7; licensed assessor, detailed report and four copies",
+                  "Articles 9.1-9.7; EMP contents"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "지방정부·의회 의견·회의록 확보",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "상세 EIA 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
+            "output": "지방정부·지역의회 의견·회의록",
+            "authorityIds": [
+              "mng-environment-authority",
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Article 8.4.8; local government and assembly proposals and meeting minutes"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "18근무일 상세 EIA 전문심사·시행결정",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "환경전문가가 보고서를 18근무일 안에 검토하고 필요시 기술팀 심사를 거친다. 중앙 환경기관은 보고서·전문가·기술위원회 의견으로 시행 가능 여부와 EMP를 결정하고 결과를 영향지역 주민에게 제시한다.",
+            "output": "상세 EIA 전문가의견·시행승인 또는 거부·영향지역 공개기록",
+            "authorityIds": [
+              "mng-environment-authority"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Articles 10.1-10.4; 18-day expert opinion, possible extension and implementation decision",
+                  "Article 9.3; EMP approval and implementation authorization",
+                  "Article 10.5; presentation of findings to affected community"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "detailed-eia-decision",
+              "gate": "환경기관의 상세 EIA·시행 공식결정",
+              "decision": "상세보고서·EMP·전문가·기술위원회 의견으로 프로젝트 시행을 승인하거나 거부한다.",
+              "output": "상세 EIA·EMP 승인 또는 거부",
+              "dependsOn": [
+                "general-eia-conclusion"
+              ]
+            }
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "상세 EIA 부족분 재평가·재심사",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "상세평가가 불충분하면 원 평가기관이 자기비용으로 추가조사·재평가해 요구수준까지 보고서·EMP를 보완하고 다시 전문심사를 받는다.",
+            "output": "재평가 보고서·수정 EMP·재심사 결과",
+            "authorityIds": [
+              "mng-environment-authority",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Articles 11.1-11.6; verification, inadequate assessment and reassessment"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "종합설계·법정 설계인증 신청",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "면허 설계자가 토지·모형도면·기술조건·EIA 결론에 따라 종합설계를 완성하고, 해당 복잡도·지진·공적자금 기준에 따라 독립 인증기관에 제출한다.",
+            "output": "종합설계·인증신청·기술계산·조사자료",
+            "authorityIds": [
+              "mng-licensed-participants",
+              "mng-construction-ministry"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 12 and 23; design requirements and development",
+                  "Articles 25.1-25.4; mandatory design certification scope"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "독립 설계인증 수락·거부 결론",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "인증전문가가 도시·건축계획, 구조안전, 기술해법·조사·예산을 법정기준에 대조해 수락 또는 거부 결론을 내며, 핵심 설계변경 시 재인증한다.",
+            "output": "설계인증 수락·거부 결론",
+            "authorityIds": [
+              "mng-construction-ministry"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 25.2-25.6; certification documents, re-certification, acceptance/refusal",
+                  "Article 25.9; rejection for design-requirement violation"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "design-certification",
+              "gate": "독립 전문가의 종합설계 인증결론",
+              "decision": "종합설계의 법정·기술 적합성을 인증수락 또는 거부로 결정한다.",
+              "output": "설계인증 수락 또는 거부결론",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "인증거부 설계보완·재인증",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "인증거부 사유가 있으면 설계자가 해당 도시계획·구조·안전·기술 부분을 수정해 재인증을 신청하고 필요시 전문위원회 분쟁해결을 요청한다.",
+            "output": "수정 종합설계·재인증 결과",
+            "authorityIds": [
+              "mng-construction-ministry",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 25.5-25.9; re-certification, refusal and professional-council resolution"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "위치·인증설계·EIA·보험·감독계획 제출",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "건축주가 위치·모형도면·기술조건 결정, 인증 종합설계·결론, 설계자·시공자 면허, 해당 EIA 보고서, 보험증명과 공정별 감독계획을 Governor에게 제출한다.",
+            "output": "완비 공사허가 신청·접수기록",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 28.2-28.4; exhaustive permit documents including EIA, insurance and supervision plan"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "10근무일 공사허가·사유부 거부",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "aimag 또는 수도 Governor가 법정서류와 인증·환경·보험·감독조건을 심사해 10근무일 안에 공사허가증을 발급하거나 이유를 적어 거부한다.",
+            "output": "공사허가증·조건 또는 사유부 거부",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 27.1-27.3; Governor decision within ten working days and reasoned refusal",
+                  "Articles 28.5-28.6; review and no extra documents"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "construction-work-permit",
+              "gate": "aimag·수도 Governor의 공사허가 공식결정",
+              "decision": "인증설계·EIA·면허·보험·감독계획을 확인해 공사허가 또는 사유부 거부를 결정한다.",
+              "output": "공사허가증·조건 또는 거부",
+              "dependsOn": [
+                "general-eia-conclusion",
+                "design-certification"
+              ]
+            }
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "허가거부 사유 해소·재신청",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "법정서류 누락, 인증거부 또는 EIA·설계조건 불일치가 거부사유이면 건축주와 전문가가 해당 문서·설계를 보완해 다시 신청한다.",
+            "output": "보완 허가신청·재결정 기록",
+            "authorityIds": [
+              "mng-local-governor",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 25.4-25.9 and 27.3; certification/permit refusal grounds and reasoned notice",
+                  "Articles 28.2-28.5; required documents reviewed for permit"
+                ]
+              }
+            ]
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "일반평가 접수"
+          ],
+          [
+            1,
+            6,
+            "sequence",
+            "상세평가 면제"
+          ],
+          [
+            1,
+            3,
+            "sequence",
+            "상세평가 요구"
+          ],
+          [
+            3,
+            2,
+            "sequence",
+            "지방의견·회의록"
+          ],
+          [
+            2,
+            4,
+            "sequence",
+            "보고서·EMP 심사"
+          ],
+          [
+            4,
+            6,
+            "sequence",
+            "환경승인"
+          ],
+          [
+            4,
+            5,
+            "message",
+            "재평가 요구"
+          ],
+          [
+            5,
+            2,
+            "loop",
+            "수정 상세 EIA"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "설계인증"
+          ],
+          [
+            7,
+            9,
+            "sequence",
+            "인증수락"
+          ],
+          [
+            7,
+            8,
+            "message",
+            "설계보완"
+          ],
+          [
+            8,
+            6,
+            "loop",
+            "수정설계 재인증"
+          ],
+          [
+            9,
+            10,
+            "sequence",
+            "허가심사"
+          ],
+          [
+            10,
+            11,
+            "message",
+            "사유부 거부"
+          ],
+          [
+            11,
+            9,
+            "loop",
+            "보완 허가 재신청"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "환경승인·설계인증·공사허가",
+            "action": "허가·EMP·감독계획에 따라 착공"
+          },
+          {
+            "state": "rework",
+            "label": "상세 EIA·설계·신청 보완",
+            "action": "해당 환경·인증·허가심사로 회귀"
+          },
+          {
+            "state": "reject",
+            "label": "환경·인증·공사허가 거부",
+            "action": "입지·기술·설계를 변경해 재평가·재신청 또는 불복"
+          }
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "Construction Law의 전국 공사감독·국가기술검사·Governor commissioning 및 occupancy certificate 경로다.",
+      "officialProcedure": {
+        "name": "몽골 기술검사·준공제도 — 단계감독·commissioning·사용증명",
+        "coverage": "article-verified",
+        "scope": "Construction Law Articles 37-40, 46-49의 공정별 감리·저자감독·자재시험·국가기술검사, 시정·현장확인, 준공신청·10일 commissioning·7일 사용증명 발급이다.",
+        "stages": [
+          "G8 허가·감독",
+          "G9 검사·시정",
+          "G10 commissioning",
+          "G11 사용증명"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "공정별 감독계약·보험·허가착공",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "건축주가 공사허가·인증설계·보험을 유지하고 공정별 감독계약과 저자감독·독립시험 체계를 가동한 뒤 허가기간에 착공한다.",
+            "output": "유효 공사허가·감독계약·보험·착공기록",
+            "authorityIds": [
+              "mng-local-governor",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 8.2-8.4; liability and worker insurance",
+                  "Articles 28.4 and 37.1.3-37.1.5; supervision plan, permit, stage supervision and tests"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "승인설계 시공·숨은공정·자재시험",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "시공자는 공사허가·인증설계·기준에 따라 시공하고 지상·지하·숨은공정 act, 단계별 구조·자재 독립시험, 현장일지와 수정 as-built drawing을 작성한다.",
+            "output": "공정 act·시험성적·현장일지·as-built drawing",
+            "authorityIds": [
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 40.1.1-40.1.2 and 40.1.11-40.1.17; construction, acts, tests and as-built drawings"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "설계자 저자감독·불일치 공식통지",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "설계자가 승인설계·건축기준 준수를 공정별 확인하고 불일치 발견 시 결론을 작성해 국가건축검사기관에 통지하며 필요한 조치를 요구한다.",
+            "output": "저자감독 결론·불일치 통지·시정요구",
+            "authorityIds": [
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 38.1.5-38.1.10; designer supervision, tests and notice to state inspection"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "국가기술검사·추가현장검증",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "국가건축검사기관이 공사품질·자재·설계이행·시공·감독을 검사하고, 서류대로 시공됐는지 확인하기 위해 추가 현장검사를 할 수 있다.",
+            "output": "국가기술검사 기록·추가검증·위반사항",
+            "authorityIds": [
+              "mng-construction-ministry"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 47.1-47.4; state technical inspection scope and additional inspection"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "불일치 시정·재시험·재검사",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "건축주·시공자·설계자가 불일치 공정을 시정하고 재시험·수정도서와 공정 act를 보완해 저자감독 및 국가검사의 재확인을 받는다.",
+            "output": "시정공사·재시험·재검사 적합기록",
+            "authorityIds": [
+              "mng-licensed-participants",
+              "mng-construction-ministry"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 38.1.6-38.1.10; changes, tests and corrective measures",
+                  "Articles 40.1.1-40.1.12; contractor compliance and verification"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "공정·숨은공사·감독·유틸리티 준공신청",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "건축주가 공정기록, 지상·지하공사 act, 저자감독·기술감독 종합결론, 유틸리티 연결, 변경설계와 설비설치·시험 act를 Governor 관할에 제출한다.",
+            "output": "commissioning 신청·법정 준공서류",
+            "authorityIds": [
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 48.5.1-48.5.7; exhaustive commissioning documents"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "10근무일 commissioning 현장·조건검증",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "aimag 또는 수도 Governor가 10근무일 안에 commissioning group을 통해 완성건축물이 공사허가 조건·승인설계·유틸리티·안전기준에 맞는지 현장검증한다.",
+            "output": "commissioning group 결론·보완 또는 인수결정",
+            "authorityIds": [
+              "mng-local-governor",
+              "mng-construction-ministry"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 48.1 and 48.6; permit-condition commissioning within ten working days"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "누락·허가조건 위반 시정·재신청",
+            "emphasis": "normal",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "법정서류 누락, 검사방해 또는 허가조건 위반으로 인수가 거부되면 건축주와 전문가가 서류·공사를 시정하고 commissioning을 다시 신청한다.",
+            "output": "보완 준공서류·시정공사·재검증 기록",
+            "authorityIds": [
+              "mng-local-governor",
+              "mng-licensed-participants"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Article 48.7.1-48.7.3; occupancy refusal grounds"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "7영업일 녹색 사용증명 발급",
+            "emphasis": "bottleneck",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "commissioning group이 적합결론을 내린 신축건축물에 국가건축검사기관이 7영업일 안에 녹색 occupancy certificate를 발급한다. 미달 사용건축물은 법정 품질등급에 따라 처리한다.",
+            "output": "녹색 사용증명 또는 발급거부·등급결정",
+            "authorityIds": [
+              "mng-construction-ministry",
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Construction Law",
+                "instrumentId": "MNG-CONSTRUCTION-LAW-2016",
+                "provisions": [
+                  "Articles 49.1-49.3; certificate within seven business days and green/yellow/red types"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "occupancy-certificate",
+              "gate": "국가건축검사기관의 사용증명 공식결정",
+              "decision": "commissioning 적합결론을 근거로 신축건축물의 녹색 사용증명을 발급하거나 거부·등급 결정한다.",
+              "output": "녹색 occupancy certificate 또는 거부·등급결정",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "허가착공"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "공정기록"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "감독·검사"
+          ],
+          [
+            3,
+            5,
+            "sequence",
+            "공사적합·완료"
+          ],
+          [
+            2,
+            4,
+            "message",
+            "저자감독 시정"
+          ],
+          [
+            3,
+            4,
+            "message",
+            "국가검사 시정"
+          ],
+          [
+            4,
+            2,
+            "loop",
+            "시정 후 감독·재검사"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "준공신청"
+          ],
+          [
+            6,
+            8,
+            "sequence",
+            "commissioning 적합"
+          ],
+          [
+            6,
+            7,
+            "message",
+            "인수거부·보완"
+          ],
+          [
+            7,
+            5,
+            "loop",
+            "시정 후 준공 재신청"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "commissioning·녹색 사용증명",
+            "action": "허가용도로 건축물 사용"
+          },
+          {
+            "state": "rework",
+            "label": "공정·준공 불일치 시정",
+            "action": "저자·국가기술검사 또는 commissioning으로 회귀"
+          },
+          {
+            "state": "reject",
+            "label": "인수·사용증명 거부",
+            "action": "법정 누락·검사·허가조건 위반을 해소 후 재신청"
+          }
+        ]
+      }
+    }
+  }
+}

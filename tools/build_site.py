@@ -357,6 +357,10 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             node.get("kind") == "statutory" for node in board["nodes"]
         ) else "source-linked")
     )
+    is_public_legal_procedure = bool(model_spec) and procedure_status in {
+        "official-source-linked",
+        "article-verified",
+    }
     instruments = {item["id"]: item for item in d["instruments"]}
     authorities = {item["id"]: item for item in d["authorities"]}
     requirements = {item["id"]: item for item in d["requirements"]}
@@ -399,13 +403,21 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             if ident in requirements and ident in selected_requirement_ids
         ]
         requirement_stages = {item["stage"] for item in linked_requirements}
-        question_ids = list(node.get("questionIds", []))
-        if not question_ids:
+        # The workflow board describes the country's legal procedure.  ODA survey
+        # questions belong only to the separate project-application checklist below;
+        # never reattach them to a researched public procedure node, including legacy
+        # hand-maintained country records that still carry internal questionIds.
+        question_ids = [] if is_public_legal_procedure else list(node.get("questionIds", []))
+        if not is_public_legal_procedure and not question_ids:
             question_ids = [
                 ident for ident, node_ids in presentation["question_nodes"].items()
                 if node["id"] in node_ids
             ]
-        if not question_ids and not presentation["question_nodes"]:
+        if (
+            not is_public_legal_procedure
+            and not question_ids
+            and not presentation["question_nodes"]
+        ):
             question_ids = [
                 item["id"] for item in d["openQuestions"]
                 if item["stage"] in requirement_stages and item["id"] in selected_question_ids
@@ -1102,8 +1114,9 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 
 .boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto;
   -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
-.board{position:relative;min-width:940px}
+.board{position:relative;min-width:940px;padding-bottom:20px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.board-scroll-hint{display:none;color:var(--muted);font-size:11.5px;text-align:right;margin:-8px 2px 8px}
 .decision-branches{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
 .decision-branches .branch-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 .decision-branches .branch-hd b{font-size:13px}
@@ -1153,6 +1166,12 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
 .node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
 .node.dim{opacity:.34}
+@media (max-width:760px){
+  .board-scroll-hint{display:block}
+  .board{min-width:var(--mobile-board-width)!important}
+  .board .brow{grid-template-columns:130px repeat(var(--stage-count),190px)!important}
+  .board .bcell{padding-inline:10px}
+}
 
 .drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
   max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
@@ -1578,11 +1597,19 @@ if(initialAxis){
 # ─────────────────────────────────────────────────────────── 상세
 
 def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str:
+    ordered_items = sorted(
+        items,
+        key=lambda item: (
+            country_name_sort_key(item["country"]["name"]),
+            item["priority"],
+        ),
+    )
+    global_idx = ordered_items.index(d)
+    prev = ordered_items[global_idx - 1] if global_idx > 0 else None
+    nxt = ordered_items[global_idx + 1] if global_idx < len(ordered_items) - 1 else None
     same_country = [item for item in items if country_slug(item) == country_slug(d)]
     same_country.sort(key=lambda item: item["priority"])
     idx = same_country.index(d)
-    prev = same_country[idx - 1] if idx > 0 else None
-    nxt = same_country[idx + 1] if idx < len(same_country) - 1 else None
     c, v, p = d["canvas"], d["verification"], d.get("process") or {}
     lanes, stages = p.get("lanes", []), p.get("stages", [])
     nodes, edges = p.get("nodes", []), p.get("edges", [])
@@ -1655,6 +1682,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     # 업무구조도 그리드
     board_width = 180 + 190 * len(stages)
+    mobile_board_width = 130 + 190 * len(stages)
     grid_cols = f"180px repeat({len(stages)},minmax(190px,1fr))"
     if d["axis"] == "construction":
         stage_heading = "행위주체 \\ 절차 구간"
@@ -1924,7 +1952,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <select id="sel" style="min-width:280px">{opts}</select>
   <a class="btn" {'href="../' + e(prev["slug"]) + '/index.html"' if prev else 'disabled'} style="text-decoration:none">← 이전</a>
   <a class="btn" {'href="../' + e(nxt["slug"]) + '/index.html"' if nxt else 'disabled'} style="text-decoration:none">다음 →</a>
-  <span class="pos">이 국가의 제도 {idx + 1}/{len(same_country)}</span>
+  <span class="pos">전체 제도 {global_idx + 1}/{len(ordered_items)} · 이 국가 {idx + 1}/{len(same_country)}</span>
 </div></div>"""
 
     body = f"""
@@ -1968,7 +1996,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
       <span><i style="background:var(--back)"></i>조건부 보완 회귀</span>
     </div>
   </div>
-  <div class="boardwrap"><div class="board" id="board" style="min-width:{board_width}px">
+  <div class="board-scroll-hint" aria-hidden="true">← 좌우로 넘겨 전체 절차 보기 →</div>
+  <div class="boardwrap"><div class="board" id="board" style="min-width:{board_width}px;--mobile-board-width:{mobile_board_width}px;--stage-count:{len(stages)}">
     <svg class="edges" id="edges"></svg>
     {head}{rows}
   </div></div>
@@ -2250,6 +2279,11 @@ function draw(){{
   }}
   function labelCandidates(rt,w,h){{
     var pts=uniq(rt.pts),segs=[],fractions=[.5,.33,.67,.2,.8];
+    // 인접 카드 사이의 거터가 라벨보다 좁을 수 있다. 짧은 두 후보만 두면
+    // 모든 후보가 카드와 겹쳐도 그중 덜 나쁜 위치를 택하게 된다. 카드 한
+    // 줄을 완전히 벗어날 수 있는 거리까지 후보를 넓혀 실제 무충돌 위치를
+    // 우선 선택한다.
+    var sideOffsets=[7,19,31,43,55,71];
     for(var i=0;i<pts.length-1;i++){{
       var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<.5;
       var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
@@ -2262,12 +2296,16 @@ function draw(){{
       fractions.forEach(function(f){{
         var x=seg.a.x+(seg.b.x-seg.a.x)*f,y=seg.a.y+(seg.b.y-seg.a.y)*f;
         if(seg.horizontal){{
-          [-(h/2+7),h/2+7,-(h/2+19),h/2+19].forEach(function(o){{
-            out.push({{x:x,y:y+o,offset:Math.abs(o)}});
+          sideOffsets.forEach(function(gap){{
+            [-(h/2+gap),h/2+gap].forEach(function(o){{
+              out.push({{x:x,y:y+o,offset:Math.abs(o)}});
+            }});
           }});
         }}else{{
-          [-(w/2+8),w/2+8,-(w/2+20),w/2+20].forEach(function(o){{
-            out.push({{x:x+o,y:y,offset:Math.abs(o)}});
+          sideOffsets.forEach(function(gap){{
+            [-(w/2+gap),w/2+gap].forEach(function(o){{
+              out.push({{x:x+o,y:y,offset:Math.abs(o)}});
+            }});
           }});
         }}
       }});

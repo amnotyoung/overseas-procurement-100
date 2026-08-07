@@ -1,0 +1,286 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "timor-leste",
+  "authorities": [],
+  "instruments": [
+    {
+      "id": "TLS-DL-9-2022",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "동티모르 법무부 Jornal da República 제I편 2022년 제9-A호의 Decreto-Lei 9/2022 원문에서 Articles 4-43의 사전정보·건축허가·검사·사용허가 절차와 시행조항을 직접 대조했다.",
+      "articlesChecked": ["Articles 4-28", "Articles 35-43"],
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "TLS-DL-5-2011",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "동티모르 법무부 Jornal da República의 Decree-Law 5/2011 공식 원문에서 Articles 3-23의 A/B/C 분류, AIA·EAI 심사, 보완, 환경결정과 환경허가 발급 절차를 직접 대조했다.",
+      "articlesChecked": ["Articles 3-14", "Articles 17-23"],
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "TLS-LAW-1-2025",
+      "title": "Law No. 1/2025 on Measures to Safeguard Urban Legality",
+      "titleKo": "법률 제1/2025호 도시 적법성 보호조치법",
+      "kind": "act",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "동티모르 법무부 Jornal da República 제I편 2025년 제11호의 Law 1/2025 원문이 Decreto-Lei 9/2022의 건축·사용허가 위반에 대한 시정·중지·적법성 보호수단을 신설한 것을 확인했다.",
+      "officialUrl": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_11.pdf",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TLS-MPW-MANDATE",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "동티모르 정부 공식 ‘IX Constitutional Government — Ministry of Public Works’ 페이지에서 건축·도시화·공공시설 관련 부처 소관을 확인했다. 다만 이 행정소개 페이지는 법령 통합본이 아니고 조직개편 이력을 제시하지 않아 개별 허가·검사 권한의 계속성은 확정하지 못했으므로 continuity_unverified를 유지한다."
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "Decreto-Lei 9/2022의 전국 공통 사전정보·anteprojeto 심사 경로다. 사전정보 신청은 선택절차이지만, 승인계획·토지권리·기반시설 조건을 건축허가 전에 공식 고정하는 대표경로로 표시했다.",
+      "officialProcedure": {
+        "name": "동티모르 도시계획·부지규제 — 사전정보·anteprojeto 심사",
+        "coverage": "official-source-linked",
+        "scope": "Decreto-Lei 9/2022 Articles 8, 10, 12-16에 따른 필지 사전정보, 토지·계획 자료, 계획기관 의견, anteprojeto 완비·도시계획 심사와 승인·거부 절차다.",
+        "stages": ["G0 사전정보 신청", "G1 계획조건 확정", "G2 anteprojeto 접수", "G3 심사·결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "권원·지적도 첨부 사전정보 신청", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "이해관계인이 토지권리 증명과 공식 지적도를 첨부해 대상 필지의 건축 가능성, 기반시설, 제한, 지수·높이·이격과 예상 수수료에 관한 informação prévia를 도시허가 담당부처에 신청한다.",
+            "output": "사전정보 신청서·권원증명·지적도",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 8(1)-(4); prior-information request, development parameters, infrastructure and legal-title evidence"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "적용 계획·보호구역·기반시설 조건 조회", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "도시허가 담당기관이 효력 있는 도시·부문계획, 행정제한, 해안·하천·침수·환경·문화재 보호구역과 도로·상하수도 등 기반시설 조건을 대조하고 국토계획 담당기관 의견을 받는다.",
+            "output": "적용계획·보호구역·기반시설 검토의견",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 8(1)-(2),(8); applicable restrictions and mandatory territorial-planning opinion", "Article 15(5)-(6); protected-area and territorial-planning consultations"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "사전정보 적합·조건·부적합 회신", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "담당기관이 신청일로부터 법정기간 안에 가능 여부와 적용조건을 서면 회신하며, 불리한 경우 충족 가능한 수정조건이나 기반시설 부족의 해소방안을 명시한다.",
+            "output": "유리·불리 사전정보와 필지별 조건",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 8(5)-(8); unfavorable correction terms, one-year binding effect and planning opinion", "Article 9(2); written information within 30 days"]}],
+            "permitGate": {"key": "prior-information", "gate": "도시허가 담당기관의 필지 사전정보 공식회신", "decision": "필지의 계획·기반시설·법정제한에 따른 개발가능성과 조건을 공식 회신한다.", "output": "필지 사전정보·조건 또는 부적합 회신", "dependsOn": []}
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "등록기술자 anteprojeto·책임서 작성", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "등록된 건축·엔지니어링 기술자가 사전정보와 계획조건에 맞춰 배치·건축 anteprojeto와 설명서·공사비를 작성하고 법규준수 책임서에 서명한다.",
+            "output": "서명 anteprojeto·설명서·책임서",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 10(2)(e); anteproject drawings, descriptive statement and cost estimate", "Article 12; authorized technicians and responsibility declaration"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "도시허가 총국에 anteprojeto 접수", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "신청인이 토지권리·지적도·적법한 점유근거와 서명 anteprojeto를 도시허가 담당 총국장 앞으로 제출해 프로젝트 승인절차를 개시한다.",
+            "output": "anteprojeto 신청서·접수기록",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 10(1)-(4); initial request, title, cadastral plan, anteproject and declarations"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "30일 내 완비·도시계획·관계기관 심사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "담당기관이 접수 후 30일 이내 누락·계획불일치·기술자료 부족을 확인하고 도시·기능·기반시설·경관 적합성을 심사하며 필요한 공공·민간기관의 법정의견을 조회한다.",
+            "output": "완비·계획 심사의견·관계기관 의견",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 13(1)-(4); urban-planning review, deficiencies and 90-day decision", "Article 15(1)-(6); binding opinions and consultations"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "누락·계획불일치 anteprojeto 보완", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "보완통지를 받은 신청인과 기술자가 지정기간 안에 누락자료와 계획·건축도서를 수정해 재제출하며 심사기간은 완비 때까지 정지된다.",
+            "output": "수정 anteprojeto·보완답변·재접수",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 13(2)-(3); notice to cure deficiencies, maximum 30-day supplementation and suspended review clock"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "anteprojeto 승인·전문설계 요구 또는 거부", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "담당기관이 anteprojeto를 승인하고 후속 전문설계 목록·기술조건을 통지하거나, 미해소 결함·구속적 반대의견·법정 거부사유가 있으면 거부결정을 내린다.",
+            "output": "anteprojeto 승인·전문설계 조건 또는 거부결정",
+            "authorityIds": ["mpw"],
+            "refs": [{"source": "Decreto-Lei 9/2022", "instrumentId": "TLS-DL-9-2022", "provisions": ["Article 13(4)-(5); decision and specialty-project conditions", "Article 16; approval or refusal after preliminary-design review"]}],
+            "permitGate": {"key": "anteproject-decision", "gate": "도시허가 담당기관의 anteprojeto 공식결정", "decision": "계획·입지 적합성을 확정하고 후속 전문설계 제출을 허용하거나 거부한다.", "output": "anteprojeto 승인·조건 또는 거부결정", "dependsOn": ["prior-information"]}
+          }
+        ],
+        "edges": [[0,1,"sequence","사전정보 접수"],[1,2,"sequence","계획조건 검토"],[2,3,"sequence","유리·조건부 회신"],[3,4,"sequence","anteprojeto 완성"],[4,5,"sequence","승인심사 개시"],[5,7,"sequence","적합·완비"],[5,6,"message","누락·불일치 보완통지"],[6,4,"loop","수정 anteprojeto 재접수"]],
+        "decisionBranches": [
+          {"state":"success","label":"사전정보·anteprojeto 승인","action":"통지된 전문설계와 관계기관 조건을 반영해 최종 건축허가 심사로 진행"},
+          {"state":"rework","label":"권원·계획·anteprojeto 보완","action":"통지된 누락·불일치를 수정해 신청단계로 재접수"},
+          {"state":"reject","label":"계획부적합·구속적 반대의견","action":"거부사유에 따라 입지·규모 변경, 재신청 또는 행정쟁송 검토"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "환경영향 가능성이 있는 일반 민간·공공 건축사업의 Category A/B 환경허가와 Decreto-Lei 9/2022 일반 건축허가를 연결한 전국 대표경로다. Category C나 소규모 간이허가, 허가 면제 공공공사는 해당 분기만 적용한다.",
+      "officialProcedure": {
+        "name": "동티모르 건축허가·환경심사 — Category A/B 환경허가·건축허가",
+        "coverage": "official-source-linked",
+        "scope": "Decreto-Lei 5/2011 Articles 3-23의 AIA/EAI·환경허가와 Decreto-Lei 9/2022 Articles 15-26의 전문설계·최종 건축허가를 법정 선행관계로 연결했다.",
+        "stages": ["G4 환경분류·도서", "G5 환경심사·결정", "G6 전문설계 심사", "G7 건축허가 결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "사업자료 제출·환경 Category A/B/C 분류", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "사업자가 위치·규모·도면·타당성자료와 분류안을 환경당국에 제출하고 Annex I·II 및 예상영향에 따라 Category A, B 또는 C와 Category A TOR 범위를 확정받는다.",
+            "output": "환경범위·Category·A 대상 TOR 의견",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Articles 4-6; A/B/C classification, optional scope request and 15-day opinion"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "Category A DIA·PGA 또는 B PGA 작성·신청", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "Category A는 승인범위에 따라 DIA·비기술요약·환경관리계획(PGA)을, Category B는 PGA와 EAI 신청자료를 작성해 환경허가 신청과 수수료 증빙을 제출한다.",
+            "output": "DIA·PGA 또는 EAI/PGA·환경허가 신청",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Articles 8-9; Category A submission", "Articles 17-18; Category B submission"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "공중참여·환경기술심사·최종의견", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "Category A 평가위원회가 DIA·PGA 공중협의와 기술평가를 실시해 최종의견을 내고, Category B는 환경당국이 PGA를 기술검토하며 필요하면 공중협의를 실시한다.",
+            "output": "공중협의 기록·환경기술의견",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Articles 10-13; A assessment committee, 24-day consultation, technical review and opinion", "Articles 18(5), 19-20; B consultation if required, review and opinion"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "1회 DIA·PGA 보완·재심사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "평가위원회나 환경당국이 한 차례 재작성·추가분석을 요구하면 사업자가 DIA·PGA 또는 PGA를 보완해 재제출하고 정지된 심사를 재개한다.",
+            "output": "수정 환경문서·보완답변·재접수",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Article 12(3)-(5); one A reformulation and suspended clock", "Article 19(3)-(5); one B reformulation and re-review"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "상급환경당국 승인·비승인 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "상급환경당국이 기술의견에 따라 DIA·PGA 또는 PGA를 조건부 승인하고 환경허가 발급을 승인하거나, 비승인으로 환경허가 절차를 종결한다.",
+            "output": "환경평가 승인·조건 또는 비승인 결정",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Article 14; Category A final approval/non-approval and conditions", "Article 21; Category B final approval/non-approval and conditions"]}],
+            "permitGate": {"key":"environmental-decision","gate":"상급환경당국의 환경평가 공식결정","decision":"Category A/B 평가문서와 관리조건을 승인해 환경허가 발급을 허용하거나 절차를 종결한다.","output":"환경승인·조건 또는 비승인 결정","dependsOn":[]}
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "환경허가 발급·수수료 납부", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "환경당국이 유리한 결정 후 Category A/B 환경허가를 발급·통지하고 사업자는 정해진 기간에 수수료를 납부한다. 이 세 요건 전에는 사업을 시행할 수 없다.",
+            "output": "Category A/B 환경허가·납부증빙",
+            "authorityIds": ["environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 5/2011","instrumentId":"TLS-DL-5-2011","provisions":["Articles 22-23; license content, issuance, notice, fee and no implementation before all requirements"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "건축·구조·인프라 전문설계 제출", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "anteprojeto 승인조건과 환경허가를 반영해 등록기술자가 건축실시설계, 구조·기초, 상하수도·우수, 도로·통신, 소방·설비와 현장계획을 작성·서명해 제출한다.",
+            "output": "서명 전문설계·환경조건 반영표",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 17; specialty execution projects", "Article 21(1); approval of specialty projects before license"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "전문설계·구속적 관계기관 최종심사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "도시허가 담당기관이 전문설계와 환경·계획·안전 조건을 심사하고 필요한 관계기관의 허가·구속적 의견을 취합해 최종 건축허가 결정을 준비한다.",
+            "output": "전문설계 심사의견·관계기관 최종의견",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 15; legal consultations and binding adverse opinions", "Articles 17-18; execution-project content"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "전문설계·인프라 조건 보완·재심사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "전문설계나 기반시설이 부족해 거부·수정사유가 통지되면 신청인과 기술자가 도서를 수정하거나 필요한 보완 기반시설 설계를 제출해 재심사를 요청한다.",
+            "output": "수정 전문설계·인프라 보완안·재심사 신청",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 22; refusal grounds", "Article 23; reconsideration with complementary infrastructure projects"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "최종 허가결정·보증·수수료·건축허가증 발급", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "도시행정 총국장이 전문설계 승인 여부를 최종 결정하고, 승인 시 해당되는 5% 이행보증과 수수료·기술책임자를 확인한 뒤 법정기간에 건축허가증과 승인도서를 발급한다.",
+            "output": "건축허가증·승인도서·조건 또는 거부통지",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Articles 20-21; final licensing decision and approval notice", "Article 24; security", "Article 26(1)-(8); title within 20 days, fees, technical director and approved plans"]}],
+            "permitGate": {"key":"construction-license","gate":"도시행정 총국장의 건축허가 공식결정","decision":"환경·계획·전문설계와 보증·수수료 요건을 확인해 건축허가증을 발급하거나 사유를 적은 거부결정을 한다.","output":"건축허가증·승인도서·조건 또는 거부통지","dependsOn":["environmental-decision"]}
+          }
+        ],
+        "edges": [[0,1,"sequence","환경 Category 확정"],[1,2,"sequence","환경문서 접수"],[2,4,"sequence","기술심사 완료"],[2,3,"message","환경문서 보완요구"],[3,2,"loop","수정 환경문서 재심사"],[4,5,"sequence","유리한 환경결정"],[5,6,"sequence","환경허가 반영"],[6,7,"sequence","전문설계 접수"],[7,9,"sequence","전문설계 적합"],[7,8,"message","전문설계·인프라 보완"],[8,6,"loop","수정 전문설계 재접수"]],
+        "decisionBranches": [
+          {"state":"success","label":"환경허가·건축허가 발급","action":"양 허가조건과 승인도서·기술책임자에 따라 착공"},
+          {"state":"rework","label":"환경문서·전문설계 보완","action":"법정 보완통지에 따라 수정자료를 제출해 해당 심사로 회귀"},
+          {"state":"reject","label":"환경 비승인·건축허가 거부","action":"공식 사유에 따라 입지·설계 변경, 재심사·재신청 또는 행정쟁송 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "Decreto-Lei 9/2022의 전국 공통 건축공사 감독·검사·사용허가 경로다. 의무검사 시점은 후속 장관령과 사업유형에 따라 달라질 수 있으나, 현장서류·변경승인·완공검사·불리한 검사보고 보완·사용허가의 법정 순서는 조문으로 확인된다.",
+      "officialProcedure": {
+        "name": "동티모르 기술검사·준공제도 — 공사감독·vistoria·사용허가",
+        "coverage": "official-source-linked",
+        "scope": "Decreto-Lei 9/2022 Articles 26-28, 35-43에 따른 허가게시·현장서류·행정검사, 준공 vistoria 위원회, 시정·재검사와 licença de utilização 발급 절차다.",
+        "stages": ["G8 허가착공", "G9 공사감독·변경", "G10 준공 vistoria", "G11 사용허가"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "건축허가 게시·승인도서 현장비치", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "허가권자가 건축허가를 발급하면 건축주는 10일 이내 현장에 허가표지를 게시하고 승인도서·허가증·기술자 출석부·공사일지·변경신청 기록을 비치한다.",
+            "output": "현장 허가표지·승인도서·공사일지",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 27; license notice within 10 days", "Article 28; documents kept at site"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "기술책임자 승인설계 시공·기록", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "지명된 기술책임자가 승인설계와 허가조건에 따라 공사를 지휘하고 구조·설비·마감과 주요 현장사건을 공사일지에 기록·서명한다.",
+            "output": "기술감독 기록·서명 공사일지",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 26(6)-(8); technical director and approved project", "Article 28(1); technical attendance and work book"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "행정 현장검사·허가·승인설계 대조", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "도시허가 담당기관이 사전통지 없이 현장검사를 실시해 공사의 적법성, 승인설계·허가조건·안전보건 규정 준수와 위험을 확인하고 검사기록을 남긴다.",
+            "output": "현장검사 기록·적합 또는 위반사항",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Articles 35-37; administrative control, competent service and site inspections"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "무단변경·위반공사 시정·변경허가", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "승인설계와 다른 공사나 위반이 확인되면 건축주·시공자는 해당 작업을 시정하고, 설계변경은 사전승인과 건축허가 부기를 받은 뒤 재검사를 요청한다.",
+            "output": "시정공사·변경승인·재검사 요청",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 28(2); no deviation before approved license amendment", "Articles 35-37; conformity enforcement"]},{"source":"Law 1/2025","instrumentId":"TLS-LAW-1-2025","provisions":["urban-legality safeguards for works without or contrary to construction license"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "준공 vistoria·사용허가 신청", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "action": "공사완료 후 신청인이 승인설계대로 시공했다는 기술책임자 확인서, as-built 도면, 서명 공사일지와 관련 보증자료를 첨부해 준공검사와 사용허가를 신청한다.",
+            "output": "vistoria·사용허가 신청서·as-built·책임확인서",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 38(1)-(7); inspection/use-license request, conformity purpose, required documents and 30-day inspection"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "홀수 위원회 준공검사·시설기능 확인", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "도시허가 기술자와 국토계획 기술자 등 홀수 위원회가 신청인·설계자·기술책임자 입회 아래 승인설계, 사용목적, 공간·기반시설의 상태와 기능, 위생·안전을 검사한다.",
+            "output": "위원회 vistoria 기록·적합성 판단",
+            "authorityIds": ["mpw", "environmental-authority"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 39; inspection committee composition and participation", "Article 38(2); conformity, functioning and intended use"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "유리·불리 vistoria 보고서 확정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "검사위원회가 만장일치로 유리 또는 불리 의견을 확정하며, 불리한 보고서에는 사실·법적 근거, 필요한 추가·시정공사와 이행기한을 명시한다.",
+            "output": "유리 또는 불리 vistoria 보고서·시정명령",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 40(1)-(5); favorable/unfavorable report, reasons, corrective works, deadline and authority order"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "불리한 보고서 시정공사·재검사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "action": "불리한 vistoria 보고서를 받은 신청인이 지정기한에 추가·시정공사를 완료하고 증빙·수정 as-built를 제출해 위원회 재검사를 받는다.",
+            "output": "시정완료 증빙·수정 as-built·재검사 기록",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 40(3)-(5); corrective works and deadline after unfavorable report"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "사용허가·용도·공공인프라 인계 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "action": "권한 있는 책임자가 유리한 vistoria 의견을 확인해 사용허가를 결정하고, 30일 이내 허가증에 승인용도를 명시해 발급한다. 허가 전에는 건축물 사용·점유가 허용되지 않는다.",
+            "output": "licença de utilização·승인용도 또는 거부결정",
+            "authorityIds": ["mpw"],
+            "refs": [{"source":"Decreto-Lei 9/2022","instrumentId":"TLS-DL-9-2022","provisions":["Article 42; favorable inspection required for use license", "Article 43(1)-(6); title within 30 days, intended use and infrastructure connection"]}],
+            "permitGate": {"key":"use-license","gate":"도시허가 담당기관의 사용허가 공식결정","decision":"유리한 준공검사 보고서와 승인용도를 확인해 사용허가증을 발급하거나 거부한다.","output":"사용허가증·승인용도 또는 거부결정","dependsOn":[]}
+          }
+        ],
+        "edges": [[0,1,"sequence","허가도서 인계"],[1,2,"sequence","시공·검사 진입"],[2,4,"sequence","공사 적합·완료"],[2,3,"message","위반·변경 시정요구"],[3,1,"loop","시정·변경승인 후 재검사"],[4,5,"sequence","준공검사 신청"],[5,6,"sequence","위원회 판단"],[6,8,"sequence","유리한 보고서"],[6,7,"message","추가·시정공사 명령"],[7,5,"loop","시정 후 위원회 재검사"]],
+        "decisionBranches": [
+          {"state":"success","label":"유리한 vistoria·사용허가 발급","action":"허가된 용도와 조건에 따라 사용·점유 및 최종 인프라 연결"},
+          {"state":"rework","label":"시공불일치·준공 시정","action":"변경승인 또는 시정공사를 완료해 현장·준공검사로 회귀"},
+          {"state":"reject","label":"사용허가 거부·위반조치","action":"거부·위반 사유에 따른 적법화, 철거·시정 또는 행정쟁송 검토"}
+        ]
+      }
+    }
+  }
+}
