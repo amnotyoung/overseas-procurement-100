@@ -48,13 +48,17 @@
       "slug": "senegal-site-urban-construction-regulations",
       "priority": 4,
       "name": "세네갈 도시계획·부지규제",
-      "oneLiner": "NICAD·권원, Diamniadio PUD 수치, 지반·침수와 유틸리티 확약으로 지을 수 있는 규모를 먼저 잠근다.",
-      "purpose": "대상 필지의 권원과 도시계획 적합성, 필지별 건폐율·용적률·높이·이격·주차, 지반·침수·배수와 전력·통신·상하수 인입조건을 설계 착수 전 확인하는 제도축",
+      "oneLiner": "NICAD·권원, Diamniadio PUD 수치, 지반·침수와 유틸리티 확약으로 부지조건을 잠그고, 별도의 분류·환경·허가 심사축으로 이관한다.",
+      "purpose": "대상 필지의 권원과 도시계획 적합성, 필지별 건폐율·용적률·높이·이격·주차, 지반·침수·배수와 전력·통신·상하수 인입조건을 설계 착수 전 확인하는 제도축이다. 마지막 부지 판정은 사업 내부 통제이며 프로젝트 분류·환경 스크리닝·허가를 대체하지 않는다.",
       "verificationScope": "2023년 도시계획법, 2025년 도시계획법 시행령의 PUD·도시계획확인서·주차·부지기준, Diamniadio PUD 승인령, 지반·유틸리티 관련 건설기준과 2024년 시험기관 인가명령을 대조했다. 필지별 PUD 부속도면·규정과 실제 지반·침수·용량은 현지 확인 대상이다.",
       "nodeIds": [
         "B01",
+        "B01A",
         "B02",
-        "B06"
+        "B02A",
+        "B06",
+        "B06A",
+        "B06B"
       ],
       "requirementIds": [
         "SEN-BLD-REQ-001",
@@ -89,22 +93,47 @@
         {
           "id": "M04-E01",
           "source": "B01",
+          "target": "B01A",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B01A",
           "target": "B02",
           "type": "sequence"
         },
         {
-          "id": "M04-L02",
-          "source": "B02",
-          "target": "B01",
-          "type": "loop",
-          "label": "권원·PUD 보완"
-        },
-        {
           "id": "M04-E03",
           "source": "B02",
+          "target": "B02A",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B02A",
           "target": "B06",
           "type": "sequence",
           "label": "필지조건 확정"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B06",
+          "target": "B06A",
+          "type": "sequence"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06A",
+          "target": "B06B",
+          "type": "sequence",
+          "label": "내부 부지판정·다음 심사축 이관"
+        },
+        {
+          "id": "M04-L07",
+          "source": "B06B",
+          "target": "B02",
+          "type": "loop",
+          "label": "권원·PUD·현장조건 보완"
         }
       ]
     },
@@ -348,6 +377,9 @@
     ],
     "stages": [
       "G0 부지·권원",
+      "G0A 계획·개발수치",
+      "G0B 현장·기반시설",
+      "G0C 부지조건 확정",
       "G1 사업분류·책임체계",
       "G2 환경·기본설계",
       "G3 관계기관 사전협의",
@@ -364,7 +396,14 @@
         "stage": "G0 부지·권원",
         "label": "필지·NICAD·권원 자료 제출",
         "emphasis": "lead",
+        "kind": "field-verification",
+        "basisScope": "node",
         "note": "정확한 필지와 건축권원이 없으면 규모·비용·일정을 확정하지 않는다.",
+        "action": "수원기관이 대상 필지의 NICAD·권원·배정·인도 자료 원본을 제출하고 신청인 적격과 건축권한의 결측을 표시한다.",
+        "outputs": [
+          "필지·NICAD·권원 원본 목록",
+          "신청인 적격·건축권한 검토메모"
+        ],
         "authorityIds": [
           "cadastre-domains",
           "dgpu"
@@ -372,6 +411,47 @@
         "requirementIds": [
           "SEN-BLD-REQ-001",
           "SEN-BLD-REQ-002"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-001"
+        ],
+        "refs": [
+          {
+            "source": "도시계획법 L.277-L.278",
+            "instrumentId": "SEN-URB-L-2023-20",
+            "provisions": [
+              "L.277-L.278"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B01A",
+        "lane": "현지 설계·검사팀",
+        "stage": "G0 부지·권원",
+        "label": "지적경계·현황측량·점유조건 대조",
+        "emphasis": "key",
+        "kind": "field-verification",
+        "basisScope": "node",
+        "note": "NICAD·지적도와 현장 경계·점유현황을 대조하고 권원 또는 배정조건의 결측을 기록한다.",
+        "action": "NICAD·지적도와 현장 경계·점유현황을 대조하고 권원 또는 배정조건의 결측을 기록한다.",
+        "outputs": [
+          "경계·현황측량도",
+          "권원·점유·배정조건 대조표"
+        ],
+        "authorityIds": [
+          "cadastre-domains",
+          "dgpu"
+        ],
+        "requirementIds": [
+          "SEN-BLD-REQ-001",
+          "SEN-BLD-REQ-002"
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-001"
         ],
         "gateOrders": [
           1
@@ -392,7 +472,14 @@
         "stage": "G0 부지·권원",
         "label": "PUD·도시계획 적합성 확인",
         "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "필지별 PUD 도면·규정과 도시계획확인서를 서면으로 확보한다.",
+        "action": "관할 도시계획기관에 필지의 PUD 적용구역·허용용도와 도시계획 적합성을 조회해 공식 서면으로 확인한다.",
+        "outputs": [
+          "도시계획확인서",
+          "필지 적용 PUD 도면·규정 발췌"
+        ],
         "authorityIds": [
           "dgpu",
           "urbanism-service",
@@ -404,6 +491,9 @@
         ],
         "gateOrders": [
           1
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-002"
         ],
         "refs": [
           {
@@ -424,12 +514,65 @@
         ]
       },
       {
+        "id": "B02A",
+        "lane": "현지 설계·검사팀",
+        "stage": "G0A 계획·개발수치",
+        "label": "PUD 수치·주차·중첩규제 대조",
+        "emphasis": "bottleneck",
+        "kind": "field-verification",
+        "basisScope": "node",
+        "note": "대상 필지를 PUD 부속도면에 매칭해 CES·COS·높이·이격·주차와 특구·도로 조건을 한 표로 확정한다.",
+        "action": "대상 필지를 PUD 부속도면에 매칭해 CES·COS·높이·이격·주차와 특구·도로 조건을 한 표로 확정한다.",
+        "outputs": [
+          "필지별 PUD 적용도",
+          "CES·COS·높이·이격·주차 규제표"
+        ],
+        "authorityIds": [
+          "dgpu",
+          "urbanism-service"
+        ],
+        "requirementIds": [
+          "SEN-BLD-REQ-001",
+          "SEN-BLD-REQ-002"
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-002"
+        ],
+        "gateOrders": [
+          1
+        ],
+        "refs": [
+          {
+            "source": "도시계획 시행령 R.409·R.417-R.441",
+            "instrumentId": "SEN-URB-D-2025-1194",
+            "provisions": [
+              "R.409",
+              "R.417-R.441"
+            ]
+          },
+          {
+            "source": "Diamniadio PUD 승인령 Art. 1-Art. 3",
+            "instrumentId": "SEN-DIAM-PUD-D-2021-698",
+            "provisions": [
+              "Art. 1-Art. 3"
+            ]
+          }
+        ]
+      },
+      {
         "id": "B03",
         "lane": "사업주·조사팀",
         "stage": "G1 사업분류·책임체계",
-        "label": "건축주·ERP·ICPE·규모 분류",
+        "label": "건축주·관할·ERP·ICPE 공식분류 확인",
         "emphasis": "key",
-        "note": "허가권자, 환경평가, 소방·접근성, 보험 문턱을 잠정 분류한다.",
+        "kind": "field-verification",
+        "basisScope": "node",
+        "note": "팀의 잠정분류에 그치지 않고 관할기관의 서면 회신으로 신청주체와 적용분류를 닫는다.",
+        "action": "승인 공간프로그램과 법적 건축주 정보를 담은 프로젝트 설명서를 관할기관에 제출해 허가권자, ERP·ICPE 가능성, 환경·기술검사 문턱의 공식 적용 여부를 서면 확인한다.",
+        "outputs": [
+          "관할·ERP·ICPE 공식 분류회신",
+          "인허가 매트릭스·선행심사 목록"
+        ],
         "authorityIds": [
           "urbanism-service",
           "civil-protection",
@@ -442,6 +585,11 @@
         ],
         "gateOrders": [
           2
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-003",
+          "SEN-BLD-Q-004",
+          "SEN-BLD-Q-006"
         ],
         "refs": [
           {
@@ -457,6 +605,23 @@
             "provisions": [
               "현행 기관명·감독관계"
             ]
+          },
+          {
+            "source": "환경법 Art. 20-Art. 27·Art. 52·Art. 64",
+            "instrumentId": "SEN-ENV-L-2023-15",
+            "provisions": [
+              "Art. 20-Art. 27",
+              "Art. 52",
+              "Art. 64"
+            ]
+          },
+          {
+            "source": "건설법 L.11-L.14·L.93-L.95",
+            "instrumentId": "SEN-CON-L-2023-21",
+            "provisions": [
+              "L.11-L.14",
+              "L.93-L.95"
+            ]
           }
         ]
       },
@@ -464,19 +629,26 @@
         "id": "B04",
         "lane": "현지 설계·검사팀",
         "stage": "G1 사업분류·책임체계",
-        "label": "ODAS 책임건축사·BET·기술검사 역할 확정",
+        "label": "ODAS 책임건축사·설계 BET 역할 확정",
         "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "외국 전문가의 서명권과 현지 책임·보험 구조를 계약에 반영한다.",
+        "action": "ODAS 등록 책임건축사를 선임하고 설계 BET와 한국 전문가의 설계·서명 책임을 자격·보험 증빙에 맞춰 배분한다.",
+        "outputs": [
+          "책임건축사·설계 BET 등록·보험 증빙",
+          "설계·서명 책임 RACI"
+        ],
         "authorityIds": [
           "odas",
           "construction-minister"
         ],
         "requirementIds": [
-          "SEN-BLD-REQ-003",
-          "SEN-BLD-REQ-008"
+          "SEN-BLD-REQ-003"
         ],
-        "gateOrders": [
-          3
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-005"
         ],
         "refs": [
           {
@@ -495,7 +667,14 @@
         "stage": "G2 환경·기본설계",
         "label": "환경평가·ICPE 공식 스크리닝",
         "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "요구 평가유형과 선행 환경증서를 환경기관의 서면으로 확정한다.",
+        "action": "환경기관에 프로젝트 설명서를 제출해 평가 카테고리·평가유형·ICPE 해당 여부와 건축허가 전 필요한 인증을 공식 확인한다.",
+        "outputs": [
+          "공식 환경 스크리닝 결정",
+          "환경평가·ICPE·선행인증 목록"
+        ],
         "authorityIds": [
           "environment-authority"
         ],
@@ -503,7 +682,10 @@
           "SEN-BLD-REQ-005"
         ],
         "gateOrders": [
-          4
+          3
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-006"
         ],
         "refs": [
           {
@@ -514,16 +696,34 @@
               "Art. 52",
               "Art. 64"
             ]
+          },
+          {
+            "source": "환경법 시행령 Art. 17-Art. 55·Annex I-III",
+            "instrumentId": "SEN-ENV-D-2025-227",
+            "provisions": [
+              "Art. 17-Art. 40",
+              "Art. 44-Art. 55",
+              "Annex I.10",
+              "Annex II",
+              "Annex III"
+            ]
           }
         ]
       },
       {
         "id": "B06",
         "lane": "현지 설계·검사팀",
-        "stage": "G2 환경·기본설계",
+        "stage": "G0B 현장·기반시설",
         "label": "지반·침수·배수·유틸리티 조건 확정",
         "emphasis": "lead",
+        "kind": "field-verification",
+        "basisScope": "node",
         "note": "PUD·지반·침수와 전력·통신·상하수 인입조건을 부지·기본설계 조건으로 확정한다.",
+        "action": "지형·지반·지하수·우기 침수·배수와 전력·통신·상하수 현황을 조사해 설계·예산에 반영할 부지 제약을 확정한다.",
+        "outputs": [
+          "지형·지반·지하수 조사보고서",
+          "침수·배수·유틸리티 제약도"
+        ],
         "authorityIds": [
           "urbanism-service",
           "utilities",
@@ -533,8 +733,10 @@
           "SEN-BLD-REQ-009",
           "SEN-BLD-REQ-017"
         ],
-        "gateOrders": [
-          5
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-007",
+          "SEN-BLD-Q-008"
         ],
         "refs": [
           {
@@ -555,12 +757,107 @@
         ]
       },
       {
+        "id": "B06A",
+        "lane": "도시계획·건축 당국",
+        "stage": "G0B 현장·기반시설",
+        "label": "배수·유틸리티 용량·인입확약 확인",
+        "emphasis": "normal",
+        "kind": "field-verification",
+        "basisScope": "node",
+        "note": "전력·통신·상수·오수·우수의 접속점, 가용용량, 증설비용과 수원기관 분담을 운영기관 회신으로 확정한다.",
+        "action": "전력·통신·상수·오수·우수의 접속점, 가용용량, 증설비용과 수원기관 분담을 운영기관 회신으로 확정한다.",
+        "outputs": [
+          "유틸리티 용량·접속점 확인서",
+          "인입공사·비용·분담 매트릭스"
+        ],
+        "authorityIds": [
+          "utilities",
+          "dgpu",
+          "urbanism-service"
+        ],
+        "requirementIds": [
+          "SEN-BLD-REQ-017"
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-008"
+        ],
+        "gateOrders": [],
+        "refs": [
+          {
+            "source": "도시계획 시행령 R.417-R.441",
+            "instrumentId": "SEN-URB-D-2025-1194",
+            "provisions": [
+              "R.417-R.441"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06B",
+        "lane": "사업주·조사팀",
+        "stage": "G0C 부지조건 확정",
+        "label": "부지 적합성 내부판정·설계조건 잠금",
+        "emphasis": "bottleneck",
+        "kind": "project-control",
+        "basisScope": "node",
+        "note": "권원·PUD·지반·침수·유틸리티 결측과 비용영향을 검토하는 내부 통제다. 프로젝트 분류·환경 스크리닝·설계 사전검토·건축허가를 대체하지 않는다.",
+        "action": "권원·PUD·지반·침수·유틸리티 결측과 비용영향을 판정해 부지를 재검토하거나, 조건부 설계입력과 미해결사항을 별도 분류·환경·허가 심사축에 이관한다.",
+        "outputs": [
+          "부지 Go/Conditional/No-Go 결정서",
+          "개념설계 입력조건·결측대장",
+          "분류·환경·허가 심사축 이관서"
+        ],
+        "authorityIds": [
+          "dgpu",
+          "urbanism-service",
+          "cadastre-domains",
+          "utilities"
+        ],
+        "requirementIds": [
+          "SEN-BLD-REQ-001",
+          "SEN-BLD-REQ-002",
+          "SEN-BLD-REQ-009",
+          "SEN-BLD-REQ-017"
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-001",
+          "SEN-BLD-Q-002",
+          "SEN-BLD-Q-007",
+          "SEN-BLD-Q-008"
+        ],
+        "gateOrders": [],
+        "refs": [
+          {
+            "source": "도시계획 시행령 R.409·R.417-R.441",
+            "instrumentId": "SEN-URB-D-2025-1194",
+            "provisions": [
+              "R.409",
+              "R.417-R.441"
+            ]
+          },
+          {
+            "source": "건설 시행령 R.90-R.92",
+            "instrumentId": "SEN-CON-D-2024-1495",
+            "provisions": [
+              "R.90-R.92"
+            ]
+          }
+        ]
+      },
+      {
         "id": "B06D",
         "lane": "현지 설계·검사팀",
         "stage": "G2 환경·기본설계",
         "label": "구조·에너지·음향 설계기준 통합",
         "emphasis": "lead",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "공공 교육·ICT 시설의 구조안전, 외피·냉방·에너지와 교육·회의·서버 공간의 음향기준을 허가설계에 통합한다.",
+        "action": "구조안전, 외피·냉방·에너지와 교육·회의·서버 공간의 음향 요구를 코드 매트릭스로 정리해 허가설계에 반영한다.",
+        "outputs": [
+          "구조·에너지·음향 코드 매트릭스",
+          "기본설계 법규검토서"
+        ],
         "authorityIds": [
           "construction-minister",
           "urbanism-service"
@@ -568,8 +865,9 @@
         "requirementIds": [
           "SEN-BLD-REQ-011"
         ],
-        "gateOrders": [
-          5
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-003"
         ],
         "refs": [
           {
@@ -588,7 +886,14 @@
         "stage": "G3 관계기관 사전협의",
         "label": "접근성·소방·ERP 사전의견",
         "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
         "note": "재실인원·피난·접근성·공중개방 조건을 허가 전 조정한다.",
+        "action": "승인 공간프로그램과 피난·접근성 계획을 Protection Civile 및 도시계획기관과 사전협의해 ERP 분류와 허가·개장 조건을 기록한다.",
+        "outputs": [
+          "ERP 잠정분류·사전협의 회의록",
+          "피난·소방·접근성 보완조건표"
+        ],
         "authorityIds": [
           "civil-protection",
           "urbanism-service"
@@ -597,8 +902,9 @@
           "SEN-BLD-REQ-004",
           "SEN-BLD-REQ-019"
         ],
-        "gateOrders": [
-          5
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-003"
         ],
         "refs": [
           {
@@ -624,7 +930,14 @@
         "stage": "G3 관계기관 사전협의",
         "label": "허가도서·관계기관 의견 통합",
         "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "환경·소방·위생·지적·기반시설 조건을 신청도서와 증빙목록에 묶는다.",
+        "action": "환경·소방·위생·지적·기반시설 의견과 승인 공간프로그램을 건축허가 도서·신청서·증빙목록에 일관되게 반영한다.",
+        "outputs": [
+          "완비 건축허가 신청도서",
+          "관계기관 의견 반영·증빙 체크리스트"
+        ],
         "authorityIds": [
           "urbanism-service",
           "hygiene-service",
@@ -635,8 +948,10 @@
           "SEN-BLD-REQ-006",
           "SEN-BLD-REQ-017"
         ],
-        "gateOrders": [
-          5
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-006",
+          "SEN-BLD-Q-011"
         ],
         "refs": [
           {
@@ -654,7 +969,14 @@
         "stage": "G4 건축허가",
         "label": "완비 건축허가 신청 제출",
         "emphasis": "lead",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "완비서류 접수증과 관계기관 협의목록을 확보한다.",
+        "action": "확정된 법적 신청인이 관할 접수창구에 허가도서·관계기관 증빙·수수료를 제출하고 완비접수 기준일을 확보한다.",
+        "outputs": [
+          "건축허가 완비접수증",
+          "제출도서·수수료 납부 증빙"
+        ],
         "authorityIds": [
           "urbanism-service"
         ],
@@ -663,7 +985,11 @@
           "SEN-BLD-REQ-007"
         ],
         "gateOrders": [
-          6
+          4
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-004",
+          "SEN-BLD-Q-011"
         ],
         "refs": [
           {
@@ -681,7 +1007,14 @@
         "stage": "G4 건축허가",
         "label": "관계기관 협의·건축허가 발급",
         "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "시장 또는 장관의 관할과 승인조건·착공기한을 허가서에 확정한다.",
+        "action": "관할 허가권자가 관계기관 의견과 법규 적합성을 심사하고 보완을 닫은 뒤 승인도서·조건·유효기간이 명시된 건축허가를 발급한다.",
+        "outputs": [
+          "건축허가서와 승인도서",
+          "허가조건·유효기간·착공기한 목록"
+        ],
         "authorityIds": [
           "competent-mayor",
           "urbanism-minister",
@@ -693,7 +1026,11 @@
           "SEN-BLD-REQ-007"
         ],
         "gateOrders": [
-          6
+          4
+        ],
+        "questionIds": [
+          "SEN-BLD-Q-004",
+          "SEN-BLD-Q-011"
         ],
         "refs": [
           {
@@ -718,7 +1055,15 @@
         "stage": "G5 착공 선행조건",
         "label": "보험·기술검사 계약·착공팩 확보",
         "emphasis": "lead",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "면제 가정 없이 주체별 보험과 기술검사 범위를 서면 확정한다.",
+        "action": "의무 적용 여부를 감독기관과 확인한 뒤 인가 기술검사기관의 임무를 계약하고 주체별 건설보험을 가입해 착공 선행조건을 묶는다.",
+        "outputs": [
+          "기술검사기관 인가·계약 증빙",
+          "주체별 보험증권·담보 매트릭스",
+          "착공 선행조건 체크리스트"
+        ],
         "authorityIds": [
           "construction-minister",
           "insurance-directorate"
@@ -727,8 +1072,10 @@
           "SEN-BLD-REQ-008",
           "SEN-BLD-REQ-012"
         ],
-        "gateOrders": [
-          7
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-009",
+          "SEN-BLD-Q-010"
         ],
         "refs": [
           {
@@ -754,7 +1101,14 @@
         "stage": "G5 착공 선행조건",
         "label": "지반·구조 비자·굴착 승인 확인",
         "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "10m 초과 굴착 여부와 Mines 승인을 포함해 착공 전 조건을 닫는다.",
+        "action": "의무 적용이 확정된 경우 지반보고서와 구조계산을 인가 검사주체의 비자로 닫고, 굴착 깊이·대상에 따라 필요한 개시허가와 Mines 승인을 확보한다.",
+        "outputs": [
+          "지반·구조 검토비자",
+          "해당 시 굴착 개시허가·Mines 승인"
+        ],
         "authorityIds": [
           "construction-minister",
           "lnr-btp",
@@ -764,9 +1118,8 @@
           "SEN-BLD-REQ-009",
           "SEN-BLD-REQ-010"
         ],
-        "gateOrders": [
-          7
-        ],
+        "gateOrders": [],
+        "questionIds": [],
         "refs": [
           {
             "source": "건설법 L.32·L.80",
@@ -792,7 +1145,15 @@
         "stage": "G6 시공·변경·검사",
         "label": "승인도서 시공·품질·HSE·폐기물 기록",
         "emphasis": "lead",
+        "kind": "project-control",
+        "basisScope": "node",
         "note": "승인도서, 변경, 검사, 품질시험, HSE와 폐기물 추적대장을 유지한다.",
+        "action": "승인도서에 따라 시공하고 품질시험·기술검사·HSE·폐기물·우연발견 기록과 현장 비치도서를 하나의 추적대장으로 유지한다.",
+        "outputs": [
+          "승인도서·변경 이력대장",
+          "품질시험·기술검사 기록",
+          "HSE·폐기물·우연발견 대장"
+        ],
         "authorityIds": [
           "urbanism-service",
           "construction-minister",
@@ -805,9 +1166,8 @@
           "SEN-BLD-REQ-015",
           "SEN-BLD-REQ-016"
         ],
-        "gateOrders": [
-          8
-        ],
+        "gateOrders": [],
+        "questionIds": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.415-R.419",
@@ -822,6 +1182,19 @@
             "provisions": [
               "R.293-R.299"
             ]
+          },
+          {
+            "source": "1997년 노동법 현행성 연결",
+            "instrumentId": "SEN-LABOR-L-1997-17",
+            "provisions": []
+          },
+          {
+            "source": "건설법 L.32·L.35-L.36",
+            "instrumentId": "SEN-CON-L-2023-21",
+            "provisions": [
+              "L.32",
+              "L.35-L.36"
+            ]
           }
         ]
       },
@@ -831,7 +1204,14 @@
         "stage": "G6 시공·변경·검사",
         "label": "변경승인·중간검사",
         "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "중대한 설계변경은 승인 전 시공하지 않고 검사·시정 기록을 남긴다.",
+        "action": "변경의 허가 영향도를 판정해 중대한 변경은 승인 후 시공하고, 관계기관·기술검사 중간검사의 지적사항을 시정·종결한다.",
+        "outputs": [
+          "설계변경 승인서·변경도서",
+          "중간검사·시정조치 종결기록"
+        ],
         "authorityIds": [
           "urbanism-service",
           "competent-mayor",
@@ -840,15 +1220,21 @@
         "requirementIds": [
           "SEN-BLD-REQ-013"
         ],
-        "gateOrders": [
-          8
-        ],
+        "gateOrders": [],
+        "questionIds": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.415-R.419",
             "instrumentId": "SEN-URB-D-2025-1194",
             "provisions": [
               "R.415-R.419"
+            ]
+          },
+          {
+            "source": "건설 시행령 R.79-R.89",
+            "instrumentId": "SEN-CON-D-2024-1495",
+            "provisions": [
+              "R.79-R.89"
             ]
           }
         ]
@@ -859,7 +1245,14 @@
         "stage": "G7 준공·적합",
         "label": "준공신고·시험·준공도면 제출",
         "emphasis": "lead",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "승인도서 대비 변경승인과 시험·기술검사 자료를 준공팩으로 묶는다.",
+        "action": "승인도서 대비 변경내역, 준공도면, 시험·시운전·기술검사 자료를 정합성 검토한 뒤 준공신고와 함께 제출한다.",
+        "outputs": [
+          "준공신고 접수증",
+          "준공도면·시험·시운전·기술검사 팩"
+        ],
         "authorityIds": [
           "urbanism-service"
         ],
@@ -867,8 +1260,9 @@
           "SEN-BLD-REQ-018"
         ],
         "gateOrders": [
-          9
+          5
         ],
+        "questionIds": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.591-R.592",
@@ -885,7 +1279,14 @@
         "stage": "G7 준공·적합",
         "label": "적합검사·적합증명서 발급",
         "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "적합증명서 취득 전 준공·사용 가능으로 확정하지 않는다.",
+        "action": "관할기관의 준공 적합검사에 대응해 지적사항을 닫고 승인도서와의 적합성이 확인된 증명서를 발급받는다.",
+        "outputs": [
+          "적합검사 기록·지적사항 종결표",
+          "적합증명서"
+        ],
         "authorityIds": [
           "urbanism-service",
           "competent-mayor",
@@ -896,8 +1297,9 @@
           "SEN-BLD-REQ-018"
         ],
         "gateOrders": [
-          9
+          5
         ],
+        "questionIds": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.591-R.592",
@@ -914,7 +1316,14 @@
         "stage": "G8 개장·운영인계",
         "label": "ERP 접수검사·공중개방 승인",
         "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
         "note": "해당 시 안전위원회 검사와 결함조치 후 개장승인을 받는다.",
+        "action": "ERP 적용이 확정된 경우 안전위원회 접수검사를 신청하고 피난·소방·접근성 지적사항을 종결해 공중개방 승인을 받는다.",
+        "outputs": [
+          "ERP 안전위원회 접수검사 의사록",
+          "해당 시 공중개방 승인서"
+        ],
         "authorityIds": [
           "civil-protection",
           "urbanism-service"
@@ -923,8 +1332,9 @@
           "SEN-BLD-REQ-019"
         ],
         "gateOrders": [
-          10
+          6
         ],
+        "questionIds": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.533-R.534",
@@ -949,7 +1359,15 @@
         "stage": "G8 개장·운영인계",
         "label": "O&M·법정점검·보험 인계",
         "emphasis": "normal",
+        "kind": "project-control",
+        "basisScope": "node",
         "note": "운영자에게 점검주기·서비스계약·비상계획·보증·보험 문서를 인계한다.",
+        "action": "설비별 법정점검과 예방정비 주기, 서비스계약, 비상계획, 보증·보험의 담당자와 연간비용을 확정해 운영기관에 인계한다.",
+        "outputs": [
+          "설비별 O&M·법정점검 계획",
+          "서비스계약·보증·보험 인수인계팩",
+          "연간 운영비·책임표"
+        ],
         "authorityIds": [
           "civil-protection",
           "construction-minister",
@@ -958,8 +1376,9 @@
         "requirementIds": [
           "SEN-BLD-REQ-020"
         ],
-        "gateOrders": [
-          10
+        "gateOrders": [],
+        "questionIds": [
+          "SEN-BLD-Q-012"
         ],
         "refs": [
           {
@@ -984,34 +1403,61 @@
       {
         "id": "BE01",
         "source": "B01",
+        "target": "B01A",
+        "type": "sequence"
+      },
+      {
+        "id": "BE01A",
+        "source": "B01A",
         "target": "B02",
         "type": "sequence"
       },
       {
         "id": "BL02",
-        "source": "B02",
-        "target": "B01",
+        "source": "B06B",
+        "target": "B02",
         "type": "loop",
-        "label": "권원·PUD 보완"
+        "label": "권원·PUD·현장조건 보완"
       },
       {
-        "id": "BE03",
+        "id": "BE02A",
         "source": "B02",
-        "target": "B03",
+        "target": "B02A",
         "type": "sequence"
       },
       {
-        "id": "BE03B",
-        "source": "B02",
-        "target": "B06",
+        "id": "BE03",
+        "source": "B06B",
+        "target": "B03",
         "type": "message",
-        "label": "필지조건"
+        "label": "부지조건 이관(분류·환경·허가 별도)"
+      },
+      {
+        "id": "BE03B",
+        "source": "B02A",
+        "target": "B06",
+        "type": "sequence",
+        "label": "필지조건 확정"
+      },
+      {
+        "id": "BE03C",
+        "source": "B06",
+        "target": "B06A",
+        "type": "sequence"
+      },
+      {
+        "id": "BE03D",
+        "source": "B06A",
+        "target": "B06B",
+        "type": "sequence",
+        "label": "내부 부지판정·다음 심사축 이관"
       },
       {
         "id": "BE04",
         "source": "B03",
         "target": "B04",
-        "type": "sequence"
+        "type": "sequence",
+        "label": "책임체계"
       },
       {
         "id": "BE05",
@@ -1024,7 +1470,8 @@
         "id": "BE06",
         "source": "B04",
         "target": "B06D",
-        "type": "sequence"
+        "type": "sequence",
+        "label": "설계기준"
       },
       {
         "id": "BE07",
@@ -1035,7 +1482,7 @@
       },
       {
         "id": "BE07B",
-        "source": "B06",
+        "source": "B06B",
         "target": "B06D",
         "type": "message",
         "label": "부지조건"
@@ -1044,8 +1491,7 @@
         "id": "BE08",
         "source": "B06D",
         "target": "B07",
-        "type": "message",
-        "label": "사전검토"
+        "type": "sequence"
       },
       {
         "id": "BE09",
@@ -1104,6 +1550,13 @@
         "target": "B09",
         "type": "loop",
         "label": "중대한 변경"
+      },
+      {
+        "id": "BL17A",
+        "source": "B14",
+        "target": "B13",
+        "type": "loop",
+        "label": "변경·시정"
       },
       {
         "id": "BE18",
@@ -2259,31 +2712,22 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "부지권원·PUD 확인",
-      "decision": "정확한 필지, NICAD, 권원과 필지별 PUD 조건을 서면 확보한다.",
+      "gate": "부지권원·PUD 공식 확인",
+      "decision": "지적·도시계획 당국이 정확한 필지, NICAD, 권원과 필지별 PUD 적용조건을 서면 확인한다.",
       "dependsOn": [],
-      "output": "부지 적법성 메모, PUD 규제표, 승인 측량도"
+      "output": "지적·권원 확인서, PUD 적용회신·규제표, 승인 측량도"
     },
     {
       "order": 2,
-      "gate": "프로젝트 법적 분류",
-      "decision": "건축주·신청인, 공공사업 여부, ERP·ICPE 가능성, 층수·면적·굴착 문턱을 잠정 분류한다.",
+      "gate": "관할·ERP·ICPE 공식 분류",
+      "decision": "관할기관이 법적 건축주·신청인, 허가권자, ERP·ICPE 가능성과 규모 문턱의 적용 여부를 서면 확인한다.",
       "dependsOn": [
         1
       ],
-      "output": "인허가 매트릭스와 관할기관 사전협의 요청서"
+      "output": "관할·ERP·ICPE 공식 분류회신과 선행심사 목록"
     },
     {
       "order": 3,
-      "gate": "현지 책임설계자 선임",
-      "decision": "ODAS 등록 건축사와 현지 자격 BET·기술검사기관의 역할을 정하고 외국 전문가의 법적 지위를 확인한다.",
-      "dependsOn": [
-        2
-      ],
-      "output": "자격증빙, 설계·서명·책임 RACI"
-    },
-    {
-      "order": 4,
       "gate": "환경 스크리닝",
       "decision": "환경기관이 요구한 평가 유형과 ICPE 여부를 확정하고 필요한 환경증서를 취득한다.",
       "dependsOn": [
@@ -2293,62 +2737,32 @@
       "output": "공식 스크리닝과 환경적합 확인서·인증서"
     },
     {
-      "order": 5,
-      "gate": "설계·기술 사전검토",
-      "decision": "지반조사, 구조·MEP, 접근성, 소방, 에너지, 배수, 기술검사 요구를 허가도서에 통합한다.",
-      "dependsOn": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "output": "허가설계와 관계기관 사전의견"
-    },
-    {
-      "order": 6,
+      "order": 4,
       "gate": "건축허가",
-      "decision": "관할 허가권자에게 완비서류를 접수하고 승인도서·조건을 확보한다.",
+      "decision": "관할 허가권자가 완비서류와 관계기관 의견을 심사해 건축허가와 승인도서·조건을 발급한다.",
       "dependsOn": [
-        4,
-        5
+        2,
+        3
       ],
       "output": "건축허가, 승인도서, 조건목록"
     },
     {
-      "order": 7,
-      "gate": "착공 선행조건",
-      "decision": "기술검사계약, 구조 비자, 지반보고서, 보험과 필요 시 굴착 개시·Mines 승인을 확보한다.",
-      "dependsOn": [
-        6
-      ],
-      "output": "착공 승인팩과 현장 허가표지"
-    },
-    {
-      "order": 8,
-      "gate": "시공·변경·검사",
-      "decision": "승인도서, 기술검사, 품질·HSE·폐기물, 변경승인과 관계기관 검사 기록을 유지한다.",
-      "dependsOn": [
-        7
-      ],
-      "output": "검사·변경·품질·HSE 대장"
-    },
-    {
-      "order": 9,
+      "order": 5,
       "gate": "준공 적합",
-      "decision": "준공신고, 준공도면, 시험·검사 자료를 제출해 적합증명서를 취득한다.",
+      "decision": "관할기관이 준공도면과 시험·검사 자료를 심사하고 현장 적합검사 후 적합증명서를 발급한다.",
       "dependsOn": [
-        8
+        4
       ],
       "output": "적합증명서"
     },
     {
-      "order": 10,
-      "gate": "ERP 개장·운영인계",
-      "decision": "해당 시 안전위원회 접수검사와 공중개방 승인을 받고 법정점검·보험·O&M 체계를 운영자에게 인계한다.",
+      "order": 6,
+      "gate": "ERP 공중개방 승인",
+      "decision": "ERP 적용 시 안전위원회가 접수검사와 결함종결을 확인해 공중개방을 승인한다.",
       "dependsOn": [
-        9
+        5
       ],
-      "output": "개장승인, 운영허가·점검대장, 인수인계팩"
+      "output": "ERP 접수검사 의사록과 공중개방 승인서"
     }
   ],
   "siteOverlays": [

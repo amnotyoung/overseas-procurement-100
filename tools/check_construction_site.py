@@ -89,6 +89,9 @@ def main() -> int:
                 errors.append(f"{slug} public construction model slugs differ")
         if len(models) != 3:
             errors.append(f"{slug} must expose three construction models, got {len(models)}")
+        for model in models:
+            if not model["canvas"].get("applicability"):
+                errors.append(f"{model['slug']} has a blank applicability card")
         conclusion_ids = {item["id"] for item in data["reportReadyConclusions"]}
         model_conclusion_ids = {
             item["id"] for model in models for item in model["canvas"]["keyFindings"]
@@ -139,11 +142,12 @@ def main() -> int:
         for source_node in board["nodes"]:
             expected_basis: dict[str, set[str]] = {}
             refs = list(source_node.get("refs", []))
-            for requirement_id in source_node.get("requirementIds", []):
-                allowed = expected_requirements_by_node.get(source_node["id"])
-                if allowed is not None and requirement_id not in allowed:
-                    continue
-                refs.extend(requirements[requirement_id].get("legalBasis", []))
+            if not refs:
+                for requirement_id in source_node.get("requirementIds", []):
+                    allowed = expected_requirements_by_node.get(source_node["id"])
+                    if allowed is not None and requirement_id not in allowed:
+                        continue
+                    refs.extend(requirements[requirement_id].get("legalBasis", []))
             for ref in refs:
                 expected_basis.setdefault(ref["instrumentId"], set()).update(ref["provisions"])
             actual_basis = {
@@ -185,6 +189,13 @@ def main() -> int:
         for model in models:
             model_slug = model["slug"]
             spec = public_specs.get(model_slug)
+            process = model["process"]
+            if not 7 <= len(process["nodes"]) <= 8:
+                errors.append(f"{model_slug} must render 7-8 nodes, got {len(process['nodes'])}")
+            if len(process["lanes"]) < 3:
+                errors.append(f"{model_slug} must render at least 3 lanes")
+            if len(process["stages"]) < 4:
+                errors.append(f"{model_slug} must render at least 4 stages")
             detail_path = SITE / "model" / model_slug / "index.html"
             detail_html = detail_path.read_text(encoding="utf-8") if detail_path.exists() else ""
             if not detail_html:
@@ -201,6 +212,8 @@ def main() -> int:
                 "현장 확인질문",
                 "보고서 반영",
                 "핵심 적용판단",
+                "업무 단계",
+                "근거 상태",
                 f'{model["priority"]:02d} · {model["name"]}',
                 "레인 \\ 단계",
             ):
@@ -213,6 +226,70 @@ def main() -> int:
                     f"site/model/{model_slug}/index.html node buttons differ: "
                     f"expected {expected_ids}, got {node_buttons}"
                 )
+            serialized = re.search(
+                r"var NODES=(\{.*?\});\nvar EDGES=(\[.*?\]);",
+                detail_html,
+                re.DOTALL,
+            )
+            if not serialized:
+                errors.append(f"site/model/{model_slug}/index.html is missing serialized NODES/EDGES")
+            else:
+                try:
+                    serialized_nodes = json.loads(serialized.group(1))
+                    serialized_edges = json.loads(serialized.group(2))
+                except json.JSONDecodeError as exc:
+                    errors.append(f"site/model/{model_slug}/index.html has invalid board JSON: {exc}")
+                else:
+                    if list(serialized_nodes) != expected_ids:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html serialized node order differs: "
+                            f"expected {expected_ids}, got {list(serialized_nodes)}"
+                        )
+                    expected_edge_ids = [edge["id"] for edge in process["edges"]]
+                    actual_edge_ids = [edge.get("id") for edge in serialized_edges]
+                    if actual_edge_ids != expected_edge_ids:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html serialized edges differ: "
+                            f"expected {expected_edge_ids}, got {actual_edge_ids}"
+                        )
+                    for node_id, node in serialized_nodes.items():
+                        if not node.get("action") or not node.get("output_documents"):
+                            errors.append(
+                                f"site/model/{model_slug}/index.html node {node_id} lacks action/output detail"
+                            )
+                        if not node.get("legal_basis"):
+                            errors.append(
+                                f"site/model/{model_slug}/index.html node {node_id} lacks legal basis"
+                            )
+                        if "confidence" in node:
+                            errors.append(
+                                f"site/model/{model_slug}/index.html node {node_id} "
+                                "exposes a synthetic numeric legal confidence"
+                            )
+                        if not node.get("evidence_status"):
+                            errors.append(
+                                f"site/model/{model_slug}/index.html node {node_id} lacks evidence status"
+                            )
+                        source_node = next(
+                            item for item in board["nodes"] if item["id"] == node_id
+                        )
+                        expected_scope = source_node.get("basisScope", "node")
+                        if node.get("basis_scope") != expected_scope:
+                            errors.append(
+                                f"site/model/{model_slug}/index.html node {node_id} "
+                                f"basis scope differs: expected {expected_scope!r}"
+                            )
+                    if data.get("generatedFrom") and "축 전체 관련 제도 근거" not in detail_html:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html does not disclose axis-level basis scope"
+                        )
+                    if (
+                        model["verification"]["status"] != "article-verified"
+                        and "세부 조문의 문언 일치나 개별 사업 적용판정을 뜻하지 않습니다" not in detail_html
+                    ):
+                        errors.append(
+                            f"site/model/{model_slug}/index.html overstates non-article verification"
+                        )
             if '<div class="studio-board-view">' in detail_html or f"{svg_rel}" in detail_html:
                 errors.append(f"site/model/{model_slug}/index.html still embeds the static SVG")
             if spec and model["verification"]["scope"] != spec["verificationScope"]:
