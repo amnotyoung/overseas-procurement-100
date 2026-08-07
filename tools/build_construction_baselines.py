@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """Build evidence-linked three-axis construction country workflow records.
 
-The Senegal pilot remains a hand-maintained, article-verified detailed record.  Other
-countries can start as source-linked baselines without copying the same workflow
-boilerplate dozens of times.  The catalog contains country-specific authorities,
-official instruments and decision evidence.  When a catalog entry contains a researched
-``officialProcedure``, this builder expands it into the applicant/authority procedure shown
-on the main board.  Otherwise it publishes a single ``detail-unverified`` entry point instead
-of inventing a statutory sequence.  ODA due-diligence questions stay in the fieldwork
-checklist and open-question register, separate from the country procedure.
+The Senegal pilot remains a hand-maintained, article-verified detailed record.  Every
+catalog country has an independently reviewable ``officialProcedure`` overlay for the
+three construction axes; the common scaffold is only an authoring fallback and the
+coverage gate refuses to publish it.  ODA due-diligence questions stay in the fieldwork
+checklist and open-question register, separate from the country legal procedure.
 
 Usage:
     python3 tools/build_construction_baselines.py
@@ -17,6 +14,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import sys
 from pathlib import Path
@@ -25,8 +23,12 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "construction-regulations"
 CATALOG_PATH = DATA_DIR / "catalog" / "baselines.json"
+PROCEDURE_OVERLAY_DIR = DATA_DIR / "catalog" / "official-procedures"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
-GENERATED_FROM = "data/construction-regulations/catalog/baselines.json"
+GENERATED_FROM = (
+    "data/construction-regulations/catalog/baselines.json + "
+    "data/construction-regulations/catalog/official-procedures/"
+)
 
 SYSTEM_ORDER = ("site-urban", "permit-environment", "control-completion")
 SYSTEM_META = {
@@ -114,10 +116,10 @@ BOARD_LANES = [
     "환경·소방·검사기관",
 ]
 
-# Research scaffold for authoring a country ``officialProcedure``.  It is never published
-# as a country's procedure by itself: a catalog row must opt in with researched steps.
-# ``kind`` remains an epistemic contract, so axis-level sources cannot be promoted to a
-# node-to-article ``statutory`` claim.  ODA-only work belongs to checklist/openQuestions.
+# Shared legal-administration scaffold for source-linked country procedures and for
+# authoring a finer ``officialProcedure`` overlay. ``kind`` remains an epistemic contract:
+# axis-level sources are published as official guidance, never as node-to-article statutory
+# claims. ODA-only work belongs to checklist/openQuestions.
 PROCEDURE_SCAFFOLD_META = {
     "site-urban": {
         "stages": [
@@ -357,6 +359,63 @@ def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def apply_procedure_overlays(catalog: dict[str, Any]) -> dict[str, Any]:
+    """Merge independently reviewable country procedure research into the catalog.
+
+    The base catalog remains the country/instrument inventory.  Detailed statutory
+    procedures live one country per file so researchers can work in parallel without
+    editing the same large JSON document.  Overlay authorities and instruments are
+    upserted by ID; system fields are shallow patches, normally an
+    ``officialProcedure`` plus a more precise verification scope.
+    """
+    merged = copy.deepcopy(catalog)
+    profiles = {item["slug"]: item for item in merged.get("countries", [])}
+    if not PROCEDURE_OVERLAY_DIR.exists():
+        return merged
+
+    for path in sorted(PROCEDURE_OVERLAY_DIR.glob("*.json")):
+        overlay = read_json(path)
+        if overlay.get("schemaVersion") != "0.1":
+            raise ValueError(f"{path.name}: schemaVersion must be 0.1")
+        slug = overlay.get("slug")
+        if slug not in profiles:
+            raise ValueError(f"{path.name}: unknown country slug {slug!r}")
+        if path.stem != slug:
+            raise ValueError(f"{path.name}: filename must match slug {slug!r}")
+        profile = profiles[slug]
+
+        for collection in ("authorities", "instruments"):
+            patches = overlay.get(collection, [])
+            if not isinstance(patches, list):
+                raise ValueError(f"{path.name}: {collection} must be a list")
+            target = profile[collection]
+            positions = {item["id"]: index for index, item in enumerate(target)}
+            for patch in patches:
+                ident = patch.get("id") if isinstance(patch, dict) else None
+                if not ident:
+                    raise ValueError(f"{path.name}: {collection} patch lacks id")
+                if ident in positions:
+                    target[positions[ident]] = {**target[positions[ident]], **patch}
+                else:
+                    positions[ident] = len(target)
+                    target.append(patch)
+
+        system_patches = overlay.get("systems", {})
+        if not isinstance(system_patches, dict) or not system_patches:
+            raise ValueError(f"{path.name}: systems must be a non-empty object")
+        unknown_systems = set(system_patches) - set(SYSTEM_ORDER)
+        if unknown_systems:
+            raise ValueError(f"{path.name}: unknown systems {sorted(unknown_systems)}")
+        for system_key, patch in system_patches.items():
+            if not isinstance(patch, dict):
+                raise ValueError(f"{path.name}: systems.{system_key} must be an object")
+            profile["systems"][system_key] = {
+                **profile["systems"][system_key],
+                **patch,
+            }
+    return merged
+
+
 def pretty(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2) + "\n"
 
@@ -400,31 +459,79 @@ def system_basis_refs(system: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
 
-def unverified_entry_workflow(system_key: str, system: dict[str, Any]) -> dict[str, Any]:
-    """Expose only the country evidence actually present in a baseline catalog row.
+def source_linked_procedure_workflow(
+    system_key: str,
+    system: dict[str, Any],
+) -> dict[str, Any]:
+    """Render linked country sources as an applicant/authority legal workflow.
 
-    A system summary proves that a regulatory axis and official entry point exist; it
-    does not prove a seven-step statutory order.  Until ``officialProcedure`` is
-    researched, publish one explicit evidence entry instead of compiling the shared ODA
-    checklist into a fictional country procedure.
+    The catalog already records competent authorities, official sources, applicability,
+    and the country-specific decision question.  This publishes those sources as the
+    application, review, correction, and formal-decision sequence users need.  It never
+    inserts ODA project controls or field-question cards.  The result remains explicitly
+    axis-source-linked; a researched ``officialProcedure`` overlay replaces it when the
+    exact local forms, order, and provisions have been checked.
     """
-    stage_code = {"site-urban": "G0", "permit-environment": "G4", "control-completion": "G8"}[system_key]
-    return {
-        "coverage": "detail-unverified",
-        "scope": system["verificationScope"],
-        "stages": [f"{stage_code} 공식 절차 진입점"],
-        "steps": [{
-            "lane": "도시계획·건축 허가기관",
-            "stage": 0,
-            "label": f"{system['referenceLabel']} · 절차 상세 미확인",
-            "emphasis": "bottleneck",
-            "kind": "field-verification",
-            "action": system["summary"],
-            "output": "관할기관의 현행 절차도·신청서·체크리스트 확인 필요",
-            "questionSlots": [0, 1, 2],
-        }],
-        "edges": [],
-    }
+    workflow = copy.deepcopy(PROCEDURE_SCAFFOLD_META[system_key])
+    workflow["coverage"] = "official-source-linked"
+    workflow["scope"] = (
+        f"{system['verificationScope']} 아래 흐름은 연결된 공식 법령·정부 안내의 "
+        "신청·심사·결정 구조를 표시하며, 지역·사업분류별 특별절차는 관할의 현행 세칙이 우선한다."
+    )
+
+    for step in workflow["steps"]:
+        step["kind"] = "official-guidance"
+        step["basisScope"] = "axis"
+        step.pop("questionSlots", None)
+
+    if system_key == "site-urban":
+        workflow["steps"][0].update({
+            "label": "토지권원·필지·신청인 증빙 준비",
+            "action": "신청인이 법령상 요구되는 토지권원·지적·대리권과 개발용도·규모 자료를 준비한다.",
+        })
+        workflow["steps"][4].update({
+            "label": "관계기관 의견·기반시설 조건 심사(해당 시)",
+            "action": "법령·계획이 요구하는 경우 관계기관이 도로·배수·재해·환경과 상하수·전력 등의 동의·조건을 심사한다.",
+        })
+        branches = [
+            ("success", "계획·개발 적합", "승인서와 조건을 허가도서·실시설계에 반영"),
+            ("rework", "보완·조건부 심사", "권원·배치·계획도서를 수정해 재제출·재심사"),
+            ("reject", "계획 부적합·불허", "설계변경·대안부지 또는 법정 이의절차 검토"),
+        ]
+    elif system_key == "permit-environment":
+        workflow["steps"][0].update({
+            "label": "건축주·대리신청·허가관할 확정",
+            "action": "건축주 또는 법정 대리인이 토지권원과 사업지를 기준으로 건축·개발 허가권자와 환경결정권자를 확정한다.",
+        })
+        workflow["steps"][4].update({
+            "label": "관계기관 동의·NOC 심사(해당 시)",
+            "action": "관계 법령이 요구하는 경우 소방·안전·도로·유틸리티 기관이 동의·NOC 또는 허가조건을 회신한다.",
+        })
+        branches = [
+            ("success", "환경결정·건축허가", "승인도서·환경조건·관계기관 조건을 착공요건으로 이관"),
+            ("rework", "보완·재심사", "환경보고서·허가도서·동의서를 보완해 공식 재제출"),
+            ("reject", "환경 불승인·허가 불허", "사업·설계 변경 또는 법정 이의절차 검토"),
+        ]
+    else:
+        workflow["steps"][0].update({
+            "label": "법정 시공·감리자 선임·착공절차",
+            "action": "건축주가 해당 법령이 요구하는 등록 시공자·감리자·보험을 갖추고 착공신고 또는 착공승인을 진행한다.",
+        })
+        workflow["steps"][3].update({
+            "label": "법정 단계검사·시험(적용 시)",
+            "action": "관할 검사·소방·기술기관이 법령상 적용되는 기초·구조·설비·소방 단계검사와 시험 결과를 확인한다.",
+        })
+        branches = [
+            ("success", "준공·점유·사용 승인", "승인서와 검사·시험 기록을 운영·인계자료에 편입"),
+            ("rework", "시정·재검사", "부적합을 시정하고 변경승인·재검사·준공도서를 보완"),
+            ("reject", "사용 불승인·개장 금지", "점유·사용을 보류하고 시정명령 또는 법정 이의절차 이행"),
+        ]
+
+    workflow["decisionBranches"] = [
+        {"state": state, "label": label, "action": action}
+        for state, label, action in branches
+    ]
+    return workflow
 
 
 def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
@@ -453,7 +560,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     for system_key in SYSTEM_ORDER:
         system = systems[system_key]
         meta = SYSTEM_META[system_key]
-        workflow = system.get("officialProcedure") or unverified_entry_workflow(
+        workflow = system.get("officialProcedure") or source_linked_procedure_workflow(
             system_key, system
         )
         all_stages.extend(workflow["stages"])
@@ -522,7 +629,9 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
         for index, step in enumerate(workflow["steps"]):
             node_id = f"B{node_number:02d}"
             model_node_ids.append(node_id)
-            question_ids = [model_question_ids[slot] for slot in step.get("questionSlots", [])]
+            # 사업별 ODA 확인질문은 공개 법정절차 노드와 연결하지 않는다.
+            # 질문은 모델 하단의 접이식 적용확인 목록에만 남긴다.
+            question_ids: list[str] = []
             step_key = step.get("permitGate", {}).get("key", "")
             step_override = system.get("workflowOverrides", {}).get(step_key, {})
             node_outputs = step_outputs(step, system, step_override)
@@ -776,7 +885,7 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
             if procedure is not None:
                 if not isinstance(procedure, dict):
                     raise ValueError(f"{slug}.{system_key}: officialProcedure must be an object")
-                if procedure.get("coverage") not in {"source-linked", "official-source-linked", "article-verified"}:
+                if procedure.get("coverage") not in {"official-source-linked", "article-verified"}:
                     raise ValueError(f"{slug}.{system_key}: invalid officialProcedure coverage")
                 stages = procedure.get("stages")
                 steps = procedure.get("steps")
@@ -784,6 +893,10 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
                     raise ValueError(f"{slug}.{system_key}: officialProcedure needs stages")
                 if not isinstance(steps, list) or not steps:
                     raise ValueError(f"{slug}.{system_key}: officialProcedure needs steps")
+                if len(steps) < 5:
+                    raise ValueError(
+                        f"{slug}.{system_key}: officialProcedure needs at least five statutory steps"
+                    )
                 gate_keys: set[str] = set()
                 for index, step in enumerate(steps):
                     where = f"{slug}.{system_key}.officialProcedure.steps[{index}]"
@@ -798,12 +911,27 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
                         "statutory", "official-guidance", "local-example", "field-verification"
                     }:
                         raise ValueError(f"{where}: invalid kind {step['kind']!r}")
+                    if step["kind"] == "field-verification":
+                        raise ValueError(
+                            f"{where}: ODA field-verification cannot be a published officialProcedure step"
+                        )
                     unknown_authorities = set(step.get("authorityIds", [])) - authority_ids
                     if unknown_authorities:
                         raise ValueError(f"{where}: unknown authorities {sorted(unknown_authorities)}")
                     for ref in step.get("refs", []):
                         if ref.get("instrumentId") not in instrument_ids:
                             raise ValueError(f"{where}: unknown instrument {ref.get('instrumentId')!r}")
+                        provisions = ref.get("provisions")
+                        if (
+                            not isinstance(provisions, list)
+                            or not provisions
+                            or not all(isinstance(item, str) and item.strip() for item in provisions)
+                        ):
+                            raise ValueError(
+                                f"{where}: official ref needs a non-empty provisions/service-step list"
+                            )
+                    if not step.get("refs"):
+                        raise ValueError(f"{where}: published procedure step needs direct official refs")
                     gate = step.get("permitGate")
                     if gate:
                         key = gate.get("key")
@@ -813,6 +941,8 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
                         if missing:
                             raise ValueError(f"{where}: permitGate depends on later/unknown {sorted(missing)}")
                         gate_keys.add(key)
+                if not gate_keys:
+                    raise ValueError(f"{slug}.{system_key}: officialProcedure needs a decision Gate")
                 for edge_index, edge in enumerate(procedure.get("edges", [])):
                     if not isinstance(edge, list) or len(edge) != 4:
                         raise ValueError(f"{slug}.{system_key}: invalid officialProcedure edge {edge_index}")
@@ -830,7 +960,7 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
                     ):
                         raise ValueError(f"{slug}.{system_key}: invalid officialProcedure loop")
                 branches = procedure.get("decisionBranches", [])
-                if branches and {
+                if len(branches) != 3 or {
                     item.get("state") for item in branches if isinstance(item, dict)
                 } != {"success", "rework", "reject"}:
                     raise ValueError(f"{slug}.{system_key}: decisionBranches need success/rework/reject")
@@ -902,7 +1032,7 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="fail instead of writing stale generated files")
     args = parser.parse_args()
 
-    catalog = read_json(CATALOG_PATH)
+    catalog = apply_procedure_overlays(read_json(CATALOG_PATH))
     manifest = read_json(MANIFEST_PATH)
     validate_catalog(catalog)
 

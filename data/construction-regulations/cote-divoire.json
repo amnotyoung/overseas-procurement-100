@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "cote-divoire",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,26 +27,101 @@
     "title": "코트디부아르 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "S0 권원·입지",
+      "S1 적용규정·설계",
+      "S2 GUPC 도시계획심사",
+      "S3 계획적합 결정",
+      "S0 ANDE 분류",
+      "S1 환경평가 작성",
+      "S2 공개조사",
+      "S3 환경기술검증",
+      "S4 환경결정",
+      "S5 GUPC 허가심사",
+      "S6 건축허가결정",
+      "S0 착공통제 준비",
+      "S1 단계검사",
+      "S2 시정·완공신고",
+      "S3 적합성증명"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "ACD·도시계획법전 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "lane": "건축주·신청인",
+        "stage": "S0 권원·입지",
+        "label": "ACD·필지식별 자료 확보",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "도시토지는 ACD 등 적법한 권원과 승인 lotissement·도시계획문서에 부합해야 한다. SIGFU·관할 도시서비스에서 필지별 허용용도·COS/CES·높이·이격·주차, 도로·배수·침수·지반·상하수·전력 조건을 확인한다.",
-        "action": "도시토지는 ACD 등 적법한 권원과 승인 lotissement·도시계획문서에 부합해야 한다. SIGFU·관할 도시서비스에서 필지별 허용용도·COS/CES·높이·이격·주차, 도로·배수·침수·지반·상하수·전력 조건을 확인한다.",
+        "note": "신청인이 도시토지의 ACD 등 적법한 권원, 지적·필지식별 자료와 대리권을 준비한다.",
+        "action": "신청인이 도시토지의 ACD 등 적법한 권원, 지적·필지식별 자료와 대리권을 준비한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "ACD·지적도·필지식별·신청권한 자료"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MULCV ACD 서비스",
+            "instrumentId": "CIV-MULCV-PERMIT-SERVICE",
+            "provisions": [
+              "Arrete de Concession Definitive service"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S0 권원·입지",
+        "label": "승인 lotissement·필지상태 조회",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "MULCV 도시토지 서비스가 대상 필지가 승인·취소·유예된 lotissement 안에 있는지와 도시토지 상태를 조회한다.",
+        "action": "MULCV 도시토지 서비스가 대상 필지가 승인·취소·유예된 lotissement 안에 있는지와 도시토지 상태를 조회한다.",
+        "outputs": [
+          "lotissement·도시토지 상태 회신"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "승인 lotissement 조회",
+            "instrumentId": "CIV-URBAN-CODE-2020-624",
+            "provisions": [
+              "approved urban subdivision and urban-land framework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S1 적용규정·설계",
+        "label": "개별·일반 도시계획규정 특정",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "관할 도시계획기관이 commune의 개별 도시계획규정이 있으면 이를, 없으면 일반 도시계획규정을 적용해 용도·COS·후퇴선 등 설계조건을 특정한다.",
+        "action": "관할 도시계획기관이 commune의 개별 도시계획규정이 있으면 이를, 없으면 일반 도시계획규정을 적용해 용도·COS·후퇴선 등 설계조건을 특정한다.",
+        "outputs": [
+          "적용 도시계획문서·필지 설계조건"
         ],
         "authorityIds": [
           "mulcv",
@@ -55,71 +130,611 @@
         "requirementIds": [
           "CIV-BLD-REQ-004"
         ],
-        "questionIds": [
-          "CIV-BLD-Q-001",
-          "CIV-BLD-Q-002",
-          "CIV-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "ACD·도시계획법전",
-            "instrumentId": "CIV-URBAN-CODE-2020-624",
-            "provisions": [
-              "urban planning and urban land framework"
-            ]
-          },
-          {
-            "source": "ACD·도시계획법전",
+            "source": "필지 건축규칙",
             "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
             "provisions": [
-              "urban and construction compliance"
+              "Articles 7-8"
             ]
           }
         ]
       },
       {
-        "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "GUPC·ANDE 환경평가 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "id": "B04",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 적용규정·설계",
+        "label": "건물 위험·용도등급 분류",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "GUPC는 도시계획·건축·공학·소방 적합성을 통합검토하고 허가등급에 따라 장관 또는 시장이 permit을 발급한다. 환경분류는 Annex I EIES, Annex II CIES, Annex III 민감입지 또는 categorical exclusion 경로를 ANDE에서 확인한다.",
-        "action": "GUPC는 도시계획·건축·공학·소방 적합성을 통합검토하고 허가등급에 따라 장관 또는 시장이 permit을 발급한다. 환경분류는 Annex I EIES, Annex II CIES, Annex III 민감입지 또는 categorical exclusion 경로를 ANDE에서 확인한다.",
+        "note": "승인 건축사가 규모·높이·지하층·용도에 따라 A~L 건물등급과 용도분류를 정하고 적용 설계·검사 수준을 반영한다.",
+        "action": "승인 건축사가 규모·높이·지하층·용도에 따라 A~L 건물등급과 용도분류를 정하고 적용 설계·검사 수준을 반영한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "건물 위험등급·용도분류표"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건물 위험기반 분류",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 9-10, 18"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 적용규정·설계",
+        "label": "도시계획 적합 도서 작성",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축사가 권원·배치·평면·높이·후퇴·주차·배수도서를 작성해 계획·정렬·위생·안전·건축경관 규정에 맞춘다.",
+        "action": "건축사가 권원·배치·평면·높이·후퇴·주차·배수도서를 작성해 계획·정렬·위생·안전·건축경관 규정에 맞춘다.",
+        "outputs": [
+          "건축사 서명 계획·배치도서"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가 적합기준",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 14, 18-19"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "건축주·신청인",
+        "stage": "S2 GUPC 도시계획심사",
+        "label": "SIGUPC에 계획·건축도서 접수",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "신청인이 GUPC 통합창구에 권원·계획·건축·공학·소방 도서를 제출하고 접수기록을 받는다.",
+        "action": "신청인이 GUPC 통합창구에 권원·계획·건축·공학·소방 도서를 제출하고 접수기록을 받는다.",
+        "outputs": [
+          "SIGUPC 접수기록·통합 심사도서"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "GUPC 법정 심사",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 16"
+            ]
+          },
+          {
+            "source": "현행 SIGUPC",
+            "instrumentId": "CIV-GUPC-SERVICE",
+            "provisions": [
+              "integrated online permit entry"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S2 GUPC 도시계획심사",
+        "label": "GUPC 도시계획·관계기관 검토",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "GUPC 참여기관이 도시계획문서·정렬·위생·배수·안전·건축경관에 대한 의견을 통합하고 부적합·누락을 적시한다.",
+        "action": "GUPC 참여기관이 도시계획문서·정렬·위생·배수·안전·건축경관에 대한 의견을 통합하고 부적합·누락을 적시한다.",
+        "outputs": [
+          "통합 기술검토 의견·보완요구"
         ],
         "authorityIds": [
           "gupc-ministry-mayor",
-          "mulcv",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가 적합기준",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 19"
+            ]
+          },
+          {
+            "source": "GUPC 위원회",
+            "instrumentId": "CIV-MULCV-PERMIT-SERVICE",
+            "provisions": [
+              "commission of all GUPC structures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 GUPC 도시계획심사",
+        "label": "계획부적합 도서 보완·재심",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축사가 통지된 도시계획·정렬·배수·안전 부적합을 수정하고 GUPC에 재제출한다.",
+        "action": "건축사가 통지된 도시계획·정렬·배수·안전 부적합을 수정하고 GUPC에 재제출한다.",
+        "outputs": [
+          "수정도서·보완 재접수"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가 심사기준",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 14, 19"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B09",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S3 계획적합 결정",
+        "label": "GUPC 계획적합 의견·허가권자 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "GUPC 위원회가 계획적합 의견을 확정하고 허가등급에 따라 장관 또는 시장이 허가·조건·유보·거부를 공식 결정한다.",
+        "action": "GUPC 위원회가 계획적합 의견을 확정하고 허가등급에 따라 장관 또는 시장이 허가·조건·유보·거부를 공식 결정한다.",
+        "outputs": [
+          "GUPC 위원회 의견과 장관·시장 결정"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건축가능 입지·허가기준",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 11, 19-20"
+            ]
+          },
+          {
+            "source": "현행 서명경로",
+            "instrumentId": "CIV-MULCV-PERMIT-SERVICE",
+            "provisions": [
+              "favourable commission opinion; ministerial or municipal signature"
+            ]
+          }
+        ],
+        "gateOrders": [
+          1
+        ]
+      },
+      {
+        "id": "B10",
+        "lane": "건축주·신청인",
+        "stage": "S0 ANDE 분류",
+        "label": "ANDE에 사업자료·TdR안 제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "사업자가 사업·입지·규모·영향자료와 필요시 평가 TdR안을 ANDE에 제출해 환경·사회평가 절차를 개시한다.",
+        "action": "사업자가 사업·입지·규모·영향자료와 필요시 평가 TdR안을 ANDE에 제출해 환경·사회평가 절차를 개시한다.",
+        "outputs": [
+          "사업기초자료·환경분류 접수"
+        ],
+        "authorityIds": [
           "ande"
         ],
         "requirementIds": [
           "CIV-BLD-REQ-005"
         ],
-        "questionIds": [
-          "CIV-BLD-Q-004",
-          "CIV-BLD-Q-005",
-          "CIV-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "GUPC·ANDE 환경평가",
-            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "source": "ANDE 절차 개시",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
             "provisions": [
-              "Arts. 11-30; construction authorizations"
+              "promoter informs ANDE and communicates project data"
             ]
           },
           {
-            "source": "GUPC·ANDE 환경평가",
+            "source": "현행 ANDE 원스톱",
+            "instrumentId": "CIV-ANDE-EES-PROCEDURE",
+            "provisions": [
+              "single window for environmental and social assessments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "lane": "환경·소방·검사기관",
+        "stage": "S0 ANDE 분류",
+        "label": "ANDE 합동 현장확인·간이 주민협의",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANDE가 사업자와 공동 현장확인 및 간이 주민협의를 실시해 사업과 입지의 민감도를 파악한다.",
+        "action": "ANDE가 사업자와 공동 현장확인 및 간이 주민협의를 실시해 사업과 입지의 민감도를 파악한다.",
+        "outputs": [
+          "현장확인·초기협의 기록"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "분류 전 현장확인",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "joint site reconnaissance and summary population consultation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B12",
+        "lane": "환경·소방·검사기관",
+        "stage": "S0 ANDE 분류",
+        "label": "EIES·CIES·CEC 공식분류",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANDE가 Annex I·III이면 EIES, Annex II이면 CIES, 그 밖이면 환경조건을 붙인 CEC 경로로 분류한다.",
+        "action": "ANDE가 Annex I·III이면 EIES, Annex II이면 CIES, 그 밖이면 환경조건을 붙인 CEC 경로로 분류한다.",
+        "outputs": [
+          "EIES·CIES 분류 또는 CEC 통지"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "평가유형 분류",
             "instrumentId": "CIV-ENV-DECREE-96-894",
             "provisions": [
-              "Annexes I, II and III; environmental assessment"
+              "Annexes I, II and III"
             ]
           },
           {
-            "source": "GUPC·ANDE 환경평가",
+            "source": "정부 분류절차",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "EIES, CIES or categorical exclusion cases"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B13",
+        "lane": "환경·소방·검사기관",
+        "stage": "S1 환경평가 작성",
+        "label": "ANDE TdR 작성·검토·승인",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANDE가 현장자료를 바탕으로 EIES·CIES TdR을 작성하거나 사업자 제출안을 수정·승인한다.",
+        "action": "ANDE가 현장자료를 바탕으로 EIES·CIES TdR을 작성하거나 사업자 제출안을 수정·승인한다.",
+        "outputs": [
+          "ANDE 승인 TdR"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "TdR 확정",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "ANDE prepares or amends and validates terms of reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 환경평가 작성",
+        "label": "공인 환경사무소 EIES·CIES 작성",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "환경부 인가를 받은 사무소·컨설턴트가 승인 TdR에 따라 조사·대안·영향·PGES와 이해관계자 협의 결과를 작성한다.",
+        "action": "환경부 인가를 받은 사무소·컨설턴트가 승인 TdR에 따라 조사·대안·영향·PGES와 이해관계자 협의 결과를 작성한다.",
+        "outputs": [
+          "EIES·CIES 보고서와 PGES"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "인가 사무소 작성",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "selection of ministry-accredited study office"
+            ]
+          },
+          {
+            "source": "현행 인가제도",
+            "instrumentId": "CIV-ANDE-EES-PROCEDURE",
+            "provisions": [
+              "2025 accreditation of EES study offices and consultants"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "건축주·신청인",
+        "stage": "S2 공개조사",
+        "label": "환경보고서 ANDE 제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "사업자가 완성된 EIES 또는 CIES 보고서를 ANDE에 제출해 국가 검증절차를 개시한다.",
+        "action": "사업자가 완성된 EIES 또는 CIES 보고서를 ANDE에 제출해 국가 검증절차를 개시한다.",
+        "outputs": [
+          "ANDE 환경보고서 접수"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "국가검증 제출",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "submission of EIES or CIES report to ANDE"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B16",
+        "lane": "환경·소방·검사기관",
+        "stage": "S2 공개조사",
+        "label": "EIES 10일 공개조사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "EIES 경로이면 ANDE가 사업지역에서 10일간 공개조사를 실시하고 의견을 심사자료에 편입한다. CIES에는 이 단계가 적용되지 않는다.",
+        "action": "EIES 경로이면 ANDE가 사업지역에서 10일간 공개조사를 실시하고 의견을 심사자료에 편입한다. CIES에는 이 단계가 적용되지 않는다.",
+        "outputs": [
+          "공개조사 기록·의견집계"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "EIES 공개조사",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "ten-day public inquiry for EIES only"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B17",
+        "lane": "환경·소방·검사기관",
+        "stage": "S3 환경기술검증",
+        "label": "부처간 위원회 기술심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANDE가 부처간 위원회 기술검증회를 열어 무조건 승인·권고조건부 승인·거부 중 의견을 확정한다.",
+        "action": "ANDE가 부처간 위원회 기술검증회를 열어 무조건 승인·권고조건부 승인·거부 중 의견을 확정한다.",
+        "outputs": [
+          "위원회 검증의견·보완 또는 거부결정"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "국가 기술검증",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "interministerial technical examination; approved, approved with recommendations, or rejected"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S3 환경기술검증",
+        "label": "위원회 권고 반영·보고서 재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "조건부 승인 또는 거부된 보고서에 위원회 권고를 반영해 ANDE에 수정본을 재제출한다.",
+        "action": "조건부 승인 또는 거부된 보고서에 위원회 권고를 반영해 ANDE에 수정본을 재제출한다.",
+        "outputs": [
+          "수정 EIES·CIES·권고 대응표"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경보고서 재심",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "rejected report is revised and resubmitted; recommendations incorporated"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "환경·소방·검사기관",
+        "stage": "S4 환경결정",
+        "label": "환경장관 EIES·CIES 승인명령",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "검증을 통과한 보고서에 대해 환경장관 승인명령이 ANDE를 통해 사업자에게 교부되고 PGES·승인조건이 집행조건이 된다.",
+        "action": "검증을 통과한 보고서에 대해 환경장관 승인명령이 ANDE를 통해 사업자에게 교부되고 PGES·승인조건이 집행조건이 된다.",
+        "outputs": [
+          "환경장관 승인명령·환경조건"
+        ],
+        "authorityIds": [
+          "ande"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경승인",
+            "instrumentId": "CIV-ANDE-EES-WORKFLOW",
+            "provisions": [
+              "ministerial order approving EIES or CIES report"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S5 GUPC 허가심사",
+        "label": "건축·공학·소방 허가도서 통합",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "승인 건축사가 환경조건을 도시계획·건축·구조·설비·소방도서에 통합하고 건물 위험등급에 맞는 관계전문가 도서를 완성한다.",
+        "action": "승인 건축사가 환경조건을 도시계획·건축·구조·설비·소방도서에 통합하고 건물 위험등급에 맞는 관계전문가 도서를 완성한다.",
+        "outputs": [
+          "환경조건 반영 GUPC 허가도서"
+        ],
+        "authorityIds": [
+          "mulcv",
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건축사·허가기준",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 10, 14, 18-19"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "건축주·신청인",
+        "stage": "S5 GUPC 허가심사",
+        "label": "SIGUPC 통합 허가신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "신청인이 GUPC에 완비 허가도서·권원·환경승인·소방 등 관계기관 자료를 접수한다.",
+        "action": "신청인이 GUPC에 완비 허가도서·권원·환경승인·소방 등 관계기관 자료를 접수한다.",
+        "outputs": [
+          "SIGUPC 신청번호·완비도서"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "GUPC 법정창구",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 16"
+            ]
+          },
+          {
+            "source": "현행 SIGUPC",
             "instrumentId": "CIV-GUPC-SERVICE",
             "provisions": [
               "integrated permit submission"
@@ -128,17 +743,119 @@
         ]
       },
       {
-        "id": "B03",
+        "id": "B22",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "공사보험·certificat de conformite · 절차 상세 미확인",
+        "stage": "S5 GUPC 허가심사",
+        "label": "GUPC 위원회 통합심사",
         "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건설·주택법전은 공사통제, 안전보건조정, certificat de conformite와 보험책임을 규정한다. 착공 전 tous risques chantier, 설계·시공자의 책임과 decennale 요구의 최신 개정상태를 확인하고 최종 적합성증명 없이 사용하지 않는다.",
-        "action": "건설·주택법전은 공사통제, 안전보건조정, certificat de conformite와 보험책임을 규정한다. 착공 전 tous risques chantier, 설계·시공자의 책임과 decennale 요구의 최신 개정상태를 확인하고 최종 적합성증명 없이 사용하지 않는다.",
+        "note": "GUPC 참여기관이 도시계획·건축·공학·소방·환경조건을 심사해 적합의견 또는 보완·거부 사유를 확정한다.",
+        "action": "GUPC 참여기관이 도시계획·건축·공학·소방·환경조건을 심사해 적합의견 또는 보완·거부 사유를 확정한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "GUPC 위원회 의견·보완요구"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "현행 GUPC 위원회",
+            "instrumentId": "CIV-MULCV-PERMIT-SERVICE",
+            "provisions": [
+              "commission composed of all structures present at GUPC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S5 GUPC 허가심사",
+        "label": "GUPC 보완도서 재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "위원회가 통지한 도시계획·기술·소방·환경조건 누락을 수정해 재심사한다.",
+        "action": "위원회가 통지한 도시계획·기술·소방·환경조건 누락을 수정해 재심사한다.",
+        "outputs": [
+          "수정 허가도서·보완 대응표"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가 적합성",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 14, 19"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S6 건축허가결정",
+        "label": "장관·시장 건축허가 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "위원회 적합의견 뒤 허가등급에 따라 건설 담당 장관 또는 시장이 건축허가·조건·거부를 서명한다.",
+        "action": "위원회 적합의견 뒤 허가등급에 따라 건설 담당 장관 또는 시장이 건축허가·조건·거부를 서명한다.",
+        "outputs": [
+          "Permis de construire·승인도서·조건 또는 거부"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가권자 서명",
+            "instrumentId": "CIV-MULCV-PERMIT-SERVICE",
+            "provisions": [
+              "ministerial permit signed by minister; municipal permit signed by mayor"
+            ]
+          },
+          {
+            "source": "허가 유효기간",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 11, 23"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "건축주·신청인",
+        "stage": "S0 착공통제 준비",
+        "label": "허가·승인도서·보험조건 확정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 유효한 건축허가와 승인도서·환경조건을 공사계약에 편입하고 법정 책임·보험조건을 갖춘다.",
+        "action": "건축주가 유효한 건축허가와 승인도서·환경조건을 공사계약에 편입하고 법정 책임·보험조건을 갖춘다.",
+        "outputs": [
+          "유효 허가·승인도서·공사통제 계약자료"
         ],
         "authorityIds": [
           "mulcv",
@@ -147,43 +864,677 @@
         "requirementIds": [
           "CIV-BLD-REQ-006"
         ],
-        "questionIds": [
-          "CIV-BLD-Q-007",
-          "CIV-BLD-Q-008",
-          "CIV-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "공사보험·certificat de conformite",
+            "source": "허가 선행·유효",
             "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
             "provisions": [
-              "Arts. 31-74; construction control, safety, conformity and reception"
+              "Articles 11-14, 23"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "건축주·신청인",
+        "stage": "S0 착공통제 준비",
+        "label": "독립 contrôleur des constructions 선임",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 동일 프로젝트의 설계·시공·감정과 겸직하지 않는 공사통제자를 선임한다.",
+        "action": "건축주가 동일 프로젝트의 설계·시공·감정과 겸직하지 않는 공사통제자를 선임한다.",
+        "outputs": [
+          "공사통제자 계약·독립성 자료"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "공사통제자 선임·독립",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 33, 39-40"
             ]
           },
           {
-            "source": "공사보험·certificat de conformite",
-            "instrumentId": "CIV-GUPC-SERVICE",
+            "source": "현행 인가 목록",
+            "instrumentId": "CIV-MULCV-MISSION-2026",
             "provisions": [
-              "permit and completion administration"
+              "regulation of construction professionals and construction control"
             ]
           }
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 단계검사",
+        "label": "실시설계·현장배치 승인",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공사통제자가 시공자의 실시도서를 검토하고 도시계획 처방에 맞는 건물배치를 확인·승인한다.",
+        "action": "공사통제자가 시공자의 실시도서를 검토하고 도시계획 처방에 맞는 건물배치를 확인·승인한다.",
+        "outputs": [
+          "실시설계·배치 승인기록"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "통제자 초기검사",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 34"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "환경·소방·검사기관",
+        "stage": "S1 단계검사",
+        "label": "굴착·기초·철근·콘크리트 단계검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공사통제자가 굴착깊이·기초저면·콘크리트 배합·거푸집·철근과 재료품질을 단계별로 검사하고 상세 서명보고서를 작성한다.",
+        "action": "공사통제자가 굴착깊이·기초저면·콘크리트 배합·거푸집·철근과 재료품질을 단계별로 검사하고 상세 서명보고서를 작성한다.",
+        "outputs": [
+          "단계검사·재료시험·서명보고서"
+        ],
+        "authorityIds": [
+          "mulcv",
+          "pccc"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "법정 단계검사",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 34-35"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B29",
+        "lane": "환경·소방·검사기관",
+        "stage": "S1 단계검사",
+        "label": "승인도서 일치·현장 합동통제",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "MULCV/PCCC와 공사통제자가 현장 공사가 건축허가·승인도서·안전조건과 일치하는지 점검한다.",
+        "action": "MULCV/PCCC와 공사통제자가 현장 공사가 건축허가·승인도서·안전조건과 일치하는지 점검한다.",
+        "outputs": [
+          "현장통제 기록·적합 또는 위반통지"
+        ],
+        "authorityIds": [
+          "mulcv",
+          "pccc"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "현행 PCCC 집행",
+            "instrumentId": "CIV-PCCC-CONTROL",
+            "provisions": [
+              "site inspection against building permit"
+            ]
+          },
+          {
+            "source": "공사통제 보고",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 34-36"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B30",
+        "lane": "환경·소방·검사기관",
+        "stage": "S2 시정·완공신고",
+        "label": "부적합 시 공사중지·시정명령",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "중대한 불일치 또는 안정성 위험이면 통제자나 관할부가 공사를 중지시키고 승인도서에 맞춘 시정을 요구한다.",
+        "action": "중대한 불일치 또는 안정성 위험이면 통제자나 관할부가 공사를 중지시키고 승인도서에 맞춘 시정을 요구한다.",
+        "outputs": [
+          "공사중지·시정 또는 철거통지"
+        ],
+        "authorityIds": [
+          "mulcv",
+          "pccc"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "통제자 공사중지",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 25-26, 36"
+            ]
+          },
+          {
+            "source": "PCCC 공사중지 사례",
+            "instrumentId": "CIV-PCCC-CONTROL",
+            "provisions": [
+              "immediate stop-work and evacuation for permit non-conformity"
+            ]
+          }
+        ],
+        "gateOrders": [
+          5
+        ]
+      },
+      {
+        "id": "B31",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 시정·완공신고",
+        "label": "부적합 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "시공자가 지적사항을 시정하고 공사통제자·관할 통제기관의 재검사를 받아 공사재개 근거를 확보한다.",
+        "action": "시공자가 지적사항을 시정하고 공사통제자·관할 통제기관의 재검사를 받아 공사재개 근거를 확보한다.",
+        "outputs": [
+          "시정완료 자료·재검사 기록"
+        ],
+        "authorityIds": [
+          "mulcv",
+          "pccc"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "시정의무",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 25-26, 36"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B32",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 시정·완공신고",
+        "label": "통제자 bonne execution 확인",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공사통제자가 전체 단계보고서를 종결하고 certificat de conformite 신청에 첨부할 적정시공 확인서를 발행한다.",
+        "action": "공사통제자가 전체 단계보고서를 종결하고 certificat de conformite 신청에 첨부할 적정시공 확인서를 발행한다.",
+        "outputs": [
+          "Attestation de bonne execution·최종 통제보고"
+        ],
+        "authorityIds": [
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "최종 공사통제 확인",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 34"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B33",
+        "lane": "건축주·신청인",
+        "stage": "S2 시정·완공신고",
+        "label": "완공신고·준공보고서 제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 건축사 또는 시공자를 통해 완전완공 신고와 준공보고서를 허가 발급기관에 제출한다.",
+        "action": "건축주가 건축사 또는 시공자를 통해 완전완공 신고와 준공보고서를 허가 발급기관에 제출한다.",
+        "outputs": [
+          "Declaration de parfait achevement·준공보고서"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "완공신고",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Article 71"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B34",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S3 적합성증명",
+        "label": "승인도서 대비 최종 적합검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "허가 발급기관이 완공 건물의 배치·형태·설비가 허가도서와 정확히 일치하는지 검사하고 보완 필요사항을 통지한다.",
+        "action": "허가 발급기관이 완공 건물의 배치·형태·설비가 허가도서와 정확히 일치하는지 검사하고 보완 필요사항을 통지한다.",
+        "outputs": [
+          "최종 적합검사 기록·보완통지"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "점유 전 일치검사",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 69-70"
+            ]
+          },
+          {
+            "source": "현행 적합성증명 소관",
+            "instrumentId": "CIV-MULCV-MISSION-2026",
+            "provisions": [
+              "delivery of conformity certificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B35",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S3 적합성증명",
+        "label": "준공부적합 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "최종검사 지적사항을 승인도서에 맞게 시정하고 수정 준공자료와 함께 재검사를 신청한다.",
+        "action": "최종검사 지적사항을 승인도서에 맞게 시정하고 수정 준공자료와 함께 재검사를 신청한다.",
+        "outputs": [
+          "시정완료·수정 준공자료·재검사 기록"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가도서 일치요건",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 69-71"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B36",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S3 적합성증명",
+        "label": "Certificat de conformite 발급",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "관할 허가권자가 적합성증명을 발급한다. 정당한 통지 없이 15일 안에 발급되지 않으면 별도 개장허가가 필요한 활동을 제외하고 법전의 점유규칙이 적용된다.",
+        "action": "관할 허가권자가 적합성증명을 발급한다. 정당한 통지 없이 15일 안에 발급되지 않으면 별도 개장허가가 필요한 활동을 제외하고 법전의 점유규칙이 적용된다.",
+        "outputs": [
+          "Certificat de conformite 또는 이유부 미발급통지"
+        ],
+        "authorityIds": [
+          "gupc-ministry-mayor",
+          "mulcv"
+        ],
+        "requirementIds": [
+          "CIV-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "적합성증명·15일",
+            "instrumentId": "CIV-CONSTRUCTION-CODE-2019-576",
+            "provisions": [
+              "Articles 69-73"
+            ]
+          },
+          {
+            "source": "현행 발급기관",
+            "instrumentId": "CIV-MULCV-MISSION-2026",
+            "provisions": [
+              "building conformity-certificate function under Decree 2026-84"
+            ]
+          }
+        ],
+        "gateOrders": [
+          6
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "필지 확인"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "적용계획"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "분류"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "설계조건"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "접수"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B06",
+        "target": "B07",
+        "type": "sequence",
+        "label": "통합심사"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B07",
+        "target": "B09",
+        "type": "sequence",
+        "label": "적합의견"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B07",
+        "target": "B08",
+        "type": "message",
+        "label": "보완통지"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B08",
+        "target": "B07",
+        "type": "loop",
+        "label": "수정안 재심"
+      },
+      {
+        "id": "BX05",
+        "source": "B09",
+        "target": "B10",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B10",
+        "target": "B11",
+        "type": "sequence",
+        "label": "현장분류"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B11",
+        "target": "B12",
+        "type": "sequence",
+        "label": "평가유형"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "TdR"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B13",
+        "target": "B14",
+        "type": "sequence",
+        "label": "인가사 작성"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B14",
+        "target": "B15",
+        "type": "sequence",
+        "label": "보고서 제출"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B15",
+        "target": "B16",
+        "type": "sequence",
+        "label": "EIES 공개"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "기술검증"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B17",
+        "target": "B19",
+        "type": "sequence",
+        "label": "승인권고"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B17",
+        "target": "B18",
+        "type": "message",
+        "label": "수정요구"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B18",
+        "target": "B17",
+        "type": "loop",
+        "label": "환경 재심"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B19",
+        "target": "B20",
+        "type": "sequence",
+        "label": "승인조건"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "허가접수"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B21",
+        "target": "B22",
+        "type": "sequence",
+        "label": "통합심사"
+      },
+      {
+        "id": "BS05-14",
+        "source": "B22",
+        "target": "B24",
+        "type": "sequence",
+        "label": "적합의견"
+      },
+      {
+        "id": "BS05-15",
+        "source": "B22",
+        "target": "B23",
+        "type": "message",
+        "label": "허가보완"
+      },
+      {
+        "id": "BS05-16",
+        "source": "B23",
+        "target": "B22",
+        "type": "loop",
+        "label": "GUPC 재심"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B24",
+        "target": "B25",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B25",
+        "target": "B26",
+        "type": "sequence",
+        "label": "통제계약"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B26",
+        "target": "B27",
+        "type": "sequence",
+        "label": "실시설계"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B27",
+        "target": "B28",
+        "type": "sequence",
+        "label": "단계검사"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B28",
+        "target": "B29",
+        "type": "sequence",
+        "label": "합동통제"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B29",
+        "target": "B30",
+        "type": "sequence",
+        "label": "적합판정"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B30",
+        "target": "B32",
+        "type": "sequence",
+        "label": "공사계속"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B30",
+        "target": "B31",
+        "type": "message",
+        "label": "시정명령"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B31",
+        "target": "B29",
+        "type": "loop",
+        "label": "시정 재검사"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B32",
+        "target": "B33",
+        "type": "sequence",
+        "label": "완공신고"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B33",
+        "target": "B34",
+        "type": "sequence",
+        "label": "최종검사"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B34",
+        "target": "B36",
+        "type": "sequence",
+        "label": "적합"
+      },
+      {
+        "id": "BS06-12",
+        "source": "B34",
+        "target": "B35",
+        "type": "message",
+        "label": "준공보완"
+      },
+      {
+        "id": "BS06-13",
+        "source": "B35",
+        "target": "B34",
+        "type": "loop",
+        "label": "준공 재검사"
       }
     ]
   },
@@ -192,14 +1543,22 @@
       "id": "site-urban",
       "slug": "cote-divoire-site-urban-construction-regulations",
       "priority": 4,
-      "name": "코트디부아르 도시계획·부지규제",
+      "name": "코트디부아르 필지·도시계획 적합성 심사",
       "oneLiner": "ACD·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "MULCV의 현행 ACD·도시계획 업무와 2020 도시법전 체계를 확인했다. 필지 수치·권원·재해·유틸리티는 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "MULCV의 현행 ACD·도시계획 업무와 2020 도시법전 체계를 확인했다. 필지 수치·권원·재해·유틸리티는 현지 확인 대상이다.",
+      "verificationScope": "건설·주택법전 제7~20조와 MULCV의 현행 토지·건축 e-service를 연결해 승인 lotissement·도시계획규정·건물 위험등급·GUPC 도시계획심사 순서를 표시했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "도시지역 신축·증축·용도변경의 필지권원, 승인 lotissement 여부, 개별 또는 일반 도시계획규정과 GUPC 도시계획 적합의견을 다룬다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
       ],
       "requirementIds": [
         "CIV-BLD-REQ-004"
@@ -220,21 +1579,115 @@
         "CIV-BLD-F-002",
         "CIV-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "필지 확인"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "적용계획"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "분류"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "설계조건"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "접수"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06",
+          "target": "B07",
+          "type": "sequence",
+          "label": "통합심사"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B07",
+          "target": "B09",
+          "type": "sequence",
+          "label": "적합의견"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B07",
+          "target": "B08",
+          "type": "message",
+          "label": "보완통지"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B08",
+          "target": "B07",
+          "type": "loop",
+          "label": "수정안 재심"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "계획적합·허가",
+          "action": "승인도서와 조건을 후속 건축·환경허가 및 착공기준으로 사용"
+        },
+        {
+          "state": "rework",
+          "label": "도시계획 보완",
+          "action": "배치·밀도·후퇴·주차·배수도서를 수정해 GUPC 재심"
+        },
+        {
+          "state": "reject",
+          "label": "유보·거부",
+          "action": "공식 사유에 따라 계획 확정까지 대기하거나 입지·용도·규모를 변경해 재신청"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "cote-divoire-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "코트디부아르 건축허가·환경심사",
+      "name": "코트디부아르 ANDE 환경평가·GUPC 건축허가",
       "oneLiner": "GUPC 건축허가와 ANDE의 EIES·CIES·배제결정을 유형·입지별로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "2026년 GUPC·MULCV 공식 서비스와 환경부의 현행 ANDE 원스톱 역할을 확인했다. 최신 환경법전·수수료·실제 기간은 기관 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "2026년 GUPC·MULCV 공식 서비스와 환경부의 현행 ANDE 원스톱 역할을 확인했다. 최신 환경법전·수수료·실제 기간은 기관 확인 대상이다.",
+      "verificationScope": "환경부가 공개한 ANDE EIES·CIES·CEC 분류·TdR·공개조사·부처간 위원회·장관 승인 흐름과 GUPC 위원회·장관/시장 허가결정을 별도 Gate로 연결했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "환경·사회평가 대상분류부터 환경장관 승인, GUPC 통합심사와 장관 또는 시장의 건축허가까지를 표시한다.",
       "nodeIds": [
-        "B02"
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24"
       ],
       "requirementIds": [
         "CIV-BLD-REQ-005"
@@ -253,21 +1706,161 @@
         "CIV-BLD-F-005",
         "CIV-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B10",
+          "target": "B11",
+          "type": "sequence",
+          "label": "현장분류"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B11",
+          "target": "B12",
+          "type": "sequence",
+          "label": "평가유형"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "TdR"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B13",
+          "target": "B14",
+          "type": "sequence",
+          "label": "인가사 작성"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B14",
+          "target": "B15",
+          "type": "sequence",
+          "label": "보고서 제출"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B15",
+          "target": "B16",
+          "type": "sequence",
+          "label": "EIES 공개"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "기술검증"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B17",
+          "target": "B19",
+          "type": "sequence",
+          "label": "승인권고"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B17",
+          "target": "B18",
+          "type": "message",
+          "label": "수정요구"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B18",
+          "target": "B17",
+          "type": "loop",
+          "label": "환경 재심"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B19",
+          "target": "B20",
+          "type": "sequence",
+          "label": "승인조건"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "허가접수"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B21",
+          "target": "B22",
+          "type": "sequence",
+          "label": "통합심사"
+        },
+        {
+          "id": "M05-E14",
+          "source": "B22",
+          "target": "B24",
+          "type": "sequence",
+          "label": "적합의견"
+        },
+        {
+          "id": "M05-E15",
+          "source": "B22",
+          "target": "B23",
+          "type": "message",
+          "label": "허가보완"
+        },
+        {
+          "id": "M05-E16",
+          "source": "B23",
+          "target": "B22",
+          "type": "loop",
+          "label": "GUPC 재심"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "환경승인·건축허가",
+          "action": "승인명령·허가도서·조건에 따라 착공 및 PGES 이행"
+        },
+        {
+          "state": "rework",
+          "label": "환경·허가 보완",
+          "action": "위원회 권고 또는 GUPC 보완요구를 반영해 해당 심사단계로 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "평가·허가 거부",
+          "action": "거부사유에 따라 입지·규모·설계를 변경해 환경분류 또는 허가를 다시 신청"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "cote-divoire-control-completion-construction-regulations",
       "priority": 6,
-      "name": "코트디부아르 기술검사·보험·준공제도",
+      "name": "코트디부아르 공사통제·적합성증명",
       "oneLiner": "등록 전문가·기술검사, chantier 보험·10년 책임과 certificat de conformite를 개장 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "건설·주택법전 구조와 MULCV의 2026년 적합성증명 소관, 2025년 보험개정 추진을 확인했다. 최종 개정문·현지 보험사·검사비는 재확인한다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "건설·주택법전 구조와 MULCV의 2026년 적합성증명 소관, 2025년 보험개정 추진을 확인했다. 최종 개정문·현지 보험사·검사비는 재확인한다.",
+      "verificationScope": "건설·주택법전 제31~41조의 독립 공사통제, 제69~73조의 준공신고·적합성증명·15일 규칙과 MULCV/PCCC 현장 집행을 연결했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "허가 후 독립 contrôleur의 단계검사, 부적합 시 공사중지·시정, 완공신고와 certificat de conformite 발급까지를 다룬다.",
       "nodeIds": [
-        "B03"
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36"
       ],
       "requirementIds": [
         "CIV-BLD-REQ-006"
@@ -286,8 +1879,116 @@
         "CIV-BLD-F-008",
         "CIV-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B25",
+          "target": "B26",
+          "type": "sequence",
+          "label": "통제계약"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B26",
+          "target": "B27",
+          "type": "sequence",
+          "label": "실시설계"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B27",
+          "target": "B28",
+          "type": "sequence",
+          "label": "단계검사"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B28",
+          "target": "B29",
+          "type": "sequence",
+          "label": "합동통제"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B29",
+          "target": "B30",
+          "type": "sequence",
+          "label": "적합판정"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B30",
+          "target": "B32",
+          "type": "sequence",
+          "label": "공사계속"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B30",
+          "target": "B31",
+          "type": "message",
+          "label": "시정명령"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B31",
+          "target": "B29",
+          "type": "loop",
+          "label": "시정 재검사"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B32",
+          "target": "B33",
+          "type": "sequence",
+          "label": "완공신고"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B33",
+          "target": "B34",
+          "type": "sequence",
+          "label": "최종검사"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B34",
+          "target": "B36",
+          "type": "sequence",
+          "label": "적합"
+        },
+        {
+          "id": "M06-E12",
+          "source": "B34",
+          "target": "B35",
+          "type": "message",
+          "label": "준공보완"
+        },
+        {
+          "id": "M06-E13",
+          "source": "B35",
+          "target": "B34",
+          "type": "loop",
+          "label": "준공 재검사"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "적합성증명 발급",
+          "action": "certificat de conformite와 필요한 별도 개장승인을 확보한 뒤 점유·운영"
+        },
+        {
+          "state": "rework",
+          "label": "공사·준공 시정",
+          "action": "현장 또는 최종검사 지적을 시정해 해당 검사단계로 복귀"
+        },
+        {
+          "state": "reject",
+          "label": "중지·철거·미발급",
+          "action": "위반공사를 중지하고 공식 명령에 따라 원상회복·철거·재허가 후 다시 검사"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -314,6 +2015,14 @@
       "role": "환경사회평가 원스톱창구로 EIES·CIES·배제결정을 심사",
       "verificationLevel": "law-linked",
       "officialUrl": "https://www.environnement.gouv.ci/"
+    },
+    {
+      "id": "pccc",
+      "name": "Plateforme Collaborative de Controle des Constructions",
+      "nameKo": "건설공사 합동통제 플랫폼(PCCC)",
+      "role": "승인도서와 다른 공사를 현장 점검하고 시정·공사중지 등 건설통제를 수행",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://web.construction.gouv.ci/index.php/actualite/4"
     }
   ],
   "instruments": [
@@ -322,21 +2031,26 @@
       "title": "Loi n° 2019-576 du 26 juin 2019 instituant Code de la Construction et de l'Habitat, as amended",
       "titleKo": "법률 제2019-576호 건설·주택법전(개정 포함)",
       "kind": "act",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "2019-06-26",
-      "officialUrl": "https://web.construction.gouv.ci/index.php/services",
+      "officialUrl": "https://www.dgi.gouv.ci/assets/documents/transfert_propriete/lois_reglements/LOI%20N%C2%B0%202019-576%20DU%2026%20JUIN%202019%20INSTITUANT%20CODE%20DE%20LA%20CONSTRUCTION%20ET%20DE%20L%27HABITAT.pdf",
       "verificationLevel": "law-linked",
-      "note": "건축허가·공사통제·보험·certificat de conformite의 기본법이다. 2025년 개정안의 최종 공포·시행내용을 확인한다."
+      "note": "건축허가·공사통제·보험·certificat de conformite의 기본법이다. 2025년 개정안의 최종 공포·시행내용을 확인한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MULCV's current 2026 e-service page describes the 2019 Construction and Housing Code as in force, and the ministry's current legal-publication register continues to publish Law 2019-576.",
+      "officialPdfUrl": "https://www.dgi.gouv.ci/assets/documents/transfert_propriete/lois_reglements/LOI%20N%C2%B0%202019-576%20DU%2026%20JUIN%202019%20INSTITUANT%20CODE%20DE%20LA%20CONSTRUCTION%20ET%20DE%20L%27HABITAT.pdf"
     },
     {
       "id": "CIV-URBAN-CODE-2020-624",
       "title": "Loi n° 2020-624 du 14 aout 2020 instituant Code de l'Urbanisme et du Domaine Foncier Urbain, as amended",
       "titleKo": "법률 제2020-624호 도시계획·도시토지법전(개정 포함)",
       "kind": "act",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "2020-08-14",
       "officialUrl": "https://web.construction.gouv.ci/actualite/5",
-      "verificationLevel": "source-linked"
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MULCV's current legal-publication register lists Law 2020-624 together with Law 2024-351 amending it."
     },
     {
       "id": "CIV-ENV-DECREE-96-894",
@@ -348,15 +2062,75 @@
       "officialUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
       "officialPdfUrl": "https://environnement.gouv.ci/wp-content/uploads/2022/01/NOUVEAU-CODE-ENVIRONNEMENT-revis-u00AEdefinitif-20-11-2014-final-1.pdf",
       "verificationLevel": "law-linked",
-      "note": "Annex I·II·III에 따른 EIES·CIES·민감입지 분류의 기초다. 최신 환경법전·후속규정과 함께 적용한다."
+      "note": "Annex I·II·III에 따른 EIES·CIES·민감입지 분류의 기초다. 최신 환경법전·후속규정과 함께 적용한다.",
+      "statusBasis": "환경부가 게시한 2026년 EIESS 문서가 Law 2023-900과 Decree 96-894를 함께 인용하는 것을 확인했다. 다만 이는 개별 사업 문서이고, 2023 환경법전 이후 Annex I·II·III 분류를 대체·개정한 후속 시행령의 전국 통합목록 또는 명시적 폐지표를 공식 법령대장에서 확인하지 못했다."
     },
     {
       "id": "CIV-GUPC-SERVICE",
       "title": "Official GUPC integrated building-permit service",
       "titleKo": "GUPC 통합 건축허가 공식 서비스",
       "kind": "official-guidance",
-      "status": "continuity_unverified",
+      "status": "current_official",
       "officialUrl": "https://www.guichet.construction.gouv.ci/GUPC/",
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The current SIGUPC government portal is online and MULCV's 2026 e-service page identifies GUPC commission review and ministerial or mayoral signature."
+    },
+    {
+      "id": "CIV-MULCV-PERMIT-SERVICE",
+      "title": "MULCV building-permit official service",
+      "titleKo": "도시계획·주택·생활환경부 건축허가 공식 서비스",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MULCV's live 2026 e-service page explains GUPC commission review and the competent signature authority.",
+      "officialUrl": "https://web.construction.gouv.ci/services",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "CIV-MULCV-MISSION-2026",
+      "title": "MULCV statutory mission under Decree 2026-84",
+      "titleKo": "시행령 제2026-84호에 따른 MULCV 현행 소관",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MULCV's current mission page cites Decree 2026-84 and assigns the ministry building-permit and conformity-certificate functions.",
+      "officialUrl": "https://web.construction.gouv.ci/ministere/mission",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "CIV-ANDE-EES-PROCEDURE",
+      "title": "Official government environmental and social assessment procedure",
+      "titleKo": "정부 환경·사회평가 분류·심사 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Environment Ministry confirmed ANDE as the single window for environmental and social assessments in March 2026 and reported active approval of EES reports and accreditation of study offices in 2025.",
+      "officialUrl": "https://environnement.gouv.ci/index.php/actualite/569",
+      "verificationLevel": "source-linked",
+      "note": "The detailed sequence is also published in the Environment Ministry-hosted government safeguards framework based on Decree 96-894."
+    },
+    {
+      "id": "CIV-ANDE-EES-WORKFLOW",
+      "title": "Government EIES/CIES/CEC review and approval workflow",
+      "titleKo": "정부 EIES·CIES·CEC 심사·승인 업무흐름",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The ministry-hosted framework remains an official published procedure source; current ANDE activity was separately confirmed on the ministry's 2026 website.",
+      "officialUrl": "https://environnement.gouv.ci/wp-content/uploads/2015/08/2PAI-NE_CGESC-CADRE-DE-GESTION-ENVIRONNEMENTALE-SOCIALE-ET-CLIMATIQUE.pdf",
+      "officialPdfUrl": "https://environnement.gouv.ci/wp-content/uploads/2015/08/2PAI-NE_CGESC-CADRE-DE-GESTION-ENVIRONNEMENTALE-SOCIALE-ET-CLIMATIQUE.pdf",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "CIV-PCCC-CONTROL",
+      "title": "MULCV construction-control enforcement notice",
+      "titleKo": "MULCV 건설현장 통제·공사중지 공식 사례",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MULCV continues to assign construction-control functions to its current organisation and publishes the PCCC inspection and stop-work enforcement route.",
+      "officialUrl": "https://web.construction.gouv.ci/index.php/actualite/4",
       "verificationLevel": "source-linked"
     }
   ],
@@ -468,7 +2242,56 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "GUPC 도시계획 적합성 공식결정",
+      "decision": "GUPC와 허가권자가 승인 lotissement·적용 도시계획문서·정렬·위생·배수·안전 적합성을 공식 결정한다.",
+      "dependsOn": [],
+      "output": "계획적합 허가·조건·유보 또는 이유부 거부"
+    },
+    {
+      "order": 2,
+      "gate": "ANDE 환경·사회평가 유형결정",
+      "decision": "ANDE가 사업·입지를 EIES·CIES·CEC 중 하나로 공식 분류하고 선행조건을 정한다.",
+      "dependsOn": [],
+      "output": "환경평가 유형·CEC·TdR 경로 통지"
+    },
+    {
+      "order": 3,
+      "gate": "환경장관 EIES·CIES 공식승인",
+      "decision": "부처간 검증과 공개조사 결과를 반영한 EIES·CIES 보고서를 환경장관이 승인·조건부 승인 또는 거부한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "환경승인명령·조건 또는 거부결정"
+    },
+    {
+      "order": 4,
+      "gate": "장관·시장 건축허가 공식결정",
+      "decision": "GUPC 위원회 의견을 바탕으로 관할 장관 또는 시장이 건축허가·조건부 허가 또는 거부를 공식 결정한다.",
+      "dependsOn": [
+        3
+      ],
+      "output": "건축허가와 승인도서·조건 또는 이유부 거부"
+    },
+    {
+      "order": 5,
+      "gate": "현장 적합·공사계속 공식판정",
+      "decision": "공사통제자와 관할 통제기관이 허가·승인도서·안전조건 일치 여부를 판정해 계속시공 또는 공사중지·시정을 명한다.",
+      "dependsOn": [],
+      "output": "단계 적합승인 또는 공사중지·시정명령"
+    },
+    {
+      "order": 6,
+      "gate": "Certificat de conformite 공식결정",
+      "decision": "허가 발급기관이 완공건물이 승인도서와 정확히 일치하는지 확인해 적합성증명 발급·보완 또는 미발급을 결정한다.",
+      "dependsOn": [
+        5
+      ],
+      "output": "적합성증명·사용가능 상태 또는 보완·미발급통지"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "CIV-LOCAL-OVERLAY-001",

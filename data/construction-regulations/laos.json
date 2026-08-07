@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "laos",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,26 +27,38 @@
     "title": "라오스 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "G0 관할·권원",
+      "G1 도서·접수",
+      "G2 현장·계획심사",
+      "G3 허가결정",
+      "G4 환경분류·범위",
+      "G5 ESIA 심사·ECC",
+      "G6 건축허가 접수·심사",
+      "G7 허가결정",
+      "G8 허가·착공",
+      "G9 공사 중 검사",
+      "G10 완료통지·최종검사",
+      "G11 정확성증명"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "개정 도시계획법 제40/NA호 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "공식 건축허가 서비스는 토지권원과 함께 master plan, zoning map, 특정 토지이용규정·도시관리·환경기준에 맞는 설계를 요구한다. 필지별 허용용도·밀도·높이·이격·주차·배수는 관할 계획도와 서면 확인으로 확정해야 한다.",
-        "action": "공식 건축허가 서비스는 토지권원과 함께 master plan, zoning map, 특정 토지이용규정·도시관리·환경기준에 맞는 설계를 요구한다. 필지별 허용용도·밀도·높이·이격·주차·배수는 관할 계획도와 서면 확인으로 확정해야 한다.",
+        "stage": "G0 관할·권원",
+        "label": "건축물 Level 1·2·3 관할분류",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "사업 규모·높이·용도·통제건축물·환경영향 가능성에 따라 주지사/비엔티안 수도행정청, 주 PWT국 또는 군 PWT사무소 중 건축허가권자를 정한다.",
+        "action": "사업 규모·높이·용도·통제건축물·환경영향 가능성에 따라 주지사/비엔티안 수도행정청, 주 PWT국 또는 군 PWT사무소 중 건축허가권자를 정한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "건축물 등급·관할 허가기관"
         ],
         "authorityIds": [
           "provincial-governor",
@@ -56,38 +68,513 @@
         "requirementIds": [
           "LAO-BLD-REQ-004"
         ],
-        "questionIds": [
-          "LAO-BLD-Q-001",
-          "LAO-BLD-Q-002",
-          "LAO-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "개정 도시계획법 제40/NA호",
-            "instrumentId": "LAO-URBAN-LAW-2017",
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
             "provisions": [
-              "official construction-permit legal framework"
+              "Level 1, 2 and 3 building thresholds and competent approval authorities"
             ]
           },
           {
-            "source": "개정 도시계획법 제40/NA호",
-            "instrumentId": "LAO-CONSTRUCTION-LAW-2009",
-            "provisions": []
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 5-6; types and levels of construction-permit authorization"
+            ]
           }
         ]
       },
       {
         "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "건설법 제05/NA호 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "공식 서비스는 대형(10,000㎡ 초과 또는 20m 초과 등), 중형(400~10,000㎡ 또는 10~20m 등), 소형(400㎡ 이하·10m 이하 주거 등)으로 허가권자를 구분한다. 통제건축물·환경영향 가능 사업은 상위 승인이 필요하므로 최종 등급과 환경심사 경로를 관할기관이 확인해야 한다.",
-        "action": "공식 서비스는 대형(10,000㎡ 초과 또는 20m 초과 등), 중형(400~10,000㎡ 또는 10~20m 등), 소형(400㎡ 이하·10m 이하 주거 등)으로 허가권자를 구분한다. 통제건축물·환경영향 가능 사업은 상위 승인이 필요하므로 최종 등급과 환경심사 경로를 관할기관이 확인해야 한다.",
+        "lane": "건축주·신청인",
+        "stage": "G0 관할·권원",
+        "label": "토지권원·신청인 신분자료 확보",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "신청인이 토지증서, 신분증·가족등록 또는 외국인 여권, 신청서를 준비한다. 토지증서 사업이 미도달한 사용권은 관할기관이 건별 판단한다.",
+        "action": "신청인이 토지증서, 신분증·가족등록 또는 외국인 여권, 신청서를 준비한다. 토지증서 사업이 미도달한 사용권은 관할기관이 건별 판단한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "토지증서·신분자료·신청서"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Land Title and applicant identity requirements; case-by-case land-use right where title project has not reached"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 도서·접수",
+        "label": "허가업체 측량·배치·토지이용 도서 작성",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "허가받은 주택건설 측량·설계회사가 1:5000 위치도, 종합배치, 토지관리·경계, 단면, 배수·오수처리, 건축계획과 관련 시스템 도서를 작성·인증한다.",
+        "action": "허가받은 주택건설 측량·설계회사가 1:5000 위치도, 종합배치, 토지관리·경계, 단면, 배수·오수처리, 건축계획과 관련 시스템 도서를 작성·인증한다.",
+        "outputs": [
+          "인증 위치·배치·토지이용·배수·건축도서"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Required Project Diagram and Certified Project Diagram by licensed survey-design company"
+            ]
+          },
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 7-9; urban land-use conditions, site survey, design and plans"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "건축주·신청인",
+        "stage": "G1 도서·접수",
+        "label": "관할 PWT 사무소 건축허가 접수",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "신청인이 토지·신분자료와 인증 설계도서 3부를 관할 PWT 기관 창구에 제출하고 정식 심사를 개시한다.",
+        "action": "신청인이 토지·신분자료와 인증 설계도서 3부를 관할 PWT 기관 창구에 제출하고 정식 심사를 개시한다.",
+        "outputs": [
+          "건축허가 신청·접수기록·제출도서"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Presentation at authority offices; application and required document list"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G2 현장·계획심사",
+        "label": "현장경계·접근·배치조건 검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할 건설관리기관이 신청 후 현장을 방문해 필지경계, 도로접근, 건축 위치와 주변 현황을 신청 위치·배치도와 대조한다.",
+        "action": "관할 건설관리기관이 신청 후 현장을 방문해 필지경계, 도로접근, 건축 위치와 주변 현황을 신청 위치·배치도와 대조한다.",
+        "outputs": [
+          "현장검사 기록·필지배치 확인"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Authority inspection of the construction site after receipt"
+            ]
+          },
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 10-13; verification procedures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G2 현장·계획심사",
+        "label": "master plan·zoning·토지용도·환경 대조",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "기관이 설계와 현장자료를 도시지도, master plan, zoning map, 특정토지이용·도시건설관리·건축보전·환경 규정과 기술기준에 대조한다.",
+        "action": "기관이 설계와 현장자료를 도시지도, master plan, zoning map, 특정토지이용·도시건설관리·건축보전·환경 규정과 기술기준에 대조한다.",
+        "outputs": [
+          "도시계획·토지이용 적합성 심사의견"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Compliance with city map, master plan, zoning map, specific land-use, urban/construction, conservation and environmental regulations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "건축주·신청인",
+        "stage": "G2 현장·계획심사",
+        "label": "7일 통지 도서·설계 보완·재접수",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "설계가 부정확하거나 서류가 불충분·미상세·기준미달이면 기관이 접수 후 7일 내 알리고, 신청인과 설계회사가 지적사항을 수정해 재제출한다.",
+        "action": "설계가 부정확하거나 서류가 불충분·미상세·기준미달이면 기관이 접수 후 7일 내 알리고, 신청인과 설계회사가 지적사항을 수정해 재제출한다.",
+        "outputs": [
+          "수정 필지·배치·설계도서·보완답변"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Notice within 7 days where design is incorrect or documents are not detailed or below standard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 허가결정",
+        "label": "필지·도시계획 적합 건축허가 결정",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할권자가 완비 신청의 토지권원·현장·계획·토지이용 적합성을 확정해 건축허가와 조건을 발급하거나 부적합 사유로 발급하지 않는다.",
+        "action": "관할권자가 완비 신청의 토지권원·현장·계획·토지이용 적합성을 확정해 건축허가와 조건을 발급하거나 부적합 사유로 발급하지 않는다.",
+        "outputs": [
+          "건축허가·필지·계획조건 또는 부적합 결정"
+        ],
+        "authorityIds": [
+          "provincial-governor",
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "Permit issue after complete application, site inspection and compliance review"
+            ]
+          }
+        ],
+        "gateOrders": [
+          1
+        ]
+      },
+      {
+        "id": "B09",
+        "lane": "건축주·신청인",
+        "stage": "G4 환경분류·범위",
+        "label": "사업규모·영향에 따른 IEE·ESIA 분류",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "사업자가 사업유형·규모·입지·예상영향을 법정 목록과 대조해 Group 1 IEE 또는 Group 2 ESIA 및 관할 자연자원환경기관을 확정한다.",
+        "action": "사업자가 사업유형·규모·입지·예상영향을 법정 목록과 대조해 Group 1 IEE 또는 Group 2 ESIA 및 관할 자연자원환경기관을 확정한다.",
+        "outputs": [
+          "환경평가 유형·관할기관·제출범위"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경보호법",
+            "instrumentId": "LAO-ENV-LAW-2012",
+            "provisions": [
+              "Articles 21-22; IEE and EIA"
+            ]
+          },
+          {
+            "source": "Decree 21/PMO 공식 적용요약",
+            "instrumentId": "LAO-EIA-DECREE-21-2019",
+            "provisions": [
+              "Article 9; Group 1 IEE and Group 2 EIA classification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B10",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G4 환경분류·범위",
+        "label": "허가 환경서비스업자 Scoping·TOR·ESIA·ESMMP 작성",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "허가받은 환경서비스 제공자가 법정 지침에 따라 Scoping·TOR, 환경사회영향평가와 환경사회관리·모니터링계획을 작성하고 공중참여를 실시한다.",
+        "action": "허가받은 환경서비스 제공자가 법정 지침에 따라 Scoping·TOR, 환경사회영향평가와 환경사회관리·모니터링계획을 작성하고 공중참여를 실시한다.",
+        "outputs": [
+          "Scoping·TOR·ESIA·ESMMP·공중참여 기록"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "ESIA and ESMMP by licensed environmental service provider; public involvement"
+            ]
+          },
+          {
+            "source": "Decree 21/PMO 공식 적용요약",
+            "instrumentId": "LAO-EIA-DECREE-21-2019",
+            "provisions": [
+              "Articles 19-30; EIA preparation, review and approval",
+              "Articles 36-39; public involvement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "lane": "건축주·신청인",
+        "stage": "G4 환경분류·범위",
+        "label": "관할 환경기관 ESIA·ESMMP 승인신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "사업자가 Scoping·TOR와 ESIA·ESMMP를 관할 자연자원환경기관에 제출해 환경준수증명 승인절차를 개시한다.",
+        "action": "사업자가 Scoping·TOR와 ESIA·ESMMP를 관할 자연자원환경기관에 제출해 환경준수증명 승인절차를 개시한다.",
+        "outputs": [
+          "ESIA·ESMMP 승인신청·접수기록"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "Presentation at authority office; ESIA and ESMMP required documents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B12",
+        "lane": "환경·소방·검사기관",
+        "stage": "G5 ESIA 심사·ECC",
+        "label": "Scoping·TOR·행정완비 검토",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "환경기관이 Scoping·TOR 및 ESIA·ESMMP의 행정적 완비성과 작성자 자격·공중참여 자료를 확인해 기술심사 범위를 확정한다.",
+        "action": "환경기관이 Scoping·TOR 및 ESIA·ESMMP의 행정적 완비성과 작성자 자격·공중참여 자료를 확인해 기술심사 범위를 확정한다.",
+        "outputs": [
+          "Scoping·TOR 의견·행정완비 확인"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "Scoping and TOR review; administrative review of ESIA and ESMMP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B13",
+        "lane": "환경·소방·검사기관",
+        "stage": "G5 ESIA 심사·ECC",
+        "label": "기술심사·전문심사단·공중의견 반영",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "환경기관과 필요시 구성된 기술심사단이 영향예측·대안·완화·보상·ESMMP와 공중의견 반영을 검토해 승인·보완·거부 권고를 작성한다.",
+        "action": "환경기관과 필요시 구성된 기술심사단이 영향예측·대안·완화·보상·ESMMP와 공중의견 반영을 검토해 승인·보완·거부 권고를 작성한다.",
+        "outputs": [
+          "환경 기술심사의견·ECC 결정안"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "Technical review and task force for complicated projects; denial grounds"
+            ]
+          },
+          {
+            "source": "Decree 21/PMO 공식 적용요약",
+            "instrumentId": "LAO-EIA-DECREE-21-2019",
+            "provisions": [
+              "Articles 19-30; technical panel, review and approval"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "건축주·신청인",
+        "stage": "G5 ESIA 심사·ECC",
+        "label": "ESIA·ESMMP 보완·재심사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "행정·기술심사에서 누락·불충분 사항이 통지되면 환경서비스업자가 조사·대안·완화·공중참여와 관리계획을 수정해 재제출한다.",
+        "action": "행정·기술심사에서 누락·불충분 사항이 통지되면 환경서비스업자가 조사·대안·완화·공중참여와 관리계획을 수정해 재제출한다.",
+        "outputs": [
+          "수정 ESIA·ESMMP·보완답변"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "Review of completeness, accuracy and quality; rejection if substantial unavoidable impacts remain"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "환경·소방·검사기관",
+        "stage": "G5 ESIA 심사·ECC",
+        "label": "ESIA·ESMMP 환경준수증명(ECC) 결정",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할 환경기관이 ESIA와 ESMMP를 승인해 각각의 환경준수증명과 조건을 발급하거나, 중대·불가피·미해소 영향 또는 국가환경정책 불일치를 이유로 거부한다.",
+        "action": "관할 환경기관이 ESIA와 ESMMP를 승인해 각각의 환경준수증명과 조건을 발급하거나, 중대·불가피·미해소 영향 또는 국가환경정책 불일치를 이유로 거부한다.",
+        "outputs": [
+          "ESIA·ESMMP ECC·조건 또는 거부결정"
+        ],
+        "authorityIds": [
+          "lao-monre"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경보호법",
+            "instrumentId": "LAO-ENV-LAW-2012",
+            "provisions": [
+              "Article 43; environmental compliance certificates"
+            ]
+          },
+          {
+            "source": "정부 ESIA 승인절차",
+            "instrumentId": "LAO-ECC-ESIA-FORMALITY",
+            "provisions": [
+              "two ECCs for ESIA and ESMMP; approval and denial grounds"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B16",
+        "lane": "건축주·신청인",
+        "stage": "G6 건축허가 접수·심사",
+        "label": "건축등급별 관할기관 허가신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "신청인이 토지증서·신분자료, 허가 설계회사의 건축·구조·배수·오수처리 도서와 해당 ECC를 건축등급별 관할기관에 제출한다.",
+        "action": "신청인이 토지증서·신분자료, 허가 설계회사의 건축·구조·배수·오수처리 도서와 해당 ECC를 건축등급별 관할기관에 제출한다.",
+        "outputs": [
+          "완비 건축허가 신청·ECC·인증도서"
         ],
         "authorityIds": [
           "provincial-governor",
@@ -97,38 +584,196 @@
         "requirementIds": [
           "LAO-BLD-REQ-005"
         ],
-        "questionIds": [
-          "LAO-BLD-Q-004",
-          "LAO-BLD-Q-005",
-          "LAO-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "건설법 제05/NA호",
-            "instrumentId": "LAO-CONSTRUCTION-LAW-2009",
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
             "provisions": [
-              "official permit classification guidance"
+              "competent authority by building level; land title, certified project diagrams and environmental compliance"
             ]
-          },
-          {
-            "source": "건설법 제05/NA호",
-            "instrumentId": "LAO-CONSTRUCTION-DECISION-2019",
-            "provisions": []
           }
         ]
       },
       {
-        "id": "B03",
+        "id": "B17",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "건설활동 관리결정 제2241/MPWT호 · 절차 상세 미확인",
+        "stage": "G6 건축허가 접수·심사",
+        "label": "현장검사·기술·계획·환경조건 통합심사",
         "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "공식 서비스에 따르면 허가기관은 준공 전 공사를 최소 2회 검사하고, 신청자는 완공 후 15일 이내에 통지해 최종검사와 accuracy certificate를 받아야 한다. 검사시점·시험자료·변경승인·현지 기술자·시공자 자격과 보험은 계약 전에 확인한다.",
-        "action": "공식 서비스에 따르면 허가기관은 준공 전 공사를 최소 2회 검사하고, 신청자는 완공 후 15일 이내에 통지해 최종검사와 accuracy certificate를 받아야 한다. 검사시점·시험자료·변경승인·현지 기술자·시공자 자격과 보험은 계약 전에 확인한다.",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할 건설관리기관이 현장을 검사하고 건축·구조·배수·오수처리 설계를 기술기준, master plan·zoning·토지이용과 ECC 조건에 대조한다.",
+        "action": "관할 건설관리기관이 현장을 검사하고 건축·구조·배수·오수처리 설계를 기술기준, master plan·zoning·토지이용과 ECC 조건에 대조한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "현장·기술·계획 통합심사의견"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "site inspection and design compliance with technical, planning, land-use, conservation and environmental rules"
+            ]
+          },
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 10-13; verification procedures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "건축주·신청인",
+        "stage": "G6 건축허가 접수·심사",
+        "label": "7일 통지 허가도서 보완·재검토",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "기관이 7일 이내 통지한 누락·부정확·기준미달 설계와 자료를 신청인·설계회사가 수정해 관할기관에 재제출한다.",
+        "action": "기관이 7일 이내 통지한 누락·부정확·기준미달 설계와 자료를 신청인·설계회사가 수정해 관할기관에 재제출한다.",
+        "outputs": [
+          "수정 허가도서·보완답변·재접수"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "notice within 7 days for incorrect design or incomplete/non-standard documents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G7 허가결정",
+        "label": "건축허가 발급·조건 또는 불허 결정",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할권자가 완비신청에 대해 법정 심사를 마치고 30일 이내 건축허가와 승인조건을 발급하거나 기준미충족 사유로 불허한다. 허가는 서명일부터 6개월 유효하다.",
+        "action": "관할권자가 완비신청에 대해 법정 심사를 마치고 30일 이내 건축허가와 승인조건을 발급하거나 기준미충족 사유로 불허한다. 허가는 서명일부터 6개월 유효하다.",
+        "outputs": [
+          "건축허가·승인도서·조건 또는 불허결정"
+        ],
+        "authorityIds": [
+          "provincial-governor",
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "permit no later than 30 days after complete application; six-month validity and one renewal"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "건축주·신청인",
+        "stage": "G8 허가·착공",
+        "label": "6개월 허가유효기간 내 착공·표시",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "건축주가 서명일부터 6개월인 건축허가 유효기간 안에 승인도서·조건에 따라 착공하며, 미착공이면 만료 전 한 차례 갱신을 신청한다.",
+        "action": "건축주가 서명일부터 6개월인 건축허가 유효기간 안에 승인도서·조건에 따라 착공하며, 미착공이면 만료 전 한 차례 갱신을 신청한다.",
+        "outputs": [
+          "유효 건축허가·착공기록 또는 갱신승인"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "six-month permit validity, one renewal and invalidity after expiration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G8 허가·착공",
+        "label": "승인도서·기술기준에 따른 시공·감독",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "허가된 설계·시공주체가 승인 프로젝트 도면과 건설기술기준, 안전·환경조건에 따라 공사를 수행하고 검사 가능한 상태와 기록을 유지한다.",
+        "action": "허가된 설계·시공주체가 승인 프로젝트 도면과 건설기술기준, 안전·환경조건에 따라 공사를 수행하고 검사 가능한 상태와 기록을 유지한다.",
+        "outputs": [
+          "시공·감독·품질기록"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 14-17; construction monitoring",
+              "Articles 18-19; obligations of developers and contractors"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B22",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G9 공사 중 검사",
+        "label": "허가기관 제1차 공사현장 검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "건축허가를 발급한 관할기관이 준공 전에 첫 현장검사를 실시해 배치·주요공정·승인도서·안전 및 허가조건 준수를 확인한다.",
+        "action": "건축허가를 발급한 관할기관이 준공 전에 첫 현장검사를 실시해 배치·주요공정·승인도서·안전 및 허가조건 준수를 확인한다.",
+        "outputs": [
+          "제1차 검사기록·적합 또는 시정사항"
         ],
         "authorityIds": [
           "provincial-governor",
@@ -138,36 +783,463 @@
         "requirementIds": [
           "LAO-BLD-REQ-006"
         ],
-        "questionIds": [
-          "LAO-BLD-Q-007",
-          "LAO-BLD-Q-008",
-          "LAO-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "건설활동 관리결정 제2241/MPWT호",
-            "instrumentId": "LAO-CONSTRUCTION-DECISION-2019",
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
             "provisions": [
-              "official inspection and completion guidance"
+              "competent authority inspects approved building at least twice before completion"
             ]
           }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G9 공사 중 검사",
+        "label": "허가기관 제2차 이상 공정검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할기관이 후속 주요공정에서 두 번째 이상 검사를 실시해 승인설계와 기술·환경조건의 지속 준수 및 이전 지적의 시정 여부를 확인한다.",
+        "action": "관할기관이 후속 주요공정에서 두 번째 이상 검사를 실시해 승인설계와 기술·환경조건의 지속 준수 및 이전 지적의 시정 여부를 확인한다.",
+        "outputs": [
+          "후속 공정검사 기록·시정확인"
+        ],
+        "authorityIds": [
+          "provincial-governor",
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "at least two inspections before completion"
+            ]
+          },
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 14-17; construction monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "건축주·신청인",
+        "stage": "G9 공사 중 검사",
+        "label": "검사지적·무허가 변경 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "검사에서 승인도서 불일치·무허가 공사·기준위반이 확인되면 건축주와 시공자가 지적공정을 시정하고 필요한 변경승인을 받은 뒤 재검사를 요청한다.",
+        "action": "검사에서 승인도서 불일치·무허가 공사·기준위반이 확인되면 건축주와 시공자가 지적공정을 시정하고 필요한 변경승인을 받은 뒤 재검사를 요청한다.",
+        "outputs": [
+          "시정공사·변경승인·재검사 기록"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 20-21; unpermitted or non-conforming construction prohibitions",
+              "Articles 27-29; inspection and problem/dispute settlement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "건축주·신청인",
+        "stage": "G10 완료통지·최종검사",
+        "label": "완료 후 15일 이내 준공통지",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "건축주가 공사완료 후 늦어도 15일 이내 건축허가를 발급한 관할기관에 완료 사실을 통지하고 최종검사를 요청한다.",
+        "action": "건축주가 공사완료 후 늦어도 15일 이내 건축허가를 발급한 관할기관에 완료 사실을 통지하고 최종검사를 요청한다.",
+        "outputs": [
+          "법정기한 내 완료통지·최종검사 신청"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "applicant notification no later than 15 days after completion for final inspection"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G10 완료통지·최종검사",
+        "label": "최종 현장검사·승인설계 정확성 대조",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "관할기관이 완성 건축물의 배치·용도·구조·설비·배수·안전과 환경조건을 허가·승인도서 및 이전 검사기록에 대조한다.",
+        "action": "관할기관이 완성 건축물의 배치·용도·구조·설비·배수·안전과 환경조건을 허가·승인도서 및 이전 검사기록에 대조한다.",
+        "outputs": [
+          "최종검사 기록·적합 또는 보완사항"
+        ],
+        "authorityIds": [
+          "provincial-governor",
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "final inspection after completion notification and accuracy certificate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "건축주·신청인",
+        "stage": "G10 완료통지·최종검사",
+        "label": "준공불일치 시정·최종 재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "최종검사에서 허가·도면·조건과 다른 사항이 확인되면 건축주·시공자가 시정하고 변경·품질증빙을 제출해 재검사를 받는다.",
+        "action": "최종검사에서 허가·도면·조건과 다른 사항이 확인되면 건축주·시공자가 시정하고 변경·품질증빙을 제출해 재검사를 받는다.",
+        "outputs": [
+          "준공시정 증빙·재검사 기록"
+        ],
+        "authorityIds": [
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Decision 2241/PWT 안내",
+            "instrumentId": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+            "provisions": [
+              "Articles 27-29; inspection and resolution of development-control problems"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G11 정확성증명",
+        "label": "건축 정확성증명서 발급·거부 결정",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "최종검사에서 허가·승인도서와 일치하면 관할기관이 해당 건축물이 변경될 때까지 증거가 되는 정확성증명서를 발급하고, 미시정이면 발급을 보류·거부한다.",
+        "action": "최종검사에서 허가·승인도서와 일치하면 관할기관이 해당 건축물이 변경될 때까지 증거가 되는 정확성증명서를 발급하고, 미시정이면 발급을 보류·거부한다.",
+        "outputs": [
+          "건축 정확성증명서 또는 발급거부"
+        ],
+        "authorityIds": [
+          "provincial-governor",
+          "provincial-pwt",
+          "district-pwt"
+        ],
+        "requirementIds": [
+          "LAO-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MOIC Construction Permit 안내",
+            "instrumentId": "LAO-BNED-CONSTRUCTION-PERMIT",
+            "provisions": [
+              "final inspection and issue of accuracy certificate as evidence until building is changed"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "관할 확정"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "권원자료 전달"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "인증도서 완성"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "허가접수"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "현장검사"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B06",
+        "target": "B08",
+        "type": "sequence",
+        "label": "계획 적합"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B05",
+        "target": "B07",
+        "type": "message",
+        "label": "현장·서류 보완"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B06",
+        "target": "B07",
+        "type": "message",
+        "label": "설계·기준 보완"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B07",
+        "target": "B04",
+        "type": "loop",
+        "label": "수정도서 재접수"
+      },
+      {
+        "id": "BX05",
+        "source": "B08",
+        "target": "B09",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B09",
+        "target": "B10",
+        "type": "sequence",
+        "label": "Group 2 ESIA 경로"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B10",
+        "target": "B11",
+        "type": "sequence",
+        "label": "환경문서 완성"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B11",
+        "target": "B12",
+        "type": "sequence",
+        "label": "ECC 신청"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "행정완비"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B13",
+        "target": "B15",
+        "type": "sequence",
+        "label": "기술심사 완료"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B12",
+        "target": "B14",
+        "type": "message",
+        "label": "행정·범위 보완"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B13",
+        "target": "B14",
+        "type": "message",
+        "label": "ESIA·ESMMP 보완"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B14",
+        "target": "B11",
+        "type": "loop",
+        "label": "수정 환경문서 재접수"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B15",
+        "target": "B16",
+        "type": "sequence",
+        "label": "ECC 반영"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "건축허가 접수"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B17",
+        "target": "B19",
+        "type": "sequence",
+        "label": "기술·계획 적합"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B17",
+        "target": "B18",
+        "type": "message",
+        "label": "허가도서 보완"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B18",
+        "target": "B16",
+        "type": "loop",
+        "label": "수정 허가도서 재접수"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B19",
+        "target": "B20",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "유효허가 착공"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B21",
+        "target": "B22",
+        "type": "sequence",
+        "label": "제1 검사 진입"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B22",
+        "target": "B23",
+        "type": "sequence",
+        "label": "제1 검사 적합"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B23",
+        "target": "B25",
+        "type": "sequence",
+        "label": "공정검사 적합·완료"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B22",
+        "target": "B24",
+        "type": "message",
+        "label": "제1 검사 시정지시"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B23",
+        "target": "B24",
+        "type": "message",
+        "label": "후속 검사 시정지시"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B24",
+        "target": "B21",
+        "type": "loop",
+        "label": "시정·변경승인 후 공정 재검사"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B25",
+        "target": "B26",
+        "type": "sequence",
+        "label": "최종검사 요청"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B26",
+        "target": "B28",
+        "type": "sequence",
+        "label": "준공 적합"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B26",
+        "target": "B27",
+        "type": "message",
+        "label": "준공 시정요구"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B27",
+        "target": "B26",
+        "type": "loop",
+        "label": "시정 후 최종 재검사"
       }
     ]
   },
@@ -176,14 +1248,21 @@
       "id": "site-urban",
       "slug": "laos-site-urban-construction-regulations",
       "priority": 4,
-      "name": "라오스 도시계획·부지규제",
+      "name": "라오스 도시계획·부지규제 — 건축허가 내 필지·도시계획 심사",
       "oneLiner": "토지권원과 master plan·zoning·토지이용규정 적합성을 건축등급 심사 전에 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "라오스 산업통상부 공식 기업환경데이터베이스의 건축허가 절차와 도시계획법·건설법 목록을 확인했다. 계획도·수치와 토지권원은 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "라오스 산업통상부 공식 기업환경데이터베이스의 건축허가 절차와 도시계획법·건설법 목록을 확인했다. 계획도·수치와 토지권원은 현지 확인 대상이다.",
+      "verificationScope": "별도 전국 단일 입지허가가 아니라 Construction Permit 심사 안에서 권원·도시계획·용도지역·필지이용·배수·환경조건을 확인한다. 아래는 MOIC 공식 절차에 공개된 일반 건축허가의 부지·도시계획 심사 축이다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "Law 40/NA, Law 05/NA와 Decision 2241/PWT에 따른 토지권원, 도시지도·master plan·zoning·특정토지이용, 측량·배치·배수계획의 접수·현장확인·보완·허가결정 절차다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08"
       ],
       "requirementIds": [
         "LAO-BLD-REQ-004"
@@ -204,21 +1283,111 @@
         "LAO-BLD-F-002",
         "LAO-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "관할 확정"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "권원자료 전달"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "인증도서 완성"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "허가접수"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "현장검사"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06",
+          "target": "B08",
+          "type": "sequence",
+          "label": "계획 적합"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B05",
+          "target": "B07",
+          "type": "message",
+          "label": "현장·서류 보완"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B06",
+          "target": "B07",
+          "type": "message",
+          "label": "설계·기준 보완"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B07",
+          "target": "B04",
+          "type": "loop",
+          "label": "수정도서 재접수"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "필지·계획 적합 허가",
+          "action": "허가조건과 승인도서를 후속 환경·기술·시공관리 기준으로 사용"
+        },
+        {
+          "state": "rework",
+          "label": "권원·배치·설계 보완",
+          "action": "7일 보완통지의 누락·부적합을 수정해 허가 신청으로 회귀"
+        },
+        {
+          "state": "reject",
+          "label": "도시계획·토지용도 부적합",
+          "action": "공식 사유에 따라 입지·용도·규모 변경 또는 재신청 검토"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "laos-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "라오스 건축허가·환경심사",
+      "name": "라오스 건축허가·환경심사 — ESIA·ECC·Construction Permit",
       "oneLiner": "면적·높이·통제건축물·환경영향 여부로 허가권자를 분류하고 완비서류 기준 심사일정을 잡는다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "공식 건축허가 서비스의 등급·허가권자·서류·처리기간 안내와 법적 근거 목록을 확인했다. 환경분류와 실제 접수기간은 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "공식 건축허가 서비스의 등급·허가권자·서류·처리기간 안내와 법적 근거 목록을 확인했다. 환경분류와 실제 접수기간은 현지 확인 대상이다.",
+      "verificationScope": "환경영향 가능성이 있는 중·대형 건축사업의 ESIA/ECC와 Construction Permit 대표경로다. Decree 21/PMO의 Group 1(IEE)·Group 2(ESIA) 중 아래 세부 환경심사는 공개 공식자료가 가장 구체적인 Group 2 ESIA 경로를 중심으로 표시했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "환경보호법 Articles 21-22, 43과 Decree 21/PMO, 정부 ESIA 승인절차 및 MOIC Construction Permit 안내를 연결한 법정 신청·심사·보완·결정 흐름이다.",
       "nodeIds": [
-        "B02"
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19"
       ],
       "requirementIds": [
         "LAO-BLD-REQ-005"
@@ -237,21 +1406,137 @@
         "LAO-BLD-F-005",
         "LAO-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B09",
+          "target": "B10",
+          "type": "sequence",
+          "label": "Group 2 ESIA 경로"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B10",
+          "target": "B11",
+          "type": "sequence",
+          "label": "환경문서 완성"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B11",
+          "target": "B12",
+          "type": "sequence",
+          "label": "ECC 신청"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "행정완비"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B13",
+          "target": "B15",
+          "type": "sequence",
+          "label": "기술심사 완료"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B12",
+          "target": "B14",
+          "type": "message",
+          "label": "행정·범위 보완"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B13",
+          "target": "B14",
+          "type": "message",
+          "label": "ESIA·ESMMP 보완"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B14",
+          "target": "B11",
+          "type": "loop",
+          "label": "수정 환경문서 재접수"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B15",
+          "target": "B16",
+          "type": "sequence",
+          "label": "ECC 반영"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "건축허가 접수"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B17",
+          "target": "B19",
+          "type": "sequence",
+          "label": "기술·계획 적합"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B17",
+          "target": "B18",
+          "type": "message",
+          "label": "허가도서 보완"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B18",
+          "target": "B16",
+          "type": "loop",
+          "label": "수정 허가도서 재접수"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "ECC·건축허가 발급",
+          "action": "환경·건축허가 조건과 승인도서에 따라 유효기간 내 착공"
+        },
+        {
+          "state": "rework",
+          "label": "환경문서·허가도서 보완",
+          "action": "공식 통지에 따라 자료를 수정해 해당 신청·심사로 회귀"
+        },
+        {
+          "state": "reject",
+          "label": "중대 환경영향·건축기준 부적합",
+          "action": "거부사유에 따라 대안입지·규모·설계 변경 후 재신청 검토"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "laos-control-completion-construction-regulations",
       "priority": 6,
-      "name": "라오스 기술검사·보험·준공제도",
+      "name": "라오스 기술검사·준공제도 — 공사 중 검사·최종검사·정확성증명",
       "oneLiner": "허가기관의 공사 중 최소 2회 검사와 준공통지·적합증명 절차를 공정 Hold Point로 반영한다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "공식 건축허가 서비스에서 공사 중 검사와 준공통지·적합증명 절차를 확인했다. 전문자격·보험·검사비와 현장 관행은 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "공식 건축허가 서비스에서 공사 중 검사와 준공통지·적합증명 절차를 확인했다. 전문자격·보험·검사비와 현장 관행은 현지 확인 대상이다.",
+      "verificationScope": "MOIC 공식 Construction Permit 안내와 Decision 2241/PWT의 전국 건설관리 흐름이다. 관할기관이 허가한 건축물을 준공 전 최소 2회 검사하고, 완료 후 15일 이내 통지에 따라 최종검사와 정확성증명서를 발급하는 절차를 표시했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "Decision 2241/PWT Articles 14-19, 22-29와 MOIC 공식 허가안내에 따른 허가유효성, 공사감독, 최소 2회 검사, 위반시정, 완료통지·최종검사·accuracy certificate 절차다.",
       "nodeIds": [
-        "B03"
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B28"
       ],
       "requirementIds": [
         "LAO-BLD-REQ-006"
@@ -270,8 +1555,102 @@
         "LAO-BLD-F-008",
         "LAO-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "유효허가 착공"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B21",
+          "target": "B22",
+          "type": "sequence",
+          "label": "제1 검사 진입"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B22",
+          "target": "B23",
+          "type": "sequence",
+          "label": "제1 검사 적합"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B23",
+          "target": "B25",
+          "type": "sequence",
+          "label": "공정검사 적합·완료"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B22",
+          "target": "B24",
+          "type": "message",
+          "label": "제1 검사 시정지시"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B23",
+          "target": "B24",
+          "type": "message",
+          "label": "후속 검사 시정지시"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B24",
+          "target": "B21",
+          "type": "loop",
+          "label": "시정·변경승인 후 공정 재검사"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B25",
+          "target": "B26",
+          "type": "sequence",
+          "label": "최종검사 요청"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B26",
+          "target": "B28",
+          "type": "sequence",
+          "label": "준공 적합"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B26",
+          "target": "B27",
+          "type": "message",
+          "label": "준공 시정요구"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B27",
+          "target": "B26",
+          "type": "loop",
+          "label": "시정 후 최종 재검사"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "최종검사 적합·정확성증명 발급",
+          "action": "증명서와 허가된 용도·조건에 따라 사용"
+        },
+        {
+          "state": "rework",
+          "label": "공정·준공 불일치 시정",
+          "action": "시정·변경승인 후 해당 공정 또는 최종검사로 회귀"
+        },
+        {
+          "state": "reject",
+          "label": "중대한 위반·미시정",
+          "action": "증명 발급 보류·거부와 법정 위반조치에 대응"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -298,6 +1677,14 @@
       "role": "소형 건축물의 건축허가와 현장검사를 담당",
       "verificationLevel": "source-linked",
       "officialUrl": "https://www.bned.moic.gov.la/en/formalities/375"
+    },
+    {
+      "id": "lao-monre",
+      "name": "Ministry of Natural Resources and Environment and competent natural-resources and environment authority",
+      "nameKo": "천연자원환경부 및 관할 자연자원환경기관",
+      "role": "IEE·ESIA 분류·검토, 공중참여와 환경준수증명(ECC) 발급·감독을 담당",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.monre.gov.la/"
     }
   ],
   "instruments": [
@@ -310,7 +1697,9 @@
       "issuedOn": "2017-01-16",
       "officialUrl": "https://www.bned.moic.gov.la/en/formalities/375",
       "verificationLevel": "source-linked",
-      "note": "산업통상부 국가기업환경데이터베이스의 건축허가 법적 근거 목록에서 확인했다."
+      "note": "산업통상부 국가기업환경데이터베이스의 건축허가 법적 근거 목록에서 확인했다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MOIC 공식 Business Formalities의 현행 Construction Permit 법적근거와 MPWT 2024 도시개발 안내에서 Law 40/NA를 적용법으로 확인"
     },
     {
       "id": "LAO-CONSTRUCTION-LAW-2009",
@@ -320,7 +1709,9 @@
       "status": "in_force",
       "issuedOn": "2009-11-26",
       "officialUrl": "https://www.bned.moic.gov.la/en/formalities/375",
-      "verificationLevel": "source-linked"
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MOIC 공식 Business Formalities와 MPWT 2024 도시개발 안내가 Law 05/NA를 건축허가·건설관리 현행 근거로 게시"
     },
     {
       "id": "LAO-CONSTRUCTION-DECISION-2019",
@@ -330,6 +1721,67 @@
       "status": "in_force",
       "issuedOn": "2019-01-31",
       "officialUrl": "https://www.bned.moic.gov.la/en/formalities/375",
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MPWT 공식 2024 Urban Development TIPS가 Ministerial Decision 2241/PWT(2019)의 Articles 5-36 체계와 현행 건축허가 절차를 설명"
+    },
+    {
+      "id": "LAO-BNED-CONSTRUCTION-PERMIT",
+      "title": "MOIC Business Formalities — Construction Permit",
+      "titleKo": "산업통상부 기업허가 포털 — 건축허가 공식안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MOIC 공식 포털이 2024년 갱신된 관할등급·신청도서·현장검사·7일 보완통지·30일 발급·공사 중 2회 검사·준공증명 절차를 현재 게시",
+      "officialUrl": "https://www.bned.moic.gov.la/en/formalities/375",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "LAO-MPWT-CONSTRUCTION-TIPS-2024",
+      "title": "MPWT Urban Development TIPS No. 6 — Decision on Construction Management",
+      "titleKo": "공공사업교통부 도시개발 안내 제6호 — 건설관리결정",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MPWT가 Decision 2241/PWT의 허가등급, 토지이용·측량·설계, 심사, 공사감독과 위반조치 조문구조를 공식 설명",
+      "officialUrl": "https://www.mpwt.gov.la/download_project?id=321",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "LAO-ENV-LAW-2012",
+      "title": "Environmental Protection Law (Revised) No. 29/NA of 2012",
+      "titleKo": "개정 환경보호법 제29/NA호(2012)",
+      "kind": "act",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "정부 Lao Trade Portal 현행 법령본문에서 Articles 21, 22, 43의 IEE·EIA·ECC를 직접 대조",
+      "articlesChecked": [
+        "Articles 21-22",
+        "Article 43"
+      ],
+      "officialUrl": "https://www.laotradeportal.gov.la/en-gb/site/display/1012",
+      "verificationLevel": "article-verified"
+    },
+    {
+      "id": "LAO-EIA-DECREE-21-2019",
+      "title": "Decree on Environmental Impact Assessment No. 21/PMO of 2019",
+      "titleKo": "환경영향평가 시행령 제21/PMO호(2019)",
+      "kind": "decree",
+      "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MONRE 공식 2025 환경사회관리문서가 Article 9의 IEE/ESIA 분류, Articles 19-30의 평가·검토·승인, Articles 36-39의 공중참여를 현행 적용법으로 확인",
+      "officialUrl": "https://www.cfmrv.monre.gov.la/files/WWF%20GEF8%20Laos%20LDCF%20ESMF%20Final.pdf",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "LAO-ECC-ESIA-FORMALITY",
+      "title": "Government Business Formality — Certificate approving ESIA and ESMMP",
+      "titleKo": "정부 기업절차 — ESIA·ESMMP 환경준수증명 승인",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "정부 Lao Trade Portal이 ESIA·ESMMP 제출, 공중참여, 행정·기술심사, 보완·거부와 ECC 산출물을 공식 절차자료로 제공",
+      "officialUrl": "https://www.laotradeportal.gov.la/upload/files/36._Certificate_to_approve_the_Environmental_and_Social_Impact_Assessment.pdf",
       "verificationLevel": "source-linked"
     }
   ],
@@ -427,7 +1879,38 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "관할권자의 필지·도시계획 적합 건축허가 공식결정",
+      "decision": "권원·도시계획·토지이용·현장조건에 따라 건축가능성과 허가조건을 공식 확정한다.",
+      "dependsOn": [],
+      "output": "건축허가·부지조건 또는 부적합 결정"
+    },
+    {
+      "order": 2,
+      "gate": "관할 환경기관의 ESIA·ESMMP ECC 공식결정",
+      "decision": "평가·관리계획을 승인해 환경준수증명과 조건을 발급하거나 공식 거부한다.",
+      "dependsOn": [],
+      "output": "환경준수증명·조건 또는 거부결정"
+    },
+    {
+      "order": 3,
+      "gate": "건축등급별 관할권자의 건축허가 공식결정",
+      "decision": "ECC·권원·설계·현장·계획 적합성을 확인해 건축허가를 발급하거나 불허한다.",
+      "dependsOn": [
+        2
+      ],
+      "output": "건축허가·조건 또는 불허결정"
+    },
+    {
+      "order": 4,
+      "gate": "관할 허가기관의 건축 정확성증명 공식결정",
+      "decision": "완성 건축물과 허가·승인도서의 일치를 확인해 정확성증명서를 발급하거나 보류·거부한다.",
+      "dependsOn": [],
+      "output": "건축 정확성증명서 또는 발급거부"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "LAO-LOCAL-OVERLAY-001",

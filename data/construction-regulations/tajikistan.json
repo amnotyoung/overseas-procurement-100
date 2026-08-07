@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "tajikistan",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,46 +27,53 @@
     "title": "타지키스탄 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "G0 계획·입지",
+      "G1 토지·설계조건",
+      "G2 조사·프로젝트",
+      "G3 지방 승인·보완",
+      "G4 EIA·환경신청",
+      "G5 환경·설계전문심사",
+      "G6 설계보완·착공허가",
+      "G7 허가보완·재신청",
+      "G8 허가통보·감독",
+      "G9 시공·국가검사",
+      "G10 준공위원회",
+      "G11 act 승인·등기"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "도시계획법전·필지조건 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "도시계획법전은 토지이용 유형, 도시계획문서·cadastre와 건축기준을 국가·지역 통제의 기초로 둔다. 대상 필지의 허용용도, 건폐율·용적률·높이·이격·주차와 보호구역은 관할 계획문서·건축조건으로, 지진·사면·산사태·토석류·홍수·지반과 상하수·전력·열 공급은 현장조사와 공급기관 기술조건으로 확정한다.",
-        "action": "도시계획법전은 토지이용 유형, 도시계획문서·cadastre와 건축기준을 국가·지역 통제의 기초로 둔다. 대상 필지의 허용용도, 건폐율·용적률·높이·이격·주차와 보호구역은 관할 계획문서·건축조건으로, 지진·사면·산사태·토석류·홍수·지반과 상하수·전력·열 공급은 현장조사와 공급기관 기술조건으로 확정한다.",
+        "stage": "G0 계획·입지",
+        "label": "승인 general·detailed plan·건축규칙 대조",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "관할 건축기관이 대상지를 승인 general plan, detailed planning project, development project와 토지이용·건축규칙에 대조해 용도·red line·건축선·최소필지·특별규제구역을 식별한다.",
+        "action": "관할 건축기관이 대상지를 승인 general plan, detailed planning project, development project와 토지이용·건축규칙에 대조해 용도·red line·건축선·최소필지·특별규제구역을 식별한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "적용 도시계획문서·zoning·red line·특별규제조건"
         ],
         "authorityIds": [
-          "tjk-architecture-committee",
           "tjk-local-architecture-authority"
         ],
         "requirementIds": [
           "TJK-BLD-REQ-004"
         ],
-        "questionIds": [
-          "TJK-BLD-Q-001",
-          "TJK-BLD-Q-002",
-          "TJK-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "도시계획법전·필지조건",
+            "source": "Urban Planning Code",
             "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
             "provisions": [
-              "Arts. 27-28",
-              "Arts. 29-54"
+              "Articles 20 and 29-42; special regulation, development rules and land-use requirements",
+              "Articles 43-55; approved planning documents, detailed plans and development projects"
             ]
           }
         ]
@@ -74,110 +81,1285 @@
       {
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "설계 국가전문심사·환경전문심사 · 절차 상세 미확인",
+        "stage": "G0 계획·입지",
+        "label": "건축입지·지방 건설결정 심의",
         "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "면허 있는 설계자가 공학조사와 설계도서를 작성하고, 원칙적으로 도시계획법전 제64조의 국가전문심사에서 긍정 결론을 받은 뒤 대상·관할에 맞는 착공허가를 확보한다. 환경영향 가능 사업은 EIA 자료를 포함해 국가환경전문심사를 신청하므로, 건축주·허가권자·면제 여부·환경평가 범위와 두 심사의 선후관계를 서면 확정한다.",
-        "action": "면허 있는 설계자가 공학조사와 설계도서를 작성하고, 원칙적으로 도시계획법전 제64조의 국가전문심사에서 긍정 결론을 받은 뒤 대상·관할에 맞는 착공허가를 확보한다. 환경영향 가능 사업은 EIA 자료를 포함해 국가환경전문심사를 신청하므로, 건축주·허가권자·면제 여부·환경평가 범위와 두 심사의 선후관계를 서면 확정한다.",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "지방행정기관은 관할 건축기관과 협의해 건축물 입지와 인프라 수용성을 심의하고 건축결정을 채택하거나 계획·공익 부적합을 이유로 제한·거부한다.",
+        "action": "지방행정기관은 관할 건축기관과 협의해 건축물 입지와 인프라 수용성을 심의하고 건축결정을 채택하거나 계획·공익 부적합을 이유로 제한·거부한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "지방 건축결정·입지조건 또는 사유부 거부"
         ],
         "authorityIds": [
-          "tjk-architecture-committee",
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 14-17; local construction decisions, siting and infrastructure powers"
+            ]
+          }
+        ],
+        "gateOrders": [
+          1
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "건축주·신청인",
+        "stage": "G1 토지·설계조건",
+        "label": "토지사용권·필지목적·경계 확정",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 건축결정에 맞는 토지사용권 증서와 필지목적·위치·설계경계를 확보한다. 지방의장은 토지제공 때 목적·위치·경계·인프라 정보를 제공한다.",
+        "action": "건축주는 건축결정에 맞는 토지사용권 증서와 필지목적·위치·설계경계를 확보한다. 지방의장은 토지제공 때 목적·위치·경계·인프라 정보를 제공한다.",
+        "outputs": [
+          "토지사용권 증서·필지목적·설계경계·인프라 정보"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 42.1-42.5; planning requirements and information supplied upon land allocation",
+              "Article 66.4; land-use title required for construction permit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "건축주·신청인",
+        "stage": "G1 토지·설계조건",
+        "label": "건축계획과제·유틸리티 기술조건 신청",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 토지권리·건축결정과 사업개요를 관할 건축기관 및 공급기관에 제출해 architectural-planning assignment와 전력·급수·하수·통신 등 기술조건을 신청한다.",
+        "action": "건축주는 토지권리·건축결정과 사업개요를 관할 건축기관 및 공급기관에 제출해 architectural-planning assignment와 전력·급수·하수·통신 등 기술조건을 신청한다.",
+        "outputs": [
+          "건축계획과제·유틸리티 기술조건 신청"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 63.6; land title, architectural-planning assignment, surveys and technical conditions as design inputs",
+              "Article 63.11-63.12; utility connection under technical conditions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G1 토지·설계조건",
+        "label": "건축계획과제·기술조건 공식 발급",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "관할 건축기관과 인프라 운영기관이 계획·red line·필지·접속용량을 반영한 설계과제와 연결 기술조건을 확정한다.",
+        "action": "관할 건축기관과 인프라 운영기관이 계획·red line·필지·접속용량을 반영한 설계과제와 연결 기술조건을 확정한다.",
+        "outputs": [
+          "architectural-planning assignment·기술조건"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 16-17; local architecture-body siting and project-coordination powers",
+              "Article 63.6 and 63.11; mandatory design inputs and utility conditions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 조사·프로젝트",
+        "label": "면허 지질·측량조사와 설계기초 작성",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "면허 조사자가 필요 범위의 engineering-geological·geodetic 조사와 위험·기반시설 기초자료를 작성한다.",
+        "action": "면허 조사자가 필요 범위의 engineering-geological·geodetic 조사와 위험·기반시설 기초자료를 작성한다.",
+        "outputs": [
+          "지질·측량·위험·인프라 조사보고서"
+        ],
+        "authorityIds": [
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 20.7; comprehensive engineering surveys for specially regulated areas",
+              "Article 63.5-63.6; licensed safety-relevant design work and survey evidence"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 조사·프로젝트",
+        "label": "면허 설계자가 건축프로젝트 작성",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "면허 설계자가 토지권리·건축계획과제·조사·기술조건에 맞춰 건축·구조·설비·방재와 프로젝트 문서를 작성한다.",
+        "action": "면허 설계자가 토지권리·건축계획과제·조사·기술조건에 맞춰 건축·구조·설비·방재와 프로젝트 문서를 작성한다.",
+        "outputs": [
+          "법정 건축프로젝트·설계도서"
+        ],
+        "authorityIds": [
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 63.1-63.7; client-funded project documentation, licensed preparation and mandatory inputs"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 지방 승인·보완",
+        "label": "지방 건축기관 프로젝트 승인결정",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "관할 건축기관이 프로젝트를 승인계획·설계과제·기술조건과 도시계획법규에 대조해 승인동의하거나 보완·거부한다.",
+        "action": "관할 건축기관이 프로젝트를 승인계획·설계과제·기술조건과 도시계획법규에 대조해 승인동의하거나 보완·거부한다.",
+        "outputs": [
+          "건축프로젝트 승인동의 또는 보완·거부"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 16.1 and 17; local architecture bodies approve building and structure projects",
+              "Article 63.2; project development, coordination and approval"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B09",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G3 지방 승인·보완",
+        "label": "입지·설계조건 불일치 보완·재제출",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "계획·red line·토지목적·조사·기술조건 불일치를 수정해 관할 건축기관에 다시 제출한다.",
+        "action": "계획·red line·토지목적·조사·기술조건 불일치를 수정해 관할 건축기관에 다시 제출한다.",
+        "outputs": [
+          "수정 프로젝트·적합표·재제출 기록"
+        ],
+        "authorityIds": [
           "tjk-local-architecture-authority",
-          "tjk-state-expertise-control",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 42-43 and 63; mandatory planning and project-document requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B10",
+        "lane": "건축주·신청인",
+        "stage": "G4 EIA·환경신청",
+        "label": "EIA 자료·공론화 준비",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 환경에 직접·간접 영향을 줄 수 있는 신축사업의 EIA 자료를 계획·설계 전 단계에서 마련하고 예정활동의 공론화를 조직한다.",
+        "action": "건축주는 환경에 직접·간접 영향을 줄 수 있는 신축사업의 EIA 자료를 계획·설계 전 단계에서 마련하고 예정활동의 공론화를 조직한다.",
+        "outputs": [
+          "EIA 자료·대안·저감안·공론화 기록"
+        ],
+        "authorityIds": [
+          "tjk-environment-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Law on Environmental Expertise",
+            "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+            "provisions": [
+              "Articles 21-22; mandatory EIA basis, client-funded assessment and public discussion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "lane": "건축주·신청인",
+        "stage": "G4 EIA·환경신청",
+        "label": "환경전문심사 신청·프로젝트/EIA 제출",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주 또는 계약상 설계자가 신청서에 프로젝트 문서, 법정 EIA 자료와 필요한 부속문서를 붙여 환경보호위원회에 제출한다.",
+        "action": "건축주 또는 계약상 설계자가 신청서에 프로젝트 문서, 법정 EIA 자료와 필요한 부속문서를 붙여 환경보호위원회에 제출한다.",
+        "outputs": [
+          "환경전문심사 신청·프로젝트·EIA 완비자료"
+        ],
+        "authorityIds": [
+          "tjk-environment-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Law on Environmental Expertise",
+            "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+            "provisions": [
+              "Articles 9.1 and 10.1-10.4; covered construction projects, application and documents"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B12",
+        "lane": "환경·소방·검사기관",
+        "stage": "G4 EIA·환경신청",
+        "label": "전문가·위원회 구성과 접수범위 확정",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "환경기관이 대상성과 제출자료를 확인하고 법정 사안에 따라 개별 전문가 또는 독립 전문가위원회에 심사를 배정한다.",
+        "action": "환경기관이 대상성과 제출자료를 확인하고 법정 사안에 따라 개별 전문가 또는 독립 전문가위원회에 심사를 배정한다.",
+        "outputs": [
+          "환경심사 접수·전문가/위원회 배정"
+        ],
+        "authorityIds": [
+          "tjk-environment-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Law on Environmental Expertise",
+            "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+            "provisions": [
+              "Articles 8-10; independent experts/commission and application-based review"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B13",
+        "lane": "환경·소방·검사기관",
+        "stage": "G4 EIA·환경신청",
+        "label": "30일 국가환경전문심사·복잡사업 60일",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "전문가가 프로젝트·EIA·공론화 자료를 환경법과 자원보전 기준에 대조한다. 통상 30일 이내이며 복잡사업은 권한기관 결정으로 60일까지 연장된다.",
+        "action": "전문가가 프로젝트·EIA·공론화 자료를 환경법과 자원보전 기준에 대조한다. 통상 30일 이내이며 복잡사업은 권한기관 결정으로 60일까지 연장된다.",
+        "outputs": [
+          "환경전문가 검토·보완의견·결론안"
+        ],
+        "authorityIds": [
+          "tjk-environment-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Law on Environmental Expertise",
+            "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+            "provisions": [
+              "Article 11; review up to 30 days, extendable to 60 days for complex projects"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "환경·소방·검사기관",
+        "stage": "G5 환경·설계전문심사",
+        "label": "환경전문심사 긍정·부정 공식결론",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "환경전문가 전원이 결론에 서명하고 환경전문심사 권한기관장이 긍정 또는 부정 결론을 승인한다. 긍정결론 전에는 대상사업의 자금조달·시행이 허용되지 않는다.",
+        "action": "환경전문가 전원이 결론에 서명하고 환경전문심사 권한기관장이 긍정 또는 부정 결론을 승인한다. 긍정결론 전에는 대상사업의 자금조달·시행이 허용되지 않는다.",
+        "outputs": [
+          "승인된 긍정 또는 부정 환경전문심사 결론"
+        ],
+        "authorityIds": [
+          "tjk-environment-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Law on Environmental Expertise",
+            "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
+            "provisions": [
+              "Article 12.1-12.7; signed and approved positive/negative conclusion and legal effect"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "건축주·신청인",
+        "stage": "G4 EIA·환경신청",
+        "label": "부정 환경결론 보완·반복심사",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "부정결론의 지적사항을 프로젝트·EIA에 반영해 반복 환경전문심사에 제출하거나 사업을 포기한다. 조건변경·승인기간 만료·승인 후 변경도 반복심사 대상이다.",
+        "action": "부정결론의 지적사항을 프로젝트·EIA에 반영해 반복 환경전문심사에 제출하거나 사업을 포기한다. 조건변경·승인기간 만료·승인 후 변경도 반복심사 대상이다.",
+        "outputs": [
+          "수정 프로젝트·EIA·반복심사 신청"
+        ],
+        "authorityIds": [
           "tjk-environment-authority",
           "tjk-licensed-participants"
         ],
         "requirementIds": [
           "TJK-BLD-REQ-005"
         ],
-        "questionIds": [
-          "TJK-BLD-Q-004",
-          "TJK-BLD-Q-005",
-          "TJK-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "설계 국가전문심사·환경전문심사",
-            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
-            "provisions": [
-              "Art. 63",
-              "Art. 64",
-              "project approval and construction-start permit framework"
-            ]
-          },
-          {
-            "source": "설계 국가전문심사·환경전문심사",
+            "source": "Law on Environmental Expertise",
             "instrumentId": "TJK-ENV-EXPERTISE-LAW-818-2012",
             "provisions": [
-              "Arts. 10-14"
+              "Articles 12.7 and 14.1-14.6; mandatory revision/repeat or abandonment and repeat-review triggers"
             ]
           }
         ]
       },
       {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "국가통제·감리·사용인수 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
-        "basisScope": "axis",
-        "note": "건축주는 승인설계와 기술규정 준수에 대한 기술감리와 설계자감리를 보장하고, 국가건축·도시계획통제기관의 검사·시정에 대응한다. 공정검사·시험·as-built·소방·유틸리티 자료를 모아 적용되는 제73조 사용인수 절차와 등록을 완료하며, 면허·검사기관·보험·비용은 계약 전 현지 시장과 감독기관에서 확인한다.",
-        "action": "건축주는 승인설계와 기술규정 준수에 대한 기술감리와 설계자감리를 보장하고, 국가건축·도시계획통제기관의 검사·시정에 대응한다. 공정검사·시험·as-built·소방·유틸리티 자료를 모아 적용되는 제73조 사용인수 절차와 등록을 완료하며, 면허·검사기관·보험·비용은 계약 전 현지 시장과 감독기관에서 확인한다.",
+        "id": "B16",
+        "lane": "건축주·신청인",
+        "stage": "G5 환경·설계전문심사",
+        "label": "설계도서 국가전문심사 제출",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주가 면허 설계도서와 조사·계산·승인자료를 국가 도시계획 프로젝트 전문심사기관에 제출한다. 국가투자·ODA 공공건축과 안전 관련 설계는 국가전문심사 대상이다.",
+        "action": "건축주가 면허 설계도서와 조사·계산·승인자료를 국가 도시계획 프로젝트 전문심사기관에 제출한다. 국가투자·ODA 공공건축과 안전 관련 설계는 국가전문심사 대상이다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "국가 설계전문심사 신청·완비도서"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 64.1-64.6; mandatory state expertise and exclusive scope for public investment/safety"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B17",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G5 환경·설계전문심사",
+        "label": "완비성·면허 확인 후 국가전문심사",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "전문심사기관은 도서 완비성과 작성자 면허를 확인하고 기술규정·위생·환경·문화재·소방·산업·구조·접근성 기준을 심사한다. 통상 1개월 이내다.",
+        "action": "전문심사기관은 도서 완비성과 작성자 면허를 확인하고 기술규정·위생·환경·문화재·소방·산업·구조·접근성 기준을 심사한다. 통상 1개월 이내다.",
+        "outputs": [
+          "전문심사 검토·보완의견·결론안"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 64.5-64.14; review scope, one-month term and intake refusal grounds"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G5 환경·설계전문심사",
+        "label": "설계전문심사 긍정·부정 결론",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "전문심사기관이 설계도서의 법정 적합 또는 부적합을 긍정·부정 결론으로 확정한다. 긍정결론 없이는 설계승인·입찰·착공허가·시공이 금지된다.",
+        "action": "전문심사기관이 설계도서의 법정 적합 또는 부적합을 긍정·부정 결론으로 확정한다. 긍정결론 없이는 설계승인·입찰·착공허가·시공이 금지된다.",
+        "outputs": [
+          "국가 설계전문심사 긍정 또는 부정 결론"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 64.9 and 64.15-64.17; legal effect, positive/negative conclusion and resubmission"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "건축주·신청인",
+        "stage": "G6 설계보완·착공허가",
+        "label": "부정 설계결론 수정·재심사",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "불완비·무면허 작성은 접수를 보완하고 부정결론의 기술·안전 지적을 설계에 반영해 국가전문심사에 다시 제출한다.",
+        "action": "불완비·무면허 작성은 접수를 보완하고 부정결론의 기술·안전 지적을 설계에 반영해 국가전문심사에 다시 제출한다.",
+        "outputs": [
+          "수정 설계도서·재심사 신청·새 결론"
         ],
         "authorityIds": [
           "tjk-state-expertise-control",
-          "tjk-architecture-committee",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 64.14-64.17; intake refusal, negative conclusion and resubmission after changes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "건축주·신청인",
+        "stage": "G6 설계보완·착공허가",
+        "label": "토지·승인설계·양대 긍정결론으로 착공신청",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 지방 건축결정, 토지사용권 증서, 승인 프로젝트, 필요 시 긍정 설계전문심사 결론과 국가환경전문심사 결론을 붙여 관할 건축기관에 착공허가를 신청한다.",
+        "action": "건축주는 지방 건축결정, 토지사용권 증서, 승인 프로젝트, 필요 시 긍정 설계전문심사 결론과 국가환경전문심사 결론을 붙여 관할 건축기관에 착공허가를 신청한다.",
+        "outputs": [
+          "법정 5종 첨부 착공허가 신청"
+        ],
+        "authorityIds": [
           "tjk-local-architecture-authority",
+          "tjk-architecture-committee"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 66.3-66.5; competent authority and exhaustive five-document application"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G6 설계보완·착공허가",
+        "label": "3근무일 착공허가·사유부 거부",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "관할 건축기관은 접수일부터 3근무일 안에 첨부서류와 도시계획법 적합성을 확인해 대상별 기간이 적힌 착공허가를 발급하거나 누락·부적합 사유를 적어 거부한다.",
+        "action": "관할 건축기관은 접수일부터 3근무일 안에 첨부서류와 도시계획법 적합성을 확인해 대상별 기간이 적힌 착공허가를 발급하거나 누락·부적합 사유를 적어 거부한다.",
+        "outputs": [
+          "착공허가증·공사기간 또는 사유부 거부"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority",
+          "tjk-architecture-committee"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 66.6-66.10; three-working-day review, permit/refusal, copy to supervision and permit term"
+            ]
+          }
+        ],
+        "gateOrders": [
+          5
+        ]
+      },
+      {
+        "id": "B22",
+        "lane": "건축주·신청인",
+        "stage": "G7 허가보완·재신청",
+        "label": "허가거부 누락·부적합 보완·재신청",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "법정서류 누락 또는 도시계획 부적합을 해소해 착공허가를 다시 신청한다. 거부는 건축·도시계획 권한기관 또는 법원에 불복할 수 있다.",
+        "action": "법정서류 누락 또는 도시계획 부적합을 해소해 착공허가를 다시 신청한다. 거부는 건축·도시계획 권한기관 또는 법원에 불복할 수 있다.",
+        "outputs": [
+          "보완 착공허가 신청 또는 불복기록"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 66.8 and 66.14; exclusive refusal grounds and administrative/judicial appeal"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G8 허가통보·감독",
+        "label": "착공허가 사본을 감독기관에 3일 내 통보",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "착공허가 발급기관이 발급일부터 3일 안에 허가 사본을 관할 국가건축감독기관에 보내 대상 공사를 감독체계에 등록한다.",
+        "action": "착공허가 발급기관이 발급일부터 3일 안에 허가 사본을 관할 국가건축감독기관에 보내 대상 공사를 감독체계에 등록한다.",
+        "outputs": [
+          "착공허가 사본·감독대상 등록"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority",
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 66.7; permit copy sent to state construction supervision within three days"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "건축주·신청인",
+        "stage": "G8 허가통보·감독",
+        "label": "기술감독·설계자감독 계약 가동",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 직접 또는 계약 엔지니어를 통해 기술감독을 의무 수행하고, 프로젝트 설계자와 설계자감독 계약을 체결해 공정별 적합확인을 가동한다.",
+        "action": "건축주는 직접 또는 계약 엔지니어를 통해 기술감독을 의무 수행하고, 프로젝트 설계자와 설계자감독 계약을 체결해 공정별 적합확인을 가동한다.",
+        "outputs": [
+          "기술감독·설계자감독 계약·감독계획"
+        ],
+        "authorityIds": [
           "tjk-licensed-participants"
         ],
         "requirementIds": [
           "TJK-BLD-REQ-006"
         ],
-        "questionIds": [
-          "TJK-BLD-Q-007",
-          "TJK-BLD-Q-008",
-          "TJK-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "국가통제·감리·사용인수",
+            "source": "Urban Planning Code",
             "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
             "provisions": [
-              "Arts. 19 and 22-25",
-              "Art. 73"
-            ]
-          },
-          {
-            "source": "국가통제·감리·사용인수",
-            "instrumentId": "TJK-COMPLETION-ORDER-564-2019",
-            "provisions": [
-              "independent acceptance into operation procedure"
+              "Articles 67 and 69-70; mandatory technical and author supervision"
             ]
           }
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G9 시공·국가검사",
+        "label": "승인설계 시공·품질기록·공정검사",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "면허 시공자와 감독자가 승인설계·기술규정에 따라 시공하고 재료·공정·숨은공사·시험과 설계자·기술감독 기록을 축적한다.",
+        "action": "면허 시공자와 감독자가 승인설계·기술규정에 따라 시공하고 재료·공정·숨은공사·시험과 설계자·기술감독 기록을 축적한다.",
+        "outputs": [
+          "공정검사·시험·숨은공사·감독 기록"
+        ],
+        "authorityIds": [
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 67-70; supervision during construction and compliance with approved design/material requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "환경·소방·검사기관",
+        "stage": "G9 시공·국가검사",
+        "label": "국가건축감독 현장·서류 검사",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "국가감독기관이 승인설계·기술규정·자재인증, 기술·설계자감독과 품질관리 이행을 현장 및 문서로 검사한다.",
+        "action": "국가감독기관이 승인설계·기술규정·자재인증, 기술·설계자감독과 품질관리 이행을 현장 및 문서로 검사한다.",
+        "outputs": [
+          "국가감독 검사기록·위반사항·적합확인"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 67-68; state control over approved design, materials and supervision"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "환경·소방·검사기관",
+        "stage": "G9 시공·국가검사",
+        "label": "시정명령·중대위반 30일 공사정지",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "위반 발견 시 감독기관은 시정사항과 기한을 명령한다. 강도·안정성 저하 또는 사고위험을 초래하는 위반은 최대 30일 공사정지할 수 있다.",
+        "action": "위반 발견 시 감독기관은 시정사항과 기한을 명령한다. 강도·안정성 저하 또는 사고위험을 초래하는 위반은 최대 30일 공사정지할 수 있다.",
+        "outputs": [
+          "시정명령·시정기한·공사정지 결정"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 19; mandatory correction and suspension powers",
+              "Article 68.4; prescriptions and enforcement for violations"
+            ]
+          }
+        ],
+        "gateOrders": [
+          6
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G9 시공·국가검사",
+        "label": "위반 시정·재시험·재검사",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "시공자와 감독자가 지적공정을 시정하고 재시험·수정기록을 제출해 국가감독의 재검사를 받는다.",
+        "action": "시공자와 감독자가 지적공정을 시정하고 재시험·수정기록을 제출해 국가감독의 재검사를 받는다.",
+        "outputs": [
+          "시정공사·재시험·재검사 적합기록"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 19 and 68; correction orders, deadlines and re-control"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B29",
+        "lane": "건축주·신청인",
+        "stage": "G10 준공위원회",
+        "label": "준공도서·작업위원회 적합결론 확보",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "건축주는 완성공사·감독·시험·유틸리티·준공도서를 취합하고 작업위원회의 긍정 사용적합 결론을 확보해 국가인수위원회에 제출한다.",
+        "action": "건축주는 완성공사·감독·시험·유틸리티·준공도서를 취합하고 작업위원회의 긍정 사용적합 결론을 확보해 국가인수위원회에 제출한다.",
+        "outputs": [
+          "완비 준공도서·작업위원회 긍정결론"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 74.1; state commission acts on approved project and positive working-commission conclusion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B30",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G10 준공위원회",
+        "label": "중요도·공사비별 국가인수위원회 임명",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "정부, 중앙행정기관 또는 관할 지방행정기관이 대상의 중요도·공사비에 따라 국가인수위원회를 임명한다.",
+        "action": "정부, 중앙행정기관 또는 관할 지방행정기관이 대상의 중요도·공사비에 따라 국가인수위원회를 임명한다.",
+        "outputs": [
+          "국가인수위원회 임명결정·구성·검사일정"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority",
+          "tjk-architecture-committee"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 74.1-74.3; commission requirement, appointing bodies and work procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B31",
+        "lane": "환경·소방·검사기관",
+        "stage": "G11 act 승인·등기",
+        "label": "국가인수위원회 현장검증·인수 act 서명",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "국가인수위원회가 승인설계·감독·시험·안전·유틸리티와 작업위원회 결론을 현장에서 검증해 인수 act를 서명하거나 결함 보완·인수거부를 결정한다.",
+        "action": "국가인수위원회가 승인설계·감독·시험·안전·유틸리티와 작업위원회 결론을 현장에서 검증해 인수 act를 서명하거나 결함 보완·인수거부를 결정한다.",
+        "outputs": [
+          "국가인수위원회 인수 act 또는 결함·거부결정"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-local-architecture-authority"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 72.1-72.3 and 74.1-74.3; state acceptance commission and acceptance act"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B32",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G11 act 승인·등기",
+        "label": "준공결함 시정·위원회 재검증",
+        "emphasis": "normal",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "인수위원회가 지적한 설계·시공·시험·서류 결함을 시정하고 작업위원회 또는 국가인수위원회의 재검증을 받는다.",
+        "action": "인수위원회가 지적한 설계·시공·시험·서류 결함을 시정하고 작업위원회 또는 국가인수위원회의 재검증을 받는다.",
+        "outputs": [
+          "시정 준공도서·보수공사·재검증 기록"
+        ],
+        "authorityIds": [
+          "tjk-state-expertise-control",
+          "tjk-licensed-participants"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Articles 72 and 74; positive commission conclusion required before operation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B33",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G11 act 승인·등기",
+        "label": "인수 act 3·5근무일 승인·등기기초 확정",
+        "emphasis": "bottleneck",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "위원회 임명기관은 서명된 인수 act를 주거·민간시설은 3근무일, 생산시설은 5근무일 이내 승인한다. 승인일이 공식 사용개시일이며, 승인 act는 완성 건축물·권리 국가등기의 법정 기초가 된다.",
+        "action": "위원회 임명기관은 서명된 인수 act를 주거·민간시설은 3근무일, 생산시설은 5근무일 이내 승인한다. 승인일이 공식 사용개시일이며, 승인 act는 완성 건축물·권리 국가등기의 법정 기초가 된다.",
+        "outputs": [
+          "승인 국가인수 act·공식 사용개시일·등기기초"
+        ],
+        "authorityIds": [
+          "tjk-local-architecture-authority",
+          "tjk-architecture-committee"
+        ],
+        "requirementIds": [
+          "TJK-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Urban Planning Code",
+            "instrumentId": "TJK-URBAN-PLANNING-CODE-933-2012",
+            "provisions": [
+              "Article 72.3-72.6; act as registration basis, three/five-day approval and operation prohibition",
+              "Article 75.1-75.2; mandatory state registration of completed building and rights"
+            ]
+          }
+        ],
+        "gateOrders": [
+          7
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "계획·입지"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "건축결정"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "토지권리"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "조건신청"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "설계기초"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B06",
+        "target": "B07",
+        "type": "sequence",
+        "label": "조사완료"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B07",
+        "target": "B08",
+        "type": "sequence",
+        "label": "프로젝트 심사"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B02",
+        "target": "B09",
+        "type": "message",
+        "label": "입지보완"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B08",
+        "target": "B09",
+        "type": "message",
+        "label": "설계보완"
+      },
+      {
+        "id": "BS04-10",
+        "source": "B09",
+        "target": "B04",
+        "type": "loop",
+        "label": "수정 후 재진입"
+      },
+      {
+        "id": "BX05",
+        "source": "B09",
+        "target": "B10",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B10",
+        "target": "B11",
+        "type": "sequence",
+        "label": "EIA 완성"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B11",
+        "target": "B12",
+        "type": "sequence",
+        "label": "환경접수"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "전문심사"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B13",
+        "target": "B14",
+        "type": "sequence",
+        "label": "환경결론"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B14",
+        "target": "B16",
+        "type": "sequence",
+        "label": "긍정결론"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B14",
+        "target": "B15",
+        "type": "message",
+        "label": "부정결론"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B15",
+        "target": "B11",
+        "type": "loop",
+        "label": "수정 EIA 재신청"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "설계심사"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B17",
+        "target": "B18",
+        "type": "sequence",
+        "label": "기술결론"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B18",
+        "target": "B20",
+        "type": "sequence",
+        "label": "긍정결론"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B18",
+        "target": "B19",
+        "type": "message",
+        "label": "부정결론"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B19",
+        "target": "B16",
+        "type": "loop",
+        "label": "수정설계 재심사"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "착공심사"
+      },
+      {
+        "id": "BS05-14",
+        "source": "B21",
+        "target": "B22",
+        "type": "message",
+        "label": "거부·보완"
+      },
+      {
+        "id": "BS05-15",
+        "source": "B22",
+        "target": "B20",
+        "type": "loop",
+        "label": "보완 허가 재신청"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B22",
+        "target": "B23",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B23",
+        "target": "B24",
+        "type": "sequence",
+        "label": "감독편입"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B24",
+        "target": "B25",
+        "type": "sequence",
+        "label": "허가착공"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B25",
+        "target": "B26",
+        "type": "sequence",
+        "label": "공정검사"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B26",
+        "target": "B27",
+        "type": "sequence",
+        "label": "감독판정"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B27",
+        "target": "B29",
+        "type": "sequence",
+        "label": "적합·완료"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B26",
+        "target": "B28",
+        "type": "message",
+        "label": "시정요구"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B27",
+        "target": "B28",
+        "type": "message",
+        "label": "정지·시정"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B28",
+        "target": "B26",
+        "type": "loop",
+        "label": "시정 후 재검사"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B29",
+        "target": "B30",
+        "type": "sequence",
+        "label": "준공신청"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B30",
+        "target": "B31",
+        "type": "sequence",
+        "label": "위원회 검사"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B31",
+        "target": "B33",
+        "type": "sequence",
+        "label": "인수적합"
+      },
+      {
+        "id": "BS06-12",
+        "source": "B31",
+        "target": "B32",
+        "type": "message",
+        "label": "결함보완"
+      },
+      {
+        "id": "BS06-13",
+        "source": "B32",
+        "target": "B29",
+        "type": "loop",
+        "label": "시정 후 재신청"
       }
     ]
   },
@@ -186,14 +1368,22 @@
       "id": "site-urban",
       "slug": "tajikistan-site-urban-construction-regulations",
       "priority": 4,
-      "name": "타지키스탄 도시계획·부지규제",
+      "name": "타지키스탄 도시계획·부지규제 — 계획대조·토지결정·건축계획조건",
       "oneLiner": "토지사용권·지적과 승인 도시계획문서를 대조해 필지의 실제 개발조건과 재해·기반시설 한계를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "법무부 ADLIA의 2026년 개정 통합 도시계획법전에서 도시계획문서·cadastre·토지이용 통제의 법적 틀을 확인했다. 필지별 수치와 공급용량은 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "법무부 ADLIA의 2026년 개정 통합 도시계획법전에서 도시계획문서·cadastre·토지이용 통제의 법적 틀을 확인했다. 필지별 수치와 공급용량은 현지 확인 대상이다.",
+      "verificationScope": "도시계획법전의 승인 도시계획·세부계획·건축규칙, 토지제공 시 도시계획정보, 지방 건축기관의 입지·프로젝트 승인 권한을 연결한 전국 법정 경로다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "Urban Planning Code Articles 14-17, 20, 42-55, 63의 승인계획·zoning·red line·토지목적·인프라 조건, 건축계획과 기술조건 및 지방기관 프로젝트 승인 절차다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
       ],
       "requirementIds": [
         "TJK-BLD-REQ-004"
@@ -214,21 +1404,120 @@
         "TJK-BLD-F-002",
         "TJK-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "계획·입지"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "건축결정"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "토지권리"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "조건신청"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "설계기초"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06",
+          "target": "B07",
+          "type": "sequence",
+          "label": "조사완료"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B07",
+          "target": "B08",
+          "type": "sequence",
+          "label": "프로젝트 심사"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B02",
+          "target": "B09",
+          "type": "message",
+          "label": "입지보완"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B08",
+          "target": "B09",
+          "type": "message",
+          "label": "설계보완"
+        },
+        {
+          "id": "M04-E10",
+          "source": "B09",
+          "target": "B04",
+          "type": "loop",
+          "label": "수정 후 재진입"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "입지·설계조건·프로젝트 승인",
+          "action": "환경·국가전문심사와 착공허가 단계로 진행"
+        },
+        {
+          "state": "rework",
+          "label": "입지·도서 보완",
+          "action": "설계과제·기술조건 또는 프로젝트를 수정해 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "계획·토지 부적합",
+          "action": "대안입지·용도·규모 변경 또는 행정·사법 불복"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "tajikistan-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "타지키스탄 건축허가·환경심사",
+      "name": "타지키스탄 건축허가·환경심사 — EIA·국가전문심사·3일 착공허가",
       "oneLiner": "면허 설계도서의 국가전문심사·착공허가 경로와 EIA·국가환경전문심사를 병행 분류한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "도시계획법전 제63·64조의 설계·국가전문심사와 환경전문심사법 제10~14조의 신청·기간·결론 구조를 확인했다. 세부 분류·수수료·실제 접수기간은 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "도시계획법전 제63·64조의 설계·국가전문심사와 환경전문심사법 제10~14조의 신청·기간·결론 구조를 확인했다. 세부 분류·수수료·실제 접수기간은 현지 확인 대상이다.",
+      "verificationScope": "환경전문심사법의 EIA·국가환경전문심사와 도시계획법전의 국가 설계전문심사·3근무일 착공허가를 법정 선후관계로 연결했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "Environmental Expertise Law Articles 9-14, 21-23과 Urban Planning Code Articles 63-66의 EIA·환경결론, 국가 설계전문심사와 착공허가 신청·결정·재심사 절차다.",
       "nodeIds": [
-        "B02"
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22"
       ],
       "requirementIds": [
         "TJK-BLD-REQ-005"
@@ -247,21 +1536,153 @@
         "TJK-BLD-F-005",
         "TJK-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B10",
+          "target": "B11",
+          "type": "sequence",
+          "label": "EIA 완성"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B11",
+          "target": "B12",
+          "type": "sequence",
+          "label": "환경접수"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "전문심사"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B13",
+          "target": "B14",
+          "type": "sequence",
+          "label": "환경결론"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B14",
+          "target": "B16",
+          "type": "sequence",
+          "label": "긍정결론"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B14",
+          "target": "B15",
+          "type": "message",
+          "label": "부정결론"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B15",
+          "target": "B11",
+          "type": "loop",
+          "label": "수정 EIA 재신청"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "설계심사"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B17",
+          "target": "B18",
+          "type": "sequence",
+          "label": "기술결론"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B18",
+          "target": "B20",
+          "type": "sequence",
+          "label": "긍정결론"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B18",
+          "target": "B19",
+          "type": "message",
+          "label": "부정결론"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B19",
+          "target": "B16",
+          "type": "loop",
+          "label": "수정설계 재심사"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "착공심사"
+        },
+        {
+          "id": "M05-E14",
+          "source": "B21",
+          "target": "B22",
+          "type": "message",
+          "label": "거부·보완"
+        },
+        {
+          "id": "M05-E15",
+          "source": "B22",
+          "target": "B20",
+          "type": "loop",
+          "label": "보완 허가 재신청"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "환경·설계 긍정결론과 착공허가",
+          "action": "허가기간·승인설계에 따라 착공하고 감독기관에 편입"
+        },
+        {
+          "state": "rework",
+          "label": "EIA·설계·허가신청 보완",
+          "action": "각 환경·설계전문심사 또는 허가접수 단계로 회귀"
+        },
+        {
+          "state": "reject",
+          "label": "부정결론·착공허가 거부",
+          "action": "사업·입지·설계를 변경해 재심사하거나 법정 불복"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "tajikistan-control-completion-construction-regulations",
       "priority": 6,
-      "name": "타지키스탄 기술검사·보험·준공제도",
+      "name": "타지키스탄 기술검사·준공제도 — 3중 감독·국가인수위원회·등기",
       "oneLiner": "면허 참여자·국가통제·설계자/기술감리 기록을 누적해 법정 사용인수와 재산등록까지 닫는다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "도시계획법전의 국가통제·기술/설계자감리·사용인수와 명령 제564/2019호의 독립 인수 절차를 연결했다. 대상별 인수방식·보험·현지 비용은 재확인한다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "도시계획법전의 국가통제·기술/설계자감리·사용인수와 명령 제564/2019호의 독립 인수 절차를 연결했다. 대상별 인수방식·보험·현지 비용은 재확인한다.",
+      "verificationScope": "도시계획법전의 착공허가 통보, 기술·설계자·국가감독, 시정명령·공사정지, 작업위원회와 국가인수위원회·인수 act 승인·등기를 연결한 전국 법정 경로다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "Urban Planning Code Articles 66-75의 감독기관 통보, 국가·기술·설계자 감독, 위반 시정·공사정지, 작업위원회 선행결론·국가인수위원회·act 승인·부동산 등기 절차다.",
       "nodeIds": [
-        "B03"
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33"
       ],
       "requirementIds": [
         "TJK-BLD-REQ-006"
@@ -280,8 +1701,116 @@
         "TJK-BLD-F-008",
         "TJK-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B23",
+          "target": "B24",
+          "type": "sequence",
+          "label": "감독편입"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B24",
+          "target": "B25",
+          "type": "sequence",
+          "label": "허가착공"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B25",
+          "target": "B26",
+          "type": "sequence",
+          "label": "공정검사"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B26",
+          "target": "B27",
+          "type": "sequence",
+          "label": "감독판정"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B27",
+          "target": "B29",
+          "type": "sequence",
+          "label": "적합·완료"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B26",
+          "target": "B28",
+          "type": "message",
+          "label": "시정요구"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B27",
+          "target": "B28",
+          "type": "message",
+          "label": "정지·시정"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B28",
+          "target": "B26",
+          "type": "loop",
+          "label": "시정 후 재검사"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B29",
+          "target": "B30",
+          "type": "sequence",
+          "label": "준공신청"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B30",
+          "target": "B31",
+          "type": "sequence",
+          "label": "위원회 검사"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B31",
+          "target": "B33",
+          "type": "sequence",
+          "label": "인수적합"
+        },
+        {
+          "id": "M06-E12",
+          "source": "B31",
+          "target": "B32",
+          "type": "message",
+          "label": "결함보완"
+        },
+        {
+          "id": "M06-E13",
+          "source": "B32",
+          "target": "B29",
+          "type": "loop",
+          "label": "시정 후 재신청"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "국가인수 act 승인·등기",
+          "action": "승인일 이후 허가용도로 사용"
+        },
+        {
+          "state": "rework",
+          "label": "공사·준공결함 시정",
+          "action": "국가감독 또는 작업·국가인수위원회 단계로 회귀"
+        },
+        {
+          "state": "reject",
+          "label": "공사정지·인수거부",
+          "action": "위반·결함을 해소하고 재검사하거나 법정 불복"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -329,9 +1858,16 @@
       "kind": "code",
       "status": "in_force",
       "issuedOn": "2012-12-28",
-      "officialUrl": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=118679",
-      "verificationLevel": "law-linked",
-      "note": "법무부 ADLIA 통합본이 2026년 법률 제2241호 개정까지 표시한다."
+      "officialUrl": "https://ncz.tj/system/files/Legislation/933_ru.pdf",
+      "verificationLevel": "article-verified",
+      "note": "법무부 ADLIA 통합본이 2026년 법률 제2241호 개정까지 표시한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "타지키스탄 국가법령센터가 2026년 법률 제2241호 개정까지 반영한 현행 러시아어 통합 PDF를 제공하며, 부지·설계전문심사·착공허가·감독·준공 조문을 직접 대조했다.",
+      "articlesChecked": [
+        "Articles 14-20",
+        "Articles 42-55",
+        "Articles 63-75"
+      ]
     },
     {
       "id": "TJK-ENV-EXPERTISE-LAW-818-2012",
@@ -340,20 +1876,28 @@
       "kind": "act",
       "status": "in_force",
       "issuedOn": "2012-04-16",
-      "officialUrl": "https://mmk.tj/node/587",
-      "verificationLevel": "law-linked",
-      "note": "공식 법령센터 본문에 2024년 법률 제2101호 개정과 국가환경전문심사 기간·결론 유효기간이 반영돼 있다."
+      "officialUrl": "https://mmk.tj/system/files/Legislation/818_ru_0.pdf",
+      "verificationLevel": "article-verified",
+      "note": "공식 법령센터 본문에 2024년 법률 제2101호 개정과 국가환경전문심사 기간·결론 유효기간이 반영돼 있다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "타지키스탄 국가법령센터의 현행 러시아어 PDF에서 2024년 제2101호 개정이 반영된 환경전문심사 대상·신청·기간·결론·재심사 조문을 직접 대조했다.",
+      "articlesChecked": [
+        "Articles 8-14",
+        "Articles 21-23"
+      ]
     },
     {
       "id": "TJK-COMPLETION-ORDER-564-2019",
       "title": "Procedure for independent acceptance into operation of buildings and structures, Order No. 564 of 1 November 2019",
       "titleKo": "건축물·시설물의 독립 사용인수 절차 명령 제564/2019호",
       "kind": "regulation",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "2019-11-01",
       "officialUrl": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=135102",
       "verificationLevel": "law-linked",
-      "note": "도시계획법전 제73조 제2항에 근거한 사용인수 절차다. 대상별 국가위원회 인수 여부와 최신 서식은 재확인한다."
+      "note": "도시계획법전 제73조 제2항에 근거한 사용인수 절차다. 대상별 국가위원회 인수 여부와 최신 서식은 재확인한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "법무부 ADLIA 공식 문서화면이 명령 제564/2019호를 'Амалкунанда(현행)'로 표시한다. 이 명령은 도시계획법전 제73조의 제한된 자가 인수 대상에 적용된다."
     }
   ],
   "requirements": [
@@ -461,7 +2005,66 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "지방행정기관의 건축입지 공식결정",
+      "decision": "승인계획·토지이용·인프라 조건에 따라 대상 건축과 입지를 승인하거나 제한·거부한다.",
+      "dependsOn": [],
+      "output": "지방 건축결정·입지조건 또는 거부"
+    },
+    {
+      "order": 2,
+      "gate": "지방 건축기관의 프로젝트 승인결정",
+      "decision": "설계도서의 계획·입지·기술조건 적합성을 확인해 승인동의, 보완 또는 거부한다.",
+      "dependsOn": [
+        1
+      ],
+      "output": "프로젝트 승인동의 또는 거부"
+    },
+    {
+      "order": 3,
+      "gate": "환경보호위원회의 국가환경전문심사 결론",
+      "decision": "프로젝트·EIA의 환경법 적합성을 긍정 또는 부정 결론으로 승인한다.",
+      "dependsOn": [],
+      "output": "긍정 또는 부정 환경전문심사 결론"
+    },
+    {
+      "order": 4,
+      "gate": "국가 설계전문심사기관의 긍정·부정 결론",
+      "decision": "설계도서의 도시계획·기술·안전 적합성을 긍정 또는 부정으로 결정한다.",
+      "dependsOn": [
+        3
+      ],
+      "output": "국가 설계전문심사 결론"
+    },
+    {
+      "order": 5,
+      "gate": "관할 건축기관의 착공허가 공식결정",
+      "decision": "법정 5종 서류와 도시계획 적합성을 확인해 착공허가 또는 사유부 거부를 결정한다.",
+      "dependsOn": [
+        3,
+        4
+      ],
+      "output": "착공허가증 또는 사유부 거부"
+    },
+    {
+      "order": 6,
+      "gate": "국가건축감독기관의 공사적합 판단",
+      "decision": "승인설계·기술규정 위반을 판정해 계속공사, 시정명령 또는 공사정지를 결정한다.",
+      "dependsOn": [],
+      "output": "적합확인 또는 시정·정지명령"
+    },
+    {
+      "order": 7,
+      "gate": "위원회 임명기관의 국가인수 act 승인",
+      "decision": "위원회 적합결론을 주거·민간 3일 또는 생산 5일 내 승인하거나 보완·거부한다.",
+      "dependsOn": [
+        6
+      ],
+      "output": "승인 국가인수 act 또는 거부"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "TJK-LOCAL-OVERLAY-001",

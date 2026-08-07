@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import html
 import json
 import re
 import sys
@@ -95,18 +96,27 @@ def main() -> int:
                 f"expected {sorted(expected_requirement_ids)}, got {sorted(actual_requirement_ids)}"
             )
 
-        expected_question_ids = {item["id"] for item in data["openQuestions"]}
         actual_question_ids = {
             ident
             for model in models
             for node in model["process"]["nodes"]
             for ident in node["question_ids"]
         }
-        if actual_question_ids != expected_question_ids:
+        if actual_question_ids:
             errors.append(
-                f"{slug} adapter question IDs differ: "
-                f"expected {sorted(expected_question_ids)}, got {sorted(actual_question_ids)}"
+                f"{slug} public legal-procedure nodes expose ODA field questions: "
+                f"{sorted(actual_question_ids)}"
             )
+        field_application_text = "\n".join(
+            str(item)
+            for model in models
+            for item in model.get("fieldVerification", [])
+        )
+        for question in data["openQuestions"]:
+            if question["question"] not in field_application_text:
+                errors.append(
+                    f"{slug} field-application checklist lost question {question['id']}"
+                )
 
         expected_gate_orders = {item["order"] for item in data["permitPath"]}
         actual_gate_orders = {
@@ -233,11 +243,6 @@ def main() -> int:
             procedure_status = canvas.get("procedureStatus", "source-linked")
             detail_unverified = procedure_status == "detail-unverified"
             official_procedure = not detail_unverified
-            representative_permit_model = bool(
-                spec
-                and spec.get("id") == "permit-environment"
-                and model.get("countryKey") in {"pakistan", "fiji"}
-            )
             procedure = canvas.get("procedure")
             if not isinstance(procedure, list):
                 errors.append(f"{model_slug} canvas procedure must be a list")
@@ -252,9 +257,9 @@ def main() -> int:
                         f"{model_slug} detail-unverified procedure must contain one entry, "
                         f"got {len(procedure)}"
                     )
-                if official_procedure and len(procedure) < 2:
+                if official_procedure and len(procedure) < 5:
                     errors.append(
-                        f"{model_slug} verified procedure must contain at least two steps, "
+                        f"{model_slug} verified procedure must contain at least five steps, "
                         f"got {len(procedure)}"
                     )
 
@@ -271,64 +276,6 @@ def main() -> int:
                     errors.append(
                         f"{model_slug} detail-unverified board lacks its explicit status label"
                     )
-
-            if representative_permit_model:
-                if len(process["nodes"]) != 7:
-                    errors.append(
-                        f"{model_slug} official permit workflow must expose 7 steps, "
-                        f"got {len(process['nodes'])}"
-                    )
-                if procedure_status != "official-source-linked":
-                    errors.append(
-                        f"{model_slug} official permit workflow has unexpected procedure status "
-                        f"{procedure_status!r}"
-                    )
-                representative_expectations = {
-                    "pakistan": {
-                        "first": "등록 건축사·구조기술자 허가도서 작성",
-                        "last": "보완도서 제출·재심사",
-                        "scope": "Islamabad/ICT",
-                    },
-                    "fiji": {
-                        "first": "BPAS Step 1 · 개발승인 신청",
-                        "last": "BPAS Step 7 · 현장 건축승인 신청·심사",
-                        "scope": "BPAS",
-                    },
-                }[model["countryKey"]]
-                if process["nodes"][0]["name"] != representative_expectations["first"]:
-                    errors.append(f"{model_slug} has the wrong first official procedure step")
-                if process["nodes"][-1]["name"] != representative_expectations["last"]:
-                    errors.append(f"{model_slug} has the wrong seventh official procedure step")
-                if representative_expectations["scope"] not in canvas.get("procedureScope", ""):
-                    errors.append(
-                        f"{model_slug} does not disclose its jurisdiction/source scope"
-                    )
-                if any(
-                    node.get("workflow_kind") == "field-verification"
-                    for node in process["nodes"]
-                ):
-                    errors.append(
-                        f"{model_slug} mixes an ODA field-verification task into the "
-                        "published statutory procedure"
-                    )
-                if model["countryKey"] == "pakistan":
-                    procedure_text = json.dumps(procedure, ensure_ascii=False)
-                    if "관할기관·신청권원 확정" in procedure_text:
-                        errors.append(
-                            f"{model_slug} still presents the internal jurisdiction check "
-                            "as a statutory step"
-                        )
-                    if "보완도서 제출·재심사" not in procedure_text:
-                        errors.append(
-                            f"{model_slug} lacks the statutory supplement/resubmission step"
-                        )
-                    branch_text = json.dumps(
-                        canvas.get("decisionBranches", []), ensure_ascii=False
-                    )
-                    if re.search(r"\bB\d{2}\b", branch_text):
-                        errors.append(
-                            f"{model_slug} exposes internal node IDs in its decision branches"
-                        )
 
             selected_gate_orders = list(dict.fromkeys(
                 order
@@ -354,19 +301,6 @@ def main() -> int:
                         f"{model_slug} canvas official Gate orders differ: "
                         f"expected unique {selected_gate_orders}, got {actual_gate_orders}"
                     )
-                expected_representative_gates = (
-                    {"pakistan": 2, "fiji": 3}.get(model.get("countryKey"))
-                    if representative_permit_model else None
-                )
-                if (
-                    expected_representative_gates is not None
-                    and len(official_gates) != expected_representative_gates
-                ):
-                    errors.append(
-                        f"{model_slug} representative permit workflow must expose "
-                        f"{expected_representative_gates} official Gates, "
-                        f"got {len(official_gates)}"
-                    )
                 if detail_unverified and official_gates:
                     errors.append(
                         f"{model_slug} detail-unverified board must not invent official Gates"
@@ -391,9 +325,9 @@ def main() -> int:
                 errors.append(
                     f"{model_slug} detail-unverified board must not invent decision branches"
                 )
-            if representative_permit_model and not decision_branches:
+            if official_procedure and not decision_branches:
                 errors.append(
-                    f"{model_slug} official permit workflow lacks decision branches"
+                    f"{model_slug} official procedure lacks decision branches"
                 )
 
             workflow_disclosure = canvas.get("workflowDisclosure")
@@ -437,6 +371,9 @@ def main() -> int:
                 "function openNode(id)",
                 "b.addEventListener('click'",
                 'class="board" id="board" style="min-width:',
+                'class="board-scroll-hint"',
+                '--mobile-board-width:',
+                '--stage-count:',
                 "협의·관할기관",
                 "핵심 적용판단",
                 f'{model["priority"]:02d} · {model["name"]}',
@@ -465,7 +402,10 @@ def main() -> int:
                 errors.append(
                     f"site/model/{model_slug}/index.html is missing its procedure-status label"
                 )
-            if canvas.get("procedureScope") and canvas["procedureScope"] not in detail_html:
+            if (
+                canvas.get("procedureScope")
+                and canvas["procedureScope"] not in html.unescape(detail_html)
+            ):
                 errors.append(
                     f"site/model/{model_slug}/index.html is missing its jurisdiction and procedure scope"
                 )
@@ -777,8 +717,8 @@ def main() -> int:
         print(f"FAILED: {len(errors)} construction site error(s)")
         return 1
     print(
-        f"OK: {countries} construction country source(s), official procedures and "
-        "detail-unverified entry cards, legacy redirects, and audited public board(s)"
+        f"OK: {countries} construction country source(s), country-specific official "
+        "procedures, legacy redirects, and audited public board(s)"
     )
     return 0
 

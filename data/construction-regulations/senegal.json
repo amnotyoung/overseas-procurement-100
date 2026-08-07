@@ -48,9 +48,10 @@
       "slug": "senegal-site-urban-construction-regulations",
       "priority": 4,
       "name": "세네갈 도시계획·부지규제",
-      "oneLiner": "NICAD·권원, Diamniadio PUD 수치, 지반·침수와 유틸리티 확약으로 부지조건을 잠그고, 별도의 분류·환경·허가 심사축으로 이관한다.",
-      "purpose": "대상 필지의 권원과 도시계획 적합성, 필지별 건폐율·용적률·높이·이격·주차, 지반·침수·배수와 전력·통신·상하수 인입조건을 설계 착수 전 확인하는 제도축이다. 마지막 부지 판정은 사업 내부 통제이며 프로젝트 분류·환경 스크리닝·허가를 대체하지 않는다.",
+      "oneLiner": "NICAD·권원 접수부터 PUD·부지기준 심사, 보완과 도시계획 적합 결정까지의 법정 절차를 표시한다.",
+      "purpose": "대상 필지의 권원과 도시계획 적합성, 필지별 건폐율·용적률·높이·이격·주차와 법정 관계기관 조건을 관할 도시계획·건축 당국이 심사·결정하는 제도축",
       "verificationScope": "2023년 도시계획법, 2025년 도시계획법 시행령의 PUD·도시계획확인서·주차·부지기준, Diamniadio PUD 승인령, 지반·유틸리티 관련 건설기준과 2024년 시험기관 인가명령을 대조했다. 필지별 PUD 부속도면·규정과 실제 지반·침수·용량은 현지 확인 대상이다.",
+      "procedureStatus": "article-verified",
       "nodeIds": [
         "B01",
         "B01A",
@@ -126,7 +127,7 @@
           "source": "B06A",
           "target": "B06B",
           "type": "sequence",
-          "label": "내부 부지판정·다음 심사축 이관"
+          "label": "도시계획 공식결정"
         },
         {
           "id": "M04-L07",
@@ -135,6 +136,11 @@
           "type": "loop",
           "label": "권원·PUD·현장조건 보완"
         }
+      ],
+      "decisionBranches": [
+        {"state": "success", "label": "도시계획·부지 적합", "action": "적용 PUD·부가조건을 건축허가 도서에 반영"},
+        {"state": "rework", "label": "권원·계획도서 보완", "action": "NICAD·권원·배치·관계기관 조건을 보완해 재심사"},
+        {"state": "reject", "label": "계획 부적합·불허", "action": "설계변경·대안부지 또는 법정 이의절차 검토"}
       ]
     },
     {
@@ -145,6 +151,7 @@
       "oneLiner": "건축주·허가권자, ERP·환경평가 분류와 완비접수부터 허가까지의 법정 경로를 확정한다.",
       "purpose": "공공 ODA 건축사업의 법적 건축주·신청인과 허가권자, ERP·ICPE·환경평가 유형, 현지 책임건축사, 신청서류·수수료·접수관행·처리기간을 확인하는 제도축",
       "verificationScope": "2023년 도시계획법·건설법·환경법, 2025년 도시계획법·환경법 시행령, 2024년 건설법 시행령, 2021년 건축사법과 2026년 국가행정 관할 배분령에서 건축주·허가권자·ERP·환경평가·현지 책임건축사·허가절차를 대조했다. 사업별 분류와 접수관행은 현지 확인 대상이다.",
+      "procedureStatus": "article-verified",
       "nodeIds": [
         "B03",
         "B04",
@@ -249,6 +256,11 @@
           "type": "loop",
           "label": "서류보완"
         }
+      ],
+      "decisionBranches": [
+        {"state": "success", "label": "환경결정·건축허가", "action": "환경·ERP·소방 조건과 승인도서를 착공요건으로 이관"},
+        {"state": "rework", "label": "보완·재심사", "action": "환경보고서·설계도서·관계기관 의견을 보완해 재제출"},
+        {"state": "reject", "label": "환경 불승인·허가 불허", "action": "불승인·불허사유에 따라 사업·설계 변경 또는 법정 이의절차 검토"}
       ]
     },
     {
@@ -259,6 +271,7 @@
       "oneLiner": "인가 검사기관·보험을 착공 전에 계약하고 시공·변경·적합증명·ERP 개장까지 증빙을 잇는다.",
       "purpose": "지반·구조 비자, 인가 기술검사기관과 건설보험, 공사 중 품질·안전·변경관리, 준공 적합증명, ERP 개장승인과 운영점검을 하나의 책임·증빙 체계로 관리하는 제도축",
       "verificationScope": "2023년 건설법, 2024년 건설법 시행령, 2024년 시험기관 인가명령, 기술검사기관 보수기준과 ODAS·보험감독 공식자료에서 기술검사·보험·착공·시공·준공·ERP 개장 의무를 대조했다. 현재 업체 자격·보험종목·계약비용은 RFQ와 감독기관 확인 대상이다.",
+      "procedureStatus": "article-verified",
       "nodeIds": [
         "B11",
         "B12",
@@ -361,19 +374,24 @@
           "type": "sequence",
           "label": "개장승인"
         }
+      ],
+      "decisionBranches": [
+        {"state": "success", "label": "적합증명·ERP 개장승인", "action": "준공·검사·보험 기록을 사용·운영 인계조건으로 편입"},
+        {"state": "rework", "label": "결함시정·재검사", "action": "부적합 공사를 시정하고 변경승인·재검사·준공도서를 보완"},
+        {"state": "reject", "label": "적합·개장 불승인", "action": "점유·공중개방을 보류하고 시정명령 또는 법정 이의절차 이행"}
       ]
     }
   ],
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "세네갈 ODA 건축 인허가·검사·개장",
-    "subtitle": "Diamniadio 파일럿 사업의 부지 확인부터 적합증명·ERP 개장·운영인계까지",
+    "title": "세네갈 건축 인허가·검사·사용 법정절차",
+    "subtitle": "필지·PUD 적합성부터 건축허가, 적합증명·ERP 공중개방까지",
     "lanes": [
-      "사업주·조사팀",
-      "현지 설계·검사팀",
+      "건축주·신청인",
+      "등록 설계·시공 전문가",
       "도시계획·건축 당국",
-      "환경·소방·운영기관"
+      "환경·소방·검사기관"
     ],
     "stages": [
       "G0 부지·권원",
@@ -392,14 +410,14 @@
     "nodes": [
       {
         "id": "B01",
-        "lane": "사업주·조사팀",
+      "lane": "건축주·신청인",
         "stage": "G0 부지·권원",
-        "label": "필지·NICAD·권원 자료 제출",
+      "label": "건축허가 신청인의 필지·NICAD·권원 제출",
         "emphasis": "lead",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
-        "note": "정확한 필지와 건축권원이 없으면 규모·비용·일정을 확정하지 않는다.",
-        "action": "수원기관이 대상 필지의 NICAD·권원·배정·인도 자료 원본을 제출하고 신청인 적격과 건축권한의 결측을 표시한다.",
+      "note": "토지 소유자 또는 적법한 대리인이 허가절차에 필요한 필지·권원 증빙을 제출한다.",
+      "action": "신청인이 대상 필지의 NICAD, 토지권원·점유·사용권, 대리권과 지적도를 관할 지적·도시계획 기관에 제출한다.",
         "outputs": [
           "필지·NICAD·권원 원본 목록",
           "신청인 적격·건축권한 검토메모"
@@ -412,9 +430,7 @@
           "SEN-BLD-REQ-001",
           "SEN-BLD-REQ-002"
         ],
-        "gateOrders": [
-          1
-        ],
+      "gateOrders": [],
         "questionIds": [
           "SEN-BLD-Q-001"
         ],
@@ -430,14 +446,14 @@
       },
       {
         "id": "B01A",
-        "lane": "현지 설계·검사팀",
+      "lane": "도시계획·건축 당국",
         "stage": "G0 부지·권원",
-        "label": "지적경계·현황측량·점유조건 대조",
+      "label": "Cadastre의 NICAD·지적경계·권원 대조",
         "emphasis": "key",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
-        "note": "NICAD·지적도와 현장 경계·점유현황을 대조하고 권원 또는 배정조건의 결측을 기록한다.",
-        "action": "NICAD·지적도와 현장 경계·점유현황을 대조하고 권원 또는 배정조건의 결측을 기록한다.",
+      "note": "Cadastre·Domaines가 제출된 NICAD·지적도·권원의 대상 필지 일치 여부를 확인한다.",
+      "action": "Cadastre·Domaines가 NICAD·지적도·토지권원과 신청 필지를 대조하고 도시계획 심사에 사용할 인증 필지자료를 확정한다.",
         "outputs": [
           "경계·현황측량도",
           "권원·점유·배정조건 대조표"
@@ -453,9 +469,7 @@
         "questionIds": [
           "SEN-BLD-Q-001"
         ],
-        "gateOrders": [
-          1
-        ],
+      "gateOrders": [],
         "refs": [
           {
             "source": "도시계획법 L.277-L.278",
@@ -515,11 +529,11 @@
       },
       {
         "id": "B02A",
-        "lane": "현지 설계·검사팀",
+      "lane": "도시계획·건축 당국",
         "stage": "G0A 계획·개발수치",
-        "label": "PUD 수치·주차·중첩규제 대조",
+      "label": "PUD 적용수치·주차·중첩규제 심사",
         "emphasis": "bottleneck",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
         "note": "대상 필지를 PUD 부속도면에 매칭해 CES·COS·높이·이격·주차와 특구·도로 조건을 한 표로 확정한다.",
         "action": "대상 필지를 PUD 부속도면에 매칭해 CES·COS·높이·이격·주차와 특구·도로 조건을 한 표로 확정한다.",
@@ -538,9 +552,7 @@
         "questionIds": [
           "SEN-BLD-Q-002"
         ],
-        "gateOrders": [
-          1
-        ],
+      "gateOrders": [],
         "refs": [
           {
             "source": "도시계획 시행령 R.409·R.417-R.441",
@@ -561,14 +573,14 @@
       },
       {
         "id": "B03",
-        "lane": "사업주·조사팀",
+      "lane": "건축주·신청인",
         "stage": "G1 사업분류·책임체계",
-        "label": "건축주·관할·ERP·ICPE 공식분류 확인",
+      "label": "건축주·허가관할·ERP·ICPE 분류신청",
         "emphasis": "key",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
-        "note": "팀의 잠정분류에 그치지 않고 관할기관의 서면 회신으로 신청주체와 적용분류를 닫는다.",
-        "action": "승인 공간프로그램과 법적 건축주 정보를 담은 프로젝트 설명서를 관할기관에 제출해 허가권자, ERP·ICPE 가능성, 환경·기술검사 문턱의 공식 적용 여부를 서면 확인한다.",
+      "note": "신청인이 시설용도·규모·수용인원과 법적 건축주 자료를 제출해 관할·분류 결정을 신청한다.",
+      "action": "신청인이 프로젝트 설명서와 건축주·토지권원 자료를 관할기관에 제출하고 허가권자, ERP·ICPE, 환경·기술검사 적용분류의 공식 결정을 요청한다.",
         "outputs": [
           "관할·ERP·ICPE 공식 분류회신",
           "인허가 매트릭스·선행심사 목록"
@@ -627,7 +639,7 @@
       },
       {
         "id": "B04",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G1 사업분류·책임체계",
         "label": "ODAS 책임건축사·설계 BET 역할 확정",
         "emphasis": "key",
@@ -663,7 +675,7 @@
       },
       {
         "id": "B05",
-        "lane": "환경·소방·운영기관",
+        "lane": "환경·소방·검사기관",
         "stage": "G2 환경·기본설계",
         "label": "환경평가·ICPE 공식 스크리닝",
         "emphasis": "bottleneck",
@@ -712,11 +724,11 @@
       },
       {
         "id": "B06",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G0B 현장·기반시설",
         "label": "지반·침수·배수·유틸리티 조건 확정",
         "emphasis": "lead",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
         "note": "PUD·지반·침수와 전력·통신·상하수 인입조건을 부지·기본설계 조건으로 확정한다.",
         "action": "지형·지반·지하수·우기 침수·배수와 전력·통신·상하수 현황을 조사해 설계·예산에 반영할 부지 제약을 확정한다.",
@@ -762,7 +774,7 @@
         "stage": "G0B 현장·기반시설",
         "label": "배수·유틸리티 용량·인입확약 확인",
         "emphasis": "normal",
-        "kind": "field-verification",
+      "kind": "official-guidance",
         "basisScope": "node",
         "note": "전력·통신·상수·오수·우수의 접속점, 가용용량, 증설비용과 수원기관 분담을 운영기관 회신으로 확정한다.",
         "action": "전력·통신·상수·오수·우수의 접속점, 가용용량, 증설비용과 수원기관 분담을 운영기관 회신으로 확정한다.",
@@ -794,18 +806,17 @@
       },
       {
         "id": "B06B",
-        "lane": "사업주·조사팀",
+      "lane": "도시계획·건축 당국",
         "stage": "G0C 부지조건 확정",
-        "label": "부지 적합성 내부판정·설계조건 잠금",
+      "label": "부지·도시계획 적합 공식결정",
         "emphasis": "bottleneck",
-        "kind": "project-control",
+      "kind": "official-guidance",
         "basisScope": "node",
-        "note": "권원·PUD·지반·침수·유틸리티 결측과 비용영향을 검토하는 내부 통제다. 프로젝트 분류·환경 스크리닝·설계 사전검토·건축허가를 대체하지 않는다.",
-        "action": "권원·PUD·지반·침수·유틸리티 결측과 비용영향을 판정해 부지를 재검토하거나, 조건부 설계입력과 미해결사항을 별도 분류·환경·허가 심사축에 이관한다.",
+      "note": "관할 도시계획·건축 당국이 권원, PUD 적합성과 법정 관계기관 조건을 종합해 승인·보완·불허를 결정한다.",
+      "action": "관할 당국이 NICAD·권원, PUD 적용수치, 법정 부지·기반시설 조건을 심사해 도시계획 적합, 조건부 적합, 보완 또는 불허를 공식 결정한다.",
         "outputs": [
-          "부지 Go/Conditional/No-Go 결정서",
-          "개념설계 입력조건·결측대장",
-          "분류·환경·허가 심사축 이관서"
+        "도시계획·부지 적합 공식결정서",
+        "PUD·부가조건·보완 또는 불허사유"
         ],
         "authorityIds": [
           "dgpu",
@@ -825,7 +836,9 @@
           "SEN-BLD-Q-007",
           "SEN-BLD-Q-008"
         ],
-        "gateOrders": [],
+      "gateOrders": [
+        1
+      ],
         "refs": [
           {
             "source": "도시계획 시행령 R.409·R.417-R.441",
@@ -846,7 +859,7 @@
       },
       {
         "id": "B06D",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G2 환경·기본설계",
         "label": "구조·에너지·음향 설계기준 통합",
         "emphasis": "lead",
@@ -882,7 +895,7 @@
       },
       {
         "id": "B07",
-        "lane": "환경·소방·운영기관",
+        "lane": "환경·소방·검사기관",
         "stage": "G3 관계기관 사전협의",
         "label": "접근성·소방·ERP 사전의견",
         "emphasis": "key",
@@ -926,7 +939,7 @@
       },
       {
         "id": "B08",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G3 관계기관 사전협의",
         "label": "허가도서·관계기관 의견 통합",
         "emphasis": "normal",
@@ -965,7 +978,7 @@
       },
       {
         "id": "B09",
-        "lane": "사업주·조사팀",
+        "lane": "건축주·신청인",
         "stage": "G4 건축허가",
         "label": "완비 건축허가 신청 제출",
         "emphasis": "lead",
@@ -1051,7 +1064,7 @@
       },
       {
         "id": "B11",
-        "lane": "사업주·조사팀",
+        "lane": "건축주·신청인",
         "stage": "G5 착공 선행조건",
         "label": "보험·기술검사 계약·착공팩 확보",
         "emphasis": "lead",
@@ -1097,7 +1110,7 @@
       },
       {
         "id": "B12",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G5 착공 선행조건",
         "label": "지반·구조 비자·굴착 승인 확인",
         "emphasis": "key",
@@ -1141,11 +1154,11 @@
       },
       {
         "id": "B13",
-        "lane": "현지 설계·검사팀",
+        "lane": "등록 설계·시공 전문가",
         "stage": "G6 시공·변경·검사",
         "label": "승인도서 시공·품질·HSE·폐기물 기록",
         "emphasis": "lead",
-        "kind": "project-control",
+      "kind": "official-guidance",
         "basisScope": "node",
         "note": "승인도서, 변경, 검사, 품질시험, HSE와 폐기물 추적대장을 유지한다.",
         "action": "승인도서에 따라 시공하고 품질시험·기술검사·HSE·폐기물·우연발견 기록과 현장 비치도서를 하나의 추적대장으로 유지한다.",
@@ -1241,7 +1254,7 @@
       },
       {
         "id": "B15",
-        "lane": "사업주·조사팀",
+      "lane": "건축주·신청인",
         "stage": "G7 준공·적합",
         "label": "준공신고·시험·준공도면 제출",
         "emphasis": "lead",
@@ -1312,7 +1325,7 @@
       },
       {
         "id": "B17",
-        "lane": "환경·소방·운영기관",
+        "lane": "환경·소방·검사기관",
         "stage": "G8 개장·운영인계",
         "label": "ERP 접수검사·공중개방 승인",
         "emphasis": "bottleneck",
@@ -1355,11 +1368,11 @@
       },
       {
         "id": "B18",
-        "lane": "사업주·조사팀",
+        "lane": "건축주·신청인",
         "stage": "G8 개장·운영인계",
-        "label": "O&M·법정점검·보험 인계",
+      "label": "운영자 법정점검·보험·유지관리 이행",
         "emphasis": "normal",
-        "kind": "project-control",
+      "kind": "official-guidance",
         "basisScope": "node",
         "note": "운영자에게 점검주기·서비스계약·비상계획·보증·보험 문서를 인계한다.",
         "action": "설비별 법정점검과 예방정비 주기, 서비스계약, 비상계획, 보증·보험의 담당자와 연간비용을 확정해 운영기관에 인계한다.",
@@ -1450,7 +1463,7 @@
         "source": "B06A",
         "target": "B06B",
         "type": "sequence",
-        "label": "내부 부지판정·다음 심사축 이관"
+        "label": "도시계획 공식결정"
       },
       {
         "id": "BE04",
@@ -1720,6 +1733,8 @@
       "status": "in_force",
       "issuedOn": "2023-12-29",
       "publishedOn": "2024-01-17",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 공공 법령포털 Vie-Publique가 2026년 현재 법률 제2023-20호 원문과 관보 제7694호 공포정보를 현행 도시계획법으로 게시하며, 대조한 L.333이 종전 2008년 법을 폐지·대체함을 확인했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/441/code-urbanisme-senegal",
       "officialPdfUrl": "https://www.vie-publique.sn/docs/71b0befa-738a-4e6e-8d4e-3124d492a710/code-urbanisme-senegal.pdf",
       "verificationLevel": "article-verified",
@@ -1738,6 +1753,8 @@
       "titleKo": "2025년 도시계획법 시행령",
       "kind": "decree",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제7846호의 시행령 원문과 R.596의 2009년 시행령·2020년 개정령 폐지조항을 직접 대조했다.",
       "issuedOn": "2025-07-17",
       "publishedOn": "2025-08-30",
       "officialUrl": "https://www.vie-publique.sn/documents/5172/JO-7846-du-30-aout-2025",
@@ -1764,6 +1781,8 @@
       "status": "in_force",
       "issuedOn": "2023-12-29",
       "publishedOn": "2024-01-18",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 공공 법령포털 Vie-Publique가 2026년 현재 법률 제2023-21호 원문을 건설법으로 게시하며, 대조한 L.211이 종전 2009년 법을 폐지·대체함을 확인했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/440/code-construction-senegal",
       "officialPdfUrl": "https://www.vie-publique.sn/docs/ce23ee17-0972-4f38-bbe9-a5391b4a7b84/code-construction-senegal.pdf",
       "verificationLevel": "article-verified",
@@ -1790,6 +1809,8 @@
       "status": "in_force",
       "issuedOn": "2024-07-30",
       "publishedOn": "2024-09-28",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 공공 법령포털 Vie-Publique의 관보 제7767호가 시행령 제2024-1495호를 건설법 규정편으로 게시하며, 대조한 R.301이 종전 시행령을 폐지함을 확인했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/605/JO-7767-du-28-septembre-2024",
       "officialPdfUrl": "https://www.vie-publique.sn/docs/99a632ff-14e4-4a5d-87ac-54eaa3d56cf1/JO-7767-du-28-septembre-2024.pdf",
       "verificationLevel": "article-verified",
@@ -1807,6 +1828,8 @@
       "titleKo": "2021년 건축 및 건축사 직업법",
       "kind": "act",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제7409호의 Law 2021-22 원문과 건축사 등록·업무 조항을 확인했으며, 기준일 공식 법령자료에서 이를 대체하는 법률은 확인되지 않았다.",
       "issuedOn": "2021-03-02",
       "publishedOn": "2021-03-20",
       "officialUrl": "https://www.vie-publique.sn/docs/ed4c09cd-2250-4092-aedc-122bd8df05cc/JO-7409-du-20-mars-2021.pdf",
@@ -1831,6 +1854,8 @@
       "kind": "official-guidance",
       "status": "continuity_unverified",
       "publishedOn": "2025-01-01",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 건축사협회(ODAS) 공식 서버가 ‘Tableau ODAS année 2025 BIS’ 등록표 PDF를 기준일 현재 제공하는 것을 확인했다. 그러나 2026년 갱신표, 개별 건축사의 현재 good standing·업무보험·정지 여부는 이 문서로 확정할 수 없어 continuity_unverified를 유지한다.",
       "officialUrl": "https://www.ordrearchitectes.sn/sites/default/files/pdf/TABLEAU%20ODAS%20ANNEE%202025%20BIS.pdf",
       "verificationLevel": "source-linked",
       "note": "후보 확인의 출발점이며 2026년 현재 등록·good standing·업무보험은 ODAS에 다시 조회해야 한다."
@@ -1843,6 +1868,8 @@
       "status": "in_force",
       "issuedOn": "2024-02-07",
       "publishedOn": "2024-05-11",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 국립기록원 Archives.sn의 공식 관보 제7733호에서 Arrêté 002464/2024 원문과 Arts. 1, 14, 18, 22의 시험·지반기관 인가·등급·3년 유효기간을 확인했다.",
       "officialUrl": "https://www.archives.sn/docs/journal-officiel/JO-7733-du-11-mai-2024",
       "verificationLevel": "article-verified",
       "articlesChecked": [
@@ -1861,6 +1888,8 @@
       "status": "continuity_unverified",
       "issuedOn": "2014-05-26",
       "publishedOn": "2014-11-08",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제6817호에서 Decree 2014-687 기술검사기관 보수표 원문을 확인했다. 그러나 2024년 건설법 시행령 이후 계속 적용·개정 여부를 명시한 공식 통합본이나 후속 요율표를 확인하지 못해 continuity_unverified를 유지한다.",
       "officialUrl": "https://www.vie-publique.sn/documents/1572/JO-6817-du-08-novembre-2014",
       "verificationLevel": "source-linked",
       "note": "통제대상 공사비와 임무별 비율로 보수를 산정하는 공식 관보 기준이다. 2024년 건설법 시행령 이후의 계속 적용 여부와 실제 임무조합·출장·재검비는 부처 확인과 RFQ가 필요하다."
@@ -1871,6 +1900,8 @@
       "titleKo": "세네갈 보험국 보험회사 목록",
       "kind": "official-guidance",
       "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 재정예산부 보험국(Direction des Assurances) 공식 ‘Sociétés d’assurances’ 목록 페이지가 기준일 현재 제공되는 것을 확인했다. 다만 게시일·최종 갱신일과 각 회사의 건설위험 종목별 현행 인가범위를 공개 목록만으로 확정할 수 없어 continuity_unverified를 유지한다.",
       "officialUrl": "https://dna.finances.gouv.sn/societes-dassurances/",
       "verificationLevel": "source-linked",
       "note": "손해보험시장 참여회사 확인용이다. 개별 회사가 건설법 L.92의 건설위험 종목 인가를 보유했다는 뜻은 아니므로 종목 인가증과 감독당국 확인이 필요하다."
@@ -1883,6 +1914,8 @@
       "status": "in_force",
       "issuedOn": "2023-08-02",
       "publishedOn": "2023-08-17",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 공공 법령포털 Vie-Publique가 2026년 현재 법률 제2023-15호 원문을 환경법으로 게시하고 2001년 환경법의 대체 사실을 명시하며, 환경평가·적합증명 체계를 계속 안내함을 확인했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/7949/loi-n-2023-15-du-02-aout-2023-portant-code-de-l-environnement-7949",
       "officialPdfUrl": "https://www.vie-publique.sn/docs/267a3345-cac1-4eba-aa0a-022a6a0d27ca/loi-n-2023-15-du-02-aout-2023-portant-code-de-l-environnement-7949.pdf",
       "verificationLevel": "article-verified",
@@ -1900,6 +1933,8 @@
       "titleKo": "2025년 환경법 시행령",
       "kind": "decree",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제7805호의 시행령 원문, Annex I-III 및 Art. 142의 2001년 구 시행령 폐지조항을 직접 대조했다.",
       "issuedOn": "2025-01-31",
       "publishedOn": "2025-02-05",
       "officialUrl": "https://www.vie-publique.sn/documents/1098/JO-7805-du-05-fevrier-2025",
@@ -1918,6 +1953,8 @@
       "titleKo": "Diamniadio 상세도시계획(PUD) 승인·시행령",
       "kind": "plan",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제7447호에서 Decree 2021-698이 약 1,644ha Diamniadio PUD를 승인하고 집행가능하게 한 원문을 확인했다. 다만 관보에 세부 도면·용도지역 규정은 없어 해당 수치의 현행판은 별도 확인 대상으로 남긴다.",
       "issuedOn": "2021-06-04",
       "publishedOn": "2021-08-07",
       "officialUrl": "https://www.vie-publique.sn/documents/900/JO-7447-du-07-ao%C3%BBt-2021",
@@ -1937,6 +1974,8 @@
       "status": "in_force",
       "issuedOn": "2017-12-27",
       "publishedOn": "2018-01-27",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 관보 제7070호에서 Decree 2017-2306의 Diamniadio·Lac Rose 도시거점 토지관리 원문을 확인하고, 후속 Decree 2021-698 Diamniadio PUD 승인령과 적용체계를 대조했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/1196/JO-7070-du-27-janvier-2018",
       "officialPdfUrl": "https://www.vie-publique.sn/docs/7d8dd608-b3d2-4341-a1fb-93384ba9bfac/JO-7070-du-27-janvier-2018.pdf",
       "verificationLevel": "law-linked",
@@ -1949,6 +1988,8 @@
       "kind": "act",
       "status": "in_force",
       "issuedOn": "2010-07-06",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 법령페이지가 Law 2010-15 원문을 기준일 현재 제공하고, 2025년 국회 공식 질의가 이 법의 일부 시행령 미비를 지적하면서 법 자체를 현행 권리보호 근거로 계속 인용하는 것을 확인했다.",
       "officialUrl": "https://www.vie-publique.sn/documents/6298/loi-d-orientation-sociale-relative-a-la-promotion-et-la-protection-des-droits-des-personnes-handica-6298",
       "verificationLevel": "law-linked",
       "note": "기본법의 일부 시행령 미비가 2025년 국회 질의에서도 지적됐다. 건축 접근성은 2023년 건설법의 직접 의무를 우선 적용한다."
@@ -1959,6 +2000,8 @@
       "titleKo": "1997년 노동법",
       "kind": "act",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Vie-Publique의 현행 노동법 원문과 2026년 신노동법안의 위원회 재회부 상태를 대조해, 기준일에는 Law 97-17을 적용법으로 확인했다.",
       "issuedOn": "1997-12-01",
       "officialUrl": "https://www.vie-publique.sn/documents/437/code-travail-senegal",
       "verificationLevel": "law-linked",
@@ -1970,6 +2013,8 @@
       "titleKo": "2026년 노동법 개정안",
       "kind": "draft",
       "status": "pending",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Vie-Publique 공식 ‘Code du travail — réforme 2026’ 입법추적 dossier에서 법안이 2026-06-22 위원회 재회부 단계에 머문 것을 확인했다. 공포·시행된 법률이 아니므로 현행법으로 사용하지 않고 pending을 유지한다.",
       "officialUrl": "https://www.vie-publique.sn/dossiers/code-du-travail-senegal-reforme-2026",
       "verificationLevel": "source-linked",
       "note": "2026-06-22 위원회 재회부 상태로 확인돼 현행법으로 사용하지 않는다."
@@ -1980,6 +2025,8 @@
       "titleKo": "2026년 국가행정·공공기관 관할 배분령",
       "kind": "decree",
       "status": "in_force",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Vie-Publique가 2026년 국가행정·공공기관 관할 배분령 원문을 현행 공식문서로 공개하고 있어 조직명·감독관계 확인자료로 대조했다.",
       "issuedOn": "2026-06-01",
       "officialUrl": "https://www.vie-publique.sn/documents/13836/decret-2026-1133-repartition-services-etat-controle-etablissements-publics-societes-participation-publique",
       "verificationLevel": "law-linked",
@@ -1991,6 +2038,8 @@
       "titleKo": "도시계획부 건축허가 민원안내",
       "kind": "official-guidance",
       "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 도시계획부 공식 ‘Demande d’une autorisation de construire’ 민원안내 페이지가 기준일 현재 응답하는 것을 확인했다. 다만 안내의 서류·수수료·처리정보가 Decree 2025-1194 반영판인지 표시되지 않고 다른 정부 안내와 인지세가 상충해 continuity_unverified를 유지한다.",
       "officialUrl": "https://www.urbanisme.gouv.sn/services-aux-usagers/demande-dune-autorisation-de-construire",
       "verificationLevel": "source-linked",
       "note": "실무 접수자료로 참고하되 2025년 시행령과 다른 서류·수수료·처리정보는 신법과 관할서비스의 서면 안내를 우선한다."
@@ -2001,6 +2050,8 @@
       "titleKo": "세네갈 행정서비스 건축허가 안내",
       "kind": "official-guidance",
       "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "세네갈 Service public 공식 ‘Demander une autorisation de construire’ 절차 경로를 확인했다. 기준일 접속은 시간초과였고, 게시정보가 Decree 2025-1194를 반영했는지와 도시계획부 안내와 상충하는 인지세·처리정보를 확정하지 못해 continuity_unverified를 유지한다.",
       "officialUrl": "https://www.servicepublic.gouv.sn/demarche/demander-une-autorisation-de-construire-permis-de-construire",
       "verificationLevel": "source-linked",
       "note": "TéléDac와 민원 흐름 참고용이다. 2025년 시행령 반영 여부를 접수 전에 재확인한다."

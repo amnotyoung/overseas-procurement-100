@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "uganda",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,26 +27,357 @@
     "title": "우간다 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "G0 예비조회·계획동의",
+      "G1 권원·전문도서",
+      "G2 접수·완비검사",
+      "G3 기술심사·위원회 결정",
+      "G0 환경분류·ELMIS",
+      "G1 Project Brief 또는 TOR",
+      "G2 ESIA·공개심사",
+      "G3 환경결정",
+      "G4 건축허가 결정",
+      "G0 착공통지",
+      "G1 단계검사",
+      "G2 시정·완공",
+      "G3 점유허가 신청·결정"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "지방계획·Building Committee · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "lane": "건축주·신청인",
+        "stage": "G0 예비조회·계획동의",
+        "label": "복합·공공건축 예비조회",
+        "emphasis": "normal",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "Building Committee는 토지이용 변경·환경훼손·인접영향을 포함해 허가를 심사하며 계획동의와 토지자료가 선행된다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 습지·홍수·경사·도로·유틸리티를 지방계획기관에서 확인한다.",
-        "action": "Building Committee는 토지이용 변경·환경훼손·인접영향을 포함해 허가를 심사하며 계획동의와 토지자료가 선행된다. 필지별 허용용도·plot ratio·coverage·높이·이격·주차와 습지·홍수·경사·도로·유틸리티를 지방계획기관에서 확인한다.",
+        "note": "복합구조 또는 공공건축이면 신청 전에 Building Control Officer에게 개념도면, 재료·공법 적합성과 승인요건에 대한 서면의견을 요청할 수 있다.",
+        "action": "복합구조 또는 공공건축이면 신청 전에 Building Control Officer에게 개념도면, 재료·공법 적합성과 승인요건에 대한 서면의견을 요청할 수 있다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "예비도면 검토의견·승인요건 안내"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Preliminary building permit enquiries",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 26"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "건축주·신청인",
+        "stage": "G0 예비조회·계획동의",
+        "label": "Development Permission 확보",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "관할 Physical Planning Committee에 대상지 토지이용·개발계획 적합성 심사를 받아 development permission을 확보한다.",
+        "action": "관할 Physical Planning Committee에 대상지 토지이용·개발계획 적합성 심사를 받아 development permission을 확보한다.",
+        "outputs": [
+          "Development Permission"
+        ],
+        "authorityIds": [
+          "physical-planning-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건축허가 필수 planning approval",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 21(2)(d)"
+            ]
+          }
+        ],
+        "gateOrders": [
+          1
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 권원·전문도서",
+        "label": "등록전문가 건축·기술도서 작성",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "등록 건축사·기술자가 건축·구조·전기·기계도서와 계산서를 작성·서명하고, 다층건물은 공인 지반보고서와 굴착·인접구조 보호설계를 추가한다.",
+        "action": "등록 건축사·기술자가 건축·구조·전기·기계도서와 계산서를 작성·서명하고, 다층건물은 공인 지반보고서와 굴착·인접구조 보호설계를 추가한다.",
+        "outputs": [
+          "등록전문가 서명도서·계산서·해당 지반자료"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "전문도서·다층건물 요건",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 35(2)(d)-(e), 35(3)"
+            ]
+          },
+          {
+            "source": "주거·상업건축 첨부도서",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 21(2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "lane": "건축주·신청인",
+        "stage": "G1 권원·전문도서",
+        "label": "권원·Village Council 서신 준비",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "land title 또는 소유권 증빙, 비소유 신청인의 법률관계, Village Council chairperson 소개서와 신청인 연락정보를 갖춘다.",
+        "action": "land title 또는 소유권 증빙, 비소유 신청인의 법률관계, Village Council chairperson 소개서와 신청인 연락정보를 갖춘다.",
+        "outputs": [
+          "권원·법률관계·LC1 소개서"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건축허가 신청요건",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 35(1)-(3)"
+            ]
+          },
+          {
+            "source": "NBRB 신청 단계",
+            "instrumentId": "UGA-NBRB-PERMIT-GUIDE",
+            "provisions": [
+              "Building Permit application steps 1-4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "건축주·신청인",
+        "stage": "G2 접수·완비검사",
+        "label": "BIMS·Building Committee 신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "대상지 관할 Building Committee에 Form 2, development permission, 권원·전문도서와 적용 수수료를 BIMS 또는 허용된 접수방식으로 제출한다.",
+        "action": "대상지 관할 Building Committee에 Form 2, development permission, 권원·전문도서와 적용 수수료를 BIMS 또는 허용된 접수방식으로 제출한다.",
+        "outputs": [
+          "건축허가 접수기록·수수료 영수증"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "주거·상업건축허가 신청",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 21 and 23(1)-(2)"
+            ]
+          },
+          {
+            "source": "BIMS 공식 서비스",
+            "instrumentId": "UGA-BIMS",
+            "provisions": [
+              "Building permit application and fee payment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G2 접수·완비검사",
+        "label": "완비검사·불완전 신청 반려",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Committee가 법정 첨부서류와 수수료의 완비 여부를 확인하고 불완전한 신청은 신청인에게 반환한다.",
+        "action": "Building Committee가 법정 첨부서류와 수수료의 완비 여부를 확인하고 불완전한 신청은 신청인에게 반환한다.",
+        "outputs": [
+          "완비접수 또는 불완전 반려통지"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Receipt and return of incomplete applications",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 23(1)-(4)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "건축주·신청인",
+        "stage": "G2 접수·완비검사",
+        "label": "누락서류 보완·재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "반려된 신청의 누락요건을 충족하고 prescribed resubmission fee와 함께 Building Committee에 다시 제출한다.",
+        "action": "반려된 신청의 누락요건을 충족하고 prescribed resubmission fee와 함께 Building Committee에 다시 제출한다.",
+        "outputs": [
+          "보완 신청·재제출 영수증"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "완비 후 재제출",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 23(3)-(4)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 기술심사·위원회 결정",
+        "label": "Building Control Officer 기술평가·권고",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Control Officer가 토지이용, 주변·환경·안전·위생·접근성, Code와 전문도서를 평가해 Building Committee에 Form 3 권고를 제출한다.",
+        "action": "Building Control Officer가 토지이용, 주변·환경·안전·위생·접근성, Code와 전문도서를 평가해 Building Committee에 Form 3 권고를 제출한다.",
+        "outputs": [
+          "기술평가서·Form 3 권고"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Building Control Officer recommendation",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 23(5)"
+            ]
+          },
+          {
+            "source": "거부 판단요소",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 36(2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B09",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 기술심사·위원회 결정",
+        "label": "Building Permit 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Committee가 신청을 심의해 조건부 포함 허가, 유예·보완 또는 서면사유를 붙인 거부를 결정하고 승인도서에 endorsement한다.",
+        "action": "Building Committee가 신청을 심의해 조건부 포함 허가, 유예·보완 또는 서면사유를 붙인 거부를 결정하고 승인도서에 endorsement한다.",
+        "outputs": [
+          "Building Permit·승인도서·조건 또는 거부사유"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가·거부·재심",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Sections 36-37"
+            ]
+          },
+          {
+            "source": "Approval, deferral and rejection",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 24"
+            ]
+          },
+          {
+            "source": "2026 현행 처리경로",
+            "instrumentId": "UGA-NBRB-PERMIT-GUIDE",
+            "provisions": [
+              "Building Committee review, additional information and decision"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B10",
+        "lane": "건축주·신청인",
+        "stage": "G3 기술심사·위원회 결정",
+        "label": "거부·유예안 수정 재심신청",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "위원회가 요구한 대로 신청·설계를 수정해 reconsideration을 요청하거나, 결정통지 후 법정기간 내 NBRB에 appeal한다.",
+        "action": "위원회가 요구한 대로 신청·설계를 수정해 reconsideration을 요청하거나, 결정통지 후 법정기간 내 NBRB에 appeal한다.",
+        "outputs": [
+          "수정 신청·재심 또는 appeal"
         ],
         "authorityIds": [
           "building-committee",
@@ -55,134 +386,1093 @@
         "requirementIds": [
           "UGA-BLD-REQ-004"
         ],
-        "questionIds": [
-          "UGA-BLD-Q-001",
-          "UGA-BLD-Q-002",
-          "UGA-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "지방계획·Building Committee",
+            "source": "수정 재제출·appeal",
             "instrumentId": "UGA-BUILDING-CONTROL-ACT",
             "provisions": [
-              "building-plan scrutiny and land-use compliance framework"
-            ]
-          },
-          {
-            "source": "지방계획·Building Committee",
-            "instrumentId": "UGA-BCR-2020",
-            "provisions": [
-              "site, plan and application requirements"
+              "Sections 36(4), 37"
             ]
           }
         ]
       },
       {
-        "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "building permit·NEMA Project Brief/ESIA · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "id": "B11",
+        "lane": "건축주·신청인",
+        "stage": "G0 환경분류·ELMIS",
+        "label": "Schedule 환경경로 확인",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건축주는 등록 건축사·기술자의 서명도서와 계획동의·수수료 증빙을 Building Committee에 제출한다. NEMA는 환경법 Schedule 4·5·10·11에 따라 Project Brief, ESIA 또는 면제경로를 결정하므로 환경결정과 건축허가의 선후관계를 확정한다.",
-        "action": "건축주는 등록 건축사·기술자의 서명도서와 계획동의·수수료 증빙을 Building Committee에 제출한다. NEMA는 환경법 Schedule 4·5·10·11에 따라 Project Brief, ESIA 또는 면제경로를 결정하므로 환경결정과 건축허가의 선후관계를 확정한다.",
+        "note": "National Environment Act Schedules 4·5·10·11에 사업을 대조해 Project Brief, full ESIA 또는 환경평가 면제 경로와 NEMA·lead agency 제출처를 정한다.",
+        "action": "National Environment Act Schedules 4·5·10·11에 사업을 대조해 Project Brief, full ESIA 또는 환경평가 면제 경로와 NEMA·lead agency 제출처를 정한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "환경평가 경로·제출기관"
         ],
         "authorityIds": [
-          "building-committee",
           "nema-uganda"
         ],
         "requirementIds": [
           "UGA-BLD-REQ-005"
         ],
-        "questionIds": [
-          "UGA-BLD-Q-004",
-          "UGA-BLD-Q-005",
-          "UGA-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "building permit·NEMA Project Brief/ESIA",
-            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "source": "NEMA ESIA applicability",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
             "provisions": [
-              "building permit and registered professional framework"
-            ]
-          },
-          {
-            "source": "building permit·NEMA Project Brief/ESIA",
-            "instrumentId": "UGA-NEA-CAP-181",
-            "provisions": [
-              "Schedules 4, 5, 10 and 11; Project Brief and ESIA"
+              "Schedules 4, 5, 10 and 11 screening"
             ]
           }
         ]
       },
       {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "National Building Code·occupation permit · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "id": "B12",
+        "lane": "건축주·신청인",
+        "stage": "G0 환경분류·ELMIS",
+        "label": "공인평가자 선임·ELMIS 제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "National Building Code와 2020 Regulations는 승인도서 준수·현장안전·검사를 요구한다. 완료 후 소유자는 Building Committee에 occupation permit을 신청해야 하며, 위원회는 검사 후 적합 여부를 결정한다. 2026년 개정기한과 보험·시험·소방요건을 확인한다.",
-        "action": "National Building Code와 2020 Regulations는 승인도서 준수·현장안전·검사를 요구한다. 완료 후 소유자는 Building Committee에 occupation permit을 신청해야 하며, 위원회는 검사 후 적합 여부를 결정한다. 2026년 개정기한과 보험·시험·소방요건을 확인한다.",
+        "note": "필요한 경우 NEMA 공인 환경평가자를 선임하고 ELMIS 계정에서 Project Brief, TOR 또는 ESIA 자료를 제출한다.",
+        "action": "필요한 경우 NEMA 공인 환경평가자를 선임하고 ELMIS 계정에서 Project Brief, TOR 또는 ESIA 자료를 제출한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "ELMIS 접수번호·환경평가자 기록"
         ],
         "authorityIds": [
-          "building-committee",
-          "nbrb"
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "NEMA ELMIS submission",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Certified assessors; ELMIS submission"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B13",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 Project Brief 또는 TOR",
+        "label": "Project Brief 작성·제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Schedule 4 사업이면 예상 환경·보건·사회경제 영향을 간결히 정리한 Project Brief를 Part I은 NEMA, Part II는 lead agency에 제출한다. 이 경로에는 scoping·TOR가 필요하지 않다.",
+        "action": "Schedule 4 사업이면 예상 환경·보건·사회경제 영향을 간결히 정리한 Project Brief를 Part I은 NEMA, Part II는 lead agency에 제출한다. 이 경로에는 scoping·TOR가 필요하지 않다.",
+        "outputs": [
+          "Project Brief"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "NEMA Project Brief",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Project Brief route; Schedule 4 Parts I-II; no scoping or ToR"
+            ]
+          },
+          {
+            "source": "Project Brief 규정",
+            "instrumentId": "UGA-NEA-CAP-181",
+            "provisions": [
+              "Environmental and Social Assessment Regulations 2020, Regulations 6-10"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 Project Brief 또는 TOR",
+        "label": "Project Brief 완비·lead-agency 심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "NEMA는 완비 Project Brief를 7일 내 관련 lead agency에 보내고, lead agency 의견을 받아 승인·유예 또는 거부안을 심사한다.",
+        "action": "NEMA는 완비 Project Brief를 7일 내 관련 lead agency에 보내고, lead agency 의견을 받아 승인·유예 또는 거부안을 심사한다.",
+        "outputs": [
+          "lead-agency 의견·승인/유예/거부안"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Project Brief review",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Completeness; seven-day referral; fourteen-day lead-agency comments; approve, defer or reject"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G1 Project Brief 또는 TOR",
+        "label": "Full ESIA Scoping·TOR 제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Schedule 5 또는 해당 Schedule 10 사업이면 scoping을 실시하고 TOR를 작성해 NEMA가 lead agency와 협의해 검토하도록 제출한다.",
+        "action": "Schedule 5 또는 해당 Schedule 10 사업이면 scoping을 실시하고 TOR를 작성해 NEMA가 lead agency와 협의해 검토하도록 제출한다.",
+        "outputs": [
+          "Scoping Report·TOR"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "NEMA full ESIA route",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Scoping/ToR and NEMA consideration with lead agencies"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B16",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 ESIA·공개심사",
+        "label": "ESIA 조사·이해관계자 협의",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "검토된 TOR에 따라 환경·사회 기초조사, 영향·대안·저감·관리계획을 평가하고 영향받는 사람을 포함한 이해관계자 협의를 거쳐 ESIA Statement를 작성한다.",
+        "action": "검토된 TOR에 따라 환경·사회 기초조사, 영향·대안·저감·관리계획을 평가하고 영향받는 사람을 포함한 이해관계자 협의를 거쳐 ESIA Statement를 작성한다.",
+        "outputs": [
+          "ESIA Statement·협의기록·관리계획"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "NEMA full ESIA study",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "ESIA study, stakeholder consultation and ESIA Statement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B17",
+        "lane": "환경·소방·검사기관",
+        "stage": "G2 ESIA·공개심사",
+        "label": "NEMA·lead agency·공중 심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "NEMA가 lead agencies, 일반공중과 영향받는 사람의 의견을 받아 ESIA Statement를 검토하고 필요한 경우 사업자 비용으로 public hearing을 실시한다.",
+        "action": "NEMA가 lead agencies, 일반공중과 영향받는 사람의 의견을 받아 ESIA Statement를 검토하고 필요한 경우 사업자 비용으로 public hearing을 실시한다.",
+        "outputs": [
+          "기술·공중의견·public-hearing 기록·보완요구"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "ESIA review and public hearing",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Lead-agency and public review; possible public hearing"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "건축주·신청인",
+        "stage": "G2 ESIA·공개심사",
+        "label": "환경자료·보고서 보완",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Project Brief 또는 ESIA 심사에서 유예·추가자료 요구가 나오면 영향·저감·협의자료를 보완해 ELMIS로 재제출한다.",
+        "action": "Project Brief 또는 ESIA 심사에서 유예·추가자료 요구가 나오면 영향·저감·협의자료를 보완해 ELMIS로 재제출한다.",
+        "outputs": [
+          "보완 Project Brief·ESIA Statement"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경평가 defer·review route",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Project Brief deferral; ESIA review and status notification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "환경·소방·검사기관",
+        "stage": "G3 환경결정",
+        "label": "환경증명 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "NEMA 또는 관할 lead agency가 Project Brief를 승인·유예·거부하거나, NEMA가 full ESIA 심사결과에 따라 Environmental Certificate를 승인 또는 거부해 통지한다.",
+        "action": "NEMA 또는 관할 lead agency가 Project Brief를 승인·유예·거부하거나, NEMA가 full ESIA 심사결과에 따라 Environmental Certificate를 승인 또는 거부해 통지한다.",
+        "outputs": [
+          "Environmental Certificate·Project Brief 결정 또는 거부통지"
+        ],
+        "authorityIds": [
+          "nema-uganda"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "NEMA environmental decision",
+            "instrumentId": "UGA-NEMA-ESIA-GUIDE",
+            "provisions": [
+              "Approval/rejection notification; Environmental Certificate of approval"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "건축주·신청인",
+        "stage": "G4 건축허가 결정",
+        "label": "Building Permit 완비 신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Form 2와 권원·development permission·전문도서·수수료를 제출하고 복합·공공건축은 NEMA environmental and social assessment certificate 및 해당 지반·수문·교통·에너지 자료를 첨부한다.",
+        "action": "Form 2와 권원·development permission·전문도서·수수료를 제출하고 복합·공공건축은 NEMA environmental and social assessment certificate 및 해당 지반·수문·교통·에너지 자료를 첨부한다.",
+        "outputs": [
+          "완비 Building Permit 신청"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "복합·공공건축 첨부자료",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 21-23, especially 22(2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G4 건축허가 결정",
+        "label": "건축·환경·안전 통합심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Control Officer와 Committee가 Act·Code·Regulations, 토지이용, 환경증명, 구조·소방·위생·접근성 및 관계기관 자료를 심사한다.",
+        "action": "Building Control Officer와 Committee가 Act·Code·Regulations, 토지이용, 환경증명, 구조·소방·위생·접근성 및 관계기관 자료를 심사한다.",
+        "outputs": [
+          "기술권고·보완 또는 결정안"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Building permit assessment",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Sections 35-36"
+            ]
+          },
+          {
+            "source": "Building Committee review",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 23-24"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B22",
+        "lane": "건축주·신청인",
+        "stage": "G4 건축허가 결정",
+        "label": "건축허가 보완·재제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "불완전 반려·추가정보·설계수정 요구를 반영하고 필요한 재제출 수수료와 함께 수정 신청을 제출한다.",
+        "action": "불완전 반려·추가정보·설계수정 요구를 반영하고 필요한 재제출 수수료와 함께 수정 신청을 제출한다.",
+        "outputs": [
+          "보완도서·재접수 기록"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "건축허가 재제출·재심",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 23(3)-(4); Regulation 24"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G4 건축허가 결정",
+        "label": "Building Permit 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Committee가 환경증명과 완비도서의 적합성을 토대로 Building Permit을 조건부 포함 발급하거나 유예·거부하고 서면 통지한다.",
+        "action": "Building Committee가 환경증명과 완비도서의 적합성을 토대로 Building Permit을 조건부 포함 발급하거나 유예·거부하고 서면 통지한다.",
+        "outputs": [
+          "Building Permit·endorsed plans·조건 또는 서면 거부사유"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Building Permit decision",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 36"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "건축주·신청인",
+        "stage": "G0 착공통지",
+        "label": "Form 6 착공통지",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축물 erection은 최소 7일 전, demolition은 최소 14일 전에 Form 6으로 착공일을 Building Committee에 서면 통지한다.",
+        "action": "건축물 erection은 최소 7일 전, demolition은 최소 14일 전에 Form 6으로 착공일을 Building Committee에 서면 통지한다.",
+        "outputs": [
+          "Form 6 착공통지·접수기록"
+        ],
+        "authorityIds": [
+          "building-committee"
         ],
         "requirementIds": [
           "UGA-BLD-REQ-006"
         ],
-        "questionIds": [
-          "UGA-BLD-Q-007",
-          "UGA-BLD-Q-008",
-          "UGA-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "National Building Code·occupation permit",
-            "instrumentId": "UGA-NBC-2019",
-            "provisions": [
-              "national design and construction standards"
-            ]
-          },
-          {
-            "source": "National Building Code·occupation permit",
+            "source": "Notice of commencement",
             "instrumentId": "UGA-BCR-2020",
             "provisions": [
-              "Reg. 34 and occupation-permit forms"
+              "Regulation 27(1)-(3); Form 6"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G0 착공통지",
+        "label": "승인도서·허가서 현장비치",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "승인도서와 Building Permit을 현장에 상시 비치하고 허가조건에 따라 등록전문가 감독·현장표지·안전시설을 유지한다.",
+        "action": "승인도서와 Building Permit을 현장에 상시 비치하고 허가조건에 따라 등록전문가 감독·현장표지·안전시설을 유지한다.",
+        "outputs": [
+          "현장비치 승인도서·허가조건 이행기록"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "현장비치·운영",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 27(4), 29-32"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "건축주·신청인",
+        "stage": "G1 단계검사",
+        "label": "Form 7 단계검사 요청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "허가조건상 검사대상 공정마다 Form 7로 Building Committee 또는 Building Control Officer에게 검사일정을 요청한다.",
+        "action": "허가조건상 검사대상 공정마다 Form 7로 Building Committee 또는 Building Control Officer에게 검사일정을 요청한다.",
+        "outputs": [
+          "Form 7 검사요청·검사일정"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Inspection request",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 27(5)-(6); Form 7"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "환경·소방·검사기관",
+        "stage": "G1 단계검사",
+        "label": "법정 공정단계 현장검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "검사관이 기초배치·굴착·콘크리트·배수·철근·거푸집·벽체·지붕·구조체와 practical completion 등 적용 단계를 승인도서·Code에 대조한다.",
+        "action": "검사관이 기초배치·굴착·콘크리트·배수·철근·거푸집·벽체·지붕·구조체와 practical completion 등 적용 단계를 승인도서·Code에 대조한다.",
+        "outputs": [
+          "단계검사 기록·진행승인 또는 부적합 통지"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "법정 검사단계",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 27(5), 27(8)-(9)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G1 단계검사",
+        "label": "다음 공정 진행결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "검사조건이 붙은 공정은 Building Committee·Officer의 검사를 통과해야 다음 단계로 진행하며, 위반이면 서면 시정·stop order를 내린다.",
+        "action": "검사조건이 붙은 공정은 Building Committee·Officer의 검사를 통과해야 다음 단계로 진행하며, 위반이면 서면 시정·stop order를 내린다.",
+        "outputs": [
+          "공정 진행승인 또는 시정·중지명령"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "단계 승인 전 진행금지",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 27(5), 27(10)-(13)"
             ]
           },
           {
-            "source": "National Building Code·occupation permit",
+            "source": "Stop and remedial orders",
             "instrumentId": "UGA-BUILDING-CONTROL-ACT",
             "provisions": [
-              "inspection, occupation permit and 2026 amendment framework"
+              "Sections 40-41"
             ]
           }
+        ],
+        "gateOrders": [
+          5
+        ]
+      },
+      {
+        "id": "B29",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 시정·완공",
+        "label": "위반 시정·서면 완료통지",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "허가·승인도서 위반을 시정하고 완료 후 Building Committee에 서면 통지해 재검사를 요청한다. 승인받은 deviation이면 등록전문가 인증 수정도서를 제출한다.",
+        "action": "허가·승인도서 위반을 시정하고 완료 후 Building Committee에 서면 통지해 재검사를 요청한다. 승인받은 deviation이면 등록전문가 인증 수정도서를 제출한다.",
+        "outputs": [
+          "시정완료 통지·수정도서·재검사 요청"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Rectification and deviation",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 27(10)-(13), 39"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B30",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G2 시정·완공",
+        "label": "구조안정·설비·Practical Completion 증명",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "해당 시 Form 8 구조안정증명과 전기·기계설비 fitness certificates, 등록전문가의 practical completion certificate 및 as-built 도서를 작성한다.",
+        "action": "해당 시 Form 8 구조안정증명과 전기·기계설비 fitness certificates, 등록전문가의 practical completion certificate 및 as-built 도서를 작성한다.",
+        "outputs": [
+          "Form 8·설비 적합증명·완공증명·as-built 도서"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "완공·설비 증빙",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 27(7); Regulation 34(2); Forms 8-9"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B31",
+        "lane": "건축주·신청인",
+        "stage": "G3 점유허가 신청·결정",
+        "label": "완공통지·Form 9 점유허가 신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "practical completion을 통지하고 Form 9에 as-built 건축·구조·전기·기계도서와 설비·완공 증명서를 첨부해 full·partial·temporary Occupation Permit을 신청한다.",
+        "action": "practical completion을 통지하고 Form 9에 as-built 건축·구조·전기·기계도서와 설비·완공 증명서를 첨부해 full·partial·temporary Occupation Permit을 신청한다.",
+        "outputs": [
+          "완공통지·Form 9 완비신청"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Occupation Permit 신청의무",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 44(1)"
+            ]
+          },
+          {
+            "source": "Occupation application documents",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 34(1)-(3); Form 9"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B32",
+        "lane": "환경·소방·검사기관",
+        "stage": "G3 점유허가 신청·결정",
+        "label": "완공도서·현장 최종검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Control Officer가 점유허가 발급 전에 완공건물을 검사해 승인도서·Regulations·Code 적합성, 안전·접근성과 설비 fitness를 확인한다.",
+        "action": "Building Control Officer가 점유허가 발급 전에 완공건물을 검사해 승인도서·Regulations·Code 적합성, 안전·접근성과 설비 fitness를 확인한다.",
+        "outputs": [
+          "최종검사 기록·적합 또는 보완사항"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Final inspection before occupation",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 34(4)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B33",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "G3 점유허가 신청·결정",
+        "label": "최종 미비 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "최종검사에서 확인된 승인도서·안전·접근성·설비 미비를 시정하고 갱신 as-built·fitness 증빙으로 재검사를 요청한다.",
+        "action": "최종검사에서 확인된 승인도서·안전·접근성·설비 미비를 시정하고 갱신 as-built·fitness 증빙으로 재검사를 요청한다.",
+        "outputs": [
+          "최종 시정완료 자료·재검사 요청"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Corrective measure and occupation compliance",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulations 34-35"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B34",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "G3 점유허가 신청·결정",
+        "label": "Occupation Permit 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Building Committee가 완공통지·신청 후 건물을 심사해 승인도서·법규 적합 시 점유허가를 발급하고, 미충족이면 14일 내 서면사유로 거부한다.",
+        "action": "Building Committee가 완공통지·신청 후 건물을 심사해 승인도서·법규 적합 시 점유허가를 발급하고, 미충족이면 14일 내 서면사유로 거부한다.",
+        "outputs": [
+          "Full·Partial·Temporary Occupation Permit 또는 서면 거부사유"
+        ],
+        "authorityIds": [
+          "building-committee"
+        ],
+        "requirementIds": [
+          "UGA-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Occupation Permit decision",
+            "instrumentId": "UGA-BUILDING-CONTROL-ACT",
+            "provisions": [
+              "Section 44(2)-(5)"
+            ]
+          },
+          {
+            "source": "Occupation Permit issuance",
+            "instrumentId": "UGA-BCR-2020",
+            "provisions": [
+              "Regulation 34(4)-(5); Form 10"
+            ]
+          },
+          {
+            "source": "2026 현행 점유허가·지연민원",
+            "instrumentId": "UGA-NBRB-PERMIT-GUIDE",
+            "provisions": [
+              "Occupation permit inspection and complaint ladder"
+            ]
+          }
+        ],
+        "gateOrders": [
+          6
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "예비의견"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "계획동의"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "전문도서"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "권원·소개서"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "신청접수"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B06",
+        "target": "B08",
+        "type": "sequence",
+        "label": "완비"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B06",
+        "target": "B07",
+        "type": "message",
+        "label": "불완전 반려"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B07",
+        "target": "B06",
+        "type": "loop",
+        "label": "보완 재접수"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B08",
+        "target": "B09",
+        "type": "sequence",
+        "label": "기술권고"
+      },
+      {
+        "id": "BS04-10",
+        "source": "B09",
+        "target": "B10",
+        "type": "message",
+        "label": "유예·거부"
+      },
+      {
+        "id": "BS04-11",
+        "source": "B10",
+        "target": "B08",
+        "type": "loop",
+        "label": "수정안 재심"
+      },
+      {
+        "id": "BX05",
+        "source": "B10",
+        "target": "B11",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B11",
+        "target": "B12",
+        "type": "sequence",
+        "label": "환경경로"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "Project Brief 경로"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B12",
+        "target": "B15",
+        "type": "sequence",
+        "label": "Full ESIA 경로"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B13",
+        "target": "B14",
+        "type": "sequence",
+        "label": "Project Brief"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B14",
+        "target": "B19",
+        "type": "sequence",
+        "label": "Project Brief 승인"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B14",
+        "target": "B18",
+        "type": "message",
+        "label": "유예·보완"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B15",
+        "target": "B16",
+        "type": "sequence",
+        "label": "검토 TOR"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "ESIA Statement"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B17",
+        "target": "B19",
+        "type": "sequence",
+        "label": "심사완료"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B17",
+        "target": "B18",
+        "type": "message",
+        "label": "추가자료"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B18",
+        "target": "B14",
+        "type": "loop",
+        "label": "Project Brief 재심"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B18",
+        "target": "B17",
+        "type": "loop",
+        "label": "ESIA 재심"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B19",
+        "target": "B20",
+        "type": "sequence",
+        "label": "환경승인"
+      },
+      {
+        "id": "BS05-14",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "완비접수"
+      },
+      {
+        "id": "BS05-15",
+        "source": "B21",
+        "target": "B23",
+        "type": "sequence",
+        "label": "기술심사 완료"
+      },
+      {
+        "id": "BS05-16",
+        "source": "B21",
+        "target": "B22",
+        "type": "message",
+        "label": "보완요구"
+      },
+      {
+        "id": "BS05-17",
+        "source": "B22",
+        "target": "B21",
+        "type": "loop",
+        "label": "수정안 재심"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B23",
+        "target": "B24",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B24",
+        "target": "B25",
+        "type": "sequence",
+        "label": "착공접수"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B25",
+        "target": "B26",
+        "type": "sequence",
+        "label": "공정도달"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B26",
+        "target": "B27",
+        "type": "sequence",
+        "label": "검사요청"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B27",
+        "target": "B28",
+        "type": "sequence",
+        "label": "검사결과"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B28",
+        "target": "B26",
+        "type": "sequence",
+        "label": "다음 공정"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B28",
+        "target": "B29",
+        "type": "message",
+        "label": "시정·중지"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B29",
+        "target": "B27",
+        "type": "loop",
+        "label": "시정 후 재검사"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B28",
+        "target": "B30",
+        "type": "sequence",
+        "label": "practical completion"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B30",
+        "target": "B31",
+        "type": "sequence",
+        "label": "완공증빙"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B31",
+        "target": "B32",
+        "type": "sequence",
+        "label": "점유신청"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B32",
+        "target": "B34",
+        "type": "sequence",
+        "label": "최종 적합"
+      },
+      {
+        "id": "BS06-12",
+        "source": "B32",
+        "target": "B33",
+        "type": "message",
+        "label": "최종 미비"
+      },
+      {
+        "id": "BS06-13",
+        "source": "B33",
+        "target": "B32",
+        "type": "loop",
+        "label": "시정 후 재검사"
       }
     ]
   },
@@ -191,14 +1481,23 @@
       "id": "site-urban",
       "slug": "uganda-site-urban-construction-regulations",
       "priority": 4,
-      "name": "우간다 도시계획·부지규제",
+      "name": "우간다 부지·Development Permission·Building Permit",
       "oneLiner": "토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "NBRB의 현행 건축법·시행규칙 안내를 확인했다. 대상 지방계획·필지수치·습지·재해·유틸리티는 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "NBRB의 현행 건축법·시행규칙 안내를 확인했다. 대상 지방계획·필지수치·습지·재해·유틸리티는 현지 확인 대상이다.",
+      "verificationScope": "Building Control Act 제35~37조와 Building Control Regulations 2020 제21~24·26조의 토지권원·development permission·전문도서·완비반려·기술권고·승인/유예/거부 절차를 연결했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "전국 district·city·urban council의 관할 Building Committee가 처리한다. 필지별 토지이용·개발조건은 해당 Physical Planning Committee의 development permission에서 확정한다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10"
       ],
       "requirementIds": [
         "UGA-BLD-REQ-004"
@@ -219,21 +1518,127 @@
         "UGA-BLD-F-002",
         "UGA-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "예비의견"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "계획동의"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "전문도서"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "권원·소개서"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "신청접수"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06",
+          "target": "B08",
+          "type": "sequence",
+          "label": "완비"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B06",
+          "target": "B07",
+          "type": "message",
+          "label": "불완전 반려"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B07",
+          "target": "B06",
+          "type": "loop",
+          "label": "보완 재접수"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B08",
+          "target": "B09",
+          "type": "sequence",
+          "label": "기술권고"
+        },
+        {
+          "id": "M04-E10",
+          "source": "B09",
+          "target": "B10",
+          "type": "message",
+          "label": "유예·거부"
+        },
+        {
+          "id": "M04-E11",
+          "source": "B10",
+          "target": "B08",
+          "type": "loop",
+          "label": "수정안 재심"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "Development·Building Permit 승인",
+          "action": "endorsed plans와 허가조건을 받아 법정기한 내 착공"
+        },
+        {
+          "state": "rework",
+          "label": "완비반려·유예·수정요구",
+          "action": "누락자료 또는 설계를 보완해 완비검사·기술심사에 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "Building Permit 거부",
+          "action": "서면사유를 반영해 재심신청하거나 NBRB·법원 appeal 경로 검토"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "uganda-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "우간다 건축허가·환경심사",
+      "name": "우간다 Project Brief·ESIA·Building Permit",
       "oneLiner": "Building Committee 건축허가와 NEMA Project Brief·ESIA 유형을 분류해 선행조건을 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "NBRB 건축허가 안내와 NEMA의 현행 Schedule·ELMIS 절차를 확인했다. 2026년 개정기한·지방 수수료·실제 기간은 기관 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "NBRB 건축허가 안내와 NEMA의 현행 Schedule·ELMIS 절차를 확인했다. 2026년 개정기한·지방 수수료·실제 기간은 기관 확인 대상이다.",
+      "verificationScope": "NEMA 공식 ESIA·Project Brief 페이지와 Environmental and Social Assessment Regulations 2020의 Project Brief·full ESIA 경로를 분리하고, 환경증명서를 복합·공공건축 Building Permit 선행서류로 연결했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "Schedule 4 사업은 Project Brief, Schedule 5 및 해당 Schedule 10 사업은 full ESIA 경로를 거친다. Part II Schedule 4 Project Brief는 lead agency가, 그 밖의 대상은 NEMA가 심사하며 최종 건축허가는 관할 Building Committee가 결정한다.",
       "nodeIds": [
-        "B02"
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22",
+        "B23"
       ],
       "requirementIds": [
         "UGA-BLD-REQ-005"
@@ -252,21 +1657,167 @@
         "UGA-BLD-F-005",
         "UGA-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B11",
+          "target": "B12",
+          "type": "sequence",
+          "label": "환경경로"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "Project Brief 경로"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B12",
+          "target": "B15",
+          "type": "sequence",
+          "label": "Full ESIA 경로"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B13",
+          "target": "B14",
+          "type": "sequence",
+          "label": "Project Brief"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B14",
+          "target": "B19",
+          "type": "sequence",
+          "label": "Project Brief 승인"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B14",
+          "target": "B18",
+          "type": "message",
+          "label": "유예·보완"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B15",
+          "target": "B16",
+          "type": "sequence",
+          "label": "검토 TOR"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "ESIA Statement"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B17",
+          "target": "B19",
+          "type": "sequence",
+          "label": "심사완료"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B17",
+          "target": "B18",
+          "type": "message",
+          "label": "추가자료"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B18",
+          "target": "B14",
+          "type": "loop",
+          "label": "Project Brief 재심"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B18",
+          "target": "B17",
+          "type": "loop",
+          "label": "ESIA 재심"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B19",
+          "target": "B20",
+          "type": "sequence",
+          "label": "환경승인"
+        },
+        {
+          "id": "M05-E14",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "완비접수"
+        },
+        {
+          "id": "M05-E15",
+          "source": "B21",
+          "target": "B23",
+          "type": "sequence",
+          "label": "기술심사 완료"
+        },
+        {
+          "id": "M05-E16",
+          "source": "B21",
+          "target": "B22",
+          "type": "message",
+          "label": "보완요구"
+        },
+        {
+          "id": "M05-E17",
+          "source": "B22",
+          "target": "B21",
+          "type": "loop",
+          "label": "수정안 재심"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "환경·Building Permit 승인",
+          "action": "환경증명·건축허가 조건과 endorsed plans를 착공·감리계획에 반영"
+        },
+        {
+          "state": "rework",
+          "label": "환경 유예·건축 보완",
+          "action": "Project Brief·ESIA 또는 건축도서를 보완해 해당 심사단계로 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "환경 또는 건축허가 거부",
+          "action": "입지·영향·설계를 변경해 재신청하거나 법정 appeal 경로 검토"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "uganda-control-completion-construction-regulations",
       "priority": 6,
-      "name": "우간다 기술검사·보험·준공제도",
+      "name": "우간다 착공·법정 단계검사·Occupation Permit",
       "oneLiner": "등록 전문가, 국가코드·단계검사와 occupation permit을 시설 사용 전 법정 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "NBRB의 2026년 개정 안내, 2019 Code와 2020 Regulations의 검사·점유허가 절차를 확인했다. 현지 업체·보험사·비용은 시장조사 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "NBRB의 2026년 개정 안내, 2019 Code와 2020 Regulations의 검사·점유허가 절차를 확인했다. 현지 업체·보험사·비용은 시장조사 대상이다.",
+      "verificationScope": "Building Control Regulations 2020 제27조의 착공통지·법정 검사단계·진행금지·시정 회귀와 제34조·Act 제44조의 완공통지·as-built·최종검사·점유허가 결정을 연결했다.",
+      "procedureStatus": "official-source-linked",
+      "procedureScope": "전국 관할 Building Committee·Building Control Officer의 법정 절차다. 2026년 개정 후에도 BIMS에서 검사일정과 건축·점유허가를 처리하며, 결정지연은 local accounting officer 민원 후 NBRB 불복 경로를 따른다.",
       "nodeIds": [
-        "B03"
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34"
       ],
       "requirementIds": [
         "UGA-BLD-REQ-006"
@@ -285,8 +1836,116 @@
         "UGA-BLD-F-008",
         "UGA-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B24",
+          "target": "B25",
+          "type": "sequence",
+          "label": "착공접수"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B25",
+          "target": "B26",
+          "type": "sequence",
+          "label": "공정도달"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B26",
+          "target": "B27",
+          "type": "sequence",
+          "label": "검사요청"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B27",
+          "target": "B28",
+          "type": "sequence",
+          "label": "검사결과"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B28",
+          "target": "B26",
+          "type": "sequence",
+          "label": "다음 공정"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B28",
+          "target": "B29",
+          "type": "message",
+          "label": "시정·중지"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B29",
+          "target": "B27",
+          "type": "loop",
+          "label": "시정 후 재검사"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B28",
+          "target": "B30",
+          "type": "sequence",
+          "label": "practical completion"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B30",
+          "target": "B31",
+          "type": "sequence",
+          "label": "완공증빙"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B31",
+          "target": "B32",
+          "type": "sequence",
+          "label": "점유신청"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B32",
+          "target": "B34",
+          "type": "sequence",
+          "label": "최종 적합"
+        },
+        {
+          "id": "M06-E12",
+          "source": "B32",
+          "target": "B33",
+          "type": "message",
+          "label": "최종 미비"
+        },
+        {
+          "id": "M06-E13",
+          "source": "B33",
+          "target": "B32",
+          "type": "loop",
+          "label": "시정 후 재검사"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "단계승인·Occupation Permit 발급",
+          "action": "허가범위·조건에 따라 건물을 점유·사용"
+        },
+        {
+          "state": "rework",
+          "label": "시정·재검사",
+          "action": "공정 또는 최종검사 부적합을 시정하고 서면 통지 후 재검사"
+        },
+        {
+          "state": "reject",
+          "label": "점유허가 거부",
+          "action": "서면 거부사유를 해소해 재신청하거나 local accounting officer 민원·NBRB appeal 경로 검토"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -313,6 +1972,14 @@
       "role": "Project Brief·ESIA·환경결정과 사후준수관리를 담당",
       "verificationLevel": "law-linked",
       "officialUrl": "https://www.nema.go.ug/en/esia/"
+    },
+    {
+      "id": "physical-planning-committee",
+      "name": "Competent Physical Planning Committee",
+      "nameKo": "관할 물리계획위원회",
+      "role": "건축허가 신청 전에 토지이용·개발계획에 따른 development permission을 결정",
+      "verificationLevel": "law-linked",
+      "officialUrl": "https://nbrb.go.ug/wp-content/uploads/2020/01/THE-BUILDING-CONTROL-REGULATIONS-2020.pdf"
     }
   ],
   "instruments": [
@@ -324,7 +1991,9 @@
       "status": "continuity_unverified",
       "officialUrl": "https://nbrb.go.ug/the-building-control-amendment-act-2026-what-it-means-for-you/",
       "verificationLevel": "law-linked",
-      "note": "2026년 개정으로 허가·점유허가 결정기한과 이의구조가 변경됐다. 사업 접수 시 개정문과 시행일을 확인한다."
+      "note": "2026년 개정으로 허가·점유허가 결정기한과 이의구조가 변경됐다. 사업 접수 시 개정문과 시행일을 확인한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NBRB 공식 ‘Building Control (Amendment) Act 2026 — What It Means for You’ 페이지에서 Building Control Act Cap. 136의 개정사항을 확인했다. 그러나 개정법 시행일과 Cap. 136·2026 개정을 병합한 공식 통합조문을 한 문서에서 확인하지 못해 continuity_unverified를 유지한다."
     },
     {
       "id": "UGA-NBC-2019",
@@ -334,7 +2003,9 @@
       "status": "in_force",
       "issuedOn": "2019-01-01",
       "officialUrl": "https://nbrb.go.ug/the-legal-regime-for-the-building-sector/",
-      "verificationLevel": "source-linked"
+      "verificationLevel": "source-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NBRB 공식 ‘The Legal Regime for the Building Sector’·Legal & Policy 자료와 2026년 개정 안내가 National Building Code 2019를 Building Control Act·Regulations 2020과 함께 현행 기술기준으로 제시하는 것을 확인했다. 기준일 NBRB 호스트는 일시 접속불가였으나 최근 공식 개정안내에서의 계속 인용을 교차확인했다."
     },
     {
       "id": "UGA-BCR-2020",
@@ -345,7 +2016,9 @@
       "issuedOn": "2020-11-06",
       "officialUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
       "officialPdfUrl": "https://nbrb.go.ug/wp-content/uploads/2020/11/THE-BUILDING-CONTROL-REGULATIONS-2020-3.pdf",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "우간다 국가건축심의원(NBRB)의 공식 Legal & Policy 목록과 ‘Building Control (Amendment) Act 2026 — What It Means for You’ 안내가 Building Control Regulations 2020을 현행 허가·검사 시행규칙으로 계속 제시하는 것을 대조했다."
     },
     {
       "id": "UGA-NEA-CAP-181",
@@ -355,7 +2028,43 @@
       "status": "continuity_unverified",
       "officialUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
       "officialPdfUrl": "https://www.nema.go.ug/new_site2/wp-content/uploads/2025/01/National-Environment-Environmental-and-Social-Assessment-Regulations-S.I.-No.-143-of-2020.pdf",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "우간다 환경관리청(NEMA) 공식 ESIA 서비스는 S.I. 143/2020 절차를 안내하지만, 연결된 Environmental and Social Assessment Regulations PDF 경로는 기준일 현재 404였고 National Environment Act Cap. 181과 후속개정의 통합상태도 확인되지 않아 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "UGA-NBRB-PERMIT-GUIDE",
+      "title": "NBRB building and occupation permit official guidance",
+      "titleKo": "우간다 NBRB 건축·점유허가 공식 안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "NBRB 공식 FAQ와 2026년 Building Control Act 개정안내가 건축허가·점유허가 신청요건과 Building Committee 처리경로를 계속 안내하는 것을 확인했다.",
+      "officialUrl": "https://nbrb.go.ug/faqs/",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "UGA-NEMA-ESIA-GUIDE",
+      "title": "NEMA Environmental and Social Impact Assessment process",
+      "titleKo": "우간다 NEMA 환경사회영향평가 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "우간다 환경관리청(NEMA) 공식 ESIA 서비스 페이지가 기준일 현재 응답하며 Project Brief·ESIA·검토·환경결정 경로를 안내하는 것을 확인했다.",
+      "officialUrl": "https://www.nema.go.ug/en/esia/",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "UGA-BIMS",
+      "title": "Building Industry Management System",
+      "titleKo": "우간다 건축산업관리시스템(BIMS)",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "우간다 정부 BIMS 공식 서비스가 기준일 현재 응답하며 건축·점유허가 신청, 등록전문가 승인, 검사일정과 수수료 기능을 제공하는 것을 확인했다.",
+      "officialUrl": "https://bims.go.ug/",
+      "verificationLevel": "source-linked",
+      "note": "건축·점유허가 신청, 등록전문가 승인, 검사일정과 수수료를 처리하는 공식 전자시스템이다."
     }
   ],
   "requirements": [
@@ -465,7 +2174,56 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "Physical Planning Committee Development Permission",
+      "decision": "관할 계획위원회가 대상 개발의 토지이용·계획 적합성을 결정한다.",
+      "dependsOn": [],
+      "output": "Development Permission 또는 보완·거부통지"
+    },
+    {
+      "order": 2,
+      "gate": "관할 Building Committee Building Permit 공식결정",
+      "decision": "위원회가 Act·Code·Regulations와 토지이용·환경·안전 기준을 심사해 허가·유예/보완 또는 거부한다.",
+      "dependsOn": [
+        1
+      ],
+      "output": "Building Permit·endorsed plans·조건 또는 서면 거부사유"
+    },
+    {
+      "order": 3,
+      "gate": "NEMA·lead agency 환경평가 공식결정",
+      "decision": "관할 환경기관이 Project Brief 또는 full ESIA를 심사해 승인·유예/보완 또는 거부한다.",
+      "dependsOn": [],
+      "output": "Environmental Certificate·Project Brief 승인 또는 거부통지"
+    },
+    {
+      "order": 4,
+      "gate": "관할 Building Committee Building Permit 공식결정",
+      "decision": "위원회가 환경증명·development permission·전문도서를 심사해 허가·유예/보완 또는 거부한다.",
+      "dependsOn": [
+        3
+      ],
+      "output": "Building Permit·endorsed plans·조건 또는 서면 거부사유"
+    },
+    {
+      "order": 5,
+      "gate": "법정 공정단계 진행승인",
+      "decision": "검사기관이 각 지정공정의 승인도서·Code 적합성을 확인해 다음 공정 진행 또는 시정·중지를 결정한다.",
+      "dependsOn": [],
+      "output": "단계 진행승인 또는 시정·중지명령"
+    },
+    {
+      "order": 6,
+      "gate": "관할 Building Committee Occupation Permit 공식결정",
+      "decision": "위원회가 최종검사로 승인도서·Act·Regulations·Code 적합성을 확인해 점유허가를 발급하거나 서면사유로 거부한다.",
+      "dependsOn": [
+        5
+      ],
+      "output": "Full·Partial·Temporary Occupation Permit 또는 서면 거부사유"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "UGA-LOCAL-OVERLAY-001",

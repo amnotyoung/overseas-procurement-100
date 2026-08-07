@@ -1,0 +1,739 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "ecuador",
+  "authorities": [
+    {
+      "id": "ecu-quito-territory-authority",
+      "name": "Quito Metropolitan Secretariat for Territory, Habitat and Housing and Zonal Administration",
+      "nameKo": "Quito 광역 영토·주거 사무국·관할 Zonal Administration",
+      "role": "IRM, LMU-10 토지조성허가와 LMU-20 건축허가를 처리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://habitat.quito.gob.ec/tramites-y-servicios"
+    },
+    {
+      "id": "ecu-quito-amc",
+      "name": "Quito Metropolitan Control Agency",
+      "nameKo": "Quito 광역통제청(AMC)",
+      "role": "LMU-10·LMU-20 공사 착공통지, 사후통제와 최종 공사적합증명을 처리",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.agenciadecontrol.quito.gob.ec/"
+    },
+    {
+      "id": "ecu-quito-fire-brigade",
+      "name": "Quito Metropolitan Fire Brigade",
+      "nameKo": "Quito 광역소방대(CBDMQ)",
+      "role": "소방도면 Visto Bueno와 준공 후 Permiso de Ocupación을 심사",
+      "verificationLevel": "source-linked",
+      "officialUrl": "https://www.bomberosquito.gob.ec/"
+    }
+  ],
+  "instruments": [
+    {
+      "id": "ECU-LOOTUGS-2016-2026",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "국회의 2026년 LOOTUGS 개정자료와 2026-07-07 관보 개정 사실을 확인했으나, 개정 이후 경과규정까지 반영한 단일 현행 통합문을 확인하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ECU-LOCAL-PUGS",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "국가 주거도시부 자료에서 PUGS 체계를 확인했으나, 실제 개발수치와 허가규칙은 cantón별 조례이므로 대상 관할의 최신 PUGS·개정조례를 특정하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ECU-NEC",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "주거도시부가 공식 게시한 NEC 구조·지반 장을 확인했으나, 화재·접근성·에너지·설비 등 장별 후속개정이 분산되어 동일 기준일의 전체 적용판을 확정하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ECU-COA-RCOA",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MAATE 환경품질 공식 법령페이지의 COA·RCOA 자료 주소를 재조회했으나 응답 지연으로 공개상태를 재확인하지 못했고, 모든 후속개정 통합상태도 확인되지 않아 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ECU-COA-ADMIN",
+      "title": "Organic Administrative Code of Ecuador",
+      "titleKo": "에콰도르 행정기본법전(COA)",
+      "kind": "code",
+      "status": "continuity_unverified",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "사법부 공식 COA PDF 주소를 재조회했으나 응답 지연으로 접근성을 재확인하지 못했고, 이후 행정법전 개정까지 반영한 통합판 여부도 확인되지 않아 continuity_unverified를 유지한다.",
+      "issuedOn": "2017-07-07",
+      "officialUrl": "https://www.funcionjudicial.gob.ec/lotaip/documentosdirecciones/transparencia/C%C3%B3digo%20Org%C3%A1nico%20Administrativo.pdf",
+      "officialPdfUrl": "https://www.funcionjudicial.gob.ec/lotaip/documentosdirecciones/transparencia/C%C3%B3digo%20Org%C3%A1nico%20Administrativo.pdf",
+      "verificationLevel": "law-linked"
+    },
+    {
+      "id": "ECU-QUITO-IRM-GUIDE",
+      "title": "Quito official procedure for the Metropolitan Regulation Report (IRM)",
+      "titleKo": "Quito 도시규제보고서(IRM) 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 IRM 전자서비스가 필지계획정보 신청·발급절차를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=451",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ECU-QUITO-LMU10-GUIDE",
+      "title": "Quito official procedure for the LMU-10 Urbanization Licence",
+      "titleKo": "Quito LMU-10 도시개발허가 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 LMU10 서비스가 건축허가 도서·심사·결정경로를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=9",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ECU-QUITO-LMU20-GUIDE",
+      "title": "Quito official procedure for the LMU-20 Major Construction Licence",
+      "titleKo": "Quito LMU-20 대규모 건축행위허가 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 LMU20 서비스가 도시개발·subdivision 승인경로를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=374",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ECU-QUITO-CONSTRUCTION-START-GUIDE",
+      "title": "Quito AMC official procedure for notification of commencement of construction",
+      "titleKo": "Quito AMC 건축공사 착공통지 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 공사착수 등록서비스가 책임자·허가조건·현장통제 절차를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=392",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ECU-QUITO-FIRE-OCCUPANCY-GUIDE",
+      "title": "Quito Fire Brigade official procedure for the Building Occupancy Permit",
+      "titleKo": "Quito 소방대 건축물 점유허가 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 소방 점유허가 서비스가 검사·보완·결정 절차를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=245",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "ECU-QUITO-CCF-GUIDE",
+      "title": "Quito AMC official procedure for the Certificate of Conformity at Completion of Construction",
+      "titleKo": "Quito AMC 공사완료 적합증명(CCF) 공식 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "Quito PAM 공식 Certificado de Conformidad Final 서비스가 완료검사·발급경로를 현재 운영",
+      "officialUrl": "https://pam.quito.gob.ec/MDMQ_Tramites/Operativas/FrmFichaTramite?codtt=393",
+      "verificationLevel": "source-linked"
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "LOOTUGS·Quito PUGS 아래 IRM과 Quito LMU-10 도시개발허가의 공식 서비스를 연결했다. 표시 절차는 Distrito Metropolitano de Quito의 도시지역 20필지 초과 urbanización 사례이며 다른 cantón은 자체 PUGS·조례·명칭으로 교체한다.",
+      "officialProcedure": {
+        "name": "에콰도르 부지규제·도시개발허가 — Quito LMU-10 사례",
+        "coverage": "official-source-linked",
+        "scope": "Quito DMQ에서 도시지역 토지를 20필지 초과로 분할·기반시설화하는 urbanización의 IRM→기술적합→LMU-10 절차다. IRM은 정보를 제공할 뿐 개발권을 부여하지 않으며, 다른 cantón은 관할 GAD의 PUGS·도시개발허가 절차를 적용한다.",
+        "stages": [
+          "S1 IRM 필지규제",
+          "S2 도시개발 기술도서",
+          "S3 LMU-10 접수·보완",
+          "S4 공식결정"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "IRM 온라인 신청",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자·적격 신청인이 그래픽 위치가 등록된 predio 번호로 Quito 온라인 시스템에 Informe de Regulación Metropolitana 발급을 신청한다.",
+            "output": "IRM 신청 접수·trámite 번호",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito IRM 공식절차", "instrumentId": "ECU-QUITO-IRM-GUIDE", "provisions": ["online application with predio number and registered graphic location"]},
+              {"source": "LOOTUGS·지방계획", "instrumentId": "ECU-LOOTUGS-2016-2026", "provisions": ["municipal land-use planning and management"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "PUGS·edificabilidad·위험 중첩조회",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito가 지적·PUGS·Código de Edificabilidad를 조회해 토지분류, 처리, 용도, COS, 높이, 이격, 도로·하천·사면·위험·보호 중첩을 IRM에 산출한다.",
+            "output": "필지별 PUGS·edificabilidad·영향정보",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito IRM 기재사항", "instrumentId": "ECU-QUITO-IRM-GUIDE", "provisions": ["land classification, use, buildability, COS, height, setbacks, roads, rivers, hazards and protections"]},
+              {"source": "관할 PUGS", "instrumentId": "ECU-LOCAL-PUGS", "provisions": ["Quito PUGS and metropolitan land-use rules"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "IRM 발급·통지",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito가 IRM을 시스템으로 발급·통지한다. 신청인은 IRM이 개발권이 아니라 적용계획 정보임을 전제로 후속 LMU-10 도서를 작성한다.",
+            "output": "Informe de Regulación Metropolitana",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito IRM 공식절차", "instrumentId": "ECU-QUITO-IRM-GUIDE", "provisions": ["electronic response; IRM does not confer land-development rights"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "urbanización·기반시설 적합도서 확보",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "책임전문가가 IRM에 맞춘 urbanización 도서와 도로·상하수·전력 등 공기업 승인, 협력기관 적합증명 및 필요한 토사·폐기물 계약을 확보한다.",
+            "output": "urbanización 기술도서·인프라 승인·적합증명",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-10 공식절차", "instrumentId": "ECU-QUITO-LMU10-GUIDE", "provisions": ["approved infrastructure projects and authorized earth/debris-disposal contract"]},
+              {"source": "관할 PUGS·조례", "instrumentId": "ECU-LOCAL-PUGS", "provisions": ["local subdivision and urbanization technical rules"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "LMU-10 온라인 신청·수수료",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자·대리인이 predio, gravamen, certificado de conformidad, 프로젝트 종류와 특별요건을 온라인 제출하고 공표된 행정수수료를 납부한다.",
+            "output": "LMU-10 신청 접수·납부증빙",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-10 신청", "instrumentId": "ECU-QUITO-LMU10-GUIDE", "provisions": ["online filing, required urbanization documents and administrative fee"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완비성·행정·기술 적합심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito 허가기관이 신청권한·gravamen·협력기관 적합증명·공기업 승인과 PUGS·도시개발 규칙 충족 여부를 심사한다.",
+            "output": "LMU-10 심사결과·보완항목 또는 적합결론",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-10 공식절차", "instrumentId": "ECU-QUITO-LMU10-GUIDE", "provisions": ["review of conformity certificate, property record, infrastructure approvals and project type"]},
+              {"source": "행정기본법전", "instrumentId": "ECU-COA-ADMIN", "provisions": ["Arts. 138-140 receipt and correction of incomplete interested-party acts"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "LMU-10 미비 보완·재제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 법적·기술적 근거와 보완방법을 특정해 미비를 통지하면 신청인과 책임전문가가 지정기한 내 수정자료를 재제출한다.",
+            "output": "보완자료 재접수·재심사 결과",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "행정기본법전 보완", "instrumentId": "ECU-COA-ADMIN", "provisions": ["Art. 140 ten-day correction notice with legal, technical or economic basis and detailed instructions"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "LMU-10 도시개발허가 결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito 영토·주거 사무국 또는 관할기관이 urbanización의 LMU-10과 승인조건을 발급하거나 부적합·미보완 사유로 거부·종료 결정을 통지한다.",
+            "output": "LMU-10·승인도서·조건 또는 거부/종료 결정",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-10 결정", "instrumentId": "ECU-QUITO-LMU10-GUIDE", "provisions": ["LMU-10 authorizes urbanization in Quito"]},
+              {"source": "행정기본법전 결정", "instrumentId": "ECU-COA-ADMIN", "provisions": ["reasoned administrative act and notification"]}
+            ],
+            "permitGate": {
+              "key": "quito-lmu10-decision",
+              "gate": "Quito의 LMU-10 도시개발허가 공식결정",
+              "decision": "PUGS·도시기술·공기업 승인과 완비자료를 심사해 LMU-10, 거부 또는 절차종료를 결정한다.",
+              "output": "LMU-10·승인도서·조건 또는 거부/종료 결정",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "predio 조회"],
+          [1, 2, "sequence", "필지규제"],
+          [2, 3, "sequence", "설계조건"],
+          [3, 4, "sequence", "적합도서"],
+          [4, 5, "sequence", "신청접수"],
+          [5, 7, "sequence", "적합"],
+          [5, 6, "message", "미비 통지 시"],
+          [6, 5, "loop", "보완자료 재심사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "LMU-10 발급", "action": "승인조건에 따라 도시개발공사 착공통지 단계로 진행"},
+          {"state": "rework", "label": "미비 보완", "action": "COA Art. 140 통지내용을 보완해 LMU-10 심사로 재제출"},
+          {"state": "reject", "label": "거부·절차종료", "action": "행정결정의 사유와 불복·재신청 경로를 확인하고 공사에 착수하지 않음"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "전국 RCOA의 SUIA intersección–impact categorization–certificate/registro/licencia와 실제 EIA 보완회귀(Arts. 421-439)를, Quito LMU-20 대규모 건축행위허가와 병렬 연결했다. 다른 cantón의 건축허가에는 Quito 명칭을 사용하지 않는다.",
+      "officialProcedure": {
+        "name": "에콰도르 환경정규화·건축허가 — SUIA·Quito LMU-20 사례",
+        "coverage": "official-source-linked",
+        "scope": "환경절차는 전국 COA/RCOA와 관할 인가 환경당국의 SUIA 경로다. 건축절차는 Quito DMQ의 intervención constructiva mayor LMU-20 사례이며, 다른 cantón은 관할 GAD licence와 현지 조례로 교체한다.",
+        "stages": [
+          "P1 SUIA 분류",
+          "P2 환경심사·보완",
+          "P3 환경결정",
+          "P4 LMU-20 도서·접수",
+          "P5 건축허가 결정"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "SUIA 사업등록·교차증명 생성",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업시행자가 SUIA에 사업·활동·정확한 좌표를 등록하고 보호지역·산림유산·무형구역과의 certificado de intersección을 생성한다.",
+            "output": "SUIA 프로젝트 코드·certificado de intersección",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA 환경등록", "instrumentId": "ECU-COA-RCOA", "provisions": ["Arts. 421-425 environmental regularization and intersection certificate"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 0,
+            "label": "환경영향·승인유형 SUIA 분류",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "SUIA와 관할 환경당국이 활동·입지의 영향·위험을 비유의, 저영향, 중·고영향으로 분류해 certificate, registro 또는 licencia 경로를 지정한다.",
+            "output": "환경영향 분류·적용 승인유형",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA 승인유형", "instrumentId": "ECU-COA-RCOA", "provisions": ["Arts. 426-427 certificate for non-significant impact, registration for low impact, licence for medium/high impact"]},
+              {"source": "COA 환경승인", "instrumentId": "ECU-COA-RCOA", "provisions": ["COA Arts. 172-173 environmental regularization and authorization"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "비유의·저영향 certificate/registro 발급",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "비유의 영향이면 SUIA가 환경 certificate와 적용 가이드를, 저영향이면 요구자료·환경관리계획을 확인해 registro ambiental을 발급한다.",
+            "output": "certificado ambiental 또는 registro ambiental·조건",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA certificate·registro", "instrumentId": "ECU-COA-RCOA", "provisions": ["Arts. 427-430 environmental certificate and environmental registration"]}
+            ],
+            "permitGate": {
+              "key": "environment-certificate-registration",
+              "gate": "SUIA의 certificate·registro 공식발급",
+              "decision": "비유의·저영향 사업에 해당 환경 certificate 또는 registro와 준수조건을 발급하거나 신청을 반려한다.",
+              "output": "certificado/registro ambiental·조건 또는 반려통지",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "중·고영향 EIA·licencia 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "중·고영향으로 분류되면 시행자가 자격 있는 컨설턴트를 통해 EIA, 환경관리계획과 참여자료를 작성해 SUIA로 licencia ambiental을 신청한다.",
+            "output": "EIA·licencia ambiental 신청 접수",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA 환경 licence", "instrumentId": "ECU-COA-RCOA", "provisions": ["Arts. 431-437 environmental-impact study and licence requirements"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "EIA 1차 기술검토·관찰사항 통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 환경당국이 EIA의 법정요건·기술내용을 1차 검토하고 모든 관찰사항을 시행자에게 통지하거나 유리한 기술의견과 참여절차 개시를 명한다.",
+            "output": "EIA 관찰사항 또는 유리한 1차 기술의견",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA EIA 검토", "instrumentId": "ECU-COA-RCOA", "provisions": ["Art. 438 initial review, observations and order to commence participation after favourable pronouncement"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "EIA 관찰사항 보완·재검토",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "시행자가 원칙적으로 15일 안에 관찰사항을 보완해 제출하고 관할기관이 보완자료를 재검토한다. 정당한 사유가 있으면 한 번의 연장이 가능하다.",
+            "output": "수정 EIA·응답표·재검토 결과",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA EIA 보완", "instrumentId": "ECU-COA-RCOA", "provisions": ["Arts. 438-439 correction within 15 days, one extension, and authority re-review"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "환경참여·최종 기술의견",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "유리한 1차 기술의견 뒤 관할기관이 법정 환경참여를 실시하고 결과와 최종 EIA를 평가해 licencia 결정용 기술의견을 확정한다.",
+            "output": "환경참여 결과·최종 기술의견",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA 환경참여·licence", "instrumentId": "ECU-COA-RCOA", "provisions": ["Art. 438 participation order and applicable environmental-participation/licensing provisions"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "licencia ambiental 공식결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 환경당국이 최종 기술의견과 참여결과를 근거로 licencia ambiental과 조건을 발급하거나 불승인 결정을 SUIA로 통지한다.",
+            "output": "licencia ambiental·조건 또는 불승인 결정",
+            "authorityIds": ["ecu-maate"],
+            "refs": [
+              {"source": "RCOA 환경 licence 결정", "instrumentId": "ECU-COA-RCOA", "provisions": ["environmental licence issuance after favourable technical review and participation"]}
+            ],
+            "permitGate": {
+              "key": "environmental-licence-decision",
+              "gate": "관할 환경당국의 licencia ambiental 공식결정",
+              "decision": "중·고영향 EIA와 참여결과를 심사해 환경 licence·조건 또는 불승인을 결정한다.",
+              "output": "licencia ambiental·조건 또는 불승인 결정",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "협력기관 건축·구조·설비 적합증명",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito의 인가 Entidad Colaboradora가 건축·구조·전기·위생 기술도서를 PUGS·시 규칙·NEC에 대조해 분야별 Certificado de Conformidad를 발급한다.",
+            "output": "건축·구조·전기·위생 적합증명",
+            "authorityIds": ["ecu-quito-territory-authority", "ecu-control-authorities"],
+            "refs": [
+              {"source": "Quito LMU-20 필수요건", "instrumentId": "ECU-QUITO-LMU20-GUIDE", "provisions": ["architectural, structural, electrical and hydrosanitary conformity certificates"]},
+              {"source": "에콰도르 건축기준", "instrumentId": "ECU-NEC", "provisions": ["applicable structural, geotechnical, fire, accessibility and services chapters"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "소방도면 Visto Bueno 확보",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito에서 공식 적용기준에 해당하는 프로젝트(공식 LMU-20 안내상 500㎡ 초과 등)는 소방대에 소방설계도서를 제출해 Visto Bueno를 받는다.",
+            "output": "소방도면 Visto Bueno 또는 보완요구",
+            "authorityIds": ["ecu-quito-fire-brigade"],
+            "refs": [
+              {"source": "Quito LMU-20 특별요건", "instrumentId": "ECU-QUITO-LMU20-GUIDE", "provisions": ["Fire Brigade plan-approval certificate for projects over 500 m2"]},
+              {"source": "NEC 화재안전", "instrumentId": "ECU-NEC", "provisions": ["applicable fire-safety chapter"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "LMU-20 온라인 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자·대리인이 predio, Zonal Administration, 적합증명, 토사처리계약, ESED와 적용되는 소방승인을 Quito 시스템에 제출한다.",
+            "output": "LMU-20 신청 접수·trámite 번호",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-20 공식신청", "instrumentId": "ECU-QUITO-LMU20-GUIDE", "provisions": ["required filing data, conformity certificates and special requirements"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 4,
+            "label": "LMU-20 완비성·행정심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito 허가기관이 신청권한, 적합증명, 특별요건과 행정수수료를 확인하고 미비하면 근거·보완방법을 특정해 신청인에게 통지한다.",
+            "output": "LMU-20 행정심사결과·보완통지 또는 적합",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-20 공식절차", "instrumentId": "ECU-QUITO-LMU20-GUIDE", "provisions": ["administrative issuance based on collaborating-entity conformity certificates"]},
+              {"source": "행정기본법전", "instrumentId": "ECU-COA-ADMIN", "provisions": ["Arts. 138-140 receipt and correction"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 4,
+            "label": "LMU-20 미비 보완·재제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인과 책임전문가가 COA 보완통지에 따라 누락자료·적합증명·설명을 수정해 Quito 허가기관에 재제출한다.",
+            "output": "LMU-20 보완자료 재접수·재심사 결과",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "행정기본법전 보완", "instrumentId": "ECU-COA-ADMIN", "provisions": ["Art. 140 ten-day correction procedure"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 4,
+            "label": "LMU-20 건축허가 결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Quito가 적합증명과 완비요건을 근거로 LMU-20을 발급해 대규모 건축행위 착수를 허가하거나 거부·절차종료를 공식 통지한다.",
+            "output": "LMU-20·승인 프로젝트·조건 또는 거부/종료 결정",
+            "authorityIds": ["ecu-quito-territory-authority"],
+            "refs": [
+              {"source": "Quito LMU-20 결정", "instrumentId": "ECU-QUITO-LMU20-GUIDE", "provisions": ["LMU-20 is the administrative act authorizing commencement of major construction"]}
+            ],
+            "permitGate": {
+              "key": "quito-lmu20-decision",
+              "gate": "Quito의 LMU-20 건축허가 공식결정",
+              "decision": "협력기관 적합증명·특별요건·완비자료를 확인해 LMU-20, 거부 또는 절차종료를 결정한다.",
+              "output": "LMU-20·승인 프로젝트·조건 또는 거부/종료 결정",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "좌표·교차증명"],
+          [1, 2, "message", "비유의·저영향"],
+          [1, 3, "message", "중·고영향"],
+          [3, 4, "sequence", "EIA 접수"],
+          [4, 6, "sequence", "유리한 기술의견"],
+          [4, 5, "message", "관찰사항 통지 시"],
+          [5, 4, "loop", "수정 EIA 재검토"],
+          [6, 7, "sequence", "참여결과"],
+          [1, 8, "message", "병렬 LMU-20 도서"],
+          [8, 9, "message", "해당 시 소방승인"],
+          [8, 10, "sequence", "적합증명"],
+          [9, 10, "message", "Visto Bueno"],
+          [10, 11, "sequence", "LMU-20 접수"],
+          [11, 13, "sequence", "완비"],
+          [11, 12, "message", "미비 통지 시"],
+          [12, 11, "loop", "보완자료 재심사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "환경승인·LMU-20", "action": "해당 certificate/registro/licencia와 Quito LMU-20 조건을 모두 충족해 착공통지"},
+          {"state": "rework", "label": "EIA·LMU 보완", "action": "EIA는 환경기술심사로, LMU-20 자료는 행정심사로 재제출"},
+          {"state": "reject", "label": "환경 불승인·LMU 거부", "action": "공사를 착수하지 않고 결정사유에 따른 불복·재신청 경로를 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "Quito LMU-20 착공통지, 소방대의 점유허가 신청–현장검사–관찰사항 재검사와 AMC의 완료통지–적합검사–CCF를 공식 서비스 기준으로 연결했다. 이는 Quito 사례이며 다른 cantón은 해당 GAD·소방 절차를 적용한다.",
+      "officialProcedure": {
+        "name": "에콰도르 공사통제·소방점유·준공적합 — Quito 사례",
+        "coverage": "official-source-linked",
+        "scope": "Quito DMQ의 intervención constructiva mayor LMU-20 공사에 적용되는 AMC 착공통지, CBDMQ Permiso de Ocupación, AMC Certificado de Conformidad de Finalización(CCF) 절차다. 다른 cantón에는 동일 명칭·기관을 일반화하지 않는다.",
+        "stages": [
+          "C1 착공통지·공사통제",
+          "C2 소방 점유검사",
+          "C3 소방결정·AMC 완료검사",
+          "C4 CCF 공식결정"
+        ],
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "LMU-20 공사 착공통지",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "LMU-20 발급 후 소유자·promotor가 AMC Formulario 23과 IESS 의무이행증명을 온라인 제출해 대규모 건축행위 착공을 통지한다.",
+            "output": "AMC 착공통지 등록·접수코드",
+            "authorityIds": ["ecu-quito-amc"],
+            "refs": [
+              {"source": "Quito AMC 착공통지", "instrumentId": "ECU-QUITO-CONSTRUCTION-START-GUIDE", "provisions": ["LMU-20 prerequisite, Form 23 and electronic notice of commencement"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "승인 프로젝트 준수 사후통제",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "AMC가 공사 중 통제권한으로 LMU-20 승인 프로젝트·시 규칙·NEC 준수 여부를 검사하고 소유자·promotor·책임전문가는 공사와 변경의 적합성을 공동 책임진다.",
+            "output": "AMC 현장통제·변경·시정 기록",
+            "authorityIds": ["ecu-quito-amc", "ecu-control-authorities"],
+            "refs": [
+              {"source": "Quito AMC 착공·사후통제", "instrumentId": "ECU-QUITO-CONSTRUCTION-START-GUIDE", "provisions": ["post-licence control and joint responsibility for execution in conformity with LMU-20"]},
+              {"source": "에콰도르 건축기준", "instrumentId": "ECU-NEC", "provisions": ["applicable construction, structural, geotechnical and fire requirements"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "소방 Permiso de Ocupación 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자·대리인이 소방도면 Visto Bueno, 설비 시험·설치증명과 적용 특별서류를 CBDMQ 온라인 시스템에 제출해 점유검사를 신청한다.",
+            "output": "소방 점유검사 신청·검사예약",
+            "authorityIds": ["ecu-quito-fire-brigade"],
+            "refs": [
+              {"source": "Quito 소방 점유허가", "instrumentId": "ECU-QUITO-FIRE-OCCUPANCY-GUIDE", "provisions": ["online application, plan approval and fire-system certificates"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "소방 현장검사·보고서",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "CBDMQ 기술자가 현장을 방문해 승인 소방설계, 피난·경보·소화·가스 등 설치·시험을 확인하고 유리 또는 불리한 검사보고서와 관찰사항을 작성한다.",
+            "output": "소방 검사보고서·관찰사항",
+            "authorityIds": ["ecu-quito-fire-brigade"],
+            "refs": [
+              {"source": "Quito 소방 점유검사", "instrumentId": "ECU-QUITO-FIRE-OCCUPANCY-GUIDE", "provisions": ["technical site inspection and favourable or unfavourable report with observations"]}
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "소방 관찰사항 시정·재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "불리한 검사보고서이면 소유자와 소방전문가가 관찰사항을 시정하고 시험·설치증빙을 갱신해 CBDMQ 재검사를 받는다.",
+            "output": "소방 시정증빙·재검사 결과",
+            "authorityIds": ["ecu-quito-fire-brigade"],
+            "refs": [
+              {"source": "Quito 소방 점유허가", "instrumentId": "ECU-QUITO-FIRE-OCCUPANCY-GUIDE", "provisions": ["management of observations after an unfavourable inspection report"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "소방 Permiso de Ocupación 발급",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "CBDMQ가 소방안전 적합성이 확인된 프로젝트에 Permiso de Ocupación을 전자 발급하고, 미해소 불일치에는 발급을 거부한다.",
+            "output": "CBDMQ Permiso de Ocupación 또는 발급거부",
+            "authorityIds": ["ecu-quito-fire-brigade"],
+            "refs": [
+              {"source": "Quito 소방 점유허가", "instrumentId": "ECU-QUITO-FIRE-OCCUPANCY-GUIDE", "provisions": ["electronic issuance after compliant inspection"]}
+            ],
+            "permitGate": {
+              "key": "quito-fire-occupancy",
+              "gate": "Quito 소방대의 Permiso de Ocupación 결정",
+              "decision": "현장 소방설비와 승인도서의 적합성을 검사해 점유허가 발급 또는 거부를 결정한다.",
+              "output": "Permiso de Ocupación 또는 발급거부",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "AMC 공사완료 통지·CCF 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자가 AMC Formulario 25, CBDMQ Permiso de Ocupación과 요구자료를 온라인 제출해 LMU-20 공사완료를 통지하고 CCF를 신청한다.",
+            "output": "공사완료 통지·CCF 신청 접수코드",
+            "authorityIds": ["ecu-quito-amc"],
+            "refs": [
+              {"source": "Quito AMC CCF 신청", "instrumentId": "ECU-QUITO-CCF-GUIDE", "provisions": ["Form 25, Fire Brigade Occupancy Permit and electronic completion notification"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "AMC 최종 프로젝트 적합성 확인",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "AMC가 LMU-20 승인 프로젝트와 완공상태를 현장확인하거나 법정 허용되는 Declaración de Fiel Cumplimiento를 검토해 CCF 적합성을 판정한다.",
+            "output": "유리한 최종검사 또는 관찰사항 기술보고서",
+            "authorityIds": ["ecu-quito-amc"],
+            "refs": [
+              {"source": "Quito AMC CCF 심사", "instrumentId": "ECU-QUITO-CCF-GUIDE", "provisions": ["verification of approved technical project or Declaration of Faithful Compliance; Municipal Code Art. 2040"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "AMC 관찰사항 시정·재확인",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "AMC가 Informe Técnico con Observaciones를 발행하면 소유자·책임전문가가 현장·도서 불일치를 시정하고 증빙을 재제출해 재확인을 받는다.",
+            "output": "CCF 시정증빙·재검사 결과",
+            "authorityIds": ["ecu-quito-amc"],
+            "refs": [
+              {"source": "Quito AMC CCF 결과", "instrumentId": "ECU-QUITO-CCF-GUIDE", "provisions": ["favourable certificate or technical-control report with observations"]},
+              {"source": "행정기본법전 보완", "instrumentId": "ECU-COA-ADMIN", "provisions": ["Art. 140 correction procedure"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "CCF 준공적합 공식결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "AMC가 LMU-20 승인 프로젝트의 물리적 준수를 확인해 Certificado de Conformidad de Finalización을 발급하거나 미해소 불일치에 발급을 거부한다.",
+            "output": "CCF 또는 발급거부·관찰사항 결정",
+            "authorityIds": ["ecu-quito-amc"],
+            "refs": [
+              {"source": "Quito AMC CCF 결정", "instrumentId": "ECU-QUITO-CCF-GUIDE", "provisions": ["Municipal Code Art. 2040; certificate after completion notice, compliance verification and fire occupancy permit"]}
+            ],
+            "permitGate": {
+              "key": "quito-completion-conformity",
+              "gate": "Quito AMC의 CCF 준공적합 공식결정",
+              "decision": "LMU-20 승인 프로젝트와 최종 공사상태의 적합성을 확인해 CCF 발급 또는 거부를 결정한다.",
+              "output": "Certificado de Conformidad de Finalización 또는 발급거부",
+              "dependsOn": ["quito-fire-occupancy"]
+            }
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "착공통지"],
+          [1, 2, "sequence", "완공·소방검사 신청"],
+          [2, 3, "sequence", "검사예약"],
+          [3, 5, "sequence", "소방 적합"],
+          [3, 4, "message", "관찰사항 발생 시"],
+          [4, 3, "loop", "시정 후 소방 재검사"],
+          [5, 6, "sequence", "점유허가"],
+          [6, 7, "sequence", "완료통지"],
+          [7, 9, "sequence", "최종 적합"],
+          [7, 8, "message", "AMC 관찰사항"],
+          [8, 7, "loop", "시정 후 AMC 재확인"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "소방 점유허가·CCF", "action": "CBDMQ 점유허가와 AMC CCF를 확보해 사용·인계"},
+          {"state": "rework", "label": "소방·AMC 관찰사항", "action": "각 검사보고서의 결함을 시정하고 해당 현장검사로 회귀"},
+          {"state": "reject", "label": "점유·준공증명 거부", "action": "사용을 보류하고 불일치·무허가변경을 시정하거나 공식 불복·재허가 절차를 검토"}
+        ]
+      }
+    }
+  }
+}

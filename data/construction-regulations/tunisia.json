@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1",
-  "generatedFrom": "data/construction-regulations/catalog/baselines.json",
+  "generatedFrom": "data/construction-regulations/catalog/baselines.json + data/construction-regulations/catalog/official-procedures/",
   "slug": "tunisia",
   "asOfDate": "2026-08-07",
   "country": {
@@ -27,26 +27,115 @@
     "title": "튀니지 건축 법·제도 3축 통합 흐름",
     "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
     "lanes": [
-      "도시계획·건축 허가기관"
+      "건축주·신청인",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
+      "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 공식 절차 진입점",
-      "G4 공식 절차 진입점",
-      "G8 공식 절차 진입점"
+      "S0 권원·lotissement",
+      "S1 PAU·RGU",
+      "S2 servitude·도서",
+      "S3 지방 기술심사",
+      "S4 공식결정",
+      "S0 환경분류",
+      "S1 EIE·cahier",
+      "S2 ANPE 심사",
+      "S3 환경결정",
+      "S4 허가도서",
+      "S5 지방 심사",
+      "S6 허가결정",
+      "S0 적용·계약",
+      "S1 설계검사",
+      "S2 시공검사",
+      "S3 준공검사",
+      "S4 PV 결정",
+      "S5 점유검사",
+      "S6 점유결정"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 공식 절차 진입점",
-        "label": "CATU·PAU·RGU · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "lane": "건축주·신청인",
+        "stage": "S0 권원·lotissement",
+        "label": "소유권·지적·승인 lotissement 확보",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "CATU 아래 지방자치단체의 plan d'amenagement urbain(PAU)과 일반도시계획규정(RGU)이 부지 개발조건을 정한다. 등기·지적·servitude와 해당 PAU 도면·규정표를 확보하고 지반·침수·배수·도로·ONAS·수도·전력 용량은 별도 실사한다.",
-        "action": "CATU 아래 지방자치단체의 plan d'amenagement urbain(PAU)과 일반도시계획규정(RGU)이 부지 개발조건을 정한다. 등기·지적·servitude와 해당 PAU 도면·규정표를 확보하고 지반·침수·배수·도로·ONAS·수도·전력 용량은 별도 실사한다.",
+        "note": "신청인이 소유권증명·지적도·필지경계와 해당 필지가 승인된 lotissement에서 나온 토지임을 입증한다.",
+        "action": "신청인이 소유권증명·지적도·필지경계와 해당 필지가 승인된 lotissement에서 나온 토지임을 입증한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "소유권증명·지적도·승인 lotissement 자료"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가 전제조건",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "owner status; parcel from an approved subdivision"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S0 권원·lotissement",
+        "label": "lotissement·필지 적법성 판정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 필지의 승인 lotissement 귀속, 경계와 신청인의 권원을 대조하고 미승인 분할이면 건축허가 심사 전 토지정리·분할승인을 요구한다.",
+        "action": "지방 기술부서가 필지의 승인 lotissement 귀속, 경계와 신청인의 권원을 대조하고 미승인 분할이면 건축허가 심사 전 토지정리·분할승인을 요구한다.",
+        "outputs": [
+          "필지 적법성 확인 또는 선행 분할승인 요구"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "필지·분할 전제",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "approved subdivision and ownership conditions"
+            ]
+          },
+          {
+            "source": "토지점용 허가",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "land-use and subdivision authorizations"
+            ]
+          }
+        ],
+        "gateOrders": [
+          1
+        ]
+      },
+      {
+        "id": "B03",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S1 PAU·RGU",
+        "label": "PAU 구역·용도 확인",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "관할 commune이 승인 plan d'aménagement urbain(PAU)의 구역·용도와 필지의 계획상 vocation을 특정한다.",
+        "action": "관할 commune이 승인 plan d'aménagement urbain(PAU)의 구역·용도와 필지의 계획상 vocation을 특정한다.",
+        "outputs": [
+          "PAU 구역·허용용도·계획조건"
         ],
         "authorityIds": [
           "tun-municipality",
@@ -55,136 +144,1806 @@
         "requirementIds": [
           "TUN-BLD-REQ-004"
         ],
-        "questionIds": [
-          "TUN-BLD-Q-001",
-          "TUN-BLD-Q-002",
-          "TUN-BLD-Q-003"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "CATU·PAU·RGU",
-            "instrumentId": "TUN-CATU-94-122",
+            "source": "계획용도 적합",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
             "provisions": [
-              "territorial and urban planning; land-use authorizations"
+              "parcel vocation conforming to the area development plan"
             ]
           },
           {
-            "source": "CATU·PAU·RGU",
-            "instrumentId": "TUN-RGU-99-2253",
+            "source": "PAU 체계",
+            "instrumentId": "TUN-CATU-94-122",
             "provisions": [
-              "general urban-planning rules where applicable"
+              "urban development plans and land-use conformity"
             ]
           }
         ]
       },
       {
-        "id": "B02",
+        "id": "B04",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G4 공식 절차 진입점",
-        "label": "permis de bâtir·ANPE · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "stage": "S1 PAU·RGU",
+        "label": "PAU 부재·RGU 적용 여부 판정",
+        "emphasis": "normal",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건축허가는 관할 commune의 기술위원회가 권원, 도시계획·건축도서와 관계기관 의견을 심사한다. 환경절차는 시행령 제2005-1991호의 Annex I 대상이면 EIE, Annex II 대상이면 해당 cahier des charges 경로를 적용하므로 사업유형·규모·입지로 ANPE에 사전분류를 확인한다.",
-        "action": "건축허가는 관할 commune의 기술위원회가 권원, 도시계획·건축도서와 관계기관 의견을 심사한다. 환경절차는 시행령 제2005-1991호의 Annex I 대상이면 EIE, Annex II 대상이면 해당 cahier des charges 경로를 적용하므로 사업유형·규모·입지로 ANPE에 사전분류를 확인한다.",
+        "note": "승인 PAU·상세계획의 적용 여부를 확인하고, 그 밖의 토지는 RGU 적용범위와 자연재해·non-aedificandi 금지구역을 판정한다.",
+        "action": "승인 PAU·상세계획의 적용 여부를 확인하고, 그 밖의 토지는 RGU 적용범위와 자연재해·non-aedificandi 금지구역을 판정한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "RGU 적용조항·건축가능 또는 금지 판정"
         ],
         "authorityIds": [
           "tun-municipality",
-          "tun-anpe",
           "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "RGU 적용범위·금지구역",
+            "instrumentId": "TUN-RGU-99-2253",
+            "provisions": [
+              "Articles 1-2; areas outside approved plans; foreseeable natural-risk and non-aedificandi zones"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S1 PAU·RGU",
+        "label": "농지·문화재·자연·보존구역 심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 농지, 고고학·역사기념물, 자연·도시경관 및 sauvegarde 구역의 특별 제한과 별도 의견 필요성을 식별한다.",
+        "action": "지방 기술부서가 농지, 고고학·역사기념물, 자연·도시경관 및 sauvegarde 구역의 특별 제한과 별도 의견 필요성을 식별한다.",
+        "outputs": [
+          "보호구역 제한·관계기관 의견목록"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "특별보호 조건",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "agricultural land, archaeological, historic, natural, urban and safeguard-area protections"
+            ]
+          },
+          {
+            "source": "RGU 특별구역 제외",
+            "instrumentId": "TUN-RGU-99-2253",
+            "provisions": [
+              "Article 1; forests, archaeological, historic and agricultural areas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "lane": "건축주·신청인",
+        "stage": "S2 servitude·도서",
+        "label": "alignment·특별 servitude 승인 확보",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "도로·해양·철도·수리 공공영역 인접 필지는 arrêté d'alignement를, 특별 servitude 인접 필지는 해당 행정승인을 확보한다.",
+        "action": "도로·해양·철도·수리 공공영역 인접 필지는 arrêté d'alignement를, 특별 servitude 인접 필지는 해당 행정승인을 확보한다.",
+        "outputs": [
+          "alignment 결정·특별 servitude 승인"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "alignment·servitude 첨부",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "alignment order; administrative authorizations for special servitudes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 servitude·도서",
+        "label": "필지규제 반영 배치·건축도서 작성",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "등록 건축사와 구조전문가가 PAU·RGU·lotissement·servitude의 용도·배치·높이·이격·주차 조건을 평면·배치·단면·입면·구조도서에 반영한다.",
+        "action": "등록 건축사와 구조전문가가 PAU·RGU·lotissement·servitude의 용도·배치·높이·이격·주차 조건을 평면·배치·단면·입면·구조도서에 반영한다.",
+        "outputs": [
+          "도시계획 적합표·배치도·건축·구조도서"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가도서 구성",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "technical information sheet; site plan; 1:500 layout; plans, sections and elevations; structural plan"
+            ]
+          },
+          {
+            "source": "도시계획 기준",
+            "instrumentId": "TUN-RGU-99-2253",
+            "provisions": [
+              "general siting and construction rules"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "건축주·신청인",
+        "stage": "S3 지방 기술심사",
+        "label": "지방 기술부서에 완비도서 접수",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "신청인이 권원·도시계획·alignment·servitude·서명도서를 관할 commune 또는 지역기관 기술부서에 제출하고 접수증을 받는다.",
+        "action": "신청인이 권원·도시계획·alignment·servitude·서명도서를 관할 commune 또는 지역기관 기술부서에 제출하고 접수증을 받는다.",
+        "outputs": [
+          "건축허가 접수증·완비일"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "접수기관·접수증",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "filing with competent local-authority technical service; receipt issued"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B09",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S3 지방 기술심사",
+        "label": "기술심사·현장확인·위원회 의견",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 서류와 현장을 심사하고 건축허가 기술위원회가 PAU·RGU·보호·servitude 적합성에 관한 의견을 확정한다.",
+        "action": "지방 기술부서가 서류와 현장을 심사하고 건축허가 기술위원회가 PAU·RGU·보호·servitude 적합성에 관한 의견을 확정한다.",
+        "outputs": [
+          "기술심사·현장확인 기록·위원회 의견"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "기술부서·위원회 심사",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "dossier study; site inspection where necessary; technical permit commission"
+            ]
+          },
+          {
+            "source": "위원회 선행의견",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Article 69"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B10",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S3 지방 기술심사",
+        "label": "도시계획 보완·위원회 재심",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "위원회가 지적한 용도·배치·보호·servitude 미비를 수정하고 보완도서를 재제출한다.",
+        "action": "위원회가 지적한 용도·배치·보호·servitude 미비를 수정하고 보완도서를 재제출한다.",
+        "outputs": [
+          "수정 도서·보완대응표·재심기록"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "법규충족 심사",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "decision only where legal and regulatory conditions are satisfied"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S4 공식결정",
+        "label": "PAU·RGU 적합 건축허가 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "기술위원회 의견 뒤 commune 의장이 도시계획 조건에 적합하면 arrêté de permis de bâtir를 작성하고, 부적합하면 사유를 적은 거부결정을 통지한다.",
+        "action": "기술위원회 의견 뒤 commune 의장이 도시계획 조건에 적합하면 arrêté de permis de bâtir를 작성하고, 부적합하면 사유를 적은 거부결정을 통지한다.",
+        "outputs": [
+          "건축허가 arrêté 또는 이유부 거부통지"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-004"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가권자·결정",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Articles 68-69"
+            ]
+          },
+          {
+            "source": "공식 허가·거부",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "permit order or reasoned refusal; registered-letter notice"
+            ]
+          }
+        ],
+        "gateOrders": [
+          2
+        ]
+      },
+      {
+        "id": "B12",
+        "lane": "건축주·신청인",
+        "stage": "S0 환경분류",
+        "label": "Annex I·II 사업유형 대조",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "사업자가 시설종류·규모·입지와 시행령 목록을 대조해 Annex I EIE, Annex II cahier des charges 또는 비대상 경로를 식별한다.",
+        "action": "사업자가 시설종류·규모·입지와 시행령 목록을 대조해 Annex I EIE, Annex II cahier des charges 또는 비대상 경로를 식별한다.",
+        "outputs": [
+          "사업유형·규모·입지 기반 환경경로표"
+        ],
+        "authorityIds": [
+          "tun-anpe"
         ],
         "requirementIds": [
           "TUN-BLD-REQ-005"
         ],
-        "questionIds": [
-          "TUN-BLD-Q-004",
-          "TUN-BLD-Q-005",
-          "TUN-BLD-Q-006"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "permis de bâtir·ANPE",
-            "instrumentId": "TUN-CATU-94-122",
+            "source": "Annex 분류",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
             "provisions": [
-              "building and land-use authorizations"
+              "Annex I mandatory EIA; Annex II cahiers des charges"
             ]
           },
           {
-            "source": "permis de bâtir·ANPE",
-            "instrumentId": "TUN-PERMIT-ORDER-2007",
-            "provisions": [
-              "permit dossier, validity, renewal and technical commission"
-            ]
-          },
-          {
-            "source": "permis de bâtir·ANPE",
+            "source": "법정 목록",
             "instrumentId": "TUN-EIA-DECREE-2005-1991",
             "provisions": [
-              "Annex I EIE and Annex II cahiers des charges"
+              "Annexes I-II"
             ]
           }
         ]
       },
       {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G8 공식 절차 진입점",
-        "label": "기술검사·10년책임·점유 · 절차 상세 미확인",
-        "emphasis": "bottleneck",
-        "kind": "field-verification",
+        "id": "B13",
+        "lane": "환경·소방·검사기관",
+        "stage": "S0 환경분류",
+        "label": "ANPE 환경경로 공식판정",
+        "emphasis": "key",
+        "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "법률 제94-9·94-10호 체계는 대상 공사의 승인 기술검사와 10년책임보험을 연결한다. 현장검사·시험·변경승인을 축적하고 commune의 procès-verbal de récolement와 permis d'occuper 등 실제 완료·점유서류를 발급받은 뒤 사용한다.",
-        "action": "법률 제94-9·94-10호 체계는 대상 공사의 승인 기술검사와 10년책임보험을 연결한다. 현장검사·시험·변경승인을 축적하고 commune의 procès-verbal de récolement와 permis d'occuper 등 실제 완료·점유서류를 발급받은 뒤 사용한다.",
+        "note": "ANPE가 법정 목록과 민감입지를 기준으로 EIE A·B, Annex II cahier des charges 또는 비대상 경로와 제출기준을 확정한다.",
+        "action": "ANPE가 법정 목록과 민감입지를 기준으로 EIE A·B, Annex II cahier des charges 또는 비대상 경로와 제출기준을 확정한다.",
         "outputs": [
-          "관할기관의 현행 절차도·신청서·체크리스트 확인 필요"
+          "환경평가 유형·제출경로 결정"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "screening·문서유형",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "screening by regulatory list; project category and document type"
+            ]
+          }
+        ],
+        "gateOrders": [
+          3
+        ]
+      },
+      {
+        "id": "B14",
+        "lane": "건축주·신청인",
+        "stage": "S1 EIE·cahier",
+        "label": "Annex II cahier des charges 이행서약",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Annex II 사업이면 해당 부문 cahier des charges를 작성·서명해 환경조치 준수의무를 인수하고 요구된 방식으로 제출한다.",
+        "action": "Annex II 사업이면 해당 부문 cahier des charges를 작성·서명해 환경조치 준수의무를 인수하고 요구된 방식으로 제출한다.",
+        "outputs": [
+          "서명·접수된 환경 cahier des charges"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Annex II 경로",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "Annex II environmental cahier des charges"
+            ]
+          },
+          {
+            "source": "cahier 근거",
+            "instrumentId": "TUN-EIA-DECREE-2005-1991",
+            "provisions": [
+              "Annex II"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 EIE·cahier",
+        "label": "전문기관 EIE 범위·TOR 설정",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "Annex I 사업이면 전문 환경사무소·전문가가 부문별 TOR과 쟁점·대안·조사범위를 정한다.",
+        "action": "Annex I 사업이면 전문 환경사무소·전문가가 부문별 TOR과 쟁점·대안·조사범위를 정한다.",
+        "outputs": [
+          "EIE TOR·조사계획"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "전문가·TOR",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "specialized offices or experts; sectoral terms of reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B16",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 EIE·cahier",
+        "label": "기초환경·영향·대안·PGES 작성",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "전문가가 사업상세, 부지·기초환경, 직접·간접영향, 보호·민감지역, 저감·보상과 비용, 상세 환경관리계획을 EIE에 작성한다.",
+        "action": "전문가가 사업상세, 부지·기초환경, 직접·간접영향, 보호·민감지역, 저감·보상과 비용, 상세 환경관리계획을 EIE에 작성한다.",
+        "outputs": [
+          "EIE 보고서·환경관리계획(PGES)"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "EIE 최소내용",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "Article 6 minimum contents"
+            ]
+          },
+          {
+            "source": "EIE 내용",
+            "instrumentId": "TUN-EIA-DECREE-2005-1991",
+            "provisions": [
+              "Article 6"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B17",
+        "lane": "건축주·신청인",
+        "stage": "S2 ANPE 심사",
+        "label": "모든 행정허가 전 ANPE 제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "사업자가 EIE를 ANPE에 제출해 다른 사업실현 행정허가보다 먼저 환경의견 절차를 개시한다.",
+        "action": "사업자가 EIE를 ANPE에 제출해 다른 사업실현 행정허가보다 먼저 환경의견 절차를 개시한다.",
+        "outputs": [
+          "ANPE EIE 접수일·접수증"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "환경절차 선행",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "EIA submitted to ANPE before all administrative authorizations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B18",
+        "lane": "환경·소방·검사기관",
+        "stage": "S2 ANPE 심사",
+        "label": "ANPE EIE 기술심사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANPE가 법정 목록·TOR·현행 기준에 따라 EIE와 PGES를 검토하고 추가조사·수정, 반대 또는 비반대 여부를 판단한다.",
+        "action": "ANPE가 법정 목록·TOR·현행 기준에 따라 EIE와 PGES를 검토하고 추가조사·수정, 반대 또는 비반대 여부를 판단한다.",
+        "outputs": [
+          "ANPE 심사의견·추가자료 요구"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "ANPE 검토·결정",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "ANPE examination; favourable or unfavourable opinion; supplementary study"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B19",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 ANPE 심사",
+        "label": "EIE 추가조사·보완·재심",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANPE 지적에 따라 영향예측·대안·저감·PGES를 보완하고 수정 EIE를 재제출한다.",
+        "action": "ANPE 지적에 따라 영향예측·대안·저감·PGES를 보완하고 수정 EIE를 재제출한다.",
+        "outputs": [
+          "수정 EIE·의견대응표·재접수"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "보완경로",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "supplementary study and corrective measures before re-examination"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B20",
+        "lane": "환경·소방·검사기관",
+        "stage": "S3 환경결정",
+        "label": "ANPE 반대·비반대 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "ANPE가 Category A 일반사업은 21 근무일, A 민감입지와 B는 3개월 안에 반대를 통지하며, 기간 내 반대가 없으면 법정 묵시동의가 성립한다.",
+        "action": "ANPE가 Category A 일반사업은 21 근무일, A 민감입지와 B는 3개월 안에 반대를 통지하며, 기간 내 반대가 없으면 법정 묵시동의가 성립한다.",
+        "outputs": [
+          "ANPE 비반대·묵시동의 또는 반대통지"
+        ],
+        "authorityIds": [
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "심사기한·묵시동의",
+            "instrumentId": "TUN-ANPE-EIA-CURRENT",
+            "provisions": [
+              "21 working days for Category A; three working months for sensitive A and Category B; tacit agreement after expiry"
+            ]
+          },
+          {
+            "source": "환경결정",
+            "instrumentId": "TUN-EIA-DECREE-2005-1991",
+            "provisions": [
+              "statutory opposition periods and tacit agreement"
+            ]
+          }
+        ],
+        "gateOrders": [
+          4
+        ]
+      },
+      {
+        "id": "B21",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S4 허가도서",
+        "label": "5부 건축·구조·환경·안전도서 편성",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축사·구조전문가가 신청서, 권원, 기술정보표, 배치·평면·단면·입면 5부, 구조도, 환경문서, alignment·servitude 승인과 해당 소방안전 승인서를 편성한다.",
+        "action": "건축사·구조전문가가 신청서, 권원, 기술정보표, 배치·평면·단면·입면 5부, 구조도, 환경문서, alignment·servitude 승인과 해당 소방안전 승인서를 편성한다.",
+        "outputs": [
+          "완비 건축허가 도서 5부·관계기관 승인"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "허가도서·환경·소방",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "required documents; five plan sets; EIA; alignment; servitudes; approved fire-safety dossier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B22",
+        "lane": "건축주·신청인",
+        "stage": "S4 허가도서",
+        "label": "지방 기술부서 접수·접수증 수령",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "신청인이 완비도서를 관할 commune 또는 지역기관 기술부서에 제출하고 법정 처리기간의 기준이 되는 접수증·완비일을 확보한다.",
+        "action": "신청인이 완비도서를 관할 commune 또는 지역기관 기술부서에 제출하고 법정 처리기간의 기준이 되는 접수증·완비일을 확보한다.",
+        "outputs": [
+          "건축허가 접수증·완비일"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "접수·법정기간",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "filing with competent technical service; receipt; 21/45/60-day periods"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B23",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S5 지방 심사",
+        "label": "서류심사·필요 시 현장확인",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 권원·계획·건축·구조·환경·소방도서를 심사하고 필요한 경우 현장을 확인한다.",
+        "action": "지방 기술부서가 권원·계획·건축·구조·환경·소방도서를 심사하고 필요한 경우 현장을 확인한다.",
+        "outputs": [
+          "기술심사표·현장확인 기록"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "지방 기술심사",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "municipal technical-service study and site inspection where necessary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B24",
+        "lane": "환경·소방·검사기관",
+        "stage": "S5 지방 심사",
+        "label": "건축허가 기술위원회 합동의견",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축허가 기술위원회가 도시계획·환경·국유재산·교통·문화·소방 등 법정 관계기관 의견을 종합해 허가·보완·거부 의견을 낸다.",
+        "action": "건축허가 기술위원회가 도시계획·환경·국유재산·교통·문화·소방 등 법정 관계기관 의견을 종합해 허가·보완·거부 의견을 낸다.",
+        "outputs": [
+          "기술위원회 회의록·합동의견"
         ],
         "authorityIds": [
           "tun-municipality",
           "tun-mehat",
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "위원회 심의",
+            "instrumentId": "TUN-PERMIT-ORDER-2007",
+            "provisions": [
+              "technical permit commission composition and operation"
+            ]
+          },
+          {
+            "source": "위원회 제출",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "presentation to the building-permit technical commission"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B25",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S5 지방 심사",
+        "label": "위원회 보완·관계기관 재협의",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "위원회 지적에 따라 건축·구조·환경·소방도서와 관계기관 승인을 수정·보완해 기술부서에 재제출한다.",
+        "action": "위원회 지적에 따라 건축·구조·환경·소방도서와 관계기관 승인을 수정·보완해 기술부서에 재제출한다.",
+        "outputs": [
+          "수정 허가도서·보완대응표·재심기록"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-anpe"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "법규조건 충족",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "permit only if legal and regulatory conditions are fulfilled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B26",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S6 허가결정",
+        "label": "arrêté 허가·이유부 거부 결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "commune 의장이 위원회 의견 뒤 arrêté de permis de bâtir 또는 이유부 거부를 결정하고 1주 안에 문서를 작성해 등기우편으로 결과를 알린다.",
+        "action": "commune 의장이 위원회 의견 뒤 arrêté de permis de bâtir 또는 이유부 거부를 결정하고 1주 안에 문서를 작성해 등기우편으로 결과를 알린다.",
+        "outputs": [
+          "건축허가 arrêté 또는 이유부 거부통지"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "법정 허가결정",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Articles 68-69"
+            ]
+          },
+          {
+            "source": "결정·통지",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "permit order or reasoned refusal; order within one week of decision; registered-letter notice"
+            ]
+          }
+        ],
+        "gateOrders": [
+          5
+        ]
+      },
+      {
+        "id": "B27",
+        "lane": "건축주·신청인",
+        "stage": "S6 허가결정",
+        "label": "허가세 납부·허가서 수령",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "승인통지를 받은 신청인이 정해진 권리금을 납부하고 통지 후 최대 1개월 안에 허가서·승인도서를 수령한다.",
+        "action": "승인통지를 받은 신청인이 정해진 권리금을 납부하고 통지 후 최대 1개월 안에 허가서·승인도서를 수령한다.",
+        "outputs": [
+          "납부영수증·건축허가서·승인도서"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "납부·교부",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "payment of rights and collection within one month after acceptance notice"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B28",
+        "lane": "건축주·신청인",
+        "stage": "S0 적용·계약",
+        "label": "기술검사·10년책임보험 대상판정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 공사종류와 법정 제외목록을 대조해 인가 기술검사와 intervenants의 10년책임보험 적용 여부를 확정한다.",
+        "action": "건축주가 공사종류와 법정 제외목록을 대조해 인가 기술검사와 intervenants의 10년책임보험 적용 여부를 확정한다.",
+        "outputs": [
+          "기술검사·보험 적용 또는 법정제외 근거"
+        ],
+        "authorityIds": [
+          "tun-technical-control",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "검사·보험 체계",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "Laws 94-9 and 94-10; Decree 95-415 exclusion list"
+            ]
+          },
+          {
+            "source": "현행 법령목록",
+            "instrumentId": "TUN-MEHAT-TECH-CONTROL-CURRENT",
+            "provisions": [
+              "technical control and decennial-insurance texts"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B29",
+        "lane": "건축주·신청인",
+        "stage": "S0 적용·계약",
+        "label": "인가 contrôleur·보험자 계약",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "대상공사의 건축주가 현행 cahier des charges를 충족한 contrôleur technique와 계약하고 설계·시공 참여자의 10년책임보험 증빙을 편성한다.",
+        "action": "대상공사의 건축주가 현행 cahier des charges를 충족한 contrôleur technique와 계약하고 설계·시공 참여자의 10년책임보험 증빙을 편성한다.",
+        "outputs": [
+          "기술검사 계약·자격증빙·보험서류"
+        ],
+        "authorityIds": [
+          "tun-technical-control",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "검사기관 임무·인가",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "Decree 95-416 as amended; controller missions and approval"
+            ]
+          },
+          {
+            "source": "현행 contrôleur 제도",
+            "instrumentId": "TUN-MEHAT-TECH-CONTROL-CURRENT",
+            "provisions": [
+              "31 March 2021 cahier des charges for technical controllers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B30",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 설계검사",
+        "label": "설계·계산서 기술검사 제출",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축사·구조기술자가 구조안전·기초·주요 설계도서와 계산서를 기술검사기관에 제출한다.",
+        "action": "건축사·구조기술자가 구조안전·기초·주요 설계도서와 계산서를 기술검사기관에 제출한다.",
+        "outputs": [
+          "기술검사용 설계·구조·계산서"
+        ],
+        "authorityIds": [
           "tun-technical-control"
         ],
         "requirementIds": [
           "TUN-BLD-REQ-006"
         ],
-        "questionIds": [
-          "TUN-BLD-Q-007",
-          "TUN-BLD-Q-008",
-          "TUN-BLD-Q-009"
-        ],
+        "questionIds": [],
         "refs": [
           {
-            "source": "기술검사·10년책임·점유",
+            "source": "기술검사 임무",
             "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
             "provisions": [
-              "technical control and mandatory decennial-liability insurance; exemptions by implementing decree"
+              "technical-controller design-review mission under Law 94-9 and Decree 95-416"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B31",
+        "lane": "환경·소방·검사기관",
+        "stage": "S1 설계검사",
+        "label": "구조안전·기술설계 의견 발행",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "인가 기술검사기관이 구조안전과 법정 검사범위의 설계를 검토해 적합의견 또는 지적사항을 발행한다.",
+        "action": "인가 기술검사기관이 구조안전과 법정 검사범위의 설계를 검토해 적합의견 또는 지적사항을 발행한다.",
+        "outputs": [
+          "설계 기술검사의견·지적목록"
+        ],
+        "authorityIds": [
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "contrôleur 임무",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "Decree 95-416 controller missions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B32",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S1 설계검사",
+        "label": "설계지적 시정·재검토",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "설계자가 검사기관 지적을 반영해 구조·재료·상세·계산서를 수정하고 재검토를 받는다.",
+        "action": "설계자가 검사기관 지적을 반영해 구조·재료·상세·계산서를 수정하고 재검토를 받는다.",
+        "outputs": [
+          "수정 설계·지적 종결기록"
+        ],
+        "authorityIds": [
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "검사의견 반영",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "technical-control opinions throughout design and execution"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B33",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 시공검사",
+        "label": "허가번호 현장표지·승인도서 착공",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "시공자가 현장 입구에 허가번호·일자·발급장소를 표시하고 허가도서와 기술검사의견에 따라 공사를 시작한다.",
+        "action": "시공자가 현장 입구에 허가번호·일자·발급장소를 표시하고 허가도서와 기술검사의견에 따라 공사를 시작한다.",
+        "outputs": [
+          "현장 허가표지·승인도서 관리기록"
+        ],
+        "authorityIds": [
+          "tun-municipality",
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "현장 허가표지",
+            "instrumentId": "TUN-SICAD-BUILDING-PERMIT",
+            "provisions": [
+              "mandatory site sign with permit number, date and place of issue"
             ]
           },
           {
-            "source": "기술검사·10년책임·점유",
-            "instrumentId": "TUN-CATU-94-122",
+            "source": "시공 기술검사",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
             "provisions": [
-              "construction control and municipal completion enforcement"
+              "technical control during execution"
             ]
           }
+        ]
+      },
+      {
+        "id": "B34",
+        "lane": "환경·소방·검사기관",
+        "stage": "S2 시공검사",
+        "label": "주요 공정 현장 기술검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "기술검사기관이 계약·법정범위에 따라 기초·구조·주요 공정의 승인도서 적합성과 시공품질을 확인해 검사보고를 발행한다.",
+        "action": "기술검사기관이 계약·법정범위에 따라 기초·구조·주요 공정의 승인도서 적합성과 시공품질을 확인해 검사보고를 발행한다.",
+        "outputs": [
+          "공정별 기술검사보고·적합 또는 지적"
+        ],
+        "authorityIds": [
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "시공단계 검사",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "Law 94-9; Decree 95-416 technical-controller execution mission"
+            ]
+          },
+          {
+            "source": "현행 등록검사기관",
+            "instrumentId": "TUN-MEHAT-TECH-CONTROL-CURRENT",
+            "provisions": [
+              "current technical-controller cahier des charges"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B35",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S2 시공검사",
+        "label": "시공부적합 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "시공자가 검사 지적을 시정하고 시험·사진·수정도서를 제출해 해당 공정의 재검사를 받는다.",
+        "action": "시공자가 검사 지적을 시정하고 시험·사진·수정도서를 제출해 해당 공정의 재검사를 받는다.",
+        "outputs": [
+          "시정완료 증빙·재검사 적합기록"
+        ],
+        "authorityIds": [
+          "tun-technical-control"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "기술검사 의견",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "technical-control opinions and corrective follow-up"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B36",
+        "lane": "환경·소방·검사기관",
+        "stage": "S3 준공검사",
+        "label": "최종 기술검사·보험 증빙 종결",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "공사완료 시 기술검사기관이 미해결 지적과 주요 구조 적합성을 종결하고 건축주가 적용대상 참여자의 10년책임보험 증빙을 취합한다.",
+        "action": "공사완료 시 기술검사기관이 미해결 지적과 주요 구조 적합성을 종결하고 건축주가 적용대상 참여자의 10년책임보험 증빙을 취합한다.",
+        "outputs": [
+          "최종 기술검사보고·보험증빙 묶음"
+        ],
+        "authorityIds": [
+          "tun-technical-control",
+          "tun-mehat"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "최종 검사·책임보험",
+            "instrumentId": "TUN-TECH-CONTROL-INSURANCE-1994",
+            "provisions": [
+              "Laws 94-9 and 94-10; technical control and decennial-liability insurance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B37",
+        "lane": "건축주·신청인",
+        "stage": "S3 준공검사",
+        "label": "준공 적합확인·récolement 신청",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 완공도서와 허가도서·기술검사 기록을 갖춰 관할 commune에 공사완료 적합확인을 신청한다.",
+        "action": "건축주가 완공도서와 허가도서·기술검사 기록을 갖춰 관할 commune에 공사완료 적합확인을 신청한다.",
+        "outputs": [
+          "récolement 신청·완공도서"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "완공 후 적합확인",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Article 73"
+            ]
+          },
+          {
+            "source": "점유허가 선행 PV",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "prior procès-verbal de récolement or as-built plans"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B38",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S3 준공검사",
+        "label": "허가도서 대비 준공현장 검사",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 완공 공사를 허가서 첨부도면과 대조해 배치·용도·구조·외관 등 허가내용의 준수 여부를 확인한다.",
+        "action": "지방 기술부서가 완공 공사를 허가서 첨부도면과 대조해 배치·용도·구조·외관 등 허가내용의 준수 여부를 확인한다.",
+        "outputs": [
+          "준공현장 검사기록·적합 또는 차이목록"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "récolement 검사",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Article 73; post-work inspection against permit plans"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B39",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S3 준공검사",
+        "label": "준공차이 시정·as-built·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "허가도서와 다른 공사는 시정하거나 실제시공도서를 제출해 적법화한 뒤 지방 기술부서의 재검사를 받는다.",
+        "action": "허가도서와 다른 공사는 시정하거나 실제시공도서를 제출해 적법화한 뒤 지방 기술부서의 재검사를 받는다.",
+        "outputs": [
+          "시정공사·plans conformes·재검사 기록"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "불일치 시 실제시공도서",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "plans conforming to executed works where the building permit was not respected"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B40",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S4 PV 결정",
+        "label": "P.V. de récolement 발행",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 완공 공사의 허가도서 적합성을 확인해 procès-verbal de récolement를 발행하거나 미비를 통지한다.",
+        "action": "지방 기술부서가 완공 공사의 허가도서 적합성을 확인해 procès-verbal de récolement를 발행하거나 미비를 통지한다.",
+        "outputs": [
+          "P.V. de récolement 또는 시정통지"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "준공 적합확인",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Articles 73-74"
+            ]
+          },
+          {
+            "source": "점유허가 전제",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "prior P.V. de récolement"
+            ]
+          }
+        ],
+        "gateOrders": [
+          6
+        ]
+      },
+      {
+        "id": "B41",
+        "lane": "건축주·신청인",
+        "stage": "S5 점유검사",
+        "label": "점유허가 신청·PV·납세증명 제출",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "건축주가 commune 의장 앞으로 신청서, P.V. de récolement 또는 적법한 plans conformes, 지방 부동산세 납부증명을 제출한다.",
+        "action": "건축주가 commune 의장 앞으로 신청서, P.V. de récolement 또는 적법한 plans conformes, 지방 부동산세 납부증명을 제출한다.",
+        "outputs": [
+          "permis d'occupation 신청접수"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "점유허가 서류",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "application; P.V. de récolement or as-built plans; local property-tax certificate"
+            ]
+          },
+          {
+            "source": "점유허가 근거",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Article 74"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B42",
+        "lane": "환경·소방·검사기관",
+        "stage": "S5 점유검사",
+        "label": "점유현장 검사·공중이용시설 합동확인",
+        "emphasis": "bottleneck",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "지방 기술부서가 건물을 현장확인하고, 공중이용시설은 국가민방위가 포함된 전문 기술위원회가 안전·점유 적합성을 확인한다.",
+        "action": "지방 기술부서가 건물을 현장확인하고, 공중이용시설은 국가민방위가 포함된 전문 기술위원회가 안전·점유 적합성을 확인한다.",
+        "outputs": [
+          "점유검사 기록·전문위원회 의견"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "점유검사·전문위원회",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "local technical-service inspection; specialized commission including Civil Protection for premises open to the public"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B43",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "S5 점유검사",
+        "label": "점유검사 지적 시정·재검사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "점유검사 또는 전문위원회 지적을 시정하고 증빙을 보완해 commune에 재검사를 신청한다.",
+        "action": "점유검사 또는 전문위원회 지적을 시정하고 증빙을 보완해 commune에 재검사를 신청한다.",
+        "outputs": [
+          "시정완료 증빙·점유 재검사 기록"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "점유조건 검증",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "permit issued after construction inspection and verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B44",
+        "lane": "건축주·신청인",
+        "stage": "S6 점유결정",
+        "label": "점유허가 수수료 납부",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "적합확인 뒤 건축주가 지방자치단체가 부과한 점유허가 권리금을 납부한다.",
+        "action": "적합확인 뒤 건축주가 지방자치단체가 부과한 점유허가 권리금을 납부한다.",
+        "outputs": [
+          "점유허가 납부영수증"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "권리금 확인·납부",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "delivery after verification of payment of the amount due"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B45",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "S6 점유결정",
+        "label": "permis d'occupation 공식결정",
+        "emphasis": "key",
+        "kind": "official-guidance",
+        "basisScope": "axis",
+        "note": "commune이 신청일로부터 2개월 안에 적합검사와 납부를 확인해 점유허가를 교부하거나 보완·미발급 사유를 통지한다.",
+        "action": "commune이 신청일로부터 2개월 안에 적합검사와 납부를 확인해 점유허가를 교부하거나 보완·미발급 사유를 통지한다.",
+        "outputs": [
+          "permis d'occupation 또는 보완·거부통지"
+        ],
+        "authorityIds": [
+          "tun-municipality"
+        ],
+        "requirementIds": [
+          "TUN-BLD-REQ-006"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "점유허가 교부",
+            "instrumentId": "TUN-SICAD-OCCUPANCY",
+            "provisions": [
+              "delivery within two months of application after inspection and payment"
+            ]
+          },
+          {
+            "source": "점유허가",
+            "instrumentId": "TUN-CATU-94-122",
+            "provisions": [
+              "Article 74"
+            ]
+          }
+        ],
+        "gateOrders": [
+          7
         ]
       }
     ],
     "edges": [
       {
-        "id": "BX05",
+        "id": "BS04-01",
         "source": "B01",
         "target": "B02",
+        "type": "sequence",
+        "label": "필지심사"
+      },
+      {
+        "id": "BS04-02",
+        "source": "B02",
+        "target": "B03",
+        "type": "sequence",
+        "label": "적법 필지"
+      },
+      {
+        "id": "BS04-03",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "PAU 유무"
+      },
+      {
+        "id": "BS04-04",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "적용규정"
+      },
+      {
+        "id": "BS04-05",
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "특별승인"
+      },
+      {
+        "id": "BS04-06",
+        "source": "B06",
+        "target": "B07",
+        "type": "sequence",
+        "label": "설계조건"
+      },
+      {
+        "id": "BS04-07",
+        "source": "B07",
+        "target": "B08",
+        "type": "sequence",
+        "label": "허가접수"
+      },
+      {
+        "id": "BS04-08",
+        "source": "B08",
+        "target": "B09",
+        "type": "sequence",
+        "label": "기술심사"
+      },
+      {
+        "id": "BS04-09",
+        "source": "B09",
+        "target": "B11",
+        "type": "sequence",
+        "label": "적합의견"
+      },
+      {
+        "id": "BS04-10",
+        "source": "B09",
+        "target": "B10",
+        "type": "message",
+        "label": "도시계획 보완"
+      },
+      {
+        "id": "BS04-11",
+        "source": "B10",
+        "target": "B09",
+        "type": "loop",
+        "label": "위원회 재심"
+      },
+      {
+        "id": "BX05",
+        "source": "B11",
+        "target": "B12",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
+        "id": "BS05-01",
+        "source": "B12",
+        "target": "B13",
+        "type": "sequence",
+        "label": "환경분류"
+      },
+      {
+        "id": "BS05-02",
+        "source": "B13",
+        "target": "B14",
+        "type": "message",
+        "label": "Annex II"
+      },
+      {
+        "id": "BS05-03",
+        "source": "B13",
+        "target": "B15",
+        "type": "message",
+        "label": "Annex I"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B14",
+        "target": "B21",
+        "type": "sequence",
+        "label": "cahier 이행"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B15",
+        "target": "B16",
+        "type": "sequence",
+        "label": "EIE 작성"
+      },
+      {
+        "id": "BS05-06",
+        "source": "B16",
+        "target": "B17",
+        "type": "sequence",
+        "label": "ANPE 제출"
+      },
+      {
+        "id": "BS05-07",
+        "source": "B17",
+        "target": "B18",
+        "type": "sequence",
+        "label": "기술심사"
+      },
+      {
+        "id": "BS05-08",
+        "source": "B18",
+        "target": "B20",
+        "type": "sequence",
+        "label": "비반대"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B18",
+        "target": "B19",
+        "type": "message",
+        "label": "추가조사"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B19",
+        "target": "B18",
+        "type": "loop",
+        "label": "ANPE 재심"
+      },
+      {
+        "id": "BS05-11",
+        "source": "B20",
+        "target": "B21",
+        "type": "sequence",
+        "label": "환경결정"
+      },
+      {
+        "id": "BS05-12",
+        "source": "B21",
+        "target": "B22",
+        "type": "sequence",
+        "label": "완비접수"
+      },
+      {
+        "id": "BS05-13",
+        "source": "B22",
+        "target": "B23",
+        "type": "sequence",
+        "label": "서류·현장"
+      },
+      {
+        "id": "BS05-14",
+        "source": "B23",
+        "target": "B24",
+        "type": "sequence",
+        "label": "위원회"
+      },
+      {
+        "id": "BS05-15",
+        "source": "B24",
+        "target": "B26",
+        "type": "sequence",
+        "label": "허가의견"
+      },
+      {
+        "id": "BS05-16",
+        "source": "B24",
+        "target": "B25",
+        "type": "message",
+        "label": "허가보완"
+      },
+      {
+        "id": "BS05-17",
+        "source": "B25",
+        "target": "B24",
+        "type": "loop",
+        "label": "위원회 재심"
+      },
+      {
+        "id": "BS05-18",
+        "source": "B26",
+        "target": "B27",
+        "type": "sequence",
+        "label": "승인통지"
+      },
+      {
         "id": "BX06",
-        "source": "B02",
-        "target": "B03",
+        "source": "B27",
+        "target": "B28",
         "type": "message",
         "label": "다음 제도축 입력"
+      },
+      {
+        "id": "BS06-01",
+        "source": "B28",
+        "target": "B29",
+        "type": "sequence",
+        "label": "적용대상"
+      },
+      {
+        "id": "BS06-02",
+        "source": "B29",
+        "target": "B30",
+        "type": "sequence",
+        "label": "설계제출"
+      },
+      {
+        "id": "BS06-03",
+        "source": "B30",
+        "target": "B31",
+        "type": "sequence",
+        "label": "설계검사"
+      },
+      {
+        "id": "BS06-04",
+        "source": "B31",
+        "target": "B33",
+        "type": "sequence",
+        "label": "적합의견"
+      },
+      {
+        "id": "BS06-05",
+        "source": "B31",
+        "target": "B32",
+        "type": "message",
+        "label": "설계보완"
+      },
+      {
+        "id": "BS06-06",
+        "source": "B32",
+        "target": "B31",
+        "type": "loop",
+        "label": "설계 재검토"
+      },
+      {
+        "id": "BS06-07",
+        "source": "B33",
+        "target": "B34",
+        "type": "sequence",
+        "label": "현장검사"
+      },
+      {
+        "id": "BS06-08",
+        "source": "B34",
+        "target": "B36",
+        "type": "sequence",
+        "label": "공정적합"
+      },
+      {
+        "id": "BS06-09",
+        "source": "B34",
+        "target": "B35",
+        "type": "message",
+        "label": "시공시정"
+      },
+      {
+        "id": "BS06-10",
+        "source": "B35",
+        "target": "B34",
+        "type": "loop",
+        "label": "공정 재검사"
+      },
+      {
+        "id": "BS06-11",
+        "source": "B36",
+        "target": "B37",
+        "type": "sequence",
+        "label": "준공신청"
+      },
+      {
+        "id": "BS06-12",
+        "source": "B37",
+        "target": "B38",
+        "type": "sequence",
+        "label": "récolement"
+      },
+      {
+        "id": "BS06-13",
+        "source": "B38",
+        "target": "B40",
+        "type": "sequence",
+        "label": "준공적합"
+      },
+      {
+        "id": "BS06-14",
+        "source": "B38",
+        "target": "B39",
+        "type": "message",
+        "label": "준공차이"
+      },
+      {
+        "id": "BS06-15",
+        "source": "B39",
+        "target": "B38",
+        "type": "loop",
+        "label": "준공 재검사"
+      },
+      {
+        "id": "BS06-16",
+        "source": "B40",
+        "target": "B41",
+        "type": "sequence",
+        "label": "점유신청"
+      },
+      {
+        "id": "BS06-17",
+        "source": "B41",
+        "target": "B42",
+        "type": "sequence",
+        "label": "점유검사"
+      },
+      {
+        "id": "BS06-18",
+        "source": "B42",
+        "target": "B44",
+        "type": "sequence",
+        "label": "점유적합"
+      },
+      {
+        "id": "BS06-19",
+        "source": "B42",
+        "target": "B43",
+        "type": "message",
+        "label": "점유보완"
+      },
+      {
+        "id": "BS06-20",
+        "source": "B43",
+        "target": "B42",
+        "type": "loop",
+        "label": "점유 재검사"
+      },
+      {
+        "id": "BS06-21",
+        "source": "B44",
+        "target": "B45",
+        "type": "sequence",
+        "label": "수수료 납부"
       }
     ]
   },
@@ -193,14 +1952,24 @@
       "id": "site-urban",
       "slug": "tunisia-site-urban-construction-regulations",
       "priority": 4,
-      "name": "튀니지 도시계획·부지규제",
+      "name": "튀니지 필지·도시계획 적합 및 건축허가 결정",
       "oneLiner": "권원·PAU와 RGU를 대조해 필지별 용도·밀도·높이·이격·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "MEHAT의 CATU·RGU·PAU 공식 체계를 확인했다. 필지별 지표·재해·유틸리티는 현지 확인 대상이다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "MEHAT의 CATU·RGU·PAU 공식 체계를 확인했다. 필지별 지표·재해·유틸리티는 현지 확인 대상이다.",
+      "verificationScope": "CATU·RGU와 SICAD 현행 허가안내를 대조해 권원·승인 lotissement·PAU 용도·보호구역·alignment·servitude를 기술위원회와 허가권자가 판단하는 실제 순서로 구성했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "관할 commune 안의 일반 건축사업을 기준으로, 필지 권원과 승인 lotissement·PAU 또는 RGU 조건을 허가도서에 반영해 지방자치단체의 공식 결정을 받는 절차다.",
       "nodeIds": [
-        "B01"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10",
+        "B11"
       ],
       "requirementIds": [
         "TUN-BLD-REQ-004"
@@ -221,21 +1990,130 @@
         "TUN-BLD-F-002",
         "TUN-BLD-F-003"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M04-E01",
+          "source": "B01",
+          "target": "B02",
+          "type": "sequence",
+          "label": "필지심사"
+        },
+        {
+          "id": "M04-E02",
+          "source": "B02",
+          "target": "B03",
+          "type": "sequence",
+          "label": "적법 필지"
+        },
+        {
+          "id": "M04-E03",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "PAU 유무"
+        },
+        {
+          "id": "M04-E04",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "적용규정"
+        },
+        {
+          "id": "M04-E05",
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "특별승인"
+        },
+        {
+          "id": "M04-E06",
+          "source": "B06",
+          "target": "B07",
+          "type": "sequence",
+          "label": "설계조건"
+        },
+        {
+          "id": "M04-E07",
+          "source": "B07",
+          "target": "B08",
+          "type": "sequence",
+          "label": "허가접수"
+        },
+        {
+          "id": "M04-E08",
+          "source": "B08",
+          "target": "B09",
+          "type": "sequence",
+          "label": "기술심사"
+        },
+        {
+          "id": "M04-E09",
+          "source": "B09",
+          "target": "B11",
+          "type": "sequence",
+          "label": "적합의견"
+        },
+        {
+          "id": "M04-E10",
+          "source": "B09",
+          "target": "B10",
+          "type": "message",
+          "label": "도시계획 보완"
+        },
+        {
+          "id": "M04-E11",
+          "source": "B10",
+          "target": "B09",
+          "type": "loop",
+          "label": "위원회 재심"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "도시계획 적합 허가",
+          "action": "허가세 납부 후 승인도서·조건과 허가표지를 기준으로 착공"
+        },
+        {
+          "state": "rework",
+          "label": "PAU·RGU·servitude 보완",
+          "action": "위원회 의견에 따라 배치·용도·도서 또는 선행승인을 보완해 재심"
+        },
+        {
+          "state": "reject",
+          "label": "필지·용도 부적합",
+          "action": "미승인 분할을 정리하거나 입지·용도·규모를 변경해 신규 신청"
+        }
+      ]
     },
     {
       "id": "permit-environment",
       "slug": "tunisia-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "튀니지 건축허가·환경심사",
+      "name": "튀니지 ANPE 환경절차·commune 건축허가",
       "oneLiner": "commune의 permis de bâtir와 ANPE의 EIE 또는 환경 cahier des charges를 유형·입지별로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "MEHAT 허가규정 목록과 환경부의 2005 환경평가 체계를 확인했다. 최신 개정·수수료·실제 기간은 접수기관에 재확인한다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "MEHAT 허가규정 목록과 환경부의 2005 환경평가 체계를 확인했다. 최신 개정·수수료·실제 기간은 접수기관에 재확인한다.",
+      "verificationScope": "ANPE 현행 Annex I EIE·Annex II cahier des charges 분기와 EIE 반대통지·묵시동의 Gate를, SICAD의 완비도서·현장확인·기술위원회·허가/거부·납부 순서와 연결했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "환경절차 대상 사업은 ANPE 경로를 다른 행정허가 전에 완료하고, 그 결과와 소방·구조·권원도서를 지방자치단체 허가절차에 제출한다.",
       "nodeIds": [
-        "B02"
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27"
       ],
       "requirementIds": [
         "TUN-BLD-REQ-005"
@@ -254,21 +2132,181 @@
         "TUN-BLD-F-005",
         "TUN-BLD-F-006"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M05-E01",
+          "source": "B12",
+          "target": "B13",
+          "type": "sequence",
+          "label": "환경분류"
+        },
+        {
+          "id": "M05-E02",
+          "source": "B13",
+          "target": "B14",
+          "type": "message",
+          "label": "Annex II"
+        },
+        {
+          "id": "M05-E03",
+          "source": "B13",
+          "target": "B15",
+          "type": "message",
+          "label": "Annex I"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B14",
+          "target": "B21",
+          "type": "sequence",
+          "label": "cahier 이행"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B15",
+          "target": "B16",
+          "type": "sequence",
+          "label": "EIE 작성"
+        },
+        {
+          "id": "M05-E06",
+          "source": "B16",
+          "target": "B17",
+          "type": "sequence",
+          "label": "ANPE 제출"
+        },
+        {
+          "id": "M05-E07",
+          "source": "B17",
+          "target": "B18",
+          "type": "sequence",
+          "label": "기술심사"
+        },
+        {
+          "id": "M05-E08",
+          "source": "B18",
+          "target": "B20",
+          "type": "sequence",
+          "label": "비반대"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B18",
+          "target": "B19",
+          "type": "message",
+          "label": "추가조사"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B19",
+          "target": "B18",
+          "type": "loop",
+          "label": "ANPE 재심"
+        },
+        {
+          "id": "M05-E11",
+          "source": "B20",
+          "target": "B21",
+          "type": "sequence",
+          "label": "환경결정"
+        },
+        {
+          "id": "M05-E12",
+          "source": "B21",
+          "target": "B22",
+          "type": "sequence",
+          "label": "완비접수"
+        },
+        {
+          "id": "M05-E13",
+          "source": "B22",
+          "target": "B23",
+          "type": "sequence",
+          "label": "서류·현장"
+        },
+        {
+          "id": "M05-E14",
+          "source": "B23",
+          "target": "B24",
+          "type": "sequence",
+          "label": "위원회"
+        },
+        {
+          "id": "M05-E15",
+          "source": "B24",
+          "target": "B26",
+          "type": "sequence",
+          "label": "허가의견"
+        },
+        {
+          "id": "M05-E16",
+          "source": "B24",
+          "target": "B25",
+          "type": "message",
+          "label": "허가보완"
+        },
+        {
+          "id": "M05-E17",
+          "source": "B25",
+          "target": "B24",
+          "type": "loop",
+          "label": "위원회 재심"
+        },
+        {
+          "id": "M05-E18",
+          "source": "B26",
+          "target": "B27",
+          "type": "sequence",
+          "label": "승인통지"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "환경 비반대·건축허가",
+          "action": "환경·허가조건과 승인도서에 따라 현장표지를 설치하고 착공"
+        },
+        {
+          "state": "rework",
+          "label": "EIE·허가도서 보완",
+          "action": "ANPE 또는 기술위원회 의견을 반영해 해당 심사단계로 재제출"
+        },
+        {
+          "state": "reject",
+          "label": "환경 반대·허가 거부",
+          "action": "공식 사유에 따라 입지·시설유형·규모·설계를 변경해 환경분류 또는 허가부터 재신청"
+        }
+      ]
     },
     {
       "id": "control-completion",
       "slug": "tunisia-control-completion-construction-regulations",
       "priority": 6,
-      "name": "튀니지 기술검사·보험·준공제도",
+      "name": "튀니지 기술검사·récolement·점유허가",
       "oneLiner": "등록 건축사·기술검사와 법정 10년책임보험, récolement·permis d'occuper를 인계 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "MEHAT의 현행 기술검사·10년책임보험 법령목록과 인가서비스를 확인했다. 완료서류 명칭·절차와 보험비는 commune·검사기관·보험사에 확인한다.",
-      "procedureStatus": "detail-unverified",
-      "procedureScope": "MEHAT의 현행 기술검사·10년책임보험 법령목록과 인가서비스를 확인했다. 완료서류 명칭·절차와 보험비는 commune·검사기관·보험사에 확인한다.",
+      "verificationScope": "법률 제94-9·94-10호와 MEHAT 현행 기술검사기관 제도, CATU 제73·74조 및 SICAD 2025 현행 점유허가 절차를 연결해 기술검사·시정·récolement·점유허가의 법정 Gate를 분리했다.",
+      "procedureStatus": "article-verified",
+      "procedureScope": "법정대상 건축공사의 인가 기술검사·10년책임보험부터 지방 기술부서의 준공 적합확인과 permis d'occupation까지를 표시한다.",
       "nodeIds": [
-        "B03"
+        "B28",
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36",
+        "B37",
+        "B38",
+        "B39",
+        "B40",
+        "B41",
+        "B42",
+        "B43",
+        "B44",
+        "B45"
       ],
       "requirementIds": [
         "TUN-BLD-REQ-006"
@@ -287,8 +2325,172 @@
         "TUN-BLD-F-008",
         "TUN-BLD-F-009"
       ],
-      "edges": [],
-      "decisionBranches": []
+      "edges": [
+        {
+          "id": "M06-E01",
+          "source": "B28",
+          "target": "B29",
+          "type": "sequence",
+          "label": "적용대상"
+        },
+        {
+          "id": "M06-E02",
+          "source": "B29",
+          "target": "B30",
+          "type": "sequence",
+          "label": "설계제출"
+        },
+        {
+          "id": "M06-E03",
+          "source": "B30",
+          "target": "B31",
+          "type": "sequence",
+          "label": "설계검사"
+        },
+        {
+          "id": "M06-E04",
+          "source": "B31",
+          "target": "B33",
+          "type": "sequence",
+          "label": "적합의견"
+        },
+        {
+          "id": "M06-E05",
+          "source": "B31",
+          "target": "B32",
+          "type": "message",
+          "label": "설계보완"
+        },
+        {
+          "id": "M06-E06",
+          "source": "B32",
+          "target": "B31",
+          "type": "loop",
+          "label": "설계 재검토"
+        },
+        {
+          "id": "M06-E07",
+          "source": "B33",
+          "target": "B34",
+          "type": "sequence",
+          "label": "현장검사"
+        },
+        {
+          "id": "M06-E08",
+          "source": "B34",
+          "target": "B36",
+          "type": "sequence",
+          "label": "공정적합"
+        },
+        {
+          "id": "M06-E09",
+          "source": "B34",
+          "target": "B35",
+          "type": "message",
+          "label": "시공시정"
+        },
+        {
+          "id": "M06-E10",
+          "source": "B35",
+          "target": "B34",
+          "type": "loop",
+          "label": "공정 재검사"
+        },
+        {
+          "id": "M06-E11",
+          "source": "B36",
+          "target": "B37",
+          "type": "sequence",
+          "label": "준공신청"
+        },
+        {
+          "id": "M06-E12",
+          "source": "B37",
+          "target": "B38",
+          "type": "sequence",
+          "label": "récolement"
+        },
+        {
+          "id": "M06-E13",
+          "source": "B38",
+          "target": "B40",
+          "type": "sequence",
+          "label": "준공적합"
+        },
+        {
+          "id": "M06-E14",
+          "source": "B38",
+          "target": "B39",
+          "type": "message",
+          "label": "준공차이"
+        },
+        {
+          "id": "M06-E15",
+          "source": "B39",
+          "target": "B38",
+          "type": "loop",
+          "label": "준공 재검사"
+        },
+        {
+          "id": "M06-E16",
+          "source": "B40",
+          "target": "B41",
+          "type": "sequence",
+          "label": "점유신청"
+        },
+        {
+          "id": "M06-E17",
+          "source": "B41",
+          "target": "B42",
+          "type": "sequence",
+          "label": "점유검사"
+        },
+        {
+          "id": "M06-E18",
+          "source": "B42",
+          "target": "B44",
+          "type": "sequence",
+          "label": "점유적합"
+        },
+        {
+          "id": "M06-E19",
+          "source": "B42",
+          "target": "B43",
+          "type": "message",
+          "label": "점유보완"
+        },
+        {
+          "id": "M06-E20",
+          "source": "B43",
+          "target": "B42",
+          "type": "loop",
+          "label": "점유 재검사"
+        },
+        {
+          "id": "M06-E21",
+          "source": "B44",
+          "target": "B45",
+          "type": "sequence",
+          "label": "수수료 납부"
+        }
+      ],
+      "decisionBranches": [
+        {
+          "state": "success",
+          "label": "PV·점유허가 발급",
+          "action": "permis d'occupation과 최종 검사·보험자료를 수령한 뒤 시설 사용·인계"
+        },
+        {
+          "state": "rework",
+          "label": "설계·시공·준공 보완",
+          "action": "기술검사 또는 commune 지적을 시정해 해당 검사단계로 복귀"
+        },
+        {
+          "state": "reject",
+          "label": "준공부적합·점유불가",
+          "action": "무허가 변경을 철거·시정 또는 적법화하고 P.V. de récolement부터 재신청"
+        }
+      ]
     }
   ],
   "authorities": [
@@ -330,50 +2532,104 @@
       "title": "Code de l'Amenagement du Territoire et de l'Urbanisme — Law No. 94-122 of 28 November 1994, as amended",
       "titleKo": "국토정비·도시계획법전(CATU), 법률 제94-122호(개정 포함)",
       "kind": "code",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "1994-11-28",
       "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/amenagement-du-territoire/reglementation-damenagement-du-territoire/",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MEHAT's current official urbanism and habitat registers continue to list Law No. 94-122 and its amendments as the governing territorial-planning and urbanism code."
     },
     {
       "id": "TUN-RGU-99-2253",
       "title": "Reglement general d'urbanisme — Decree No. 99-2253, as amended",
       "titleKo": "일반도시계획규정(RGU), 시행령 제99-2253호(개정 포함)",
       "kind": "regulation",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/urbanisme/reglementation-urbanisme/",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MEHAT's current official urbanism register continues to list Decree No. 99-2253, including subsequent amendments, as the general urbanism regulation."
     },
     {
       "id": "TUN-PERMIT-ORDER-2007",
       "title": "Order of 17 April 2007 on building-permit files, validity, renewal and technical commissions",
       "titleKo": "2007년 4월 17일 건축허가 서류·유효기간·갱신·기술위원회 명령",
       "kind": "regulation",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "2007-04-17",
       "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/habitat/reglementation-habitat/",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MEHAT's current official habitat register continues to list both 17 April 2007 orders, while the current SICAD building-permit service applies the dossier, commission, validity and renewal rules."
     },
     {
       "id": "TUN-EIA-DECREE-2005-1991",
       "title": "Decree No. 2005-1991 of 11 July 2005 on environmental impact assessment and listed units",
       "titleKo": "환경영향평가·대상시설 시행령 제2005-1991호",
       "kind": "regulation",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "2005-07-11",
       "officialUrl": "https://environnement.gov.tn/ministere/cadre-juridique-et-institutionnel",
       "verificationLevel": "law-linked",
-      "note": "Annex I EIE와 Annex II 환경 cahier des charges 경로의 기본 규정이다. 환경부는 개정 필요성을 공표하고 있으므로 접수 시 최신 문안을 확인한다."
+      "note": "Annex I EIE와 Annex II 환경 cahier des charges 경로의 기본 규정이다. 환경부는 개정 필요성을 공표하고 있으므로 접수 시 최신 문안을 확인한다.",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "ANPE's current official EIA service continues to apply Decree No. 2005-1991, its Annex I EIA categories, Annex II cahiers des charges and statutory review periods."
     },
     {
       "id": "TUN-TECH-CONTROL-INSURANCE-1994",
       "title": "Laws No. 94-9 and 94-10 of 31 January 1994 and implementing decrees on technical control and decennial insurance",
       "titleKo": "기술검사·10년책임보험 법률 제94-9·94-10호 및 시행령",
       "kind": "act",
-      "status": "continuity_unverified",
+      "status": "in_force",
       "issuedOn": "1994-01-31",
       "officialUrl": "https://www.mehat.gov.tn/fr/principaux-secteurs/batiments-civils/reglementation-batiments-civils/",
-      "verificationLevel": "law-linked"
+      "verificationLevel": "law-linked",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MEHAT's current official civil-buildings register continues to list Laws No. 94-9 and 94-10, Decrees No. 95-415 and 95-416 and the 2010 amendment governing technical control and decennial insurance."
+    },
+    {
+      "id": "TUN-SICAD-BUILDING-PERMIT",
+      "title": "SICAD current building-permit service",
+      "titleKo": "SICAD 현행 건축허가 서비스",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Tunisian government SICAD portal currently publishes the required conditions, dossier, municipal review, technical-commission opinion, decision, notice, payment and collection steps.",
+      "officialUrl": "https://www.sicad.gov.tn/Fr/Prestations_57_3_D609",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TUN-ANPE-EIA-CURRENT",
+      "title": "ANPE current environmental-impact assessment procedure",
+      "titleKo": "ANPE 현행 환경영향평가 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "ANPE currently publishes the Annex I/Annex II screening rule, minimum EIA contents, specialist-preparation requirement and opposition/non-opposition review periods.",
+      "officialUrl": "https://www.anpe.nat.tn/fr/fr/Fr/etude-deimpact-sur-leenvironnement_11_165",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TUN-SICAD-OCCUPANCY",
+      "title": "SICAD current occupation-permit service",
+      "titleKo": "SICAD 현행 점유허가 서비스",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "The Tunisian government SICAD portal currently publishes the completion-conformity prerequisite, application documents, municipal inspection, public-building specialist commission and two-month occupation-permit route.",
+      "officialUrl": "https://www.sicad.gov.tn/Fr/Permis-doccupation_57_3_D2053",
+      "verificationLevel": "source-linked"
+    },
+    {
+      "id": "TUN-MEHAT-TECH-CONTROL-CURRENT",
+      "title": "MEHAT current technical-controller regime and register",
+      "titleKo": "MEHAT 현행 기술검사기관 제도·등록 안내",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "MEHAT's current official service continues the 31 March 2021 cahier-des-charges regime for technical controllers and publishes the governing technical-control and insurance texts.",
+      "officialUrl": "https://www.mehat.gov.tn/fr/services/cahiers-des-charges-en-ligne/",
+      "verificationLevel": "source-linked"
     }
   ],
   "requirements": [
@@ -485,7 +2741,65 @@
       "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
-  "permitPath": [],
+  "permitPath": [
+    {
+      "order": 1,
+      "gate": "필지·lotissement 법정상태 판정",
+      "decision": "지방 기술부서가 소유권과 승인 lotissement를 확인해 건축심사를 진행시키거나 선행 토지정리·분할승인을 요구한다.",
+      "dependsOn": [],
+      "output": "필지 적법성 확인 또는 선행절차 통지"
+    },
+    {
+      "order": 2,
+      "gate": "commune 도시계획·건축허가 공식결정",
+      "decision": "commune 의장이 기술위원회 의견을 받아 PAU·RGU·lotissement·보호·servitude 적합성에 따라 허가 또는 이유부 거부를 결정한다.",
+      "dependsOn": [
+        1
+      ],
+      "output": "arrêté de permis de bâtir 또는 이유부 거부"
+    },
+    {
+      "order": 3,
+      "gate": "ANPE 환경절차 유형결정",
+      "decision": "ANPE가 사업·입지에 적용되는 EIE A·B, cahier des charges 또는 비대상 경로를 확정한다.",
+      "dependsOn": [],
+      "output": "환경절차 유형·요구도서"
+    },
+    {
+      "order": 4,
+      "gate": "ANPE EIE 비반대·반대 결정",
+      "decision": "ANPE가 EIE에 반대통지를 하거나 법정기간 경과로 비반대·묵시동의가 성립한다.",
+      "dependsOn": [
+        3
+      ],
+      "output": "환경 비반대·묵시동의 또는 이유부 반대"
+    },
+    {
+      "order": 5,
+      "gate": "commune 건축허가 공식결정",
+      "decision": "commune 의장이 기술위원회 의견과 환경·소방·계획조건을 종합해 허가 또는 이유부 거부를 공식 결정한다.",
+      "dependsOn": [
+        4
+      ],
+      "output": "arrêté de permis de bâtir 또는 이유부 거부"
+    },
+    {
+      "order": 6,
+      "gate": "commune 준공 적합 공식판정",
+      "decision": "지방 기술부서가 완공공사를 허가도서와 대조해 P.V. de récolement 발행 또는 시정·재검사를 결정한다.",
+      "dependsOn": [],
+      "output": "P.V. de récolement 또는 시정통지"
+    },
+    {
+      "order": 7,
+      "gate": "commune 점유허가 공식결정",
+      "decision": "commune이 P.V. de récolement, 현장·안전 적합성과 납부를 확인해 permis d'occupation을 교부하거나 보완·거부한다.",
+      "dependsOn": [
+        6
+      ],
+      "output": "permis d'occupation 또는 보완·거부통지"
+    }
+  ],
   "siteOverlays": [
     {
       "id": "TUN-LOCAL-OVERLAY-001",

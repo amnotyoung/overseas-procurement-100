@@ -21,10 +21,12 @@
 | `data/construction-regulations/manifest.json` | 스키마·대상국·진행 상태 | 수동 |
 | `data/construction-regulations/{country}.json` | 국가별 원천 데이터 | 수동 |
 | `data/construction-regulations/catalog/baselines.json` | 전체 국가 기본판의 공식 출처·기관·3축 판단 | 수동 |
+| `data/construction-regulations/catalog/official-procedures/{country}.json` | catalog 국가별 3축 공식절차·현행성 오버레이 | 수동 |
 | `tools/build_construction_baselines.py` | 기본판을 표준 국가 JSON으로 확장 | 수동 |
 | `docs/construction-regulations-data-contract.md` | 이 데이터 계약 | 수동 |
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
+| `tools/check_construction_procedure_coverage.py` | 44개국·132모델의 국가별 절차·현행성 품질 게이트 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
 | `tools/build_construction_boards.mjs` | `processBoard`를 korea100studio SVG로 렌더 | 수동 |
 | `tools/check_construction_site.py` | 통합 model·클릭 구조도·이전 URL·감사용 SVG 확인 | 수동 |
@@ -89,9 +91,9 @@
 
 `processBoard`는 확인된 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 행위주체와 순서로 구조화하고, `publicModels`는 그 절차를 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 모든 협력국은 조달 3종과 균형을 맞춰 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 3종을 4~6번으로 공개한다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 준비·확인업무는 절차 노드로 섞지 않고 `openQuestions`, `fieldworkChecklist`, `requirements[].evidenceToObtain`과 공개 화면의 **ODA 사업 적용 확인사항**에 별도로 둔다. 국가별 공식 결정은 `permitPath`에 확인된 범위만 기록한다.
 
-국가 기본판(`generatedFrom` 존재)은 공식 법령·정부 서비스의 진입경로와 핵심 의사결정만 확인한 `law-linked` 또는 `source-linked` 자료다. 세네갈처럼 조문을 대조한 상세판과 같은 깊이로 오인하지 않도록 검증상태와 한계를 화면에 그대로 노출한다. 기본판의 생성 JSON은 직접 고치지 않고 catalog를 수정한다.
+국가 생성판(`generatedFrom` 존재)은 기본 catalog와 국가별 공식절차 오버레이를 합친 결과다. 세네갈처럼 조문을 직접 대조한 단계는 `article-verified`, 법령·정부 서비스에서 공식 순서를 확인했으나 단계별 조문 대조가 아닌 경우는 `official-source-linked`로 구분한다. 생성 JSON은 직접 고치지 않고 기본 catalog 또는 해당 국가 overlay를 수정한다.
 
-catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 순서를 확인했을 때만 `officialProcedure`를 갖는다. `officialProcedure` 안에는 절차의 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 선택적 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 근거 범위만큼 기록한다. `officialProcedure`가 없으면 생성기는 공통 절차를 추정하지 않고 `procedureStatus: "detail-unverified"`인 **공식 절차 상세 미확인** 1개 증거 진입 노드만 만든다. 별도 환경결정·착공통지·NOC·점유승인 같이 확인되지 않은 절차를 노드 수를 맞추기 위해 만들지 않는다.
+catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 그 안에는 절차의 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 근거가 있는 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 기록한다. 생성기에는 편집 중 자료를 확인하기 위한 공통 scaffold가 남아 있지만, `check_construction_procedure_coverage.py`가 국가별 3축 overlay가 없는 결과의 공개·배포를 차단한다. 별도 환경결정·착공통지·NOC·점유승인 같이 확인되지 않은 절차는 노드 수를 맞추기 위해 만들지 않는다.
 
 ## 5. 핵심 객체
 
@@ -257,7 +259,7 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
 - 각 공개 제도축은 선택한 노드만으로 독립적으로 연결된 클릭형 구조도를 만든다.
 - 공개 제도축의 edge는 통합 `processBoard.edges`에 같은 source·target·type·label로 존재하는 경로만 투영한다.
 - `officialProcedure`가 있는 공개 제도축의 노드·레인·절차구간·Gate 수는 공식 근거에서 확인한 범위를 따른다. 일정한 노드 수나 레인 수를 맞추기 위해 절차를 추가하지 않는다.
-- `officialProcedure`가 없는 공개 제도축은 `detail-unverified` 1노드와 빈 `edges`를 허용한다. 이 노드는 관할기관의 현행 절차도·신청서·체크리스트를 추가 확인해야 한다는 상태를 뜻하며, 실제 절차로 해석하지 않는다.
+- `detail-unverified`와 `source-linked`는 편집·이관 호환을 위한 작성 중 상태다. 배포 대상 공개 제도축은 국가별 `officialProcedure`를 바탕으로 `official-source-linked` 또는 `article-verified`여야 하며, `check_construction_procedure_coverage.py`가 미확인 1노드·빈 흐름의 공개를 차단한다.
 - 모든 건축 국가 파일은 정확히 3개 공개 제도축과 연속 우선순위 4·5·6을 가져야 한다.
 - 한 국가의 공개 제도축 전체를 합치면 원천 노드, 의무, Gate, 질문, 결론, 부지 특례와 현지조사 체크리스트가 빠짐없이 포괄돼야 한다. `requirementIds`는 각 의무를 한 축에만 배정해 선택 노드의 다른 주제가 섞이지 않게 한다.
 - 여러 제도에 공통인 법령·Gate·결론은 중복 표시할 수 있지만 원천 객체를 복제하지 않는다.
@@ -266,15 +268,17 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
 - `permitPath`는 관할기관의 계획·환경·건축·준공·점유 등 **외부 법정·공식 결정 Gate**만 담는 일정·산출물 대장이다. 신청·완비성·기술심사 등의 업무 노드와 관할기관의 최종 공식 결정 Gate를 분리하며, Gate 수는 국가·제도축별로 다를 수 있다. 자료수집, 현장조사, 설계통합, ODA 내부 Go/No-Go 같은 운영업무는 `permitPath`나 절차 노드에 복제하지 않는다. 국가별 공식 선후관계를 확인하기 전에는 `dependsOn`을 비워 둔다.
 - 공개 화면의 **업무구조도/절차 단계**는 선택한 `processBoard`/`publicModels` 노드를 빠짐없이 보여주고, **공식 결정 Gate**는 해당 `permitPath`의 결정기관·적용조건·산출물·선행조건을 별도로 보여준다. 화면 Gate 번호는 선택축 안의 `Gate i/N` 로컬 번호이며, 원천 `permitPath.order`과 `dependsOn`이 확인된 선후관계를 보존한다. 절차 단계 수와 Gate 수는 같을 필요가 없다.
 - `decisionBranches`는 관할 절차에서 근거를 확인한 경우에만 `success`·`rework`·`reject` 세 상태와 후속 조치를 표시한다. 보완회귀도 조건·돌아갈 단계·재접수 경로를 확인한 `loop` edge가 있을 때만 표시하며, 공식 근거가 없는 이의신청·재신청·불복절차나 기한을 추정하지 않는다.
-- 공식 Gate가 있는 경우 각 `permitPath.order`는 최소 한 개의 보드 노드 `gateOrders`에 연결한다. `detail-unverified` 제도축은 Gate 없이 1노드만 가질 수 있다.
+- 각 공개 제도축은 최소 한 개의 공식 Gate를 가지며, 각 `permitPath.order`는 최소 한 개의 보드 노드 `gateOrders`에 연결한다.
 - 모든 노드는 근거 `refs`를 갖고 기존 법령 ID·요구사항·기관으로 역추적할 수 있어야 한다. 단계별 조문 대응을 검증하지 않은 국가 기본판은 `basisScope: "axis"`로 표시하고 해당 제도축의 전체 관련 근거를 연결한다. 이를 개별 노드의 직접 조문 근거로 표현하지 않는다.
 - `evidenceToObtain`은 법정 순서가 아니라 ODA 사업에 적용할 때 확인할 증빙이다. 노드 수를 맞추려고 이를 가상의 법정 단계로 쪼개지 않는다. `kind`로 법정절차·공식경로·지역사례·현지확인을 구분하며, 근거가 없는 착공통지·NOC·점유승인·보험 의무는 절차 노드로 추정하지 않고 `fieldworkChecklist`와 `openQuestions`의 적용 여부 확인으로 표현한다. 특히 `basisScope: "axis"`이거나 연결 근거의 현행성이 `continuity_unverified`인 노드는 `statutory`로 표시하지 않는다. `statutory`는 현행 조문과 해당 노드의 직접 대응을 확인한 경우에만 쓴다.
 - `action`·`outputs`가 있으면 공개 카드 상세는 이를 우선 사용한다. `requirementIds`는 상태·적용조건·근거 추적을 유지하되 같은 축의 긴 요구사항과 증빙목록을 모든 카드에 반복하지 않는다.
 - 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 첫 건축 model로 이동한다.
 - 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드의 노드별 근거는 `processBoard.refs`를 우선하고, refs가 없는 구 계약에서만 연결된 `requirements[].legalBasis`를 대체 근거로 쓴다. 축 전체 근거는 캔버스 법적 근거에 별도로 유지한다.
 - 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `scope`, `note`를 보존한다. `current_official`은 법적 근거가 아니라 운영 중 공식자료로 분리하고, `pending`·`superseded`·`continuity_unverified`는 사이트 검증 예외로 원문 대장에서 구체적 사유와 함께 표시한다.
+- 공개 원문 대장에 표시되는 `in_force`·`current_official` 자료는 `statusCheckedOn`과 구체적인 `statusBasis`를 모두 가져야 한다. `pending`·`superseded`·`continuity_unverified`도 예외 표지만 붙이는 데 그치지 않고, 확인한 공식 출처와 미확정·대체 사유를 `statusBasis`에 기록한다. 한 노드나 다른 출처의 현행성 기록으로 이 항목을 대신할 수 없다.
+- 배포 게이트는 모델 전체에 현행 출처가 하나 있는지만 보지 않고 **각 절차 노드**를 검사한다. 노드마다 `in_force`·`current_official` 근거의 `statusCheckedOn`과 `statusBasis`가 모두 있거나, `continuity_unverified`를 유지해야 하는 구체적 예외사유가 `statusBasis`에 있어야 한다. 다른 노드의 현행 출처로 이 조건을 대신 충족할 수 없다.
 - `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.
-- `npm run build:construction-boards`의 SVG는 공개 본문 이미지가 아니라 `korea100studio validate --strict`, `render`, `check`를 위한 구성 감사 산출물이다.
+- `npm run build:construction-boards`의 SVG는 GitHub Pages의 `site/boards/`에 함께 배포되는 직접 열람·다운로드 가능한 구성 감사 산출물이다. 다만 공개 model 본문의 기준 화면은 HTML 버튼·동적 연결선·상세 패널로 만든 클릭형 구조도이며, 정적 SVG를 저화질·비클릭 대체 화면으로 임베드하지 않는다. SVG는 `korea100studio validate`, `audit`, `render`, `check`와 확대·감사용으로 유지한다. 무관한 카드를 관통하는 연결선은 hard fail이고, 교차·stretch 등 레이아웃 의존 지표는 별도 경고로 보고한다.
 
 ## 6. 참조 무결성 규칙
 
@@ -286,7 +290,7 @@ catalog의 각 제도축은 공식 원문으로 신청·심사·협의·결정 �
 - 모든 차단 질문은 증빙과 확인 상대를 지정해야 한다.
 - 기준일보다 뒤 날짜의 법령은 `in_force`로 둘 수 없다.
 - `processBoard`의 lane·stage·node·edge ID는 유일해야 하고 모든 참조 대상이 존재해야 한다.
-- `officialProcedure`가 있는 공개 모델의 non-loop 흐름은 정의된 진입 노드에서 절차 노드에 도달해야 하고, 연결된 모든 `permitPath` 순번을 포괄해야 한다. `detail-unverified` 1노드 모델은 빈 edge와 Gate 0개를 허용한다.
+- 배포 대상 공개 모델의 non-loop 흐름은 정의된 진입 노드에서 모든 절차 노드에 도달해야 하고, 연결된 모든 `permitPath` 순번을 포괄해야 한다. 각 모델은 공식 Gate와 성공·보완·불허 결과분기를 가져야 하며 `detail-unverified` 1노드·빈 edge 모델은 배포 검증을 통과할 수 없다.
 - 보완회귀는 선택 요소이며, 존재하는 경우 비어 있지 않은 조건 라벨을 갖고 `nodeIds`상 앞선 신청·심사 단계로 돌아가야 한다. `decisionBranches`를 제공하면 `success`·`rework`·`reject` 세 상태를 모두 정의한다.
 - 새 구조도는 korea100studio 감사에서 노드 관통 0건을 충족해야 한다. 실제 법정 보완회귀 때문에 교차·경로길이 같은 soft 구성예산을 넘으면 빌드 결과에 경고로 남기고, 공개 HTML 보드에서 카드·라벨 충돌을 별도로 확인한다.
 

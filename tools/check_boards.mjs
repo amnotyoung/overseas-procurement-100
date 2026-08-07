@@ -80,10 +80,10 @@ const constructionFiles = readdirSync(CONSTRUCTION_DIR)
 for (const f of constructionFiles) {
   const item = JSON.parse(readFileSync(join(CONSTRUCTION_DIR, f), "utf8"));
   if (!item.processBoard) continue;
-  // Catalog-generated boards share the versioned workflow templates and are all
-  // validated/rendered with korea100studio --strict by build_construction_boards.mjs.
-  // Keep this regression baseline for hand-maintained boards; otherwise 129 nearly
-  // identical CLI subprocesses make the faster regression check needlessly expensive.
+  // Catalog-generated boards come from the country-specific official-procedure
+  // overlays and are all validated/rendered by build_construction_boards.mjs.
+  // Keep this faster regression baseline for hand-maintained boards; the full build
+  // remains the hard layout gate for all 129 generated country-axis boards.
   if (item.generatedFrom) continue;
   const publicModels = item.publicModels || [];
   if (!publicModels.length) {

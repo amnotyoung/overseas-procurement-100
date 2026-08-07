@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "ethiopia",
+  "instruments": [
+    {
+      "id": "ETH-BUILDING-PROC-1356-2024",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "연방 공식 Fana Federal Institutions Capacity(FIFIC) 서버의 Ethiopian Building Proclamation 1356/2024 원문에서 Proclamation 624/2009 폐지·대체 조항을 확인했다. 다만 하위규정의 과도기 적용과 지역·도시별 집행규칙의 계속효력을 통합 확인할 공식 자료가 없어 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ETH-URBAN-PLAN-PROC",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "에티오피아 도시인프라부(MUI) 공식 ‘Proclamations’ 법령대장이 기준일 현재 제공되는 것을 확인했다. 그러나 대장은 연방 도시계획 법령과 Addis Ababa·각 지역·도시의 토지이용·계획도구 중 어느 판이 해당 필지에 계속 적용되는지 통합 표시하지 않아 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ETH-EIA-PROC-299-2002",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "에티오피아 연방대법원 디지털 법률도서관의 Environmental Impact Assessment Proclamation 299/2002 원문에서 허가 전 환경평가·승인요건을 확인했다. 다만 연방·지역별 후속절차와 대체입법 여부를 단일 현행 통합자료에서 확인하지 못해 continuity_unverified를 유지한다."
+    },
+    {
+      "id": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+      "title": "Ethiopian Business Portal — Construction Permits",
+      "titleKo": "에티오피아 비즈니스포털 건축허가 절차",
+      "kind": "official-guidance",
+      "status": "current_official",
+      "statusCheckedOn": "2026-08-07",
+      "statusBasis": "에티오피아 정부 National Business Portal의 ‘Construction Permits’ 서비스가 기준일 현재 응답하며 Addis Ababa의 토지확인·계획동의·설계승인·건축허가·검사·점유허가 여정을 제공하는 것을 확인했다.",
+      "officialUrl": "https://new.business.gov.et/Construction%20Permits",
+      "verificationLevel": "source-linked",
+      "note": "Addis Ababa의 토지확인·계획동의·설계승인·건축허가·착공·검사·점유허가를 보여주는 공식 도시 집행 사례다."
+    }
+  ],
+  "systems": {
+    "site-urban": {
+      "verificationScope": "국가 비즈니스포털에 공개된 Addis Ababa의 Land Authentication과 Planning Consent 실제 순서를 건축법 포고령 제1356/2024호 제8조의 계획동의 선행요건과 연결했다.",
+      "officialProcedure": {
+        "name": "에티오피아 토지확인·Planning Consent — Addis Ababa 대표 사례",
+        "coverage": "official-source-linked",
+        "scope": "아래는 Addis Ababa 상업건축의 공식 처리사례다. 고층은 City Construction Permit and Control Authority, 저층은 sub-city office가 처리하며 다른 지역은 관할 지역·도시기관의 절차를 적용한다.",
+        "stages": ["G0 토지서류", "G1 토지인증", "G2 계획동의 신청", "G3 master-plan 심사·결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "Land Authentication 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "신청서에 담보 미등록을 증명하는 debt provision document, 이웃 동의서, lease agreement 또는 title deed를 첨부해 토지인증을 신청한다.", "output": "토지인증 신청서·권원 첨부자료",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "National Business Portal — Land Authentication", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Land Authentication steps 1-3"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "토지 적법성 검증", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "Addis Ababa Land Holding Registration and Information Agency가 제출서류와 토지의 건축개발 적법성을 확인한다.", "output": "토지 적법성 검증기록·보완요구",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "National Business Portal — Land Authentication", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Bureau verifies land legality for construction"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "토지서류 보완 제출", "emphasis": "normal", "kind": "official-guidance",
+            "action": "검증 과정에서 누락 또는 불일치가 확인되면 권원·담보·이웃동의 자료를 정정해 다시 제출한다.", "output": "보완 토지서류",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "Land Authentication 필수서류", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Application, debt provision, neighbor consent, lease agreement or title deed"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "Land Holding Certificate 발급", "emphasis": "key", "kind": "official-guidance",
+            "action": "토지 적법성이 확인되면 Land Administration Bureau가 개발용 land holding certificate를 발급한다.", "output": "Land Holding Certificate",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "Land Authentication 결정", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Bureau issues land holding certificate after verification"]}],
+            "permitGate": {"key": "addis-land-authentication", "gate": "토지개발 적법성 공식확인", "decision": "토지등록기관이 권원·담보·동의자료를 검증해 land holding certificate를 발급하거나 보완·거부한다.", "output": "Land Holding Certificate 또는 보완·거부통지", "dependsOn": []}
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "Planning Consent 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "관할 building permit department에 신청서, title deed, 개발자와 design consultant/company 간 계약을 제출하고 계약의 위임관계를 인증한다.", "output": "Planning Consent 신청서·권원·설계계약",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "National Business Portal — Planning Consent", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Planning Consent process steps 1-2"]},
+              {"source": "계획동의 선행요건", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 8(1)(a), 8(2)-(4)"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Master Plan 적합성 심사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "건물 규모·용도에 따라 city 또는 sub-city 기관이 대상지와 제안계획을 master plan guidelines에 대조해 심사한다.", "output": "master-plan 심사의견·보완요구",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "National Business Portal — Planning Consent", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Building Permit Department review against master-plan guidelines"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "계획안·서류 정정", "emphasis": "normal", "kind": "official-guidance",
+            "action": "master plan 또는 제출요건과 맞지 않는 계획·서류를 정정해 관할 building permit department에 재제출한다.", "output": "수정 계획안·보완서류",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "Planning Consent 요구사항", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Planning consent issued if all requirements meet master-plan guidelines"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Planning Consent 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "master plan guidelines와 관할·서류요건이 충족되면 plan consent document를 발급하고, 미충족이면 보완 또는 거부한다.", "output": "Plan Consent Document 또는 보완·거부통지",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "Planning Consent 발급", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Planning Consent process steps 3-4"]}],
+            "permitGate": {"key": "addis-planning-consent", "gate": "관할 도시기관 Planning Consent 공식결정", "decision": "관할기관이 master plan 적합성을 심사해 planning consent를 발급하거나 보완·거부한다.", "output": "Planning Consent Document 또는 보완·거부통지", "dependsOn": ["addis-land-authentication"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "토지서류"], [1, 3, "sequence", "적법성 확인"], [1, 2, "message", "누락·불일치"], [2, 1, "loop", "보완 재검증"],
+          [3, 4, "sequence", "토지인증"], [4, 5, "sequence", "계획동의 신청"], [5, 7, "sequence", "기준충족"], [5, 6, "message", "계획·서류 보완"], [6, 5, "loop", "수정안 재심사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "토지인증·Planning Consent 발급", "action": "승인된 계획조건으로 건축설계·건축허가 단계 진행"},
+          {"state": "rework", "label": "권원·계획안 보완", "action": "토지서류 또는 계획안을 정정해 해당 심사단계에 재제출"},
+          {"state": "reject", "label": "토지인증 또는 계획동의 거부", "action": "권원·입지·master plan 부적합 사유를 해소해 재신청하거나 법정 불복수단 검토"}
+        ]
+      }
+    },
+    "permit-environment": {
+      "verificationScope": "환경영향평가 포고령 제299/2002호 제3·5·7~9·15조의 적용판정·보고서·공개·심사·결정과 Addis Ababa 공식 포털의 건축·구조·설비 순차 설계심사·보완·건축허가 발급을 연결했다.",
+      "officialProcedure": {
+        "name": "에티오피아 환경승인·Construction Permit — 연방법·Addis Ababa 사례",
+        "coverage": "official-source-linked",
+        "scope": "환경승인은 사업의 연방·지역 관할에 따라 EPA 또는 관할 지역 환경기관이 처리한다. 건축허가 후반부는 Addis Ababa 상업건축 대표 절차이며 다른 도시에서는 해당 도시기관의 세부절차를 적용한다.",
+        "stages": ["G0 환경 적용판정", "G1 EIA 작성·공개", "G2 환경결정", "G3 설계심사", "G4 건축허가 결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "환경평가 대상·관할 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "사업유형·규모·입지자료를 관할 EPA 또는 지역 환경기관에 제출해 EIA 필요 여부와 심사관할을 확인한다.", "output": "환경평가 대상·관할 확인기록",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "EIA 적용·관할", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Articles 3, 5, 6 and 14"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 0, "label": "EIA 필요·비대상 판정", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "환경기관이 지침상 사업범주와 예상영향을 심사해 EIA를 요구하거나 영향이 미미한 경우 EIA 비대상을 결정한다.", "output": "EIA 요구 또는 비대상 결정",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "EIA 대상판정", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Article 3(1)-(3); Article 4; Article 5"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "EIA 조사·보고서 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "자격요건을 충족하는 전문가가 사업·오염원·에너지·누적·광역영향, 대안·저감·비상계획·모니터링을 포함한 EIA 보고서를 작성한다.", "output": "EIA 보고서·비기술요약·관리·모니터링계획",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "사업자 의무·보고서 내용", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Articles 7-8"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "보고서 공개·공중의견 수렴", "emphasis": "normal", "kind": "official-guidance",
+            "action": "환경기관이 EIA 보고서를 일반에 공개하고 영향받는 지역사회를 포함한 공중의견을 수렴해 평가에 반영한다.", "output": "공개기록·공중의견",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "Public participation", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Article 15"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "EIA 보고서 기술심사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "환경기관이 보고서 완전성·정확성, 공중의견과 전문가 의견을 종합해 무조건 승인·조건부 승인·거부안을 심사한다.", "output": "EIA 심사의견·보완 또는 결정안",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "EIA report review", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Article 9(1)-(2)"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "EIA 추가자료·수정보고서 제출", "emphasis": "normal", "kind": "official-guidance",
+            "action": "환경기관의 완전성·영향·저감조치 지적을 반영해 추가자료와 수정보고서를 제출한다.", "output": "보완 EIA 보고서·추가자료",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "EIA 결정에 필요한 충분한 정보", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Articles 8(1), 9"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "환경 Authorization 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "환경기관이 공중·전문가 의견을 고려해 사업을 무조건 승인, 저감조건부 승인 또는 거부하며 licensing agency는 이 결정을 건축허가 전에 확인한다.", "output": "환경 Authorization·조건 또는 거부결정",
+            "authorityIds": ["epa-regional-env"],
+            "refs": [{"source": "환경 공식결정", "instrumentId": "ETH-EIA-PROC-299-2002", "provisions": ["Article 3(3); Article 9(2)(a)-(c)"]}],
+            "permitGate": {"key": "ethiopia-environmental-authorization", "gate": "환경기관 EIA Authorization 공식결정", "decision": "환경기관이 EIA와 공중·전문가 의견을 심사해 무조건 승인·조건부 승인 또는 거부한다.", "output": "환경 Authorization·조건 또는 거부결정", "dependsOn": []}
+          },
+          {
+            "lane": "건축주·신청인", "stage": 3, "label": "건축도서 1차 제출", "emphasis": "key", "kind": "official-guidance",
+            "action": "Planning Consent와 환경결정을 갖추고 architectural plan 및 design consultant 면허사본을 city 또는 sub-city building permit office에 제출한다.", "output": "건축설계 심사신청",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Construction Permit 설계제출", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Construction Permit process steps 1-3"]},
+              {"source": "허가신청·디자인", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Articles 7-9"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "건축설계 심사·수정의견", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "관할기관이 architectural design을 건축법·Ethiopian Building Standards·planning consent에 대조해 승인하거나 수정의견을 부여한다.", "output": "건축설계 승인 또는 수정의견",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "건축설계 심사", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Construction Permit process steps 2-3"]},
+              {"source": "디자인 심사·승인·거부", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Articles 9-10"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "건축설계 수정·재제출", "emphasis": "normal", "kind": "official-guidance",
+            "action": "관할기관의 의견을 반영해 architectural design을 수정하고 재제출한다.", "output": "수정 건축설계",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "건축설계 수정경로", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Customer makes corrections and resubmits"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 4, "label": "구조·전기·위생·지반도서 제출", "emphasis": "key", "kind": "official-guidance",
+            "action": "건축설계 승인 후 structural plan, electrical plan, sanitary system와 soil test report를 제출한다.", "output": "구조·설비·지반 기술도서",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "2차 기술도서 제출", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Construction Permit process step 4"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "기술도서 심사·보완", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "관할기관이 구조·전기·위생·지반도서를 심사하고 수정이 필요하면 의견을 부여해 재검토한다.", "output": "기술도서 승인 또는 수정의견",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "2차 설계심사·수정", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Construction Permit process steps 5-6"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "Construction Permit 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "모든 설계가 승인되고 선행 환경·계획요건이 충족되면 city 또는 sub-city 기관이 construction permit을 발급하고, 중대한 부적합이면 거부한다.", "output": "Construction Permit·승인도서 또는 거부사유",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Construction Permit 발급", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Construction Permit process step 7"]},
+              {"source": "건축허가 발급권", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 5(1); Articles 7-10"]}
+            ],
+            "permitGate": {"key": "addis-construction-permit", "gate": "관할 도시기관 Construction Permit 공식결정", "decision": "관할기관이 계획동의·환경승인과 건축·구조·설비·지반도서를 심사해 허가 또는 거부한다.", "output": "Construction Permit·승인도서 또는 거부사유", "dependsOn": ["ethiopia-environmental-authorization"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "사업·입지정보"], [1, 2, "sequence", "EIA 요구 시"], [1, 7, "sequence", "EIA 비대상 시"], [2, 3, "sequence", "EIA 보고서"],
+          [3, 4, "sequence", "공중의견"], [4, 6, "sequence", "심사완료"], [4, 5, "message", "추가자료·수정"], [5, 4, "loop", "보완보고서 재심사"],
+          [6, 7, "sequence", "환경승인"], [7, 8, "sequence", "건축도서"], [8, 10, "sequence", "건축설계 승인"], [8, 9, "message", "수정의견"], [9, 8, "loop", "수정도서 재심사"],
+          [10, 11, "sequence", "2차 기술도서"], [11, 12, "sequence", "기술승인"], [11, 10, "loop", "기술도서 수정·재제출"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "환경승인·Construction Permit 발급", "action": "승인조건과 승인도서를 착공·감리계획에 반영"},
+          {"state": "rework", "label": "EIA·설계 보완", "action": "환경보고서 또는 건축·기술도서를 수정해 해당 심사단계에 재제출"},
+          {"state": "reject", "label": "환경 또는 건축허가 거부", "action": "영향회피·입지·설계를 변경해 재신청하거나 법정 불복절차 검토"}
+        ]
+      }
+    },
+    "control-completion": {
+      "verificationScope": "건축법 포고령 제1356/2024호 제17~19조의 착공통지·단계감독·시정·전문가 완공증명과 국가 비즈니스포털의 단계검사·공사중지·최종검사·Occupancy Permit 순서를 연결했다.",
+      "officialProcedure": {
+        "name": "에티오피아 착공·단계검사·Building Use Permit — Addis Ababa 사례",
+        "coverage": "official-source-linked",
+        "scope": "포고령 제1356/2024호의 감독·사용허가 원칙은 전국 체계이며 실제 접수·검사 순서는 Addis Ababa 공식 사례다. 건물분류별 검사단계와 관할은 도시·지역 시행규정에 따른다.",
+        "stages": ["G0 착공통지", "G1 단계감독", "G2 완공·최종검사", "G3 사용허가 결정"],
+        "steps": [
+          {
+            "lane": "건축주·신청인", "stage": 0, "label": "착공일정·Commencement 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "Construction Permit 취득 후 착공 전에 공사일정을 포함한 통지를 제출하고, 기존 건축물 철거·기반시설 이설이 있으면 해당 허가·조치를 완료한다.", "output": "착공통지·공정계획·선행허가",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "착공통지", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 17(1)-(3)"]},
+              {"source": "Commencement Permit", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Commencement Permit process"]}
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "Commencement 결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "관할기관이 건축허가·계획·현장 선행요건을 확인해 착공을 허용하거나 추가 통지·보완을 요구한다.", "output": "착공허용 또는 보완통지",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "착공통지 결정", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 17(2)-(3)"]}],
+            "permitGate": {"key": "ethiopia-commencement-decision", "gate": "관할기관 착공 공식결정", "decision": "관할기관이 착공통지와 선행요건을 확인해 착공을 허용하거나 보완한다.", "output": "착공허용 또는 보완통지", "dependsOn": []}
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "등록 감리전문가 선임·공사감독", "emphasis": "key", "kind": "official-guidance",
+            "action": "건물분류에 맞는 등록 consulting firm·전문가를 선임해 시공인력·자재·승인도서 적합성을 공사완료까지 감독한다.", "output": "감리계약·감독기록",
+            "authorityIds": ["mui-eca", "city-building-authority"],
+            "refs": [{"source": "등록전문가 감독", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 19(1)-(6)"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 1, "label": "법정 단계검사 요청", "emphasis": "normal", "kind": "official-guidance",
+            "action": "관할 caseworker에게 규정된 각 공정단계 검사를 요청하고 승인 전에는 해당 단계 이후 공사를 진행하지 않는다.", "output": "단계검사 요청·공정통지",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Construction Phase", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Call caseworker for inspection at every defined stage"]},
+              {"source": "단계별 진행승인", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 18(1)-(3)"]}
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "현장 단계검사·계속공사 결정", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "caseworker가 승인도서·Ethiopian Building Standards, 자재품질·현장안전·접근성을 검사해 다음 단계 진행을 허용하거나 공사중지·시정을 명령한다.", "output": "단계검사 기록·진행허용 또는 공사중지",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Construction Phase inspection", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Caseworker inspection; continuation prohibited in case of building error"]},
+              {"source": "건축공사 감독", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 18(1)-(3)"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "부적합 시정·완료통지", "emphasis": "normal", "kind": "official-guidance",
+            "action": "승인도서 밖의 공사 또는 품질·안전 부적합을 시정하고 완료사실을 관할기관에 통지해 재검사를 요청한다.", "output": "시정완료 통지·재검사 요청",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "시정완료 통지", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 17(4)-(5)"]}]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "전문가 완공증명서 제출", "emphasis": "key", "kind": "official-guidance",
+            "action": "공사가 완료되면 등록 consulting firm·책임전문가가 설계·감독결과와 완공을 확인해 서명한 certificate를 관할기관에 제출한다.", "output": "등록전문가 서명 완공증명서",
+            "authorityIds": ["mui-eca", "city-building-authority"],
+            "refs": [{"source": "전문가 완공증명", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Article 19(4)-(6)"]}]
+          },
+          {
+            "lane": "건축주·신청인", "stage": 2, "label": "Occupancy Permit 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "architectural·building plans, 모든 단계검사 기록과 전문가 완공증명서를 첨부해 occupancy permit을 신청한다.", "output": "Occupancy Permit 완비 신청",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "Occupancy Permit 신청", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Occupancy Permit process step 1"]}]
+          },
+          {
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "완공도서 심사·최종 현장검사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "caseworker가 검사기록·도서를 검토하고 건물 규모·용도에 필요한 편의·안전·승인설계 적합성을 최종 현장검사한다.", "output": "최종검사 기록·보완사항",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Occupancy final inspection", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Occupancy Permit process step 2"]},
+              {"source": "사용허가 적합성", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Articles 5(3), 7(2), 16"]}
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "최종 미비사항 시정·재검사", "emphasis": "normal", "kind": "official-guidance",
+            "action": "최종검사에서 확인된 승인설계·편의·안전 미비사항을 시정하고 갱신 도서·증빙으로 재검사를 요청한다.", "output": "최종 시정완료 자료·재검사 요청",
+            "authorityIds": ["city-building-authority"],
+            "refs": [{"source": "사용허가 요건·시정권", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Articles 5(2)-(3), 16(1)-(5)"]}]
+          },
+          {
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Building Use Permit 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "관할기관이 승인설계·법정기준·검사기록과 최종 현장상태를 확인해 occupancy/building use permit을 발급하거나 보완·거부한다.", "output": "Occupancy/Building Use Permit 또는 보완·거부통지",
+            "authorityIds": ["city-building-authority"],
+            "refs": [
+              {"source": "Occupancy Permit 발급", "instrumentId": "ETH-CONSTRUCTION-PERMIT-PORTAL", "provisions": ["Occupancy Permit process step 3"]},
+              {"source": "Building Use Permit", "instrumentId": "ETH-BUILDING-PROC-1356-2024", "provisions": ["Articles 5(3), 7(2), 16"]}
+            ],
+            "permitGate": {"key": "ethiopia-building-use-permit", "gate": "관할기관 Building Use Permit 공식결정", "decision": "관할기관이 최종검사와 승인설계·필수기준 적합성을 확인해 사용허가를 발급하거나 보완·거부한다.", "output": "Occupancy/Building Use Permit 또는 보완·거부통지", "dependsOn": ["ethiopia-commencement-decision"]}
+          }
+        ],
+        "edges": [
+          [0, 1, "sequence", "착공통지"], [1, 2, "sequence", "착공허용"], [2, 3, "sequence", "공정관리"], [3, 4, "sequence", "단계검사"],
+          [4, 3, "sequence", "다음 검사단계"], [4, 5, "message", "공사중지·시정"], [5, 4, "loop", "시정 후 재검사"], [4, 6, "sequence", "모든 단계 통과"],
+          [6, 7, "sequence", "완공증명"], [7, 8, "sequence", "완비신청"], [8, 10, "sequence", "최종 적합"], [8, 9, "message", "최종 미비"], [9, 8, "loop", "시정 후 재검사"]
+        ],
+        "decisionBranches": [
+          {"state": "success", "label": "착공·단계·사용허가", "action": "Building Use Permit 발급 후 건물을 사용"},
+          {"state": "rework", "label": "단계·최종검사 시정", "action": "부적합을 시정하고 검사기관에 완료통지·재검사 요청"},
+          {"state": "reject", "label": "사용허가 거부", "action": "중대 설계·안전·접근성 부적합을 해소해 재신청하거나 Appeal Hearing Board 절차 검토"}
+        ]
+      }
+    }
+  }
+}
