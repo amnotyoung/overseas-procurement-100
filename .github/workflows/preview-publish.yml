@@ -1,0 +1,653 @@
+name: Publish PR Preview
+
+on:
+  workflow_run:
+    workflows: ["Build PR Preview"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+  issues: write
+  pull-requests: read
+  statuses: write
+
+concurrency:
+  group: preview-repository-write
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  publish:
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    environment: preview-publisher
+    concurrency:
+      group: preview-status-${{ github.event.workflow_run.head_branch }}
+      cancel-in-progress: false
+      queue: max
+
+    steps:
+      - name: Check out trusted publisher from main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Resolve current pull request and exact artifact
+        id: context
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          PREVIEW_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+          PREVIEW_REPOSITORY: ${{ vars.PREVIEW_REPOSITORY }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const run = context.payload.workflow_run
+            const workflowPath = String(run.path || '').split('@')[0]
+            if (
+              run.event !== 'pull_request' ||
+              workflowPath !== '.github/workflows/preview-build.yml' ||
+              run.head_repository?.full_name !== context.payload.repository.full_name
+            ) {
+              core.setFailed('Refusing an unexpected workflow_run source.')
+              return
+            }
+            if (!Number.isInteger(run.run_attempt) || run.run_attempt < 1) {
+              core.setFailed('workflow_run has no valid run_attempt.')
+              return
+            }
+            const latestRun = await github.rest.actions.getWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: run.id
+            })
+            if (latestRun.data.run_attempt !== run.run_attempt) {
+              core.notice(`Run attempt ${run.run_attempt} is no longer latest; skipping it.`)
+              core.setOutput('should_handle', 'false')
+              return
+            }
+            const branchRuns = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'preview-build.yml',
+              branch: run.head_branch,
+              event: 'pull_request',
+              per_page: 100
+            })
+            const newestRelatedRun = branchRuns
+              .filter(candidate => candidate.head_sha === run.head_sha)
+              .sort((left, right) => right.id - left.id)[0]
+            if (!newestRelatedRun || newestRelatedRun.id !== run.id) {
+              core.notice(`Workflow run ${run.id} is not the newest build for this PR head; skipping it.`)
+              core.setOutput('should_handle', 'false')
+              return
+            }
+            if (!process.env.PREVIEW_BASE_URL || !process.env.PREVIEW_REPOSITORY) {
+              core.setFailed('Preview repository variables are not configured.')
+              return
+            }
+
+            const pulls = await github.paginate(
+              github.rest.repos.listPullRequestsAssociatedWithCommit,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: run.head_sha,
+                per_page: 100
+              }
+            )
+            const current = pulls.filter(pr =>
+              pr.state === 'open' &&
+              pr.head?.sha === run.head_sha &&
+              pr.head?.ref === run.head_branch &&
+              pr.head?.repo?.full_name === context.payload.repository.full_name &&
+              pr.base?.ref === context.payload.repository.default_branch
+            )
+            if (current.length !== 1) {
+              core.notice(`No unique current same-repository PR for ${run.head_sha}; skipping stale run.`)
+              core.setOutput('should_handle', 'false')
+              return
+            }
+
+            const pr = current[0]
+            const previewUrl = `${process.env.PREVIEW_BASE_URL.replace(/\/$/, '')}/pr-${pr.number}/`
+            const action = run.conclusion === 'success' ? 'publish' : 'invalidate'
+            core.setOutput('should_handle', 'true')
+            core.setOutput('action', action)
+            core.setOutput('conclusion', run.conclusion || 'unknown')
+            core.setOutput('pr_number', String(pr.number))
+            core.setOutput('head_sha', run.head_sha)
+            core.setOutput('run_id', String(run.id))
+            core.setOutput('run_attempt', String(run.run_attempt))
+            core.setOutput('preview_url', previewUrl)
+
+            if (action !== 'publish') return
+            const expectedName = `pages-preview-${run.id}-${run.run_attempt}`
+            const artifacts = await github.paginate(
+              github.rest.actions.listWorkflowRunArtifacts,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: run.id,
+                per_page: 100
+              }
+            )
+            const matches = artifacts.filter(artifact => artifact.name === expectedName)
+            if (matches.length !== 1) {
+              core.setFailed(`Expected exactly one ${expectedName} artifact; found ${matches.length}.`)
+              return
+            }
+            const artifact = matches[0]
+            if (artifact.expired) {
+              core.setFailed('Preview artifact has expired.')
+              return
+            }
+            if (artifact.size_in_bytes > 50 * 1024 * 1024) {
+              core.setFailed(`Compressed preview artifact is too large: ${artifact.size_in_bytes} bytes.`)
+              return
+            }
+            if (!/^sha256:[0-9a-f]{64}$/.test(artifact.digest || '')) {
+              core.setFailed('Preview artifact has no valid SHA-256 digest.')
+              return
+            }
+            core.setOutput('artifact_id', String(artifact.id))
+            core.setOutput('artifact_sha256', artifact.digest.slice('sha256:'.length))
+
+      - name: Download and safely extract untrusted static artifact
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'publish'
+        env:
+          ARTIFACT_ID: ${{ steps.context.outputs.artifact_id }}
+          ARTIFACT_SHA256: ${{ steps.context.outputs.artifact_sha256 }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$ARTIFACT_ID" =~ ^[1-9][0-9]*$ ]]
+          archive="$RUNNER_TEMP/pages-preview-$ARTIFACT_ID.zip"
+          curl --fail --silent --show-error --location --retry 3 \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2026-03-10" \
+            --output "$archive" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip"
+          printf '%s  %s\n' "$ARTIFACT_SHA256" "$archive" | sha256sum --check --strict
+          python tools/publish_pages_preview.py extract \
+            --archive "$archive" \
+            --destination incoming
+
+      - name: Confirm pull request head is still current
+        id: current
+        if: steps.context.outputs.should_handle == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+          WORKFLOW_RUN_ATTEMPT: ${{ steps.context.outputs.run_attempt }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const response = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(process.env.PR_NUMBER)
+            })
+            const pr = response.data
+            const run = await github.rest.actions.getWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: Number(process.env.WORKFLOW_RUN_ID)
+            })
+            const branchRuns = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'preview-build.yml',
+              branch: pr.head.ref,
+              event: 'pull_request',
+              per_page: 100
+            })
+            const newestRelatedRun = branchRuns
+              .filter(candidate => candidate.head_sha === process.env.HEAD_SHA)
+              .sort((left, right) => right.id - left.id)[0]
+            const isCurrent =
+              pr.state === 'open' &&
+              pr.head?.sha === process.env.HEAD_SHA &&
+              pr.head?.repo?.full_name === context.payload.repository.full_name &&
+              pr.base?.ref === context.payload.repository.default_branch &&
+              pr.head?.ref === run.data.head_branch &&
+              run.data.head_sha === process.env.HEAD_SHA &&
+              run.data.run_attempt === Number(process.env.WORKFLOW_RUN_ATTEMPT) &&
+              newestRelatedRun?.id === Number(process.env.WORKFLOW_RUN_ID)
+            core.setOutput('is_current', isCurrent ? 'true' : 'false')
+            if (!isCurrent) core.notice('PR changed while the preview run was queued; skipping it.')
+
+      - name: Update dedicated Preview Pages repository
+        id: update
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.current.outputs.is_current == 'true'
+        env:
+          ACTION: ${{ steps.context.outputs.action }}
+          PREVIEW_DEPLOY_KEY: ${{ secrets.PREVIEW_REPOSITORY_DEPLOY_KEY }}
+          PREVIEW_REPOSITORY: ${{ vars.PREVIEW_REPOSITORY }}
+          PREVIEW_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+          WORKFLOW_RUN_ATTEMPT: ${{ steps.context.outputs.run_attempt }}
+        run: |
+          set -euo pipefail
+          test -n "$PREVIEW_DEPLOY_KEY"
+          [[ "$PREVIEW_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]]
+          [[ "$WORKFLOW_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          [[ "$WORKFLOW_RUN_ATTEMPT" =~ ^[1-9][0-9]*$ ]]
+          case "$ACTION" in publish|invalidate) ;; *) exit 2 ;; esac
+
+          key_path="$RUNNER_TEMP/preview-deploy-key-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          trap 'rm -f "$key_path"' EXIT
+          umask 077
+          printf '%s\n' "$PREVIEW_DEPLOY_KEY" > "$key_path"
+          export GIT_SSH_COMMAND="ssh -i $key_path -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/github-known-hosts"
+
+          completed=false
+          metadata_allowed=true
+          for attempt in $(seq 1 5); do
+            checkout="$RUNNER_TEMP/preview-repository-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$attempt"
+            result_path="$RUNNER_TEMP/preview-operation-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$attempt.json"
+            git clone --depth 1 "git@github.com:$PREVIEW_REPOSITORY.git" "$checkout"
+            if [[ "$ACTION" == publish ]]; then
+              python tools/publish_pages_preview.py publish \
+                --source-site incoming/site \
+                --repository-root "$checkout" \
+                --pr-number "$PR_NUMBER" \
+                --head-sha "$HEAD_SHA" \
+                --workflow-run-id "$WORKFLOW_RUN_ID" \
+                --workflow-run-attempt "$WORKFLOW_RUN_ATTEMPT" \
+                --source-repository "$GITHUB_REPOSITORY" \
+                --preview-base-url "$PREVIEW_BASE_URL" \
+                --result-output "$result_path"
+            else
+              python tools/publish_pages_preview.py remove \
+                --repository-root "$checkout" \
+                --pr-number "$PR_NUMBER" \
+                --preview-base-url "$PREVIEW_BASE_URL" \
+                --max-workflow-run-id "$WORKFLOW_RUN_ID" \
+                --max-workflow-run-attempt "$WORKFLOW_RUN_ATTEMPT" \
+                --result-output "$result_path"
+            fi
+            metadata_allowed="$(jq -r '.metadataAllowed' "$result_path")"
+            if [[ "$metadata_allowed" != true ]]; then
+              echo "A newer preview operation already won; treating this run as a no-op."
+              completed=true
+              break
+            fi
+            if [[ "$ACTION" == invalidate ]]; then
+              cleanup_file="$checkout/.preview-cleanups.json"
+              existing_cleanups='[]'
+              if [[ -f "$cleanup_file" && ! -L "$cleanup_file" ]]; then
+                existing_cleanups="$(jq -ce '
+                  .pullRequests
+                  | select(type == "array" and length <= 10000)
+                  | if all(.[]; type == "number" and . >= 1 and floor == .)
+                    then .
+                    else error("invalid cleanup PR number")
+                    end
+                ' "$cleanup_file")"
+              elif [[ -e "$cleanup_file" || -L "$cleanup_file" ]]; then
+                echo "Refusing unexpected cleanup state path." >&2
+                exit 1
+              fi
+              cleanup_temp="$RUNNER_TEMP/preview-cleanups-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$attempt.json"
+              jq -n \
+                --argjson existing "$existing_cleanups" \
+                --argjson pr "$PR_NUMBER" \
+                --arg cleanupAttempt "$WORKFLOW_RUN_ID-$WORKFLOW_RUN_ATTEMPT" \
+                '($existing + [$pr] | unique | sort) as $pullRequests
+                | if ($pullRequests | length) <= 10000
+                  then {pullRequests: $pullRequests, attempt: $cleanupAttempt}
+                  else error("cleanup PR list exceeds its limit")
+                  end' \
+                > "$cleanup_temp"
+              mv "$cleanup_temp" "$cleanup_file"
+            fi
+            git -C "$checkout" config user.name "github-actions[bot]"
+            git -C "$checkout" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C "$checkout" add --all
+            if git -C "$checkout" diff --cached --quiet; then
+              echo "Preview repository already has the requested state."
+              completed=true
+              break
+            fi
+            if [[ "$ACTION" == publish ]]; then
+              message="Preview PR #$PR_NUMBER at ${HEAD_SHA:0:12}"
+            else
+              message="Invalidate preview for PR #$PR_NUMBER"
+            fi
+            git -C "$checkout" commit -m "$message"
+            if git -C "$checkout" push origin HEAD:main; then
+              completed=true
+              break
+            fi
+            if [[ "$attempt" == 5 ]]; then
+              break
+            fi
+            echo "Concurrent preview update detected; retrying ($attempt/5)."
+            sleep $((attempt * 2))
+          done
+          if [[ "$completed" != true ]]; then
+            echo "Unable to update the preview repository after five attempts." >&2
+            exit 1
+          fi
+          echo "metadata_allowed=$metadata_allowed" >> "$GITHUB_OUTPUT"
+
+      - name: Keep commit preview status pending while Pages propagates
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'publish' &&
+          steps.current.outputs.is_current == 'true' &&
+          steps.update.outputs.metadata_allowed == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          RUN_ID: ${{ steps.context.outputs.run_id }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'pending',
+              context: 'Preview Published',
+              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.RUN_ID}`,
+              description: 'Validated preview is being published'
+            })
+
+      - name: Verify public preview URL
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'publish' &&
+          steps.current.outputs.is_current == 'true' &&
+          steps.update.outputs.metadata_allowed == 'true'
+        env:
+          PREVIEW_URL: ${{ steps.context.outputs.preview_url }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+          WORKFLOW_RUN_ATTEMPT: ${{ steps.context.outputs.run_attempt }}
+        run: |
+          set -o pipefail
+          for attempt in $(seq 1 120); do
+            if curl -fsSL "${PREVIEW_URL}preview-manifest.json?run=$WORKFLOW_RUN_ID&attempt=$attempt" \
+              | jq -e --arg sha "$HEAD_SHA" --argjson run "$WORKFLOW_RUN_ID" \
+                --argjson runAttempt "$WORKFLOW_RUN_ATTEMPT" \
+                '.headSha == $sha and .workflowRunId == $run and .workflowRunAttempt == $runAttempt' >/dev/null; then
+              echo "Preview is live at $PREVIEW_URL"
+              exit 0
+            fi
+            echo "Waiting for Pages propagation ($attempt/120)."
+            sleep 5
+          done
+          echo "Preview did not become visible within ten minutes." >&2
+          exit 1
+
+      - name: Confirm head after publication
+        id: published-current
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'publish' &&
+          steps.current.outputs.is_current == 'true' &&
+          steps.update.outputs.metadata_allowed == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+          WORKFLOW_RUN_ATTEMPT: ${{ steps.context.outputs.run_attempt }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const response = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(process.env.PR_NUMBER)
+            })
+            const run = await github.rest.actions.getWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: Number(process.env.WORKFLOW_RUN_ID)
+            })
+            const branchRuns = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'preview-build.yml',
+              branch: response.data.head.ref,
+              event: 'pull_request',
+              per_page: 100
+            })
+            const newestRelatedRun = branchRuns
+              .filter(candidate => candidate.head_sha === process.env.HEAD_SHA)
+              .sort((left, right) => right.id - left.id)[0]
+            const isCurrent =
+              response.data.state === 'open' &&
+              response.data.head.sha === process.env.HEAD_SHA &&
+              response.data.head?.repo?.full_name === context.payload.repository.full_name &&
+              response.data.base?.ref === context.payload.repository.default_branch &&
+              response.data.head?.ref === run.data.head_branch &&
+              run.data.head_sha === process.env.HEAD_SHA &&
+              run.data.run_attempt === Number(process.env.WORKFLOW_RUN_ATTEMPT) &&
+              newestRelatedRun?.id === Number(process.env.WORKFLOW_RUN_ID)
+            core.setOutput('is_current', isCurrent ? 'true' : 'false')
+            if (!isCurrent) core.notice('Preview is live but the PR has moved; a newer build must replace it.')
+
+      - name: Register deployment, comment, and success status
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'publish' &&
+          steps.published-current.outputs.is_current == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          PREVIEW_URL: ${{ steps.context.outputs.preview_url }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER)
+            const environment = `pr-${prNumber}`
+            const logUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: process.env.HEAD_SHA,
+              task: 'deploy',
+              auto_merge: false,
+              required_contexts: [],
+              environment,
+              description: `Preview for PR #${prNumber}`,
+              transient_environment: true,
+              production_environment: false
+            })
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment.data.id,
+              state: 'success',
+              environment,
+              environment_url: process.env.PREVIEW_URL,
+              log_url: logUrl,
+              description: 'Preview is ready'
+            })
+
+            const marker = '<!-- github-pages-pr-preview -->'
+            const body = [
+              marker,
+              '### GitHub Pages 미리보기',
+              '',
+              `🔎 [PR #${prNumber} 미리보기 열기](${process.env.PREVIEW_URL})`,
+              '',
+              `- 소스: \`${process.env.HEAD_SHA.slice(0, 12)}\``,
+              '- 운영 배포와 분리된 전용 Preview Pages 저장소/경로입니다.',
+              '- **미리보기를 확인하고 승인받기 전에는 병합하지 않습니다.**'
+            ].join('\n')
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              per_page: 100
+            })
+            const existing = comments.find(comment =>
+              comment.user?.type === 'Bot' && comment.body?.includes(marker)
+            )
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body
+              })
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body
+              })
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'success',
+              context: 'Preview Published',
+              target_url: process.env.PREVIEW_URL,
+              description: 'Preview is published and ready for review'
+            })
+
+      - name: Mark invalidated preview inactive
+        if: >-
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.action == 'invalidate' &&
+          steps.current.outputs.is_current == 'true' &&
+          steps.update.outputs.metadata_allowed == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          CONCLUSION: ${{ steps.context.outputs.conclusion }}
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER)
+            const environment = `pr-${prNumber}`
+            const deployments = await github.paginate(github.rest.repos.listDeployments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              environment,
+              per_page: 100
+            })
+            for (const deployment of deployments) {
+              await github.rest.repos.createDeploymentStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.id,
+                state: 'inactive',
+                environment,
+                description: 'Current preview build did not pass'
+              })
+            }
+
+            const marker = '<!-- github-pages-pr-preview -->'
+            const body = `${marker}\n### GitHub Pages 미리보기\n\n현재 커밋의 빌드가 **${process.env.CONCLUSION}** 상태여서 기존 미리보기를 비활성화했습니다.`
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              per_page: 100
+            })
+            const existing = comments.find(comment =>
+              comment.user?.type === 'Bot' && comment.body?.includes(marker)
+            )
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body
+              })
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'failure',
+              context: 'Preview Published',
+              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.WORKFLOW_RUN_ID}`,
+              description: `Preview build ${process.env.CONCLUSION}`
+            })
+
+      - name: Mark publisher failure on the pull request commit
+        if: >-
+          failure() &&
+          steps.context.outputs.should_handle == 'true' &&
+          steps.context.outputs.head_sha != '' &&
+          steps.update.outputs.metadata_allowed != 'false'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          HEAD_SHA: ${{ steps.context.outputs.head_sha }}
+          PR_NUMBER: ${{ steps.context.outputs.pr_number }}
+          WORKFLOW_RUN_ID: ${{ steps.context.outputs.run_id }}
+          WORKFLOW_RUN_ATTEMPT: ${{ steps.context.outputs.run_attempt }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(process.env.PR_NUMBER)
+            })
+            const run = await github.rest.actions.getWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: Number(process.env.WORKFLOW_RUN_ID)
+            })
+            const branchRuns = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'preview-build.yml',
+              branch: pr.data.head.ref,
+              event: 'pull_request',
+              per_page: 100
+            })
+            const newestRelatedRun = branchRuns
+              .filter(candidate => candidate.head_sha === process.env.HEAD_SHA)
+              .sort((left, right) => right.id - left.id)[0]
+            if (
+              pr.data.state !== 'open' ||
+              pr.data.head.sha !== process.env.HEAD_SHA ||
+              pr.data.head?.repo?.full_name !== context.payload.repository.full_name ||
+              pr.data.base?.ref !== context.payload.repository.default_branch ||
+              pr.data.head?.ref !== run.data.head_branch ||
+              run.data.head_sha !== process.env.HEAD_SHA ||
+              run.data.run_attempt !== Number(process.env.WORKFLOW_RUN_ATTEMPT) ||
+              newestRelatedRun?.id !== Number(process.env.WORKFLOW_RUN_ID)
+            ) {
+              core.notice('A newer PR head or workflow attempt exists; not overwriting its preview status.')
+              return
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'error',
+              context: 'Preview Published',
+              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              description: 'Preview publisher failed; inspect the workflow log'
+            })

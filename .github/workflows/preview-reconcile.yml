@@ -1,0 +1,464 @@
+name: Reconcile PR Previews
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  deployments: write
+  issues: write
+  pull-requests: read
+  statuses: write
+
+concurrency:
+  group: preview-repository-write
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    environment: preview-publisher
+
+    steps:
+      - name: Check out trusted reconciler from main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: List open same-repository pull requests
+        id: open-prs
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              base: context.payload.repository.default_branch,
+              per_page: 100
+            })
+            const expected = Object.fromEntries(pulls
+              .filter(pr => pr.head?.repo?.full_name === context.payload.repository.full_name)
+              .sort((left, right) => left.number - right.number)
+              .map(pr => [String(pr.number), pr.head.sha]))
+            core.setOutput('expected', JSON.stringify(expected))
+
+      - name: Remove previews without an open pull request
+        id: reconcile
+        env:
+          EXPECTED_PREVIEWS_JSON: ${{ steps.open-prs.outputs.expected }}
+          PREVIEW_DEPLOY_KEY: ${{ secrets.PREVIEW_REPOSITORY_DEPLOY_KEY }}
+          PREVIEW_REPOSITORY: ${{ vars.PREVIEW_REPOSITORY }}
+          PREVIEW_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+        run: |
+          set -euo pipefail
+          test -n "$PREVIEW_DEPLOY_KEY"
+          [[ "$PREVIEW_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ "$PREVIEW_BASE_URL" =~ ^https://[^?#]+$ ]]
+
+          key_path="$RUNNER_TEMP/preview-reconcile-key-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          state_path="$RUNNER_TEMP/preview-reconcile-state.json"
+          trap 'rm -f "$key_path"' EXIT
+          umask 077
+          printf '%s\n' "$PREVIEW_DEPLOY_KEY" > "$key_path"
+          export GIT_SSH_COMMAND="ssh -i $key_path -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$GITHUB_WORKSPACE/.github/github-known-hosts"
+
+          for attempt in $(seq 1 5); do
+            checkout="$RUNNER_TEMP/preview-reconcile-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$attempt"
+            git clone --depth 1 "git@github.com:$PREVIEW_REPOSITORY.git" "$checkout"
+            known_cleanups='[]'
+            pending_cleanups='[]'
+            cleanup_file="$checkout/.preview-cleanups.json"
+            if [[ -f "$cleanup_file" && ! -L "$cleanup_file" ]]; then
+              jq -e '.pullRequests | type == "array" and length <= 10000' "$cleanup_file" >/dev/null
+              known_cleanups="$(jq -c '.pullRequests | unique' "$cleanup_file")"
+              while IFS= read -r pr_number; do
+                [[ "$pr_number" =~ ^[1-9][0-9]*$ ]]
+                manifest_path="$RUNNER_TEMP/public-cleanup-$pr_number-$GITHUB_RUN_ID.json"
+                if http_code="$(curl --silent --show-error --location --max-time 20 \
+                  --output "$manifest_path" --write-out '%{http_code}' \
+                  "$PREVIEW_BASE_URL/pr-$pr_number/preview-manifest.json?cleanup=$GITHUB_RUN_ID")"; then
+                  if [[ "$http_code" == 200 ]] && jq -e \
+                    --argjson pr "$pr_number" --arg source "$GITHUB_REPOSITORY" \
+                    '.pullRequest == $pr and .sourceRepository == $source' \
+                    "$manifest_path" >/dev/null; then
+                    pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
+                  elif [[ "$http_code" != 404 ]]; then
+                    pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
+                  fi
+                else
+                  pending_cleanups="$(jq -c --argjson pr "$pr_number" '. + [$pr] | unique' <<< "$pending_cleanups")"
+                fi
+              done < <(jq -r '.pullRequests[]' "$cleanup_file")
+            elif [[ -e "$cleanup_file" || -L "$cleanup_file" ]]; then
+              echo "Refusing unexpected cleanup state path." >&2
+              exit 1
+            fi
+            completed_cleanups="$(jq -cn \
+              --argjson known "$known_cleanups" --argjson pending "$pending_cleanups" \
+              '$known - $pending')"
+            python tools/publish_pages_preview.py reconcile \
+              --repository-root "$checkout" \
+              --expected-previews-json "$EXPECTED_PREVIEWS_JSON" \
+              --source-repository "$GITHUB_REPOSITORY" \
+              --preview-base-url "$PREVIEW_BASE_URL" \
+              --pending-cleanups-json "$pending_cleanups" \
+              --completed-cleanups-json "$completed_cleanups" \
+              --cleanup-attempt "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" \
+              --state-output "$state_path"
+            git -C "$checkout" config user.name "github-actions[bot]"
+            git -C "$checkout" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C "$checkout" add --all
+            if git -C "$checkout" diff --cached --quiet; then
+              echo "Preview repository is already reconciled."
+              break
+            fi
+            git -C "$checkout" commit -m "Reconcile closed PR previews"
+            if git -C "$checkout" push origin HEAD:main; then
+              break
+            fi
+            if [[ "$attempt" == 5 ]]; then
+              echo "Unable to reconcile previews after five attempts." >&2
+              exit 1
+            fi
+            echo "Concurrent preview update detected; retrying ($attempt/5)."
+            sleep $((attempt * 2))
+          done
+          echo "state=$(jq -c . "$state_path")" >> "$GITHUB_OUTPUT"
+
+      - name: Reconcile preview deployments and comments
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          PREVIEW_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+          RECONCILE_STATE: ${{ steps.reconcile.outputs.state }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const state = JSON.parse(process.env.RECONCILE_STATE)
+            const validNumbers = value =>
+              Array.isArray(value) && value.every(number => Number.isInteger(number) && number > 0)
+            const validActive = value =>
+              value && typeof value === 'object' && !Array.isArray(value) &&
+              Object.entries(value).every(([number, sha]) =>
+                /^[1-9][0-9]*$/.test(number) && /^[0-9a-f]{40}$/.test(sha)
+              )
+            if (
+              !state ||
+              !validActive(state.active) ||
+              !validActive(state.missing) ||
+              !validNumbers(state.cleanupCompleted) ||
+              !validNumbers(state.cleanupPending) ||
+              !validNumbers(state.removed)
+            ) {
+              core.setFailed('Reconciler produced invalid state.')
+              return
+            }
+            const active = new Map(
+              Object.entries(state.active).map(([number, sha]) => [Number(number), sha])
+            )
+            const missing = new Map(
+              Object.entries(state.missing).map(([number, sha]) => [Number(number), sha])
+            )
+            const removed = new Set(state.removed)
+            const cleanupCompleted = new Set(state.cleanupCompleted)
+            const cleanupPending = new Set(state.cleanupPending)
+            const marker = '<!-- github-pages-pr-preview -->'
+            const verifiedActive = new Map()
+            const currentPulls = new Map()
+            const previewBase = (process.env.PREVIEW_BASE_URL || '').replace(/\/$/, '')
+            if (!previewBase) {
+              core.setFailed('PREVIEW_BASE_URL is not configured.')
+              return
+            }
+
+            const setPreviewStatus = async (sha, desired) => {
+              const statuses = await github.rest.repos.listCommitStatusesForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: sha,
+                per_page: 100
+              })
+              const latest = statuses.data.find(status => status.context === 'Preview Published')
+              if (
+                latest?.state === desired.state &&
+                latest?.target_url === desired.target_url &&
+                latest?.description === desired.description
+              ) return
+              await github.rest.repos.createCommitStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                sha,
+                context: 'Preview Published',
+                ...desired
+              })
+            }
+
+            const upsertPreviewComment = async (prNumber, body) => {
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                per_page: 100
+              })
+              const existing = comments.find(comment =>
+                comment.user?.type === 'Bot' && comment.body?.includes(marker)
+              )
+              if (existing) {
+                if (existing.body !== body) {
+                  await github.rest.issues.updateComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: existing.id,
+                    body
+                  })
+                }
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  body
+                })
+              }
+            }
+
+            for (const [prNumber, headSha] of new Map([...active, ...missing])) {
+              const pull = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber
+              })
+              if (
+                pull.data.state !== 'open' ||
+                pull.data.base?.ref !== context.payload.repository.default_branch ||
+                pull.data.head?.repo?.full_name !== context.payload.repository.full_name ||
+                pull.data.head?.sha !== headSha
+              ) continue
+              currentPulls.set(prNumber, pull.data)
+
+              const previewUrl = `${previewBase}/pr-${prNumber}/`
+              let isPubliclyCurrent = false
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: 'preview-build.yml',
+                branch: pull.data.head.ref,
+                event: 'pull_request',
+                per_page: 100
+              })
+              const newest = runs
+                .filter(run => run.head_sha === headSha)
+                .sort((left, right) => right.id - left.id)[0]
+              const commitStatuses = await github.rest.repos.listCommitStatusesForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: headSha,
+                per_page: 100
+              })
+              const latestPreviewStatus = commitStatuses.data.find(
+                status => status.context === 'Preview Published'
+              )
+              const eventPendingCreatedAt = Date.parse(latestPreviewStatus?.created_at || '')
+              let previewEventUpdatedAt = Number.NaN
+              try {
+                previewEventUpdatedAt = Date.parse(
+                  new URL(latestPreviewStatus?.target_url || '').searchParams.get('preview_event') || ''
+                )
+              } catch (error) {
+                core.debug(`Preview event marker is unavailable: ${error.message}`)
+              }
+              const newestRunCreatedAt = Date.parse(newest?.created_at || '')
+              const newestRunUpdatedAt = Date.parse(newest?.updated_at || '')
+              const initializerPending =
+                latestPreviewStatus?.state === 'pending' &&
+                latestPreviewStatus?.description === 'Waiting for a validated preview of this PR head'
+              const freshRunForEvent =
+                initializerPending &&
+                Number.isFinite(previewEventUpdatedAt) &&
+                Number.isFinite(newestRunCreatedAt) &&
+                newestRunCreatedAt >= previewEventUpdatedAt
+              const freshRunCompleted =
+                freshRunForEvent &&
+                newest?.status === 'completed' &&
+                Number.isFinite(eventPendingCreatedAt) &&
+                Number.isFinite(newestRunUpdatedAt) &&
+                newestRunUpdatedAt > eventPendingCreatedAt
+              if (active.get(prNumber) === headSha) {
+                try {
+                  const response = await fetch(
+                    `${previewUrl}preview-manifest.json?reconcile=${context.runId}`,
+                    {
+                      headers: { 'cache-control': 'no-cache' },
+                      signal: AbortSignal.timeout(15000)
+                    }
+                  )
+                  if (response.ok) {
+                    const manifest = await response.json()
+                    const indexResponse = await fetch(
+                      `${previewUrl}?reconcile=${context.runId}`,
+                      {
+                        headers: { 'cache-control': 'no-cache' },
+                        signal: AbortSignal.timeout(15000)
+                      }
+                    )
+                    const index = indexResponse.ok ? await indexResponse.text() : ''
+                    isPubliclyCurrent =
+                      manifest.pullRequest === prNumber &&
+                      manifest.headSha === headSha &&
+                      manifest.sourceRepository === context.payload.repository.full_name &&
+                      manifest.workflowRunId === newest?.id &&
+                      manifest.workflowRunAttempt === newest?.run_attempt &&
+                      newest?.conclusion === 'success' &&
+                      (!initializerPending || freshRunCompleted) &&
+                      index.includes('pages-pr-preview-banner') &&
+                      index.includes(headSha.slice(0, 12))
+                  }
+                } catch (error) {
+                  core.notice(`Could not verify preview for PR #${prNumber}: ${error.message}`)
+                }
+              }
+
+              const pendingAge = Date.now() - eventPendingCreatedAt
+              const waitingForFreshEvent =
+                initializerPending &&
+                (!freshRunCompleted || (
+                  newest?.conclusion === 'success' &&
+                  Date.now() - newestRunUpdatedAt < 20 * 60 * 1000
+                )) &&
+                (!Number.isFinite(pendingAge) || pendingAge < 2 * 60 * 60 * 1000)
+
+              if (isPubliclyCurrent) {
+                verifiedActive.set(prNumber, headSha)
+                await setPreviewStatus(headSha, {
+                  state: 'success',
+                  target_url: previewUrl,
+                  description: 'Preview is published and ready for review'
+                })
+                await upsertPreviewComment(prNumber, [
+                  marker,
+                  '### GitHub Pages 미리보기',
+                  '',
+                  `🔎 [PR #${prNumber} 미리보기 열기](${previewUrl})`,
+                  '',
+                  `- 소스: \`${headSha.slice(0, 12)}\``,
+                  '- 운영 배포와 분리된 전용 Preview Pages 저장소/경로입니다.',
+                  '- **미리보기를 확인하고 승인받기 전에는 병합하지 않습니다.**'
+                ].join('\n'))
+              } else if (waitingForFreshEvent) {
+                core.notice(`PR #${prNumber} has a newer preview event; preserving its pending status.`)
+                await upsertPreviewComment(
+                  prNumber,
+                  `${marker}\n### GitHub Pages 미리보기\n\n현재 PR 이벤트에 대한 새 미리보기를 생성하고 있습니다.`
+                )
+              } else {
+                await setPreviewStatus(headSha, {
+                  state: 'error',
+                  target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}`,
+                  description: 'Current preview is missing; rerun the preview build'
+                })
+                await upsertPreviewComment(
+                  prNumber,
+                  `${marker}\n### GitHub Pages 미리보기\n\n현재 커밋의 공개 미리보기를 확인할 수 없습니다. Preview build를 다시 실행해 주세요.`
+                )
+              }
+            }
+
+            const deployments = await github.paginate(github.rest.repos.listDeployments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            })
+            const cleanupCommentNumbers = new Set()
+            const matchingDeployments = new Set()
+            for (const deployment of deployments) {
+              const match = /^pr-([1-9][0-9]*)$/.exec(deployment.environment || '')
+              if (!match) continue
+              const prNumber = Number(match[1])
+              const statuses = await github.rest.repos.listDeploymentStatuses({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.id,
+                per_page: 1
+              })
+              const currentSha = verifiedActive.get(prNumber)
+              if (currentSha === deployment.ref && !matchingDeployments.has(prNumber)) {
+                matchingDeployments.add(prNumber)
+                if (statuses.data[0]?.state !== 'success') {
+                  await github.rest.repos.createDeploymentStatus({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    deployment_id: deployment.id,
+                    state: 'success',
+                    environment: deployment.environment,
+                    environment_url: `${previewBase}/pr-${prNumber}/`,
+                    description: 'Preview is ready'
+                  })
+                }
+                continue
+              }
+              if (statuses.data[0]?.state !== 'inactive') {
+                await github.rest.repos.createDeploymentStatus({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: deployment.id,
+                  state: 'inactive',
+                  environment: deployment.environment,
+                  description: 'Preview is no longer current'
+                })
+              }
+              if (!currentPulls.has(prNumber)) cleanupCommentNumbers.add(prNumber)
+            }
+
+            for (const [prNumber, headSha] of verifiedActive) {
+              if (matchingDeployments.has(prNumber)) continue
+              const environment = `pr-${prNumber}`
+              const deployment = await github.rest.repos.createDeployment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: headSha,
+                task: 'deploy',
+                auto_merge: false,
+                required_contexts: [],
+                environment,
+                description: `Preview for PR #${prNumber}`,
+                transient_environment: true,
+                production_environment: false
+              })
+              await github.rest.repos.createDeploymentStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.data.id,
+                state: 'success',
+                environment,
+                environment_url: `${previewBase}/pr-${prNumber}/`,
+                description: 'Preview is ready'
+              })
+            }
+
+            for (const prNumber of new Set([
+              ...removed,
+              ...cleanupCompleted,
+              ...cleanupPending,
+              ...cleanupCommentNumbers
+            ])) {
+              const pull = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber
+              })
+              const reason = cleanupPending.has(prNumber)
+                ? '오래된 공개 미리보기를 정리 중이며 Pages 반영 여부를 재확인하고 있습니다.'
+                : pull.data.state === 'open'
+                  ? 'PR의 현재 커밋과 달라 오래된 미리보기를 정리했습니다.'
+                  : 'PR이 종료되어 미리보기를 정리했습니다.'
+              await upsertPreviewComment(
+                prNumber,
+                `${marker}\n### GitHub Pages 미리보기\n\n${reason}`
+              )
+            }

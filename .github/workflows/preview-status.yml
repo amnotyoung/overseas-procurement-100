@@ -1,0 +1,93 @@
+name: Initialize PR Preview Status
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  actions: read
+  contents: read
+  statuses: write
+
+jobs:
+  pending:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    concurrency:
+      group: preview-status-${{ github.event.pull_request.head.ref }}
+      cancel-in-progress: false
+      queue: max
+
+    steps:
+      - name: Require a fresh preview for the current pull request head
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PREVIEW_BASE_URL: ${{ vars.PREVIEW_BASE_URL }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_UPDATED_AT: ${{ github.event.pull_request.updated_at }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER)
+            const previewBase = (process.env.PREVIEW_BASE_URL || '').replace(/\/$/, '')
+            if (previewBase) {
+              const manifestUrl = `${previewBase}/pr-${prNumber}/preview-manifest.json?head=${process.env.HEAD_SHA}`
+              try {
+                const response = await fetch(manifestUrl, {
+                  headers: { 'cache-control': 'no-cache' },
+                  signal: AbortSignal.timeout(15000)
+                })
+                if (response.ok) {
+                  const manifest = await response.json()
+                  const indexResponse = await fetch(
+                    `${previewBase}/pr-${prNumber}/?head=${process.env.HEAD_SHA}`,
+                    {
+                      headers: { 'cache-control': 'no-cache' },
+                      signal: AbortSignal.timeout(15000)
+                    }
+                  )
+                  const index = indexResponse.ok ? await indexResponse.text() : ''
+                  const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    workflow_id: 'preview-build.yml',
+                    branch: process.env.HEAD_BRANCH,
+                    event: 'pull_request',
+                    per_page: 100
+                  })
+                  const newest = runs
+                    .filter(run => run.head_sha === process.env.HEAD_SHA)
+                    .sort((left, right) => right.id - left.id)[0]
+                  const freshForEvent = newest &&
+                    Date.parse(newest.created_at) >= Date.parse(process.env.PR_UPDATED_AT)
+                  if (
+                    manifest.pullRequest === prNumber &&
+                    manifest.headSha === process.env.HEAD_SHA &&
+                    manifest.sourceRepository === context.payload.repository.full_name &&
+                    manifest.workflowRunId === newest?.id &&
+                    manifest.workflowRunAttempt === newest?.run_attempt &&
+                    newest?.conclusion === 'success' &&
+                    freshForEvent &&
+                    index.includes('pages-pr-preview-banner') &&
+                    index.includes(process.env.HEAD_SHA.slice(0, 12))
+                  ) {
+                    core.notice('The exact current preview is already public; preserving its success status.')
+                    return
+                  }
+                }
+              } catch (error) {
+                core.notice(`Could not confirm an existing preview: ${error.message}`)
+              }
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'pending',
+              context: 'Preview Published',
+              target_url: `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/pull/${prNumber}?preview_event=${encodeURIComponent(process.env.PR_UPDATED_AT)}`,
+              description: 'Waiting for a validated preview of this PR head'
+            })

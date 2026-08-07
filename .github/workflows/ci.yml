@@ -37,6 +37,9 @@ jobs:
       - name: Check process boards
         run: npm run check:boards
 
+      - name: Check dedicated Pages preview publisher
+        run: python tools/check_pages_preview.py
+
       - name: Build documentation and site
         run: |
           python tools/build_docs.py
