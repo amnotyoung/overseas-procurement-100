@@ -89,102 +89,11 @@ WORKFLOW_KIND_LABEL = {
     "project-control": "사업통제",
 }
 
-# ``processBoard``는 ODA 사업팀의 준비·확인·통합 업무이고 ``permitPath``는
-# 국가 근거로 확인한 외부 법정·공식 결정 Gate다. 공개 화면에서 둘을 섞지
-# 않도록 제도축별 Gate 결과에 따른 *ODA 후속조치*만 공통 표시한다. 이는
-# 해당국의 법정 불복·재신청 절차를 뜻하지 않는다.
-CONSTRUCTION_DECISION_BRANCHES = {
-    "site-urban": [
-        {
-            "state": "success",
-            "label": "Go·조건부 Go",
-            "action": "확정된 부지조건을 설계입력으로 잠그고 인허가 준비로 진행",
-        },
-        {
-            "state": "rework",
-            "label": "자료·기관확인 보완",
-            "action": "계획·개발규제 확인으로 회귀해 결측자료와 기관조건을 보완",
-        },
-        {
-            "state": "reject",
-            "label": "No-Go",
-            "action": "대체부지, 사업규모 또는 공간프로그램을 재검토",
-        },
-    ],
-    "permit-environment": [
-        {
-            "state": "success",
-            "label": "승인결정 확인",
-            "action": "결정문·승인도서·조건을 ODA 대장에 고정하고 착공준비 여부를 검토",
-        },
-        {
-            "state": "rework",
-            "label": "공식 보완요구 확인",
-            "action": "ODA 제출도서와 관계기관 협의자료를 재통합하고 후속 공식절차는 관할기관 확인 후 반영",
-        },
-        {
-            "state": "reject",
-            "label": "불허결정 확인",
-            "action": "법정 불복경로를 가정하지 않고 사업조건·설계안·부지 적합성을 재검토",
-        },
-    ],
-    "control-completion": [
-        {
-            "state": "success",
-            "label": "준공·사용승인",
-            "action": "승인조건과 인계자료를 잠그고 개장·운영으로 전환",
-        },
-        {
-            "state": "rework",
-            "label": "보완·재검사",
-            "action": "품질기록·검사 단계로 회귀해 시정조치와 재검사를 완료",
-        },
-        {
-            "state": "reject",
-            "label": "승인보류·사용불가",
-            "action": "중대 결함과 운영개시 조건을 재검토",
-        },
-    ],
-}
-
-CONSTRUCTION_LOOP_LABEL = {
-    "site-urban": "보완 필요 시 · 필지자료·기관확인 재수행",
-    "permit-environment": "ODA 도서보완 필요 시 · 허가도서·관계협의 재통합",
-    "control-completion": "보완·재검사 시 · 품질기록·검사 재수행",
-}
-
-# 국가 기본판의 ``processBoard`` 노드는 관할기관의 법정 행위를 대신하는
-# 절차가 아니라 ODA 사업팀의 확인·기록 업무다. 외부기관 명칭을 레인에
-# 그대로 두면 그 기관이 ODA 업무를 수행하는 것처럼 보이므로, 법정절차
-# 노드가 하나도 없는 공개 제도축에 한해 ODA 역할 레인으로 투영한다.
-CONSTRUCTION_ODA_LANE = {
-    "사업주·수원기관": "사업주·수원기관",
-    "현지 설계·조사팀": "현지 설계·검증팀",
-    "도시계획·건축 당국": "ODA 인허가·환경 검증팀",
-    "환경·안전·검사기관": "ODA 인허가·환경 검증팀",
-}
-
-# 공통 ODA 확인노드가 국가별 공식 결정 Gate와 같은 이름을 쓰지 않도록
-# 화면용 문구만 분리한다. 국별 데이터의 원문과 법정절차 노드는 바꾸지 않는다.
-CONSTRUCTION_ODA_NODE_OVERRIDES = {
-    ("permit-environment", "B10"): {
-        "source_label": "환경 스크리닝·평가경로 결정",
-        "name": "환경평가 적용유형·공식결정 확보",
-        "action": (
-            "관할 환경기관의 공식 분류·결정문을 확보해 적용유형·선행조건·유효성을 "
-            "ODA 대장에 기록한다."
-        ),
-        "outputs": ["환경평가 적용유형·공식결정 확인대장"],
-    },
-    ("permit-environment", "B14"): {
-        "source_label": "완비접수·수수료·허가결정 Gate",
-        "name": "완비접수·수수료·허가결과 검증",
-        "action": (
-            "접수증·수수료 영수증·허가결정문을 확보하고 보완정지·실제 처리기간·"
-            "승인조건을 ODA 일정·조건 대장에 기록한다."
-        ),
-        "outputs": ["완비접수·수수료·허가결과 검증대장"],
-    },
+CONSTRUCTION_PROCEDURE_STATUS_LABEL = {
+    "article-verified": "조문 대조 절차",
+    "source-linked": "공식자료 연결 절차",
+    "official-source-linked": "공식자료 연결 절차",
+    "detail-unverified": "공식 절차 상세 미확인",
 }
 
 
@@ -356,9 +265,9 @@ def construction_presentation(d: dict, board: dict, *, segmented: bool = False) 
     for index, stage in enumerate(board["stages"], start=1):
         code, _, label = stage.partition(" ")
         if segmented and re.fullmatch(r"G\d+[A-Z]?", code):
-            # 공개 보드의 생애주기 단계(S)는 permitPath의 인허가 절차(P)와
-            # 별도 체계다. 원래 단계 번호를 보존해 P1~P10과 혼동하지 않는다.
-            stage_map[stage] = f"S{code[1:]} {label or stage}"
+            # 각 공개 제도는 독립된 한 장 절차다. 원천 생애주기 번호(G4 등)는
+            # 내부 추적에 남기고 화면에서는 조달 보드처럼 G1부터 다시 시작한다.
+            stage_map[stage] = f"G{index} {label or stage}"
         else:
             stage_map[stage] = f"G{index} {label or stage}"
     config = {
@@ -423,39 +332,13 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     """
     board = construction_model_board(d, model_spec)
     model_id = model_spec.get("id", "") if model_spec else ""
-    all_oda_nodes = bool(model_spec) and all(
-        node.get("kind") != "statutory" for node in board["nodes"]
+    procedure_status = (
+        model_spec.get("procedureStatus", "source-linked")
+        if model_spec else
+        ("article-verified" if any(
+            node.get("kind") == "statutory" for node in board["nodes"]
+        ) else "source-linked")
     )
-    if model_spec:
-        if all_oda_nodes:
-            display_nodes = []
-            for node in board["nodes"]:
-                display_node = dict(node)
-                display_node["lane"] = CONSTRUCTION_ODA_LANE.get(
-                    display_node["lane"], display_node["lane"]
-                )
-                override = CONSTRUCTION_ODA_NODE_OVERRIDES.get((model_id, node["id"]))
-                if override and node.get("label") == override["source_label"]:
-                    display_node["label"] = override["name"]
-                    display_node["action"] = override["action"]
-                    display_node["outputs"] = list(override["outputs"])
-                display_nodes.append(display_node)
-            board = {
-                **board,
-                "lanes": unique_strings(node["lane"] for node in display_nodes),
-                "nodes": display_nodes,
-            }
-        display_edges = []
-        for edge in board["edges"]:
-            display_edge = dict(edge)
-            if (
-                all_oda_nodes
-                and display_edge.get("type") == "loop"
-                and model_id in CONSTRUCTION_LOOP_LABEL
-            ):
-                display_edge["label"] = CONSTRUCTION_LOOP_LABEL[model_id]
-            display_edges.append(display_edge)
-        board = {**board, "edges": display_edges}
     instruments = {item["id"]: item for item in d["instruments"]}
     authorities = {item["id"]: item for item in d["authorities"]}
     requirements = {item["id"]: item for item in d["requirements"]}
@@ -463,9 +346,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     questions = {item["id"]: item for item in d["openQuestions"]}
     context = d.get("pilotContext") or {}
     presentation = construction_presentation(d, board, segmented=bool(model_spec))
-    decision_branches = list(
-        CONSTRUCTION_DECISION_BRANCHES.get(model_id, []) if model_spec else []
-    )
+    decision_branches = list(model_spec.get("decisionBranches", []) if model_spec else [])
 
     selected_requirement_ids = set(
         model_spec.get("requirementIds", [])
@@ -580,6 +461,10 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         permit_gates = [permit_path[order] for order in node.get("gateOrders", []) if order in permit_path]
         process_nodes.append({
             "id": node["id"],
+            # 공개 제도축은 독립된 한 장 흐름이므로 화면 번호를 B01부터 다시
+            # 매긴다. 원천 생애주기 ID는 ``id``/data-id에 보존해 추적성과
+            # 엣지 연결을 유지한다.
+            "display_id": f"B{len(process_nodes) + 1:02d}" if model_spec else node["id"],
             "name": node["label"],
             "lane": node["lane"],
             "stage": display_stage,
@@ -863,13 +748,21 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         "canvas": {
             "purpose": model_spec["purpose"] if model_spec else d["purpose"],
             "workflowDisclosure": (
-                f"아래 {len(process_nodes)}단계는 해당국 법정절차를 복제한 것이 아니라, ODA 사업팀이 수행할 "
-                "관할확정·현지확인·설계통합·기관협의를 정리한 공통 준비·검증 업무다. "
-                "국가별 공식 결정은 별도 Gate 확인대장에서 구분한다."
-                if all_oda_nodes else
-                "카드의 ‘법정절차’ 배지는 국가 근거와 직접 대조된 절차이고, ‘공식경로·현지확인·"
-                "사업통제’ 배지는 ODA 사업팀의 확인·관리 업무다. 외부기관의 공식 결정은 별도 "
-                "Gate 확인대장에서 다시 구분한다."
+                "국가별 공식 절차의 순서·행위·분기까지 확인되지 않아 가상의 7단계를 만들지 않았다. "
+                "현재 카드는 확인된 제도 진입점이며, 관할기관의 현행 절차도·신청서·체크리스트를 "
+                "확보해야 실제 업무구조도로 전환할 수 있다."
+                if procedure_status == "detail-unverified" else
+                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청인·전문가·심사기관의 절차를 "
+                "표시한다. 카드 배지는 노드별 근거 수준이며, ‘현지확인’ 항목은 관할·사업유형에 "
+                "따라 최종 적용을 다시 확인해야 한다."
+            ),
+            "procedureStatus": procedure_status,
+            "procedureStatusLabel": CONSTRUCTION_PROCEDURE_STATUS_LABEL.get(
+                procedure_status, procedure_status
+            ),
+            "procedureScope": (
+                model_spec.get("procedureScope", "") if model_spec else
+                d["verification"].get("scope", "")
             ),
             "stakeholders": ", ".join(
                 item["nameKo"] for item in d["authorities"]
@@ -879,7 +772,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             "referenceBasis": reference_basis,
             "authorities": authority_cards,
             "procedure": [
-                f'{item["id"]} {item["name"]} — {item["action"]} / 산출물: '
+                f'{item["display_id"]} {item["name"]} — {item["action"]} / 산출물: '
                 f'{" · ".join(item["output_documents"])}'
                 for item in process_nodes
             ],
@@ -1198,7 +1091,7 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
 /* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
-  display:flex;flex-direction:column;gap:26px;justify-content:center}
+  display:flex;flex-direction:column;gap:32px;justify-content:center}
 .bcell:last-child{border-right:0}
 .brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
 .brow.head .bcell:first-child{z-index:5;background:var(--soft)}
@@ -1640,20 +1533,18 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     has_statutory_nodes = any(
         node.get("workflow_kind") == "statutory" for node in nodes
     )
-    if d["axis"] == "construction" and has_statutory_nodes:
-        board_title = "업무구조도 · 법정절차와 ODA 확인 구분"
-        board_description = (
-            "‘법정절차’ 배지는 국가 근거와 직접 대조된 절차이고, ‘공식경로·현지확인·사업통제’ "
-            "배지는 ODA 사업팀의 확인·관리 업무입니다. 외부기관의 공식 결정은 아래 국가별 "
-            "Gate 확인대장에서 따로 확인합니다. 노드를 누르면 근거 범위가 열립니다."
-        )
-    elif d["axis"] == "construction":
-        board_title = "공통 ODA 준비·확인 업무구조도"
-        board_description = (
-            "국가별 법정절차 자체가 아니라 ODA 사업팀의 준비·확인·설계통합 업무를 표시합니다. "
-            "레인은 ODA 주관 역할이며 국가기관은 카드 상세의 협의기관으로 분리했습니다. "
-            "외부기관의 공식 결정은 아래 국가별 Gate 확인대장에서 따로 확인합니다."
-        )
+    if d["axis"] == "construction":
+        board_title = "업무구조도"
+        if c.get("procedureStatus") == "detail-unverified":
+            board_description = (
+                "이 국가·제도축은 공식 진입점까지만 확인되어 상세 법정순서를 임의로 만들지 않았습니다. "
+                "관할기관의 현행 절차 원문이 확보되면 신청·심사·보완·결정 노드로 확장합니다."
+            )
+        else:
+            board_description = (
+                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청·심사·보완·결정 흐름입니다. "
+                "레인은 실제 행위주체이며, 노드를 누르면 적용범위·산출문서와 근거 수준이 열립니다."
+            )
     else:
         board_title = "업무구조도"
         board_description = (
@@ -1669,8 +1560,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     if d["axis"] == "construction" and not checked:
         evidence_metric = len(v.get("sources", []))
         evidence_metric_label = "공식 출처"
-    stage_metric_label = "업무 구간" if d["axis"] == "construction" else "게이트"
-    node_metric_label = "업무절차" if d["axis"] == "construction" else "절차 노드"
+    stage_metric_label = "절차 구간" if d["axis"] == "construction" else "게이트"
+    node_metric_label = "절차 단계" if d["axis"] == "construction" else "절차 노드"
     if d["axis"] == "construction":
         currentness_issues = sum(
             1 for source in v.get("sources", [])
@@ -1702,10 +1593,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     # 업무구조도 그리드
     board_width = 180 + 190 * len(stages)
     grid_cols = f"180px repeat({len(stages)},minmax(190px,1fr))"
-    if d["axis"] == "construction" and not has_statutory_nodes:
-        stage_heading = "ODA 역할 \\ 업무 구간"
-    elif d["axis"] == "construction":
-        stage_heading = "주관·협의 상대 \\ 업무 구간"
+    if d["axis"] == "construction":
+        stage_heading = "행위주체 \\ 절차 구간"
     else:
         stage_heading = "레인 \\ 게이트"
     head = f'<div class="brow head" style="grid-template-columns:{grid_cols}">' \
@@ -1728,7 +1617,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 tag = {"key": "핵심", "warn": "유의", "back": "회귀"}.get(tone, "")
                 kind_tag = n.get("workflow_kind_label", "") if d["axis"] == "construction" else ""
                 cell += f"""<button class="node" data-id="{e(n['id'])}"{f' data-tone="{tone}"' if tone else ''}>
-  <span class="id"><span>{e(n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
+  <span class="id"><span>{e(n.get('display_id') or n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
   <span class="nm">{e(n['name'])}</span></button>"""
             rows += f'<div class="bcell" data-lane="{e(lane)}" data-stage="{e(st)}">{cell}</div>'
         rows += "</div>"
@@ -1810,28 +1699,30 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         for x in c.get("decisionBranches", [])
     )
     procedure_heading = (
-        (
-            "업무절차" if has_statutory_nodes
-            else "공통 ODA 확인업무"
-        ) + f' · {len(c.get("procedure", []))}단계'
+        f'국가별 건축 인허가 절차 · {len(c.get("procedure", []))}단계'
         if d["axis"] == "construction" else "절차"
     )
     disclosure = (
         f'<p class="workflow-disclosure">{e(c.get("workflowDisclosure", ""))}</p>'
         if d["axis"] == "construction" and c.get("workflowDisclosure") else ""
     )
+    procedure_scope = (
+        '<p class="workflow-disclosure"><b>적용 범위</b> · '
+        f'{e(c.get("procedureScope", ""))}</p>'
+        if d["axis"] == "construction" and c.get("procedureScope") else ""
+    )
     official_gate_card = (
-        f'<div class="card span2"><h3>국가별 공식 결정 Gate · {len(official_gate_data)}개</h3>'
-        '<p class="workflow-disclosure">국가 데이터에서 공식 근거와 연결된 외부기관 결정만 '
-        '별도 확인대장으로 표시합니다. Gate 1/N 표시는 이 화면의 현지 번호이며, 공식 선후관계가 '
-        '확인되기 전에는 법정 순서로 해석하지 않습니다.</p>'
+        f'<div class="card span2"><h3>공식 결정 Gate · {len(official_gate_data)}개</h3>'
+        '<p class="workflow-disclosure">위 절차 중 관할기관이 공식 문서를 발급하거나 처분하는 '
+        '결정 지점만 분리했습니다. Gate 1/N은 이 페이지 안의 표시번호이며, 적용범위와 근거상태는 '
+        '각 Gate에서 확인해야 합니다.</p>'
         f'<ol class="official-gates">{official_gates}</ol></div>'
         if d["axis"] == "construction" and official_gates else ""
     )
     decision_branch_panel = (
         '<div class="decision-branches"><div class="branch-hd">'
-        '<b>공식결정 수령 후 ODA 대응(공통)</b>'
-        '<span>아래 세 갈래는 법정 처분유형·불복·재신청 절차가 아니라 ODA 사업팀의 내부 대응 상태입니다.</span>'
+        '<b>공식 결정 결과 분기</b>'
+        '<span>보완 회귀는 위 절차에 근거가 있는 경우만 표시합니다. 불복·재신청 경로와 기한은 별도 근거가 없으면 추정하지 않습니다.</span>'
         f'</div><div class="decision-branch-grid">{decision_branches}</div></div>'
         if d["axis"] == "construction" and decision_branches else ""
     )
@@ -1928,18 +1819,19 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
     <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
+    {f'<span class="badge {"warn" if c.get("procedureStatus") == "detail-unverified" else "info"}">{e(c.get("procedureStatusLabel", ""))}</span>' if d['axis'] == 'construction' and c.get('procedureStatusLabel') else ''}
     {f'<span class="badge bad">확인사항 {len(discs)}건</span>' if discs else ''}
   </div>
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
   <div class="tiles">
     <div class="tile"><b>{len(nodes)}</b><span>{e(node_metric_label)}</span></div>
-    {f'<div class="tile info"><b>{len(c.get("officialGates", []))}</b><span>국가별 공식 결정 Gate</span></div>' if d['axis'] == 'construction' else ''}
+    {f'<div class="tile info"><b>{len(c.get("officialGates", []))}</b><span>공식 결정 Gate</span></div>' if d['axis'] == 'construction' else ''}
     <div class="tile"><b>{len(lanes)}</b><span>행위 레인</span></div>
     <div class="tile"><b>{len(stages)}</b><span>{e(stage_metric_label)}</span></div>
     <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
     <div class="tile{' bad' if status_metric_bad else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
-    <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>현장 검증</span></div>
+    <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>ODA 적용 확인</span></div>
   </div>
 </div>
 
@@ -1953,7 +1845,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
       <span><i style="background:var(--warn)"></i>유의</span>
-      <span><i style="background:var(--muted)"></i>업무 순서</span>
+      <span><i style="background:var(--muted)"></i>절차 순서</span>
       <span><i style="background:var(--info)"></i>기관 간 입력</span>
       <span><i style="background:var(--back)"></i>조건부 보완 회귀</span>
     </div>
@@ -1969,7 +1861,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <h2>한 장 캔버스</h2>
   <p class="desc">{e(c['purpose'])}</p>
   <div class="cards">
-    <div class="card span2"><h3>{e(procedure_heading)}</h3>{disclosure}<ol class="steps">{steps}</ol></div>
+    <div class="card span2"><h3>{e(procedure_heading)}</h3>{disclosure}{procedure_scope}<ol class="steps">{steps}</ol></div>
     {official_gate_card}
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['applicability'])}</p></div>
     <div class="card"><h3>법적 근거</h3>{legal_basis_body}</div>
@@ -1979,7 +1871,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="card"><h3>제출서류</h3>{docs}</div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>
     {f'<div class="card"><h3>진입장벽</h3><ul class="plain">{barr}</ul></div>' if barr else ''}
-    <div class="card"><h3>현장 검증 필요</h3><ul class="plain">{fv}</ul></div>
+    <div class="card"><h3>ODA 사업 적용 확인사항</h3><ul class="plain">{fv}</ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
   </div>
 </section>
@@ -2038,6 +1930,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     for n in nodes:
         nv = dict(n)
         nv["id"] = e(nv["id"])
+        nv["display_id"] = e(nv.get("display_id") or nv["id"])
         for k in (
             "name", "actor", "action", "deadline", "blocker", "lane", "stage",
             "applicability", "report_use", "consulted_authorities", "confidence_reason",
@@ -2208,38 +2101,106 @@ function draw(){{
     var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
   }}
 
-  function labelPoint(rt){{
-    if(rt.label)return rt.label;
-    var pts=uniq(rt.pts),best={{score:-1,x:0,y:0}};
-    for(var i=0;i<pts.length-1;i++){{
-      var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<0.5;
-      var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
-      var candidate=length+(horizontal?120:0);
-      if(candidate>best.score) best={{score:candidate,x:(a.x+b.x)/2,y:(a.y+b.y)/2-(horizontal?6:0)}};
-    }}
-    return best;
-  }}
-
+  var labelJobs=[];
   EDGES.forEach(function(ed){{
     var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
     var t=ed.type||'sequence', rt=route(a,b,ed);
     d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
       +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
-    if(ed.label){{
-      var lp=labelPoint(rt);
-      d+='<text class="edge-label" x="'+rnd(lp.x)+'" y="'+rnd(lp.y)+'" text-anchor="middle" '
-        +'dominant-baseline="central" fill="'+C[t]+'" stroke="'+BG+'" stroke-width="4" '
-        +'paint-order="stroke" stroke-linejoin="round" font-size="10" font-weight="700">'
-        +ed.label+'</text>';
-    }}
+    if(ed.label) labelJobs.push({{ed:ed,rt:rt,color:C[t]}});
   }});
   svg.innerHTML=d;
+
+  /* 라벨은 경로와 별도 2차 배치한다. 실제 글자 폭을 잰 뒤 카드·화살촉·
+     다른 라벨과 겹치지 않는 후보를 고르므로 세로선 중점에 긴 문구를
+     얹어 카드 뒤로 잘리던 문제를 막는다. */
+  var NS='http://www.w3.org/2000/svg', labelBoxes=[];
+  var arrowBoxes=labelJobs.map(function(job){{
+    var pts=uniq(job.rt.pts),p=pts[pts.length-1];
+    return {{x:p.x-11,y:p.y-11,r:p.x+11,b:p.y+11}};
+  }});
+  function overlaps(a,b){{return a.x<b.r&&a.r>b.x&&a.y<b.b&&a.b>b.y;}}
+  function overlapArea(a,b){{
+    return Math.max(0,Math.min(a.r,b.r)-Math.max(a.x,b.x))*
+           Math.max(0,Math.min(a.b,b.b)-Math.max(a.y,b.y));
+  }}
+  function labelCandidates(rt,w,h){{
+    var pts=uniq(rt.pts),segs=[],fractions=[.5,.33,.67,.2,.8];
+    for(var i=0;i<pts.length-1;i++){{
+      var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<.5;
+      var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
+      if(length>8) segs.push({{a:a,b:b,horizontal:horizontal,length:length}});
+    }}
+    segs.sort(function(a,b){{return (b.horizontal-a.horizontal)||b.length-a.length;}});
+    var out=[];
+    if(rt.label) out.push({{x:rt.label.x,y:rt.label.y,offset:0}});
+    segs.forEach(function(seg){{
+      fractions.forEach(function(f){{
+        var x=seg.a.x+(seg.b.x-seg.a.x)*f,y=seg.a.y+(seg.b.y-seg.a.y)*f;
+        if(seg.horizontal){{
+          [-(h/2+7),h/2+7,-(h/2+19),h/2+19].forEach(function(o){{
+            out.push({{x:x,y:y+o,offset:Math.abs(o)}});
+          }});
+        }}else{{
+          [-(w/2+8),w/2+8,-(w/2+20),w/2+20].forEach(function(o){{
+            out.push({{x:x+o,y:y,offset:Math.abs(o)}});
+          }});
+        }}
+      }});
+    }});
+    return out;
+  }}
+  function candidateBox(p,w,h){{
+    return {{x:p.x-w/2,y:p.y-h/2,r:p.x+w/2,b:p.y+h/2,w:w,h:h}};
+  }}
+  function labelPenalty(box,p){{
+    var score=p.offset||0;
+    if(box.x<4)score+=(4-box.x)*100000;
+    if(box.y<4)score+=(4-box.y)*100000;
+    if(box.r>board.scrollWidth-4)score+=(box.r-board.scrollWidth+4)*100000;
+    if(box.b>board.scrollHeight-4)score+=(box.b-board.scrollHeight+4)*100000;
+    OB.forEach(function(o){{
+      var padded={{x:o.x-6,y:o.y-6,r:o.r+6,b:o.b+6}};
+      if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
+    }});
+    arrowBoxes.forEach(function(o){{if(overlaps(box,o))score+=250000+overlapArea(box,o)*100;}});
+    labelBoxes.forEach(function(o){{if(overlaps(box,o))score+=750000+overlapArea(box,o)*1000;}});
+    return score;
+  }}
+  labelJobs.forEach(function(job){{
+    var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
+    var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
+    bg.setAttribute('rx','4'); bg.setAttribute('fill',BG); bg.setAttribute('fill-opacity','.96');
+    var txt=document.createElementNS(NS,'text'); txt.setAttribute('class','edge-label');
+    txt.setAttribute('x','0'); txt.setAttribute('y','0'); txt.setAttribute('text-anchor','middle');
+    txt.setAttribute('dominant-baseline','central'); txt.setAttribute('fill',job.color);
+    txt.setAttribute('font-size','10'); txt.setAttribute('font-weight','700');
+    txt.style.visibility='hidden'; txt.textContent=job.ed.label;
+    var title=document.createElementNS(NS,'title'); title.textContent=txt.textContent;
+    group.appendChild(bg); group.appendChild(txt); group.appendChild(title); svg.appendChild(group);
+    var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+10;
+    var h=Math.max(measured.height,12)+6,candidates=labelCandidates(job.rt,w,h);
+    var best=null,bestScore=Infinity;
+    candidates.forEach(function(p){{
+      var b=candidateBox(p,w,h),s=labelPenalty(b,p);
+      if(s<bestScore){{best={{p:p,box:b}};bestScore=s;}}
+    }});
+    if(!best){{
+      var first=uniq(job.rt.pts)[0]; best={{p:first,box:candidateBox(first,w,h)}};
+    }}
+    labelBoxes.push(best.box);
+    bg.setAttribute('x',rnd(best.box.x)); bg.setAttribute('y',rnd(best.box.y));
+    bg.setAttribute('width',rnd(w)); bg.setAttribute('height',rnd(h));
+    bg.setAttribute('stroke',job.color); bg.setAttribute('stroke-opacity','.18');
+    txt.setAttribute('x',rnd(best.p.x)); txt.setAttribute('y',rnd(best.p.y));
+    txt.style.visibility='visible';
+  }});
 }}
 
 function openNode(id){{
   var n=NODES[id]; if(!n)return;
-  var h='<span class="badge plain muted">'+n.id+'</span> '
+  var h='<span class="badge plain muted">'+(n.display_id||n.id)+'</span> '
        +'<span class="badge plain muted">'+n.lane+'</span> '
        +'<span class="badge plain muted">'+n.stage+'</span>'
        +(n.workflow_kind_label?' <span class="badge info">'+n.workflow_kind_label+'</span>':'');
@@ -2313,6 +2274,7 @@ document.getElementById('dlg').addEventListener('click',function(ev){{
 }});
 
 addEventListener('load',draw); addEventListener('resize',draw);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 new MutationObserver(draw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
     return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone)

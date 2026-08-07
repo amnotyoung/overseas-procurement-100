@@ -191,16 +191,12 @@ def main() -> int:
             spec = public_specs.get(model_slug)
             process = model["process"]
             canvas = model["canvas"]
-            has_statutory_nodes = any(
-                node.get("workflow_kind") == "statutory"
-                for node in process["nodes"]
-            )
-            oda_only_model = not has_statutory_nodes
-            oda_only_permit_model = bool(
-                oda_only_model and spec and spec.get("id") == "permit-environment"
-            )
-            representative_two_gate_model = bool(
-                oda_only_permit_model
+            procedure_status = canvas.get("procedureStatus", "source-linked")
+            detail_unverified = procedure_status == "detail-unverified"
+            official_procedure = not detail_unverified
+            representative_permit_model = bool(
+                spec
+                and spec.get("id") == "permit-environment"
                 and model.get("countryKey") in {"pakistan", "fiji"}
             )
             procedure = canvas.get("procedure")
@@ -212,15 +208,61 @@ def main() -> int:
                         f"{model_slug} canvas procedure count differs from process nodes: "
                         f"expected {len(process['nodes'])}, got {len(procedure)}"
                     )
-                if not 7 <= len(procedure) <= 8:
+                if detail_unverified and len(procedure) != 1:
                     errors.append(
-                        f"{model_slug} canvas procedure must contain 7-8 steps, "
+                        f"{model_slug} detail-unverified procedure must contain one entry, "
                         f"got {len(procedure)}"
                     )
-                if oda_only_model and len(procedure) != 7:
+                if official_procedure and len(procedure) < 2:
                     errors.append(
-                        f"{model_slug} ODA-only workflow must contain 7 steps, "
+                        f"{model_slug} verified procedure must contain at least two steps, "
                         f"got {len(procedure)}"
+                    )
+
+            if detail_unverified:
+                if len(process["nodes"]) != 1:
+                    errors.append(
+                        f"{model_slug} detail-unverified board must contain one entry node"
+                    )
+                if process["edges"]:
+                    errors.append(
+                        f"{model_slug} detail-unverified board must not invent procedure edges"
+                    )
+                if canvas.get("procedureStatusLabel") != "공식 절차 상세 미확인":
+                    errors.append(
+                        f"{model_slug} detail-unverified board lacks its explicit status label"
+                    )
+
+            if representative_permit_model:
+                if len(process["nodes"]) != 7:
+                    errors.append(
+                        f"{model_slug} official permit workflow must expose 7 steps, "
+                        f"got {len(process['nodes'])}"
+                    )
+                if procedure_status != "official-source-linked":
+                    errors.append(
+                        f"{model_slug} official permit workflow has unexpected procedure status "
+                        f"{procedure_status!r}"
+                    )
+                representative_expectations = {
+                    "pakistan": {
+                        "first": "관할기관·신청권원 확정",
+                        "last": "건축·구조·용도 기술심사",
+                        "scope": "Islamabad/ICT",
+                    },
+                    "fiji": {
+                        "first": "BPAS Step 1 · 개발승인 신청",
+                        "last": "BPAS Step 7 · 현장 건축승인 신청·심사",
+                        "scope": "BPAS",
+                    },
+                }[model["countryKey"]]
+                if process["nodes"][0]["name"] != representative_expectations["first"]:
+                    errors.append(f"{model_slug} has the wrong first official procedure step")
+                if process["nodes"][-1]["name"] != representative_expectations["last"]:
+                    errors.append(f"{model_slug} has the wrong seventh official procedure step")
+                if representative_expectations["scope"] not in canvas.get("procedureScope", ""):
+                    errors.append(
+                        f"{model_slug} does not disclose its jurisdiction/source scope"
                     )
 
             selected_gate_orders = list(dict.fromkeys(
@@ -247,42 +289,28 @@ def main() -> int:
                         f"{model_slug} canvas official Gate orders differ: "
                         f"expected unique {selected_gate_orders}, got {actual_gate_orders}"
                     )
-                if representative_two_gate_model and len(official_gates) != 2:
+                expected_representative_gates = (
+                    {"pakistan": 2, "fiji": 3}.get(model.get("countryKey"))
+                    if representative_permit_model else None
+                )
+                if (
+                    expected_representative_gates is not None
+                    and len(official_gates) != expected_representative_gates
+                ):
                     errors.append(
-                        f"{model_slug} representative permit workflow must expose 2 official Gates, "
+                        f"{model_slug} representative permit workflow must expose "
+                        f"{expected_representative_gates} official Gates, "
                         f"got {len(official_gates)}"
                     )
-
-            if oda_only_permit_model:
-                gate_named_nodes = [
-                    node["id"]
-                    for node in process["nodes"]
-                    if "gate" in node.get("name", "").casefold()
-                ]
-                if gate_named_nodes:
+                if detail_unverified and official_gates:
                     errors.append(
-                        f"{model_slug} ODA-only node names must not claim Gate status: "
-                        f"{gate_named_nodes}"
+                        f"{model_slug} detail-unverified board must not invent official Gates"
                     )
-
-            if oda_only_model:
-                for edge in process["edges"]:
-                    if edge.get("type") != "loop":
-                        continue
-                    label = edge.get("label", "")
-                    forbidden_terms = [
-                        term for term in ("재접수", "불복") if term in label
-                    ]
-                    if forbidden_terms:
-                        errors.append(
-                            f"{model_slug} ODA-only loop edge {edge.get('id')} "
-                            f"claims an unverified official path: {forbidden_terms}"
-                        )
 
             decision_branches = canvas.get("decisionBranches")
             if not isinstance(decision_branches, list):
                 errors.append(f"{model_slug} canvas decisionBranches must be a list")
-            else:
+            elif decision_branches:
                 branch_states = [
                     item.get("state") if isinstance(item, dict) else None
                     for item in decision_branches
@@ -294,6 +322,14 @@ def main() -> int:
                         f"{model_slug} must expose success/rework/reject decision branches, "
                         f"got {branch_states}"
                     )
+            if detail_unverified and decision_branches:
+                errors.append(
+                    f"{model_slug} detail-unverified board must not invent decision branches"
+                )
+            if representative_permit_model and not decision_branches:
+                errors.append(
+                    f"{model_slug} official permit workflow lacks decision branches"
+                )
 
             workflow_disclosure = canvas.get("workflowDisclosure")
             if (
@@ -316,12 +352,14 @@ def main() -> int:
                     errors.append(
                         f"{model_slug} referenceBasis contains an in-force instrument"
                     )
-            if not 7 <= len(process["nodes"]) <= 8:
-                errors.append(f"{model_slug} must render 7-8 nodes, got {len(process['nodes'])}")
-            if len(process["lanes"]) < 3:
-                errors.append(f"{model_slug} must render at least 3 lanes")
-            if len(process["stages"]) < 4:
-                errors.append(f"{model_slug} must render at least 4 stages")
+            if not process["lanes"]:
+                errors.append(f"{model_slug} must render at least one actor lane")
+            if not process["stages"]:
+                errors.append(f"{model_slug} must render at least one procedure segment")
+            if spec and any(not stage.startswith("G") for stage in process["stages"]):
+                errors.append(
+                    f"{model_slug} public board must number its local procedure segments as G-series"
+                )
             detail_path = SITE / "model" / model_slug / "index.html"
             detail_html = detail_path.read_text(encoding="utf-8") if detail_path.exists() else ""
             if not detail_html:
@@ -340,25 +378,62 @@ def main() -> int:
                 "핵심 적용판단",
                 "근거 상태",
                 f'{model["priority"]:02d} · {model["name"]}',
-                "업무 구간",
-                "ODA 사업팀",
-                "<span>업무절차</span>",
-                "<span>국가별 공식 결정 Gate</span>",
-                "<span>업무 구간</span>",
-                'data-state="success"',
-                'data-state="rework"',
-                'data-state="reject"',
+                "절차 구간",
+                "ODA 사업 적용 확인사항",
+                "<span>절차 단계</span>",
+                "<span>공식 결정 Gate</span>",
+                "<span>절차 구간</span>",
             ):
                 if marker not in detail_html:
                     errors.append(f"site/model/{model_slug}/index.html is missing {marker!r}")
-            if not re.search(r'class="[^"]*\bdecision-branches\b[^"]*"', detail_html):
+            if (
+                "국가별 법정절차 자체가 아니라" in detail_html
+                or "ODA 사업팀의 준비·확인·설계통합 업무" in detail_html
+            ):
+                errors.append(
+                    f"site/model/{model_slug}/index.html still describes the main board "
+                    "as an ODA-team workflow"
+                )
+            if canvas.get("procedureStatusLabel") not in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html is missing its procedure-status label"
+                )
+            if canvas.get("procedureScope") and canvas["procedureScope"] not in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html is missing its jurisdiction and procedure scope"
+                )
+            if decision_branches and not re.search(
+                r'class="[^"]*\bdecision-branches\b[^"]*"', detail_html
+            ):
                 errors.append(
                     f"site/model/{model_slug}/index.html is missing the decision branch panel"
                 )
-            if not re.search(r'class="[^"]*\bedge-label\b[^"]*"', detail_html):
+            if not decision_branches and re.search(
+                r'class="[^"]*\bdecision-branches\b[^"]*"', detail_html
+            ):
                 errors.append(
-                    f"site/model/{model_slug}/index.html is missing edge-label rendering"
+                    f"site/model/{model_slug}/index.html invents a decision branch panel"
                 )
+            if decision_branches:
+                for state in ("success", "rework", "reject"):
+                    if f'data-state="{state}"' not in detail_html:
+                        errors.append(
+                            f"site/model/{model_slug}/index.html is missing {state!r} branch"
+                        )
+
+            for renderer_marker in (
+                "edge-label-group",
+                "edge-label-bg",
+                "labelCandidates",
+                "labelBoxes",
+                "getComputedTextLength",
+                "document.fonts.ready",
+            ):
+                if renderer_marker not in detail_html:
+                    errors.append(
+                        f"site/model/{model_slug}/index.html is missing collision-aware "
+                        f"edge-label marker {renderer_marker!r}"
+                    )
             if not re.search(r"if\s*\(\s*ed\.label\s*\)", detail_html):
                 errors.append(
                     f"site/model/{model_slug}/index.html does not guard edge-label rendering"
@@ -380,9 +455,9 @@ def main() -> int:
                 errors.append(
                     f"site/model/{model_slug}/index.html lacks fixed loop-route early return"
                 )
-            if isinstance(official_gates, list):
+            if isinstance(official_gates, list) and official_gates:
                 gate_count = len(official_gates)
-                gate_heading = f"국가별 공식 결정 Gate · {gate_count}개"
+                gate_heading = f"공식 결정 Gate · {gate_count}개"
                 if gate_heading not in detail_html:
                     errors.append(
                         f"site/model/{model_slug}/index.html is missing "
@@ -395,21 +470,44 @@ def main() -> int:
                             f"site/model/{model_slug}/index.html is missing "
                             f"local Gate label {local_label!r}"
                         )
+            if detail_unverified and "<h3>공식 결정 Gate ·" in detail_html:
+                errors.append(
+                    f"site/model/{model_slug}/index.html invents an official Gate card"
+                )
             if isinstance(reference_basis, list) and reference_basis:
                 if "관련 공식자료·현행성 확인대상" not in detail_html:
                     errors.append(
                         f"site/model/{model_slug}/index.html does not separate unverified sources"
                     )
-            if has_statutory_nodes and "법정절차" not in detail_html:
-                errors.append(
-                    f"site/model/{model_slug}/index.html lacks the statutory-procedure badge"
-                )
             expected_ids = [node["id"] for node in model["process"]["nodes"]]
+            expected_display_ids = [
+                f"B{index:02d}" for index in range(1, len(expected_ids) + 1)
+            ]
+            actual_display_ids = [
+                node.get("display_id") for node in model["process"]["nodes"]
+            ]
+            if actual_display_ids != expected_display_ids:
+                errors.append(
+                    f"{model_slug} visible node IDs must restart at B01: "
+                    f"expected {expected_display_ids}, got {actual_display_ids}"
+                )
             node_buttons = re.findall(r'<button class="node" data-id="([^"]+)"', detail_html)
             if len(node_buttons) != len(expected_ids) or set(node_buttons) != set(expected_ids):
                 errors.append(
                     f"site/model/{model_slug}/index.html node buttons differ: "
                     f"expected {expected_ids}, got {node_buttons}"
+                )
+            button_labels = dict(re.findall(
+                r'<button class="node" data-id="([^"]+)"[^>]*>\s*'
+                r'<span class="id"><span>([^<]+)</span>',
+                detail_html,
+                re.DOTALL,
+            ))
+            expected_button_labels = dict(zip(expected_ids, expected_display_ids))
+            if button_labels != expected_button_labels:
+                errors.append(
+                    f"site/model/{model_slug}/index.html visible node labels differ: "
+                    f"expected {expected_button_labels}, got {button_labels}"
                 )
             serialized = re.search(
                 r"var NODES=(\{.*?\});\nvar EDGES=(\[.*?\]);",
@@ -440,20 +538,34 @@ def main() -> int:
                     loop_edges = [
                         edge for edge in serialized_edges if edge.get("type") == "loop"
                     ]
-                    if not loop_edges:
-                        errors.append(
-                            f"site/model/{model_slug}/index.html has no conditional loop edge"
-                        )
+                    node_positions = {
+                        node_id: index for index, node_id in enumerate(expected_ids)
+                    }
                     for edge in loop_edges:
                         label = edge.get("label")
-                        if oda_only_model and (
-                            not isinstance(label, str) or "시" not in label
-                        ):
+                        if not isinstance(label, str) or not label.strip():
                             errors.append(
                                 f"site/model/{model_slug}/index.html loop edge "
                                 f"{edge.get('id')} lacks a conditional label: {label!r}"
                             )
+                        source_position = node_positions.get(edge.get("source"))
+                        target_position = node_positions.get(edge.get("target"))
+                        if (
+                            source_position is None
+                            or target_position is None
+                            or target_position >= source_position
+                        ):
+                            errors.append(
+                                f"site/model/{model_slug}/index.html loop edge "
+                                f"{edge.get('id')} is not a backward correction route"
+                            )
                     for node_id, node in serialized_nodes.items():
+                        expected_display_id = expected_button_labels[node_id]
+                        if node.get("display_id") != expected_display_id:
+                            errors.append(
+                                f"site/model/{model_slug}/index.html serialized node {node_id} "
+                                f"must display {expected_display_id}, got {node.get('display_id')!r}"
+                            )
                         if not node.get("action") or not node.get("output_documents"):
                             errors.append(
                                 f"site/model/{model_slug}/index.html node {node_id} lacks action/output detail"
@@ -495,14 +607,12 @@ def main() -> int:
                 errors.append(f"site/model/{model_slug}/index.html still embeds the static SVG")
             if spec and model["verification"]["scope"] != spec["verificationScope"]:
                 errors.append(f"site/model/{model_slug} uses the country-wide verification scope")
-            if spec and any(not stage.startswith("S") for stage in model["process"]["stages"]):
-                errors.append(f"site/model/{model_slug} does not distinguish lifecycle stages as S-series")
 
             projected_svg_rel = f"{model_slug}.svg"
             projected_svg_path = SITE / "boards" / projected_svg_rel
-            if not projected_svg_path.exists():
+            if official_procedure and not projected_svg_path.exists():
                 errors.append(f"site/boards/{projected_svg_rel} is missing")
-            else:
+            elif official_procedure:
                 try:
                     projected_root = ET.parse(projected_svg_path).getroot()
                 except ET.ParseError as exc:
@@ -564,8 +674,8 @@ def main() -> int:
         print(f"FAILED: {len(errors)} construction site error(s)")
         return 1
     print(
-        f"OK: {countries} construction country source(s), three-axis interactive boards, "
-        "legacy redirects, and korea100studio-audited public board(s)"
+        f"OK: {countries} construction country source(s), official procedures and "
+        "detail-unverified entry cards, legacy redirects, and audited public board(s)"
     )
     return 0
 

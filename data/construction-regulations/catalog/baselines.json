@@ -1236,7 +1236,8 @@
           "kind": "act",
           "status": "continuity_unverified",
           "issuedOn": "1997-12-06",
-          "officialUrl": "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apqaZQ%3D%3D-sg-jjjjjjjjjjjjj",
+          "officialUrl": "https://pakistancode.gov.pk/pdffiles/administrator17094efb999f9a865461eb1498175947.pdf",
+          "officialPdfUrl": "https://pakistancode.gov.pk/pdffiles/administrator17094efb999f9a865461eb1498175947.pdf",
           "verificationLevel": "law-linked",
           "note": "연방법 원문이다. 제18차 헌법개정 이후 환경권한이 주로 이양됐으므로 대상 주의 환경법·규칙을 우선 확인한다."
         },
@@ -1301,7 +1302,159 @@
           "decisionQuestion": "본 사업의 건축허가권자와 적용 주 환경법, 스크리닝·IEE·EIA 유형 및 NOC 선후관계는 무엇인가?",
           "conclusion": "파키스탄에서는 건축허가와 환경승인 모두 관할 확인이 선행돼야 하며 연방 규정만으로 주 사업의 승인경로를 확정해서는 안 된다.",
           "verificationScope": "Pakistan Code의 PEPA, 연방 EPA 규정대장과 CDA 예시를 확인했다. 대상 주 법령·수수료·접수관행과 전체기간은 현지 확인 대상이다.",
-          "referenceLabel": "주 EPA IEE·EIA·건축허가"
+          "referenceLabel": "주 EPA IEE·EIA·건축허가",
+          "officialProcedure": {
+            "name": "파키스탄 건축허가·환경심사 — Islamabad/ICT 사례",
+            "coverage": "official-source-linked",
+            "scope": "건축허가 7단계는 Islamabad/ICT의 CDA 공식 절차 사례이고, 환경절차는 ICT의 PEPA·Pak-EPA 기준선이다. ICT 밖에서는 1단계에서 해당 주·도시 허가기관과 주 EPA 절차로 교체해야 한다.",
+            "stages": [
+              "G4 관할·허가도서",
+              "G5 환경분류·심사",
+              "G6 건축허가 접수",
+              "G7 기술심사·결정"
+            ],
+            "steps": [
+              {
+                "lane": "건축주·신청인",
+                "stage": 0,
+                "label": "관할기관·신청권원 확정",
+                "emphasis": "lead",
+                "kind": "field-verification",
+                "basisScope": "node",
+                "action": "토지소유자·allottee 또는 위임대리인이 필지와 신청권원을 확인하고 건축허가·환경심사의 관할을 확정한다. Islamabad/ICT에서는 CDA와 Pak-EPA가 기준 사례다.",
+                "output": "관할 확인·allotment/transfer letter·possession certificate·대리권 증빙",
+                "questionSlots": [0],
+                "authorityIds": ["local-development-authority", "provincial-epa"],
+                "refs": [
+                  {"source": "CDA Building Plan 절차", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Requirements for Approval of Building Plans"]},
+                  {"source": "PEPA 관할 기준선", "instrumentId": "PAK-PEPA-1997", "provisions": ["Section 12; provincial jurisdiction must be fixed"]}
+                ]
+              },
+              {
+                "lane": "현지 설계·시공 전문가",
+                "stage": 0,
+                "label": "등록 건축사·구조기술자 허가도서 작성",
+                "emphasis": "key",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "CDA 승인 건축사와 등록 구조기술자가 A1·A2 신청서, 건축·구조도면, 구조안전확인서와 계산서를 작성·서명한다.",
+                "output": "전문가 서명 건축허가 신청도서",
+                "questionSlots": [1],
+                "authorityIds": ["local-development-authority", "pec-pcatp"],
+                "refs": [
+                  {"source": "CDA Building Plan 절차", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Forms A1/A2; architectural and structural plans; stability certificate; calculation book"]}
+                ]
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 1,
+                "label": "환경관할·IEE·EIA 대상 분류",
+                "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "사업 위치·규모·유형을 적용 환경법과 일정표에 대조해 관할 EPA와 IEE·EIA 또는 비대상 경로를 분류한다.",
+                "output": "적용 환경법·관할 EPA·IEE/EIA 경로",
+                "questionSlots": [0],
+                "authorityIds": ["provincial-epa"],
+                "refs": [
+                  {"source": "PEPA 환경평가 의무", "instrumentId": "PAK-PEPA-1997", "provisions": ["Section 12"]},
+                  {"source": "Pak-EPA IEE/EIA 일정표", "instrumentId": "PAK-IEE-EIA-REG-2000", "provisions": ["Schedules I-II and jurisdiction caveat"]}
+                ]
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 1,
+                "label": "IEE·EIA 접수·완비성 심사",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "사업시행자가 IEE 또는 EIA 보고서·신청서와 수수료를 제출하고 관할 EPA가 완비성을 심사해 추가자료 또는 수정을 요구한다.",
+                "output": "완비 접수확인 또는 환경자료 보완요구",
+                "questionSlots": [2],
+                "authorityIds": ["provincial-epa"],
+                "refs": [
+                  {"source": "Pak-EPA IEE/EIA 검토규정", "instrumentId": "PAK-IEE-EIA-REG-2000", "provisions": ["filing and preliminary scrutiny"]}
+                ]
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 1,
+                "label": "환경 본심사·공중참여",
+                "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "관할 EPA가 IEE를 심사하고, EIA이면 기술검토와 공중참여를 거쳐 환경결정안을 마련한다.",
+                "output": "기술심사·공중참여 기록과 환경결정안",
+                "questionSlots": [0],
+                "authorityIds": ["provincial-epa"],
+                "refs": [
+                  {"source": "PEPA 환경결정", "instrumentId": "PAK-PEPA-1997", "provisions": ["Section 12(2)-(4)"]},
+                  {"source": "Pak-EPA IEE/EIA 본심사", "instrumentId": "PAK-IEE-EIA-REG-2000", "provisions": ["review and public participation for EIA"]}
+                ],
+                "permitGate": {
+                  "key": "environment-decision",
+                  "gate": "관할 EPA의 환경평가 공식결정",
+                  "decision": "관할 EPA가 IEE·EIA를 심사해 승인, 조건부 승인, 수정요구 또는 불승인을 공식 결정한다.",
+                  "output": "환경승인·조건부 승인·수정요구 또는 불승인 결정문",
+                  "dependsOn": []
+                }
+              },
+              {
+                "lane": "건축주·신청인",
+                "stage": 2,
+                "label": "건축허가 신청·심사료 접수",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "건축주·대리인과 등록전문가가 권원서류·허가도서를 CDA One Window 또는 관할기관에 제출하고 현재 심사료를 납부한다.",
+                "output": "건축허가 접수증·신청번호·심사료 납부증빙",
+                "questionSlots": [1, 2],
+                "authorityIds": ["local-development-authority", "pec-pcatp"],
+                "refs": [
+                  {"source": "CDA Building Plan 접수", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Requirements for Approval of Building Plans; current fee and copy count must be rechecked"]}
+                ]
+              },
+              {
+                "lane": "도시계획·건축 허가기관",
+                "stage": 3,
+                "label": "건축·구조·용도 기술심사",
+                "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "CDA Building Control 또는 관할기관이 토지이용·배치·건축기준·구조안전과 필요한 기관의견을 심사하고 미비하면 보완을 요구한다.",
+                "output": "기술심사의견·보완요구와 허가결정안",
+                "questionSlots": [0],
+                "authorityIds": ["local-development-authority"],
+                "refs": [
+                  {"source": "CDA Building Plan 심사", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["building-plan approval and Plan Approval Letter"]},
+                  {"source": "ICT Building Control 지역사례", "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023", "provisions": ["Islamabad-only building control"]}
+                ],
+                "permitGate": {
+                  "key": "building-permit-decision",
+                  "gate": "CDA·관할기관의 건축허가 공식결정",
+                  "decision": "CDA Building Control 또는 관할 건축기관이 신청도서를 심사해 허가, 조건부 허가, 보완 또는 불허를 공식 결정한다.",
+                  "output": "건축허가결정문·승인도서·조건 또는 보완·불허 통지",
+                  "dependsOn": []
+                }
+              }
+            ],
+            "edges": [
+              [0, 1, "sequence", "허가도서 작성"],
+              [0, 2, "message", "환경관할"],
+              [2, 3, "sequence", "IEE·EIA 제출"],
+              [3, 4, "sequence", "완비접수"],
+              [1, 5, "sequence", "서명도서"],
+              [4, 6, "message", "해당 시 환경조건"],
+              [5, 6, "sequence", "허가접수"],
+              [4, 3, "loop", "추가자료·수정 요구 시"]
+            ],
+            "loop": [6, 1, "보완요구 시 · 허가도서 수정·재접수"],
+            "decisionBranches": [
+              {"state": "success", "label": "허가·조건부 허가", "action": "승인도서와 허가조건에 따라 다음 착공절차로 진행"},
+              {"state": "rework", "label": "공식 보완요구", "action": "환경자료는 B04, 건축허가도서는 B02·B06으로 돌아가 수정·재접수"},
+              {"state": "reject", "label": "불승인·불허", "action": "해당 절차를 종료하고 불복·재신청 경로는 관할법의 별도 근거를 확인"}
+            ]
+          }
         },
         "control-completion": {
           "oneLiner": "BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.",
@@ -1351,6 +1504,22 @@
           "role": "구조적 화재안전 도면승인과 완공 화재검사를 담당",
           "verificationLevel": "source-linked",
           "officialUrl": "https://www.businessnow.gov.fj/construction-permits/resources/"
+        },
+        {
+          "id": "waf",
+          "name": "Water Authority of Fiji",
+          "nameKo": "피지 수도공사(WAF)",
+          "role": "신규 상수도·하수도 연결 신청, 현장검사와 연결 완료를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.businessnow.gov.fj/new-water-waste-water-connection/"
+        },
+        {
+          "id": "nohs",
+          "name": "National Occupational Health and Safety Services",
+          "nameKo": "국가 산업안전보건서비스(OHS)",
+          "role": "작업장 용도의 신축·변경·해체 도면을 심사하고 설계동의를 담당",
+          "verificationLevel": "source-linked",
+          "officialUrl": "https://www.businessnow.gov.fj/workplace-design/"
         }
       ],
       "instruments": [
@@ -1392,6 +1561,43 @@
           "officialUrl": "https://www.businessnow.gov.fj/construction-permits/",
           "verificationLevel": "source-linked",
           "note": "2026년 정부 온라인 플랫폼이 Development Permission, Building Plan Approval, Certificate of Occupancy 3단계를 안내한다."
+        },
+        {
+          "id": "FJI-TOWN-PLANNING-ACT",
+          "title": "Town Planning Act",
+          "titleKo": "피지 도시계획법",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.laws.gov.fj/Acts/DisplayAct/307",
+          "verificationLevel": "law-linked",
+          "note": "Laws of Fiji 공식 통합본이다. 실제 지방계획과 관할 지방정부 적용은 필지별로 확인한다."
+        },
+        {
+          "id": "FJI-EMA-2005",
+          "title": "Environment Management Act 2005",
+          "titleKo": "피지 환경관리법 2005",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.laws.gov.fj/Acts/DisplayAct/2576",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "FJI-NFS-ACT",
+          "title": "National Fire Service Act",
+          "titleKo": "피지 국가소방서비스법",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://laws.gov.fj/Acts/DisplayAct/2954",
+          "verificationLevel": "law-linked"
+        },
+        {
+          "id": "FJI-HSW-ACT",
+          "title": "Health and Safety at Work Act",
+          "titleKo": "피지 산업안전보건법",
+          "kind": "act",
+          "status": "continuity_unverified",
+          "officialUrl": "https://www.laws.gov.fj/Acts/DisplayAct/454",
+          "verificationLevel": "law-linked"
         }
       ],
       "systems": {
@@ -1414,7 +1620,7 @@
           "oneLiner": "개발허가·건축도면 승인과 EIA screening·처리를 BPAS에서 병행하고 소방·OHS·유틸리티 승인을 묶는다.",
           "summary": "정부 BPAS는 개발허가, 건축도면 승인, 건축허가를 단계화하고 EIA screening, 환경처리, 소방·OHS·도로·물·전력 승인을 연결한다. EIA 규정에 따라 Part 1·2·3 분류와 처리기관·TOR·승인조건을 확정해야 한다.",
           "applicability": "건축·개발허가 대상 공사와 환경영향 가능 개발제안",
-          "authorityIds": ["dtcp-local-authority", "doe", "nfa"],
+          "authorityIds": ["dtcp-local-authority", "doe", "waf", "nfa", "nohs"],
           "basis": [
             {"instrumentId": "FJI-PH-BUILDING-REG-1959", "provisions": ["Regulations 15-26"]},
             {"instrumentId": "FJI-EIA-REG-2007", "provisions": ["Parts 2-4"]},
@@ -1424,7 +1630,168 @@
           "decisionQuestion": "본 사업의 개발·건축허가와 EIA 분류·처리기관, 소방·OHS·유틸리티 승인 선후관계는 무엇인가?",
           "conclusion": "피지는 개발허가·환경평가·건축허가가 연결되지만 서로 대체되지 않으므로 BPAS의 각 기관 완료조건을 통합 일정으로 관리해야 한다.",
           "verificationScope": "정부 BPAS와 Laws of Fiji의 EIA 규정·건축규정을 연결했다. 사업분류·수수료·보완·실제 전체기간은 현지 확인 대상이다.",
-          "referenceLabel": "BPAS·EIA screening"
+          "referenceLabel": "BPAS·EIA screening",
+          "officialProcedure": {
+            "coverage": "official-source-linked",
+            "scope": "피지 정부 BPAS가 Building Plan Approval Stage 2로 공표한 7개 Step을 그대로 사용한다. BPAS 설명은 Suva City Council 사례를 포함하므로 실제 사업지는 해당 City/Town Council로 바꿔 확인한다.",
+            "stages": [
+              "G4 개발승인·환경심사",
+              "G5 유틸리티·엔지니어링",
+              "G6 소방·OHS 승인",
+              "G7 건축허가"
+            ],
+            "steps": [
+              {
+                "lane": "도시계획·건축 허가기관",
+                "stage": 0,
+                "label": "BPAS Step 1 · 개발승인 신청",
+                "emphasis": "lead",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "토지소유자와 책임전문가가 IPA 이후 건축·용도·토공·진입로를 포함한 본 개발승인을 관할 City/Town Council과 DTCP에 신청한다.",
+                "output": "Development Permission과 승인조건",
+                "questionSlots": [0],
+                "authorityIds": ["dtcp-local-authority"],
+                "refs": [
+                  {"source": "BPAS Approval to Develop", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 1"]},
+                  {"source": "Town Planning Act", "instrumentId": "FJI-TOWN-PLANNING-ACT", "provisions": ["development permission framework"]}
+                ],
+                "permitGate": {
+                  "key": "planning-decision",
+                  "gate": "관할기관의 Development Permission 결정",
+                  "decision": "관할 City/Town Council과 DTCP가 대상지의 본 개발승인과 조건을 공식 결정한다.",
+                  "output": "Development Permission과 승인조건 또는 불허통지",
+                  "dependsOn": []
+                }
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 0,
+                "label": "BPAS Step 2 · 환경 스크리닝·EIA",
+                "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "사업시행자가 제안서를 제출하면 환경국·EIA 행정관이 EIA 대상 여부를 스크리닝하고, 대상이면 scoping·TOR·조사·공개·기술심사를 거쳐 결정한다.",
+                "output": "EIA 비대상 결정 또는 환경승인·조건·불승인",
+                "questionSlots": [0],
+                "authorityIds": ["doe"],
+                "refs": [
+                  {"source": "BPAS EIA 절차", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 2"]},
+                  {"source": "Environment Management Act", "instrumentId": "FJI-EMA-2005", "provisions": ["EIA process"]},
+                  {"source": "EIA Process Regulations", "instrumentId": "FJI-EIA-REG-2007", "provisions": ["Parts 2-4"]}
+                ],
+                "permitGate": {
+                  "key": "environment-decision",
+                  "gate": "환경국·EIA 행정관의 환경평가 결정",
+                  "decision": "환경국·EIA 행정관이 EIA 비대상, 승인, 조건부 승인 또는 불승인을 공식 결정한다.",
+                  "output": "서면 비대상 결정 또는 EIA 승인·조건·불승인",
+                  "dependsOn": []
+                }
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 1,
+                "label": "BPAS Step 3 · 상수도·하수도 연결",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "신규 연결이 필요한 개발자가 권원·위치도·TIN·배관공 서류를 WAF에 제출하고 현장검사와 연결승인을 받는다.",
+                "output": "급수·하수 연결 승인과 검사·완료확인",
+                "questionSlots": [2],
+                "authorityIds": ["waf"],
+                "refs": [
+                  {"source": "BPAS Water and Wastewater Connection", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 3; applies when new connections are required"]}
+                ]
+              },
+              {
+                "lane": "현지 설계·시공 전문가",
+                "stage": 1,
+                "label": "BPAS Step 4 · 엔지니어링 도서 심사",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "등록 기술자가 도로·보도·배수·상수도·전력·가로등·소화전의 engineering plans를 제출하고 DTCP·관계 인프라기관의 심사를 받는다.",
+                "output": "승인된 engineering plans와 관계기관 의견",
+                "questionSlots": [2],
+                "authorityIds": ["dtcp-local-authority", "waf"],
+                "refs": [
+                  {"source": "BPAS Lodgement of Engineering Plans", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 4"]}
+                ]
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 2,
+                "label": "BPAS Step 5 · 구조적 화재안전 승인",
+                "emphasis": "key",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "개발자와 건축전문가가 SFS 신청서와 도서를 NFA에 제출해 내화성능·피난·소방설비 심사를 받고 승인 또는 보완요구를 받는다.",
+                "output": "NFA Structural Fire Safety Approval 또는 보완요구",
+                "questionSlots": [1],
+                "authorityIds": ["nfa"],
+                "refs": [
+                  {"source": "BPAS Structural Fire Safety", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 5"]},
+                  {"source": "National Fire Service Act", "instrumentId": "FJI-NFS-ACT", "provisions": ["Section 11A"]},
+                  {"source": "National Building Code", "instrumentId": "FJI-NBC-REG-2004", "provisions": ["Regulation 3"]}
+                ]
+              },
+              {
+                "lane": "환경·소방·검사기관",
+                "stage": 2,
+                "label": "BPAS Step 6 · 작업장 설계 심사",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "작업장 용도의 신축·변경·해체이면 소유자가 NFA 승인도서와 구조기술자 확인서를 OHS에 제출해 설계심사를 받는다. BPAS상 Step 5와 병행할 수 있다.",
+                "output": "Workplace Design Vetting/Consent 또는 보완요구",
+                "questionSlots": [1],
+                "authorityIds": ["nohs"],
+                "refs": [
+                  {"source": "BPAS Workplace Design", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 6; concurrent with Step 5"]},
+                  {"source": "Health and Safety at Work Act", "instrumentId": "FJI-HSW-ACT", "provisions": ["workplace design applicability"]}
+                ]
+              },
+              {
+                "lane": "도시계획·건축 허가기관",
+                "stage": 3,
+                "label": "BPAS Step 7 · 현장 건축승인 신청·심사",
+                "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "소유자와 책임전문가가 개발승인·관계기관 승인·최종도서를 관할 City/Town Council에 제출하고 완비성·기술심사를 받아 Building Permit 결정을 받는다.",
+                "output": "Building Permit·승인도서·조건 또는 보완·불허통지",
+                "questionSlots": [0],
+                "authorityIds": ["dtcp-local-authority"],
+                "refs": [
+                  {"source": "BPAS Approval to Construct on Site", "instrumentId": "FJI-BPAS", "provisions": ["Stage 2 Step 7"]},
+                  {"source": "Public Health (Building) Regulations", "instrumentId": "FJI-PH-BUILDING-REG-1959", "provisions": ["Regulations 15-26"]}
+                ],
+                "permitGate": {
+                  "key": "building-permit-decision",
+                  "gate": "관할 지방정부의 Building Permit 결정",
+                  "decision": "관할 City/Town Council이 최종 도서와 관계기관 승인을 심사해 Building Permit, 보완 또는 불허를 공식 결정한다.",
+                  "output": "Building Permit·승인도서·조건 또는 보완·불허통지",
+                  "dependsOn": ["planning-decision"]
+                }
+              }
+            ],
+            "edges": [
+              [0, 1, "message", "병렬 EIA"],
+              [0, 2, "message", "해당 시 연결"],
+              [1, 3, "message", "환경조건"],
+              [2, 3, "message", "연결조건"],
+              [3, 4, "sequence", "기술도서"],
+              [3, 5, "message", "작업장 용도 시"],
+              [4, 6, "sequence", "NFA 승인"],
+              [5, 6, "message", "OHS 동의"]
+            ],
+            "loop": [6, 3, "결함·불일치 통지 시 · 해당도서 보완"],
+            "decisionBranches": [
+              {"state": "success", "label": "Building Permit 발급", "action": "승인도서와 조건에 따라 착공 단계로 진행"},
+              {"state": "rework", "label": "결함·불일치 보완", "action": "통지된 분야의 Step 4·5·6 도서를 수정하고 Step 7에 재제출"},
+              {"state": "reject", "label": "불허", "action": "착공할 수 없으며 불복·재신청 경로는 결정문과 관할 법령에서 별도 확인"}
+            ]
+          }
         },
         "control-completion": {
           "oneLiner": "National Building Code, 단계검사·화재안전과 Certificate of Completion/Occupancy를 사용개시 Gate로 둔다.",

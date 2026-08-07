@@ -4,10 +4,11 @@
 The Senegal pilot remains a hand-maintained, article-verified detailed record.  Other
 countries can start as source-linked baselines without copying the same workflow
 boilerplate dozens of times.  The catalog contains country-specific authorities,
-official instruments and decision evidence.  This builder expands that evidence into
-a seven-node due-diligence workflow per axis.  The generated workflow deliberately
-distinguishes official-route checks from field verification and project-control tasks:
-catalog evidence is never presented as an invented statutory sequence.
+official instruments and decision evidence.  When a catalog entry contains a researched
+``officialProcedure``, this builder expands it into the applicant/authority procedure shown
+on the main board.  Otherwise it publishes a single ``detail-unverified`` entry point instead
+of inventing a statutory sequence.  ODA due-diligence questions stay in the fieldwork
+checklist and open-question register, separate from the country procedure.
 
 Usage:
     python3 tools/build_construction_baselines.py
@@ -107,117 +108,115 @@ SYSTEM_META = {
 }
 
 BOARD_LANES = [
-    "사업주·수원기관",
-    "현지 설계·조사팀",
-    "도시계획·건축 당국",
-    "환경·안전·검사기관",
+    "건축주·신청인",
+    "현지 설계·시공 전문가",
+    "도시계획·건축 허가기관",
+    "환경·소방·검사기관",
 ]
 
-# Each public construction model mirrors the procurement boards' information density:
-# seven nodes, at least three active lanes and four lifecycle stages.  ``kind`` is the
-# epistemic contract.  Generated catalog evidence is axis-level rather than a verified
-# node-to-article crosswalk, so these generic nodes never claim ``statutory`` status.
-# ``official-guidance`` marks a task that checks an official route; field-verification
-# and project-control nodes are ODA-team tasks, not additional local-law steps.
-WORKFLOW_META = {
+# Research scaffold for authoring a country ``officialProcedure``.  It is never published
+# as a country's procedure by itself: a catalog row must opt in with researched steps.
+# ``kind`` remains an epistemic contract, so axis-level sources cannot be promoted to a
+# node-to-article ``statutory`` claim.  ODA-only work belongs to checklist/openQuestions.
+PROCEDURE_SCAFFOLD_META = {
     "site-urban": {
         "stages": [
-            "G0 필지·권원",
-            "G1 계획·개발규제",
-            "G2 현장·기반시설",
-            "G3 부지조건 확정",
+            "G0 신청·권원",
+            "G1 계획·개발 신청",
+            "G2 관계기관 심사",
+            "G3 계획·개발 결정",
         ],
         "steps": [
             {
-                "lane": "사업주·수원기관", "stage": 0,
-                "label": "대상 필지·사업입력 확정", "emphasis": "lead",
-                "kind": "project-control",
-                "action": "필지 식별정보, 사업용도, 규모와 사업주체를 한 개 기준선으로 고정한다.",
-                "output": "사업개요·필지 식별표", "questionSlots": [],
-            },
-            {
-                "lane": "현지 설계·조사팀", "stage": 0,
-                "label": "권원·토지사용권 검증", "emphasis": "key",
+                "lane": "건축주·신청인", "stage": 0,
+                "label": "필지·신청인·관할기관 특정", "emphasis": "lead",
                 "kind": "field-verification",
-                "action": "등기·지적·사용권과 소유자 또는 권리자의 사업 동의를 원본으로 대조한다.",
-                "output": "권원·경계·사용동의 검증표", "questionSlots": [2],
+                "action": "신청인이 필지 식별정보, 계획용도·규모와 관할 계획·개발기관을 특정한다.",
+                "output": "필지·신청인·관할 확인자료", "questionSlots": [0],
             },
             {
-                "lane": "도시계획·건축 당국", "stage": 1,
-                "label": "{referenceLabel} 공식 적용확인", "emphasis": "normal",
+                "lane": "건축주·신청인", "stage": 0,
+                "label": "권원·토지사용 동의서류 제출", "emphasis": "key",
                 "kind": "official-guidance",
-                "action": "필지·사업자료를 기준으로 관할기관 또는 공식 서비스에서 적용 계획·개발규제와 승인·비대상 결정경로를 확인한다.",
-                "output": "계획·개발 적용회신·승인·비대상 결정과 경로표", "questionSlots": [1],
+                "action": "신청인이 등기·지적·임차·사용권과 소유자 동의 등 계획·개발 신청의 권원서류를 제출한다.",
+                "output": "권원·경계·토지사용 동의서류", "questionSlots": [2],
+            },
+            {
+                "lane": "도시계획·건축 허가기관", "stage": 1,
+                "label": "{referenceLabel} 적용규제 분류", "emphasis": "normal",
+                "kind": "official-guidance",
+                "action": "관할기관이 필지와 제안 용도를 기준으로 적용 계획·개발규제, 심사경로와 사전승인 필요 여부를 분류한다.",
+                "output": "적용규제·심사경로 안내 또는 사전회신", "questionSlots": [1],
+            },
+            {
+                "lane": "현지 설계·시공 전문가", "stage": 1,
+                "label": "계획·개발 신청도서 작성·접수", "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "action": "현지 책임전문가가 용도·배치·개발수치와 요구도서를 작성하고 신청인이 관할기관에 접수한다.",
+                "output": "계획·개발 신청서와 접수증", "questionSlots": [1],
+            },
+            {
+                "lane": "환경·소방·검사기관", "stage": 2,
+                "label": "도로·배수·환경·유틸리티 협의", "emphasis": "normal",
+                "kind": "field-verification",
+                "action": "관계기관이 도로·배수·재해·환경과 상하수·전력 등 적용조건 및 동의 필요 여부를 심사한다.",
+                "output": "관계기관 의견·동의·조건", "questionSlots": [2],
+            },
+            {
+                "lane": "도시계획·건축 허가기관", "stage": 2,
+                "label": "완비성·기술심사와 보완요구", "emphasis": "normal",
+                "kind": "official-guidance",
+                "action": "관할기관이 권원·계획 적합성·관계기관 의견과 신청도서를 심사하고 미비사항이 있으면 보완을 요구한다.",
+                "output": "완비확인 또는 공식 보완요구서", "questionSlots": [0],
+            },
+            {
+                "lane": "도시계획·건축 허가기관", "stage": 3,
+                "label": "계획·개발 승인·조건·불허 결정", "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "action": "관할기관이 심사를 종결하고 승인, 조건부 승인, 비대상 회신 또는 불허를 공식 결정한다.",
+                "output": "계획·개발 결정문과 승인조건", "questionSlots": [0],
                 "permitGate": {
                     "key": "planning-decision",
-                    "gate": "계획·개발규제 공식 적용확인",
+                    "gate": "계획·개발규제 공식 적용결정",
                     "decision": (
-                        "관할 계획·개발기관이 대상 필지에 적용되는 계획·개발규제와 "
-                        "사전승인 필요 여부를 공식 확인한다."
+                        "관할 계획·개발기관이 대상 필지의 계획 적합성, 적용 개발규제와 "
+                        "사전승인 필요 여부를 심사해 공식 결정한다."
                     ),
-                    "output": "계획·개발 적합확인·승인서 또는 비대상 회신",
+                    "output": "계획·개발 승인·조건·불허 또는 비대상 회신",
                     "dependsOn": [],
                 },
             },
-            {
-                "lane": "현지 설계·조사팀", "stage": 1,
-                "label": "용도·개발수치·중첩규제 확인", "emphasis": "bottleneck",
-                "kind": "field-verification",
-                "action": "필지에 실제 적용되는 허용용도와 개발수치, 도로·주차·특구 등 중첩조건을 서면 확인한다.",
-                "output": "필지별 개발규제표", "questionSlots": [1],
-            },
-            {
-                "lane": "현지 설계·조사팀", "stage": 2,
-                "label": "지반·재해·유틸리티 조사", "emphasis": "normal",
-                "kind": "field-verification",
-                "action": "지반, 침수·재해, 접근·배수와 전력·통신·상하수 용량을 현장자료로 검증한다.",
-                "output": "현장조건·인입용량 조사서", "questionSlots": [2],
-            },
-            {
-                "lane": "도시계획·건축 당국", "stage": 2,
-                "label": "관할기관 조건·결측 서면확정", "emphasis": "normal",
-                "kind": "field-verification",
-                "action": "공개자료로 확정되지 않는 필지조건과 추가 제출자료를 관할기관 회신으로 잠근다.",
-                "output": "기관 회신·조건부사항 대장", "questionSlots": [0],
-            },
-            {
-                "lane": "사업주·수원기관", "stage": 3,
-                "label": "부지 적합성 Gate·설계조건 잠금", "emphasis": "bottleneck",
-                "kind": "project-control",
-                "action": "권원·규제·현장조건의 결측과 위험을 검토해 설계 진행, 조건부 진행 또는 부지 재검토를 결정한다.",
-                "output": "부지 Go/Conditional/No-Go 결정서", "questionSlots": [0],
-            },
         ],
-        "loop": (6, 2, "필지자료·기관확인 보완"),
+        "loop": (5, 3, "보완요구 시 · 신청도서 수정"),
     },
     "permit-environment": {
         "stages": [
-            "G4 신청인·사업분류",
-            "G5 환경·전문심사",
-            "G6 허가도서·관계협의",
-            "G7 접수·허가결정",
+            "G4 신청·환경분류",
+            "G5 허가도서 접수",
+            "G6 관계기관·기술심사",
+            "G7 허가결정",
         ],
         "steps": [
             {
-                "lane": "사업주·수원기관", "stage": 0,
-                "label": "건축주·신청인·관할 확정", "emphasis": "lead",
-                "kind": "project-control",
-                "action": "법적 건축주·토지소유자·신청인과 국가·지방·특구 관할을 확정한다.",
-                "output": "신청주체·권한·관할 매트릭스", "questionSlots": [0],
+                "lane": "건축주·신청인", "stage": 0,
+                "label": "건축주·신청인·허가관할 특정", "emphasis": "lead",
+                "kind": "field-verification",
+                "action": "건축주 또는 적법한 대리신청인이 대상지의 건축·개발 허가기관과 환경심사기관을 특정한다.",
+                "output": "신청권한·토지권원·관할 확인자료", "questionSlots": [0],
             },
             {
-                "lane": "현지 설계·조사팀", "stage": 0,
-                "label": "책임설계자·시설·위험분류", "emphasis": "key",
-                "kind": "field-verification",
-                "action": "현지 서명권자와 시설 용도·점유·규모·위험 분류 및 제출도서 책임을 확인한다.",
-                "output": "책임설계·시설분류표", "questionSlots": [1],
+                "lane": "현지 설계·시공 전문가", "stage": 0,
+                "label": "책임설계자 선임·시설분류", "emphasis": "key",
+                "kind": "official-guidance",
+                "action": "현지 서명권이 있는 책임설계자가 시설의 용도·점유·규모·위험분류와 적용 설계기준을 정한다.",
+                "output": "전문자격 증빙·시설분류·설계기준표", "questionSlots": [1],
             },
             {
-                "lane": "환경·안전·검사기관", "stage": 1,
-                "label": "환경 스크리닝·평가경로 결정", "emphasis": "bottleneck",
-                "kind": "field-verification",
-                "action": "환경기관의 공식 분류로 평가유형, 선행조건, 심사기관과 승인 산출물을 결정한다.",
-                "output": "환경 스크리닝·평가경로 결정", "questionSlots": [0],
+                "lane": "환경·소방·검사기관", "stage": 0,
+                "label": "환경 스크리닝·평가유형 결정", "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "action": "관할 환경기관이 사업정보를 심사해 비대상·면제·간이평가·본평가 등 적용유형과 선행조건을 결정한다.",
+                "output": "환경 분류·승인·면제 또는 비대상 결정문", "questionSlots": [0],
                 "dependsOnStepIndexes": [1],
                 "permitGate": {
                     "key": "environment-decision",
@@ -231,34 +230,34 @@ WORKFLOW_META = {
                 },
             },
             {
-                "lane": "도시계획·건축 당국", "stage": 1,
-                "label": "건축·개발허가 공식경로 확인", "emphasis": "normal",
+                "lane": "현지 설계·시공 전문가", "stage": 1,
+                "label": "허가도서·환경조건 작성·접수", "emphasis": "normal",
                 "kind": "official-guidance",
-                "action": "공식 허가 안내와 법령을 대조해 건축·개발허가의 적용경로와 선행관계를 확인한다.",
-                "output": "건축·개발허가 경로표", "questionSlots": [1],
-                "dependsOnStepIndexes": [1],
+                "action": "책임설계자가 환경결정과 적용기준을 반영한 건축·개발 허가도서를 작성하고 신청인이 수수료와 함께 접수한다.",
+                "output": "건축·개발 허가신청서·도서·접수증", "questionSlots": [1],
+                "dependsOnStepIndexes": [1, 2],
             },
             {
-                "lane": "현지 설계·조사팀", "stage": 2,
-                "label": "허가도서·설계기준 통합", "emphasis": "normal",
-                "kind": "project-control",
-                "action": "분류결정, 현지 서명요건과 최신 체크리스트를 설계·제출도서 목록에 통합한다.",
-                "output": "허가도서·서명·설계기준 대장", "questionSlots": [2],
-                "dependsOnStepIndexes": [2, 3],
-            },
-            {
-                "lane": "환경·안전·검사기관", "stage": 2,
-                "label": "소방·안전·유틸리티 병렬협의", "emphasis": "normal",
+                "lane": "환경·소방·검사기관", "stage": 2,
+                "label": "소방·안전·도로·유틸리티 협의", "emphasis": "normal",
                 "kind": "field-verification",
-                "action": "소방·안전·도로·물·전력 등 적용 기관과 동의서·NOC의 필요 여부 및 병렬처리 가능성을 확인한다.",
-                "output": "관계기관 협의·선행동의 매트릭스", "questionSlots": [2],
+                "action": "관계기관이 소방·안전·도로·물·전력 등 해당 분야를 심사하고 필요한 동의·NOC 또는 조건을 회신한다.",
+                "output": "관계기관 동의·NOC·심사의견", "questionSlots": [2],
+                "dependsOnStepIndexes": [3],
             },
             {
-                "lane": "도시계획·건축 당국", "stage": 3,
-                "label": "완비접수·수수료·허가결정 Gate", "emphasis": "bottleneck",
-                "kind": "field-verification",
-                "action": "완비 기준, 접수일, 수수료, 보완정지, 실제 처리기간과 건축·개발허가 조건 및 해당 시 별도 환경결정 조건을 기록한다.",
-                "output": "완비접수증·결정문·조건·일정대장", "questionSlots": [0],
+                "lane": "도시계획·건축 허가기관", "stage": 2,
+                "label": "완비성·기술심사와 보완요구", "emphasis": "normal",
+                "kind": "official-guidance",
+                "action": "허가기관이 신청도서, 환경조건과 관계기관 의견을 심사하고 미비·부적합 사항이 있으면 공식 보완을 요구한다.",
+                "output": "완비확인·기술심사의견 또는 보완요구서", "questionSlots": [2],
+            },
+            {
+                "lane": "도시계획·건축 허가기관", "stage": 3,
+                "label": "건축·개발허가 최종결정", "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "action": "허가기관이 심사를 종결하고 허가, 조건부 허가 또는 불허를 결정해 승인도서와 조건을 발급한다.",
+                "output": "건축·개발 허가결정문과 승인도서·조건", "questionSlots": [0],
                 "permitGate": {
                     "key": "building-permit-decision",
                     "gate": "관할 건축·개발기관의 허가결정",
@@ -272,65 +271,71 @@ WORKFLOW_META = {
             },
         ],
         "edges": [
-            (0, 1, "sequence", "책임체계"),
-            (1, 2, "message", "환경분류"),
-            (1, 3, "sequence", "허가경로"),
-            (2, 4, "message", "환경조건"),
-            (3, 4, "sequence", "허가요건"),
-            (4, 5, "sequence", "관계협의"),
-            (5, 6, "sequence", "완비접수"),
+            (0, 1, "sequence", "전문가 선임"),
+            (1, 2, "message", "사업분류 입력"),
+            (2, 3, "message", "환경조건"),
+            (3, 4, "sequence", "협의요청"),
+            (4, 5, "message", "기관의견"),
+            (5, 6, "sequence", "심사완료"),
         ],
-        "loop": (6, 4, "도서·기관의견 보완"),
+        "loop": (5, 3, "보완요구 시 · 허가도서·NOC 수정"),
     },
     "control-completion": {
         "stages": [
-            "G8 자격·착공준비",
-            "G9 시공·품질관리",
-            "G10 검사·준공보완",
-            "G11 사용승인·인계",
+            "G8 착공 준비",
+            "G9 시공·단계검사",
+            "G10 시정·준공신청",
+            "G11 준공·사용결정",
         ],
         "steps": [
             {
-                "lane": "사업주·수원기관", "stage": 0,
-                "label": "자격·계약·보험 적용판정", "emphasis": "lead",
+                "lane": "건축주·신청인", "stage": 0,
+                "label": "등록 시공·감리자 선임·착공신고", "emphasis": "lead",
                 "kind": "field-verification",
-                "action": "현지 설계·시공·검사 주체의 등록자격과 계약상 책임, 의무보험 적용 여부와 견적을 확인한다.",
-                "output": "자격·계약·보험 적용표", "questionSlots": [0],
+                "action": "허가권자가 요구하는 등록 시공자·감리자와 의무보험을 갖추고 착공신고 또는 착공승인을 신청한다.",
+                "output": "자격·보험 증빙과 착공신고·승인서", "questionSlots": [0],
             },
             {
-                "lane": "현지 설계·조사팀", "stage": 0,
-                "label": "기술기준·검사계획 확정", "emphasis": "key",
+                "lane": "현지 설계·시공 전문가", "stage": 0,
+                "label": "승인도서·검사 Hold Point 확정", "emphasis": "key",
                 "kind": "official-guidance",
-                "action": "적용 코드·표준, 착공 전 통지 여부, 법정·계약 검사 Hold Point와 책임자를 확정한다.",
-                "output": "적용기준·검사시험계획(ITP)", "questionSlots": [1],
+                "action": "책임전문가와 시공자가 승인도서·허가조건, 적용 코드와 법정 단계검사 시점을 현장 실행계획에 반영한다.",
+                "output": "승인도서·허가조건·검사계획", "questionSlots": [1],
             },
             {
-                "lane": "도시계획·건축 당국", "stage": 1,
-                "label": "{referenceLabel} 적용경로 확인", "emphasis": "normal",
+                "lane": "현지 설계·시공 전문가", "stage": 1,
+                "label": "승인도서에 따른 시공·기록 작성", "emphasis": "normal",
                 "kind": "official-guidance",
-                "action": "공식 법령·서비스에서 착공, 단계검사, 준공·점유의 적용경로와 관할을 확인한다.",
-                "output": "검사·준공·점유 법정경로표", "questionSlots": [1],
+                "action": "시공자와 감리자가 승인도서에 따라 시공하고 자재·시험·사진·감리·변경 기록을 작성한다.",
+                "output": "시공·품질·시험·감리 기록", "questionSlots": [1],
             },
             {
-                "lane": "현지 설계·조사팀", "stage": 1,
-                "label": "시공·시험·품질기록 이행", "emphasis": "normal",
-                "kind": "project-control",
-                "action": "승인도서와 검사계획에 따라 자재·시험·사진·감리·시공 기록을 누적 관리한다.",
-                "output": "품질·시험·시공기록 대장", "questionSlots": [2],
-            },
-            {
-                "lane": "환경·안전·검사기관", "stage": 2,
-                "label": "단계검사·변경·재검사 관리", "emphasis": "bottleneck",
+                "lane": "환경·소방·검사기관", "stage": 1,
+                "label": "법정 단계검사·시험 확인", "emphasis": "normal",
                 "kind": "field-verification",
-                "action": "법정 또는 계약 검사, 변경승인, 부적합 시정과 재검사 완료를 증빙으로 닫는다.",
-                "output": "검사·변경·부적합 종결기록", "questionSlots": [2],
+                "action": "관할 검사기관이 기초·구조·설비·소방 등 적용되는 단계검사와 시험 결과를 확인한다.",
+                "output": "단계검사 기록·시험성적·검사확인", "questionSlots": [2],
             },
             {
-                "lane": "환경·안전·검사기관", "stage": 2,
-                "label": "최종·소방검사·준공·점유결정", "emphasis": "normal",
+                "lane": "현지 설계·시공 전문가", "stage": 2,
+                "label": "부적합 시정·변경승인·재검사", "emphasis": "bottleneck",
                 "kind": "field-verification",
-                "action": "관할기관과 최종·소방검사를 닫고 as-built·시험성적·인증서를 제출해 준공·점유·사용승인 또는 비대상 회신을 확보한다.",
-                "output": "최종·소방검사 결과와 준공·점유·사용승인서·비대상 회신", "questionSlots": [0],
+                "action": "신청인과 책임전문가가 검사 부적합을 시정하고 필요한 설계변경 승인을 받은 뒤 재검사를 요청한다.",
+                "output": "시정·변경승인·재검사 종결기록", "questionSlots": [2],
+            },
+            {
+                "lane": "건축주·신청인", "stage": 2,
+                "label": "준공도서 제출·최종검사 신청", "emphasis": "normal",
+                "kind": "official-guidance",
+                "action": "신청인이 준공도면, 시험·감리·소방 등 요구증빙을 제출하고 최종검사와 준공·점유·사용승인을 신청한다.",
+                "output": "준공·점유 신청서와 준공도서", "questionSlots": [0],
+            },
+            {
+                "lane": "도시계획·건축 허가기관", "stage": 3,
+                "label": "준공·점유·사용 최종결정", "emphasis": "bottleneck",
+                "kind": "official-guidance",
+                "action": "관할 건축·검사·소방기관이 최종검사와 제출도서를 심사해 준공·점유·사용승인, 보완 또는 불승인을 결정한다.",
+                "output": "최종검사 결과와 준공·점유·사용승인서", "questionSlots": [0],
                 "permitGate": {
                     "key": "completion-use-decision",
                     "gate": "관할기관의 준공·점유·사용결정",
@@ -342,15 +347,8 @@ WORKFLOW_META = {
                     "dependsOn": [],
                 },
             },
-            {
-                "lane": "사업주·수원기관", "stage": 3,
-                "label": "준공·점유·O&M 인계 Gate", "emphasis": "bottleneck",
-                "kind": "project-control",
-                "action": "준공·점유·개장에 필요한 증명과 잔여조건을 확인하고 O&M·보증·자산 인계를 승인한다.",
-                "output": "점유·개장 승인 및 O&M 인계팩", "questionSlots": [0],
-            },
         ],
-        "loop": (6, 3, "품질기록·검사 보완"),
+        "loop": (4, 2, "부적합 시 · 시정·재검사"),
     },
 }
 
@@ -402,6 +400,33 @@ def system_basis_refs(system: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
 
+def unverified_entry_workflow(system_key: str, system: dict[str, Any]) -> dict[str, Any]:
+    """Expose only the country evidence actually present in a baseline catalog row.
+
+    A system summary proves that a regulatory axis and official entry point exist; it
+    does not prove a seven-step statutory order.  Until ``officialProcedure`` is
+    researched, publish one explicit evidence entry instead of compiling the shared ODA
+    checklist into a fictional country procedure.
+    """
+    stage_code = {"site-urban": "G0", "permit-environment": "G4", "control-completion": "G8"}[system_key]
+    return {
+        "coverage": "detail-unverified",
+        "scope": system["verificationScope"],
+        "stages": [f"{stage_code} 공식 절차 진입점"],
+        "steps": [{
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": f"{system['referenceLabel']} · 절차 상세 미확인",
+            "emphasis": "bottleneck",
+            "kind": "field-verification",
+            "action": system["summary"],
+            "output": "관할기관의 현행 절차도·신청서·체크리스트 확인 필요",
+            "questionSlots": [0, 1, 2],
+        }],
+        "edges": [],
+    }
+
+
 def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     slug = profile["slug"]
     iso3 = profile["iso3"]
@@ -416,6 +441,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     nodes: list[dict[str, Any]] = []
     permit_path: list[dict[str, Any]] = []
     source_edges: list[dict[str, Any]] = []
+    all_stages: list[str] = []
 
     node_number = 1
     gate_number = 1
@@ -427,7 +453,10 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     for system_key in SYSTEM_ORDER:
         system = systems[system_key]
         meta = SYSTEM_META[system_key]
-        workflow = WORKFLOW_META[system_key]
+        workflow = system.get("officialProcedure") or unverified_entry_workflow(
+            system_key, system
+        )
+        all_stages.extend(workflow["stages"])
         req_id = f"{prefix}-BLD-REQ-{meta['priority']:03d}"
         conclusion_id = f"{prefix}-BLD-C-{conclusion_number:03d}"
         model_node_ids: list[str] = []
@@ -506,14 +535,14 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
                 "label": label,
                 "emphasis": step["emphasis"],
                 "kind": step["kind"],
-                "basisScope": "axis",
+                "basisScope": step.get("basisScope", "axis"),
                 "note": action,
                 "action": action,
                 "outputs": node_outputs,
-                "authorityIds": system["authorityIds"],
+                "authorityIds": step.get("authorityIds", system["authorityIds"]),
                 "requirementIds": [req_id],
                 "questionIds": question_ids,
-                "refs": system_basis_refs(system),
+                "refs": step.get("refs", system_basis_refs(system)),
             }
             permit_gate = None if step_override.get("omitPermitGate") else step.get("permitGate")
             if permit_gate:
@@ -570,14 +599,16 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
                 source_edge["label"] = edge_label
             source_edges.append(source_edge)
 
-        loop_source, loop_target, loop_label = workflow["loop"]
-        source_edges.append({
-            "id": f"BL{meta['priority']:02d}",
-            "source": model_node_ids[loop_source],
-            "target": model_node_ids[loop_target],
-            "type": "loop",
-            "label": loop_label,
-        })
+        loop = workflow.get("loop")
+        if loop:
+            loop_source, loop_target, loop_label = loop
+            source_edges.append({
+                "id": f"BL{meta['priority']:02d}",
+                "source": model_node_ids[loop_source],
+                "target": model_node_ids[loop_target],
+                "type": "loop",
+                "label": loop_label,
+            })
 
         for phase, check, output in meta["checklist"]:
             checklist_id = f"{prefix}-BLD-F-{checklist_number:03d}"
@@ -614,21 +645,25 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             if edge_label:
                 edge["label"] = edge_label
             model_edges.append(edge)
-        model_edges.append({
-            "id": f"M{meta['priority']:02d}-L01",
-            "source": model_node_ids[loop_source],
-            "target": model_node_ids[loop_target],
-            "type": "loop",
-            "label": loop_label,
-        })
+        if loop:
+            loop_source, loop_target, loop_label = loop
+            model_edges.append({
+                "id": f"M{meta['priority']:02d}-L01",
+                "source": model_node_ids[loop_source],
+                "target": model_node_ids[loop_target],
+                "type": "loop",
+                "label": loop_label,
+            })
         models.append({
             "id": system_key,
             "slug": model_slug,
             "priority": meta["priority"],
-            "name": f"{profile['name']} {meta['name']}",
+            "name": workflow.get("name", f"{profile['name']} {meta['name']}"),
             "oneLiner": system["oneLiner"],
             "purpose": meta["purpose"],
             "verificationScope": system["verificationScope"],
+            "procedureStatus": workflow.get("coverage", "source-linked"),
+            "procedureScope": workflow.get("scope", system["verificationScope"]),
             "nodeIds": model_node_ids,
             "requirementIds": [req_id],
             "questionIds": model_question_ids,
@@ -636,6 +671,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "siteOverlayIds": [f"{prefix}-LOCAL-OVERLAY-001"] if system_key == "site-urban" else [],
             "fieldworkChecklistIds": model_checklist_ids,
             "edges": model_edges,
+            "decisionBranches": workflow.get("decisionBranches", []),
         })
 
     first_system = systems["site-urban"]
@@ -679,12 +715,8 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "profile": "gov",
             "title": f"{profile['name']} 건축 법·제도 3축 통합 흐름",
             "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
-            "lanes": BOARD_LANES,
-            "stages": [
-                stage
-                for system_key in SYSTEM_ORDER
-                for stage in WORKFLOW_META[system_key]["stages"]
-            ],
+            "lanes": [lane for lane in BOARD_LANES if any(node["lane"] == lane for node in nodes)],
+            "stages": list(dict.fromkeys(all_stages)),
             "nodes": nodes,
             "edges": source_edges,
         },
@@ -740,12 +772,74 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
             for ref in system["basis"]:
                 if ref["instrumentId"] not in instrument_ids:
                     raise ValueError(f"{slug}.{system_key}: unknown instrument {ref['instrumentId']}")
+            procedure = system.get("officialProcedure")
+            if procedure is not None:
+                if not isinstance(procedure, dict):
+                    raise ValueError(f"{slug}.{system_key}: officialProcedure must be an object")
+                if procedure.get("coverage") not in {"source-linked", "official-source-linked", "article-verified"}:
+                    raise ValueError(f"{slug}.{system_key}: invalid officialProcedure coverage")
+                stages = procedure.get("stages")
+                steps = procedure.get("steps")
+                if not isinstance(stages, list) or not stages or not all(stages):
+                    raise ValueError(f"{slug}.{system_key}: officialProcedure needs stages")
+                if not isinstance(steps, list) or not steps:
+                    raise ValueError(f"{slug}.{system_key}: officialProcedure needs steps")
+                gate_keys: set[str] = set()
+                for index, step in enumerate(steps):
+                    where = f"{slug}.{system_key}.officialProcedure.steps[{index}]"
+                    for field in ("lane", "stage", "label", "emphasis", "kind", "action", "output"):
+                        if field not in step or step[field] in (None, ""):
+                            raise ValueError(f"{where}: missing {field}")
+                    if step["lane"] not in BOARD_LANES:
+                        raise ValueError(f"{where}: unknown lane {step['lane']!r}")
+                    if not isinstance(step["stage"], int) or not 0 <= step["stage"] < len(stages):
+                        raise ValueError(f"{where}: invalid stage index")
+                    if step["kind"] not in {
+                        "statutory", "official-guidance", "local-example", "field-verification"
+                    }:
+                        raise ValueError(f"{where}: invalid kind {step['kind']!r}")
+                    unknown_authorities = set(step.get("authorityIds", [])) - authority_ids
+                    if unknown_authorities:
+                        raise ValueError(f"{where}: unknown authorities {sorted(unknown_authorities)}")
+                    for ref in step.get("refs", []):
+                        if ref.get("instrumentId") not in instrument_ids:
+                            raise ValueError(f"{where}: unknown instrument {ref.get('instrumentId')!r}")
+                    gate = step.get("permitGate")
+                    if gate:
+                        key = gate.get("key")
+                        if not key or key in gate_keys:
+                            raise ValueError(f"{where}: missing or duplicate permitGate key")
+                        missing = set(gate.get("dependsOn", [])) - gate_keys
+                        if missing:
+                            raise ValueError(f"{where}: permitGate depends on later/unknown {sorted(missing)}")
+                        gate_keys.add(key)
+                for edge_index, edge in enumerate(procedure.get("edges", [])):
+                    if not isinstance(edge, list) or len(edge) != 4:
+                        raise ValueError(f"{slug}.{system_key}: invalid officialProcedure edge {edge_index}")
+                    source, target, edge_type, _ = edge
+                    if source not in range(len(steps)) or target not in range(len(steps)):
+                        raise ValueError(f"{slug}.{system_key}: edge {edge_index} references unknown step")
+                    if edge_type not in {"sequence", "message", "loop"}:
+                        raise ValueError(f"{slug}.{system_key}: edge {edge_index} has invalid type")
+                loop = procedure.get("loop")
+                if loop is not None:
+                    if (
+                        not isinstance(loop, list) or len(loop) != 3
+                        or loop[0] not in range(len(steps)) or loop[1] not in range(len(steps))
+                        or not loop[2]
+                    ):
+                        raise ValueError(f"{slug}.{system_key}: invalid officialProcedure loop")
+                branches = procedure.get("decisionBranches", [])
+                if branches and {
+                    item.get("state") for item in branches if isinstance(item, dict)
+                } != {"success", "rework", "reject"}:
+                    raise ValueError(f"{slug}.{system_key}: decisionBranches need success/rework/reject")
             overrides = system.get("workflowOverrides", {})
             if not isinstance(overrides, dict):
                 raise ValueError(f"{slug}.{system_key}: workflowOverrides must be an object")
             known_gate_keys = {
                 step["permitGate"]["key"]
-                for step in WORKFLOW_META[system_key]["steps"]
+                for step in PROCEDURE_SCAFFOLD_META[system_key]["steps"]
                 if step.get("permitGate")
             }
             for override_key, override in overrides.items():
