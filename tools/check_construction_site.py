@@ -285,8 +285,8 @@ def main() -> int:
                     )
                 representative_expectations = {
                     "pakistan": {
-                        "first": "관할기관·신청권원 확정",
-                        "last": "건축·구조·용도 기술심사",
+                        "first": "등록 건축사·구조기술자 허가도서 작성",
+                        "last": "보완도서 제출·재심사",
                         "scope": "Islamabad/ICT",
                     },
                     "fiji": {
@@ -303,6 +303,32 @@ def main() -> int:
                     errors.append(
                         f"{model_slug} does not disclose its jurisdiction/source scope"
                     )
+                if any(
+                    node.get("workflow_kind") == "field-verification"
+                    for node in process["nodes"]
+                ):
+                    errors.append(
+                        f"{model_slug} mixes an ODA field-verification task into the "
+                        "published statutory procedure"
+                    )
+                if model["countryKey"] == "pakistan":
+                    procedure_text = json.dumps(procedure, ensure_ascii=False)
+                    if "관할기관·신청권원 확정" in procedure_text:
+                        errors.append(
+                            f"{model_slug} still presents the internal jurisdiction check "
+                            "as a statutory step"
+                        )
+                    if "보완도서 제출·재심사" not in procedure_text:
+                        errors.append(
+                            f"{model_slug} lacks the statutory supplement/resubmission step"
+                        )
+                    branch_text = json.dumps(
+                        canvas.get("decisionBranches", []), ensure_ascii=False
+                    )
+                    if re.search(r"\bB\d{2}\b", branch_text):
+                        errors.append(
+                            f"{model_slug} exposes internal node IDs in its decision branches"
+                        )
 
             selected_gate_orders = list(dict.fromkeys(
                 order
@@ -412,13 +438,15 @@ def main() -> int:
                 "b.addEventListener('click'",
                 'class="board" id="board" style="min-width:',
                 "협의·관할기관",
-                "현장 확인질문",
-                "보고서 반영",
                 "핵심 적용판단",
-                "근거 상태",
                 f'{model["priority"]:02d} · {model["name"]}',
                 "절차 구간",
-                "ODA 사업 적용 확인사항",
+                "ODA 사업별 적용 확인사항",
+                'class="card field-application"',
+                "법정절차 외 체크리스트",
+                "업무구조도와 공식 결정 Gate에는 포함하지 않습니다",
+                "law-copy",
+                "law-meta",
                 "<span>절차 단계</span>",
                 "<span>공식 결정 Gate</span>",
                 "<span>절차 구간</span>",
@@ -648,9 +676,15 @@ def main() -> int:
                                 f"site/model/{model_slug}/index.html node {node_id} "
                                 "exposes a synthetic numeric legal confidence"
                             )
-                        if not node.get("evidence_status"):
+                        internal_fields = {
+                            "blocker", "evidence_status", "report_use",
+                            "open_questions", "question_ids",
+                        }.intersection(node)
+                        if internal_fields:
                             errors.append(
-                                f"site/model/{model_slug}/index.html node {node_id} lacks evidence status"
+                                f"site/model/{model_slug}/index.html node {node_id} "
+                                "exposes ODA survey-only fields: "
+                                f"{sorted(internal_fields)}"
                             )
                         source_node = next(
                             item for item in board["nodes"] if item["id"] == node_id

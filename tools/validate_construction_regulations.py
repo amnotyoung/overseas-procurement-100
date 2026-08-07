@@ -653,6 +653,17 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     f"{where}.nodeIds",
                     f"unverified procedure fallback must expose one evidence entry, got {len(selected_nodes)}",
                 )
+            if procedure_status in {"official-source-linked", "article-verified"}:
+                internal_nodes = [
+                    item.get("id") for item in selected_nodes
+                    if item.get("kind") == "field-verification"
+                ]
+                if internal_nodes:
+                    result.error(
+                        f"{where}.nodeIds",
+                        "researched country procedure cannot publish ODA field-verification "
+                        f"nodes: {internal_nodes}",
+                    )
 
             available_requirements = {
                 requirement_id

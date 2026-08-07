@@ -34,7 +34,7 @@
     ],
     "stages": [
       "G0 공식 절차 진입점",
-      "G4 관할·허가도서",
+      "G4 허가도서 작성",
       "G5 환경분류·심사",
       "G6 건축허가 접수",
       "G7 기술심사·결정",
@@ -85,48 +85,8 @@
       },
       {
         "id": "B02",
-        "lane": "건축주·신청인",
-        "stage": "G4 관할·허가도서",
-        "label": "관할기관·신청권원 확정",
-        "emphasis": "lead",
-        "kind": "field-verification",
-        "basisScope": "node",
-        "note": "토지소유자·allottee 또는 위임대리인이 필지와 신청권원을 확인하고 건축허가·환경심사의 관할을 확정한다. Islamabad/ICT에서는 CDA와 Pak-EPA가 기준 사례다.",
-        "action": "토지소유자·allottee 또는 위임대리인이 필지와 신청권원을 확인하고 건축허가·환경심사의 관할을 확정한다. Islamabad/ICT에서는 CDA와 Pak-EPA가 기준 사례다.",
-        "outputs": [
-          "관할 확인·allotment/transfer letter·possession certificate·대리권 증빙"
-        ],
-        "authorityIds": [
-          "local-development-authority",
-          "provincial-epa"
-        ],
-        "requirementIds": [
-          "PAK-BLD-REQ-005"
-        ],
-        "questionIds": [
-          "PAK-BLD-Q-004"
-        ],
-        "refs": [
-          {
-            "source": "CDA Building Plan 절차",
-            "instrumentId": "PAK-CDA-PROCEDURES",
-            "provisions": [
-              "Requirements for Approval of Building Plans"
-            ]
-          },
-          {
-            "source": "PEPA 관할 기준선",
-            "instrumentId": "PAK-PEPA-1997",
-            "provisions": [
-              "Section 12; provincial jurisdiction must be fixed"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
         "lane": "현지 설계·시공 전문가",
-        "stage": "G4 관할·허가도서",
+        "stage": "G4 허가도서 작성",
         "label": "등록 건축사·구조기술자 허가도서 작성",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -157,7 +117,7 @@
         ]
       },
       {
-        "id": "B04",
+        "id": "B03",
         "lane": "환경·소방·검사기관",
         "stage": "G5 환경분류·심사",
         "label": "환경관할·IEE·EIA 대상 분류",
@@ -196,7 +156,7 @@
         ]
       },
       {
-        "id": "B05",
+        "id": "B04",
         "lane": "환경·소방·검사기관",
         "stage": "G5 환경분류·심사",
         "label": "IEE·EIA 접수·완비성 심사",
@@ -228,7 +188,7 @@
         ]
       },
       {
-        "id": "B06",
+        "id": "B05",
         "lane": "환경·소방·검사기관",
         "stage": "G5 환경분류·심사",
         "label": "환경 본심사·공중참여",
@@ -270,7 +230,7 @@
         ]
       },
       {
-        "id": "B07",
+        "id": "B06",
         "lane": "건축주·신청인",
         "stage": "G6 건축허가 접수",
         "label": "건축허가 신청·심사료 접수",
@@ -311,7 +271,7 @@
         ]
       },
       {
-        "id": "B08",
+        "id": "B07",
         "lane": "도시계획·건축 허가기관",
         "stage": "G7 기술심사·결정",
         "label": "건축·구조·용도 기술심사",
@@ -350,6 +310,47 @@
         ],
         "gateOrders": [
           2
+        ]
+      },
+      {
+        "id": "B08",
+        "lane": "건축주·신청인",
+        "stage": "G7 기술심사·결정",
+        "label": "보완도서 제출·재심사",
+        "emphasis": "normal",
+        "kind": "official-guidance",
+        "basisScope": "node",
+        "note": "CDA 또는 관할기관의 공식 보완요구를 받은 건축주와 등록전문가가 지적사항을 반영한 수정도서와 필요한 NOC를 재제출하고, 관할기관이 보완 항목을 재심사한다.",
+        "action": "CDA 또는 관할기관의 공식 보완요구를 받은 건축주와 등록전문가가 지적사항을 반영한 수정도서와 필요한 NOC를 재제출하고, 관할기관이 보완 항목을 재심사한다.",
+        "outputs": [
+          "보완도서 재접수증·재심사 결과"
+        ],
+        "authorityIds": [
+          "local-development-authority",
+          "pec-pcatp"
+        ],
+        "requirementIds": [
+          "PAK-BLD-REQ-005"
+        ],
+        "questionIds": [
+          "PAK-BLD-Q-005",
+          "PAK-BLD-Q-006"
+        ],
+        "refs": [
+          {
+            "source": "CDA Building Plan 보완·재심사",
+            "instrumentId": "PAK-CDA-PROCEDURES",
+            "provisions": [
+              "building-plan scrutiny, correction and Plan Approval Letter"
+            ]
+          },
+          {
+            "source": "ICT Building Control Regulations",
+            "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023",
+            "provisions": [
+              "2023 building-plan scrutiny and compliance"
+            ]
+          }
         ]
       },
       {
@@ -407,64 +408,64 @@
         "id": "BS05-01",
         "source": "B02",
         "target": "B03",
-        "type": "sequence",
-        "label": "허가도서 작성"
+        "type": "message",
+        "label": "병렬 환경절차 착수"
       },
       {
         "id": "BS05-02",
         "source": "B02",
-        "target": "B04",
-        "type": "message",
-        "label": "환경관할"
+        "target": "B06",
+        "type": "sequence",
+        "label": "서명도서"
       },
       {
         "id": "BS05-03",
-        "source": "B04",
-        "target": "B05",
+        "source": "B03",
+        "target": "B04",
         "type": "sequence",
         "label": "IEE·EIA 제출"
       },
       {
         "id": "BS05-04",
-        "source": "B05",
-        "target": "B06",
+        "source": "B04",
+        "target": "B05",
         "type": "sequence",
         "label": "완비접수"
       },
       {
         "id": "BS05-05",
-        "source": "B03",
+        "source": "B05",
         "target": "B07",
-        "type": "sequence",
-        "label": "서명도서"
-      },
-      {
-        "id": "BS05-06",
-        "source": "B06",
-        "target": "B08",
         "type": "message",
         "label": "해당 시 환경조건"
       },
       {
-        "id": "BS05-07",
-        "source": "B07",
-        "target": "B08",
+        "id": "BS05-06",
+        "source": "B06",
+        "target": "B07",
         "type": "sequence",
         "label": "허가접수"
       },
       {
-        "id": "BS05-08",
-        "source": "B06",
-        "target": "B05",
+        "id": "BS05-07",
+        "source": "B05",
+        "target": "B04",
         "type": "loop",
-        "label": "추가자료·수정 요구 시"
+        "label": "환경자료 추가·수정 요구 시"
       },
       {
-        "id": "BL05",
+        "id": "BS05-08",
+        "source": "B07",
+        "target": "B08",
+        "type": "message",
+        "label": "건축도서 보완요구 시"
+      },
+      {
+        "id": "BS05-09",
         "source": "B08",
-        "target": "B03",
+        "target": "B07",
         "type": "loop",
-        "label": "보완요구 시 · 허가도서 수정·재접수"
+        "label": "보완도서 재접수"
       },
       {
         "id": "BX06",
@@ -520,7 +521,7 @@
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "ICT 기준으로 PEPA 1997·IEE/EIA 규정 2000의 현행 집행, CDA 2023 규정과 현재 접수경로를 확인했다. ICT 밖은 해당 주 법령으로 교체하며 실제 demand note·접수관행·전체기간만 사업별 확인사항이다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "건축허가 7단계는 Islamabad/ICT의 CDA 공식 절차 사례이고, 환경절차는 ICT의 PEPA·Pak-EPA 기준선이다. ICT 밖에서는 1단계에서 해당 주·도시 허가기관과 주 EPA 절차로 교체해야 한다.",
+      "procedureScope": "건축허가 7단계는 Islamabad/ICT의 CDA 공식 절차 사례이고, 환경절차는 ICT의 PEPA·Pak-EPA 기준선이다. ICT 밖에서는 이 순서를 그대로 일반화하지 않고 해당 주·도시 허가기관과 주 EPA의 법정 신청·심사 경로로 교체해야 한다.",
       "nodeIds": [
         "B02",
         "B03",
@@ -552,64 +553,64 @@
           "id": "M05-E01",
           "source": "B02",
           "target": "B03",
-          "type": "sequence",
-          "label": "허가도서 작성"
+          "type": "message",
+          "label": "병렬 환경절차 착수"
         },
         {
           "id": "M05-E02",
           "source": "B02",
-          "target": "B04",
-          "type": "message",
-          "label": "환경관할"
+          "target": "B06",
+          "type": "sequence",
+          "label": "서명도서"
         },
         {
           "id": "M05-E03",
-          "source": "B04",
-          "target": "B05",
+          "source": "B03",
+          "target": "B04",
           "type": "sequence",
           "label": "IEE·EIA 제출"
         },
         {
           "id": "M05-E04",
-          "source": "B05",
-          "target": "B06",
+          "source": "B04",
+          "target": "B05",
           "type": "sequence",
           "label": "완비접수"
         },
         {
           "id": "M05-E05",
-          "source": "B03",
+          "source": "B05",
           "target": "B07",
-          "type": "sequence",
-          "label": "서명도서"
-        },
-        {
-          "id": "M05-E06",
-          "source": "B06",
-          "target": "B08",
           "type": "message",
           "label": "해당 시 환경조건"
         },
         {
-          "id": "M05-E07",
-          "source": "B07",
-          "target": "B08",
+          "id": "M05-E06",
+          "source": "B06",
+          "target": "B07",
           "type": "sequence",
           "label": "허가접수"
         },
         {
-          "id": "M05-E08",
-          "source": "B06",
-          "target": "B05",
+          "id": "M05-E07",
+          "source": "B05",
+          "target": "B04",
           "type": "loop",
-          "label": "추가자료·수정 요구 시"
+          "label": "환경자료 추가·수정 요구 시"
         },
         {
-          "id": "M05-L01",
+          "id": "M05-E08",
+          "source": "B07",
+          "target": "B08",
+          "type": "message",
+          "label": "건축도서 보완요구 시"
+        },
+        {
+          "id": "M05-E09",
           "source": "B08",
-          "target": "B03",
+          "target": "B07",
           "type": "loop",
-          "label": "보완요구 시 · 허가도서 수정·재접수"
+          "label": "보완도서 재접수"
         }
       ],
       "decisionBranches": [
@@ -621,7 +622,7 @@
         {
           "state": "rework",
           "label": "공식 보완요구",
-          "action": "환경자료는 B04, 건축허가도서는 B02·B06으로 돌아가 수정·재접수"
+          "action": "환경자료는 IEE·EIA 접수·완비성 심사로, 건축허가도서는 보완도서 제출·재심사로 회귀"
         },
         {
           "state": "reject",

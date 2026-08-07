@@ -669,7 +669,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         if item["id"] in selected_checklist_ids
     ]
     field_verification.extend(
-        f'{item["id"]} {item["question"]} — 영향: {item["whyItMatters"]}; '
+        f'{item["question"]} — 영향: {item["whyItMatters"]}; '
         f'담당 {item["owner"]}; 확인기관 {", ".join(authorities[x]["nameKo"] if x in authorities else x for x in item["confirmWith"])}; '
         f'필요 증빙 {", ".join(item["evidenceNeeded"])}'
         for item in d["openQuestions"]
@@ -787,9 +787,9 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "현재 카드는 확인된 제도 진입점이며, 관할기관의 현행 절차도·신청서·체크리스트를 "
                 "확보해야 실제 업무구조도로 전환할 수 있다."
                 if procedure_status == "detail-unverified" else
-                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청인·전문가·심사기관의 절차를 "
-                "표시한다. 카드 배지는 노드별 근거 수준이며, ‘현지확인’ 항목은 관할·사업유형에 "
-                "따라 최종 적용을 다시 확인해야 한다."
+                "해당 국가의 법령·관할기관 공식자료에서 확인한 신청·심사·보완·결정 절차를 "
+                "표시한다. 업무구조도와 노드 상세에는 국가 절차만 두고, ODA 조사팀의 사업별 "
+                "확인질문은 페이지 하단의 별도 접이식 목록으로 분리한다."
             ),
             "procedureStatus": procedure_status,
             "procedureStatusLabel": CONSTRUCTION_PROCEDURE_STATUS_LABEL.get(
@@ -1168,8 +1168,9 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .kv dd{margin:3px 0 0}
 .kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
+  gap:16px;align-items:start}
+.card{min-width:0;border:1px solid var(--line);border-radius:11px;padding:17px 19px}
 .card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
 .card.span2{grid-column:span 2}
 @media (max-width:820px){.card.span2{grid-column:span 1}}
@@ -1188,21 +1189,43 @@ ol.steps li{margin-bottom:5px}
 .gate-meta{display:grid;grid-template-columns:max-content 1fr;gap:5px 10px;margin:0;font-size:12.5px;line-height:1.55}
 .gate-meta dt{color:var(--muted);font-weight:700}.gate-meta dd{margin:0;min-width:0}
 .gate-basis{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.gate-basis a,.gate-basis .law-name{font-weight:700}
+.gate-basis a,.gate-basis .law-name{min-width:0;font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.gate-basis .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
 ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
 ul.plain li{margin-bottom:6px}
-.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law{min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .law:last-child{border-bottom:0}
-.law .nm{font-weight:600}
-.law .ar{color:var(--muted);font-size:12.5px}
+.law-copy{min-width:0}
+.law .nm{display:block;min-width:0;font-weight:600;line-height:1.5;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar{display:block;min-width:0;margin-top:2px;color:var(--muted);font-size:12.5px;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar:empty{display:none}
+.law-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;margin-top:6px}
+.law-meta:empty{display:none}
+.law-meta .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+.law-meta .badge::before,.gate-basis .badge::before,.auth .badge::before{flex:none}
 .docset{margin-bottom:13px}
 .docset b{font-size:12.5px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
-.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);gap:10px;
+  align-items:start;min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .auth:last-child{border-bottom:0}
-.auth b{flex:none;max-width:42%;font-size:13px}
-.auth span{color:var(--muted);font-size:12.5px}
+.auth b{min-width:0;max-width:none;font-size:13px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+.auth span{min-width:0;color:var(--muted);font-size:12.5px;word-break:keep-all;overflow-wrap:anywhere}
+.auth .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+@media (max-width:620px){.auth{grid-template-columns:1fr;gap:4px}}
+.field-application{grid-column:1/-1;padding:0}
+.field-application summary{display:flex;align-items:center;gap:12px;min-width:0;padding:17px 19px;
+  cursor:pointer;list-style:none;font-size:13.5px;font-weight:700}
+.field-application summary::-webkit-details-marker{display:none}
+.field-application summary small{margin-left:auto;color:var(--muted);font-size:11.5px;font-weight:600}
+.field-application summary::after{content:"⌄";color:var(--muted);font-size:16px;line-height:1;
+  transition:transform .15s ease}
+.field-application[open] summary::after{transform:rotate(180deg)}
+.field-application .field-application-body{padding:0 19px 17px}
+.field-application .workflow-disclosure{margin-top:0}
 
 .disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
 .disc[data-sev="high"]{border-left-color:var(--bad)}
@@ -1665,21 +1688,34 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     # 캔버스 — 법령명은 verification.sources의 원문 URL과 자동으로 이어 붙인다
     surl = source_urls(d)
     def render_law_list(items: list[dict], *, show_status: bool = False) -> str:
-        return "".join(
-            f'<div class="law"><span class="nm">{link(e(l["law"]), l.get("url") or surl.get(l["law"]))}</span>'
-            f'<span class="ar">{e(l.get("articles") or "")}</span>'
-            f'<span class="badge plain muted" style="margin-left:auto">{e(KIND_LABEL.get(l["kind"], l["kind"]))}</span>'
-            + (f'<span class="badge plain info">{e(l.get("scopeLabel"))}</span>'
-               if l.get("scopeLabel") else "")
-            + (f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(l["status"], "muted")}">'
-               f'{e(CONSTRUCTION_STATUS_LABEL.get(l["status"], l["status"]))}</span>'
-               if show_status and l.get("status") else "")
-            + (f'<span class="badge {VERIF_TONE.get(l["verificationLevel"], "muted")}">'
-               f'{e(VERIF_LABEL.get(l["verificationLevel"], l["verificationLevel"]))}</span>'
-               if l.get("verificationLevel") else "")
-            + '</div>'
-            for l in items
-        )
+        rows: list[str] = []
+        for item in items:
+            badges = (
+                f'<span class="badge plain muted">'
+                f'{e(KIND_LABEL.get(item["kind"], item["kind"]))}</span>'
+            )
+            if item.get("scopeLabel"):
+                badges += f'<span class="badge plain info">{e(item["scopeLabel"])}</span>'
+            if show_status and item.get("status"):
+                badges += (
+                    f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(item["status"], "muted")}">'
+                    f'{e(CONSTRUCTION_STATUS_LABEL.get(item["status"], item["status"]))}</span>'
+                )
+            if item.get("verificationLevel"):
+                badges += (
+                    f'<span class="badge {VERIF_TONE.get(item["verificationLevel"], "muted")}">'
+                    f'{e(VERIF_LABEL.get(item["verificationLevel"], item["verificationLevel"]))}</span>'
+                )
+            rows.append(
+                '<div class="law">'
+                '<div class="law-copy">'
+                f'<span class="nm">{link(e(item["law"]), item.get("url") or surl.get(item["law"]))}</span>'
+                f'<span class="ar">{e(item.get("articles") or "")}</span>'
+                '</div>'
+                f'<div class="law-meta">{badges}</div>'
+                '</div>'
+            )
+        return "".join(rows)
 
     laws = render_law_list(c["legalBasis"])
     reference_basis = c.get("referenceBasis", [])
@@ -1793,6 +1829,22 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     bott = "".join(f"<li>{el(x)}</li>" for x in c["bottlenecks"])
     barr = "".join(f"<li>{el(x)}</li>" for x in c.get("entryBarriers", []))
     fv = "".join(f"<li>{el(x)}</li>" for x in d["fieldVerification"])
+    bottleneck_card = (
+        f'<div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>'
+        if d["axis"] != "construction" and bott else ""
+    )
+    field_application_card = (
+        '<details class="card field-application">'
+        '<summary><span>ODA 사업별 적용 확인사항</span>'
+        f'<small>법정절차 외 체크리스트 · {len(d["fieldVerification"])}개</small></summary>'
+        '<div class="field-application-body">'
+        '<p class="workflow-disclosure">아래 항목은 해당 국가의 법정 절차가 아니라 대상 사업의 '
+        '관할·필지·시설 조건을 확정하기 위한 조사 체크리스트입니다. 업무구조도와 공식 결정 Gate에는 '
+        '포함하지 않습니다.</p>'
+        f'<ul class="plain">{fv}</ul></div></details>'
+        if d["axis"] == "construction" and fv else
+        (f'<div class="card"><h3>ODA 사업 적용 확인사항</h3><ul class="plain">{fv}</ul></div>' if fv else "")
+    )
     findings = "".join(
         f'<div class="decision" data-state="{e(x["status"])}">'
         f'<span class="badge {CONSTRUCTION_STATUS_TONE.get(x["status"], "muted")}">'
@@ -1936,10 +1988,10 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="card"><h3>권한 기관</h3>{auths}</div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['stakeholders'])}</p></div>
     <div class="card"><h3>제출서류</h3>{docs}</div>
-    <div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>
+    {bottleneck_card}
     {f'<div class="card"><h3>진입장벽</h3><ul class="plain">{barr}</ul></div>' if barr else ''}
-    <div class="card"><h3>ODA 사업 적용 확인사항</h3><ul class="plain">{fv}</ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
+    {field_application_card}
   </div>
 </section>
 
@@ -1996,6 +2048,11 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     node_view = {}
     for n in nodes:
         nv = dict(n)
+        if d["axis"] == "construction":
+            for internal_key in (
+                "blocker", "evidence_status", "report_use", "open_questions", "question_ids"
+            ):
+                nv.pop(internal_key, None)
         nv["id"] = e(nv["id"])
         nv["display_id"] = e(nv.get("display_id") or nv["id"])
         for k in (

@@ -1327,30 +1327,14 @@
           "officialProcedure": {
             "name": "파키스탄 건축허가·환경심사 — Islamabad/ICT 사례",
             "coverage": "official-source-linked",
-            "scope": "건축허가 7단계는 Islamabad/ICT의 CDA 공식 절차 사례이고, 환경절차는 ICT의 PEPA·Pak-EPA 기준선이다. ICT 밖에서는 1단계에서 해당 주·도시 허가기관과 주 EPA 절차로 교체해야 한다.",
+            "scope": "건축허가 7단계는 Islamabad/ICT의 CDA 공식 절차 사례이고, 환경절차는 ICT의 PEPA·Pak-EPA 기준선이다. ICT 밖에서는 이 순서를 그대로 일반화하지 않고 해당 주·도시 허가기관과 주 EPA의 법정 신청·심사 경로로 교체해야 한다.",
             "stages": [
-              "G4 관할·허가도서",
+              "G4 허가도서 작성",
               "G5 환경분류·심사",
               "G6 건축허가 접수",
               "G7 기술심사·결정"
             ],
             "steps": [
-              {
-                "lane": "건축주·신청인",
-                "stage": 0,
-                "label": "관할기관·신청권원 확정",
-                "emphasis": "lead",
-                "kind": "field-verification",
-                "basisScope": "node",
-                "action": "토지소유자·allottee 또는 위임대리인이 필지와 신청권원을 확인하고 건축허가·환경심사의 관할을 확정한다. Islamabad/ICT에서는 CDA와 Pak-EPA가 기준 사례다.",
-                "output": "관할 확인·allotment/transfer letter·possession certificate·대리권 증빙",
-                "questionSlots": [0],
-                "authorityIds": ["local-development-authority", "provincial-epa"],
-                "refs": [
-                  {"source": "CDA Building Plan 절차", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["Requirements for Approval of Building Plans"]},
-                  {"source": "PEPA 관할 기준선", "instrumentId": "PAK-PEPA-1997", "provisions": ["Section 12; provincial jurisdiction must be fixed"]}
-                ]
-              },
               {
                 "lane": "현지 설계·시공 전문가",
                 "stage": 0,
@@ -1458,22 +1442,38 @@
                   "output": "건축허가결정문·승인도서·조건 또는 보완·불허 통지",
                   "dependsOn": []
                 }
+              },
+              {
+                "lane": "건축주·신청인",
+                "stage": 3,
+                "label": "보완도서 제출·재심사",
+                "emphasis": "normal",
+                "kind": "official-guidance",
+                "basisScope": "node",
+                "action": "CDA 또는 관할기관의 공식 보완요구를 받은 건축주와 등록전문가가 지적사항을 반영한 수정도서와 필요한 NOC를 재제출하고, 관할기관이 보완 항목을 재심사한다.",
+                "output": "보완도서 재접수증·재심사 결과",
+                "questionSlots": [1, 2],
+                "authorityIds": ["local-development-authority", "pec-pcatp"],
+                "refs": [
+                  {"source": "CDA Building Plan 보완·재심사", "instrumentId": "PAK-CDA-PROCEDURES", "provisions": ["building-plan scrutiny, correction and Plan Approval Letter"]},
+                  {"source": "ICT Building Control Regulations", "instrumentId": "PAK-ICT-BUILDING-REG-2020-2023", "provisions": ["2023 building-plan scrutiny and compliance"]}
+                ]
               }
             ],
             "edges": [
-              [0, 1, "sequence", "허가도서 작성"],
-              [0, 2, "message", "환경관할"],
-              [2, 3, "sequence", "IEE·EIA 제출"],
-              [3, 4, "sequence", "완비접수"],
-              [1, 5, "sequence", "서명도서"],
-              [4, 6, "message", "해당 시 환경조건"],
-              [5, 6, "sequence", "허가접수"],
-              [4, 3, "loop", "추가자료·수정 요구 시"]
+              [0, 1, "message", "병렬 환경절차 착수"],
+              [0, 4, "sequence", "서명도서"],
+              [1, 2, "sequence", "IEE·EIA 제출"],
+              [2, 3, "sequence", "완비접수"],
+              [3, 5, "message", "해당 시 환경조건"],
+              [4, 5, "sequence", "허가접수"],
+              [3, 2, "loop", "환경자료 추가·수정 요구 시"],
+              [5, 6, "message", "건축도서 보완요구 시"],
+              [6, 5, "loop", "보완도서 재접수"]
             ],
-            "loop": [6, 1, "보완요구 시 · 허가도서 수정·재접수"],
             "decisionBranches": [
               {"state": "success", "label": "허가·조건부 허가", "action": "승인도서와 허가조건에 따라 다음 착공절차로 진행"},
-              {"state": "rework", "label": "공식 보완요구", "action": "환경자료는 B04, 건축허가도서는 B02·B06으로 돌아가 수정·재접수"},
+              {"state": "rework", "label": "공식 보완요구", "action": "환경자료는 IEE·EIA 접수·완비성 심사로, 건축허가도서는 보완도서 제출·재심사로 회귀"},
               {"state": "reject", "label": "불승인·불허", "action": "해당 절차를 종료하고 불복·재신청 경로는 관할법의 별도 근거를 확인"}
             ]
           }
