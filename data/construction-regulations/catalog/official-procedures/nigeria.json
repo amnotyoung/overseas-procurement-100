@@ -382,7 +382,7 @@
         ],
         "edges": [
           [0, 1, "sequence", "착공서류"], [1, 2, "sequence", "요건충족"], [2, 3, "sequence", "착공승인"], [3, 4, "sequence", "검사요청"],
-          [4, 3, "sequence", "다음 단계"], [4, 5, "message", "부적합·시정명령"], [5, 4, "loop", "시정 후 재검사"], [4, 6, "sequence", "최종 단계 완료"],
+          [4, 3, "loop", "다음 단계"], [4, 5, "message", "부적합·시정명령"], [5, 4, "loop", "시정 후 재검사"], [4, 6, "sequence", "최종 단계 완료"],
           [6, 7, "sequence", "검사통과"], [6, 5, "message", "미비사항"], [7, 8, "sequence", "완비신청"]
         ],
         "decisionBranches": [
