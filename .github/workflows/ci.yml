@@ -27,13 +27,16 @@ jobs:
         run: npm ci
 
       - name: Validate institution records
-        run: python tools/validate.py
+        run: |
+          python tools/validate.py
+          python tools/audit_article_verification.py
 
       - name: Validate construction regulation records
         run: |
           python tools/build_construction_baselines.py --check
           python tools/validate_construction_regulations.py
           python tools/check_construction_procedure_coverage.py
+          python tools/check_construction_evidence_grade.py
           python tools/check_construction_procedure_structure.py
           python tools/check_construction_terminology.py
 

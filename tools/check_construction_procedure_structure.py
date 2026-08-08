@@ -130,6 +130,15 @@ def main() -> int:
         metavar="REF",
         help="print a fingerprint fixture generated from a reviewed git ref",
     )
+    parser.add_argument(
+        "--update",
+        action="store_true",
+        help=(
+            "rewrite the fixture from the working tree. 근거 등급 승격은 "
+            "procedureStatus·basisScope·kind·provisions를 바꾸므로 반드시 이 픽스처를 "
+            "건드린다. 갱신 diff를 PR 리뷰에 포함해 구조 변경이 눈에 띄게 한다"
+        ),
+    )
     args = parser.parse_args()
     if args.emit_from_git:
         print(json.dumps(
@@ -137,6 +146,13 @@ def main() -> int:
             ensure_ascii=False,
             indent=2,
         ))
+        return 0
+    if args.update:
+        actual = fingerprints_from_records(current_records())
+        FIXTURE.write_text(
+            json.dumps(actual, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"UPDATED: {FIXTURE.relative_to(ROOT)} — {len(actual)} model structures")
         return 0
 
     if not FIXTURE.exists():

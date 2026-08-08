@@ -460,6 +460,19 @@ def main() -> int:
                 "leaderSegments.push(lead)",
                 "getComputedTextLength",
                 "document.fonts.ready",
+                # 라벨이 남의 연결선을 덮어 선이 끊겨 보이던 것을 막는 경로 회피
+                "pathSegs.push(",
+                "function segmentCoverLength(s,box)",
+                "if(s.ed===own)return;",
+                "group.setAttribute('data-covers'",
+                # 순차 라벨은 접어 두고 카드 선택·토글로 드러낸다
+                'data-edge-kind',
+                'data-edge-source',
+                'show-all-labels',
+                "b.addEventListener('focus'",
+                '.edge-label-group[data-edge-kind="sequence"]',
+                # 축 공통근거 노드를 여는 분기가 렌더러에 남아 있어야 한다
+                "축 전체 관련 제도 근거",
             ):
                 if renderer_marker not in detail_html:
                     errors.append(
@@ -667,10 +680,10 @@ def main() -> int:
                                 f"site/model/{model_slug}/index.html node {node_id} "
                                 f"basis scope differs: expected {expected_scope!r}"
                             )
-                    if data.get("generatedFrom") and "축 전체 관련 제도 근거" not in detail_html:
-                        errors.append(
-                            f"site/model/{model_slug}/index.html does not disclose axis-level basis scope"
-                        )
+                    # 축 공통근거 공시는 위의 노드별 basis_scope 대조가 실질 검사다.
+                    # 화면 문구("축 전체 관련 제도 근거")로 보면 openNode()의 삼항
+                    # 리터럴 때문에 axis 노드가 하나도 없는 페이지에서도 통과하므로,
+                    # 문구의 존재 자체는 아래 renderer_marker 목록에서 확인한다.
                     if (
                         model["verification"]["status"] != "article-verified"
                         and "개별 사업 적용판정은 ODA 적용 확인사항으로 따로 관리합니다" not in detail_html

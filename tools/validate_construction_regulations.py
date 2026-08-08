@@ -13,6 +13,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from build_construction_baselines import derive_country_verification_status
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "construction-regulations"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
@@ -373,6 +375,15 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         verified_at = validate_date(verification.get("verifiedAt"), f"{rel}.verification.verifiedAt", result)
         if as_of and verified_at and verified_at > as_of:
             result.error(f"{rel}.verification.verifiedAt", "cannot be later than asOfDate")
+        # 국가 등급은 가장 약한 축을 따르는 파생값이다. 수기로 어긋나면 한
+        # 페이지 안에서 국가 배지와 축 배지가 서로 다른 말을 하게 된다.
+        expected_status = derive_country_verification_status(data.get("publicModels") or [])
+        if verification.get("status") != expected_status:
+            result.error(
+                f"{rel}.verification.status",
+                f"must follow the weakest axis grade: expected {expected_status!r}, "
+                f"got {verification.get('status')!r}",
+            )
 
     authorities = unique_ids(data.get("authorities"), "authorities", rel, result)
     for ident, authority in authorities.items():
@@ -653,7 +664,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     f"{where}.nodeIds",
                     f"unverified procedure fallback must expose one evidence entry, got {len(selected_nodes)}",
                 )
-            if procedure_status in {"official-source-linked", "article-verified"}:
+            if procedure_status in {"official-source-linked", "article-linked", "article-verified"}:
                 internal_nodes = [
                     item.get("id") for item in selected_nodes
                     if item.get("kind") == "field-verification"

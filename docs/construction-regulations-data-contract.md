@@ -27,7 +27,7 @@
 | `docs/construction-regulations-data-contract.md` | 이 데이터 계약 | 수동 |
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
-| `tools/check_construction_procedure_coverage.py` | 44개국·132모델의 국가별 절차·현행성 품질 게이트 | 수동 |
+| `tools/check_construction_procedure_coverage.py` | 44개국·132모델 상세절차 품질 게이트 | 수동 |
 | `tools/check_construction_procedure_structure.py` | 번역 외 노드·Gate·분기·근거 구조 변경 방지 | 수동 |
 | `tools/check_construction_terminology.py` | 한국어 우선·원어 최초 1회 표기 검사 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
@@ -60,6 +60,23 @@
 | `needs-review` | 원문 또는 현지 확인이 더 필요 |
 
 `article-verified`는 조문의 존재와 문언을 확인했다는 뜻이다. 특정 사업에 적용된다는 최종 판단은 `requirements[].applicability`와 `openQuestions`에서 별도로 관리한다.
+
+### 3.3 축 근거 등급 `procedureStatus`와 그 진입 요건
+
+근거 등급은 국가·축·문서·노드 네 층에 흩어져 있어 서로 어긋날 수 있었다. 공표 단위는 **축**이며(`publicModels[].procedureStatus`), 나머지 세 층이 그 진입 요건이다. `tools/check_construction_evidence_grade.py`가 축마다 달성 등급을 계산해 주장이 그보다 높으면 실패시킨다.
+
+| 등급 | 화면 표기 | 진입 요건 |
+|---|---|---|
+| `detail-unverified` · `source-linked` | 공식 절차 상세 미확인 · 절차 근거 작성 중 | 작성 중 상태. 배포 대상이 아니다 |
+| `official-source-linked` | 공식자료 연결 | `check_construction_procedure_coverage.py`의 현행 검사 전부. `basisScope: axis` 허용 |
+| `article-linked` | 조문 연결 | 위 + ① 축 노드의 `basisScope`가 전부 `node` ② 축이 참조하는 **법령**(조문이 존재하는 `kind`) 중 `article-verified`가 1건 이상 ③ 그 법령 중 `source-linked` 0건 ④ 모든 공식 Gate 노드가 `status: in_force` 법령을 근거로 가짐 |
+| `article-verified` | 조문 대조 완료 | 위 + ⑤ 축이 참조하는 법령 **전부**가 `article-verified`이고 비어 있지 않은 `articlesChecked`를 가짐 ⑥ 조문과 직접 대응하는 노드(`kind: statutory`)가 1개 이상 |
+
+`kind`가 `official-guidance`인 자료는 조문 자체가 없으므로 위 요건의 "법령"에 넣지 않는다. 안내 페이지에 조문 대조를 요구하면 어떤 축도 승격할 수 없다.
+
+**국가 등급 `verification.status`는 가장 약한 축을 따르는 파생값이다.** 세 축 중 하나라도 조문 대조 전이면 그 국가 자료 전체가 조문 대조를 마쳤다고 말할 수 없다. 축 등급 5종을 국가 등급 4종으로 옮기는 규칙은 `derive_country_verification_status()`에 있으며, 수기로 어긋나면 검증기가 실패시킨다. catalog의 `verificationStatus`는 더 이상 이 값을 정하지 않는다.
+
+등급 분포의 하한은 `catalog/evidence-grade-baseline.json`에 고정한다. 하한보다 낮으면 승격이 되돌아간 것이고, 높으면 픽스처를 갱신하라고 실패한다 — 승격 사실이 반드시 리뷰에 드러나게 하려는 것이다. `--update`로 갱신하고 그 diff를 리뷰에 포함한다.
 
 ## 4. 최상위 구조
 
@@ -96,7 +113,7 @@
 
 국가 생성판(`generatedFrom` 존재)은 기본 catalog와 국가별 공식절차 오버레이를 합친 결과다. 세네갈처럼 조문을 직접 대조한 단계는 `article-verified`, 법령·정부 서비스에서 공식 순서를 확인했으나 단계별 조문 대조가 아닌 경우는 `official-source-linked`로 구분한다. 생성 JSON은 직접 고치지 않고 기본 catalog 또는 해당 국가 overlay를 수정한다.
 
-catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 그 안에는 절차의 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 근거가 있는 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 기록한다. 생성기에는 편집 중 자료를 확인하기 위한 공통 scaffold가 남아 있지만, `check_construction_procedure_coverage.py`가 국가별 3축 overlay가 없는 결과의 공개·배포를 차단한다. 별도 환경결정·착공통지·NOC·점유승인 같이 확인되지 않은 절차는 노드 수를 맞추기 위해 만들지 않는다.
+catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 그 안에는 절차의 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 근거가 있는 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 기록한다. 생성기에는 편집 중 자료를 확인하기 위한 1노드 fallback이 남아 있지만, 상세절차 품질 게이트가 국가별 3축 overlay가 없는 결과의 공개·배포를 차단한다.
 
 ## 5. 핵심 객체
 
@@ -262,7 +279,7 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
 - 각 공개 제도축은 선택한 노드만으로 독립적으로 연결된 클릭형 구조도를 만든다.
 - 공개 제도축의 edge는 통합 `processBoard.edges`에 같은 source·target·type·label로 존재하는 경로만 투영한다.
 - `officialProcedure`가 있는 공개 제도축의 노드·레인·절차구간·Gate 수는 공식 근거에서 확인한 범위를 따른다. 일정한 노드 수나 레인 수를 맞추기 위해 절차를 추가하지 않는다.
-- `detail-unverified`와 `source-linked`는 편집·이관 호환을 위한 작성 중 상태다. 배포 대상 공개 제도축은 국가별 `officialProcedure`를 바탕으로 `official-source-linked` 또는 `article-verified`여야 하며, `check_construction_procedure_coverage.py`가 미확인 1노드·빈 흐름의 공개를 차단한다.
+- `detail-unverified`와 `source-linked`는 편집·이관 호환을 위한 작성 중 상태다. 배포 대상 공개 제도축은 국가별 `officialProcedure`를 바탕으로 `official-source-linked`·`article-linked`·`article-verified` 중 하나여야 하며, 주장한 등급의 진입 요건(§3.3)을 실제로 충족해야 한다.
 - 모든 건축 국가 파일은 정확히 3개 공개 제도축과 연속 우선순위 4·5·6을 가져야 한다.
 - 한 국가의 공개 제도축 전체를 합치면 원천 노드, 의무, Gate, 질문, 결론, 부지 특례와 현지조사 체크리스트가 빠짐없이 포괄돼야 한다. `requirementIds`는 각 의무를 한 축에만 배정해 선택 노드의 다른 주제가 섞이지 않게 한다.
 - 여러 제도에 공통인 법령·Gate·결론은 중복 표시할 수 있지만 원천 객체를 복제하지 않는다.
@@ -278,10 +295,8 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
 - 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 첫 건축 model로 이동한다.
 - 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드의 노드별 근거는 `processBoard.refs`를 우선하고, refs가 없는 구 계약에서만 연결된 `requirements[].legalBasis`를 대체 근거로 쓴다. 축 전체 근거는 캔버스 법적 근거에 별도로 유지한다.
 - 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `scope`, `note`를 보존한다. `current_official`은 법적 근거가 아니라 운영 중 공식자료로 분리하고, `pending`·`superseded`·`continuity_unverified`는 사이트 검증 예외로 원문 대장에서 구체적 사유와 함께 표시한다.
-- 공개 원문 대장에 표시되는 `in_force`·`current_official` 자료는 `statusCheckedOn`과 구체적인 `statusBasis`를 모두 가져야 한다. `pending`·`superseded`·`continuity_unverified`도 예외 표지만 붙이는 데 그치지 않고, 확인한 공식 출처와 미확정·대체 사유를 `statusBasis`에 기록한다. 한 노드나 다른 출처의 현행성 기록으로 이 항목을 대신할 수 없다.
-- 배포 게이트는 모델 전체에 현행 출처가 하나 있는지만 보지 않고 **각 절차 노드**를 검사한다. 노드마다 `in_force`·`current_official` 근거의 `statusCheckedOn`과 `statusBasis`가 모두 있거나, `continuity_unverified`를 유지해야 하는 구체적 예외사유가 `statusBasis`에 있어야 한다. 다른 노드의 현행 출처로 이 조건을 대신 충족할 수 없다.
 - `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.
-- `npm run build:construction-boards`의 SVG는 GitHub Pages의 `site/boards/`에 함께 배포되는 직접 열람·다운로드 가능한 구성 감사 산출물이다. 다만 공개 model 본문의 기준 화면은 HTML 버튼·동적 연결선·상세 패널로 만든 클릭형 구조도이며, 정적 SVG를 저화질·비클릭 대체 화면으로 임베드하지 않는다. SVG는 `korea100studio validate`, `audit`, `render`, `check`와 확대·감사용으로 유지한다. 무관한 카드를 관통하는 연결선은 hard fail이고, 교차·stretch 등 레이아웃 의존 지표는 별도 경고로 보고한다.
+- `npm run build:construction-boards`의 SVG는 공개 본문 이미지가 아니라 `korea100studio validate --strict`, `render`, `check`를 위한 구성 감사 산출물이다.
 
 ## 6. 참조 무결성 규칙
 
@@ -293,7 +308,7 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
 - 모든 차단 질문은 증빙과 확인 상대를 지정해야 한다.
 - 기준일보다 뒤 날짜의 법령은 `in_force`로 둘 수 없다.
 - `processBoard`의 lane·stage·node·edge ID는 유일해야 하고 모든 참조 대상이 존재해야 한다.
-- 배포 대상 공개 모델의 non-loop 흐름은 정의된 진입 노드에서 모든 절차 노드에 도달해야 하고, 연결된 모든 `permitPath` 순번을 포괄해야 한다. 각 모델은 공식 Gate와 성공·보완·불허 결과분기를 가져야 하며 `detail-unverified` 1노드·빈 edge 모델은 배포 검증을 통과할 수 없다.
+- 배포 대상 공개 모델의 non-loop 흐름은 정의된 진입 노드에서 모든 절차 노드에 도달해야 하고, 연결된 모든 `permitPath` 순번을 포괄해야 한다. 각 모델은 공식 Gate와 성공·보완·불허 결과분기를 가져야 한다.
 - 보완회귀는 선택 요소이며, 존재하는 경우 비어 있지 않은 조건 라벨을 갖고 `nodeIds`상 앞선 신청·심사 단계로 돌아가야 한다. `decisionBranches`를 제공하면 `success`·`rework`·`reject` 세 상태를 모두 정의한다.
 - 새 구조도는 korea100studio 감사에서 노드 관통 0건을 충족해야 한다. 실제 법정 보완회귀 때문에 교차·경로길이 같은 soft 구성예산을 넘으면 빌드 결과에 경고로 남기고, 공개 HTML 보드에서 카드·라벨 충돌을 별도로 확인한다.
 

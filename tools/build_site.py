@@ -90,11 +90,22 @@ WORKFLOW_KIND_LABEL = {
     "project-control": "사업통제",
 }
 
+# 축 근거 등급. 조달의 VERIF_LABEL과 문구를 맞춰 두 축이 같은 것을 잰다는 사실을
+# 드러낸다. source-linked는 계약상 배포 대상이 아닌 작성 중 상태이므로
+# official-source-linked와 같은 라벨을 쓰면 안 된다 — 등급 차이가 화면에서 사라진다.
 CONSTRUCTION_PROCEDURE_STATUS_LABEL = {
-    "article-verified": "조문 대조 절차",
-    "source-linked": "공식자료 연결 절차",
-    "official-source-linked": "공식자료 연결 절차",
+    "article-verified": "조문 대조 완료",
+    "article-linked": "조문 연결",
+    "official-source-linked": "공식자료 연결",
+    "source-linked": "절차 근거 작성 중",
     "detail-unverified": "공식 절차 상세 미확인",
+}
+CONSTRUCTION_PROCEDURE_STATUS_TONE = {
+    "article-verified": "ok",
+    "article-linked": "info",
+    "official-source-linked": "info",
+    "source-linked": "warn",
+    "detail-unverified": "warn",
 }
 
 
@@ -387,6 +398,8 @@ CONSTRUCTION_TERMINOLOGY_SKIP_KEYS = {
     "depends_on", "dependsOn", "instrument_id", "url", "officialUrl", "officialName",
     "law", "articles", "article", "source", "provisions", "refs", "sources",
     "legalBasis", "legal_basis", "referenceBasis", "sourceQuotes", "related", "method",
+    # 조문 확인 기록과 증빙 링크는 원문 표기를 그대로 보존한다
+    "articlesChecked", "articlesCheckedOn", "evidenceUrl", "instrumentIds",
 }
 
 
@@ -542,6 +555,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
     )
     is_public_legal_procedure = bool(model_spec) and procedure_status in {
         "official-source-linked",
+        "article-linked",
         "article-verified",
     }
     instruments = {item["id"]: item for item in d["instruments"]}
@@ -988,6 +1002,9 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             "procedureStatusLabel": CONSTRUCTION_PROCEDURE_STATUS_LABEL.get(
                 procedure_status, procedure_status
             ),
+            "procedureStatusTone": CONSTRUCTION_PROCEDURE_STATUS_TONE.get(
+                procedure_status, "info"
+            ),
             "procedureScope": (
                 model_spec.get("procedureScope", "") if model_spec else
                 d["verification"].get("scope", "")
@@ -1349,6 +1366,17 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
 .node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
 .node.dim{opacity:.34}
+/* 순차 라벨은 "다음 단계로 넘어간다"는 이미 자명한 정보를 짧게 되풀이하는
+   경우가 많아 상시 표시하면 분기 조건 라벨까지 묻힌다. 기본은 숨기고 카드를
+   가리키거나 포커스할 때, 또는 아래 토글로 드러낸다. 배치는 숨긴 상태에서도
+   미리 계산해 두므로 드러날 때 위치가 흔들리지 않는다. */
+.edge-label-group[data-edge-kind="sequence"]{opacity:0;transition:opacity .12s}
+.edge-label-group[data-edge-kind="sequence"].lit{opacity:1}
+.board.show-all-labels .edge-label-group[data-edge-kind="sequence"]{opacity:1}
+.legend-toggle{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;
+  color:var(--muted);cursor:pointer;user-select:none}
+.legend-toggle input{margin:0;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.edge-label-group{transition:none}}
 @media (max-width:760px){
   .board-scroll-hint{display:block}
   .board{min-width:var(--mobile-board-width)!important}
@@ -2150,6 +2178,16 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <span class="pos">전체 제도 {global_idx + 1}/{len(ordered_items)} · 이 국가 {idx + 1}/{len(same_country)}</span>
 </div></div>"""
 
+    # 국가 등급은 가장 약한 축을 따르므로 축 등급이 그와 같으면 같은 말을 두 번
+    # 하는 셈이다. 축이 국가보다 앞선 경우에만 따로 세운다.
+    procedure_badge = ""
+    if d["axis"] == "construction" and c.get("procedureStatusLabel"):
+        if c["procedureStatusLabel"] != VERIF_LABEL.get(v["status"]):
+            procedure_badge = (
+                f'<span class="badge {e(c.get("procedureStatusTone", "info"))}">'
+                f'이 제도축 {e(c["procedureStatusLabel"])}</span>'
+            )
+
     body = f"""
 {subnav}
 
@@ -2159,7 +2197,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
     <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
-    {f'<span class="badge {"warn" if c.get("procedureStatus") == "detail-unverified" else "info"}">{e(c.get("procedureStatusLabel", ""))}</span>' if d['axis'] == 'construction' and c.get('procedureStatusLabel') else ''}
+    {procedure_badge}
     {f'<span class="badge bad">확인사항 {len(discs)}건</span>' if discs else ''}
   </div>
   <h1>{e(d['name'])}</h1>
@@ -2186,14 +2224,15 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
       <span><i style="background:var(--warn)"></i>유의</span>
-      <span><i style="background:var(--muted)"></i>절차 순서</span>
+      <span><i style="background:var(--muted)"></i>절차 순서 · 라벨은 카드 선택 시</span>
       <span><i style="background:var(--info)"></i>기관 간 입력</span>
       <span><i style="background:var(--back)"></i>조건부 보완 회귀</span>
+      <label class="legend-toggle"><input type="checkbox" id="labelall">순차 라벨 모두 보기</label>
     </div>
   </div>
   <div class="board-scroll-hint" aria-hidden="true">← 좌우로 넘겨 전체 절차 보기 →</div>
   <div class="boardwrap"><div class="board" id="board" style="min-width:{board_width}px;--mobile-board-width:{mobile_board_width}px;--stage-count:{len(stages)}">
-    <svg class="edges" id="edges"></svg>
+    <svg class="edges" id="edges" aria-hidden="true"></svg>
     {head}{rows}
   </div></div>
   {decision_branch_panel}
@@ -2472,11 +2511,20 @@ function draw(){{
     var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
   }}
 
-  var labelJobs=[];
+  var labelJobs=[],pathSegs=[],allArrows=[];
   EDGES.forEach(function(ed){{
     var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
-    var t=ed.type||'sequence', rt=route(a,b,ed);
-    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+    var t=ed.type||'sequence', rt=route(a,b,ed), pts=uniq(rt.pts);
+    /* 라벨 배경이 남의 연결선을 덮어 선이 끊겨 보이는 것을 막으려면 모든
+       연결선의 위치를 알아야 한다. 라벨 없는 엣지도 덮이면 똑같이 끊겨
+       보이므로 전부 모은다. 엣지 객체 참조를 그대로 담아 자기 경로인지
+       판정한다 — id 문자열 비교는 id가 없을 때 전부 자기 것이 된다. */
+    for(var si=0;si<pts.length-1;si++)
+      pathSegs.push({{x1:pts[si].x,y1:pts[si].y,x2:pts[si+1].x,y2:pts[si+1].y,ed:ed}});
+    var tip=pts[pts.length-1];
+    allArrows.push({{x:tip.x-11,y:tip.y-11,r:tip.x+11,b:tip.y+11}});
+    d+='<path class="edge-path" data-edge-id="'+ed.id+'" d="'+orthPath(rt.pts)
+      +'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
       +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
     if(ed.label) labelJobs.push({{ed:ed,rt:rt,color:C[t],sourceBox:a,targetBox:b}});
@@ -2494,10 +2542,8 @@ function draw(){{
      다른 라벨과 겹치지 않는 후보를 고르므로 세로선 중점에 긴 문구를
      얹어 카드 뒤로 잘리던 문제를 막는다. */
   var NS='http://www.w3.org/2000/svg', labelBoxes=[],leaderSegments=[];
-  var arrowBoxes=labelJobs.map(function(job){{
-    var pts=uniq(job.rt.pts),p=pts[pts.length-1];
-    return {{x:p.x-11,y:p.y-11,r:p.x+11,b:p.y+11}};
-  }});
+  // 라벨 없는 엣지의 화살촉도 가려지면 안 되므로 전체 엣지 기준으로 둔다.
+  var arrowBoxes=allArrows;
   function overlaps(a,b){{return a.x<b.r&&a.r>b.x&&a.y<b.b&&a.b>b.y;}}
   function overlapArea(a,b){{
     return Math.max(0,Math.min(a.r,b.r)-Math.max(a.x,b.x))*
@@ -2603,20 +2649,48 @@ function draw(){{
     return clip(-dx,seg.x1-L)&&clip(dx,R-seg.x1)
       &&clip(-dy,seg.y1-T)&&clip(dy,B-seg.y1)&&t1>=t0;
   }}
-  function labelPenalty(box,p){{
+  function segmentCoverLength(s,box){{
+    // 직교 세그먼트가 라벨 박스에 가려지는 길이. route()의 점은 전부 직교라
+    // 나눗셈 없이 겹친 구간 길이만 재면 된다. 테두리에 스치는 선은 제외한다.
+    var M=1;
+    if(Math.abs(s.y1-s.y2)<.5){{
+      if(s.y1<=box.y+M||s.y1>=box.b-M)return 0;
+      return Math.max(0,Math.min(Math.max(s.x1,s.x2),box.r)-Math.max(Math.min(s.x1,s.x2),box.x));
+    }}
+    if(Math.abs(s.x1-s.x2)<.5){{
+      if(s.x1<=box.x+M||s.x1>=box.r-M)return 0;
+      return Math.max(0,Math.min(Math.max(s.y1,s.y2),box.b)-Math.max(Math.min(s.y1,s.y2),box.y));
+    }}
+    return 0;
+  }}
+  function labelPenalty(box,p,own,limit){{
     var score=p.offset||0;
+    if(limit===undefined)limit=Infinity;
     if(box.x<4)score+=(4-box.x)*100000;
     if(box.y<4)score+=(4-box.y)*100000;
     if(box.r>board.scrollWidth-4)score+=(box.r-board.scrollWidth+4)*100000;
     if(box.b>board.scrollHeight-4)score+=(box.b-board.scrollHeight+4)*100000;
+    if(score>=limit)return score;
     OB.forEach(function(o){{
       var padded={{x:o.x-6,y:o.y-6,r:o.r+6,b:o.b+6}};
       if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
     }});
+    if(score>=limit)return score;
     TB.forEach(function(o){{
       var padded={{x:o.x-4,y:o.y-4,r:o.r+4,b:o.b+4}};
       if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
     }});
+    if(score>=limit)return score;
+    /* 남의 연결선을 덮으면 그 선이 끊어져 보인다. 가린 길이에 비례해 매긴다 —
+       수직 교차는 라벨 높이(~18px)만 가려 점선처럼 보이지만, 평행하게 얹히면
+       라벨 폭 전체가 사라져 "선이 끊겼다"로 읽힌다. 자기 경로 위에 얹는 것은
+       라벨과 선의 소속을 분명히 하려는 의도된 배치이므로 제외한다. */
+    pathSegs.forEach(function(s){{
+      if(s.ed===own)return;
+      var cov=segmentCoverLength(s,box);
+      if(cov>2)score+=80000+cov*5000;
+    }});
+    if(score>=limit)return score;
     arrowBoxes.forEach(function(o){{if(overlaps(box,o))score+=250000+overlapArea(box,o)*100;}});
     labelBoxes.forEach(function(o){{if(overlaps(box,o))score+=750000+overlapArea(box,o)*1000;}});
     var leader=leaderSegment(box,p);
@@ -2635,6 +2709,9 @@ function draw(){{
   labelJobs.forEach(function(job){{
     var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
     group.setAttribute('data-edge-id',job.ed.id);
+    group.setAttribute('data-edge-kind',job.ed.type||'sequence');
+    group.setAttribute('data-edge-source',job.ed.source);
+    group.setAttribute('data-edge-target',job.ed.target);
     var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
     bg.setAttribute('rx','4'); bg.setAttribute('fill',BG); bg.setAttribute('fill-opacity','.96');
     var txt=document.createElementNS(NS,'text'); txt.setAttribute('class','edge-label');
@@ -2644,14 +2721,20 @@ function draw(){{
     txt.style.visibility='hidden'; txt.textContent=job.ed.label;
     var title=document.createElementNS(NS,'title'); title.textContent=txt.textContent;
     group.appendChild(bg); group.appendChild(txt); group.appendChild(title); svg.appendChild(group);
-    var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+10;
-    var h=Math.max(measured.height,12)+6;
+    var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+7;
+    var h=Math.max(measured.height,12)+5;
     var candidates=labelCandidates(job.rt,w,h,job.sourceBox,job.targetBox);
+    /* 점수는 offset에 음이 아닌 패널티만 더하므로 score >= offset 이 늘 성립한다.
+       offset 오름차순으로 보면 bestScore <= 현재 offset 인 순간 남은 후보는
+       전부 개선 불가다. 후보 수백 개 중 대개 수십 개만 평가하고 끝난다. */
+    candidates.sort(function(x,y){{return (x.offset||0)-(y.offset||0);}});
     var best=null,bestScore=Infinity;
-    candidates.forEach(function(p){{
-      var b=candidateBox(p,w,h),s=labelPenalty(b,p);
+    for(var ci=0;ci<candidates.length;ci++){{
+      var p=candidates[ci];
+      if(bestScore<=(p.offset||0))break;
+      var b=candidateBox(p,w,h),s=labelPenalty(b,p,job.ed,bestScore);
       if(s<bestScore){{best={{p:p,box:b}};bestScore=s;}}
-    }});
+    }}
     if(!best){{
       var first=uniq(job.rt.pts)[0]; best={{p:{{x:first.x,y:first.y,anchor:first}},box:candidateBox(first,w,h)}};
     }}
@@ -2671,6 +2754,19 @@ function draw(){{
     bg.setAttribute('width',rnd(w)); bg.setAttribute('height',rnd(h));
     bg.setAttribute('stroke',job.color); bg.setAttribute('stroke-opacity','.18');
     txt.setAttribute('x',rnd(best.p.x)); txt.setAttribute('y',rnd(best.p.y));
+    /* 패널티로도 못 피한 겹침이 남으면 불투명 사각형을 고집하지 않는다.
+       배경을 낮추고 글자 획 주변만 배경색으로 둘러(헤일로) 선이 라벨 뒤로
+       이어져 보이게 한다. 지도 라벨의 표준 기법이며, 가리는 면적이 사각형
+       전체에서 글자 윤곽으로 줄어 "선이 끊겼다"로 읽히지 않는다. */
+    var residual=0;
+    pathSegs.forEach(function(s){{ if(s.ed!==job.ed) residual+=segmentCoverLength(s,best.box); }});
+    if(residual>2){{
+      bg.setAttribute('fill-opacity','.55');
+      txt.setAttribute('paint-order','stroke');
+      txt.setAttribute('stroke',BG); txt.setAttribute('stroke-width','3');
+      txt.setAttribute('stroke-linejoin','round');
+      group.setAttribute('data-covers',rnd(residual));
+    }}
     txt.style.visibility='visible';
   }});
 }}
@@ -2725,34 +2821,57 @@ function openNode(id){{
   }}
   var ins=EDGES.filter(function(x){{return x.target===id}}),
       outs=EDGES.filter(function(x){{return x.source===id}});
+  /* 보드에서 순차 라벨을 접어 두므로 여기가 전이 문구를 빠짐없이 보는 자리다.
+     한 줄로 이어붙이면 묻히므로 연결 종류별 배지로 세워 준다. */
+  function edgeLine(otherId,x){{
+    var tone=x.type==='loop'?'back':(x.type==='message'?'info':'muted');
+    return '<div style="margin-bottom:5px">'+(NODES[otherId]?NODES[otherId].name:otherId)
+      +(x.label?' <span class="badge '+tone+'">'+x.label+'</span>':'')+'</div>';
+  }}
   if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){{
-    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}}).join(' · ')+'</dd>';
+    return edgeLine(x.source,x);}}).join('')+'</dd>';
   if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){{
-    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}}).join(' · ')+'</dd>';
+    return edgeLine(x.target,x);}}).join('')+'</dd>';
   h+='</dl>';
   document.getElementById('dbody').innerHTML=h;
   document.getElementById('dlg').showModal();
 }}
 
+/* 인접 카드 강조와 숨긴 순차 라벨 노출을 한 곳에서 처리한다. focus·blur를 함께
+   걸어 마우스 없이 Tab만으로도 같은 정보에 닿게 한다 — 카드는 button이라 원래
+   포커스를 받는데 지금까지 hover에만 반응해 키보드에서는 강조가 동작하지 않았다. */
+function peek(id,on){{
+  var rel={{}};rel[id]=1;
+  EDGES.forEach(function(x){{if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;}});
+  document.querySelectorAll('.node').forEach(function(o){{o.classList.toggle('dim',on&&!rel[o.dataset.id])}});
+  var sv=document.getElementById('edges'); if(!sv)return;
+  sv.querySelectorAll('.edge-label-group').forEach(function(g){{
+    g.classList.toggle('lit', on && (g.getAttribute('data-edge-source')===id
+                                   ||g.getAttribute('data-edge-target')===id));
+  }});
+}}
 document.querySelectorAll('.node').forEach(function(b){{
   b.addEventListener('click',function(){{openNode(b.dataset.id)}});
-  b.addEventListener('mouseenter',function(){{
-    var id=b.dataset.id;
-    var rel={{}};rel[id]=1;
-    EDGES.forEach(function(x){{if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;}});
-    document.querySelectorAll('.node').forEach(function(o){{o.classList.toggle('dim',!rel[o.dataset.id])}});
-  }});
-  b.addEventListener('mouseleave',function(){{
-    document.querySelectorAll('.node').forEach(function(o){{o.classList.remove('dim')}});
-  }});
+  b.addEventListener('mouseenter',function(){{peek(b.dataset.id,true)}});
+  b.addEventListener('focus',function(){{peek(b.dataset.id,true)}});
+  b.addEventListener('mouseleave',function(){{peek(b.dataset.id,false)}});
+  b.addEventListener('blur',function(){{peek(b.dataset.id,false)}});
+}});
+var _all=document.getElementById('labelall');
+if(_all) _all.addEventListener('change',function(){{
+  var bd=document.getElementById('board');
+  if(bd) bd.classList.toggle('show-all-labels',this.checked);
 }});
 document.getElementById('dlg').addEventListener('click',function(ev){{
   if(ev.target===this) this.close();
 }});
 
-addEventListener('load',draw); addEventListener('resize',draw);
+// 리사이즈는 연속으로 쏟아지므로 프레임당 한 번으로 모은다.
+var _raf=0;
+function redraw(){{ if(_raf)return; _raf=requestAnimationFrame(function(){{_raf=0;draw();}}); }}
+addEventListener('load',draw); addEventListener('resize',redraw);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
-new MutationObserver(draw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
+new MutationObserver(redraw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
     return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone)
 
@@ -3184,13 +3303,20 @@ def build_errata(items: list[dict]) -> str:
                              {"high": 0, "medium": 1, "low": 2}[t[1]["severity"]]))
     blocks = []
     for i, (d, x) in enumerate(rows, 1):
-        ref = next((r for r in d["sourceRefs"]), {})
+        # 자료집 쪽·절 표시는 조달 축의 sourceRefs에서만 나온다. 건축 모델은
+        # 1차 출처가 자료집이 아니라 각국 정부 공식자료여서 이 키가 없다.
+        ref = next((r for r in d.get("sourceRefs") or []), {})
+        origin = (
+            f"{e(ref.get('pages', ''))}쪽 · {e(ref.get('section', ''))}"
+            if ref
+            else e(AXIS_LABEL.get(d.get("axis", ""), "공식 원문"))
+        )
         blocks.append(f"""<div class="disc" data-sev="{e(x['severity'])}">
   <div class="top">
     <span class="badge plain muted">{i:02d}</span>
     <span class="badge {SEV_TONE[x['severity']]}">{e(SEV_LABEL[x['severity']])}</span>
     <span class="badge plain muted">{e(d['country']['name'])}</span>
-    <span class="badge plain muted">{e(ref.get('pages', ''))}쪽 · {e(ref.get('section', ''))}</span>
+    <span class="badge plain muted">{origin}</span>
   </div>
   <h3>{e(x['field'])}</h3>
   <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
