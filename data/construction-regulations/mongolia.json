@@ -382,6 +382,37 @@
       },
       {
         "id": "B11",
+        "lane": "건축주·신청인",
+        "stage": "G4 일반 환경영향평가·지방의견",
+        "label": "지방정부·의회 의견·회의록 확보",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
+        "action": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
+        "outputs": [
+          "지방정부·지역의회 의견·회의록"
+        ],
+        "authorityIds": [
+          "mng-environment-authority",
+          "mng-local-governor"
+        ],
+        "requirementIds": [
+          "MNG-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "Environmental Impact Assessment Law",
+            "instrumentId": "MNG-EIA-LAW-2012",
+            "provisions": [
+              "Article 8.4.8; local government and assembly proposals and meeting minutes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B12",
         "lane": "현지 설계·시공 전문가",
         "stage": "G5 상세 환경영향평가 작성",
         "label": "공인기관 상세 환경영향평가·환경관리계획 작성",
@@ -408,37 +439,6 @@
             "provisions": [
               "Articles 8.1-8.7; licensed assessor, detailed report and four copies",
               "Articles 9.1-9.7; EMP contents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B12",
-        "lane": "건축주·신청인",
-        "stage": "G4 일반 환경영향평가·지방의견",
-        "label": "지방정부·의회 의견·회의록 확보",
-        "emphasis": "key",
-        "kind": "statutory",
-        "basisScope": "node",
-        "note": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
-        "action": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
-        "outputs": [
-          "지방정부·지역의회 의견·회의록"
-        ],
-        "authorityIds": [
-          "mng-environment-authority",
-          "mng-local-governor"
-        ],
-        "requirementIds": [
-          "MNG-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Environmental Impact Assessment Law",
-            "instrumentId": "MNG-EIA-LAW-2012",
-            "provisions": [
-              "Article 8.4.8; local government and assembly proposals and meeting minutes"
             ]
           }
         ]
@@ -1071,20 +1071,20 @@
       {
         "id": "BS05-03",
         "source": "B10",
-        "target": "B12",
+        "target": "B11",
         "type": "sequence",
         "label": "상세평가 요구"
       },
       {
         "id": "BS05-04",
-        "source": "B12",
-        "target": "B11",
+        "source": "B11",
+        "target": "B12",
         "type": "sequence",
         "label": "지방의견·회의록"
       },
       {
         "id": "BS05-05",
-        "source": "B11",
+        "source": "B12",
         "target": "B13",
         "type": "sequence",
         "label": "보고서·EMP 심사"
@@ -1106,7 +1106,7 @@
       {
         "id": "BS05-08",
         "source": "B14",
-        "target": "B11",
+        "target": "B12",
         "type": "loop",
         "label": "수정 상세 EIA"
       },
@@ -1427,20 +1427,20 @@
         {
           "id": "M05-E03",
           "source": "B10",
-          "target": "B12",
+          "target": "B11",
           "type": "sequence",
           "label": "상세평가 요구"
         },
         {
           "id": "M05-E04",
-          "source": "B12",
-          "target": "B11",
+          "source": "B11",
+          "target": "B12",
           "type": "sequence",
           "label": "지방의견·회의록"
         },
         {
           "id": "M05-E05",
-          "source": "B11",
+          "source": "B12",
           "target": "B13",
           "type": "sequence",
           "label": "보고서·EMP 심사"
@@ -1462,7 +1462,7 @@
         {
           "id": "M05-E08",
           "source": "B14",
-          "target": "B11",
+          "target": "B12",
           "type": "loop",
           "label": "수정 상세 EIA"
         },

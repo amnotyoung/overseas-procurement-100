@@ -403,6 +403,29 @@
             }
           },
           {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "지방정부·의회 의견·회의록 확보",
+            "emphasis": "key",
+            "kind": "statutory",
+            "basisScope": "node",
+            "action": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
+            "output": "지방정부·지역의회 의견·회의록",
+            "authorityIds": [
+              "mng-environment-authority",
+              "mng-local-governor"
+            ],
+            "refs": [
+              {
+                "source": "Environmental Impact Assessment Law",
+                "instrumentId": "MNG-EIA-LAW-2012",
+                "provisions": [
+                  "Article 8.4.8; local government and assembly proposals and meeting minutes"
+                ]
+              }
+            ]
+          },
+          {
             "lane": "현지 설계·시공 전문가",
             "stage": 1,
             "label": "공인기관 상세 환경영향평가·환경관리계획 작성",
@@ -422,29 +445,6 @@
                 "provisions": [
                   "Articles 8.1-8.7; licensed assessor, detailed report and four copies",
                   "Articles 9.1-9.7; EMP contents"
-                ]
-              }
-            ]
-          },
-          {
-            "lane": "건축주·신청인",
-            "stage": 0,
-            "label": "지방정부·의회 의견·회의록 확보",
-            "emphasis": "key",
-            "kind": "statutory",
-            "basisScope": "node",
-            "action": "상세 환경영향평가 착수 전 사업지 지방정부·지역의회 제안과 회의록을 확보해 평가범위와 보고서의 법정 입력자료로 편입한다.",
-            "output": "지방정부·지역의회 의견·회의록",
-            "authorityIds": [
-              "mng-environment-authority",
-              "mng-local-governor"
-            ],
-            "refs": [
-              {
-                "source": "Environmental Impact Assessment Law",
-                "instrumentId": "MNG-EIA-LAW-2012",
-                "provisions": [
-                  "Article 8.4.8; local government and assembly proposals and meeting minutes"
                 ]
               }
             ]
@@ -677,18 +677,18 @@
           ],
           [
             1,
-            3,
+            2,
             "sequence",
             "상세평가 요구"
           ],
           [
-            3,
             2,
+            3,
             "sequence",
             "지방의견·회의록"
           ],
           [
-            2,
+            3,
             4,
             "sequence",
             "보고서·EMP 심사"
@@ -707,7 +707,7 @@
           ],
           [
             5,
-            2,
+            3,
             "loop",
             "수정 상세 EIA"
           ],

@@ -365,7 +365,7 @@
         ],
         "edges": [
           [0, 1, "sequence", "착공접수"], [1, 2, "sequence", "공정도달"], [2, 3, "sequence", "검사요청"], [3, 4, "sequence", "검사결과"],
-          [4, 2, "sequence", "다음 공정"], [4, 5, "message", "시정·중지"], [5, 3, "loop", "시정 후 재검사"], [4, 6, "sequence", "실질완공"],
+          [4, 2, "loop", "다음 공정"], [4, 5, "message", "시정·중지"], [5, 3, "loop", "시정 후 재검사"], [4, 6, "sequence", "실질완공"],
           [6, 7, "sequence", "완공증빙"], [7, 8, "sequence", "점유신청"], [8, 10, "sequence", "최종 적합"], [8, 9, "message", "최종 미비"], [9, 8, "loop", "시정 후 재검사"]
         ],
         "decisionBranches": [
