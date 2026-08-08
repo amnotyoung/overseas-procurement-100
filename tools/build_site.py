@@ -2224,9 +2224,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
       <span><i style="background:var(--warn)"></i>유의</span>
-      <span><i style="background:var(--muted)"></i>절차 순서 · 라벨은 카드 선택 시</span>
+      <span><i style="background:var(--muted)"></i>절차 순서 · 갈림길 외 라벨은 카드 선택 시</span>
       <span><i style="background:var(--info)"></i>기관 간 입력</span>
-      <span><i style="background:var(--back)"></i>조건부 보완 회귀</span>
+      <span><i style="background:var(--back)"></i>앞 단계로 되돌아가는 경로</span>
       <label class="legend-toggle"><input type="checkbox" id="labelall">순차 라벨 모두 보기</label>
     </div>
   </div>
@@ -2531,11 +2531,19 @@ function draw(){{
   }});
   svg.innerHTML=d;
 
+  // 한 노드에서 순차선이 두 갈래 이상 나가면 그건 전이가 아니라 결정이다.
+  // 그 라벨("상세평가 면제"/"상세평가 요구")이 없으면 왜 선이 갈라지는지
+  // 읽을 수 없으므로, 갈림길의 순차 라벨은 접지 않고 상시 표시한다.
+  var seqOut={{}};
+  EDGES.forEach(function(x){{ if((x.type||'sequence')==='sequence') seqOut[x.source]=(seqOut[x.source]||0)+1; }});
+  function isBranch(ed){{ return (ed.type||'sequence')==='sequence' && seqOut[ed.source]>1; }}
+
   // 보완·분기선은 긴 우회 경로를 쓰므로 먼저 라벨 자리를 확보한다.
-  // 단순 순차선은 남은 가까운 경로 후보를 사용해 분기 라벨의 소속이
-  // 흐려지지 않게 한다. 최신 엔진의 안정 정렬로 원래 상대순서는 유지된다.
+  // 상시 표시되는 갈림길 라벨이 그다음, 접힌 순차 라벨이 마지막이다.
+  // 최신 엔진의 안정 정렬로 원래 상대순서는 유지된다.
   labelJobs.sort(function(a,b){{
-    return (a.ed.type==='sequence'?1:0)-(b.ed.type==='sequence'?1:0);
+    function tier(j){{ var t=j.ed.type||'sequence'; return t!=='sequence'?0:(isBranch(j.ed)?1:2); }}
+    return tier(a)-tier(b);
   }});
 
   /* 라벨은 경로와 별도 2차 배치한다. 실제 글자 폭을 잰 뒤 카드·화살촉·
@@ -2709,7 +2717,7 @@ function draw(){{
   labelJobs.forEach(function(job){{
     var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
     group.setAttribute('data-edge-id',job.ed.id);
-    group.setAttribute('data-edge-kind',job.ed.type||'sequence');
+    group.setAttribute('data-edge-kind',isBranch(job.ed)?'sequence-branch':(job.ed.type||'sequence'));
     group.setAttribute('data-edge-source',job.ed.source);
     group.setAttribute('data-edge-target',job.ed.target);
     var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
