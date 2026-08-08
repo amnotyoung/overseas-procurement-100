@@ -41,7 +41,7 @@
       "P1 전문도서·환경분류",
       "P2 공식접수",
       "P3 완비·기술심사",
-      "P4 EIA·관계기관",
+      "P4 환경영향평가·관계기관",
       "P5 보완·재심사",
       "P6 공식결정",
       "C1 착공·감리",
@@ -521,7 +521,7 @@
         "note": "관할위원회가 승인도서·조건과 함께 유효 building permit을 발급하거나 거부한다.",
         "action": "관할위원회가 승인도서·조건과 함께 유효 building permit을 발급하거나 거부한다.",
         "outputs": [
-          "building permit·승인도서 또는 거부"
+          "건축허가(building permit)·승인도서 또는 거부"
         ],
         "authorityIds": [
           "pse-local-authority",
@@ -641,7 +641,7 @@
       {
         "id": "B19",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P4 EIA·관계기관",
+        "stage": "P4 환경영향평가·관계기관",
         "label": "EIA·환경관리자료 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -671,7 +671,7 @@
       {
         "id": "B20",
         "lane": "환경·소방·검사기관",
-        "stage": "P4 EIA·관계기관",
+        "stage": "P4 환경영향평가·관계기관",
         "label": "EQA 기술·환경영향 심사",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -918,14 +918,14 @@
         "id": "B28",
         "lane": "도시계획·건축 허가기관",
         "stage": "C3 타설결정·위반시정",
-        "label": "공정별 Pour Permit 결정",
+        "label": "공정별 콘크리트 타설허가 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "검사적합 시 공학부서가 기초·각 slab의 pour permit를 발급하고 허가파일·감리자·건축주에게 사본을 보관·교부한다.",
         "action": "검사적합 시 공학부서가 기초·각 slab의 pour permit를 발급하고 허가파일·감리자·건축주에게 사본을 보관·교부한다.",
         "outputs": [
-          "공정별 pour permit 또는 미발급 통지"
+          "공정별 타설허가 또는 미발급 통지"
         ],
         "authorityIds": [
           "pse-local-authority"
@@ -1166,14 +1166,14 @@
         "id": "B36",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 점유결정",
-        "label": "Occupancy Permit 공식결정",
+        "label": "점유허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "관할위원회가 적합성을 확인해 1년 유효 occupancy permit를 발급하거나 거부한다.",
         "action": "관할위원회가 적합성을 확인해 1년 유효 occupancy permit를 발급하거나 거부한다.",
         "outputs": [
-          "occupancy permit 또는 거부통지"
+          "점유허가 또는 거부통지"
         ],
         "authorityIds": [
           "pse-local-authority",
@@ -1497,7 +1497,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "서안 관련 Law 79/1966 현행 통합본, Gaza Law 28/1936 계통과 지방정부법을 대조해 관할판정부터 구조·상세계획 결정까지 구성했다. 실제 통제권·접근가능성·필지수치는 사업지별 서면확인이 필요하다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "필지의 West Bank/Gaza·지방정부·계획구역·별도통제 관할을 먼저 확정하고 권원·지적과 유효 구조/상세계획을 대조해 개발조건을 공식 결정받는 절차다.",
+      "procedureScope": "필지의 요르단강 서안(West Bank)·가자지구(Gaza)·지방정부·계획구역·별도통제 관할을 먼저 확정하고 권원·지적과 유효 구조/상세계획을 대조해 개발조건을 공식 결정받는 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1615,12 +1615,12 @@
       "id": "permit-environment",
       "slug": "palestine-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "팔레스타인 건축·착공허가와 EQA 사전환경승인",
+      "name": "팔레스타인 건축·착공허가와 환경품질청(EQA) 사전환경승인",
       "oneLiner": "관할 위원회의 건축·착공허가와 EQA의 EIA 유형·사전 환경승인을 하나의 선행조건표로 묶는다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "지방정부 Building Regulation 6/2011·Amendment 15/2020의 등록도서·건축허가·착공허가와 Environment Law Arts.45-48의 EIA·사전환경승인을 분리해 구성했다. 실제 허가위원회와 EQA 업무가능성은 사업지별 확인한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "등록 설계사무소·기술사회 인증도서를 관할기관에 제출해 건축허가와 별도 착공허가를 받고, EQA의 환경스크리닝·EIA·사전환경승인을 완료하는 절차다.",
+      "procedureScope": "등록 설계사무소·기술사회 인증도서를 관할기관에 제출해 건축허가와 별도 착공허가를 받고, 환경품질청의 환경분류검토(screening)·환경영향평가(EIA)·사전환경승인을 완료하는 절차다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1769,7 +1769,7 @@
         },
         {
           "state": "rework",
-          "label": "도서·EIA 보완",
+          "label": "도서·환경영향평가 보완",
           "action": "해당 자료를 보완해 건축 또는 환경심사로 회귀한다."
         },
         {
@@ -1788,7 +1788,7 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "Amendment 15/2020 Arts.3-5, 11-12의 착공감리·위반중지·굴착허가·타설 전 검사·적합증명·점유허가를 실제 순서로 구성했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "등록 engineering office가 공사를 감독하고 foundation·slab·column 타설 전 지방공학부서 검사를 받아 pour permit를 확보한 뒤 적합증명·기술사회 인증으로 occupancy permit를 받는 절차다.",
+      "procedureScope": "등록 공학사무소(engineering office)가 공사를 감독하고 기초(foundation)·슬래브(slab)·기둥(column) 타설 전 지방공학부서 검사를 받아 콘크리트 타설허가(pour permit)를 확보한 뒤 적합증명(conformity certificate)·기술사회 인증으로 점유허가(occupancy permit)를 받는 절차다.",
       "nodeIds": [
         "B24",
         "B25",
@@ -2191,7 +2191,7 @@
       "gate": "관할위원회 건축허가 공식결정",
       "decision": "관할위원회가 계획·기술·관계기관 적합성을 심사해 건축허가 또는 거부를 확정한다.",
       "dependsOn": [],
-      "output": "building permit·승인도서 또는 거부"
+      "output": "건축허가·승인도서 또는 거부"
     },
     {
       "order": 3,
@@ -2211,19 +2211,19 @@
     },
     {
       "order": 5,
-      "gate": "지방공학부서 공정별 Pour Permit 결정",
-      "decision": "공학부서가 타설 전 현장적합성을 확인해 pour permit를 발급하거나 보완·중지를 통지한다.",
+      "gate": "지방공학부서 공정별 타설허가 결정",
+      "decision": "공학부서가 타설 전 현장적합성을 확인해 타설허가를 발급하거나 보완·중지를 통지한다.",
       "dependsOn": [],
-      "output": "공정별 pour permit 또는 미발급 통지"
+      "output": "공정별 타설허가 또는 미발급 통지"
     },
     {
       "order": 6,
-      "gate": "관할위원회 Occupancy Permit 공식결정",
-      "decision": "관할위원회가 licence·현장·인증 적합성을 확인해 점유를 허가하거나 거부한다.",
+      "gate": "관할위원회 점유허가 공식결정",
+      "decision": "관할위원회가 허가·현장·인증 적합성을 확인해 점유를 허가하거나 거부한다.",
       "dependsOn": [
         5
       ],
-      "output": "Occupancy Permit 또는 거부통지"
+      "output": "점유허가 또는 거부통지"
     }
   ],
   "siteOverlays": [

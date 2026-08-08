@@ -68,46 +68,46 @@
       "officialProcedure": {
         "name": "모잠비크 사전계획정보·건축프로젝트·건축허가",
         "coverage": "official-source-linked",
-        "scope": "민간건축은 관할 municipality 또는 district administration이 처리한다. 사전정보 회신으로 계획도구와 필지조건을 확인한 뒤 건축프로젝트와 보완설계를 순차 승인받는다.",
+        "scope": "민간건축은 관할 지방자치단체(municipality) 또는 지구행정청(district administration)이 처리한다. 사전정보 회신으로 계획도구와 필지조건을 확인한 뒤 건축프로젝트와 보완설계를 순차 승인받는다.",
         "stages": ["G0 사전정보 신청", "G1 현장·계획 회신", "G2 건축프로젝트 심사", "G3 보완설계 심사", "G4 건축허가 결정"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "Informação prévia 신청", "emphasis": "key", "kind": "official-guidance",
-            "action": "신청서 2부, 신축 DUAT 또는 기존건축 권원, 설명서, 위치도, 세금증빙을 제출하고 신축·증축이면 배치·높이·층수·면적·용도를 표시한 추가도면을 낸다.", "output": "사전정보 신청서·권원·계획기초도서",
+            "lane": "건축주·신청인", "stage": 0, "label": "사전계획정보(Informação prévia) 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "신청서 2부, 신축 토지사용수익권(DUAT) 또는 기존건축 권원, 설명서, 위치도, 세금증빙을 제출하고 신축·증축이면 배치·높이·층수·면적·용도를 표시한 추가도면을 낸다.", "output": "사전정보 신청서·권원·계획기초도서",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사전정보 신청자료", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2; Decree 2/2004 Article 9"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 0, "label": "접수·도시화부서 회부", "emphasis": "normal", "kind": "official-guidance",
-            "action": "municipal/district secretariat가 신청을 접수해 urbanisation and construction 담당부서로 보내고 필지·계획자료를 대조한다.", "output": "접수기록·담당부서 회부",
+            "action": "지방자치단체·지구 사무국(municipal/district secretariat)이 신청을 접수해 도시화·건축 담당부서(urbanisation and construction)로 보내고 필지·계획자료를 대조한다.", "output": "접수기록·담당부서 회부",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사전정보 내부처리", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — secretariat referral"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 1, "label": "필지 현장방문·계획조건 검토", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "기술부서가 대상지를 방문해 위치·경계·현황을 확인하고 적용 planning instruments, 용도·배치·높이·면적 등 건축조건에 대한 기술의견을 작성한다.", "output": "현장방문 기록·기술의견",
+            "action": "기술부서가 대상지를 방문해 위치·경계·현황을 확인하고 적용 계획수단(planning instruments), 용도·배치·높이·면적 등 건축조건에 대한 기술의견을 작성한다.", "output": "현장방문 기록·기술의견",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "현장방문·의견작성", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — site visit and technical opinion"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 1, "label": "사전계획정보 공식회신", "emphasis": "key", "kind": "official-guidance",
-            "action": "관할기관이 적용 계획도구와 건축 요구조건을 despacho로 결정해 신청인에게 통지한다.", "output": "Informação prévia despacho·계획조건",
+            "action": "관할기관이 적용 계획도구와 건축 요구조건을 행정결정(despacho)으로 확정해 신청인에게 통지한다.", "output": "사전계획정보 행정결정·계획조건",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사전정보 결정·통지", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — opinion, despacho and communication"]}],
-            "permitGate": {"key": "mozambique-prior-information", "gate": "관할기관 Informação prévia 공식회신", "decision": "현장·계획검토를 토대로 대상 필지에 적용되는 계획도구와 건축조건을 공식 회신한다.", "output": "Informação prévia despacho 또는 부정적 회신", "dependsOn": []}
+            "permitGate": {"key": "mozambique-prior-information", "gate": "관할기관 사전계획정보 공식회신", "decision": "현장·계획검토를 토대로 대상 필지에 적용되는 계획도구와 건축조건을 공식 회신한다.", "output": "사전계획정보 행정결정 또는 부정적 회신", "dependsOn": []}
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "건축프로젝트·책임서 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "사전정보 조건에 맞춰 건축프로젝트, 설명서, DUAT·소유권, 계획·측량도와 설계자 책임서(termo de responsabilidade)를 작성한다.", "output": "건축프로젝트·설계자 책임서·권원도서",
+            "action": "사전정보 조건에 맞춰 건축프로젝트, 설명서, 토지사용수익권·소유권, 계획·측량도와 설계자 책임확약서(termo de responsabilidade)를 작성한다.", "output": "건축프로젝트·설계자 책임서·권원도서",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "건축프로젝트 신청자료", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — architectural-project dossier"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 2, "label": "건축프로젝트 기술심사·결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "건축사·물리계획가·기술자가 신청의 장애요소와 계획·건축 적합성을 심사하고 건축프로젝트 승인 또는 보완·거부 despacho를 결정한다.", "output": "건축프로젝트 승인 despacho 또는 보완·거부통지",
+            "action": "건축사·물리계획가·기술자가 신청의 장애요소와 계획·건축 적합성을 심사하고 건축프로젝트 승인 또는 보완·거부 행정결정을 내린다.", "output": "건축프로젝트 승인 행정결정 또는 보완·거부통지",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "건축프로젝트 기술심사", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — technical appraisal and architectural approval"]}],
-            "permitGate": {"key": "mozambique-architecture-approval", "gate": "건축프로젝트 공식결정", "decision": "관할 기술부서가 계획·건축 적합성을 심사해 건축프로젝트 승인, 보완 또는 거부를 결정한다.", "output": "건축프로젝트 승인 despacho 또는 공식 보완·거부통지", "dependsOn": ["mozambique-prior-information"]}
+            "permitGate": {"key": "mozambique-architecture-approval", "gate": "건축프로젝트 공식결정", "decision": "관할 기술부서가 계획·건축 적합성을 심사해 건축프로젝트 승인, 보완 또는 거부를 결정한다.", "output": "건축프로젝트 승인 행정결정 또는 공식 보완·거부통지", "dependsOn": ["mozambique-prior-information"]}
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "건축프로젝트 보완·재심", "emphasis": "normal", "kind": "official-guidance",
@@ -135,10 +135,10 @@
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 4, "label": "건축허가 발급결정·수수료", "emphasis": "key", "kind": "official-guidance",
-            "action": "보완설계가 승인 건축프로젝트와 일치하면 관할기관이 프로젝트 승인을 통지하고 법정 수수료 납부 후 licença de construção를 발급하거나 이유를 붙여 거부한다.", "output": "Licença de construção·승인도서·수수료 영수증 또는 거부통지",
+            "action": "보완설계가 승인 건축프로젝트와 일치하면 관할기관이 프로젝트 승인을 통지하고 법정 수수료 납부 후 건축허가(licença de construção)를 발급하거나 이유를 붙여 거부한다.", "output": "건축허가·승인도서·수수료 영수증 또는 거부통지",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "건축허가 발급", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — project approval and construction licence"]}],
-            "permitGate": {"key": "mozambique-site-construction-licence", "gate": "관할기관 Licença de construção 공식결정", "decision": "승인 건축프로젝트와 보완설계의 일치를 확인해 수수료 납부 후 건축허가를 발급하거나 보완·거부한다.", "output": "Licença de construção·승인도서 또는 공식 보완·거부통지", "dependsOn": ["mozambique-architecture-approval"]}
+            "permitGate": {"key": "mozambique-site-construction-licence", "gate": "관할기관 건축허가 공식결정", "decision": "승인 건축프로젝트와 보완설계의 일치를 확인해 수수료 납부 후 건축허가를 발급하거나 보완·거부한다.", "output": "건축허가·승인도서 또는 공식 보완·거부통지", "dependsOn": ["mozambique-architecture-approval"]}
           }
         ],
         "edges": [
@@ -147,7 +147,7 @@
           [7, 8, "sequence", "보완설계"], [8, 10, "sequence", "정합성 확인"], [8, 9, "message", "불일치·누락"], [9, 8, "loop", "보완설계 재심"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "건축프로젝트·허가 승인", "action": "수수료 납부 후 licença de construção와 승인도서에 따라 착공"},
+          {"state": "success", "label": "건축프로젝트·허가 승인", "action": "수수료 납부 후 건축허가와 승인도서에 따라 착공"},
           {"state": "rework", "label": "건축·보완설계 수정", "action": "심사의견을 반영해 해당 기술심사 단계에 재제출"},
           {"state": "reject", "label": "계획 또는 허가 거부", "action": "공식 사유에 따라 입지·계획·설계를 변경해 재신청하거나 불복 검토"}
         ]
@@ -158,12 +158,12 @@
       "officialProcedure": {
         "name": "모잠비크 A+/A/B/C 환경허가·건축허가",
         "coverage": "official-source-linked",
-        "scope": "모든 개발사업은 환경 사전평가로 A+, A, B 또는 C를 분류받는다. A+/A는 full EIA, B는 simplified environmental study, C는 승인받은 good-practice instrument 경로이며 환경허가 뒤 관할 municipality/district가 건축허가를 결정한다.",
+        "scope": "모든 개발사업은 환경 사전평가로 A+, A, B 또는 C를 분류받는다. A+/A는 전면 환경영향평가(EIA), B는 간이환경조사(simplified environmental study), C는 승인받은 우수관행 지침(good-practice instrument) 경로이며 환경허가 뒤 관할 지방자치단체·지구행정청(municipality/district)이 건축허가를 결정한다.",
         "stages": ["G0 환경과정 개시", "G1 A+/A/B/C 분류", "G2 조사범위·공중참여", "G3 평가서 심사·보완", "G4 환경허가 결정", "G5 건축허가 접수·심사", "G6 건축허가 결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "환경 사전평가서류 제출", "emphasis": "key", "kind": "official-guidance",
-            "action": "사업설명·입지·DUAT·예상 생물물리·사회영향과 법정 첨부자료를 환경기관에 제출해 AIA 과정을 개시한다.", "output": "Instrução do processo·사전평가 접수기록",
+            "action": "사업설명·입지·토지사용수익권(DUAT)·예상 생물물리·사회영향과 법정 첨부자료를 환경기관에 제출해 환경영향평가 절차(AIA)를 개시한다.", "output": "절차개시 접수(Instrução do processo)·사전평가 기록",
             "authorityIds": ["environment-authority"],
             "refs": [
               {"source": "AIA 과정개시", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["Pre-feasibility and process-initiation workflow"]},
@@ -175,23 +175,23 @@
             "action": "관할 환경기관이 사업의 성격·규모·입지·민감도와 잠재영향을 심사해 A+, A, B 또는 C로 분류하고 필요한 평가도서·심사기관을 통지한다.", "output": "환경 카테고리·평가경로 공식통지",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "4개 환경분류", "instrumentId": "MOZ-ENV-DECREE-54-2015", "provisions": ["Categories A+, A, B and C"]}],
-            "permitGate": {"key": "mozambique-environment-category", "gate": "환경기관 A+/A/B/C 공식분류", "decision": "사전평가를 토대로 full EIA, simplified study 또는 good-practice instrument 경로를 공식 결정한다.", "output": "A+/A/B/C 분류통지 또는 사전부적합 통지", "dependsOn": []}
+            "permitGate": {"key": "mozambique-environment-category", "gate": "환경기관 A+/A/B/C 공식분류", "decision": "사전평가를 토대로 전면 환경영향평가, 간이조사 또는 우수관행 지침 경로를 공식 결정한다.", "output": "A+/A/B/C 분류통지 또는 사전부적합 통지", "dependsOn": []}
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "A+/A EPDA·TdR 또는 B TdR 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "A+/A는 EPDA와 EIA Terms of Reference, B는 simplified assessment의 Terms of Reference를 작성해 환경기관 승인을 요청한다.", "output": "EPDA·TdR 또는 B-category TdR",
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "A+/A 환경사전타당성·범위설정서(EPDA)·과업지시서(TdR) 또는 B 과업지시서 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "A+/A는 환경사전타당성·범위설정서와 환경영향평가 과업지시서를, B는 간이환경평가 과업지시서를 작성해 환경기관 승인을 요청한다.", "output": "환경사전타당성·범위설정서·과업지시서 또는 B등급 과업지시서",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "AIA 분류별 선행도서", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["A+/A EPDA and ToR; B ToR"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "C-category PBPGA 작성", "emphasis": "normal", "kind": "official-guidance",
-            "action": "C 사업은 예상영향의 관리조치를 담은 environmental good-practice procedure/manual(PBPGA)을 작성해 homologation과 환경허가를 요청한다.", "output": "PBPGA·good-practice manual",
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "C등급 우수환경관리관행절차(PBPGA) 작성", "emphasis": "normal", "kind": "official-guidance",
+            "action": "C 사업은 예상영향의 관리조치를 담은 환경우수관행 절차·지침을 작성해 공식승인(homologation)과 환경허가를 요청한다.", "output": "우수환경관리관행절차·우수관행 지침",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "C-category 관리도구", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["Category C PBPGA/manual route"]}]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 2, "label": "TdR 승인·A+ 독립검토자 지정", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "환경기관이 EPDA/TdR을 심사·승인하고 A+ 사업에는 공인 독립전문가의 peer review·감독을 적용한다.", "output": "승인 EPDA/TdR·A+ 독립검토 계획",
+            "lane": "환경·소방·검사기관", "stage": 2, "label": "과업지시서 승인·A+ 독립검토자 지정", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "환경기관이 환경사전타당성·범위설정서와 과업지시서를 심사·승인하고 A+ 사업에는 공인 독립전문가의 동료검토(peer review)·감독을 적용한다.", "output": "승인 범위설정서·과업지시서·A+ 독립검토 계획",
             "authorityIds": ["environment-authority"],
             "refs": [
               {"source": "분류별 평가절차", "instrumentId": "MOZ-ENV-DECREE-54-2015", "provisions": ["A+/A/B assessment modalities"]},
@@ -200,13 +200,13 @@
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "법정 공중참여 실시", "emphasis": "key", "kind": "official-guidance",
-            "action": "A+/A는 최소 2회, B는 최소 1회의 participatory consultation을 실시해 이해관계자 의견과 반영결과를 평가도서에 포함한다.", "output": "공중참여 공고·회의록·의견반영표",
+            "action": "A+/A는 최소 2회, B는 최소 1회의 참여협의(participatory consultation)를 실시해 이해관계자 의견과 반영결과를 평가도서에 포함한다.", "output": "공중참여 공고·회의록·의견반영표",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "A+/A/B 공중참여", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["Decree 54/2015 public participation; Ministerial Diploma 130/2006"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "EIA·EAS·PBPGA 최종제출", "emphasis": "key", "kind": "official-guidance",
-            "action": "승인 TdR과 공중참여 결과에 따라 A+/A full EIA, B simplified environmental study(EAS), 또는 C PBPGA를 완성해 제출한다.", "output": "EIA·EAS 또는 PBPGA 최종본",
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "환경영향평가·간이환경평가(EAS)·우수환경관리관행절차 최종제출", "emphasis": "key", "kind": "official-guidance",
+            "action": "승인 과업지시서와 공중참여 결과에 따라 A+/A 전면 환경영향평가, B 간이환경평가 또는 C 우수환경관리관행절차를 완성해 제출한다.", "output": "환경영향평가·간이환경평가 또는 우수환경관리관행절차 최종본",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "분류별 최종 평가도서", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["REIA, REAS and PBPGA routes"]}]
           },
@@ -218,20 +218,20 @@
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 3, "label": "환경평가서·관리계획 보완", "emphasis": "normal", "kind": "official-guidance",
-            "action": "기술위원회 또는 독립검토자의 추가조사·대안·저감·공중의견 반영 요구를 수정 평가서와 관리계획에 반영해 재제출한다.", "output": "보완 EIA·EAS·PBPGA·답변서",
+            "action": "기술위원회 또는 독립검토자의 추가조사·대안·저감·공중의견 반영 요구를 수정 평가서와 관리계획에 반영해 재제출한다.", "output": "보완 환경영향평가·간이환경평가·우수환경관리관행절차·답변서",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "AIA 보완심사", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["study review, revision and approval workflow"]}]
           },
           {
             "lane": "환경·소방·검사기관", "stage": 4, "label": "환경허가 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "관할 환경기관이 분류별 평가도서와 심사결과를 토대로 설치단계 환경허가를 발급하거나 조건·보완·거부를 공식 통지한다.", "output": "Licença Ambiental de Instalação·조건 또는 거부통지",
+            "action": "관할 환경기관이 분류별 평가도서와 심사결과를 토대로 설치단계 환경허가(Licença Ambiental de Instalação)를 발급하거나 조건·보완·거부를 공식 통지한다.", "output": "설치 환경허가·조건 또는 거부통지",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "환경허가 발급", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["Environmental-study approval and installation licence"]}],
-            "permitGate": {"key": "mozambique-environmental-licence", "gate": "환경기관 Licença Ambiental 공식결정", "decision": "A+/A EIA, B EAS 또는 C PBPGA를 심사해 설치 환경허가·조건·보완 또는 거부를 결정한다.", "output": "Licença Ambiental de Instalação 또는 공식 보완·거부통지", "dependsOn": ["mozambique-environment-category"]}
+            "permitGate": {"key": "mozambique-environmental-licence", "gate": "환경기관 환경허가 공식결정", "decision": "A+/A 환경영향평가, B 간이환경평가 또는 C 우수환경관리관행절차를 심사해 설치 환경허가·조건·보완 또는 거부를 결정한다.", "output": "설치 환경허가 또는 공식 보완·거부통지", "dependsOn": ["mozambique-environment-category"]}
           },
           {
             "lane": "건축주·신청인", "stage": 5, "label": "환경허가 포함 건축허가 신청", "emphasis": "key", "kind": "official-guidance",
-            "action": "환경허가와 DUAT·건축프로젝트·설계자 책임서·보완설계를 관할 municipality/district에 제출해 건축허가를 신청한다.", "output": "완비 건축허가 신청",
+            "action": "환경허가와 토지사용수익권·건축프로젝트·설계자 책임서·보완설계를 관할 지방자치단체·지구행정청에 제출해 건축허가를 신청한다.", "output": "완비 건축허가 신청",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "건축프로젝트·허가 신청", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2"]}]
           },
@@ -249,21 +249,21 @@
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 6, "label": "건축허가 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "관할기관이 환경허가와 건축·보완설계 적합성을 확인해 수수료 납부 후 licença de construção를 발급하거나 보완·거부를 통지한다.", "output": "Licença de construção·승인도서 또는 거부통지",
+            "action": "관할기관이 환경허가와 건축·보완설계 적합성을 확인해 수수료 납부 후 건축허가(licença de construção)를 발급하거나 보완·거부를 통지한다.", "output": "건축허가·승인도서 또는 거부통지",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "건축허가 발급", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — construction licence after complementary-project approval"]}],
-            "permitGate": {"key": "mozambique-combined-construction-licence", "gate": "관할기관 Licença de construção 공식결정", "decision": "환경허가·건축프로젝트·보완설계를 심사해 건축허가를 발급하거나 보완·거부한다.", "output": "Licença de construção·승인도서 또는 공식 보완·거부통지", "dependsOn": ["mozambique-environmental-licence"]}
+            "permitGate": {"key": "mozambique-combined-construction-licence", "gate": "관할기관 건축허가 공식결정", "decision": "환경허가·건축프로젝트·보완설계를 심사해 건축허가를 발급하거나 보완·거부한다.", "output": "건축허가·승인도서 또는 공식 보완·거부통지", "dependsOn": ["mozambique-environmental-licence"]}
           }
         ],
         "edges": [
-          [0, 1, "sequence", "사전평가"], [1, 2, "sequence", "A+/A/B"], [1, 3, "sequence", "C 경로"], [2, 4, "sequence", "EPDA·TdR"], [4, 5, "sequence", "승인 조사범위"],
-          [5, 6, "sequence", "공중의견"], [3, 6, "sequence", "PBPGA"], [6, 7, "sequence", "평가서 접수"], [7, 9, "sequence", "승인권고"], [7, 8, "message", "추가조사·보완"],
+          [0, 1, "sequence", "사전평가"], [1, 2, "sequence", "A+/A/B"], [1, 3, "sequence", "C 경로"], [2, 4, "sequence", "범위설정서·과업지시서"], [4, 5, "sequence", "승인 조사범위"],
+          [5, 6, "sequence", "공중의견"], [3, 6, "sequence", "우수환경관리관행절차"], [6, 7, "sequence", "평가서 접수"], [7, 9, "sequence", "승인권고"], [7, 8, "message", "추가조사·보완"],
           [8, 7, "loop", "환경 재심"], [9, 10, "sequence", "환경허가"], [10, 11, "sequence", "건축허가 접수"], [11, 13, "sequence", "기술적합"],
           [11, 12, "message", "설계보완"], [12, 11, "loop", "건축 재심"]
         ],
         "decisionBranches": [
           {"state": "success", "label": "환경·건축허가 승인", "action": "환경관리조건과 승인도서에 따라 착공"},
-          {"state": "rework", "label": "평가서·설계 보완", "action": "EIA/EAS/PBPGA 또는 건축도서를 수정해 해당 기술심사에 재제출"},
+          {"state": "rework", "label": "평가서·설계 보완", "action": "환경영향평가·간이환경평가·우수환경관리관행절차 또는 건축도서를 수정해 해당 기술심사에 재제출"},
           {"state": "reject", "label": "환경 또는 건축허가 거부", "action": "공식 사유에 따라 입지·사업·설계를 변경해 재신청하거나 불복 검토"}
         ]
       }
@@ -273,12 +273,12 @@
       "officialProcedure": {
         "name": "모잠비크 시공감독·환경검사·사용허가",
         "coverage": "official-source-linked",
-        "scope": "관할 municipality/district는 건축허가에 따른 공사를 감독하고 완공 후 licença de utilização를 결정한다. 환경기관은 승인 관리도구와 환경허가조건 이행을 별도로 검사한다.",
+        "scope": "관할 지방자치단체·지구행정청(municipality/district)은 건축허가에 따른 공사를 감독하고 완공 후 사용허가(licença de utilização)를 결정한다. 환경기관은 승인 관리도구와 환경허가조건 이행을 별도로 검사한다.",
         "stages": ["G0 허가·착공", "G1 시공·법정검사", "G2 시정·완공", "G3 사용허가 신청", "G4 최종검사·결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "건축허가·수수료·승인도서 확보", "emphasis": "key", "kind": "official-guidance",
-            "action": "licença de construção 수수료를 납부하고 승인 건축·구조·상하수·설비도서와 환경허가조건을 확보한 뒤 허가기간 안에 공사를 개시한다.", "output": "유효 건축허가·승인도서·환경허가조건",
+            "action": "건축허가(licença de construção) 수수료를 납부하고 승인 건축·구조·상하수·설비도서와 환경허가조건을 확보한 뒤 허가기간 안에 공사를 개시한다.", "output": "유효 건축허가·승인도서·환경허가조건",
             "authorityIds": ["municipality-district", "environment-authority"],
             "refs": [{"source": "건축허가 발급·기간", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — licence issuance and extension"]}]
           },
@@ -292,14 +292,14 @@
             ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "Municipality 공사준수 검사", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "municipality가 Decree 2/2004 제33조에 따라 현장을 검사해 건축허가·승인도서와 기술조건 준수를 감독한다.", "output": "현장검사 기록·적합 또는 시정통지",
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "지방자치단체 공사준수 검사", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "지방자치단체가 법령 제2/2004호(Decree 2/2004) 제33조에 따라 현장을 검사해 건축허가·승인도서와 기술조건 준수를 감독한다.", "output": "현장검사 기록·적합 또는 시정통지",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "공사감독 권한", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2; Decree 2/2004 Article 33"]}]
           },
           {
             "lane": "환경·소방·검사기관", "stage": 1, "label": "환경허가·관리도구 이행검사", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "환경기관이 공사 중 승인 EIA/EAS/PBPGA와 환경허가조건, 모니터링·저감조치 이행을 검사·감사한다.", "output": "환경검사·감사 기록·시정요구",
+            "action": "환경기관이 공사 중 승인 환경영향평가(EIA)·간이환경평가(EAS)·우수환경관리관행절차(PBPGA)와 환경허가조건, 모니터링·저감조치 이행을 검사·감사한다.", "output": "환경검사·감사 기록·시정요구",
             "authorityIds": ["environment-authority"],
             "refs": [{"source": "환경감사·검사", "instrumentId": "MOZ-GOV-EIA-FLOW", "provisions": ["Environmental audit and inspection requirements"]}]
           },
@@ -329,29 +329,29 @@
             "refs": [{"source": "사용허가 신청자료", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — utilisation-licence documents"]}]
           },
           {
-            "lane": "건축주·신청인", "stage": 3, "label": "Licença de utilização 신청", "emphasis": "key", "kind": "official-guidance",
-            "action": "단일 신청서 2부, 유효 건축허가 사본, 승인 프로젝트 도면과 세금증빙을 관할 municipality/district에 제출해 사용허가를 신청한다.", "output": "사용허가 신청 접수기록",
+            "lane": "건축주·신청인", "stage": 3, "label": "사용허가 신청", "emphasis": "key", "kind": "official-guidance",
+            "action": "단일 신청서 2부, 유효 건축허가 사본, 승인 프로젝트 도면과 세금증빙을 관할 지방자치단체·지구행정청에 제출해 사용허가를 신청한다.", "output": "사용허가 신청 접수기록",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사용허가 신청", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Section 4.1.2 — application after completion"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "완공건물 Vistoria", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "municipality 기술팀이 완공건물을 현장검사해 승인 프로젝트 이행과 안전·위생·상하수·전력 등 사용조건을 확인한다.", "output": "Vistoria 기록·적합의견 또는 시정요구",
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "완공건물 사용 전 현장검사(Vistoria)", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "지방자치단체 기술팀이 완공건물을 현장검사해 승인 프로젝트 이행과 안전·위생·상하수·전력 등 사용조건을 확인한다.", "output": "사용 전 현장검사 기록·적합의견 또는 시정요구",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "완공 현장검사·사용조건", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Sections 4.1 and 4.1.2 — site inspection and utilisation licence"]}]
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 4, "label": "최종검사 지적 시정·재검", "emphasis": "normal", "kind": "official-guidance",
-            "action": "vistoria에서 확인된 승인도서·안전·위생·설비 미비를 시정하고 증빙과 함께 재검사를 요청한다.", "output": "시정완료 증빙·재검사 기록",
+            "action": "사용 전 현장검사에서 확인된 승인도서·안전·위생·설비 미비를 시정하고 증빙과 함께 재검사를 요청한다.", "output": "시정완료 증빙·재검사 기록",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사용허가 적합성 확인", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Sections 4.1 and 4.1.2"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 4, "label": "사용허가 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "현장검사에서 완공사업의 안전·위생·물·전력과 승인 프로젝트 준수가 확인되면 municipality가 licença de utilização를 발급하고, 부적합이면 시정·거부를 통지한다.", "output": "Licença de utilização 또는 시정·거부통지",
+            "action": "현장검사에서 완공사업의 안전·위생·물·전력과 승인 프로젝트 준수가 확인되면 지방자치단체가 사용허가를 발급하고, 부적합이면 시정·거부를 통지한다.", "output": "사용허가 또는 시정·거부통지",
             "authorityIds": ["municipality-district"],
             "refs": [{"source": "사용허가 발급", "instrumentId": "MOZ-PDUL-URBAN-GUIDE", "provisions": ["Sections 4.1 and 4.1.2 — utilisation licence"]}],
-            "permitGate": {"key": "mozambique-utilisation-licence", "gate": "Municipality Licença de utilização 공식결정", "decision": "완공건물의 승인도서·안전·위생·기반시설 조건을 검사해 사용허가를 발급하거나 시정·거부한다.", "output": "Licença de utilização 또는 공식 시정·거부통지", "dependsOn": ["mozambique-construction-compliance"]}
+            "permitGate": {"key": "mozambique-utilisation-licence", "gate": "지방자치단체 사용허가 공식결정", "decision": "완공건물의 승인도서·안전·위생·기반시설 조건을 검사해 사용허가를 발급하거나 시정·거부한다.", "output": "사용허가 또는 공식 시정·거부통지", "dependsOn": ["mozambique-construction-compliance"]}
           }
         ],
         "edges": [
@@ -360,7 +360,7 @@
           [7, 8, "sequence", "최종검사"], [8, 10, "sequence", "사용 적합"], [8, 9, "message", "최종 시정"], [9, 8, "loop", "시정 후 재검"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "사용허가 발급", "action": "licença de utilização 발급 뒤 승인용도로 사용"},
+          {"state": "success", "label": "사용허가 발급", "action": "사용허가 발급 뒤 승인용도로 사용"},
           {"state": "rework", "label": "공사·최종검사 시정", "action": "건축·환경·사용조건 지적을 시정하고 해당 검사로 회귀"},
           {"state": "reject", "label": "사용허가 거부·공사중지", "action": "사용·공사를 중단하고 공식 사유에 따라 적합화·재신청 또는 불복 검토"}
         ]

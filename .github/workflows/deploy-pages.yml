@@ -40,6 +40,8 @@ jobs:
           python3 tools/build_construction_baselines.py --check
           python3 tools/validate_construction_regulations.py
           python3 tools/check_construction_procedure_coverage.py
+          python3 tools/check_construction_procedure_structure.py
+          python3 tools/check_construction_terminology.py
           npm run check:boards
 
       - name: Build static site

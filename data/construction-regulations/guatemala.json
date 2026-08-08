@@ -33,7 +33,7 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 필지·POT 조회",
+      "S1 필지·도시공간계획 조회",
       "S2 절차등급·도서",
       "S3 공식접수",
       "S4 기술심사·보완",
@@ -43,9 +43,9 @@
       "P3 시청결정·환경 완비성",
       "P4 건축결정·환경 기술심사",
       "P5 공식결정",
-      "P6 환경 licence",
-      "C1 NRD 접수",
-      "C2 NRD 심사·결정",
+      "P6 환경허가증",
+      "C1 재난저감규정 접수",
+      "C2 재난저감규정 심사·결정",
       "C3 공사착수·감독",
       "C4 변경·시정",
       "C5 완료검사·시정",
@@ -55,7 +55,7 @@
       {
         "id": "B01",
         "lane": "건축주·신청인",
-        "stage": "S1 필지·POT 조회",
+        "stage": "S1 필지·도시공간계획 조회",
         "label": "소유권·지적필지·신청권한 확정",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -85,15 +85,15 @@
       {
         "id": "B02",
         "lane": "현지 설계·시공 전문가",
-        "stage": "S1 필지·POT 조회",
-        "label": "POT G-zone·보완계획 대조",
+        "stage": "S1 필지·도시공간계획 조회",
+        "label": "도시공간계획 G 구역·보완계획 대조",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "현지 책임전문가가 POT 지도와 보완계획에서 필지의 G-zone, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
-        "action": "현지 책임전문가가 POT 지도와 보완계획에서 필지의 G-zone, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
+        "note": "현지 책임전문가가 도시공간계획 지도와 보완계획에서 필지의 G 구역, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
+        "action": "현지 책임전문가가 도시공간계획 지도와 보완계획에서 필지의 G 구역, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
         "outputs": [
-          "필지별 POT·제약조건표"
+          "필지별 도시공간계획·제약조건표"
         ],
         "authorityIds": [
           "gtm-active-professionals",
@@ -121,8 +121,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Dirección de Control Territorial가 사업의 POT 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
-        "action": "Dirección de Control Territorial가 사업의 POT 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
+        "note": "토지관리국(Dirección de Control Territorial, DCT)이 사업의 도시공간계획 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
+        "action": "토지관리국(Dirección de Control Territorial, DCT)이 사업의 도시공간계획 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
         "outputs": [
           "적용 절차등급·심의경로"
         ],
@@ -151,8 +151,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 POT 적합성 자료 및 요구 의견서를 작성한다.",
-        "action": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 POT 적합성 자료 및 요구 의견서를 작성한다.",
+        "note": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 도시공간계획 적합성 자료 및 요구 의견서를 작성한다.",
+        "action": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 도시공간계획 적합성 자료 및 요구 의견서를 작성한다.",
         "outputs": [
           "서명된 도시계획 신청도서"
         ],
@@ -178,7 +178,7 @@
         "id": "B05",
         "lane": "건축주·신청인",
         "stage": "S3 공식접수",
-        "label": "Ventanilla Unica 공식접수",
+        "label": "단일창구(Ventanilla Única) 공식접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -208,12 +208,12 @@
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 기술심사·보완",
-        "label": "POT 기술·법률 적합심사",
+        "label": "도시공간계획 기술·법률 적합심사",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT가 필지·사업자료를 POT 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
-        "action": "DCT가 필지·사업자료를 POT 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
+        "note": "DCT가 필지·사업자료를 도시공간계획 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
+        "action": "DCT가 필지·사업자료를 도시공간계획 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
         "outputs": [
           "DCT 검토보고·JOT 또는 의견수렴 기록"
         ],
@@ -238,7 +238,7 @@
         "id": "B07",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 기술심사·보완",
-        "label": "누락·POT 불일치 보완통지",
+        "label": "누락·도시공간계획 불일치 보완통지",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -303,8 +303,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "적용 경로의 권한기관이 POT 적합 여부와 조건을 확정하고 informe, dictamen, autorización 또는 불승인 통지를 발급한다.",
-        "action": "적용 경로의 권한기관이 POT 적합 여부와 조건을 확정하고 informe, dictamen, autorización 또는 불승인 통지를 발급한다.",
+        "note": "적용 경로의 권한기관이 도시공간계획 적합 여부와 조건을 확정하고 보고서(informe), 의견서(dictamen), 허가서(autorización) 또는 불승인 통지를 발급한다.",
+        "action": "적용 경로의 권한기관이 도시공간계획 적합 여부와 조건을 확정하고 보고서(informe), 의견서(dictamen), 허가서(autorización) 또는 불승인 통지를 발급한다.",
         "outputs": [
           "도시계획 적합결정·조건 또는 불승인 통지"
         ],
@@ -336,10 +336,10 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "시가 인정하는 책임전문가가 승인된 POT 조건, 건축·구조·설비도서, 권원, NRD-1·NRD-2 적용자료와 관계기관 요구자료를 구성한다.",
-        "action": "시가 인정하는 책임전문가가 승인된 POT 조건, 건축·구조·설비도서, 권원, NRD-1·NRD-2 적용자료와 관계기관 요구자료를 구성한다.",
+        "note": "시가 인정하는 책임전문가가 승인된 도시공간계획(Plan de Ordenamiento Territorial, POT) 조건, 건축·구조·설비도서, 권원, 재난저감규정(Normas de Reducción de Desastres, NRD) 제1·2호 적용자료와 관계기관 요구자료를 구성한다.",
+        "action": "시가 인정하는 책임전문가가 승인된 도시공간계획(Plan de Ordenamiento Territorial, POT) 조건, 건축·구조·설비도서, 권원, 재난저감규정(Normas de Reducción de Desastres, NRD) 제1·2호 적용자료와 관계기관 요구자료를 구성한다.",
         "outputs": [
-          "서명·봉인된 Licencia de Obra 신청도서"
+          "서명·봉인된 공사허가 신청도서"
         ],
         "authorityIds": [
           "gtm-active-professionals",
@@ -368,8 +368,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인이 Ventanilla Unica에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
-        "action": "신청인이 Ventanilla Unica에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
+        "note": "신청인이 단일창구(Ventanilla Única)에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
+        "action": "신청인이 단일창구(Ventanilla Única)에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
         "outputs": [
           "건축허가 접수증·사건번호"
         ],
@@ -398,8 +398,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT가 권원·책임전문가·도면의 완비성과 POT·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
-        "action": "DCT가 권원·책임전문가·도면의 완비성과 POT·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
+        "note": "DCT가 권원·책임전문가·도면의 완비성과 도시공간계획·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
+        "action": "DCT가 권원·책임전문가·도면의 완비성과 도시공간계획·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
         "outputs": [
           "DCT 기술·법률 심사기록"
         ],
@@ -485,14 +485,14 @@
         "id": "B15",
         "lane": "도시계획·건축 허가기관",
         "stage": "P4 건축결정·환경 기술심사",
-        "label": "Licencia de Obra 공식결정",
+        "label": "공사허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 Licencia de Obra를 발급하거나 불승인을 통지한다.",
-        "action": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 Licencia de Obra를 발급하거나 불승인을 통지한다.",
+        "note": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 공사허가를 발급하거나 불승인을 통지한다.",
+        "action": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 공사허가를 발급하거나 불승인을 통지한다.",
         "outputs": [
-          "Licencia de Obra·승인도서·조건 또는 불승인"
+          "공사허가·승인도서·조건 또는 불승인"
         ],
         "authorityIds": [
           "gtm-municipality"
@@ -518,12 +518,12 @@
         "id": "B16",
         "lane": "환경·소방·검사기관",
         "stage": "P1 분류·허가도서",
-        "label": "Listado Taxativo 환경범주 판정",
+        "label": "법정 환경분류목록(Listado Taxativo) 환경범주 판정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "MARN의 신청시점 Listado Taxativo에 사업 활동·규모·입지를 대조해 A, B1, B2, C 또는 CR 범주와 제출 환경도구를 판정한다.",
-        "action": "MARN의 신청시점 Listado Taxativo에 사업 활동·규모·입지를 대조해 A, B1, B2, C 또는 CR 범주와 제출 환경도구를 판정한다.",
+        "note": "MARN의 신청시점 법정 환경분류목록에 사업 활동·규모·입지를 대조해 A, B1, B2, C 또는 CR 범주와 제출 환경도구를 판정한다.",
+        "action": "MARN의 신청시점 법정 환경분류목록에 사업 활동·규모·입지를 대조해 A, B1, B2, C 또는 CR 범주와 제출 환경도구를 판정한다.",
         "outputs": [
           "환경범주·적용 환경도구"
         ],
@@ -552,8 +552,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "등록 환경컨설턴트가 판정 범주에 맞는 EIA 또는 범주별 환경도구, 위치·계획도서, 권원과 환경관리자료를 작성한다.",
-        "action": "등록 환경컨설턴트가 판정 범주에 맞는 EIA 또는 범주별 환경도구, 위치·계획도서, 권원과 환경관리자료를 작성한다.",
+        "note": "등록 환경컨설턴트가 판정 범주에 맞는 환경영향평가(EIA) 또는 범주별 환경도구, 위치·계획도서, 권원과 환경관리자료를 작성한다.",
+        "action": "등록 환경컨설턴트가 판정 범주에 맞는 환경영향평가(EIA) 또는 범주별 환경도구, 위치·계획도서, 권원과 환경관리자료를 작성한다.",
         "outputs": [
           "범주별 환경도구·첨부도서"
         ],
@@ -761,14 +761,14 @@
         "id": "B24",
         "lane": "환경·소방·검사기관",
         "stage": "P5 공식결정",
-        "label": "환경승인 resolution 결정",
+        "label": "환경승인 결정서(resolution) 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "MARN이 기술·법률 검토결과에 따라 환경도구를 승인하고 조건·환경약정을 부과하거나 불승인·종결 결정을 발급한다.",
         "action": "MARN이 기술·법률 검토결과에 따라 환경도구를 승인하고 조건·환경약정을 부과하거나 불승인·종결 결정을 발급한다.",
         "outputs": [
-          "환경승인 resolution·조건 또는 불승인"
+          "환경승인 결정서·조건 또는 불승인"
         ],
         "authorityIds": [
           "gtm-marn"
@@ -793,15 +793,15 @@
       {
         "id": "B25",
         "lane": "건축주·신청인",
-        "stage": "P6 환경 licence",
-        "label": "환경 licence 신청·납부",
+        "stage": "P6 환경허가증",
+        "label": "환경허가증 신청·납부",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경도구 승인 후 신청인이 규정된 기간 내 환경 licence 발급을 신청하고 해당 수수료·보증 등 요구자료를 제출한다.",
-        "action": "환경도구 승인 후 신청인이 규정된 기간 내 환경 licence 발급을 신청하고 해당 수수료·보증 등 요구자료를 제출한다.",
+        "note": "환경도구 승인 후 신청인이 규정된 기간 내 환경허가증 발급을 신청하고 해당 수수료·보증 등 요구자료를 제출한다.",
+        "action": "환경도구 승인 후 신청인이 규정된 기간 내 환경허가증 발급을 신청하고 해당 수수료·보증 등 요구자료를 제출한다.",
         "outputs": [
-          "환경 licence 발급신청·납부증빙"
+          "환경허가증 발급신청·납부증빙"
         ],
         "authorityIds": [
           "gtm-marn"
@@ -823,15 +823,15 @@
       {
         "id": "B26",
         "lane": "환경·소방·검사기관",
-        "stage": "P6 환경 licence",
-        "label": "MARN 환경 licence 발급결정",
+        "stage": "P6 환경허가증",
+        "label": "MARN 환경허가증 발급결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "MARN이 승인 resolution과 납부·보증 요건을 확인해 환경 licence를 발급하거나 미충족 사유를 통지한다.",
-        "action": "MARN이 승인 resolution과 납부·보증 요건을 확인해 환경 licence를 발급하거나 미충족 사유를 통지한다.",
+        "note": "MARN이 승인 결정서와 납부·보증 요건을 확인해 환경허가증을 발급하거나 미충족 사유를 통지한다.",
+        "action": "MARN이 승인 결정서와 납부·보증 요건을 확인해 환경허가증을 발급하거나 미충족 사유를 통지한다.",
         "outputs": [
-          "환경 licence 또는 미발급 통지"
+          "환경허가증 또는 미발급 통지"
         ],
         "authorityIds": [
           "gtm-marn"
@@ -856,15 +856,15 @@
       {
         "id": "B27",
         "lane": "현지 설계·시공 전문가",
-        "stage": "C1 NRD 접수",
-        "label": "NRD-2 안전평가 도서 작성",
+        "stage": "C1 재난저감규정 접수",
+        "label": "재난저감규정 제2호 안전평가 도서 작성",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 NRD-1 구조자료를 적용 범위에 맞춰 작성한다.",
-        "action": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 NRD-1 구조자료를 적용 범위에 맞춰 작성한다.",
+        "note": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 재난저감규정 제1호 구조자료를 적용 범위에 맞춰 작성한다.",
+        "action": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 재난저감규정 제1호 구조자료를 적용 범위에 맞춰 작성한다.",
         "outputs": [
-          "NRD-2 평가도서·구조안전 자료"
+          "재난저감규정 제2호 평가도서·구조안전 자료"
         ],
         "authorityIds": [
           "gtm-active-professionals",
@@ -887,8 +887,8 @@
       {
         "id": "B28",
         "lane": "건축주·신청인",
-        "stage": "C1 NRD 접수",
-        "label": "SIPROCODE NRD-2 자료제출",
+        "stage": "C1 재난저감규정 접수",
+        "label": "SIPROCODE 재난저감규정 제2호 자료제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -917,15 +917,15 @@
       {
         "id": "B29",
         "lane": "환경·소방·검사기관",
-        "stage": "C2 NRD 심사·결정",
-        "label": "CONRED NRD-2 기술평가",
+        "stage": "C2 재난저감규정 심사·결정",
+        "label": "CONRED 재난저감규정 제2호 기술평가",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CONRED가 제출요건과 사업정보를 확인하고 NRD-2 안전기준에 대한 기술평가를 수행한다.",
-        "action": "CONRED가 제출요건과 사업정보를 확인하고 NRD-2 안전기준에 대한 기술평가를 수행한다.",
+        "note": "CONRED가 제출요건과 사업정보를 확인하고 재난저감규정 제2호 안전기준에 대한 기술평가를 수행한다.",
+        "action": "CONRED가 제출요건과 사업정보를 확인하고 재난저감규정 제2호 안전기준에 대한 기술평가를 수행한다.",
         "outputs": [
-          "NRD-2 기술평가기록"
+          "재난저감규정 제2호 기술평가기록"
         ],
         "authorityIds": [
           "gtm-conred"
@@ -947,15 +947,15 @@
       {
         "id": "B30",
         "lane": "건축주·신청인",
-        "stage": "C2 NRD 심사·결정",
-        "label": "NRD-2 수정·명확화 요구",
+        "stage": "C2 재난저감규정 심사·결정",
+        "label": "재난저감규정 제2호 수정·명확화 요구",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CONRED가 기준 미충족이나 정보 부족을 특정해 modificación 또는 aclaración 요구를 발행한다.",
-        "action": "CONRED가 기준 미충족이나 정보 부족을 특정해 modificación 또는 aclaración 요구를 발행한다.",
+        "note": "CONRED가 기준 미충족이나 정보 부족을 특정해 수정(modificación) 또는 명확화(aclaración) 요구를 발행한다.",
+        "action": "CONRED가 기준 미충족이나 정보 부족을 특정해 수정(modificación) 또는 명확화(aclaración) 요구를 발행한다.",
         "outputs": [
-          "NRD-2 수정·명확화 요구"
+          "재난저감규정 제2호 수정·명확화 요구"
         ],
         "authorityIds": [
           "gtm-conred"
@@ -977,15 +977,15 @@
       {
         "id": "B31",
         "lane": "현지 설계·시공 전문가",
-        "stage": "C2 NRD 심사·결정",
-        "label": "NRD-2 보완·재평가",
+        "stage": "C2 재난저감규정 심사·결정",
+        "label": "재난저감규정 제2호 보완·재평가",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "책임전문가가 피난·수용인원·표지·비상계획 자료를 수정해 SIPROCODE로 다시 제출한다.",
         "action": "책임전문가가 피난·수용인원·표지·비상계획 자료를 수정해 SIPROCODE로 다시 제출한다.",
         "outputs": [
-          "수정 NRD-2 도서·재제출 기록"
+          "수정 재난저감규정 제2호 도서·재제출 기록"
         ],
         "authorityIds": [
           "gtm-active-professionals",
@@ -1008,15 +1008,15 @@
       {
         "id": "B32",
         "lane": "환경·소방·검사기관",
-        "stage": "C2 NRD 심사·결정",
-        "label": "NRD-2 Informe de Evaluacion 결정",
+        "stage": "C2 재난저감규정 심사·결정",
+        "label": "재난저감규정 제2호 평가보고서(Informe de Evaluación) 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "CONRED가 적합성을 확인해 SIPROCODE에서 내려받을 수 있는 공식 평가보고서를 발급하거나 미충족 결정을 통지한다.",
         "action": "CONRED가 적합성을 확인해 SIPROCODE에서 내려받을 수 있는 공식 평가보고서를 발급하거나 미충족 결정을 통지한다.",
         "outputs": [
-          "NRD-2 Informe de Evaluacion 또는 미충족 통지"
+          "재난저감규정 제2호 평가보고서 또는 미충족 통지"
         ],
         "authorityIds": [
           "gtm-conred"
@@ -1046,8 +1046,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "유효한 Licencia de Obra, 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
-        "action": "유효한 Licencia de Obra, 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
+        "note": "유효한 공사허가(Licencia de Obra), 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
+        "action": "유효한 공사허가(Licencia de Obra), 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
         "outputs": [
           "합법적 착공·현장 허가도서"
         ],
@@ -1164,12 +1164,12 @@
         "id": "B37",
         "lane": "건축주·신청인",
         "stage": "C5 완료검사·시정",
-        "label": "obra conforme 완료검사 신청",
+        "label": "공사적합 완료검사 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 constancia de obra conforme 검사를 요청한다.",
-        "action": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 constancia de obra conforme 검사를 요청한다.",
+        "note": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 공사적합증명 검사를 요청한다.",
+        "action": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 공사적합증명 검사를 요청한다.",
         "outputs": [
           "완료검사 신청·완료도서"
         ],
@@ -1198,8 +1198,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 obra conforme 여부를 검사한다.",
-        "action": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 obra conforme 여부를 검사한다.",
+        "note": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 공사적합 여부를 검사한다.",
+        "action": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 공사적합 여부를 검사한다.",
         "outputs": [
           "최종검사 기록·적합 또는 결함목록"
         ],
@@ -1285,14 +1285,14 @@
         "id": "B41",
         "lane": "도시계획·건축 허가기관",
         "stage": "C6 사용결정",
-        "label": "Constancia de Obra Conforme 결정",
+        "label": "공사적합증명서 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 constancia de obra conforme를 발급하거나 미적합 결정을 통지한다.",
-        "action": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 constancia de obra conforme를 발급하거나 미적합 결정을 통지한다.",
+        "note": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 공사적합증명서를 발급하거나 미적합 결정을 통지한다.",
+        "action": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 공사적합증명서를 발급하거나 미적합 결정을 통지한다.",
         "outputs": [
-          "Constancia de Obra Conforme 또는 미적합 통지"
+          "공사적합증명서 또는 미적합 통지"
         ],
         "authorityIds": [
           "gtm-municipality"
@@ -1318,14 +1318,14 @@
         "id": "B42",
         "lane": "건축주·신청인",
         "stage": "C6 사용결정",
-        "label": "필요한 토지사용 licence 신청",
+        "label": "필요한 토지사용허가증 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "예정 운영에 별도 Licencia de Uso del Suelo 또는 공개시설 개설허가가 필요한 경우 신청인이 obra conforme와 운영자료를 제출한다.",
-        "action": "예정 운영에 별도 Licencia de Uso del Suelo 또는 공개시설 개설허가가 필요한 경우 신청인이 obra conforme와 운영자료를 제출한다.",
+        "note": "예정 운영에 별도 토지사용허가증 또는 공개시설 개설허가가 필요한 경우 신청인이 공사적합증명서와 운영자료를 제출한다.",
+        "action": "예정 운영에 별도 토지사용허가증 또는 공개시설 개설허가가 필요한 경우 신청인이 공사적합증명서와 운영자료를 제출한다.",
         "outputs": [
-          "토지사용·영업 관련 licence 신청"
+          "토지사용·영업 관련 허가증 신청"
         ],
         "authorityIds": [
           "gtm-municipality"
@@ -1348,14 +1348,14 @@
         "id": "B43",
         "lane": "도시계획·건축 허가기관",
         "stage": "C6 사용결정",
-        "label": "토지사용·개장 licence 결정",
+        "label": "토지사용·개장허가증 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "DCT 또는 해당 시 부서가 obra conforme와 운영용도 적합성을 확인해 필요한 토지사용·개장 licence를 발급하거나 불승인한다.",
-        "action": "DCT 또는 해당 시 부서가 obra conforme와 운영용도 적합성을 확인해 필요한 토지사용·개장 licence를 발급하거나 불승인한다.",
+        "note": "DCT 또는 해당 시 부서가 공사적합증명서와 운영용도 적합성을 확인해 필요한 토지사용·개장허가증을 발급하거나 불승인한다.",
+        "action": "DCT 또는 해당 시 부서가 공사적합증명서와 운영용도 적합성을 확인해 필요한 토지사용·개장허가증을 발급하거나 불승인한다.",
         "outputs": [
-          "토지사용·개장 licence 또는 불승인"
+          "토지사용·개장허가증 또는 불승인"
         ],
         "authorityIds": [
           "gtm-municipality"
@@ -1391,7 +1391,7 @@
         "source": "B02",
         "target": "B03",
         "type": "sequence",
-        "label": "POT 대조"
+        "label": "도시공간계획 대조"
       },
       {
         "id": "BS04-03",
@@ -1580,7 +1580,7 @@
         "source": "B25",
         "target": "B26",
         "type": "sequence",
-        "label": "licence 신청"
+        "label": "환경허가증 신청"
       },
       {
         "id": "BX06",
@@ -1594,7 +1594,7 @@
         "source": "B27",
         "target": "B28",
         "type": "sequence",
-        "label": "NRD 도서"
+        "label": "재난저감규정 도서"
       },
       {
         "id": "BS06-02",
@@ -1608,7 +1608,7 @@
         "source": "B29",
         "target": "B32",
         "type": "sequence",
-        "label": "NRD-2 적합"
+        "label": "재난저감규정 제2호 적합"
       },
       {
         "id": "BS06-04",
@@ -1629,7 +1629,7 @@
         "source": "B31",
         "target": "B29",
         "type": "loop",
-        "label": "보완 후 NRD 재평가"
+        "label": "보완 후 재난저감규정 재평가"
       },
       {
         "id": "BS06-07",
@@ -1713,7 +1713,7 @@
         "source": "B41",
         "target": "B42",
         "type": "sequence",
-        "label": "obra conforme"
+        "label": "공사적합증명"
       },
       {
         "id": "BS06-19",
@@ -1734,7 +1734,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "지방자치단체별 절차 중 과테말라시 POT와 Ventanilla Unica의 실제 경로를 구성했다. G-zone, 건축수치, 양식과 결정기관은 과테말라시 사례이며 다른 municipality에는 해당 시의 현행 계획·조례·지적절차를 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "과테말라시에서 필지를 특정하고 POT의 G-zone·허용용도·절차등급을 판정한 뒤 DCT 또는 JOT의 공식 도시계획 결정을 받는 절차다. 과테말라시 수치와 기관을 전국에 일반화하지 않는다.",
+      "procedureScope": "과테말라시에서 필지를 특정하고 도시공간계획(Plan de Ordenamiento Territorial, POT)의 G 구역(G-zone)·허용용도·절차등급을 판정한 뒤 DCT 또는 JOT의 공식 도시계획 결정을 받는 절차다. 과테말라시 수치와 기관을 전국에 일반화하지 않는다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1778,7 +1778,7 @@
           "source": "B02",
           "target": "B03",
           "type": "sequence",
-          "label": "POT 대조"
+          "label": "도시공간계획 대조"
         },
         {
           "id": "M04-E03",
@@ -1833,8 +1833,8 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "POT 적합결정",
-          "action": "확정된 용도·도시계획 조건으로 Licencia de Obra 도서를 작성한다."
+          "label": "도시공간계획 적합결정",
+          "action": "확정된 용도·도시계획 조건으로 공사허가(Licencia de Obra) 도서를 작성한다."
         },
         {
           "state": "rework",
@@ -1843,7 +1843,7 @@
         },
         {
           "state": "reject",
-          "label": "POT 부적합",
+          "label": "도시공간계획 부적합",
           "action": "해당 용도·규모의 신청을 중단하고 적법한 계획변경 또는 대체부지를 검토한다."
         }
       ]
@@ -1857,7 +1857,7 @@
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "과테말라시 건축허가와 전국 MARN RECSA 환경평가·승인 경로를 각각 실제 절차로 구성했다. 지방 건축허가 경로는 과테말라시 사례이며 환경범주는 신청 시점의 MARN Listado Taxativo로 확정해야 한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "과테말라시 Licencia de Obra와 MARN의 A·B1·B2·C 환경도구 심사·환경승인·licencia 발급을 병렬로 표시한다. 두 결정은 서로 대체하지 않으며 다른 municipality에는 해당 지방절차를 적용한다.",
+      "procedureScope": "과테말라시 공사허가(Licencia de Obra)와 MARN의 A·B1·B2·C 환경도구 심사·환경승인·환경허가증(licencia) 발급을 병렬로 표시한다. 두 결정은 서로 대체하지 않으며 다른 지방자치단체에는 해당 지방절차를 적용한다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -2026,7 +2026,7 @@
           "source": "B25",
           "target": "B26",
           "type": "sequence",
-          "label": "licence 신청"
+          "label": "환경허가증 신청"
         }
       ],
       "decisionBranches": [
@@ -2051,12 +2051,12 @@
       "id": "control-completion",
       "slug": "guatemala-control-completion-construction-regulations",
       "priority": 6,
-      "name": "과테말라 NRD 안전검토·공사검사·사용결정 — 과테말라시 완료절차 사례",
+      "name": "과테말라 재난저감규정(Normas de Reducción de Desastres, NRD) 안전검토·공사검사·사용결정 — 과테말라시 완료절차 사례",
       "oneLiner": "현행 등록 전문가, NRD-1 구조안전·NRD-2 피난안전과 지방검사·obra conforme를 개장 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "과테말라시 POT의 공사감독·obra conforme와 CONRED SIPROCODE의 NRD-2 평가절차를 구성했다. CONRED 경로는 해당 공공이용·공공투자 사업에 적용하고, 지방 최종검사·사용서류 명칭은 관할 municipality별로 달라진다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "공공이용 건축물의 NRD-2 설계평가, 허가조건에 따른 공사 중 DCT 감독, 준공 후 constancia de obra conforme와 필요한 토지사용 licence 결정을 표시한다.",
+      "procedureScope": "공공이용 건축물의 재난저감규정 제2호 설계평가, 허가조건에 따른 공사 중 DCT 감독, 준공 후 공사적합증명서(constancia de obra conforme)와 필요한 토지사용허가증(Licencia de Uso del Suelo) 결정을 표시한다.",
       "nodeIds": [
         "B27",
         "B28",
@@ -2099,7 +2099,7 @@
           "source": "B27",
           "target": "B28",
           "type": "sequence",
-          "label": "NRD 도서"
+          "label": "재난저감규정 도서"
         },
         {
           "id": "M06-E02",
@@ -2113,7 +2113,7 @@
           "source": "B29",
           "target": "B32",
           "type": "sequence",
-          "label": "NRD-2 적합"
+          "label": "재난저감규정 제2호 적합"
         },
         {
           "id": "M06-E04",
@@ -2134,7 +2134,7 @@
           "source": "B31",
           "target": "B29",
           "type": "loop",
-          "label": "보완 후 NRD 재평가"
+          "label": "보완 후 재난저감규정 재평가"
         },
         {
           "id": "M06-E07",
@@ -2218,7 +2218,7 @@
           "source": "B41",
           "target": "B42",
           "type": "sequence",
-          "label": "obra conforme"
+          "label": "공사적합증명"
         },
         {
           "id": "M06-E19",
@@ -2232,7 +2232,7 @@
         {
           "state": "success",
           "label": "안전·완료·사용 승인",
-          "action": "NRD 평가와 obra conforme 및 적용되는 사용 licence를 확보한 범위에서 건물을 사용·개장한다."
+          "action": "재난저감규정 평가와 공사적합증명서 및 적용되는 사용허가증을 확보한 범위에서 건물을 사용·개장한다."
         },
         {
           "state": "rework",
@@ -2499,58 +2499,58 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "과테말라시 POT 도시계획 공식결정",
-      "decision": "DCT·JOT 또는 적용 권한기관이 필지와 제안사업의 POT 적합성·조건을 공식 확정한다.",
+      "gate": "과테말라시 도시공간계획 공식결정",
+      "decision": "DCT·JOT 또는 적용 권한기관이 필지와 제안사업의 도시공간계획 적합성·조건을 공식 확정한다.",
       "dependsOn": [],
       "output": "도시계획 적합결정·조건 또는 불승인 통지"
     },
     {
       "order": 2,
-      "gate": "과테말라시 Licencia de Obra 공식결정",
-      "decision": "권한기관이 완비도서의 POT·건축·안전기준 적합성을 심사해 공사허가, 조건부 허가 또는 불승인을 확정한다.",
+      "gate": "과테말라시 공사허가 공식결정",
+      "decision": "권한기관이 완비도서의 도시공간계획·건축·안전기준 적합성을 심사해 공사허가, 조건부 허가 또는 불승인을 확정한다.",
       "dependsOn": [],
-      "output": "Licencia de Obra·승인도서·조건 또는 불승인"
+      "output": "공사허가·승인도서·조건 또는 불승인"
     },
     {
       "order": 3,
       "gate": "MARN 환경도구 공식결정",
       "decision": "MARN이 적용 범주의 환경도구를 승인·조건부 승인하거나 불승인한다.",
       "dependsOn": [],
-      "output": "환경승인 resolution·조건 또는 불승인"
+      "output": "환경승인 결정서·조건 또는 불승인"
     },
     {
       "order": 4,
-      "gate": "MARN 환경 licence 공식결정",
-      "decision": "MARN이 승인 resolution의 후속요건을 확인해 환경 licence 발급 여부를 확정한다.",
+      "gate": "MARN 환경허가증 공식결정",
+      "decision": "MARN이 승인 결정서의 후속요건을 확인해 환경허가증 발급 여부를 확정한다.",
       "dependsOn": [
         3
       ],
-      "output": "환경 licence 또는 미발급 통지"
+      "output": "환경허가증 또는 미발급 통지"
     },
     {
       "order": 5,
-      "gate": "CONRED NRD-2 공식평가 결정",
-      "decision": "적용 사업의 NRD-2 기술도서 적합 여부를 평가해 Informe de Evaluacion을 발급하거나 보완·미충족 처리한다.",
+      "gate": "CONRED 재난저감규정 제2호 공식평가 결정",
+      "decision": "적용 사업의 재난저감규정 제2호 기술도서 적합 여부를 평가해 평가보고서를 발급하거나 보완·미충족 처리한다.",
       "dependsOn": [],
-      "output": "NRD-2 Informe de Evaluacion 또는 미충족 통지"
+      "output": "재난저감규정 제2호 평가보고서 또는 미충족 통지"
     },
     {
       "order": 6,
-      "gate": "과테말라시 Constancia de Obra Conforme 공식결정",
-      "decision": "DCT가 완성공사의 승인도서·조건 적합성을 확인해 obra conforme를 발급하거나 미적합 처리한다.",
+      "gate": "과테말라시 공사적합증명서 공식결정",
+      "decision": "DCT가 완성공사의 승인도서·조건 적합성을 확인해 공사적합증명서를 발급하거나 미적합 처리한다.",
       "dependsOn": [
         5
       ],
-      "output": "Constancia de Obra Conforme 또는 미적합 통지"
+      "output": "공사적합증명서 또는 미적합 통지"
     },
     {
       "order": 7,
-      "gate": "과테말라시 적용 토지사용·개장 licence 결정",
-      "decision": "별도 운영 licence 대상이면 관할 시 부서가 완성건축물의 승인용도 사용·개장 여부를 공식 확정한다.",
+      "gate": "과테말라시 적용 토지사용·개장허가증 결정",
+      "decision": "별도 운영허가증 대상이면 관할 시 부서가 완성건축물의 승인용도 사용·개장 여부를 공식 확정한다.",
       "dependsOn": [
         6
       ],
-      "output": "토지사용·개장 licence 또는 불승인"
+      "output": "토지사용·개장허가증 또는 불승인"
     }
   ],
   "siteOverlays": [

@@ -33,33 +33,33 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 IRM 필지규제",
+      "S1 수도권 규제보고서 필지규제",
       "S2 도시개발 기술도서",
-      "S3 LMU-10 접수·보완",
+      "S3 도시개발허가 접수·보완",
       "S4 공식결정",
       "P1 SUIA 분류",
       "P2 환경심사·보완",
       "P3 환경결정",
-      "P4 LMU-20 도서·접수",
+      "P4 대규모 건축허가 도서·접수",
       "P5 건축허가 결정",
       "C1 착공통지·공사통제",
       "C2 소방 점유검사",
       "C3 소방결정·AMC 완료검사",
-      "C4 CCF 공식결정"
+      "C4 준공적합증명 공식결정"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "건축주·신청인",
-        "stage": "S1 IRM 필지규제",
-        "label": "IRM 온라인 신청",
+        "stage": "S1 수도권 규제보고서 필지규제",
+        "label": "수도권 규제보고서 온라인 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자·적격 신청인이 그래픽 위치가 등록된 predio 번호로 Quito 온라인 시스템에 Informe de Regulación Metropolitana 발급을 신청한다.",
-        "action": "소유자·적격 신청인이 그래픽 위치가 등록된 predio 번호로 Quito 온라인 시스템에 Informe de Regulación Metropolitana 발급을 신청한다.",
+        "note": "소유자·적격 신청인이 그래픽 위치가 등록된 필지번호(predio)로 키토 온라인 시스템에 수도권 규제보고서 발급을 신청한다.",
+        "action": "소유자·적격 신청인이 그래픽 위치가 등록된 필지번호(predio)로 키토 온라인 시스템에 수도권 규제보고서 발급을 신청한다.",
         "outputs": [
-          "IRM 신청 접수·trámite 번호"
+          "수도권 규제보고서 신청 접수·처리번호(trámite)"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -88,15 +88,15 @@
       {
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S1 IRM 필지규제",
-        "label": "PUGS·edificabilidad·위험 중첩조회",
+        "stage": "S1 수도권 규제보고서 필지규제",
+        "label": "토지이용계획·건축가능규모·위험 중첩조회",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito가 지적·PUGS·Código de Edificabilidad를 조회해 토지분류, 처리, 용도, COS, 높이, 이격, 도로·하천·사면·위험·보호 중첩을 IRM에 산출한다.",
-        "action": "Quito가 지적·PUGS·Código de Edificabilidad를 조회해 토지분류, 처리, 용도, COS, 높이, 이격, 도로·하천·사면·위험·보호 중첩을 IRM에 산출한다.",
+        "note": "키토가 지적·토지이용·관리계획·건축가능규모 규정(Código de Edificabilidad)을 조회해 토지분류, 처리, 용도, 대지점유율(COS), 높이, 이격, 도로·하천·사면·위험·보호 중첩을 수도권 규제보고서에 산출한다.",
+        "action": "키토가 지적·토지이용·관리계획·건축가능규모 규정(Código de Edificabilidad)을 조회해 토지분류, 처리, 용도, 대지점유율(COS), 높이, 이격, 도로·하천·사면·위험·보호 중첩을 수도권 규제보고서에 산출한다.",
         "outputs": [
-          "필지별 PUGS·edificabilidad·영향정보"
+          "필지별 토지이용계획·건축가능규모·영향정보"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -125,15 +125,15 @@
       {
         "id": "B03",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S1 IRM 필지규제",
-        "label": "IRM 발급·통지",
+        "stage": "S1 수도권 규제보고서 필지규제",
+        "label": "수도권 규제보고서 발급·통지",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito가 IRM을 시스템으로 발급·통지한다. 신청인은 IRM이 개발권이 아니라 적용계획 정보임을 전제로 후속 LMU-10 도서를 작성한다.",
-        "action": "Quito가 IRM을 시스템으로 발급·통지한다. 신청인은 IRM이 개발권이 아니라 적용계획 정보임을 전제로 후속 LMU-10 도서를 작성한다.",
+        "note": "키토가 수도권 규제보고서를 시스템으로 발급·통지한다. 신청인은 이 보고서가 개발권이 아니라 적용계획 정보임을 전제로 후속 도시개발허가 도서를 작성한다.",
+        "action": "키토가 수도권 규제보고서를 시스템으로 발급·통지한다. 신청인은 이 보고서가 개발권이 아니라 적용계획 정보임을 전제로 후속 도시개발허가 도서를 작성한다.",
         "outputs": [
-          "Informe de Regulación Metropolitana"
+          "수도권 규제보고서"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -156,14 +156,14 @@
         "id": "B04",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 도시개발 기술도서",
-        "label": "urbanización·기반시설 적합도서 확보",
+        "label": "도시개발·기반시설 적합도서 확보",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "책임전문가가 IRM에 맞춘 urbanización 도서와 도로·상하수·전력 등 공기업 승인, 협력기관 적합증명 및 필요한 토사·폐기물 계약을 확보한다.",
-        "action": "책임전문가가 IRM에 맞춘 urbanización 도서와 도로·상하수·전력 등 공기업 승인, 협력기관 적합증명 및 필요한 토사·폐기물 계약을 확보한다.",
+        "note": "책임전문가가 수도권 규제보고서에 맞춘 도시개발 도서와 도로·상하수·전력 등 공기업 승인, 협력기관 적합증명 및 필요한 토사·폐기물 계약을 확보한다.",
+        "action": "책임전문가가 수도권 규제보고서에 맞춘 도시개발 도서와 도로·상하수·전력 등 공기업 승인, 협력기관 적합증명 및 필요한 토사·폐기물 계약을 확보한다.",
         "outputs": [
-          "urbanización 기술도서·인프라 승인·적합증명"
+          "도시개발 기술도서·인프라 승인·적합증명"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -192,15 +192,15 @@
       {
         "id": "B05",
         "lane": "건축주·신청인",
-        "stage": "S3 LMU-10 접수·보완",
-        "label": "LMU-10 온라인 신청·수수료",
+        "stage": "S3 도시개발허가 접수·보완",
+        "label": "도시개발허가 온라인 신청·수수료",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자·대리인이 predio, gravamen, certificado de conformidad, 프로젝트 종류와 특별요건을 온라인 제출하고 공표된 행정수수료를 납부한다.",
-        "action": "소유자·대리인이 predio, gravamen, certificado de conformidad, 프로젝트 종류와 특별요건을 온라인 제출하고 공표된 행정수수료를 납부한다.",
+        "note": "소유자·대리인이 필지번호, 권리부담(gravamen), 적합증명(certificado de conformidad), 프로젝트 종류와 특별요건을 온라인 제출하고 공표된 행정수수료를 납부한다.",
+        "action": "소유자·대리인이 필지번호, 권리부담(gravamen), 적합증명(certificado de conformidad), 프로젝트 종류와 특별요건을 온라인 제출하고 공표된 행정수수료를 납부한다.",
         "outputs": [
-          "LMU-10 신청 접수·납부증빙"
+          "도시개발허가 신청 접수·납부증빙"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -222,15 +222,15 @@
       {
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S3 LMU-10 접수·보완",
+        "stage": "S3 도시개발허가 접수·보완",
         "label": "완비성·행정·기술 적합심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito 허가기관이 신청권한·gravamen·협력기관 적합증명·공기업 승인과 PUGS·도시개발 규칙 충족 여부를 심사한다.",
-        "action": "Quito 허가기관이 신청권한·gravamen·협력기관 적합증명·공기업 승인과 PUGS·도시개발 규칙 충족 여부를 심사한다.",
+        "note": "키토 허가기관이 신청권한·권리부담·협력기관 적합증명·공기업 승인과 토지이용·관리계획·도시개발 규칙 충족 여부를 심사한다.",
+        "action": "키토 허가기관이 신청권한·권리부담·협력기관 적합증명·공기업 승인과 토지이용·관리계획·도시개발 규칙 충족 여부를 심사한다.",
         "outputs": [
-          "LMU-10 심사결과·보완항목 또는 적합결론"
+          "도시개발허가 심사결과·보완항목 또는 적합결론"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -259,8 +259,8 @@
       {
         "id": "B07",
         "lane": "건축주·신청인",
-        "stage": "S3 LMU-10 접수·보완",
-        "label": "LMU-10 미비 보완·재제출",
+        "stage": "S3 도시개발허가 접수·보완",
+        "label": "도시개발허가 미비 보완·재제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -290,14 +290,14 @@
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 공식결정",
-        "label": "LMU-10 도시개발허가 결정",
+        "label": "도시개발허가 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito 영토·주거 사무국 또는 관할기관이 urbanización의 LMU-10과 승인조건을 발급하거나 부적합·미보완 사유로 거부·종료 결정을 통지한다.",
-        "action": "Quito 영토·주거 사무국 또는 관할기관이 urbanización의 LMU-10과 승인조건을 발급하거나 부적합·미보완 사유로 거부·종료 결정을 통지한다.",
+        "note": "키토 영토·주거 사무국 또는 관할기관이 도시개발허가와 승인조건을 발급하거나 부적합·미보완 사유로 거부·종료 결정을 통지한다.",
+        "action": "키토 영토·주거 사무국 또는 관할기관이 도시개발허가와 승인조건을 발급하거나 부적합·미보완 사유로 거부·종료 결정을 통지한다.",
         "outputs": [
-          "LMU-10·승인도서·조건 또는 거부/종료 결정"
+          "도시개발허가·승인도서·조건 또는 거부/종료 결정"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -334,10 +334,10 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "사업시행자가 SUIA에 사업·활동·정확한 좌표를 등록하고 보호지역·산림유산·무형구역과의 certificado de intersección을 생성한다.",
-        "action": "사업시행자가 SUIA에 사업·활동·정확한 좌표를 등록하고 보호지역·산림유산·무형구역과의 certificado de intersección을 생성한다.",
+        "note": "사업시행자가 SUIA에 사업·활동·정확한 좌표를 등록하고 보호지역·산림유산·무형구역과의 중첩증명(certificado de intersección)을 생성한다.",
+        "action": "사업시행자가 SUIA에 사업·활동·정확한 좌표를 등록하고 보호지역·산림유산·무형구역과의 중첩증명(certificado de intersección)을 생성한다.",
         "outputs": [
-          "SUIA 프로젝트 코드·certificado de intersección"
+          "SUIA 프로젝트 코드·중첩증명"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -364,8 +364,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "SUIA와 관할 환경당국이 활동·입지의 영향·위험을 비유의, 저영향, 중·고영향으로 분류해 certificate, registro 또는 licencia 경로를 지정한다.",
-        "action": "SUIA와 관할 환경당국이 활동·입지의 영향·위험을 비유의, 저영향, 중·고영향으로 분류해 certificate, registro 또는 licencia 경로를 지정한다.",
+        "note": "SUIA와 관할 환경당국이 활동·입지의 영향·위험을 비유의, 저영향, 중·고영향으로 분류해 환경증명, 환경등록 또는 환경허가 경로를 지정한다.",
+        "action": "SUIA와 관할 환경당국이 활동·입지의 영향·위험을 비유의, 저영향, 중·고영향으로 분류해 환경증명, 환경등록 또는 환경허가 경로를 지정한다.",
         "outputs": [
           "환경영향 분류·적용 승인유형"
         ],
@@ -397,14 +397,14 @@
         "id": "B11",
         "lane": "환경·소방·검사기관",
         "stage": "P3 환경결정",
-        "label": "비유의·저영향 certificate/registro 발급",
+        "label": "비유의·저영향 환경증명·환경등록 발급",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "비유의 영향이면 SUIA가 환경 certificate와 적용 가이드를, 저영향이면 요구자료·환경관리계획을 확인해 registro ambiental을 발급한다.",
-        "action": "비유의 영향이면 SUIA가 환경 certificate와 적용 가이드를, 저영향이면 요구자료·환경관리계획을 확인해 registro ambiental을 발급한다.",
+        "note": "비유의 영향이면 SUIA가 환경증명과 적용 가이드를, 저영향이면 요구자료·환경관리계획을 확인해 환경등록을 발급한다.",
+        "action": "비유의 영향이면 SUIA가 환경증명과 적용 가이드를, 저영향이면 요구자료·환경관리계획을 확인해 환경등록을 발급한다.",
         "outputs": [
-          "certificado ambiental 또는 registro ambiental·조건"
+          "환경증명 또는 환경등록·조건"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -430,14 +430,14 @@
         "id": "B12",
         "lane": "건축주·신청인",
         "stage": "P2 환경심사·보완",
-        "label": "중·고영향 EIA·licencia 신청",
+        "label": "중·고영향 환경영향평가서(EIA)·환경허가 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "중·고영향으로 분류되면 시행자가 자격 있는 컨설턴트를 통해 EIA, 환경관리계획과 참여자료를 작성해 SUIA로 licencia ambiental을 신청한다.",
-        "action": "중·고영향으로 분류되면 시행자가 자격 있는 컨설턴트를 통해 EIA, 환경관리계획과 참여자료를 작성해 SUIA로 licencia ambiental을 신청한다.",
+        "note": "중·고영향으로 분류되면 시행자가 자격 있는 컨설턴트를 통해 환경영향평가서, 환경관리계획과 참여자료를 작성해 SUIA로 환경허가를 신청한다.",
+        "action": "중·고영향으로 분류되면 시행자가 자격 있는 컨설턴트를 통해 환경영향평가서, 환경관리계획과 참여자료를 작성해 SUIA로 환경허가를 신청한다.",
         "outputs": [
-          "EIA·licencia ambiental 신청 접수"
+          "환경영향평가서·환경허가 신청 접수"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -460,14 +460,14 @@
         "id": "B13",
         "lane": "환경·소방·검사기관",
         "stage": "P2 환경심사·보완",
-        "label": "EIA 1차 기술검토·관찰사항 통지",
+        "label": "환경영향평가서 1차 기술검토·관찰사항 통지",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 환경당국이 EIA의 법정요건·기술내용을 1차 검토하고 모든 관찰사항을 시행자에게 통지하거나 유리한 기술의견과 참여절차 개시를 명한다.",
-        "action": "관할 환경당국이 EIA의 법정요건·기술내용을 1차 검토하고 모든 관찰사항을 시행자에게 통지하거나 유리한 기술의견과 참여절차 개시를 명한다.",
+        "note": "관할 환경당국이 환경영향평가서의 법정요건·기술내용을 1차 검토하고 모든 관찰사항을 시행자에게 통지하거나 유리한 기술의견과 참여절차 개시를 명한다.",
+        "action": "관할 환경당국이 환경영향평가서의 법정요건·기술내용을 1차 검토하고 모든 관찰사항을 시행자에게 통지하거나 유리한 기술의견과 참여절차 개시를 명한다.",
         "outputs": [
-          "EIA 관찰사항 또는 유리한 1차 기술의견"
+          "환경영향평가서 관찰사항 또는 유리한 1차 기술의견"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -490,14 +490,14 @@
         "id": "B14",
         "lane": "건축주·신청인",
         "stage": "P2 환경심사·보완",
-        "label": "EIA 관찰사항 보완·재검토",
+        "label": "환경영향평가서 관찰사항 보완·재검토",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "시행자가 원칙적으로 15일 안에 관찰사항을 보완해 제출하고 관할기관이 보완자료를 재검토한다. 정당한 사유가 있으면 한 번의 연장이 가능하다.",
         "action": "시행자가 원칙적으로 15일 안에 관찰사항을 보완해 제출하고 관할기관이 보완자료를 재검토한다. 정당한 사유가 있으면 한 번의 연장이 가능하다.",
         "outputs": [
-          "수정 EIA·응답표·재검토 결과"
+          "수정 환경영향평가서·응답표·재검토 결과"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -524,8 +524,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "유리한 1차 기술의견 뒤 관할기관이 법정 환경참여를 실시하고 결과와 최종 EIA를 평가해 licencia 결정용 기술의견을 확정한다.",
-        "action": "유리한 1차 기술의견 뒤 관할기관이 법정 환경참여를 실시하고 결과와 최종 EIA를 평가해 licencia 결정용 기술의견을 확정한다.",
+        "note": "유리한 1차 기술의견 뒤 관할기관이 법정 환경참여를 실시하고 결과와 최종 환경영향평가서를 평가해 환경허가 결정용 기술의견을 확정한다.",
+        "action": "유리한 1차 기술의견 뒤 관할기관이 법정 환경참여를 실시하고 결과와 최종 환경영향평가서를 평가해 환경허가 결정용 기술의견을 확정한다.",
         "outputs": [
           "환경참여 결과·최종 기술의견"
         ],
@@ -550,14 +550,14 @@
         "id": "B16",
         "lane": "환경·소방·검사기관",
         "stage": "P3 환경결정",
-        "label": "licencia ambiental 공식결정",
+        "label": "환경허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 환경당국이 최종 기술의견과 참여결과를 근거로 licencia ambiental과 조건을 발급하거나 불승인 결정을 SUIA로 통지한다.",
-        "action": "관할 환경당국이 최종 기술의견과 참여결과를 근거로 licencia ambiental과 조건을 발급하거나 불승인 결정을 SUIA로 통지한다.",
+        "note": "관할 환경당국이 최종 기술의견과 참여결과를 근거로 환경허가와 조건을 발급하거나 불승인 결정을 SUIA로 통지한다.",
+        "action": "관할 환경당국이 최종 기술의견과 참여결과를 근거로 환경허가와 조건을 발급하거나 불승인 결정을 SUIA로 통지한다.",
         "outputs": [
-          "licencia ambiental·조건 또는 불승인 결정"
+          "환경허가·조건 또는 불승인 결정"
         ],
         "authorityIds": [
           "ecu-maate"
@@ -582,13 +582,13 @@
       {
         "id": "B17",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P4 LMU-20 도서·접수",
+        "stage": "P4 대규모 건축허가 도서·접수",
         "label": "협력기관 건축·구조·설비 적합증명",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito의 인가 Entidad Colaboradora가 건축·구조·전기·위생 기술도서를 PUGS·시 규칙·NEC에 대조해 분야별 Certificado de Conformidad를 발급한다.",
-        "action": "Quito의 인가 Entidad Colaboradora가 건축·구조·전기·위생 기술도서를 PUGS·시 규칙·NEC에 대조해 분야별 Certificado de Conformidad를 발급한다.",
+        "note": "키토의 인가 협력기관(Entidad Colaboradora)이 건축·구조·전기·위생 기술도서를 토지이용·관리계획·시 규칙·에콰도르 건축규정(NEC)에 대조해 분야별 적합증명(Certificado de Conformidad)을 발급한다.",
+        "action": "키토의 인가 협력기관(Entidad Colaboradora)이 건축·구조·전기·위생 기술도서를 토지이용·관리계획·시 규칙·에콰도르 건축규정(NEC)에 대조해 분야별 적합증명(Certificado de Conformidad)을 발급한다.",
         "outputs": [
           "건축·구조·전기·위생 적합증명"
         ],
@@ -620,15 +620,15 @@
       {
         "id": "B18",
         "lane": "환경·소방·검사기관",
-        "stage": "P4 LMU-20 도서·접수",
-        "label": "소방도면 Visto Bueno 확보",
+        "stage": "P4 대규모 건축허가 도서·접수",
+        "label": "소방도면 승인(Visto Bueno) 확보",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito에서 공식 적용기준에 해당하는 프로젝트(공식 LMU-20 안내상 500㎡ 초과 등)는 소방대에 소방설계도서를 제출해 Visto Bueno를 받는다.",
-        "action": "Quito에서 공식 적용기준에 해당하는 프로젝트(공식 LMU-20 안내상 500㎡ 초과 등)는 소방대에 소방설계도서를 제출해 Visto Bueno를 받는다.",
+        "note": "키토에서 공식 적용기준에 해당하는 프로젝트(공식 대규모 건축허가 안내상 500㎡ 초과 등)는 소방대에 소방설계도서를 제출해 소방도면 승인을 받는다.",
+        "action": "키토에서 공식 적용기준에 해당하는 프로젝트(공식 대규모 건축허가 안내상 500㎡ 초과 등)는 소방대에 소방설계도서를 제출해 소방도면 승인을 받는다.",
         "outputs": [
-          "소방도면 Visto Bueno 또는 보완요구"
+          "소방도면 승인 또는 보완요구"
         ],
         "authorityIds": [
           "ecu-quito-fire-brigade"
@@ -657,15 +657,15 @@
       {
         "id": "B19",
         "lane": "건축주·신청인",
-        "stage": "P4 LMU-20 도서·접수",
-        "label": "LMU-20 온라인 신청",
+        "stage": "P4 대규모 건축허가 도서·접수",
+        "label": "대규모 건축허가 온라인 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자·대리인이 predio, Zonal Administration, 적합증명, 토사처리계약, ESED와 적용되는 소방승인을 Quito 시스템에 제출한다.",
-        "action": "소유자·대리인이 predio, Zonal Administration, 적합증명, 토사처리계약, ESED와 적용되는 소방승인을 Quito 시스템에 제출한다.",
+        "note": "소유자·대리인이 필지번호(predio), 구역행정청(Zonal Administration), 적합증명, 토사처리계약, ESED와 적용되는 소방승인을 키토 시스템에 제출한다.",
+        "action": "소유자·대리인이 필지번호(predio), 구역행정청(Zonal Administration), 적합증명, 토사처리계약, ESED와 적용되는 소방승인을 키토 시스템에 제출한다.",
         "outputs": [
-          "LMU-20 신청 접수·trámite 번호"
+          "대규모 건축허가 신청 접수·처리번호(trámite)"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -688,14 +688,14 @@
         "id": "B20",
         "lane": "도시계획·건축 허가기관",
         "stage": "P5 건축허가 결정",
-        "label": "LMU-20 완비성·행정심사",
+        "label": "대규모 건축허가 완비성·행정심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "Quito 허가기관이 신청권한, 적합증명, 특별요건과 행정수수료를 확인하고 미비하면 근거·보완방법을 특정해 신청인에게 통지한다.",
         "action": "Quito 허가기관이 신청권한, 적합증명, 특별요건과 행정수수료를 확인하고 미비하면 근거·보완방법을 특정해 신청인에게 통지한다.",
         "outputs": [
-          "LMU-20 행정심사결과·보완통지 또는 적합"
+          "대규모 건축허가 행정심사결과·보완통지 또는 적합"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -725,14 +725,14 @@
         "id": "B21",
         "lane": "건축주·신청인",
         "stage": "P5 건축허가 결정",
-        "label": "LMU-20 미비 보완·재제출",
+        "label": "대규모 건축허가 미비 보완·재제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "신청인과 책임전문가가 COA 보완통지에 따라 누락자료·적합증명·설명을 수정해 Quito 허가기관에 재제출한다.",
         "action": "신청인과 책임전문가가 COA 보완통지에 따라 누락자료·적합증명·설명을 수정해 Quito 허가기관에 재제출한다.",
         "outputs": [
-          "LMU-20 보완자료 재접수·재심사 결과"
+          "대규모 건축허가 보완자료 재접수·재심사 결과"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -755,14 +755,14 @@
         "id": "B22",
         "lane": "도시계획·건축 허가기관",
         "stage": "P5 건축허가 결정",
-        "label": "LMU-20 건축허가 결정",
+        "label": "대규모 건축허가 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Quito가 적합증명과 완비요건을 근거로 LMU-20을 발급해 대규모 건축행위 착수를 허가하거나 거부·절차종료를 공식 통지한다.",
-        "action": "Quito가 적합증명과 완비요건을 근거로 LMU-20을 발급해 대규모 건축행위 착수를 허가하거나 거부·절차종료를 공식 통지한다.",
+        "note": "키토가 적합증명과 완비요건을 근거로 대규모 건축허가를 발급해 건축행위 착수를 허가하거나 거부·절차종료를 공식 통지한다.",
+        "action": "키토가 적합증명과 완비요건을 근거로 대규모 건축허가를 발급해 건축행위 착수를 허가하거나 거부·절차종료를 공식 통지한다.",
         "outputs": [
-          "LMU-20·승인 프로젝트·조건 또는 거부/종료 결정"
+          "대규모 건축허가·승인 프로젝트·조건 또는 거부/종료 결정"
         ],
         "authorityIds": [
           "ecu-quito-territory-authority"
@@ -788,12 +788,12 @@
         "id": "B23",
         "lane": "건축주·신청인",
         "stage": "C1 착공통지·공사통제",
-        "label": "LMU-20 공사 착공통지",
+        "label": "대규모 건축허가 공사 착공통지",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "LMU-20 발급 후 소유자·promotor가 AMC Formulario 23과 IESS 의무이행증명을 온라인 제출해 대규모 건축행위 착공을 통지한다.",
-        "action": "LMU-20 발급 후 소유자·promotor가 AMC Formulario 23과 IESS 의무이행증명을 온라인 제출해 대규모 건축행위 착공을 통지한다.",
+        "note": "대규모 건축허가(LMU-20) 발급 후 소유자·사업시행자(promotor)가 AMC 서식 23(Formulario 23)과 IESS 의무이행증명을 온라인 제출해 대규모 건축행위 착공을 통지한다.",
+        "action": "대규모 건축허가(LMU-20) 발급 후 소유자·사업시행자(promotor)가 AMC 서식 23(Formulario 23)과 IESS 의무이행증명을 온라인 제출해 대규모 건축행위 착공을 통지한다.",
         "outputs": [
           "AMC 착공통지 등록·접수코드"
         ],
@@ -822,8 +822,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AMC가 공사 중 통제권한으로 LMU-20 승인 프로젝트·시 규칙·NEC 준수 여부를 검사하고 소유자·promotor·책임전문가는 공사와 변경의 적합성을 공동 책임진다.",
-        "action": "AMC가 공사 중 통제권한으로 LMU-20 승인 프로젝트·시 규칙·NEC 준수 여부를 검사하고 소유자·promotor·책임전문가는 공사와 변경의 적합성을 공동 책임진다.",
+        "note": "AMC가 공사 중 통제권한으로 대규모 건축허가 승인 프로젝트·시 규칙·에콰도르 건축규정(NEC) 준수 여부를 검사하고 소유자·사업시행자·책임전문가는 공사와 변경의 적합성을 공동 책임진다.",
+        "action": "AMC가 공사 중 통제권한으로 대규모 건축허가 승인 프로젝트·시 규칙·에콰도르 건축규정(NEC) 준수 여부를 검사하고 소유자·사업시행자·책임전문가는 공사와 변경의 적합성을 공동 책임진다.",
         "outputs": [
           "AMC 현장통제·변경·시정 기록"
         ],
@@ -856,12 +856,12 @@
         "id": "B25",
         "lane": "건축주·신청인",
         "stage": "C2 소방 점유검사",
-        "label": "소방 Permiso de Ocupación 신청",
+        "label": "소방점유허가 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자·대리인이 소방도면 Visto Bueno, 설비 시험·설치증명과 적용 특별서류를 CBDMQ 온라인 시스템에 제출해 점유검사를 신청한다.",
-        "action": "소유자·대리인이 소방도면 Visto Bueno, 설비 시험·설치증명과 적용 특별서류를 CBDMQ 온라인 시스템에 제출해 점유검사를 신청한다.",
+        "note": "소유자·대리인이 소방도면 승인(Visto Bueno), 설비 시험·설치증명과 적용 특별서류를 CBDMQ 온라인 시스템에 제출해 점유검사를 신청한다.",
+        "action": "소유자·대리인이 소방도면 승인(Visto Bueno), 설비 시험·설치증명과 적용 특별서류를 CBDMQ 온라인 시스템에 제출해 점유검사를 신청한다.",
         "outputs": [
           "소방 점유검사 신청·검사예약"
         ],
@@ -946,14 +946,14 @@
         "id": "B28",
         "lane": "환경·소방·검사기관",
         "stage": "C3 소방결정·AMC 완료검사",
-        "label": "소방 Permiso de Ocupación 발급",
+        "label": "소방점유허가 발급",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CBDMQ가 소방안전 적합성이 확인된 프로젝트에 Permiso de Ocupación을 전자 발급하고, 미해소 불일치에는 발급을 거부한다.",
-        "action": "CBDMQ가 소방안전 적합성이 확인된 프로젝트에 Permiso de Ocupación을 전자 발급하고, 미해소 불일치에는 발급을 거부한다.",
+        "note": "CBDMQ가 소방안전 적합성이 확인된 프로젝트에 소방점유허가를 전자 발급하고, 미해소 불일치에는 발급을 거부한다.",
+        "action": "CBDMQ가 소방안전 적합성이 확인된 프로젝트에 소방점유허가를 전자 발급하고, 미해소 불일치에는 발급을 거부한다.",
         "outputs": [
-          "CBDMQ Permiso de Ocupación 또는 발급거부"
+          "CBDMQ 소방점유허가 또는 발급거부"
         ],
         "authorityIds": [
           "ecu-quito-fire-brigade"
@@ -979,14 +979,14 @@
         "id": "B29",
         "lane": "건축주·신청인",
         "stage": "C3 소방결정·AMC 완료검사",
-        "label": "AMC 공사완료 통지·CCF 신청",
+        "label": "AMC 공사완료 통지·준공적합증명 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자가 AMC Formulario 25, CBDMQ Permiso de Ocupación과 요구자료를 온라인 제출해 LMU-20 공사완료를 통지하고 CCF를 신청한다.",
-        "action": "소유자가 AMC Formulario 25, CBDMQ Permiso de Ocupación과 요구자료를 온라인 제출해 LMU-20 공사완료를 통지하고 CCF를 신청한다.",
+        "note": "소유자가 AMC 서식 25, CBDMQ 소방점유허가와 요구자료를 온라인 제출해 대규모 건축허가 공사완료를 통지하고 준공적합증명을 신청한다.",
+        "action": "소유자가 AMC 서식 25, CBDMQ 소방점유허가와 요구자료를 온라인 제출해 대규모 건축허가 공사완료를 통지하고 준공적합증명을 신청한다.",
         "outputs": [
-          "공사완료 통지·CCF 신청 접수코드"
+          "공사완료 통지·준공적합증명 신청 접수코드"
         ],
         "authorityIds": [
           "ecu-quito-amc"
@@ -1013,8 +1013,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AMC가 LMU-20 승인 프로젝트와 완공상태를 현장확인하거나 법정 허용되는 Declaración de Fiel Cumplimiento를 검토해 CCF 적합성을 판정한다.",
-        "action": "AMC가 LMU-20 승인 프로젝트와 완공상태를 현장확인하거나 법정 허용되는 Declaración de Fiel Cumplimiento를 검토해 CCF 적합성을 판정한다.",
+        "note": "AMC가 대규모 건축허가 승인 프로젝트와 완공상태를 현장확인하거나 법정 허용되는 성실이행선언(Declaración de Fiel Cumplimiento)을 검토해 준공적합증명 적합성을 판정한다.",
+        "action": "AMC가 대규모 건축허가 승인 프로젝트와 완공상태를 현장확인하거나 법정 허용되는 성실이행선언(Declaración de Fiel Cumplimiento)을 검토해 준공적합증명 적합성을 판정한다.",
         "outputs": [
           "유리한 최종검사 또는 관찰사항 기술보고서"
         ],
@@ -1043,10 +1043,10 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AMC가 Informe Técnico con Observaciones를 발행하면 소유자·책임전문가가 현장·도서 불일치를 시정하고 증빙을 재제출해 재확인을 받는다.",
-        "action": "AMC가 Informe Técnico con Observaciones를 발행하면 소유자·책임전문가가 현장·도서 불일치를 시정하고 증빙을 재제출해 재확인을 받는다.",
+        "note": "AMC가 관찰사항 기술보고서(Informe Técnico con Observaciones)를 발행하면 소유자·책임전문가가 현장·도서 불일치를 시정하고 증빙을 재제출해 재확인을 받는다.",
+        "action": "AMC가 관찰사항 기술보고서(Informe Técnico con Observaciones)를 발행하면 소유자·책임전문가가 현장·도서 불일치를 시정하고 증빙을 재제출해 재확인을 받는다.",
         "outputs": [
-          "CCF 시정증빙·재검사 결과"
+          "준공적합증명 시정증빙·재검사 결과"
         ],
         "authorityIds": [
           "ecu-quito-amc"
@@ -1075,15 +1075,15 @@
       {
         "id": "B32",
         "lane": "도시계획·건축 허가기관",
-        "stage": "C4 CCF 공식결정",
-        "label": "CCF 준공적합 공식결정",
+        "stage": "C4 준공적합증명 공식결정",
+        "label": "준공적합증명 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AMC가 LMU-20 승인 프로젝트의 물리적 준수를 확인해 Certificado de Conformidad de Finalización을 발급하거나 미해소 불일치에 발급을 거부한다.",
-        "action": "AMC가 LMU-20 승인 프로젝트의 물리적 준수를 확인해 Certificado de Conformidad de Finalización을 발급하거나 미해소 불일치에 발급을 거부한다.",
+        "note": "AMC가 대규모 건축허가 승인 프로젝트의 물리적 준수를 확인해 준공적합증명을 발급하거나 미해소 불일치에 발급을 거부한다.",
+        "action": "AMC가 대규모 건축허가 승인 프로젝트의 물리적 준수를 확인해 준공적합증명을 발급하거나 미해소 불일치에 발급을 거부한다.",
         "outputs": [
-          "CCF 또는 발급거부·관찰사항 결정"
+          "준공적합증명 또는 발급거부·관찰사항 결정"
         ],
         "authorityIds": [
           "ecu-quito-amc"
@@ -1112,7 +1112,7 @@
         "source": "B01",
         "target": "B02",
         "type": "sequence",
-        "label": "predio 조회"
+        "label": "필지 조회"
       },
       {
         "id": "BS04-02",
@@ -1196,7 +1196,7 @@
         "source": "B12",
         "target": "B13",
         "type": "sequence",
-        "label": "EIA 접수"
+        "label": "환경영향평가서 접수"
       },
       {
         "id": "BS05-05",
@@ -1217,7 +1217,7 @@
         "source": "B14",
         "target": "B13",
         "type": "loop",
-        "label": "수정 EIA 재검토"
+        "label": "수정 환경영향평가서 재검토"
       },
       {
         "id": "BS05-08",
@@ -1231,7 +1231,7 @@
         "source": "B10",
         "target": "B17",
         "type": "message",
-        "label": "병렬 LMU-20 도서"
+        "label": "병렬 대규모 건축허가 도서"
       },
       {
         "id": "BS05-10",
@@ -1252,14 +1252,14 @@
         "source": "B18",
         "target": "B19",
         "type": "message",
-        "label": "Visto Bueno"
+        "label": "소방도면 승인"
       },
       {
         "id": "BS05-13",
         "source": "B19",
         "target": "B20",
         "type": "sequence",
-        "label": "LMU-20 접수"
+        "label": "대규모 건축허가 접수"
       },
       {
         "id": "BS05-14",
@@ -1373,12 +1373,12 @@
       "id": "site-urban",
       "slug": "ecuador-site-urban-construction-regulations",
       "priority": 4,
-      "name": "에콰도르 부지규제·도시개발허가 — Quito LMU-10 사례",
+      "name": "에콰도르 부지규제·도시개발허가 — 키토 도시개발허가(LMU-10) 사례",
       "oneLiner": "등기·지적과 관할 cantón의 PUGS·조례로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "LOOTUGS·Quito PUGS 아래 IRM과 Quito LMU-10 도시개발허가의 공식 서비스를 연결했다. 표시 절차는 Distrito Metropolitano de Quito의 도시지역 20필지 초과 urbanización 사례이며 다른 cantón은 자체 PUGS·조례·명칭으로 교체한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Quito DMQ에서 도시지역 토지를 20필지 초과로 분할·기반시설화하는 urbanización의 IRM→기술적합→LMU-10 절차다. IRM은 정보를 제공할 뿐 개발권을 부여하지 않으며, 다른 cantón은 관할 GAD의 PUGS·도시개발허가 절차를 적용한다.",
+      "procedureScope": "키토 수도권(DMQ)에서 도시지역 토지를 20필지 초과로 분할·기반시설화하는 도시개발(urbanización)의 수도권 규제보고서(Informe de Regulación Metropolitana, IRM)→기술적합→도시개발허가 절차다. 수도권 규제보고서는 정보를 제공할 뿐 개발권을 부여하지 않으며, 다른 칸톤(cantón)은 관할 지방자치정부(GAD)의 토지이용·관리계획(PUGS)과 도시개발허가 절차를 적용한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1414,7 +1414,7 @@
           "source": "B01",
           "target": "B02",
           "type": "sequence",
-          "label": "predio 조회"
+          "label": "필지 조회"
         },
         {
           "id": "M04-E02",
@@ -1469,13 +1469,13 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "LMU-10 발급",
+          "label": "도시개발허가 발급",
           "action": "승인조건에 따라 도시개발공사 착공통지 단계로 진행"
         },
         {
           "state": "rework",
           "label": "미비 보완",
-          "action": "COA Art. 140 통지내용을 보완해 LMU-10 심사로 재제출"
+          "action": "COA 제140조 통지내용을 보완해 도시개발허가 심사로 재제출"
         },
         {
           "state": "reject",
@@ -1488,12 +1488,12 @@
       "id": "permit-environment",
       "slug": "ecuador-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "에콰도르 환경정규화·건축허가 — SUIA·Quito LMU-20 사례",
+      "name": "에콰도르 환경정규화·건축허가 — SUIA·키토 대규모 건축허가(LMU-20) 사례",
       "oneLiner": "GAD 건축 licence와 SUIA의 certificate·registro·licencia 환경경로를 영향·입지별로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "전국 RCOA의 SUIA intersección–impact categorization–certificate/registro/licencia와 실제 EIA 보완회귀(Arts. 421-439)를, Quito LMU-20 대규모 건축행위허가와 병렬 연결했다. 다른 cantón의 건축허가에는 Quito 명칭을 사용하지 않는다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "환경절차는 전국 COA/RCOA와 관할 인가 환경당국의 SUIA 경로다. 건축절차는 Quito DMQ의 intervención constructiva mayor LMU-20 사례이며, 다른 cantón은 관할 GAD licence와 현지 조례로 교체한다.",
+      "procedureScope": "환경절차는 전국 COA/RCOA와 관할 인가 환경당국의 SUIA 경로로, 환경증명(certificate), 환경등록(registro ambiental), 환경허가(licencia ambiental)를 구분한다. 건축절차는 키토 수도권의 대규모 건축행위(intervención constructiva mayor) 허가 사례이며, 다른 칸톤(cantón)은 관할 지방자치정부(GAD) 허가와 현지 조례로 교체한다.",
       "nodeIds": [
         "B09",
         "B10",
@@ -1554,7 +1554,7 @@
           "source": "B12",
           "target": "B13",
           "type": "sequence",
-          "label": "EIA 접수"
+          "label": "환경영향평가서 접수"
         },
         {
           "id": "M05-E05",
@@ -1575,7 +1575,7 @@
           "source": "B14",
           "target": "B13",
           "type": "loop",
-          "label": "수정 EIA 재검토"
+          "label": "수정 환경영향평가서 재검토"
         },
         {
           "id": "M05-E08",
@@ -1589,7 +1589,7 @@
           "source": "B10",
           "target": "B17",
           "type": "message",
-          "label": "병렬 LMU-20 도서"
+          "label": "병렬 대규모 건축허가 도서"
         },
         {
           "id": "M05-E10",
@@ -1610,14 +1610,14 @@
           "source": "B18",
           "target": "B19",
           "type": "message",
-          "label": "Visto Bueno"
+          "label": "소방도면 승인"
         },
         {
           "id": "M05-E13",
           "source": "B19",
           "target": "B20",
           "type": "sequence",
-          "label": "LMU-20 접수"
+          "label": "대규모 건축허가 접수"
         },
         {
           "id": "M05-E14",
@@ -1644,17 +1644,17 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "환경승인·LMU-20",
-          "action": "해당 certificate/registro/licencia와 Quito LMU-20 조건을 모두 충족해 착공통지"
+          "label": "환경승인·대규모 건축허가",
+          "action": "해당 환경증명·환경등록·환경허가와 키토 대규모 건축허가 조건을 모두 충족해 착공통지"
         },
         {
           "state": "rework",
-          "label": "EIA·LMU 보완",
-          "action": "EIA는 환경기술심사로, LMU-20 자료는 행정심사로 재제출"
+          "label": "환경평가·건축허가 보완",
+          "action": "환경영향평가서는 환경기술심사로, 대규모 건축허가 자료는 행정심사로 재제출"
         },
         {
           "state": "reject",
-          "label": "환경 불승인·LMU 거부",
+          "label": "환경 불승인·건축허가 거부",
           "action": "공사를 착수하지 않고 결정사유에 따른 불복·재신청 경로를 검토"
         }
       ]
@@ -1663,12 +1663,12 @@
       "id": "control-completion",
       "slug": "ecuador-control-completion-construction-regulations",
       "priority": 6,
-      "name": "에콰도르 공사통제·소방점유·준공적합 — Quito 사례",
+      "name": "에콰도르 공사통제·소방점유·준공적합 — 키토 사례",
       "oneLiner": "NEC 책임전문가·검사, 소방 점유허가와 GAD 최종 공사적합성 증명을 사용개시 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "Quito LMU-20 착공통지, 소방대의 점유허가 신청–현장검사–관찰사항 재검사와 AMC의 완료통지–적합검사–CCF를 공식 서비스 기준으로 연결했다. 이는 Quito 사례이며 다른 cantón은 해당 GAD·소방 절차를 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Quito DMQ의 intervención constructiva mayor LMU-20 공사에 적용되는 AMC 착공통지, CBDMQ Permiso de Ocupación, AMC Certificado de Conformidad de Finalización(CCF) 절차다. 다른 cantón에는 동일 명칭·기관을 일반화하지 않는다.",
+      "procedureScope": "키토 수도권(DMQ)의 대규모 건축행위(intervención constructiva mayor) 허가 공사에 적용되는 AMC 착공통지, CBDMQ 소방점유허가(Permiso de Ocupación), AMC 준공적합증명(Certificado de Conformidad de Finalización, CCF) 절차다. 다른 칸톤(cantón)에는 동일 명칭·기관을 일반화하지 않는다.",
       "nodeIds": [
         "B23",
         "B24",
@@ -1780,8 +1780,8 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "소방 점유허가·CCF",
-          "action": "CBDMQ 점유허가와 AMC CCF를 확보해 사용·인계"
+          "label": "소방점유허가·준공적합증명",
+          "action": "CBDMQ 소방점유허가와 AMC 준공적합증명을 확보해 사용·인계"
         },
         {
           "state": "rework",
@@ -2086,47 +2086,47 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "Quito의 LMU-10 도시개발허가 공식결정",
-      "decision": "PUGS·도시기술·공기업 승인과 완비자료를 심사해 LMU-10, 거부 또는 절차종료를 결정한다.",
+      "gate": "키토의 도시개발허가 공식결정",
+      "decision": "토지이용·관리계획·도시기술·공기업 승인과 완비자료를 심사해 도시개발허가, 거부 또는 절차종료를 결정한다.",
       "dependsOn": [],
-      "output": "LMU-10·승인도서·조건 또는 거부/종료 결정"
+      "output": "도시개발허가·승인도서·조건 또는 거부/종료 결정"
     },
     {
       "order": 2,
-      "gate": "SUIA의 certificate·registro 공식발급",
-      "decision": "비유의·저영향 사업에 해당 환경 certificate 또는 registro와 준수조건을 발급하거나 신청을 반려한다.",
+      "gate": "SUIA의 환경증명·환경등록 공식발급",
+      "decision": "비유의·저영향 사업에 해당 환경증명 또는 환경등록과 준수조건을 발급하거나 신청을 반려한다.",
       "dependsOn": [],
-      "output": "certificado/registro ambiental·조건 또는 반려통지"
+      "output": "환경증명·환경등록·조건 또는 반려통지"
     },
     {
       "order": 3,
-      "gate": "관할 환경당국의 licencia ambiental 공식결정",
-      "decision": "중·고영향 EIA와 참여결과를 심사해 환경 licence·조건 또는 불승인을 결정한다.",
+      "gate": "관할 환경당국의 환경허가 공식결정",
+      "decision": "중·고영향 환경영향평가서와 참여결과를 심사해 환경허가·조건 또는 불승인을 결정한다.",
       "dependsOn": [],
-      "output": "licencia ambiental·조건 또는 불승인 결정"
+      "output": "환경허가·조건 또는 불승인 결정"
     },
     {
       "order": 4,
-      "gate": "Quito의 LMU-20 건축허가 공식결정",
-      "decision": "협력기관 적합증명·특별요건·완비자료를 확인해 LMU-20, 거부 또는 절차종료를 결정한다.",
+      "gate": "키토의 대규모 건축허가 공식결정",
+      "decision": "협력기관 적합증명·특별요건·완비자료를 확인해 대규모 건축허가, 거부 또는 절차종료를 결정한다.",
       "dependsOn": [],
-      "output": "LMU-20·승인 프로젝트·조건 또는 거부/종료 결정"
+      "output": "대규모 건축허가·승인 프로젝트·조건 또는 거부/종료 결정"
     },
     {
       "order": 5,
-      "gate": "Quito 소방대의 Permiso de Ocupación 결정",
+      "gate": "키토 소방대의 소방점유허가 결정",
       "decision": "현장 소방설비와 승인도서의 적합성을 검사해 점유허가 발급 또는 거부를 결정한다.",
       "dependsOn": [],
-      "output": "Permiso de Ocupación 또는 발급거부"
+      "output": "소방점유허가 또는 발급거부"
     },
     {
       "order": 6,
-      "gate": "Quito AMC의 CCF 준공적합 공식결정",
-      "decision": "LMU-20 승인 프로젝트와 최종 공사상태의 적합성을 확인해 CCF 발급 또는 거부를 결정한다.",
+      "gate": "키토 AMC의 준공적합 공식결정",
+      "decision": "대규모 건축허가 승인 프로젝트와 최종 공사상태의 적합성을 확인해 준공적합증명 발급 또는 거부를 결정한다.",
       "dependsOn": [
         5
       ],
-      "output": "Certificado de Conformidad de Finalización 또는 발급거부"
+      "output": "준공적합증명 또는 발급거부"
     }
   ],
   "siteOverlays": [

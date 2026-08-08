@@ -69,13 +69,13 @@
     "site-urban": {
       "verificationScope": "Law 3966의 지방 도시계획 권한과 Asunción의 Informe de Uso de Suelo para Construir 요구·Plan Regulador 심사를 실제 절차로 구성했다. 표시된 기관·양식은 Asunción 사례이며 다른 municipality에는 해당 POUT·조례·토지이용 확인절차를 적용한다.",
       "officialProcedure": {
-        "name": "파라과이 필지규제·토지이용 적합결정 — Asunción 사례",
+        "name": "파라과이 필지규제·토지이용 적합결정 — 아순시온 사례",
         "coverage": "official-source-linked",
-        "scope": "Asunción에서 건축허가 선행자료인 Informe de Uso de Suelo para Construir를 받아 Plan Regulador상 필지·용도 적합성을 확정하는 절차다. 다른 municipality에 Asunción의 용도지역·건축수치·서식을 일반화하지 않는다.",
+        "scope": "아순시온에서 건축허가 선행자료인 건축용 토지이용보고서(Informe de Uso de Suelo para Construir)를 받아 규제계획(Plan Regulador)상 필지·용도 적합성을 확정하는 절차다. 다른 지방자치단체(municipality)에 아순시온의 용도지역·건축수치·서식을 일반화하지 않는다.",
         "stages": ["S1 권원·지적", "S2 토지이용 신청", "S3 도시계획 심사·보완", "S4 공식결정"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "권원·Cta. Cte. Catastral 확정", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 0, "label": "권원·지적계정(Cta. Cte. Catastral) 확정", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "소유자 또는 적법한 대리인이 등기된 소유권문서, Cta. Cte. Catastral, 소유자·사업주 권한과 지방세 상태를 정리해 대상 필지를 특정한다.",
             "output": "등기권원·지적계정·신청권한 자료",
             "authorityIds": ["pry-municipality"],
@@ -93,7 +93,7 @@
             ]
           },
           {
-            "lane": "건축주·신청인", "stage": 1, "label": "Unidad de Ordenamiento Urbano 접수", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 1, "label": "도시정비부서(Unidad de Ordenamiento Urbano) 접수", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "신청인이 시 Unidad de Ordenamiento Urbano에 Informe de Uso de Suelo para Construir 발급을 신청하고 지적·권원·예정사업 자료를 제출한다.",
             "output": "토지이용보고서 신청 접수",
             "authorityIds": ["pry-municipality"],
@@ -102,7 +102,7 @@
             ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "지적·Plan Regulador 기술대조", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "지적·규제계획 기술대조", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "Unidad de Ordenamiento Urbano가 지적 필지와 예정용도를 현행 Plan Regulador·관련 조례에 대조해 허용용도와 적용 도시계획 조건을 검토한다.",
             "output": "필지·용도·도시계획 검토기록",
             "authorityIds": ["pry-municipality"],
@@ -130,19 +130,19 @@
             ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Informe de Uso de Suelo 결정", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "건축용 토지이용보고서 결정", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "Unidad de Ordenamiento Urbano가 현행 Plan Regulador 대조결과를 반영해 건축용 토지이용보고서를 유리·조건부 또는 불리한 결과로 확정하고 담당자가 서명한다.",
-            "output": "서명된 Informe de Uso de Suelo para Construir 또는 부적합 통지",
+            "output": "서명된 건축용 토지이용보고서 또는 부적합 통지",
             "authorityIds": ["pry-municipality"],
             "refs": [
               {"source": "Asunción 건축허가 필수 선행문서", "instrumentId": "PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS", "provisions": ["item 3.3; favorable, signed construction land-use report"]}
             ],
-            "permitGate": {"key": "asuncion-land-use-report", "gate": "Asunción의 건축용 토지이용 공식결정", "decision": "필지·예정용도를 Plan Regulador에 대조해 유리·조건부 또는 부적합 결과를 확정한다.", "output": "서명된 Informe de Uso de Suelo para Construir 또는 부적합 통지", "dependsOn": []}
+            "permitGate": {"key": "asuncion-land-use-report", "gate": "아순시온의 건축용 토지이용 공식결정", "decision": "필지·예정용도를 규제계획에 대조해 유리·조건부 또는 부적합 결과를 확정한다.", "output": "서명된 건축용 토지이용보고서 또는 부적합 통지", "dependsOn": []}
           }
         ],
         "edges": [[0,1,"sequence","필지확정"],[1,2,"sequence","신청자료"],[2,3,"sequence","공식접수"],[3,6,"sequence","적합"],[3,4,"message","누락·불일치"],[4,5,"sequence","보완요구"],[5,3,"loop","보완 후 도시계획 재심사"]],
         "decisionBranches": [
-          {"state":"success","label":"유리한 토지이용보고서","action":"확정된 도시계획 조건으로 건축허가도서와 SATI 신청 진행"},
+          {"state":"success","label":"유리한 토지이용보고서","action":"확정된 도시계획 조건으로 건축허가도서와 전자신청 진행"},
           {"state":"rework","label":"보완·조건부","action":"지적·사업개요를 보완하거나 조건을 설계에 반영해 도시계획 심사로 회귀"},
           {"state":"reject","label":"용도 부적합","action":"해당 용도·규모로는 건축허가 신청을 중단하고 합법적 예외·계획변경 또는 대체부지 검토"}
         ]
@@ -151,24 +151,24 @@
     "permit-environment": {
       "verificationScope": "Asunción SATI 안내서의 접수·20% 선납·병렬 기술심사·초기현장검사·예비보고·보완·최종보고·잔액납부·실물도면 검증·DOP 결정을 재현했다. 환경경로는 전국 MADES SIAM의 Nota Consulta, EIAp/EDE/PGAG 제출과 DIA 결정을 별도 Gate로 구성했다.",
       "officialProcedure": {
-        "name": "파라과이 건축허가·환경영향결정 — Asunción SATI·MADES 사례",
+        "name": "파라과이 건축허가·환경영향결정 — 아순시온 통합행정처리시스템(SATI)·MADES 사례",
         "coverage": "official-source-linked",
-        "scope": "건축경로는 Asunción의 SATI Autorización para Construcción de Obras 절차이고 다른 municipality에는 해당 지방 절차를 적용한다. 환경경로는 Law 294/93·Decrees 453/13·954/13에 따른 전국 MADES SIAM 절차다.",
-        "stages": ["P1 허가도서·SATI", "P2 완비·선납", "P3 시 기술심사·보완", "P4 세금·도면검증", "P5 MADES 환경심사", "P6 공식결정"],
+        "scope": "건축경로는 아순시온의 건축공사허가(Autorización para Construcción de Obras) 절차이고 다른 지방자치단체(municipality)에는 해당 지방 절차를 적용한다. 환경경로는 Law 294/93·Decrees 453/13·954/13에 따른 전국 MADES 환경정보시스템(SIAM) 절차다.",
+        "stages": ["P1 허가도서·전자신청", "P2 완비·선납", "P3 시 기술심사·보완", "P4 세금·도면검증", "P5 MADES 환경심사", "P6 공식결정"],
         "steps": [
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"용도·건축·구조·PCI 허가도서 작성","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "lane":"현지 설계·시공 전문가","stage":0,"label":"용도·건축·구조·화재예방계획(PCI) 허가도서 작성","emphasis":"key","kind":"official-guidance","basisScope":"node",
             "action":"시 등록 책임전문가가 유리한 토지이용보고서에 맞춰 건축·구조·굴착·지반·교통·PCI·환경·문화재 관련 적용도서를 작성하고 소유자와 서명한다.","output":"전문가·소유자 서명 디지털 허가도서","authorityIds":["pry-municipality","pry-local-professionals"],
             "refs":[{"source":"Asunción 디지털 허가 요구자료","instrumentId":"PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS","provisions":["items 3-8; land-use, architectural, structural, demolition, heritage, fire-prevention and environmental documents"]}]
           },
           {
-            "lane":"건축주·신청인","stage":0,"label":"SATI DDJJ·CAD/PDF 신청","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"신청인이 SATI에서 사업주·토지소유자·책임전문가·공사정보 DDJJ를 작성하고 CAD 도면과 PDF 증빙을 전송한다.","output":"SATI 전자신청·제출자료","authorityIds":["pry-municipality"],
+            "lane":"건축주·신청인","stage":0,"label":"전자 서약서(DDJJ)·CAD/PDF 신청","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"신청인이 SATI에서 사업주·토지소유자·책임전문가·공사정보 DDJJ를 작성하고 CAD 도면과 PDF 증빙을 전송한다.","output":"전자신청·제출자료","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción SATI 안내","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["sections 2-5; mandatory prior authorization, SATI application, declaration and attachments"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"완비확인·전자 expediente 생성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"DOP 행정사무가 제출문서의 완비·가독성·진위를 확인해 적합하면 전자 expediente를 생성하고 20% 건축세 선납액을 산정·통지한다.","output":"전자 expediente·20% 선납 통지 또는 접수거절 통지","authorityIds":["pry-municipality"],
+            "lane":"도시계획·건축 허가기관","stage":1,"label":"완비확인·전자 사건기록(expediente) 생성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"DOP 행정사무가 제출문서의 완비·가독성·진위를 확인해 적합하면 전자 expediente를 생성하고 20% 건축세 선납액을 산정·통지한다.","output":"전자 사건기록·20% 선납 통지 또는 접수거절 통지","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción SATI 접수","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["sections 9-12; document verification, electronic file, 20% advance tax and rejection/correction notice"]}]
           },
           {
@@ -187,8 +187,8 @@
             "refs":[{"source":"Asunción SATI 본심사","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["section 13; simultaneous technical review and initial site inspection"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"Informe Técnico Preliminar 통지","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"기술분석 후 시가 적합부분과 관찰된 부분을 구분한 예비기술보고서를 전자주소로 통지해 누락보충·설계수정을 요구한다.","output":"Informe Técnico Preliminar·관찰사항","authorityIds":["pry-municipality"],
+            "lane":"도시계획·건축 허가기관","stage":2,"label":"예비기술보고서(Informe Técnico Preliminar) 통지","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"기술분석 후 시가 적합부분과 관찰된 부분을 구분한 예비기술보고서를 전자주소로 통지해 누락보충·설계수정을 요구한다.","output":"예비기술보고서·관찰사항","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción SATI 관찰통지","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["section 14; preliminary report identifying compliant and observed project parts"]}]
           },
           {
@@ -197,8 +197,8 @@
             "refs":[{"source":"Asunción SATI 보완재심사","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["sections 8, 13-14; modification on preliminary report and renewed analysis"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Informe Final·잔액 산정","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"규정에 맞으면 DOP가 허가를 권고하는 최종보고서를 발행하고 건축세 잔액·기타 지방세를 산정해 납부와 서명 실물도면 제출을 통지한다.","output":"Informe Final·세금잔액·실물도면 제출통지","authorityIds":["pry-municipality"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"최종보고서(Informe Final)·잔액 산정","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"규정에 맞으면 DOP가 허가를 권고하는 최종보고서를 발행하고 건축세 잔액·기타 지방세를 산정해 납부와 서명 실물도면 제출을 통지한다.","output":"최종보고서·세금잔액·실물도면 제출통지","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción SATI 최종보고","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["sections 15-17; final favorable recommendation, tax balance and signed physical plans"]}]
           },
           {
@@ -217,24 +217,24 @@
             "refs":[{"source":"Asunción SATI 도면보정","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["section 18; correction of physical plans that do not conform to the final report"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":5,"label":"Resolución DOP 건축허가 결정","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"도면검증 후 DAP와 DOP 책임자가 허가결의안을 서명해 사업주·필지·주요공사특성·용도·책임시공자·납부액이 기재된 Resolución DOP를 발급하거나 절차종료 사유를 통지한다.","output":"Resolución DOP·승인도면 또는 거절/보관 통지","authorityIds":["pry-municipality"],
+            "lane":"도시계획·건축 허가기관","stage":5,"label":"DOP 결정서(Resolución DOP) 건축허가 결정","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"도면검증 후 DAP와 DOP 책임자가 허가결의안을 서명해 사업주·필지·주요공사특성·용도·책임시공자·납부액이 기재된 Resolución DOP를 발급하거나 절차종료 사유를 통지한다.","output":"DOP 결정서·승인도면 또는 거절/보관 통지","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción SATI 공식결정","instrumentId":"PRY-ASUNCION-SATI-CONSTRUCTION-GUIDE","provisions":["section 19; DAP and DOP signature and content of construction authorization resolution"]},{"source":"Municipal Organic Law","instrumentId":"PRY-MUNICIPAL-LAW-3966","provisions":["Art. 235; prior municipal permit"]}],
-            "permitGate":{"key":"asuncion-building-authorization","gate":"Asunción DOP의 건축공사 허가결정","decision":"완비·기술·세금·도면검증을 마쳐 Resolución DOP와 승인도면을 발급하거나 거절·보관한다.","output":"Resolución DOP·승인도면 또는 거절/보관 통지","dependsOn":[]}
+            "permitGate":{"key":"asuncion-building-authorization","gate":"아순시온 DOP의 건축공사 허가결정","decision":"완비·기술·세금·도면검증을 마쳐 DOP 결정서와 승인도면을 발급하거나 거절·보관한다.","output":"DOP 결정서·승인도면 또는 거절/보관 통지","dependsOn":[]}
           },
           {
-            "lane":"건축주·신청인","stage":4,"label":"SIAM Nota Consulta·환경유형 확인","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업유형에 EIAp, EDE 또는 PGAG 요구 여부가 불명확하면 사업주가 SIAM으로 Nota Consulta를 제출해 Law 294/93·Decrees 453/13·954/13 적용유형을 공식 확인한다.","output":"MADES Nota Consulta 접수·환경도구 요구결과","authorityIds":["pry-mades"],
+            "lane":"건축주·신청인","stage":4,"label":"환경정보시스템 사전질의서(Nota Consulta)·환경유형 확인","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"사업유형에 EIAp, EDE 또는 PGAG 요구 여부가 불명확하면 사업주가 SIAM으로 Nota Consulta를 제출해 Law 294/93·Decrees 453/13·954/13 적용유형을 공식 확인한다.","output":"MADES 사전질의서 접수·환경도구 요구결과","authorityIds":["pry-mades"],
             "refs":[{"source":"MADES SIAM Nota Consulta","instrumentId":"PRY-MADES-SIAM-CONSULTATION-GUIDE","provisions":["Resolution 255/2020 procedure; SIAM-only filing to determine EIAp, EDE or PGAG requirement"]},{"source":"MADES 공식 환경규정 안내","instrumentId":"PRY-MADES-EIA-OFFICIAL-GUIDE","provisions":["study type determined under Decrees 453/13 and 954/13"]}]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":4,"label":"EIAp·EDE·PGA 자료 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"적격 환경컨설턴트가 공식 결정 또는 적용목록에 따라 요구되는 EIAp, EDE, PGA·RIMA와 Resolution 184/2016의 통제서식·첨부자료를 작성한다.","output":"환경연구·PGA·RIMA·통제서식","authorityIds":["pry-mades","pry-local-professionals"],
+            "lane":"현지 설계·시공 전문가","stage":4,"label":"예비환경영향평가(EIAp)·환경자료·환경관리계획(PGA) 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"적격 환경컨설턴트가 공식 결정 또는 적용목록에 따라 요구되는 EIAp, EDE, PGA·RIMA와 Resolution 184/2016의 통제서식·첨부자료를 작성한다.","output":"환경연구·환경관리계획·환경영향요약서(RIMA)·통제서식","authorityIds":["pry-mades","pry-local-professionals"],
             "refs":[{"source":"MADES 제출요건","instrumentId":"PRY-MADES-EIA-OFFICIAL-GUIDE","provisions":["Resolution SEAM 184/2016 control forms and required documents for EIAp, EDE and environmental-management submissions"]}]
           },
           {
-            "lane":"건축주·신청인","stage":4,"label":"SIAM 환경연구 정식접수","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"사업주·컨설턴트가 요구 환경연구와 첨부자료를 SIAM에 전자접수해 추적 가능한 환경 expediente를 생성한다.","output":"SIAM 환경 expediente·접수번호","authorityIds":["pry-mades"],
+            "lane":"건축주·신청인","stage":4,"label":"환경정보시스템 환경연구 정식접수","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"사업주·컨설턴트가 요구 환경연구와 첨부자료를 SIAM에 전자접수해 추적 가능한 환경 expediente를 생성한다.","output":"환경정보시스템 사건기록·접수번호","authorityIds":["pry-mades"],
             "refs":[{"source":"MADES SIAM 의무접수","instrumentId":"PRY-MADES-SIAM-CONSULTATION-GUIDE","provisions":["online environmental filing through SIAM"]},{"source":"MADES DIA 일정안내","instrumentId":"PRY-EIA-LAW-294-DECREES-453-954","provisions":["Law 294/93 and regulated environmental-evaluation route"]}]
           },
           {
@@ -248,29 +248,29 @@
             "refs":[{"source":"MADES 환경평가 운영","instrumentId":"PRY-MADES-EIA-OFFICIAL-GUIDE","provisions":["environmental-study evaluation and required control documentation"]},{"source":"MADES SIAM 운영","instrumentId":"PRY-MADES-SIAM-CONSULTATION-GUIDE","provisions":["traceable SIAM processing of requirements and submitted records"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":5,"label":"DIA·환경결정 발급","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"MADES가 최종 기술평가를 근거로 환경영향선언(DIA)과 환경관리조건을 발급하거나 불승인·절차종료 결정을 통지한다. 적용대상이 아닌 경우에는 공식 Nota Consulta 결과를 따른다.","output":"DIA·환경조건, 비대상 확인 또는 불승인결정","authorityIds":["pry-mades"],
+            "lane":"환경·소방·검사기관","stage":5,"label":"환경영향선언(DIA)·환경결정 발급","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"MADES가 최종 기술평가를 근거로 환경영향선언(DIA)과 환경관리조건을 발급하거나 불승인·절차종료 결정을 통지한다. 적용대상이 아닌 경우에는 공식 Nota Consulta 결과를 따른다.","output":"환경영향선언·환경조건, 비대상 확인 또는 불승인결정","authorityIds":["pry-mades"],
             "refs":[{"source":"MADES DIA 결정","instrumentId":"PRY-EIA-LAW-294-DECREES-453-954","provisions":["Law 294/93 Art. 12; prior environmental-impact declaration"]},{"source":"MADES 공식 환경규정 안내","instrumentId":"PRY-MADES-EIA-OFFICIAL-GUIDE","provisions":["EIA/EDE evaluation and environmental-impact declaration"]}],
-            "permitGate":{"key":"mades-dia","gate":"MADES의 환경영향 공식결정","decision":"적용유형과 환경연구를 심사해 DIA·조건, 비대상 확인 또는 불승인을 결정한다.","output":"DIA·환경조건, 비대상 확인 또는 불승인결정","dependsOn":[]}
+            "permitGate":{"key":"mades-dia","gate":"MADES의 환경영향 공식결정","decision":"적용유형과 환경연구를 심사해 환경영향선언·조건, 비대상 확인 또는 불승인을 결정한다.","output":"환경영향선언·환경조건, 비대상 확인 또는 불승인결정","dependsOn":[]}
           }
         ],
         "edges": [[0,1,"sequence","서명 허가도서"],[1,2,"sequence","SATI 전송"],[2,4,"sequence","완비·선납통지"],[2,3,"message","접수미비"],[3,2,"loop","보완 후 완비재검토"],[4,5,"sequence","선납완료"],[5,6,"sequence","병렬 기술검토"],[6,8,"sequence","적합"],[6,7,"message","기술관찰"],[7,5,"loop","수정도서 재심사"],[8,9,"sequence","잔액·실물도면"],[9,10,"sequence","검증"],[10,12,"sequence","일치"],[10,11,"message","도면불일치"],[11,10,"loop","보정도면 재검증"],[0,13,"message","병렬 환경확인"],[13,14,"sequence","요구환경도구"],[14,15,"sequence","SIAM 접수"],[15,16,"sequence","환경 expediente"],[16,18,"sequence","적합"],[16,17,"message","환경관찰"],[17,16,"loop","보완 후 재평가"]],
         "decisionBranches": [
-          {"state":"success","label":"Resolución DOP·DIA","action":"적용되는 두 공식결정과 조건을 확보한 뒤 합법적으로 착공"},
+          {"state":"success","label":"DOP 결정서·환경영향선언","action":"적용되는 두 공식결정과 조건을 확보한 뒤 합법적으로 착공"},
           {"state":"rework","label":"시·환경 보완","action":"허가도서는 DOP 기술심사로, 환경연구는 MADES 평가로 각각 회귀"},
-          {"state":"reject","label":"거절·불승인·desistimiento","action":"착공하지 않고 결정사유에 따른 불복, 새 신청 또는 사업변경 검토"}
+          {"state":"reject","label":"거절·불승인·자진철회(desistimiento)","action":"착공하지 않고 결정사유에 따른 불복, 새 신청 또는 사업변경 검토"}
         ]
       }
     },
     "control-completion": {
       "verificationScope": "Law 3966의 지방 건축감독·화재·붕괴 안전권한과 Asunción 공식 요구자료의 책임전문가·전위험보험·최종검사를 연결했다. 공개자료에서 전국 공통 사용승인 명칭은 확인되지 않아 Gate를 Asunción의 municipal Inspección Final 결과로 한정하고 영업·용도별 habilitación은 별도 절차임을 명시한다.",
       "officialProcedure": {
-        "name":"파라과이 공사통제·최종검사 — Asunción 사례","coverage":"official-source-linked",
-        "scope":"Asunción 승인도면에 따른 책임시공·지방감독·PCI와 Inspección Final 절차다. 이 최종검사 결과를 전국 공통 occupancy permit으로 해석하지 않으며, 실제 사용·영업에는 용도별 지방 licence·habilitación을 별도 확인한다.",
+        "name":"파라과이 공사통제·최종검사 — 아순시온 사례","coverage":"official-source-linked",
+        "scope":"아순시온 승인도면에 따른 책임시공·지방감독·화재예방계획(PCI)과 최종검사(Inspección Final) 절차다. 이 최종검사 결과를 전국 공통 사용허가(occupancy permit)로 해석하지 않으며, 실제 사용·영업에는 용도별 지방 면허·승인(licence·habilitación)을 별도 확인한다.",
         "stages":["C1 착공조건","C2 시 공사감독","C3 완료신청","C4 최종검사·보완","C5 공식결정"],
         "steps":[
           {
-            "lane":"건축주·신청인","stage":0,"label":"Resolución DOP·보험·책임전문가 확보","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":0,"label":"DOP 결정서(Resolución DOP)·보험·책임전문가 확보","emphasis":"key","kind":"official-guidance","basisScope":"node",
             "action":"허가소유자는 Resolución DOP와 승인도면, 시 등록 책임전문가, 적용되는 공사 전위험보험과 PCI 조건을 갖춘 뒤 착공한다.","output":"유효 허가·승인도면·전문가·보험 증빙","authorityIds":["pry-municipality","pry-local-professionals"],
             "refs":[{"source":"Asunción 허가·보험 요구","instrumentId":"PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS","provisions":["responsible-professional plans and applicable fire-prevention documents"]},{"source":"Asunción 고복잡도 공사요건","instrumentId":"PRY-LOCAL-PLANNING-BUILDING-ORDINANCES","provisions":["all-risk policy valid until completion for applicable projects"]}]
           },
@@ -290,13 +290,13 @@
             "refs":[{"source":"Municipal Organic Law","instrumentId":"PRY-MUNICIPAL-LAW-3966","provisions":["municipal enforcement of building and safety requirements"]},{"source":"Asunción 건축규정","instrumentId":"PRY-LOCAL-PLANNING-BUILDING-ORDINANCES","provisions":["responsible construction and municipal inspection under approved plans"]}]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"Inspección Final 신청자료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":2,"label":"최종검사 신청자료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
             "action":"완공 후 신청인이 승인도면, 공사·시험·PCI 기록과 필요한 지적계정 통합증빙을 갖춰 DOP의 Inspección Final을 신청한다.","output":"최종검사 신청·완료자료","authorityIds":["pry-municipality","pry-local-professionals"],
             "refs":[{"source":"Asunción 최종검사 선행요건","instrumentId":"PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS","provisions":["final inspection referenced in official construction requirements"]},{"source":"Asunción 고복잡도 공사요건","instrumentId":"PRY-LOCAL-PLANNING-BUILDING-ORDINANCES","provisions":["unification of multiple cadastral accounts before final inspection"]}]
           },
           {
             "lane":"도시계획·건축 허가기관","stage":3,"label":"완공상태·승인도면·PCI 최종대조","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"시 검사담당자가 완공상태를 승인도면·허가조건·구조·설비·PCI와 대조해 적합, 보완 가능한 불일치 또는 중대한 위반을 기록한다.","output":"Inspección Final 검사기록·관찰사항","authorityIds":["pry-municipality"],
+            "action":"시 검사담당자가 완공상태를 승인도면·허가조건·구조·설비·PCI와 대조해 적합, 보완 가능한 불일치 또는 중대한 위반을 기록한다.","output":"최종검사 기록·관찰사항","authorityIds":["pry-municipality"],
             "refs":[{"source":"Municipal Organic Law","instrumentId":"PRY-MUNICIPAL-LAW-3966","provisions":["municipal building supervision and safety-control powers"]},{"source":"Asunción 공식 건축요건","instrumentId":"PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS","provisions":["final inspection under approved construction documentation"]}]
           },
           {
@@ -305,15 +305,15 @@
             "refs":[{"source":"Municipal Organic Law","instrumentId":"PRY-MUNICIPAL-LAW-3966","provisions":["municipal correction and control of non-compliant construction"]},{"source":"Asunción 건축규정","instrumentId":"PRY-LOCAL-PLANNING-BUILDING-ORDINANCES","provisions":["inspection compliance with approved plans and fire/collapse requirements"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":4,"label":"Inspección Final 공식결과","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"시가 최종검사와 재검사 결과를 근거로 승인도면·안전조건에 맞는 최종검사 결과를 확정하거나 시정·불승인 통지를 발행한다.","output":"시 최종검사 acta/informe 또는 시정·불승인 통지","authorityIds":["pry-municipality"],
+            "lane":"도시계획·건축 허가기관","stage":4,"label":"최종검사 공식결과","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"시가 최종검사와 재검사 결과를 근거로 승인도면·안전조건에 맞는 최종검사 결과를 확정하거나 시정·불승인 통지를 발행한다.","output":"시 최종검사 기록·보고서(acta/informe) 또는 시정·불승인 통지","authorityIds":["pry-municipality"],
             "refs":[{"source":"Asunción 최종검사 공식요건","instrumentId":"PRY-ASUNCION-CONSTRUCTION-REQUIREMENTS","provisions":["municipal final inspection of the work"]},{"source":"Municipal Organic Law","instrumentId":"PRY-MUNICIPAL-LAW-3966","provisions":["Arts. 160 and 235-236; construction and safety control"]}],
-            "permitGate":{"key":"asuncion-final-inspection","gate":"Asunción의 공사 최종검사 결정","decision":"완공상태를 허가·승인도면·안전조건에 대조해 최종검사 적합, 보완 또는 불승인을 결정한다.","output":"시 최종검사 acta/informe 또는 시정·불승인 통지","dependsOn":[]}
+            "permitGate":{"key":"asuncion-final-inspection","gate":"아순시온의 공사 최종검사 결정","decision":"완공상태를 허가·승인도면·안전조건에 대조해 최종검사 적합, 보완 또는 불승인을 결정한다.","output":"시 최종검사 기록·보고서 또는 시정·불승인 통지","dependsOn":[]}
           }
         ],
         "edges":[[0,1,"sequence","착공조건"],[1,2,"sequence","책임시공"],[2,4,"sequence","공정적합·완공"],[2,3,"message","공사불일치"],[3,2,"loop","시정 후 공사검사"],[4,5,"sequence","최종검사 신청"],[5,7,"sequence","적합"],[5,6,"message","최종 관찰"],[6,5,"loop","시정 후 재검사"]],
         "decisionBranches":[
-          {"state":"success","label":"최종검사 적합","action":"최종검사 결과를 인계하고 적용되는 별도 사용·영업 licence 절차 진행"},
+          {"state":"success","label":"최종검사 적합","action":"최종검사 결과를 인계하고 적용되는 별도 사용·영업허가 절차 진행"},
           {"state":"rework","label":"시정·재검사","action":"현장·도면·PCI 불일치를 시정해 공사검사 또는 최종검사로 회귀"},
           {"state":"reject","label":"중대위반·불승인","action":"사용·인계를 보류하고 합법화·원상회복·불복 또는 재신청 경로 검토"}
         ]

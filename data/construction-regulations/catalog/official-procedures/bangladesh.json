@@ -86,36 +86,36 @@
     "site-urban": {
       "verificationScope": "아래 6단계는 다카 RAJUK ECPS의 Planning Permit/Land Use Clearance 대표사례다. RAJUK 밖에서는 해당 개발청·지방정부의 master plan·zoning과 신청·심사 절차로 교체한다.",
       "officialProcedure": {
-        "name": "방글라데시 도시계획·부지규제 — 다카 RAJUK 계획허가 사례",
+        "name": "방글라데시 도시계획·부지규제 — 다카 수도개발청(RAJUK) 계획허가 사례",
         "coverage": "official-source-linked",
-        "scope": "RAJUK ECPS Planning Permit Process Manual의 DTP·ATP·측량·외부·내부검토와 최종결정을 재구성했다. 필지 수치는 DAP 2022-2035·Bidhimala 2025와 개별 승인조건으로 확정한다.",
+        "scope": "수도개발청 전자건축허가시스템(ECPS) 계획허가 절차서의 도시계획국장(DTP)·도시계획보좌관(ATP)·측량·외부·내부검토와 최종결정을 재구성했다. 필지 수치는 상세지역계획(DAP) 2022-2035·건축규정(Bidhimala) 2025와 개별 승인조건으로 확정한다.",
         "stages": ["G0 신청·초기심사", "G1 측량·입지검토", "G2 관계부서·보완", "G3 계획결정"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "Planning Permit·LUC 전자신청", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 0, "label": "계획허가(Planning Permit)·토지이용확인(LUC) 전자신청", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "토지소유자가 권원·mutation·세금·mouza map·위임장과 계획자료를 ECPS에 입력·첨부하고 Planning Permit/Land Use Clearance를 신청한다.",
             "output": "전자신청서·권원·필지도서·접수번호",
             "authorityIds": ["rajuk"],
             "refs": [{"source": "RAJUK ECPS LUC 안내·체크리스트", "instrumentId": "BGD-RAJUK-ECPS", "provisions": ["Land Use Clearance application, ownership and map documents"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "DTP 초기 완비성·계획자료 심사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "도시계획국장 초기 완비성·계획자료 심사", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "Deputy Town Planner가 신청자료·첨부·필지정보를 초기 심사하고 검토의견을 기록해 Assistant Town Planner와 현장조사 경로로 배정한다.",
-            "output": "DTP 초기검토의견·업무배정",
+            "output": "도시계획국장 초기검토의견·업무배정",
             "authorityIds": ["rajuk"],
             "refs": [{"source": "RAJUK Planning Permit Process Manual", "instrumentId": "BGD-RAJUK-PP-MANUAL", "provisions": ["DTP Staff Reviews and assignment to ATP"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "ATP 검토·측량·상황도 작성", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 1, "label": "도시계획보좌관 검토·측량·상황도 작성", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "ATP가 DTP 의견을 검토하고 Surveyor와 Tracer가 현장조사보고서·format map·필지 상황도를 작성해 계획심사 자료로 돌려보낸다.",
-            "output": "현장조사보고서·format map·필지상황도",
+            "output": "현장조사보고서·서식지도(format map)·필지상황도",
             "authorityIds": ["rajuk"],
             "refs": [{"source": "RAJUK Planning Permit Process Manual", "instrumentId": "BGD-RAJUK-PP-MANUAL", "provisions": ["ATP review; Surveyor inspection; Tracer format map; submit report"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "외부 NOC·RAJUK 내부부서 의견조회", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "외부 이의없음확인서(NOC)·수도개발청 내부부서 의견조회", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "DTP가 필요 시 외부 compliance authority와 RAJUK 법무·estate·architecture·planning 부서에 신청을 보내 의견과 조건을 취합한다.",
-            "output": "외부 NOC·내부부서 검토의견",
+            "output": "외부 이의없음확인서·내부부서 검토의견",
             "authorityIds": ["rajuk"],
             "refs": [{"source": "RAJUK Planning Permit Process Manual·ECPS 기능", "instrumentId": "BGD-RAJUK-PP-MANUAL", "provisions": ["External review; Request Optional Review; internal Law review"]}]
           },
@@ -127,18 +127,18 @@
             "refs": [{"source": "RAJUK Planning Permit Process Manual", "instrumentId": "BGD-RAJUK-PP-MANUAL", "provisions": ["Request Report Correction; Request Clarification; corrected report return"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "Planning Permit·LUC 승인 또는 거부", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "계획허가·토지이용확인 승인 또는 거부", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "DTP가 조사·관계기관 의견과 적용 계획을 종합해 신청을 승인하거나 거부하고 전자 결정서와 조건을 발급한다.",
-            "output": "Planning Permit·LUC 결정서·조건 또는 거부통지",
+            "output": "계획허가·토지이용확인 결정서·조건 또는 거부통지",
             "authorityIds": ["rajuk"],
             "refs": [{"source": "RAJUK Planning Permit Process Manual", "instrumentId": "BGD-RAJUK-PP-MANUAL", "provisions": ["Make a Decision; Approve or Reject; permit/rejection letter"]}],
-            "permitGate": {"key": "planning-decision", "gate": "RAJUK의 Planning Permit·LUC 공식결정", "decision": "RAJUK가 대상지의 계획·토지이용 적합성과 승인조건을 공식 결정한다.", "output": "계획허가·토지이용확인·조건 또는 거부통지", "dependsOn": []}
+            "permitGate": {"key": "planning-decision", "gate": "수도개발청의 계획허가·토지이용확인 공식결정", "decision": "수도개발청이 대상지의 계획·토지이용 적합성과 승인조건을 공식 결정한다.", "output": "계획허가·토지이용확인·조건 또는 거부통지", "dependsOn": []}
           }
         ],
         "edges": [[0,1,"sequence","전자접수"],[1,2,"sequence","현장조사 배정"],[2,3,"sequence","입지자료 완성"],[3,5,"sequence","의견취합"],[2,4,"message","보고서 수정요구"],[3,4,"message","신청자료 소명요구"],[4,1,"loop","수정자료 재심사"]],
         "decisionBranches": [
           {"state":"success","label":"계획·토지이용 승인","action":"결정서와 조건을 건축허가 설계에 반영"},
-          {"state":"rework","label":"조사·신청자료 보완","action":"공식 수정·소명요구에 따라 자료를 재제출하고 DTP 심사로 회귀"},
+          {"state":"rework","label":"조사·신청자료 보완","action":"공식 수정·소명요구에 따라 자료를 재제출하고 도시계획국장 심사로 회귀"},
           {"state":"reject","label":"계획 부적합·거부","action":"거부결정에 대한 공식 불복 또는 수정·재신청 가능성을 검토"}
         ]
       }
@@ -146,23 +146,23 @@
     "permit-environment": {
       "verificationScope": "환경허가는 전국 DoE 체계이고 건축허가는 다카 RAJUK 사례다. 비RAJUK 지역은 해당 개발청·지방정부 건축허가 절차로 교체하며, 환경분류는 ECR 2023의 사업·규모별 분류를 적용한다.",
       "officialProcedure": {
-        "name": "방글라데시 건축허가·환경심사 — DoE·다카 RAJUK 사례",
+        "name": "방글라데시 건축허가·환경심사 — 환경국(DoE)·다카 수도개발청(RAJUK) 사례",
         "coverage": "official-source-linked",
-        "scope": "DoE 환경분류·허가와 RAJUK Construction Permit의 별도 결정을 연결했다. 환경입지·환경허가의 정확한 경로는 ECR 2023 분류에 따르고, Large and Special Project·외부 NOC는 규모·용도별로 적용한다.",
+        "scope": "환경국 환경분류·허가와 수도개발청 건축허가(Construction Permit)의 별도 결정을 연결했다. 환경입지·환경허가의 정확한 경로는 환경보전규칙(ECR) 2023 분류에 따르고, 대형·특수사업(Large and Special Project)·외부 이의없음확인서(NOC)는 규모·용도별로 적용한다.",
         "stages": ["G4 환경분류·신청", "G5 환경심사·결정", "G6 건축허가 접수", "G7 기술심사·허가"],
         "steps": [
           {
-            "lane":"건축주·신청인","stage":0,"label":"ECR 2023 환경분류·신청유형 확정","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":0,"label":"환경보전규칙 2023 환경분류·신청유형 확정","emphasis":"key","kind":"official-guidance","basisScope":"node",
             "action":"사업유형·규모·입지를 ECR 2023 분류표에 대조해 환경입지허가·환경허가·관련 보고서와 건축물용 Form 3의 적용을 정한다.","output":"환경분류·신청유형·필요 보고서 목록","authorityIds":["doe"],
             "refs":[{"source":"환경보전규칙 2023·공식 건축물 서식","instrumentId":"BGD-ECR-2023","provisions":["project classification; site/environmental clearance; building application Form 3"]}]
           },
           {
-            "lane":"건축주·신청인","stage":0,"label":"DoE 온라인 환경허가 신청·수수료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":0,"label":"환경국 온라인 환경허가 신청·수수료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
             "action":"신청인이 분류에 맞는 신청서·보고서·도면·관계승인과 공식 수수료 증빙을 DoE 온라인 서비스에 제출한다.","output":"환경허가 전자접수·수수료 증빙","authorityIds":["doe"],
             "refs":[{"source":"DoE 온라인 환경허가·ECR 2023 서식","instrumentId":"BGD-DOE-CLEARANCE-SERVICE","provisions":["online application with required documents and fee"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"DoE 서류검토·현장검사·위원회 심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "lane":"환경·소방·검사기관","stage":1,"label":"환경국 서류검토·현장검사·위원회 심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
             "action":"관할 DoE 사무소가 신청내용과 서류를 검토하고 현장검사를 실시하며, 해당 분류는 검사보고서를 환경허가위원회에 보내 평가·권고를 받는다.","output":"현장검사보고서·위원회 결정 또는 권고","authorityIds":["doe"],
             "refs":[{"source":"DoE 시민헌장 환경허가 절차","instrumentId":"BGD-DOE-CLEARANCE-SERVICE","provisions":["document review; site inspection; clearance committee evaluation and recommendation"]}]
           },
@@ -175,15 +175,15 @@
             "lane":"환경·소방·검사기관","stage":1,"label":"환경입지·환경허가 승인 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
             "action":"권한 있는 DoE 기관이 환경허가를 발급하거나 신청 거부를 서면 통지하고 승인조건을 정한다.","output":"환경입지·환경허가·조건 또는 거부통지","authorityIds":["doe"],
             "refs":[{"source":"DoE 시민헌장 환경결정","instrumentId":"BGD-DOE-CLEARANCE-SERVICE","provisions":["issue environmental clearance or notify rejection in writing"]}],
-            "permitGate":{"key":"environment-decision","gate":"DoE의 환경허가 공식결정","decision":"DoE가 적용 분류의 심사·현장검사 결과에 따라 환경허가, 조건부 허가 또는 거부를 공식 결정한다.","output":"환경허가·조건 또는 거부통지","dependsOn":[]}
+            "permitGate":{"key":"environment-decision","gate":"환경국의 환경허가 공식결정","decision":"환경국이 적용 분류의 심사·현장검사 결과에 따라 환경허가, 조건부 허가 또는 거부를 공식 결정한다.","output":"환경허가·조건 또는 거부통지","dependsOn":[]}
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"RAJUK Construction Permit 전자신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"신청인과 등록 건축·구조·설비 전문자가 승인 Planning Permit, 권원, 건축·구조·전기·배관도서와 해당 Special Project·외부 NOC를 ECPS에 제출하고 수수료를 납부한다.","output":"Construction Permit 접수·전문가 서명도서·납부증빙","authorityIds":["rajuk"],
+            "lane":"건축주·신청인","stage":2,"label":"수도개발청 건축허가 전자신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"신청인과 등록 건축·구조·설비 전문자가 승인 Planning Permit, 권원, 건축·구조·전기·배관도서와 해당 Special Project·외부 NOC를 ECPS에 제출하고 수수료를 납부한다.","output":"건축허가 접수·전문가 서명도서·납부증빙","authorityIds":["rajuk"],
             "refs":[{"source":"RAJUK CP 매뉴얼·체크리스트","instrumentId":"BGD-RAJUK-CP-MANUAL","provisions":["professional invitations; application certification; online payment; submit application"]},{"source":"RAJUK CP 체크리스트","instrumentId":"BGD-RAJUK-ECPS","provisions":["architectural, structural, electrical and plumbing plans; special project and external clearances"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Front Desk·AO·위원회 기술심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"접수창구(Front Desk)·권한담당관(AO)·위원회 기술심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
             "action":"Front Desk가 완비성을 심사하고 Authorised Officer와 관계 담당자·위원회가 계획, 건축, 구조, 설비와 외부 NOC를 검토한다.","output":"완비심사·기술검토·위원회 의견","authorityIds":["rajuk","authorized-officer"],
             "refs":[{"source":"RAJUK CP 매뉴얼","instrumentId":"BGD-RAJUK-CP-MANUAL","provisions":["Front Desk review; Authorized Officer inquiry; committee review"]},{"source":"Building Construction Act","instrumentId":"BGD-BUILDING-ACT-1953","provisions":["Section 3 prior sanction"]}]
           },
@@ -193,50 +193,50 @@
             "refs":[{"source":"RAJUK CP 매뉴얼","instrumentId":"BGD-RAJUK-CP-MANUAL","provisions":["Request Corrections; Re-Submit; Send Clarifications; Submit Corrections of Drawing"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Construction Permit 승인 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"Authorised Officer와 권한 있는 RAJUK 결정주체가 심사결과에 따라 건축허가·승인도서를 발급하거나 거부결정을 통지한다.","output":"Construction Permit·승인도서·조건 또는 거부통지","authorityIds":["rajuk","authorized-officer"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"건축허가 승인 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"Authorised Officer와 권한 있는 RAJUK 결정주체가 심사결과에 따라 건축허가·승인도서를 발급하거나 거부결정을 통지한다.","output":"건축허가·승인도서·조건 또는 거부통지","authorityIds":["rajuk","authorized-officer"],
             "refs":[{"source":"RAJUK CP 매뉴얼·공식 안내","instrumentId":"BGD-RAJUK-CP-MANUAL","provisions":["Authorized Officer approval response; Rejected Letters"]},{"source":"Building Construction Act","instrumentId":"BGD-BUILDING-ACT-1953","provisions":["Sections 3 and 3B"]}],
-            "permitGate":{"key":"building-permit-decision","gate":"RAJUK의 Construction Permit 공식결정","decision":"RAJUK가 건축·구조·설비와 관계기관 조건을 심사해 건축허가 또는 거부를 공식 결정한다.","output":"Construction Permit·승인도서·조건 또는 거부통지","dependsOn":["environment-decision"]}
+            "permitGate":{"key":"building-permit-decision","gate":"수도개발청의 건축허가 공식결정","decision":"수도개발청이 건축·구조·설비와 관계기관 조건을 심사해 건축허가 또는 거부를 공식 결정한다.","output":"건축허가·승인도서·조건 또는 거부통지","dependsOn":["environment-decision"]}
           }
         ],
         "edges":[[0,1,"sequence","환경유형 확정"],[1,2,"sequence","환경접수"],[2,4,"sequence","심사완료"],[2,3,"message","환경 보완요구"],[3,2,"loop","수정 환경자료 재접수"],[4,5,"sequence","환경결정 반영"],[5,6,"sequence","건축허가 접수"],[6,8,"sequence","기술심사 완료"],[6,7,"message","건축도서 보완요구"],[7,6,"loop","수정도서 재접수"]],
         "decisionBranches":[
           {"state":"success","label":"환경허가·건축허가","action":"두 결정의 조건을 승인도서·착공요건에 반영"},
           {"state":"rework","label":"환경·건축도서 보완","action":"해당 보완단계에서 수정자료를 재제출하고 공식 심사로 회귀"},
-          {"state":"reject","label":"환경 거부·건축허가 거부","action":"거부사유와 ECPS appeal·법정 불복 또는 수정 재신청 경로를 검토"}
+          {"state":"reject","label":"환경 거부·건축허가 거부","action":"거부사유와 전자시스템 불복(appeal)·법정 불복 또는 수정 재신청 경로를 검토"}
         ]
       }
     },
     "control-completion": {
       "verificationScope": "아래 절차는 다카 RAJUK ECPS의 착공통지·공사통제·Occupancy Certificate 사례다. 비RAJUK 지역은 해당 개발청·지방정부의 검사·사용승인 절차로 교체한다.",
       "officialProcedure": {
-        "name":"방글라데시 기술검사·준공제도 — 다카 RAJUK 사례","coverage":"official-source-linked",
-        "scope":"Building Construction Act의 집행·현장출입·위반시정과 RAJUK ECPS 착공통지·Occupancy Certificate를 연결했다. 세부 검사 Hold Point는 적용 BNBC 2020과 승인조건을 따른다.",
+        "name":"방글라데시 기술검사·준공제도 — 다카 수도개발청(RAJUK) 사례","coverage":"official-source-linked",
+        "scope":"건축법(Building Construction Act)의 집행·현장출입·위반시정과 수도개발청 전자건축허가시스템(ECPS) 착공통지·사용승인서(Occupancy Certificate)를 연결했다. 세부 필수검사점(Hold Point)은 적용 방글라데시 국가건축법규(BNBC) 2020과 승인조건을 따른다.",
         "stages":["G8 착공통지","G9 시공·검사","G10 시정·준공신청","G11 사용승인"],
         "steps":[
           {
-            "lane":"건축주·신청인","stage":0,"label":"Construction Start Notice 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":0,"label":"착공통지(Construction Start Notice) 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
             "action":"신청인이 승인 CP/RDC 프로젝트를 ECPS에 연결하고 책임전문자 정보와 착공자료를 입력해 착공통지를 제출한다.","output":"전자 착공통지·프로젝트번호·전문자 기록","authorityIds":["rajuk"],
             "refs":[{"source":"RAJUK Construction Start Notice Manual","instrumentId":"BGD-RAJUK-START-NOTICE","provisions":["approved CP/RDC linkage; professional invitation; submit notice"]}]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":1,"label":"승인도서·BNBC에 따른 시공·기술관리","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "lane":"현지 설계·시공 전문가","stage":1,"label":"승인도서·국가건축법규에 따른 시공·기술관리","emphasis":"normal","kind":"official-guidance","basisScope":"node",
             "action":"등록 전문자와 시공자가 승인허가도서, 허가조건과 BNBC 2020의 구조·화재·재료·시공·설비 기준에 따라 공사·감독기록을 작성한다.","output":"감리·시공·시험·변경관리 기록","authorityIds":["mohpw","rajuk"],
             "refs":[{"source":"Building Construction Act","instrumentId":"BGD-BUILDING-ACT-1953","provisions":["Section 18A national building code subjects"]},{"source":"BNBC 2020 공식 게시","instrumentId":"BGD-BNBC-2020","provisions":["official BNBC 2020 publication"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"RAJUK 현장출입·허가준수 검사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "lane":"도시계획·건축 허가기관","stage":1,"label":"수도개발청 현장출입·허가준수 검사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
             "action":"Authorised Officer 또는 권한을 받은 담당자가 합리적 통지 후 현장에 출입해 승인허가와 공사 적합성을 검사하고 허가서 제시를 요구할 수 있다.","output":"현장검사·허가대조 기록","authorityIds":["authorized-officer","rajuk"],
             "refs":[{"source":"Building Construction Act","instrumentId":"BGD-BUILDING-ACT-1953","provisions":["Section 10 entry into premises and production of sanction"]}]
           },
           {
             "lane":"건축주·신청인","stage":2,"label":"위반사항 시정·재검사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"무허가 또는 승인조건 위반이 확인되면 소유자·점유자·현장책임자가 show-cause 통지에 대응하고 지적사항을 시정해 재검사를 받는다.","output":"show-cause 답변·시정기록·재검사 결과","authorityIds":["authorized-officer","rajuk"],
+            "action":"무허가 또는 승인조건 위반이 확인되면 소유자·점유자·현장책임자가 show-cause 통지에 대응하고 지적사항을 시정해 재검사를 받는다.","output":"소명요구(show-cause) 답변·시정기록·재검사 결과","authorityIds":["authorized-officer","rajuk"],
             "refs":[{"source":"Building Construction Act","instrumentId":"BGD-BUILDING-ACT-1953","provisions":["Section 3B notice, show cause and removal/correction enforcement"]}]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"Occupancy Certificate 신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"공사완료 후 사용 전에 신청인이 completion report, as-built 건축도면, 구조도면, 모든 building-service 설계와 기술자 증명을 ECPS에 제출한다.","output":"사용승인 신청서·준공·as-built·기술자 증명","authorityIds":["rajuk"],
+            "lane":"건축주·신청인","stage":2,"label":"사용승인서 신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"공사완료 후 사용 전에 신청인이 completion report, as-built 건축도면, 구조도면, 모든 building-service 설계와 기술자 증명을 ECPS에 제출한다.","output":"사용승인 신청서·준공보고서·준공도면(as-built)·기술자 증명","authorityIds":["rajuk"],
             "refs":[{"source":"RAJUK Occupancy Certificate 안내·체크리스트","instrumentId":"BGD-RAJUK-OCCUPANCY","provisions":["required after completion and before use; completion report; as-built, structural and building-service drawings; technical-person certificate"]}]
           },
           {
@@ -245,15 +245,15 @@
             "refs":[{"source":"RAJUK Occupancy Certificate 서비스","instrumentId":"BGD-RAJUK-OCCUPANCY","provisions":["AO, AAO, Chief Inspector and Inspector review before certificate issuance"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Occupancy Certificate 발급 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"RAJUK가 준공·기술 적합성이 확인된 건축물에 Occupancy Certificate를 발급하고, 미충족이면 보완·시정 또는 발급거부를 통지한다.","output":"Occupancy Certificate·조건 또는 보완·거부통지","authorityIds":["rajuk"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"사용승인서 발급 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"RAJUK가 준공·기술 적합성이 확인된 건축물에 Occupancy Certificate를 발급하고, 미충족이면 보완·시정 또는 발급거부를 통지한다.","output":"사용승인서·조건 또는 보완·거부통지","authorityIds":["rajuk"],
             "refs":[{"source":"RAJUK Occupancy Certificate 서비스","instrumentId":"BGD-RAJUK-OCCUPANCY","provisions":["certificate issuance after multi-party review; required before use"]}],
-            "permitGate":{"key":"occupancy-decision","gate":"RAJUK의 Occupancy Certificate 공식결정","decision":"RAJUK가 준공도서·기술자 증명·현장 적합성을 심사해 사용 가능 여부를 공식 결정한다.","output":"Occupancy Certificate·조건 또는 보완·거부통지","dependsOn":[]}
+            "permitGate":{"key":"occupancy-decision","gate":"수도개발청의 사용승인서 공식결정","decision":"수도개발청이 준공도서·기술자 증명·현장 적합성을 심사해 사용 가능 여부를 공식 결정한다.","output":"사용승인서·조건 또는 보완·거부통지","dependsOn":[]}
           }
         ],
         "edges":[[0,1,"sequence","착공통지"],[1,2,"sequence","검사대상 공정"],[2,4,"sequence","적합 공사완료"],[2,3,"message","위반·부적합 통지"],[3,2,"loop","시정 후 재검사"],[4,5,"sequence","준공신청"],[5,6,"sequence","적합성 결정"],[5,4,"loop","준공도서 보완"]],
         "decisionBranches":[
-          {"state":"success","label":"사용승인 발급","action":"Occupancy Certificate 조건을 충족한 뒤 사용 개시"},
+          {"state":"success","label":"사용승인 발급","action":"사용승인서 조건을 충족한 뒤 사용 개시"},
           {"state":"rework","label":"공사시정·준공도서 보완","action":"시정·수정자료 제출 후 현장검사 또는 준공심사로 회귀"},
           {"state":"reject","label":"사용승인 거부·위반조치","action":"사용을 개시하지 않고 거부·집행사유를 해소한 뒤 공식 재신청"}
         ]

@@ -35,14 +35,14 @@
     "stages": [
       "S0 권원·입지",
       "S1 적용규정·설계",
-      "S2 GUPC 도시계획심사",
+      "S2 통합창구 도시계획심사",
       "S3 계획적합 결정",
-      "S0 ANDE 분류",
+      "S0 국가환경청 분류",
       "S1 환경평가 작성",
       "S2 공개조사",
       "S3 환경기술검증",
       "S4 환경결정",
-      "S5 GUPC 허가심사",
+      "S5 통합창구 허가심사",
       "S6 건축허가결정",
       "S0 착공통제 준비",
       "S1 단계검사",
@@ -54,14 +54,14 @@
         "id": "B01",
         "lane": "건축주·신청인",
         "stage": "S0 권원·입지",
-        "label": "ACD·필지식별 자료 확보",
+        "label": "최종양여결정서(ACD)·필지식별 자료 확보",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "신청인이 도시토지의 ACD 등 적법한 권원, 지적·필지식별 자료와 대리권을 준비한다.",
         "action": "신청인이 도시토지의 ACD 등 적법한 권원, 지적·필지식별 자료와 대리권을 준비한다.",
         "outputs": [
-          "ACD·지적도·필지식별·신청권한 자료"
+          "최종양여결정서·지적도·필지식별·신청권한 자료"
         ],
         "authorityIds": [
           "mulcv"
@@ -84,14 +84,14 @@
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
         "stage": "S0 권원·입지",
-        "label": "승인 lotissement·필지상태 조회",
+        "label": "승인 필지분할개발·필지상태 조회",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "MULCV 도시토지 서비스가 대상 필지가 승인·취소·유예된 lotissement 안에 있는지와 도시토지 상태를 조회한다.",
         "action": "MULCV 도시토지 서비스가 대상 필지가 승인·취소·유예된 lotissement 안에 있는지와 도시토지 상태를 조회한다.",
         "outputs": [
-          "lotissement·도시토지 상태 회신"
+          "필지분할개발·도시토지 상태 회신"
         ],
         "authorityIds": [
           "mulcv"
@@ -204,15 +204,15 @@
       {
         "id": "B06",
         "lane": "건축주·신청인",
-        "stage": "S2 GUPC 도시계획심사",
-        "label": "SIGUPC에 계획·건축도서 접수",
+        "stage": "S2 통합창구 도시계획심사",
+        "label": "통합창구 정보시스템(SIGUPC)에 계획·건축도서 접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "신청인이 GUPC 통합창구에 권원·계획·건축·공학·소방 도서를 제출하고 접수기록을 받는다.",
         "action": "신청인이 GUPC 통합창구에 권원·계획·건축·공학·소방 도서를 제출하고 접수기록을 받는다.",
         "outputs": [
-          "SIGUPC 접수기록·통합 심사도서"
+          "통합창구 정보시스템 접수기록·통합 심사도서"
         ],
         "authorityIds": [
           "gupc-ministry-mayor"
@@ -241,8 +241,8 @@
       {
         "id": "B07",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S2 GUPC 도시계획심사",
-        "label": "GUPC 도시계획·관계기관 검토",
+        "stage": "S2 통합창구 도시계획심사",
+        "label": "건축허가통합창구 도시계획·관계기관 검토",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -279,7 +279,7 @@
       {
         "id": "B08",
         "lane": "현지 설계·시공 전문가",
-        "stage": "S2 GUPC 도시계획심사",
+        "stage": "S2 통합창구 도시계획심사",
         "label": "계획부적합 도서 보완·재심",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -310,14 +310,14 @@
         "id": "B09",
         "lane": "도시계획·건축 허가기관",
         "stage": "S3 계획적합 결정",
-        "label": "GUPC 계획적합 의견·허가권자 결정",
+        "label": "건축허가통합창구 계획적합 의견·허가권자 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "GUPC 위원회가 계획적합 의견을 확정하고 허가등급에 따라 장관 또는 시장이 허가·조건·유보·거부를 공식 결정한다.",
         "action": "GUPC 위원회가 계획적합 의견을 확정하고 허가등급에 따라 장관 또는 시장이 허가·조건·유보·거부를 공식 결정한다.",
         "outputs": [
-          "GUPC 위원회 의견과 장관·시장 결정"
+          "건축허가통합창구 위원회 의견과 장관·시장 결정"
         ],
         "authorityIds": [
           "gupc-ministry-mayor",
@@ -350,8 +350,8 @@
       {
         "id": "B10",
         "lane": "건축주·신청인",
-        "stage": "S0 ANDE 분류",
-        "label": "ANDE에 사업자료·TdR안 제출",
+        "stage": "S0 국가환경청 분류",
+        "label": "국가환경청에 사업자료·평가범위서(TdR)안 제출",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -387,8 +387,8 @@
       {
         "id": "B11",
         "lane": "환경·소방·검사기관",
-        "stage": "S0 ANDE 분류",
-        "label": "ANDE 합동 현장확인·간이 주민협의",
+        "stage": "S0 국가환경청 분류",
+        "label": "국가환경청 합동 현장확인·간이 주민협의",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -417,15 +417,15 @@
       {
         "id": "B12",
         "lane": "환경·소방·검사기관",
-        "stage": "S0 ANDE 분류",
-        "label": "EIES·CIES·CEC 공식분류",
+        "stage": "S0 국가환경청 분류",
+        "label": "환경사회영향평가(EIES)·간이환경사회영향평가(CIES)·범주면제증명(CEC) 공식분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "ANDE가 Annex I·III이면 EIES, Annex II이면 CIES, 그 밖이면 환경조건을 붙인 CEC 경로로 분류한다.",
         "action": "ANDE가 Annex I·III이면 EIES, Annex II이면 CIES, 그 밖이면 환경조건을 붙인 CEC 경로로 분류한다.",
         "outputs": [
-          "EIES·CIES 분류 또는 CEC 통지"
+          "환경사회영향평가·간이환경사회영향평가 분류 또는 범주면제증명 통지"
         ],
         "authorityIds": [
           "ande"
@@ -458,14 +458,14 @@
         "id": "B13",
         "lane": "환경·소방·검사기관",
         "stage": "S1 환경평가 작성",
-        "label": "ANDE TdR 작성·검토·승인",
+        "label": "국가환경청 평가범위서 작성·검토·승인",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "ANDE가 현장자료를 바탕으로 EIES·CIES TdR을 작성하거나 사업자 제출안을 수정·승인한다.",
         "action": "ANDE가 현장자료를 바탕으로 EIES·CIES TdR을 작성하거나 사업자 제출안을 수정·승인한다.",
         "outputs": [
-          "ANDE 승인 TdR"
+          "국가환경청 승인 평가범위서"
         ],
         "authorityIds": [
           "ande"
@@ -488,14 +488,14 @@
         "id": "B14",
         "lane": "현지 설계·시공 전문가",
         "stage": "S1 환경평가 작성",
-        "label": "공인 환경사무소 EIES·CIES 작성",
+        "label": "공인 환경사무소 환경·사회평가서 작성",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "환경부 인가를 받은 사무소·컨설턴트가 승인 TdR에 따라 조사·대안·영향·PGES와 이해관계자 협의 결과를 작성한다.",
         "action": "환경부 인가를 받은 사무소·컨설턴트가 승인 TdR에 따라 조사·대안·영향·PGES와 이해관계자 협의 결과를 작성한다.",
         "outputs": [
-          "EIES·CIES 보고서와 PGES"
+          "환경·사회평가서와 환경사회관리계획(PGES)"
         ],
         "authorityIds": [
           "ande"
@@ -645,7 +645,7 @@
         "id": "B19",
         "lane": "환경·소방·검사기관",
         "stage": "S4 환경결정",
-        "label": "환경장관 EIES·CIES 승인명령",
+        "label": "환경장관 환경·사회평가서 승인명령",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -677,7 +677,7 @@
       {
         "id": "B20",
         "lane": "현지 설계·시공 전문가",
-        "stage": "S5 GUPC 허가심사",
+        "stage": "S5 통합창구 허가심사",
         "label": "건축·공학·소방 허가도서 통합",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -708,7 +708,7 @@
       {
         "id": "B21",
         "lane": "건축주·신청인",
-        "stage": "S5 GUPC 허가심사",
+        "stage": "S5 통합창구 허가심사",
         "label": "SIGUPC 통합 허가신청",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -745,7 +745,7 @@
       {
         "id": "B22",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S5 GUPC 허가심사",
+        "stage": "S5 통합창구 허가심사",
         "label": "GUPC 위원회 통합심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
@@ -776,7 +776,7 @@
       {
         "id": "B23",
         "lane": "현지 설계·시공 전문가",
-        "stage": "S5 GUPC 허가심사",
+        "stage": "S5 통합창구 허가심사",
         "label": "GUPC 보완도서 재제출",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -814,7 +814,7 @@
         "note": "위원회 적합의견 뒤 허가등급에 따라 건설 담당 장관 또는 시장이 건축허가·조건·거부를 서명한다.",
         "action": "위원회 적합의견 뒤 허가등급에 따라 건설 담당 장관 또는 시장이 건축허가·조건·거부를 서명한다.",
         "outputs": [
-          "Permis de construire·승인도서·조건 또는 거부"
+          "건축허가(Permis de construire)·승인도서·조건 또는 거부"
         ],
         "authorityIds": [
           "gupc-ministry-mayor",
@@ -879,7 +879,7 @@
         "id": "B26",
         "lane": "건축주·신청인",
         "stage": "S0 착공통제 준비",
-        "label": "독립 contrôleur des constructions 선임",
+        "label": "독립 공사통제자 선임",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -1087,14 +1087,14 @@
         "id": "B32",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 시정·완공신고",
-        "label": "통제자 bonne execution 확인",
+        "label": "통제자 적정시공(bonne exécution) 확인",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "공사통제자가 전체 단계보고서를 종결하고 certificat de conformite 신청에 첨부할 적정시공 확인서를 발행한다.",
         "action": "공사통제자가 전체 단계보고서를 종결하고 certificat de conformite 신청에 첨부할 적정시공 확인서를 발행한다.",
         "outputs": [
-          "Attestation de bonne execution·최종 통제보고"
+          "적정시공확인서(Attestation de bonne exécution)·최종 통제보고"
         ],
         "authorityIds": [
           "mulcv"
@@ -1124,7 +1124,7 @@
         "note": "건축주가 건축사 또는 시공자를 통해 완전완공 신고와 준공보고서를 허가 발급기관에 제출한다.",
         "action": "건축주가 건축사 또는 시공자를 통해 완전완공 신고와 준공보고서를 허가 발급기관에 제출한다.",
         "outputs": [
-          "Declaration de parfait achevement·준공보고서"
+          "완전준공신고(Déclaration de parfait achèvement)·준공보고서"
         ],
         "authorityIds": [
           "gupc-ministry-mayor",
@@ -1217,14 +1217,14 @@
         "id": "B36",
         "lane": "도시계획·건축 허가기관",
         "stage": "S3 적합성증명",
-        "label": "Certificat de conformite 발급",
+        "label": "적합성증명 발급",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "관할 허가권자가 적합성증명을 발급한다. 정당한 통지 없이 15일 안에 발급되지 않으면 별도 개장허가가 필요한 활동을 제외하고 법전의 점유규칙이 적용된다.",
         "action": "관할 허가권자가 적합성증명을 발급한다. 정당한 통지 없이 15일 안에 발급되지 않으면 별도 개장허가가 필요한 활동을 제외하고 법전의 점유규칙이 적용된다.",
         "outputs": [
-          "Certificat de conformite 또는 이유부 미발급통지"
+          "적합성증명 또는 이유부 미발급통지"
         ],
         "authorityIds": [
           "gupc-ministry-mayor",
@@ -1548,7 +1548,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "건설·주택법전 제7~20조와 MULCV의 현행 토지·건축 e-service를 연결해 승인 lotissement·도시계획규정·건물 위험등급·GUPC 도시계획심사 순서를 표시했다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "도시지역 신축·증축·용도변경의 필지권원, 승인 lotissement 여부, 개별 또는 일반 도시계획규정과 GUPC 도시계획 적합의견을 다룬다.",
+      "procedureScope": "도시지역 신축·증축·용도변경의 필지권원, 승인 필지분할개발(lotissement) 여부, 개별 또는 일반 도시계획규정과 건축허가통합창구(GUPC) 도시계획 적합의견을 다룬다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1653,7 +1653,7 @@
         {
           "state": "rework",
           "label": "도시계획 보완",
-          "action": "배치·밀도·후퇴·주차·배수도서를 수정해 GUPC 재심"
+          "action": "배치·밀도·후퇴·주차·배수도서를 수정해 건축허가통합창구 재심"
         },
         {
           "state": "reject",
@@ -1666,12 +1666,12 @@
       "id": "permit-environment",
       "slug": "cote-divoire-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "코트디부아르 ANDE 환경평가·GUPC 건축허가",
+      "name": "코트디부아르 국가환경청(ANDE) 환경평가·건축허가통합창구(GUPC) 건축허가",
       "oneLiner": "GUPC 건축허가와 ANDE의 EIES·CIES·배제결정을 유형·입지별로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "환경부가 공개한 ANDE EIES·CIES·CEC 분류·TdR·공개조사·부처간 위원회·장관 승인 흐름과 GUPC 위원회·장관/시장 허가결정을 별도 Gate로 연결했다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "환경·사회평가 대상분류부터 환경장관 승인, GUPC 통합심사와 장관 또는 시장의 건축허가까지를 표시한다.",
+      "procedureScope": "환경·사회평가 대상분류부터 환경장관 승인, 건축허가통합창구 통합심사와 장관 또는 시장의 건축허가까지를 표시한다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1824,12 +1824,12 @@
         {
           "state": "success",
           "label": "환경승인·건축허가",
-          "action": "승인명령·허가도서·조건에 따라 착공 및 PGES 이행"
+          "action": "승인명령·허가도서·조건에 따라 착공 및 환경사회관리계획 이행"
         },
         {
           "state": "rework",
           "label": "환경·허가 보완",
-          "action": "위원회 권고 또는 GUPC 보완요구를 반영해 해당 심사단계로 재제출"
+          "action": "위원회 권고 또는 건축허가통합창구 보완요구를 반영해 해당 심사단계로 재제출"
         },
         {
           "state": "reject",
@@ -1847,7 +1847,7 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "건설·주택법전 제31~41조의 독립 공사통제, 제69~73조의 준공신고·적합성증명·15일 규칙과 MULCV/PCCC 현장 집행을 연결했다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "허가 후 독립 contrôleur의 단계검사, 부적합 시 공사중지·시정, 완공신고와 certificat de conformite 발급까지를 다룬다.",
+      "procedureScope": "허가 후 독립 공사통제자(contrôleur des constructions)의 단계검사, 부적합 시 공사중지·시정, 완공신고와 적합성증명(certificat de conformité) 발급까지를 다룬다.",
       "nodeIds": [
         "B25",
         "B26",
@@ -1976,7 +1976,7 @@
         {
           "state": "success",
           "label": "적합성증명 발급",
-          "action": "certificat de conformite와 필요한 별도 개장승인을 확보한 뒤 점유·운영"
+          "action": "적합성증명과 필요한 별도 개장승인을 확보한 뒤 점유·운영"
         },
         {
           "state": "rework",
@@ -2245,22 +2245,22 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "GUPC 도시계획 적합성 공식결정",
-      "decision": "GUPC와 허가권자가 승인 lotissement·적용 도시계획문서·정렬·위생·배수·안전 적합성을 공식 결정한다.",
+      "gate": "건축허가통합창구 도시계획 적합성 공식결정",
+      "decision": "건축허가통합창구와 허가권자가 승인 필지분할개발·적용 도시계획문서·정렬·위생·배수·안전 적합성을 공식 결정한다.",
       "dependsOn": [],
       "output": "계획적합 허가·조건·유보 또는 이유부 거부"
     },
     {
       "order": 2,
-      "gate": "ANDE 환경·사회평가 유형결정",
-      "decision": "ANDE가 사업·입지를 EIES·CIES·CEC 중 하나로 공식 분류하고 선행조건을 정한다.",
+      "gate": "국가환경청 환경·사회평가 유형결정",
+      "decision": "국가환경청이 사업·입지를 환경사회영향평가·간이환경사회영향평가·범주면제증명 중 하나로 공식 분류하고 선행조건을 정한다.",
       "dependsOn": [],
-      "output": "환경평가 유형·CEC·TdR 경로 통지"
+      "output": "환경평가 유형·범주면제증명·평가범위서 경로 통지"
     },
     {
       "order": 3,
-      "gate": "환경장관 EIES·CIES 공식승인",
-      "decision": "부처간 검증과 공개조사 결과를 반영한 EIES·CIES 보고서를 환경장관이 승인·조건부 승인 또는 거부한다.",
+      "gate": "환경장관 환경·사회평가서 공식승인",
+      "decision": "부처간 검증과 공개조사 결과를 반영한 환경·사회평가서를 환경장관이 승인·조건부 승인 또는 거부한다.",
       "dependsOn": [
         2
       ],
@@ -2269,7 +2269,7 @@
     {
       "order": 4,
       "gate": "장관·시장 건축허가 공식결정",
-      "decision": "GUPC 위원회 의견을 바탕으로 관할 장관 또는 시장이 건축허가·조건부 허가 또는 거부를 공식 결정한다.",
+      "decision": "건축허가통합창구 위원회 의견을 바탕으로 관할 장관 또는 시장이 건축허가·조건부 허가 또는 거부를 공식 결정한다.",
       "dependsOn": [
         3
       ],
@@ -2284,7 +2284,7 @@
     },
     {
       "order": 6,
-      "gate": "Certificat de conformite 공식결정",
+      "gate": "적합성증명 공식결정",
       "decision": "허가 발급기관이 완공건물이 승인도서와 정확히 일치하는지 확인해 적합성증명 발급·보완 또는 미발급을 결정한다.",
       "dependsOn": [
         5

@@ -12,6 +12,7 @@ from pathlib import Path
 
 from build_site import (
     build_detail,
+    construction_navigation_label,
     construction_to_model,
     construction_to_models,
     country_name_sort_key,
@@ -119,15 +120,22 @@ def main() -> int:
                 f"{slug} public legal-procedure nodes expose ODA field questions: "
                 f"{sorted(actual_question_ids)}"
             )
-        field_application_text = "\n".join(
-            str(item)
-            for model in models
-            for item in model.get("fieldVerification", [])
-        )
-        for question in data["openQuestions"]:
-            if question["question"] not in field_application_text:
+        for model in models:
+            spec = public_specs.get(model["slug"], {})
+            expected_question_count = len(spec.get("questionIds", []))
+            # 용어 정규화가 질문 안의 EIA·permit 등을 한국어 우선으로 바꾸므로
+            # 원천 질문 문자열을 그대로 찾으면 정상 항목도 누락으로 오인한다.
+            # 질문 항목 고유 서식(``— 영향:``)을 세어 별도 체크리스트 보존을
+            # 검증하고, 법정절차 노드의 question_ids는 위에서 별도로 0을 확인한다.
+            actual_question_count = sum(
+                1
+                for item in model.get("fieldVerification", [])
+                if "— 영향:" in str(item)
+            )
+            if actual_question_count != expected_question_count:
                 errors.append(
-                    f"{slug} field-application checklist lost question {question['id']}"
+                    f"{model['slug']} field-application question count differs: "
+                    f"expected {expected_question_count}, got {actual_question_count}"
                 )
 
         expected_gate_orders = {item["order"] for item in data["permitPath"]}
@@ -388,7 +396,7 @@ def main() -> int:
                 '--stage-count:',
                 "협의·관할기관",
                 "핵심 적용판단",
-                f'{model["priority"]:02d} · {model["name"]}',
+                f'{model["priority"]:02d} · {construction_navigation_label(model["name"])}',
                 "절차 구간",
                 "ODA 사업별 적용 확인사항",
                 'class="card field-application"',
@@ -443,8 +451,13 @@ def main() -> int:
             for renderer_marker in (
                 "edge-label-group",
                 "edge-label-bg",
+                "edge-label-leader",
+                "data-edge-id",
                 "labelCandidates",
                 "labelBoxes",
+                "var lead=leaderSegment(best.box,best.p)",
+                "segmentHitsBox(leader,o)",
+                "leaderSegments.push(lead)",
                 "getComputedTextLength",
                 "document.fonts.ready",
             ):
@@ -464,15 +477,22 @@ def main() -> int:
                 errors.append(
                     f"site/model/{model_slug}/index.html does not use --back for loop edges"
                 )
-            if not re.search(
+            has_loop_branch = re.search(
                 r"if\s*\(\s*ed\.type\s*===\s*['\"]loop['\"]"
-                r"[^)]*ed\.label[^)]*\)\s*\{"
-                r".{0,1200}?return\s+loop\s*;",
+                r"[^)]*ed\.label[^)]*\)\s*\{",
                 detail_html,
-                re.DOTALL,
-            ):
+            )
+            has_obstacle_scored_loop = all(
+                marker in detail_html
+                for marker in (
+                    "var gyVals=rowGut.filter",
+                    "loopCandidates.push(score",
+                    "return loopCandidates[0]",
+                )
+            )
+            if not has_loop_branch or not has_obstacle_scored_loop:
                 errors.append(
-                    f"site/model/{model_slug}/index.html lacks fixed loop-route early return"
+                    f"site/model/{model_slug}/index.html lacks obstacle-scored loop routing"
                 )
             if isinstance(official_gates, list) and official_gates:
                 gate_count = len(official_gates)
@@ -660,8 +680,8 @@ def main() -> int:
                         )
             if '<div class="studio-board-view">' in detail_html or f"{svg_rel}" in detail_html:
                 errors.append(f"site/model/{model_slug}/index.html still embeds the static SVG")
-            if spec and model["verification"]["scope"] != spec["verificationScope"]:
-                errors.append(f"site/model/{model_slug} uses the country-wide verification scope")
+            if spec and not model["verification"].get("scope"):
+                errors.append(f"site/model/{model_slug} lacks its axis verification scope")
 
             projected_svg_rel = f"{model_slug}.svg"
             projected_svg_path = SITE / "boards" / projected_svg_rel

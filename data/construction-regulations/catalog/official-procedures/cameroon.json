@@ -66,11 +66,11 @@
       "officialProcedure": {
         "name": "카메룬 도시계획증명·건축허가",
         "coverage": "official-source-linked",
-        "scope": "건축허가는 대상 commune의 Mayor가 발급한다. 계획은 원칙적으로 National Order에 등록된 architect가 책임지고, 토지·계획조건은 certificat d'urbanisme와 현행 planning documents에서 확인한다.",
-        "stages": ["G0 권원·도시계획증명", "G1 건축사·허가도서", "G2 Mairie 접수·공고", "G3 기술심사·보완", "G4 허가결정"],
+        "scope": "건축허가는 대상 지방자치단체(commune)의 시장(Mayor)이 발급한다. 계획은 원칙적으로 국가 건축사협회(National Order)에 등록된 건축사가 책임지고, 토지·계획조건은 도시계획증명(certificat d'urbanisme)과 현행 계획문서에서 확인한다.",
+        "stages": ["G0 권원·도시계획증명", "G1 건축사·허가도서", "G2 시청 접수·공고", "G3 기술심사·보완", "G4 허가결정"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "권원·Certificat d'urbanisme 확보", "emphasis": "key", "kind": "official-guidance",
+            "lane": "건축주·신청인", "stage": 0, "label": "권원·도시계획증명 확보", "emphasis": "key", "kind": "official-guidance",
             "action": "6개월 이내 소유권증명 또는 대체 토지행정문서를 준비하고 commune에 대상 필지의 planning document·용도·배치·건축조건을 표시한 certificat d'urbanisme를 신청한다.", "output": "현행 소유권증명·도시계획증명 신청",
             "authorityIds": ["mayor", "minhdu-local"],
             "refs": [
@@ -80,7 +80,7 @@
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 0, "label": "필지 계획조건 공식회신", "emphasis": "key", "kind": "official-guidance",
-            "action": "commune과 지방 도시계획서비스가 적용 계획문서 또는 일반 도시계획·건축규칙에 따라 입지·용도·배치·접근·위생·servitude 조건을 확인해 도시계획증명을 발급하거나 제한사유를 통지한다.", "output": "Certificat d'urbanisme·필지조건 또는 제한사유",
+            "action": "commune과 지방 도시계획서비스가 적용 계획문서 또는 일반 도시계획·건축규칙에 따라 입지·용도·배치·접근·위생·servitude 조건을 확인해 도시계획증명을 발급하거나 제한사유를 통지한다.", "output": "도시계획증명·필지조건 또는 제한사유",
             "authorityIds": ["mayor", "minhdu-local"],
             "refs": [{"source": "도시계획 적합성", "instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["Articles 108 and planning-document compliance"]}],
             "permitGate": {"key": "cameroon-urban-certificate", "gate": "Commune 도시계획조건 공식회신", "decision": "필지에 적용되는 planning documents·일반규칙과 건축조건을 공식 확인한다.", "output": "Certificat d'urbanisme 또는 공식 제한사유", "dependsOn": []}
@@ -98,7 +98,7 @@
             "refs": [{"source": "허가도서 구성", "instrumentId": "CMR-MINHDU-BUILD-GUIDE", "provisions": ["Five-copy permit dossier"]}]
           },
           {
-            "lane": "건축주·신청인", "stage": 2, "label": "Mayor에게 허가신청·접수증", "emphasis": "key", "kind": "official-guidance",
+            "lane": "건축주·신청인", "stage": 2, "label": "시장에게 허가신청·접수증", "emphasis": "key", "kind": "official-guidance",
             "action": "소유자 또는 대리인이 관할 mairie에 5부 허가도서를 제출하고 날짜·신청기록이 있는 récépissé를 받는다.", "output": "건축허가 접수증",
             "authorityIds": ["mayor"],
             "refs": [{"source": "Mairie 접수", "instrumentId": "CMR-MINHDU-BUILD-GUIDE", "provisions": ["Submission against receipt to the Mayor"]}]
@@ -125,8 +125,8 @@
             "refs": [{"source": "허가 적합화", "instrumentId": "CMR-LAND-USE-DECREE-2008", "provisions": ["Permit examination and conformity"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "Mayor 건축허가 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "Mayor가 접수일부터 45일 안에 건축허가를 발급하거나 이유를 명시해 거부한다. 기한 안에 거부통지가 없으면 법정 묵시허가 효력이 발생한다.", "output": "명시·묵시 Permis de construire 또는 이유부 거부통지",
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "시장 건축허가 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "Mayor가 접수일부터 45일 안에 건축허가를 발급하거나 이유를 명시해 거부한다. 기한 안에 거부통지가 없으면 법정 묵시허가 효력이 발생한다.", "output": "명시·묵시 건축허가(Permis de construire) 또는 이유부 거부통지",
             "authorityIds": ["mayor"],
             "refs": [{"source": "45일 결정·묵시허가", "instrumentId": "CMR-MINHDU-BUILD-GUIDE", "provisions": ["Forty-five-day decision and deemed approval"]}],
             "permitGate": {"key": "cameroon-building-permit", "gate": "Mayor Permis de construire 공식결정", "decision": "도시계획·건축기준 적합성을 확인해 명시·묵시 허가 또는 이유부 거부를 결정한다.", "output": "Permis de construire·승인도서 또는 이유부 거부통지", "dependsOn": ["cameroon-urban-certificate"]}
@@ -146,13 +146,13 @@
     "permit-environment": {
       "verificationScope": "Decree 2013/0171 제13~26조의 NIE·간이/상세 EIES 분류, TdR, 공인사무소, 공동현장검증·보고서 완비·공개협의·CIE 의견·환경적합증명과 MINHDU 45일 건축허가를 두 핵심 결정 Gate로 연결했다.",
       "officialProcedure": {
-        "name": "카메룬 NIE·간이/상세 EIES·건축허가",
+        "name": "카메룬 환경영향통지서(NIE)·간이/상세 환경영향평가서(EIES)·건축허가",
         "coverage": "official-source-linked",
-        "scope": "소규모·낮은 영향 사업은 commune NIE, 그 밖의 대상은 MINEPDED 간이 또는 상세 EIES 경로를 거친다. EIES 대상은 공사 전 환경적합증명을 받아야 하며 최종 건축허가는 Mayor가 결정한다.",
-        "stages": ["G0 환경경로·TdR", "G1 환경조사·협의", "G2 보고서 접수·현장검증", "G3 완비·공개심사", "G4 환경결정", "G5 건축허가 심사", "G6 건축허가 결정"],
+        "scope": "소규모·낮은 영향 사업은 지방자치단체 환경영향통지서 경로를, 그 밖의 대상은 MINEPDED 간이 또는 상세 환경영향평가서 경로를 거친다. 환경영향평가 대상은 공사 전 환경적합증명을 받아야 하며 최종 건축허가는 시장이 결정한다.",
+        "stages": ["G0 환경경로·평가범위서", "G1 환경조사·협의", "G2 보고서 접수·현장검증", "G3 완비·공개심사", "G4 환경결정", "G5 건축허가 심사", "G6 건축허가 결정"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "NIE·간이·상세 EIES 경로 확인", "emphasis": "key", "kind": "official-guidance",
+            "lane": "건축주·신청인", "stage": 0, "label": "환경영향통지서·간이·상세 환경영향평가 경로 확인", "emphasis": "key", "kind": "official-guidance",
             "action": "사업유형·규모·입지를 법정 목록과 commune 기준에 대조해 Notice d'Impact, EIES sommaire 또는 EIES détaillée 경로와 제출기관을 확인한다.", "output": "환경평가 경로·관할기관",
             "authorityIds": ["minepded", "mayor"],
             "refs": [
@@ -161,20 +161,20 @@
             ]
           },
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "TdR·사업설명·수수료 제출", "emphasis": "key", "kind": "official-guidance",
-            "action": "EIES는 competent administration와 MINEPDED에 신청서·TdR·입지선정 설명·수수료 영수증을, NIE는 commune에 같은 성격의 서류를 제출하고 접수증을 받는다.", "output": "TdR 신청·사업설명·수수료 영수증·접수증",
+            "lane": "건축주·신청인", "stage": 0, "label": "평가범위서(TdR)·사업설명·수수료 제출", "emphasis": "key", "kind": "official-guidance",
+            "action": "EIES는 competent administration와 MINEPDED에 신청서·TdR·입지선정 설명·수수료 영수증을, NIE는 commune에 같은 성격의 서류를 제출하고 접수증을 받는다.", "output": "평가범위서 신청·사업설명·수수료 영수증·접수증",
             "authorityIds": ["minepded", "mayor"],
             "refs": [{"source": "TdR 신청·접수", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 13 and 15"]}]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 0, "label": "TdR 심사·Cahier des charges", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "MINEPDED 또는 département 환경책임자가 평가수준·분석범위·사업자 의무를 심사해 TdR 의견과 cahier des charges를 통지한다. 법정 무응답 기한이 지나면 TdR은 승인된 것으로 본다.", "output": "승인 TdR·cahier des charges 또는 보완요구",
+            "lane": "환경·소방·검사기관", "stage": 0, "label": "평가범위서 심사·과업준수조건서(Cahier des charges)", "emphasis": "bottleneck", "kind": "official-guidance",
+            "action": "MINEPDED 또는 département 환경책임자가 평가수준·분석범위·사업자 의무를 심사해 TdR 의견과 cahier des charges를 통지한다. 법정 무응답 기한이 지나면 TdR은 승인된 것으로 본다.", "output": "승인 평가범위서·과업준수조건서 또는 보완요구",
             "authorityIds": ["minepded", "mayor"],
             "refs": [{"source": "TdR 심사·묵시승인", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 13(3)-(5), 15(3)-(4)"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "공인 평가사무소 EIES·NIE 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "EIES는 MINEPDED 공인 bureau d'études가 승인 TdR에 따라 기초환경·대안·영향·저감·PGES를 평가하고, NIE는 적격 전문가가 cahier des charges 초안을 포함해 작성한다.", "output": "EIES sommaire/détaillée 또는 NIE·PGES",
+            "lane": "현지 설계·시공 전문가", "stage": 1, "label": "공인 평가사무소 환경영향평가서·환경영향통지서 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "EIES는 MINEPDED 공인 bureau d'études가 승인 TdR에 따라 기초환경·대안·영향·저감·PGES를 평가하고, NIE는 적격 전문가가 cahier des charges 초안을 포함해 작성한다.", "output": "간이/상세 환경영향평가서 또는 환경영향통지서·환경사회관리계획(PGES)",
             "authorityIds": ["minepded", "mayor"],
             "refs": [
               {"source": "공인 사무소", "instrumentId": "CMR-MINEPDED-EVAL-SERVICE", "provisions": ["Accredited environmental-study office requirement"]},
@@ -188,7 +188,7 @@
             "refs": [{"source": "주민협의", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 20-21"]}]
           },
           {
-            "lane": "건축주·신청인", "stage": 2, "label": "EIES·NIE 보고서 공식제출", "emphasis": "key", "kind": "official-guidance",
+            "lane": "건축주·신청인", "stage": 2, "label": "환경영향평가서·환경영향통지서 공식제출", "emphasis": "key", "kind": "official-guidance",
             "action": "EIES는 competent administration 2부와 MINEPDED 20부, NIE는 commune 6부와 수수료 증빙을 제출하고 접수증을 받는다.", "output": "환경보고서 접수증·법정 부수",
             "authorityIds": ["minepded", "mayor"],
             "refs": [{"source": "보고서 제출", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 15(2), 18(1)"]}]
@@ -201,25 +201,25 @@
           },
           {
             "lane": "환경·소방·검사기관", "stage": 3, "label": "20일 완비성 판단", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "MINEPDED가 접수 후 20일 안에 EIES를 현 상태로 recevable로 선언해 공개하거나, 완비를 위한 observations를 통지한다. 무응답이면 법정 완비로 본다.", "output": "Recevabilité 통지·공개 또는 보완 observations",
+            "action": "MINEPDED가 접수 후 20일 안에 EIES를 현 상태로 recevable로 선언해 공개하거나, 완비를 위한 observations를 통지한다. 무응답이면 법정 완비로 본다.", "output": "완비성 확인(Recevabilité) 통지·공개 또는 보완의견",
             "authorityIds": ["minepded"],
             "refs": [{"source": "EIES 완비성 판단", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Article 18(4)"]}]
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 3, "label": "환경보고서 보완·재심", "emphasis": "normal", "kind": "official-guidance",
-            "action": "MINEPDED observations에 따라 조사·대안·저감·PGES와 주민협의 자료를 보완해 다시 제출한다.", "output": "보완 EIES·NIE·PGES·답변서",
+            "action": "MINEPDED observations에 따라 조사·대안·저감·PGES와 주민협의 자료를 보완해 다시 제출한다.", "output": "보완 환경영향평가서·환경영향통지서·환경사회관리계획·답변서",
             "authorityIds": ["minepded", "mayor"],
             "refs": [{"source": "완비성 보완", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Article 18(4)(a)"]}]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 3, "label": "공개청문·CIE 심의", "emphasis": "bottleneck", "kind": "official-guidance",
+            "lane": "환경·소방·검사기관", "stage": 3, "label": "공개청문·부처간 환경위원회(CIE) 심의", "emphasis": "bottleneck", "kind": "official-guidance",
             "action": "완비 EIES를 공개하고 ad hoc commission이 public hearing 보고서를 작성한 뒤 CIE가 EIES·평가·협의·청문기록을 심의해 의견을 낸다.", "output": "공개청문 보고서·CIE 의견",
             "authorityIds": ["minepded"],
             "refs": [{"source": "공개청문·CIE 의견", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 22 and 24"]}]
           },
           {
             "lane": "환경·소방·검사기관", "stage": 4, "label": "환경적합증명 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "EIES는 CIE 의견 후 환경장관이, NIE는 département 환경책임자 적합의견에 따라 Mayor가 환경적합증명·조건부 보완 또는 불허를 결정한다.", "output": "Certificat/Attestation de conformité environnementale 또는 조건·불허통지",
+            "action": "EIES는 CIE 의견 후 환경장관이, NIE는 département 환경책임자 적합의견에 따라 Mayor가 환경적합증명·조건부 보완 또는 불허를 결정한다.", "output": "환경적합증명(Certificat/Attestation de conformité environnementale) 또는 조건·불허통지",
             "authorityIds": ["minepded", "mayor"],
             "refs": [
               {"source": "EIES 공식결정", "instrumentId": "CMR-EIES-DECREE-2013-0171", "provisions": ["Articles 25-26"]},
@@ -247,7 +247,7 @@
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 6, "label": "건축허가 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "Mayor가 45일 안에 건축허가를 명시 발급하거나 이유부 거부를 통지한다. 기한 내 거부통지가 없으면 법정 묵시허가가 성립한다.", "output": "Permis de construire·승인도서 또는 이유부 거부통지",
+            "action": "Mayor가 45일 안에 건축허가를 명시 발급하거나 이유부 거부를 통지한다. 기한 내 거부통지가 없으면 법정 묵시허가가 성립한다.", "output": "건축허가(Permis de construire)·승인도서 또는 이유부 거부통지",
             "authorityIds": ["mayor"],
             "refs": [{"source": "45일 허가결정", "instrumentId": "CMR-MINHDU-BUILD-GUIDE", "provisions": ["Forty-five-day decision and deemed approval"]}],
             "permitGate": {"key": "cameroon-combined-building-permit", "gate": "Mayor Permis de construire 공식결정", "decision": "환경적합증명과 도시계획·건축도서를 심사해 명시·묵시 허가 또는 이유부 거부를 결정한다.", "output": "Permis de construire·승인도서 또는 공식 거부통지", "dependsOn": ["cameroon-environmental-conformity"]}
@@ -271,7 +271,7 @@
       "officialProcedure": {
         "name": "카메룬 시공통제·환경모니터링·적합증명",
         "coverage": "official-source-linked",
-        "scope": "Mayor 주도로 sworn municipal officers와 지방 기술서비스가 공사 중·완공 후 현장을 검사한다. 완공된 건축물은 의무 certificat de conformité를 받아야 하며 EIES/NIE 대상은 PGES·cahier des charges 이행감시가 병행된다.",
+        "scope": "시장(Mayor) 주도로 선서 지방공무원(sworn municipal officers)과 지방 기술부서가 공사 중·완공 후 현장을 검사한다. 완공된 건축물은 의무 적합증명(certificat de conformité)을 받아야 하며 환경영향평가서·환경영향통지서 대상은 환경사회관리계획·과업준수조건서 이행감시가 병행된다.",
         "stages": ["G0 허가·착공", "G1 시공·현장검사", "G2 위반·환경시정", "G3 완공신고", "G4 최종검사·적합결정"],
         "steps": [
           {
@@ -296,7 +296,7 @@
             "refs": [{"source": "현장방문권", "instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["Article 118"]}]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 1, "label": "안전·위생·PGES 합동통제", "emphasis": "bottleneck", "kind": "official-guidance",
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "안전·위생·환경사회관리계획 합동통제", "emphasis": "bottleneck", "kind": "official-guidance",
             "action": "Mayor의 control commission과 환경기관이 안전·위생·ERP·위험시설 조건 및 PGES·NIE cahier des charges 이행을 점검하고 공동보고서를 작성한다.", "output": "안전·위생·환경 합동검사보고",
             "authorityIds": ["mayor", "minhdu-local", "minepded"],
             "refs": [
@@ -315,7 +315,7 @@
             "permitGate": {"key": "cameroon-construction-compliance", "gate": "Mayor·관할기관 공사준수 공식판단", "decision": "허가·계획·안전·위생·환경조건 준수 여부에 따라 공정 계속 또는 시정·중지를 결정한다.", "output": "공정 계속 확인 또는 공식 시정·중지통지", "dependsOn": []}
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "위반·PGES 시정·재검사", "emphasis": "normal", "kind": "official-guidance",
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "위반·환경사회관리계획 시정·재검사", "emphasis": "normal", "kind": "official-guidance",
             "action": "건축·안전·위생 위반과 PGES 추가조치를 이행하고 수정도서·환경증빙과 함께 재검사를 요청한다.", "output": "시정완료 증빙·재검사 기록",
             "authorityIds": ["mayor", "minhdu-local", "minepded"],
             "refs": [
@@ -324,8 +324,8 @@
             ]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "완공신고·Récolement 도서 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "공사완료 후 허가권자와 책임전문가가 정해진 서식으로 déclaration d'achèvement를 작성하고 요구 시 plans de récolement와 투자비 자료를 준비한다.", "output": "완공신고·as-built/recolement 도서·투자비",
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "완공신고·준공확인(Récolement) 도서 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "공사완료 후 허가권자와 책임전문가가 정해진 서식으로 déclaration d'achèvement를 작성하고 요구 시 plans de récolement와 투자비 자료를 준비한다.", "output": "완공신고·준공도면(as-built)·준공확인도서·투자비",
             "authorityIds": ["mayor", "minhdu-local"],
             "refs": [
               {"source": "완공신고·적합증명 서식", "instrumentId": "CMR-MINHDU-COMPLETION-FORM", "provisions": ["Order No. 0006 forms"]},
@@ -354,8 +354,8 @@
             "refs": [{"source": "완공 적합성 재확인", "instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["Articles 118 and 121-123"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "Mayor 적합증명 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "Mayor가 완공건축물이 건축·배치 허가도서와 법정 부지·환경조치에 맞는지 확인해 certificat de conformité를 발급하거나 시정·거부를 통지한다.", "output": "Certificat de conformité 또는 공식 시정·거부통지",
+            "lane": "도시계획·건축 허가기관", "stage": 4, "label": "시장 적합증명 공식결정", "emphasis": "key", "kind": "official-guidance",
+            "action": "Mayor가 완공건축물이 건축·배치 허가도서와 법정 부지·환경조치에 맞는지 확인해 certificat de conformité를 발급하거나 시정·거부를 통지한다.", "output": "적합증명 또는 공식 시정·거부통지",
             "authorityIds": ["mayor"],
             "refs": [{"source": "적합증명 정의·의무", "instrumentId": "CMR-URBAN-LAW-2004-003", "provisions": ["Articles 121-123"]}],
             "permitGate": {"key": "cameroon-completion-conformity", "gate": "Mayor Certificat de conformité 공식결정", "decision": "완공건물의 허가·계획·안전·위생·환경 적합성을 확인해 의무 적합증명을 발급하거나 시정·거부한다.", "output": "Certificat de conformité 또는 공식 시정·거부통지", "dependsOn": ["cameroon-construction-compliance"]}

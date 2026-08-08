@@ -16,6 +16,7 @@
 from __future__ import annotations
 
 import html
+import copy
 import json
 import re
 import shutil
@@ -321,6 +322,188 @@ def unique_strings(values) -> list[str]:
     return out
 
 
+# 독자가 절차를 바로 읽을 수 있도록 업무용 외국어는 한국어를 먼저 쓰고,
+# 한 페이지에서 최초 1회만 원어·약어를 괄호에 남긴다. 기관·플랫폼명과
+# 법령·조문 인용은 고유명/추적키이므로 이 목록에 넣지 않는다.
+CONSTRUCTION_KOREAN_FIRST_TERMS = (
+    (r"Pedido de informa(?:ç|c)[aã]o pr[eé]via(?:\s*,\s*PIP)?", "사전 도시계획정보 신청"),
+    (r"licen(?:ç|c)a de utiliza(?:ç|c)[aã]o", "사용허가"),
+    (r"certificat de conformit(?:é|e)", "적합증명서"),
+    (r"certificate of occupancy", "점유허가서"),
+    (r"occupancy certificate", "점유허가서"),
+    (r"occupancy permit", "점유허가"),
+    (r"occupation permit", "점유허가"),
+    (r"building use permit", "건축물 사용허가"),
+    (r"construction site opening permit", "공사현장 개설허가"),
+    (r"construction permit", "건축허가"),
+    (r"building permit", "건축허가"),
+    (r"planning permit", "계획허가"),
+    (r"development permission", "개발허가"),
+    (r"permis de construire", "건축허가"),
+    (r"permiso de construcci[oó]n", "건축허가"),
+    (r"licencia de construcci[oó]n", "건축허가"),
+    (r"construction licence", "건축허가"),
+    (r"as[- ]built", "준공도면"),
+    (r"anteprojet(?:o|to)|anteproyecto", "기본설계안"),
+    (r"vistoria", "준공검사"),
+    (r"cahier des charges", "시방·조건서"),
+    (r"(?<![A-Za-z0-9])acta(?![A-Za-z0-9])", "회의록·검사조서"),
+    (r"(?<![A-Za-z0-9])informe(?![A-Za-z0-9])", "보고서"),
+    (r"(?<![A-Za-z0-9])zoning(?![A-Za-z0-9])", "용도지역"),
+    (r"(?<![A-Za-z0-9])Category(?![A-Za-z0-9])", "환경등급"),
+    (r"(?<![A-Za-z0-9])Annex(?:es)?(?![A-Za-z0-9])", "부속서"),
+    (r"(?<![A-Za-z0-9])Appendix(?:es)?(?![A-Za-z0-9])", "부록"),
+    (r"(?<![A-Za-z0-9])screening(?![A-Za-z0-9])", "사전선별"),
+    (r"(?<![A-Za-z0-9])scoping(?![A-Za-z0-9])", "평가범위 설정"),
+    (r"(?<![A-Za-z0-9])ESMMP(?![A-Za-z0-9])", "환경·사회관리계획"),
+    (r"(?<![A-Za-z0-9])ESMP(?![A-Za-z0-9])", "환경·사회관리계획"),
+    (r"(?<![A-Za-z0-9])ESIA(?![A-Za-z0-9])", "환경·사회영향평가"),
+    (r"(?<![A-Za-z0-9])EIES(?![A-Za-z0-9])", "환경영향연구"),
+    (r"(?<![A-Za-z0-9])EIA(?![A-Za-z0-9])", "환경영향평가"),
+    (r"(?<![A-Za-z0-9])IEE(?![A-Za-z0-9])", "초기환경검토"),
+    (r"(?<![A-Za-z0-9])EIE(?![A-Za-z0-9])", "환경영향연구"),
+    (r"(?<![A-Za-z0-9])DIA(?![A-Za-z0-9])", "환경영향평가서"),
+    (r"(?<![A-Za-z0-9])EAI(?![A-Za-z0-9])", "초기환경평가"),
+    (r"(?<![A-Za-z0-9])PGES(?![A-Za-z0-9])", "환경·사회관리계획"),
+    (r"(?<![A-Za-z0-9])PGA(?![A-Za-z0-9])", "환경관리계획"),
+    (r"(?<![A-Za-z0-9])EMP(?![A-Za-z0-9])", "환경관리계획"),
+    (r"(?<![A-Za-z0-9])TOR(?![A-Za-z0-9])", "평가범위"),
+    (r"(?<![A-Za-z0-9])TdR(?![A-Za-z0-9])", "평가범위·과업지시서"),
+    (r"(?<![A-Za-z0-9])NOC(?![A-Za-z0-9])", "이의없음확인"),
+    (r"(?<![A-Za-z0-9])RFQ(?![A-Za-z0-9])", "견적요청서"),
+    (r"(?<![A-Za-z0-9])HSE(?![A-Za-z0-9])", "보건·안전·환경"),
+    (r"(?<![A-Za-z0-9])O&M(?![A-Za-z0-9])", "운영·유지관리"),
+    (r"(?<![A-Za-z0-9])RACI(?![A-Za-z0-9])", "역할·책임표"),
+    (r"(?<![A-Za-z0-9])NICAD(?![A-Za-z0-9])", "지적식별번호"),
+    (r"(?<![A-Za-z0-9])PUD(?![A-Za-z0-9])", "상세도시계획"),
+    (r"(?<![A-Za-z0-9])ERP(?![A-Za-z0-9])", "대중이용시설"),
+    (r"(?<![A-Za-z0-9])ICPE(?![A-Za-z0-9])", "환경오염분류시설"),
+)
+
+CONSTRUCTION_TERMINOLOGY_SKIP_KEYS = {
+    "id", "slug", "countryKey", "schemaVersion", "priority", "axis", "asOfDate",
+    "type", "state", "status", "workflow_kind", "basis_scope", "lane", "stage",
+    "requirement_ids", "question_ids", "gate_orders", "order", "sourceOrder",
+    "depends_on", "dependsOn", "instrument_id", "url", "officialUrl", "officialName",
+    "law", "articles", "article", "source", "provisions", "refs", "sources",
+    "legalBasis", "legal_basis", "referenceBasis", "sourceQuotes", "related", "method",
+}
+
+
+def apply_construction_terminology(model: dict) -> dict:
+    """Apply page-local Korean-first terminology without touching legal citations."""
+    result = copy.deepcopy(model)
+    seen: set[str] = set()
+
+    def translate_text(value: str) -> str:
+        translated = value
+        for pattern, korean in CONSTRUCTION_KOREAN_FIRST_TERMS:
+            key = pattern.casefold()
+            flags = re.IGNORECASE
+            combined = re.compile(
+                rf"(?P<parenthesized>\(\s*(?:{pattern})\s*\))|(?P<raw>{pattern})",
+                flags,
+            )
+
+            def replace_match(match: re.Match) -> str:
+                if match.group("parenthesized") is not None:
+                    if key not in seen:
+                        seen.add(key)
+                        return match.group(0)
+                    return ""
+                # 복합 원어 괄호(Category A/B 등) 안의 일부와 고유명은 원천의
+                # 국가별 편집에서 처리한다. 여기서는 독립 용어만 안전하게 보정한다.
+                before = translated[:match.start()]
+                open_at = before.rfind("(")
+                if open_at > before.rfind(")"):
+                    close_at = translated.find(")", match.end())
+                    parenthetical = translated[open_at + 1:close_at] if close_at >= 0 else ""
+                    # ``(EIA Study)``, ``(EIA Licence)``처럼 약어가 더 긴
+                    # 공식명 안에 포함된 경우 약어만 바꾸면 ``(환경영향평가
+                    # Study)``처럼 원문명이 깨진다. 복합 원문명은 국가별 편집을
+                    # 그대로 보존하고, 독립 약어에만 페이지 1회 규칙을 적용한다.
+                    if parenthetical and not re.search(r"[가-힣]", parenthetical):
+                        return match.group(0)
+                if key not in seen:
+                    seen.add(key)
+                    return f"{korean}({match.group(0)})"
+                return korean
+
+            translated = combined.sub(replace_match, translated)
+        return translated
+
+    def walk(value, parent_key: str = ""):
+        if parent_key in CONSTRUCTION_TERMINOLOGY_SKIP_KEYS:
+            return value
+        if isinstance(value, str):
+            return translate_text(value)
+        if isinstance(value, list):
+            return [walk(item, parent_key) for item in value]
+        if isinstance(value, dict):
+            return {key: walk(item, key) for key, item in value.items()}
+        return value
+
+    # 실제 화면의 읽기 순서에 맞춘다. 카드 상세의 숨은 액션보다 보드의 모든
+    # 노드명이 먼저 보이므로 제목·단계·노드명에서 최초 병기를 우선한다.
+    for key in ("name", "oneLiner"):
+        result[key] = walk(result.get(key, ""), key)
+
+    process = result.get("process", {})
+    # 단계명은 목록과 각 노드가 조인 키로 함께 사용한다. 페이지 최초 병기
+    # 정규화로 목록의 ``G3 환경영향평가(EIA)``가 ``G3 환경영향평가``로
+    # 바뀌더라도 노드의 stage 값은 같은 번역값으로 동기화해야 그리드에서
+    # 카드가 누락되지 않는다.
+    original_stages = list(process.get("stages", []))
+    process["stages"] = walk(original_stages, "stages")
+    translated_stages = dict(zip(original_stages, process["stages"]))
+    for node in process.get("nodes", []):
+        if node.get("stage") in translated_stages:
+            node["stage"] = translated_stages[node["stage"]]
+    for node in process.get("nodes", []):
+        node["name"] = walk(node.get("name", ""), "name")
+    for edge in process.get("edges", []):
+        if edge.get("label"):
+            edge["label"] = walk(edge["label"], "label")
+
+    canvas = result.get("canvas", {})
+    for key in (
+        "purpose", "workflowDisclosure", "procedureStatusLabel", "procedureScope",
+        "stakeholders", "authorities", "procedure", "officialGates", "decisionBranches",
+        "applicability", "submittedDocuments", "bottlenecks", "entryBarriers",
+        "keyFindings", "siteOverlays",
+    ):
+        if key in canvas:
+            canvas[key] = walk(canvas[key], key)
+
+    for node in process.get("nodes", []):
+        for key in (
+            "actor", "consulted_authorities", "action", "deadline",
+            "output_documents", "blocker", "evidence_status", "applicability",
+            "report_use", "open_questions", "permit_gates",
+        ):
+            if key in node:
+                node[key] = walk(node[key], key)
+    process["warnings"] = walk(process.get("warnings", []), "warnings")
+    result["fieldVerification"] = walk(
+        result.get("fieldVerification", []), "fieldVerification"
+    )
+    verification = result.get("verification", {})
+    for key in ("scope", "notes", "unresolved", "discrepancies"):
+        if key in verification:
+            verification[key] = walk(verification[key], key)
+    return result
+
+
+_CONSTRUCTION_NAV_ORIGINAL_RE = re.compile(
+    r"\s*\((?=[^)]*[A-Za-zÀ-ÖØ-öø-ÿ])[^)]*\)"
+)
+
+
+def construction_navigation_label(value: str) -> str:
+    """Keep compact selectors Korean-only; the page heading owns first original use."""
+    return _CONSTRUCTION_NAV_ORIGINAL_RE.sub("", value).strip()
+
+
 def construction_model_board(d: dict, model_spec: dict | None) -> dict:
     """전체 생애주기 보드에서 공개 제도축에 필요한 노드만 투영한다."""
     if not model_spec:
@@ -403,10 +586,8 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             if ident in requirements and ident in selected_requirement_ids
         ]
         requirement_stages = {item["stage"] for item in linked_requirements}
-        # The workflow board describes the country's legal procedure.  ODA survey
-        # questions belong only to the separate project-application checklist below;
-        # never reattach them to a researched public procedure node, including legacy
-        # hand-maintained country records that still carry internal questionIds.
+        # 공개 구조도는 해당 국가의 법정절차만 보여준다. 사업별 ODA 확인질문은
+        # 아래의 별도 적용확인 목록에 남기고, 상세 법정절차 노드에는 재부착하지 않는다.
         question_ids = [] if is_public_legal_procedure else list(node.get("questionIds", []))
         if not is_public_legal_procedure and not question_ids:
             question_ids = [
@@ -775,7 +956,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         item["slug"] for item in d.get("publicModels", [])
         if item["slug"] != model_slug
     ]
-    return {
+    model = {
         "schemaVersion": 1,
         "slug": model_slug,
         "countryKey": country_key,
@@ -852,6 +1033,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
             "discrepancies": [],
         },
     }
+    return apply_construction_terminology(model)
 
 
 def construction_to_models(d: dict) -> list[dict]:
@@ -1114,7 +1296,7 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 
 .boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto;
   -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
-.board{position:relative;min-width:940px;padding-bottom:20px}
+.board{position:relative;min-width:940px;padding-bottom:52px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .board-scroll-hint{display:none;color:var(--muted);font-size:11.5px;text-align:right;margin:-8px 2px 8px}
 .decision-branches{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
@@ -1140,6 +1322,7 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 /* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
   display:flex;flex-direction:column;gap:32px;justify-content:center}
+.brow:not(.head) .bcell{padding-block:40px}
 .bcell:last-child{border-right:0}
 .brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
 .brow.head .bcell:first-child{z-index:5;background:var(--soft)}
@@ -1677,7 +1860,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     opts = "".join(
         f'<option value="{e(x["slug"])}"{" selected" if x is d else ""}>'
-        f'{x["priority"]:02d} · {e(x["name"] if x["axis"] == "construction" else country_display_name(x["country"]["name"]) + " " + AXIS_LABEL[x["axis"]])}</option>'
+        f'{x["priority"]:02d} · {e(construction_navigation_label(x["name"]) if x["axis"] == "construction" else country_display_name(x["country"]["name"]) + " " + AXIS_LABEL[x["axis"]])}</option>'
         for x in same_country)
 
     # 업무구조도 그리드
@@ -1895,10 +2078,22 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         item["slug"] for item in same_country
         if item["slug"] != d["slug"] and item["slug"] not in related_slugs
     )
+
+    def related_label(slug: str) -> str:
+        related_item = next((item for item in items if item["slug"] == slug), None)
+        if related_item is None:
+            return slug
+        label = related_item["name"]
+        return (
+            construction_navigation_label(label)
+            if related_item["axis"] == "construction"
+            else label
+        )
+
     rel = "".join(
-        (f'<span class="chip">{e(next((y["name"] for y in items if y["slug"] == r), r))}</span>'
+        (f'<span class="chip">{e(related_label(r))}</span>'
          if standalone else
-         f'<a class="chip" style="text-decoration:none" href="../{e(r)}/index.html">{e(next((y["name"] for y in items if y["slug"] == r), r))}</a>')
+         f'<a class="chip" style="text-decoration:none" href="../{e(r)}/index.html">{e(related_label(r))}</a>')
         for r in related_slugs)
 
     # 검증
@@ -2189,6 +2384,12 @@ function draw(){{
   // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
   var OB=[];
   board.querySelectorAll('.node').forEach(function(el){{ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); }});
+  // 단계 머리글과 각 행의 행위주체 셀도 텍스트 장애물이다. 카드만 피하면
+  // 긴 회귀 라벨이 머리글 뒤로 올라가거나 행위주체명을 가릴 수 있다.
+  var TB=[];
+  board.querySelectorAll('.brow.head .bcell,.brow:not(.head) .bcell:first-child').forEach(function(el){{
+    TB.push(rel(el.getBoundingClientRect()));
+  }});
   var rowGut=[], colGut=[];
   board.querySelectorAll('.brow:not(.head)').forEach(function(el){{ var r=rel(el.getBoundingClientRect());
     rowGut.push(r.y+9); rowGut.push(r.b-9); }});
@@ -2211,13 +2412,31 @@ function draw(){{
 
   function route(a,b,ed){{
     var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
-    // 보완 회귀는 일반 최단경로와 경쟁시키지 않는다. source 오른쪽 거터로
-    // 빠져 target 오른쪽으로 되돌아가게 고정해 순방향 선과 시각적으로 분리한다.
+    // 보완 회귀는 source 오른쪽 거터로 빠진 뒤 target 행의 위·아래 여백을
+    // 거쳐 진입한다. target 중심 높이로 곧장 되돌리면 같은 행의 중간 카드를
+    // 관통할 수 있으므로, 실측한 행 거터 후보를 장애물 수·길이로 비교한다.
     if(ed.type==='loop'&&ed.label){{
-      var gx=Math.min(board.scrollWidth-12,Math.max(a.r,b.r)+28);
-      var loop=score([{{x:a.r,y:acy}},{{x:gx,y:acy}},{{x:gx,y:bcy}},{{x:b.r+GAP,y:bcy}},{{x:b.r,y:bcy}}],e1,e2);
-      loop.label={{x:(gx+b.r)/2,y:bcy-8}};
-      return loop;
+      var maxRight=Math.max(a.r,b.r), gx0=Math.min(board.scrollWidth-4,maxRight+28);
+      var gxVals=[gx0,board.scrollWidth-4], loopCandidates=[];
+      colGut.forEach(function(gx){{if(gx>maxRight+10)gxVals.push(gx);}});
+      gxVals=gxVals.filter(function(gx,i){{return gx>maxRight+6&&gxVals.indexOf(gx)===i;}});
+      var gyVals=rowGut.filter(function(gy){{return gy<b.y-6||gy>b.b+6;}});
+      gxVals.forEach(function(gx){{
+        gyVals.forEach(function(gy){{
+          var above=gy<b.y;
+          var tp={{x:bcx,y:above?b.y:b.b}};
+          var pre={{x:bcx,y:tp.y+(above?-GAP:GAP)}};
+          loopCandidates.push(score([
+            {{x:a.r,y:acy}},{{x:gx,y:acy}},{{x:gx,y:gy}},{{x:bcx,y:gy}},pre,tp
+          ],e1,e2));
+        }});
+      }});
+      // 극단적으로 거터 후보가 없는 단일 행 보드에서도 선은 계속 표시한다.
+      loopCandidates.push(score([
+        {{x:a.r,y:acy}},{{x:gx0,y:acy}},{{x:gx0,y:bcy}},{{x:b.r+GAP,y:bcy}},{{x:b.r,y:bcy}}
+      ],e1,e2));
+      loopCandidates.sort(function(x,y){{return x.p-y.p||x.l-y.l;}});
+      return loopCandidates[0];
     }}
     // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
     var below=bcy>acy, sp={{x:acx,y:below?a.b:a.y}}, tp={{x:bcx,y:below?b.y:b.b}}, tg={{x:tp.x,y:tp.y+(below?-GAP:GAP)}};
@@ -2260,14 +2479,21 @@ function draw(){{
     d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
       +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
-    if(ed.label) labelJobs.push({{ed:ed,rt:rt,color:C[t]}});
+    if(ed.label) labelJobs.push({{ed:ed,rt:rt,color:C[t],sourceBox:a,targetBox:b}});
   }});
   svg.innerHTML=d;
+
+  // 보완·분기선은 긴 우회 경로를 쓰므로 먼저 라벨 자리를 확보한다.
+  // 단순 순차선은 남은 가까운 경로 후보를 사용해 분기 라벨의 소속이
+  // 흐려지지 않게 한다. 최신 엔진의 안정 정렬로 원래 상대순서는 유지된다.
+  labelJobs.sort(function(a,b){{
+    return (a.ed.type==='sequence'?1:0)-(b.ed.type==='sequence'?1:0);
+  }});
 
   /* 라벨은 경로와 별도 2차 배치한다. 실제 글자 폭을 잰 뒤 카드·화살촉·
      다른 라벨과 겹치지 않는 후보를 고르므로 세로선 중점에 긴 문구를
      얹어 카드 뒤로 잘리던 문제를 막는다. */
-  var NS='http://www.w3.org/2000/svg', labelBoxes=[];
+  var NS='http://www.w3.org/2000/svg', labelBoxes=[],leaderSegments=[];
   var arrowBoxes=labelJobs.map(function(job){{
     var pts=uniq(job.rt.pts),p=pts[pts.length-1];
     return {{x:p.x-11,y:p.y-11,r:p.x+11,b:p.y+11}};
@@ -2277,13 +2503,10 @@ function draw(){{
     return Math.max(0,Math.min(a.r,b.r)-Math.max(a.x,b.x))*
            Math.max(0,Math.min(a.b,b.b)-Math.max(a.y,b.y));
   }}
-  function labelCandidates(rt,w,h){{
+  function labelCandidates(rt,w,h,sourceBox,targetBox){{
     var pts=uniq(rt.pts),segs=[],fractions=[.5,.33,.67,.2,.8];
-    // 인접 카드 사이의 거터가 라벨보다 좁을 수 있다. 짧은 두 후보만 두면
-    // 모든 후보가 카드와 겹쳐도 그중 덜 나쁜 위치를 택하게 된다. 카드 한
-    // 줄을 완전히 벗어날 수 있는 거리까지 후보를 넓혀 실제 무충돌 위치를
-    // 우선 선택한다.
-    var sideOffsets=[7,19,31,43,55,71];
+    // 인접 카드 사이 거터가 좁은 경우에도 카드 한 줄 밖까지 탐색한다.
+    var sideOffsets=[3,7,19,31,43,55,71,87,103,119,135,151,167,183,199,215];
     for(var i=0;i<pts.length-1;i++){{
       var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<.5;
       var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
@@ -2291,20 +2514,61 @@ function draw(){{
     }}
     segs.sort(function(a,b){{return (b.horizontal-a.horizontal)||b.length-a.length;}});
     var out=[];
-    if(rt.label) out.push({{x:rt.label.x,y:rt.label.y,offset:0}});
+    if(rt.label) out.push({{x:rt.label.x,y:rt.label.y,offset:0,anchor:rt.label}});
+    // 같은 행·열의 카드 사이 라벨은 카드 사이의 실제 연결선에 먼저 붙인다.
+    // 그 자리가 막힐 때만 카드 바깥 후보를 써서 라벨이 고아처럼 멀어지지
+    // 않으면서도 카드나 단계 제목 뒤에 가려지지 않게 한다.
+    if(sourceBox&&targetBox){{
+      var sx=sourceBox.x+sourceBox.w/2,sy=sourceBox.y+sourceBox.h/2;
+      var tx=targetBox.x+targetBox.w/2,ty=targetBox.y+targetBox.h/2;
+      if(Math.abs(sy-ty)<=Math.max(sourceBox.h,targetBox.h)*.45){{
+        var left=sx<=tx?sourceBox:targetBox,right=sx<=tx?targetBox:sourceBox;
+        var gapX=(left.r+right.x)/2;
+        var attachY=(sy+ty)/2;
+        for(var hi=0;hi<segs.length;hi++){{
+          var hs=segs[hi];
+          if(hs.horizontal&&gapX>=Math.min(hs.a.x,hs.b.x)-.5&&gapX<=Math.max(hs.a.x,hs.b.x)+.5){{
+            attachY=hs.a.y; break;
+          }}
+        }}
+        var hAnchor={{x:gapX,y:attachY}};
+        out.push({{x:gapX,y:Math.min(sourceBox.y,targetBox.y)-h/2-5,offset:4,anchor:hAnchor}});
+        out.push({{x:gapX,y:Math.max(sourceBox.b,targetBox.b)+h/2+5,offset:8,anchor:hAnchor}});
+      }}
+      if(Math.abs(sx-tx)<=Math.max(sourceBox.w,targetBox.w)*.45){{
+        var top=sy<=ty?sourceBox:targetBox,bottom=sy<=ty?targetBox:sourceBox;
+        var gapY=(top.b+bottom.y)/2;
+        var attachX=(sx+tx)/2;
+        for(var vi=0;vi<segs.length;vi++){{
+          var vs=segs[vi];
+          if(!vs.horizontal&&gapY>=Math.min(vs.a.y,vs.b.y)-.5&&gapY<=Math.max(vs.a.y,vs.b.y)+.5){{
+            attachX=vs.a.x; break;
+          }}
+        }}
+        var vAnchor={{x:attachX,y:gapY}};
+        out.push({{x:attachX+w/2+7,y:gapY,offset:2,anchor:vAnchor}});
+        out.push({{x:attachX-w/2-7,y:gapY,offset:3,anchor:vAnchor}});
+        out.push({{x:Math.min(sourceBox.x,targetBox.x)-w/2-7,y:gapY,offset:6,anchor:vAnchor}});
+        out.push({{x:Math.max(sourceBox.r,targetBox.r)+w/2+7,y:gapY,offset:10,anchor:vAnchor}});
+      }}
+    }}
     segs.forEach(function(seg){{
       fractions.forEach(function(f){{
         var x=seg.a.x+(seg.b.x-seg.a.x)*f,y=seg.a.y+(seg.b.y-seg.a.y)*f;
+        // 빈 선 구간에는 흰 배경 라벨을 선 위에 직접 놓는다. 라벨과 선의
+        // 소속관계가 가장 분명하고, 충돌 시에만 아래의 측면 후보로 밀린다.
+        var anchor={{x:x,y:y}};
+        out.push({{x:x,y:y,offset:0,anchor:anchor}});
         if(seg.horizontal){{
           sideOffsets.forEach(function(gap){{
             [-(h/2+gap),h/2+gap].forEach(function(o){{
-              out.push({{x:x,y:y+o,offset:Math.abs(o)}});
+              out.push({{x:x,y:y+o,offset:Math.abs(o),anchor:anchor}});
             }});
           }});
         }}else{{
           sideOffsets.forEach(function(gap){{
             [-(w/2+gap),w/2+gap].forEach(function(o){{
-              out.push({{x:x+o,y:y,offset:Math.abs(o)}});
+              out.push({{x:x+o,y:y,offset:Math.abs(o),anchor:anchor}});
             }});
           }});
         }}
@@ -2314,6 +2578,30 @@ function draw(){{
   }}
   function candidateBox(p,w,h){{
     return {{x:p.x-w/2,y:p.y-h/2,r:p.x+w/2,b:p.y+h/2,w:w,h:h}};
+  }}
+  function leaderSegment(box,p){{
+    var anchor=p.anchor;
+    if(!anchor)return null;
+    var x2=Math.max(box.x,Math.min(anchor.x,box.r));
+    var y2=Math.max(box.y,Math.min(anchor.y,box.b));
+    if(Math.hypot(anchor.x-x2,anchor.y-y2)<=24)return null;
+    return {{x1:anchor.x,y1:anchor.y,x2:x2,y2:y2}};
+  }}
+  function segmentHitsBox(seg,o){{
+    // 테두리를 따라가는 선은 허용하되 카드·머리글·행위주체 셀 내부를
+    // 통과하는 리더선은 source/target 구분 없이 후보 점수에 반영한다.
+    var M=1.5,L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+    if(L>=R||T>=B)return false;
+    var dx=seg.x2-seg.x1,dy=seg.y2-seg.y1,t0=0,t1=1;
+    function clip(p,q){{
+      if(Math.abs(p)<.000001)return q>=0;
+      var t=q/p;
+      if(p<0){{if(t>t1)return false;if(t>t0)t0=t;}}
+      else {{if(t<t0)return false;if(t<t1)t1=t;}}
+      return true;
+    }}
+    return clip(-dx,seg.x1-L)&&clip(dx,R-seg.x1)
+      &&clip(-dy,seg.y1-T)&&clip(dy,B-seg.y1)&&t1>=t0;
   }}
   function labelPenalty(box,p){{
     var score=p.offset||0;
@@ -2325,12 +2613,28 @@ function draw(){{
       var padded={{x:o.x-6,y:o.y-6,r:o.r+6,b:o.b+6}};
       if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
     }});
+    TB.forEach(function(o){{
+      var padded={{x:o.x-4,y:o.y-4,r:o.r+4,b:o.b+4}};
+      if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
+    }});
     arrowBoxes.forEach(function(o){{if(overlaps(box,o))score+=250000+overlapArea(box,o)*100;}});
     labelBoxes.forEach(function(o){{if(overlaps(box,o))score+=750000+overlapArea(box,o)*1000;}});
+    var leader=leaderSegment(box,p);
+    if(leader){{
+      // 일반 거리 점수와 화살촉 패널티보다 크게 두되 라벨·카드 겹침보다는
+      // 낮게 두어, 카드 내부를 가로지르는 리더선보다 빈 거터를 우선한다.
+      OB.forEach(function(o){{if(segmentHitsBox(leader,o))score+=500000;}});
+      TB.forEach(function(o){{if(segmentHitsBox(leader,o))score+=500000;}});
+      labelBoxes.forEach(function(o){{if(segmentHitsBox(leader,o))score+=500000;}});
+    }}
+    // 현재 라벨도 앞서 확정된 리더선을 덮지 않게 하여 어느 연결선의
+    // 설명인지 시각적으로 뒤바뀌는 일을 막는다.
+    leaderSegments.forEach(function(seg){{if(segmentHitsBox(seg,box))score+=500000;}});
     return score;
   }}
   labelJobs.forEach(function(job){{
     var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
+    group.setAttribute('data-edge-id',job.ed.id);
     var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
     bg.setAttribute('rx','4'); bg.setAttribute('fill',BG); bg.setAttribute('fill-opacity','.96');
     var txt=document.createElementNS(NS,'text'); txt.setAttribute('class','edge-label');
@@ -2341,14 +2645,26 @@ function draw(){{
     var title=document.createElementNS(NS,'title'); title.textContent=txt.textContent;
     group.appendChild(bg); group.appendChild(txt); group.appendChild(title); svg.appendChild(group);
     var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+10;
-    var h=Math.max(measured.height,12)+6,candidates=labelCandidates(job.rt,w,h);
+    var h=Math.max(measured.height,12)+6;
+    var candidates=labelCandidates(job.rt,w,h,job.sourceBox,job.targetBox);
     var best=null,bestScore=Infinity;
     candidates.forEach(function(p){{
       var b=candidateBox(p,w,h),s=labelPenalty(b,p);
       if(s<bestScore){{best={{p:p,box:b}};bestScore=s;}}
     }});
     if(!best){{
-      var first=uniq(job.rt.pts)[0]; best={{p:first,box:candidateBox(first,w,h)}};
+      var first=uniq(job.rt.pts)[0]; best={{p:{{x:first.x,y:first.y,anchor:first}},box:candidateBox(first,w,h)}};
+    }}
+    var lead=leaderSegment(best.box,best.p);
+    if(lead){{
+      var leader=document.createElementNS(NS,'line');
+      leader.setAttribute('class','edge-label-leader');
+      leader.setAttribute('x1',rnd(lead.x1)); leader.setAttribute('y1',rnd(lead.y1));
+      leader.setAttribute('x2',rnd(lead.x2)); leader.setAttribute('y2',rnd(lead.y2));
+      leader.setAttribute('stroke',job.color); leader.setAttribute('stroke-width','1');
+      leader.setAttribute('stroke-dasharray','2 2'); leader.setAttribute('opacity','.55');
+      group.insertBefore(leader,bg);
+      leaderSegments.push(lead);
     }}
     labelBoxes.push(best.box);
     bg.setAttribute('x',rnd(best.box.x)); bg.setAttribute('y',rnd(best.box.y));

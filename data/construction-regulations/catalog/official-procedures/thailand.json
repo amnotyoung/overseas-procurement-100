@@ -40,7 +40,7 @@
       "officialProcedure": {
         "name": "태국 도시계획·부지규제 — 방콕 건축허가 내 계획심사 사례",
         "coverage": "official-source-linked",
-        "scope": "방콕의 B.1 허가절차 중 토지·배치·도시계획 적합성 판단을 분리한 흐름이다. 실제 FAR·OSR·높이·이격·주차는 대상지의 유효 comprehensive plan과 지방조례로 교체한다.",
+        "scope": "방콕의 건축허가 신청서(B.1) 절차 중 토지·배치·도시계획 적합성 판단을 분리한 흐름이다. 실제 용적률(FAR)·공지율(OSR)·높이·이격·주차는 대상지의 유효 종합계획(comprehensive plan)과 지방조례로 교체한다.",
         "stages": [
           "G0 필지·계획도서",
           "G1 완비접수",
@@ -69,12 +69,12 @@
           {
             "lane": "건축주·신청인",
             "stage": 1,
-            "label": "관할 Building Control Office·구청 접수",
+            "label": "관할 건축통제사무소(Building Control Office)·구청 접수",
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
             "action": "신청인이 방콕 Building Control Office, 관할 50개 구청 토목부서 또는 BMA OSS에 필지·건축 신청도서를 제출한다.",
-            "output": "B.1 신청접수·온라인 신청번호",
+            "output": "건축허가 신청접수·온라인 신청번호",
             "authorityIds": ["local-official"],
             "refs": [
               {
@@ -187,14 +187,14 @@
     "permit-environment": {
       "verificationScope": "건축허가는 지방정부, IEE·EIA·EHIA는 ONEP 체계와 사업승인기관이 처리한다. 건축허가 단계는 방콕시 B.1 공식 서비스를 대표사례로 하며 비방콕 지역은 관할 지방정부 절차로 교체한다.",
       "officialProcedure": {
-        "name": "태국 건축허가·환경심사 — 방콕·ONEP 사례",
+        "name": "태국 건축허가·환경심사 — 방콕·국가환경정책계획국(ONEP) 사례",
         "coverage": "official-source-linked",
-        "scope": "Building Control Act 제21·25·27조의 방콕 허가절차와 ONEP IEE·EIA·EHIA 심사를 병렬로 표시한다. 환경보고서 대상·결정기관은 최신 사업유형 고시와 규모문턱으로 확정한다.",
+        "scope": "건축물관리법(Building Control Act) 제21·25·27조의 방콕 허가절차와 국가환경정책계획국의 초기환경검토(IEE)·환경영향평가(EIA)·환경건강영향평가(EHIA) 심사를 병렬로 표시한다. 환경보고서 대상·결정기관은 최신 사업유형 고시와 규모문턱으로 확정한다.",
         "stages": ["G4 환경분류·제출", "G5 환경심사·결정", "G6 건축허가 접수", "G7 기술심사·결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0,
-            "label": "IEE·EIA·EHIA 대상유형 판정", "emphasis": "key",
+            "label": "초기환경검토·환경영향평가·환경건강영향평가 대상유형 판정", "emphasis": "key",
             "kind": "official-guidance", "basisScope": "node",
             "action": "사업유형·규모·입지를 최신 환경평가 대상 고시에 대조해 IEE, EIA, EHIA 또는 비대상 경로와 결정기관을 정한다.",
             "output": "환경평가 유형·결정기관·보고서 경로",
@@ -206,13 +206,13 @@
             "label": "환경보고서 작성·전자제출", "emphasis": "normal",
             "kind": "official-guidance", "basisScope": "node",
             "action": "등록 환경전문가가 요구 형식의 보고서와 대안·저감·공중참여 자료를 작성하고 ONEP 전자시스템 또는 관할기관에 제출한다.",
-            "output": "IEE·EIA·EHIA 보고서·접수번호",
+            "output": "환경평가 보고서·접수번호",
             "authorityIds": ["onep-eia"],
             "refs": [{"source": "ONEP 환경보고서 제출", "instrumentId": "THA-ONEP-EIA", "provisions": ["Smart EIA Plus report submission and status workflow"]}]
           },
           {
             "lane": "환경·소방·검사기관", "stage": 1,
-            "label": "ONEP·전문위원회 완비성·기술심사", "emphasis": "bottleneck",
+            "label": "국가환경정책계획국·전문위원회 완비성·기술심사", "emphasis": "bottleneck",
             "kind": "official-guidance", "basisScope": "node",
             "action": "ONEP와 권한 있는 전문가위원회가 보고서 완비성·영향·저감대책과 필요한 공중참여를 심사하고 추가정보·수정을 요구할 수 있다.",
             "output": "전문심사의견·추가정보 요구·결정안",
@@ -231,10 +231,10 @@
           },
           {
             "lane": "건축주·신청인", "stage": 2,
-            "label": "B.1 건축·변경·철거·이전 허가신청", "emphasis": "key",
+            "label": "건축·변경·철거·이전 허가신청", "emphasis": "key",
             "kind": "official-guidance", "basisScope": "node",
             "action": "신청인이 B.1 신청서, 토지·신원자료, 위치·배치·건축도면 5세트와 해당 계산·전문면허 서류를 관할기관 또는 BMA OSS에 제출한다.",
-            "output": "B.1 건축허가 신청·접수기록",
+            "output": "건축허가 신청·접수기록",
             "authorityIds": ["local-official"],
             "refs": [{"source": "방콕시 B.1 허가서비스", "instrumentId": "THA-BMA-PERMIT", "provisions": ["Application form B.1; five drawing sets; calculations; service channels"]}]
           },
@@ -285,7 +285,7 @@
       "officialProcedure": {
         "name": "태국 기술검사·공사완료·사용증명 — 방콕 사례",
         "coverage": "official-source-linked",
-        "scope": "허가도서 시공과 지방공무원 검사, 제32조 사용통제 건축물의 완료증명 흐름이다. 모든 건축물에 동일한 완료증명이 필요한 것으로 일반화하지 않는다.",
+        "scope": "허가도서 시공과 지방공무원 검사, 제32조 사용통제 건축물의 공사완료 신청서(TS.1)·공사완료 증명서(TS.2) 흐름이다. 모든 건축물에 동일한 완료증명이 필요한 것으로 일반화하지 않는다.",
         "stages": ["G8 허가시공", "G9 검사·완료신청", "G10 적합성 심사", "G11 완료증명"],
         "steps": [
           {
@@ -308,10 +308,10 @@
           },
           {
             "lane": "건축주·신청인", "stage": 1,
-            "label": "사용통제 건축물 분류·TS.1 완료신청", "emphasis": "bottleneck",
+            "label": "사용통제 건축물 분류·공사완료 신청", "emphasis": "bottleneck",
             "kind": "official-guidance", "basisScope": "node",
             "action": "공사완료 후 건축주가 제32조 사용통제 대상 여부를 확인하고 해당하면 TS.1 신청서와 토지·허가·완료도서를 관할기관 또는 BMA OSS에 제출한다.",
-            "output": "TS.1 공사완료 증명 신청·접수기록",
+            "output": "공사완료 증명 신청·접수기록",
             "authorityIds": ["local-official"],
             "refs": [{"source": "방콕시 사용통제 건축물 완료증명", "instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["TS.1 application for construction, alteration or relocation certificate of controlled-use building"]}]
           },
@@ -335,19 +335,19 @@
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 3,
-            "label": "TS.2 공사완료 증명 발급·거부", "emphasis": "bottleneck",
+            "label": "공사완료 증명 발급·거부", "emphasis": "bottleneck",
             "kind": "official-guidance", "basisScope": "node",
             "action": "관할 지방공무원이 사용통제 건축물의 적합성을 확인해 TS.2 공사완료 증명을 발급하거나 시정·거부를 공식 통지한다.",
-            "output": "TS.2 공사완료 증명·조건 또는 거부통지",
+            "output": "공사완료 증명·조건 또는 거부통지",
             "authorityIds": ["local-official"],
             "refs": [{"source": "방콕시 공사완료 증명 결정", "instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["TS.1/TS.2 construction certificate service for controlled-use buildings"]}],
-            "permitGate": {"key": "completion-certificate", "gate": "지방공무원의 사용통제 건축물 완료증명 결정", "decision": "관할 지방공무원이 완공건축물의 사용통제 적합성과 합법적 사용개시 여부를 결정한다.", "output": "TS.2 완료증명·조건 또는 거부통지", "dependsOn": []}
+            "permitGate": {"key": "completion-certificate", "gate": "지방공무원의 사용통제 건축물 완료증명 결정", "decision": "관할 지방공무원이 완공건축물의 사용통제 적합성과 합법적 사용개시 여부를 결정한다.", "output": "완료증명·조건 또는 거부통지", "dependsOn": []}
           }
         ],
         "edges": [[0, 1, "sequence", "허가시공"], [1, 2, "sequence", "공사완료"], [2, 3, "sequence", "TS.1 접수"], [3, 4, "sequence", "완비확인"], [4, 5, "sequence", "검사적합"], [4, 2, "loop", "준공도서·현장 시정 시"]],
         "decisionBranches": [
-          {"state": "success", "label": "TS.2 완료증명 발급", "action": "증명서의 용도·사용조건에 따라 개장·인계"},
-          {"state": "rework", "label": "완료도서·현장시정", "action": "지적사항을 시정하고 TS.1 보완·재검사"},
+          {"state": "success", "label": "완료증명 발급", "action": "증명서의 용도·사용조건에 따라 개장·인계"},
+          {"state": "rework", "label": "완료도서·현장시정", "action": "지적사항을 시정하고 완료신청 보완·재검사"},
           {"state": "reject", "label": "완료증명 거부", "action": "거부사유 해소 전 사용하지 않고 공식 이의·재신청 경로 진행"}
         ]
       }

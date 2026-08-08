@@ -39,7 +39,7 @@
       "S4 계획심사·보완",
       "S5 개발결정",
       "P1 개발결정·환경분류",
-      "P2 EIA·기술도서",
+      "P2 환경영향평가·기술도서",
       "P3 환경·관계기관 심사",
       "P4 건축접수",
       "P5 건축심사·보완",
@@ -86,14 +86,14 @@
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
         "stage": "S1 권원·계획구역",
-        "label": "Town Planning Area·scheme 확정",
+        "label": "도시계획구역·도시계획안 확정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "관할기관이 대상지가 고시 town planning area인지와 적용 scheme·지방 건축규정·subdivision 조건을 특정한다.",
         "action": "관할기관이 대상지가 고시 town planning area인지와 적용 scheme·지방 건축규정·subdivision 조건을 특정한다.",
         "outputs": [
-          "적용 계획구역·scheme·관할 확정"
+          "적용 계획구역·도시계획안·관할 확정"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -123,7 +123,7 @@
         "note": "책임전문가가 예정 용도·배치·도로·배수·토공·위험·기반시설 자료를 적용 scheme과 대조해 개발신청 도서를 작성한다.",
         "action": "책임전문가가 예정 용도·배치·도로·배수·토공·위험·기반시설 자료를 적용 scheme과 대조해 개발신청 도서를 작성한다.",
         "outputs": [
-          "Development Permission 신청도서"
+          "개발허가 신청도서"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -146,7 +146,7 @@
         "id": "B04",
         "lane": "건축주·신청인",
         "stage": "S3 공식접수",
-        "label": "City/Town Council 개발신청 접수",
+        "label": "시·타운 의회 개발신청 접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -176,7 +176,7 @@
         "id": "B05",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 계획심사·보완",
-        "label": "완비성·scheme·기술심사",
+        "label": "완비성·도시계획안·기술심사",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -273,14 +273,14 @@
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "S5 개발결정",
-        "label": "Development Permission 공식결정",
+        "label": "개발허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "관할 City/Town Council과 DTCP가 개발제안을 승인·조건부 승인 또는 불허하고 결정문과 승인도서를 교부한다.",
         "action": "관할 City/Town Council과 DTCP가 개발제안을 승인·조건부 승인 또는 불허하고 결정문과 승인도서를 교부한다.",
         "outputs": [
-          "Development Permission·조건 또는 불허통지"
+          "개발허가·조건 또는 불허통지"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -313,14 +313,14 @@
         "id": "B09",
         "lane": "도시계획·건축 허가기관",
         "stage": "P1 개발결정·환경분류",
-        "label": "Development Permission 선행결정",
+        "label": "개발허가 선행결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "관할 City/Town Council과 DTCP가 대상지 개발승인과 조건을 먼저 공식 확정한다.",
         "action": "관할 City/Town Council과 DTCP가 대상지 개발승인과 조건을 먼저 공식 확정한다.",
         "outputs": [
-          "Development Permission·승인조건 또는 불허"
+          "개발허가·승인조건 또는 불허"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -346,14 +346,14 @@
         "id": "B10",
         "lane": "건축주·신청인",
         "stage": "P1 개발결정·환경분류",
-        "label": "환경제안서·스크리닝 신청",
+        "label": "환경제안서·선별(screening) 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "사업자가 제안서와 입지·규모·활동자료를 환경국에 제출해 EIA 스크리닝을 신청한다.",
         "action": "사업자가 제안서와 입지·규모·활동자료를 환경국에 제출해 EIA 스크리닝을 신청한다.",
         "outputs": [
-          "환경 스크리닝 접수"
+          "환경 선별 접수"
         ],
         "authorityIds": [
           "doe"
@@ -382,15 +382,15 @@
       {
         "id": "B11",
         "lane": "환경·소방·검사기관",
-        "stage": "P2 EIA·기술도서",
-        "label": "EIA 대상·처리기관 공식분류",
+        "stage": "P2 환경영향평가·기술도서",
+        "label": "환경영향평가 대상·처리기관 공식분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "환경국·EIA 행정관이 Part 1·2·3 분류, EIA 필요 여부와 처리기관·후속 환경도구를 결정한다.",
         "action": "환경국·EIA 행정관이 Part 1·2·3 분류, EIA 필요 여부와 처리기관·후속 환경도구를 결정한다.",
         "outputs": [
-          "EIA 비대상·분류·처리경로"
+          "환경영향평가 비대상·분류·처리경로"
         ],
         "authorityIds": [
           "doe"
@@ -412,15 +412,15 @@
       {
         "id": "B12",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P2 EIA·기술도서",
-        "label": "scoping·TOR·EIA 보고서 작성",
+        "stage": "P2 환경영향평가·기술도서",
+        "label": "범위설정(scoping)·평가범위서(TOR)·환경영향평가 보고서 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "EIA 대상이면 등록 환경전문가가 scoping·승인 TOR에 따라 영향조사·완화·환경관리계획과 보고서를 작성한다.",
         "action": "EIA 대상이면 등록 환경전문가가 scoping·승인 TOR에 따라 영향조사·완화·환경관리계획과 보고서를 작성한다.",
         "outputs": [
-          "TOR·EIA 보고서·환경관리계획"
+          "평가범위서·환경영향평가 보고서·환경관리계획"
         ],
         "authorityIds": [
           "doe"
@@ -517,7 +517,7 @@
         "note": "환경전문가가 추가정보·수정본을 제출해 환경 기술심사를 다시 받는다.",
         "action": "환경전문가가 추가정보·수정본을 제출해 환경 기술심사를 다시 받는다.",
         "outputs": [
-          "보완 EIA·답변서"
+          "보완 환경영향평가·답변서"
         ],
         "authorityIds": [
           "doe"
@@ -540,7 +540,7 @@
         "id": "B16",
         "lane": "환경·소방·검사기관",
         "stage": "P3 환경·관계기관 심사",
-        "label": "EIA 비대상·승인·불승인 결정",
+        "label": "환경영향평가 비대상·승인·불승인 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -579,15 +579,15 @@
       {
         "id": "B17",
         "lane": "환경·소방·검사기관",
-        "stage": "P2 EIA·기술도서",
-        "label": "WAF 연결·engineering plans 승인",
+        "stage": "P2 환경영향평가·기술도서",
+        "label": "수자원공사 연결·공학도서 승인",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "해당 사업이 WAF 상하수 연결을 신청·검사받고 등록기술자가 도로·배수·전력·가로등·소화전 engineering plans를 관계기관에 제출해 승인받는다.",
         "action": "해당 사업이 WAF 상하수 연결을 신청·검사받고 등록기술자가 도로·배수·전력·가로등·소화전 engineering plans를 관계기관에 제출해 승인받는다.",
         "outputs": [
-          "WAF 연결·engineering plans 승인"
+          "수자원공사 연결·공학도서 승인"
         ],
         "authorityIds": [
           "waf",
@@ -611,14 +611,14 @@
         "id": "B18",
         "lane": "환경·소방·검사기관",
         "stage": "P3 환경·관계기관 심사",
-        "label": "NFA 화재안전·OHS 작업장 동의",
+        "label": "소방청 화재안전·산업안전보건 작업장 동의",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "NFA가 구조적 화재안전도서를 심사하고, 작업장 용도이면 OHS가 NFA 승인도서·구조확인서를 병행 심사한다.",
         "action": "NFA가 구조적 화재안전도서를 심사하고, 작업장 용도이면 OHS가 NFA 승인도서·구조확인서를 병행 심사한다.",
         "outputs": [
-          "NFA Structural Fire Safety Approval·OHS Consent"
+          "소방청 구조화재안전승인·산업안전보건 동의"
         ],
         "authorityIds": [
           "nfa",
@@ -656,14 +656,14 @@
         "id": "B19",
         "lane": "현지 설계·시공 전문가",
         "stage": "P4 건축접수",
-        "label": "최종 Building Permit 도서 통합",
+        "label": "최종 건축허가 도서 통합",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "책임전문가가 개발·환경·WAF·engineering·NFA·OHS 결정과 최종 건축·구조·설비도서를 하나의 허가 expediente로 통합한다.",
         "action": "책임전문가가 개발·환경·WAF·engineering·NFA·OHS 결정과 최종 건축·구조·설비도서를 하나의 허가 expediente로 통합한다.",
         "outputs": [
-          "완비 Building Permit 신청도서"
+          "완비 건축허가 신청도서"
         ],
         "authorityIds": [
           "dtcp-local-authority",
@@ -690,14 +690,14 @@
         "id": "B20",
         "lane": "건축주·신청인",
         "stage": "P4 건축접수",
-        "label": "City/Town Council 건축허가 접수",
+        "label": "시·타운 의회 건축허가 접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "소유자와 책임전문가가 완비도서를 관할 City/Town Council에 제출해 Building Permit 심사를 개시한다.",
         "action": "소유자와 책임전문가가 완비도서를 관할 City/Town Council에 제출해 Building Permit 심사를 개시한다.",
         "outputs": [
-          "Building Permit 접수·사건기록"
+          "건축허가 접수·사건기록"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -817,14 +817,14 @@
         "id": "B24",
         "lane": "도시계획·건축 허가기관",
         "stage": "P6 허가결정",
-        "label": "Building Permit 공식결정",
+        "label": "건축허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "관할 City/Town Council이 최종도서와 관계기관 승인을 확인해 Building Permit·조건을 발급하거나 불허한다.",
         "action": "관할 City/Town Council이 최종도서와 관계기관 승인을 확인해 Building Permit·조건을 발급하거나 불허한다.",
         "outputs": [
-          "Building Permit·승인도서·조건 또는 불허"
+          "건축허가·승인도서·조건 또는 불허"
         ],
         "authorityIds": [
           "dtcp-local-authority"
@@ -1303,7 +1303,7 @@
         "source": "B09",
         "target": "B10",
         "type": "message",
-        "label": "EIA 스크리닝"
+        "label": "환경영향평가 선별"
       },
       {
         "id": "BS05-02",
@@ -1324,7 +1324,7 @@
         "source": "B11",
         "target": "B12",
         "type": "sequence",
-        "label": "EIA 대상"
+        "label": "환경영향평가 대상"
       },
       {
         "id": "BS05-05",
@@ -1338,7 +1338,7 @@
         "source": "B12",
         "target": "B13",
         "type": "sequence",
-        "label": "EIA 보고서"
+        "label": "환경영향평가 보고서"
       },
       {
         "id": "BS05-07",
@@ -1380,7 +1380,7 @@
         "source": "B18",
         "target": "B19",
         "type": "sequence",
-        "label": "NFA·OHS"
+        "label": "소방청·산업안전보건"
       },
       {
         "id": "BS05-13",
@@ -1550,12 +1550,12 @@
       "id": "site-urban",
       "slug": "fiji-site-urban-construction-regulations",
       "priority": 4,
-      "name": "피지 토지권원·Town Planning·Development Permission 절차",
+      "name": "피지 토지권원·도시계획(Town Planning)·개발허가(Development Permission) 절차",
       "oneLiner": "토지권원과 DTCP 개발허가·town planning·subdivision 적합성으로 용도·배치·도로·배수조건을 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "Town Planning Act 현행본과 BPAS Stage 1을 대조해 토지권원·적용 scheme 확인부터 Development Permission 결정까지의 실제 절차를 구성했다. 필지별 수치는 해당 town planning area·scheme·지방규정에서 확정한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "대상지의 토지권원과 고시 town planning area·scheme을 확정하고 관할 City/Town Council·DTCP에 Development Permission을 신청해 공식 개발결정을 받는 절차다.",
+      "procedureScope": "대상지의 토지권원과 고시 도시계획구역(town planning area)·도시계획안(scheme)을 확정하고 관할 시·타운 의회(City/Town Council)·도시·지역계획국(DTCP)에 개발허가를 신청해 공식 개발결정을 받는 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1647,7 +1647,7 @@
         {
           "state": "success",
           "label": "개발허가 발급",
-          "action": "승인조건을 BPAS 건축도면·환경·관계기관 승인에 반영한다."
+          "action": "승인조건을 건축허가신청시스템(BPAS) 건축도면·환경·관계기관 승인에 반영한다."
         },
         {
           "state": "rework",
@@ -1665,12 +1665,12 @@
       "id": "permit-environment",
       "slug": "fiji-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "피지 BPAS 개발·EIA·관계기관·Building Permit 절차",
+      "name": "피지 건축허가신청시스템(BPAS) 개발·환경영향평가(EIA)·관계기관·건축허가(Building Permit) 절차",
       "oneLiner": "개발허가·건축도면 승인과 EIA screening·처리를 BPAS에서 병행하고 소방·OHS·유틸리티 승인을 묶는다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "피지 정부 BPAS Stage 2의 개발승인·환경·유틸리티·엔지니어링·NFA·OHS·현장 건축승인을 실제 순서로 분해하고, EIA와 건축심사의 보완회귀를 명시했다. Suva 사례기관은 실제 사업지 City/Town Council로 치환한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Development Permission 이후 EIA 스크리닝·평가와 WAF·engineering·NFA·OHS 동의를 통합해 관할 City/Town Council의 Building Permit 결정을 받는 BPAS 법정·공식 경로다.",
+      "procedureScope": "개발허가(Development Permission) 이후 환경영향평가 선별·평가와 수자원공사(WAF)·공학도서(engineering plans)·소방청(NFA)·산업안전보건(OHS) 동의를 통합해 관할 시·타운 의회(City/Town Council)의 건축허가 결정을 받는 건축허가신청시스템 법정·공식 경로다.",
       "nodeIds": [
         "B09",
         "B10",
@@ -1712,7 +1712,7 @@
           "source": "B09",
           "target": "B10",
           "type": "message",
-          "label": "EIA 스크리닝"
+          "label": "환경영향평가 선별"
         },
         {
           "id": "M05-E02",
@@ -1733,7 +1733,7 @@
           "source": "B11",
           "target": "B12",
           "type": "sequence",
-          "label": "EIA 대상"
+          "label": "환경영향평가 대상"
         },
         {
           "id": "M05-E05",
@@ -1747,7 +1747,7 @@
           "source": "B12",
           "target": "B13",
           "type": "sequence",
-          "label": "EIA 보고서"
+          "label": "환경영향평가 보고서"
         },
         {
           "id": "M05-E07",
@@ -1789,7 +1789,7 @@
           "source": "B18",
           "target": "B19",
           "type": "sequence",
-          "label": "NFA·OHS"
+          "label": "소방청·산업안전보건"
         },
         {
           "id": "M05-E13",
@@ -1844,7 +1844,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "Building Permit 발급",
+          "label": "건축허가 발급",
           "action": "환경·관계기관·건축허가 조건을 공사계약·착공요건에 반영한다."
         },
         {
@@ -1863,7 +1863,7 @@
       "id": "control-completion",
       "slug": "fiji-control-completion-construction-regulations",
       "priority": 6,
-      "name": "피지 공사검사·NFA 완공검사·Certificate of Occupancy",
+      "name": "피지 공사검사·NFA 완공검사·점유허가서(Certificate of Occupancy)",
       "oneLiner": "National Building Code, 단계검사·화재안전과 Certificate of Completion/Occupancy를 사용개시 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "Public Health (Building) Regulations의 공사검사·완료·점유 조항과 BPAS Stage 3 Certificate of Occupancy, NFA 완공 화재검사를 연결해 실제 완료절차를 구성했다.",
@@ -2320,21 +2320,21 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "관할기관 Development Permission 공식결정",
-      "decision": "관할 지방정부와 DTCP가 개발제안의 적용 scheme 적합성과 조건을 확정해 승인 또는 불허한다.",
+      "gate": "관할기관 개발허가 공식결정",
+      "decision": "관할 지방정부와 도시·지역계획국이 개발제안의 적용 도시계획안 적합성과 조건을 확정해 승인 또는 불허한다.",
       "dependsOn": [],
-      "output": "Development Permission·승인조건 또는 불허통지"
+      "output": "개발허가·승인조건 또는 불허통지"
     },
     {
       "order": 2,
-      "gate": "Development Permission 공식결정",
+      "gate": "개발허가 공식결정",
       "decision": "관할기관이 본 개발의 계획 적합성과 승인조건을 결정한다.",
       "dependsOn": [],
-      "output": "Development Permission 또는 불허통지"
+      "output": "개발허가 또는 불허통지"
     },
     {
       "order": 3,
-      "gate": "환경국·EIA 행정관 환경 공식결정",
+      "gate": "환경국·환경영향평가 행정관 환경 공식결정",
       "decision": "환경당국이 비대상, 승인·조건부 승인 또는 불승인을 확정한다.",
       "dependsOn": [
         2
@@ -2343,13 +2343,13 @@
     },
     {
       "order": 4,
-      "gate": "관할 지방정부 Building Permit 공식결정",
+      "gate": "관할 지방정부 건축허가 공식결정",
       "decision": "관할 지방정부가 완비도서와 관계기관 결정을 통합심사해 건축허가·조건 또는 불허를 확정한다.",
       "dependsOn": [
         2,
         3
       ],
-      "output": "Building Permit·승인도서·조건 또는 불허"
+      "output": "건축허가·승인도서·조건 또는 불허"
     },
     {
       "order": 5,
