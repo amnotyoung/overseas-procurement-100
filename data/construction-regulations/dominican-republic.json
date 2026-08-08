@@ -54,14 +54,14 @@
         "id": "B01",
         "lane": "건축주·신청인",
         "stage": "S1 권원·지적",
-        "label": "título·mensura·대리권 확정",
+        "label": "권원증서·지적측량·대리권 확정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
         "action": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
         "outputs": [
-          "권원·mensura·신청권한 자료"
+          "권원·지적측량·신청권한 자료"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -115,14 +115,14 @@
         "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 신청도서",
-        "label": "특별구역 사전 no-objection 확보",
+        "label": "특별구역 사전 이의없음확인(no-objection) 확보",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
         "action": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
         "outputs": [
-          "적용 특별구역 no-objection"
+          "적용 특별구역 이의없음확인"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -266,7 +266,7 @@
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "S5 용도인증 결정",
-        "label": "Certificación de Uso de Suelo 결정",
+        "label": "토지이용 인증서(Certificación de Uso de Suelo) 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -481,14 +481,14 @@
         "id": "B15",
         "lane": "도시계획·건축 허가기관",
         "stage": "P5 공식결정",
-        "label": "Licencia de Construcción 결정",
+        "label": "건축허가 결정",
         "emphasis": "key",
         "kind": "statutory",
         "basisScope": "node",
         "note": "MIVHED 권한자가 Licencia de Construcción을 발급하고 승인·봉인 도면이 포함된 완전한 expediente를 신청인에게 교부하거나 불승인한다.",
         "action": "MIVHED 권한자가 Licencia de Construcción을 발급하고 승인·봉인 도면이 포함된 완전한 expediente를 신청인에게 교부하거나 불승인한다.",
         "outputs": [
-          "건축 licence·승인봉인도면 또는 불승인"
+          "건축허가·승인봉인도면 또는 불승인"
         ],
         "authorityIds": [
           "dom-mivhed"
@@ -1096,7 +1096,7 @@
         "id": "B35",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 최종검사·인증",
-        "label": "Certificación Oficial de Inspección Final 결정",
+        "label": "공식 최종검사 인증 결정",
         "emphasis": "key",
         "kind": "statutory",
         "basisScope": "node",
@@ -1407,12 +1407,12 @@
       "id": "site-urban",
       "slug": "dominican-republic-site-urban-construction-regulations",
       "priority": 4,
-      "name": "도미니카공화국 필지·토지이용 결정 — Distrito Nacional 사례",
+      "name": "도미니카공화국 필지·토지이용 결정 — 국가구(Distrito Nacional) 사례",
       "oneLiner": "권원·mensura catastral과 관할 ayuntamiento의 용도인증·no-objection으로 필지별 개발조건을 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "전국 지방분권 체계 중 Distrito Nacional의 실제 Certificación de Uso de Suelo 절차를 공식 사례로 구성했다. 용도·밀도·높이·주차·수수료는 다른 ayuntamiento에 일반화하지 않는다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Distrito Nacional에서 título·mensura로 필지를 특정하고 ADN의 도시계획 심사를 거쳐 허용용도를 공식 인증받는 절차다. 다른 지방은 관할 ayuntamiento의 현행 조례·서비스를 적용한다.",
+      "procedureScope": "국가구에서 권원증서(título)·지적측량(mensura)으로 필지를 특정하고 국가구 시청(ADN)의 도시계획 심사를 거쳐 허용용도를 공식 인증받는 절차다. 다른 지방은 관할 시청(ayuntamiento)의 현행 조례·서비스를 적용한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1522,12 +1522,12 @@
       "id": "permit-environment",
       "slug": "dominican-republic-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "도미니카공화국 MIVHED 건축 licence·환경부 A-D 승인",
+      "name": "도미니카공화국 주택건축부(MIVHED) 건축허가·환경부 A-D 승인",
       "oneLiner": "시청 용도·no-objection, MIVHED 건축 licence와 환경부 A·B·C·D 승인을 순서대로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "MIVHED R-021의 도면접수·승인·licence 절차와 환경부의 2024 A-D 분류·현행 디지털 평가절차를 구성했다. 지방 사전승인과 특정 분야 관계기관 의견은 사업지·용도별로 적용한다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "MIVHED에 전문도서를 제출해 승인도면·Licencia de Construcción을 받는 경로와 환경부의 등록·사전분석·A-D 분류·연구·CTE 결정 경로를 병렬로 표시한다.",
+      "procedureScope": "주택건축부에 전문도서를 제출해 승인도면·건축허가(Licencia de Construcción)를 받는 경로와 환경부의 등록·사전분석·A-D 분류·연구·기술평가위원회(CTE) 결정 경로를 병렬로 표시한다.",
       "nodeIds": [
         "B09",
         "B10",
@@ -1679,7 +1679,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "건축 licence·환경승인 충족",
+          "label": "건축허가·환경승인 충족",
           "action": "승인도면과 모든 조건을 공사계약·착공조건에 반영한다."
         },
         {
@@ -1703,7 +1703,7 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "MIVHED R-004 조문의 공사책임·단계검사·최종검사 경로를 구성했다. 실제 검사 hold point와 habilitación 전문기관은 공사유형·규모별 R-004 적용판정과 MIVHED 배정에 따른다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "CODIA 등록 공사책임자·감리자를 지정하고 MIVHED의 공정별 공식검사와 최종검사를 거쳐 Certificación Oficial de Inspección Final을 받는 법정 절차다.",
+      "procedureScope": "도미니카 기술자·건축사·측량사협회(CODIA) 등록 공사책임자·감리자를 지정하고 주택건축부(MIVHED)의 공정별 공식검사와 최종검사를 거쳐 공식 최종검사 인증(Certificación Oficial de Inspección Final)을 받는 법정 절차다.",
       "nodeIds": [
         "B24",
         "B25",
@@ -2089,17 +2089,17 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "ADN 토지이용 공식결정",
-      "decision": "ADN이 필지에 허용되는 용도와 적용조건을 공식 인증하거나 부적합 처리한다.",
+      "gate": "국가구 시청 토지이용 공식결정",
+      "decision": "국가구 시청이 필지에 허용되는 용도와 적용조건을 공식 인증하거나 부적합 처리한다.",
       "dependsOn": [],
-      "output": "Certificación de Uso de Suelo 또는 부적합 통지"
+      "output": "토지이용 인증서 또는 부적합 통지"
     },
     {
       "order": 2,
-      "gate": "MIVHED Licencia de Construcción 공식결정",
-      "decision": "MIVHED가 기술규정 적합성과 발급요건을 확인해 건축 licence를 발급하거나 불승인한다.",
+      "gate": "주택건축부 건축허가 공식결정",
+      "decision": "주택건축부가 기술규정 적합성과 발급요건을 확인해 건축허가를 발급하거나 불승인한다.",
       "dependsOn": [],
-      "output": "Licencia de Construcción·승인도면 또는 불승인"
+      "output": "건축허가·승인도면 또는 불승인"
     },
     {
       "order": 3,
@@ -2110,10 +2110,10 @@
     },
     {
       "order": 4,
-      "gate": "MIVHED 공식 최종검사 인증결정",
-      "decision": "MIVHED가 완성공사의 승인도면·기술규정 적합성을 최종 확인해 인증을 발급하거나 미적합 처리한다.",
+      "gate": "주택건축부 공식 최종검사 인증결정",
+      "decision": "주택건축부가 완성공사의 승인도면·기술규정 적합성을 최종 확인해 인증을 발급하거나 미적합 처리한다.",
       "dependsOn": [],
-      "output": "Certificación Oficial de Inspección Final 또는 미적합 통지"
+      "output": "공식 최종검사 인증 또는 미적합 통지"
     }
   ],
   "siteOverlays": [

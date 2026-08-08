@@ -47,7 +47,7 @@
 
 데이터 구조와 확장 규칙은 [국가별 건축 법·제도 데이터 계약](docs/construction-regulations-data-contract.md)에 정리돼 있다. 국가 파일 하나를 추가하면 검증기와 생성기가 같은 형식의 전문가 브리프를 만든다.
 
-공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 해당 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 보여준다. 43개 catalog 국가는 `catalog/official-procedures/{country}.json`에 3축 전용 절차를 두고, 세네갈은 수기 조문대조 상세판을 유지한다. 전용 절차가 하나라도 없으면 배포 품질 게이트가 실패하므로 공통 예시 흐름은 공개될 수 없다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업별 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다.
+공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 해당 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 보여준다. 43개 catalog 국가는 `catalog/official-procedures/{country}.json`에 3축 전용 절차를 두고, 세네갈은 수기 조문대조 상세판을 유지한다. 전용 절차가 하나라도 없으면 배포 품질 게이트가 실패하므로 공통 예시 흐름은 공개될 수 없다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업별 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다. 독자용 절차 문구는 한국어 번역을 먼저 쓰고 원어·약어는 제도 페이지별 최초 1회만 괄호에 병기하며, 법령 정식명과 조문 인용은 원문을 보존한다.
 
 ## 원작
 
@@ -101,6 +101,8 @@ sources/koica-2026/
 │   ├── build_docs.py            문서 생성
 │   ├── validate_construction_regulations.py  건축 법·제도 검증
 │   ├── check_construction_procedure_coverage.py  44개국·132모델 절차·현행성 게이트
+│   ├── check_construction_procedure_structure.py 번역 외 구조변경 방지
+│   ├── check_construction_terminology.py 한국어 우선·원어 1회 표기 검사
 │   ├── build_construction_regulations.py     건축 법·제도 브리프 생성
 │   └── build_site.py            정적 사이트·국가별 배포 파일 생성
 ├── site/                        정적 사이트
@@ -125,6 +127,8 @@ python3 tools/build_site.py
 python3 tools/build_construction_baselines.py --check
 python3 tools/validate_construction_regulations.py
 python3 tools/check_construction_procedure_coverage.py
+python3 tools/check_construction_procedure_structure.py
+python3 tools/check_construction_terminology.py
 python3 tools/build_construction_regulations.py
 python3 tools/build_site.py
 npm run build:construction-boards

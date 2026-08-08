@@ -37,28 +37,28 @@
       "G1 토지·설계조건",
       "G2 조사·프로젝트",
       "G3 지방 승인·보완",
-      "G4 EIA·환경신청",
+      "G4 환경영향평가·환경신청",
       "G5 환경·설계전문심사",
       "G6 설계보완·착공허가",
       "G7 허가보완·재신청",
       "G8 허가통보·감독",
       "G9 시공·국가검사",
       "G10 준공위원회",
-      "G11 act 승인·등기"
+      "G11 인수증서 승인·등기"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "도시계획·건축 허가기관",
         "stage": "G0 계획·입지",
-        "label": "승인 general·detailed plan·건축규칙 대조",
+        "label": "승인 기본계획(general plan)·상세계획(detailed plan)·건축규칙 대조",
         "emphasis": "key",
         "kind": "statutory",
         "basisScope": "node",
         "note": "관할 건축기관이 대상지를 승인 general plan, detailed planning project, development project와 토지이용·건축규칙에 대조해 용도·red line·건축선·최소필지·특별규제구역을 식별한다.",
         "action": "관할 건축기관이 대상지를 승인 general plan, detailed planning project, development project와 토지이용·건축규칙에 대조해 용도·red line·건축선·최소필지·특별규제구역을 식별한다.",
         "outputs": [
-          "적용 도시계획문서·zoning·red line·특별규제조건"
+          "적용 도시계획문서·용도지역·건축선·특별규제조건"
         ],
         "authorityIds": [
           "tjk-local-architecture-authority"
@@ -184,7 +184,7 @@
         "note": "관할 건축기관과 인프라 운영기관이 계획·red line·필지·접속용량을 반영한 설계과제와 연결 기술조건을 확정한다.",
         "action": "관할 건축기관과 인프라 운영기관이 계획·red line·필지·접속용량을 반영한 설계과제와 연결 기술조건을 확정한다.",
         "outputs": [
-          "architectural-planning assignment·기술조건"
+          "건축계획과제(architectural-planning assignment)·기술조건"
         ],
         "authorityIds": [
           "tjk-local-architecture-authority"
@@ -333,15 +333,15 @@
       {
         "id": "B10",
         "lane": "건축주·신청인",
-        "stage": "G4 EIA·환경신청",
-        "label": "EIA 자료·공론화 준비",
+        "stage": "G4 환경영향평가·환경신청",
+        "label": "환경영향평가 자료·공론화 준비",
         "emphasis": "key",
         "kind": "statutory",
         "basisScope": "node",
         "note": "건축주는 환경에 직접·간접 영향을 줄 수 있는 신축사업의 EIA 자료를 계획·설계 전 단계에서 마련하고 예정활동의 공론화를 조직한다.",
         "action": "건축주는 환경에 직접·간접 영향을 줄 수 있는 신축사업의 EIA 자료를 계획·설계 전 단계에서 마련하고 예정활동의 공론화를 조직한다.",
         "outputs": [
-          "EIA 자료·대안·저감안·공론화 기록"
+          "환경영향평가 자료·대안·저감안·공론화 기록"
         ],
         "authorityIds": [
           "tjk-environment-authority"
@@ -363,15 +363,15 @@
       {
         "id": "B11",
         "lane": "건축주·신청인",
-        "stage": "G4 EIA·환경신청",
-        "label": "환경전문심사 신청·프로젝트/EIA 제출",
+        "stage": "G4 환경영향평가·환경신청",
+        "label": "환경전문심사 신청·프로젝트/환경영향평가 제출",
         "emphasis": "key",
         "kind": "statutory",
         "basisScope": "node",
         "note": "건축주 또는 계약상 설계자가 신청서에 프로젝트 문서, 법정 EIA 자료와 필요한 부속문서를 붙여 환경보호위원회에 제출한다.",
         "action": "건축주 또는 계약상 설계자가 신청서에 프로젝트 문서, 법정 EIA 자료와 필요한 부속문서를 붙여 환경보호위원회에 제출한다.",
         "outputs": [
-          "환경전문심사 신청·프로젝트·EIA 완비자료"
+          "환경전문심사 신청·프로젝트·환경영향평가 완비자료"
         ],
         "authorityIds": [
           "tjk-environment-authority"
@@ -393,7 +393,7 @@
       {
         "id": "B12",
         "lane": "환경·소방·검사기관",
-        "stage": "G4 EIA·환경신청",
+        "stage": "G4 환경영향평가·환경신청",
         "label": "전문가·위원회 구성과 접수범위 확정",
         "emphasis": "normal",
         "kind": "statutory",
@@ -423,7 +423,7 @@
       {
         "id": "B13",
         "lane": "환경·소방·검사기관",
-        "stage": "G4 EIA·환경신청",
+        "stage": "G4 환경영향평가·환경신청",
         "label": "30일 국가환경전문심사·복잡사업 60일",
         "emphasis": "bottleneck",
         "kind": "statutory",
@@ -486,7 +486,7 @@
       {
         "id": "B15",
         "lane": "건축주·신청인",
-        "stage": "G4 EIA·환경신청",
+        "stage": "G4 환경영향평가·환경신청",
         "label": "부정 환경결론 보완·반복심사",
         "emphasis": "normal",
         "kind": "statutory",
@@ -985,15 +985,15 @@
       {
         "id": "B31",
         "lane": "환경·소방·검사기관",
-        "stage": "G11 act 승인·등기",
-        "label": "국가인수위원회 현장검증·인수 act 서명",
+        "stage": "G11 인수증서 승인·등기",
+        "label": "국가인수위원회 현장검증·인수증서 서명",
         "emphasis": "bottleneck",
         "kind": "statutory",
         "basisScope": "node",
         "note": "국가인수위원회가 승인설계·감독·시험·안전·유틸리티와 작업위원회 결론을 현장에서 검증해 인수 act를 서명하거나 결함 보완·인수거부를 결정한다.",
         "action": "국가인수위원회가 승인설계·감독·시험·안전·유틸리티와 작업위원회 결론을 현장에서 검증해 인수 act를 서명하거나 결함 보완·인수거부를 결정한다.",
         "outputs": [
-          "국가인수위원회 인수 act 또는 결함·거부결정"
+          "국가인수위원회 인수증서 또는 결함·거부결정"
         ],
         "authorityIds": [
           "tjk-state-expertise-control",
@@ -1016,7 +1016,7 @@
       {
         "id": "B32",
         "lane": "현지 설계·시공 전문가",
-        "stage": "G11 act 승인·등기",
+        "stage": "G11 인수증서 승인·등기",
         "label": "준공결함 시정·위원회 재검증",
         "emphasis": "normal",
         "kind": "statutory",
@@ -1047,15 +1047,15 @@
       {
         "id": "B33",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G11 act 승인·등기",
-        "label": "인수 act 3·5근무일 승인·등기기초 확정",
+        "stage": "G11 인수증서 승인·등기",
+        "label": "인수증서 3·5근무일 승인·등기기초 확정",
         "emphasis": "bottleneck",
         "kind": "statutory",
         "basisScope": "node",
         "note": "위원회 임명기관은 서명된 인수 act를 주거·민간시설은 3근무일, 생산시설은 5근무일 이내 승인한다. 승인일이 공식 사용개시일이며, 승인 act는 완성 건축물·권리 국가등기의 법정 기초가 된다.",
         "action": "위원회 임명기관은 서명된 인수 act를 주거·민간시설은 3근무일, 생산시설은 5근무일 이내 승인한다. 승인일이 공식 사용개시일이며, 승인 act는 완성 건축물·권리 국가등기의 법정 기초가 된다.",
         "outputs": [
-          "승인 국가인수 act·공식 사용개시일·등기기초"
+          "승인 국가인수증서·공식 사용개시일·등기기초"
         ],
         "authorityIds": [
           "tjk-local-architecture-authority",
@@ -1373,7 +1373,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "도시계획법전의 승인 도시계획·세부계획·건축규칙, 토지제공 시 도시계획정보, 지방 건축기관의 입지·프로젝트 승인 권한을 연결한 전국 법정 경로다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "Urban Planning Code Articles 14-17, 20, 42-55, 63의 승인계획·zoning·red line·토지목적·인프라 조건, 건축계획과 기술조건 및 지방기관 프로젝트 승인 절차다.",
+      "procedureScope": "도시계획법전(Urban Planning Code) Articles 14-17, 20, 42-55, 63의 승인계획·용도지역(zoning)·건축선(red line)·토지목적·기반시설 조건, 건축계획과 기술조건 및 지방기관 프로젝트 승인 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1498,12 +1498,12 @@
       "id": "permit-environment",
       "slug": "tajikistan-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "타지키스탄 건축허가·환경심사 — EIA·국가전문심사·3일 착공허가",
+      "name": "타지키스탄 건축허가·환경심사 — 환경영향평가(EIA)·국가전문심사·3일 착공허가",
       "oneLiner": "면허 설계도서의 국가전문심사·착공허가 경로와 EIA·국가환경전문심사를 병행 분류한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "환경전문심사법의 EIA·국가환경전문심사와 도시계획법전의 국가 설계전문심사·3근무일 착공허가를 법정 선후관계로 연결했다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "Environmental Expertise Law Articles 9-14, 21-23과 Urban Planning Code Articles 63-66의 EIA·환경결론, 국가 설계전문심사와 착공허가 신청·결정·재심사 절차다.",
+      "procedureScope": "환경전문심사법(Environmental Expertise Law) Articles 9-14, 21-23과 도시계획법전 Articles 63-66의 환경영향평가·환경결론, 국가 설계전문심사와 착공허가 신청·결정·재심사 절차다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1651,7 +1651,7 @@
         },
         {
           "state": "rework",
-          "label": "EIA·설계·허가신청 보완",
+          "label": "환경영향평가·설계·허가신청 보완",
           "action": "각 환경·설계전문심사 또는 허가접수 단계로 회귀"
         },
         {
@@ -1670,7 +1670,7 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "도시계획법전의 착공허가 통보, 기술·설계자·국가감독, 시정명령·공사정지, 작업위원회와 국가인수위원회·인수 act 승인·등기를 연결한 전국 법정 경로다.",
       "procedureStatus": "article-verified",
-      "procedureScope": "Urban Planning Code Articles 66-75의 감독기관 통보, 국가·기술·설계자 감독, 위반 시정·공사정지, 작업위원회 선행결론·국가인수위원회·act 승인·부동산 등기 절차다.",
+      "procedureScope": "도시계획법전(Urban Planning Code) Articles 66-75의 감독기관 통보, 국가·기술·설계자 감독, 위반 시정·공사정지, 작업위원회 선행결론·국가인수위원회·인수증서(act) 승인·부동산 등기 절차다.",
       "nodeIds": [
         "B23",
         "B24",
@@ -1797,7 +1797,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "국가인수 act 승인·등기",
+          "label": "국가인수증서 승인·등기",
           "action": "승인일 이후 허가용도로 사용"
         },
         {
@@ -2057,12 +2057,12 @@
     },
     {
       "order": 7,
-      "gate": "위원회 임명기관의 국가인수 act 승인",
+      "gate": "위원회 임명기관의 국가인수증서 승인",
       "decision": "위원회 적합결론을 주거·민간 3일 또는 생산 5일 내 승인하거나 보완·거부한다.",
       "dependsOn": [
         6
       ],
-      "output": "승인 국가인수 act 또는 거부"
+      "output": "승인 국가인수증서 또는 거부"
     }
   ],
   "siteOverlays": [

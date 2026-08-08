@@ -33,17 +33,17 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 지적·LUSU",
+      "S1 지적·토지이용규정",
       "S2 사전도서·접수",
       "S3 기술확인·보완",
       "S4 공식적합결정",
       "P1 건축도서·접수",
       "P2 시 기술심사·보완",
-      "P3 FNCA 환경분류",
-      "P4 IRAP 심사·보완",
+      "P3 환경범주등급서식 환경분류",
+      "P4 환경규제 적용문서 심사·보완",
       "P5 공식결정",
       "C1 착공·동행검사",
-      "C2 As-Built 접수",
+      "C2 준공도면 접수",
       "C3 현장·도면심사",
       "C4 공식완료결정"
     ],
@@ -51,15 +51,15 @@
       {
         "id": "B01",
         "lane": "건축주·신청인",
-        "stage": "S1 지적·LUSU",
-        "label": "Certificado Catastral·Línea Municipal 확보",
+        "stage": "S1 지적·토지이용규정",
+        "label": "지적증명서·시 도로경계선 확보",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "소유자·대리인이 현행 Certificado de Registro Catastral과 해당 시 Línea Municipal을 확보해 권원·경계·기존건축물 정보를 고정한다.",
         "action": "소유자·대리인이 현행 Certificado de Registro Catastral과 해당 시 Línea Municipal을 확보해 권원·경계·기존건축물 정보를 고정한다.",
         "outputs": [
-          "현행 지적증명·Línea Municipal"
+          "현행 지적증명·시 도로경계선"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -88,15 +88,15 @@
       {
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S1 지적·LUSU",
-        "label": "LUSU 지도·Patrón·Cartilla 조회",
+        "stage": "S1 지적·토지이용규정",
+        "label": "토지이용지도·정주유형(Patrón de Asentamiento)·규정집(Cartilla Normativa) 조회",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "GAMLP의 LUSU 지도에서 필지의 토지이용과 Patrón de Asentamiento를 확인하고 해당 Cartilla Normativa의 용도·형태·높이·이격·주차·위험조건을 산출한다.",
         "action": "GAMLP의 LUSU 지도에서 필지의 토지이용과 Patrón de Asentamiento를 확인하고 해당 Cartilla Normativa의 용도·형태·높이·이격·주차·위험조건을 산출한다.",
         "outputs": [
-          "필지별 LUSU patrón·Cartilla 규제표"
+          "필지별 토지이용·정주유형·규정집 규제표"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -126,14 +126,14 @@
         "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 사전도서·접수",
-        "label": "Cartilla 대조 anteproyecto 작성",
+        "label": "규정집 대조 기본설계 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "등록 건축사가 Cartilla와 지적경계에 맞춰 CAD 폴리곤·면적대조표·배수·3D 이미지·건축 anteproyecto를 작성하고 소유자와 준수책임 선언을 서명한다.",
         "action": "등록 건축사가 Cartilla와 지적경계에 맞춰 CAD 폴리곤·면적대조표·배수·3D 이미지·건축 anteproyecto를 작성하고 소유자와 준수책임 선언을 서명한다.",
         "outputs": [
-          "Cartilla 대조표·CAD·서명 anteproyecto"
+          "규정집 대조표·컴퓨터지원설계(CAD)·서명 기본설계"
         ],
         "authorityIds": [
           "bol-municipality",
@@ -157,14 +157,14 @@
         "id": "B04",
         "lane": "건축주·신청인",
         "stage": "S2 사전도서·접수",
-        "label": "FUAT 온라인 사전접수",
+        "label": "통합국토행정서식(FUAT) 온라인 사전접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "신청인이 iGob 24/7에 자료를 입력·전송하고 소유자·대리인 서명이 포함된 Formulario Único de Administración Territorial(FUAT)을 생성해 정식 접수한다.",
         "action": "신청인이 iGob 24/7에 자료를 입력·전송하고 소유자·대리인 서명이 포함된 Formulario Único de Administración Territorial(FUAT)을 생성해 정식 접수한다.",
         "outputs": [
-          "FUAT·온라인 trámite 번호"
+          "통합국토행정서식·온라인 처리사건(trámite) 번호"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -187,14 +187,14 @@
         "id": "B05",
         "lane": "도시계획·건축 허가기관",
         "stage": "S3 기술확인·보완",
-        "label": "요건·필지·anteproyecto 사전검증",
+        "label": "요건·필지·기본설계 사전검증",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "GAMLP가 지적·권원·LUSU 대조표와 anteproyecto를 검증하고 필요한 경우 담당기술자의 필지검사를 통해 habilitación, 관찰 또는 거부안을 작성한다.",
         "action": "GAMLP가 지적·권원·LUSU 대조표와 anteproyecto를 검증하고 필요한 경우 담당기술자의 필지검사를 통해 habilitación, 관찰 또는 거부안을 작성한다.",
         "outputs": [
-          "사전검증 informe·현장검사 기록"
+          "사전검증 보고서(informe)·현장검사 기록"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -224,7 +224,7 @@
         "note": "보완 가능한 관찰사항이 한 번에 통지되면 건축사와 소유자가 CAD·대조표·서류를 수정해 온라인 재제출하고 GAMLP의 재검토를 받는다.",
         "action": "보완 가능한 관찰사항이 한 번에 통지되면 건축사와 소유자가 CAD·대조표·서류를 수정해 온라인 재제출하고 GAMLP의 재검토를 받는다.",
         "outputs": [
-          "보완 anteproyecto·재검토 결과"
+          "보완 기본설계·재검토 결과"
         ],
         "authorityIds": [
           "bol-municipality",
@@ -248,14 +248,14 @@
         "id": "B07",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 공식적합결정",
-        "label": "부지·anteproyecto habilitación 결정",
+        "label": "부지·기본설계 적격확인(habilitación) 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "GAMLP가 LUSU·지적·위험·anteproyecto 적합성을 확인해 후속 건축허가 심사가 가능한 habilitación을 확정하거나 관찰·거부 결과를 통지한다.",
         "action": "GAMLP가 LUSU·지적·위험·anteproyecto 적합성을 확인해 후속 건축허가 심사가 가능한 habilitación을 확정하거나 관찰·거부 결과를 통지한다.",
         "outputs": [
-          "habilitación informe 또는 관찰·거부 통지"
+          "적격확인 보고서 또는 관찰·거부 통지"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -326,7 +326,7 @@
         "id": "B09",
         "lane": "건축주·신청인",
         "stage": "P1 건축도서·접수",
-        "label": "Permiso de Construcción 정식접수",
+        "label": "건축허가 정식접수",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
@@ -363,7 +363,7 @@
         "note": "GAMLP가 면적표·폴리곤·LUSU 파라미터, 우수배수, 위험·구조조건을 검토하고 검토보고서에 적합·보완 가능·비보완 거부를 구분한다.",
         "action": "GAMLP가 면적표·폴리곤·LUSU 파라미터, 우수배수, 위험·구조조건을 검토하고 검토보고서에 적합·보완 가능·비보완 거부를 구분한다.",
         "outputs": [
-          "Informe de Revisión de Planos"
+          "도면검토보고서(Informe de Revisión de Planos)"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -421,10 +421,10 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "검토보고서가 procedente이면 GAMLP가 승인요금을 산정·통지하고 납부 후 Permiso de Construcción과 승인도면을 발급하며, 비보완 불일치는 거부한다.",
-        "action": "검토보고서가 procedente이면 GAMLP가 승인요금을 산정·통지하고 납부 후 Permiso de Construcción과 승인도면을 발급하며, 비보완 불일치는 거부한다.",
+        "note": "검토보고서가 적합(procedente)이면 GAMLP가 승인요금을 산정·통지하고 납부 후 건축허가와 승인도면을 발급하며, 비보완 불일치는 거부한다.",
+        "action": "검토보고서가 적합(procedente)이면 GAMLP가 승인요금을 산정·통지하고 납부 후 건축허가와 승인도면을 발급하며, 비보완 불일치는 거부한다.",
         "outputs": [
-          "Permiso de Construcción·승인도면 또는 거부결정"
+          "건축허가·승인도면 또는 거부결정"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -449,15 +449,15 @@
       {
         "id": "B13",
         "lane": "건축주·신청인",
-        "stage": "P3 FNCA 환경분류",
-        "label": "FNCA 작성·AOP 환경분류 신청",
+        "stage": "P3 환경범주등급서식 환경분류",
+        "label": "환경범주등급서식 작성·사업 환경분류 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AOP 대표자가 DS 3856 Annex A에 맞춘 Formulario de Nivel de Categorización Ambiental, 선서서명, 요약서와 공문을 관할 AAC에 제출한다.",
-        "action": "AOP 대표자가 DS 3856 Annex A에 맞춘 Formulario de Nivel de Categorización Ambiental, 선서서명, 요약서와 공문을 관할 AAC에 제출한다.",
+        "note": "사업 대표자가 최고령 제3856호 부속서 A에 맞춘 환경범주등급서식(Formulario de Nivel de Categorización Ambiental), 선서서명, 요약서와 공문을 관할환경기관에 제출한다.",
+        "action": "사업 대표자가 최고령 제3856호 부속서 A에 맞춘 환경범주등급서식(Formulario de Nivel de Categorización Ambiental), 선서서명, 요약서와 공문을 관할환경기관에 제출한다.",
         "outputs": [
-          "FNCA 접수·제안 환경범주"
+          "환경범주등급서식 접수·제안 환경범주"
         ],
         "authorityIds": [
           "bol-environment-authority"
@@ -486,15 +486,15 @@
       {
         "id": "B14",
         "lane": "환경·소방·검사기관",
-        "stage": "P3 FNCA 환경분류",
-        "label": "AAC 범주 1·2·3·4 공식분류",
+        "stage": "P3 환경범주등급서식 환경분류",
+        "label": "관할환경기관 범주 1·2·3·4 공식분류",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 AAC가 AOP·입지·영향을 목록과 대조해 Category 1, 2, 3 또는 4와 요구 IRAP를 확정하고 보완이 필요하면 FNCA 수정을 요구한다.",
-        "action": "관할 AAC가 AOP·입지·영향을 목록과 대조해 Category 1, 2, 3 또는 4와 요구 IRAP를 확정하고 보완이 필요하면 FNCA 수정을 요구한다.",
+        "note": "관할환경기관이 사업·입지·영향을 목록과 대조해 범주(Category) 1·2·3·4와 요구 환경규제 적용문서를 확정하고 보완이 필요하면 환경범주등급서식 수정을 요구한다.",
+        "action": "관할환경기관이 사업·입지·영향을 목록과 대조해 범주(Category) 1·2·3·4와 요구 환경규제 적용문서를 확정하고 보완이 필요하면 환경범주등급서식 수정을 요구한다.",
         "outputs": [
-          "환경범주·요구 IRAP 분류결정"
+          "환경범주·요구 환경규제 적용문서 분류결정"
         ],
         "authorityIds": [
           "bol-environment-authority"
@@ -526,15 +526,15 @@
       {
         "id": "B15",
         "lane": "건축주·신청인",
-        "stage": "P4 IRAP 심사·보완",
-        "label": "범주별 EEIA·PPM-PASA 제출",
+        "stage": "P4 환경규제 적용문서 심사·보완",
+        "label": "범주별 환경영향평가(EEIA)·예방·저감 및 환경모니터링계획(PPM-PASA) 제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "분류결정에 따라 RENCA 적격전문가가 Category 1 EEIA-AI, Category 2 EEIA-AE 또는 Category 3 PPM-PASA 등 요구 IRAP를 작성해 관할 AAC에 제출한다.",
-        "action": "분류결정에 따라 RENCA 적격전문가가 Category 1 EEIA-AI, Category 2 EEIA-AE 또는 Category 3 PPM-PASA 등 요구 IRAP를 작성해 관할 AAC에 제출한다.",
+        "note": "분류결정에 따라 국가환경컨설턴트등록부(RENCA) 적격전문가가 범주 1 종합 환경영향평가(EEIA-AI), 범주 2 특정 환경영향평가(EEIA-AE) 또는 범주 3 예방·저감 및 환경모니터링계획 등 요구 문서를 작성해 관할환경기관에 제출한다.",
+        "action": "분류결정에 따라 국가환경컨설턴트등록부(RENCA) 적격전문가가 범주 1 종합 환경영향평가(EEIA-AI), 범주 2 특정 환경영향평가(EEIA-AE) 또는 범주 3 예방·저감 및 환경모니터링계획 등 요구 문서를 작성해 관할환경기관에 제출한다.",
         "outputs": [
-          "범주별 IRAP 본심사 접수"
+          "범주별 환경규제 적용문서 본심사 접수"
         ],
         "authorityIds": [
           "bol-environment-authority",
@@ -564,15 +564,15 @@
       {
         "id": "B16",
         "lane": "환경·소방·검사기관",
-        "stage": "P4 IRAP 심사·보완",
-        "label": "IRAP 기술심사·공공협의·관찰사항",
+        "stage": "P4 환경규제 적용문서 심사·보완",
+        "label": "환경규제 적용문서 기술심사·공공협의·관찰사항",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 AAC와 적용 OSC가 IRAP 기술내용을 심사하고 Category 1·2의 법정 공공협의 등 적용절차를 거쳐 통합 관찰사항 또는 적합 기술의견을 낸다.",
-        "action": "관할 AAC와 적용 OSC가 IRAP 기술내용을 심사하고 Category 1·2의 법정 공공협의 등 적용절차를 거쳐 통합 관찰사항 또는 적합 기술의견을 낸다.",
+        "note": "관할환경기관과 적용 부문별 관할기관(OSC)이 환경규제 적용문서 기술내용을 심사하고 범주 1·2의 법정 공공협의 등 적용절차를 거쳐 통합 관찰사항 또는 적합 기술의견을 낸다.",
+        "action": "관할환경기관과 적용 부문별 관할기관(OSC)이 환경규제 적용문서 기술내용을 심사하고 범주 1·2의 법정 공공협의 등 적용절차를 거쳐 통합 관찰사항 또는 적합 기술의견을 낸다.",
         "outputs": [
-          "IRAP 기술의견·협의기록·관찰사항"
+          "환경규제 적용문서 기술의견·협의기록·관찰사항"
         ],
         "authorityIds": [
           "bol-environment-authority"
@@ -594,15 +594,15 @@
       {
         "id": "B17",
         "lane": "건축주·신청인",
-        "stage": "P4 IRAP 심사·보완",
+        "stage": "P4 환경규제 적용문서 심사·보완",
         "label": "환경 관찰사항 보완·재심사",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "AOP 대표자와 환경전문가가 관찰사항 응답표와 수정 IRAP를 제출해 AAC·OSC 재심사를 받는다.",
-        "action": "AOP 대표자와 환경전문가가 관찰사항 응답표와 수정 IRAP를 제출해 AAC·OSC 재심사를 받는다.",
+        "note": "사업 대표자와 환경전문가가 관찰사항 응답표와 수정 환경규제 적용문서를 제출해 관할환경기관·부문별 관할기관 재심사를 받는다.",
+        "action": "사업 대표자와 환경전문가가 관찰사항 응답표와 수정 환경규제 적용문서를 제출해 관할환경기관·부문별 관할기관 재심사를 받는다.",
         "outputs": [
-          "수정 IRAP·응답표·재심사 결과"
+          "수정 환경규제 적용문서·응답표·재심사 결과"
         ],
         "authorityIds": [
           "bol-environment-authority"
@@ -625,14 +625,14 @@
         "id": "B18",
         "lane": "환경·소방·검사기관",
         "stage": "P5 공식결정",
-        "label": "환경 licence 발급·불승인",
+        "label": "환경허가 발급·불승인",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 AAC가 최종 IRAP와 분류를 근거로 DIA·CD 계열의 적용 환경 licence와 조건을 발급하거나 불승인한다. Category 4는 공식 분류결정에 따른 면제·등록결과를 적용한다.",
-        "action": "관할 AAC가 최종 IRAP와 분류를 근거로 DIA·CD 계열의 적용 환경 licence와 조건을 발급하거나 불승인한다. Category 4는 공식 분류결정에 따른 면제·등록결과를 적용한다.",
+        "note": "관할환경기관이 최종 환경규제 적용문서와 분류를 근거로 환경영향선언(DIA)·면제증명(CD) 계열의 환경허가와 조건을 발급하거나 불승인한다. 범주 4는 공식 분류결정에 따른 면제·등록결과를 적용한다.",
+        "action": "관할환경기관이 최종 환경규제 적용문서와 분류를 근거로 환경영향선언(DIA)·면제증명(CD) 계열의 환경허가와 조건을 발급하거나 불승인한다. 범주 4는 공식 분류결정에 따른 면제·등록결과를 적용한다.",
         "outputs": [
-          "환경 licence·조건 또는 불승인/면제결과"
+          "환경허가·조건 또는 불승인·면제결과"
         ],
         "authorityIds": [
           "bol-environment-authority"
@@ -703,7 +703,7 @@
         "note": "GAMLP 담당자가 공사 중 승인 파라미터·도면 준수를 현장 확인하고 위반·변경이 있으면 시정·허가변경을 기록한다.",
         "action": "GAMLP 담당자가 공사 중 승인 파라미터·도면 준수를 현장 확인하고 위반·변경이 있으면 시정·허가변경을 기록한다.",
         "outputs": [
-          "동행검사 acta·시정/변경 기록"
+          "동행검사 조서(acta)·시정·변경 기록"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -725,15 +725,15 @@
       {
         "id": "B21",
         "lane": "건축주·신청인",
-        "stage": "C2 As-Built 접수",
-        "label": "As-Built 승인 신청·FUAT",
+        "stage": "C2 준공도면 접수",
+        "label": "준공도면 승인 신청·통합국토행정서식(FUAT)",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "완공 후 소유자와 책임전문가가 현행 지적증명, 기존 허가·승인도면, 최종 As-Built 도면과 Ficha Técnica·FUAT를 제출한다.",
-        "action": "완공 후 소유자와 책임전문가가 현행 지적증명, 기존 허가·승인도면, 최종 As-Built 도면과 Ficha Técnica·FUAT를 제출한다.",
+        "note": "완공 후 소유자와 책임전문가가 현행 지적증명, 기존 허가·승인도면, 최종 준공도면과 기술정보표(Ficha Técnica)·통합국토행정서식을 제출한다.",
+        "action": "완공 후 소유자와 책임전문가가 현행 지적증명, 기존 허가·승인도면, 최종 준공도면과 기술정보표(Ficha Técnica)·통합국토행정서식을 제출한다.",
         "outputs": [
-          "As-Built 신청 접수·FUAT"
+          "준공도면 신청 접수·통합국토행정서식"
         ],
         "authorityIds": [
           "bol-municipality",
@@ -757,14 +757,14 @@
         "id": "B22",
         "lane": "도시계획·건축 허가기관",
         "stage": "C3 현장·도면심사",
-        "label": "As-Built 현장검사",
+        "label": "준공도면 현장검사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "GAMLP 기술자가 신청인 입회 아래 필지를 검사해 실제 건축상태·면적·높이·이격을 As-Built와 승인허가에 대조한다.",
-        "action": "GAMLP 기술자가 신청인 입회 아래 필지를 검사해 실제 건축상태·면적·높이·이격을 As-Built와 승인허가에 대조한다.",
+        "note": "GAMLP 기술자가 신청인 입회 아래 필지를 검사해 실제 건축상태·면적·높이·이격을 준공도면과 승인허가에 대조한다.",
+        "action": "GAMLP 기술자가 신청인 입회 아래 필지를 검사해 실제 건축상태·면적·높이·이격을 준공도면과 승인허가에 대조한다.",
         "outputs": [
-          "As-Built 현장검사 기록"
+          "준공도면 현장검사 기록"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -791,10 +791,10 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "담당자가 현장·As-Built·LUSU·기존허가를 심사해 procedencia, 보완 가능한 observación 또는 rechazo를 기술보고서에 판정한다.",
-        "action": "담당자가 현장·As-Built·LUSU·기존허가를 심사해 procedencia, 보완 가능한 observación 또는 rechazo를 기술보고서에 판정한다.",
+        "note": "담당자가 현장·준공도면·LUSU·기존허가를 심사해 적합(procedencia), 보완관찰(observación) 또는 거부(rechazo)를 기술보고서에 판정한다.",
+        "action": "담당자가 현장·준공도면·LUSU·기존허가를 심사해 적합(procedencia), 보완관찰(observación) 또는 거부(rechazo)를 기술보고서에 판정한다.",
         "outputs": [
-          "As-Built procedencia·observación·rechazo informe"
+          "준공도면 적합·보완관찰·거부 기술보고서(informe)"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -817,14 +817,14 @@
         "id": "B24",
         "lane": "건축주·신청인",
         "stage": "C3 현장·도면심사",
-        "label": "As-Built 관찰사항 보완·재검사",
+        "label": "준공도면 관찰사항 보완·재검사",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "보완 가능 관찰이면 소유자·전문가가 도면·서류 또는 현장불일치를 시정해 재제출하고 필요한 재검사를 받는다.",
         "action": "보완 가능 관찰이면 소유자·전문가가 도면·서류 또는 현장불일치를 시정해 재제출하고 필요한 재검사를 받는다.",
         "outputs": [
-          "수정 As-Built·시정증빙·재검사 결과"
+          "수정 준공도면·시정증빙·재검사 결과"
         ],
         "authorityIds": [
           "bol-municipality",
@@ -848,14 +848,14 @@
         "id": "B25",
         "lane": "도시계획·건축 허가기관",
         "stage": "C4 공식완료결정",
-        "label": "As-Built 도면승인 결정",
+        "label": "준공도면 승인 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "규정준수가 만족되면 GAMLP가 최종 As-Built 도면을 승인하고, 비보완 불일치에는 거부결정을 발급한다.",
-        "action": "규정준수가 만족되면 GAMLP가 최종 As-Built 도면을 승인하고, 비보완 불일치에는 거부결정을 발급한다.",
+        "note": "규정준수가 만족되면 GAMLP가 최종 준공도면을 승인하고, 비보완 불일치에는 거부결정을 발급한다.",
+        "action": "규정준수가 만족되면 GAMLP가 최종 준공도면을 승인하고, 비보완 불일치에는 거부결정을 발급한다.",
         "outputs": [
-          "승인 As-Built 도면 또는 거부결정"
+          "승인 준공도면 또는 거부결정"
         ],
         "authorityIds": [
           "bol-municipality"
@@ -1087,7 +1087,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "La Paz의 현행 LUSU 지도·Patrón de Asentamiento·Cartilla Normativa와 2025 온라인 건축허가 사전검증을 연결했다. 이는 GAMLP 사례이며 다른 GAM은 자체 지적·토지이용·위험·허가규정을 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "La Paz GAMLP에서 Certificado Catastral·Línea Municipal과 LUSU Cartilla를 확정해 온라인 건축허가용 anteproyecto를 적합화하는 절차다. 다른 자치시정부에는 La Paz 수치·양식·처리기간을 일반화하지 않는다.",
+      "procedureScope": "La Paz GAMLP에서 지적증명서(Certificado Catastral)·시 도로경계선(Línea Municipal)과 토지이용·도시형태 규정집(LUSU Cartilla)을 확정해 온라인 건축허가용 기본설계(anteproyecto)를 적합화하는 절차다. 다른 자치시정부에는 La Paz 수치·양식·처리기간을 일반화하지 않는다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1170,8 +1170,8 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "habilitación",
-          "action": "확정 Cartilla와 anteproyecto로 정식 건축허가 심사 진행"
+          "label": "적격확인",
+          "action": "확정 규정집과 기본설계로 정식 건축허가 심사 진행"
         },
         {
           "state": "rework",
@@ -1189,12 +1189,12 @@
       "id": "permit-environment",
       "slug": "bolivia-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "볼리비아 건축허가·환경 licence — La Paz·FNCA 사례",
+      "name": "볼리비아 건축허가·환경허가 — La Paz·환경범주등급서식(FNCA) 사례",
       "oneLiner": "GAM 건축허가와 AAC의 FNCA 분류·IRAP·환경 licence를 입지·규모별로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "La Paz RA 158/2025의 건축허가 기술검토·관찰·거부·승인과 국가 RPCA/DS 3856의 FNCA 범주 1–4·IRAP·환경 licence 경로를 병렬로 구성했다. 건축절차는 La Paz 사례이고 환경관할은 AOP별 AACN/AACD를 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "건축경로는 GAMLP 온라인 Permiso de Construcción 사례다. 환경경로는 전국 Law 1333·RPCA·DS 3549/3856 아래 AOP의 FNCA 분류와 관할 AAC의 IRAP·licencia 결정이며, 다른 GAM의 허가요건은 해당 시 규정으로 교체한다.",
+      "procedureScope": "건축경로는 GAMLP 온라인 건축허가(Permiso de Construcción) 사례다. 환경경로는 전국 법률 제1333호(Law 1333)·환경오염예방·통제규정(RPCA)·최고령 제3549호·제3856호(DS 3549/3856) 아래 사업·활동·프로젝트(AOP)의 환경범주등급서식 분류와 관할환경기관(AAC)의 환경규제 적용문서(IRAP)·허가결정이며, 다른 자치시정부(GAM)의 허가요건은 해당 시 규정으로 교체한다.",
       "nodeIds": [
         "B08",
         "B09",
@@ -1314,13 +1314,13 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "건축허가·환경 licence",
+          "label": "건축허가·환경허가",
           "action": "두 공식결정과 조건을 확보해 착공통지"
         },
         {
           "state": "rework",
           "label": "시·환경 보완",
-          "action": "건축도서는 GAMLP 기술검토로, IRAP는 AAC 본심사로 재제출"
+          "action": "건축도서는 GAMLP 기술검토로, 환경규제 적용문서는 관할환경기관 본심사로 재제출"
         },
         {
           "state": "reject",
@@ -1333,12 +1333,12 @@
       "id": "control-completion",
       "slug": "bolivia-control-completion-construction-regulations",
       "priority": 6,
-      "name": "볼리비아 공사검사·As-Built 승인 — La Paz 사례",
+      "name": "볼리비아 공사검사·준공도면(As-Built) 승인 — La Paz 사례",
       "oneLiner": "등록 전문가·NBDS 구조안전, GAM 동행검사와 승인 as-built·준공서류를 인계 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "NBDS 2023 적용과 La Paz의 공사 동행검사·As-Built 도면승인 공식서비스를 연결했다. 표시된 완료문서는 La Paz 사례이며 다른 GAM의 준공·사용승인 명칭으로 교체한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "GAMLP 건축허가에 따른 공사 동행검사와 준공 후 As-Built 도면승인 절차다. 다른 GAM에는 La Paz FUAT·문서명·처리방식을 일반화하지 않는다.",
+      "procedureScope": "GAMLP 건축허가에 따른 공사 동행검사와 준공 후 준공도면 승인 절차다. 다른 GAM에는 La Paz FUAT·문서명·처리방식을 일반화하지 않는다.",
       "nodeIds": [
         "B19",
         "B20",
@@ -1419,17 +1419,17 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "As-Built 승인",
+          "label": "준공도면 승인",
           "action": "승인 최종도면을 인계·지적·사용 관련 후속절차에 사용"
         },
         {
           "state": "rework",
           "label": "관찰사항",
-          "action": "현장 또는 도면불일치를 시정해 As-Built 현장검사로 회귀"
+          "action": "현장 또는 도면불일치를 시정해 준공도면 현장검사로 회귀"
         },
         {
           "state": "reject",
-          "label": "As-Built 거부",
+          "label": "준공도면 거부",
           "action": "사용·인계를 보류하고 무허가변경 정리 또는 정식 불복·재신청 검토"
         }
       ]
@@ -1642,40 +1642,40 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "GAMLP의 부지·anteproyecto 적합결정",
-      "decision": "LUSU·지적·위험·Cartilla 적합성을 심사해 habilitación, 보완 또는 거부를 결정한다.",
+      "gate": "GAMLP의 부지·기본설계 적합결정",
+      "decision": "토지이용규정·지적·위험·규정집 적합성을 심사해 적격확인, 보완 또는 거부를 결정한다.",
       "dependsOn": [],
-      "output": "habilitación informe 또는 관찰·거부 통지"
+      "output": "적격확인 보고서 또는 관찰·거부 통지"
     },
     {
       "order": 2,
-      "gate": "GAMLP의 Permiso de Construcción 공식결정",
+      "gate": "GAMLP의 건축허가 공식결정",
       "decision": "LUSU·도면·기술조건을 심사해 건축허가 발급, 보완 또는 거부를 결정한다.",
       "dependsOn": [],
-      "output": "Permiso de Construcción·승인도면 또는 거부결정"
+      "output": "건축허가·승인도면 또는 거부결정"
     },
     {
       "order": 3,
-      "gate": "관할 AAC의 환경범주 공식결정",
-      "decision": "FNCA를 심사해 범주 1–4와 후속 IRAP 또는 면제경로를 확정한다.",
+      "gate": "관할환경기관의 환경범주 공식결정",
+      "decision": "환경범주등급서식을 심사해 범주 1–4와 후속 환경규제 적용문서 또는 면제경로를 확정한다.",
       "dependsOn": [],
-      "output": "환경범주·요구 IRAP 분류결정"
+      "output": "환경범주·요구 환경규제 적용문서 분류결정"
     },
     {
       "order": 4,
-      "gate": "관할 AAC의 환경 licence 공식결정",
-      "decision": "범주별 IRAP를 심사해 환경 licence·조건, 면제결과 또는 불승인을 결정한다.",
+      "gate": "관할환경기관의 환경허가 공식결정",
+      "decision": "범주별 환경규제 적용문서를 심사해 환경허가·조건, 면제결과 또는 불승인을 결정한다.",
       "dependsOn": [
         3
       ],
-      "output": "환경 licence·조건 또는 불승인/면제결과"
+      "output": "환경허가·조건 또는 불승인·면제결과"
     },
     {
       "order": 5,
-      "gate": "GAMLP의 As-Built 공식승인",
-      "decision": "실제 완공상태와 허가·LUSU 적합성을 검사해 As-Built 승인, 보완 또는 거부를 결정한다.",
+      "gate": "GAMLP의 준공도면 공식승인",
+      "decision": "실제 완공상태와 허가·LUSU 적합성을 검사해 준공도면 승인, 보완 또는 거부를 결정한다.",
       "dependsOn": [],
-      "output": "승인 As-Built 도면 또는 거부결정"
+      "output": "승인 준공도면 또는 거부결정"
     }
   ],
   "siteOverlays": [

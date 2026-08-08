@@ -75,9 +75,9 @@
     "site-urban": {
       "verificationScope": "2019 도시계획·건축 장관령 제27~29조, Building Control Regulations 제2.1절과 BPMIS의 전자 반려·수정 기능을 연결했다. 르완다는 별도 zoning certificate보다 건축허가 기술심사에서 필지 계획적합성을 심사하는 구조다.",
       "officialProcedure": {
-        "name": "르완다 BPMIS 필지·도시계획 적합성 심사절차",
+        "name": "르완다 건축허가관리정보시스템(BPMIS) 필지·도시계획 적합성 심사절차",
         "coverage": "official-source-linked",
-        "scope": "City of Kigali 또는 대상 District One Stop Centre의 건축허가 안에서 zoning·site·services·drainage 적합성을 심사하는 전국 절차다. 필지 수치와 Master Plan 세부기준은 해당 District/City plan을 적용한다.",
+        "scope": "키갈리시(City of Kigali) 또는 대상 지구 단일창구(District One Stop Centre, OSC)의 건축허가 안에서 용도지역(zoning)·부지(site)·기반시설(services)·배수(drainage) 적합성을 심사하는 전국 절차다. 필지 수치와 종합계획(Master Plan) 세부기준은 해당 지구·시 계획을 적용한다.",
         "stages": [
           "G0 사전계획·도서",
           "G1 BPMIS 접수·완비",
@@ -91,8 +91,8 @@
             "label": "주요 공공건축 사전계획 의견요청",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "주요 공공건축이면 정식 신청 전에 OSC에 preliminary sketch·plan을 제출해 계획·공법의 규정적합성에 대한 서면의견을 요청할 수 있다.",
-            "output": "OSC preliminary written comments",
+            "action": "주요 공공건축이면 정식 신청 전에 OSC에 예비 스케치·계획안(preliminary sketch·plan)을 제출해 계획·공법의 규정적합성에 대한 서면의견을 요청할 수 있다.",
+            "output": "OSC 예비 서면의견",
             "authorityIds": ["district-osc"],
             "refs": [
               {"source": "preliminary plans and enquiries", "instrumentId": "RWA-BUILDING-CONTROL-2E", "provisions": ["Section 2.1.3.1"]}
@@ -101,11 +101,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 0,
-            "label": "Zoning·site·services 신청도서 작성",
+            "label": "용도지역·부지·기반시설 신청도서 작성",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "등록전문가가 현행 zoning과 parcel 조건을 반영해 site plan, layout, 기존·계획 services 연결과 site drainage plan 등 허가도서를 작성한다.",
-            "output": "zoning 적합 site·layout·services·drainage 도서",
+            "action": "등록전문가가 현행 용도지역과 필지 조건을 반영해 부지계획, 배치, 기존·계획 기반시설 연결과 부지 배수계획 등 허가도서를 작성한다.",
+            "output": "용도지역 적합 부지·배치·기반시설·배수 도서",
             "authorityIds": ["district-osc"],
             "refs": [
               {"source": "zoning and plan submittals", "instrumentId": "RWA-BUILDING-CONTROL-2E", "provisions": ["Sections 2.1.1.5-2.1.1.6"]}
@@ -117,7 +117,7 @@
             "label": "BPMIS 건축허가 전자신청",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "건축주 또는 권한 있는 등록전문가가 City of Kigali·District OSC를 선택해 신청서와 계획도서를 BPMIS로 업로드하고 결제증빙을 제출한다.",
+            "action": "건축주 또는 권한 있는 등록전문가가 키갈리시·지구 OSC를 선택해 신청서와 계획도서를 BPMIS로 업로드하고 결제증빙을 제출한다.",
             "output": "BPMIS 신청번호·전자도서",
             "authorityIds": ["district-osc"],
             "refs": [
@@ -141,10 +141,10 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 2,
-            "label": "Master Plan·zoning·site 기술평가",
+            "label": "종합계획·용도지역·부지 기술평가",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "OSC Development Control 담당자가 Master Plan·zoning, 부지배치·접근·배수·services와 해당 도시설계 기준을 신청도서에 대조해 의견을 입력한다.",
+            "action": "OSC 개발관리 담당자가 종합계획·용도지역, 부지배치·접근·배수·기반시설과 해당 도시설계 기준을 신청도서에 대조해 의견을 입력한다.",
             "output": "계획·부지 기술검토 의견",
             "authorityIds": ["district-osc"],
             "refs": [
@@ -158,7 +158,7 @@
             "label": "OSC 의견반영·수정안 재제출",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "OSC가 BPMIS에서 신청을 amendments로 반려하면 등록전문가가 의견을 반영한 site·layout·services 도서를 다시 업로드한다.",
+            "action": "OSC가 BPMIS에서 신청을 보완요청(amendments)으로 반려하면 등록전문가가 의견을 반영한 부지·배치·기반시설 도서를 다시 업로드한다.",
             "output": "수정도서·BPMIS 재제출 기록",
             "authorityIds": ["district-osc"],
             "refs": [
@@ -168,11 +168,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 3,
-            "label": "Category 4·5 RHA non-objection",
+            "label": "등급(Category) 4·5 RHA 이의없음 확인(non-objection)",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "Category 4·5 건축물이면 RHA가 계획·기술요건과 현장을 심사해 non-objection 여부를 결정한다. non-objection 없는 District·City 허가는 무효다.",
-            "output": "RHA non-objection 또는 부적합의견",
+            "action": "등급 4·5 건축물이면 RHA가 계획·기술요건과 현장을 심사해 이의없음 확인 여부를 결정한다. 이의없음 확인 없는 지구·시 허가는 무효다.",
+            "output": "RHA 이의없음 확인 또는 부적합의견",
             "authorityIds": ["rha"],
             "refs": [
               {"source": "RHA non-objection", "instrumentId": "RWA-URBAN-BUILDING-REG-2019", "provisions": ["Article 27"]},
@@ -182,10 +182,10 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "District·City 건축허가 결정",
+            "label": "지구·시 건축허가 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "완비일로부터 30일 안에 District 또는 City of Kigali가 계획·기술심사를 마치고 건축허가를 발급하거나 반려·거부하며 지연 시 사유를 서면통지한다.",
+            "action": "완비일로부터 30일 안에 지구 또는 키갈리시가 계획·기술심사를 마치고 건축허가를 발급하거나 반려·거부하며 지연 시 사유를 서면통지한다.",
             "output": "건축허가·조건 또는 반려·거부·지연통지",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
@@ -194,8 +194,8 @@
             ],
             "permitGate": {
               "key": "planning-building-permit",
-              "gate": "District·City의 계획적합 건축허가 결정",
-              "decision": "OSC가 zoning·site·기술요건과 해당 시 RHA non-objection을 확인해 건축허가, 보완 또는 거부를 공식 결정한다.",
+              "gate": "지구·시의 계획적합 건축허가 결정",
+              "decision": "OSC가 용도지역·부지·기술요건과 해당 시 RHA 이의없음 확인을 확인해 건축허가, 보완 또는 거부를 공식 결정한다.",
               "output": "BPMIS 건축허가·조건 또는 공식 반려·거부통지",
               "dependsOn": []
             }
@@ -206,15 +206,15 @@
           [1, 2, "sequence", "전자도서"],
           [2, 3, "sequence", "BPMIS 접수"],
           [3, 4, "sequence", "완비승인"],
-          [4, 6, "sequence", "Category 4·5 해당 시"],
-          [4, 7, "sequence", "일반 Category"],
+          [4, 6, "sequence", "등급 4·5 해당 시"],
+          [4, 7, "sequence", "일반 등급"],
           [4, 5, "message", "수정의견 시"],
           [5, 4, "loop", "수정안 재평가"],
-          [6, 7, "sequence", "RHA non-objection"]
+          [6, 7, "sequence", "RHA 이의없음 확인"]
         ],
         "decisionBranches": [
           {"state": "success", "label": "계획적합·건축허가", "action": "BPMIS 허가와 RHA 조건을 승인도서에 고정하고 유효기간 안에 착공"},
-          {"state": "rework", "label": "Amendments 반환", "action": "OSC·RHA 의견을 반영한 수정도서를 BPMIS에 재제출"},
+          {"state": "rework", "label": "보완요청 반환", "action": "OSC·RHA 의견을 반영한 수정도서를 BPMIS에 재제출"},
           {"state": "reject", "label": "부적합·허가거부", "action": "계획·부지 부적합 사유에 따라 설계변경 또는 새 신청 검토"}
         ]
       }
@@ -222,12 +222,12 @@
     "permit-environment": {
       "verificationScope": "환경 장관령 제001/2019호 제3~10조의 full/partial EIA, TOR, report, 추가정보·공중참여 절차와 건축 장관령 제27~28조·BPMIS 허가흐름을 연결했다.",
       "officialProcedure": {
-        "name": "르완다 EIA·BPMIS 건축허가 법정절차",
+        "name": "르완다 환경영향평가(EIA)·건축허가관리정보시스템(BPMIS) 건축허가 법정절차",
         "coverage": "official-source-linked",
-        "scope": "EIA 분류·심사는 장관령 제001/2019호의 전국 절차이고 건축허가는 City of Kigali 또는 대상 District OSC가 BPMIS로 처리한다. Category 4·5는 RHA non-objection이 추가된다.",
+        "scope": "환경영향평가 분류·심사는 장관령 제001/2019호의 전국 절차이고 건축허가는 키갈리시 또는 대상 지구 OSC가 BPMIS로 처리한다. 등급(Category) 4·5는 RHA 이의없음 확인(non-objection)이 추가된다.",
         "stages": [
-          "G0 환경분류·TOR",
-          "G1 EIA 작성·심사",
+          "G0 환경분류·평가범위·과업지시서(Terms of Reference, TOR)",
+          "G1 환경영향평가 작성·심사",
           "G2 BPMIS 접수·기술심사",
           "G3 환경·건축결정"
         ],
@@ -235,11 +235,11 @@
           {
             "lane": "건축주·신청인",
             "stage": 0,
-            "label": "Project Brief 제출·EIA 등록",
+            "label": "사업개요서(Project Brief) 제출·환경영향평가 등록",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "사업시행자가 사업개요·입지·예상영향을 담은 Project Brief를 환경승인기관에 제출해 EIA 절차를 개시한다.",
-            "output": "환경신청 등록·Project Brief",
+            "action": "사업시행자가 사업개요·입지·예상영향을 담은 사업개요서를 환경승인기관에 제출해 환경영향평가 절차를 개시한다.",
+            "output": "환경신청 등록·사업개요서",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "REMA project application", "instrumentId": "RWA-REMA-EIA-GUIDE", "provisions": ["Section 2.1.1 — Project Application and Registration"]},
@@ -249,11 +249,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 0,
-            "label": "Full·Partial EIA 분류",
+            "label": "전체·부분 환경영향평가(EIA) 분류",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "환경승인기관이 장관령 목록과 Project Brief를 대조해 full EIA, partial EIA 또는 목록 밖 경로를 분류한다.",
-            "output": "EIA 분류·심사경로",
+            "action": "환경승인기관이 장관령 목록과 사업개요서를 대조해 전체 환경영향평가, 부분 환경영향평가 또는 목록 밖 경로를 분류한다.",
+            "output": "환경영향평가 분류·심사경로",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "EIA project lists", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Articles 3-5"]},
@@ -263,11 +263,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 0,
-            "label": "EIA 전문가·TOR 확정",
+            "label": "환경영향평가 전문가·과업지시서 확정",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "승인된 EIA 전문가가 제안한 TOR를 환경승인기관이 승인하거나 수정요구하고, 확정 TOR에 따라 평가범위를 정한다.",
-            "output": "승인·수정된 EIA Terms of Reference",
+            "action": "승인된 환경영향평가 전문가가 제안한 과업지시서를 환경승인기관이 승인하거나 수정요구하고, 확정 과업지시서에 따라 평가범위를 정한다.",
+            "output": "승인·수정된 환경영향평가 과업지시서",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "EIA terms of reference", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Article 6"]},
@@ -277,11 +277,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 1,
-            "label": "EIA 조사·이해관계자 의견반영",
+            "label": "환경영향평가 조사·이해관계자 의견반영",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "선정 전문가는 확정 TOR에 따라 환경·사회·경제영향과 저감책을 평가하고 모든 관련 이해관계자 의견을 반영한다.",
-            "output": "EIA Report·관리·저감계획",
+            "action": "선정 전문가는 확정 과업지시서에 따라 환경·사회·경제영향과 저감책을 평가하고 모든 관련 이해관계자 의견을 반영한다.",
+            "output": "환경영향평가서(EIA Report)·관리·저감계획",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "conduct of EIA", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Article 7"]}
@@ -290,11 +290,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 1,
-            "label": "EIA Report 전자제출",
+            "label": "환경영향평가서 전자제출",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "선정 전문가는 완료된 EIA Report를 Word·PDF 형식으로 환경승인기관에 제출하고 필요 시 addendum을 첨부한다.",
-            "output": "전자 EIA Report·addendum",
+            "action": "선정 전문가는 완료된 환경영향평가서를 Word·PDF 형식으로 환경승인기관에 제출하고 필요 시 부록(addendum)을 첨부한다.",
+            "output": "전자 환경영향평가서·부록",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "submission of EIA report", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Article 8"]}
@@ -306,8 +306,8 @@
             "label": "20일 본심사·추가정보·공중참여",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "환경승인기관이 TOR·지침 적합성을 심사해 20 working days 안에 수락 또는 추가정보를 요구하고, 필요한 경우 15 working days를 더해 공중참여를 실시한다.",
-            "output": "EIA 심사의견·추가정보 요구·공중참여 기록",
+            "action": "환경승인기관이 과업지시서·지침 적합성을 심사해 20근무일 안에 수락 또는 추가정보를 요구하고, 필요한 경우 15근무일을 더해 공중참여를 실시한다.",
+            "output": "환경영향평가 심사의견·추가정보 요구·공중참여 기록",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "report analysis and additional information", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Articles 9-10"]}
@@ -316,11 +316,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 1,
-            "label": "환경 추가정보·Addendum 재제출",
+            "label": "환경 추가정보·부록 재제출",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "공식 추가정보 요구와 공중참여 의견을 반영해 수정 EIA Report 또는 addendum을 제출한다.",
-            "output": "수정 EIA Report·추가정보",
+            "action": "공식 추가정보 요구와 공중참여 의견을 반영해 수정 환경영향평가서 또는 부록을 제출한다.",
+            "output": "수정 환경영향평가서·추가정보",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "additional information and addendum", "instrumentId": "RWA-EIA-ORDER-001-2019", "provisions": ["Articles 8-9"]}
@@ -329,11 +329,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 3,
-            "label": "환경승인·EIA Certificate 결정",
+            "label": "환경승인·환경영향평가 승인서(EIA Certificate of Authorization) 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "환경승인기관이 검토완료 후 프로젝트를 조건부 또는 무조건 승인하거나 거부하고 승인 시 EIA Certificate of Authorization을 발급한다.",
-            "output": "EIA Certificate·조건 또는 거부결정",
+            "action": "환경승인기관이 검토완료 후 프로젝트를 조건부 또는 무조건 승인하거나 거부하고 승인 시 환경영향평가 승인서를 발급한다.",
+            "output": "환경영향평가 승인서·조건 또는 거부결정",
             "authorityIds": ["rdb-rema"],
             "refs": [
               {"source": "REMA record of decision", "instrumentId": "RWA-REMA-EIA-GUIDE", "provisions": ["Sections 2.1.6.5-2.1.6.8"]},
@@ -341,9 +341,9 @@
             ],
             "permitGate": {
               "key": "eia-authorization",
-              "gate": "환경승인기관의 EIA 공식결정",
-              "decision": "환경승인기관이 EIA를 승인·조건부 승인, 추가정보 요구 또는 거부하고 Certificate 발급 여부를 결정한다.",
-              "output": "EIA Certificate·조건 또는 거부결정",
+              "gate": "환경승인기관의 환경영향평가 공식결정",
+              "decision": "환경승인기관이 환경영향평가를 승인·조건부 승인, 추가정보 요구 또는 거부하고 승인서 발급 여부를 결정한다.",
+              "output": "환경영향평가 승인서·조건 또는 거부결정",
               "dependsOn": []
             }
           },
@@ -353,7 +353,7 @@
             "label": "BPMIS 건축허가 신청",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "해당 EIA Certificate·환경조건과 전문가 서명 건축·구조·설비도서를 BPMIS로 City of Kigali 또는 District OSC에 제출한다.",
+            "action": "해당 환경영향평가 승인서·환경조건과 전문가 서명 건축·구조·설비도서를 BPMIS로 키갈리시 또는 지구 OSC에 제출한다.",
             "output": "BPMIS 건축허가 신청번호",
             "authorityIds": ["district-osc"],
             "refs": [
@@ -367,7 +367,7 @@
             "label": "완비확인·기술평가",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "OSC가 신청완비를 확인한 뒤 planning·architecture·structure·services와 환경조건을 기술평가한다.",
+            "action": "OSC가 신청완비를 확인한 뒤 계획·건축·구조·기반시설과 환경조건을 기술평가한다.",
             "output": "완비확인·분야별 기술검토 의견",
             "authorityIds": ["district-osc"],
             "refs": [
@@ -390,11 +390,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 2,
-            "label": "Category 4·5 RHA non-objection",
+            "label": "등급 4·5 RHA 이의없음 확인",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "Category 4·5는 RHA가 모든 요구사항의 준수를 심사해 non-objection을 내야 District·City가 유효한 건축허가를 발급할 수 있다.",
-            "output": "RHA non-objection 또는 보완·부적합의견",
+            "action": "등급 4·5는 RHA가 모든 요구사항의 준수를 심사해 이의없음 확인을 내야 지구·시가 유효한 건축허가를 발급할 수 있다.",
+            "output": "RHA 이의없음 확인 또는 보완·부적합의견",
             "authorityIds": ["rha"],
             "refs": [
               {"source": "mandatory RHA no-objection", "instrumentId": "RWA-URBAN-BUILDING-REG-2019", "provisions": ["Article 27"]},
@@ -407,7 +407,7 @@
             "label": "건축허가 공식결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "OSC가 완비일로부터 30일 안에 건축허가를 승인·조건부 승인, amendments 반환 또는 거부하고 지연 시 사유를 서면통지한다.",
+            "action": "OSC가 완비일로부터 30일 안에 건축허가를 승인·조건부 승인, 보완요청(amendments) 반환 또는 거부하고 지연 시 사유를 서면통지한다.",
             "output": "BPMIS 건축허가·조건 또는 반려·거부통지",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
@@ -416,33 +416,33 @@
             ],
             "permitGate": {
               "key": "building-permit-decision",
-              "gate": "District·City 건축허가 공식결정",
-              "decision": "OSC가 환경승인과 기술심사, 해당 시 RHA non-objection을 토대로 건축허가·조건, 보완 또는 거부를 결정한다.",
+              "gate": "지구·시 건축허가 공식결정",
+              "decision": "OSC가 환경승인과 기술심사, 해당 시 RHA 이의없음 확인을 토대로 건축허가·조건, 보완 또는 거부를 결정한다.",
               "output": "건축허가·승인조건 또는 공식 반려·거부통지",
               "dependsOn": ["eia-authorization"]
             }
           }
         ],
         "edges": [
-          [0, 1, "sequence", "Project Brief"],
-          [1, 2, "sequence", "EIA 경로"],
-          [2, 3, "sequence", "승인 TOR"],
+          [0, 1, "sequence", "사업개요서"],
+          [1, 2, "sequence", "환경영향평가 경로"],
+          [2, 3, "sequence", "승인 과업지시서"],
           [3, 4, "sequence", "완료 보고서"],
           [4, 5, "sequence", "전자제출"],
           [5, 7, "sequence", "심사완료"],
           [5, 6, "message", "추가정보 요구 시"],
-          [6, 5, "loop", "Addendum 재심사"],
-          [7, 8, "sequence", "EIA Certificate 첨부"],
+          [6, 5, "loop", "부록 재심사"],
+          [7, 8, "sequence", "환경영향평가 승인서 첨부"],
           [8, 9, "sequence", "완비접수"],
-          [9, 11, "sequence", "Category 4·5 해당 시"],
-          [9, 12, "sequence", "일반 Category"],
-          [9, 10, "message", "amendments 반환 시"],
+          [9, 11, "sequence", "등급 4·5 해당 시"],
+          [9, 12, "sequence", "일반 등급"],
+          [9, 10, "message", "보완요청 반환 시"],
           [10, 9, "loop", "수정도서 재평가"],
-          [11, 12, "sequence", "RHA non-objection"]
+          [11, 12, "sequence", "RHA 이의없음 확인"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "EIA·건축허가 승인", "action": "두 승인과 조건을 설계·착공조건에 통합"},
-          {"state": "rework", "label": "추가정보·Amendments", "action": "환경 addendum 또는 BPMIS 수정도서를 제출해 재심사"},
+          {"state": "success", "label": "환경영향평가·건축허가 승인", "action": "두 승인과 조건을 설계·착공조건에 통합"},
+          {"state": "rework", "label": "추가정보·보완요청", "action": "환경 부록 또는 BPMIS 수정도서를 제출해 재심사"},
           {"state": "reject", "label": "환경·건축 거부", "action": "거부사유에 따라 설계변경·재신청 또는 법정 불복 검토"}
         ]
       }
@@ -450,9 +450,9 @@
     "control-completion": {
       "verificationScope": "BPMIS 검사·점유서비스, Building Control Regulations 제5.1.1.1과 RHA 공식 Inspection Guideline의 착공 전·기초·공사중·최종검사를 연결했다.",
       "officialProcedure": {
-        "name": "르완다 BPMIS 단계검사·Occupancy Permit 절차",
+        "name": "르완다 건축허가관리정보시스템(BPMIS) 단계검사·점유허가(Occupancy Permit) 절차",
         "coverage": "official-source-linked",
-        "scope": "City of Kigali와 District OSC가 BPMIS로 검사통지와 Occupancy Permit을 처리하는 전국 절차다. 검사 횟수와 참여전문분야는 건축물 Category·occupancy class에 따라 달라진다.",
+        "scope": "키갈리시와 지구 OSC가 BPMIS로 검사통지와 점유허가를 처리하는 전국 절차다. 검사 횟수와 참여전문분야는 건축물 등급(Category)·점유등급(occupancy class)에 따라 달라진다.",
         "stages": [
           "G0 착공·검사통지",
           "G1 공사단계 검사",
@@ -480,8 +480,8 @@
             "label": "BPMIS 검사통지·검사예약",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "건축물 Category와 공정단계에 맞춰 BPMIS Inspection Notice로 District/City inspector에게 검사를 통지한다.",
-            "output": "BPMIS Inspection Notice·검사예약",
+            "action": "건축물 등급과 공정단계에 맞춰 BPMIS 검사통지서(Inspection Notice)로 지구·시 검사관에게 검사를 통지한다.",
+            "output": "BPMIS 검사통지서·검사예약",
             "authorityIds": ["district-osc"],
             "refs": [
               {"source": "BPMIS inspection service", "instrumentId": "RWA-BPMIS", "provisions": ["Inspection Notice; notify district office for site inspections"]}
@@ -490,11 +490,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 1,
-            "label": "착공 전·Site Mobilisation 검사",
+            "label": "착공 전·현장동원(Site Mobilisation) 검사",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "OSC inspector가 permit·approved plans·zoning·현장기록을 대조해 site mobilisation, setting out, excavation·earthworks를 확인한다.",
-            "output": "착공 전·setting-out 검사기록",
+            "action": "OSC 검사관이 허가서·승인도면·용도지역·현장기록을 대조해 현장동원, 측량배치(setting out), 굴착·토공을 확인한다.",
+            "output": "착공 전·측량배치 검사기록",
             "authorityIds": ["district-osc"],
             "refs": [
               {"source": "inspection stages and forms", "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE", "provisions": ["Forms 1-2; before-construction inspection"]}
@@ -506,8 +506,8 @@
             "label": "기초공사 단계검사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "기초 은폐 전에 inspector가 foundation works를 승인도서·구조기준과 대조하고 검사결과와 지적사항을 기록한다.",
-            "output": "Foundation inspection report",
+            "action": "기초 은폐 전에 검사관이 기초공사(foundation works)를 승인도서·구조기준과 대조하고 검사결과와 지적사항을 기록한다.",
+            "output": "기초검사보고서",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
               {"source": "foundation inspection", "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE", "provisions": ["Form 3; during-construction foundation inspection"]}
@@ -519,8 +519,8 @@
             "label": "시정 재검사·후속 공정 합동검사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "지적사항이 있으면 시정된 해당 공정을 먼저 재검사하고, 적합하면 Category·occupancy class에 따른 superstructure·설비·안전검사와 필요한 관계기관 joint site inspection을 계속한다.",
-            "output": "시정 재검사·Superstructure·joint inspection reports",
+            "action": "지적사항이 있으면 시정된 해당 공정을 먼저 재검사하고, 적합하면 등급·점유등급에 따른 상부구조(superstructure)·설비·안전검사와 필요한 관계기관 합동 현장검사(joint site inspection)를 계속한다.",
+            "output": "시정 재검사·상부구조·합동검사 보고서",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
               {"source": "construction inspections", "instrumentId": "RWA-BUILDING-INSPECTION-GUIDE", "provisions": ["Forms 4-5; mandatory and random inspections by category"]}
@@ -543,11 +543,11 @@
           {
             "lane": "건축주·신청인",
             "stage": 2,
-            "label": "Occupancy Permit 전자신청",
+            "label": "점유허가 전자신청",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "공사완료 후 점유 전에 건축주가 BPMIS로 Occupancy Permit을 신청하고 승인도서·검사·준공자료를 제출한다.",
-            "output": "BPMIS Occupancy Permit 신청번호",
+            "action": "공사완료 후 점유 전에 건축주가 BPMIS로 점유허가를 신청하고 승인도서·검사·준공자료를 제출한다.",
+            "output": "BPMIS 점유허가 신청번호",
             "authorityIds": ["district-osc"],
             "refs": [
               {"source": "BPMIS occupancy service", "instrumentId": "RWA-BPMIS", "provisions": ["Occupancy Permit Application"]},
@@ -560,8 +560,8 @@
             "label": "OSC 준공·최종검사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "OSC housing officer가 Occupancy Permit 신청을 받은 뒤 발급 전에 완공건물의 최종검사를 실시하고 법령·승인도서·안전·설비 적합성을 확인한다.",
-            "output": "Final inspection report·시정요구 또는 적합의견",
+            "action": "OSC 주택담당자가 점유허가 신청을 받은 뒤 발급 전에 완공건물의 최종검사를 실시하고 법령·승인도서·안전·설비 적합성을 확인한다.",
+            "output": "최종검사보고서(Final inspection report)·시정요구 또는 적합의견",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
               {"source": "final inspection before occupancy", "instrumentId": "RWA-BUILDING-CONTROL-2E", "provisions": ["Section 5.1.1.1"]},
@@ -571,11 +571,11 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "Occupancy Permit 발급결정",
+            "label": "점유허가 발급결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "OSC가 최종검사 적합 시 Occupancy Permit을 발급하고, 미비하면 amendments·시정 후 재검사 또는 거부를 통지한다.",
-            "output": "Occupancy Permit 또는 공식 시정·거부통지",
+            "action": "OSC가 최종검사 적합 시 점유허가를 발급하고, 미비하면 보완요청(amendments)·시정 후 재검사 또는 거부를 통지한다.",
+            "output": "점유허가 또는 공식 시정·거부통지",
             "authorityIds": ["district-osc", "rha"],
             "refs": [
               {"source": "occupancy inspection and permit", "instrumentId": "RWA-BUILDING-CONTROL-2E", "provisions": ["Part 5, Section 5.1.1.1"]},
@@ -583,16 +583,16 @@
             ],
             "permitGate": {
               "key": "occupancy-permit-decision",
-              "gate": "District·City Occupancy Permit 결정",
+              "gate": "지구·시 점유허가 결정",
               "decision": "OSC가 최종검사 결과에 따라 점유허가 발급, 시정·재검사 또는 거부를 공식 결정한다.",
-              "output": "BPMIS Occupancy Permit 또는 공식 시정·거부통지",
+              "output": "BPMIS 점유허가 또는 공식 시정·거부통지",
               "dependsOn": []
             }
           }
         ],
         "edges": [
           [0, 1, "sequence", "공정별 검사계획"],
-          [1, 2, "sequence", "Inspection Notice"],
+          [1, 2, "sequence", "검사통지서"],
           [2, 3, "sequence", "착공 전 적합"],
           [3, 4, "sequence", "기초 적합"],
           [4, 6, "sequence", "공사검사 적합"],
@@ -605,7 +605,7 @@
           [7, 5, "loop", "최종검사 시정요구"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "검사적합·점유허가", "action": "Occupancy Permit 발급 후 건물을 점유·운영"},
+          {"state": "success", "label": "검사적합·점유허가", "action": "점유허가 발급 후 건물을 점유·운영"},
           {"state": "rework", "label": "시정·재검사", "action": "해당 공정 또는 최종검사 지적사항을 시정하고 BPMIS로 재검사"},
           {"state": "reject", "label": "점유허가 거부", "action": "점유를 금지하고 공식 거부사유에 따라 재시공·재검사 또는 불복 검토"}
         ]

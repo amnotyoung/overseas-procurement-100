@@ -32,9 +32,9 @@
     "site-urban": {
       "verificationScope": "전국 공통 국가건축법 위에 LGU별 zoning ordinance가 적용된다. 아래 6단계는 Quezon City의 Locational Clearance 공식 서비스를 대표사례로 정리했으며, 다른 지역은 관할 LGU의 CLUP·조례·서비스 절차로 교체한다.",
       "officialProcedure": {
-        "name": "필리핀 도시계획·부지규제 — Quezon City 입지확인 사례",
+        "name": "필리핀 도시계획·부지규제 — 케손시(Quezon City) 입지확인 사례",
         "coverage": "official-source-linked",
-        "scope": "Quezon City Zoning Administration Unit의 신축·정규 Locational Clearance 절차 사례다. 필지별 허용용도·PSO·FAR·BHL·이격·주차는 해당 LGU의 현행 zoning ordinance로 확정한다.",
+        "scope": "케손시 용도지역행정팀(Zoning Administration Unit)의 신축·정규 입지확인(Locational Clearance) 절차 사례다. 필지별 허용용도·대지점유율(PSO)·용적률(FAR)·건축높이한도(BHL)·이격·주차는 해당 지방정부(LGU)의 현행 용도지역 조례(zoning ordinance)로 확정한다.",
         "stages": [
           "G0 신청도서",
           "G1 용도지역 심사",
@@ -49,8 +49,8 @@
             "emphasis": "key",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "신청인이 현년도 tax clearance, 토지권원, 서명·날인된 lot plan과 건축도면, 필요한 소유자 동의·대리권 서류를 Zoning Administration Unit에 제출한다.",
-            "output": "Locational Clearance 신청도서·접수기록",
+            "action": "신청인이 현년도 납세증명(tax clearance), 토지권원, 서명·날인된 필지계획도(lot plan)와 건축도면, 필요한 소유자 동의·대리권 서류를 용도지역행정팀에 제출한다.",
+            "output": "입지확인 신청도서·접수기록",
             "authorityIds": ["lgu-zoning"],
             "refs": [
               {
@@ -67,7 +67,7 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Zoning Administration Unit이 신청서, 권원, 세금납부, lot plan과 전문자 서명도서의 완비성을 확인하고 미비하면 보완을 요구한다.",
+            "action": "용도지역행정팀이 신청서, 권원, 세금납부, 필지계획도와 전문자 서명도서의 완비성을 확인하고 미비하면 보완을 요구한다.",
             "output": "완비접수 또는 서류 보완안내",
             "authorityIds": ["lgu-zoning"],
             "refs": [
@@ -85,7 +85,7 @@
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Zoning Official이 필지 zoning, 허용용도와 건축계획을 지방 zoning ordinance 및 국가·지방 건축코드에 대조한다.",
+            "action": "용도지역 담당관(Zoning Official)이 필지 용도지역, 허용용도와 건축계획을 지방 용도지역 조례 및 국가·지방 건축코드에 대조한다.",
             "output": "용도지역 적합성 심사의견",
             "authorityIds": ["lgu-zoning", "lgu-building-official"],
             "refs": [
@@ -108,7 +108,7 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "일반 적합신청의 지적사항은 수정도서로 보완하고, 조례상 Certificate of Exception 또는 Special Use Permit 대상이면 추가서류와 공청·시의회 결의 절차를 진행한다.",
+            "action": "일반 적합신청의 지적사항은 수정도서로 보완하고, 조례상 예외증명(Certificate of Exception) 또는 특별용도허가(Special Use Permit) 대상이면 추가서류와 공청·시의회 결의 절차를 진행한다.",
             "output": "보완도서 또는 예외·특별용도 심의기록",
             "authorityIds": ["lgu-zoning"],
             "refs": [
@@ -140,12 +140,12 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "Locational Clearance 발급·거부 결정",
+            "label": "입지확인 발급·거부 결정",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Zoning Official이 적합한 신청에 Locational Clearance와 승인도서를 발급하고, 부적합 신청은 보완·예외절차 안내 또는 거부결정으로 종결한다.",
-            "output": "Locational Clearance·승인도서 또는 거부통지",
+            "action": "용도지역 담당관이 적합한 신청에 입지확인과 승인도서를 발급하고, 부적합 신청은 보완·예외절차 안내 또는 거부결정으로 종결한다.",
+            "output": "입지확인·승인도서 또는 거부통지",
             "authorityIds": ["lgu-zoning"],
             "refs": [
               {
@@ -156,9 +156,9 @@
             ],
             "permitGate": {
               "key": "locational-clearance",
-              "gate": "LGU의 Locational Clearance 공식결정",
-              "decision": "Zoning Official이 제안 건축물의 지방 zoning 적합성과 건축허가 진입 가능 여부를 공식 결정한다.",
-              "output": "Locational Clearance·조건·승인도서 또는 거부통지",
+              "gate": "지방정부의 입지확인 공식결정",
+              "decision": "용도지역 담당관이 제안 건축물의 지방 용도지역 적합성과 건축허가 진입 가능 여부를 공식 결정한다.",
+              "output": "입지확인·조건·승인도서 또는 거부통지",
               "dependsOn": []
             }
           }
@@ -176,12 +176,12 @@
           {
             "state": "success",
             "label": "입지 적합·조건부 적합",
-            "action": "Locational Clearance와 조건을 건축허가 신청도서에 반영"
+            "action": "입지확인과 조건을 건축허가 신청도서에 반영"
           },
           {
             "state": "rework",
             "label": "보완·예외심의",
-            "action": "지적사항을 수정하거나 COE·SUP 대상이면 공청·시의회 결의 후 재심사"
+            "action": "지적사항을 수정하거나 예외증명·특별용도허가 대상이면 공청·시의회 결의 후 재심사"
           },
           {
             "state": "reject",
@@ -194,9 +194,9 @@
     "permit-environment": {
       "verificationScope": "환경 절차는 DENR-EMB의 전국 PEISS, 건축허가는 LGU OBO가 집행한다. 아래 건축허가 단계는 Quezon City OBO를 대표사례로 하며 대상 LGU의 서비스·수수료로 교체한다.",
       "officialProcedure": {
-        "name": "필리핀 건축허가·환경심사 — LGU OBO·PEISS",
+        "name": "필리핀 건축허가·환경심사 — 지방정부 건축사무소(LGU OBO)·필리핀 환경영향평가체계(PEISS)",
         "coverage": "official-source-linked",
-        "scope": "PEISS의 ECC·CNC 분류와 LGU 건축허가·BFP FSEC를 연결한 절차다. 환경대상 여부와 OBO 제출목록은 사업유형·대상 LGU별로 달라진다.",
+        "scope": "필리핀 환경영향평가체계의 환경준수증명(ECC)·비대상확인증명(CNC) 분류와 지방정부 건축허가·소방안전평가확인서(Fire Safety Evaluation Clearance, FSEC)를 연결한 절차다. 환경대상 여부와 건축사무소 제출목록은 사업유형·대상 지방정부별로 달라진다.",
         "stages": [
           "G4 환경분류·신청",
           "G5 환경심사·결정",
@@ -207,12 +207,12 @@
           {
             "lane": "건축주·신청인",
             "stage": 0,
-            "label": "PEISS coverage·ECC/CNC 경로 분류",
+            "label": "환경평가 적용범위·환경준수/비대상확인 경로 분류",
             "emphasis": "key",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "신청인이 사업유형·규모·입지를 ECP·ECA와 PEISS project group에 대조해 ECC 보고서 유형 또는 Category D CNC 경로를 정한다.",
-            "output": "PEISS category·EIA 보고서·ECC/CNC 신청경로",
+            "action": "신청인이 사업유형·규모·입지를 환경중요사업(ECP)·환경민감지역(ECA)과 환경평가 사업군(project group)에 대조해 환경준수증명 보고서 유형 또는 환경범주 D(Category D) 비대상확인증명 경로를 정한다.",
+            "output": "환경평가 범주·환경영향평가 보고서·환경준수/비대상확인 신청경로",
             "authorityIds": ["emb-denr"],
             "refs": [
               {
@@ -225,12 +225,12 @@
           {
             "lane": "건축주·신청인",
             "stage": 0,
-            "label": "ECC·CNC 신청서·환경보고서 제출",
+            "label": "환경준수·비대상확인 신청서·환경보고서 제출",
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "해당 보고서 형식(EIS·IEE checklist·PDR 등), 신청서와 지원문서를 EMB 중앙 또는 관할 Regional Office에 제출한다.",
-            "output": "ECC·CNC 정식 신청패키지·접수기록",
+            "action": "해당 환경영향서(EIS)·초기환경검토 체크리스트(IEE checklist)·사업설명보고서(PDR) 등 보고서 형식, 신청서와 지원문서를 EMB 중앙 또는 관할 지역사무소(Regional Office)에 제출한다.",
+            "output": "환경준수·비대상확인 정식 신청패키지·접수기록",
             "authorityIds": ["emb-denr"],
             "refs": [
               {
@@ -261,12 +261,12 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 1,
-            "label": "ECC·CNC 발급 또는 거부결정",
+            "label": "환경준수·비대상확인증명 발급 또는 거부결정",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "권한 있는 DENR·EMB 결정자가 평가결과에 따라 ECC·CNC를 발급하거나 조건·추가검토·거부를 공식 통지한다.",
-            "output": "ECC·CNC·승인조건 또는 거부통지",
+            "action": "권한 있는 DENR·EMB 결정자가 평가결과에 따라 환경준수·비대상확인증명을 발급하거나 조건·추가검토·거부를 공식 통지한다.",
+            "output": "환경준수·비대상확인증명·승인조건 또는 거부통지",
             "authorityIds": ["emb-denr"],
             "refs": [
               {
@@ -277,21 +277,21 @@
             ],
             "permitGate": {
               "key": "environment-decision",
-              "gate": "DENR-EMB의 ECC·CNC 공식결정",
+              "gate": "DENR-EMB의 환경준수·비대상확인 공식결정",
               "decision": "관할 EMB가 사업의 환경승인·비대상 확인과 조건 또는 거부를 공식 결정한다.",
-              "output": "ECC·CNC·환경조건 또는 거부통지",
+              "output": "환경준수·비대상확인증명·환경조건 또는 거부통지",
               "dependsOn": []
             }
           },
           {
             "lane": "환경·소방·검사기관",
             "stage": 2,
-            "label": "BFP Fire Safety Evaluation Clearance 확보",
+            "label": "BFP 소방안전평가확인서 확보",
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "건축·소방 도서를 BFP에 제출하고 소방안전평가를 거쳐 건축허가 선행 FSEC를 확보한다.",
-            "output": "Fire Safety Evaluation Clearance 또는 보완통지",
+            "action": "건축·소방 도서를 BFP에 제출하고 소방안전평가를 거쳐 건축허가 선행 소방안전평가확인서를 확보한다.",
+            "output": "소방안전평가확인서 또는 보완통지",
             "authorityIds": ["bfp"],
             "refs": [
               {
@@ -308,8 +308,8 @@
             "emphasis": "key",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Locational Clearance, FSEC, 권원자료와 면허전문가가 서명한 건축·구조·전기·기계·위생 등 통합 신청도서를 관할 OBO에 제출한다.",
-            "output": "건축·ancillary permit 신청서·접수기록",
+            "action": "입지확인(Locational Clearance), 소방안전평가확인서, 권원자료와 면허전문가가 서명한 건축·구조·전기·기계·위생 등 통합 신청도서를 관할 건축사무소(OBO)에 제출한다.",
+            "output": "건축·부대설비 허가(ancillary permit) 신청서·접수기록",
             "authorityIds": ["lgu-building-official", "lgu-zoning", "bfp"],
             "refs": [
               {
@@ -326,7 +326,7 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "OBO가 신청도서의 zoning·구조·건축·설비·소방 적합성을 분야별 심사하고 미비사항은 공식 보완요구로 통지한다.",
+            "action": "건축사무소가 신청도서의 용도지역(zoning)·구조·건축·설비·소방 적합성을 분야별 심사하고 미비사항은 공식 보완요구로 통지한다.",
             "output": "분야별 심사의견·보완요구 또는 허가결정안",
             "authorityIds": ["lgu-building-official"],
             "refs": [
@@ -344,8 +344,8 @@
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Building Official이 법정 최소요건을 충족한 신청에 건축·부대설비 허가를 발급하고, 미충족 신청은 보완 또는 불허로 종결한다.",
-            "output": "Building Permit·ancillary permits 또는 불허통지",
+            "action": "건축담당관(Building Official)이 법정 최소요건을 충족한 신청에 건축·부대설비 허가를 발급하고, 미충족 신청은 보완 또는 불허로 종결한다.",
+            "output": "건축허가(Building Permit)·부대설비 허가 또는 불허통지",
             "authorityIds": ["lgu-building-official"],
             "refs": [
               {
@@ -356,8 +356,8 @@
             ],
             "permitGate": {
               "key": "building-permit",
-              "gate": "LGU Building Official의 건축허가 공식결정",
-              "decision": "Building Official이 승인도서에 대한 건축·부대설비 허가 발급 또는 불허를 공식 결정한다.",
+              "gate": "지방정부 건축담당관의 건축허가 공식결정",
+              "decision": "건축담당관이 승인도서에 대한 건축·부대설비 허가 발급 또는 불허를 공식 결정한다.",
               "output": "건축허가·승인도서·조건 또는 불허통지",
               "dependsOn": []
             }
@@ -368,9 +368,9 @@
           [1, 2, "sequence", "환경신청 접수"],
           [2, 3, "sequence", "검토완료"],
           [2, 1, "loop", "추가정보·수정보고서 요구 시"],
-          [3, 5, "message", "해당 시 ECC·CNC"],
+          [3, 5, "message", "해당 시 환경준수·비대상확인증명"],
           [0, 4, "message", "병렬 소방도서 검토"],
-          [4, 5, "sequence", "FSEC"],
+          [4, 5, "sequence", "소방안전평가확인서"],
           [5, 6, "sequence", "건축허가 접수"],
           [6, 7, "sequence", "기술심사 완료"],
           [6, 5, "loop", "도서 보완요구 시"]
@@ -379,7 +379,7 @@
           {
             "state": "success",
             "label": "환경결정·건축허가 발급",
-            "action": "ECC·CNC와 건축·소방 허가조건을 승인도서와 착공조건에 반영"
+            "action": "환경준수·비대상확인증명과 건축·소방 허가조건을 승인도서와 착공조건에 반영"
           },
           {
             "state": "rework",
@@ -399,7 +399,7 @@
       "officialProcedure": {
         "name": "필리핀 기술검사·준공·점유승인 — OBO·BFP",
         "coverage": "official-source-linked",
-        "scope": "승인도서 시공, OBO 공사·최종검사, BFP FSIC와 Certificate of Occupancy의 법정 선후관계를 표시한다. 대상 LGU의 양식·수수료·검사예약은 별도 적용한다.",
+        "scope": "승인도서 시공, 건축사무소(OBO) 공사·최종검사, 소방청(BFP) 소방안전검사증명서(Fire Safety Inspection Certificate, FSIC)와 점유허가증(Certificate of Occupancy)의 법정 선후관계를 표시한다. 대상 지방정부(LGU)의 양식·수수료·검사예약은 별도 적용한다.",
         "stages": [
           "G8 허가조건·시공",
           "G9 준공신청",
@@ -432,7 +432,7 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Building Official의 검사자가 진행 중 공사의 승인도서·안전기준 적합성을 검사하고 위반에는 시정·중지 등 공식 조치를 한다.",
+            "action": "건축담당관(Building Official)의 검사자가 진행 중 공사의 승인도서·안전기준 적합성을 검사하고 위반에는 시정·중지 등 공식 조치를 한다.",
             "output": "공사검사 기록·시정 또는 중지명령",
             "authorityIds": ["lgu-building-official"],
             "refs": [
@@ -446,12 +446,12 @@
           {
             "lane": "건축주·신청인",
             "stage": 1,
-            "label": "준공증명·as-built·점유허가 신청",
+            "label": "준공증명·준공도면(as-built)·점유허가 신청",
             "emphasis": "key",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "공사완료 후 신청인이 Certificate of Completion, 점유허가 수수료 산정자료와 변경이 있으면 as-built 도서를 OBO에 제출한다.",
-            "output": "Certificate of Occupancy 신청도서·OBO 접수기록",
+            "action": "공사완료 후 신청인이 준공증명서(Certificate of Completion), 점유허가 수수료 산정자료와 변경이 있으면 준공도면을 건축사무소에 제출한다.",
+            "output": "점유허가증 신청도서·건축사무소 접수기록",
             "authorityIds": ["lgu-building-official"],
             "refs": [
               {
@@ -468,8 +468,8 @@
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "BFP가 OBO endorsement, Certificate of Completion, as-built와 Fire Safety Compliance and Commissioning Report를 심사하고 현장을 검사한다.",
-            "output": "BFP 검사기록·시정요구 또는 FSIC 결정안",
+            "action": "소방청이 건축사무소 이송확인(endorsement), 준공증명서, 준공도면과 소방안전 준수·시운전보고서(Fire Safety Compliance and Commissioning Report)를 심사하고 현장을 검사한다.",
+            "output": "소방청 검사기록·시정요구 또는 소방안전검사증명 결정안",
             "authorityIds": ["bfp"],
             "refs": [
               {
@@ -482,12 +482,12 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 2,
-            "label": "FSIC 발급·보완·거부 결정",
+            "label": "소방안전검사증명서 발급·보완·거부 결정",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "관할 Fire Marshal이 소방공사·보호시스템 적합성을 확인해 점유허가 선행 FSIC를 발급하거나 시정·거부를 통지한다.",
-            "output": "Fire Safety Inspection Certificate 또는 시정·거부통지",
+            "action": "관할 소방서장(Fire Marshal)이 소방공사·보호시스템 적합성을 확인해 점유허가 선행 소방안전검사증명서를 발급하거나 시정·거부를 통지한다.",
+            "output": "소방안전검사증명서 또는 시정·거부통지",
             "authorityIds": ["bfp"],
             "refs": [
               {
@@ -498,9 +498,9 @@
             ],
             "permitGate": {
               "key": "fire-safety-certificate",
-              "gate": "BFP의 FSIC 공식결정",
+              "gate": "소방청의 소방안전검사증명 공식결정",
               "decision": "BFP가 완공 건축물의 소방공사·설비 적합성과 점유허가 진입 가능 여부를 결정한다.",
-              "output": "FSIC 또는 시정·거부통지",
+              "output": "소방안전검사증명서 또는 시정·거부통지",
               "dependsOn": []
             }
           },
@@ -511,7 +511,7 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "OBO가 완공건축물을 현장검사해 승인도서·건축·구조·설비기준과 FSIC 등 점유 선행서류를 확인하고 미비하면 보완을 요구한다.",
+            "action": "건축사무소가 완공건축물을 현장검사해 승인도서·건축·구조·설비기준과 소방안전검사증명서 등 점유 선행서류를 확인하고 미비하면 보완을 요구한다.",
             "output": "최종검사 기록·보완요구 또는 점유결정안",
             "authorityIds": ["lgu-building-official"],
             "refs": [
@@ -525,12 +525,12 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "Certificate of Occupancy 발급·불허 결정",
+            "label": "점유허가증 발급·불허 결정",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "Building Official이 완공건축물의 법정 적합성과 FSIC를 확인해 점유허가를 발급하거나 보완·불허를 공식 통지한다.",
-            "output": "Certificate of Occupancy·조건 또는 불허통지",
+            "action": "건축담당관이 완공건축물의 법정 적합성과 소방안전검사증명서를 확인해 점유허가를 발급하거나 보완·불허를 공식 통지한다.",
+            "output": "점유허가증·조건 또는 불허통지",
             "authorityIds": ["lgu-building-official"],
             "refs": [
               {
@@ -541,9 +541,9 @@
             ],
             "permitGate": {
               "key": "occupancy-certificate",
-              "gate": "LGU Building Official의 점유허가 공식결정",
-              "decision": "Building Official이 건축물 사용·점유 가능 여부와 조건을 공식 결정한다.",
-              "output": "Certificate of Occupancy·조건 또는 불허통지",
+              "gate": "지방정부 건축담당관의 점유허가 공식결정",
+              "decision": "건축담당관이 건축물 사용·점유 가능 여부와 조건을 공식 결정한다.",
+              "output": "점유허가증·조건 또는 불허통지",
               "dependsOn": ["fire-safety-certificate"]
             }
           }
@@ -551,9 +551,9 @@
         "edges": [
           [0, 1, "sequence", "공사착수"],
           [1, 2, "sequence", "공사완료"],
-          [2, 3, "sequence", "OBO endorsement·준공도서"],
+          [2, 3, "sequence", "건축사무소 이송확인·준공도서"],
           [3, 4, "sequence", "소방검사 완료"],
-          [4, 5, "sequence", "FSIC"],
+          [4, 5, "sequence", "소방안전검사증명서"],
           [5, 6, "sequence", "최종검사 완료"],
           [3, 2, "loop", "소방도서·설비 시정 시"],
           [5, 2, "loop", "준공도서·현장 보완 시"]
@@ -561,17 +561,17 @@
         "decisionBranches": [
           {
             "state": "success",
-            "label": "FSIC·점유허가 발급",
-            "action": "Certificate of Occupancy의 용도·재실·운영조건에 따라 개장·인계"
+            "label": "소방안전검사증명서·점유허가 발급",
+            "action": "점유허가증의 용도·재실·운영조건에 따라 개장·인계"
           },
           {
             "state": "rework",
             "label": "소방·준공 보완",
-            "action": "소방설비, as-built 또는 현장 미비를 시정하고 BFP·OBO 재검사"
+            "action": "소방설비, 준공도면 또는 현장 미비를 시정하고 소방청·건축사무소 재검사"
           },
           {
             "state": "reject",
-            "label": "FSIC·점유허가 거부",
+            "label": "소방안전검사증명서·점유허가 거부",
             "action": "거부·위반사유를 해소하기 전 점유·사용하지 않고 공식 재신청 경로 진행"
           }
         ]

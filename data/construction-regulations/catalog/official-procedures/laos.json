@@ -93,11 +93,11 @@
       "officialProcedure": {
         "name": "라오스 도시계획·부지규제 — 건축허가 내 필지·도시계획 심사",
         "coverage": "official-source-linked",
-        "scope": "Law 40/NA, Law 05/NA와 Decision 2241/PWT에 따른 토지권원, 도시지도·master plan·zoning·특정토지이용, 측량·배치·배수계획의 접수·현장확인·보완·허가결정 절차다.",
+        "scope": "법률 제40/NA호(Law 40/NA), 법률 제05/NA호(Law 05/NA)와 결정 제2241/PWT호(Decision 2241/PWT)에 따른 토지권원, 도시지도·종합계획(master plan)·용도지역(zoning)·특정토지이용, 측량·배치·배수계획의 접수·현장확인·보완·허가결정 절차다.",
         "stages": ["G0 관할·권원", "G1 도서·접수", "G2 현장·계획심사", "G3 허가결정"],
         "steps": [
           {
-            "lane":"도시계획·건축 허가기관","stage":0,"label":"건축물 Level 1·2·3 관할분류","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "lane":"도시계획·건축 허가기관","stage":0,"label":"건축물 등급(Level) 1·2·3 관할분류","emphasis":"key","kind":"official-guidance","basisScope":"node",
             "action":"사업 규모·높이·용도·통제건축물·환경영향 가능성에 따라 주지사/비엔티안 수도행정청, 주 PWT국 또는 군 PWT사무소 중 건축허가권자를 정한다.",
             "output":"건축물 등급·관할 허가기관",
             "authorityIds":["provincial-governor","provincial-pwt","district-pwt"],
@@ -132,8 +132,8 @@
             "refs":[{"source":"MOIC Construction Permit 안내","instrumentId":"LAO-BNED-CONSTRUCTION-PERMIT","provisions":["Authority inspection of the construction site after receipt"]},{"source":"Decision 2241/PWT 안내","instrumentId":"LAO-MPWT-CONSTRUCTION-TIPS-2024","provisions":["Articles 10-13; verification procedures"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"master plan·zoning·토지용도·환경 대조","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"기관이 설계와 현장자료를 도시지도, master plan, zoning map, 특정토지이용·도시건설관리·건축보전·환경 규정과 기술기준에 대조한다.",
+            "lane":"도시계획·건축 허가기관","stage":2,"label":"종합계획·용도지역·토지용도·환경 대조","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"기관이 설계와 현장자료를 도시지도, 종합계획, 용도지역도, 특정토지이용·도시건설관리·건축보전·환경 규정과 기술기준에 대조한다.",
             "output":"도시계획·토지이용 적합성 심사의견",
             "authorityIds":["provincial-pwt","district-pwt"],
             "refs":[{"source":"MOIC Construction Permit 안내","instrumentId":"LAO-BNED-CONSTRUCTION-PERMIT","provisions":["Compliance with city map, master plan, zoning map, specific land-use, urban/construction, conservation and environmental regulations"]}]
@@ -165,71 +165,71 @@
     "permit-environment": {
       "verificationScope":"환경영향 가능성이 있는 중·대형 건축사업의 ESIA/ECC와 Construction Permit 대표경로다. Decree 21/PMO의 Group 1(IEE)·Group 2(ESIA) 중 아래 세부 환경심사는 공개 공식자료가 가장 구체적인 Group 2 ESIA 경로를 중심으로 표시했다.",
       "officialProcedure": {
-        "name":"라오스 건축허가·환경심사 — ESIA·ECC·Construction Permit",
+        "name":"라오스 건축허가·환경심사 — 환경사회영향평가(ESIA)·환경준수증명(ECC)·건축허가(Construction Permit)",
         "coverage":"official-source-linked",
-        "scope":"환경보호법 Articles 21-22, 43과 Decree 21/PMO, 정부 ESIA 승인절차 및 MOIC Construction Permit 안내를 연결한 법정 신청·심사·보완·결정 흐름이다.",
-        "stages":["G4 환경분류·범위","G5 ESIA 심사·ECC","G6 건축허가 접수·심사","G7 허가결정"],
+        "scope":"환경보호법 제21조~제22조·제43조와 총리령 제21/PMO호(Decree 21/PMO), 정부 환경사회영향평가 승인절차 및 MOIC 건축허가 안내를 연결한 법정 신청·심사·보완·결정 흐름이다.",
+        "stages":["G4 환경분류·범위","G5 환경사회영향평가 심사·환경준수증명","G6 건축허가 접수·심사","G7 허가결정"],
         "steps":[
           {
-            "lane":"건축주·신청인","stage":0,"label":"사업규모·영향에 따른 IEE·ESIA 분류","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업자가 사업유형·규모·입지·예상영향을 법정 목록과 대조해 Group 1 IEE 또는 Group 2 ESIA 및 관할 자연자원환경기관을 확정한다.",
+            "lane":"건축주·신청인","stage":0,"label":"사업규모·영향에 따른 초기환경평가(IEE)·환경사회영향평가 분류","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"사업자가 사업유형·규모·입지·예상영향을 법정 목록과 대조해 제1그룹(Group 1) 초기환경평가 또는 제2그룹(Group 2) 환경사회영향평가 및 관할 자연자원환경기관을 확정한다.",
             "output":"환경평가 유형·관할기관·제출범위",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"환경보호법","instrumentId":"LAO-ENV-LAW-2012","provisions":["Articles 21-22; IEE and EIA"]},{"source":"Decree 21/PMO 공식 적용요약","instrumentId":"LAO-EIA-DECREE-21-2019","provisions":["Article 9; Group 1 IEE and Group 2 EIA classification"]}]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"허가 환경서비스업자 Scoping·TOR·ESIA·ESMMP 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"허가받은 환경서비스 제공자가 법정 지침에 따라 Scoping·TOR, 환경사회영향평가와 환경사회관리·모니터링계획을 작성하고 공중참여를 실시한다.",
-            "output":"Scoping·TOR·ESIA·ESMMP·공중참여 기록",
+            "lane":"현지 설계·시공 전문가","stage":0,"label":"허가 환경서비스업자 범위설정(Scoping)·과업지시서(TOR)·환경사회영향평가·환경사회관리·모니터링계획(ESMMP) 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"허가받은 환경서비스 제공자가 법정 지침에 따라 범위설정·과업지시서, 환경사회영향평가와 환경사회관리·모니터링계획을 작성하고 공중참여를 실시한다.",
+            "output":"범위설정·과업지시서·환경사회영향평가·환경사회관리·모니터링계획·공중참여 기록",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["ESIA and ESMMP by licensed environmental service provider; public involvement"]},{"source":"Decree 21/PMO 공식 적용요약","instrumentId":"LAO-EIA-DECREE-21-2019","provisions":["Articles 19-30; EIA preparation, review and approval", "Articles 36-39; public involvement"]}]
           },
           {
-            "lane":"건축주·신청인","stage":0,"label":"관할 환경기관 ESIA·ESMMP 승인신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업자가 Scoping·TOR와 ESIA·ESMMP를 관할 자연자원환경기관에 제출해 환경준수증명 승인절차를 개시한다.",
-            "output":"ESIA·ESMMP 승인신청·접수기록",
+            "lane":"건축주·신청인","stage":0,"label":"관할 환경기관 환경사회영향평가·환경사회관리·모니터링계획 승인신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"사업자가 범위설정·과업지시서와 환경사회영향평가·환경사회관리·모니터링계획을 관할 자연자원환경기관에 제출해 환경준수증명 승인절차를 개시한다.",
+            "output":"환경사회영향평가·환경사회관리·모니터링계획 승인신청·접수기록",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["Presentation at authority office; ESIA and ESMMP required documents"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"Scoping·TOR·행정완비 검토","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"환경기관이 Scoping·TOR 및 ESIA·ESMMP의 행정적 완비성과 작성자 자격·공중참여 자료를 확인해 기술심사 범위를 확정한다.",
-            "output":"Scoping·TOR 의견·행정완비 확인",
+            "lane":"환경·소방·검사기관","stage":1,"label":"범위설정·과업지시서·행정완비 검토","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"환경기관이 범위설정·과업지시서 및 환경사회영향평가·환경사회관리·모니터링계획의 행정적 완비성과 작성자 자격·공중참여 자료를 확인해 기술심사 범위를 확정한다.",
+            "output":"범위설정·과업지시서 의견·행정완비 확인",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["Scoping and TOR review; administrative review of ESIA and ESMMP"]}]
           },
           {
             "lane":"환경·소방·검사기관","stage":1,"label":"기술심사·전문심사단·공중의견 반영","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"환경기관과 필요시 구성된 기술심사단이 영향예측·대안·완화·보상·ESMMP와 공중의견 반영을 검토해 승인·보완·거부 권고를 작성한다.",
-            "output":"환경 기술심사의견·ECC 결정안",
+            "action":"환경기관과 필요시 구성된 기술심사단이 영향예측·대안·완화·보상·환경사회관리·모니터링계획과 공중의견 반영을 검토해 승인·보완·거부 권고를 작성한다.",
+            "output":"환경 기술심사의견·환경준수증명 결정안",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["Technical review and task force for complicated projects; denial grounds"]},{"source":"Decree 21/PMO 공식 적용요약","instrumentId":"LAO-EIA-DECREE-21-2019","provisions":["Articles 19-30; technical panel, review and approval"]}]
           },
           {
-            "lane":"건축주·신청인","stage":1,"label":"ESIA·ESMMP 보완·재심사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "lane":"건축주·신청인","stage":1,"label":"환경사회영향평가·환경사회관리·모니터링계획 보완·재심사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
             "action":"행정·기술심사에서 누락·불충분 사항이 통지되면 환경서비스업자가 조사·대안·완화·공중참여와 관리계획을 수정해 재제출한다.",
-            "output":"수정 ESIA·ESMMP·보완답변",
+            "output":"수정 환경사회영향평가·환경사회관리·모니터링계획·보완답변",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["Review of completeness, accuracy and quality; rejection if substantial unavoidable impacts remain"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"ESIA·ESMMP 환경준수증명(ECC) 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"관할 환경기관이 ESIA와 ESMMP를 승인해 각각의 환경준수증명과 조건을 발급하거나, 중대·불가피·미해소 영향 또는 국가환경정책 불일치를 이유로 거부한다.",
-            "output":"ESIA·ESMMP ECC·조건 또는 거부결정",
+            "lane":"환경·소방·검사기관","stage":1,"label":"환경사회영향평가·환경사회관리·모니터링계획 환경준수증명 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"관할 환경기관이 환경사회영향평가와 환경사회관리·모니터링계획을 승인해 각각의 환경준수증명과 조건을 발급하거나, 중대·불가피·미해소 영향 또는 국가환경정책 불일치를 이유로 거부한다.",
+            "output":"환경사회영향평가·환경사회관리·모니터링계획 환경준수증명·조건 또는 거부결정",
             "authorityIds":["lao-monre"],
             "refs":[{"source":"환경보호법","instrumentId":"LAO-ENV-LAW-2012","provisions":["Article 43; environmental compliance certificates"]},{"source":"정부 ESIA 승인절차","instrumentId":"LAO-ECC-ESIA-FORMALITY","provisions":["two ECCs for ESIA and ESMMP; approval and denial grounds"]}],
-            "permitGate":{"key":"environmental-compliance-certificate","gate":"관할 환경기관의 ESIA·ESMMP ECC 공식결정","decision":"평가·관리계획을 승인해 환경준수증명과 조건을 발급하거나 공식 거부한다.","output":"환경준수증명·조건 또는 거부결정","dependsOn":[]}
+            "permitGate":{"key":"environmental-compliance-certificate","gate":"관할 환경기관의 환경사회영향평가·환경사회관리·모니터링계획 환경준수증명 공식결정","decision":"평가·관리계획을 승인해 환경준수증명과 조건을 발급하거나 공식 거부한다.","output":"환경준수증명·조건 또는 거부결정","dependsOn":[]}
           },
           {
             "lane":"건축주·신청인","stage":2,"label":"건축등급별 관할기관 허가신청","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"신청인이 토지증서·신분자료, 허가 설계회사의 건축·구조·배수·오수처리 도서와 해당 ECC를 건축등급별 관할기관에 제출한다.",
-            "output":"완비 건축허가 신청·ECC·인증도서",
+            "action":"신청인이 토지증서·신분자료, 허가 설계회사의 건축·구조·배수·오수처리 도서와 해당 환경준수증명을 건축등급별 관할기관에 제출한다.",
+            "output":"완비 건축허가 신청·환경준수증명·인증도서",
             "authorityIds":["provincial-governor","provincial-pwt","district-pwt"],
             "refs":[{"source":"MOIC Construction Permit 안내","instrumentId":"LAO-BNED-CONSTRUCTION-PERMIT","provisions":["competent authority by building level; land title, certified project diagrams and environmental compliance"]}]
           },
           {
             "lane":"도시계획·건축 허가기관","stage":2,"label":"현장검사·기술·계획·환경조건 통합심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"관할 건설관리기관이 현장을 검사하고 건축·구조·배수·오수처리 설계를 기술기준, master plan·zoning·토지이용과 ECC 조건에 대조한다.",
+            "action":"관할 건설관리기관이 현장을 검사하고 건축·구조·배수·오수처리 설계를 기술기준, 종합계획(master plan)·용도지역(zoning)·토지이용과 환경준수증명 조건에 대조한다.",
             "output":"현장·기술·계획 통합심사의견",
             "authorityIds":["provincial-pwt","district-pwt"],
             "refs":[{"source":"MOIC Construction Permit 안내","instrumentId":"LAO-BNED-CONSTRUCTION-PERMIT","provisions":["site inspection and design compliance with technical, planning, land-use, conservation and environmental rules"]},{"source":"Decision 2241/PWT 안내","instrumentId":"LAO-MPWT-CONSTRUCTION-TIPS-2024","provisions":["Articles 10-13; verification procedures"]}]
@@ -247,12 +247,12 @@
             "output":"건축허가·승인도서·조건 또는 불허결정",
             "authorityIds":["provincial-governor","provincial-pwt","district-pwt"],
             "refs":[{"source":"MOIC Construction Permit 안내","instrumentId":"LAO-BNED-CONSTRUCTION-PERMIT","provisions":["permit no later than 30 days after complete application; six-month validity and one renewal"]}],
-            "permitGate":{"key":"construction-permit","gate":"건축등급별 관할권자의 건축허가 공식결정","decision":"ECC·권원·설계·현장·계획 적합성을 확인해 건축허가를 발급하거나 불허한다.","output":"건축허가·조건 또는 불허결정","dependsOn":["environmental-compliance-certificate"]}
+            "permitGate":{"key":"construction-permit","gate":"건축등급별 관할권자의 건축허가 공식결정","decision":"환경준수증명·권원·설계·현장·계획 적합성을 확인해 건축허가를 발급하거나 불허한다.","output":"건축허가·조건 또는 불허결정","dependsOn":["environmental-compliance-certificate"]}
           }
         ],
-        "edges":[[0,1,"sequence","Group 2 ESIA 경로"],[1,2,"sequence","환경문서 완성"],[2,3,"sequence","ECC 신청"],[3,4,"sequence","행정완비"],[4,6,"sequence","기술심사 완료"],[3,5,"message","행정·범위 보완"],[4,5,"message","ESIA·ESMMP 보완"],[5,2,"loop","수정 환경문서 재접수"],[6,7,"sequence","ECC 반영"],[7,8,"sequence","건축허가 접수"],[8,10,"sequence","기술·계획 적합"],[8,9,"message","허가도서 보완"],[9,7,"loop","수정 허가도서 재접수"]],
+        "edges":[[0,1,"sequence","제2그룹 환경사회영향평가 경로"],[1,2,"sequence","환경문서 완성"],[2,3,"sequence","환경준수증명 신청"],[3,4,"sequence","행정완비"],[4,6,"sequence","기술심사 완료"],[3,5,"message","행정·범위 보완"],[4,5,"message","환경사회영향평가·관리계획 보완"],[5,2,"loop","수정 환경문서 재접수"],[6,7,"sequence","환경준수증명 반영"],[7,8,"sequence","건축허가 접수"],[8,10,"sequence","기술·계획 적합"],[8,9,"message","허가도서 보완"],[9,7,"loop","수정 허가도서 재접수"]],
         "decisionBranches":[
-          {"state":"success","label":"ECC·건축허가 발급","action":"환경·건축허가 조건과 승인도서에 따라 유효기간 내 착공"},
+          {"state":"success","label":"환경준수증명·건축허가 발급","action":"환경·건축허가 조건과 승인도서에 따라 유효기간 내 착공"},
           {"state":"rework","label":"환경문서·허가도서 보완","action":"공식 통지에 따라 자료를 수정해 해당 신청·심사로 회귀"},
           {"state":"reject","label":"중대 환경영향·건축기준 부적합","action":"거부사유에 따라 대안입지·규모·설계 변경 후 재신청 검토"}
         ]
@@ -263,7 +263,7 @@
       "officialProcedure": {
         "name":"라오스 기술검사·준공제도 — 공사 중 검사·최종검사·정확성증명",
         "coverage":"official-source-linked",
-        "scope":"Decision 2241/PWT Articles 14-19, 22-29와 MOIC 공식 허가안내에 따른 허가유효성, 공사감독, 최소 2회 검사, 위반시정, 완료통지·최종검사·accuracy certificate 절차다.",
+        "scope":"결정 제2241/PWT호(Decision 2241/PWT) 제14조~제19조·제22조~제29조와 MOIC 공식 허가안내에 따른 허가유효성, 공사감독, 최소 2회 검사, 위반시정, 완료통지·최종검사·정확성증명서(accuracy certificate) 절차다.",
         "stages":["G8 허가·착공","G9 공사 중 검사","G10 완료통지·최종검사","G11 정확성증명"],
         "steps":[
           {

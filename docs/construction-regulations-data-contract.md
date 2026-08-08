@@ -13,6 +13,7 @@
 5. **미확정은 0이나 ‘해당 없음’으로 바꾸지 않는다.** `openQuestions`에 필요한 증빙, 확인기관, 보고서 영향을 남긴다.
 6. **공식 서비스 페이지보다 최신 법령을 우선한다.** 안내 페이지가 개정 법령을 반영하지 않았으면 그 충돌을 명시한다.
 7. **특정 법권의 용어를 국가 공통 개념으로 일반화하지 않는다.** PUD·ERP처럼 일부 국가에서만 쓰는 명칭은 해당 국가 원문과 상세판에만 두고, 공통 계약과 화면에서는 ‘필지별 개발규제’, ‘시설·용도·위험 분류’처럼 기능 중심의 중립 용어를 사용한다.
+8. **독자용 문구는 한국어를 먼저 쓴다.** 국가 고유 업무용어는 페이지별 최초 1회만 `한국어(원어·약어)`로 병기하고 이후에는 한국어만 쓴다. 법령 정식명·기관 고유명·조문 인용은 추적성을 위해 원문을 보존한다.
 
 ## 2. 파일 배치
 
@@ -27,6 +28,8 @@
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
 | `tools/check_construction_procedure_coverage.py` | 44개국·132모델의 국가별 절차·현행성 품질 게이트 | 수동 |
+| `tools/check_construction_procedure_structure.py` | 번역 외 노드·Gate·분기·근거 구조 변경 방지 | 수동 |
+| `tools/check_construction_terminology.py` | 한국어 우선·원어 최초 1회 표기 검사 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
 | `tools/build_construction_boards.mjs` | `processBoard`를 korea100studio SVG로 렌더 | 수동 |
 | `tools/check_construction_site.py` | 통합 model·클릭 구조도·이전 URL·감사용 SVG 확인 | 수동 |

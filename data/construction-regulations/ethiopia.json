@@ -36,9 +36,9 @@
       "G0 토지서류",
       "G1 토지인증",
       "G2 계획동의 신청",
-      "G3 master-plan 심사·결정",
+      "G3 종합계획(master plan) 심사·결정",
       "G0 환경 적용판정",
-      "G1 EIA 작성·공개",
+      "G1 환경영향평가(EIA) 작성·공개",
       "G2 환경결정",
       "G3 설계심사",
       "G4 건축허가 결정",
@@ -52,12 +52,12 @@
         "id": "B01",
         "lane": "건축주·신청인",
         "stage": "G0 토지서류",
-        "label": "Land Authentication 신청",
+        "label": "토지인증(Land Authentication) 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "신청서에 담보 미등록을 증명하는 debt provision document, 이웃 동의서, lease agreement 또는 title deed를 첨부해 토지인증을 신청한다.",
-        "action": "신청서에 담보 미등록을 증명하는 debt provision document, 이웃 동의서, lease agreement 또는 title deed를 첨부해 토지인증을 신청한다.",
+        "note": "신청서에 담보 미등록을 증명하는 채무부담 확인서(debt provision document), 이웃 동의서, 임대차계약서(lease agreement) 또는 소유권증서(title deed)를 첨부해 토지인증을 신청한다.",
+        "action": "신청서에 담보 미등록을 증명하는 채무부담 확인서(debt provision document), 이웃 동의서, 임대차계약서(lease agreement) 또는 소유권증서(title deed)를 첨부해 토지인증을 신청한다.",
         "outputs": [
           "토지인증 신청서·권원 첨부자료"
         ],
@@ -86,8 +86,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "Addis Ababa Land Holding Registration and Information Agency가 제출서류와 토지의 건축개발 적법성을 확인한다.",
-        "action": "Addis Ababa Land Holding Registration and Information Agency가 제출서류와 토지의 건축개발 적법성을 확인한다.",
+        "note": "아디스아바바 토지보유등록·정보청(Addis Ababa Land Holding Registration and Information Agency)이 제출서류와 토지의 건축개발 적법성을 확인한다.",
+        "action": "아디스아바바 토지보유등록·정보청(Addis Ababa Land Holding Registration and Information Agency)이 제출서류와 토지의 건축개발 적법성을 확인한다.",
         "outputs": [
           "토지 적법성 검증기록·보완요구"
         ],
@@ -142,14 +142,14 @@
         "id": "B04",
         "lane": "도시계획·건축 허가기관",
         "stage": "G1 토지인증",
-        "label": "Land Holding Certificate 발급",
+        "label": "토지보유증명서(Land Holding Certificate) 발급",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "토지 적법성이 확인되면 Land Administration Bureau가 개발용 land holding certificate를 발급한다.",
-        "action": "토지 적법성이 확인되면 Land Administration Bureau가 개발용 land holding certificate를 발급한다.",
+        "note": "토지 적법성이 확인되면 토지행정국(Land Administration Bureau)이 개발용 토지보유증명서를 발급한다.",
+        "action": "토지 적법성이 확인되면 토지행정국(Land Administration Bureau)이 개발용 토지보유증명서를 발급한다.",
         "outputs": [
-          "Land Holding Certificate"
+          "토지보유증명서"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -175,14 +175,14 @@
         "id": "B05",
         "lane": "건축주·신청인",
         "stage": "G2 계획동의 신청",
-        "label": "Planning Consent 신청",
+        "label": "계획동의 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "관할 building permit department에 신청서, title deed, 개발자와 design consultant/company 간 계약을 제출하고 계약의 위임관계를 인증한다.",
-        "action": "관할 building permit department에 신청서, title deed, 개발자와 design consultant/company 간 계약을 제출하고 계약의 위임관계를 인증한다.",
+        "note": "관할 건축허가부(building permit department)에 신청서, 소유권증서, 개발자와 설계컨설턴트·회사(design consultant/company) 간 계약을 제출하고 계약의 위임관계를 인증한다.",
+        "action": "관할 건축허가부(building permit department)에 신청서, 소유권증서, 개발자와 설계컨설턴트·회사(design consultant/company) 간 계약을 제출하고 계약의 위임관계를 인증한다.",
         "outputs": [
-          "Planning Consent 신청서·권원·설계계약"
+          "계획동의 신청서·권원·설계계약"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -211,15 +211,15 @@
       {
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G3 master-plan 심사·결정",
+        "stage": "G3 종합계획(master plan) 심사·결정",
         "label": "Master Plan 적합성 심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건물 규모·용도에 따라 city 또는 sub-city 기관이 대상지와 제안계획을 master plan guidelines에 대조해 심사한다.",
-        "action": "건물 규모·용도에 따라 city 또는 sub-city 기관이 대상지와 제안계획을 master plan guidelines에 대조해 심사한다.",
+        "note": "건물 규모·용도에 따라 시 또는 하위도시 기관이 대상지와 제안계획을 종합계획 지침에 대조해 심사한다.",
+        "action": "건물 규모·용도에 따라 시 또는 하위도시 기관이 대상지와 제안계획을 종합계획 지침에 대조해 심사한다.",
         "outputs": [
-          "master-plan 심사의견·보완요구"
+          "종합계획 심사의견·보완요구"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -241,13 +241,13 @@
       {
         "id": "B07",
         "lane": "현지 설계·시공 전문가",
-        "stage": "G3 master-plan 심사·결정",
+        "stage": "G3 종합계획(master plan) 심사·결정",
         "label": "계획안·서류 정정",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "master plan 또는 제출요건과 맞지 않는 계획·서류를 정정해 관할 building permit department에 재제출한다.",
-        "action": "master plan 또는 제출요건과 맞지 않는 계획·서류를 정정해 관할 building permit department에 재제출한다.",
+        "note": "종합계획 또는 제출요건과 맞지 않는 계획·서류를 정정해 관할 건축허가부에 재제출한다.",
+        "action": "종합계획 또는 제출요건과 맞지 않는 계획·서류를 정정해 관할 건축허가부에 재제출한다.",
         "outputs": [
           "수정 계획안·보완서류"
         ],
@@ -271,15 +271,15 @@
       {
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G3 master-plan 심사·결정",
-        "label": "Planning Consent 공식결정",
+        "stage": "G3 종합계획(master plan) 심사·결정",
+        "label": "계획동의 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "master plan guidelines와 관할·서류요건이 충족되면 plan consent document를 발급하고, 미충족이면 보완 또는 거부한다.",
-        "action": "master plan guidelines와 관할·서류요건이 충족되면 plan consent document를 발급하고, 미충족이면 보완 또는 거부한다.",
+        "note": "종합계획 지침과 관할·서류요건이 충족되면 계획동의서(plan consent document)를 발급하고, 미충족이면 보완 또는 거부한다.",
+        "action": "종합계획 지침과 관할·서류요건이 충족되면 계획동의서(plan consent document)를 발급하고, 미충족이면 보완 또는 거부한다.",
         "outputs": [
-          "Plan Consent Document 또는 보완·거부통지"
+          "계획동의서 또는 보완·거부통지"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -309,8 +309,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "사업유형·규모·입지자료를 관할 EPA 또는 지역 환경기관에 제출해 EIA 필요 여부와 심사관할을 확인한다.",
-        "action": "사업유형·규모·입지자료를 관할 EPA 또는 지역 환경기관에 제출해 EIA 필요 여부와 심사관할을 확인한다.",
+        "note": "사업유형·규모·입지자료를 관할 EPA 또는 지역 환경기관에 제출해 환경영향평가 필요 여부와 심사관할을 확인한다.",
+        "action": "사업유형·규모·입지자료를 관할 EPA 또는 지역 환경기관에 제출해 환경영향평가 필요 여부와 심사관할을 확인한다.",
         "outputs": [
           "환경평가 대상·관할 확인기록"
         ],
@@ -335,14 +335,14 @@
         "id": "B10",
         "lane": "환경·소방·검사기관",
         "stage": "G0 환경 적용판정",
-        "label": "EIA 필요·비대상 판정",
+        "label": "환경영향평가 필요·비대상 판정",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "환경기관이 지침상 사업범주와 예상영향을 심사해 EIA를 요구하거나 영향이 미미한 경우 EIA 비대상을 결정한다.",
-        "action": "환경기관이 지침상 사업범주와 예상영향을 심사해 EIA를 요구하거나 영향이 미미한 경우 EIA 비대상을 결정한다.",
+        "note": "환경기관이 지침상 사업범주와 예상영향을 심사해 환경영향평가를 요구하거나 영향이 미미한 경우 비대상을 결정한다.",
+        "action": "환경기관이 지침상 사업범주와 예상영향을 심사해 환경영향평가를 요구하거나 영향이 미미한 경우 비대상을 결정한다.",
         "outputs": [
-          "EIA 요구 또는 비대상 결정"
+          "환경영향평가 요구 또는 비대상 결정"
         ],
         "authorityIds": [
           "epa-regional-env"
@@ -364,15 +364,15 @@
       {
         "id": "B11",
         "lane": "현지 설계·시공 전문가",
-        "stage": "G1 EIA 작성·공개",
-        "label": "EIA 조사·보고서 작성",
+        "stage": "G1 환경영향평가(EIA) 작성·공개",
+        "label": "환경영향평가 조사·보고서 작성",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "자격요건을 충족하는 전문가가 사업·오염원·에너지·누적·광역영향, 대안·저감·비상계획·모니터링을 포함한 EIA 보고서를 작성한다.",
-        "action": "자격요건을 충족하는 전문가가 사업·오염원·에너지·누적·광역영향, 대안·저감·비상계획·모니터링을 포함한 EIA 보고서를 작성한다.",
+        "note": "자격요건을 충족하는 전문가가 사업·오염원·에너지·누적·광역영향, 대안·저감·비상계획·모니터링을 포함한 환경영향평가 보고서를 작성한다.",
+        "action": "자격요건을 충족하는 전문가가 사업·오염원·에너지·누적·광역영향, 대안·저감·비상계획·모니터링을 포함한 환경영향평가 보고서를 작성한다.",
         "outputs": [
-          "EIA 보고서·비기술요약·관리·모니터링계획"
+          "환경영향평가 보고서·비기술요약·관리·모니터링계획"
         ],
         "authorityIds": [
           "epa-regional-env"
@@ -394,13 +394,13 @@
       {
         "id": "B12",
         "lane": "환경·소방·검사기관",
-        "stage": "G1 EIA 작성·공개",
+        "stage": "G1 환경영향평가(EIA) 작성·공개",
         "label": "보고서 공개·공중의견 수렴",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "환경기관이 EIA 보고서를 일반에 공개하고 영향받는 지역사회를 포함한 공중의견을 수렴해 평가에 반영한다.",
-        "action": "환경기관이 EIA 보고서를 일반에 공개하고 영향받는 지역사회를 포함한 공중의견을 수렴해 평가에 반영한다.",
+        "note": "환경기관이 환경영향평가 보고서를 일반에 공개하고 영향받는 지역사회를 포함한 공중의견을 수렴해 평가에 반영한다.",
+        "action": "환경기관이 환경영향평가 보고서를 일반에 공개하고 영향받는 지역사회를 포함한 공중의견을 수렴해 평가에 반영한다.",
         "outputs": [
           "공개기록·공중의견"
         ],
@@ -425,14 +425,14 @@
         "id": "B13",
         "lane": "환경·소방·검사기관",
         "stage": "G2 환경결정",
-        "label": "EIA 보고서 기술심사",
+        "label": "환경영향평가 보고서 기술심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "환경기관이 보고서 완전성·정확성, 공중의견과 전문가 의견을 종합해 무조건 승인·조건부 승인·거부안을 심사한다.",
         "action": "환경기관이 보고서 완전성·정확성, 공중의견과 전문가 의견을 종합해 무조건 승인·조건부 승인·거부안을 심사한다.",
         "outputs": [
-          "EIA 심사의견·보완 또는 결정안"
+          "환경영향평가 심사의견·보완 또는 결정안"
         ],
         "authorityIds": [
           "epa-regional-env"
@@ -455,14 +455,14 @@
         "id": "B14",
         "lane": "건축주·신청인",
         "stage": "G2 환경결정",
-        "label": "EIA 추가자료·수정보고서 제출",
+        "label": "환경영향평가 추가자료·수정보고서 제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "환경기관의 완전성·영향·저감조치 지적을 반영해 추가자료와 수정보고서를 제출한다.",
         "action": "환경기관의 완전성·영향·저감조치 지적을 반영해 추가자료와 수정보고서를 제출한다.",
         "outputs": [
-          "보완 EIA 보고서·추가자료"
+          "보완 환경영향평가 보고서·추가자료"
         ],
         "authorityIds": [
           "epa-regional-env"
@@ -485,14 +485,14 @@
         "id": "B15",
         "lane": "환경·소방·검사기관",
         "stage": "G2 환경결정",
-        "label": "환경 Authorization 공식결정",
+        "label": "환경승인(Authorization) 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "환경기관이 공중·전문가 의견을 고려해 사업을 무조건 승인, 저감조건부 승인 또는 거부하며 licensing agency는 이 결정을 건축허가 전에 확인한다.",
-        "action": "환경기관이 공중·전문가 의견을 고려해 사업을 무조건 승인, 저감조건부 승인 또는 거부하며 licensing agency는 이 결정을 건축허가 전에 확인한다.",
+        "note": "환경기관이 공중·전문가 의견을 고려해 사업을 무조건 승인, 저감조건부 승인 또는 거부하며 허가기관(licensing agency)은 이 결정을 건축허가 전에 확인한다.",
+        "action": "환경기관이 공중·전문가 의견을 고려해 사업을 무조건 승인, 저감조건부 승인 또는 거부하며 허가기관(licensing agency)은 이 결정을 건축허가 전에 확인한다.",
         "outputs": [
-          "환경 Authorization·조건 또는 거부결정"
+          "환경승인·조건 또는 거부결정"
         ],
         "authorityIds": [
           "epa-regional-env"
@@ -522,8 +522,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "Planning Consent와 환경결정을 갖추고 architectural plan 및 design consultant 면허사본을 city 또는 sub-city building permit office에 제출한다.",
-        "action": "Planning Consent와 환경결정을 갖추고 architectural plan 및 design consultant 면허사본을 city 또는 sub-city building permit office에 제출한다.",
+        "note": "계획동의(Planning Consent)와 환경결정을 갖추고 건축도면(architectural plan) 및 설계컨설턴트(design consultant) 면허사본을 시·하위도시 건축허가부(city or sub-city building permit office)에 제출한다.",
+        "action": "계획동의(Planning Consent)와 환경결정을 갖추고 건축도면(architectural plan) 및 설계컨설턴트(design consultant) 면허사본을 시·하위도시 건축허가부(city or sub-city building permit office)에 제출한다.",
         "outputs": [
           "건축설계 심사신청"
         ],
@@ -559,8 +559,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "관할기관이 architectural design을 건축법·Ethiopian Building Standards·planning consent에 대조해 승인하거나 수정의견을 부여한다.",
-        "action": "관할기관이 architectural design을 건축법·Ethiopian Building Standards·planning consent에 대조해 승인하거나 수정의견을 부여한다.",
+        "note": "관할기관이 건축설계를 건축법·에티오피아 건축기준(Ethiopian Building Standards)·계획동의에 대조해 승인하거나 수정의견을 부여한다.",
+        "action": "관할기관이 건축설계를 건축법·에티오피아 건축기준(Ethiopian Building Standards)·계획동의에 대조해 승인하거나 수정의견을 부여한다.",
         "outputs": [
           "건축설계 승인 또는 수정의견"
         ],
@@ -596,8 +596,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "관할기관의 의견을 반영해 architectural design을 수정하고 재제출한다.",
-        "action": "관할기관의 의견을 반영해 architectural design을 수정하고 재제출한다.",
+        "note": "관할기관의 의견을 반영해 건축설계를 수정하고 재제출한다.",
+        "action": "관할기관의 의견을 반영해 건축설계를 수정하고 재제출한다.",
         "outputs": [
           "수정 건축설계"
         ],
@@ -626,8 +626,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건축설계 승인 후 structural plan, electrical plan, sanitary system와 soil test report를 제출한다.",
-        "action": "건축설계 승인 후 structural plan, electrical plan, sanitary system와 soil test report를 제출한다.",
+        "note": "건축설계 승인 후 구조도면(structural plan), 전기도면(electrical plan), 위생설비(sanitary system)와 지반시험보고서(soil test report)를 제출한다.",
+        "action": "건축설계 승인 후 구조도면(structural plan), 전기도면(electrical plan), 위생설비(sanitary system)와 지반시험보고서(soil test report)를 제출한다.",
         "outputs": [
           "구조·설비·지반 기술도서"
         ],
@@ -682,14 +682,14 @@
         "id": "B21",
         "lane": "도시계획·건축 허가기관",
         "stage": "G4 건축허가 결정",
-        "label": "Construction Permit 공식결정",
+        "label": "건축허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "모든 설계가 승인되고 선행 환경·계획요건이 충족되면 city 또는 sub-city 기관이 construction permit을 발급하고, 중대한 부적합이면 거부한다.",
-        "action": "모든 설계가 승인되고 선행 환경·계획요건이 충족되면 city 또는 sub-city 기관이 construction permit을 발급하고, 중대한 부적합이면 거부한다.",
+        "note": "모든 설계가 승인되고 선행 환경·계획요건이 충족되면 시 또는 하위도시 기관이 건축허가를 발급하고, 중대한 부적합이면 거부한다.",
+        "action": "모든 설계가 승인되고 선행 환경·계획요건이 충족되면 시 또는 하위도시 기관이 건축허가를 발급하고, 중대한 부적합이면 거부한다.",
         "outputs": [
-          "Construction Permit·승인도서 또는 거부사유"
+          "건축허가·승인도서 또는 거부사유"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -722,12 +722,12 @@
         "id": "B22",
         "lane": "건축주·신청인",
         "stage": "G0 착공통지",
-        "label": "착공일정·Commencement 신청",
+        "label": "착공일정·착공승인(Commencement) 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "Construction Permit 취득 후 착공 전에 공사일정을 포함한 통지를 제출하고, 기존 건축물 철거·기반시설 이설이 있으면 해당 허가·조치를 완료한다.",
-        "action": "Construction Permit 취득 후 착공 전에 공사일정을 포함한 통지를 제출하고, 기존 건축물 철거·기반시설 이설이 있으면 해당 허가·조치를 완료한다.",
+        "note": "건축허가(Construction Permit) 취득 후 착공 전에 공사일정을 포함한 통지를 제출하고, 기존 건축물 철거·기반시설 이설이 있으면 해당 허가·조치를 완료한다.",
+        "action": "건축허가(Construction Permit) 취득 후 착공 전에 공사일정을 포함한 통지를 제출하고, 기존 건축물 철거·기반시설 이설이 있으면 해당 허가·조치를 완료한다.",
         "outputs": [
           "착공통지·공정계획·선행허가"
         ],
@@ -759,7 +759,7 @@
         "id": "B23",
         "lane": "도시계획·건축 허가기관",
         "stage": "G0 착공통지",
-        "label": "Commencement 결정",
+        "label": "착공승인 결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -796,8 +796,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "건물분류에 맞는 등록 consulting firm·전문가를 선임해 시공인력·자재·승인도서 적합성을 공사완료까지 감독한다.",
-        "action": "건물분류에 맞는 등록 consulting firm·전문가를 선임해 시공인력·자재·승인도서 적합성을 공사완료까지 감독한다.",
+        "note": "건물분류에 맞는 등록 감리회사(consulting firm)·전문가를 선임해 시공인력·자재·승인도서 적합성을 공사완료까지 감독한다.",
+        "action": "건물분류에 맞는 등록 감리회사(consulting firm)·전문가를 선임해 시공인력·자재·승인도서 적합성을 공사완료까지 감독한다.",
         "outputs": [
           "감리계약·감독기록"
         ],
@@ -827,8 +827,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "관할 caseworker에게 규정된 각 공정단계 검사를 요청하고 승인 전에는 해당 단계 이후 공사를 진행하지 않는다.",
-        "action": "관할 caseworker에게 규정된 각 공정단계 검사를 요청하고 승인 전에는 해당 단계 이후 공사를 진행하지 않는다.",
+        "note": "관할 담당심사관(caseworker)에게 규정된 각 공정단계 검사를 요청하고 승인 전에는 해당 단계 이후 공사를 진행하지 않는다.",
+        "action": "관할 담당심사관(caseworker)에게 규정된 각 공정단계 검사를 요청하고 승인 전에는 해당 단계 이후 공사를 진행하지 않는다.",
         "outputs": [
           "단계검사 요청·공정통지"
         ],
@@ -864,8 +864,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "caseworker가 승인도서·Ethiopian Building Standards, 자재품질·현장안전·접근성을 검사해 다음 단계 진행을 허용하거나 공사중지·시정을 명령한다.",
-        "action": "caseworker가 승인도서·Ethiopian Building Standards, 자재품질·현장안전·접근성을 검사해 다음 단계 진행을 허용하거나 공사중지·시정을 명령한다.",
+        "note": "담당심사관이 승인도서·에티오피아 건축기준(Ethiopian Building Standards), 자재품질·현장안전·접근성을 검사해 다음 단계 진행을 허용하거나 공사중지·시정을 명령한다.",
+        "action": "담당심사관이 승인도서·에티오피아 건축기준(Ethiopian Building Standards), 자재품질·현장안전·접근성을 검사해 다음 단계 진행을 허용하거나 공사중지·시정을 명령한다.",
         "outputs": [
           "단계검사 기록·진행허용 또는 공사중지"
         ],
@@ -931,8 +931,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "공사가 완료되면 등록 consulting firm·책임전문가가 설계·감독결과와 완공을 확인해 서명한 certificate를 관할기관에 제출한다.",
-        "action": "공사가 완료되면 등록 consulting firm·책임전문가가 설계·감독결과와 완공을 확인해 서명한 certificate를 관할기관에 제출한다.",
+        "note": "공사가 완료되면 등록 감리회사·책임전문가가 설계·감독결과와 완공을 확인해 서명한 증명서(certificate)를 관할기관에 제출한다.",
+        "action": "공사가 완료되면 등록 감리회사·책임전문가가 설계·감독결과와 완공을 확인해 서명한 증명서(certificate)를 관할기관에 제출한다.",
         "outputs": [
           "등록전문가 서명 완공증명서"
         ],
@@ -958,14 +958,14 @@
         "id": "B29",
         "lane": "건축주·신청인",
         "stage": "G2 완공·최종검사",
-        "label": "Occupancy Permit 신청",
+        "label": "점유허가(Occupancy Permit) 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "architectural·building plans, 모든 단계검사 기록과 전문가 완공증명서를 첨부해 occupancy permit을 신청한다.",
-        "action": "architectural·building plans, 모든 단계검사 기록과 전문가 완공증명서를 첨부해 occupancy permit을 신청한다.",
+        "note": "건축·시공도면(architectural·building plans), 모든 단계검사 기록과 전문가 완공증명서를 첨부해 점유허가를 신청한다.",
+        "action": "건축·시공도면(architectural·building plans), 모든 단계검사 기록과 전문가 완공증명서를 첨부해 점유허가를 신청한다.",
         "outputs": [
-          "Occupancy Permit 완비 신청"
+          "점유허가 완비 신청"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -992,8 +992,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "caseworker가 검사기록·도서를 검토하고 건물 규모·용도에 필요한 편의·안전·승인설계 적합성을 최종 현장검사한다.",
-        "action": "caseworker가 검사기록·도서를 검토하고 건물 규모·용도에 필요한 편의·안전·승인설계 적합성을 최종 현장검사한다.",
+        "note": "담당심사관이 검사기록·도서를 검토하고 건물 규모·용도에 필요한 편의·안전·승인설계 적합성을 최종 현장검사한다.",
+        "action": "담당심사관이 검사기록·도서를 검토하고 건물 규모·용도에 필요한 편의·안전·승인설계 적합성을 최종 현장검사한다.",
         "outputs": [
           "최종검사 기록·보완사항"
         ],
@@ -1055,14 +1055,14 @@
         "id": "B32",
         "lane": "도시계획·건축 허가기관",
         "stage": "G3 사용허가 결정",
-        "label": "Building Use Permit 공식결정",
+        "label": "건축물 사용허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
-        "note": "관할기관이 승인설계·법정기준·검사기록과 최종 현장상태를 확인해 occupancy/building use permit을 발급하거나 보완·거부한다.",
-        "action": "관할기관이 승인설계·법정기준·검사기록과 최종 현장상태를 확인해 occupancy/building use permit을 발급하거나 보완·거부한다.",
+        "note": "관할기관이 승인설계·법정기준·검사기록과 최종 현장상태를 확인해 점유·건축물 사용허가를 발급하거나 보완·거부한다.",
+        "action": "관할기관이 승인설계·법정기준·검사기록과 최종 현장상태를 확인해 점유·건축물 사용허가를 발급하거나 보완·거부한다.",
         "outputs": [
-          "Occupancy/Building Use Permit 또는 보완·거부통지"
+          "점유·건축물 사용허가 또는 보완·거부통지"
         ],
         "authorityIds": [
           "city-building-authority"
@@ -1380,12 +1380,12 @@
       "id": "site-urban",
       "slug": "ethiopia-site-urban-construction-regulations",
       "priority": 4,
-      "name": "에티오피아 토지확인·Planning Consent — Addis Ababa 대표 사례",
+      "name": "에티오피아 토지확인·계획동의(Planning Consent) — Addis Ababa 대표 사례",
       "oneLiner": "도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "국가 비즈니스포털에 공개된 Addis Ababa의 Land Authentication과 Planning Consent 실제 순서를 건축법 포고령 제1356/2024호 제8조의 계획동의 선행요건과 연결했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "아래는 Addis Ababa 상업건축의 공식 처리사례다. 고층은 City Construction Permit and Control Authority, 저층은 sub-city office가 처리하며 다른 지역은 관할 지역·도시기관의 절차를 적용한다.",
+      "procedureScope": "아래는 Addis Ababa 상업건축의 공식 처리사례다. 고층은 시 건축허가·통제청(City Construction Permit and Control Authority), 저층은 하위도시 사무소(sub-city office)가 처리하며 다른 지역은 관할 지역·도시기관의 절차를 적용한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1483,7 +1483,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "토지인증·Planning Consent 발급",
+          "label": "토지인증·계획동의 발급",
           "action": "승인된 계획조건으로 건축설계·건축허가 단계 진행"
         },
         {
@@ -1494,7 +1494,7 @@
         {
           "state": "reject",
           "label": "토지인증 또는 계획동의 거부",
-          "action": "권원·입지·master plan 부적합 사유를 해소해 재신청하거나 법정 불복수단 검토"
+          "action": "권원·입지·종합계획 부적합 사유를 해소해 재신청하거나 법정 불복수단 검토"
         }
       ]
     },
@@ -1502,7 +1502,7 @@
       "id": "permit-environment",
       "slug": "ethiopia-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "에티오피아 환경승인·Construction Permit — 연방법·Addis Ababa 사례",
+      "name": "에티오피아 환경승인·건축허가(Construction Permit) — 연방법·Addis Ababa 사례",
       "oneLiner": "설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "환경영향평가 포고령 제299/2002호 제3·5·7~9·15조의 적용판정·보고서·공개·심사·결정과 Addis Ababa 공식 포털의 건축·구조·설비 순차 설계심사·보완·건축허가 발급을 연결했다.",
@@ -1657,12 +1657,12 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "환경승인·Construction Permit 발급",
+          "label": "환경승인·건축허가 발급",
           "action": "승인조건과 승인도서를 착공·감리계획에 반영"
         },
         {
           "state": "rework",
-          "label": "EIA·설계 보완",
+          "label": "환경영향평가·설계 보완",
           "action": "환경보고서 또는 건축·기술도서를 수정해 해당 심사단계에 재제출"
         },
         {
@@ -1676,7 +1676,7 @@
       "id": "control-completion",
       "slug": "ethiopia-control-completion-construction-regulations",
       "priority": 6,
-      "name": "에티오피아 착공·단계검사·Building Use Permit — Addis Ababa 사례",
+      "name": "에티오피아 착공·단계검사·건축물 사용허가(Building Use Permit) — Addis Ababa 사례",
       "oneLiner": "EBCS와 등록 전문가·시공자, 현장감독·책임보험 및 building use permit을 인계 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "건축법 포고령 제1356/2024호 제17~19조의 착공통지·단계감독·시정·전문가 완공증명과 국가 비즈니스포털의 단계검사·공사중지·최종검사·Occupancy Permit 순서를 연결했다.",
@@ -1809,7 +1809,7 @@
         {
           "state": "success",
           "label": "착공·단계·사용허가",
-          "action": "Building Use Permit 발급 후 건물을 사용"
+          "action": "건축물 사용허가 발급 후 건물을 사용"
         },
         {
           "state": "rework",
@@ -1819,7 +1819,7 @@
         {
           "state": "reject",
           "label": "사용허가 거부",
-          "action": "중대 설계·안전·접근성 부적합을 해소해 재신청하거나 Appeal Hearing Board 절차 검토"
+          "action": "중대 설계·안전·접근성 부적합을 해소해 재신청하거나 이의심리위원회(Appeal Hearing Board) 절차 검토"
         }
       ]
     }
@@ -2012,34 +2012,34 @@
     {
       "order": 1,
       "gate": "토지개발 적법성 공식확인",
-      "decision": "토지등록기관이 권원·담보·동의자료를 검증해 land holding certificate를 발급하거나 보완·거부한다.",
+      "decision": "토지등록기관이 권원·담보·동의자료를 검증해 토지보유증명서를 발급하거나 보완·거부한다.",
       "dependsOn": [],
-      "output": "Land Holding Certificate 또는 보완·거부통지"
+      "output": "토지보유증명서 또는 보완·거부통지"
     },
     {
       "order": 2,
-      "gate": "관할 도시기관 Planning Consent 공식결정",
-      "decision": "관할기관이 master plan 적합성을 심사해 planning consent를 발급하거나 보완·거부한다.",
+      "gate": "관할 도시기관 계획동의 공식결정",
+      "decision": "관할기관이 종합계획 적합성을 심사해 계획동의를 발급하거나 보완·거부한다.",
       "dependsOn": [
         1
       ],
-      "output": "Planning Consent Document 또는 보완·거부통지"
+      "output": "계획동의서 또는 보완·거부통지"
     },
     {
       "order": 3,
-      "gate": "환경기관 EIA Authorization 공식결정",
-      "decision": "환경기관이 EIA와 공중·전문가 의견을 심사해 무조건 승인·조건부 승인 또는 거부한다.",
+      "gate": "환경기관 환경영향평가 승인 공식결정",
+      "decision": "환경기관이 환경영향평가와 공중·전문가 의견을 심사해 무조건 승인·조건부 승인 또는 거부한다.",
       "dependsOn": [],
-      "output": "환경 Authorization·조건 또는 거부결정"
+      "output": "환경승인·조건 또는 거부결정"
     },
     {
       "order": 4,
-      "gate": "관할 도시기관 Construction Permit 공식결정",
+      "gate": "관할 도시기관 건축허가 공식결정",
       "decision": "관할기관이 계획동의·환경승인과 건축·구조·설비·지반도서를 심사해 허가 또는 거부한다.",
       "dependsOn": [
         3
       ],
-      "output": "Construction Permit·승인도서 또는 거부사유"
+      "output": "건축허가·승인도서 또는 거부사유"
     },
     {
       "order": 5,
@@ -2050,12 +2050,12 @@
     },
     {
       "order": 6,
-      "gate": "관할기관 Building Use Permit 공식결정",
+      "gate": "관할기관 건축물 사용허가 공식결정",
       "decision": "관할기관이 최종검사와 승인설계·필수기준 적합성을 확인해 사용허가를 발급하거나 보완·거부한다.",
       "dependsOn": [
         5
       ],
-      "output": "Occupancy/Building Use Permit 또는 보완·거부통지"
+      "output": "점유·건축물 사용허가 또는 보완·거부통지"
     }
   ],
   "siteOverlays": [

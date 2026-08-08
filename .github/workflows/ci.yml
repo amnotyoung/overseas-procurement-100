@@ -34,6 +34,8 @@ jobs:
           python tools/build_construction_baselines.py --check
           python tools/validate_construction_regulations.py
           python tools/check_construction_procedure_coverage.py
+          python tools/check_construction_procedure_structure.py
+          python tools/check_construction_terminology.py
 
       - name: Check process boards
         run: npm run check:boards

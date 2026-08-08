@@ -34,7 +34,7 @@
     ],
     "stages": [
       "S1 관할·권원",
-      "S2 zoning·필지조회",
+      "S2 용도지역·필지조회",
       "S3 계획도서",
       "S4 CDA 심사·보완",
       "S5 계획결정",
@@ -85,14 +85,14 @@
         "id": "B02",
         "lane": "건축주·신청인",
         "stage": "S1 관할·권원",
-        "label": "allotment·lease·possession 권원확정",
+        "label": "배정·임대차(lease)·점유권 권원확정",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자·allottee가 allotment/transfer letter, lease, possession, title과 대리권 자료로 신청 필지를 특정한다.",
-        "action": "소유자·allottee가 allotment/transfer letter, lease, possession, title과 대리권 자료로 신청 필지를 특정한다.",
+        "note": "소유자·배정권자(allottee)가 배정·양도증서(transfer letter), 임대차, 점유권, 권원과 대리권 자료로 신청 필지를 특정한다.",
+        "action": "소유자·배정권자(allottee)가 배정·양도증서(transfer letter), 임대차, 점유권, 권원과 대리권 자료로 신청 필지를 특정한다.",
         "outputs": [
-          "권원·allotment·possession 자료"
+          "권원·배정·점유권 자료"
         ],
         "authorityIds": [
           "local-development-authority"
@@ -114,15 +114,15 @@
       {
         "id": "B03",
         "lane": "도시계획·건축 허가기관",
-        "stage": "S2 zoning·필지조회",
-        "label": "적용 zoning·용도·plot category 확인",
+        "stage": "S2 용도지역·필지조회",
+        "label": "적용 용도지역·용도·필지유형(plot category) 확인",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA가 master plan·sector·plot category·승인 용도를 특정하고 해당 ICT Building Control Regulations의 적용조건을 확인한다.",
-        "action": "CDA가 master plan·sector·plot category·승인 용도를 특정하고 해당 ICT Building Control Regulations의 적용조건을 확인한다.",
+        "note": "CDA가 기본계획(master plan)·지구(sector)·필지유형·승인 용도를 특정하고 해당 ICT 건축통제규정의 적용조건을 확인한다.",
+        "action": "CDA가 기본계획(master plan)·지구(sector)·필지유형·승인 용도를 특정하고 해당 ICT 건축통제규정의 적용조건을 확인한다.",
         "outputs": [
-          "적용 zoning·용도·plot category"
+          "적용 용도지역·용도·필지유형"
         ],
         "authorityIds": [
           "local-development-authority"
@@ -149,10 +149,10 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA 승인 건축사가 허용용도, FAR·coverage·높이·이격·주차, 접근·배수·기반시설 조건을 필지에 대조해 계획도서를 작성한다.",
-        "action": "CDA 승인 건축사가 허용용도, FAR·coverage·높이·이격·주차, 접근·배수·기반시설 조건을 필지에 대조해 계획도서를 작성한다.",
+        "note": "CDA 승인 건축사가 허용용도, 용적률(FAR)·건폐율(coverage)·높이·이격·주차, 접근·배수·기반시설 조건을 필지에 대조해 계획도서를 작성한다.",
+        "action": "CDA 승인 건축사가 허용용도, 용적률(FAR)·건폐율(coverage)·높이·이격·주차, 접근·배수·기반시설 조건을 필지에 대조해 계획도서를 작성한다.",
         "outputs": [
-          "필지별 zoning·배치 조건표"
+          "필지별 용도지역·배치 조건표"
         ],
         "authorityIds": [
           "pec-pcatp",
@@ -302,8 +302,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA가 필지의 승인용도·배치조건을 승인도서·Plan Approval Letter에 확정하거나 부적합·불허를 통지한다.",
-        "action": "CDA가 필지의 승인용도·배치조건을 승인도서·Plan Approval Letter에 확정하거나 부적합·불허를 통지한다.",
+        "note": "CDA가 필지의 승인용도·배치조건을 승인도서·계획승인서(Plan Approval Letter)에 확정하거나 부적합·불허를 통지한다.",
+        "action": "CDA가 필지의 승인용도·배치조건을 승인도서·계획승인서(Plan Approval Letter)에 확정하거나 부적합·불허를 통지한다.",
         "outputs": [
           "계획·배치 승인조건 또는 불허통지"
         ],
@@ -362,12 +362,12 @@
         "id": "B11",
         "lane": "건축주·신청인",
         "stage": "P2 공식접수",
-        "label": "CDA One Window 접수·demand note 납부",
+        "label": "CDA 원스톱 창구 접수·납부고지서(demand note) 납부",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "건축주·대리인이 권원과 서명도서 6세트를 One Window에 제출하고 Annex-A에 따라 발급된 demand note를 납부한다.",
-        "action": "건축주·대리인이 권원과 서명도서 6세트를 One Window에 제출하고 Annex-A에 따라 발급된 demand note를 납부한다.",
+        "note": "건축주·대리인이 권원과 서명도서 6세트를 원스톱 창구에 제출하고 부속서 A(Annex-A)에 따라 발급된 납부고지서를 납부한다.",
+        "action": "건축주·대리인이 권원과 서명도서 6세트를 원스톱 창구에 제출하고 부속서 A(Annex-A)에 따라 발급된 납부고지서를 납부한다.",
         "outputs": [
           "건축허가 접수·신청번호·납부증빙"
         ],
@@ -400,12 +400,12 @@
         "id": "B12",
         "lane": "도시계획·건축 허가기관",
         "stage": "P3 완비성 심사",
-        "label": "건축도서 완비성·NOC 확인",
+        "label": "건축도서 완비성·이의없음확인서(NOC) 확인",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA가 권원·전문서명·도서부수·수수료와 용도별 소방·유틸리티 등 요구 NOC의 완비성을 확인한다.",
-        "action": "CDA가 권원·전문서명·도서부수·수수료와 용도별 소방·유틸리티 등 요구 NOC의 완비성을 확인한다.",
+        "note": "CDA가 권원·전문서명·도서부수·수수료와 용도별 소방·유틸리티 등 요구 이의없음확인서의 완비성을 확인한다.",
+        "action": "CDA가 권원·전문서명·도서부수·수수료와 용도별 소방·유틸리티 등 요구 이의없음확인서의 완비성을 확인한다.",
         "outputs": [
           "완비접수 또는 누락통지"
         ],
@@ -533,8 +533,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA가 Plan Approval Letter·승인도서·허가조건을 발급하거나 불허한다.",
-        "action": "CDA가 Plan Approval Letter·승인도서·허가조건을 발급하거나 불허한다.",
+        "note": "CDA가 계획승인서·승인도서·허가조건을 발급하거나 불허한다.",
+        "action": "CDA가 계획승인서·승인도서·허가조건을 발급하거나 불허한다.",
         "outputs": [
           "건축허가결정·승인도서·조건 또는 불허"
         ],
@@ -562,14 +562,14 @@
         "id": "B17",
         "lane": "환경·소방·검사기관",
         "stage": "P1 분류·도서",
-        "label": "Pak-EPA 관할·IEE/EIA 분류",
+        "label": "Pak-EPA 관할·초기환경평가·환경영향평가 분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "ICT 사업의 위치·유형·규모를 PEPA와 Schedules I-II에 대조해 IEE, EIA 또는 비대상 경로를 판정한다.",
-        "action": "ICT 사업의 위치·유형·규모를 PEPA와 Schedules I-II에 대조해 IEE, EIA 또는 비대상 경로를 판정한다.",
+        "note": "ICT 사업의 위치·유형·규모를 PEPA와 별표 I–II(Schedules I-II)에 대조해 초기환경평가, 환경영향평가 또는 비대상 경로를 판정한다.",
+        "action": "ICT 사업의 위치·유형·규모를 PEPA와 별표 I–II(Schedules I-II)에 대조해 초기환경평가, 환경영향평가 또는 비대상 경로를 판정한다.",
         "outputs": [
-          "관할 EPA·IEE/EIA 분류"
+          "관할 EPA·초기환경평가·환경영향평가 분류"
         ],
         "authorityIds": [
           "provincial-epa"
@@ -599,14 +599,14 @@
         "id": "B18",
         "lane": "현지 설계·시공 전문가",
         "stage": "P1 분류·도서",
-        "label": "IEE·EIA 보고서·신청서 작성",
+        "label": "초기환경평가·환경영향평가 보고서·신청서 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경전문가가 적용 경로의 IEE 또는 EIA, 관리조치와 신청서·수수료 자료를 작성한다.",
-        "action": "환경전문가가 적용 경로의 IEE 또는 EIA, 관리조치와 신청서·수수료 자료를 작성한다.",
+        "note": "환경전문가가 적용 경로의 초기환경평가 또는 환경영향평가, 관리조치와 신청서·수수료 자료를 작성한다.",
+        "action": "환경전문가가 적용 경로의 초기환경평가 또는 환경영향평가, 관리조치와 신청서·수수료 자료를 작성한다.",
         "outputs": [
-          "IEE/EIA 신청자료"
+          "초기환경평가·환경영향평가 신청자료"
         ],
         "authorityIds": [
           "provincial-epa"
@@ -790,8 +790,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Pak-EPA가 IEE·EIA를 승인·조건부 승인하거나 불승인하며 비대상은 서면 확인한다.",
-        "action": "Pak-EPA가 IEE·EIA를 승인·조건부 승인하거나 불승인하며 비대상은 서면 확인한다.",
+        "note": "Pak-EPA가 초기환경평가·환경영향평가를 승인·조건부 승인하거나 불승인하며 비대상은 서면 확인한다.",
+        "action": "Pak-EPA가 초기환경평가·환경영향평가를 승인·조건부 승인하거나 불승인하며 비대상은 서면 확인한다.",
         "outputs": [
           "환경승인·조건·비대상 또는 불승인"
         ],
@@ -899,8 +899,8 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "foundation·structure·services 등 관할 hold point에서 책임자가 현장검사와 토질·재료·구조 시험기록 검토를 요청한다.",
-        "action": "foundation·structure·services 등 관할 hold point에서 책임자가 현장검사와 토질·재료·구조 시험기록 검토를 요청한다.",
+        "note": "기초(foundation)·구조(structure)·설비(services) 등 관할 공정중지점(hold point)에서 책임자가 현장검사와 토질·재료·구조 시험기록 검토를 요청한다.",
+        "action": "기초(foundation)·구조(structure)·설비(services) 등 관할 공정중지점(hold point)에서 책임자가 현장검사와 토질·재료·구조 시험기록 검토를 요청한다.",
         "outputs": [
           "단계검사 요청·시험기록"
         ],
@@ -1017,14 +1017,14 @@
         "id": "B31",
         "lane": "현지 설계·시공 전문가",
         "stage": "C4 완료신청",
-        "label": "completion 도서·stability 확인 작성",
+        "label": "준공도서·구조안전(stability) 확인 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "공사완료 후 승인건축사·구조기술자가 as-built, 구조안전·완료확인, 검사·시험과 요구 NOC를 작성·서명한다.",
-        "action": "공사완료 후 승인건축사·구조기술자가 as-built, 구조안전·완료확인, 검사·시험과 요구 NOC를 작성·서명한다.",
+        "note": "공사완료 후 승인건축사·구조기술자가 준공도면(as-built), 구조안전·완료확인, 검사·시험과 요구 이의없음확인서를 작성·서명한다.",
+        "action": "공사완료 후 승인건축사·구조기술자가 준공도면(as-built), 구조안전·완료확인, 검사·시험과 요구 이의없음확인서를 작성·서명한다.",
         "outputs": [
-          "completion dossier·as-built·안전확인"
+          "준공도서(completion dossier)·준공도면·안전확인"
         ],
         "authorityIds": [
           "pec-pcatp",
@@ -1048,12 +1048,12 @@
         "id": "B32",
         "lane": "건축주·신청인",
         "stage": "C4 완료신청",
-        "label": "CDA Completion Certificate 신청",
+        "label": "CDA 준공증명서 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "건축주·등록전문가가 completion dossier와 수수료·NOC를 CDA One Window에 제출한다.",
-        "action": "건축주·등록전문가가 completion dossier와 수수료·NOC를 CDA One Window에 제출한다.",
+        "note": "건축주·등록전문가가 준공도서와 수수료·이의없음확인서를 CDA 원스톱 창구에 제출한다.",
+        "action": "건축주·등록전문가가 준공도서와 수수료·이의없음확인서를 CDA 원스톱 창구에 제출한다.",
         "outputs": [
           "준공증명 접수·사건기록"
         ],
@@ -1170,14 +1170,14 @@
         "id": "B36",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 최종검사·결정",
-        "label": "Completion·Occupancy 공식결정",
+        "label": "준공·점유 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "CDA가 완성공사의 승인도서·기술조건 적합성을 확인해 Completion Certificate/occupancy를 발급하거나 거부한다.",
-        "action": "CDA가 완성공사의 승인도서·기술조건 적합성을 확인해 Completion Certificate/occupancy를 발급하거나 거부한다.",
+        "note": "CDA가 완성공사의 승인도서·기술조건 적합성을 확인해 준공증명서·점유승인을 발급하거나 거부한다.",
+        "action": "CDA가 완성공사의 승인도서·기술조건 적합성을 확인해 준공증명서·점유승인을 발급하거나 거부한다.",
         "outputs": [
-          "Completion Certificate·점유승인 또는 거부"
+          "준공증명서·점유승인 또는 거부"
         ],
         "authorityIds": [
           "local-development-authority"
@@ -1502,12 +1502,12 @@
       "id": "site-urban",
       "slug": "pakistan-site-urban-construction-regulations",
       "priority": 4,
-      "name": "파키스탄 필지·zoning·개발조건 결정 — Islamabad/ICT CDA 사례",
+      "name": "파키스탄 필지·용도지역(zoning)·개발조건 결정 — Islamabad/ICT CDA 사례",
       "oneLiner": "대상지 개발청·지방정부와 zoning·master plan을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "전국 단일 필지규제가 아닌 파키스탄 체계를 전제로 Islamabad/ICT CDA 2023 Building Control Regulations와 2026 주차개정을 실제 지역사례로 구성했다. ICT 밖은 해당 주·개발청·지방정부의 현행 master plan·building regulations로 교체한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "CDA 관할에서 권원·allotment·possession과 적용 zoning·land-use·plot controls를 확인해 건축도면 작성의 공식 계획조건을 확정하는 절차다. CDA 수치를 전국에 일반화하지 않는다.",
+      "procedureScope": "CDA 관할에서 권원·배정(allotment)·점유권(possession)과 적용 용도지역·토지이용·필지규제를 확인해 건축도면 작성의 공식 계획조건을 확정하는 절차다. CDA 수치를 전국에 일반화하지 않는다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1616,7 +1616,7 @@
         },
         {
           "state": "reject",
-          "label": "zoning·용도 불허",
+          "label": "용도지역·용도 불허",
           "action": "해당 안으로 진행하지 않고 적법한 변경·불복·대체부지를 검토한다."
         }
       ]
@@ -1630,7 +1630,7 @@
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "Islamabad/ICT의 CDA 건축도면 승인과 Pak-EPA PEPA 1997·IEE/EIA Regulations 2000 절차를 각각 공식 단계로 구성했다. ICT 밖에서는 해당 주 환경법·규칙과 관할 개발청 절차로 교체한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "CDA 등록전문가 도서·One Window 건축심사와 Pak-EPA의 IEE/EIA 분류·접수·기술/공중심사·결정을 병렬로 표시한다. 연방 경로를 다른 주에 일반화하지 않는다.",
+      "procedureScope": "CDA 등록전문가 도서·원스톱 창구(One Window) 건축심사와 Pak-EPA의 초기환경평가(IEE)·환경영향평가(EIA) 분류·접수·기술·공중심사·결정을 병렬로 표시한다. 연방 경로를 다른 주에 일반화하지 않는다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1815,12 +1815,12 @@
       "id": "control-completion",
       "slug": "pakistan-control-completion-construction-regulations",
       "priority": 6,
-      "name": "파키스탄 공사검사·Completion Certificate — Islamabad/ICT CDA 사례",
+      "name": "파키스탄 공사검사·준공증명서(Completion Certificate) — Islamabad/ICT CDA 사례",
       "oneLiner": "BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "BCP 2021 기술기준과 CDA Islamabad completion-certificate 공식절차를 연결했다. ICT 밖은 해당 관할기관의 검사·준공·점유 규정과 양식으로 교체한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "CDA 승인도서·BCP 2021로 공사하고 등록전문가의 감독·검사·완료도서를 거쳐 CDA Completion Certificate/occupancy 결정을 받는 절차다.",
+      "procedureScope": "CDA 승인도서·BCP 2021로 공사하고 등록전문가의 감독·검사·완료도서를 거쳐 CDA 준공증명서·점유승인(occupancy) 결정을 받는 절차다.",
       "nodeIds": [
         "B25",
         "B26",
@@ -1948,7 +1948,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "Completion·Occupancy 발급",
+          "label": "준공·점유 승인",
           "action": "발급된 점유범위와 조건에 따라 건물을 인계·사용한다."
         },
         {
@@ -2176,31 +2176,31 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "CDA 필지·zoning·배치 공식결정",
+      "gate": "CDA 필지·용도지역·배치 공식결정",
       "decision": "CDA가 대상 필지의 용도·배치·개발조건 적합성을 승인하거나 불허한다.",
       "dependsOn": [],
-      "output": "Plan Approval Letter·승인조건 또는 불허통지"
+      "output": "계획승인서·승인조건 또는 불허통지"
     },
     {
       "order": 2,
       "gate": "CDA 건축허가 공식결정",
-      "decision": "CDA가 완비도서의 zoning·기술기준·NOC 적합성을 심사해 허가·조건 또는 불허를 확정한다.",
+      "decision": "CDA가 완비도서의 용도지역·기술기준·이의없음확인서 적합성을 심사해 허가·조건 또는 불허를 확정한다.",
       "dependsOn": [],
-      "output": "Plan Approval Letter·승인도서 또는 불허"
+      "output": "계획승인서·승인도서 또는 불허"
     },
     {
       "order": 3,
       "gate": "Pak-EPA 환경평가 공식결정",
-      "decision": "Pak-EPA가 ICT 사업의 IEE/EIA·비대상 여부와 승인조건 또는 불승인을 공식 확정한다.",
+      "decision": "Pak-EPA가 ICT 사업의 초기환경평가·환경영향평가·비대상 여부와 승인조건 또는 불승인을 공식 확정한다.",
       "dependsOn": [],
       "output": "환경결정문·조건 또는 불승인"
     },
     {
       "order": 4,
-      "gate": "CDA Completion Certificate 공식결정",
-      "decision": "CDA가 완성공사의 승인도서·현장·NOC 적합성을 확인해 준공·점유를 승인하거나 거부한다.",
+      "gate": "CDA 준공증명서 공식결정",
+      "decision": "CDA가 완성공사의 승인도서·현장·이의없음확인서 적합성을 확인해 준공·점유를 승인하거나 거부한다.",
       "dependsOn": [],
-      "output": "Completion Certificate·점유승인 또는 거부통지"
+      "output": "준공증명서·점유승인 또는 거부통지"
     }
   ],
   "siteOverlays": [

@@ -35,10 +35,10 @@
     "stages": [
       "G0 권원·도시계획증명",
       "G1 건축사·허가도서",
-      "G2 Mairie 접수·공고",
+      "G2 시청 접수·공고",
       "G3 기술심사·보완",
       "G4 허가결정",
-      "G0 환경경로·TdR",
+      "G0 환경경로·평가범위서",
       "G1 환경조사·협의",
       "G2 보고서 접수·현장검증",
       "G3 완비·공개심사",
@@ -56,7 +56,7 @@
         "id": "B01",
         "lane": "건축주·신청인",
         "stage": "G0 권원·도시계획증명",
-        "label": "권원·Certificat d'urbanisme 확보",
+        "label": "권원·도시계획증명 확보",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -101,7 +101,7 @@
         "note": "commune과 지방 도시계획서비스가 적용 계획문서 또는 일반 도시계획·건축규칙에 따라 입지·용도·배치·접근·위생·servitude 조건을 확인해 도시계획증명을 발급하거나 제한사유를 통지한다.",
         "action": "commune과 지방 도시계획서비스가 적용 계획문서 또는 일반 도시계획·건축규칙에 따라 입지·용도·배치·접근·위생·servitude 조건을 확인해 도시계획증명을 발급하거나 제한사유를 통지한다.",
         "outputs": [
-          "Certificat d'urbanisme·필지조건 또는 제한사유"
+          "도시계획증명·필지조건 또는 제한사유"
         ],
         "authorityIds": [
           "mayor",
@@ -189,8 +189,8 @@
       {
         "id": "B05",
         "lane": "건축주·신청인",
-        "stage": "G2 Mairie 접수·공고",
-        "label": "Mayor에게 허가신청·접수증",
+        "stage": "G2 시청 접수·공고",
+        "label": "시장에게 허가신청·접수증",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -219,7 +219,7 @@
       {
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G2 Mairie 접수·공고",
+        "stage": "G2 시청 접수·공고",
         "label": "15일 내 허가신청 공고",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -319,14 +319,14 @@
         "id": "B09",
         "lane": "도시계획·건축 허가기관",
         "stage": "G4 허가결정",
-        "label": "Mayor 건축허가 공식결정",
+        "label": "시장 건축허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "Mayor가 접수일부터 45일 안에 건축허가를 발급하거나 이유를 명시해 거부한다. 기한 안에 거부통지가 없으면 법정 묵시허가 효력이 발생한다.",
         "action": "Mayor가 접수일부터 45일 안에 건축허가를 발급하거나 이유를 명시해 거부한다. 기한 안에 거부통지가 없으면 법정 묵시허가 효력이 발생한다.",
         "outputs": [
-          "명시·묵시 Permis de construire 또는 이유부 거부통지"
+          "명시·묵시 건축허가(Permis de construire) 또는 이유부 거부통지"
         ],
         "authorityIds": [
           "mayor"
@@ -351,8 +351,8 @@
       {
         "id": "B10",
         "lane": "건축주·신청인",
-        "stage": "G0 환경경로·TdR",
-        "label": "NIE·간이·상세 EIES 경로 확인",
+        "stage": "G0 환경경로·평가범위서",
+        "label": "환경영향통지서·간이·상세 환경영향평가 경로 확인",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -389,15 +389,15 @@
       {
         "id": "B11",
         "lane": "건축주·신청인",
-        "stage": "G0 환경경로·TdR",
-        "label": "TdR·사업설명·수수료 제출",
+        "stage": "G0 환경경로·평가범위서",
+        "label": "평가범위서(TdR)·사업설명·수수료 제출",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "EIES는 competent administration와 MINEPDED에 신청서·TdR·입지선정 설명·수수료 영수증을, NIE는 commune에 같은 성격의 서류를 제출하고 접수증을 받는다.",
         "action": "EIES는 competent administration와 MINEPDED에 신청서·TdR·입지선정 설명·수수료 영수증을, NIE는 commune에 같은 성격의 서류를 제출하고 접수증을 받는다.",
         "outputs": [
-          "TdR 신청·사업설명·수수료 영수증·접수증"
+          "평가범위서 신청·사업설명·수수료 영수증·접수증"
         ],
         "authorityIds": [
           "minepded",
@@ -420,15 +420,15 @@
       {
         "id": "B12",
         "lane": "환경·소방·검사기관",
-        "stage": "G0 환경경로·TdR",
-        "label": "TdR 심사·Cahier des charges",
+        "stage": "G0 환경경로·평가범위서",
+        "label": "평가범위서 심사·과업준수조건서(Cahier des charges)",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "MINEPDED 또는 département 환경책임자가 평가수준·분석범위·사업자 의무를 심사해 TdR 의견과 cahier des charges를 통지한다. 법정 무응답 기한이 지나면 TdR은 승인된 것으로 본다.",
         "action": "MINEPDED 또는 département 환경책임자가 평가수준·분석범위·사업자 의무를 심사해 TdR 의견과 cahier des charges를 통지한다. 법정 무응답 기한이 지나면 TdR은 승인된 것으로 본다.",
         "outputs": [
-          "승인 TdR·cahier des charges 또는 보완요구"
+          "승인 평가범위서·과업준수조건서 또는 보완요구"
         ],
         "authorityIds": [
           "minepded",
@@ -452,14 +452,14 @@
         "id": "B13",
         "lane": "현지 설계·시공 전문가",
         "stage": "G1 환경조사·협의",
-        "label": "공인 평가사무소 EIES·NIE 작성",
+        "label": "공인 평가사무소 환경영향평가서·환경영향통지서 작성",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "EIES는 MINEPDED 공인 bureau d'études가 승인 TdR에 따라 기초환경·대안·영향·저감·PGES를 평가하고, NIE는 적격 전문가가 cahier des charges 초안을 포함해 작성한다.",
         "action": "EIES는 MINEPDED 공인 bureau d'études가 승인 TdR에 따라 기초환경·대안·영향·저감·PGES를 평가하고, NIE는 적격 전문가가 cahier des charges 초안을 포함해 작성한다.",
         "outputs": [
-          "EIES sommaire/détaillée 또는 NIE·PGES"
+          "간이/상세 환경영향평가서 또는 환경영향통지서·환경사회관리계획(PGES)"
         ],
         "authorityIds": [
           "minepded",
@@ -520,7 +520,7 @@
         "id": "B15",
         "lane": "건축주·신청인",
         "stage": "G2 보고서 접수·현장검증",
-        "label": "EIES·NIE 보고서 공식제출",
+        "label": "환경영향평가서·환경영향통지서 공식제출",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -588,7 +588,7 @@
         "note": "MINEPDED가 접수 후 20일 안에 EIES를 현 상태로 recevable로 선언해 공개하거나, 완비를 위한 observations를 통지한다. 무응답이면 법정 완비로 본다.",
         "action": "MINEPDED가 접수 후 20일 안에 EIES를 현 상태로 recevable로 선언해 공개하거나, 완비를 위한 observations를 통지한다. 무응답이면 법정 완비로 본다.",
         "outputs": [
-          "Recevabilité 통지·공개 또는 보완 observations"
+          "완비성 확인(Recevabilité) 통지·공개 또는 보완의견"
         ],
         "authorityIds": [
           "minepded"
@@ -618,7 +618,7 @@
         "note": "MINEPDED observations에 따라 조사·대안·저감·PGES와 주민협의 자료를 보완해 다시 제출한다.",
         "action": "MINEPDED observations에 따라 조사·대안·저감·PGES와 주민협의 자료를 보완해 다시 제출한다.",
         "outputs": [
-          "보완 EIES·NIE·PGES·답변서"
+          "보완 환경영향평가서·환경영향통지서·환경사회관리계획·답변서"
         ],
         "authorityIds": [
           "minepded",
@@ -642,7 +642,7 @@
         "id": "B19",
         "lane": "환경·소방·검사기관",
         "stage": "G3 완비·공개심사",
-        "label": "공개청문·CIE 심의",
+        "label": "공개청문·부처간 환경위원회(CIE) 심의",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -679,7 +679,7 @@
         "note": "EIES는 CIE 의견 후 환경장관이, NIE는 département 환경책임자 적합의견에 따라 Mayor가 환경적합증명·조건부 보완 또는 불허를 결정한다.",
         "action": "EIES는 CIE 의견 후 환경장관이, NIE는 département 환경책임자 적합의견에 따라 Mayor가 환경적합증명·조건부 보완 또는 불허를 결정한다.",
         "outputs": [
-          "Certificat/Attestation de conformité environnementale 또는 조건·불허통지"
+          "환경적합증명(Certificat/Attestation de conformité environnementale) 또는 조건·불허통지"
         ],
         "authorityIds": [
           "minepded",
@@ -814,7 +814,7 @@
         "note": "Mayor가 45일 안에 건축허가를 명시 발급하거나 이유부 거부를 통지한다. 기한 내 거부통지가 없으면 법정 묵시허가가 성립한다.",
         "action": "Mayor가 45일 안에 건축허가를 명시 발급하거나 이유부 거부를 통지한다. 기한 내 거부통지가 없으면 법정 묵시허가가 성립한다.",
         "outputs": [
-          "Permis de construire·승인도서 또는 이유부 거부통지"
+          "건축허가(Permis de construire)·승인도서 또는 이유부 거부통지"
         ],
         "authorityIds": [
           "mayor"
@@ -941,7 +941,7 @@
         "id": "B28",
         "lane": "환경·소방·검사기관",
         "stage": "G1 시공·현장검사",
-        "label": "안전·위생·PGES 합동통제",
+        "label": "안전·위생·환경사회관리계획 합동통제",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -1022,7 +1022,7 @@
         "id": "B30",
         "lane": "현지 설계·시공 전문가",
         "stage": "G2 위반·환경시정",
-        "label": "위반·PGES 시정·재검사",
+        "label": "위반·환경사회관리계획 시정·재검사",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "axis",
@@ -1061,14 +1061,14 @@
         "id": "B31",
         "lane": "현지 설계·시공 전문가",
         "stage": "G3 완공신고",
-        "label": "완공신고·Récolement 도서 작성",
+        "label": "완공신고·준공확인(Récolement) 도서 작성",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "공사완료 후 허가권자와 책임전문가가 정해진 서식으로 déclaration d'achèvement를 작성하고 요구 시 plans de récolement와 투자비 자료를 준비한다.",
         "action": "공사완료 후 허가권자와 책임전문가가 정해진 서식으로 déclaration d'achèvement를 작성하고 요구 시 plans de récolement와 투자비 자료를 준비한다.",
         "outputs": [
-          "완공신고·as-built/recolement 도서·투자비"
+          "완공신고·준공도면(as-built)·준공확인도서·투자비"
         ],
         "authorityIds": [
           "mayor",
@@ -1200,14 +1200,14 @@
         "id": "B35",
         "lane": "도시계획·건축 허가기관",
         "stage": "G4 최종검사·적합결정",
-        "label": "Mayor 적합증명 공식결정",
+        "label": "시장 적합증명 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "axis",
         "note": "Mayor가 완공건축물이 건축·배치 허가도서와 법정 부지·환경조치에 맞는지 확인해 certificat de conformité를 발급하거나 시정·거부를 통지한다.",
         "action": "Mayor가 완공건축물이 건축·배치 허가도서와 법정 부지·환경조치에 맞는지 확인해 certificat de conformité를 발급하거나 시정·거부를 통지한다.",
         "outputs": [
-          "Certificat de conformité 또는 공식 시정·거부통지"
+          "적합증명 또는 공식 시정·거부통지"
         ],
         "authorityIds": [
           "mayor"
@@ -1523,7 +1523,7 @@
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "MINHDU 현행 안내가 공개한 certificat d'urbanisme, 소유권·건축사·5부 도서, mairie 접수·15일 게시·45일 심사·명시/묵시 허가와 Urbanism Law 제107~112조를 실제 순서로 연결했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "건축허가는 대상 commune의 Mayor가 발급한다. 계획은 원칙적으로 National Order에 등록된 architect가 책임지고, 토지·계획조건은 certificat d'urbanisme와 현행 planning documents에서 확인한다.",
+      "procedureScope": "건축허가는 대상 지방자치단체(commune)의 시장(Mayor)이 발급한다. 계획은 원칙적으로 국가 건축사협회(National Order)에 등록된 건축사가 책임지고, 토지·계획조건은 도시계획증명(certificat d'urbanisme)과 현행 계획문서에서 확인한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1641,12 +1641,12 @@
       "id": "permit-environment",
       "slug": "cameroon-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "카메룬 NIE·간이/상세 EIES·건축허가",
+      "name": "카메룬 환경영향통지서(NIE)·간이/상세 환경영향평가서(EIES)·건축허가",
       "oneLiner": "시장 건축허가와 MINEPDED의 NIE·간이/상세 EIES·CCE를 별도 Gate로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "Decree 2013/0171 제13~26조의 NIE·간이/상세 EIES 분류, TdR, 공인사무소, 공동현장검증·보고서 완비·공개협의·CIE 의견·환경적합증명과 MINHDU 45일 건축허가를 두 핵심 결정 Gate로 연결했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "소규모·낮은 영향 사업은 commune NIE, 그 밖의 대상은 MINEPDED 간이 또는 상세 EIES 경로를 거친다. EIES 대상은 공사 전 환경적합증명을 받아야 하며 최종 건축허가는 Mayor가 결정한다.",
+      "procedureScope": "소규모·낮은 영향 사업은 지방자치단체 환경영향통지서 경로를, 그 밖의 대상은 MINEPDED 간이 또는 상세 환경영향평가서 경로를 거친다. 환경영향평가 대상은 공사 전 환경적합증명을 받아야 하며 최종 건축허가는 시장이 결정한다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1822,7 +1822,7 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "Urbanism Law 제118~123조의 수시 현장방문·도시계획/안전·위생 통제·완공 후 검사·의무 적합증명, Order 0006 서식과 Decree 2013/0171 제27~28조 PGES 모니터링·시정조치를 연결했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Mayor 주도로 sworn municipal officers와 지방 기술서비스가 공사 중·완공 후 현장을 검사한다. 완공된 건축물은 의무 certificat de conformité를 받아야 하며 EIES/NIE 대상은 PGES·cahier des charges 이행감시가 병행된다.",
+      "procedureScope": "시장(Mayor) 주도로 선서 지방공무원(sworn municipal officers)과 지방 기술부서가 공사 중·완공 후 현장을 검사한다. 완공된 건축물은 의무 적합증명(certificat de conformité)을 받아야 하며 환경영향평가서·환경영향통지서 대상은 환경사회관리계획·과업준수조건서 이행감시가 병행된다.",
       "nodeIds": [
         "B25",
         "B26",

@@ -33,9 +33,9 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 사전정보 신청",
+      "G0 사전 도시계획정보 신청",
       "G1 계획조건 확정",
-      "G2 anteprojeto 접수",
+      "G2 기본설계안 접수",
       "G3 심사·결정",
       "G4 환경분류·도서",
       "G5 환경심사·결정",
@@ -43,22 +43,22 @@
       "G7 건축허가 결정",
       "G8 허가착공",
       "G9 공사감독·변경",
-      "G10 준공 vistoria",
+      "G10 준공검사",
       "G11 사용허가"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "건축주·신청인",
-        "stage": "G0 사전정보 신청",
-        "label": "권원·지적도 첨부 사전정보 신청",
+        "stage": "G0 사전 도시계획정보 신청",
+        "label": "권원·지적도 첨부 사전 도시계획정보 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "이해관계인이 토지권리 증명과 공식 지적도를 첨부해 대상 필지의 건축 가능성, 기반시설, 제한, 지수·높이·이격과 예상 수수료에 관한 informação prévia를 도시허가 담당부처에 신청한다.",
-        "action": "이해관계인이 토지권리 증명과 공식 지적도를 첨부해 대상 필지의 건축 가능성, 기반시설, 제한, 지수·높이·이격과 예상 수수료에 관한 informação prévia를 도시허가 담당부처에 신청한다.",
+        "note": "이해관계인이 토지권리 증명과 공식 지적도를 첨부해 대상 필지의 건축 가능성, 기반시설, 제한, 지수·높이·이격과 예상 수수료에 관한 사전 도시계획정보를 도시허가 담당부처에 신청한다.",
+        "action": "이해관계인이 토지권리 증명과 공식 지적도를 첨부해 대상 필지의 건축 가능성, 기반시설, 제한, 지수·높이·이격과 예상 수수료에 관한 사전 도시계획정보를 도시허가 담당부처에 신청한다.",
         "outputs": [
-          "사전정보 신청서·권원증명·지적도"
+          "사전 도시계획정보 신청서·권원증명·지적도"
         ],
         "authorityIds": [
           "mpw"
@@ -80,7 +80,7 @@
       {
         "id": "B02",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G0 사전정보 신청",
+        "stage": "G0 사전 도시계획정보 신청",
         "label": "적용 계획·보호구역·기반시설 조건 조회",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -112,14 +112,14 @@
         "id": "B03",
         "lane": "도시계획·건축 허가기관",
         "stage": "G1 계획조건 확정",
-        "label": "사전정보 적합·조건·부적합 회신",
+        "label": "사전 도시계획정보 적합·조건·부적합 회신",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "담당기관이 신청일로부터 법정기간 안에 가능 여부와 적용조건을 서면 회신하며, 불리한 경우 충족 가능한 수정조건이나 기반시설 부족의 해소방안을 명시한다.",
         "action": "담당기관이 신청일로부터 법정기간 안에 가능 여부와 적용조건을 서면 회신하며, 불리한 경우 충족 가능한 수정조건이나 기반시설 부족의 해소방안을 명시한다.",
         "outputs": [
-          "유리·불리 사전정보와 필지별 조건"
+          "유리·불리 사전 도시계획정보와 필지별 조건"
         ],
         "authorityIds": [
           "mpw"
@@ -146,14 +146,14 @@
         "id": "B04",
         "lane": "현지 설계·시공 전문가",
         "stage": "G1 계획조건 확정",
-        "label": "등록기술자 anteprojeto·책임서 작성",
+        "label": "등록기술자 기본설계안·책임서 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "등록된 건축·엔지니어링 기술자가 사전정보와 계획조건에 맞춰 배치·건축 anteprojeto와 설명서·공사비를 작성하고 법규준수 책임서에 서명한다.",
-        "action": "등록된 건축·엔지니어링 기술자가 사전정보와 계획조건에 맞춰 배치·건축 anteprojeto와 설명서·공사비를 작성하고 법규준수 책임서에 서명한다.",
+        "note": "등록된 건축·엔지니어링 기술자가 사전 도시계획정보와 계획조건에 맞춰 배치·건축 기본설계안과 설명서·공사비를 작성하고 법규준수 책임서에 서명한다.",
+        "action": "등록된 건축·엔지니어링 기술자가 사전 도시계획정보와 계획조건에 맞춰 배치·건축 기본설계안과 설명서·공사비를 작성하고 법규준수 책임서에 서명한다.",
         "outputs": [
-          "서명 anteprojeto·설명서·책임서"
+          "서명 기본설계안·설명서·책임서"
         ],
         "authorityIds": [
           "mpw"
@@ -176,15 +176,15 @@
       {
         "id": "B05",
         "lane": "건축주·신청인",
-        "stage": "G2 anteprojeto 접수",
-        "label": "도시허가 총국에 anteprojeto 접수",
+        "stage": "G2 기본설계안 접수",
+        "label": "도시허가 총국에 기본설계안 접수",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인이 토지권리·지적도·적법한 점유근거와 서명 anteprojeto를 도시허가 담당 총국장 앞으로 제출해 프로젝트 승인절차를 개시한다.",
-        "action": "신청인이 토지권리·지적도·적법한 점유근거와 서명 anteprojeto를 도시허가 담당 총국장 앞으로 제출해 프로젝트 승인절차를 개시한다.",
+        "note": "신청인이 토지권리·지적도·적법한 점유근거와 서명 기본설계안을 도시허가 담당 총국장 앞으로 제출해 프로젝트 승인절차를 개시한다.",
+        "action": "신청인이 토지권리·지적도·적법한 점유근거와 서명 기본설계안을 도시허가 담당 총국장 앞으로 제출해 프로젝트 승인절차를 개시한다.",
         "outputs": [
-          "anteprojeto 신청서·접수기록"
+          "기본설계안 신청서·접수기록"
         ],
         "authorityIds": [
           "mpw"
@@ -206,7 +206,7 @@
       {
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
-        "stage": "G2 anteprojeto 접수",
+        "stage": "G2 기본설계안 접수",
         "label": "30일 내 완비·도시계획·관계기관 심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
@@ -237,15 +237,15 @@
       {
         "id": "B07",
         "lane": "건축주·신청인",
-        "stage": "G2 anteprojeto 접수",
-        "label": "누락·계획불일치 anteprojeto 보완",
+        "stage": "G2 기본설계안 접수",
+        "label": "누락·계획불일치 기본설계안 보완",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "보완통지를 받은 신청인과 기술자가 지정기간 안에 누락자료와 계획·건축도서를 수정해 재제출하며 심사기간은 완비 때까지 정지된다.",
         "action": "보완통지를 받은 신청인과 기술자가 지정기간 안에 누락자료와 계획·건축도서를 수정해 재제출하며 심사기간은 완비 때까지 정지된다.",
         "outputs": [
-          "수정 anteprojeto·보완답변·재접수"
+          "수정 기본설계안·보완답변·재접수"
         ],
         "authorityIds": [
           "mpw"
@@ -268,14 +268,14 @@
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "G3 심사·결정",
-        "label": "anteprojeto 승인·전문설계 요구 또는 거부",
+        "label": "기본설계안 승인·전문설계 요구 또는 거부",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "담당기관이 anteprojeto를 승인하고 후속 전문설계 목록·기술조건을 통지하거나, 미해소 결함·구속적 반대의견·법정 거부사유가 있으면 거부결정을 내린다.",
-        "action": "담당기관이 anteprojeto를 승인하고 후속 전문설계 목록·기술조건을 통지하거나, 미해소 결함·구속적 반대의견·법정 거부사유가 있으면 거부결정을 내린다.",
+        "note": "담당기관이 기본설계안을 승인하고 후속 전문설계 목록·기술조건을 통지하거나, 미해소 결함·구속적 반대의견·법정 거부사유가 있으면 거부결정을 내린다.",
+        "action": "담당기관이 기본설계안을 승인하고 후속 전문설계 목록·기술조건을 통지하거나, 미해소 결함·구속적 반대의견·법정 거부사유가 있으면 거부결정을 내린다.",
         "outputs": [
-          "anteprojeto 승인·전문설계 조건 또는 거부결정"
+          "기본설계안 승인·전문설계 조건 또는 거부결정"
         ],
         "authorityIds": [
           "mpw"
@@ -302,14 +302,14 @@
         "id": "B09",
         "lane": "건축주·신청인",
         "stage": "G4 환경분류·도서",
-        "label": "사업자료 제출·환경 Category A/B/C 분류",
+        "label": "사업자료 제출·환경등급 A/B/C 분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "사업자가 위치·규모·도면·타당성자료와 분류안을 환경당국에 제출하고 Annex I·II 및 예상영향에 따라 Category A, B 또는 C와 Category A TOR 범위를 확정받는다.",
-        "action": "사업자가 위치·규모·도면·타당성자료와 분류안을 환경당국에 제출하고 Annex I·II 및 예상영향에 따라 Category A, B 또는 C와 Category A TOR 범위를 확정받는다.",
+        "note": "사업자가 위치·규모·도면·타당성자료와 분류안을 환경당국에 제출하고 부속서(Annex) I·II 및 예상영향에 따라 환경등급 A, B 또는 C와 환경등급 A의 평가범위·과업지시서(TOR)를 확정받는다.",
+        "action": "사업자가 위치·규모·도면·타당성자료와 분류안을 환경당국에 제출하고 부속서(Annex) I·II 및 예상영향에 따라 환경등급 A, B 또는 C와 환경등급 A의 평가범위·과업지시서(TOR)를 확정받는다.",
         "outputs": [
-          "환경범위·Category·A 대상 TOR 의견"
+          "환경범위·환경등급·A 대상 과업지시서 의견"
         ],
         "authorityIds": [
           "environmental-authority"
@@ -332,14 +332,14 @@
         "id": "B10",
         "lane": "현지 설계·시공 전문가",
         "stage": "G4 환경분류·도서",
-        "label": "Category A DIA·PGA 또는 B PGA 작성·신청",
+        "label": "환경등급 A 환경영향평가서(DIA)·환경관리계획(PGA) 또는 B 환경관리계획 작성·신청",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Category A는 승인범위에 따라 DIA·비기술요약·환경관리계획(PGA)을, Category B는 PGA와 EAI 신청자료를 작성해 환경허가 신청과 수수료 증빙을 제출한다.",
-        "action": "Category A는 승인범위에 따라 DIA·비기술요약·환경관리계획(PGA)을, Category B는 PGA와 EAI 신청자료를 작성해 환경허가 신청과 수수료 증빙을 제출한다.",
+        "note": "환경등급 A는 승인범위에 따라 환경영향평가서·비기술요약·환경관리계획을, 환경등급 B는 환경관리계획과 초기환경검토 신청자료를 작성해 환경허가 신청과 수수료 증빙을 제출한다.",
+        "action": "환경등급 A는 승인범위에 따라 환경영향평가서·비기술요약·환경관리계획을, 환경등급 B는 환경관리계획과 초기환경검토 신청자료를 작성해 환경허가 신청과 수수료 증빙을 제출한다.",
         "outputs": [
-          "DIA·PGA 또는 EAI/PGA·환경허가 신청"
+          "환경영향평가서·환경관리계획 또는 초기환경검토·환경관리계획·환경허가 신청"
         ],
         "authorityIds": [
           "environmental-authority"
@@ -367,8 +367,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Category A 평가위원회가 DIA·PGA 공중협의와 기술평가를 실시해 최종의견을 내고, Category B는 환경당국이 PGA를 기술검토하며 필요하면 공중협의를 실시한다.",
-        "action": "Category A 평가위원회가 DIA·PGA 공중협의와 기술평가를 실시해 최종의견을 내고, Category B는 환경당국이 PGA를 기술검토하며 필요하면 공중협의를 실시한다.",
+        "note": "환경등급 A 평가위원회가 환경영향평가서·환경관리계획 공중협의와 기술평가를 실시해 최종의견을 내고, 환경등급 B는 환경당국이 환경관리계획을 기술검토하며 필요하면 공중협의를 실시한다.",
+        "action": "환경등급 A 평가위원회가 환경영향평가서·환경관리계획 공중협의와 기술평가를 실시해 최종의견을 내고, 환경등급 B는 환경당국이 환경관리계획을 기술검토하며 필요하면 공중협의를 실시한다.",
         "outputs": [
           "공중협의 기록·환경기술의견"
         ],
@@ -394,12 +394,12 @@
         "id": "B12",
         "lane": "건축주·신청인",
         "stage": "G5 환경심사·결정",
-        "label": "1회 DIA·PGA 보완·재심사",
+        "label": "1회 환경영향평가서·환경관리계획 보완·재심사",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "평가위원회나 환경당국이 한 차례 재작성·추가분석을 요구하면 사업자가 DIA·PGA 또는 PGA를 보완해 재제출하고 정지된 심사를 재개한다.",
-        "action": "평가위원회나 환경당국이 한 차례 재작성·추가분석을 요구하면 사업자가 DIA·PGA 또는 PGA를 보완해 재제출하고 정지된 심사를 재개한다.",
+        "note": "평가위원회나 환경당국이 한 차례 재작성·추가분석을 요구하면 사업자가 환경영향평가서·환경관리계획 또는 환경관리계획을 보완해 재제출하고 정지된 심사를 재개한다.",
+        "action": "평가위원회나 환경당국이 한 차례 재작성·추가분석을 요구하면 사업자가 환경영향평가서·환경관리계획 또는 환경관리계획을 보완해 재제출하고 정지된 심사를 재개한다.",
         "outputs": [
           "수정 환경문서·보완답변·재접수"
         ],
@@ -429,8 +429,8 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "상급환경당국이 기술의견에 따라 DIA·PGA 또는 PGA를 조건부 승인하고 환경허가 발급을 승인하거나, 비승인으로 환경허가 절차를 종결한다.",
-        "action": "상급환경당국이 기술의견에 따라 DIA·PGA 또는 PGA를 조건부 승인하고 환경허가 발급을 승인하거나, 비승인으로 환경허가 절차를 종결한다.",
+        "note": "상급환경당국이 기술의견에 따라 환경영향평가서·환경관리계획 또는 환경관리계획을 조건부 승인하고 환경허가 발급을 승인하거나, 비승인으로 환경허가 절차를 종결한다.",
+        "action": "상급환경당국이 기술의견에 따라 환경영향평가서·환경관리계획 또는 환경관리계획을 조건부 승인하고 환경허가 발급을 승인하거나, 비승인으로 환경허가 절차를 종결한다.",
         "outputs": [
           "환경평가 승인·조건 또는 비승인 결정"
         ],
@@ -463,10 +463,10 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경당국이 유리한 결정 후 Category A/B 환경허가를 발급·통지하고 사업자는 정해진 기간에 수수료를 납부한다. 이 세 요건 전에는 사업을 시행할 수 없다.",
-        "action": "환경당국이 유리한 결정 후 Category A/B 환경허가를 발급·통지하고 사업자는 정해진 기간에 수수료를 납부한다. 이 세 요건 전에는 사업을 시행할 수 없다.",
+        "note": "환경당국이 유리한 결정 후 환경등급 A/B 환경허가를 발급·통지하고 사업자는 정해진 기간에 수수료를 납부한다. 이 세 요건 전에는 사업을 시행할 수 없다.",
+        "action": "환경당국이 유리한 결정 후 환경등급 A/B 환경허가를 발급·통지하고 사업자는 정해진 기간에 수수료를 납부한다. 이 세 요건 전에는 사업을 시행할 수 없다.",
         "outputs": [
-          "Category A/B 환경허가·납부증빙"
+          "환경등급 A/B 환경허가·납부증빙"
         ],
         "authorityIds": [
           "environmental-authority"
@@ -493,8 +493,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "anteprojeto 승인조건과 환경허가를 반영해 등록기술자가 건축실시설계, 구조·기초, 상하수도·우수, 도로·통신, 소방·설비와 현장계획을 작성·서명해 제출한다.",
-        "action": "anteprojeto 승인조건과 환경허가를 반영해 등록기술자가 건축실시설계, 구조·기초, 상하수도·우수, 도로·통신, 소방·설비와 현장계획을 작성·서명해 제출한다.",
+        "note": "기본설계안(anteprojeto) 승인조건과 환경허가를 반영해 등록기술자가 건축실시설계, 구조·기초, 상하수도·우수, 도로·통신, 소방·설비와 현장계획을 작성·서명해 제출한다.",
+        "action": "기본설계안(anteprojeto) 승인조건과 환경허가를 반영해 등록기술자가 건축실시설계, 구조·기초, 상하수도·우수, 도로·통신, 소방·설비와 현장계획을 작성·서명해 제출한다.",
         "outputs": [
           "서명 전문설계·환경조건 반영표"
         ],
@@ -746,15 +746,15 @@
       {
         "id": "B23",
         "lane": "건축주·신청인",
-        "stage": "G10 준공 vistoria",
-        "label": "준공 vistoria·사용허가 신청",
+        "stage": "G10 준공검사",
+        "label": "준공검사·사용허가 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "공사완료 후 신청인이 승인설계대로 시공했다는 기술책임자 확인서, as-built 도면, 서명 공사일지와 관련 보증자료를 첨부해 준공검사와 사용허가를 신청한다.",
-        "action": "공사완료 후 신청인이 승인설계대로 시공했다는 기술책임자 확인서, as-built 도면, 서명 공사일지와 관련 보증자료를 첨부해 준공검사와 사용허가를 신청한다.",
+        "note": "공사완료 후 신청인이 승인설계대로 시공했다는 기술책임자 확인서, 준공도면(as-built), 서명 공사일지와 관련 보증자료를 첨부해 준공검사와 사용허가를 신청한다.",
+        "action": "공사완료 후 신청인이 승인설계대로 시공했다는 기술책임자 확인서, 준공도면(as-built), 서명 공사일지와 관련 보증자료를 첨부해 준공검사와 사용허가를 신청한다.",
         "outputs": [
-          "vistoria·사용허가 신청서·as-built·책임확인서"
+          "준공검사·사용허가 신청서·준공도면·책임확인서"
         ],
         "authorityIds": [
           "mpw"
@@ -776,7 +776,7 @@
       {
         "id": "B24",
         "lane": "환경·소방·검사기관",
-        "stage": "G10 준공 vistoria",
+        "stage": "G10 준공검사",
         "label": "홀수 위원회 준공검사·시설기능 확인",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
@@ -784,7 +784,7 @@
         "note": "도시허가 기술자와 국토계획 기술자 등 홀수 위원회가 신청인·설계자·기술책임자 입회 아래 승인설계, 사용목적, 공간·기반시설의 상태와 기능, 위생·안전을 검사한다.",
         "action": "도시허가 기술자와 국토계획 기술자 등 홀수 위원회가 신청인·설계자·기술책임자 입회 아래 승인설계, 사용목적, 공간·기반시설의 상태와 기능, 위생·안전을 검사한다.",
         "outputs": [
-          "위원회 vistoria 기록·적합성 판단"
+          "위원회 준공검사 기록·적합성 판단"
         ],
         "authorityIds": [
           "mpw",
@@ -808,15 +808,15 @@
       {
         "id": "B25",
         "lane": "환경·소방·검사기관",
-        "stage": "G10 준공 vistoria",
-        "label": "유리·불리 vistoria 보고서 확정",
+        "stage": "G10 준공검사",
+        "label": "유리·불리 준공검사 보고서 확정",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
         "note": "검사위원회가 만장일치로 유리 또는 불리 의견을 확정하며, 불리한 보고서에는 사실·법적 근거, 필요한 추가·시정공사와 이행기한을 명시한다.",
         "action": "검사위원회가 만장일치로 유리 또는 불리 의견을 확정하며, 불리한 보고서에는 사실·법적 근거, 필요한 추가·시정공사와 이행기한을 명시한다.",
         "outputs": [
-          "유리 또는 불리 vistoria 보고서·시정명령"
+          "유리 또는 불리 준공검사 보고서·시정명령"
         ],
         "authorityIds": [
           "mpw"
@@ -838,15 +838,15 @@
       {
         "id": "B26",
         "lane": "건축주·신청인",
-        "stage": "G10 준공 vistoria",
+        "stage": "G10 준공검사",
         "label": "불리한 보고서 시정공사·재검사",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "불리한 vistoria 보고서를 받은 신청인이 지정기한에 추가·시정공사를 완료하고 증빙·수정 as-built를 제출해 위원회 재검사를 받는다.",
-        "action": "불리한 vistoria 보고서를 받은 신청인이 지정기한에 추가·시정공사를 완료하고 증빙·수정 as-built를 제출해 위원회 재검사를 받는다.",
+        "note": "불리한 준공검사 보고서를 받은 신청인이 지정기한에 추가·시정공사를 완료하고 증빙·수정 준공도면을 제출해 위원회 재검사를 받는다.",
+        "action": "불리한 준공검사 보고서를 받은 신청인이 지정기한에 추가·시정공사를 완료하고 증빙·수정 준공도면을 제출해 위원회 재검사를 받는다.",
         "outputs": [
-          "시정완료 증빙·수정 as-built·재검사 기록"
+          "시정완료 증빙·수정 준공도면·재검사 기록"
         ],
         "authorityIds": [
           "mpw"
@@ -873,10 +873,10 @@
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "권한 있는 책임자가 유리한 vistoria 의견을 확인해 사용허가를 결정하고, 30일 이내 허가증에 승인용도를 명시해 발급한다. 허가 전에는 건축물 사용·점유가 허용되지 않는다.",
-        "action": "권한 있는 책임자가 유리한 vistoria 의견을 확인해 사용허가를 결정하고, 30일 이내 허가증에 승인용도를 명시해 발급한다. 허가 전에는 건축물 사용·점유가 허용되지 않는다.",
+        "note": "권한 있는 책임자가 유리한 준공검사 의견을 확인해 사용허가를 결정하고, 30일 이내 허가증에 승인용도를 명시해 발급한다. 허가 전에는 건축물 사용·점유가 허용되지 않는다.",
+        "action": "권한 있는 책임자가 유리한 준공검사 의견을 확인해 사용허가를 결정하고, 30일 이내 허가증에 승인용도를 명시해 발급한다. 허가 전에는 건축물 사용·점유가 허용되지 않는다.",
         "outputs": [
-          "licença de utilização·승인용도 또는 거부결정"
+          "사용허가·승인용도 또는 거부결정"
         ],
         "authorityIds": [
           "mpw"
@@ -906,7 +906,7 @@
         "source": "B01",
         "target": "B02",
         "type": "sequence",
-        "label": "사전정보 접수"
+        "label": "사전 도시계획정보 접수"
       },
       {
         "id": "BS04-02",
@@ -927,7 +927,7 @@
         "source": "B04",
         "target": "B05",
         "type": "sequence",
-        "label": "anteprojeto 완성"
+        "label": "기본설계안 완성"
       },
       {
         "id": "BS04-05",
@@ -955,7 +955,7 @@
         "source": "B07",
         "target": "B05",
         "type": "loop",
-        "label": "수정 anteprojeto 재접수"
+        "label": "수정 기본설계안 재접수"
       },
       {
         "id": "BX05",
@@ -969,7 +969,7 @@
         "source": "B09",
         "target": "B10",
         "type": "sequence",
-        "label": "환경 Category 확정"
+        "label": "환경등급 확정"
       },
       {
         "id": "BS05-02",
@@ -1125,12 +1125,12 @@
       "id": "site-urban",
       "slug": "timor-leste-site-urban-construction-regulations",
       "priority": 4,
-      "name": "동티모르 도시계획·부지규제 — 사전정보·anteprojeto 심사",
+      "name": "동티모르 도시계획·부지규제 — 사전 도시계획정보 신청(Pedido de informação prévia, PIP)·기본설계안(anteprojeto) 심사",
       "oneLiner": "토지권원과 관할 계획도·도시관리수단에 맞춘 개발 가능성을 건축허가 전에 확인한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "Decreto-Lei 9/2022의 전국 공통 사전정보·anteprojeto 심사 경로다. 사전정보 신청은 선택절차이지만, 승인계획·토지권리·기반시설 조건을 건축허가 전에 공식 고정하는 대표경로로 표시했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Decreto-Lei 9/2022 Articles 8, 10, 12-16에 따른 필지 사전정보, 토지·계획 자료, 계획기관 의견, anteprojeto 완비·도시계획 심사와 승인·거부 절차다.",
+      "procedureScope": "Decreto-Lei 9/2022 Articles 8, 10, 12-16에 따른 필지 사전 도시계획정보, 토지·계획 자료, 계획기관 의견, 기본설계안 완비·도시계획 심사와 승인·거부 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1166,7 +1166,7 @@
           "source": "B01",
           "target": "B02",
           "type": "sequence",
-          "label": "사전정보 접수"
+          "label": "사전 도시계획정보 접수"
         },
         {
           "id": "M04-E02",
@@ -1187,7 +1187,7 @@
           "source": "B04",
           "target": "B05",
           "type": "sequence",
-          "label": "anteprojeto 완성"
+          "label": "기본설계안 완성"
         },
         {
           "id": "M04-E05",
@@ -1215,18 +1215,18 @@
           "source": "B07",
           "target": "B05",
           "type": "loop",
-          "label": "수정 anteprojeto 재접수"
+          "label": "수정 기본설계안 재접수"
         }
       ],
       "decisionBranches": [
         {
           "state": "success",
-          "label": "사전정보·anteprojeto 승인",
+          "label": "사전 도시계획정보·기본설계안 승인",
           "action": "통지된 전문설계와 관계기관 조건을 반영해 최종 건축허가 심사로 진행"
         },
         {
           "state": "rework",
-          "label": "권원·계획·anteprojeto 보완",
+          "label": "권원·계획·기본설계안 보완",
           "action": "통지된 누락·불일치를 수정해 신청단계로 재접수"
         },
         {
@@ -1240,12 +1240,12 @@
       "id": "permit-environment",
       "slug": "timor-leste-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "동티모르 건축허가·환경심사 — Category A/B 환경허가·건축허가",
+      "name": "동티모르 건축허가·환경심사 — 환경등급(Category) A/B 환경허가·건축허가",
       "oneLiner": "건축·사용허가와 환경 Category 결정을 별도 Gate로 두고 선후관계를 관할기관과 확정한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "환경영향 가능성이 있는 일반 민간·공공 건축사업의 Category A/B 환경허가와 Decreto-Lei 9/2022 일반 건축허가를 연결한 전국 대표경로다. Category C나 소규모 간이허가, 허가 면제 공공공사는 해당 분기만 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Decreto-Lei 5/2011 Articles 3-23의 AIA/EAI·환경허가와 Decreto-Lei 9/2022 Articles 15-26의 전문설계·최종 건축허가를 법정 선행관계로 연결했다.",
+      "procedureScope": "Decreto-Lei 5/2011 Articles 3-23의 환경영향평가(AIA)·초기환경검토(EAI)·환경허가와 Decreto-Lei 9/2022 Articles 15-26의 전문설계·최종 건축허가를 법정 선행관계로 연결했다.",
       "nodeIds": [
         "B09",
         "B10",
@@ -1281,7 +1281,7 @@
           "source": "B09",
           "target": "B10",
           "type": "sequence",
-          "label": "환경 Category 확정"
+          "label": "환경등급 확정"
         },
         {
           "id": "M05-E02",
@@ -1376,12 +1376,12 @@
       "id": "control-completion",
       "slug": "timor-leste-control-completion-construction-regulations",
       "priority": 6,
-      "name": "동티모르 기술검사·준공제도 — 공사감독·vistoria·사용허가",
+      "name": "동티모르 기술검사·준공제도 — 공사감독·준공검사(vistoria)·사용허가(licença de utilização)",
       "oneLiner": "책임기술자·시공감독·준공검사와 건축물 사용허가를 하나의 인계조건으로 관리한다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "Decreto-Lei 9/2022의 전국 공통 건축공사 감독·검사·사용허가 경로다. 의무검사 시점은 후속 장관령과 사업유형에 따라 달라질 수 있으나, 현장서류·변경승인·완공검사·불리한 검사보고 보완·사용허가의 법정 순서는 조문으로 확인된다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "Decreto-Lei 9/2022 Articles 26-28, 35-43에 따른 허가게시·현장서류·행정검사, 준공 vistoria 위원회, 시정·재검사와 licença de utilização 발급 절차다.",
+      "procedureScope": "Decreto-Lei 9/2022 Articles 26-28, 35-43에 따른 허가게시·현장서류·행정검사, 준공검사 위원회, 시정·재검사와 사용허가 발급 절차다.",
       "nodeIds": [
         "B19",
         "B20",
@@ -1485,7 +1485,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "유리한 vistoria·사용허가 발급",
+          "label": "유리한 준공검사·사용허가 발급",
           "action": "허가된 용도와 조건에 따라 사용·점유 및 최종 인프라 연결"
         },
         {
@@ -1555,7 +1555,7 @@
       "verificationLevel": "article-verified",
       "note": "환경평가·허가의 Category A 등 절차를 규정한다. 최근 개정·기관명은 재확인한다.",
       "statusCheckedOn": "2026-08-07",
-      "statusBasis": "동티모르 법무부 Jornal da República의 Decree-Law 5/2011 공식 원문에서 Articles 3-23의 A/B/C 분류, AIA·EAI 심사, 보완, 환경결정과 환경허가 발급 절차를 직접 대조했다.",
+      "statusBasis": "동티모르 법무부 Jornal da República의 Decree-Law 5/2011 공식 원문에서 Articles 3-23의 A/B/C 분류, 환경영향평가·초기환경검토 심사, 보완, 환경결정과 환경허가 발급 절차를 직접 대조했다.",
       "articlesChecked": [
         "Articles 3-14",
         "Articles 17-23"
@@ -1683,24 +1683,24 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "도시허가 담당기관의 필지 사전정보 공식회신",
+      "gate": "도시허가 담당기관의 필지 사전 도시계획정보 공식회신",
       "decision": "필지의 계획·기반시설·법정제한에 따른 개발가능성과 조건을 공식 회신한다.",
       "dependsOn": [],
-      "output": "필지 사전정보·조건 또는 부적합 회신"
+      "output": "필지 사전 도시계획정보·조건 또는 부적합 회신"
     },
     {
       "order": 2,
-      "gate": "도시허가 담당기관의 anteprojeto 공식결정",
+      "gate": "도시허가 담당기관의 기본설계안 공식결정",
       "decision": "계획·입지 적합성을 확정하고 후속 전문설계 제출을 허용하거나 거부한다.",
       "dependsOn": [
         1
       ],
-      "output": "anteprojeto 승인·조건 또는 거부결정"
+      "output": "기본설계안 승인·조건 또는 거부결정"
     },
     {
       "order": 3,
       "gate": "상급환경당국의 환경평가 공식결정",
-      "decision": "Category A/B 평가문서와 관리조건을 승인해 환경허가 발급을 허용하거나 절차를 종결한다.",
+      "decision": "환경등급 A/B 평가문서와 관리조건을 승인해 환경허가 발급을 허용하거나 절차를 종결한다.",
       "dependsOn": [],
       "output": "환경승인·조건 또는 비승인 결정"
     },

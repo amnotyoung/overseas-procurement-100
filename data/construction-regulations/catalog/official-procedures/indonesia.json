@@ -58,43 +58,43 @@
     "site-urban": {
       "verificationScope": "아래 절차는 OSS를 통한 육상 사업활동의 KKPR, 특히 RDTR 자동확인이 되지 않아 공간계획 OPD·DPMPTSP가 처리하는 PKKPR 대표경로다. 비사업·정부사업, 해역 또는 RDTR 자동승인 대상은 별도 법정경로를 적용한다.",
       "officialProcedure": {
-        "name": "인도네시아 도시계획·부지규제 — OSS 육상 KKPR·PKKPR",
+        "name": "인도네시아 도시계획·부지규제 — 온라인 단일창구(OSS) 육상 공간이용적합성 확인(KKPR)·승인경로(PKKPR)",
         "coverage": "official-source-linked",
-        "scope": "OSS의 RDTR 기반 KKPR 안내와 OPD·DPMPTSP PKKPR 처리지침을 연결했다. 개별 필지의 용도·KDB·KLB·높이·이격은 해당 RDTR/RTR와 최종 KKPR 조건으로 확정한다.",
-        "stages": ["G0 OSS 위치신청", "G1 RDTR·완비검증", "G2 PNBP·공간검토", "G3 KKPR 결정"],
+        "scope": "OSS의 상세공간계획(RDTR) 기반 공간이용적합성 확인 안내와 지방 실무기관(OPD)·투자원스톱서비스청(DPMPTSP)의 승인경로 처리지침을 연결했다. 개별 필지의 용도·건폐율(KDB)·용적률(KLB)·높이·이격은 해당 상세공간계획·공간계획(RTR)과 최종 적합성 확인 조건으로 확정한다.",
+        "stages": ["G0 OSS 위치신청", "G1 상세공간계획·완비검증", "G2 비과세 국가수입(PNBP)·공간검토", "G3 공간이용적합성 결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "OSS 사업·위치·좌표자료 입력", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "사업자가 OSS에 사업활동, 토지면적, 위치·좌표와 권원·공간정보 자료를 입력해 KKPR 기본요건 신청을 시작한다.",
-            "output": "OSS KKPR 신청·위치좌표·사업자료",
+            "output": "OSS 공간이용적합성 신청·위치좌표·사업자료",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS RDTR 기반 KKPR 안내", "instrumentId": "IDN-OSS-KKPR", "provisions": ["business and location data entry; coordinate and land-area information"]}, {"source": "PP 28/2025", "instrumentId": "IDN-PP-28-2025", "provisions": ["risk-based business licensing basic spatial requirements"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "RDTR 자동확인 또는 PKKPR 심사경로 분기", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 0, "label": "상세공간계획 자동확인 또는 공간이용적합성 승인 심사경로 분기", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "OSS가 해당 위치의 통합 RDTR 가용성과 사업활동 적합성을 판별해 자동 KKPR 경로 또는 공간계획 OPD의 PKKPR 검증경로로 보낸다.",
-            "output": "RDTR 자동확인 또는 PKKPR 사건번호·관할배정",
+            "output": "상세공간계획 자동확인 또는 공간이용적합성 승인 사건번호·관할배정",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS RDTR 기반 KKPR 안내", "instrumentId": "IDN-OSS-KKPR", "provisions": ["RDTR-based KKPR workflow and routing where RDTR is available"]}, {"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["OPD verification menu and applicant selection"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 1, "label": "OPD 신청완비·공간자료 검증", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "관할 공간계획 OPD가 OSS 사건과 GISTARU 자료를 연결하고 신청서·좌표·토지면적·활동정보의 완비성과 일치 여부를 검증해 완비상태를 확정한다.",
-            "output": "PKKPR 완비검증·공간자료 대조기록",
+            "output": "공간이용적합성 승인 완비검증·공간자료 대조기록",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["connect GISTARU; check completeness and conformity; mark documents complete"]}]
           },
           {
-            "lane": "건축주·신청인", "stage": 2, "label": "PNBP 고지액 납부", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 2, "label": "비과세 국가수입 고지액 납부", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "OPD가 PNBP를 산정·검증해 billing을 생성하면 사업자가 고지액을 납부하고 OSS가 납부확인 후 처리기한을 가동한다.",
-            "output": "PNBP billing·납부확인·SLA 개시",
+            "output": "비과세 국가수입 납부고지서(billing)·납부확인·처리기한(SLA) 개시",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["calculate and validate PNBP; create billing; applicant payment; activate SLA"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "Pertek·공간검토·포럼 결과 반영", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "토지기술검토(Pertek)·공간검토·포럼 결과 반영", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "OPD가 토지기술검토(Pertek)를 기다려 수령하고, 적용되는 공간계획 연구·포럼 결과와 좌표자료를 반영해 PKKPR 적합·조건부·부적합안을 작성한다.",
-            "output": "Pertek·공간검토·포럼 기록·KKPR 결정안",
+            "output": "토지기술검토·공간검토·포럼 기록·공간이용적합성 결정안",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["wait for Pertek; upload coordinates from Pertek, spatial study or forum; select KKPR status"]}]
           },
@@ -106,17 +106,17 @@
             "refs": [{"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["document-completeness and conformity check before complete status"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "DPMPTSP KKPR 검증·OSS 발급", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "DPMPTSP 공간이용적합성 검증·OSS 발급", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "OPD가 결과를 DPMPTSP에 통지하면 DPMPTSP가 공간검토 결과와 상태를 확인해 최종 KKPR를 OSS와 신청인에게 전송한다.",
-            "output": "KKPR·공간이용 조건 또는 부적합 결정",
+            "output": "공간이용적합성 확인·조건 또는 부적합 결정",
             "authorityIds": ["spatial-authority-oss"],
             "refs": [{"source": "OSS PKKPR OPD 처리지침", "instrumentId": "IDN-OSS-PKKPR-OPD", "provisions": ["notify DPMPTSP; verify result and status; transmit final result to OSS and applicant"]}],
-            "permitGate": {"key": "kkpr-decision", "gate": "관할 DPMPTSP의 KKPR 공식결정", "decision": "공간계획 검토결과에 따라 사업위치의 공간이용 적합성·조건 또는 부적합을 공식 확정한다.", "output": "KKPR·좌표·조건 또는 부적합 결정", "dependsOn": []}
+            "permitGate": {"key": "kkpr-decision", "gate": "관할 DPMPTSP의 공간이용적합성 공식결정", "decision": "공간계획 검토결과에 따라 사업위치의 공간이용 적합성·조건 또는 부적합을 공식 확정한다.", "output": "공간이용적합성 확인·좌표·조건 또는 부적합 결정", "dependsOn": []}
           }
         ],
         "edges": [[0,1,"sequence","OSS 위치신청"],[1,2,"sequence","PKKPR 관할배정"],[2,3,"sequence","완비검증"],[3,4,"sequence","PNBP 납부"],[4,6,"sequence","공간검토 완료"],[2,5,"message","미비·불일치 통지"],[5,2,"loop","수정자료 재검증"]],
         "decisionBranches": [
-          {"state":"success","label":"공간이용 적합·조건부 적합","action":"KKPR 좌표·조건을 PBG와 환경승인 신청도서에 반영"},
+          {"state":"success","label":"공간이용 적합·조건부 적합","action":"공간이용적합성 좌표·조건을 건축승인(PBG)과 환경승인 신청도서에 반영"},
           {"state":"rework","label":"위치·공간자료 보완","action":"미비·불일치 자료를 수정해 OPD 완비검증으로 회귀"},
           {"state":"reject","label":"공간이용 부적합","action":"부적합 사유를 확인하고 공식 정정·변경입지·재신청 경로 검토"}
         ]
@@ -125,13 +125,13 @@
     "permit-environment": {
       "verificationScope": "환경승인은 PP 22/2021의 전국 체계이고 PBG는 PP 16/2021에 따라 군·시 정부가 SIMBG로 처리한다. 환경문서 유형과 결정권자는 사업 위험·규모·입지에 따라 중앙·주·군·시 기관 중 확정한다.",
       "officialProcedure": {
-        "name": "인도네시아 건축허가·환경심사 — 환경승인·SIMBG PBG",
+        "name": "인도네시아 건축허가·환경심사 — 환경승인·건축물정보관리시스템(SIMBG) 건축승인(PBG)",
         "coverage": "official-source-linked",
-        "scope": "PP 22/2021의 AMDAL·UKL-UPL·SPPL 분류·심사와 PP 16/2021 Articles 251-261의 PBG 신청·TPA/TPT 검토·보완·발급을 연결했다.",
-        "stages": ["G4 환경분류·작성", "G5 환경심사·승인", "G6 SIMBG PBG 접수", "G7 기술심사·PBG"],
+        "scope": "정부령 제22/2021호(PP 22/2021)의 환경영향분석(AMDAL)·환경관리·모니터링계획(UKL-UPL)·환경관리확약서(SPPL) 분류·심사와 정부령 제16/2021호(PP 16/2021) 제251조~제261조의 건축승인 신청·전문가팀(TPA)·기술검토팀(TPT) 검토·보완·발급을 연결했다.",
+        "stages": ["G4 환경분류·작성", "G5 환경심사·승인", "G6 SIMBG 건축승인 접수", "G7 기술심사·건축승인"],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0, "label": "AMDAL·UKL-UPL·SPPL 환경유형 분류", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 0, "label": "환경영향분석·환경관리·모니터링계획·환경관리확약서 유형 분류", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "사업자가 사업유형·규모·위험·입지를 법정 기준에 대조해 AMDAL, UKL-UPL 또는 SPPL 경로와 관할 환경결정권자를 확정한다.",
             "output": "환경문서 유형·관할기관·제출범위",
             "authorityIds": ["environmental-authority"],
@@ -140,7 +140,7 @@
           {
             "lane": "현지 설계·시공 전문가", "stage": 0, "label": "환경문서·관리계획 작성·제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "해당 전문자와 사업자가 AMDAL 또는 UKL-UPL의 영향·관리·모니터링 자료를 작성해 관할 환경기관의 전자·공식 경로에 제출하며 SPPL 대상은 법정 확인서를 제출한다.",
-            "output": "AMDAL·UKL-UPL 또는 SPPL 제출자료",
+            "output": "환경영향분석·환경관리·모니터링계획 또는 환경관리확약서 제출자료",
             "authorityIds": ["environmental-authority"],
             "refs": [{"source": "PP 22/2021", "instrumentId": "IDN-PP-22-2021", "provisions": ["Articles 21-51; AMDAL preparation and review", "Articles 52-64; UKL-UPL", "Articles 65-66; SPPL"]}]
           },
@@ -167,23 +167,23 @@
             "permitGate": {"key": "environmental-approval", "gate": "관할 환경기관의 환경승인 공식결정", "decision": "관할 기관이 적용 환경문서의 심사결과와 환경관리조건을 공식 확정한다.", "output": "환경승인·조건 또는 거부결정", "dependsOn": []}
           },
           {
-            "lane": "건축주·신청인", "stage": 2, "label": "SIMBG PBG 등록·기술계획 제출", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인", "stage": 2, "label": "SIMBG 건축승인 등록·기술계획 제출", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "소유자가 인증된 설계서비스 제공자가 작성한 건축·구조·기계·전기·배관 기술계획과 기본요건 자료를 SIMBG에 등록해 PBG를 신청한다.",
-            "output": "SIMBG PBG 등록·기술계획·신청번호",
+            "output": "SIMBG 건축승인 등록·기술계획·신청번호",
             "authorityIds": ["pu-simbg", "local-building-government"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Articles 251-253; certified design provider, technical plans and PBG registration through SIMBG"]}, {"source": "SIMBG", "instrumentId": "IDN-SIMBG", "provisions": ["PBG electronic service"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "PBG 완비확인·검토일정 통지", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 2, "label": "건축승인 완비확인·검토일정 통지", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "관할 군·시 기술부서가 SIMBG 신청정보와 기술계획의 완비성을 확인하고 TPA 또는 TPT 검토일정·방식을 신청인에게 통지한다.",
-            "output": "완비접수·TPA/TPT 검토일정",
+            "output": "완비접수·전문가팀·기술검토팀 검토일정",
             "authorityIds": ["local-building-government", "pu-simbg"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Article 253; registration information, completeness and examination schedule"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "TPA·TPT 건축·구조·MEP 기술검토", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "전문가팀·기술검토팀 건축·구조·기계·전기·배관(MEP) 기술검토", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "전문가팀 TPA 또는 기술검토팀 TPT가 건축계획을 먼저 검토하고 구조·기계·전기·배관 계획을 이어 심사해 각 회의 의사록과 적합성 권고를 SIMBG에 기록한다.",
-            "output": "TPA/TPT 검토의사록·기술적합 권고 또는 수정요구",
+            "output": "전문가팀·기술검토팀 검토의사록·기술적합 권고 또는 수정요구",
             "authorityIds": ["local-building-government", "pu-simbg"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Articles 254-255; TPA/TPT examination, architecture then structure and MEP, minutes and recommendations"]}]
           },
@@ -195,29 +195,29 @@
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Articles 255-256; upload corrections before next review; technical-compliance statement or re-registration with corrected documents"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "재산정수수료 납부·PBG 발급", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "재산정수수료 납부·건축승인 발급", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "기술적합 확인 후 지방정부가 건축물 재산정수수료를 산정·고지하고, 신청인이 납부하면 DPMPTSP가 SIMBG를 통해 PBG와 승인자료를 발급한다.",
-            "output": "PBG·승인 기술계획·납부증빙 또는 부적합 종결",
+            "output": "건축승인·승인 기술계획·납부증빙 또는 부적합 종결",
             "authorityIds": ["local-building-government", "pu-simbg"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Article 261; retribution assessment, payment and DPMPTSP issuance of PBG"]}],
-            "permitGate": {"key": "pbg-decision", "gate": "관할 군·시 정부의 PBG 공식결정", "decision": "기술적합성과 납부를 확인한 지방정부가 건축승인 PBG의 발급 또는 부적합 종결을 공식 확정한다.", "output": "PBG·승인 기술계획·조건 또는 부적합 종결", "dependsOn": ["environmental-approval"]}
+            "permitGate": {"key": "pbg-decision", "gate": "관할 군·시 정부의 건축승인 공식결정", "decision": "기술적합성과 납부를 확인한 지방정부가 건축승인의 발급 또는 부적합 종결을 공식 확정한다.", "output": "건축승인·승인 기술계획·조건 또는 부적합 종결", "dependsOn": ["environmental-approval"]}
           }
         ],
         "edges": [[0,1,"sequence","환경유형 확정"],[1,2,"sequence","환경문서 접수"],[2,4,"sequence","환경심사 완료"],[2,3,"message","환경 보완요구"],[3,2,"loop","수정 환경문서 재심사"],[4,5,"sequence","환경결정 반영"],[5,6,"sequence","PBG 등록"],[6,7,"sequence","검토일정 확정"],[7,9,"sequence","기술적합 권고"],[7,8,"message","기술계획 수정요구"],[8,7,"loop","수정계획 재검토"]],
         "decisionBranches": [
-          {"state":"success","label":"환경승인·PBG 발급","action":"두 공식결정의 조건과 승인 기술계획에 따라 착공통지"},
+          {"state":"success","label":"환경승인·건축승인 발급","action":"두 공식결정의 조건과 승인 기술계획에 따라 착공통지"},
           {"state":"rework","label":"환경문서·기술계획 보완","action":"공식 수정요구에 따라 자료를 재제출하고 해당 법정 심사로 회귀"},
-          {"state":"reject","label":"환경 또는 PBG 부적합","action":"결정사유에 따라 공식 정정·설계변경·재등록·이의경로 검토"}
+          {"state":"reject","label":"환경 또는 건축승인 부적합","action":"결정사유에 따라 공식 정정·설계변경·재등록·이의경로 검토"}
         ]
       }
     },
     "control-completion": {
       "verificationScope": "PP 16/2021의 전국 PBG·SLF 체계이며 실제 검사는 관할 군·시 건축기술부서와 승인된 감리·시공 전문자가 SIMBG에 기록한다. 검사 공정과 추가 요구는 건축물 기능·복잡도에 따라 달라질 수 있다.",
       "officialProcedure": {
-        "name": "인도네시아 기술검사·준공제도 — SIMBG 착공통지·공정검사·SLF",
+        "name": "인도네시아 기술검사·준공제도 — 건축물정보관리시스템(SIMBG) 착공통지·공정검사·기능적합증명서(SLF)",
         "coverage": "official-source-linked",
-        "scope": "PP 16/2021 Articles 263-276, 283-285에 따른 착공통지, 법정 공정검사, 위반시정, testing and commissioning, 기능적합증명서(SLF) 발급 절차다.",
-        "stages": ["G8 착공통지", "G9 공정검사", "G10 시정·기능검증", "G11 SLF 결정"],
+        "scope": "정부령 제16/2021호(PP 16/2021) 제263조~제276조·제283조~제285조에 따른 착공통지, 법정 공정검사, 위반시정, 시험·시운전(testing and commissioning), 기능적합증명서 발급 절차다.",
+        "stages": ["G8 착공통지", "G9 공정검사", "G10 시정·기능검증", "G11 기능적합증명 결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "SIMBG 공사일정·착공 통지", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
@@ -227,14 +227,14 @@
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Article 263; construction after PBG and notification of schedule/start through SIMBG"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "승인 PBG 기술계획에 따른 시공·감리", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "현지 설계·시공 전문가", "stage": 0, "label": "승인 건축승인(PBG) 기술계획에 따른 시공·감리", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "시공자와 감리·건설관리 전문자가 PBG 승인 기술계획과 건축기준에 따라 공사하고 품질·안전·자재·변경기록을 유지한다.",
             "output": "시공·감리·품질·변경관리 기록",
             "authorityIds": ["local-building-government"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["construction implementation and supervision provisions preceding Articles 263-270"]}]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 1, "label": "기초·지하·상부·건축·MEP 공정검사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "환경·소방·검사기관", "stage": 1, "label": "기초·지하·상부·건축·기계·전기·배관(MEP) 공정검사", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "관할 기관과 감리 주체가 기초, 지하층, 상부구조, 건축·기계·전기·배관 공정의 법정 검사시점에 승인도서와 현장시공을 대조한다.",
             "output": "공정별 현장검사·승인도서 대조결과",
             "authorityIds": ["local-building-government"],
@@ -262,33 +262,33 @@
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Articles 267-269; correction and continuation after compliance"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "설비 Testing and Commissioning", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "설비 시험·시운전", "emphasis": "key", "kind": "official-guidance", "basisScope": "node",
             "action": "공사완료 단계에서 설비·시스템을 시험·시운전하고 기능·안전성 결과와 조치기록을 준공자료로 작성한다.",
             "output": "시험·시운전 성적서·기능검증 기록",
             "authorityIds": ["local-building-government"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Article 270; testing and commissioning"]}]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "기능적합 체크리스트·as-built·확인서 제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "기능적합 체크리스트·준공도면(as-built)·확인서 제출", "emphasis": "normal", "kind": "official-guidance", "basisScope": "node",
             "action": "감리·전문자가 기능적합 체크리스트와 확인서를 작성하고 as-built 도면, 검사·시험자료를 SIMBG에 업로드해 SLF 심사를 신청한다.",
-            "output": "기능적합 확인서·as-built·SLF 신청자료",
+            "output": "기능적합 확인서·준공도면·기능적합증명 신청자료",
             "authorityIds": ["pu-simbg", "local-building-government"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Article 272; functional checklist, statement and as-built drawings uploaded through SIMBG"]}]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "SLF 발급·보완·거부 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "기능적합증명 발급·보완·거부 공식결정", "emphasis": "bottleneck", "kind": "official-guidance", "basisScope": "node",
             "action": "관할 군·시가 기능적합 확인서와 준공자료를 검증해 사용 전에 SLF와 건축물소유증서를 발급하며, 문서 미비·현장 불일치는 보완 또는 반복검사·거부로 돌린다.",
-            "output": "SLF·건축물소유증서 또는 보완·거부통지",
+            "output": "기능적합증명서·건축물소유증서 또는 보완·거부통지",
             "authorityIds": ["local-building-government", "pu-simbg"],
             "refs": [{"source": "PP 16/2021", "instrumentId": "IDN-PP-16-2021", "provisions": ["Articles 274 and 276; SLF before use and issuance through SIMBG", "Articles 283-285; document discrepancy, correction and repeat process"]}],
-            "permitGate": {"key": "slf-decision", "gate": "관할 군·시 정부의 SLF 공식결정", "decision": "관할 정부가 완성 건축물의 기능적합성과 준공자료를 확인해 법정 사용 가능 여부를 공식 결정한다.", "output": "SLF·사용조건 또는 보완·거부통지", "dependsOn": []}
+            "permitGate": {"key": "slf-decision", "gate": "관할 군·시 정부의 기능적합증명 공식결정", "decision": "관할 정부가 완성 건축물의 기능적합성과 준공자료를 확인해 법정 사용 가능 여부를 공식 결정한다.", "output": "기능적합증명서·사용조건 또는 보완·거부통지", "dependsOn": []}
           }
         ],
         "edges": [[0,1,"sequence","착공통지"],[1,2,"sequence","공정검사 진입"],[2,3,"sequence","검사기록"],[3,4,"sequence","적합성 판단"],[4,6,"sequence","적합·시정완료"],[4,5,"message","시정·변경PBG 요구"],[5,1,"loop","시정 후 감리확인·재검사"],[6,7,"sequence","기능검증 완료"],[7,8,"sequence","SLF 신청"],[8,7,"loop","준공자료 미비·불일치 보완"]],
         "decisionBranches": [
-          {"state":"success","label":"기능적합·SLF 발급","action":"SLF와 사용조건에 따라 건축물 사용 개시"},
+          {"state":"success","label":"기능적합·기능적합증명 발급","action":"기능적합증명서와 사용조건에 따라 건축물 사용 개시"},
           {"state":"rework","label":"공사·준공자료 보완","action":"현장시정·변경PBG 또는 준공자료 보완 후 공식 검사·심사로 회귀"},
-          {"state":"reject","label":"SLF 거부·공사중지","action":"부적합 사유에 따라 시정·변경승인·반복검사 또는 공식 이의경로 검토"}
+          {"state":"reject","label":"기능적합증명 거부·공사중지","action":"부적합 사유에 따라 시정·변경승인·반복검사 또는 공식 이의경로 검토"}
         ]
       }
     }

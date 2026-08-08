@@ -74,7 +74,7 @@
     "site-urban": {
       "verificationScope": "Kenya Law의 PLUPA 제57~64조와 L.N. 253/2021 제21조를 직접 대조했다. 개발허가권은 각 카운티에 있으므로 실제 수수료·제출포털은 관할 카운티 규정을 적용한다.",
       "officialProcedure": {
-        "name": "케냐 카운티 Development Permission 법정절차",
+        "name": "케냐 카운티 개발허가(Development Permission) 법정절차",
         "coverage": "official-source-linked",
         "scope": "PLUPA 제55~64조와 L.N. 253/2021의 전국 공통 개발허가 절차다. 결정기관·수수료표·전자접수 방식은 대상 카운티가 정하며 전략적 국가사업은 별도 국가절차를 적용한다.",
         "stages": [
@@ -90,7 +90,7 @@
             "label": "등록전문가 개발신청도서 작성",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "등록·면허를 가진 관련 전문가가 용도·밀도·easement, 계획·도면·토지자료를 작성·인증하고 비소유 신청인은 등기소유자의 서면동의를 확보한다.",
+            "action": "등록·면허를 가진 관련 전문가가 용도·밀도·지역권(easement), 계획·도면·토지자료를 작성·인증하고 비소유 신청인은 등기소유자의 서면동의를 확보한다.",
             "output": "전문가 인증 개발신청도서·소유자 동의",
             "authorityIds": ["county-government"],
             "refs": [
@@ -117,8 +117,8 @@
             "label": "카운티 개발허가 신청·수수료 납부",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "관할 County Executive Committee Member에게 prescribed form과 계획·도서·공고자료를 제출하고 카운티가 정한 수수료를 납부한다.",
-            "output": "Submission Certificate·신청등록번호",
+            "action": "관할 카운티 집행위원(County Executive Committee Member)에게 지정양식(prescribed form)과 계획·도서·공고자료를 제출하고 카운티가 정한 수수료를 납부한다.",
+            "output": "제출확인서(Submission Certificate)·신청등록번호",
             "authorityIds": ["county-government"],
             "refs": [
               {"source": "PLUPA application and register", "instrumentId": "KEN-PPA-2019", "provisions": ["Sections 58(1)-(5), 62-63"]},
@@ -144,7 +144,7 @@
             "label": "계획·기관·주민의견 종합심사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "County Director가 승인된 국가·카운티·도시·지역계획, 사회·환경시설, 기관의견, 주민의견과 lease 조건을 대조해 기술보고서를 작성한다.",
+            "action": "카운티 담당국장(County Director)이 승인된 국가·카운티·도시·지역계획, 사회·환경시설, 기관의견, 주민의견과 임대차(lease) 조건을 대조해 기술보고서를 작성한다.",
             "output": "개발허가 기술검토보고서",
             "authorityIds": ["county-government"],
             "refs": [
@@ -155,10 +155,10 @@
           {
             "lane": "건축주·신청인",
             "stage": 2,
-            "label": "Defer 사유 보완·재회람",
+            "label": "심사유보(Defer) 사유 보완·재회람",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "카운티가 신청을 defer하면 신청인이 명시된 사유를 보완하고 County Director가 관련 기관에 다시 회람해 검토보고서를 갱신한다.",
+            "action": "카운티가 신청을 심사유보하면 신청인이 명시된 사유를 보완하고 카운티 담당국장이 관련 기관에 다시 회람해 검토보고서를 갱신한다.",
             "output": "보완신청서·갱신된 기관의견",
             "authorityIds": ["county-government"],
             "refs": [
@@ -168,11 +168,11 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "개발허가 승인·Defer·거부 결정",
+            "label": "개발허가 승인·심사유보·거부 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "County Executive Committee Member가 개발허가를 조건부 또는 무조건 승인하거나 defer·거부하고, 거부 시 이유를 서면으로 통지한다.",
-            "output": "Form PLUPA/DC/8 허가·Defer 또는 서면 거부결정",
+            "action": "카운티 집행위원이 개발허가를 조건부 또는 무조건 승인하거나 심사유보·거부하고, 거부 시 이유를 서면으로 통지한다.",
+            "output": "PLUPA/DC/8 양식 허가·심사유보 또는 서면 거부결정",
             "authorityIds": ["county-government"],
             "refs": [
               {"source": "PLUPA decision", "instrumentId": "KEN-PPA-2019", "provisions": ["Section 61(2)-(4)"]},
@@ -180,9 +180,9 @@
             ],
             "permitGate": {
               "key": "county-development-permission",
-              "gate": "관할 카운티의 Development Permission 결정",
-              "decision": "County Executive Committee Member가 신청을 승인·조건부 승인, defer 또는 서면 거부한다.",
-              "output": "개발허가·조건·Defer 또는 거부사유",
+              "gate": "관할 카운티의 개발허가 결정",
+              "decision": "카운티 집행위원이 신청을 승인·조건부 승인, 심사유보 또는 서면 거부한다.",
+              "output": "개발허가·조건·심사유보 또는 거부사유",
               "dependsOn": []
             }
           }
@@ -190,16 +190,16 @@
         "edges": [
           [0, 1, "sequence", "공고도서"],
           [1, 2, "sequence", "공고증빙 첨부"],
-          [2, 3, "sequence", "Submission Certificate"],
+          [2, 3, "sequence", "제출확인서"],
           [3, 4, "sequence", "기관의견"],
           [4, 6, "sequence", "검토보고서"],
-          [4, 5, "message", "Defer·보완 필요 시"],
+          [4, 5, "message", "심사유보·보완 필요 시"],
           [5, 4, "loop", "보완 후 재회람"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "승인·조건부 승인", "action": "PLUPA/DC/8 허가와 conformance·performance 조건에 따라 후속 건축·착공 절차 진행"},
-          {"state": "rework", "label": "Defer", "action": "명시된 사유를 보완하고 관계기관 재회람·재심사"},
-          {"state": "reject", "label": "거부", "action": "14일 안에 County Physical and Land Use Planning Liaison Committee 불복 또는 재신청 검토"}
+          {"state": "success", "label": "승인·조건부 승인", "action": "PLUPA/DC/8 허가와 적합·성능조건(conformance·performance conditions)에 따라 후속 건축·착공 절차 진행"},
+          {"state": "rework", "label": "심사유보", "action": "명시된 사유를 보완하고 관계기관 재회람·재심사"},
+          {"state": "reject", "label": "거부", "action": "14일 안에 카운티 물리·토지이용계획 연락위원회(County Physical and Land Use Planning Liaison Committee) 불복 또는 재신청 검토"}
         ]
       }
     },
@@ -208,10 +208,10 @@
       "officialProcedure": {
         "name": "케냐 NEMA 환경평가·카운티 개발허가 법정절차",
         "coverage": "official-source-linked",
-        "scope": "NEMA 환경평가는 전국 절차이고 개발·건축허가는 각 카운티가 결정한다. 아래 카운티 단계는 PLUPA 전국 공통절차이며 포털·수수료·추가 clearance는 대상 카운티가 정한다.",
+        "scope": "NEMA 환경평가는 전국 절차이고 개발·건축허가는 각 카운티가 결정한다. 아래 카운티 단계는 PLUPA 전국 공통절차이며 포털·수수료·추가 승인(clearance)은 대상 카운티가 정한다.",
         "stages": [
           "G0 환경신청·분류",
-          "G1 EIA Study·심사",
+          "G1 환경영향평가 본조사(EIA Study)·심사",
           "G2 카운티 신청·회람",
           "G3 허가결정"
         ],
@@ -219,11 +219,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 0,
-            "label": "NEMA 등록전문가 Project Report 작성",
+            "label": "NEMA 등록전문가 사업보고서(Project Report) 작성",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "NEMA 등록 EIA 전문가가 사업·부지·예상영향·저감대안을 담은 Project Report 또는 정해진 초기 환경보고서를 작성해 NEMA에 제출한다.",
-            "output": "Project Report·NEMA 환경신청",
+            "action": "NEMA 등록 환경영향평가(EIA) 전문가가 사업·부지·예상영향·저감대안을 담은 사업보고서 또는 정해진 초기 환경보고서를 작성해 NEMA에 제출한다.",
+            "output": "사업보고서·NEMA 환경신청",
             "authorityIds": ["nema-kenya"],
             "refs": [
               {"source": "NEMA EIA process", "instrumentId": "KEN-NEMA-EIA-SERVICE", "provisions": ["Project Report submission; registered EIA experts"]},
@@ -236,8 +236,8 @@
             "label": "NEMA 환경평가 경로 결정",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "NEMA가 초기보고서를 검토해 보고서만으로 결정할지, 추가 Project Report 보완 또는 full EIA Study가 필요한지 정한다.",
-            "output": "환경평가 분류·EIA Study 요구 또는 결정안",
+            "action": "NEMA가 초기보고서를 검토해 보고서만으로 결정할지, 추가 사업보고서 보완 또는 전체 환경영향평가 본조사가 필요한지 정한다.",
+            "output": "환경평가 분류·환경영향평가 본조사 요구 또는 결정안",
             "authorityIds": ["nema-kenya"],
             "refs": [
               {"source": "NEMA EIA route", "instrumentId": "KEN-NEMA-EIA-SERVICE", "provisions": ["Project Report; escalation to EIA Study where required"]}
@@ -246,11 +246,11 @@
           {
             "lane": "현지 설계·시공 전문가",
             "stage": 1,
-            "label": "Scoping·TOR 승인 및 EIA Study 수행",
+            "label": "평가범위 설정(Scoping)·과업지시서(TOR) 승인 및 환경영향평가 본조사 수행",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "full EIA가 요구되면 등록전문가가 scoping과 TOR를 NEMA 승인받고 baseline·대안·영향·저감·관리계획을 조사한다.",
-            "output": "승인 TOR·EIA Study Report 초안",
+            "action": "전체 환경영향평가가 요구되면 등록전문가가 평가범위와 과업지시서를 NEMA 승인받고 기초현황(baseline)·대안·영향·저감·관리계획을 조사한다.",
+            "output": "승인 과업지시서·환경영향평가 본조사보고서(EIA Study Report) 초안",
             "authorityIds": ["nema-kenya"],
             "refs": [
               {"source": "NEMA EIA steps", "instrumentId": "KEN-NEMA-EIA-SERVICE", "provisions": ["Scoping and TOR approval; baseline investigation and EIA Study Report"]}
@@ -259,10 +259,10 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 1,
-            "label": "공중참여·Lead Agency 본심사",
+            "label": "공중참여·주무기관(Lead Agency) 본심사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "사업시행자가 법정 공중참여를 실시하고 NEMA가 EIA Study Report를 관련 lead agencies와 검토해 추가정보 또는 결정안을 마련한다.",
+            "action": "사업시행자가 법정 공중참여를 실시하고 NEMA가 환경영향평가 본조사보고서를 관련 주무기관과 검토해 추가정보 또는 결정안을 마련한다.",
             "output": "공중참여 기록·기관검토 의견·보완요구",
             "authorityIds": ["nema-kenya"],
             "refs": [
@@ -275,8 +275,8 @@
             "label": "환경 추가정보·수정본 재제출",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "NEMA·lead agency 검토의견을 반영해 추가조사·저감대책과 수정 EIA 보고서를 재제출한다.",
-            "output": "수정 EIA Study Report·추가정보",
+            "action": "NEMA·주무기관 검토의견을 반영해 추가조사·저감대책과 수정 환경영향평가 보고서를 재제출한다.",
+            "output": "수정 환경영향평가 본조사보고서·추가정보",
             "authorityIds": ["nema-kenya"],
             "refs": [
               {"source": "NEMA report review", "instrumentId": "KEN-NEMA-EIA-SERVICE", "provisions": ["Review of EIA Study Report and mitigation information"]}
@@ -285,11 +285,11 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 1,
-            "label": "EIA Licence 공식결정",
+            "label": "환경영향평가 허가증(EIA Licence) 공식결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "NEMA가 EIA Study Report를 승인·조건부 승인 또는 거부하고 승인 시 EIA licence를 발급한다.",
-            "output": "NEMA EIA licence·조건 또는 거부결정",
+            "action": "NEMA가 환경영향평가 본조사보고서를 승인·조건부 승인 또는 거부하고 승인 시 환경영향평가 허가증을 발급한다.",
+            "output": "NEMA 환경영향평가 허가증·조건 또는 거부결정",
             "authorityIds": ["nema-kenya"],
             "refs": [
               {"source": "NEMA EIA decision", "instrumentId": "KEN-NEMA-EIA-SERVICE", "provisions": ["Decision: approval, approval with conditions or rejection"]},
@@ -297,9 +297,9 @@
             ],
             "permitGate": {
               "key": "nema-eia-licence",
-              "gate": "NEMA EIA Licence 공식결정",
-              "decision": "NEMA가 환경보고서를 승인·조건부 승인 또는 거부하고 EIA licence 발급 여부를 공식 결정한다.",
-              "output": "EIA licence·환경조건 또는 거부결정",
+              "gate": "NEMA 환경영향평가 허가증 공식결정",
+              "decision": "NEMA가 환경보고서를 승인·조건부 승인 또는 거부하고 환경영향평가 허가증 발급 여부를 공식 결정한다.",
+              "output": "환경영향평가 허가증·환경조건 또는 거부결정",
               "dependsOn": []
             }
           },
@@ -309,8 +309,8 @@
             "label": "카운티 개발·건축허가 신청",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "해당하는 NEMA EIA licence와 전문가 인증 계획·건축도서를 prescribed form으로 관할 카운티에 제출하고 submission certificate를 받는다.",
-            "output": "카운티 Submission Certificate·완비신청",
+            "action": "해당하는 NEMA 환경영향평가 허가증과 전문가 인증 계획·건축도서를 지정양식(prescribed form)으로 관할 카운티에 제출하고 제출확인서(submission certificate)를 받는다.",
+            "output": "카운티 제출확인서·완비신청",
             "authorityIds": ["county-government"],
             "refs": [
               {"source": "PLUPA application", "instrumentId": "KEN-PPA-2019", "provisions": ["Sections 58-59, 62"]},
@@ -333,10 +333,10 @@
           {
             "lane": "건축주·신청인",
             "stage": 2,
-            "label": "Defer·건축도서 보완 재제출",
+            "label": "심사유보(Defer)·건축도서 보완 재제출",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "카운티의 defer·보완사유와 관계기관 의견을 반영한 수정도서를 제출하고 관계기관 재회람·재심사를 받는다.",
+            "action": "카운티의 심사유보·보완사유와 관계기관 의견을 반영한 수정도서를 제출하고 관계기관 재회람·재심사를 받는다.",
             "output": "카운티 보완도서·재회람 기록",
             "authorityIds": ["county-government"],
             "refs": [
@@ -349,8 +349,8 @@
             "label": "카운티 개발·건축허가 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "County Executive Committee Member가 NEMA licence와 기술검토를 토대로 승인·조건부 승인, defer 또는 서면 거부한다.",
-            "output": "Development Permission·조건·Defer 또는 거부통지",
+            "action": "카운티 집행위원(County Executive Committee Member)이 NEMA 환경영향평가 허가증과 기술검토를 토대로 승인·조건부 승인, 심사유보 또는 서면 거부한다.",
+            "output": "개발허가(Development Permission)·조건·심사유보 또는 거부통지",
             "authorityIds": ["county-government"],
             "refs": [
               {"source": "PLUPA decision", "instrumentId": "KEN-PPA-2019", "provisions": ["Section 61(2)-(4)"]},
@@ -359,28 +359,28 @@
             "permitGate": {
               "key": "county-building-decision",
               "gate": "관할 카운티의 개발·건축허가 결정",
-              "decision": "카운티가 NEMA licence와 계획·건축도서 심사 결과에 따라 승인·조건부 승인, defer 또는 거부한다.",
+              "decision": "카운티가 NEMA 환경영향평가 허가증과 계획·건축도서 심사 결과에 따라 승인·조건부 승인, 심사유보 또는 거부한다.",
               "output": "개발·건축허가·조건 또는 거부통지",
               "dependsOn": ["nema-eia-licence"]
             }
           }
         ],
         "edges": [
-          [0, 1, "sequence", "Project Report"],
-          [1, 2, "sequence", "EIA Study 요구 시"],
-          [2, 3, "sequence", "EIA 보고서"],
+          [0, 1, "sequence", "사업보고서"],
+          [1, 2, "sequence", "환경영향평가 본조사 요구 시"],
+          [2, 3, "sequence", "환경영향평가 보고서"],
           [3, 5, "sequence", "심사완료"],
           [3, 4, "message", "추가정보 요구 시"],
           [4, 3, "loop", "수정보고서 재심사"],
-          [5, 6, "sequence", "EIA licence 첨부"],
+          [5, 6, "sequence", "환경영향평가 허가증 첨부"],
           [6, 7, "sequence", "카운티 접수"],
           [7, 9, "sequence", "기술보고서"],
-          [7, 8, "message", "Defer·보완 시"],
+          [7, 8, "message", "심사유보·보완 시"],
           [8, 7, "loop", "보완 후 재회람"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "EIA licence·카운티 허가", "action": "두 결정의 조건을 통합해 후속 NCA 등록·착공절차 진행"},
-          {"state": "rework", "label": "환경보완·Defer", "action": "수정 EIA 보고서 또는 카운티 보완도서를 재제출해 재심사"},
+          {"state": "success", "label": "환경영향평가 허가증·카운티 허가", "action": "두 결정의 조건을 통합해 후속 NCA 등록·착공절차 진행"},
+          {"state": "rework", "label": "환경보완·심사유보", "action": "수정 환경영향평가 보고서 또는 카운티 보완도서를 재제출해 재심사"},
           {"state": "reject", "label": "환경거부·개발거부", "action": "해당 신청을 종료하고 법정 불복 또는 설계변경 후 재신청 검토"}
         ]
       }
@@ -390,7 +390,7 @@
       "officialProcedure": {
         "name": "케냐 NCA 프로젝트등록·카운티 검사·점유증명 절차",
         "coverage": "official-source-linked",
-        "scope": "NCA 프로젝트등록은 전국 공공·민간 건설공사에 적용되고, 단계·최종검사와 Certificate of Compliance·Occupation은 관할 카운티가 처리한다. 전략적 국가사업은 별도 국가절차를 적용한다.",
+        "scope": "NCA 프로젝트등록은 전국 공공·민간 건설공사에 적용되고, 단계·최종검사와 적합증명서(Certificate of Compliance)·점유증명서(Certificate of Occupation)는 관할 카운티가 처리한다. 전략적 국가사업은 별도 국가절차를 적용한다.",
         "stages": [
           "G0 NCA 프로젝트등록",
           "G1 착공·단계검사",
@@ -418,7 +418,7 @@
             "label": "NCA 서류평가·현장실사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "NCA가 시공자·전문가 면허, 승인 건축·구조도서, 카운티·NEMA 등 허가와 계약자료를 검토하고 현장 due diligence를 수행한다.",
+            "action": "NCA가 시공자·전문가 면허, 승인 건축·구조도서, 카운티·NEMA 등 허가와 계약자료를 검토하고 현장 실사(due diligence)를 수행한다.",
             "output": "NCA 평가·현장실사 결과",
             "authorityIds": ["nca-kenya"],
             "refs": [
@@ -428,20 +428,20 @@
           {
             "lane": "환경·소방·검사기관",
             "stage": 0,
-            "label": "NCA Compliance Certificate 결정",
+            "label": "NCA 적합증명서 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "요건 충족 시 NCA가 프로젝트를 등록하고 Compliance Certificate를 발급하며, 누락 시 보완 또는 등록거부를 통지한다.",
-            "output": "NCA Compliance Certificate 또는 보완·거부통지",
+            "action": "요건 충족 시 NCA가 프로젝트를 등록하고 적합증명서를 발급하며, 누락 시 보완 또는 등록거부를 통지한다.",
+            "output": "NCA 적합증명서 또는 보완·거부통지",
             "authorityIds": ["nca-kenya"],
             "refs": [
               {"source": "NCA project portal", "instrumentId": "KEN-NCA-PROJECT-SERVICE", "provisions": ["Project registration and compliance certificate service"]}
             ],
             "permitGate": {
               "key": "nca-compliance-certificate",
-              "gate": "NCA 프로젝트등록·Compliance Certificate 결정",
-              "decision": "NCA가 프로젝트등록 요건을 심사해 Compliance Certificate 발급, 보완 또는 거부를 결정한다.",
-              "output": "NCA Compliance Certificate 또는 공식 보완·거부통지",
+              "gate": "NCA 프로젝트등록·적합증명서 결정",
+              "decision": "NCA가 프로젝트등록 요건을 심사해 적합증명서 발급, 보완 또는 거부를 결정한다.",
+              "output": "NCA 적합증명서 또는 공식 보완·거부통지",
               "dependsOn": []
             }
           },
@@ -451,7 +451,7 @@
             "label": "카운티 착공·단계검사 통지",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "등록소유자 또는 대리전문가가 PLUPA/DC/14로 착공과 performance-condition 단계검사를 서면 통지한다.",
+            "action": "등록소유자 또는 대리전문가가 PLUPA/DC/14로 착공과 성능조건(performance condition) 단계검사를 서면 통지한다.",
             "output": "PLUPA/DC/14 착공·검사요청",
             "authorityIds": ["county-government"],
             "refs": [
@@ -464,7 +464,7 @@
             "label": "관계기관 단계 현장검사",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "County Director가 검사일을 PLUPA/DC/15로 통지하고 관계기관이 현장을 방문해 승인조건·코드·물질변경 여부를 검사한다.",
+            "action": "카운티 담당국장(County Director)이 검사일을 PLUPA/DC/15로 통지하고 관계기관이 현장을 방문해 승인조건·코드·물질변경 여부를 검사한다.",
             "output": "단계검사카드·진행허가 또는 시정요구",
             "authorityIds": ["county-government", "nca-kenya"],
             "refs": [
@@ -498,7 +498,7 @@
             "label": "완공통지·합동 최종검사 요청",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "완공 후 등록전문가 또는 대리인이 모든 관계기관의 joint final inspection을 요청하고 현장을 performance conditions에 맞게 준비한다.",
+            "action": "완공 후 등록전문가 또는 대리인이 모든 관계기관의 합동 최종검사(joint final inspection)를 요청하고 현장을 성능조건에 맞게 준비한다.",
             "output": "완공통지·합동 최종검사 신청",
             "authorityIds": ["county-government"],
             "refs": [
@@ -511,7 +511,7 @@
             "label": "합동 최종검사·보고서 통합",
             "emphasis": "bottleneck",
             "kind": "official-guidance",
-            "action": "County Director가 관계기관 합동 최종검사를 조정하고 검사보고서를 통합해 Planning Authority에 전달한다. 미비 시 시정·재검사를 요구한다.",
+            "action": "카운티 담당국장이 관계기관 합동 최종검사를 조정하고 검사보고서를 통합해 계획기관(Planning Authority)에 전달한다. 미비 시 시정·재검사를 요구한다.",
             "output": "통합 최종검사보고서·발급권고 또는 시정요구",
             "authorityIds": ["county-government", "nca-kenya"],
             "refs": [
@@ -521,11 +521,11 @@
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 3,
-            "label": "Compliance·Occupation 증명 결정",
+            "label": "적합·점유증명 결정",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "Planning Authority가 통합검사보고서를 받아 7일 안에 PLUPA/DC/10 Certificate of Compliance와 PLUPA/DC/11 occupation certificate 발급통지를 내거나 시정·거부한다.",
-            "output": "Certificate of Compliance·Occupation 발급통지 또는 시정·거부",
+            "action": "계획기관이 통합검사보고서를 받아 7일 안에 PLUPA/DC/10 적합증명서와 PLUPA/DC/11 점유증명서 발급통지를 내거나 시정·거부한다.",
+            "output": "적합증명서·점유증명서 발급통지 또는 시정·거부",
             "authorityIds": ["county-government"],
             "refs": [
               {"source": "completion and occupation", "instrumentId": "KEN-PLUP-GDPCR-2021", "provisions": ["Regulation 27(2)-(3); Forms PLUPA/DC/10 and PLUPA/DC/11"]}
@@ -533,7 +533,7 @@
             "permitGate": {
               "key": "county-occupation-decision",
               "gate": "카운티 준공적합·점유증명 결정",
-              "decision": "Planning Authority가 최종검사 결과에 따라 Certificate of Compliance와 occupation certificate 발급 또는 시정·거부를 결정한다.",
+              "decision": "계획기관이 최종검사 결과에 따라 적합증명서와 점유증명서 발급 또는 시정·거부를 결정한다.",
               "output": "준공적합·점유증명 또는 공식 시정·거부통지",
               "dependsOn": ["nca-compliance-certificate", "stage-inspection-release"]
             }
@@ -552,7 +552,7 @@
           [7, 5, "loop", "최종검사 시정요구"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "등록·검사·점유승인", "action": "NCA 증명과 카운티 Certificate of Compliance·Occupation을 확보한 뒤 사용"},
+          {"state": "success", "label": "등록·검사·점유승인", "action": "NCA 증명과 카운티 적합증명서·점유증명서를 확보한 뒤 사용"},
           {"state": "rework", "label": "시정·재검사", "action": "해당 단계의 기준·허가조건을 시정하고 같은 검사를 다시 요청"},
           {"state": "reject", "label": "등록거부·철거·점유거부", "action": "공사를 중지하고 공식 사유에 따라 보완, 재시공, 불복 또는 새 신청 검토"}
         ]

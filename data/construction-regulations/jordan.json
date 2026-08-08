@@ -34,20 +34,20 @@
     ],
     "stages": [
       "S1 관할·권원",
-      "S2 계획·zoning",
+      "S2 계획·용도지역",
       "S3 계획자료 접수",
       "S4 기술심사·보완",
       "S5 공식결정",
       "P1 분류·전문도서",
       "P2 공식접수",
       "P3 완비성 심사",
-      "P4 기술·EIA 심사",
+      "P4 기술·환경영향평가 심사",
       "P5 보완·재심사",
       "P6 공식결정",
       "C1 책임자·착공",
       "C2 감리·시험",
       "C3 위반시정",
-      "C4 완료증명·Civil Defense",
+      "C4 완료증명·민방위청",
       "C5 점유결정"
     ],
     "nodes": [
@@ -114,15 +114,15 @@
       {
         "id": "B03",
         "lane": "현지 설계·시공 전문가",
-        "stage": "S2 계획·zoning",
-        "label": "구조계획·zoning·필지조건 대조",
+        "stage": "S2 계획·용도지역",
+        "label": "구조계획·용도지역·필지조건 대조",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "등록 설계사무소가 승인계획·zoning에서 용도, plot percentage, floor ratio, 높이, setback, parking, 도로·wadi·보호조건을 대조한다.",
-        "action": "등록 설계사무소가 승인계획·zoning에서 용도, plot percentage, floor ratio, 높이, setback, parking, 도로·wadi·보호조건을 대조한다.",
+        "note": "등록 설계사무소가 승인계획·용도지역에서 용도, 필지점유율(plot percentage), 용적률(floor ratio), 높이, 이격(setback), 주차(parking), 도로·하천(wadi)·보호조건을 대조한다.",
+        "action": "등록 설계사무소가 승인계획·용도지역에서 용도, 필지점유율(plot percentage), 용적률(floor ratio), 높이, 이격(setback), 주차(parking), 도로·하천(wadi)·보호조건을 대조한다.",
         "outputs": [
-          "필지별 계획·zoning 조건표"
+          "필지별 계획·용도지역 조건표"
         ],
         "authorityIds": [
           "jor-planning-authority",
@@ -298,14 +298,14 @@
         "id": "B09",
         "lane": "도시계획·건축 허가기관",
         "stage": "S5 공식결정",
-        "label": "필지·zoning 공식결정",
+        "label": "필지·용도지역 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 planning authority가 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
-        "action": "관할 planning authority가 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
+        "note": "관할 계획허가기관이 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
+        "action": "관할 계획허가기관이 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
         "outputs": [
-          "계획·zoning 승인조건 또는 거부통지"
+          "계획·용도지역 승인조건 또는 거부통지"
         ],
         "authorityIds": [
           "jor-planning-authority"
@@ -335,8 +335,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "등록 설계사무소가 건축·구조·MEP·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
-        "action": "등록 설계사무소가 건축·구조·MEP·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
+        "note": "등록 설계사무소가 건축·구조·기계·전기·배관(MEP)·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
+        "action": "등록 설계사무소가 건축·구조·기계·전기·배관(MEP)·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
         "outputs": [
           "인증 건축허가 도서"
         ],
@@ -430,7 +430,7 @@
       {
         "id": "B13",
         "lane": "도시계획·건축 허가기관",
-        "stage": "P4 기술·EIA 심사",
+        "stage": "P4 기술·환경영향평가 심사",
         "label": "건축·구조·코드 기술심사",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -587,14 +587,14 @@
         "id": "B18",
         "lane": "환경·소방·검사기관",
         "stage": "P2 공식접수",
-        "label": "Category 1·2·3·4 공식분류",
+        "label": "환경범주 1·2·3·4 공식분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경부가 Appendix 1과 활동영향을 대조해 Category 1 종합EIA, 2 예비EIA, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
-        "action": "환경부가 Appendix 1과 활동영향을 대조해 Category 1 종합EIA, 2 예비EIA, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
+        "note": "환경부가 부속서 1(Appendix 1)과 활동영향을 대조해 범주 1 종합환경영향평가, 2 예비환경영향평가, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
+        "action": "환경부가 부속서 1(Appendix 1)과 활동영향을 대조해 범주 1 종합환경영향평가, 2 예비환경영향평가, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
         "outputs": [
-          "환경 Category·평가/동의 경로"
+          "환경범주·평가·동의 경로"
         ],
         "authorityIds": [
           "jor-environment-ministry"
@@ -617,14 +617,14 @@
         "id": "B19",
         "lane": "환경·소방·검사기관",
         "stage": "P3 완비성 심사",
-        "label": "환경요건·TOR 확정",
+        "label": "환경요건·과업지시서(TOR) 확정",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "분류에 따라 환경부가 종합/예비 EIA TOR·요구자료 또는 Category 3·4 환경동의·조건자료를 확정한다.",
-        "action": "분류에 따라 환경부가 종합/예비 EIA TOR·요구자료 또는 Category 3·4 환경동의·조건자료를 확정한다.",
+        "note": "분류에 따라 환경부가 종합·예비 환경영향평가 과업지시서·요구자료 또는 범주 3·4 환경동의·조건자료를 확정한다.",
+        "action": "분류에 따라 환경부가 종합·예비 환경영향평가 과업지시서·요구자료 또는 범주 3·4 환경동의·조건자료를 확정한다.",
         "outputs": [
-          "TOR·환경요건·요구자료"
+          "과업지시서·환경요건·요구자료"
         ],
         "authorityIds": [
           "jor-environment-ministry"
@@ -646,7 +646,7 @@
       {
         "id": "B20",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P4 기술·EIA 심사",
+        "stage": "P4 기술·환경영향평가 심사",
         "label": "종합/예비 EIA·환경자료 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -676,7 +676,7 @@
       {
         "id": "B21",
         "lane": "환경·소방·검사기관",
-        "stage": "P4 기술·EIA 심사",
+        "stage": "P4 기술·환경영향평가 심사",
         "label": "환경기술·위원회 심사",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -767,12 +767,12 @@
         "id": "B24",
         "lane": "환경·소방·검사기관",
         "stage": "P6 공식결정",
-        "label": "환경동의·EIA·허가 공식결정",
+        "label": "환경동의·환경영향평가·허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경부가 범주에 따라 종합/예비 EIA 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
-        "action": "환경부가 범주에 따라 종합/예비 EIA 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
+        "note": "환경부가 범주에 따라 종합·예비 환경영향평가 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
+        "action": "환경부가 범주에 따라 종합·예비 환경영향평가 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
         "outputs": [
           "환경승인·동의·조건 또는 불승인"
         ],
@@ -811,8 +811,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "건축주가 법정 등록 설계·시공자와 감독 engineering office를 지정하고 관할기관에 감리자를 통지한다.",
-        "action": "건축주가 법정 등록 설계·시공자와 감독 engineering office를 지정하고 관할기관에 감리자를 통지한다.",
+        "note": "건축주가 법정 등록 설계·시공자와 감리 엔지니어링 사무소(engineering office)를 지정하고 관할기관에 감리자를 통지한다.",
+        "action": "건축주가 법정 등록 설계·시공자와 감리 엔지니어링 사무소(engineering office)를 지정하고 관할기관에 감리자를 통지한다.",
         "outputs": [
           "등록 시공·감리 지정·통지"
         ],
@@ -872,8 +872,8 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "감리자가 승인도서·JNBC 코드에 따라 공사를 감독하고 재료 laboratory tests·구조·설비·은폐공정 기록을 유지한다.",
-        "action": "감리자가 승인도서·JNBC 코드에 따라 공사를 감독하고 재료 laboratory tests·구조·설비·은폐공정 기록을 유지한다.",
+        "note": "감리자가 승인도서·JNBC 코드에 따라 공사를 감독하고 재료 실험실 시험(laboratory tests)·구조·설비·은폐공정 기록을 유지한다.",
+        "action": "감리자가 승인도서·JNBC 코드에 따라 공사를 감독하고 재료 실험실 시험(laboratory tests)·구조·설비·은폐공정 기록을 유지한다.",
         "outputs": [
           "감리·시험·공정검사 기록"
         ],
@@ -991,15 +991,15 @@
       {
         "id": "B31",
         "lane": "현지 설계·시공 전문가",
-        "stage": "C4 완료증명·Civil Defense",
+        "stage": "C4 완료증명·민방위청",
         "label": "감리사무소 적합증명 발행",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "완료 후 감독 engineering office가 승인도서·코드·감리·시험에 대한 Certificate of Conformity를 발행한다.",
-        "action": "완료 후 감독 engineering office가 승인도서·코드·감리·시험에 대한 Certificate of Conformity를 발행한다.",
+        "note": "완료 후 감리 엔지니어링 사무소가 승인도서·코드·감리·시험에 대한 적합성증명서(Certificate of Conformity)를 발행한다.",
+        "action": "완료 후 감리 엔지니어링 사무소가 승인도서·코드·감리·시험에 대한 적합성증명서(Certificate of Conformity)를 발행한다.",
         "outputs": [
-          "감리사무소 Certificate of Conformity"
+          "감리사무소 적합성증명서"
         ],
         "authorityIds": [
           "jor-professional-control"
@@ -1021,7 +1021,7 @@
       {
         "id": "B32",
         "lane": "환경·소방·검사기관",
-        "stage": "C4 완료증명·Civil Defense",
+        "stage": "C4 완료증명·민방위청",
         "label": "JEA 인증·Civil Defense 승인",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -1051,7 +1051,7 @@
       {
         "id": "B33",
         "lane": "건축주·신청인",
-        "stage": "C4 완료증명·Civil Defense",
+        "stage": "C4 완료증명·민방위청",
         "label": "occupancy/use permit 신청",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -1144,14 +1144,14 @@
         "id": "B36",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 점유결정",
-        "label": "Occupancy/Use Permit 공식결정",
+        "label": "점유·사용허가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할기관이 모든 적합증빙을 확인해 occupancy/use permit를 발급하거나 거부한다.",
-        "action": "관할기관이 모든 적합증빙을 확인해 occupancy/use permit를 발급하거나 거부한다.",
+        "note": "관할기관이 모든 적합증빙을 확인해 점유·사용허가를 발급하거나 거부한다.",
+        "action": "관할기관이 모든 적합증빙을 확인해 점유·사용허가를 발급하거나 거부한다.",
         "outputs": [
-          "occupancy/use permit 또는 거부"
+          "점유·사용허가 또는 거부"
         ],
         "authorityIds": [
           "jor-planning-authority"
@@ -1469,12 +1469,12 @@
       "id": "site-urban",
       "slug": "jordan-site-urban-construction-regulations",
       "priority": 4,
-      "name": "요르단 토지·계획·zoning 필지조건 결정",
+      "name": "요르단 토지·계획·용도지역(zoning) 필지조건 결정",
       "oneLiner": "토지등기·지적과 관할 구조계획·용도지역·필지규칙으로 실제 건축가능 수치를 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
       "verificationScope": "Planning Law 79/1966의 계획위원회·허가체계를 기준으로 관할·토지·계획·zoning 심사 절차를 구성했다. Greater Amman·ASEZA·각 municipality의 필지수치와 양식은 해당 지역 현행 규정으로 확정한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "관할 planning authority를 확정하고 토지등기·지적과 승인 구조/상세계획·zoning을 대조해 필지의 건축가능조건을 공식 결정받는 절차다.",
+      "procedureScope": "관할 계획허가기관(planning authority)을 확정하고 토지등기·지적과 승인 구조·상세계획·용도지역을 대조해 필지의 건축가능조건을 공식 결정받는 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1573,7 +1573,7 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "계획·zoning 승인",
+          "label": "계획·용도지역 승인",
           "action": "확정 조건으로 건축허가도서를 작성한다."
         },
         {
@@ -1592,12 +1592,12 @@
       "id": "permit-environment",
       "slug": "jordan-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "요르단 건축허가·환경 Category 1–4 절차",
+      "name": "요르단 건축허가·환경범주(Category) 1–4 절차",
       "oneLiner": "계획기관의 건축허가와 환경부 Category 1–4 분류·동의/EIA를 독립 선행조건으로 묶는다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "관할 planning authority의 건축허가와 Regulation 69/2020·97/2020의 Category 1–4 환경분류·EIA·환경동의 절차를 분리해 구성했다. Regulation 69 Art.3에 따라 ASEZA는 별도 환경체계를 적용한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "JEA 인증·JNBC 코드도서를 관할기관에 제출해 건축허가를 받고, 환경부가 활동을 Category 1–4로 분류해 종합/예비 EIA·환경동의·조건을 결정하는 절차다.",
+      "procedureScope": "JEA 인증·JNBC 코드도서를 관할기관에 제출해 건축허가를 받고, 환경부가 활동을 환경범주 1–4로 분류해 종합·예비 환경영향평가(EIA)·환경동의·조건을 결정하는 절차다.",
       "nodeIds": [
         "B10",
         "B11",
@@ -1761,7 +1761,7 @@
         },
         {
           "state": "rework",
-          "label": "도서·EIA 보완",
+          "label": "도서·환경영향평가 보완",
           "action": "해당 자료를 보완해 건축 또는 환경심사로 회귀한다."
         },
         {
@@ -1775,12 +1775,12 @@
       "id": "control-completion",
       "slug": "jordan-control-completion-construction-regulations",
       "priority": 6,
-      "name": "요르단 전문감리·코드검사·Occupancy/Use Permit 절차",
+      "name": "요르단 전문감리·코드검사·점유·사용허가(Occupancy/Use Permit) 절차",
       "oneLiner": "등록 설계·시공·감리, JNBC 코드검사와 Civil Defense·점유허가를 개장 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "공공사업주택부의 현행 국가코드 적용지침에서 등록사무소·감리자·현장기록·위반시정·JEA 적합증명·Civil Defense·점유허가 조건을 추출해 완료절차로 구성했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "등록 설계·시공·감리자가 승인도서와 JNBC 코드로 공사하고 위반시정·적합증명·Civil Defense 승인을 거쳐 관할기관의 occupancy/use permit를 받는 절차다.",
+      "procedureScope": "등록 설계·시공·감리자가 승인도서와 JNBC 코드로 공사하고 위반시정·적합증명·민방위청(Civil Defense) 승인을 거쳐 관할기관의 점유·사용허가를 받는 절차다.",
       "nodeIds": [
         "B25",
         "B26",
@@ -2126,8 +2126,8 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "관할 planning authority 필지조건 공식결정",
-      "decision": "관할기관이 필지의 계획·zoning 적합성과 조건을 승인하거나 거부한다.",
+      "gate": "관할 계획허가기관 필지조건 공식결정",
+      "decision": "관할기관이 필지의 계획·용도지역 적합성과 조건을 승인하거나 거부한다.",
       "dependsOn": [],
       "output": "계획승인·조건 또는 거부통지"
     },
@@ -2140,17 +2140,17 @@
     },
     {
       "order": 3,
-      "gate": "환경부 Category 1–4 공식결정",
-      "decision": "환경부가 범주별 EIA·동의·조건 또는 불승인을 확정한다.",
+      "gate": "환경부 환경범주 1–4 공식결정",
+      "decision": "환경부가 범주별 환경영향평가·동의·조건 또는 불승인을 확정한다.",
       "dependsOn": [],
       "output": "환경결정·조건 또는 불승인"
     },
     {
       "order": 4,
-      "gate": "관할기관 Occupancy/Use Permit 공식결정",
-      "decision": "관할기관이 적합증명·Civil Defense·현장조건을 확인해 점유·사용을 승인하거나 거부한다.",
+      "gate": "관할기관 점유·사용허가 공식결정",
+      "decision": "관할기관이 적합증명·민방위청·현장조건을 확인해 점유·사용을 승인하거나 거부한다.",
       "dependsOn": [],
-      "output": "Occupancy/Use Permit 또는 거부통지"
+      "output": "점유·사용허가 또는 거부통지"
     }
   ],
   "siteOverlays": [

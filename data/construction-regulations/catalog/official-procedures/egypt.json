@@ -91,37 +91,37 @@
       "officialProcedure": {
         "name": "이집트 부지 적합성증명·건축허가",
         "coverage": "official-source-linked",
-        "scope": "일반 지역은 관할 local administrative authority, 신도시는 NUCA city authority가 처리한다. 필지별 계획·건축조건은 site suitability statement에서 확정하며, 허가도서는 공사등급에 맞는 등록기술자가 작성·인증한다.",
+        "scope": "일반 지역은 관할 지방행정기관(local administrative authority), 신도시는 NUCA 도시기관(city authority)이 처리한다. 필지별 계획·건축조건은 부지적합성 확인서(site suitability statement)에서 확정하며, 허가도서는 공사등급에 맞는 등록기술자가 작성·인증한다.",
         "stages": ["G0 부지적합성 신청", "G1 계획조건 결정", "G2 전문도서·보험", "G3 접수·기술심사", "G4 허가결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "부지 적합성증명 신청", "emphasis": "key", "kind": "official-guidance",
-            "action": "필지 주소·경계를 적은 신청서에 위치·접근도로 개략도, 신분증과 수수료 영수증을 붙여 관할 local authority 또는 NUCA city authority에 제출한다.", "output": "부지 적합성 신청·당일 접수증",
+            "action": "필지 주소·경계를 적은 신청서에 위치·접근도로 개략도, 신분증과 수수료 영수증을 붙여 관할 지방기관 또는 NUCA 도시기관에 제출한다.", "output": "부지 적합성 신청·당일 접수증",
             "authorityIds": ["local-admin-nuca"],
             "refs": [{"source": "부지 적합성 신청", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Step 1 — site suitability statement application"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 0, "label": "위치·계획규제·허가장애 확인", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "관할기관이 대상지의 planning status, building requirements, 경계·도로·높이 등 조건과 governor 또는 관계기관의 허가정지·제한 여부를 확인한다.", "output": "계획·건축조건 검토기록·허가장애 확인",
+            "action": "관할기관이 대상지의 계획현황(planning status), 건축요건(building requirements), 경계·도로·높이 등 조건과 주지사(governor) 또는 관계기관의 허가정지·제한 여부를 확인한다.", "output": "계획·건축조건 검토기록·허가장애 확인",
             "authorityIds": ["local-admin-nuca"],
             "refs": [{"source": "계획조건·장애 확인", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Site suitability review and obstacles"]}]
           },
           {
             "lane": "도시계획·건축 허가기관", "stage": 1, "label": "부지 적합성증명 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "관할기관이 신청 후 공식 site suitability statement에 적용 계획·건축조건을 기재해 발급하거나, 발급을 막는 사유를 명시한 회신을 통지한다.", "output": "Site suitability statement·계획조건 또는 장애사유 회신",
+            "action": "관할기관이 신청 후 공식 부지적합성 확인서에 적용 계획·건축조건을 기재해 발급하거나, 발급을 막는 사유를 명시한 회신을 통지한다.", "output": "부지적합성 확인서·계획조건 또는 장애사유 회신",
             "authorityIds": ["local-admin-nuca"],
             "refs": [{"source": "부지 적합성 공식회신", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Statement issuance or obstacle notice"]}],
-            "permitGate": {"key": "egypt-site-suitability", "gate": "관할 행정기관 부지 적합성 공식결정", "decision": "필지별 계획·건축조건과 허가장애를 확인해 적합성증명 또는 사유부 회신을 발급한다.", "output": "Site suitability statement 또는 공식 장애사유 회신", "dependsOn": []}
+            "permitGate": {"key": "egypt-site-suitability", "gate": "관할 행정기관 부지 적합성 공식결정", "decision": "필지별 계획·건축조건과 허가장애를 확인해 적합성증명 또는 사유부 회신을 발급한다.", "output": "부지적합성 확인서 또는 공식 장애사유 회신", "dependsOn": []}
           },
           {
             "lane": "건축주·신청인", "stage": 2, "label": "공사등급별 등록기술자 선임", "emphasis": "key", "kind": "official-guidance",
-            "action": "법정 공사등급 A~D와 구조·용도·규모에 맞는 등록 엔지니어 또는 engineering office를 선임하고 허가대행 권한을 위임한다.", "output": "기술자·설계사무소 계약·위임장",
+            "action": "법정 공사등급 A~D와 구조·용도·규모에 맞는 등록 엔지니어 또는 엔지니어링 사무소(engineering office)를 선임하고 허가대행 권한을 위임한다.", "output": "기술자·설계사무소 계약·위임장",
             "authorityIds": ["local-admin-nuca", "mohuc"],
             "refs": [{"source": "공사등급별 기술자 요건", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Engineering categories A-D and experience requirements"]}]
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "허가설계·토질·안전도서 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "부지 적합성조건에 맞춰 건축·구조·설비도면, 계산서, 토질보고서, 공사가액과 works-suitability certificate를 작성·인증한다.", "output": "등록기술자 인증 허가도서·토질·계산서",
+            "action": "부지 적합성조건에 맞춰 건축·구조·설비도면, 계산서, 토질보고서, 공사가액과 공사적합증명서(works-suitability certificate)를 작성·인증한다.", "output": "등록기술자 인증 허가도서·토질·계산서",
             "authorityIds": ["local-admin-nuca", "mohuc"],
             "refs": [
               {"source": "허가도서·전문가 인증", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Owner documents and licensed engineering design"]},
@@ -130,13 +130,13 @@
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "해당 구조검토·의무보험 확보", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "Building Law 제46조 대상이면 구조설계·토질·계산서를 지정 기술검토기관에서 승인받고 construction civil-liability insurance policy를 확보한다.", "output": "구조검토 승인·의무보험증권",
+            "action": "Building Law 제46조 대상이면 구조설계·토질·계산서를 지정 기술검토기관에서 승인받고 건설 민사책임보험증권(construction civil-liability insurance policy)을 확보한다.", "output": "구조검토 승인·의무보험증권",
             "authorityIds": ["local-admin-nuca", "mohuc"],
             "refs": [{"source": "구조검토·보험", "instrumentId": "EGY-GIZA-BUILDING-ADMIN-GUIDE", "provisions": ["Law 119/2008 Article 46 insurance and structural review"]}]
           },
           {
             "lane": "건축주·신청인", "stage": 3, "label": "건축허가 완비신청", "emphasis": "key", "kind": "official-guidance",
-            "action": "소유권·신분·위임, 부지 적합성증명, 인증설계·공사가액·works-suitability certificate와 적용 보험서류를 관할기관에 제출한다.", "output": "건축허가 신청접수·완비도서",
+            "action": "소유권·신분·위임, 부지 적합성증명, 인증설계·공사가액·공사적합증명서와 적용 보험서류를 관할기관에 제출한다.", "output": "건축허가 신청접수·완비도서",
             "authorityIds": ["local-admin-nuca"],
             "refs": [{"source": "허가신청 완비도서", "instrumentId": "EGY-GIZA-BUILDING-ADMIN-GUIDE", "provisions": ["Building permit application documents"]}]
           },
@@ -183,8 +183,8 @@
       "officialProcedure": {
         "name": "이집트 EEAA 환경심사·건축허가",
         "coverage": "official-source-linked",
-        "scope": "사업자는 관할 허가권자인 Competent Administrative Authority(CAA)를 통해 환경서류를 제출한다. EEAA가 환경평가 의견을 내고 CAA가 최종 결과를 통지·집행한 뒤 관할 건축행정기관이 건축허가를 결정한다.",
-        "stages": ["G0 환경분류·CAA 신청", "G1 완비·EEAA 회부", "G2 Scoped·Full EIA", "G3 EEAA 심사·보완", "G4 환경결정·불복", "G5 건축허가 심사", "G6 건축허가 결정"],
+        "scope": "사업자는 관할 행정기관(Competent Administrative Authority, CAA)을 통해 환경서류를 제출한다. EEAA가 환경평가 의견을 내고 CAA가 최종 결과를 통지·집행한 뒤 관할 건축행정기관이 건축허가를 결정한다.",
+        "stages": ["G0 환경분류·CAA 신청", "G1 완비·EEAA 회부", "G2 범위형·전체 환경영향평가(EIA)", "G3 EEAA 심사·보완", "G4 환경결정·불복", "G5 건축허가 심사", "G6 건축허가 결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "A·B·C 환경경로 확인", "emphasis": "key", "kind": "official-guidance",
@@ -194,7 +194,7 @@
           },
           {
             "lane": "건축주·신청인", "stage": 0, "label": "CAA에 환경신청 제출", "emphasis": "key", "kind": "official-guidance",
-            "action": "착공 전에 A는 screening Form A, B는 Form B, C는 scoped/full EIA와 신청공문을 관할 CAA에 제출한다.", "output": "Form A·Form B 또는 scoped/full EIA 신청",
+            "action": "착공 전에 A는 심사양식 A(screening Form A), B는 양식 B(Form B), C는 범위형·전체 환경영향평가와 신청공문을 관할 CAA에 제출한다.", "output": "양식 A·양식 B 또는 범위형·전체 환경영향평가 신청",
             "authorityIds": ["eeaa-caa"],
             "refs": [
               {"source": "분류별 제출도서", "instrumentId": "EGY-EEAA-URBAN-EIA-GUIDE", "provisions": ["A/B/C submission before construction"]},
@@ -209,7 +209,7 @@
           },
           {
             "lane": "환경·소방·검사기관", "stage": 1, "label": "EEAA 1차평가·범위결정", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "EEAA가 완비 서류를 법정기간 안에 평가해 A·B 경로 수용, B의 scoped EIA 요구, C 절차 전환 또는 추가자료 필요성을 CAA에 제시한다.", "output": "EEAA 1차의견·scoped/C 전환·보완요구",
+            "action": "EEAA가 완비 서류를 법정기간 안에 평가해 A·B 경로 수용, B의 범위형 환경영향평가 요구, C 절차 전환 또는 추가자료 필요성을 CAA에 제시한다.", "output": "EEAA 1차의견·범위형/C 전환·보완요구",
             "authorityIds": ["eeaa-caa"],
             "refs": [
               {"source": "EEAA 평가기간·가능결과", "instrumentId": "EGY-EEAA-EIA-SERVICES", "provisions": ["Procedure steps 3-5"]},
@@ -217,20 +217,20 @@
             ]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "Scoped·Full EIA·EMP 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "EEAA가 정한 범위에 따라 B scoped EIA 또는 C full EIA를 수행하고 대안·기초환경·영향·저감·환경관리계획을 작성한다.", "output": "Scoped EIA 또는 full EIA·EMP",
+            "lane": "현지 설계·시공 전문가", "stage": 2, "label": "범위형·전체 환경영향평가·환경관리계획(EMP) 작성", "emphasis": "key", "kind": "official-guidance",
+            "action": "EEAA가 정한 범위에 따라 B 범위형 환경영향평가 또는 C 전체 환경영향평가를 수행하고 대안·기초환경·영향·저감·환경관리계획을 작성한다.", "output": "범위형 또는 전체 환경영향평가·환경관리계획",
             "authorityIds": ["eeaa-caa"],
             "refs": [{"source": "환경평가 범위·도서", "instrumentId": "EGY-EIA-GUIDE", "provisions": ["Screening, scoping, EIA and environmental management plan"]}]
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 2, "label": "공중·이해관계자 협의 반영", "emphasis": "normal", "kind": "official-guidance",
-            "action": "적용 지침과 평가범위에 따라 영향받는 이해관계자 의견을 수렴하고 협의내용·반영결과를 EIA에 기록한다.", "output": "공중협의 기록·의견반영표",
+            "action": "적용 지침과 평가범위에 따라 영향받는 이해관계자 의견을 수렴하고 협의내용·반영결과를 환경영향평가에 기록한다.", "output": "공중협의 기록·의견반영표",
             "authorityIds": ["eeaa-caa"],
             "refs": [{"source": "EIA 공중참여", "instrumentId": "EGY-EIA-GUIDE", "provisions": ["Public consultation and disclosure requirements"]}]
           },
           {
             "lane": "환경·소방·검사기관", "stage": 3, "label": "EEAA 기술심사·조건협의", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "EEAA가 Form·EIA·EMP와 협의자료를 심사하고 환경보호를 위한 승인조건, 추가조사·수정 또는 거부의견을 CAA에 회신한다.", "output": "EEAA 기술의견·환경조건·보완요구",
+            "action": "EEAA가 양식·환경영향평가·환경관리계획과 협의자료를 심사하고 환경보호를 위한 승인조건, 추가조사·수정 또는 거부의견을 CAA에 회신한다.", "output": "EEAA 기술의견·환경조건·보완요구",
             "authorityIds": ["eeaa-caa"],
             "refs": [
               {"source": "EEAA 평가·제안", "instrumentId": "EGY-EEAA-EIA-SERVICES", "provisions": ["Procedure steps 3-4"]},
@@ -238,8 +238,8 @@
             ]
           },
           {
-            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "환경서류·EIA 보완·재심", "emphasis": "normal", "kind": "official-guidance",
-            "action": "EEAA·CAA의 누락·범위·저감요구를 Form, scoped/full EIA와 EMP에 반영해 CAA를 통해 재제출한다.", "output": "보완 환경서류·EIA·EMP·답변서",
+            "lane": "현지 설계·시공 전문가", "stage": 3, "label": "환경서류·환경영향평가 보완·재심", "emphasis": "normal", "kind": "official-guidance",
+            "action": "EEAA·CAA의 누락·범위·저감요구를 양식, 범위형·전체 환경영향평가와 환경관리계획에 반영해 CAA를 통해 재제출한다.", "output": "보완 환경서류·환경영향평가·환경관리계획·답변서",
             "authorityIds": ["eeaa-caa"],
             "refs": [{"source": "EEAA 검토·추가조치", "instrumentId": "EGY-EEAA-EIA-SERVICES", "provisions": ["Evaluation comments and required measures"]}]
           },
@@ -252,7 +252,7 @@
           },
           {
             "lane": "건축주·신청인", "stage": 4, "label": "부정결정 30일 이의신청", "emphasis": "normal", "kind": "official-guidance",
-            "action": "환경결정에 이의가 있으면 통지받은 날부터 30일 안에 Permanent Appeals Committee에 서면 appeal을 제출한다. 분류 자체는 불복대상이 아니다.", "output": "환경결정 이의신청·위원회 기록",
+            "action": "환경결정에 이의가 있으면 통지받은 날부터 30일 안에 상설불복위원회(Permanent Appeals Committee)에 서면 불복신청(appeal)을 제출한다. 분류 자체는 불복대상이 아니다.", "output": "환경결정 이의신청·위원회 기록",
             "authorityIds": ["eeaa-caa"],
             "refs": [{"source": "환경결정 불복", "instrumentId": "EGY-EEAA-EIA-SERVICES", "provisions": ["Written appeal within thirty days"]}]
           },
@@ -284,13 +284,13 @@
         ],
         "edges": [
           [0, 1, "sequence", "분류별 신청"], [1, 2, "sequence", "CAA 접수"], [2, 3, "sequence", "EEAA 회부"], [3, 8, "sequence", "A·B 수용"],
-          [3, 4, "sequence", "Scoped·C 요구"], [4, 5, "sequence", "평가·협의"], [5, 6, "sequence", "EIA 제출"], [6, 8, "sequence", "승인의견"],
+          [3, 4, "sequence", "범위형·C 요구"], [4, 5, "sequence", "평가·협의"], [5, 6, "sequence", "환경영향평가 제출"], [6, 8, "sequence", "승인의견"],
           [6, 7, "message", "추가자료·수정"], [7, 6, "loop", "환경 재심"], [8, 10, "sequence", "환경승인"], [8, 9, "message", "부정결정"],
           [10, 11, "sequence", "허가접수"], [11, 13, "sequence", "기술적합"], [11, 12, "message", "설계보완"], [12, 11, "loop", "건축 재심"]
         ],
         "decisionBranches": [
           {"state": "success", "label": "환경·건축허가 승인", "action": "환경조건·승인도면·보험조건에 따라 착공통지"},
-          {"state": "rework", "label": "상위평가·환경·설계 보완", "action": "B scoped/C EIA 전환 또는 EIA·허가도서를 보완해 해당 심사로 재제출"},
+          {"state": "rework", "label": "상위평가·환경·설계 보완", "action": "B 범위형/C 환경영향평가 전환 또는 환경영향평가·허가도서를 보완해 해당 심사로 재제출"},
           {"state": "reject", "label": "환경 또는 건축허가 거부", "action": "30일 환경불복 또는 공식 사유에 따른 입지·설계 변경·재신청 검토"}
         ]
       }
@@ -300,12 +300,12 @@
       "officialProcedure": {
         "name": "이집트 착공통지·공사통제·점유적합증명",
         "coverage": "official-source-linked",
-        "scope": "관할 local administrative authority 또는 NUCA city authority가 공사 중 허가준수를 통제하고, 감독 엔지니어가 제출한 full/partial occupancy suitability certificate를 현장검사한 뒤 공식 처리한다.",
+        "scope": "관할 지방행정기관(local administrative authority) 또는 NUCA 도시기관(city authority)이 공사 중 허가준수를 통제하고, 감독 엔지니어가 제출한 전체·부분 점유적합증명서(full/partial occupancy suitability certificate)를 현장검사한 뒤 공식 처리한다.",
         "stages": ["G0 착공 전 통지", "G1 공사·감독", "G2 위반 시정·재검", "G3 점유증명 제출", "G4 최종검사·결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "착공 2주 전 공식통지", "emphasis": "key", "kind": "official-guidance",
-            "action": "착공 최소 2주 전에 등기우편으로 관할기관에 시행의사를 통지하고 시공계약서와 Engineers Syndicate 인증 감독증명서를 첨부한다.", "output": "착공통지·시공계약·감독증명 접수",
+            "action": "착공 최소 2주 전에 등기우편으로 관할기관에 시행의사를 통지하고 시공계약서와 엔지니어협회(Engineers Syndicate) 인증 감독증명서를 첨부한다.", "output": "착공통지·시공계약·감독증명 접수",
             "authorityIds": ["local-admin-nuca"],
             "refs": [
               {"source": "착공 전 통지", "instrumentId": "EGY-MHUC-BUILDING-PERMIT-GUIDE", "provisions": ["Owner obligations before commencement"]},
@@ -345,7 +345,7 @@
           },
           {
             "lane": "현지 설계·시공 전문가", "stage": 3, "label": "점유적합증명·실시자료 작성", "emphasis": "key", "kind": "official-guidance",
-            "action": "감독 엔지니어 또는 engineering office가 완공·외부마감·공용부·부대시설의 허가준수를 확인해 full 또는 partial occupancy suitability certificate와 실시자료를 작성한다.", "output": "Full/partial occupancy suitability certificate·실시자료",
+            "action": "감독 엔지니어 또는 엔지니어링 사무소(engineering office)가 완공·외부마감·공용부·부대시설의 허가준수를 확인해 전체 또는 부분 점유적합증명서와 실시자료를 작성한다.", "output": "전체·부분 점유적합증명서·실시자료",
             "authorityIds": ["local-admin-nuca"],
             "refs": [
               {"source": "점유적합증명 작성", "instrumentId": "EGY-GIZA-BUILDING-ADMIN-GUIDE", "provisions": ["Occupancy suitability certificate — full or partial"]},

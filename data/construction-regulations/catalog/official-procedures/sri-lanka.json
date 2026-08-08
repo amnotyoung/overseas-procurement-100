@@ -55,187 +55,187 @@
     "site-urban": {
       "verificationScope": "UDA가 선포한 Urban Development Area에 적용되는 PPC 대표절차다. Development Permit과 PPC의 실제 처리기관은 UDA·관할 지방정부 위임관계, 대상 규모와 지역에 따라 달라지며 PPC는 착공허가가 아니다.",
       "officialProcedure": {
-        "name":"스리랑카 도시계획·부지규제 — UDA Preliminary Planning Clearance","coverage":"official-source-linked",
-        "scope":"UDA Regulations 1-3과 공식 승인절차에 따른 PPC 신청·현장검사·위원회·결정 흐름이다. 필지별 용도·plot coverage·FAR·높이·이격·주차는 해당 Development Plan과 PPC 조건으로 확정한다.",
-        "stages":["G0 PPC 신청","G1 완비·현장검사","G2 보완·위원회","G3 PPC 결정"],
+        "name":"스리랑카 도시계획·부지규제 — 도시개발청(UDA) 예비계획승인(Preliminary Planning Clearance, PPC)","coverage":"official-source-linked",
+        "scope":"도시개발청 규정 제1~3조와 공식 승인절차에 따른 예비계획승인 신청·현장검사·위원회·결정 흐름이다. 필지별 용도·건폐율(plot coverage)·용적률(FAR)·높이·이격·주차는 해당 개발계획(Development Plan)과 예비계획승인 조건으로 확정한다.",
+        "stages":["G0 예비계획승인 신청","G1 완비·현장검사","G2 보완·위원회","G3 예비계획승인 결정"],
         "steps":[
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"측량도·concept development 자료 작성","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"자격 있는 전문자가 토지측량도, 위치·접근, 권리자료와 제안 용도·규모·개념계획을 작성해 적용 Development Plan 심사용 자료를 완성한다.","output":"측량도·위치도·권리·개념계획","authorityIds":["uda-local-authority"],
+            "lane":"현지 설계·시공 전문가","stage":0,"label":"측량도·개념개발(concept development) 자료 작성","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"자격 있는 전문자가 토지측량도, 위치·접근, 권리자료와 제안 용도·규모·개념계획을 작성해 적용 개발계획 심사용 자료를 완성한다.","output":"측량도·위치도·권리·개념계획","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA 개발승인 공식 안내","instrumentId":"LKA-UDA-APPROVAL-INSTRUCTIONS","provisions":["PPC survey plan and concept details; ownership, location and agency documents"]}]
           },
           {
-            "lane":"건축주·신청인","stage":0,"label":"PPC Form A 온라인 신청·수수료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"개발자 또는 대리인이 Form A, 관련도서와 공식 처리수수료를 UDA에 온라인 또는 지정경로로 제출하고 사건번호를 받는다.","output":"PPC 신청·납부증빙·파일번호","authorityIds":["uda-local-authority"],
+            "lane":"건축주·신청인","stage":0,"label":"예비계획승인 A호 서식(Form A) 온라인 신청·수수료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"개발자 또는 대리인이 A호 서식, 관련도서와 공식 처리수수료를 도시개발청에 온라인 또는 지정경로로 제출하고 사건번호를 받는다.","output":"예비계획승인 신청·납부증빙·파일번호","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Planning and Development Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 1(1)-(4); Form A, online application, documents and fee"]},{"source":"UDA 승인절차","instrumentId":"LKA-UDA-APPROVAL-PROCESS","provisions":["application submission with processing fee and obtain file number"]}]
           },
           {
             "lane":"도시계획·건축 허가기관","stage":1,"label":"신청완비성·전문자 자격 검증","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"UDA가 신청정보·계획·계산의 완비·정확성과 자격전문자 인증을 확인하고 불완전하거나 자격범위를 벗어난 신청은 접수하지 않고 보완사유를 알린다.","output":"완비접수 또는 불완전·부적격 통지","authorityIds":["uda-local-authority"],
+            "action":"도시개발청이 신청정보·계획·계산의 완비·정확성과 자격전문자 인증을 확인하고 불완전하거나 자격범위를 벗어난 신청은 접수하지 않고 보완사유를 알린다.","output":"완비접수 또는 불완전·부적격 통지","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Planning and Development Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 95(1); incomplete, inaccurate or uncertified applications not accepted"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"UDA 현장검사·Development Plan 대조","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"UDA 담당자가 현장을 검사하고 측량·접근·인접·기반시설·환경조건과 제안개발을 적용 Development Plan·planning regulations에 대조한다.","output":"현장검사보고서·계획적합성 검토의견","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":1,"label":"도시개발청 현장검사·개발계획 대조","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"도시개발청 담당자가 현장을 검사하고 측량·접근·인접·기반시설·환경조건과 제안개발을 적용 개발계획·계획규정(planning regulations)에 대조한다.","output":"현장검사보고서·계획적합성 검토의견","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA 승인절차","instrumentId":"LKA-UDA-APPROVAL-PROCESS","provisions":["site inspection; inspection report with recommendation to Director Enforcement"]},{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulations 2 and 101; PPC conditions and Development Guide Plan controls"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"Director·Sub Committee·Main Committee 심의","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"일반 안건은 Director Enforcement가 검사권고로 처리하고 쟁점·질의가 있으면 Sub Committee와 Main Committee에 순차 상정해 추가조건·결정안을 심의한다.","output":"Director·위원회 심의기록·추가질의","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":2,"label":"국장(Director)·소위원회(Sub Committee)·본위원회(Main Committee) 심의","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"일반 안건은 집행국장이 검사권고로 처리하고 쟁점·질의가 있으면 소위원회와 본위원회에 순차 상정해 추가조건·결정안을 심의한다.","output":"국장·위원회 심의기록·추가질의","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA 승인절차","instrumentId":"LKA-UDA-APPROVAL-PROCESS","provisions":["internal processing; Sub Committee and Main Committee for further queries; decisions"]}]
           },
           {
             "lane":"건축주·신청인","stage":2,"label":"추가정보·수정개념계획 보완","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"UDA가 규모·입지·기관조건 판단에 추가자료 또는 계획수정을 요구하면 신청인과 전문자가 enhanced information·수정계획을 제출해 다시 심사받는다.","output":"추가정보·수정개념계획·보완답변","authorityIds":["uda-local-authority"],
+            "action":"도시개발청이 규모·입지·기관조건 판단에 보강정보(enhanced information) 또는 계획수정을 요구하면 신청인과 전문자가 보강정보·수정계획을 제출해 다시 심사받는다.","output":"추가정보·수정개념계획·보완답변","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Planning and Development Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 2(1); enhanced information and additional conditions", "Regulation 101(2); modifications for consistency with DGP"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"PPC 발급·조건·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"UDA가 제안개발의 계획상 수용가능성을 판단해 조건부 PPC를 발급하거나 이유를 적은 거부결정을 통지한다. PPC만으로는 개발공사를 시작할 수 없다.","output":"PPC·계획조건 또는 거부통지","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"예비계획승인 발급·조건·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"도시개발청이 제안개발의 계획상 수용가능성을 판단해 조건부 예비계획승인을 발급하거나 이유를 적은 거부결정을 통지한다. 예비계획승인만으로는 개발공사를 시작할 수 없다.","output":"예비계획승인·계획조건 또는 거부통지","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Planning and Development Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 2; conditional PPC and no development without permit", "Regulations 95(4) and 96; refusal reasons and appeal"]}],
-            "permitGate":{"key":"ppc-decision","gate":"UDA의 Preliminary Planning Clearance 공식결정","decision":"UDA가 제안개발의 도시계획 수용가능성 및 Development Permit 심사조건을 공식 결정한다.","output":"PPC·조건 또는 거부통지","dependsOn":[]}
+            "permitGate":{"key":"ppc-decision","gate":"도시개발청의 예비계획승인 공식결정","decision":"도시개발청이 제안개발의 도시계획 수용가능성 및 개발허가(Development Permit) 심사조건을 공식 결정한다.","output":"예비계획승인·조건 또는 거부통지","dependsOn":[]}
           }
         ],
-        "edges":[[0,1,"sequence","PPC 자료완성"],[1,2,"sequence","PPC 접수"],[2,3,"sequence","완비확인"],[3,4,"sequence","검사권고"],[4,6,"sequence","위원회 결정안"],[2,5,"message","완비성 보완"],[4,5,"message","추가정보·수정요구"],[5,1,"loop","보완자료 Form A 재제출"]],
+        "edges":[[0,1,"sequence","예비계획승인 자료완성"],[1,2,"sequence","예비계획승인 접수"],[2,3,"sequence","완비확인"],[3,4,"sequence","검사권고"],[4,6,"sequence","위원회 결정안"],[2,5,"message","완비성 보완"],[4,5,"message","추가정보·수정요구"],[5,1,"loop","보완자료 A호 서식 재제출"]],
         "decisionBranches":[
-          {"state":"success","label":"PPC 발급·조건부 적합","action":"PPC 조건과 관계기관 clearance를 Development Permit 설계에 반영"},
+          {"state":"success","label":"예비계획승인 발급·조건부 적합","action":"예비계획승인 조건과 관계기관 승인(clearance)을 개발허가 설계에 반영"},
           {"state":"rework","label":"추가정보·계획수정","action":"공식 질의·조건에 따라 계획을 보완해 완비·현장·위원회 심사로 회귀"},
-          {"state":"reject","label":"PPC 거부","action":"거부사유를 확인하고 30일 내 법정 appeal 또는 변경·재신청 검토"}
+          {"state":"reject","label":"예비계획승인 거부","action":"거부사유를 확인하고 30일 내 법정 불복(appeal) 또는 변경·재신청 검토"}
         ]
       }
     },
     "permit-environment": {
       "verificationScope": "NEA의 EIA/IEE는 prescribed project에 적용되고 CEA가 적정 PAA를 지정한다. Development Permit은 UDA 선포구역의 Relevant Authority가 처리하며 규모·위임에 따라 UDA 또는 지방정부가 결정한다.",
       "officialProcedure": {
-        "name":"스리랑카 건축허가·환경심사 — PAA IEE/EIA·UDA Development Permit","coverage":"official-source-linked",
-        "scope":"CEA의 6단계 EIA/IEE와 UDA Regulations 28-30, 95-98, 108의 Development Permit을 연결했다. prescribed project가 아니면 환경 Gate를 비대상 확인으로 기록한다.",
-        "stages":["G4 환경 screening·scoping","G5 보고서 심사·결정","G6 Development Permit 신청","G7 기술·관계기관 심사"],
+        "name":"스리랑카 건축허가·환경심사 — 사업승인기관(Project Approving Agency, PAA)의 초기환경검토(IEE)·환경영향평가(EIA)·도시개발청(UDA) 개발허가(Development Permit)","coverage":"official-source-linked",
+        "scope":"중앙환경청(CEA)의 6단계 환경평가와 도시개발청 규정 제28~30·95~98·108조의 개발허가를 연결했다. 지정사업(prescribed project)이 아니면 환경 관문을 비대상 확인으로 기록한다.",
+        "stages":["G4 환경 선별(screening)·범위설정(scoping)","G5 보고서 심사·결정","G6 개발허가 신청","G7 기술·관계기관 심사"],
         "steps":[
           {
-            "lane":"건축주·신청인","stage":0,"label":"CEA Basic Information·prescribed project screening","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업자가 Basic Information Questionnaire 등 초기 사업정보를 CEA에 제출하면 CEA가 prescribed project 여부와 IEE/EIA 필요성을 screening한다.","output":"환경 screening·IEE/EIA 또는 비대상 경로","authorityIds":["cea-paa"],
+            "lane":"건축주·신청인","stage":0,"label":"중앙환경청 기본정보서(Basic Information)·지정사업 선별","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"사업자가 기본정보질의서(Basic Information Questionnaire) 등 초기 사업정보를 중앙환경청에 제출하면 중앙환경청이 지정사업 여부와 초기환경검토·환경영향평가 필요성을 선별한다.","output":"환경 선별·초기환경검토·환경영향평가 또는 비대상 경로","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 공식절차","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["preliminary information/BIQ; screening prescribed projects under Gazette 772/22"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":0,"label":"CEA PAA 지정·scoping·ToR 발행","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"CEA가 해당 사업의 Project Approving Agency를 지정하고 PAA가 관련기관과 scoping을 실시해 IEE 또는 EIA Terms of Reference를 발행한다.","output":"지정 PAA·승인범위·ToR","authorityIds":["cea-paa"],
+            "lane":"환경·소방·검사기관","stage":0,"label":"중앙환경청 사업승인기관 지정·범위설정·평가범위서(ToR) 발행","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"중앙환경청이 해당 사업의 사업승인기관을 지정하고 사업승인기관이 관련기관과 범위설정을 실시해 초기환경검토 또는 환경영향평가의 평가범위서(Terms of Reference)를 발행한다.","output":"지정 사업승인기관·승인범위·평가범위서","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 공식절차","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["CEA appoints appropriate PAA; screening and scoping; PAA issues ToR"]}]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"IEE/EIA 보고서 작성·제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"사업자와 환경컨설턴트가 ToR에 따라 영향·대안·완화·관리계획을 조사해 IEE 또는 EIA 보고서를 PAA에 제출한다.","output":"IEE/EIA 보고서·환경관리계획","authorityIds":["cea-paa"],
+            "lane":"현지 설계·시공 전문가","stage":0,"label":"초기환경검토·환경영향평가 보고서 작성·제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"사업자와 환경컨설턴트가 평가범위서에 따라 영향·대안·완화·관리계획을 조사해 초기환경검토 또는 환경영향평가 보고서를 사업승인기관에 제출한다.","output":"초기환경검토·환경영향평가 보고서·환경관리계획","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 공식절차","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["preparation and submission of EIA/IEE report by project proponent or consultant"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"adequacy·공중검토·TEC 기술심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"PAA가 ToR 충족을 확인하고 EIA는 30일 공중열람·의견을 거치며, Technical Evaluation Committee가 IEE/EIA의 기술적 충분성을 평가해 권고한다.","output":"adequacy 결과·공중의견·TEC 권고","authorityIds":["cea-paa"],
+            "lane":"환경·소방·검사기관","stage":1,"label":"적정성(adequacy)·공중검토·기술평가위원회(TEC) 심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"사업승인기관이 평가범위서 충족을 확인하고 환경영향평가는 30일 공중열람·의견을 거치며, 기술평가위원회(Technical Evaluation Committee)가 초기환경검토·환경영향평가의 기술적 충분성을 평가해 권고한다.","output":"적정성 결과·공중의견·기술평가위원회 권고","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 절차·공중참여 안내","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["adequacy check; 30-working-day EIA public review; TEC technical evaluation"]},{"source":"NEA EIA 체계","instrumentId":"LKA-NEA-EIA","provisions":["prescribed-project approval procedure and public participation"]}]
           },
           {
             "lane":"건축주·신청인","stage":1,"label":"공중의견 답변·환경보고서 보완","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"PAA가 공중의견과 TEC 질의를 보내면 사업자와 컨설턴트가 답변·추가조사·수정보고서를 제출해 adequacy·기술심사를 다시 받는다.","output":"공중의견 답변·수정 IEE/EIA·보완자료","authorityIds":["cea-paa"],
+            "action":"사업승인기관이 공중의견과 기술평가위원회 질의를 보내면 사업자와 컨설턴트가 답변·추가조사·수정보고서를 제출해 적정성·기술심사를 다시 받는다.","output":"공중의견 답변·수정 초기환경검토·환경영향평가·보완자료","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 심사절차","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["public comments sent to project proponent for response; sufficient information required for review"]}]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"PAA 환경승인·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"PAA가 TEC 권고를 토대로 CEA가 아닌 PAA이면 CEA concurrence를 받은 뒤 조건부 승인 또는 이유를 적은 거부결정을 한다.","output":"IEE/EIA 승인·조건 또는 거부결정","authorityIds":["cea-paa"],
+            "lane":"환경·소방·검사기관","stage":1,"label":"사업승인기관 환경승인·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"사업승인기관이 기술평가위원회 권고를 토대로 중앙환경청이 아닌 기관이면 중앙환경청 동의(concurrence)를 받은 뒤 조건부 승인 또는 이유를 적은 거부결정을 한다.","output":"초기환경검토·환경영향평가 승인·조건 또는 거부결정","authorityIds":["cea-paa"],
             "refs":[{"source":"CEA EIA 공식절차","instrumentId":"LKA-CEA-EIA-PROCEDURE","provisions":["PAA approval with terms and conditions or rejection with reasons; CEA concurrence where PAA is not CEA"]}],
-            "permitGate":{"key":"environment-decision","gate":"PAA의 IEE/EIA 공식결정","decision":"지정 PAA가 CEA concurrence와 TEC 권고에 따라 환경승인·조건 또는 거부를 공식 결정한다.","output":"IEE/EIA 승인·조건 또는 거부결정","dependsOn":[]}
+            "permitGate":{"key":"environment-decision","gate":"사업승인기관의 초기환경검토·환경영향평가 공식결정","decision":"지정 사업승인기관이 중앙환경청 동의와 기술평가위원회 권고에 따라 환경승인·조건 또는 거부를 공식 결정한다.","output":"초기환경검토·환경영향평가 승인·조건 또는 거부결정","dependsOn":[]}
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":2,"label":"자격전문자의 Development Permit 도서·인증","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Qualified Person이 PPC, 환경승인과 건축·구조·서비스 설계를 통합하고 Form E와 법정 declarations를 작성·인증한다.","output":"Form E·전문자 인증·건축·구조·서비스도서","authorityIds":["uda-local-authority"],
+            "lane":"현지 설계·시공 전문가","stage":2,"label":"관할 자격전문가(Relevant Qualified Person)의 개발허가 도서·인증","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"관할 자격전문가가 예비계획승인, 환경승인과 건축·구조·서비스 설계를 통합하고 E호 서식(Form E)과 법정 확인서(declarations)를 작성·인증한다.","output":"E호 서식·전문자 인증·건축·구조·서비스도서","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Planning and Development Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 28(1)-(4); prior approval, Form E, qualified-person declarations, online application and fee", "Regulation 29; technical and PPC compliance"]}]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"온라인 허가신청·관계기관 clearance 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"신청인이 승인환경자료, PPC, 권원·측량·서명도서와 적용되는 fire, CEB, water, wastewater, solid-waste, condominium 및 기타 clearance를 온라인 제출하고 수수료를 납부한다.","output":"Development Permit 접수·clearance·납부증빙","authorityIds":["uda-local-authority","nbro","cea-paa"],
+            "lane":"건축주·신청인","stage":2,"label":"온라인 허가신청·관계기관 승인(clearance) 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"신청인이 승인환경자료, 예비계획승인, 권원·측량·서명도서와 적용되는 소방·CEB·상수도·하수·폐기물·공동주택 및 기타 승인을 온라인 제출하고 수수료를 납부한다.","output":"개발허가 접수·관계기관 승인·납부증빙","authorityIds":["uda-local-authority","nbro","cea-paa"],
             "refs":[{"source":"UDA 개발승인 안내","instrumentId":"LKA-UDA-APPROVAL-INSTRUCTIONS","provisions":["online Building Application and fire, electricity, water, sewerage, waste and other PPC clearances"]},{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 108; prescribed projects comply with NEA"]}]
           },
           {
             "lane":"도시계획·건축 허가기관","stage":3,"label":"완비·계획·건축·관계기관 기술심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Authority가 신청완비성·전문자 자격, Development Plan·PPC, 건축·구조·서비스 및 관계기관 조건을 심사하고 필요 시 NBRO 등 추가 clearance를 요구한다.","output":"허가 기술심사의견·추가자료·수정요구","authorityIds":["uda-local-authority","nbro"],
+            "action":"관할기관(Relevant Authority)이 신청완비성·전문자 자격, 개발계획·예비계획승인, 건축·구조·서비스 및 관계기관 조건을 심사하고 필요 시 NBRO 등 추가 승인을 요구한다.","output":"허가 기술심사의견·추가자료·수정요구","authorityIds":["uda-local-authority","nbro"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulations 29 and 95; technical/PPC requirements and application acceptance"]},{"source":"NBRO 지반기술 clearance","instrumentId":"LKA-NBRO-GEOTECH","provisions":["project-approving-agency request, geotechnical report review and clearance where stipulated"]}]
           },
           {
             "lane":"건축주·신청인","stage":3,"label":"추가자료·수정허가도서 재제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"허가기관이 부적합·누락·추가 clearance를 통지하면 신청인과 전문자가 설계·계산·기관승인을 보완해 동일 심사경로로 재제출한다.","output":"수정 허가도서·추가 clearance·보완답변","authorityIds":["uda-local-authority","nbro"],
+            "action":"허가기관이 부적합·누락·추가 승인을 통지하면 신청인과 전문자가 설계·계산·기관승인을 보완해 동일 심사경로로 재제출한다.","output":"수정 허가도서·추가 승인·보완답변","authorityIds":["uda-local-authority","nbro"],
             "refs":[{"source":"UDA 개발승인 안내","instrumentId":"LKA-UDA-APPROVAL-INSTRUCTIONS","provisions":["notification of additional documents required during processing"]},{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 95(1) and 97; complete information and approval conditions"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Development Permit 승인·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Authority가 적합 신청에 조건과 승인계획을 붙여 Development Permit을 발급하거나 거부이유와 appeal 경로를 통지한다.","output":"Development Permit·승인도서·조건 또는 거부통지","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"개발허가 승인·거부 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"관할기관이 적합 신청에 조건과 승인계획을 붙여 개발허가를 발급하거나 거부이유와 불복(appeal) 경로를 통지한다.","output":"개발허가·승인도서·조건 또는 거부통지","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulations 28-30; prior permit, application and validity", "Regulations 95(4), 96 and 97; refusal reasons, appeal and conditional approval"]}],
-            "permitGate":{"key":"development-permit","gate":"Relevant Authority의 Development Permit 공식결정","decision":"관할 UDA·지방정부가 계획·기술·환경·관계기관 조건을 심사해 개발허가 또는 거부를 공식 결정한다.","output":"Development Permit·승인도서·조건 또는 거부통지","dependsOn":["environment-decision"]}
+            "permitGate":{"key":"development-permit","gate":"관할기관의 개발허가 공식결정","decision":"관할 도시개발청·지방정부가 계획·기술·환경·관계기관 조건을 심사해 개발허가 또는 거부를 공식 결정한다.","output":"개발허가·승인도서·조건 또는 거부통지","dependsOn":["environment-decision"]}
           }
         ],
-        "edges":[[0,1,"sequence","환경 screening"],[1,2,"sequence","ToR 발행"],[2,3,"sequence","IEE/EIA 접수"],[3,5,"sequence","TEC 권고"],[3,4,"message","의견답변·보완요구"],[4,3,"loop","수정보고서 재심사"],[5,6,"sequence","환경승인 반영"],[6,7,"sequence","허가도서 완성"],[7,8,"sequence","Development Permit 접수"],[8,10,"sequence","기술심사 완료"],[8,9,"message","추가자료·수정요구"],[9,8,"loop","수정도서 재심사"]],
+        "edges":[[0,1,"sequence","환경 선별"],[1,2,"sequence","평가범위서 발행"],[2,3,"sequence","초기환경검토·환경영향평가 접수"],[3,5,"sequence","기술평가위원회 권고"],[3,4,"message","의견답변·보완요구"],[4,3,"loop","수정보고서 재심사"],[5,6,"sequence","환경승인 반영"],[6,7,"sequence","허가도서 완성"],[7,8,"sequence","개발허가 접수"],[8,10,"sequence","기술심사 완료"],[8,9,"message","추가자료·수정요구"],[9,8,"loop","수정도서 재심사"]],
         "decisionBranches":[
-          {"state":"success","label":"환경승인·Development Permit","action":"두 결정의 조건과 승인도서에 따라 착공"},
-          {"state":"rework","label":"환경·허가도서 보완","action":"공중·TEC·허가기관 질의에 답해 해당 공식심사로 회귀"},
-          {"state":"reject","label":"환경 또는 개발허가 거부","action":"거부이유에 따라 30일 appeal 또는 계획변경·재신청 검토"}
+          {"state":"success","label":"환경승인·개발허가","action":"두 결정의 조건과 승인도서에 따라 착공"},
+          {"state":"rework","label":"환경·허가도서 보완","action":"공중·기술평가위원회·허가기관 질의에 답해 해당 공식심사로 회귀"},
+          {"state":"reject","label":"환경 또는 개발허가 거부","action":"거부이유에 따라 30일 불복 또는 계획변경·재신청 검토"}
         ]
       }
     },
     "control-completion": {
       "verificationScope": "UDA Planning and Development Regulations가 선포 도시개발구역의 공사감독·Post-Permit Audit·CoC를 규정한다. 400㎡ 초과 건물의 UDA 6개월 검사와 qualified-person 보고가 핵심이며 추가 fire·NBRO·서비스기관 검사는 용도·허가조건에 따라 적용한다.",
       "officialProcedure": {
-        "name":"스리랑카 기술검사·준공제도 — Post-Permit Audit·Certificate of Conformity","coverage":"official-source-linked",
-        "scope":"Regulations 78, 80-86, 110-111에 따른 승인허가 착공, 자격전문자 감독, 6개월 검사·보고, 시정, 최종 audit와 사용 전 CoC 절차다.",
-        "stages":["G8 허가착공","G9 감독·정기검사","G10 시정·준공신청","G11 CoC 결정"],
+        "name":"스리랑카 기술검사·준공제도 — 허가 후 감사(Post-Permit Audit)·적합증명서(Certificate of Conformity, CoC)","coverage":"official-source-linked",
+        "scope":"도시개발청 규정(Regulations) 제78·80~86·110~111조에 따른 승인허가 착공, 자격전문가(Qualified Person) 감독, 6개월 검사·보고, 시정, 최종 감사와 사용 전 적합증명 절차다.",
+        "stages":["G8 허가착공","G9 감독·정기검사","G10 시정·준공신청","G11 적합증명 결정"],
         "steps":[
           {
-            "lane":"건축주·신청인","stage":0,"label":"Development Permit 확보·승인도서 현장비치","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"개발자는 유효한 Development Permit과 승인도서를 확보한 뒤 허가 한계·조건에 따라 공사를 시작하고 승인계획 사본을 현장에 비치한다.","output":"유효 Development Permit·현장 승인도서·착공기록","authorityIds":["uda-local-authority"],
+            "lane":"건축주·신청인","stage":0,"label":"개발허가(Development Permit) 확보·승인도서 현장비치","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"개발자는 유효한 개발허가와 승인도서를 확보한 뒤 허가 한계·조건에 따라 공사를 시작하고 승인계획 사본을 현장에 비치한다.","output":"유효 개발허가·현장 승인도서·착공기록","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 80; no commencement, continuation or completion without permit and compliance with conditions", "Regulation 30(10); approved plans retained at site"]}]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":1,"label":"Qualified Person 시공감독·6개월 progress report","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Qualified Persons가 토목·구조·전기·배관 공사를 감독·인증하고 적용 건물은 6개월마다 현장을 검사해 완공까지 progress report를 Relevant Authority에 제출한다.","output":"전문자 감독·인증·6개월 progress report","authorityIds":["uda-local-authority"],
+            "lane":"현지 설계·시공 전문가","stage":1,"label":"자격전문가 시공감독·6개월 공정보고서(progress report)","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"관할 자격전문가가 토목·구조·전기·배관 공사를 감독·인증하고 적용 건물은 6개월마다 현장을 검사해 완공까지 공정보고서를 관할기관에 제출한다.","output":"전문가 감독·인증·6개월 공정보고서","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 78; civil, electrical and plumbing supervision/certification", "Regulation 110; qualified-person examination and six-month progress reports"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"Relevant Authority 6개월 현장검사·Post-Permit Audit","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"400㎡ 초과 건축물은 허가일부터 공사기간 중 Relevant Authority가 6개월마다 승인설계 준수를 검사하고 Post-Permit Audit and Monitoring Report를 발급한다.","output":"현장검사·Post-Permit Audit and Monitoring Report","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":1,"label":"관할기관(Relevant Authority) 6개월 현장검사·허가 후 감사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"400㎡ 초과 건축물은 허가일부터 공사기간 중 관할기관이 6개월마다 승인설계 준수를 검사하고 허가 후 감사·모니터링 보고서(Post-Permit Audit and Monitoring Report)를 발급한다.","output":"현장검사·허가 후 감사·모니터링 보고서","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 81(1); six-month inspections for buildings over 400m² and post-permit audit report"]}]
           },
           {
             "lane":"건축주·신청인","stage":2,"label":"검사지적 14일 대응·공사시정","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Authority의 검사서신·지적을 받으면 신청인과 전문자가 지정사항에 대응해 현장·도서를 시정하고 재검사를 요청한다. 미응답이면 추가 집행절차로 넘어간다.","output":"14일 대응·시정기록·재검사 결과","authorityIds":["uda-local-authority"],
+            "action":"관할기관의 검사서신·지적을 받으면 신청인과 전문자가 지정사항에 대응해 현장·도서를 시정하고 재검사를 요청한다. 미응답이면 추가 집행절차로 넘어간다.","output":"14일 대응·시정기록·재검사 결과","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 81(2); further action if applicant does not respond within 14 days", "Regulation 98; revocation for contravention or non-compliance"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"최종 Post-Permit Audit 보고서 발급","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"공사완료·시정 후 개발자가 최종 audit 보고서를 요청하면 Relevant Authority가 최종 Post-Permit Audit and Monitoring Report를 작성·발급한다.","output":"최종 Post-Permit Audit and Monitoring Report","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":2,"label":"최종 허가 후 감사 보고서 발급","emphasis":"key","kind":"official-guidance","basisScope":"node",
+            "action":"공사완료·시정 후 개발자가 최종 감사 보고서를 요청하면 관할기관이 최종 허가 후 감사·모니터링 보고서를 작성·발급한다.","output":"최종 허가 후 감사·모니터링 보고서","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 81(3)-(4); request and fee for final Post Audit & Monitoring Report"]}]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"CoC Form I·전문자·기관증명 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"사용 전에 신청인이 Form I, 수수료, 최종 audit, 자격전문자·구조·MEP 증명과 fire·전기·상수·하수·폐기물 등 허가조건상 증명을 제출한다.","output":"CoC 신청·전문자·기관증명·납부증빙","authorityIds":["uda-local-authority"],
+            "lane":"건축주·신청인","stage":2,"label":"적합증명서 I호 서식(Form I)·전문가·기관증명 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node",
+            "action":"사용 전에 신청인이 I호 서식, 수수료, 최종 감사, 자격전문가·구조·기계·전기·배관(MEP) 증명과 소방·전기·상수·하수·폐기물 등 허가조건상 증명을 제출한다.","output":"적합증명 신청·전문가·기관증명·납부증빙","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulations 82-84; Form I, fee, permit conditions, qualified-person and agency certificates before occupation"]}]
           },
           {
             "lane":"도시계획·건축 허가기관","stage":3,"label":"준공 현장·허가조건 적합성 검사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Authority가 준공도서와 증명을 심사하고 권한 있는 담당자가 현장에 출입해 승인계획·개발허가 조건 준수와 안전한 사용 가능성을 확인한다.","output":"CoC 현장검사·허가조건 적합성 의견","authorityIds":["uda-local-authority"],
+            "action":"관할기관이 준공도서와 증명을 심사하고 권한 있는 담당자가 현장에 출입해 승인계획·개발허가 조건 준수와 안전한 사용 가능성을 확인한다.","output":"적합증명 현장검사·허가조건 적합성 의견","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 85; authority entry and inspection before CoC", "Regulation 83; permit conditions fulfilled"]}]
           },
           {
             "lane":"건축주·신청인","stage":3,"label":"준공편차·증명서 보완·재검사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"현장편차 또는 증명 누락이 확인되면 신청인과 전문자가 시정·추가증명·필요한 수정승인을 제출해 CoC 검사를 다시 받는다.","output":"시정공사·수정승인·추가증명·재검사","authorityIds":["uda-local-authority"],
+            "action":"현장편차 또는 증명 누락이 확인되면 신청인과 전문자가 시정·추가증명·필요한 수정승인을 제출해 적합증명 검사를 다시 받는다.","output":"시정공사·수정승인·추가증명·재검사","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulation 84; completion certificates and conditions", "Regulation 86; minor deviations and revocation for violations"]}]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"Certificate of Conformity 발급·거부 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"Relevant Authority가 승인계획·허가조건 적합성을 확정해 전체 또는 해당되는 부분 CoC를 발급하거나 보완·거부·취소 결정을 통지하며 CoC 전에는 점유할 수 없다.","output":"CoC·사용조건 또는 보완·거부통지","authorityIds":["uda-local-authority"],
+            "lane":"도시계획·건축 허가기관","stage":3,"label":"적합증명서 발급·거부 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
+            "action":"관할기관이 승인계획·허가조건 적합성을 확정해 전체 또는 해당되는 부분 적합증명을 발급하거나 보완·거부·취소 결정을 통지하며 적합증명 전에는 점유할 수 없다.","output":"적합증명서·사용조건 또는 보완·거부통지","authorityIds":["uda-local-authority"],
             "refs":[{"source":"UDA Regulations","instrumentId":"LKA-UDA-REG-2021","provisions":["Regulations 82 and 84-89; CoC before occupation, partial/final certificate, grant/revoke and prohibition on occupancy"]}],
-            "permitGate":{"key":"certificate-of-conformity","gate":"Relevant Authority의 CoC 공식결정","decision":"관할 UDA·지방정부가 준공건축물의 승인계획·허가조건 적합성과 점유 가능 여부를 공식 결정한다.","output":"Certificate of Conformity·조건 또는 거부통지","dependsOn":[]}
+            "permitGate":{"key":"certificate-of-conformity","gate":"관할기관의 적합증명 공식결정","decision":"관할 도시개발청·지방정부가 준공건축물의 승인계획·허가조건 적합성과 점유 가능 여부를 공식 결정한다.","output":"적합증명서·조건 또는 거부통지","dependsOn":[]}
           }
         ],
-        "edges":[[0,1,"sequence","허가착공"],[1,2,"sequence","정기보고·검사"],[2,4,"sequence","적합·시정완료"],[2,3,"message","검사지적 서신"],[3,2,"loop","시정 후 재검사"],[4,5,"sequence","최종 audit"],[5,6,"sequence","CoC 신청"],[6,8,"sequence","준공 적합"],[6,7,"message","편차·증명 보완"],[7,6,"loop","시정 후 CoC 재검사"]],
+        "edges":[[0,1,"sequence","허가착공"],[1,2,"sequence","정기보고·검사"],[2,4,"sequence","적합·시정완료"],[2,3,"message","검사지적 서신"],[3,2,"loop","시정 후 재검사"],[4,5,"sequence","최종 감사"],[5,6,"sequence","적합증명 신청"],[6,8,"sequence","준공 적합"],[6,7,"message","편차·증명 보완"],[7,6,"loop","시정 후 적합증명 재검사"]],
         "decisionBranches":[
-          {"state":"success","label":"준공 적합·CoC 발급","action":"CoC의 지정용도·조건에 따라 건축물 점유"},
-          {"state":"rework","label":"공사·준공증명 보완","action":"현장·도서·기관증명을 시정해 정기검사 또는 CoC 검사로 회귀"},
-          {"state":"reject","label":"CoC 거부·허가취소","action":"위반사유에 따라 법정 시정·수정승인 또는 30일 appeal 경로 검토"}
+          {"state":"success","label":"준공 적합·적합증명 발급","action":"적합증명의 지정용도·조건에 따라 건축물 점유"},
+          {"state":"rework","label":"공사·준공증명 보완","action":"현장·도서·기관증명을 시정해 정기검사 또는 적합증명 검사로 회귀"},
+          {"state":"reject","label":"적합증명 거부·허가취소","action":"위반사유에 따라 법정 시정·수정승인 또는 30일 불복(appeal) 경로 검토"}
         ]
       }
     }
