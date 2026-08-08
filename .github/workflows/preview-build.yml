@@ -36,9 +36,11 @@ jobs:
       - name: Validate source and preview publisher
         run: |
           python tools/validate.py
+          python tools/audit_article_verification.py
           python tools/build_construction_baselines.py --check
           python tools/validate_construction_regulations.py
           python tools/check_construction_procedure_coverage.py
+          python tools/check_construction_evidence_grade.py
           python tools/check_construction_procedure_structure.py
           python tools/check_construction_terminology.py
           npm run check:boards
