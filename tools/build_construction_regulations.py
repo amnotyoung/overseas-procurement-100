@@ -177,13 +177,14 @@ def build_country(data: dict[str, Any]) -> str:
             add(f"- 보고서 반영: {item['reportUse']}")
             add("")
 
-    add("## Diamniadio 부지 특례")
-    add("")
-    add("| 구역 | 상태 | 확인된 규칙 | 빠진 증빙 | 보고서 처리 |")
-    add("|---|---|---|---|---|")
-    for item in data["siteOverlays"]:
-        add(f"| {esc(item['area'])} | {STATUS_LABELS[item['status']]} | {esc(item['rule'])} | {join_items(item['missingEvidence'])} | {esc(item['consequence'])} |")
-    add("")
+    if data["siteOverlays"]:
+        add("## 대상 필지별 적용 확인사항")
+        add("")
+        add("| 구역 | 상태 | 확인된 규칙 | 빠진 증빙 | 보고서 처리 |")
+        add("|---|---|---|---|---|")
+        for item in data["siteOverlays"]:
+            add(f"| {esc(item['area'])} | {STATUS_LABELS[item['status']]} | {esc(item['rule'])} | {join_items(item['missingEvidence'])} | {esc(item['consequence'])} |")
+        add("")
 
     add("## 전체 미확정 질문")
     add("")

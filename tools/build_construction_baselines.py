@@ -34,6 +34,7 @@ GENERATED_FROM = (
 )
 
 SYSTEM_ORDER = ("site-urban", "permit-environment", "control-completion")
+PUBLICATION_SCOPES = {"national", "subnational-example"}
 SYSTEM_META = {
     "site-urban": {
         "priority": 4,
@@ -423,10 +424,6 @@ def pretty(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2) + "\n"
 
 
-def basis_sources(system: dict[str, Any]) -> list[str]:
-    return [item["instrumentId"] for item in system["basis"]]
-
-
 def render_step_text(value: str, system: dict[str, Any]) -> str:
     return value.format(referenceLabel=system["referenceLabel"])
 
@@ -537,6 +534,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     permit_path: list[dict[str, Any]] = []
     source_edges: list[dict[str, Any]] = []
     all_stages: list[str] = []
+    published_basis_by_system: dict[str, list[dict[str, Any]]] = {}
 
     node_number = 1
     gate_number = 1
@@ -545,12 +543,36 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
     checklist_number = 1
     conclusion_number = 1
 
-    for system_key in SYSTEM_ORDER:
+    published_system_keys = [
+        system_key
+        for system_key in SYSTEM_ORDER
+        if profile["systems"][system_key]["officialProcedure"]["publicationScope"]
+        == "national"
+    ]
+
+    for system_key in published_system_keys:
         system = systems[system_key]
         meta = SYSTEM_META[system_key]
-        workflow = system.get("officialProcedure") or unverified_entry_workflow(
-            system_key, system
-        )
+        workflow = system["officialProcedure"]
+        workflow_authority_ids = list(dict.fromkeys(
+            authority_id
+            for step in workflow["steps"]
+            for authority_id in step["authorityIds"]
+        ))
+        workflow_basis: list[dict[str, Any]] = []
+        seen_workflow_basis: set[tuple[str, tuple[str, ...]]] = set()
+        for step in workflow["steps"]:
+            for ref in step["refs"]:
+                provisions = tuple(ref.get("provisions", []))
+                signature = (ref["instrumentId"], provisions)
+                if signature in seen_workflow_basis:
+                    continue
+                seen_workflow_basis.add(signature)
+                workflow_basis.append({
+                    "instrumentId": ref["instrumentId"],
+                    "provisions": list(provisions),
+                })
+        published_basis_by_system[system_key] = workflow_basis
         all_stages.extend(workflow["stages"])
         req_id = f"{prefix}-BLD-REQ-{meta['priority']:03d}"
         conclusion_id = f"{prefix}-BLD-C-{conclusion_number:03d}"
@@ -566,8 +588,8 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "status": "conditional",
             "applicability": system["applicability"],
             "requirement": system["summary"],
-            "authorityIds": system["authorityIds"],
-            "legalBasis": system["basis"],
+            "authorityIds": workflow_authority_ids,
+            "legalBasis": workflow_basis,
             "evidenceToObtain": system["evidence"],
             "reportUse": meta["reportUse"],
         })
@@ -581,7 +603,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "question": system["decisionQuestion"],
             "whyItMatters": meta["genericWhy"],
             "evidenceNeeded": system["evidence"],
-            "confirmWith": system["authorityIds"],
+            "confirmWith": workflow_authority_ids,
             "owner": "수원기관·현지 건축전문가",
         })
         question_number += 1
@@ -595,7 +617,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "question": meta["genericQuestion"],
             "whyItMatters": meta["genericWhy"],
             "evidenceNeeded": meta["genericEvidence"],
-            "confirmWith": system["authorityIds"],
+            "confirmWith": workflow_authority_ids,
             "owner": "수원기관·현지 건축전문가",
         })
         question_number += 1
@@ -609,7 +631,7 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "question": f"{system['referenceLabel']}의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
             "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
             "evidenceNeeded": system["evidence"],
-            "confirmWith": system["authorityIds"],
+            "confirmWith": workflow_authority_ids,
             "owner": "현지 건축전문가·조사총괄",
         })
         question_number += 1
@@ -640,10 +662,10 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
                 "note": action,
                 "action": action,
                 "outputs": node_outputs,
-                "authorityIds": step.get("authorityIds", system["authorityIds"]),
+                "authorityIds": step["authorityIds"],
                 "requirementIds": [req_id],
                 "questionIds": question_ids,
-                "refs": step.get("refs", system_basis_refs(system)),
+                "refs": step["refs"],
             }
             permit_gate = None if step_override.get("omitPermitGate") else step.get("permitGate")
             if permit_gate:
@@ -730,7 +752,9 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "id": conclusion_id,
             "confidence": "conditional",
             "text": system["conclusion"],
-            "basis": basis_sources(system),
+            "basis": list(dict.fromkeys(
+                ref["instrumentId"] for ref in workflow_basis
+            )),
         })
         conclusion_number += 1
 
@@ -764,6 +788,12 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "purpose": meta["purpose"],
             "verificationScope": system["verificationScope"],
             "procedureStatus": workflow.get("coverage", "source-linked"),
+            "publicationScope": workflow["publicationScope"],
+            **(
+                {"laneOrder": list(workflow["laneOrder"])}
+                if workflow.get("laneOrder")
+                else {}
+            ),
             "procedureScope": workflow.get("scope", system["verificationScope"]),
             "nodeIds": model_node_ids,
             "requirementIds": [req_id],
@@ -775,59 +805,44 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             "decisionBranches": workflow.get("decisionBranches", []),
         })
 
-    first_system = systems["site-urban"]
-    first_basis = first_system["basis"][0]
     instrument_titles = {item["id"]: item["titleKo"] for item in profile["instruments"]}
     method_source_titles = [
         instrument_titles[item["instrumentId"]]
-        for system in systems.values()
-        for item in system["basis"]
+        for system_key in published_system_keys
+        for item in published_basis_by_system[system_key]
     ]
     method_sources = "·".join(dict.fromkeys(method_source_titles))
     country_status = derive_country_verification_status(models)
-
-    return {
-        "schemaVersion": "0.1",
-        "generatedFrom": GENERATED_FROM,
-        "slug": slug,
-        "asOfDate": as_of,
-        "country": {
-            "name": profile["name"],
-            "nameEn": profile["nameEn"],
-            "iso3": iso3,
-            "region": profile["region"],
-        },
-        "purpose": (
-            f"{profile['name']} ODA 건축사업의 도시계획·부지, 건축허가·환경심사, "
-            "기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다."
-        ),
-        "verification": {
-            "status": country_status,
-            "verifiedAt": as_of,
-            "method": f"{method_sources}의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-            "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
-            "limitations": [
-                "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
-                "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
-                "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다.",
-            ],
-        },
-        "processBoard": {
-            "schema_version": 1,
-            "profile": "gov",
-            "title": f"{profile['name']} 건축 법·제도 3축 통합 흐름",
-            "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
-            "lanes": [lane for lane in BOARD_LANES if any(node["lane"] == lane for node in nodes)],
-            "stages": list(dict.fromkeys(all_stages)),
-            "nodes": nodes,
-            "edges": source_edges,
-        },
-        "publicModels": models,
-        "authorities": profile["authorities"],
-        "instruments": profile["instruments"],
-        "requirements": requirements,
-        "permitPath": permit_path,
-        "siteOverlays": [{
+    model_names = [SYSTEM_META[key]["name"] for key in published_system_keys]
+    referenced_authority_ids = {
+        authority_id
+        for node in nodes
+        for authority_id in node.get("authorityIds", [])
+    }
+    referenced_instrument_ids = {
+        ref["instrumentId"]
+        for system_key in published_system_keys
+        for ref in published_basis_by_system[system_key]
+    }
+    referenced_instrument_ids.update(
+        ref["instrumentId"]
+        for node in nodes
+        for ref in node.get("refs", [])
+    )
+    published_authorities = [
+        item
+        for item in profile["authorities"]
+        if item["id"] in referenced_authority_ids
+    ]
+    published_instruments = [
+        item
+        for item in profile["instruments"]
+        if item["id"] in referenced_instrument_ids
+    ]
+    site_overlays = []
+    if "site-urban" in published_system_keys:
+        first_basis = published_basis_by_system["site-urban"][0]
+        site_overlays = [{
             "id": f"{prefix}-LOCAL-OVERLAY-001",
             "area": "대상 필지의 관할 지방정부·계획구역·특구",
             "status": "unresolved",
@@ -841,7 +856,55 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
             }],
             "missingEvidence": ["필지 식별정보", "현행 계획도·조례", "관할기관의 필지별 규제확인서"],
             "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다.",
-        }],
+        }]
+
+    return {
+        "schemaVersion": "0.1",
+        "generatedFrom": GENERATED_FROM,
+        "slug": slug,
+        "asOfDate": as_of,
+        "country": {
+            "name": profile["name"],
+            "nameEn": profile["nameEn"],
+            "iso3": iso3,
+            "region": profile["region"],
+        },
+        "purpose": (
+            f"{profile['name']} ODA 건축사업에서 전국 공통으로 확인된 "
+            f"{', '.join(model_names) if model_names else '공개 건축 절차'}를 "
+            "공식 출처와 현지 확인질문으로 정리한다."
+        ),
+        "verification": {
+            "status": country_status,
+            "verifiedAt": as_of,
+            "method": (
+                f"{method_sources}의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다."
+                if method_sources
+                else "전국 공통으로 일반화할 수 있는 건축 절차를 확인하지 못해 지역 사례를 공개 대상에서 제외했다."
+            ),
+            "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+            "limitations": [
+                "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
+                "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
+                "건폐율·용적률·높이·이격·주차, 환경평가 유형, 수수료·실제 기간과 현지 업체 비용은 필지·시설·관할에 따라 달라 확인 전 수치로 사용하지 않는다.",
+            ],
+        },
+        "processBoard": {
+            "schema_version": 1,
+            "profile": "gov",
+            "title": f"{profile['name']} 전국 공통 건축 법·제도 흐름",
+            "subtitle": " → ".join(model_names) if model_names else "공개 가능한 전국 공통 절차 없음",
+            "lanes": [lane for lane in BOARD_LANES if any(node["lane"] == lane for node in nodes)],
+            "stages": list(dict.fromkeys(all_stages)),
+            "nodes": nodes,
+            "edges": source_edges,
+        },
+        "publicModels": models,
+        "authorities": published_authorities,
+        "instruments": published_instruments,
+        "requirements": requirements,
+        "permitPath": permit_path,
+        "siteOverlays": site_overlays,
         "openQuestions": questions,
         "fieldworkChecklist": checklist,
         "reportReadyConclusions": conclusions,
@@ -875,67 +938,148 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
                 if ref["instrumentId"] not in instrument_ids:
                     raise ValueError(f"{slug}.{system_key}: unknown instrument {ref['instrumentId']}")
             procedure = system.get("officialProcedure")
-            if procedure is not None:
-                if not isinstance(procedure, dict):
-                    raise ValueError(f"{slug}.{system_key}: officialProcedure must be an object")
-                if procedure.get("coverage") not in {"source-linked", "official-source-linked", "article-linked", "article-verified"}:
-                    raise ValueError(f"{slug}.{system_key}: invalid officialProcedure coverage")
-                stages = procedure.get("stages")
-                steps = procedure.get("steps")
-                if not isinstance(stages, list) or not stages or not all(stages):
-                    raise ValueError(f"{slug}.{system_key}: officialProcedure needs stages")
-                if not isinstance(steps, list) or not steps:
-                    raise ValueError(f"{slug}.{system_key}: officialProcedure needs steps")
-                gate_keys: set[str] = set()
-                for index, step in enumerate(steps):
-                    where = f"{slug}.{system_key}.officialProcedure.steps[{index}]"
-                    for field in ("lane", "stage", "label", "emphasis", "kind", "action", "output"):
-                        if field not in step or step[field] in (None, ""):
-                            raise ValueError(f"{where}: missing {field}")
-                    if step["lane"] not in BOARD_LANES:
-                        raise ValueError(f"{where}: unknown lane {step['lane']!r}")
-                    if not isinstance(step["stage"], int) or not 0 <= step["stage"] < len(stages):
-                        raise ValueError(f"{where}: invalid stage index")
-                    if step["kind"] not in {
-                        "statutory", "official-guidance", "local-example", "field-verification"
-                    }:
-                        raise ValueError(f"{where}: invalid kind {step['kind']!r}")
-                    unknown_authorities = set(step.get("authorityIds", [])) - authority_ids
-                    if unknown_authorities:
-                        raise ValueError(f"{where}: unknown authorities {sorted(unknown_authorities)}")
-                    for ref in step.get("refs", []):
-                        if ref.get("instrumentId") not in instrument_ids:
-                            raise ValueError(f"{where}: unknown instrument {ref.get('instrumentId')!r}")
-                    gate = step.get("permitGate")
-                    if gate:
-                        key = gate.get("key")
-                        if not key or key in gate_keys:
-                            raise ValueError(f"{where}: missing or duplicate permitGate key")
-                        missing = set(gate.get("dependsOn", [])) - gate_keys
-                        if missing:
-                            raise ValueError(f"{where}: permitGate depends on later/unknown {sorted(missing)}")
-                        gate_keys.add(key)
-                for edge_index, edge in enumerate(procedure.get("edges", [])):
-                    if not isinstance(edge, list) or len(edge) != 4:
-                        raise ValueError(f"{slug}.{system_key}: invalid officialProcedure edge {edge_index}")
-                    source, target, edge_type, _ = edge
-                    if source not in range(len(steps)) or target not in range(len(steps)):
-                        raise ValueError(f"{slug}.{system_key}: edge {edge_index} references unknown step")
-                    if edge_type not in {"sequence", "message", "loop"}:
-                        raise ValueError(f"{slug}.{system_key}: edge {edge_index} has invalid type")
-                loop = procedure.get("loop")
-                if loop is not None:
-                    if (
-                        not isinstance(loop, list) or len(loop) != 3
-                        or loop[0] not in range(len(steps)) or loop[1] not in range(len(steps))
-                        or not loop[2]
+            if procedure is None:
+                raise ValueError(f"{slug}.{system_key}: officialProcedure is required")
+            if not isinstance(procedure, dict):
+                raise ValueError(f"{slug}.{system_key}: officialProcedure must be an object")
+            if procedure.get("coverage") not in {"source-linked", "official-source-linked", "article-linked", "article-verified"}:
+                raise ValueError(f"{slug}.{system_key}: invalid officialProcedure coverage")
+            if procedure.get("publicationScope") not in PUBLICATION_SCOPES:
+                raise ValueError(
+                    f"{slug}.{system_key}: officialProcedure publicationScope must be "
+                    f"one of {sorted(PUBLICATION_SCOPES)}"
+                )
+            stages = procedure.get("stages")
+            steps = procedure.get("steps")
+            if not isinstance(stages, list) or not stages or not all(stages):
+                raise ValueError(f"{slug}.{system_key}: officialProcedure needs stages")
+            if not isinstance(steps, list) or not steps:
+                raise ValueError(f"{slug}.{system_key}: officialProcedure needs steps")
+            gate_keys: set[str] = set()
+            for index, step in enumerate(steps):
+                where = f"{slug}.{system_key}.officialProcedure.steps[{index}]"
+                if not isinstance(step, dict):
+                    raise ValueError(f"{where}: step must be an object")
+                for field in ("lane", "stage", "label", "emphasis", "kind", "action", "output"):
+                    if field not in step or step[field] in (None, ""):
+                        raise ValueError(f"{where}: missing {field}")
+                if step["lane"] not in BOARD_LANES:
+                    raise ValueError(f"{where}: unknown lane {step['lane']!r}")
+                if not isinstance(step["stage"], int) or not 0 <= step["stage"] < len(stages):
+                    raise ValueError(f"{where}: invalid stage index")
+                if step["kind"] not in {
+                    "statutory", "official-guidance", "local-example", "field-verification"
+                }:
+                    raise ValueError(f"{where}: invalid kind {step['kind']!r}")
+                if (
+                    procedure["publicationScope"] == "national"
+                    and step["kind"] in {"local-example", "field-verification"}
+                ):
+                    raise ValueError(
+                        f"{where}: national procedure cannot publish {step['kind']}"
+                    )
+                step_authorities = step.get("authorityIds")
+                if step_authorities is None:
+                    step_authorities = []
+                if not isinstance(step_authorities, list) or any(
+                    not isinstance(item, str) or not item.strip()
+                    for item in step_authorities
+                ):
+                    raise ValueError(f"{where}: authorityIds must be an array of non-empty strings")
+                if procedure["publicationScope"] == "national" and not step_authorities:
+                    raise ValueError(
+                        f"{where}: national procedure needs non-empty authorityIds"
+                    )
+                unknown_authorities = set(step_authorities) - authority_ids
+                if unknown_authorities:
+                    raise ValueError(f"{where}: unknown authorities {sorted(unknown_authorities)}")
+                step_refs = step.get("refs")
+                if step_refs is None:
+                    step_refs = []
+                if not isinstance(step_refs, list):
+                    raise ValueError(f"{where}: refs must be an array")
+                if procedure["publicationScope"] == "national" and not step_refs:
+                    raise ValueError(
+                        f"{where}: national procedure needs non-empty refs"
+                    )
+                for ref_index, ref in enumerate(step_refs):
+                    ref_where = f"{where}.refs[{ref_index}]"
+                    if not isinstance(ref, dict):
+                        raise ValueError(f"{ref_where}: ref must be an object")
+                    instrument_id = ref.get("instrumentId")
+                    if not isinstance(instrument_id, str) or not instrument_id.strip():
+                        raise ValueError(f"{ref_where}: instrumentId must be a non-empty string")
+                    if instrument_id not in instrument_ids:
+                        raise ValueError(f"{ref_where}: unknown instrument {instrument_id!r}")
+                    provisions = ref.get("provisions")
+                    if procedure["publicationScope"] == "national" and (
+                        not isinstance(provisions, list)
+                        or not provisions
+                        or any(not isinstance(item, str) or not item.strip() for item in provisions)
                     ):
-                        raise ValueError(f"{slug}.{system_key}: invalid officialProcedure loop")
-                branches = procedure.get("decisionBranches", [])
-                if branches and {
-                    item.get("state") for item in branches if isinstance(item, dict)
-                } != {"success", "rework", "reject"}:
-                    raise ValueError(f"{slug}.{system_key}: decisionBranches need success/rework/reject")
+                        raise ValueError(
+                            f"{ref_where}: national procedure ref needs direct provisions"
+                        )
+                gate = step.get("permitGate")
+                if gate:
+                    if not isinstance(gate, dict):
+                        raise ValueError(f"{where}: permitGate must be an object")
+                    key = gate.get("key")
+                    if not key or key in gate_keys:
+                        raise ValueError(f"{where}: missing or duplicate permitGate key")
+                    missing = set(gate.get("dependsOn", [])) - gate_keys
+                    if missing:
+                        raise ValueError(f"{where}: permitGate depends on later/unknown {sorted(missing)}")
+                    gate_keys.add(key)
+            lane_order = procedure.get("laneOrder")
+            if lane_order is not None:
+                where = f"{slug}.{system_key}.officialProcedure.laneOrder"
+                if (
+                    not isinstance(lane_order, list)
+                    or not lane_order
+                    or any(
+                        not isinstance(item, str) or item not in BOARD_LANES
+                        for item in lane_order
+                    )
+                    or len(lane_order) != len(set(lane_order))
+                ):
+                    raise ValueError(
+                        f"{where}: must be a unique, non-empty array of known lanes"
+                    )
+                used_lanes = {step["lane"] for step in steps}
+                if set(lane_order) != used_lanes:
+                    raise ValueError(
+                        f"{where}: must contain exactly the procedure's used lanes"
+                    )
+            for edge_index, edge in enumerate(procedure.get("edges", [])):
+                if not isinstance(edge, list) or len(edge) != 4:
+                    raise ValueError(f"{slug}.{system_key}: invalid officialProcedure edge {edge_index}")
+                source, target, edge_type, _ = edge
+                if (
+                    not isinstance(source, int)
+                    or not isinstance(target, int)
+                    or source not in range(len(steps))
+                    or target not in range(len(steps))
+                ):
+                    raise ValueError(f"{slug}.{system_key}: edge {edge_index} references unknown step")
+                if edge_type not in {"sequence", "message", "loop"}:
+                    raise ValueError(f"{slug}.{system_key}: edge {edge_index} has invalid type")
+            loop = procedure.get("loop")
+            if loop is not None:
+                if (
+                    not isinstance(loop, list) or len(loop) != 3
+                    or not isinstance(loop[0], int) or not isinstance(loop[1], int)
+                    or loop[0] not in range(len(steps)) or loop[1] not in range(len(steps))
+                    or not loop[2]
+                ):
+                    raise ValueError(f"{slug}.{system_key}: invalid officialProcedure loop")
+            branches = procedure.get("decisionBranches", [])
+            if branches and (
+                not isinstance(branches, list)
+                or any(not isinstance(item, dict) for item in branches)
+                or {item.get("state") for item in branches} != {"success", "rework", "reject"}
+            ):
+                raise ValueError(f"{slug}.{system_key}: decisionBranches need success/rework/reject")
             overrides = system.get("workflowOverrides", {})
             if not isinstance(overrides, dict):
                 raise ValueError(f"{slug}.{system_key}: workflowOverrides must be an object")

@@ -9,12 +9,12 @@
     "iso3": "DOM",
     "region": "중남미"
   },
-  "purpose": "도미니카공화국 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "도미니카공화국 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사, 기술검사·보험·준공제도를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "관할 시 도시계획·토지이용 조례(국가구역청 ADN 용도인증 공식 예시)·일반건축규정 적용·도면접수규정 R-021(시행령 제576-06호)·환경천연자원기본법 제64-00호 및 2024년 환경분류·평가절차 결의·공사 일반감리·검사규정 R-004(시행령 제232-17호)·MIVHED 설치법 제160-21호·건축기술규정체계법 제687-82호의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "일반건축규정 적용·도면접수규정 R-021(시행령 제576-06호)·환경부 사업·공사·활동 A·B·C·D 환경승인 공식서비스·환경평가 현행절차·표준화 TdR 공식포털·환경천연자원기본법 제64-00호 및 2024년 환경분류·평가절차 결의·공사 일반감리·검사규정 R-004(시행령 제232-17호)의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,8 +24,8 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "도미니카공화국 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "도미니카공화국 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사 → 기술검사·보험·준공제도",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
@@ -33,11 +33,6 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 권원·지적",
-      "S2 신청도서",
-      "S3 공식접수",
-      "S4 도시계획 심사·보완",
-      "S5 용도인증 결정",
       "P1 분류·도서",
       "P2 공식접수",
       "P3 완비·기술심사",
@@ -52,251 +47,6 @@
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "S1 권원·지적",
-        "label": "권원증서·지적측량·대리권 확정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
-        "action": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
-        "outputs": [
-          "권원·지적측량·신청권한 자료"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "property title, cadastral survey and notarized owner authorization"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S2 신청도서",
-        "label": "위치·예정용도·규모자료 작성",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "전문가가 필지 위치, 현재·예정용도, 사업규모와 해당 도시계획·특별구역 조건을 대조해 신청자료를 작성한다.",
-        "action": "전문가가 필지 위치, 현재·예정용도, 사업규모와 해당 도시계획·특별구역 조건을 대조해 신청자료를 작성한다.",
-        "outputs": [
-          "토지이용 신청서·위치·사업개요"
-        ],
-        "authorityIds": [
-          "dom-codia-professionals",
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 요건",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "application form, property location and land-use description"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S2 신청도서",
-        "label": "특별구역 사전 이의없음확인(no-objection) 확보",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
-        "action": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
-        "outputs": [
-          "적용 특별구역 이의없음확인"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "DNPM no-objection required for Gazcue or Zona Colonial"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "건축주·신청인",
-        "stage": "S3 공식접수",
-        "label": "ADN 토지이용 인증 공식접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인이 정해진 양식과 디지털·종이 첨부자료를 ADN에 제출해 토지이용 인증 절차를 개시한다.",
-        "action": "신청인이 정해진 양식과 디지털·종이 첨부자료를 ADN에 제출해 토지이용 인증 절차를 개시한다.",
-        "outputs": [
-          "Certificación de Uso de Suelo 접수"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "in-person filing of form and digitized supporting documents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 도시계획 심사·보완",
-        "label": "도시계획·허용용도 기술심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "ADN 도시계획부서가 mensura와 필지위치를 관할 계획·조례에 대조해 허용용도와 적용 도시계획 조건을 심사한다.",
-        "action": "ADN 도시계획부서가 mensura와 필지위치를 관할 계획·조례에 대조해 허용용도와 적용 도시계획 조건을 심사한다.",
-        "outputs": [
-          "용도·도시계획 검토기록"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "certification of the use permitted in the territory"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 도시계획 심사·보완",
-        "label": "누락·계획불일치 보완통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "요건 누락이나 계획불일치가 있으면 담당부서가 추가자료·정정 또는 사업계획 수정을 신청인에게 요구한다.",
-        "action": "요건 누락이나 계획불일치가 있으면 담당부서가 추가자료·정정 또는 사업계획 수정을 신청인에게 요구한다.",
-        "outputs": [
-          "보완·계획수정 통지"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 요건",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "required application, ownership, survey, location and special-area documents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B07",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S4 도시계획 심사·보완",
-        "label": "토지이용 자료 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인과 전문가가 누락·불일치를 보완하고 수정자료를 제출해 도시계획 재심사를 받는다.",
-        "action": "신청인과 전문가가 누락·불일치를 보완하고 수정자료를 제출해 도시계획 재심사를 받는다.",
-        "outputs": [
-          "보완자료·재접수 기록"
-        ],
-        "authorityIds": [
-          "dom-codia-professionals",
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "applicant follow-up and complete supporting documents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S5 용도인증 결정",
-        "label": "토지이용 인증서(Certificación de Uso de Suelo) 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "ADN이 해당 필지의 허용용도와 조건을 인증서로 발급하거나 부적합·불가 결정을 통지한다.",
-        "action": "ADN이 해당 필지의 허용용도와 조건을 인증서로 발급하거나 부적합·불가 결정을 통지한다.",
-        "outputs": [
-          "토지이용 인증서·조건 또는 부적합 통지"
-        ],
-        "authorityIds": [
-          "dom-municipality"
-        ],
-        "requirementIds": [
-          "DOM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
-            "provisions": [
-              "official certification of permitted land use"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B09",
         "lane": "현지 설계·시공 전문가",
         "stage": "P1 분류·도서",
         "label": "R-021 허가유형·전문도서 확정",
@@ -327,7 +77,7 @@
         ]
       },
       {
-        "id": "B10",
+        "id": "B02",
         "lane": "건축주·신청인",
         "stage": "P2 공식접수",
         "label": "MIVHED 도면접수 신청",
@@ -357,7 +107,7 @@
         ]
       },
       {
-        "id": "B11",
+        "id": "B03",
         "lane": "도시계획·건축 허가기관",
         "stage": "P3 완비·기술심사",
         "label": "MIVHED 기술규정·관계기관 심사",
@@ -387,7 +137,7 @@
         ]
       },
       {
-        "id": "B12",
+        "id": "B04",
         "lane": "도시계획·건축 허가기관",
         "stage": "P4 보완·전문평가",
         "label": "건축도서 관찰·보완통지",
@@ -417,17 +167,17 @@
         ]
       },
       {
-        "id": "B13",
+        "id": "B05",
         "lane": "현지 설계·시공 전문가",
         "stage": "P4 보완·전문평가",
-        "label": "건축도서 수정·재심사",
+        "label": "건축도서 수정·재제출",
         "emphasis": "normal",
         "kind": "statutory",
         "basisScope": "node",
         "note": "책임전문가가 관찰사항을 반영해 도면·계산·동의자료를 수정하고 MIVHED에 재제출한다.",
         "action": "책임전문가가 관찰사항을 반영해 도면·계산·동의자료를 수정하고 MIVHED에 재제출한다.",
         "outputs": [
-          "보완도서·재심사 기록"
+          "보완도서·재제출 기록"
         ],
         "authorityIds": [
           "dom-codia-professionals",
@@ -448,7 +198,37 @@
         ]
       },
       {
-        "id": "B14",
+        "id": "B06",
+        "lane": "도시계획·건축 허가기관",
+        "stage": "P4 보완·전문평가",
+        "label": "MIVHED 보완도서 재심사",
+        "emphasis": "key",
+        "kind": "statutory",
+        "basisScope": "node",
+        "note": "MIVHED가 재제출된 보완도서를 관찰사항과 적용 기술규정에 다시 대조해 적합 여부를 심사한다.",
+        "action": "MIVHED가 재제출된 보완도서를 관찰사항과 적용 기술규정에 다시 대조해 적합 여부를 심사한다.",
+        "outputs": [
+          "보완도서 재심사 결과"
+        ],
+        "authorityIds": [
+          "dom-mivhed"
+        ],
+        "requirementIds": [
+          "DOM-BLD-REQ-005"
+        ],
+        "questionIds": [],
+        "refs": [
+          {
+            "source": "MIVHED R-021",
+            "instrumentId": "DOM-R021-576-06",
+            "provisions": [
+              "plan processing and technical compliance required before approval and sealing"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B07",
         "lane": "건축주·신청인",
         "stage": "P5 공식결정",
         "label": "승인 수수료·stamp 제출",
@@ -478,7 +258,7 @@
         ]
       },
       {
-        "id": "B15",
+        "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "P5 공식결정",
         "label": "건축허가 결정",
@@ -507,11 +287,11 @@
           }
         ],
         "gateOrders": [
-          2
+          1
         ]
       },
       {
-        "id": "B16",
+        "id": "B09",
         "lane": "건축주·신청인",
         "stage": "P1 분류·도서",
         "label": "환경 디지털 등록·기초자료 제출",
@@ -542,7 +322,7 @@
         ]
       },
       {
-        "id": "B17",
+        "id": "B10",
         "lane": "환경·소방·검사기관",
         "stage": "P2 공식접수",
         "label": "사전분석·A/B/C/D 분류",
@@ -572,7 +352,7 @@
         ]
       },
       {
-        "id": "B18",
+        "id": "B11",
         "lane": "환경·소방·검사기관",
         "stage": "P3 완비·기술심사",
         "label": "범주별 TdR·심사범위 발행",
@@ -602,7 +382,7 @@
         ]
       },
       {
-        "id": "B19",
+        "id": "B12",
         "lane": "현지 설계·시공 전문가",
         "stage": "P3 완비·기술심사",
         "label": "환경연구·관리조치 작성",
@@ -633,7 +413,7 @@
         ]
       },
       {
-        "id": "B20",
+        "id": "B13",
         "lane": "환경·소방·검사기관",
         "stage": "P4 보완·전문평가",
         "label": "환경 기술평가·CTE 심의",
@@ -663,7 +443,7 @@
         ]
       },
       {
-        "id": "B21",
+        "id": "B14",
         "lane": "환경·소방·검사기관",
         "stage": "P4 보완·전문평가",
         "label": "환경 추가정보·보완통지",
@@ -693,7 +473,7 @@
         ]
       },
       {
-        "id": "B22",
+        "id": "B15",
         "lane": "현지 설계·시공 전문가",
         "stage": "P4 보완·전문평가",
         "label": "환경연구 보완·재심사",
@@ -724,7 +504,7 @@
         ]
       },
       {
-        "id": "B23",
+        "id": "B16",
         "lane": "환경·소방·검사기관",
         "stage": "P5 공식결정",
         "label": "환경 A-D 공식결정",
@@ -753,11 +533,11 @@
           }
         ],
         "gateOrders": [
-          3
+          2
         ]
       },
       {
-        "id": "B24",
+        "id": "B17",
         "lane": "건축주·신청인",
         "stage": "C1 책임자·착공",
         "label": "CODIA 등록 책임자·감리자 지정",
@@ -788,7 +568,7 @@
         ]
       },
       {
-        "id": "B25",
+        "id": "B18",
         "lane": "현지 설계·시공 전문가",
         "stage": "C1 책임자·착공",
         "label": "착공·검사계획·현장기록 개시",
@@ -819,7 +599,7 @@
         ]
       },
       {
-        "id": "B26",
+        "id": "B19",
         "lane": "현지 설계·시공 전문가",
         "stage": "C2 단계검사",
         "label": "공정별 공식검사 요청",
@@ -850,7 +630,7 @@
         ]
       },
       {
-        "id": "B27",
+        "id": "B20",
         "lane": "도시계획·건축 허가기관",
         "stage": "C2 단계검사",
         "label": "MIVHED 단계검사 실시",
@@ -880,7 +660,7 @@
         ]
       },
       {
-        "id": "B28",
+        "id": "B21",
         "lane": "현지 설계·시공 전문가",
         "stage": "C3 시험·보완",
         "label": "재료시험·전문검사 결과 제출",
@@ -911,7 +691,7 @@
         ]
       },
       {
-        "id": "B29",
+        "id": "B22",
         "lane": "도시계획·건축 허가기관",
         "stage": "C3 시험·보완",
         "label": "단계검사 결함·시정명령",
@@ -941,7 +721,7 @@
         ]
       },
       {
-        "id": "B30",
+        "id": "B23",
         "lane": "현지 설계·시공 전문가",
         "stage": "C3 시험·보완",
         "label": "현장 시정·단계 재검사",
@@ -972,7 +752,7 @@
         ]
       },
       {
-        "id": "B31",
+        "id": "B24",
         "lane": "건축주·신청인",
         "stage": "C4 완료신청",
         "label": "FI-05 최종검사 신청",
@@ -1002,7 +782,7 @@
         ]
       },
       {
-        "id": "B32",
+        "id": "B25",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 최종검사·인증",
         "label": "MIVHED 공식 최종검사",
@@ -1032,7 +812,7 @@
         ]
       },
       {
-        "id": "B33",
+        "id": "B26",
         "lane": "환경·소방·검사기관",
         "stage": "C5 최종검사·인증",
         "label": "최종결함 보완·재검사 요구",
@@ -1062,7 +842,7 @@
         ]
       },
       {
-        "id": "B34",
+        "id": "B27",
         "lane": "현지 설계·시공 전문가",
         "stage": "C5 최종검사·인증",
         "label": "최종결함 시정·재신청",
@@ -1093,7 +873,7 @@
         ]
       },
       {
-        "id": "B35",
+        "id": "B28",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 최종검사·인증",
         "label": "공식 최종검사 인증 결정",
@@ -1122,402 +902,238 @@
           }
         ],
         "gateOrders": [
-          4
+          3
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
-        "source": "B01",
-        "target": "B02",
-        "type": "sequence",
-        "label": "필지확정"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "특별구역 확인"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "신청도서"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "공식접수"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B08",
-        "type": "sequence",
-        "label": "용도 적합"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B05",
-        "target": "B06",
-        "type": "message",
-        "label": "누락·불일치"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B06",
-        "target": "B07",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B07",
-        "target": "B05",
-        "type": "loop",
-        "label": "보완 후 도시계획 재심사"
-      },
-      {
-        "id": "BX05",
-        "source": "B08",
-        "target": "B09",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
         "id": "BS05-01",
-        "source": "B09",
-        "target": "B16",
+        "source": "B01",
+        "target": "B09",
         "type": "message",
         "label": "병렬 환경등록"
       },
       {
         "id": "BS05-02",
-        "source": "B09",
-        "target": "B10",
+        "source": "B01",
+        "target": "B02",
         "type": "sequence",
         "label": "R-021 도서"
       },
       {
         "id": "BS05-03",
-        "source": "B10",
-        "target": "B11",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "MIVHED 접수"
       },
       {
         "id": "BS05-04",
-        "source": "B11",
-        "target": "B14",
+        "source": "B03",
+        "target": "B07",
         "type": "sequence",
-        "label": "도면 적합"
+        "label": "초회 심사 적합"
       },
       {
         "id": "BS05-05",
-        "source": "B11",
-        "target": "B12",
+        "source": "B03",
+        "target": "B04",
         "type": "message",
         "label": "관찰사항"
       },
       {
         "id": "BS05-06",
-        "source": "B12",
-        "target": "B13",
+        "source": "B04",
+        "target": "B05",
         "type": "sequence",
         "label": "보완요구"
       },
       {
         "id": "BS05-07",
-        "source": "B13",
-        "target": "B11",
-        "type": "loop",
-        "label": "보완 후 건축 재심사"
+        "source": "B05",
+        "target": "B06",
+        "type": "sequence",
+        "label": "보완도서 재제출"
       },
       {
         "id": "BS05-08",
-        "source": "B14",
-        "target": "B15",
+        "source": "B06",
+        "target": "B07",
+        "type": "sequence",
+        "label": "재심사 적합"
+      },
+      {
+        "id": "BS05-09",
+        "source": "B06",
+        "target": "B04",
+        "type": "loop",
+        "label": "추가 관찰사항"
+      },
+      {
+        "id": "BS05-10",
+        "source": "B07",
+        "target": "B08",
         "type": "sequence",
         "label": "발급요건"
       },
       {
-        "id": "BS05-09",
-        "source": "B16",
-        "target": "B17",
+        "id": "BS05-11",
+        "source": "B09",
+        "target": "B10",
         "type": "sequence",
         "label": "환경등록"
       },
       {
-        "id": "BS05-10",
-        "source": "B17",
-        "target": "B18",
+        "id": "BS05-12",
+        "source": "B10",
+        "target": "B11",
         "type": "sequence",
         "label": "A-D 분류"
       },
       {
-        "id": "BS05-11",
-        "source": "B18",
-        "target": "B19",
+        "id": "BS05-13",
+        "source": "B11",
+        "target": "B12",
         "type": "sequence",
         "label": "TdR·요구자료"
       },
       {
-        "id": "BS05-12",
-        "source": "B19",
-        "target": "B20",
+        "id": "BS05-14",
+        "source": "B12",
+        "target": "B13",
         "type": "sequence",
         "label": "환경연구"
       },
       {
-        "id": "BS05-13",
-        "source": "B20",
-        "target": "B23",
+        "id": "BS05-15",
+        "source": "B13",
+        "target": "B16",
         "type": "sequence",
         "label": "기술 적합"
       },
       {
-        "id": "BS05-14",
-        "source": "B20",
-        "target": "B21",
+        "id": "BS05-16",
+        "source": "B13",
+        "target": "B14",
         "type": "message",
         "label": "추가정보"
       },
       {
-        "id": "BS05-15",
-        "source": "B21",
-        "target": "B22",
+        "id": "BS05-17",
+        "source": "B14",
+        "target": "B15",
         "type": "sequence",
         "label": "보완요구"
       },
       {
-        "id": "BS05-16",
-        "source": "B22",
-        "target": "B20",
+        "id": "BS05-18",
+        "source": "B15",
+        "target": "B13",
         "type": "loop",
         "label": "보완 후 환경 재심사"
       },
       {
         "id": "BX06",
-        "source": "B23",
-        "target": "B24",
+        "source": "B16",
+        "target": "B17",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
         "id": "BS06-01",
-        "source": "B24",
-        "target": "B25",
+        "source": "B17",
+        "target": "B18",
         "type": "sequence",
         "label": "책임자 지정"
       },
       {
         "id": "BS06-02",
-        "source": "B25",
-        "target": "B26",
+        "source": "B18",
+        "target": "B19",
         "type": "sequence",
         "label": "공정 hold point"
       },
       {
         "id": "BS06-03",
-        "source": "B26",
-        "target": "B27",
+        "source": "B19",
+        "target": "B20",
         "type": "sequence",
         "label": "검사요청"
       },
       {
         "id": "BS06-04",
-        "source": "B27",
-        "target": "B28",
+        "source": "B20",
+        "target": "B21",
         "type": "sequence",
         "label": "단계 적합"
       },
       {
         "id": "BS06-05",
-        "source": "B28",
-        "target": "B31",
+        "source": "B21",
+        "target": "B24",
         "type": "sequence",
         "label": "공사 완료"
       },
       {
         "id": "BS06-06",
-        "source": "B27",
-        "target": "B29",
+        "source": "B20",
+        "target": "B22",
         "type": "message",
         "label": "현장 부적합"
       },
       {
         "id": "BS06-07",
-        "source": "B29",
-        "target": "B30",
+        "source": "B22",
+        "target": "B23",
         "type": "sequence",
         "label": "시정명령"
       },
       {
         "id": "BS06-08",
-        "source": "B30",
-        "target": "B27",
+        "source": "B23",
+        "target": "B20",
         "type": "loop",
         "label": "시정 후 단계 재검사"
       },
       {
         "id": "BS06-09",
-        "source": "B31",
-        "target": "B32",
+        "source": "B24",
+        "target": "B25",
         "type": "sequence",
         "label": "FI-05 접수"
       },
       {
         "id": "BS06-10",
-        "source": "B32",
-        "target": "B35",
+        "source": "B25",
+        "target": "B28",
         "type": "sequence",
         "label": "최종 적합"
       },
       {
         "id": "BS06-11",
-        "source": "B32",
-        "target": "B33",
+        "source": "B25",
+        "target": "B26",
         "type": "message",
         "label": "최종결함"
       },
       {
         "id": "BS06-12",
-        "source": "B33",
-        "target": "B34",
+        "source": "B26",
+        "target": "B27",
         "type": "sequence",
         "label": "재검사 요구"
       },
       {
         "id": "BS06-13",
-        "source": "B34",
-        "target": "B32",
+        "source": "B27",
+        "target": "B25",
         "type": "loop",
         "label": "시정 후 최종 재검사"
       }
     ]
   },
   "publicModels": [
-    {
-      "id": "site-urban",
-      "slug": "dominican-republic-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "도미니카공화국 필지·토지이용 결정 — 국가구(Distrito Nacional) 사례",
-      "oneLiner": "권원·mensura catastral과 관할 ayuntamiento의 용도인증·no-objection으로 필지별 개발조건을 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "전국 지방분권 체계 중 Distrito Nacional의 실제 Certificación de Uso de Suelo 절차를 공식 사례로 구성했다. 용도·밀도·높이·주차·수수료는 다른 ayuntamiento에 일반화하지 않는다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "국가구에서 권원증서(título)·지적측량(mensura)으로 필지를 특정하고 국가구 시청(ADN)의 도시계획 심사를 거쳐 허용용도를 공식 인증받는 절차다. 다른 지방은 관할 시청(ayuntamiento)의 현행 조례·서비스를 적용한다.",
-      "nodeIds": [
-        "B01",
-        "B02",
-        "B03",
-        "B04",
-        "B05",
-        "B06",
-        "B07",
-        "B08"
-      ],
-      "requirementIds": [
-        "DOM-BLD-REQ-004"
-      ],
-      "questionIds": [
-        "DOM-BLD-Q-001",
-        "DOM-BLD-Q-002",
-        "DOM-BLD-Q-003"
-      ],
-      "conclusionIds": [
-        "DOM-BLD-C-001"
-      ],
-      "siteOverlayIds": [
-        "DOM-LOCAL-OVERLAY-001"
-      ],
-      "fieldworkChecklistIds": [
-        "DOM-BLD-F-001",
-        "DOM-BLD-F-002",
-        "DOM-BLD-F-003"
-      ],
-      "edges": [
-        {
-          "id": "M04-E01",
-          "source": "B01",
-          "target": "B02",
-          "type": "sequence",
-          "label": "필지확정"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "특별구역 확인"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "신청도서"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "공식접수"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B08",
-          "type": "sequence",
-          "label": "용도 적합"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B05",
-          "target": "B06",
-          "type": "message",
-          "label": "누락·불일치"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B06",
-          "target": "B07",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B07",
-          "target": "B05",
-          "type": "loop",
-          "label": "보완 후 도시계획 재심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "허용용도 인증",
-          "action": "인증조건을 MIVHED 건축허가도서와 환경승인 신청에 반영한다."
-        },
-        {
-          "state": "rework",
-          "label": "보완·조건부",
-          "action": "요구자료 또는 사업계획을 보완해 도시계획 심사로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "용도 부적합",
-          "action": "해당 용도·규모로 진행하지 않고 적법한 변경 또는 대체부지를 검토한다."
-        }
-      ]
-    },
     {
       "id": "permit-environment",
       "slug": "dominican-republic-permit-environment-construction-regulations",
@@ -1527,8 +1143,23 @@
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "MIVHED R-021의 도면접수·승인·licence 절차와 환경부의 2024 A-D 분류·현행 디지털 평가절차를 구성했다. 지방 사전승인과 특정 분야 관계기관 의견은 사업지·용도별로 적용한다.",
       "procedureStatus": "article-linked",
+      "publicationScope": "national",
+      "laneOrder": [
+        "도시계획·건축 허가기관",
+        "현지 설계·시공 전문가",
+        "건축주·신청인",
+        "환경·소방·검사기관"
+      ],
       "procedureScope": "주택건축부에 전문도서를 제출해 승인도면·건축허가(Licencia de Construcción)를 받는 경로와 환경부의 등록·사전분석·A-D 분류·연구·기술평가위원회(CTE) 결정 경로를 병렬로 표시한다.",
       "nodeIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
         "B09",
         "B10",
         "B11",
@@ -1536,142 +1167,149 @@
         "B13",
         "B14",
         "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21",
-        "B22",
-        "B23"
+        "B16"
       ],
       "requirementIds": [
         "DOM-BLD-REQ-005"
       ],
       "questionIds": [
-        "DOM-BLD-Q-004",
-        "DOM-BLD-Q-005",
-        "DOM-BLD-Q-006"
+        "DOM-BLD-Q-001",
+        "DOM-BLD-Q-002",
+        "DOM-BLD-Q-003"
       ],
       "conclusionIds": [
-        "DOM-BLD-C-002"
+        "DOM-BLD-C-001"
       ],
       "siteOverlayIds": [],
       "fieldworkChecklistIds": [
-        "DOM-BLD-F-004",
-        "DOM-BLD-F-005",
-        "DOM-BLD-F-006"
+        "DOM-BLD-F-001",
+        "DOM-BLD-F-002",
+        "DOM-BLD-F-003"
       ],
       "edges": [
         {
           "id": "M05-E01",
-          "source": "B09",
-          "target": "B16",
+          "source": "B01",
+          "target": "B09",
           "type": "message",
           "label": "병렬 환경등록"
         },
         {
           "id": "M05-E02",
-          "source": "B09",
-          "target": "B10",
+          "source": "B01",
+          "target": "B02",
           "type": "sequence",
           "label": "R-021 도서"
         },
         {
           "id": "M05-E03",
-          "source": "B10",
-          "target": "B11",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "MIVHED 접수"
         },
         {
           "id": "M05-E04",
-          "source": "B11",
-          "target": "B14",
+          "source": "B03",
+          "target": "B07",
           "type": "sequence",
-          "label": "도면 적합"
+          "label": "초회 심사 적합"
         },
         {
           "id": "M05-E05",
-          "source": "B11",
-          "target": "B12",
+          "source": "B03",
+          "target": "B04",
           "type": "message",
           "label": "관찰사항"
         },
         {
           "id": "M05-E06",
-          "source": "B12",
-          "target": "B13",
+          "source": "B04",
+          "target": "B05",
           "type": "sequence",
           "label": "보완요구"
         },
         {
           "id": "M05-E07",
-          "source": "B13",
-          "target": "B11",
-          "type": "loop",
-          "label": "보완 후 건축 재심사"
+          "source": "B05",
+          "target": "B06",
+          "type": "sequence",
+          "label": "보완도서 재제출"
         },
         {
           "id": "M05-E08",
-          "source": "B14",
-          "target": "B15",
+          "source": "B06",
+          "target": "B07",
+          "type": "sequence",
+          "label": "재심사 적합"
+        },
+        {
+          "id": "M05-E09",
+          "source": "B06",
+          "target": "B04",
+          "type": "loop",
+          "label": "추가 관찰사항"
+        },
+        {
+          "id": "M05-E10",
+          "source": "B07",
+          "target": "B08",
           "type": "sequence",
           "label": "발급요건"
         },
         {
-          "id": "M05-E09",
-          "source": "B16",
-          "target": "B17",
+          "id": "M05-E11",
+          "source": "B09",
+          "target": "B10",
           "type": "sequence",
           "label": "환경등록"
         },
         {
-          "id": "M05-E10",
-          "source": "B17",
-          "target": "B18",
+          "id": "M05-E12",
+          "source": "B10",
+          "target": "B11",
           "type": "sequence",
           "label": "A-D 분류"
         },
         {
-          "id": "M05-E11",
-          "source": "B18",
-          "target": "B19",
+          "id": "M05-E13",
+          "source": "B11",
+          "target": "B12",
           "type": "sequence",
           "label": "TdR·요구자료"
         },
         {
-          "id": "M05-E12",
-          "source": "B19",
-          "target": "B20",
+          "id": "M05-E14",
+          "source": "B12",
+          "target": "B13",
           "type": "sequence",
           "label": "환경연구"
         },
         {
-          "id": "M05-E13",
-          "source": "B20",
-          "target": "B23",
+          "id": "M05-E15",
+          "source": "B13",
+          "target": "B16",
           "type": "sequence",
           "label": "기술 적합"
         },
         {
-          "id": "M05-E14",
-          "source": "B20",
-          "target": "B21",
+          "id": "M05-E16",
+          "source": "B13",
+          "target": "B14",
           "type": "message",
           "label": "추가정보"
         },
         {
-          "id": "M05-E15",
-          "source": "B21",
-          "target": "B22",
+          "id": "M05-E17",
+          "source": "B14",
+          "target": "B15",
           "type": "sequence",
           "label": "보완요구"
         },
         {
-          "id": "M05-E16",
-          "source": "B22",
-          "target": "B20",
+          "id": "M05-E18",
+          "source": "B15",
+          "target": "B13",
           "type": "loop",
           "label": "보완 후 환경 재심사"
         }
@@ -1703,127 +1341,128 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "MIVHED R-004 조문의 공사책임·단계검사·최종검사 경로를 구성했다. 실제 검사 hold point와 habilitación 전문기관은 공사유형·규모별 R-004 적용판정과 MIVHED 배정에 따른다.",
       "procedureStatus": "article-verified",
+      "publicationScope": "national",
       "procedureScope": "도미니카 기술자·건축사·측량사협회(CODIA) 등록 공사책임자·감리자를 지정하고 주택건축부(MIVHED)의 공정별 공식검사와 최종검사를 거쳐 공식 최종검사 인증(Certificación Oficial de Inspección Final)을 받는 법정 절차다.",
       "nodeIds": [
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
         "B24",
         "B25",
         "B26",
         "B27",
-        "B28",
-        "B29",
-        "B30",
-        "B31",
-        "B32",
-        "B33",
-        "B34",
-        "B35"
+        "B28"
       ],
       "requirementIds": [
         "DOM-BLD-REQ-006"
       ],
       "questionIds": [
-        "DOM-BLD-Q-007",
-        "DOM-BLD-Q-008",
-        "DOM-BLD-Q-009"
+        "DOM-BLD-Q-004",
+        "DOM-BLD-Q-005",
+        "DOM-BLD-Q-006"
       ],
       "conclusionIds": [
-        "DOM-BLD-C-003"
+        "DOM-BLD-C-002"
       ],
       "siteOverlayIds": [],
       "fieldworkChecklistIds": [
-        "DOM-BLD-F-007",
-        "DOM-BLD-F-008",
-        "DOM-BLD-F-009"
+        "DOM-BLD-F-004",
+        "DOM-BLD-F-005",
+        "DOM-BLD-F-006"
       ],
       "edges": [
         {
           "id": "M06-E01",
-          "source": "B24",
-          "target": "B25",
+          "source": "B17",
+          "target": "B18",
           "type": "sequence",
           "label": "책임자 지정"
         },
         {
           "id": "M06-E02",
-          "source": "B25",
-          "target": "B26",
+          "source": "B18",
+          "target": "B19",
           "type": "sequence",
           "label": "공정 hold point"
         },
         {
           "id": "M06-E03",
-          "source": "B26",
-          "target": "B27",
+          "source": "B19",
+          "target": "B20",
           "type": "sequence",
           "label": "검사요청"
         },
         {
           "id": "M06-E04",
-          "source": "B27",
-          "target": "B28",
+          "source": "B20",
+          "target": "B21",
           "type": "sequence",
           "label": "단계 적합"
         },
         {
           "id": "M06-E05",
-          "source": "B28",
-          "target": "B31",
+          "source": "B21",
+          "target": "B24",
           "type": "sequence",
           "label": "공사 완료"
         },
         {
           "id": "M06-E06",
-          "source": "B27",
-          "target": "B29",
+          "source": "B20",
+          "target": "B22",
           "type": "message",
           "label": "현장 부적합"
         },
         {
           "id": "M06-E07",
-          "source": "B29",
-          "target": "B30",
+          "source": "B22",
+          "target": "B23",
           "type": "sequence",
           "label": "시정명령"
         },
         {
           "id": "M06-E08",
-          "source": "B30",
-          "target": "B27",
+          "source": "B23",
+          "target": "B20",
           "type": "loop",
           "label": "시정 후 단계 재검사"
         },
         {
           "id": "M06-E09",
-          "source": "B31",
-          "target": "B32",
+          "source": "B24",
+          "target": "B25",
           "type": "sequence",
           "label": "FI-05 접수"
         },
         {
           "id": "M06-E10",
-          "source": "B32",
-          "target": "B35",
+          "source": "B25",
+          "target": "B28",
           "type": "sequence",
           "label": "최종 적합"
         },
         {
           "id": "M06-E11",
-          "source": "B32",
-          "target": "B33",
+          "source": "B25",
+          "target": "B26",
           "type": "message",
           "label": "최종결함"
         },
         {
           "id": "M06-E12",
-          "source": "B33",
-          "target": "B34",
+          "source": "B26",
+          "target": "B27",
           "type": "sequence",
           "label": "재검사 요구"
         },
         {
           "id": "M06-E13",
-          "source": "B34",
-          "target": "B32",
+          "source": "B27",
+          "target": "B25",
           "type": "loop",
           "label": "시정 후 최종 재검사"
         }
@@ -1853,8 +1492,7 @@
       "name": "Competent ayuntamiento or municipal district",
       "nameKo": "관할 시청(ayuntamiento)·지방구",
       "role": "토지이용 인증·no-objection, 도시계획·필지 개발조건과 지방검사를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://adn.gob.do/solicitud-de-certificacion-de-uso-de-suelo-2/"
+      "verificationLevel": "source-linked"
     },
     {
       "id": "dom-mivhed",
@@ -1882,29 +1520,6 @@
     }
   ],
   "instruments": [
-    {
-      "id": "DOM-LOCAL-LANDUSE",
-      "title": "Applicable municipal land-use plan and ordinances; Distrito Nacional land-use certification as an official example",
-      "titleKo": "관할 시 도시계획·토지이용 조례(국가구역청 ADN 용도인증 공식 예시)",
-      "kind": "local-regulation",
-      "status": "in_force",
-      "officialUrl": "https://adn.gob.do/planeamiento-urbano/",
-      "verificationLevel": "source-linked",
-      "note": "ADN의 수치·수수료는 전국 공통이 아니다. 사업지 ayuntamiento의 현행 계획·조례를 적용한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Distrito Nacional 시청이 Certificación de Uso de Suelo의 현행 공식 서비스·요건·접수경로를 게시"
-    },
-    {
-      "id": "DOM-LAW-160-21-687-82",
-      "title": "Law No. 160-21 creating MIVHED and Law No. 687-82 on technical regulations for engineering and architecture",
-      "titleKo": "MIVHED 설치법 제160-21호·건축기술규정체계법 제687-82호",
-      "kind": "act",
-      "status": "continuity_unverified",
-      "officialUrl": "https://mived.gob.do/wp-content/uploads/2024/09/DNR-Requisitos-para-evaluacion-estructural-de-edificios-existentes-o-iniciados.pdf",
-      "officialPdfUrl": "https://mived.gob.do/wp-content/uploads/2024/09/DNR-Requisitos-para-evaluacion-estructural-de-edificios-existentes-o-iniciados.pdf",
-      "verificationLevel": "law-linked",
-      "statusBasis": "MIVHED의 2024년 공식 구조평가 요구사항이 Law 160-21과 Law 687-82를 건축허가 기술심사의 근거로 함께 인용한다. 다만 2025년 CDCRD가 종전의 개별 기술규정을 통합·대체한다고 밝히고 있어, 두 법률을 묶은 이 자료의 잔존 절차범위와 CDCRD 전환조항을 보여 주는 공식 통합 폐지·승계표는 확인하지 못했다."
-    },
     {
       "id": "DOM-R021-576-06",
       "title": "R-021 Requirements for Application of the General Building Regulation and Plan Processing — Decree No. 576-06",
@@ -1952,17 +1567,6 @@
       "statusBasis": "환경부의 현행 디지털 서비스가 Law 64-00, Resolution 0025-2024·0038-2024의 A-D 절차를 현재 적용"
     },
     {
-      "id": "DOM-ADN-LANDUSE-SERVICE",
-      "title": "Distrito Nacional official Land-Use Certification service",
-      "titleKo": "국가구역청(ADN) 토지이용 인증 공식서비스",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "ADN 공식 서비스 페이지가 신청대상·권원·mensura·특별구역 no-objection 요구를 현재 게시",
-      "officialUrl": "https://adn.gob.do/solicitud-de-certificacion-de-uso-de-suelo-2/",
-      "verificationLevel": "source-linked"
-    },
-    {
       "id": "DOM-ENV-AUTHORIZATION-SERVICE",
       "title": "Environmental Authorization for projects, works and activities — Categories A, B, C and D",
       "titleKo": "환경부 사업·공사·활동 A·B·C·D 환경승인 공식서비스",
@@ -1987,32 +1591,6 @@
   ],
   "requirements": [
     {
-      "id": "DOM-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "도미니카공화국에서 신축·증축·용도변경 또는 urbanizacion을 추진하는 사업",
-      "requirement": "사업지 ayuntamiento의 토지이용계획·조례가 용도, 밀도, 높이, 이격, 주차와 도시설계 조건을 정한다. ADN 서비스는 공식 예시일 뿐이므로 실제 관할에서 titulo, mensura catastral, certificado de uso de suelo와 no objecion을 받고 지반·침수·배수·상하수·전력 용량을 조사한다.",
-      "authorityIds": [
-        "dom-municipality"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "DOM-LOCAL-LANDUSE",
-          "provisions": [
-            "municipal land-use certification, no-objection and local parcel parameters"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "titulo de propiedad·mensura catastral·경계·권원자",
-        "certificado de uso de suelo·no objecion·보호구역 의견",
-        "필지별 점유율·용적·높이·이격·주차",
-        "지반·지진·허리케인·침수·배수·상하수·전력 용량"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
-    {
       "id": "DOM-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
@@ -2020,21 +1598,106 @@
       "applicability": "MIVHED 건축 licence와 환경부 환경승인 대상 건축·개발사업",
       "requirement": "MIVHED는 R-021과 기술규정에 따라 전문도면·구조·설비를 심사해 licencia de construccion을 발급한다. 환경부는 Law 64-00과 2024 결의에 따라 A·B·C·D를 분류하고 licence, permit, constancia 또는 CRIM 경로를 정하며 신청자료로 관할 시청의 토지이용 no-objection을 요구한다.",
       "authorityIds": [
-        "dom-municipality",
+        "dom-codia-professionals",
         "dom-mivhed",
-        "dom-environment"
+        "dom-environment",
+        "dom-municipality"
       ],
       "legalBasis": [
         {
           "instrumentId": "DOM-R021-576-06",
           "provisions": [
-            "building classification, plan processing and construction licence"
+            "sections 2.3.1.1-2.3.1.2; project classification, plans and professional signatures"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "section 2.3.1.2.2; filing with Central or Regional Plan Processing Office"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "plan review and approval under applicable technical regulations"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "plan processing and compliance with technical requirements before approval"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "technical compliance required for approved and sealed plans"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "plan processing and technical compliance required before approval and sealing"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "section 2.3.2.1; delivery of stamps and payment receipts before licence issuance"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R021-576-06",
+          "provisions": [
+            "sections 2.3.2.1-2.3.2.3; signed licence and approved sealed plans"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-AUTHORIZATION-SERVICE",
+          "provisions": [
+            "project registration, property title, cadastral survey, municipal land-use no-objection and filing fee"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-TDR-2026",
+          "provisions": [
+            "preliminary analysis and classification under Resolution 0025-2024"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-TDR-2026",
+          "provisions": [
+            "A EsIA, B DIA, C environmental constancia and D CRIM requirements"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-TDR-2026",
+          "provisions": [
+            "minimum content and structure of studies by category"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-AUTHORIZATION-SERVICE",
+          "provisions": [
+            "A/B study presented to Technical Evaluation Committee; approve, postpone or dismiss"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-TDR-2026",
+          "provisions": [
+            "request for additional information during preliminary and technical analysis"
+          ]
+        },
+        {
+          "instrumentId": "DOM-ENV-TDR-2026",
+          "provisions": [
+            "supplementation of deficient or incomplete environmental information"
           ]
         },
         {
           "instrumentId": "DOM-ENV-LAW-64-00-RES-2024",
           "provisions": [
-            "Art. 38 and current A-D environmental authorization procedure"
+            "Resolution 0025-2024; A licence, B permit, C constancia and D CRIM"
           ]
         }
       ],
@@ -2054,26 +1717,80 @@
       "applicability": "전문감리·단계검사·최종검사 인증 대상 공공·민간 건축공사",
       "requirement": "R-004는 건축물 용도·규모에 따라 민간 전문감리 분야와 MIVHED 공식 단계검사를 요구한다. CODIA 등록 설계·공사·감리 책임자와 habilitación 지반·구조·시험기관을 지정하고, 모든 단계검사·시험·as-built를 완료한 뒤 certificación oficial de inspección final 없이는 사용하지 않는다.",
       "authorityIds": [
-        "dom-mivhed",
-        "dom-codia-professionals"
+        "dom-codia-professionals",
+        "dom-mivhed"
       ],
       "legalBasis": [
         {
           "instrumentId": "DOM-R004-232-17",
           "provisions": [
-            "Arts. 80-107 and 122; official staged and final inspection"
+            "articles 80-87; supervision responsibilities and qualified agents"
           ]
         },
         {
-          "instrumentId": "DOM-LAW-160-21-687-82",
+          "instrumentId": "DOM-R004-232-17",
           "provisions": [
-            "MIVHED competence and technical-regulation system"
+            "inspection planning, approved plans and construction records"
           ]
         },
         {
-          "instrumentId": "DOM-R021-576-06",
+          "instrumentId": "DOM-R004-232-17",
           "provisions": [
-            "agents of building, professional responsibility and approved plans"
+            "articles 88-107; official inspections by construction stage"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "articles 88-107; staged official inspection and findings"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "specialist supervision, quality control and test records"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "official inspection findings and correction before continuation"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "correction and reinspection of nonconforming work"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "article 122; application and official final inspection"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "article 122; official final inspection and conformity review"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "final inspection conformity and correction of deficiencies"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "correction and repeat official inspection"
+          ]
+        },
+        {
+          "instrumentId": "DOM-R004-232-17",
+          "provisions": [
+            "article 122; official final-inspection certification"
           ]
         }
       ],
@@ -2089,108 +1806,30 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "국가구 시청 토지이용 공식결정",
-      "decision": "국가구 시청이 필지에 허용되는 용도와 적용조건을 공식 인증하거나 부적합 처리한다.",
-      "dependsOn": [],
-      "output": "토지이용 인증서 또는 부적합 통지"
-    },
-    {
-      "order": 2,
       "gate": "주택건축부 건축허가 공식결정",
       "decision": "주택건축부가 기술규정 적합성과 발급요건을 확인해 건축허가를 발급하거나 불승인한다.",
       "dependsOn": [],
       "output": "건축허가·승인도면 또는 불승인"
     },
     {
-      "order": 3,
+      "order": 2,
       "gate": "환경부 A-D 환경승인 공식결정",
       "decision": "권한자가 범주별 평가결과에 따라 환경승인을 발급·유보 또는 기각한다.",
       "dependsOn": [],
       "output": "Licencia·Permiso·Constancia·CRIM 또는 기각결정"
     },
     {
-      "order": 4,
+      "order": 3,
       "gate": "주택건축부 공식 최종검사 인증결정",
       "decision": "주택건축부가 완성공사의 승인도면·기술규정 적합성을 최종 확인해 인증을 발급하거나 미적합 처리한다.",
       "dependsOn": [],
       "output": "공식 최종검사 인증 또는 미적합 통지"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "DOM-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "DOM-LOCAL-LANDUSE",
-          "provisions": [
-            "municipal land-use certification, no-objection and local parcel parameters"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "DOM-BLD-Q-001",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "사업지 ayuntamiento와 대상 필지의 허용용도·밀도·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "titulo de propiedad·mensura catastral·경계·권원자",
-        "certificado de uso de suelo·no objecion·보호구역 의견",
-        "필지별 점유율·용적·높이·이격·주차",
-        "지반·지진·허리케인·침수·배수·상하수·전력 용량"
-      ],
-      "confirmWith": [
-        "dom-municipality"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "DOM-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "dom-municipality"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "DOM-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "시청 용도인증·no-objection의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "titulo de propiedad·mensura catastral·경계·권원자",
-        "certificado de uso de suelo·no objecion·보호구역 의견",
-        "필지별 점유율·용적·높이·이격·주차",
-        "지반·지진·허리케인·침수·배수·상하수·전력 용량"
-      ],
-      "confirmWith": [
-        "dom-municipality"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "DOM-BLD-Q-004",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 시청 사전승인, MIVHED 건축 licence 유형과 환경부 A·B·C·D 승인·선행관계는 무엇인가?",
@@ -2202,14 +1841,15 @@
         "환경 A/B/C/D 결정·승인서와 실제 수수료·전체 기간"
       ],
       "confirmWith": [
-        "dom-municipality",
+        "dom-codia-professionals",
         "dom-mivhed",
-        "dom-environment"
+        "dom-environment",
+        "dom-municipality"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "DOM-BLD-Q-005",
+      "id": "DOM-BLD-Q-002",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -2220,14 +1860,15 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "dom-municipality",
+        "dom-codia-professionals",
         "dom-mivhed",
-        "dom-environment"
+        "dom-environment",
+        "dom-municipality"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "DOM-BLD-Q-006",
+      "id": "DOM-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
       "question": "MIVHED licence·환경 A-D의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
@@ -2239,14 +1880,15 @@
         "환경 A/B/C/D 결정·승인서와 실제 수수료·전체 기간"
       ],
       "confirmWith": [
-        "dom-municipality",
+        "dom-codia-professionals",
         "dom-mivhed",
-        "dom-environment"
+        "dom-environment",
+        "dom-municipality"
       ],
       "owner": "현지 건축전문가·조사총괄"
     },
     {
-      "id": "DOM-BLD-Q-007",
+      "id": "DOM-BLD-Q-004",
       "blocking": true,
       "stage": "completion",
       "question": "요구되는 감리 분야·MIVHED 단계검사와 최종검사 인증의 현지 전문가·시험소·비용·기간은 무엇인가?",
@@ -2258,13 +1900,13 @@
         "as-built·FI-05·certificación oficial de inspección final·비용"
       ],
       "confirmWith": [
-        "dom-mivhed",
-        "dom-codia-professionals"
+        "dom-codia-professionals",
+        "dom-mivhed"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "DOM-BLD-Q-008",
+      "id": "DOM-BLD-Q-005",
       "blocking": true,
       "stage": "completion",
       "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
@@ -2275,13 +1917,13 @@
         "준공·소방·사용승인 체크리스트와 실제 견적"
       ],
       "confirmWith": [
-        "dom-mivhed",
-        "dom-codia-professionals"
+        "dom-codia-professionals",
+        "dom-mivhed"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "DOM-BLD-Q-009",
+      "id": "DOM-BLD-Q-006",
       "blocking": false,
       "stage": "completion",
       "question": "R-004 단계·최종검사의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
@@ -2293,8 +1935,8 @@
         "as-built·FI-05·certificación oficial de inspección final·비용"
       ],
       "confirmWith": [
-        "dom-mivhed",
-        "dom-codia-professionals"
+        "dom-codia-professionals",
+        "dom-mivhed"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2303,53 +1945,35 @@
     {
       "id": "DOM-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "DOM-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "DOM-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "DOM-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "DOM-BLD-F-005",
+      "id": "DOM-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "DOM-BLD-F-006",
+      "id": "DOM-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
     },
     {
-      "id": "DOM-BLD-F-007",
+      "id": "DOM-BLD-F-004",
       "phase": "시장조사",
       "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
       "output": "적격기관·보험 대장"
     },
     {
-      "id": "DOM-BLD-F-008",
+      "id": "DOM-BLD-F-005",
       "phase": "기관협의",
       "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
       "output": "검사·준공·개장 Hold Point 표"
     },
     {
-      "id": "DOM-BLD-F-009",
+      "id": "DOM-BLD-F-006",
       "phase": "보고서 반영",
       "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
@@ -2359,28 +1983,20 @@
     {
       "id": "DOM-BLD-C-001",
       "confidence": "conditional",
-      "text": "Distrito Nacional의 수치·수수료를 다른 시에 적용하지 말고 실제 ayuntamiento의 인증·no-objection과 필지 실사를 개념설계 전에 확정한다.",
+      "text": "시청, MIVHED, 환경부 승인은 서로 대체하지 않으므로 환경범주와 지방 선행서류를 먼저 확인해 하나의 인허가 일정으로 관리한다.",
       "basis": [
-        "DOM-LOCAL-LANDUSE"
+        "DOM-R021-576-06",
+        "DOM-ENV-AUTHORIZATION-SERVICE",
+        "DOM-ENV-TDR-2026",
+        "DOM-ENV-LAW-64-00-RES-2024"
       ]
     },
     {
       "id": "DOM-BLD-C-002",
       "confidence": "conditional",
-      "text": "시청, MIVHED, 환경부 승인은 서로 대체하지 않으므로 환경범주와 지방 선행서류를 먼저 확인해 하나의 인허가 일정으로 관리한다.",
-      "basis": [
-        "DOM-R021-576-06",
-        "DOM-ENV-LAW-64-00-RES-2024"
-      ]
-    },
-    {
-      "id": "DOM-BLD-C-003",
-      "confidence": "conditional",
       "text": "단계검사를 놓치면 licence 효력이 문제될 수 있으므로 검사 hold point와 최종 인증을 입찰·공정·지급·인계조건에 명시한다.",
       "basis": [
-        "DOM-R004-232-17",
-        "DOM-LAW-160-21-687-82",
-        "DOM-R021-576-06"
+        "DOM-R004-232-17"
       ]
     }
   ]

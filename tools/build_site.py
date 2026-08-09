@@ -526,12 +526,13 @@ def construction_model_board(d: dict, model_spec: dict | None) -> dict:
     nodes = [item for item in source["nodes"] if item["id"] in node_ids]
     used_lanes = {item["lane"] for item in nodes}
     used_stages = {item["stage"] for item in nodes}
+    lane_order = model_spec.get("laneOrder") or source["lanes"]
     return {
         "schema_version": source["schema_version"],
         "profile": source["profile"],
         "title": model_spec["name"],
         "subtitle": model_spec["oneLiner"],
-        "lanes": [item for item in source["lanes"] if item in used_lanes],
+        "lanes": [item for item in lane_order if item in used_lanes],
         "stages": [item for item in source["stages"] if item in used_stages],
         "nodes": nodes,
         "edges": model_spec["edges"],
@@ -814,6 +815,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
                 "status": instrument["status"],
                 "verificationLevel": instrument["verificationLevel"],
                 "scopeLabel": construction_scope_label(instrument),
+                "jurisdictionScope": instrument.get("scope", ""),
                 "statusCheckedOn": construction_status_checked_on(
                     instrument, d.get("asOfDate", "")
                 ),
@@ -976,6 +978,7 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         "countryKey": country_key,
         "name": model_spec["name"] if model_spec else f'{d["country"]["name"]} ODA 건축 인허가·검사·개장',
         "priority": model_spec["priority"] if model_spec else 4,
+        "publicationScope": model_spec["publicationScope"] if model_spec else "national",
         "axis": "construction",
         "country": d["country"],
         "asOfDate": d["asOfDate"],
@@ -1054,10 +1057,10 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
 
 
 def construction_to_models(d: dict) -> list[dict]:
-    """국가 원천 하나를 공개 제도축 1개 이상으로 변환한다."""
+    """국가 원천 하나의 명시적 전국 공개축만 변환한다."""
     specs = d.get("publicModels")
-    if not specs:
-        return [construction_to_model(d)]
+    if not isinstance(specs, list):
+        raise ValueError(f"{d.get('slug', '<unknown>')}: publicModels must be an array")
     return [construction_to_model(d, spec) for spec in specs]
 
 
@@ -3520,23 +3523,36 @@ def main() -> int:
             country_models = [
                 item for item in construction_models if item["countryKey"] == d["slug"]
             ]
-            primary_model = min(country_models, key=lambda item: item["priority"])
+            primary_model = (
+                min(country_models, key=lambda item: item["priority"])
+                if country_models else None
+            )
             out = SITE / "construction" / d["slug"]
             out.mkdir(parents=True, exist_ok=True)
+            target = (
+                f'../../model/{primary_model["slug"]}/index.html'
+                if primary_model else
+                "../../index.html?axis=construction"
+            )
             (out / "index.html").write_text(
                 clean_generated_html(redirect_page(
-                    f'../../model/{primary_model["slug"]}/index.html',
+                    target,
                     f'{d["country"]["name"]} 건축 법·제도 | {SITE_TITLE}',
                 )),
                 encoding="utf-8",
             )
             legacy_slug = f'{d["slug"]}-construction-regulations'
-            if legacy_slug != primary_model["slug"]:
+            if primary_model is None or legacy_slug != primary_model["slug"]:
                 legacy_out = SITE / "model" / legacy_slug
                 legacy_out.mkdir(parents=True, exist_ok=True)
+                legacy_target = (
+                    f'../{primary_model["slug"]}/index.html'
+                    if primary_model else
+                    "../../index.html?axis=construction"
+                )
                 (legacy_out / "index.html").write_text(
                     clean_generated_html(redirect_page(
-                        f'../{primary_model["slug"]}/index.html',
+                        legacy_target,
                         f'{d["country"]["name"]} 건축 법·제도 | {SITE_TITLE}',
                     )),
                     encoding="utf-8",
@@ -3549,7 +3565,12 @@ def main() -> int:
     if construction_items:
         print(f"  {SITE}/construction/index.html  (통합 대장으로 이동)")
         for d in construction_items:
-            print(f"  {SITE}/construction/{d['slug']}/index.html  (첫 건축 model로 이동)")
+            redirect_note = (
+                "첫 건축 model로 이동"
+                if construction_to_models(d)
+                else "전국 공개축 없음 · 통합 대장으로 이동"
+            )
+            print(f"  {SITE}/construction/{d['slug']}/index.html  ({redirect_note})")
     for d in items:
         print(f"  {SITE}/model/{d['slug']}/index.html")
 

@@ -184,10 +184,27 @@ def validate_process_board(
     result: Validation,
     *,
     allow_entry_only: bool = False,
+    allow_empty: bool = False,
 ) -> dict[str, int]:
     """Validate the embedded korea100studio board-v1 and its trace links."""
     if not isinstance(board, dict):
         result.error(where, "must be an object")
+        return {"board_nodes": 0, "board_edges": 0}
+    if allow_empty and all(
+        board.get(field) == [] for field in ("lanes", "stages", "nodes", "edges")
+    ):
+        required(
+            board,
+            ("schema_version", "profile", "title", "subtitle"),
+            where,
+            result,
+        )
+        if board.get("schema_version") != 1:
+            result.error(f"{where}.schema_version", "must be board-v1 schema version 1")
+        if board.get("profile") != "gov":
+            result.error(f"{where}.profile", "construction boards must use the gov profile")
+        if permit_orders:
+            result.error(f"{where}.nodes", "empty board cannot map permitPath gates")
         return {"board_nodes": 0, "board_edges": 0}
     required(
         board,
@@ -335,18 +352,22 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
             "purpose",
             "verification",
             "processBoard",
-            "authorities",
-            "instruments",
-            "requirements",
-            "siteOverlays",
-            "openQuestions",
-            "fieldworkChecklist",
-            "reportReadyConclusions",
-            "publicModels",
         ),
         rel,
         result,
     )
+    for field in (
+        "publicModels",
+        "authorities",
+        "instruments",
+        "requirements",
+        "siteOverlays",
+        "openQuestions",
+        "fieldworkChecklist",
+        "reportReadyConclusions",
+    ):
+        if field not in data:
+            result.error(rel, f"missing required field {field!r}")
     if "permitPath" not in data:
         result.error(rel, "missing required field 'permitPath'")
     if data.get("schemaVersion") != manifest.get("schemaVersion"):
@@ -518,6 +539,10 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
         requirements,
         permit_orders,
         result,
+        allow_empty=(
+            isinstance(data.get("publicModels"), list)
+            and not data["publicModels"]
+        ),
     )
 
     overlays = unique_ids(data.get("siteOverlays"), "siteOverlays", rel, result)
@@ -608,6 +633,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     "oneLiner",
                     "purpose",
                     "verificationScope",
+                    "publicationScope",
                     "nodeIds",
                     "requirementIds",
                     "questionIds",
@@ -618,6 +644,11 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 result,
             )
             procedure_status = model.get("procedureStatus", "source-linked")
+            if model.get("publicationScope") != "national":
+                result.error(
+                    f"{where}.publicationScope",
+                    "public construction models must be based on a national procedure",
+                )
             if "edges" not in model or not isinstance(model.get("edges"), list):
                 result.error(f"{where}.edges", "must be an array")
             if "siteOverlayIds" not in model:
@@ -665,15 +696,16 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                     f"unverified procedure fallback must expose one evidence entry, got {len(selected_nodes)}",
                 )
             if procedure_status in {"official-source-linked", "article-linked", "article-verified"}:
+                prohibited_kinds = {"local-example", "field-verification", "project-control"}
                 internal_nodes = [
                     item.get("id") for item in selected_nodes
-                    if item.get("kind") == "field-verification"
+                    if item.get("kind") in prohibited_kinds
                 ]
                 if internal_nodes:
                     result.error(
                         f"{where}.nodeIds",
-                        "researched country procedure cannot publish ODA field-verification "
-                        f"nodes: {internal_nodes}",
+                        "researched country procedure cannot publish local or internal "
+                        f"workflow nodes: {internal_nodes}",
                     )
 
             available_requirements = {
@@ -724,6 +756,25 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
 
             used_lanes = {item.get("lane") for item in selected_nodes}
             used_stages = {item.get("stage") for item in selected_nodes}
+            source_lanes = source_board.get("lanes", [])
+            lane_order = model.get("laneOrder")
+            if lane_order is None:
+                lane_order = source_lanes
+            elif (
+                not isinstance(lane_order, list)
+                or not lane_order
+                or any(
+                    not isinstance(item, str) or item not in source_lanes
+                    for item in lane_order
+                )
+                or len(lane_order) != len(set(lane_order))
+                or set(lane_order) != used_lanes
+            ):
+                result.error(
+                    f"{where}.laneOrder",
+                    "must contain each lane used by this model exactly once",
+                )
+                lane_order = source_lanes
             if procedure_status != "detail-unverified" and len(used_lanes) < 2:
                 result.error(f"{where}.nodeIds", f"country procedure must use at least 2 lanes, got {len(used_lanes)}")
             if procedure_status != "detail-unverified" and len(used_stages) < 2:
@@ -816,7 +867,7 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 "profile": source_board.get("profile"),
                 "title": model.get("name"),
                 "subtitle": model.get("oneLiner"),
-                "lanes": [item for item in source_board.get("lanes", []) if item in used_lanes],
+                "lanes": [item for item in lane_order if item in used_lanes],
                 "stages": [item for item in source_board.get("stages", []) if item in used_stages],
                 "nodes": selected_nodes,
                 "edges": model.get("edges"),
@@ -835,21 +886,28 @@ def validate_country(data: dict[str, Any], path: Path, manifest: dict[str, Any],
                 allow_entry_only=procedure_status == "detail-unverified",
             )
 
-        expected_priorities = set(range(4, 4 + public_model_count))
+        priority_by_system = {
+            "site-urban": 4,
+            "permit-environment": 5,
+            "control-completion": 6,
+        }
+        expected_priorities = {
+            priority_by_system[ident]
+            for ident in public_models
+            if ident in priority_by_system
+        }
         if priorities != expected_priorities:
             result.error(
                 f"{rel}.publicModels",
-                f"priorities must be contiguous from 4: expected {sorted(expected_priorities)}, "
+                f"priorities must match their system axes: expected {sorted(expected_priorities)}, "
                 f"got {sorted(priorities)}",
             )
-        if public_model_count != 3:
-            result.error(f"{rel}.publicModels", "every construction country must expose exactly three models")
         system_ids = ("site-urban", "permit-environment", "control-completion")
         expected_model_ids = set(system_ids)
-        if set(public_models) != expected_model_ids:
+        if not set(public_models).issubset(expected_model_ids):
             result.error(
                 f"{rel}.publicModels",
-                f"model IDs must be {list(system_ids)}, got {sorted(public_models)}",
+                f"model IDs must be a subset of {list(system_ids)}, got {sorted(public_models)}",
             )
         for index, (left_name, left_nodes) in enumerate(model_node_sets):
             for right_name, right_nodes in model_node_sets[index + 1:]:

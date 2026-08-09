@@ -14,7 +14,28 @@ CATALOG_PATH = DATA_DIR / "catalog" / "baselines.json"
 OVERLAY_DIR = DATA_DIR / "catalog" / "official-procedures"
 REQUIRED_AXES = {"site-urban", "permit-environment", "control-completion"}
 ALLOWED_STATUS = {"official-source-linked", "article-linked", "article-verified"}
-INTERNAL_KINDS = {"field-verification", "project-control"}
+PUBLICATION_SCOPES = {"national", "subnational-example"}
+REGIONAL_EXAMPLE_MARKERS = (
+    "대표 사례",
+    "대표사례",
+    "지역 사례",
+    "주 사례",
+    "시 사례",
+    "사례기관",
+    "대표 경로",
+    "대표 관할",
+    "공식 예시",
+    "집행 예시",
+    "치환",
+    "전국에 일반화하지",
+    "전국 공통으로 일반화할 수 없",
+    "다른 지방자치단체",
+    "다른 주·연방수도지구",
+    "밖에서는 해당",
+    "비방콕",
+    "비RAJUK",
+)
+INTERNAL_KINDS = {"local-example", "field-verification", "project-control"}
 CURRENT_SOURCE_STATUSES = {"in_force", "current_official"}
 CURRENTNESS_EXCEPTION_STATUSES = {"continuity_unverified", "pending", "superseded"}
 
@@ -37,6 +58,33 @@ def validate_overlay_axis(
         errors.append(f"{prefix}: actual officialProcedure object is missing")
         return
 
+    publication_scope = procedure.get("publicationScope")
+    if publication_scope not in PUBLICATION_SCOPES:
+        errors.append(
+            f"{prefix}: publicationScope is {publication_scope!r}; "
+            f"expected one of {sorted(PUBLICATION_SCOPES)}"
+        )
+        return
+    if publication_scope == "subnational-example":
+        return
+
+    public_disclosure = " ".join(
+        str(value or "")
+        for value in (
+            procedure.get("name"),
+            procedure.get("scope"),
+            system.get("verificationScope"),
+        )
+    )
+    found_markers = [
+        marker for marker in REGIONAL_EXAMPLE_MARKERS if marker in public_disclosure
+    ]
+    if found_markers:
+        errors.append(
+            f"{prefix}: national procedure still contains regional-example markers "
+            f"{found_markers}"
+        )
+
     if procedure.get("coverage") not in ALLOWED_STATUS:
         errors.append(
             f"{prefix}: officialProcedure coverage is {procedure.get('coverage')!r}"
@@ -55,6 +103,17 @@ def validate_overlay_axis(
             errors.append(f"{step_prefix}: step is not an object")
             continue
         refs = step.get("refs")
+        authority_ids = step.get("authorityIds")
+        if (
+            not isinstance(authority_ids, list)
+            or not authority_ids
+            or any(not nonempty_text(item) for item in authority_ids)
+        ):
+            errors.append(f"{step_prefix}: authorityIds must identify national-flow actors")
+        if step.get("kind") in INTERNAL_KINDS:
+            errors.append(
+                f"{step_prefix}: national procedure cannot publish {step.get('kind')} nodes"
+            )
         if not isinstance(refs, list) or not refs:
             errors.append(f"{step_prefix}: lacks direct refs")
         else:
@@ -118,8 +177,8 @@ def main() -> int:
     errors: list[str] = []
 
     # A generated fallback can be structurally complete while still describing only
-    # the common permit pattern.  The public promise is stronger: every catalog
-    # country must have an independently reviewable, country-specific 3-axis overlay.
+    # a common permit pattern.  Every overlay axis must therefore make an explicit,
+    # fail-closed publication-scope decision; only national axes are public.
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     catalog_slugs = {item["slug"] for item in catalog.get("countries", [])}
     overlay_paths = sorted(OVERLAY_DIR.glob("*.json"))
@@ -157,6 +216,26 @@ def main() -> int:
             models += 1
             slug = model["slug"]
             status = model["canvas"].get("procedureStatus")
+            if model.get("publicationScope") != "national":
+                errors.append(f"{slug}: publishes a non-national procedure")
+            public_payload = json.dumps(
+                {
+                    "name": model.get("name"),
+                    "canvas": model.get("canvas"),
+                    "process": model.get("process"),
+                },
+                ensure_ascii=False,
+            )
+            payload_markers = [
+                marker
+                for marker in REGIONAL_EXAMPLE_MARKERS
+                if marker in public_payload
+            ]
+            if payload_markers:
+                errors.append(
+                    f"{slug}: regional-example markers {payload_markers} remain "
+                    "in the rendered public payload"
+                )
             nodes = model["process"]["nodes"]
             gates = model["canvas"].get("officialGates", [])
             branches = model["canvas"].get("decisionBranches", [])
@@ -204,6 +283,31 @@ def main() -> int:
             for source in model.get("verification", {}).get("sources", []):
                 source_id = source.get("id", "?")
                 source_status = source.get("status")
+                if source.get("jurisdictionScope") in {"local", "subnational"}:
+                    errors.append(
+                        f"{slug}:source:{source_id}: national model references "
+                        f"{source.get('jurisdictionScope')} material"
+                    )
+                source_disclosure = " ".join(
+                    str(source.get(field) or "")
+                    for field in (
+                        "law",
+                        "officialName",
+                        "scopeLabel",
+                        "statusBasis",
+                        "note",
+                    )
+                )
+                source_markers = [
+                    marker
+                    for marker in REGIONAL_EXAMPLE_MARKERS
+                    if marker in source_disclosure
+                ]
+                if source_markers:
+                    errors.append(
+                        f"{slug}:source:{source_id}: regional-example markers "
+                        f"{source_markers} remain in a public source"
+                    )
                 if source_status in CURRENT_SOURCE_STATUSES:
                     if not (
                         nonempty_text(source.get("statusCheckedOn"))
@@ -224,14 +328,17 @@ def main() -> int:
             if {item.get("state") for item in branches} != {"success", "rework", "reject"}:
                 errors.append(f"{slug}: lacks success/rework/reject decision branches")
 
-    if countries != 44 or models != 132:
-        errors.append(f"coverage count differs: {countries} countries, {models} models")
+    if countries != 44:
+        errors.append(f"coverage country count differs: {countries} countries")
     if errors:
         print("FAILED: researched construction-procedure coverage is incomplete")
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"OK: {countries} countries and {models} public models expose researched procedures")
+    print(
+        f"OK: {countries} countries and {models} public national models expose "
+        "researched procedures"
+    )
     return 0
 
 

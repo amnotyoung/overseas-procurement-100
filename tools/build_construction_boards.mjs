@@ -57,12 +57,26 @@ for (const file of files) {
   const sourceBoard = data.processBoard;
   if (!sourceBoard) fail(`${file} is missing processBoard`);
 
-  const publicModels = data.publicModels || [];
-  const targets = publicModels.length ? [] : [{
-    id: data.slug,
-    board: sourceBoard,
-    outputName: `${data.slug}-construction.svg`,
-  }];
+  if (!Array.isArray(data.publicModels)) fail(`${file} is missing publicModels`);
+  const publicModels = data.publicModels;
+  const currentOutputs = new Set(
+    publicModels
+      .filter((spec) => spec.procedureStatus !== "detail-unverified")
+      .map((spec) => `${spec.slug}.svg`),
+  );
+  const ownedOutputs = readdirSync(OUTPUT_DIR).filter((name) => (
+    name === `${data.slug}-construction.svg`
+    || (
+      name.startsWith(`${data.slug}-`)
+      && name.endsWith("-construction-regulations.svg")
+    )
+  ));
+  for (const outputName of ownedOutputs) {
+    if (!currentOutputs.has(outputName)) {
+      rmSync(join(OUTPUT_DIR, outputName), { force: true });
+    }
+  }
+  const targets = [];
   for (const spec of publicModels) {
     if (spec.procedureStatus === "detail-unverified") {
       // A one-node evidence-entry record is deliberately not a statutory
@@ -76,6 +90,7 @@ for (const file of files) {
     const nodes = sourceBoard.nodes.filter((node) => nodeIds.has(node.id));
     const usedLanes = new Set(nodes.map((node) => node.lane));
     const usedStages = new Set(nodes.map((node) => node.stage));
+    const laneOrder = spec.laneOrder || sourceBoard.lanes;
     targets.push({
       id: spec.slug,
       outputName: `${spec.slug}.svg`,
@@ -84,7 +99,7 @@ for (const file of files) {
         profile: sourceBoard.profile,
         title: spec.name,
         subtitle: spec.oneLiner,
-        lanes: sourceBoard.lanes.filter((lane) => usedLanes.has(lane)),
+        lanes: laneOrder.filter((lane) => usedLanes.has(lane)),
         stages: sourceBoard.stages.filter((stage) => usedStages.has(stage)),
         nodes,
         edges: spec.edges,

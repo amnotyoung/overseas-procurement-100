@@ -9,12 +9,12 @@
     "iso3": "PHL",
     "region": "아시아·태평양"
   },
-  "purpose": "필리핀 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "필리핀 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사, 기술검사·보험·준공제도를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "지방정부 용도지역조례·입지확인(Locational Clearance) 제도·대통령령 제1096호 필리핀 국가건축법·개정 시행규칙·대통령령 제1586호·필리핀 환경영향평가제도(PEISS)·공화국법 제9514호 필리핀 소방법 2008·개정 시행규칙의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "대통령령 제1586호·필리핀 환경영향평가제도(PEISS)·공화국법 제9514호 필리핀 소방법 2008·개정 시행규칙·대통령령 제1096호 필리핀 국가건축법·개정 시행규칙의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,18 +24,14 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "필리핀 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "필리핀 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사 → 기술검사·보험·준공제도",
     "lanes": [
       "건축주·신청인",
       "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 신청도서",
-      "G1 용도지역 심사",
-      "G2 예외·보완",
-      "G3 입지결정",
       "G4 환경분류·신청",
       "G5 환경심사·결정",
       "G6 소방·건축허가 신청",
@@ -48,197 +44,6 @@
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "G0 신청도서",
-        "label": "권원·세금·필지·건축도서 제출",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인이 현년도 납세증명(tax clearance), 토지권원, 서명·날인된 필지계획도(lot plan)와 건축도면, 필요한 소유자 동의·대리권 서류를 용도지역행정팀에 제출한다.",
-        "action": "신청인이 현년도 납세증명(tax clearance), 토지권원, 서명·날인된 필지계획도(lot plan)와 건축도면, 필요한 소유자 동의·대리권 서류를 용도지역행정팀에 제출한다.",
-        "outputs": [
-          "입지확인 신청도서·접수기록"
-        ],
-        "authorityIds": [
-          "lgu-zoning"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City Locational Clearance 서비스",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "New regular application checklist; proof of lot ownership; signed and sealed lot and architectural plans"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 신청도서",
-        "label": "신청도서 완비성·필지정보 확인",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "용도지역행정팀이 신청서, 권원, 세금납부, 필지계획도와 전문자 서명도서의 완비성을 확인하고 미비하면 보완을 요구한다.",
-        "action": "용도지역행정팀이 신청서, 권원, 세금납부, 필지계획도와 전문자 서명도서의 완비성을 확인하고 미비하면 보완을 요구한다.",
-        "outputs": [
-          "완비접수 또는 서류 보완안내"
-        ],
-        "authorityIds": [
-          "lgu-zoning"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City Locational Clearance 접수절차",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "Initial assessment and verification; checklist of requirements"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 용도지역 심사",
-        "label": "용도지역·건축계획 적합성 심사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "용도지역 담당관(Zoning Official)이 필지 용도지역, 허용용도와 건축계획을 지방 용도지역 조례 및 국가·지방 건축코드에 대조한다.",
-        "action": "용도지역 담당관(Zoning Official)이 필지 용도지역, 허용용도와 건축계획을 지방 용도지역 조례 및 국가·지방 건축코드에 대조한다.",
-        "outputs": [
-          "용도지역 적합성 심사의견"
-        ],
-        "authorityIds": [
-          "lgu-zoning",
-          "lgu-building-official"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City Zoning Ordinance",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "Section 59; Locational Clearance before issuance of Building Permit"
-            ]
-          },
-          {
-            "source": "National Building Code",
-            "instrumentId": "PHL-PD-1096",
-            "provisions": [
-              "PD 1096 Sections 301-302; Revised IRR site and occupancy controls"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "건축주·신청인",
-        "stage": "G2 예외·보완",
-        "label": "부적합사항 보완 또는 예외·특별용도 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "일반 적합신청의 지적사항은 수정도서로 보완하고, 조례상 예외증명(Certificate of Exception) 또는 특별용도허가(Special Use Permit) 대상이면 추가서류와 공청·시의회 결의 절차를 진행한다.",
-        "action": "일반 적합신청의 지적사항은 수정도서로 보완하고, 조례상 예외증명(Certificate of Exception) 또는 특별용도허가(Special Use Permit) 대상이면 추가서류와 공청·시의회 결의 절차를 진행한다.",
-        "outputs": [
-          "보완도서 또는 예외·특별용도 심의기록"
-        ],
-        "authorityIds": [
-          "lgu-zoning"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City 예외·특별용도 서비스",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "Certificate of Exception and Special Use Permit; public consultation and City Council resolution"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "건축주·신청인",
-        "stage": "G2 예외·보완",
-        "label": "처리수수료 납부·영수증 제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인은 기관 산정액을 납부하고 공식 영수증을 제출해 결정서 발급요건을 완료한다.",
-        "action": "신청인은 기관 산정액을 납부하고 공식 영수증을 제출해 결정서 발급요건을 완료한다.",
-        "outputs": [
-          "수수료 공식영수증·완결 신청기록"
-        ],
-        "authorityIds": [
-          "lgu-zoning"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City Locational Clearance 서비스",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "Payment of processing fee and submission of Official Receipt"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 입지결정",
-        "label": "입지확인 발급·거부 결정",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "용도지역 담당관이 적합한 신청에 입지확인과 승인도서를 발급하고, 부적합 신청은 보완·예외절차 안내 또는 거부결정으로 종결한다.",
-        "action": "용도지역 담당관이 적합한 신청에 입지확인과 승인도서를 발급하고, 부적합 신청은 보완·예외절차 안내 또는 거부결정으로 종결한다.",
-        "outputs": [
-          "입지확인·승인도서 또는 거부통지"
-        ],
-        "authorityIds": [
-          "lgu-zoning"
-        ],
-        "requirementIds": [
-          "PHL-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Quezon City Locational Clearance 결정",
-            "instrumentId": "PHL-LOCAL-ZONING",
-            "provisions": [
-              "Issue Locational Clearance for conforming projects; motion for reconsideration service"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B07",
         "lane": "건축주·신청인",
         "stage": "G4 환경분류·신청",
         "label": "환경평가 적용범위·환경준수/비대상확인 경로 분류",
@@ -268,7 +73,7 @@
         ]
       },
       {
-        "id": "B08",
+        "id": "B02",
         "lane": "건축주·신청인",
         "stage": "G4 환경분류·신청",
         "label": "환경준수·비대상확인 신청서·환경보고서 제출",
@@ -298,7 +103,7 @@
         ]
       },
       {
-        "id": "B09",
+        "id": "B03",
         "lane": "환경·소방·검사기관",
         "stage": "G5 환경심사·결정",
         "label": "EMB 절차심사·기술검토·공중참여",
@@ -328,7 +133,7 @@
         ]
       },
       {
-        "id": "B10",
+        "id": "B04",
         "lane": "환경·소방·검사기관",
         "stage": "G5 환경심사·결정",
         "label": "환경준수·비대상확인증명 발급 또는 거부결정",
@@ -357,11 +162,11 @@
           }
         ],
         "gateOrders": [
-          2
+          1
         ]
       },
       {
-        "id": "B11",
+        "id": "B05",
         "lane": "환경·소방·검사기관",
         "stage": "G6 소방·건축허가 신청",
         "label": "BFP 소방안전평가확인서 확보",
@@ -391,7 +196,7 @@
         ]
       },
       {
-        "id": "B12",
+        "id": "B06",
         "lane": "건축주·신청인",
         "stage": "G6 소방·건축허가 신청",
         "label": "건축·부대설비 허가도서 OBO 제출",
@@ -423,7 +228,7 @@
         ]
       },
       {
-        "id": "B13",
+        "id": "B07",
         "lane": "도시계획·건축 허가기관",
         "stage": "G7 기술심사·허가",
         "label": "OBO 완비성·전문분야 기술심사와 보완",
@@ -444,7 +249,7 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "Quezon City Department of Building Official",
+            "source": "PD 1096·Revised IRR 건축허가 심사",
             "instrumentId": "PHL-PD-1096",
             "provisions": [
               "OBO evaluation and processing of building, ancillary and auxiliary permit applications"
@@ -453,7 +258,7 @@
         ]
       },
       {
-        "id": "B14",
+        "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "G7 기술심사·허가",
         "label": "건축·부대설비 허가 발급·불허 결정",
@@ -482,11 +287,11 @@
           }
         ],
         "gateOrders": [
-          3
+          2
         ]
       },
       {
-        "id": "B15",
+        "id": "B09",
         "lane": "건축주·신청인",
         "stage": "G8 허가조건·시공",
         "label": "건축허가·승인도서에 따른 착공",
@@ -516,7 +321,7 @@
         ]
       },
       {
-        "id": "B16",
+        "id": "B10",
         "lane": "도시계획·건축 허가기관",
         "stage": "G8 허가조건·시공",
         "label": "OBO 공사 중 현장검사·위반 시정",
@@ -546,7 +351,7 @@
         ]
       },
       {
-        "id": "B17",
+        "id": "B11",
         "lane": "건축주·신청인",
         "stage": "G9 준공신청",
         "label": "준공증명·준공도면(as-built)·점유허가 신청",
@@ -567,7 +372,7 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "Quezon City final certificates",
+            "source": "PD 1096·Revised IRR 준공·점유허가 신청",
             "instrumentId": "PHL-PD-1096",
             "provisions": [
               "Certificate of Occupancy or Use before occupancy; OBO final-certificate service"
@@ -576,7 +381,7 @@
         ]
       },
       {
-        "id": "B18",
+        "id": "B12",
         "lane": "환경·소방·검사기관",
         "stage": "G10 소방·최종검사",
         "label": "BFP 소방완료도서 심사·현장검사",
@@ -606,7 +411,7 @@
         ]
       },
       {
-        "id": "B19",
+        "id": "B13",
         "lane": "환경·소방·검사기관",
         "stage": "G10 소방·최종검사",
         "label": "소방안전검사증명서 발급·보완·거부 결정",
@@ -635,11 +440,11 @@
           }
         ],
         "gateOrders": [
-          4
+          3
         ]
       },
       {
-        "id": "B20",
+        "id": "B14",
         "lane": "도시계획·건축 허가기관",
         "stage": "G10 소방·최종검사",
         "label": "OBO 최종검사·승인도서 적합성 확인",
@@ -660,7 +465,7 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "Quezon City OBO final inspection",
+            "source": "PD 1096·Revised IRR 최종검사",
             "instrumentId": "PHL-PD-1096",
             "provisions": [
               "Ocular inspection of completed structures for occupancy and final permits"
@@ -669,7 +474,7 @@
         ]
       },
       {
-        "id": "B21",
+        "id": "B15",
         "lane": "도시계획·건축 허가기관",
         "stage": "G11 점유결정",
         "label": "점유허가증 발급·불허 결정",
@@ -698,197 +503,141 @@
           }
         ],
         "gateOrders": [
-          5
+          4
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS05-01",
         "source": "B01",
         "target": "B02",
-        "type": "sequence",
-        "label": "입지확인 신청"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "완비접수"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "message",
-        "label": "수정·예외 필요 시"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B03",
-        "target": "B05",
-        "type": "sequence",
-        "label": "일반 적합"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "보완·결의 완료"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B05",
-        "target": "B06",
-        "type": "sequence",
-        "label": "납부확인"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B04",
-        "target": "B02",
-        "type": "loop",
-        "label": "서류·도면 재제출"
-      },
-      {
-        "id": "BX05",
-        "source": "B06",
-        "target": "B07",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B07",
-        "target": "B08",
         "type": "sequence",
         "label": "환경경로 확정"
       },
       {
         "id": "BS05-02",
-        "source": "B08",
-        "target": "B09",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "환경신청 접수"
       },
       {
         "id": "BS05-03",
-        "source": "B09",
-        "target": "B10",
+        "source": "B03",
+        "target": "B04",
         "type": "sequence",
         "label": "검토완료"
       },
       {
         "id": "BS05-04",
-        "source": "B09",
-        "target": "B08",
+        "source": "B03",
+        "target": "B02",
         "type": "loop",
         "label": "추가정보·수정보고서 요구 시"
       },
       {
         "id": "BS05-05",
-        "source": "B10",
-        "target": "B12",
+        "source": "B04",
+        "target": "B06",
         "type": "message",
         "label": "해당 시 환경준수·비대상확인증명"
       },
       {
         "id": "BS05-06",
-        "source": "B07",
-        "target": "B11",
+        "source": "B01",
+        "target": "B05",
         "type": "message",
         "label": "병렬 소방도서 검토"
       },
       {
         "id": "BS05-07",
-        "source": "B11",
-        "target": "B12",
+        "source": "B05",
+        "target": "B06",
         "type": "sequence",
         "label": "소방안전평가확인서"
       },
       {
         "id": "BS05-08",
-        "source": "B12",
-        "target": "B13",
+        "source": "B06",
+        "target": "B07",
         "type": "sequence",
         "label": "건축허가 접수"
       },
       {
         "id": "BS05-09",
-        "source": "B13",
-        "target": "B14",
+        "source": "B07",
+        "target": "B08",
         "type": "sequence",
         "label": "기술심사 완료"
       },
       {
         "id": "BS05-10",
-        "source": "B13",
-        "target": "B12",
+        "source": "B07",
+        "target": "B06",
         "type": "loop",
         "label": "도서 보완요구 시"
       },
       {
         "id": "BX06",
-        "source": "B14",
-        "target": "B15",
+        "source": "B08",
+        "target": "B09",
         "type": "message",
         "label": "다음 제도축 입력"
       },
       {
         "id": "BS06-01",
-        "source": "B15",
-        "target": "B16",
+        "source": "B09",
+        "target": "B10",
         "type": "sequence",
         "label": "공사착수"
       },
       {
         "id": "BS06-02",
-        "source": "B16",
-        "target": "B17",
+        "source": "B10",
+        "target": "B11",
         "type": "sequence",
         "label": "공사완료"
       },
       {
         "id": "BS06-03",
-        "source": "B17",
-        "target": "B18",
+        "source": "B11",
+        "target": "B12",
         "type": "sequence",
         "label": "건축사무소 이송확인·준공도서"
       },
       {
         "id": "BS06-04",
-        "source": "B18",
-        "target": "B19",
+        "source": "B12",
+        "target": "B13",
         "type": "sequence",
         "label": "소방검사 완료"
       },
       {
         "id": "BS06-05",
-        "source": "B19",
-        "target": "B20",
+        "source": "B13",
+        "target": "B14",
         "type": "sequence",
         "label": "소방안전검사증명서"
       },
       {
         "id": "BS06-06",
-        "source": "B20",
-        "target": "B21",
+        "source": "B14",
+        "target": "B15",
         "type": "sequence",
         "label": "최종검사 완료"
       },
       {
         "id": "BS06-07",
-        "source": "B18",
-        "target": "B17",
+        "source": "B12",
+        "target": "B11",
         "type": "loop",
         "label": "소방도서·설비 시정 시"
       },
       {
         "id": "BS06-08",
-        "source": "B20",
-        "target": "B17",
+        "source": "B14",
+        "target": "B11",
         "type": "loop",
         "label": "준공도서·현장 보완 시"
       }
@@ -896,25 +645,28 @@
   },
   "publicModels": [
     {
-      "id": "site-urban",
-      "slug": "philippines-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "필리핀 도시계획·부지규제 — 케손시(Quezon City) 입지확인 사례",
-      "oneLiner": "토지권원과 대상 LGU의 CLUP·zoning ordinance·Locational Clearance로 용도·밀도·높이·이격·주차를 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "전국 공통 국가건축법 위에 LGU별 zoning ordinance가 적용된다. 아래 6단계는 Quezon City의 Locational Clearance 공식 서비스를 대표사례로 정리했으며, 다른 지역은 관할 LGU의 CLUP·조례·서비스 절차로 교체한다.",
+      "id": "permit-environment",
+      "slug": "philippines-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "필리핀 건축허가·환경심사 — 지방정부 건축사무소(LGU OBO)·필리핀 환경영향평가체계(PEISS)",
+      "oneLiner": "LGU 건축·부대설비 허가와 EMB의 ECC·CNC coverage를 분류하고 BFP·전문기관 clearance를 연결한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "대통령령 제1586호(PD 1586)의 전국 필리핀 환경영향평가체계(PEISS), 대통령령 제1096호(PD 1096)의 전국 건축허가 체계와 공화국법 제9514호(RA 9514)의 전국 소방안전 사전심사 절차를 연결했다. 지방정부 건축사무소(OBO)는 국가법에 따른 허가업무를 집행하며 현지 양식·수수료만 별도 확인한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "케손시 용도지역행정팀(Zoning Administration Unit)의 신축·정규 입지확인(Locational Clearance) 절차 사례다. 필지별 허용용도·대지점유율(PSO)·용적률(FAR)·건축높이한도(BHL)·이격·주차는 해당 지방정부(LGU)의 현행 용도지역 조례(zoning ordinance)로 확정한다.",
+      "publicationScope": "national",
+      "procedureScope": "대통령령 제1586호(PD 1586)에 따른 환경준수증명(ECC)·비대상확인증명(CNC), 공화국법 제9514호(RA 9514)에 따른 소방안전평가확인서(Fire Safety Evaluation Clearance, FSEC), 대통령령 제1096호(PD 1096)에 따른 건축·부대설비 허가를 연결한 전국 공통 법정 절차다. 사업별 환경대상 여부와 지방정부 건축사무소의 양식·수수료는 별도 확인한다.",
       "nodeIds": [
         "B01",
         "B02",
         "B03",
         "B04",
         "B05",
-        "B06"
+        "B06",
+        "B07",
+        "B08"
       ],
       "requirementIds": [
-        "PHL-BLD-REQ-004"
+        "PHL-BLD-REQ-005"
       ],
       "questionIds": [
         "PHL-BLD-Q-001",
@@ -924,9 +676,7 @@
       "conclusionIds": [
         "PHL-BLD-C-001"
       ],
-      "siteOverlayIds": [
-        "PHL-LOCAL-OVERLAY-001"
-      ],
+      "siteOverlayIds": [],
       "fieldworkChecklistIds": [
         "PHL-BLD-F-001",
         "PHL-BLD-F-002",
@@ -934,178 +684,72 @@
       ],
       "edges": [
         {
-          "id": "M04-E01",
+          "id": "M05-E01",
           "source": "B01",
           "target": "B02",
-          "type": "sequence",
-          "label": "입지확인 신청"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "완비접수"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "message",
-          "label": "수정·예외 필요 시"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B03",
-          "target": "B05",
-          "type": "sequence",
-          "label": "일반 적합"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "보완·결의 완료"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B05",
-          "target": "B06",
-          "type": "sequence",
-          "label": "납부확인"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B04",
-          "target": "B02",
-          "type": "loop",
-          "label": "서류·도면 재제출"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "입지 적합·조건부 적합",
-          "action": "입지확인과 조건을 건축허가 신청도서에 반영"
-        },
-        {
-          "state": "rework",
-          "label": "보완·예외심의",
-          "action": "지적사항을 수정하거나 예외증명·특별용도허가 대상이면 공청·시의회 결의 후 재심사"
-        },
-        {
-          "state": "reject",
-          "label": "입지 부적합·거부",
-          "action": "거부사유를 확인하고 공식 재심·이의 또는 대안부지 경로 검토"
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "philippines-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "필리핀 건축허가·환경심사 — 지방정부 건축사무소(LGU OBO)·필리핀 환경영향평가체계(PEISS)",
-      "oneLiner": "LGU 건축·부대설비 허가와 EMB의 ECC·CNC coverage를 분류하고 BFP·전문기관 clearance를 연결한다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "환경 절차는 DENR-EMB의 전국 PEISS, 건축허가는 LGU OBO가 집행한다. 아래 건축허가 단계는 Quezon City OBO를 대표사례로 하며 대상 LGU의 서비스·수수료로 교체한다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "필리핀 환경영향평가체계의 환경준수증명(ECC)·비대상확인증명(CNC) 분류와 지방정부 건축허가·소방안전평가확인서(Fire Safety Evaluation Clearance, FSEC)를 연결한 절차다. 환경대상 여부와 건축사무소 제출목록은 사업유형·대상 지방정부별로 달라진다.",
-      "nodeIds": [
-        "B07",
-        "B08",
-        "B09",
-        "B10",
-        "B11",
-        "B12",
-        "B13",
-        "B14"
-      ],
-      "requirementIds": [
-        "PHL-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "PHL-BLD-Q-004",
-        "PHL-BLD-Q-005",
-        "PHL-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "PHL-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "PHL-BLD-F-004",
-        "PHL-BLD-F-005",
-        "PHL-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B07",
-          "target": "B08",
           "type": "sequence",
           "label": "환경경로 확정"
         },
         {
           "id": "M05-E02",
-          "source": "B08",
-          "target": "B09",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "환경신청 접수"
         },
         {
           "id": "M05-E03",
-          "source": "B09",
-          "target": "B10",
+          "source": "B03",
+          "target": "B04",
           "type": "sequence",
           "label": "검토완료"
         },
         {
           "id": "M05-E04",
-          "source": "B09",
-          "target": "B08",
+          "source": "B03",
+          "target": "B02",
           "type": "loop",
           "label": "추가정보·수정보고서 요구 시"
         },
         {
           "id": "M05-E05",
-          "source": "B10",
-          "target": "B12",
+          "source": "B04",
+          "target": "B06",
           "type": "message",
           "label": "해당 시 환경준수·비대상확인증명"
         },
         {
           "id": "M05-E06",
-          "source": "B07",
-          "target": "B11",
+          "source": "B01",
+          "target": "B05",
           "type": "message",
           "label": "병렬 소방도서 검토"
         },
         {
           "id": "M05-E07",
-          "source": "B11",
-          "target": "B12",
+          "source": "B05",
+          "target": "B06",
           "type": "sequence",
           "label": "소방안전평가확인서"
         },
         {
           "id": "M05-E08",
-          "source": "B12",
-          "target": "B13",
+          "source": "B06",
+          "target": "B07",
           "type": "sequence",
           "label": "건축허가 접수"
         },
         {
           "id": "M05-E09",
-          "source": "B13",
-          "target": "B14",
+          "source": "B07",
+          "target": "B08",
           "type": "sequence",
           "label": "기술심사 완료"
         },
         {
           "id": "M05-E10",
-          "source": "B13",
-          "target": "B12",
+          "source": "B07",
+          "target": "B06",
           "type": "loop",
           "label": "도서 보완요구 시"
         }
@@ -1135,89 +779,90 @@
       "name": "필리핀 기술검사·준공·점유승인 — OBO·BFP",
       "oneLiner": "면허 설계·시공자, OBO·BFP 검사와 Certificate of Occupancy·FSIC를 사용개시 전 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "전국 국가건축법·소방법을 LGU OBO와 BFP가 집행한다. 아래 단계는 Quezon City OBO와 BFP Citizen's Charter의 점유허가 절차를 대표사례로 정리했다.",
+      "verificationScope": "대통령령 제1096호(PD 1096)의 전국 공사검사·점유허가 체계와 공화국법 제9514호(RA 9514)의 전국 소방완료검사·소방안전검사증명 절차를 연결했다. 지방정부 건축사무소(OBO)와 소방청(BFP)이 국가법에 따른 검사·결정을 집행한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "승인도서 시공, 건축사무소(OBO) 공사·최종검사, 소방청(BFP) 소방안전검사증명서(Fire Safety Inspection Certificate, FSIC)와 점유허가증(Certificate of Occupancy)의 법정 선후관계를 표시한다. 대상 지방정부(LGU)의 양식·수수료·검사예약은 별도 적용한다.",
+      "publicationScope": "national",
+      "procedureScope": "대통령령 제1096호(PD 1096)에 따른 승인도서 시공·공사검사·최종검사·점유허가와 공화국법 제9514호(RA 9514)에 따른 소방안전검사증명서(Fire Safety Inspection Certificate, FSIC)의 법정 선후관계를 표시하는 전국 공통 절차다. 대상 지방정부의 양식·수수료·검사예약은 별도 확인한다.",
       "nodeIds": [
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21"
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15"
       ],
       "requirementIds": [
         "PHL-BLD-REQ-006"
       ],
       "questionIds": [
-        "PHL-BLD-Q-007",
-        "PHL-BLD-Q-008",
-        "PHL-BLD-Q-009"
+        "PHL-BLD-Q-004",
+        "PHL-BLD-Q-005",
+        "PHL-BLD-Q-006"
       ],
       "conclusionIds": [
-        "PHL-BLD-C-003"
+        "PHL-BLD-C-002"
       ],
       "siteOverlayIds": [],
       "fieldworkChecklistIds": [
-        "PHL-BLD-F-007",
-        "PHL-BLD-F-008",
-        "PHL-BLD-F-009"
+        "PHL-BLD-F-004",
+        "PHL-BLD-F-005",
+        "PHL-BLD-F-006"
       ],
       "edges": [
         {
           "id": "M06-E01",
-          "source": "B15",
-          "target": "B16",
+          "source": "B09",
+          "target": "B10",
           "type": "sequence",
           "label": "공사착수"
         },
         {
           "id": "M06-E02",
-          "source": "B16",
-          "target": "B17",
+          "source": "B10",
+          "target": "B11",
           "type": "sequence",
           "label": "공사완료"
         },
         {
           "id": "M06-E03",
-          "source": "B17",
-          "target": "B18",
+          "source": "B11",
+          "target": "B12",
           "type": "sequence",
           "label": "건축사무소 이송확인·준공도서"
         },
         {
           "id": "M06-E04",
-          "source": "B18",
-          "target": "B19",
+          "source": "B12",
+          "target": "B13",
           "type": "sequence",
           "label": "소방검사 완료"
         },
         {
           "id": "M06-E05",
-          "source": "B19",
-          "target": "B20",
+          "source": "B13",
+          "target": "B14",
           "type": "sequence",
           "label": "소방안전검사증명서"
         },
         {
           "id": "M06-E06",
-          "source": "B20",
-          "target": "B21",
+          "source": "B14",
+          "target": "B15",
           "type": "sequence",
           "label": "최종검사 완료"
         },
         {
           "id": "M06-E07",
-          "source": "B18",
-          "target": "B17",
+          "source": "B12",
+          "target": "B11",
           "type": "loop",
           "label": "소방도서·설비 시정 시"
         },
         {
           "id": "M06-E08",
-          "source": "B20",
-          "target": "B17",
+          "source": "B14",
+          "target": "B11",
           "type": "loop",
           "label": "준공도서·현장 보완 시"
         }
@@ -1247,16 +892,14 @@
       "name": "Office of the Building Official of the competent LGU",
       "nameKo": "관할 지방정부 건축공무원실(OBO)",
       "role": "National Building Code와 지방 건축규정에 따라 건축·부대설비 허가, 검사와 점유허가를 담당",
-      "verificationLevel": "law-linked",
-      "officialUrl": "https://quezoncity.gov.ph/departments/department-of-the-building-official/"
+      "verificationLevel": "law-linked"
     },
     {
       "id": "lgu-zoning",
       "name": "LGU Zoning Administrator or Planning Office",
       "nameKo": "지방정부 도시계획·용도지역 담당부서",
       "role": "지방 zoning ordinance에 따른 Locational Clearance·예외·특별용도 허가를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://quezoncity.gov.ph/departments/city-planning-and-development-department/"
+      "verificationLevel": "source-linked"
     },
     {
       "id": "emb-denr",
@@ -1287,19 +930,7 @@
       "verificationLevel": "source-linked",
       "note": "DPWH 공식 발령과 2023년 대법원 판결에서 계속 적용되는 국가 건축법·IRR을 확인했다. 최신 DPWH 개정·해석과 지방코드를 함께 확인한다.",
       "statusCheckedOn": "2026-08-07",
-      "statusBasis": "DPWH가 게시한 PD 1096 개정 시행규칙과 Quezon City OBO의 2026년 현행 서비스에서 계속 적용됨을 확인"
-    },
-    {
-      "id": "PHL-LOCAL-ZONING",
-      "title": "LGU zoning ordinance and Locational Clearance system",
-      "titleKo": "지방정부 용도지역조례·입지확인(Locational Clearance) 제도",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "officialUrl": "https://quezoncity.gov.ph/departments/city-planning-and-development-department/",
-      "verificationLevel": "source-linked",
-      "note": "Quezon City의 현행 공식 절차는 지방 집행 예시다. 대상 LGU의 CLUP·zoning ordinance·수수료를 별도 확보한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Quezon City 도시계획부의 현행 Locational Clearance 서비스와 2016 Zoning Ordinance 제59조를 확인"
+      "statusBasis": "DPWH가 게시한 PD 1096 개정 시행규칙과 국가건축법 공식 자료에서 현행 적용을 확인"
     },
     {
       "id": "PHL-PD-1586-PEISS",
@@ -1329,68 +960,65 @@
   ],
   "requirements": [
     {
-      "id": "PHL-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "필리핀 LGU에서 신축·증축·수선·용도변경·개발을 추진하는 ODA 건축사업",
-      "requirement": "National Building Code는 전국 최소기준이지만 토지이용·밀도·예외는 LGU의 CLUP와 zoning ordinance가 결정한다. Locational Clearance를 통해 용도적합성을 확인하고 필지별 PSO·FAR·BHL·setback·parking, road right-of-way와 hazard 조건을 확정한다.",
-      "authorityIds": [
-        "lgu-zoning",
-        "lgu-building-official"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "PHL-LOCAL-ZONING",
-          "provisions": [
-            "Locational Clearance before Building Permit"
-          ]
-        },
-        {
-          "instrumentId": "PHL-PD-1096",
-          "provisions": [
-            "site, occupancy and building-control framework"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "토지권원·tax declaration·lot plan",
-        "LGU CLUP·zoning map·Locational Clearance",
-        "필지별 PSO·FAR·높이·이격·주차·RROW",
-        "지진·화산·홍수·산사태·배수·유틸리티 확인"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
-    {
       "id": "PHL-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
       "status": "conditional",
       "applicability": "National Building Code상 허가대상 공사와 PEISS coverage screening 대상 사업",
-      "requirement": "OBO는 건축·전기·기계·위생 등 허가를 처리하며 zoning clearance가 선행된다. PEISS는 ECP·ECA 여부와 threshold로 ECC 또는 CNC 경로를 정하고, BFP 소방안전평가 등 전문승인을 추가한다.",
+      "requirement": "대통령령 제1586호(PD 1586)에 따라 DENR-EMB가 환경준수증명(ECC)·비대상확인증명(CNC) 경로를 분류·심사하고, 공화국법 제9514호(RA 9514)에 따라 소방국(BFP)이 소방안전평가확인서(FSEC)를 심사한다. 지방정부 건축공무원실(OBO)은 대통령령 제1096호(PD 1096)에 따른 건축·부대설비 허가를 처리한다.",
       "authorityIds": [
-        "lgu-building-official",
-        "lgu-zoning",
         "emb-denr",
-        "bfp"
+        "bfp",
+        "lgu-building-official",
+        "lgu-zoning"
       ],
       "legalBasis": [
         {
-          "instrumentId": "PHL-PD-1096",
+          "instrumentId": "PHL-PD-1586-PEISS",
           "provisions": [
-            "building and ancillary permit framework"
+            "DAO 2003-30 Revised Procedural Manual project groups; ECC/CNC documentary requirements"
           ]
         },
         {
           "instrumentId": "PHL-PD-1586-PEISS",
           "provisions": [
-            "ECP, ECA, ECC and CNC framework"
+            "Requirements for Securing ECC; Revised Procedural Manual Annex 2-1a"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1586-PEISS",
+          "provisions": [
+            "DAO 2003-30 Revised Procedural Manual procedural screening, substantive review and public participation"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1586-PEISS",
+          "provisions": [
+            "PD 1586; DAO 2003-30 decision authority and ECC/CNC process"
           ]
         },
         {
           "instrumentId": "PHL-RA-9514-FIRE",
           "provisions": [
-            "fire-safety evaluation and inspection framework"
+            "FSEC application for Building Permit; RA 9514 Revised IRR"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "PD 1096 Sections 301-302; Revised IRR Rule III building and ancillary permits"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "OBO evaluation and processing of building, ancillary and auxiliary permit applications"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "PD 1096 Sections 301-304; Revised IRR Rule III"
           ]
         }
       ],
@@ -1408,7 +1036,7 @@
       "topic": "기술기준·검사·보험·준공·사용승인",
       "status": "conditional",
       "applicability": "건축허가를 받아 시공하고 Certificate of Occupancy가 필요한 건축물",
-      "requirement": "승인도서에 따라 면허 전문자가 공사를 수행·확인하고 OBO의 단계·최종검사와 BFP 소방검사를 받아야 한다. BFP의 FSIC는 OBO Certificate of Occupancy의 선행서류이며, 점유허가 전 사용해서는 안 된다.",
+      "requirement": "대통령령 제1096호(PD 1096)에 따라 승인도서로 시공하고 건축공무원실(OBO)의 공사·최종검사를 거쳐야 한다. 공화국법 제9514호(RA 9514)에 따른 소방국(BFP)의 소방안전검사증명서(FSIC)는 점유허가증의 선행서류이며, 점유허가 전에는 건물을 사용할 수 없다.",
       "authorityIds": [
         "lgu-building-official",
         "bfp"
@@ -1417,13 +1045,43 @@
         {
           "instrumentId": "PHL-PD-1096",
           "provisions": [
-            "inspection and Certificate of Occupancy framework"
+            "PD 1096 Sections 301, 308; Revised IRR construction and supervision controls"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "PD 1096 Section 207 and Section 308; OBO inspection and enforcement"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "Certificate of Occupancy or Use before occupancy; OBO final-certificate service"
           ]
         },
         {
           "instrumentId": "PHL-RA-9514-FIRE",
           "provisions": [
-            "FSIC prerequisite for Certificate of Occupancy"
+            "Citizen's Charter FSIC documentary requirements and fire-safety inspection"
+          ]
+        },
+        {
+          "instrumentId": "PHL-RA-9514-FIRE",
+          "provisions": [
+            "RA 9514 Revised IRR Rule 3; FSIC prerequisite for Certificate of Occupancy"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "Ocular inspection of completed structures for occupancy and final permits"
+          ]
+        },
+        {
+          "instrumentId": "PHL-PD-1096",
+          "provisions": [
+            "PD 1096 Section 309; Certificate of Occupancy before use"
           ]
         }
       ],
@@ -1439,120 +1097,39 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "지방정부의 입지확인 공식결정",
-      "decision": "용도지역 담당관이 제안 건축물의 지방 용도지역 적합성과 건축허가 진입 가능 여부를 공식 결정한다.",
-      "dependsOn": [],
-      "output": "입지확인·조건·승인도서 또는 거부통지"
-    },
-    {
-      "order": 2,
       "gate": "DENR-EMB의 환경준수·비대상확인 공식결정",
       "decision": "관할 EMB가 사업의 환경승인·비대상 확인과 조건 또는 거부를 공식 결정한다.",
       "dependsOn": [],
       "output": "환경준수·비대상확인증명·환경조건 또는 거부통지"
     },
     {
-      "order": 3,
+      "order": 2,
       "gate": "지방정부 건축담당관의 건축허가 공식결정",
       "decision": "건축담당관이 승인도서에 대한 건축·부대설비 허가 발급 또는 불허를 공식 결정한다.",
       "dependsOn": [],
       "output": "건축허가·승인도서·조건 또는 불허통지"
     },
     {
-      "order": 4,
+      "order": 3,
       "gate": "소방청의 소방안전검사증명 공식결정",
       "decision": "BFP가 완공 건축물의 소방공사·설비 적합성과 점유허가 진입 가능 여부를 결정한다.",
       "dependsOn": [],
       "output": "소방안전검사증명서 또는 시정·거부통지"
     },
     {
-      "order": 5,
+      "order": 4,
       "gate": "지방정부 건축담당관의 점유허가 공식결정",
       "decision": "건축담당관이 건축물 사용·점유 가능 여부와 조건을 공식 결정한다.",
       "dependsOn": [
-        4
+        3
       ],
       "output": "점유허가증·조건 또는 불허통지"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "PHL-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "PHL-LOCAL-ZONING",
-          "provisions": [
-            "Locational Clearance before Building Permit"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "PHL-BLD-Q-001",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 LGU의 zoning과 Locational Clearance상 허용용도·PSO·FAR·높이·이격·주차·재해조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "토지권원·tax declaration·lot plan",
-        "LGU CLUP·zoning map·Locational Clearance",
-        "필지별 PSO·FAR·높이·이격·주차·RROW",
-        "지진·화산·홍수·산사태·배수·유틸리티 확인"
-      ],
-      "confirmWith": [
-        "lgu-zoning",
-        "lgu-building-official"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "PHL-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "lgu-zoning",
-        "lgu-building-official"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "PHL-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "LGU Locational Clearance·국가건축법의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "토지권원·tax declaration·lot plan",
-        "LGU CLUP·zoning map·Locational Clearance",
-        "필지별 PSO·FAR·높이·이격·주차·RROW",
-        "지진·화산·홍수·산사태·배수·유틸리티 확인"
-      ],
-      "confirmWith": [
-        "lgu-zoning",
-        "lgu-building-official"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "PHL-BLD-Q-004",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 Locational Clearance·건축허가와 ECC·CNC 유형, BFP·외부 clearance의 선후관계는 무엇인가?",
@@ -1564,15 +1141,15 @@
         "수수료·완비일·보완·실제 전체 인허가기간"
       ],
       "confirmWith": [
-        "lgu-building-official",
-        "lgu-zoning",
         "emb-denr",
-        "bfp"
+        "bfp",
+        "lgu-building-official",
+        "lgu-zoning"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "PHL-BLD-Q-005",
+      "id": "PHL-BLD-Q-002",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -1583,15 +1160,15 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "lgu-building-official",
-        "lgu-zoning",
         "emb-denr",
-        "bfp"
+        "bfp",
+        "lgu-building-official",
+        "lgu-zoning"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "PHL-BLD-Q-006",
+      "id": "PHL-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
       "question": "OBO 건축허가·EMB ECC/CNC의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
@@ -1603,15 +1180,15 @@
         "수수료·완비일·보완·실제 전체 인허가기간"
       ],
       "confirmWith": [
-        "lgu-building-official",
-        "lgu-zoning",
         "emb-denr",
-        "bfp"
+        "bfp",
+        "lgu-building-official",
+        "lgu-zoning"
       ],
       "owner": "현지 건축전문가·조사총괄"
     },
     {
-      "id": "PHL-BLD-Q-007",
+      "id": "PHL-BLD-Q-004",
       "blocking": true,
       "stage": "completion",
       "question": "필요 전문면허·OBO/BFP 검사와 FSIC·Certificate of Occupancy의 서류·비용·실제 기간은 무엇인가?",
@@ -1629,7 +1206,7 @@
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "PHL-BLD-Q-008",
+      "id": "PHL-BLD-Q-005",
       "blocking": true,
       "stage": "completion",
       "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
@@ -1646,7 +1223,7 @@
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "PHL-BLD-Q-009",
+      "id": "PHL-BLD-Q-006",
       "blocking": false,
       "stage": "completion",
       "question": "FSIC·Certificate of Occupancy의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
@@ -1668,53 +1245,35 @@
     {
       "id": "PHL-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "PHL-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "PHL-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "PHL-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "PHL-BLD-F-005",
+      "id": "PHL-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "PHL-BLD-F-006",
+      "id": "PHL-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
     },
     {
-      "id": "PHL-BLD-F-007",
+      "id": "PHL-BLD-F-004",
       "phase": "시장조사",
       "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
       "output": "적격기관·보험 대장"
     },
     {
-      "id": "PHL-BLD-F-008",
+      "id": "PHL-BLD-F-005",
       "phase": "기관협의",
       "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
       "output": "검사·준공·개장 Hold Point 표"
     },
     {
-      "id": "PHL-BLD-F-009",
+      "id": "PHL-BLD-F-006",
       "phase": "보고서 반영",
       "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
@@ -1724,26 +1283,17 @@
     {
       "id": "PHL-BLD-C-001",
       "confidence": "conditional",
-      "text": "필리핀은 국가건축법과 지방 zoning이 결합되므로 Quezon City 수치나 국가 코드만으로 대상 필지의 설계 가능 규모를 확정할 수 없다.",
+      "text": "대통령령 제1096호의 건축허가, 대통령령 제1586호의 환경결정과 공화국법 제9514호의 소방안전평가확인은 서로 다른 전국 법정 Gate이므로 한 기관의 처리기한만으로 전체 착공일정을 산정해서는 안 된다.",
       "basis": [
-        "PHL-LOCAL-ZONING",
+        "PHL-PD-1586-PEISS",
+        "PHL-RA-9514-FIRE",
         "PHL-PD-1096"
       ]
     },
     {
       "id": "PHL-BLD-C-002",
       "confidence": "conditional",
-      "text": "필리핀의 건축허가·환경승인·소방승인은 별도 법정 Gate이므로 한 기관의 처리기한만으로 전체 착공일정을 산정해서는 안 된다.",
-      "basis": [
-        "PHL-PD-1096",
-        "PHL-PD-1586-PEISS",
-        "PHL-RA-9514-FIRE"
-      ]
-    },
-    {
-      "id": "PHL-BLD-C-003",
-      "confidence": "conditional",
-      "text": "필리핀에서는 공사완료와 합법적 점유가 다르므로 FSIC와 Certificate of Occupancy를 인계·개장 선행조건으로 계약에 반영해야 한다.",
+      "text": "대통령령 제1096호와 공화국법 제9514호의 전국 체계에서 공사완료와 합법적 점유는 구분되므로 FSIC와 Certificate of Occupancy를 인계·개장 선행조건으로 계약에 반영해야 한다.",
       "basis": [
         "PHL-PD-1096",
         "PHL-RA-9514-FIRE"

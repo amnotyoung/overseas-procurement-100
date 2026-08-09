@@ -76,6 +76,7 @@
       "officialProcedure": {
         "name": "도미니카공화국 필지·토지이용 결정 — 국가구(Distrito Nacional) 사례",
         "coverage": "official-source-linked",
+        "publicationScope": "subnational-example",
         "scope": "국가구에서 권원증서(título)·지적측량(mensura)으로 필지를 특정하고 국가구 시청(ADN)의 도시계획 심사를 거쳐 허용용도를 공식 인증받는 절차다. 다른 지방은 관할 시청(ayuntamiento)의 현행 조례·서비스를 적용한다.",
         "stages": ["S1 권원·지적", "S2 신청도서", "S3 공식접수", "S4 도시계획 심사·보완", "S5 용도인증 결정"],
         "steps": [
@@ -101,14 +102,17 @@
       "officialProcedure": {
         "name": "도미니카공화국 주택건축부(MIVHED) 건축허가·환경부 A-D 승인",
         "coverage": "article-linked",
+        "publicationScope": "national",
         "scope": "주택건축부에 전문도서를 제출해 승인도면·건축허가(Licencia de Construcción)를 받는 경로와 환경부의 등록·사전분석·A-D 분류·연구·기술평가위원회(CTE) 결정 경로를 병렬로 표시한다.",
         "stages":["P1 분류·도서","P2 공식접수","P3 완비·기술심사","P4 보완·전문평가","P5 공식결정"],
+        "laneOrder":["도시계획·건축 허가기관","현지 설계·시공 전문가","건축주·신청인","환경·소방·검사기관"],
         "steps":[
           {"lane":"현지 설계·시공 전문가","stage":0,"label":"R-021 허가유형·전문도서 확정","emphasis":"key","kind":"statutory","basisScope":"node","action":"CODIA 등록 책임전문가가 R-021의 공사분류와 적용 기술규정에 따라 건축·구조·설비도면, 계산서, 권원과 시청 선행자료를 작성·서명한다.","output":"서명된 MIVHED 허가도서","authorityIds":["dom-codia-professionals","dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["sections 2.3.1.1-2.3.1.2; project classification, plans and professional signatures"]}]},
           {"lane":"건축주·신청인","stage":1,"label":"MIVHED 도면접수 신청","emphasis":"normal","kind":"statutory","basisScope":"node","action":"소유자 또는 대리인이 중앙 또는 관할 지역 도면접수부서에 전문도서·권원·시청자료를 제출한다.","output":"도면심사 접수·사건기록","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["section 2.3.1.2.2; filing with Central or Regional Plan Processing Office"]}]},
           {"lane":"도시계획·건축 허가기관","stage":2,"label":"MIVHED 기술규정·관계기관 심사","emphasis":"key","kind":"statutory","basisScope":"node","action":"MIVHED가 건축·구조·설비도면을 적용 기술규정과 선행승인에 대조하고 필요한 전문부서·관계기관 검토를 통합한다.","output":"기술심사·관계기관 의견기록","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["plan review and approval under applicable technical regulations"]}]},
           {"lane":"도시계획·건축 허가기관","stage":3,"label":"건축도서 관찰·보완통지","emphasis":"bottleneck","kind":"statutory","basisScope":"node","action":"기술요건이나 제출자료가 충족되지 않으면 MIVHED가 관찰사항을 특정해 도서수정·보완을 요구한다.","output":"관찰·보완통지","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["plan processing and compliance with technical requirements before approval"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":3,"label":"건축도서 수정·재심사","emphasis":"normal","kind":"statutory","basisScope":"node","action":"책임전문가가 관찰사항을 반영해 도면·계산·동의자료를 수정하고 MIVHED에 재제출한다.","output":"보완도서·재심사 기록","authorityIds":["dom-codia-professionals","dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["technical compliance required for approved and sealed plans"]}]},
+          {"lane":"현지 설계·시공 전문가","stage":3,"label":"건축도서 수정·재제출","emphasis":"normal","kind":"statutory","basisScope":"node","action":"책임전문가가 관찰사항을 반영해 도면·계산·동의자료를 수정하고 MIVHED에 재제출한다.","output":"보완도서·재제출 기록","authorityIds":["dom-codia-professionals","dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["technical compliance required for approved and sealed plans"]}]},
+          {"lane":"도시계획·건축 허가기관","stage":3,"label":"MIVHED 보완도서 재심사","emphasis":"key","kind":"statutory","basisScope":"node","action":"MIVHED가 재제출된 보완도서를 관찰사항과 적용 기술규정에 다시 대조해 적합 여부를 심사한다.","output":"보완도서 재심사 결과","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["plan processing and technical compliance required before approval and sealing"]}]},
           {"lane":"건축주·신청인","stage":4,"label":"승인 수수료·stamp 제출","emphasis":"normal","kind":"statutory","basisScope":"node","action":"도면 승인 후 신청인이 요구되는 수수료 영수증과 stamp를 제출해 licence 발급요건을 완결한다.","output":"수수료·stamp 납부증빙","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["section 2.3.2.1; delivery of stamps and payment receipts before licence issuance"]}]},
           {"lane":"도시계획·건축 허가기관","stage":4,"label":"건축허가 결정","emphasis":"key","kind":"statutory","basisScope":"node","action":"MIVHED 권한자가 Licencia de Construcción을 발급하고 승인·봉인 도면이 포함된 완전한 expediente를 신청인에게 교부하거나 불승인한다.","output":"건축허가·승인봉인도면 또는 불승인","authorityIds":["dom-mivhed"],"refs":[{"source":"MIVHED R-021","instrumentId":"DOM-R021-576-06","provisions":["sections 2.3.2.1-2.3.2.3; signed licence and approved sealed plans"]}],"permitGate":{"key":"mivhed-construction-licence","gate":"주택건축부 건축허가 공식결정","decision":"주택건축부가 기술규정 적합성과 발급요건을 확인해 건축허가를 발급하거나 불승인한다.","output":"건축허가·승인도면 또는 불승인","dependsOn":[]}},
           {"lane":"건축주·신청인","stage":0,"label":"환경 디지털 등록·기초자료 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"사업자가 환경부 디지털 시스템에 사업 위치·특성·투자·권원·mensura·시청 uso de suelo no-objection·계획자료를 등록하고 수수료를 납부한다.","output":"환경등록·고유사건번호·납부증빙","authorityIds":["dom-environment","dom-municipality"],"refs":[{"source":"환경부 A-D 승인 공식서비스","instrumentId":"DOM-ENV-AUTHORIZATION-SERVICE","provisions":["project registration, property title, cadastral survey, municipal land-use no-objection and filing fee"]}]},
@@ -120,7 +124,7 @@
           {"lane":"현지 설계·시공 전문가","stage":3,"label":"환경연구 보완·재심사","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"환경서비스 제공자가 통지된 사항을 보완해 연구·PMAA를 다시 제출하고 기술평가로 회귀한다.","output":"보완 환경연구·답변서","authorityIds":["dom-codia-professionals","dom-environment"],"refs":[{"source":"환경부 현행 환경평가 절차","instrumentId":"DOM-ENV-TDR-2026","provisions":["supplementation of deficient or incomplete environmental information"]}]},
           {"lane":"환경·소방·검사기관","stage":4,"label":"환경 A-D 공식결정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"환경부 권한자가 범주에 따라 Licencia Ambiental, Permiso Ambiental, Constancia Ambiental 또는 CRIM을 조건과 함께 발급하거나 유보·기각한다.","output":"A/B/C/D 환경승인·조건 또는 기각","authorityIds":["dom-environment"],"refs":[{"source":"환경부 A-D 현행 승인체계","instrumentId":"DOM-ENV-LAW-64-00-RES-2024","provisions":["Resolution 0025-2024; A licence, B permit, C constancia and D CRIM"]}],"permitGate":{"key":"environment-abcd-authorization","gate":"환경부 A-D 환경승인 공식결정","decision":"권한자가 범주별 평가결과에 따라 환경승인을 발급·유보 또는 기각한다.","output":"Licencia·Permiso·Constancia·CRIM 또는 기각결정","dependsOn":[]}}
         ],
-        "edges":[[0,7,"message","병렬 환경등록"],[0,1,"sequence","R-021 도서"],[1,2,"sequence","MIVHED 접수"],[2,5,"sequence","도면 적합"],[2,3,"message","관찰사항"],[3,4,"sequence","보완요구"],[4,2,"loop","보완 후 건축 재심사"],[5,6,"sequence","발급요건"],[7,8,"sequence","환경등록"],[8,9,"sequence","A-D 분류"],[9,10,"sequence","TdR·요구자료"],[10,11,"sequence","환경연구"],[11,14,"sequence","기술 적합"],[11,12,"message","추가정보"],[12,13,"sequence","보완요구"],[13,11,"loop","보완 후 환경 재심사"]],
+        "edges":[[0,8,"message","병렬 환경등록"],[0,1,"sequence","R-021 도서"],[1,2,"sequence","MIVHED 접수"],[2,6,"sequence","초회 심사 적합"],[2,3,"message","관찰사항"],[3,4,"sequence","보완요구"],[4,5,"sequence","보완도서 재제출"],[5,6,"sequence","재심사 적합"],[5,3,"loop","추가 관찰사항"],[6,7,"sequence","발급요건"],[8,9,"sequence","환경등록"],[9,10,"sequence","A-D 분류"],[10,11,"sequence","TdR·요구자료"],[11,12,"sequence","환경연구"],[12,15,"sequence","기술 적합"],[12,13,"message","추가정보"],[13,14,"sequence","보완요구"],[14,12,"loop","보완 후 환경 재심사"]],
         "decisionBranches":[
           {"state":"success","label":"건축허가·환경승인 충족","action":"승인도면과 모든 조건을 공사계약·착공조건에 반영한다."},
           {"state":"rework","label":"관찰·유보·조건부","action":"MIVHED 또는 환경부 요구를 도서·연구에 반영해 해당 심사로 회귀한다."},
@@ -133,6 +137,7 @@
       "officialProcedure": {
         "name":"도미니카공화국 R-004 공사감리·단계검사·최종인증",
         "coverage":"article-verified",
+        "publicationScope": "national",
         "scope":"도미니카 기술자·건축사·측량사협회(CODIA) 등록 공사책임자·감리자를 지정하고 주택건축부(MIVHED)의 공정별 공식검사와 최종검사를 거쳐 공식 최종검사 인증(Certificación Oficial de Inspección Final)을 받는 법정 절차다.",
         "stages":["C1 책임자·착공","C2 단계검사","C3 시험·보완","C4 완료신청","C5 최종검사·인증"],
         "steps":[

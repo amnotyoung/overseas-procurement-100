@@ -14,6 +14,7 @@
 6. **공식 서비스 페이지보다 최신 법령을 우선한다.** 안내 페이지가 개정 법령을 반영하지 않았으면 그 충돌을 명시한다.
 7. **특정 법권의 용어를 국가 공통 개념으로 일반화하지 않는다.** PUD·ERP처럼 일부 국가에서만 쓰는 명칭은 해당 국가 원문과 상세판에만 두고, 공통 계약과 화면에서는 ‘필지별 개발규제’, ‘시설·용도·위험 분류’처럼 기능 중심의 중립 용어를 사용한다.
 8. **독자용 문구는 한국어를 먼저 쓴다.** 국가 고유 업무용어는 페이지별 최초 1회만 `한국어(원어·약어)`로 병기하고 이후에는 한국어만 쓴다. 법령 정식명·기관 고유명·조문 인용은 추적성을 위해 원문을 보존한다.
+9. **지역 대표 사례를 국가 제도로 공개하지 않는다.** 특정 주·도시·지방의 절차와 전국 절차를 섞지 않으며, 전국 공통성을 확인하지 못한 축은 공개 목록·페이지·구조도·출처에서 제외한다.
 
 ## 2. 파일 배치
 
@@ -27,7 +28,7 @@
 | `docs/construction-regulations-data-contract.md` | 이 데이터 계약 | 수동 |
 | `docs/construction-regulations/{country}.md` | 전문가용 국가 브리프 | `build_construction_regulations.py` |
 | `tools/validate_construction_regulations.py` | 구조·참조·근거 검증 | 수동 |
-| `tools/check_construction_procedure_coverage.py` | 44개국·132모델 상세절차 품질 게이트 | 수동 |
+| `tools/check_construction_procedure_coverage.py` | 44개국의 전국 공통 공개축 상세절차·관할범위 품질 게이트 | 수동 |
 | `tools/check_construction_procedure_structure.py` | 번역 외 노드·Gate·분기·근거 구조 변경 방지 | 수동 |
 | `tools/check_construction_terminology.py` | 한국어 우선·원어 최초 1회 표기 검사 | 수동 |
 | `tools/build_construction_regulations.py` | Markdown 생성 | 수동 |
@@ -74,7 +75,7 @@
 
 `kind`가 `official-guidance`인 자료는 조문 자체가 없으므로 위 요건의 "법령"에 넣지 않는다. 안내 페이지에 조문 대조를 요구하면 어떤 축도 승격할 수 없다.
 
-**국가 등급 `verification.status`는 가장 약한 축을 따르는 파생값이다.** 세 축 중 하나라도 조문 대조 전이면 그 국가 자료 전체가 조문 대조를 마쳤다고 말할 수 없다. 축 등급 5종을 국가 등급 4종으로 옮기는 규칙은 `derive_country_verification_status()`에 있으며, 수기로 어긋나면 검증기가 실패시킨다. catalog의 `verificationStatus`는 더 이상 이 값을 정하지 않는다.
+**국가 등급 `verification.status`는 공개된 전국 공통 축 가운데 가장 약한 축을 따르는 파생값이다.** 공개축 하나라도 조문 대조 전이면 그 국가 공개자료 전체가 조문 대조를 마쳤다고 말할 수 없다. 축 등급 5종을 국가 등급 4종으로 옮기는 규칙은 `derive_country_verification_status()`에 있으며, 수기로 어긋나면 검증기가 실패시킨다. catalog의 `verificationStatus`는 더 이상 이 값을 정하지 않는다.
 
 등급 분포의 하한은 `catalog/evidence-grade-baseline.json`에 고정한다. 하한보다 낮으면 승격이 되돌아간 것이고, 높으면 픽스처를 갱신하라고 실패한다 — 승격 사실이 반드시 리뷰에 드러나게 하려는 것이다. `--update`로 갱신하고 그 diff를 리뷰에 포함한다.
 
@@ -95,7 +96,7 @@
   pilotContext?: ProjectContext;
   verification: VerificationSummary;
   processBoard: ConstructionProcessBoard;
-  publicModels?: PublicConstructionModel[];
+  publicModels: PublicConstructionModel[];
   authorities: Authority[];
   instruments: Instrument[];
   requirements: Requirement[];
@@ -109,11 +110,11 @@
 
 `pilotContext`는 특정 사업에 맞춘 적용 가설이다. 국가 공통 사실과 혼동하지 않도록 확인된 입력(`known`)과 미확정 입력(`unknown`)을 나눠 적는다.
 
-`processBoard`는 확인된 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 행위주체와 순서로 구조화하고, `publicModels`는 그 절차를 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 모든 협력국은 조달 3종과 균형을 맞춰 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 3종을 4~6번으로 공개한다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 준비·확인업무는 절차 노드로 섞지 않고 `openQuestions`, `fieldworkChecklist`, `requirements[].evidenceToObtain`과 공개 화면의 **ODA 사업 적용 확인사항**에 별도로 둔다. 국가별 공식 결정은 `permitPath`에 확인된 범위만 기록한다.
+`processBoard`는 전국 공통성이 확인된 실제 공식 건축 인허가·검사 절차를 행위주체와 순서로 구조화하고, `publicModels`는 그 절차를 공개 사이트의 독립 제도축으로 나누는 표시 계약이다. 각 협력국은 `도시계획·부지규제`, `건축허가·환경심사`, `기술검사·보험·준공제도` 가운데 전국 공통성이 확인된 0~3개 축만 4번부터 공개한다. 공개축이 없으면 배열과 구조도는 비어 있고 지역 사례는 대체 콘텐츠로 노출하지 않는다. 법령·의무·질문을 복제하지 않고 전체 `processBoard`의 노드와 공통 대장을 참조한다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 준비·확인업무는 절차 노드로 섞지 않고 `openQuestions`, `fieldworkChecklist`, `requirements[].evidenceToObtain`과 공개 화면의 **ODA 사업 적용 확인사항**에 별도로 둔다. 국가별 공식 결정은 `permitPath`에 확인된 범위만 기록한다.
 
 국가 생성판(`generatedFrom` 존재)은 기본 catalog와 국가별 공식절차 오버레이를 합친 결과다. 세네갈처럼 조문을 직접 대조한 단계는 `article-verified`, 법령·정부 서비스에서 공식 순서를 확인했으나 단계별 조문 대조가 아닌 경우는 `official-source-linked`로 구분한다. 생성 JSON은 직접 고치지 않고 기본 catalog 또는 해당 국가 overlay를 수정한다.
 
-catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 그 안에는 절차의 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 근거가 있는 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 기록한다. 생성기에는 편집 중 자료를 확인하기 위한 1노드 fallback이 남아 있지만, 상세절차 품질 게이트가 국가별 3축 overlay가 없는 결과의 공개·배포를 차단한다.
+catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 각 절차에는 공개 관할 판정인 `publicationScope: national | subnational-example`을 반드시 쓰고, 적용 범위(`scope`), 단계(`steps`), 연결(`edges`), 공식 결정(`permitGate`), 근거가 있는 보완회귀(`loop`)와 결과분기(`decisionBranches`)를 기록한다. 생성기와 검증기는 `national` 축만 공개 데이터로 투영하고, `subnational-example` 축은 관련 기관·법령·노드와 함께 공개 산출물에서 제거한다.
 
 ## 5. 핵심 객체
 
@@ -261,6 +262,7 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
   procedureStatus?: "detail-unverified" | "source-linked" |
                     "official-source-linked" | "article-verified";
   procedureScope?: string;          // 관할·시설·절차 범위와 제한
+  laneOrder?: string[];             // 복합 흐름의 모델별 행위주체 표시순서
   nodeIds: string[];                // 전체 processBoard.nodes 참조
   requirementIds: string[];         // requirements 참조, 축 간 내용 혼입 방지
   questionIds: string[];            // openQuestions 참조
@@ -278,9 +280,10 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
 
 - 각 공개 제도축은 선택한 노드만으로 독립적으로 연결된 클릭형 구조도를 만든다.
 - 공개 제도축의 edge는 통합 `processBoard.edges`에 같은 source·target·type·label로 존재하는 경로만 투영한다.
+- `laneOrder`는 복합 병렬흐름에서 특정 공개축의 교차선을 줄이기 위한 표시 전용 재정렬이다. 지정할 때는 그 축이 사용하는 행위주체를 빠짐없이 한 번씩 포함해야 하며, 노드의 실제 `lane`이나 다른 공개축의 순서는 바꾸지 않는다.
 - `officialProcedure`가 있는 공개 제도축의 노드·레인·절차구간·Gate 수는 공식 근거에서 확인한 범위를 따른다. 일정한 노드 수나 레인 수를 맞추기 위해 절차를 추가하지 않는다.
 - `detail-unverified`와 `source-linked`는 편집·이관 호환을 위한 작성 중 상태다. 배포 대상 공개 제도축은 국가별 `officialProcedure`를 바탕으로 `official-source-linked`·`article-linked`·`article-verified` 중 하나여야 하며, 주장한 등급의 진입 요건(§3.3)을 실제로 충족해야 한다.
-- 모든 건축 국가 파일은 정확히 3개 공개 제도축과 연속 우선순위 4·5·6을 가져야 한다.
+- 각 건축 국가 파일은 전국 공통성이 확인된 0~3개 공개 제도축만 가지며, 공개되는 축은 종류별 고정 우선순위 4·5·6을 유지한다.
 - 한 국가의 공개 제도축 전체를 합치면 원천 노드, 의무, Gate, 질문, 결론, 부지 특례와 현지조사 체크리스트가 빠짐없이 포괄돼야 한다. `requirementIds`는 각 의무를 한 축에만 배정해 선택 노드의 다른 주제가 섞이지 않게 한다.
 - 여러 제도에 공통인 법령·Gate·결론은 중복 표시할 수 있지만 원천 객체를 복제하지 않는다.
 - 원천 `processBoard.nodes[].id`는 국가 파일 안의 참조 무결성을 위해 유지한다. 공개 화면은 각 제도축의 `nodeIds` 순서를 기준으로 노드 번호를 `B01`부터, 절차구간을 `G1`부터 다시 매긴다. 카드와 상세 패널은 이 화면 로컬 번호를 표시하되, 연결·근거 추적은 원천 ID를 사용한다.
@@ -292,7 +295,7 @@ catalog의 각 국가는 세 제도축 모두 `officialProcedure`를 갖는다. 
 - 모든 노드는 근거 `refs`를 갖고 기존 법령 ID·요구사항·기관으로 역추적할 수 있어야 한다. 단계별 조문 대응을 검증하지 않은 국가 기본판은 `basisScope: "axis"`로 표시하고 해당 제도축의 전체 관련 근거를 연결한다. 이를 개별 노드의 직접 조문 근거로 표현하지 않는다.
 - `evidenceToObtain`은 법정 순서가 아니라 ODA 사업에 적용할 때 확인할 증빙이다. 노드 수를 맞추려고 이를 가상의 법정 단계로 쪼개지 않는다. `kind`로 법정절차·공식경로·지역사례·현지확인을 구분하며, 근거가 없는 착공통지·NOC·점유승인·보험 의무는 절차 노드로 추정하지 않고 `fieldworkChecklist`와 `openQuestions`의 적용 여부 확인으로 표현한다. 특히 `basisScope: "axis"`이거나 연결 근거의 현행성이 `continuity_unverified`인 노드는 `statutory`로 표시하지 않는다. `statutory`는 현행 조문과 해당 노드의 직접 대응을 확인한 경우에만 쓴다.
 - `action`·`outputs`가 있으면 공개 카드 상세는 이를 우선 사용한다. `requirementIds`는 상태·적용조건·근거 추적을 유지하되 같은 축의 긴 요구사항과 증빙목록을 모든 카드에 반복하지 않는다.
-- 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 첫 건축 model로 이동한다.
+- 공개 화면은 `build_site.py`가 `processBoard` 또는 `publicModels` 투영을 기존 model 템플릿의 HTML 버튼·동적 연결선·상세 패널로 변환한다. 국가별 조달 3축 뒤에 `priority: 4`부터 배치하며, 기존 `/construction/{country}/`와 단일 건축 model 주소는 공개축이 있으면 첫 건축 model로, 없으면 통합 대장으로 이동한다.
 - 카드의 `담당`은 lane의 책임주체이고 `authorityIds`는 `협의·관할기관`으로 따로 표시한다. 카드의 노드별 근거는 `processBoard.refs`를 우선하고, refs가 없는 구 계약에서만 연결된 `requirements[].legalBasis`를 대체 근거로 쓴다. 축 전체 근거는 캔버스 법적 근거에 별도로 유지한다.
 - 법령·자료의 원래 `kind`, `status`, `verificationLevel`, `scope`, `note`를 보존한다. `current_official`은 법적 근거가 아니라 운영 중 공식자료로 분리하고, `pending`·`superseded`·`continuity_unverified`는 사이트 검증 예외로 원문 대장에서 구체적 사유와 함께 표시한다.
 - `reportReadyConclusions`, `siteOverlays`, `openQuestions`, `permitPath.dependsOn`은 통합 model에서도 생략하지 않는다. 국가별 표시 보정과 법정기한은 다른 국가에 재사용하지 않는다.

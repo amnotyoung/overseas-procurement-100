@@ -9,12 +9,12 @@
     "iso3": "NGA",
     "region": "아프리카"
   },
-  "purpose": "나이지리아 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "나이지리아 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "라고스주 도시·지역계획·개발법 2010(개정 포함)·라고스주 전자 계획허가·건축통제 절차·환경영향평가법 Cap E12 LFN 2010(1992년 제86호)·나이지리아 국가건축기준 2006의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "연방 환경평가국 환경영향평가 공식 절차·환경영향평가법 Cap E12 LFN 2010(1992년 제86호)의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,312 +24,21 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "나이지리아 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "나이지리아 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
-      "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 계획정보·전문도서",
-      "G1 전자접수·스크리닝",
-      "G2 현장·기술심사",
-      "G3 결재·허가발급",
       "G0 등록·선별검토",
       "G1 과업지시서(TOR)·환경평가",
-      "G2 환경영향평가 심사·결정",
-      "G3 계획허가 심사·결정",
-      "G0 착공신고·승인",
-      "G1 단계검사·시정",
-      "G2 최종검사",
-      "G3 사용적합성 결정"
+      "G2 환경영향평가 심사·결정"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "G0 계획정보·전문도서",
-        "label": "계획정보(Planning Information) 조회",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "용도지역·허용용도·높이·정부취득 여부가 불명확하면 측량도(survey plan)와 권원자료로 MPP&UD 또는 관할 지구사무소(District Office)에 계획정보를 신청한다.",
-        "action": "용도지역·허용용도·높이·정부취득 여부가 불명확하면 측량도(survey plan)와 권원자료로 MPP&UD 또는 관할 지구사무소(District Office)에 계획정보를 신청한다.",
-        "outputs": [
-          "필지 계획정보·적용 계획기준"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA Planning Information",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Planning Information — zoning/use, permissible height and land status"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G0 계획정보·전문도서",
-        "label": "권원·측량도·전문도서 작성",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "토지권원과 측량도를 갖추고 등록 건축사·기술자가 건축·구조·기계·전기 도서 및 시설별 PPTR·LUPAR·지반자료를 작성·서명한다.",
-        "action": "토지권원과 측량도를 갖추고 등록 건축사·기술자가 건축·구조·기계·전기 도서 및 시설별 PPTR·LUPAR·지반자료를 작성·서명한다.",
-        "outputs": [
-          "권원서류·측량도·등록전문가 서명도서"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA 일반·용도별 체크리스트",
-            "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-            "provisions": [
-              "General requirements; types of use and professional submissions"
-            ]
-          },
-          {
-            "source": "계획허가 법정의무",
-            "instrumentId": "NGA-LAGOS-PLANNING-LAW-2010",
-            "provisions": [
-              "Section 28(1)-(6)"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "건축주·신청인",
-        "stage": "G1 전자접수·스크리닝",
-        "label": "전자계획허가(ePP) 1차 검토 신청",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "전자계획허가 포털(e-Planning Permit)에 계정을 만들고 부지·신청정보를 입력한 뒤 건축도면, 권원서류와 측량도를 업로드하고 1차 검토 수수료(screening fee)를 납부한다.",
-        "action": "전자계획허가 포털(e-Planning Permit)에 계정을 만들고 부지·신청정보를 입력한 뒤 건축도면, 권원서류와 측량도를 업로드하고 1차 검토 수수료(screening fee)를 납부한다.",
-        "outputs": [
-          "전자 검토번호·수수료 영수증"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "ePP Applicant Login Guide",
-            "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-            "provisions": [
-              "Registration; first screening; part-payment"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 전자접수·스크리닝",
-        "label": "권원·토지이용·건축도서 스크리닝",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "담당 도시계획가(Town Planner)가 권원, 측량도, 토지이용·위치와 건축계획의 주차·조경·높이·용적률(FAR) 등 계획기준 적합성을 확인한다.",
-        "action": "담당 도시계획가(Town Planner)가 권원, 측량도, 토지이용·위치와 건축계획의 주차·조경·높이·용적률(FAR) 등 계획기준 적합성을 확인한다.",
-        "outputs": [
-          "스크리닝 통과 또는 보완요구"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA front-desk screening",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Front Desk — title, survey, land-use, location and planning criteria screening"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G2 현장·기술심사",
-        "label": "합동 현장검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "1차 검토를 통과하면 정해진 검사일에 현장을 확인해 실제 부지·접근·주변용도와 제출 측량·계획정보의 일치를 검증한다.",
-        "action": "1차 검토를 통과하면 정해진 검사일에 현장을 확인해 실제 부지·접근·주변용도와 제출 측량·계획정보의 일치를 검증한다.",
-        "outputs": [
-          "합동 현장검사 기록"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA joint site inspection",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Joint site inspection after sufficient desk screening"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G2 현장·기술심사",
-        "label": "구조·설비·관계기관 심사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "구조·기계·전기 도서를 전문 심사하고 배수·교통·소방·비행경로·도시재생 등 해당하는 관계기관 승인서(MDA clearance)와 잔여 처리수수료를 확인한다.",
-        "action": "구조·기계·전기 도서를 전문 심사하고 배수·교통·소방·비행경로·도시재생 등 해당하는 관계기관 승인서(MDA clearance)와 잔여 처리수수료를 확인한다.",
-        "outputs": [
-          "전문심사 의견·관계기관 승인서 확인"
-        ],
-        "authorityIds": [
-          "state-planning-authority",
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA clearance·engineering screening",
-            "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-            "provisions": [
-              "Clearance from other MDAs; professional design submissions"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B07",
-        "lane": "건축주·신청인",
-        "stage": "G2 현장·기술심사",
-        "label": "추가정보·수정도서 제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "1차 검토·현장·전문심사에서 요구된 추가정보, 수정도서 또는 누락 승인서를 제출하고 잔여 수수료를 납부한다.",
-        "action": "1차 검토·현장·전문심사에서 요구된 추가정보, 수정도서 또는 누락 승인서를 제출하고 잔여 수수료를 납부한다.",
-        "outputs": [
-          "보완도서·승인서·잔여수수료 영수증"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "추가정보·processing fee",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Approving Authority may request additional information; balance processing fee"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 결재·허가발급",
-        "label": "층수별 결재·계획허가(Planning Permit) 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "지구담당관(District Officer)부터 상급 승인권자까지 건물 층수에 맞는 결재권자가 시행계획·계획기준 적합성을 토대로 승인·조건부 승인 또는 거부한다.",
-        "action": "지구담당관(District Officer)부터 상급 승인권자까지 건물 층수에 맞는 결재권자가 시행계획·계획기준 적합성을 토대로 승인·조건부 승인 또는 거부한다.",
-        "outputs": [
-          "계획허가 결정·조건 또는 거부사유"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA concurrent approval routing",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Day 17-22 consideration; approving authority by number of floors"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B09",
-        "lane": "건축주·신청인",
-        "stage": "G3 결재·허가발급",
-        "label": "승인도서 제출·허가서 수령",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "승인 통지를 받은 뒤 최종 전문서명 도서 5세트를 제출해 승인확인(endorsement)을 받고 계획허가서(Planning Permit letter)와 승인도서를 수령한다.",
-        "action": "승인 통지를 받은 뒤 최종 전문서명 도서 5세트를 제출해 승인확인(endorsement)을 받고 계획허가서(Planning Permit letter)와 승인도서를 수령한다.",
-        "outputs": [
-          "계획허가서·승인확인 도면(endorsed drawings)"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Permit issuance",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Endorsement and collection of permit and professional drawings"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B10",
         "lane": "건축주·신청인",
         "stage": "G0 등록·선별검토",
         "label": "EAD 사업등록",
@@ -359,7 +68,7 @@
         ]
       },
       {
-        "id": "B11",
+        "id": "B02",
         "lane": "환경·소방·검사기관",
         "stage": "G0 등록·선별검토",
         "label": "현장확인·선별·범위설정(screening/scoping)",
@@ -389,7 +98,7 @@
         ]
       },
       {
-        "id": "B12",
+        "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "G1 과업지시서(TOR)·환경평가",
         "label": "과업지시서 작성·평가 신청",
@@ -419,7 +128,7 @@
         ]
       },
       {
-        "id": "B13",
+        "id": "B04",
         "lane": "현지 설계·시공 전문가",
         "stage": "G1 과업지시서(TOR)·환경평가",
         "label": "환경영향평가 조사·보고서 제출",
@@ -456,7 +165,7 @@
         ]
       },
       {
-        "id": "B14",
+        "id": "B05",
         "lane": "환경·소방·검사기관",
         "stage": "G2 환경영향평가 심사·결정",
         "label": "환경영향평가 기술·패널·공개심사",
@@ -486,7 +195,7 @@
         ]
       },
       {
-        "id": "B15",
+        "id": "B06",
         "lane": "건축주·신청인",
         "stage": "G2 환경영향평가 심사·결정",
         "label": "환경영향평가 보완·최종보고서 제출",
@@ -516,7 +225,7 @@
         ]
       },
       {
-        "id": "B16",
+        "id": "B07",
         "lane": "환경·소방·검사기관",
         "stage": "G2 환경영향평가 심사·결정",
         "label": "환경영향평가 허가(EIA Permit) 공식결정",
@@ -545,683 +254,74 @@
           }
         ],
         "gateOrders": [
-          2
-        ]
-      },
-      {
-        "id": "B17",
-        "lane": "건축주·신청인",
-        "stage": "G3 계획허가 심사·결정",
-        "label": "계획허가 신청·환경승인서 첨부",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "등록전문가 도서, 권원·측량도(survey plan), 환경영향평가 승인서와 해당 관계기관 승인서를 전자계획허가 포털(ePP)로 제출하고 처리수수료를 납부한다.",
-        "action": "등록전문가 도서, 권원·측량도(survey plan), 환경영향평가 승인서와 해당 관계기관 승인서를 전자계획허가 포털(ePP)로 제출하고 처리수수료를 납부한다.",
-        "outputs": [
-          "완비 계획허가 신청"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA checklist",
-            "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-            "provisions": [
-              "General requirements; environmental and other MDA clearances"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B18",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 계획허가 심사·결정",
-        "label": "현장·계획·전문도서 심사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "LASPPPA와 관련 기술부서가 현장, 시행계획 적합성, 건축·구조·설비도서와 관계기관 승인서를 심사한다.",
-        "action": "LASPPPA와 관련 기술부서가 현장, 시행계획 적합성, 건축·구조·설비도서와 관계기관 승인서를 심사한다.",
-        "outputs": [
-          "계획허가 심사의견·보완요구"
-        ],
-        "authorityIds": [
-          "state-planning-authority",
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA permit routing",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Front-desk screening; joint inspection; engineering screening; concurrent approvals"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B19",
-        "lane": "건축주·신청인",
-        "stage": "G3 계획허가 심사·결정",
-        "label": "계획허가 보완도서 제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "추가정보 또는 설계수정 요구를 반영해 도서·승인서를 다시 제출한다.",
-        "action": "추가정보 또는 설계수정 요구를 반영해 도서·승인서를 다시 제출한다.",
-        "outputs": [
-          "수정도서·보완 재접수"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "추가정보 요구",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Approving Authority may contact applicant for additional information"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B20",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 계획허가 심사·결정",
-        "label": "계획허가(Planning Permit) 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "관할 승인권자가 계획·건축·환경조건 적합성을 확인해 계획허가를 승인·조건부 승인 또는 거부한다.",
-        "action": "관할 승인권자가 계획·건축·환경조건 적합성을 확인해 계획허가를 승인·조건부 승인 또는 거부한다.",
-        "outputs": [
-          "계획허가·승인조건 또는 거부사유"
-        ],
-        "authorityIds": [
-          "state-planning-authority"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASPPPA approval and issuance",
-            "instrumentId": "NGA-LAGOS-EPP-PROCEDURE",
-            "provisions": [
-              "Consideration, approval and permit endorsement"
-            ]
-          }
-        ],
-        "gateOrders": [
-          3
-        ]
-      },
-      {
-        "id": "B21",
-        "lane": "건축주·신청인",
-        "stage": "G0 착공신고·승인",
-        "label": "착공의향·C서식(Form C) 제출",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "계획허가(Planning Permit) 취득 후 착공 최소 7일 전에 LASBCA에 착공의향, C서식, 승인도서·공정표·안전자료와 해당 보험증서를 제출한다.",
-        "action": "계획허가(Planning Permit) 취득 후 착공 최소 7일 전에 LASBCA에 착공의향, C서식, 승인도서·공정표·안전자료와 해당 보험증서를 제출한다.",
-        "outputs": [
-          "착공신고·C서식·완비 서류"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA commencement procedure",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 11-12 — intention to commence, required documents and seven-day notice"
-            ]
-          },
-          {
-            "source": "ePP stage certification",
-            "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-            "provisions": [
-              "Form C and stage-certification procedure"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B22",
-        "lane": "환경·소방·검사기관",
-        "stage": "G0 착공신고·승인",
-        "label": "착공 전 현장·서류검사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "LASBCA가 현장이 미착공 상태인지 확인하고 계획허가·승인도서·등록전문가·보험·수수료 등 제출요건을 검증해 사건파일을 개설한다.",
-        "action": "LASBCA가 현장이 미착공 상태인지 확인하고 계획허가·승인도서·등록전문가·보험·수수료 등 제출요건을 검증해 사건파일을 개설한다.",
-        "outputs": [
-          "현장확인 기록·LASBCA 공사파일"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA pre-start verification",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 11-12 — vacant-site visit, file opening and required documents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B23",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 착공신고·승인",
-        "label": "착공승인서(Authorization to Commence) 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "착공 전 요구사항이 충족되면 LASBCA가 착공승인서와 녹색 스티커(green sticker)를 발급하고, 미충족이면 보완 또는 착공중지를 통지한다.",
-        "action": "착공 전 요구사항이 충족되면 LASBCA가 착공승인서와 녹색 스티커(green sticker)를 발급하고, 미충족이면 보완 또는 착공중지를 통지한다.",
-        "outputs": [
-          "착공승인·녹색 스티커 또는 보완통지"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA authorization",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 9, 11-12 — authorization to commence and green sticker"
-            ]
-          }
-        ],
-        "gateOrders": [
-          4
-        ]
-      },
-      {
-        "id": "B24",
-        "lane": "건축주·신청인",
-        "stage": "G1 단계검사·시정",
-        "label": "단계검사 7일 전 요청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "기초부터 외부공사·설비까지 각 검사단계 도달 전에 LASBCA에 7일 전 서면으로 검사를 요청한다.",
-        "action": "기초부터 외부공사·설비까지 각 검사단계 도달 전에 LASBCA에 7일 전 서면으로 검사를 요청한다.",
-        "outputs": [
-          "단계검사 요청서·통지기록"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA stage invitation",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Page 12 — seven-day invitation at every construction stage"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B25",
-        "lane": "환경·소방·검사기관",
-        "stage": "G1 단계검사·시정",
-        "label": "단계검사·단계인증(Stage Certification)",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "LASBCA 다분야 검사팀이 승인도서·계획허가 조건·건축법규(Building Code)와 시공품질을 확인해 단계별 적합을 인증하거나 시정·공사중지(stop-work)를 명령한다.",
-        "action": "LASBCA 다분야 검사팀이 승인도서·계획허가 조건·건축법규(Building Code)와 시공품질을 확인해 단계별 적합을 인증하거나 시정·공사중지(stop-work)를 명령한다.",
-        "outputs": [
-          "단계인증서(Stage Certificate) 또는 시정·중지통지"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA stage certification",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 11-12 — multidisciplinary monitoring and certification from foundation to completion"
-            ]
-          },
-          {
-            "source": "국가 최소기준",
-            "instrumentId": "NGA-NBC-2006",
-            "provisions": [
-              "construction-stage national benchmark"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B26",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G1 단계검사·시정",
-        "label": "부적합 시정·재검사 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "검사에서 지적된 승인도서·허가조건·품질 부적합을 시정하고 증빙과 함께 재검사를 요청한다.",
-        "action": "검사에서 지적된 승인도서·허가조건·품질 부적합을 시정하고 증빙과 함께 재검사를 요청한다.",
-        "outputs": [
-          "시정완료 기록·재검사 요청"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA compliance enforcement",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 13-14 — contravention notice and stop-work response"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B27",
-        "lane": "환경·소방·검사기관",
-        "stage": "G2 최종검사",
-        "label": "최종 합동검사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "공사완료 후 등록전문가와 LASBCA가 최종 합동검사를 실시해 승인설계·단계인증·외부공사·설비와 안전·거주적합성을 확인한다.",
-        "action": "공사완료 후 등록전문가와 LASBCA가 최종 합동검사를 실시해 승인설계·단계인증·외부공사·설비와 안전·거주적합성을 확인한다.",
-        "outputs": [
-          "최종 합동검사 기록·미비사항"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA final joint inspection",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Page 12 — final joint stage inspection by consultants and Agency"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B28",
-        "lane": "건축주·신청인",
-        "stage": "G3 사용적합성 결정",
-        "label": "준공·사용적합성증명(Completion·Fitness Certificate) 신청",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "최종검사와 모든 단계인증을 갖춰 준공·거주적합성증명서(Certificate of Completion and Fitness for Habitation) 발급을 신청한다.",
-        "action": "최종검사와 모든 단계인증을 갖춰 준공·거주적합성증명서(Certificate of Completion and Fitness for Habitation) 발급을 신청한다.",
-        "outputs": [
-          "사용적합성증명 신청서·완비 증빙"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA certificate request",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 11-12 — request after final joint inspection"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B29",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 사용적합성 결정",
-        "label": "완공·거주적합성증명 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "LASBCA가 완공도서·검사기록·시정완료와 안전·거주적합성을 심사해 증명을 발급하거나 추가 시정·거부한다.",
-        "action": "LASBCA가 완공도서·검사기록·시정완료와 안전·거주적합성을 심사해 증명을 발급하거나 추가 시정·거부한다.",
-        "outputs": [
-          "준공·거주적합성증명서 또는 보완·거부통지"
-        ],
-        "authorityIds": [
-          "state-building-control"
-        ],
-        "requirementIds": [
-          "NGA-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "LASBCA certificate issuance",
-            "instrumentId": "NGA-LASBCA-GUIDE",
-            "provisions": [
-              "Pages 11-12 — completion and fitness certificate; approximately 10 days after complete submission"
-            ]
-          }
-        ],
-        "gateOrders": [
-          5
+          1
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS05-01",
         "source": "B01",
         "target": "B02",
-        "type": "sequence",
-        "label": "계획조건"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "신청도서"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "전자접수"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "스크리닝 통과"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B06",
-        "type": "sequence",
-        "label": "현장확인"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B06",
-        "target": "B08",
-        "type": "sequence",
-        "label": "심사완료"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B04",
-        "target": "B07",
-        "type": "message",
-        "label": "누락·부적합"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B06",
-        "target": "B07",
-        "type": "message",
-        "label": "추가정보 요구"
-      },
-      {
-        "id": "BS04-09",
-        "source": "B07",
-        "target": "B04",
-        "type": "loop",
-        "label": "보완 재스크리닝"
-      },
-      {
-        "id": "BS04-10",
-        "source": "B08",
-        "target": "B09",
-        "type": "sequence",
-        "label": "승인 시 발급"
-      },
-      {
-        "id": "BX05",
-        "source": "B09",
-        "target": "B10",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B10",
-        "target": "B11",
         "type": "sequence",
         "label": "등록정보"
       },
       {
         "id": "BS05-02",
-        "source": "B11",
-        "target": "B12",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "평가범위"
       },
       {
         "id": "BS05-03",
-        "source": "B12",
-        "target": "B13",
+        "source": "B03",
+        "target": "B04",
         "type": "sequence",
         "label": "승인 과업지시서"
       },
       {
         "id": "BS05-04",
-        "source": "B13",
-        "target": "B14",
+        "source": "B04",
+        "target": "B05",
         "type": "sequence",
         "label": "환경영향평가 보고서"
       },
       {
         "id": "BS05-05",
-        "source": "B14",
-        "target": "B16",
+        "source": "B05",
+        "target": "B07",
         "type": "sequence",
         "label": "심사완료"
       },
       {
         "id": "BS05-06",
-        "source": "B14",
-        "target": "B15",
+        "source": "B05",
+        "target": "B06",
         "type": "message",
         "label": "보완요구"
       },
       {
         "id": "BS05-07",
-        "source": "B15",
-        "target": "B14",
+        "source": "B06",
+        "target": "B05",
         "type": "loop",
         "label": "최종보고서 재심사"
-      },
-      {
-        "id": "BS05-08",
-        "source": "B16",
-        "target": "B17",
-        "type": "sequence",
-        "label": "환경허가"
-      },
-      {
-        "id": "BS05-09",
-        "source": "B17",
-        "target": "B18",
-        "type": "sequence",
-        "label": "완비접수"
-      },
-      {
-        "id": "BS05-10",
-        "source": "B18",
-        "target": "B20",
-        "type": "sequence",
-        "label": "심사완료"
-      },
-      {
-        "id": "BS05-11",
-        "source": "B18",
-        "target": "B19",
-        "type": "message",
-        "label": "추가정보 요구"
-      },
-      {
-        "id": "BS05-12",
-        "source": "B19",
-        "target": "B18",
-        "type": "loop",
-        "label": "보완 재심사"
-      },
-      {
-        "id": "BX06",
-        "source": "B20",
-        "target": "B21",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS06-01",
-        "source": "B21",
-        "target": "B22",
-        "type": "sequence",
-        "label": "착공서류"
-      },
-      {
-        "id": "BS06-02",
-        "source": "B22",
-        "target": "B23",
-        "type": "sequence",
-        "label": "요건충족"
-      },
-      {
-        "id": "BS06-03",
-        "source": "B23",
-        "target": "B24",
-        "type": "sequence",
-        "label": "착공승인"
-      },
-      {
-        "id": "BS06-04",
-        "source": "B24",
-        "target": "B25",
-        "type": "sequence",
-        "label": "검사요청"
-      },
-      {
-        "id": "BS06-05",
-        "source": "B25",
-        "target": "B24",
-        "type": "loop",
-        "label": "다음 단계"
-      },
-      {
-        "id": "BS06-06",
-        "source": "B25",
-        "target": "B26",
-        "type": "message",
-        "label": "부적합·시정명령"
-      },
-      {
-        "id": "BS06-07",
-        "source": "B26",
-        "target": "B25",
-        "type": "loop",
-        "label": "시정 후 재검사"
-      },
-      {
-        "id": "BS06-08",
-        "source": "B25",
-        "target": "B27",
-        "type": "sequence",
-        "label": "최종 단계 완료"
-      },
-      {
-        "id": "BS06-09",
-        "source": "B27",
-        "target": "B28",
-        "type": "sequence",
-        "label": "검사통과"
-      },
-      {
-        "id": "BS06-10",
-        "source": "B27",
-        "target": "B26",
-        "type": "message",
-        "label": "미비사항"
-      },
-      {
-        "id": "BS06-11",
-        "source": "B28",
-        "target": "B29",
-        "type": "sequence",
-        "label": "완비신청"
       }
     ]
   },
   "publicModels": [
     {
-      "id": "site-urban",
-      "slug": "nigeria-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "나이지리아 도시계획·개발허가 — 라고스주 대표 사례",
-      "oneLiner": "대상 주·FCT의 계획법·개발계획과 필지 권원으로 용도·밀도·높이·이격·주차를 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "라고스주 LASPPPA 공식 포털의 Planning Information, 1차 스크리닝, 합동 현장검사, 전문도서 심사, 층수별 결재와 허가발급 순서를 연결했다. 나이지리아의 계획허가는 주·FCT별로 집행되므로 아래는 라고스 대표 사례다.",
+      "id": "permit-environment",
+      "slug": "nigeria-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "나이지리아 연방 환경영향평가(EIA) — EAD 절차",
+      "oneLiner": "연방 EAD의 EIA 등록·스크리닝·심사·허가 경로를 관리한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "환경영향평가법(EIA Act)과 연방 환경평가국(EAD) 공식 업무에 명시된 사업등록·현장확인·선별·범위설정·과업지시서·환경영향평가 보고서·기술·패널·공개심사·허가결정의 전국 절차를 연결했다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "라고스주 내 개발에는 라고스주 도시·지역계획 및 개발법(Lagos State Urban and Regional Planning and Development Law)과 시행 중인 개발계획(operative development plans)이 적용된다. 다른 주·연방수도지구(FCT) 사업은 해당 관할 계획허가기관의 법정 절차로 바꿔야 한다.",
+      "publicationScope": "national",
+      "procedureScope": "환경영향평가법(EIA Act) 적용사업을 연방 환경평가국(EAD)에 등록하고 선별·범위설정, 과업지시서와 환경영향평가 보고서 심사, 공개검토를 거쳐 환경영향평가 허가 결정을 받는 전국 절차다. 주 환경승인·부문별 승인서와 주·연방수도지구(FCT)의 개발·건축허가는 이 연방 절차와 별도로 확인한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1229,12 +329,10 @@
         "B04",
         "B05",
         "B06",
-        "B07",
-        "B08",
-        "B09"
+        "B07"
       ],
       "requirementIds": [
-        "NGA-BLD-REQ-004"
+        "NGA-BLD-REQ-005"
       ],
       "questionIds": [
         "NGA-BLD-Q-001",
@@ -1244,9 +342,7 @@
       "conclusionIds": [
         "NGA-BLD-C-001"
       ],
-      "siteOverlayIds": [
-        "NGA-LOCAL-OVERLAY-001"
-      ],
+      "siteOverlayIds": [],
       "fieldworkChecklistIds": [
         "NGA-BLD-F-001",
         "NGA-BLD-F-002",
@@ -1254,391 +350,75 @@
       ],
       "edges": [
         {
-          "id": "M04-E01",
+          "id": "M05-E01",
           "source": "B01",
           "target": "B02",
-          "type": "sequence",
-          "label": "계획조건"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "신청도서"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "전자접수"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "스크리닝 통과"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B06",
-          "type": "sequence",
-          "label": "현장확인"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B06",
-          "target": "B08",
-          "type": "sequence",
-          "label": "심사완료"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B04",
-          "target": "B07",
-          "type": "message",
-          "label": "누락·부적합"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B06",
-          "target": "B07",
-          "type": "message",
-          "label": "추가정보 요구"
-        },
-        {
-          "id": "M04-E09",
-          "source": "B07",
-          "target": "B04",
-          "type": "loop",
-          "label": "보완 재스크리닝"
-        },
-        {
-          "id": "M04-E10",
-          "source": "B08",
-          "target": "B09",
-          "type": "sequence",
-          "label": "승인 시 발급"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "승인·조건부 승인",
-          "action": "최종 도서를 제출해 Planning Permit과 승인도서를 수령"
-        },
-        {
-          "state": "rework",
-          "label": "추가정보·설계수정",
-          "action": "요구자료를 보완해 스크리닝·전문심사 단계로 재제출"
-        },
-        {
-          "state": "reject",
-          "label": "거부",
-          "action": "거부사유에 따라 설계를 변경해 재신청하거나 주법상 불복수단 검토"
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "nigeria-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "나이지리아 연방 환경영향평가(EIA)·계획허가 — EAD·라고스주 사례",
-      "oneLiner": "주·FCT 계획·건축허가와 연방 EAD의 EIA 등록·스크리닝·permit 경로를 분리해 연결한다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "연방 EAD 공식 업무에 명시된 등록·현장확인·screening/scoping·TOR·EIA 보고서·복수 심사·public display·permit 단계와 라고스주 계획허가 단계를 분리해 연결했다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "환경영향평가법(EIA Act) 적용사업의 연방 환경평가는 EAD가 처리한다. 개발허가는 주·연방수도지구(FCT)별 절차이며 아래 후반부는 라고스주 대표 사례다. 주 환경승인·부문별 승인서(clearance)가 추가될 수 있다.",
-      "nodeIds": [
-        "B10",
-        "B11",
-        "B12",
-        "B13",
-        "B14",
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20"
-      ],
-      "requirementIds": [
-        "NGA-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "NGA-BLD-Q-004",
-        "NGA-BLD-Q-005",
-        "NGA-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "NGA-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "NGA-BLD-F-004",
-        "NGA-BLD-F-005",
-        "NGA-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B10",
-          "target": "B11",
           "type": "sequence",
           "label": "등록정보"
         },
         {
           "id": "M05-E02",
-          "source": "B11",
-          "target": "B12",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "평가범위"
         },
         {
           "id": "M05-E03",
-          "source": "B12",
-          "target": "B13",
+          "source": "B03",
+          "target": "B04",
           "type": "sequence",
           "label": "승인 과업지시서"
         },
         {
           "id": "M05-E04",
-          "source": "B13",
-          "target": "B14",
+          "source": "B04",
+          "target": "B05",
           "type": "sequence",
           "label": "환경영향평가 보고서"
         },
         {
           "id": "M05-E05",
-          "source": "B14",
-          "target": "B16",
+          "source": "B05",
+          "target": "B07",
           "type": "sequence",
           "label": "심사완료"
         },
         {
           "id": "M05-E06",
-          "source": "B14",
-          "target": "B15",
+          "source": "B05",
+          "target": "B06",
           "type": "message",
           "label": "보완요구"
         },
         {
           "id": "M05-E07",
-          "source": "B15",
-          "target": "B14",
+          "source": "B06",
+          "target": "B05",
           "type": "loop",
           "label": "최종보고서 재심사"
-        },
-        {
-          "id": "M05-E08",
-          "source": "B16",
-          "target": "B17",
-          "type": "sequence",
-          "label": "환경허가"
-        },
-        {
-          "id": "M05-E09",
-          "source": "B17",
-          "target": "B18",
-          "type": "sequence",
-          "label": "완비접수"
-        },
-        {
-          "id": "M05-E10",
-          "source": "B18",
-          "target": "B20",
-          "type": "sequence",
-          "label": "심사완료"
-        },
-        {
-          "id": "M05-E11",
-          "source": "B18",
-          "target": "B19",
-          "type": "message",
-          "label": "추가정보 요구"
-        },
-        {
-          "id": "M05-E12",
-          "source": "B19",
-          "target": "B18",
-          "type": "loop",
-          "label": "보완 재심사"
         }
       ],
       "decisionBranches": [
         {
           "state": "success",
-          "label": "환경영향평가·계획허가 승인",
-          "action": "환경조건과 계획허가 조건을 설계·시공 문서에 반영"
+          "label": "환경영향평가 허가·조건부 허가",
+          "action": "환경영향평가 허가조건과 환경관리계획을 후속 설계·시공·운영 문서에 반영"
         },
         {
           "state": "rework",
-          "label": "환경·계획 보완",
-          "action": "요구된 추가조사·설계수정을 제출해 해당 심사단계로 회귀"
+          "label": "환경영향평가 보완",
+          "action": "요구된 추가조사·저감조치·보고서 수정을 제출해 기술·공개심사를 다시 받음"
         },
         {
           "state": "reject",
-          "label": "환경영향평가 또는 계획허가 거부",
-          "action": "거부사유에 따라 입지·설계를 변경해 재신청하거나 법정 불복수단 검토"
-        }
-      ]
-    },
-    {
-      "id": "control-completion",
-      "slug": "nigeria-control-completion-construction-regulations",
-      "priority": 6,
-      "name": "나이지리아 착공·단계검사·사용적합성 — 라고스주 대표 사례",
-      "oneLiner": "주별 코드 채택, 등록 전문가, 착공·단계검사·보험과 사용적합성증명을 계약·인계 Gate로 둔다.",
-      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "LASBCA 공식 Guide의 착공의향·현장확인·Authorization to Commence, 보험, 매 단계 7일 전 통지·검사·인증, 최종 합동검사와 Certificate of Completion and Fitness for Habitation 순서를 직접 연결했다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "라고스주 LASBCA의 실제 건축통제 절차다. 다른 주·연방수도지구(FCT)에서는 해당 주의 건축통제기관·코드 채택·보험·검사·점유허가 절차로 바꾼다.",
-      "nodeIds": [
-        "B21",
-        "B22",
-        "B23",
-        "B24",
-        "B25",
-        "B26",
-        "B27",
-        "B28",
-        "B29"
-      ],
-      "requirementIds": [
-        "NGA-BLD-REQ-006"
-      ],
-      "questionIds": [
-        "NGA-BLD-Q-007",
-        "NGA-BLD-Q-008",
-        "NGA-BLD-Q-009"
-      ],
-      "conclusionIds": [
-        "NGA-BLD-C-003"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "NGA-BLD-F-007",
-        "NGA-BLD-F-008",
-        "NGA-BLD-F-009"
-      ],
-      "edges": [
-        {
-          "id": "M06-E01",
-          "source": "B21",
-          "target": "B22",
-          "type": "sequence",
-          "label": "착공서류"
-        },
-        {
-          "id": "M06-E02",
-          "source": "B22",
-          "target": "B23",
-          "type": "sequence",
-          "label": "요건충족"
-        },
-        {
-          "id": "M06-E03",
-          "source": "B23",
-          "target": "B24",
-          "type": "sequence",
-          "label": "착공승인"
-        },
-        {
-          "id": "M06-E04",
-          "source": "B24",
-          "target": "B25",
-          "type": "sequence",
-          "label": "검사요청"
-        },
-        {
-          "id": "M06-E05",
-          "source": "B25",
-          "target": "B24",
-          "type": "loop",
-          "label": "다음 단계"
-        },
-        {
-          "id": "M06-E06",
-          "source": "B25",
-          "target": "B26",
-          "type": "message",
-          "label": "부적합·시정명령"
-        },
-        {
-          "id": "M06-E07",
-          "source": "B26",
-          "target": "B25",
-          "type": "loop",
-          "label": "시정 후 재검사"
-        },
-        {
-          "id": "M06-E08",
-          "source": "B25",
-          "target": "B27",
-          "type": "sequence",
-          "label": "최종 단계 완료"
-        },
-        {
-          "id": "M06-E09",
-          "source": "B27",
-          "target": "B28",
-          "type": "sequence",
-          "label": "검사통과"
-        },
-        {
-          "id": "M06-E10",
-          "source": "B27",
-          "target": "B26",
-          "type": "message",
-          "label": "미비사항"
-        },
-        {
-          "id": "M06-E11",
-          "source": "B28",
-          "target": "B29",
-          "type": "sequence",
-          "label": "완비신청"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "착공·단계·점유 승인",
-          "action": "준공·거주적합성증명서 수령 후 사용"
-        },
-        {
-          "state": "rework",
-          "label": "착공서류·검사 보완",
-          "action": "요구된 서류 또는 시공부적합을 시정하고 해당 공식결정 단계(Gate)·검사에 재제출"
-        },
-        {
-          "state": "reject",
-          "label": "착공 또는 점유 거부",
-          "action": "무허가·중대부적합 원인을 해소하고 재신청하거나 법정 이의절차 검토"
+          "label": "환경영향평가 허가 거부",
+          "action": "거부사유를 확인하고 입지·사업설계 변경, 재신청 또는 법정 불복수단을 검토"
         }
       ]
     }
   ],
   "authorities": [
-    {
-      "id": "state-planning-authority",
-      "name": "Competent State or FCT planning permit authority",
-      "nameKo": "관할 주 또는 연방수도지구 계획허가기관",
-      "role": "주법·계획에 따라 토지이용·개발·계획허가를 발급",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://epp.lagosstate.gov.ng/Home/About"
-    },
-    {
-      "id": "state-building-control",
-      "name": "Competent State building control authority",
-      "nameKo": "관할 주 건축통제기관",
-      "role": "착공승인, 단계검사, 보험 확인과 준공·사용적합성 증명을 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://lasbca.lagosstate.gov.ng/"
-    },
     {
       "id": "fmenv-ead",
       "name": "Federal Ministry of Environment — Environmental Assessment Department",
@@ -1646,31 +426,9 @@
       "role": "연방 EIA법에 따른 사업등록·스크리닝·평가·허가와 사후 모니터링을 담당",
       "verificationLevel": "law-linked",
       "officialUrl": "https://ead.gov.ng/"
-    },
-    {
-      "id": "fmhud",
-      "name": "Federal Ministry of Housing and Urban Development",
-      "nameKo": "연방주택·도시개발부",
-      "role": "National Building Code의 국가 벤치마크와 자문체계를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://www.fmhud.gov.ng/"
     }
   ],
   "instruments": [
-    {
-      "id": "NGA-NBC-2006",
-      "title": "National Building Code of Nigeria, 2006",
-      "titleKo": "나이지리아 국가건축기준 2006",
-      "kind": "code",
-      "status": "continuity_unverified",
-      "issuedOn": "2006-01-01",
-      "officialUrl": "https://fmhud.gov.ng/themes/front_end_themes_01/images/download/25080529456.pdf",
-      "officialPdfUrl": "https://fmhud.gov.ng/themes/front_end_themes_01/images/download/25080529456.pdf",
-      "verificationLevel": "source-linked",
-      "note": "연방부는 2025년 이를 국가 최소기준 벤치마크로 재확인했으나 실제 채택·집행은 주별 법·규정과 관할기관에서 확인한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "연방 주택도시개발부가 2025년에 NBC 2006을 국가 최소기준 벤치마크로 재확인하고 원문을 게시한 사실을 확인했으나, 실제 법적 채택·집행은 주별 법령에 달려 있어 continuity_unverified를 유지한다."
-    },
     {
       "id": "NGA-EIA-ACT-CAP-E12",
       "title": "Environmental Impact Assessment Act, Cap E12 LFN 2010 (originally Decree No. 86 of 1992)",
@@ -1683,54 +441,6 @@
       "note": "EAD가 사업등록·현장확인·screening/scoping·TOR·심사·EIA permit을 현행 업무로 명시한다.",
       "statusCheckedOn": "2026-08-07",
       "statusBasis": "연방 환경평가국(EAD)의 공식 현행 업무 페이지에서 등록·현장확인·screening/scoping·TOR·심사·EIA permit 절차를 확인했으나, Cap E12의 모든 후속개정을 반영한 통합법령 상태는 확인되지 않아 continuity_unverified를 유지한다."
-    },
-    {
-      "id": "NGA-LAGOS-PLANNING-LAW-2010",
-      "title": "Lagos State Urban and Regional Planning and Development Law, 2010, as amended",
-      "titleKo": "라고스주 도시·지역계획·개발법 2010(개정 포함)",
-      "kind": "act",
-      "status": "continuity_unverified",
-      "officialUrl": "https://lasbca.lagosstate.gov.ng/resources/",
-      "verificationLevel": "source-linked",
-      "note": "라고스주의 공식 지방 집행 예시다. 대상 주·FCT의 자체 법률·계획·기관을 대체하지 않는다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "LASBCA 공식 법률·자료 페이지에서 Lagos State Planning Law 적용을 확인했으나, 개정 조문 전체의 통합본과 타 주·FCT 적용을 확인할 수 없어 continuity_unverified를 유지한다."
-    },
-    {
-      "id": "NGA-LAGOS-PERMIT-CONTROL",
-      "title": "Lagos State e-Planning Permit and LASBCA building-control procedures",
-      "titleKo": "라고스주 전자 계획허가·건축통제 절차",
-      "kind": "official-guidance",
-      "status": "continuity_unverified",
-      "officialUrl": "https://epp.lagosstate.gov.ng/Home/Checklist",
-      "verificationLevel": "source-linked",
-      "note": "계획허가, 착공 전 Form C, 단계검사, 보험과 Certificate of Completion and Fitness for Habitation의 주 단위 집행 사례다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Lagos e-Planning Permit 체크리스트와 LASBCA 공식 안내에서 계획허가·Form C·단계검사·완료증명 경로를 확인했으나, 이는 라고스주 사례이며 다른 주·FCT와 향후 서식개정의 연속성을 입증하지 못해 continuity_unverified를 유지한다."
-    },
-    {
-      "id": "NGA-LAGOS-EPP-PROCEDURE",
-      "title": "Lagos State e-Planning Permit official procedure",
-      "titleKo": "라고스주 전자 계획허가 공식 절차",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Lagos State Physical Planning Permit Authority official e-Planning Permit portal",
-      "officialUrl": "https://www.epp.lagosstate.gov.ng/Home/AboutPlanningPermit",
-      "verificationLevel": "source-linked",
-      "note": "분권형 나이지리아에서 라고스주의 실제 처리순서를 보여주는 대표 관할 사례다. 다른 주·FCT에서는 해당 관할의 법·기관·서식으로 대체한다."
-    },
-    {
-      "id": "NGA-LASBCA-GUIDE",
-      "title": "Lagos State Building Control Agency Guide",
-      "titleKo": "라고스주 건축통제청 공식 업무지침",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "LASBCA official website publication",
-      "officialUrl": "https://lasbca.lagosstate.gov.ng/wp-content/uploads/2023/11/LASBCA-GUIDE.pdf",
-      "officialPdfUrl": "https://lasbca.lagosstate.gov.ng/wp-content/uploads/2023/11/LASBCA-GUIDE.pdf",
-      "verificationLevel": "source-linked"
     },
     {
       "id": "NGA-EAD-EIA-PROCEDURE",
@@ -1746,49 +456,40 @@
   ],
   "requirements": [
     {
-      "id": "NGA-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "나이지리아에서 신축·증축·용도변경 또는 개발허가를 추진하는 ODA 건축사업",
-      "requirement": "토지이용·계획허가는 연방 단일 창구가 아니라 주·FCT 법과 지방 계획으로 집행된다. 따라서 토지권원·survey plan, operative development plan과 zoning을 확인해 필지별 허용용도·plot coverage·FAR·높이·이격·주차, 홍수·배수·도로·유틸리티 조건을 확정한다.",
-      "authorityIds": [
-        "state-planning-authority"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "NGA-LAGOS-PLANNING-LAW-2010",
-          "provisions": [
-            "state planning and development-control example"
-          ]
-        },
-        {
-          "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
-          "provisions": [
-            "planning permit and site dossier example"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "토지권원·survey plan·경계확인",
-        "대상 주·FCT 계획법·개발계획·zoning",
-        "필지별 coverage·FAR·높이·이격·주차",
-        "홍수·배수·지반·도로·전력·상수 용량"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
-    {
       "id": "NGA-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
       "status": "conditional",
-      "applicability": "주·FCT 계획허가가 필요한 사업 및 EIA Act·주 환경법 적용 가능 사업",
-      "requirement": "개발·계획허가는 관할 주·FCT 기관이 처리하고, EIA Act 적용사업은 연방환경부 EAD에서 등록·현장확인·screening/scoping·평가서 심사와 EIA permit을 거친다. 주 환경승인과 소방·항공·교통 등 추가 clearance 여부도 사업유형·입지별로 확인한다.",
+      "applicability": "연방 EIA Act 적용 대상 사업",
+      "requirement": "환경영향평가법(EIA Act) 적용사업은 연방 환경평가국(EAD)에 등록하고 현장확인·선별·범위설정, 과업지시서 평가, 환경영향평가 보고서의 기술·패널·공개심사와 최종 허가결정을 거친다.",
       "authorityIds": [
-        "state-planning-authority",
         "fmenv-ead"
       ],
       "legalBasis": [
+        {
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
+          "provisions": [
+            "Registration of new projects"
+          ]
+        },
+        {
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
+          "provisions": [
+            "Site verification; project screening/scoping; risk assessment"
+          ]
+        },
+        {
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
+          "provisions": [
+            "TOR evaluation"
+          ]
+        },
+        {
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
+          "provisions": [
+            "EIA reports and records"
+          ]
+        },
         {
           "instrumentId": "NGA-EIA-ACT-CAP-E12",
           "provisions": [
@@ -1796,188 +497,63 @@
           ]
         },
         {
-          "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
           "provisions": [
-            "state planning-permit example"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "건축주·신청인·주/FCT 관할",
-        "계획·건축허가 체크리스트",
-        "EAD 등록·screening·EIA 결정",
-        "주 환경·소방 등 선행동의와 실제 수수료·기간"
-      ],
-      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
-    },
-    {
-      "id": "NGA-BLD-REQ-006",
-      "stage": "completion",
-      "topic": "기술기준·검사·보험·준공·사용승인",
-      "status": "conditional",
-      "applicability": "관할 주의 건축통제·검사·준공 또는 사용적합성 절차 대상 공사",
-      "requirement": "National Building Code는 국가 기술 벤치마크지만 법적 채택과 집행은 주별로 달라질 수 있다. 라고스 예시에서는 계획허가 후 착공승인, 단계검사, 일정 규모의 보험 확인, 최종 Certificate of Completion and Fitness for Habitation을 요구하므로 대상 주의 대응 절차를 확인한다.",
-      "authorityIds": [
-        "state-building-control",
-        "fmhud"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "NGA-NBC-2006",
-          "provisions": [
-            "pre-design, design, construction and post-construction benchmark"
+            "In-house, panel and technical review; public review/display"
           ]
         },
         {
-          "instrumentId": "NGA-LAGOS-PERMIT-CONTROL",
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
           "provisions": [
-            "commencement, stage inspection, insurance and fitness certificate example"
+            "Evaluation of final EIA reports"
+          ]
+        },
+        {
+          "instrumentId": "NGA-EAD-EIA-PROCEDURE",
+          "provisions": [
+            "Processing of EIA permits"
           ]
         }
       ],
       "evidenceToObtain": [
-        "대상 주의 코드 채택·적용판",
-        "등록 건축사·기술자·시공자·검사자",
-        "착공승인·단계검사·시험기록",
-        "공사보험·준공·사용적합성 증명과 실제 비용"
+        "사업제안서·입지·규모·환경영향 기초자료",
+        "EAD 등록·현장확인·screening/scoping 결정",
+        "승인 과업지시서·EIA 보고서·공개심사 기록",
+        "EIA Permit·허가조건·보완기록·실제 수수료와 처리기간"
       ],
-      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
     }
   ],
   "permitPath": [
     {
       "order": 1,
-      "gate": "LASPPPA 계획허가 공식결정",
-      "decision": "관할 결재권자가 개발계획·계획기준 적합성을 심사해 승인·조건부 승인 또는 거부한다.",
-      "dependsOn": [],
-      "output": "계획허가 결정문·승인조건 또는 거부사유"
-    },
-    {
-      "order": 2,
       "gate": "연방 EAD 환경영향평가 허가 공식결정",
       "decision": "EAD가 환경영향평가 심사결과에 따라 허가·조건부 허가, 보완 또는 거부를 결정한다.",
       "dependsOn": [],
       "output": "환경영향평가 허가·조건 또는 거부사유"
-    },
-    {
-      "order": 3,
-      "gate": "LASPPPA 계획허가 공식결정",
-      "decision": "관할 승인권자가 완비도서와 환경·관계기관 승인서를 토대로 승인·조건부 승인 또는 거부한다.",
-      "dependsOn": [
-        2
-      ],
-      "output": "계획허가·승인도서·조건 또는 거부사유"
-    },
-    {
-      "order": 4,
-      "gate": "LASBCA 착공승인",
-      "decision": "LASBCA가 계획허가와 착공 전 서류·현장 상태를 확인해 착공을 승인하거나 보완·중지한다.",
-      "dependsOn": [],
-      "output": "착공승인서·녹색 스티커 또는 보완통지"
-    },
-    {
-      "order": 5,
-      "gate": "LASBCA 완공·거주적합성 공식결정",
-      "decision": "LASBCA가 최종검사와 완비자료를 토대로 사용적합성증명을 발급하거나 보완·거부한다.",
-      "dependsOn": [
-        4
-      ],
-      "output": "준공·거주적합성증명서 또는 보완·거부통지"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "NGA-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "NGA-LAGOS-PLANNING-LAW-2010",
-          "provisions": [
-            "state planning and development-control example"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "NGA-BLD-Q-001",
       "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 주·FCT의 관할 계획과 필지별 허용용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "토지권원·survey plan·경계확인",
-        "대상 주·FCT 계획법·개발계획·zoning",
-        "필지별 coverage·FAR·높이·이격·주차",
-        "홍수·배수·지반·도로·전력·상수 용량"
-      ],
-      "confirmWith": [
-        "state-planning-authority"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "NGA-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "state-planning-authority"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "NGA-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "주·FCT 계획허가의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "토지권원·survey plan·경계확인",
-        "대상 주·FCT 계획법·개발계획·zoning",
-        "필지별 coverage·FAR·높이·이격·주차",
-        "홍수·배수·지반·도로·전력·상수 용량"
-      ],
-      "confirmWith": [
-        "state-planning-authority"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "NGA-BLD-Q-004",
-      "blocking": true,
       "stage": "permit",
-      "question": "본 사업의 주·FCT 허가와 연방 EIA 유형, 주 환경·소방 등 추가승인의 선후관계는 무엇인가?",
+      "question": "본 사업의 연방 EIA 등록·분류·과업지시서·공개심사·허가 단계와 선행조건은 무엇인가?",
       "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
       "evidenceNeeded": [
-        "건축주·신청인·주/FCT 관할",
-        "계획·건축허가 체크리스트",
-        "EAD 등록·screening·EIA 결정",
-        "주 환경·소방 등 선행동의와 실제 수수료·기간"
+        "사업제안서·입지·규모·환경영향 기초자료",
+        "EAD 등록·현장확인·screening/scoping 결정",
+        "승인 과업지시서·EIA 보고서·공개심사 기록",
+        "EIA Permit·허가조건·보완기록·실제 수수료와 처리기간"
       ],
       "confirmWith": [
-        "state-planning-authority",
         "fmenv-ead"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "NGA-BLD-Q-005",
+      "id": "NGA-BLD-Q-002",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -1988,79 +564,24 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "state-planning-authority",
         "fmenv-ead"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "NGA-BLD-Q-006",
+      "id": "NGA-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
-      "question": "주 계획허가·연방 EIA의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
+      "question": "연방 EAD 환경영향평가·허가의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
       "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
       "evidenceNeeded": [
-        "건축주·신청인·주/FCT 관할",
-        "계획·건축허가 체크리스트",
-        "EAD 등록·screening·EIA 결정",
-        "주 환경·소방 등 선행동의와 실제 수수료·기간"
+        "사업제안서·입지·규모·환경영향 기초자료",
+        "EAD 등록·현장확인·screening/scoping 결정",
+        "승인 과업지시서·EIA 보고서·공개심사 기록",
+        "EIA Permit·허가조건·보완기록·실제 수수료와 처리기간"
       ],
       "confirmWith": [
-        "state-planning-authority",
         "fmenv-ead"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "NGA-BLD-Q-007",
-      "blocking": true,
-      "stage": "completion",
-      "question": "대상 주에서 적용되는 코드·전문자격·보험·단계검사와 준공·사용증명의 정확한 절차는 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "대상 주의 코드 채택·적용판",
-        "등록 건축사·기술자·시공자·검사자",
-        "착공승인·단계검사·시험기록",
-        "공사보험·준공·사용적합성 증명과 실제 비용"
-      ],
-      "confirmWith": [
-        "state-building-control",
-        "fmhud"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "NGA-BLD-Q-008",
-      "blocking": true,
-      "stage": "completion",
-      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "전문가·시공자·검사기관 등록증과 보험증권",
-        "검사계획·시험성적서·변경승인 기록",
-        "준공·소방·사용승인 체크리스트와 실제 견적"
-      ],
-      "confirmWith": [
-        "state-building-control",
-        "fmhud"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "NGA-BLD-Q-009",
-      "blocking": false,
-      "stage": "completion",
-      "question": "National Building Code·주 건축통제의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "대상 주의 코드 채택·적용판",
-        "등록 건축사·기술자·시공자·검사자",
-        "착공승인·단계검사·시험기록",
-        "공사보험·준공·사용적합성 증명과 실제 비용"
-      ],
-      "confirmWith": [
-        "state-building-control",
-        "fmhud"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2069,84 +590,30 @@
     {
       "id": "NGA-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "NGA-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "NGA-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "NGA-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "NGA-BLD-F-005",
+      "id": "NGA-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "NGA-BLD-F-006",
+      "id": "NGA-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
-    },
-    {
-      "id": "NGA-BLD-F-007",
-      "phase": "시장조사",
-      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
-      "output": "적격기관·보험 대장"
-    },
-    {
-      "id": "NGA-BLD-F-008",
-      "phase": "기관협의",
-      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
-      "output": "검사·준공·개장 Hold Point 표"
-    },
-    {
-      "id": "NGA-BLD-F-009",
-      "phase": "보고서 반영",
-      "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
     }
   ],
   "reportReadyConclusions": [
     {
       "id": "NGA-BLD-C-001",
       "confidence": "conditional",
-      "text": "라고스 수치나 국가건축기준을 전국에 일반화할 수 없으므로 대상 주·FCT의 계획허가권자와 필지 규제표를 먼저 확정해야 한다.",
+      "text": "연방 EAD의 환경영향평가 허가는 환경영향평가법에 따른 독립 Gate이므로 보완·공개심사·허가조건을 설계·시공 일정과 환경관리계획에 반영한다.",
       "basis": [
-        "NGA-LAGOS-PLANNING-LAW-2010",
-        "NGA-LAGOS-PERMIT-CONTROL"
-      ]
-    },
-    {
-      "id": "NGA-BLD-C-002",
-      "confidence": "conditional",
-      "text": "주 계획허가와 연방 EIA는 관할과 절차가 다르므로 각각의 완비일·보완·승인조건을 통합 일정으로 관리한다.",
-      "basis": [
-        "NGA-EIA-ACT-CAP-E12",
-        "NGA-LAGOS-PERMIT-CONTROL"
-      ]
-    },
-    {
-      "id": "NGA-BLD-C-003",
-      "confidence": "conditional",
-      "text": "국가건축기준의 존재만으로 준공요건을 확정하지 말고 주별 채택·검사·보험·사용증명 조건을 입찰·인계 문서에 고정해야 한다.",
-      "basis": [
-        "NGA-NBC-2006",
-        "NGA-LAGOS-PERMIT-CONTROL"
+        "NGA-EAD-EIA-PROCEDURE",
+        "NGA-EIA-ACT-CAP-E12"
       ]
     }
   ]

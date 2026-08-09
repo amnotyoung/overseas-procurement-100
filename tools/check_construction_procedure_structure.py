@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard the 132 public construction workflows against accidental flattening.
+"""Guard public national construction workflows against accidental flattening.
 
 Reader-facing wording may change, but node order, actors, edges, decision Gates,
 branch states, and direct legal references must stay stable unless the reviewed
@@ -41,6 +41,12 @@ def canonical_model(data: dict[str, Any], spec: dict[str, Any]) -> dict[str, Any
         "modelId": spec.get("id"),
         "slug": spec["slug"],
         "procedureStatus": spec.get("procedureStatus"),
+        "publicationScope": spec.get("publicationScope"),
+        **(
+            {"laneOrder": spec["laneOrder"]}
+            if spec.get("laneOrder")
+            else {}
+        ),
         "nodeIds": spec["nodeIds"],
         "requirementIds": spec.get("requirementIds", []),
         "nodes": [

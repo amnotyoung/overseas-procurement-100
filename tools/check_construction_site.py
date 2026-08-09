@@ -45,6 +45,8 @@ def main() -> int:
         json.loads(path.read_text(encoding="utf-8"))
         for path in sorted(INST_DIR.glob("*.json"))
     ]
+    expected_construction_model_dirs: set[str] = set()
+    expected_construction_svgs: set[str] = set()
     countries = 0
     for path in sorted(DATA_DIR.glob("*.json")):
         if path.name == "manifest.json":
@@ -53,32 +55,23 @@ def main() -> int:
         slug = data["slug"]
         board = data["processBoard"]
         models = construction_to_models(data)
+        expected_construction_model_dirs.add(f"{slug}-construction-regulations")
+        expected_construction_model_dirs.update(model["slug"] for model in models)
+        expected_construction_svgs.update(
+            f'{model["slug"]}.svg'
+            for model in models
+            if model["canvas"].get("procedureStatus") != "detail-unverified"
+        )
         navigation_items.extend(models)
         public_specs = {item["slug"]: item for item in data.get("publicModels", [])}
         countries += 1
 
-        if slug in {"fiji", "pakistan"}:
+        if slug == "fiji":
             instruments_by_id = {item["id"]: item for item in data["instruments"]}
             expected_statuses = {
-                "fiji": {
-                    "FJI-BPAS": "current_official",
-                    "FJI-PH-BUILDING-REG-1959": "in_force",
-                    "FJI-NBC-REG-2004": "in_force",
-                    "FJI-EIA-REG-2007": "in_force",
-                    "FJI-TOWN-PLANNING-ACT": "in_force",
-                    "FJI-EMA-2005": "in_force",
-                    "FJI-NFS-ACT": "in_force",
-                    "FJI-HSW-ACT": "in_force",
-                    "FJI-GWC-REG-2003": "in_force",
-                },
-                "pakistan": {
-                    "PAK-BCP-2021": "in_force",
-                    "PAK-PEPA-1997": "in_force",
-                    "PAK-IEE-EIA-REG-2000": "in_force",
-                    "PAK-CDA-PROCEDURES": "current_official",
-                    "PAK-ICT-BUILDING-REG-2020-2023": "in_force",
-                },
-            }[slug]
+                "FJI-EIA-REG-2007": "in_force",
+                "FJI-EMA-2005": "in_force",
+            }
             actual_statuses = {
                 ident: instruments_by_id.get(ident, {}).get("status")
                 for ident in expected_statuses
@@ -151,14 +144,14 @@ def main() -> int:
                 f"expected {sorted(expected_gate_orders)}, got {sorted(actual_gate_orders)}"
             )
 
-        if data.get("publicModels"):
+        if data.get("publicModels") is not None:
             expected_model_slugs = {item["slug"] for item in data["publicModels"]}
             actual_model_slugs = {item["slug"] for item in models}
             if actual_model_slugs != expected_model_slugs:
                 errors.append(f"{slug} public construction model slugs differ")
-        if len(models) != 3:
-            errors.append(f"{slug} must expose three construction models, got {len(models)}")
         for model in models:
+            if model.get("publicationScope") != "national":
+                errors.append(f"{model['slug']} publishes a non-national procedure")
             if not model["canvas"].get("applicability"):
                 errors.append(f"{model['slug']} has a blank applicability card")
         conclusion_ids = {item["id"] for item in data["reportReadyConclusions"]}
@@ -174,12 +167,13 @@ def main() -> int:
         if model_overlay_ids != overlay_ids:
             errors.append(f"{slug} adapter site overlay IDs differ")
 
-        xss_probe = copy.deepcopy(data)
-        xss_probe["processBoard"]["nodes"][0]["note"] = "</script><script>globalThis.PWNED=1</script>"
-        xss_model = construction_to_models(xss_probe)[0]
-        xss_html = build_detail(xss_model, [xss_model])
-        if "</script><script>globalThis.PWNED=1</script>" in xss_html:
-            errors.append(f"{slug} adapter allows an inline-script breakout")
+        if models:
+            xss_probe = copy.deepcopy(data)
+            xss_probe["processBoard"]["nodes"][0]["note"] = "</script><script>globalThis.PWNED=1</script>"
+            xss_model = construction_to_models(xss_probe)[0]
+            xss_html = build_detail(xss_model, [xss_model])
+            if "</script><script>globalThis.PWNED=1</script>" in xss_html:
+                errors.append(f"{slug} adapter allows an inline-script breakout")
 
         if slug == "senegal":
             generic_probe = copy.deepcopy(data)
@@ -235,7 +229,7 @@ def main() -> int:
                     )
 
         svg_rel = f"{slug}-construction.svg"
-        if not public_specs:
+        if data.get("publicModels") is None:
             svg_path = SITE / "boards" / svg_rel
             if not svg_path.exists():
                 errors.append(f"site/boards/{svg_rel} is missing")
@@ -254,6 +248,8 @@ def main() -> int:
             for node in board["nodes"]:
                 if node["id"] not in svg_text:
                     errors.append(f"site/boards/{svg_rel} is missing node {node['id']}")
+        elif not public_specs and (SITE / "boards" / svg_rel).exists():
+            errors.append(f"site/boards/{svg_rel} leaks an internal empty-country board")
 
         for model in models:
             model_slug = model["slug"]
@@ -719,21 +715,30 @@ def main() -> int:
             if f'model/{model_slug}/index.html' not in index_html:
                 errors.append(f"main index is missing {model_slug}")
 
-        primary_model = min(models, key=lambda item: item["priority"])
-        primary_slug = primary_model["slug"]
+        primary_model = min(models, key=lambda item: item["priority"]) if models else None
+        primary_slug = primary_model["slug"] if primary_model else ""
 
         legacy_detail_path = SITE / "construction" / slug / "index.html"
         legacy_detail_html = (
             legacy_detail_path.read_text(encoding="utf-8")
             if legacy_detail_path.exists() else ""
         )
-        redirect_target = f"../../model/{primary_slug}/index.html"
+        redirect_target = (
+            f"../../model/{primary_slug}/index.html"
+            if primary_model else
+            "../../index.html?axis=construction"
+        )
         if redirect_target not in legacy_detail_html:
             errors.append(f"site/construction/{slug}/index.html is not a model redirect")
 
         old_model_path = SITE / "model" / f"{slug}-construction-regulations" / "index.html"
         old_model_html = old_model_path.read_text(encoding="utf-8") if old_model_path.exists() else ""
-        if f"../{primary_slug}/index.html" not in old_model_html:
+        legacy_model_target = (
+            f"../{primary_slug}/index.html"
+            if primary_model else
+            "../../index.html?axis=construction"
+        )
+        if legacy_model_target not in old_model_html:
             errors.append(f"legacy model/{slug}-construction-regulations is not redirected")
         if 'data-a="construction"' not in index_html:
             errors.append("main index is missing the construction axis")
@@ -750,11 +755,50 @@ def main() -> int:
 
         pipeline_path = SITE / "model" / f"{slug}-oda-project-pipeline" / "index.html"
         pipeline_html = pipeline_path.read_text(encoding="utf-8") if pipeline_path.exists() else ""
-        if (
-            f'href="../{primary_slug}/index.html"' not in pipeline_html
-            or "이 국가 3/6" not in pipeline_html
-        ):
-            errors.append(f"{slug} model navigation does not continue from 03 to 04")
+        country_total = 3 + len(models)
+        if f"이 국가 3/{country_total}" not in pipeline_html:
+            errors.append(f"{slug} procurement navigation has the wrong country total")
+        if primary_model and f'href="../{primary_slug}/index.html"' not in pipeline_html:
+            errors.append(f"{slug} model navigation does not continue to its first public construction model")
+
+        public_axis_ids = {item["id"] for item in data.get("publicModels", [])}
+        axis_parts = {
+            "site-urban": "site-urban",
+            "permit-environment": "permit-environment",
+            "control-completion": "control-completion",
+        }
+        for axis_id, slug_part in axis_parts.items():
+            if axis_id in public_axis_ids:
+                continue
+            internal_slug = f"{slug}-{slug_part}-construction-regulations"
+            if (SITE / "model" / internal_slug / "index.html").exists():
+                errors.append(f"internal regional model is still published: {internal_slug}")
+            if (SITE / "boards" / f"{internal_slug}.svg").exists():
+                errors.append(f"internal regional board is still published: {internal_slug}.svg")
+            if f"model/{internal_slug}/index.html" in index_html or internal_slug in bundle_html:
+                errors.append(f"internal regional model leaks into navigation or bundle: {internal_slug}")
+
+    actual_construction_model_dirs = {
+        path.name
+        for path in (SITE / "model").iterdir()
+        if path.is_dir() and "construction" in path.name
+    }
+    if actual_construction_model_dirs != expected_construction_model_dirs:
+        errors.append(
+            "construction model directories differ from the public/redirect allowlist: "
+            f"missing={sorted(expected_construction_model_dirs - actual_construction_model_dirs)}, "
+            f"unexpected={sorted(actual_construction_model_dirs - expected_construction_model_dirs)}"
+        )
+    actual_construction_svgs = {
+        path.name
+        for path in (SITE / "boards").glob("*construction*.svg")
+    }
+    if actual_construction_svgs != expected_construction_svgs:
+        errors.append(
+            "construction SVGs differ from the public allowlist: "
+            f"missing={sorted(expected_construction_svgs - actual_construction_svgs)}, "
+            f"unexpected={sorted(actual_construction_svgs - expected_construction_svgs)}"
+        )
 
     navigation_items.sort(
         key=lambda item: (

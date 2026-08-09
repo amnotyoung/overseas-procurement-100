@@ -64,6 +64,7 @@
       "officialProcedure": {
         "name": "나이지리아 도시계획·개발허가 — 라고스주 대표 사례",
         "coverage": "official-source-linked",
+        "publicationScope": "subnational-example",
         "scope": "라고스주 내 개발에는 라고스주 도시·지역계획 및 개발법(Lagos State Urban and Regional Planning and Development Law)과 시행 중인 개발계획(operative development plans)이 적용된다. 다른 주·연방수도지구(FCT) 사업은 해당 관할 계획허가기관의 법정 절차로 바꿔야 한다.",
         "stages": [
           "G0 계획정보·전문도서",
@@ -218,12 +219,13 @@
       }
     },
     "permit-environment": {
-      "verificationScope": "연방 EAD 공식 업무에 명시된 등록·현장확인·screening/scoping·TOR·EIA 보고서·복수 심사·public display·permit 단계와 라고스주 계획허가 단계를 분리해 연결했다.",
+      "verificationScope": "환경영향평가법(EIA Act)과 연방 환경평가국(EAD) 공식 업무에 명시된 사업등록·현장확인·선별·범위설정·과업지시서·환경영향평가 보고서·기술·패널·공개심사·허가결정의 전국 절차를 연결했다.",
       "officialProcedure": {
-        "name": "나이지리아 연방 환경영향평가(EIA)·계획허가 — EAD·라고스주 사례",
+        "name": "나이지리아 연방 환경영향평가(EIA) — EAD 절차",
         "coverage": "official-source-linked",
-        "scope": "환경영향평가법(EIA Act) 적용사업의 연방 환경평가는 EAD가 처리한다. 개발허가는 주·연방수도지구(FCT)별 절차이며 아래 후반부는 라고스주 대표 사례다. 주 환경승인·부문별 승인서(clearance)가 추가될 수 있다.",
-        "stages": ["G0 등록·선별검토", "G1 과업지시서(TOR)·환경평가", "G2 환경영향평가 심사·결정", "G3 계획허가 심사·결정"],
+        "publicationScope": "national",
+        "scope": "환경영향평가법(EIA Act) 적용사업을 연방 환경평가국(EAD)에 등록하고 선별·범위설정, 과업지시서와 환경영향평가 보고서 심사, 공개검토를 거쳐 환경영향평가 허가 결정을 받는 전국 절차다. 주 환경승인·부문별 승인서와 주·연방수도지구(FCT)의 개발·건축허가는 이 연방 절차와 별도로 확인한다.",
+        "stages": ["G0 등록·선별검토", "G1 과업지시서(TOR)·환경평가", "G2 환경영향평가 심사·결정"],
         "steps": [
           {
             "lane": "건축주·신청인", "stage": 0, "label": "EAD 사업등록", "emphasis": "key", "kind": "official-guidance",
@@ -270,42 +272,16 @@
             "authorityIds": ["fmenv-ead"],
             "refs": [{"source": "EAD permit processing", "instrumentId": "NGA-EAD-EIA-PROCEDURE", "provisions": ["Processing of EIA permits"]}],
             "permitGate": {"key": "federal-eia-permit-decision", "gate": "연방 EAD 환경영향평가 허가 공식결정", "decision": "EAD가 환경영향평가 심사결과에 따라 허가·조건부 허가, 보완 또는 거부를 결정한다.", "output": "환경영향평가 허가·조건 또는 거부사유", "dependsOn": []}
-          },
-          {
-            "lane": "건축주·신청인", "stage": 3, "label": "계획허가 신청·환경승인서 첨부", "emphasis": "key", "kind": "official-guidance",
-            "action": "등록전문가 도서, 권원·측량도(survey plan), 환경영향평가 승인서와 해당 관계기관 승인서를 전자계획허가 포털(ePP)로 제출하고 처리수수료를 납부한다.", "output": "완비 계획허가 신청",
-            "authorityIds": ["state-planning-authority"],
-            "refs": [{"source": "LASPPPA checklist", "instrumentId": "NGA-LAGOS-PERMIT-CONTROL", "provisions": ["General requirements; environmental and other MDA clearances"]}]
-          },
-          {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "현장·계획·전문도서 심사", "emphasis": "bottleneck", "kind": "official-guidance",
-            "action": "LASPPPA와 관련 기술부서가 현장, 시행계획 적합성, 건축·구조·설비도서와 관계기관 승인서를 심사한다.", "output": "계획허가 심사의견·보완요구",
-            "authorityIds": ["state-planning-authority", "state-building-control"],
-            "refs": [{"source": "LASPPPA permit routing", "instrumentId": "NGA-LAGOS-EPP-PROCEDURE", "provisions": ["Front-desk screening; joint inspection; engineering screening; concurrent approvals"]}]
-          },
-          {
-            "lane": "건축주·신청인", "stage": 3, "label": "계획허가 보완도서 제출", "emphasis": "normal", "kind": "official-guidance",
-            "action": "추가정보 또는 설계수정 요구를 반영해 도서·승인서를 다시 제출한다.", "output": "수정도서·보완 재접수",
-            "authorityIds": ["state-planning-authority"],
-            "refs": [{"source": "추가정보 요구", "instrumentId": "NGA-LAGOS-EPP-PROCEDURE", "provisions": ["Approving Authority may contact applicant for additional information"]}]
-          },
-          {
-            "lane": "도시계획·건축 허가기관", "stage": 3, "label": "계획허가(Planning Permit) 공식결정", "emphasis": "key", "kind": "official-guidance",
-            "action": "관할 승인권자가 계획·건축·환경조건 적합성을 확인해 계획허가를 승인·조건부 승인 또는 거부한다.", "output": "계획허가·승인조건 또는 거부사유",
-            "authorityIds": ["state-planning-authority"],
-            "refs": [{"source": "LASPPPA approval and issuance", "instrumentId": "NGA-LAGOS-EPP-PROCEDURE", "provisions": ["Consideration, approval and permit endorsement"]}],
-            "permitGate": {"key": "lagos-combined-planning-permit", "gate": "LASPPPA 계획허가 공식결정", "decision": "관할 승인권자가 완비도서와 환경·관계기관 승인서를 토대로 승인·조건부 승인 또는 거부한다.", "output": "계획허가·승인도서·조건 또는 거부사유", "dependsOn": ["federal-eia-permit-decision"]}
           }
         ],
         "edges": [
           [0, 1, "sequence", "등록정보"], [1, 2, "sequence", "평가범위"], [2, 3, "sequence", "승인 과업지시서"], [3, 4, "sequence", "환경영향평가 보고서"],
-          [4, 6, "sequence", "심사완료"], [4, 5, "message", "보완요구"], [5, 4, "loop", "최종보고서 재심사"], [6, 7, "sequence", "환경허가"],
-          [7, 8, "sequence", "완비접수"], [8, 10, "sequence", "심사완료"], [8, 9, "message", "추가정보 요구"], [9, 8, "loop", "보완 재심사"]
+          [4, 6, "sequence", "심사완료"], [4, 5, "message", "보완요구"], [5, 4, "loop", "최종보고서 재심사"]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "환경영향평가·계획허가 승인", "action": "환경조건과 계획허가 조건을 설계·시공 문서에 반영"},
-          {"state": "rework", "label": "환경·계획 보완", "action": "요구된 추가조사·설계수정을 제출해 해당 심사단계로 회귀"},
-          {"state": "reject", "label": "환경영향평가 또는 계획허가 거부", "action": "거부사유에 따라 입지·설계를 변경해 재신청하거나 법정 불복수단 검토"}
+          {"state": "success", "label": "환경영향평가 허가·조건부 허가", "action": "환경영향평가 허가조건과 환경관리계획을 후속 설계·시공·운영 문서에 반영"},
+          {"state": "rework", "label": "환경영향평가 보완", "action": "요구된 추가조사·저감조치·보고서 수정을 제출해 기술·공개심사를 다시 받음"},
+          {"state": "reject", "label": "환경영향평가 허가 거부", "action": "거부사유를 확인하고 입지·사업설계 변경, 재신청 또는 법정 불복수단을 검토"}
         ]
       }
     },
@@ -314,6 +290,7 @@
       "officialProcedure": {
         "name": "나이지리아 착공·단계검사·사용적합성 — 라고스주 대표 사례",
         "coverage": "official-source-linked",
+        "publicationScope": "subnational-example",
         "scope": "라고스주 LASBCA의 실제 건축통제 절차다. 다른 주·연방수도지구(FCT)에서는 해당 주의 건축통제기관·코드 채택·보험·검사·점유허가 절차로 바꾼다.",
         "stages": ["G0 착공신고·승인", "G1 단계검사·시정", "G2 최종검사", "G3 사용적합성 결정"],
         "steps": [

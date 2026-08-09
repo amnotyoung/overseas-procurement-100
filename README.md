@@ -16,19 +16,19 @@
 - 2026 참여전략 자료집 수록 43개국 전수: 아시아·태평양 12, 아프리카 15, 중남미 8, 중동·CIS 8
 - 자료집 미수록 보강국 미얀마 3개 제도
 - 발주자(KOICA) 규정 3개 제도
-- 협력국 44개국·KOICA 발주자, 조달 135개 + 건축 132개 제도 다이어그램
+- 협력국 44개국·KOICA 발주자, 조달 135개 + 전국 공통성이 확인된 건축 제도 다이어그램
 - 현행 기준 확인사항 16건
 - 4개 지역판 43개국의 원문 추출본·페이지 범위 등록
 
 조달 다이어그램은 자료집 전수 국가를 `source-document` 단계로 1차 구조화하고 일부
-국가는 공식 원문으로 심화검증했다. 건축 다이어그램은 44개 협력국 모두 국가별로 따로
-검토한 3축 공식절차 오버레이를 사용한다. 신청·심사·보완·결정·검사·준공 순서와
+국가는 공식 원문으로 심화검증했다. 건축 다이어그램은 44개 협력국의 3축 공식절차를 국가별로
+검토하되 전국 공통성이 확인된 축만 공개한다. 신청·심사·보완·결정·검사·준공 순서와
 성공·보완·불허 분기를 공식 원문 범위 안에서 표시하고, 조문 직접 대조 여부는 별도 표지한다.
 
 | 범위 | 국가 수 | 제도 수 | 검증 수준 |
 |---|---:|---:|---|
-| 자료집 수록국 | 43 | 조달 129 + 건축 129 | 조달 `source-document` 중심, 건축 `law-linked` 중심 |
-| 미얀마 보강 | 1 | 조달 3 + 건축 3 | 공식 법령·정부자료 연결, 일부 추가검증 필요 |
+| 자료집 수록국 | 43 | 조달 129 + 전국 공통 건축축 | 조달 `source-document` 중심, 건축 `law-linked` 중심 |
+| 미얀마 보강 | 1 | 조달 3, 지역 한정 건축축 공개 제외 | 공식 법령·정부자료 연결, 전국 공통성 추가검증 필요 |
 | KOICA(발주자) | 1 | 조달 3 | `article-verified` |
 
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
@@ -39,15 +39,15 @@
 
 - 공개 화면: [통합 제도 대장](https://amnotyoung.github.io/overseas-procurement-100/?axis=construction) → [세네갈 04 도시계획·부지규제](https://amnotyoung.github.io/overseas-procurement-100/model/senegal-site-urban-construction-regulations/)
 - 생성 문서: [세네갈 건축 법·제도 브리프](docs/construction-regulations/senegal.md)
-- 범위: 법령·공식자료 14종·관할기관 14개·생애주기 의무 20건·미확정 질문 12건·제도 구조도 18노드
+- 범위: 전국 공통성이 확인된 도시계획·인허가·준공 절차와 그 공식 근거
 - 구조도: [`korea100studio`](https://github.com/amnotyoung/korea100studio) `gov` 프로필로 구성 품질을 검사하고, 공개 화면은 기존 model 템플릿의 선명한 HTML 카드·동적 연결선·클릭 상세 패널로 렌더링한다.
-- 사업 적용: Diamniadio AI Transition Center의 Gate 1 자료요청, 인허가 경로, 현지 책임건축사, ERP·소방, 환경평가, 기술검사·보험, 준공·개장 조건
+- 사업 적용: 실제 필지·시설의 자료요청, 인허가 경로, 현지 책임건축사, 소방·환경평가, 기술검사·보험, 준공·개장 조건은 별도 현지 확인사항으로 관리
 - 원칙: 법령의 현행·폐지·개정예고를 구분하고, 조문 확인과 사업 적용판단을 분리하며, 필지·면적·용도처럼 받지 못한 정보는 ‘해당 없음’으로 처리하지 않는다.
 - 국가 공통 확인사항: 필지별 개발규제(건폐율·용적률·높이·이격·주차), 시설·용도·위험 분류, 지반·침수, 실제 수수료·처리기간, 현지 설계·검사·보험기관은 국가·사업별 현지조사 항목으로 분리한다. PUD·ERP 같은 특정 법권의 용어는 해당 국가에서만 사용한다.
 
 데이터 구조와 확장 규칙은 [국가별 건축 법·제도 데이터 계약](docs/construction-regulations-data-contract.md)에 정리돼 있다. 국가 파일 하나를 추가하면 검증기와 생성기가 같은 형식의 전문가 브리프를 만든다.
 
-공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 해당 국가·지방 관할의 실제 공식 건축 인허가·검사 절차를 보여준다. 43개 catalog 국가는 `catalog/official-procedures/{country}.json`에 3축 전용 절차를 두고, 세네갈은 수기 조문대조 상세판을 유지한다. 전용 절차가 하나라도 없으면 배포 품질 게이트가 실패하므로 공통 예시 흐름은 공개될 수 없다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업별 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다. 독자용 절차 문구는 한국어 번역을 먼저 쓰고 원어·약어는 제도 페이지별 최초 1회만 괄호에 병기하며, 법령 정식명과 조문 인용은 원문을 보존한다.
+공개 화면의 **업무구조도**는 `processBoard`와 `publicModels`에 정리한 전국 공통 공식 건축 인허가·검사 절차만 보여준다. 43개 catalog 국가는 `catalog/official-procedures/{country}.json`에 3축 전용 절차와 공개 관할 판정을 두고, 세네갈은 수기 조문대조 상세판을 유지한다. 특정 주·도시·지방 사례 또는 서로 다른 법권을 섞은 축은 공개 목록·페이지·구조도·출처에서 제외한다. 현지자료 요청·사업별 적용판단·설계통합 같은 ODA 사업팀의 업무는 **ODA 사업별 적용 확인사항** 카드에 별도로 둔다. `permitPath`의 **공식 결정 Gate**는 신청·심사 단계와 분리해 관할기관의 결정·산출물·선행조건을 보여준다. 단계·Gate·결과분기·보완회귀 수는 국가별 확인 근거에 따라 달라지며, 분기와 회귀는 근거가 있는 경우에만 표시한다. 화면의 노드 번호는 각 제도축에서 `B01`부터 다시 시작하며, 원천 ID는 참조 추적을 위해 별도로 유지한다. 독자용 절차 문구는 한국어 번역을 먼저 쓰고 원어·약어는 제도 페이지별 최초 1회만 괄호에 병기하며, 법령 정식명과 조문 인용은 원문을 보존한다.
 
 ## 원작
 
@@ -100,7 +100,7 @@ sources/koica-2026/
 │   ├── check_links.py           외부 링크 확인
 │   ├── build_docs.py            문서 생성
 │   ├── validate_construction_regulations.py  건축 법·제도 검증
-│   ├── check_construction_procedure_coverage.py  44개국·132모델 절차·현행성 게이트
+│   ├── check_construction_procedure_coverage.py  44개국 전국 공통 공개축 절차·현행성 게이트
 │   ├── check_construction_procedure_structure.py 번역 외 구조변경 방지
 │   ├── check_construction_terminology.py 한국어 우선·원어 1회 표기 검사
 │   ├── build_construction_regulations.py     건축 법·제도 브리프 생성
@@ -237,14 +237,14 @@ python3 -m http.server 8765 --directory site
 4. 국가 공통 의무는 `requirements`, 부지별 계획·특구는 `siteOverlays`, 받지 못한 사업 입력은 `openQuestions`에 적고, 공개 제도축은 `publicModels`에서 같은 원천을 참조해 나눈다.
 5. 법정 처리기간은 완비서류 접수 후 기간으로 기록하고 전체 인허가기간과 구분한다.
 6. `python3 tools/validate_construction_regulations.py`와 `python3 tools/build_construction_regulations.py`를 실행한다.
-7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 도시계획·부지, 건축허가·환경, 기술검사·보험·준공 3종을 4~6번으로 자동 배치한다.
+7. `build_site.py`가 같은 국가의 조달 1~3번 뒤에 전국 공통성이 확인된 건축축 0~3종을 4번부터 자동 배치한다.
 
 세네갈 조문대조 상세판은 국가 JSON을 직접 관리한다. 나머지 국가는
 `data/construction-regulations/catalog/baselines.json`에 공식 출처·기관·판단을 두고,
 `data/construction-regulations/catalog/official-procedures/{country}.json`에 세 제도축의 실제
 단계·Gate·분기·보완회귀와 노드별 근거를 기록한다. `build_construction_baselines.py`가 이를
-표준 국가 JSON으로 생성한다. `check_construction_procedure_coverage.py`는 44개국·132개 모델,
-국가별 3축 전용절차, 직접 근거, 공식 결정, 3개 결과분기와 사이트 현행성 판단기록을 강제한다.
+표준 국가 JSON으로 생성한다. `check_construction_procedure_coverage.py`는 44개국의 축별 공개 관할 판정과
+전국 공통 공개축의 직접 근거, 공식 결정, 3개 결과분기와 사이트 현행성 판단기록을 강제한다.
 ODA 준비·현지확인 항목은 절차 노드가 아니라 별도 접이식 카드로 분리한다.
 
 공개 산출물은 “현행 기준”, “산출물 반영”, “확인 출처”, “실무 확인” 순으로 보여준다. 내부 JSON의 `verification.discrepancies`와 `upstream` 필드는 기존 데이터 계약과 추적성을 위해 유지한다.

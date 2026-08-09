@@ -83,24 +83,22 @@ for (const f of constructionFiles) {
   // Catalog-generated boards come from the country-specific official-procedure
   // overlays and are all validated/rendered by build_construction_boards.mjs.
   // Keep this faster regression baseline for hand-maintained boards; the full build
-  // remains the hard layout gate for all 129 generated country-axis boards.
+  // remains the hard layout gate for all published national country-axis boards.
   if (item.generatedFrom) continue;
-  const publicModels = item.publicModels || [];
-  if (!publicModels.length) {
-    results[`construction/${item.slug}`] = audit(item.processBoard);
-    continue;
-  }
+  if (!Array.isArray(item.publicModels)) fail(`${f} is missing publicModels`);
+  const publicModels = item.publicModels;
   for (const spec of publicModels) {
     const nodeIds = new Set(spec.nodeIds);
     const nodes = item.processBoard.nodes.filter((node) => nodeIds.has(node.id));
     const usedLanes = new Set(nodes.map((node) => node.lane));
     const usedStages = new Set(nodes.map((node) => node.stage));
+    const laneOrder = spec.laneOrder || item.processBoard.lanes;
     results[`construction/${spec.slug}`] = audit({
       schema_version: item.processBoard.schema_version,
       profile: item.processBoard.profile,
       title: spec.name,
       subtitle: spec.oneLiner,
-      lanes: item.processBoard.lanes.filter((lane) => usedLanes.has(lane)),
+      lanes: laneOrder.filter((lane) => usedLanes.has(lane)),
       stages: item.processBoard.stages.filter((stage) => usedStages.has(stage)),
       nodes,
       edges: spec.edges,

@@ -1,16 +1,7 @@
 {
   "schemaVersion": "0.1",
   "slug": "cote-divoire",
-  "authorities": [
-    {
-      "id": "pccc",
-      "name": "Plateforme Collaborative de Controle des Constructions",
-      "nameKo": "건설공사 합동통제 플랫폼(PCCC)",
-      "role": "승인도서와 다른 공사를 현장 점검하고 시정·공사중지 등 건설통제를 수행",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://web.construction.gouv.ci/index.php/actualite/4"
-    }
-  ],
+  "authorities": [],
   "instruments": [
     {
       "id": "CIV-CONSTRUCTION-CODE-2019-576",
@@ -82,17 +73,6 @@
       "id": "CIV-ENV-DECREE-96-894",
       "status": "continuity_unverified",
       "statusBasis": "환경부가 게시한 2026년 EIESS 문서가 Law 2023-900과 Decree 96-894를 함께 인용하는 것을 확인했다. 다만 이는 개별 사업 문서이고, 2023 환경법전 이후 Annex I·II·III 분류를 대체·개정한 후속 시행령의 전국 통합목록 또는 명시적 폐지표를 공식 법령대장에서 확인하지 못했다."
-    },
-    {
-      "id": "CIV-PCCC-CONTROL",
-      "title": "MULCV construction-control enforcement notice",
-      "titleKo": "MULCV 건설현장 통제·공사중지 공식 사례",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "MULCV continues to assign construction-control functions to its current organisation and publishes the PCCC inspection and stop-work enforcement route.",
-      "officialUrl": "https://web.construction.gouv.ci/index.php/actualite/4",
-      "verificationLevel": "source-linked"
     }
   ],
   "systems": {
@@ -101,6 +81,7 @@
       "officialProcedure": {
         "name": "코트디부아르 필지·도시계획 적합성 심사",
         "coverage": "official-source-linked",
+        "publicationScope": "national",
         "scope": "도시지역 신축·증축·용도변경의 필지권원, 승인 필지분할개발(lotissement) 여부, 개별 또는 일반 도시계획규정과 건축허가통합창구(GUPC) 도시계획 적합의견을 다룬다.",
         "stages": ["S0 권원·입지", "S1 적용규정·설계", "S2 통합창구 도시계획심사", "S3 계획적합 결정"],
         "steps": [
@@ -173,6 +154,7 @@
       "officialProcedure": {
         "name": "코트디부아르 국가환경청(ANDE) 환경평가·건축허가통합창구(GUPC) 건축허가",
         "coverage": "official-source-linked",
+        "publicationScope": "subnational-example",
         "scope": "환경·사회평가 대상분류부터 환경장관 승인, 건축허가통합창구 통합심사와 장관 또는 시장의 건축허가까지를 표시한다.",
         "stages": ["S0 국가환경청 분류", "S1 환경평가 작성", "S2 공개조사", "S3 환경기술검증", "S4 환경결정", "S5 통합창구 허가심사", "S6 건축허가결정"],
         "steps": [
@@ -201,20 +183,21 @@
       }
     },
     "control-completion": {
-      "verificationScope": "건설·주택법전 제31~41조의 독립 공사통제, 제69~73조의 준공신고·적합성증명·15일 규칙과 MULCV/PCCC 현장 집행을 연결했다.",
+      "verificationScope": "건설·주택법전 제31~41조의 독립 공사통제와 제69~73조의 준공신고·적합성증명·15일 규칙에서 전국 공통 절차만 추출했다.",
       "officialProcedure": {
         "name": "코트디부아르 공사통제·적합성증명",
         "coverage": "official-source-linked",
+        "publicationScope": "national",
         "scope": "허가 후 독립 공사통제자(contrôleur des constructions)의 단계검사, 부적합 시 공사중지·시정, 완공신고와 적합성증명(certificat de conformité) 발급까지를 다룬다.",
         "stages": ["S0 착공통제 준비", "S1 단계검사", "S2 시정·완공신고", "S3 적합성증명"],
         "steps": [
           {"lane":"건축주·신청인","stage":0,"label":"허가·승인도서·보험조건 확정","emphasis":"key","kind":"official-guidance","action":"건축주가 유효한 건축허가와 승인도서·환경조건을 공사계약에 편입하고 법정 책임·보험조건을 갖춘다.","output":"유효 허가·승인도서·공사통제 계약자료","authorityIds":["mulcv","gupc-ministry-mayor"],"refs":[{"source":"허가 선행·유효", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 11-14, 23"]}]},
           {"lane":"건축주·신청인","stage":0,"label":"독립 공사통제자 선임","emphasis":"key","kind":"official-guidance","action":"건축주가 동일 프로젝트의 설계·시공·감정과 겸직하지 않는 공사통제자를 선임한다.","output":"공사통제자 계약·독립성 자료","authorityIds":["mulcv"],"refs":[{"source":"공사통제자 선임·독립", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 33, 39-40"]},{"source":"현행 인가 목록", "instrumentId":"CIV-MULCV-MISSION-2026","provisions":["regulation of construction professionals and construction control"]}]},
           {"lane":"현지 설계·시공 전문가","stage":1,"label":"실시설계·현장배치 승인","emphasis":"normal","kind":"official-guidance","action":"공사통제자가 시공자의 실시도서를 검토하고 도시계획 처방에 맞는 건물배치를 확인·승인한다.","output":"실시설계·배치 승인기록","authorityIds":["mulcv"],"refs":[{"source":"통제자 초기검사", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Article 34"]}]},
-          {"lane":"환경·소방·검사기관","stage":1,"label":"굴착·기초·철근·콘크리트 단계검사","emphasis":"bottleneck","kind":"official-guidance","action":"공사통제자가 굴착깊이·기초저면·콘크리트 배합·거푸집·철근과 재료품질을 단계별로 검사하고 상세 서명보고서를 작성한다.","output":"단계검사·재료시험·서명보고서","authorityIds":["mulcv","pccc"],"refs":[{"source":"법정 단계검사", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 34-35"]}]},
-          {"lane":"환경·소방·검사기관","stage":1,"label":"승인도서 일치·현장 합동통제","emphasis":"normal","kind":"official-guidance","action":"MULCV/PCCC와 공사통제자가 현장 공사가 건축허가·승인도서·안전조건과 일치하는지 점검한다.","output":"현장통제 기록·적합 또는 위반통지","authorityIds":["mulcv","pccc"],"refs":[{"source":"현행 PCCC 집행", "instrumentId":"CIV-PCCC-CONTROL","provisions":["site inspection against building permit"]},{"source":"공사통제 보고", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 34-36"]}]},
-          {"lane":"환경·소방·검사기관","stage":2,"label":"부적합 시 공사중지·시정명령","emphasis":"key","kind":"official-guidance","action":"중대한 불일치 또는 안정성 위험이면 통제자나 관할부가 공사를 중지시키고 승인도서에 맞춘 시정을 요구한다.","output":"공사중지·시정 또는 철거통지","authorityIds":["mulcv","pccc"],"refs":[{"source":"통제자 공사중지", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 25-26, 36"]},{"source":"PCCC 공사중지 사례", "instrumentId":"CIV-PCCC-CONTROL","provisions":["immediate stop-work and evacuation for permit non-conformity"]}],"permitGate":{"key":"civ-construction-control","gate":"현장 적합·공사계속 공식판정","decision":"공사통제자와 관할 통제기관이 허가·승인도서·안전조건 일치 여부를 판정해 계속시공 또는 공사중지·시정을 명한다.","output":"단계 적합승인 또는 공사중지·시정명령","dependsOn":[]}},
-          {"lane":"현지 설계·시공 전문가","stage":2,"label":"부적합 시정·재검사","emphasis":"normal","kind":"official-guidance","action":"시공자가 지적사항을 시정하고 공사통제자·관할 통제기관의 재검사를 받아 공사재개 근거를 확보한다.","output":"시정완료 자료·재검사 기록","authorityIds":["mulcv","pccc"],"refs":[{"source":"시정의무", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 25-26, 36"]}]},
+          {"lane":"환경·소방·검사기관","stage":1,"label":"굴착·기초·철근·콘크리트 단계검사","emphasis":"bottleneck","kind":"official-guidance","action":"공사통제자가 굴착깊이·기초저면·콘크리트 배합·거푸집·철근과 재료품질을 단계별로 검사하고 상세 서명보고서를 작성한다.","output":"단계검사·재료시험·서명보고서","authorityIds":["mulcv"],"refs":[{"source":"법정 단계검사", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 34-35"]}]},
+          {"lane":"환경·소방·검사기관","stage":1,"label":"승인도서 일치·현장 통제","emphasis":"normal","kind":"official-guidance","action":"관할부와 공사통제자가 현장 공사가 건축허가·승인도서·안전조건과 일치하는지 점검한다.","output":"현장통제 기록·적합 또는 위반통지","authorityIds":["mulcv"],"refs":[{"source":"공사통제 보고", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 34-36"]}]},
+          {"lane":"환경·소방·검사기관","stage":2,"label":"부적합 시 공사중지·시정명령","emphasis":"key","kind":"official-guidance","action":"중대한 불일치 또는 안정성 위험이면 통제자나 관할부가 공사를 중지시키고 승인도서에 맞춘 시정을 요구한다.","output":"공사중지·시정 또는 철거통지","authorityIds":["mulcv"],"refs":[{"source":"통제자 공사중지", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 25-26, 36"]}],"permitGate":{"key":"civ-construction-control","gate":"현장 적합·공사계속 공식판정","decision":"공사통제자와 관할 통제기관이 허가·승인도서·안전조건 일치 여부를 판정해 계속시공 또는 공사중지·시정을 명한다.","output":"단계 적합승인 또는 공사중지·시정명령","dependsOn":[]}},
+          {"lane":"현지 설계·시공 전문가","stage":2,"label":"부적합 시정·재검사","emphasis":"normal","kind":"official-guidance","action":"시공자가 지적사항을 시정하고 공사통제자·관할 통제기관의 재검사를 받아 공사재개 근거를 확보한다.","output":"시정완료 자료·재검사 기록","authorityIds":["mulcv"],"refs":[{"source":"시정의무", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 25-26, 36"]}]},
           {"lane":"현지 설계·시공 전문가","stage":2,"label":"통제자 적정시공(bonne exécution) 확인","emphasis":"normal","kind":"official-guidance","action":"공사통제자가 전체 단계보고서를 종결하고 certificat de conformite 신청에 첨부할 적정시공 확인서를 발행한다.","output":"적정시공확인서(Attestation de bonne exécution)·최종 통제보고", "authorityIds":["mulcv"],"refs":[{"source":"최종 공사통제 확인", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Article 34"]}]},
           {"lane":"건축주·신청인","stage":2,"label":"완공신고·준공보고서 제출","emphasis":"key","kind":"official-guidance","action":"건축주가 건축사 또는 시공자를 통해 완전완공 신고와 준공보고서를 허가 발급기관에 제출한다.","output":"완전준공신고(Déclaration de parfait achèvement)·준공보고서", "authorityIds":["gupc-ministry-mayor","mulcv"],"refs":[{"source":"완공신고", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Article 71"]}]},
           {"lane":"도시계획·건축 허가기관","stage":3,"label":"승인도서 대비 최종 적합검사","emphasis":"bottleneck","kind":"official-guidance","action":"허가 발급기관이 완공 건물의 배치·형태·설비가 허가도서와 정확히 일치하는지 검사하고 보완 필요사항을 통지한다.","output":"최종 적합검사 기록·보완통지","authorityIds":["gupc-ministry-mayor","mulcv"],"refs":[{"source":"점유 전 일치검사", "instrumentId":"CIV-CONSTRUCTION-CODE-2019-576","provisions":["Articles 69-70"]},{"source":"현행 적합성증명 소관", "instrumentId":"CIV-MULCV-MISSION-2026","provisions":["delivery of conformity certificate"]}]},

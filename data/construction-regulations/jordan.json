@@ -9,12 +9,12 @@
     "iso3": "JOR",
     "region": "중동·CIS"
   },
-  "purpose": "요르단 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "요르단 ODA 건축사업에서 전국 공통으로 확인된 기술검사·보험·준공제도를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "도시·촌락·건축계획법 제79/1966호 및 관할 용도지역·건축규칙(개정 포함)·요르단 국가건축법 제7/1993호 및 코드 적용지침(개정 포함)·환경분류·인허가규정 제69/2020호의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "요르단 국가건축코드 적용·공사통제 현행지침의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,8 +24,8 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "요르단 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "요르단 전국 공통 건축 법·제도 흐름",
+    "subtitle": "기술검사·보험·준공제도",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
@@ -33,17 +33,6 @@
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 관할·권원",
-      "S2 계획·용도지역",
-      "S3 계획자료 접수",
-      "S4 기술심사·보완",
-      "S5 공식결정",
-      "P1 분류·전문도서",
-      "P2 공식접수",
-      "P3 완비성 심사",
-      "P4 기술·환경영향평가 심사",
-      "P5 보완·재심사",
-      "P6 공식결정",
       "C1 책임자·착공",
       "C2 감리·시험",
       "C3 위반시정",
@@ -53,758 +42,6 @@
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "S1 관할·권원",
-        "label": "계획구역·허가위원회 관할확정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "사업 위치가 Greater Amman, municipality, Aqaba 또는 다른 계획구역인지 확인해 관할 planning committee와 적용 규칙을 확정한다.",
-        "action": "사업 위치가 Greater Amman, municipality, Aqaba 또는 다른 계획구역인지 확인해 관할 planning committee와 적용 규칙을 확정한다.",
-        "outputs": [
-          "관할 계획·허가기관 확정기록"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law·공식 적용지침",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "planning authorities, statutory plans and local building-control jurisdiction"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "건축주·신청인",
-        "stage": "S1 관할·권원",
-        "label": "토지등기·지적·경계 확정",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "소유자 또는 적법한 대리인이 등기·지적도·경계·소유자 동의와 신청권한을 정리한다.",
-        "action": "소유자 또는 적법한 대리인이 등기·지적도·경계·소유자 동의와 신청권한을 정리한다.",
-        "outputs": [
-          "권원·지적·신청권한 자료"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 허가체계",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "land and parcel documentation for planning and building licence"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S2 계획·용도지역",
-        "label": "구조계획·용도지역·필지조건 대조",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "등록 설계사무소가 승인계획·용도지역에서 용도, 필지점유율(plot percentage), 용적률(floor ratio), 높이, 이격(setback), 주차(parking), 도로·하천(wadi)·보호조건을 대조한다.",
-        "action": "등록 설계사무소가 승인계획·용도지역에서 용도, 필지점유율(plot percentage), 용적률(floor ratio), 높이, 이격(setback), 주차(parking), 도로·하천(wadi)·보호조건을 대조한다.",
-        "outputs": [
-          "필지별 계획·용도지역 조건표"
-        ],
-        "authorityIds": [
-          "jor-planning-authority",
-          "jor-professional-control"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law·관할 building regulations",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "statutory plans, zoning/building control and licence conditions"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S3 계획자료 접수",
-        "label": "계획·필지조건 신청도서 작성",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "위치·경계·예정용도·규모·접근·주차·배수와 적용 계획적합성을 표시한 신청도서를 작성·인증한다.",
-        "action": "위치·경계·예정용도·규모·접근·주차·배수와 적용 계획적합성을 표시한 신청도서를 작성·인증한다.",
-        "outputs": [
-          "계획·필지조건 신청도서"
-        ],
-        "authorityIds": [
-          "jor-professional-control",
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 계획허가체계",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "planning application and certified drawings"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "건축주·신청인",
-        "stage": "S3 계획자료 접수",
-        "label": "관할 planning authority 공식접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인이 권원·지적과 인증도서를 관할 planning authority에 제출한다.",
-        "action": "신청인이 권원·지적과 인증도서를 관할 planning authority에 제출한다.",
-        "outputs": [
-          "계획신청 접수·사건기록"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 허가절차",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "application to competent planning authority"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 기술심사·보완",
-        "label": "계획·zoning·도로 기술심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "planning committee가 신청을 승인계획·zoning·필지·도로·서비스 조건에 대조하고 관계기관 의견을 검토한다.",
-        "action": "planning committee가 신청을 승인계획·zoning·필지·도로·서비스 조건에 대조하고 관계기관 의견을 검토한다.",
-        "outputs": [
-          "계획위원회 기술심사기록"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "statutory planning and building-control review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B07",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 기술심사·보완",
-        "label": "계획불일치·추가자료 통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "자료가 부족하거나 계획·zoning과 불일치하면 관할기관이 추가자료·계획수정을 통지한다.",
-        "action": "자료가 부족하거나 계획·zoning과 불일치하면 관할기관이 추가자료·계획수정을 통지한다.",
-        "outputs": [
-          "계획·필지 보완통지"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 허가통제",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "compliance required before planning/building approval"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S4 기술심사·보완",
-        "label": "계획자료 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "설계사무소가 계획·배치·도로·서비스 자료를 보완해 재제출한다.",
-        "action": "설계사무소가 계획·배치·도로·서비스 자료를 보완해 재제출한다.",
-        "outputs": [
-          "보완도서·재접수 기록"
-        ],
-        "authorityIds": [
-          "jor-professional-control",
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 허가절차",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "revised application reviewed by competent planning authority"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B09",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S5 공식결정",
-        "label": "필지·용도지역 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 계획허가기관이 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
-        "action": "관할 계획허가기관이 필지의 허용용도·개발조건을 승인·조건부 승인 또는 거부한다.",
-        "outputs": [
-          "계획·용도지역 승인조건 또는 거부통지"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "planning and building-control decision"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B10",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P1 분류·전문도서",
-        "label": "JEA 인증·JNBC 허가도서 작성",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "등록 설계사무소가 건축·구조·기계·전기·배관(MEP)·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
-        "action": "등록 설계사무소가 건축·구조·기계·전기·배관(MEP)·소방도서를 적용 JNBC 코드와 계획조건에 맞춰 작성하고 JEA 인증을 받는다.",
-        "outputs": [
-          "인증 건축허가 도서"
-        ],
-        "authorityIds": [
-          "jor-professional-control",
-          "jor-building-council",
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "국가건축법·코드 적용지침",
-            "instrumentId": "JOR-NATIONAL-BUILDING-LAW-7-1993",
-            "provisions": [
-              "approved codes and certified engineering drawings"
-            ]
-          },
-          {
-            "source": "현행 코드 적용지침",
-            "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
-            "provisions": [
-              "certified engineering-office drawings and code compliance"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B11",
-        "lane": "건축주·신청인",
-        "stage": "P2 공식접수",
-        "label": "관할 건축허가 공식접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "건축주가 권원·계획승인·JEA 인증도서·관계기관 자료를 관할 municipality/planning authority에 제출한다.",
-        "action": "건축주가 권원·계획승인·JEA 인증도서·관계기관 자료를 관할 municipality/planning authority에 제출한다.",
-        "outputs": [
-          "건축허가 접수·사건기록"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 건축허가",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "building licence and planning compliance"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B12",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P3 완비성 심사",
-        "label": "건축허가 완비성·관계기관 확인",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할기관이 권원·계획조건·전문인증·도서·소방·위생·유틸리티 등 적용자료의 완비성을 확인한다.",
-        "action": "관할기관이 권원·계획조건·전문인증·도서·소방·위생·유틸리티 등 적용자료의 완비성을 확인한다.",
-        "outputs": [
-          "완비접수 또는 누락통지"
-        ],
-        "authorityIds": [
-          "jor-planning-authority",
-          "jor-professional-control"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law·코드 적용지침",
-            "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
-            "provisions": [
-              "licensing authority verification of approved drawings and required controls"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B13",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P4 기술·환경영향평가 심사",
-        "label": "건축·구조·코드 기술심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할기관과 적용 관계기관이 계획조건·JNBC 구조·소방·접근·MEP 적합성을 심사한다.",
-        "action": "관할기관과 적용 관계기관이 계획조건·JNBC 구조·소방·접근·MEP 적합성을 심사한다.",
-        "outputs": [
-          "건축기술·관계기관 심사기록"
-        ],
-        "authorityIds": [
-          "jor-planning-authority",
-          "jor-building-council",
-          "jor-professional-control"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "국가건축법·적용지침",
-            "instrumentId": "JOR-NATIONAL-BUILDING-LAW-7-1993",
-            "provisions": [
-              "code compliance through design and licensing"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B14",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P5 보완·재심사",
-        "label": "건축도서 보완·수정 통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "누락·기술불일치이면 관할기관이 수정도서·추가승인을 요구한다.",
-        "action": "누락·기술불일치이면 관할기관이 수정도서·추가승인을 요구한다.",
-        "outputs": [
-          "건축허가 보완통지"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law 허가통제",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "compliance and correction before building licence"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B15",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P5 보완·재심사",
-        "label": "건축도서 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "설계사무소가 지적사항을 반영해 JEA 재인증이 필요한 도서와 관계기관 자료를 재제출한다.",
-        "action": "설계사무소가 지적사항을 반영해 JEA 재인증이 필요한 도서와 관계기관 자료를 재제출한다.",
-        "outputs": [
-          "보완도서·재심사 기록"
-        ],
-        "authorityIds": [
-          "jor-professional-control",
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "코드 적용지침",
-            "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
-            "provisions": [
-              "corrected certified drawings and licensing review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B16",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P6 공식결정",
-        "label": "건축허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할기관이 승인도서·조건을 포함한 건축허가를 발급하거나 거부한다.",
-        "action": "관할기관이 승인도서·조건을 포함한 건축허가를 발급하거나 거부한다.",
-        "outputs": [
-          "건축허가·승인도서·조건 또는 거부"
-        ],
-        "authorityIds": [
-          "jor-planning-authority"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Planning Law",
-            "instrumentId": "JOR-PLANNING-LAW-79-1966",
-            "provisions": [
-              "building permit decision"
-            ]
-          }
-        ],
-        "gateOrders": [
-          2
-        ]
-      },
-      {
-        "id": "B17",
-        "lane": "건축주·신청인",
-        "stage": "P1 분류·전문도서",
-        "label": "환경분류 신청·활동자료 제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "사업대표가 환경부 인허가·오염저감국에 활동·시설·입지·규모자료와 분류신청을 제출한다.",
-        "action": "사업대표가 환경부 인허가·오염저감국에 활동·시설·입지·규모자료와 분류신청을 제출한다.",
-        "outputs": [
-          "환경분류 신청·사건기록"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "articles 2-4; application and environmental classification"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B18",
-        "lane": "환경·소방·검사기관",
-        "stage": "P2 공식접수",
-        "label": "환경범주 1·2·3·4 공식분류",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경부가 부속서 1(Appendix 1)과 활동영향을 대조해 범주 1 종합환경영향평가, 2 예비환경영향평가, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
-        "action": "환경부가 부속서 1(Appendix 1)과 활동영향을 대조해 범주 1 종합환경영향평가, 2 예비환경영향평가, 3 환경동의 또는 4 환경조건 경로로 분류한다.",
-        "outputs": [
-          "환경범주·평가·동의 경로"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020 현행본",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "articles 3-5 and Appendix 1; Categories 1-4 and ASEZA exclusion"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B19",
-        "lane": "환경·소방·검사기관",
-        "stage": "P3 완비성 심사",
-        "label": "환경요건·과업지시서(TOR) 확정",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "분류에 따라 환경부가 종합·예비 환경영향평가 과업지시서·요구자료 또는 범주 3·4 환경동의·조건자료를 확정한다.",
-        "action": "분류에 따라 환경부가 종합·예비 환경영향평가 과업지시서·요구자료 또는 범주 3·4 환경동의·조건자료를 확정한다.",
-        "outputs": [
-          "과업지시서·환경요건·요구자료"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "category-specific comprehensive/preliminary EIA, consent and conditions"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B20",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P4 기술·환경영향평가 심사",
-        "label": "종합/예비 EIA·환경자료 작성",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경컨설턴트가 적용 TOR에 따라 종합 또는 예비 EIA와 관리·완화조치를 작성하거나 Category 3·4 요구자료를 제출한다.",
-        "action": "환경컨설턴트가 적용 TOR에 따라 종합 또는 예비 EIA와 관리·완화조치를 작성하거나 Category 3·4 요구자료를 제출한다.",
-        "outputs": [
-          "범주별 EIA·환경관리자료"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "articles 6-15; category review documentation and EIA"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B21",
-        "lane": "환경·소방·검사기관",
-        "stage": "P4 기술·환경영향평가 심사",
-        "label": "환경기술·위원회 심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경부와 EIA 위원회가 범주별 자료·입지·영향·완화조치를 심사하고 결정안을 작성한다.",
-        "action": "환경부와 EIA 위원회가 범주별 자료·입지·영향·완화조치를 심사하고 결정안을 작성한다.",
-        "outputs": [
-          "환경기술·위원회 심사기록"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "articles 6-18; ministry and EIA committee review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B22",
-        "lane": "환경·소방·검사기관",
-        "stage": "P5 보완·재심사",
-        "label": "환경 추가정보·수정 요구",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경자료나 완화조치가 부족하면 환경부가 추가정보·EIA 수정을 통지한다.",
-        "action": "환경자료나 완화조치가 부족하면 환경부가 추가정보·EIA 수정을 통지한다.",
-        "outputs": [
-          "환경 보완통지"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "additional information and study modification during review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B23",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P5 보완·재심사",
-        "label": "환경자료 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경컨설턴트가 보완자료·수정 EIA를 제출해 기술심사를 다시 받는다.",
-        "action": "환경컨설턴트가 보완자료·수정 EIA를 제출해 기술심사를 다시 받는다.",
-        "outputs": [
-          "보완 환경자료·재심사 기록"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "supplementation and further evaluation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B24",
-        "lane": "환경·소방·검사기관",
-        "stage": "P6 공식결정",
-        "label": "환경동의·환경영향평가·허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경부가 범주에 따라 종합·예비 환경영향평가 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
-        "action": "환경부가 범주에 따라 종합·예비 환경영향평가 승인, 환경동의·조건 또는 불승인을 공식 결정한다.",
-        "outputs": [
-          "환경승인·동의·조건 또는 불승인"
-        ],
-        "authorityIds": [
-          "jor-environment-ministry"
-        ],
-        "requirementIds": [
-          "JOR-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Regulation 69/2020·현행 대장",
-            "instrumentId": "JOR-MOENV-REGULATIONS-REGISTER",
-            "provisions": [
-              "current Regulation 69 and amending Regulation 97"
-            ]
-          },
-          {
-            "source": "Regulation 69/2020",
-            "instrumentId": "JOR-ENV-REG-69-2020",
-            "provisions": [
-              "category-specific environmental decision and permit"
-            ]
-          }
-        ],
-        "gateOrders": [
-          3
-        ]
-      },
-      {
-        "id": "B25",
         "lane": "건축주·신청인",
         "stage": "C1 책임자·착공",
         "label": "등록 시공자·감리사무소 지정",
@@ -835,7 +72,7 @@
         ]
       },
       {
-        "id": "B26",
+        "id": "B02",
         "lane": "현지 설계·시공 전문가",
         "stage": "C1 책임자·착공",
         "label": "승인도서·감리기록으로 착공",
@@ -865,7 +102,7 @@
         ]
       },
       {
-        "id": "B27",
+        "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "C2 감리·시험",
         "label": "상주감리·재료시험·단계확인",
@@ -896,7 +133,7 @@
         ]
       },
       {
-        "id": "B28",
+        "id": "B04",
         "lane": "도시계획·건축 허가기관",
         "stage": "C2 감리·시험",
         "label": "JEA·허가기관 현장통제",
@@ -927,7 +164,7 @@
         ]
       },
       {
-        "id": "B29",
+        "id": "B05",
         "lane": "도시계획·건축 허가기관",
         "stage": "C3 위반시정",
         "label": "위반내용·시정기한 공식통지",
@@ -958,7 +195,7 @@
         ]
       },
       {
-        "id": "B30",
+        "id": "B06",
         "lane": "현지 설계·시공 전문가",
         "stage": "C3 위반시정",
         "label": "현장 시정·JEA 재확인",
@@ -989,7 +226,7 @@
         ]
       },
       {
-        "id": "B31",
+        "id": "B07",
         "lane": "현지 설계·시공 전문가",
         "stage": "C4 완료증명·민방위청",
         "label": "감리사무소 적합증명 발행",
@@ -1019,7 +256,7 @@
         ]
       },
       {
-        "id": "B32",
+        "id": "B08",
         "lane": "환경·소방·검사기관",
         "stage": "C4 완료증명·민방위청",
         "label": "JEA 인증·Civil Defense 승인",
@@ -1049,7 +286,7 @@
         ]
       },
       {
-        "id": "B33",
+        "id": "B09",
         "lane": "건축주·신청인",
         "stage": "C4 완료증명·민방위청",
         "label": "occupancy/use permit 신청",
@@ -1080,7 +317,7 @@
         ]
       },
       {
-        "id": "B34",
+        "id": "B10",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 점유결정",
         "label": "완료·사용 적합검사",
@@ -1110,7 +347,7 @@
         ]
       },
       {
-        "id": "B35",
+        "id": "B11",
         "lane": "현지 설계·시공 전문가",
         "stage": "C5 점유결정",
         "label": "완료결함 보완·재검사",
@@ -1141,7 +378,7 @@
         ]
       },
       {
-        "id": "B36",
+        "id": "B12",
         "lane": "도시계획·건축 허가기관",
         "stage": "C5 점유결정",
         "label": "점유·사용허가 공식결정",
@@ -1170,607 +407,105 @@
           }
         ],
         "gateOrders": [
-          4
+          1
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS06-01",
         "source": "B01",
         "target": "B02",
-        "type": "sequence",
-        "label": "관할확정"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "권원확정"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "zoning 대조"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "신청도서"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B06",
-        "type": "sequence",
-        "label": "공식접수"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B06",
-        "target": "B09",
-        "type": "sequence",
-        "label": "계획 적합"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B06",
-        "target": "B07",
-        "type": "message",
-        "label": "불일치"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B07",
-        "target": "B08",
-        "type": "sequence",
-        "label": "보완통지"
-      },
-      {
-        "id": "BS04-09",
-        "source": "B08",
-        "target": "B06",
-        "type": "loop",
-        "label": "보완 후 계획 재심사"
-      },
-      {
-        "id": "BX05",
-        "source": "B09",
-        "target": "B10",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B10",
-        "target": "B17",
-        "type": "message",
-        "label": "병렬 환경분류"
-      },
-      {
-        "id": "BS05-02",
-        "source": "B10",
-        "target": "B11",
-        "type": "sequence",
-        "label": "허가도서"
-      },
-      {
-        "id": "BS05-03",
-        "source": "B11",
-        "target": "B12",
-        "type": "sequence",
-        "label": "건축접수"
-      },
-      {
-        "id": "BS05-04",
-        "source": "B12",
-        "target": "B13",
-        "type": "sequence",
-        "label": "완비"
-      },
-      {
-        "id": "BS05-05",
-        "source": "B13",
-        "target": "B16",
-        "type": "sequence",
-        "label": "건축 적합"
-      },
-      {
-        "id": "BS05-06",
-        "source": "B12",
-        "target": "B14",
-        "type": "message",
-        "label": "누락"
-      },
-      {
-        "id": "BS05-07",
-        "source": "B13",
-        "target": "B14",
-        "type": "message",
-        "label": "기술보완"
-      },
-      {
-        "id": "BS05-08",
-        "source": "B14",
-        "target": "B15",
-        "type": "sequence",
-        "label": "보완통지"
-      },
-      {
-        "id": "BS05-09",
-        "source": "B15",
-        "target": "B13",
-        "type": "loop",
-        "label": "보완 후 건축 재심사"
-      },
-      {
-        "id": "BS05-10",
-        "source": "B17",
-        "target": "B18",
-        "type": "sequence",
-        "label": "환경신청"
-      },
-      {
-        "id": "BS05-11",
-        "source": "B18",
-        "target": "B19",
-        "type": "sequence",
-        "label": "범주결정"
-      },
-      {
-        "id": "BS05-12",
-        "source": "B19",
-        "target": "B20",
-        "type": "sequence",
-        "label": "TOR·요건"
-      },
-      {
-        "id": "BS05-13",
-        "source": "B20",
-        "target": "B21",
-        "type": "sequence",
-        "label": "환경자료"
-      },
-      {
-        "id": "BS05-14",
-        "source": "B21",
-        "target": "B24",
-        "type": "sequence",
-        "label": "환경 적합"
-      },
-      {
-        "id": "BS05-15",
-        "source": "B21",
-        "target": "B22",
-        "type": "message",
-        "label": "추가정보"
-      },
-      {
-        "id": "BS05-16",
-        "source": "B22",
-        "target": "B23",
-        "type": "sequence",
-        "label": "보완통지"
-      },
-      {
-        "id": "BS05-17",
-        "source": "B23",
-        "target": "B21",
-        "type": "loop",
-        "label": "보완 후 환경 재심사"
-      },
-      {
-        "id": "BX06",
-        "source": "B24",
-        "target": "B25",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS06-01",
-        "source": "B25",
-        "target": "B26",
         "type": "sequence",
         "label": "책임자 지정"
       },
       {
         "id": "BS06-02",
-        "source": "B26",
-        "target": "B27",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "착공·감리"
       },
       {
         "id": "BS06-03",
-        "source": "B27",
-        "target": "B28",
+        "source": "B03",
+        "target": "B04",
         "type": "sequence",
         "label": "감리기록"
       },
       {
         "id": "BS06-04",
-        "source": "B28",
-        "target": "B31",
+        "source": "B04",
+        "target": "B07",
         "type": "sequence",
         "label": "현장 적합"
       },
       {
         "id": "BS06-05",
-        "source": "B28",
-        "target": "B29",
+        "source": "B04",
+        "target": "B05",
         "type": "message",
         "label": "위반"
       },
       {
         "id": "BS06-06",
-        "source": "B29",
-        "target": "B30",
+        "source": "B05",
+        "target": "B06",
         "type": "sequence",
         "label": "시정통지"
       },
       {
         "id": "BS06-07",
-        "source": "B30",
-        "target": "B28",
+        "source": "B06",
+        "target": "B04",
         "type": "loop",
         "label": "시정 후 현장 재확인"
       },
       {
         "id": "BS06-08",
-        "source": "B31",
-        "target": "B32",
+        "source": "B07",
+        "target": "B08",
         "type": "sequence",
         "label": "적합증명"
       },
       {
         "id": "BS06-09",
-        "source": "B32",
-        "target": "B33",
+        "source": "B08",
+        "target": "B09",
         "type": "sequence",
         "label": "JEA·Civil Defense"
       },
       {
         "id": "BS06-10",
-        "source": "B33",
-        "target": "B34",
+        "source": "B09",
+        "target": "B10",
         "type": "sequence",
         "label": "점유신청"
       },
       {
         "id": "BS06-11",
-        "source": "B34",
-        "target": "B36",
+        "source": "B10",
+        "target": "B12",
         "type": "sequence",
         "label": "완료 적합"
       },
       {
         "id": "BS06-12",
-        "source": "B34",
-        "target": "B35",
+        "source": "B10",
+        "target": "B11",
         "type": "message",
         "label": "완료결함"
       },
       {
         "id": "BS06-13",
-        "source": "B35",
-        "target": "B34",
+        "source": "B11",
+        "target": "B10",
         "type": "loop",
         "label": "시정 후 완료 재검사"
       }
     ]
   },
   "publicModels": [
-    {
-      "id": "site-urban",
-      "slug": "jordan-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "요르단 토지·계획·용도지역(zoning) 필지조건 결정",
-      "oneLiner": "토지등기·지적과 관할 구조계획·용도지역·필지규칙으로 실제 건축가능 수치를 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "Planning Law 79/1966의 계획위원회·허가체계를 기준으로 관할·토지·계획·zoning 심사 절차를 구성했다. Greater Amman·ASEZA·각 municipality의 필지수치와 양식은 해당 지역 현행 규정으로 확정한다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "관할 계획허가기관(planning authority)을 확정하고 토지등기·지적과 승인 구조·상세계획·용도지역을 대조해 필지의 건축가능조건을 공식 결정받는 절차다.",
-      "nodeIds": [
-        "B01",
-        "B02",
-        "B03",
-        "B04",
-        "B05",
-        "B06",
-        "B07",
-        "B08",
-        "B09"
-      ],
-      "requirementIds": [
-        "JOR-BLD-REQ-004"
-      ],
-      "questionIds": [
-        "JOR-BLD-Q-001",
-        "JOR-BLD-Q-002",
-        "JOR-BLD-Q-003"
-      ],
-      "conclusionIds": [
-        "JOR-BLD-C-001"
-      ],
-      "siteOverlayIds": [
-        "JOR-LOCAL-OVERLAY-001"
-      ],
-      "fieldworkChecklistIds": [
-        "JOR-BLD-F-001",
-        "JOR-BLD-F-002",
-        "JOR-BLD-F-003"
-      ],
-      "edges": [
-        {
-          "id": "M04-E01",
-          "source": "B01",
-          "target": "B02",
-          "type": "sequence",
-          "label": "관할확정"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "권원확정"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "zoning 대조"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "신청도서"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B06",
-          "type": "sequence",
-          "label": "공식접수"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B06",
-          "target": "B09",
-          "type": "sequence",
-          "label": "계획 적합"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B06",
-          "target": "B07",
-          "type": "message",
-          "label": "불일치"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B07",
-          "target": "B08",
-          "type": "sequence",
-          "label": "보완통지"
-        },
-        {
-          "id": "M04-E09",
-          "source": "B08",
-          "target": "B06",
-          "type": "loop",
-          "label": "보완 후 계획 재심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "계획·용도지역 승인",
-          "action": "확정 조건으로 건축허가도서를 작성한다."
-        },
-        {
-          "state": "rework",
-          "label": "계획보완·조건부",
-          "action": "계획·필지자료를 보완해 심사로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "계획거부",
-          "action": "해당 개발안을 중단하고 적법한 변경·불복·대체부지를 검토한다."
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "jordan-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "요르단 건축허가·환경범주(Category) 1–4 절차",
-      "oneLiner": "계획기관의 건축허가와 환경부 Category 1–4 분류·동의/EIA를 독립 선행조건으로 묶는다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "관할 planning authority의 건축허가와 Regulation 69/2020·97/2020의 Category 1–4 환경분류·EIA·환경동의 절차를 분리해 구성했다. Regulation 69 Art.3에 따라 ASEZA는 별도 환경체계를 적용한다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "JEA 인증·JNBC 코드도서를 관할기관에 제출해 건축허가를 받고, 환경부가 활동을 환경범주 1–4로 분류해 종합·예비 환경영향평가(EIA)·환경동의·조건을 결정하는 절차다.",
-      "nodeIds": [
-        "B10",
-        "B11",
-        "B12",
-        "B13",
-        "B14",
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21",
-        "B22",
-        "B23",
-        "B24"
-      ],
-      "requirementIds": [
-        "JOR-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "JOR-BLD-Q-004",
-        "JOR-BLD-Q-005",
-        "JOR-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "JOR-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "JOR-BLD-F-004",
-        "JOR-BLD-F-005",
-        "JOR-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B10",
-          "target": "B17",
-          "type": "message",
-          "label": "병렬 환경분류"
-        },
-        {
-          "id": "M05-E02",
-          "source": "B10",
-          "target": "B11",
-          "type": "sequence",
-          "label": "허가도서"
-        },
-        {
-          "id": "M05-E03",
-          "source": "B11",
-          "target": "B12",
-          "type": "sequence",
-          "label": "건축접수"
-        },
-        {
-          "id": "M05-E04",
-          "source": "B12",
-          "target": "B13",
-          "type": "sequence",
-          "label": "완비"
-        },
-        {
-          "id": "M05-E05",
-          "source": "B13",
-          "target": "B16",
-          "type": "sequence",
-          "label": "건축 적합"
-        },
-        {
-          "id": "M05-E06",
-          "source": "B12",
-          "target": "B14",
-          "type": "message",
-          "label": "누락"
-        },
-        {
-          "id": "M05-E07",
-          "source": "B13",
-          "target": "B14",
-          "type": "message",
-          "label": "기술보완"
-        },
-        {
-          "id": "M05-E08",
-          "source": "B14",
-          "target": "B15",
-          "type": "sequence",
-          "label": "보완통지"
-        },
-        {
-          "id": "M05-E09",
-          "source": "B15",
-          "target": "B13",
-          "type": "loop",
-          "label": "보완 후 건축 재심사"
-        },
-        {
-          "id": "M05-E10",
-          "source": "B17",
-          "target": "B18",
-          "type": "sequence",
-          "label": "환경신청"
-        },
-        {
-          "id": "M05-E11",
-          "source": "B18",
-          "target": "B19",
-          "type": "sequence",
-          "label": "범주결정"
-        },
-        {
-          "id": "M05-E12",
-          "source": "B19",
-          "target": "B20",
-          "type": "sequence",
-          "label": "TOR·요건"
-        },
-        {
-          "id": "M05-E13",
-          "source": "B20",
-          "target": "B21",
-          "type": "sequence",
-          "label": "환경자료"
-        },
-        {
-          "id": "M05-E14",
-          "source": "B21",
-          "target": "B24",
-          "type": "sequence",
-          "label": "환경 적합"
-        },
-        {
-          "id": "M05-E15",
-          "source": "B21",
-          "target": "B22",
-          "type": "message",
-          "label": "추가정보"
-        },
-        {
-          "id": "M05-E16",
-          "source": "B22",
-          "target": "B23",
-          "type": "sequence",
-          "label": "보완통지"
-        },
-        {
-          "id": "M05-E17",
-          "source": "B23",
-          "target": "B21",
-          "type": "loop",
-          "label": "보완 후 환경 재심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "건축·환경 승인",
-          "action": "승인도서와 환경조건으로 착공한다."
-        },
-        {
-          "state": "rework",
-          "label": "도서·환경영향평가 보완",
-          "action": "해당 자료를 보완해 건축 또는 환경심사로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "거부·불승인",
-          "action": "적법한 재신청 경로가 없으면 착공하지 않는다."
-        }
-      ]
-    },
     {
       "id": "control-completion",
       "slug": "jordan-control-completion-construction-regulations",
@@ -1780,127 +515,128 @@
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "공공사업주택부의 현행 국가코드 적용지침에서 등록사무소·감리자·현장기록·위반시정·JEA 적합증명·Civil Defense·점유허가 조건을 추출해 완료절차로 구성했다.",
       "procedureStatus": "official-source-linked",
+      "publicationScope": "national",
       "procedureScope": "등록 설계·시공·감리자가 승인도서와 JNBC 코드로 공사하고 위반시정·적합증명·민방위청(Civil Defense) 승인을 거쳐 관할기관의 점유·사용허가를 받는 절차다.",
       "nodeIds": [
-        "B25",
-        "B26",
-        "B27",
-        "B28",
-        "B29",
-        "B30",
-        "B31",
-        "B32",
-        "B33",
-        "B34",
-        "B35",
-        "B36"
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10",
+        "B11",
+        "B12"
       ],
       "requirementIds": [
         "JOR-BLD-REQ-006"
       ],
       "questionIds": [
-        "JOR-BLD-Q-007",
-        "JOR-BLD-Q-008",
-        "JOR-BLD-Q-009"
+        "JOR-BLD-Q-001",
+        "JOR-BLD-Q-002",
+        "JOR-BLD-Q-003"
       ],
       "conclusionIds": [
-        "JOR-BLD-C-003"
+        "JOR-BLD-C-001"
       ],
       "siteOverlayIds": [],
       "fieldworkChecklistIds": [
-        "JOR-BLD-F-007",
-        "JOR-BLD-F-008",
-        "JOR-BLD-F-009"
+        "JOR-BLD-F-001",
+        "JOR-BLD-F-002",
+        "JOR-BLD-F-003"
       ],
       "edges": [
         {
           "id": "M06-E01",
-          "source": "B25",
-          "target": "B26",
+          "source": "B01",
+          "target": "B02",
           "type": "sequence",
           "label": "책임자 지정"
         },
         {
           "id": "M06-E02",
-          "source": "B26",
-          "target": "B27",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "착공·감리"
         },
         {
           "id": "M06-E03",
-          "source": "B27",
-          "target": "B28",
+          "source": "B03",
+          "target": "B04",
           "type": "sequence",
           "label": "감리기록"
         },
         {
           "id": "M06-E04",
-          "source": "B28",
-          "target": "B31",
+          "source": "B04",
+          "target": "B07",
           "type": "sequence",
           "label": "현장 적합"
         },
         {
           "id": "M06-E05",
-          "source": "B28",
-          "target": "B29",
+          "source": "B04",
+          "target": "B05",
           "type": "message",
           "label": "위반"
         },
         {
           "id": "M06-E06",
-          "source": "B29",
-          "target": "B30",
+          "source": "B05",
+          "target": "B06",
           "type": "sequence",
           "label": "시정통지"
         },
         {
           "id": "M06-E07",
-          "source": "B30",
-          "target": "B28",
+          "source": "B06",
+          "target": "B04",
           "type": "loop",
           "label": "시정 후 현장 재확인"
         },
         {
           "id": "M06-E08",
-          "source": "B31",
-          "target": "B32",
+          "source": "B07",
+          "target": "B08",
           "type": "sequence",
           "label": "적합증명"
         },
         {
           "id": "M06-E09",
-          "source": "B32",
-          "target": "B33",
+          "source": "B08",
+          "target": "B09",
           "type": "sequence",
           "label": "JEA·Civil Defense"
         },
         {
           "id": "M06-E10",
-          "source": "B33",
-          "target": "B34",
+          "source": "B09",
+          "target": "B10",
           "type": "sequence",
           "label": "점유신청"
         },
         {
           "id": "M06-E11",
-          "source": "B34",
-          "target": "B36",
+          "source": "B10",
+          "target": "B12",
           "type": "sequence",
           "label": "완료 적합"
         },
         {
           "id": "M06-E12",
-          "source": "B34",
-          "target": "B35",
+          "source": "B10",
+          "target": "B11",
           "type": "message",
           "label": "완료결함"
         },
         {
           "id": "M06-E13",
-          "source": "B35",
-          "target": "B34",
+          "source": "B11",
+          "target": "B10",
           "type": "loop",
           "label": "시정 후 완료 재검사"
         }
@@ -1927,19 +663,11 @@
   "authorities": [
     {
       "id": "jor-planning-authority",
-      "name": "Competent planning authority, municipality or Greater Amman Municipality",
-      "nameKo": "관할 계획기관·지방정부 또는 암만광역시",
+      "name": "Competent planning authority or municipality",
+      "nameKo": "관할 계획기관 또는 지방정부",
       "role": "계획구역·용도지역·필지조건을 적용하고 건축허가와 점유·사용허가를 처리",
       "verificationLevel": "law-linked",
       "officialUrl": "https://mpwh.gov.jo/AR/ListDetails/Instraction2020/62/7"
-    },
-    {
-      "id": "jor-environment-ministry",
-      "name": "Ministry of Environment, Licensing and Pollution Mitigation Directorate",
-      "nameKo": "환경부 인허가·오염저감국",
-      "role": "Category 1–4 환경분류, 환경동의·예비/종합 EIA와 환경허가를 심사",
-      "verificationLevel": "law-linked",
-      "officialUrl": "https://moenv.gov.jo/"
     },
     {
       "id": "jor-building-council",
@@ -1960,45 +688,6 @@
   ],
   "instruments": [
     {
-      "id": "JOR-PLANNING-LAW-79-1966",
-      "title": "Cities, Villages and Buildings Planning Law No. 79 of 1966 and applicable zoning/building regulations, as amended",
-      "titleKo": "도시·촌락·건축계획법 제79/1966호 및 관할 용도지역·건축규칙(개정 포함)",
-      "kind": "act",
-      "status": "in_force",
-      "issuedOn": "1966-01-01",
-      "officialUrl": "https://mpwh.gov.jo/AR/ListDetails/Instraction2020/62/7",
-      "verificationLevel": "law-linked",
-      "note": "Greater Amman, Aqaba 특별경제구역과 다른 municipality의 계획·건축규칙 및 허가권자가 다를 수 있어 사업지 최신본을 별도 확인한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "공공사업주택부 현행 법령·적용지침 페이지가 Planning Law 79/1966과 허가·위반통제를 현재 참조"
-    },
-    {
-      "id": "JOR-NATIONAL-BUILDING-LAW-7-1993",
-      "title": "Jordan National Building Law No. 7 of 1993 and code-application instructions, as amended",
-      "titleKo": "요르단 국가건축법 제7/1993호 및 코드 적용지침(개정 포함)",
-      "kind": "act",
-      "status": "in_force",
-      "issuedOn": "1993-01-01",
-      "officialUrl": "https://mpwh.gov.jo/AR/ListDetails/2020%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/63/2",
-      "verificationLevel": "law-linked",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "JNBC 현행 공식 사이트가 Law 7/1993 및 개정법에 따른 코드·설계·시공·감리 적용체계를 현재 운영"
-    },
-    {
-      "id": "JOR-ENV-REG-69-2020",
-      "title": "Environmental Classification and Licensing Regulation No. 69 of 2020",
-      "titleKo": "환경분류·인허가규정 제69/2020호",
-      "kind": "regulation",
-      "status": "in_force",
-      "issuedOn": "2020-07-05",
-      "officialUrl": "https://moenv.gov.jo/ebv4.0/root_storage/en/eb_list_page/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81_%D9%88_%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AE%D9%8A%D8%B5_%D8%B1%D9%82%D9%85_69_%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9_%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A%D8%A9.pdf",
-      "officialPdfUrl": "https://moenv.gov.jo/ebv4.0/root_storage/en/eb_list_page/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81_%D9%88_%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AE%D9%8A%D8%B5_%D8%B1%D9%82%D9%85_69_%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9_%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A%D8%A9.pdf",
-      "verificationLevel": "law-linked",
-      "note": "Regulation Art. 3은 Aqaba Special Economic Zone Authority를 일반 적용범위에서 제외하므로 ASEZA 사업은 별도 환경체계를 확인한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "환경부 현행 Regulations 대장과 2026 갱신 공식문에서 Regulation 69/2020·97/2020 개정 적용을 확인"
-    },
-    {
       "id": "JOR-CODE-APPLICATION-INSTRUCTIONS",
       "title": "Jordan National Building Code application and construction-control instructions",
       "titleKo": "요르단 국가건축코드 적용·공사통제 현행지침",
@@ -2008,86 +697,9 @@
       "statusBasis": "공공사업주택부 공식 페이지가 설계인증·감리·현장기록·위반시정·점유허가 조건을 현재 게시",
       "officialUrl": "https://mpwh.gov.jo/AR/ListDetails/Instraction2020/62/7",
       "verificationLevel": "source-linked"
-    },
-    {
-      "id": "JOR-MOENV-REGULATIONS-REGISTER",
-      "title": "Ministry of Environment current environmental regulations register",
-      "titleKo": "요르단 환경부 현행 환경규정 대장",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "환경부 공식 Regulations 페이지가 Regulation 69 영어본과 Regulation 97 개정본을 현재 제공",
-      "officialUrl": "https://moenv.gov.jo/EN/List/Regulations",
-      "verificationLevel": "source-linked"
     }
   ],
   "requirements": [
-    {
-      "id": "JOR-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "요르단에서 신축·증축·용도변경 또는 부지개발을 추진하는 사업",
-      "requirement": "planning authority가 승인계획과 zoning/building regulation을 적용해 용도, plot percentage, floor ratio, 높이, setback, parking과 도로조건을 판단한다. 토지권리·경계·계획등급을 확인하고 지반·사면·지진·돌발홍수, 물 부족과 상하수·전력 용량을 별도 조사한다.",
-      "authorityIds": [
-        "jor-planning-authority"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "JOR-PLANNING-LAW-79-1966",
-          "provisions": [
-            "planning authorities, statutory plans, zoning/building control and licence"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "토지등기·지적도·경계·권원자",
-        "현행 구조/상세계획·용도지역·도로·보호구역",
-        "필지별 용도·건폐·용적·높이·이격·주차",
-        "지반·지진·사면·wadi/돌발홍수·배수·상하수·전력 용량"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
-    {
-      "id": "JOR-BLD-REQ-005",
-      "stage": "permit",
-      "topic": "사업분류·건축허가·환경심사",
-      "status": "conditional",
-      "applicability": "건축허가 대상 공사와 환경분류·동의·EIA 대상 활동 또는 시설",
-      "requirement": "건축허가는 토지·계획 적합, JNBC 코드 도서와 관계기관 승인을 심사한다. Regulation 69/2020은 활동을 Category 1(종합 EIA), 2(예비 EIA), 3(환경동의), 4(환경조건 준수)로 나누며 미열거 활동도 환경부가 분류할 수 있다. ASEZA는 별도 절차를 확인한다.",
-      "authorityIds": [
-        "jor-planning-authority",
-        "jor-environment-ministry",
-        "jor-building-council"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "JOR-PLANNING-LAW-79-1966",
-          "provisions": [
-            "building permit and planning compliance"
-          ]
-        },
-        {
-          "instrumentId": "JOR-NATIONAL-BUILDING-LAW-7-1993",
-          "provisions": [
-            "approved national codes and certified engineering drawings"
-          ]
-        },
-        {
-          "instrumentId": "JOR-ENV-REG-69-2020",
-          "provisions": [
-            "Arts. 3-18 and Appendix 1; Categories 1-4, consent, EIA and permit"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "건축주·토지권리·관할 계획/허가기관",
-        "JEA 인증 설계도서·JNBC 코드·소방·위생·유틸리티 동의",
-        "환경 Category 1–4 판정·ToR·예비/종합 EIA·환경동의/허가",
-        "실제 수수료·접수채널·보완관행·전체 기간"
-      ],
-      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
-    },
     {
       "id": "JOR-BLD-REQ-006",
       "stage": "completion",
@@ -2096,21 +708,81 @@
       "applicability": "국가건축코드와 전문감리·소방·점유허가가 적용되는 건축공사",
       "requirement": "JNBC 적용지침은 법정 등록 설계사무소의 전문도서 인증, 공사 전 감리자 통지, 현장상주·감리와 승인도서 준수를 요구한다. 구조·재료·설비·소방검사와 변경승인을 완료하고 관할기관이 요구하는 occupancy/use permit를 받은 뒤 운영한다.",
       "authorityIds": [
+        "jor-professional-control",
         "jor-planning-authority",
-        "jor-building-council",
-        "jor-professional-control"
+        "jor-building-council"
       ],
       "legalBasis": [
         {
-          "instrumentId": "JOR-NATIONAL-BUILDING-LAW-7-1993",
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
           "provisions": [
-            "code compliance in design, execution, supervision, maintenance and operation"
+            "licensed engineering office, contractor and supervisor requirements"
           ]
         },
         {
-          "instrumentId": "JOR-PLANNING-LAW-79-1966",
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
           "provisions": [
-            "construction control, violations and local occupancy/use approval"
+            "approved plans kept on site and daily progress reports"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "site supervision, laboratory tests and code compliance records"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "follow-up by Engineers Association and/or licensing authority"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "violation record, required action, correction period and enforcement notice within three days"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "violator notifies association after correction; association verifies and informs licensing authority"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "conformity certificate issued by supervising engineering office"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "association-certified conformity certificate and Civil Defense approval before occupancy where required"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "documents required before issuance of occupancy permit"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "licensing authority occupancy review and compliance"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "correction of violations before occupancy authorization"
+          ]
+        },
+        {
+          "instrumentId": "JOR-CODE-APPLICATION-INSTRUCTIONS",
+          "provisions": [
+            "article 7; no occupancy permit without certified conformity and required Civil Defense approval"
           ]
         }
       ],
@@ -2126,164 +798,16 @@
   "permitPath": [
     {
       "order": 1,
-      "gate": "관할 계획허가기관 필지조건 공식결정",
-      "decision": "관할기관이 필지의 계획·용도지역 적합성과 조건을 승인하거나 거부한다.",
-      "dependsOn": [],
-      "output": "계획승인·조건 또는 거부통지"
-    },
-    {
-      "order": 2,
-      "gate": "관할기관 건축허가 공식결정",
-      "decision": "관할기관이 계획·코드·관계기관 적합성을 심사해 건축허가 또는 거부를 확정한다.",
-      "dependsOn": [],
-      "output": "건축허가·승인도서 또는 거부"
-    },
-    {
-      "order": 3,
-      "gate": "환경부 환경범주 1–4 공식결정",
-      "decision": "환경부가 범주별 환경영향평가·동의·조건 또는 불승인을 확정한다.",
-      "dependsOn": [],
-      "output": "환경결정·조건 또는 불승인"
-    },
-    {
-      "order": 4,
       "gate": "관할기관 점유·사용허가 공식결정",
       "decision": "관할기관이 적합증명·민방위청·현장조건을 확인해 점유·사용을 승인하거나 거부한다.",
       "dependsOn": [],
       "output": "점유·사용허가 또는 거부통지"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "JOR-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "JOR-PLANNING-LAW-79-1966",
-          "provisions": [
-            "planning authorities, statutory plans, zoning/building control and licence"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "JOR-BLD-Q-001",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 권원·계획구역과 실제 용도·건폐·용적·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "토지등기·지적도·경계·권원자",
-        "현행 구조/상세계획·용도지역·도로·보호구역",
-        "필지별 용도·건폐·용적·높이·이격·주차",
-        "지반·지진·사면·wadi/돌발홍수·배수·상하수·전력 용량"
-      ],
-      "confirmWith": [
-        "jor-planning-authority"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "JOR-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "jor-planning-authority"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "JOR-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "계획·zoning·필지조건의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "토지등기·지적도·경계·권원자",
-        "현행 구조/상세계획·용도지역·도로·보호구역",
-        "필지별 용도·건폐·용적·높이·이격·주차",
-        "지반·지진·사면·wadi/돌발홍수·배수·상하수·전력 용량"
-      ],
-      "confirmWith": [
-        "jor-planning-authority"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "JOR-BLD-Q-004",
-      "blocking": true,
-      "stage": "permit",
-      "question": "본 사업의 건축허가권자·전문도서와 환경 Category 1–4·승인유형·선행관계·실제 기간은 무엇인가?",
-      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
-      "evidenceNeeded": [
-        "건축주·토지권리·관할 계획/허가기관",
-        "JEA 인증 설계도서·JNBC 코드·소방·위생·유틸리티 동의",
-        "환경 Category 1–4 판정·ToR·예비/종합 EIA·환경동의/허가",
-        "실제 수수료·접수채널·보완관행·전체 기간"
-      ],
-      "confirmWith": [
-        "jor-planning-authority",
-        "jor-environment-ministry",
-        "jor-building-council"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "JOR-BLD-Q-005",
-      "blocking": true,
-      "stage": "permit",
-      "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
-      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
-      "evidenceNeeded": [
-        "관할기관 사전분류 회신",
-        "현지 책임건축사·기술자 자격증빙",
-        "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
-      ],
-      "confirmWith": [
-        "jor-planning-authority",
-        "jor-environment-ministry",
-        "jor-building-council"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "JOR-BLD-Q-006",
-      "blocking": false,
-      "stage": "permit",
-      "question": "건축허가·환경 Category 1–4의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "건축주·토지권리·관할 계획/허가기관",
-        "JEA 인증 설계도서·JNBC 코드·소방·위생·유틸리티 동의",
-        "환경 Category 1–4 판정·ToR·예비/종합 EIA·환경동의/허가",
-        "실제 수수료·접수채널·보완관행·전체 기간"
-      ],
-      "confirmWith": [
-        "jor-planning-authority",
-        "jor-environment-ministry",
-        "jor-building-council"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "JOR-BLD-Q-007",
       "blocking": true,
       "stage": "completion",
       "question": "현지 등록전문가·감리·검사·보험과 Civil Defense·점유허가의 실제 서류·비용·기간은 무엇인가?",
@@ -2295,14 +819,14 @@
         "occupancy/use permit·보험·검사기관·현지 비용"
       ],
       "confirmWith": [
+        "jor-professional-control",
         "jor-planning-authority",
-        "jor-building-council",
-        "jor-professional-control"
+        "jor-building-council"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "JOR-BLD-Q-008",
+      "id": "JOR-BLD-Q-002",
       "blocking": true,
       "stage": "completion",
       "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
@@ -2313,14 +837,14 @@
         "준공·소방·사용승인 체크리스트와 실제 견적"
       ],
       "confirmWith": [
+        "jor-professional-control",
         "jor-planning-authority",
-        "jor-building-council",
-        "jor-professional-control"
+        "jor-building-council"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "JOR-BLD-Q-009",
+      "id": "JOR-BLD-Q-003",
       "blocking": false,
       "stage": "completion",
       "question": "전문감리·코드검사·점유허가의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
@@ -2332,9 +856,9 @@
         "occupancy/use permit·보험·검사기관·현지 비용"
       ],
       "confirmWith": [
+        "jor-professional-control",
         "jor-planning-authority",
-        "jor-building-council",
-        "jor-professional-control"
+        "jor-building-council"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2342,54 +866,18 @@
   "fieldworkChecklist": [
     {
       "id": "JOR-BLD-F-001",
-      "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "JOR-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "JOR-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "JOR-BLD-F-004",
-      "phase": "출국 전",
-      "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
-      "output": "사업분류표와 기관 질의서"
-    },
-    {
-      "id": "JOR-BLD-F-005",
-      "phase": "기관협의",
-      "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
-      "output": "인허가 일정·비용 매트릭스"
-    },
-    {
-      "id": "JOR-BLD-F-006",
-      "phase": "보고서 반영",
-      "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "건축허가·환경심사 근거대장·보고서 반영표"
-    },
-    {
-      "id": "JOR-BLD-F-007",
       "phase": "시장조사",
       "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
       "output": "적격기관·보험 대장"
     },
     {
-      "id": "JOR-BLD-F-008",
+      "id": "JOR-BLD-F-002",
       "phase": "기관협의",
       "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
       "output": "검사·준공·개장 Hold Point 표"
     },
     {
-      "id": "JOR-BLD-F-009",
+      "id": "JOR-BLD-F-003",
       "phase": "보고서 반영",
       "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
@@ -2399,28 +887,9 @@
     {
       "id": "JOR-BLD-C-001",
       "confidence": "conditional",
-      "text": "Amman 등 다른 관할의 수치를 일반화하지 말고 해당 planning authority의 최신 계획·필지조건과 현장 기반시설 조사를 개념설계 전에 확정한다.",
-      "basis": [
-        "JOR-PLANNING-LAW-79-1966"
-      ]
-    },
-    {
-      "id": "JOR-BLD-C-002",
-      "confidence": "conditional",
-      "text": "건축허가와 환경동의·EIA를 상호 대체하지 말고 입지·활동별 분류결정을 먼저 받아 통합 인허가 일정으로 관리한다.",
-      "basis": [
-        "JOR-PLANNING-LAW-79-1966",
-        "JOR-NATIONAL-BUILDING-LAW-7-1993",
-        "JOR-ENV-REG-69-2020"
-      ]
-    },
-    {
-      "id": "JOR-BLD-C-003",
-      "confidence": "conditional",
       "text": "전문도서 인증부터 감리기록·소방·점유허가까지를 공사 중 누적하고 최종지급·유틸리티 연결·개장 전 Gate로 계약에 반영한다.",
       "basis": [
-        "JOR-NATIONAL-BUILDING-LAW-7-1993",
-        "JOR-PLANNING-LAW-79-1966"
+        "JOR-CODE-APPLICATION-INSTRUCTIONS"
       ]
     }
   ]

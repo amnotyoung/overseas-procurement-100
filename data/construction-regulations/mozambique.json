@@ -9,12 +9,12 @@
     "iso3": "MOZ",
     "region": "아프리카"
   },
-  "purpose": "모잠비크 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "모잠비크 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "시행령 제2/2004호 민간건축공사 허가제도·마푸투시 건축·도시화 규정(지방 집행 예시)·시행령 제54/2015호 환경영향평가 절차규정의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "시행령 제54/2015호 환경영향평가 절차규정·모잠비크 환경허가관리시스템(SGLA) 공식 법령대장의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,378 +24,23 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "모잠비크 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "모잠비크 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
-      "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
-      "G0 사전정보 신청",
-      "G1 현장·계획 회신",
-      "G2 건축프로젝트 심사",
-      "G3 보완설계 심사",
-      "G4 건축허가 결정",
       "G0 환경과정 개시",
       "G1 A+/A/B/C 분류",
       "G2 조사범위·공중참여",
       "G3 평가서 심사·보완",
-      "G4 환경허가 결정",
-      "G5 건축허가 접수·심사",
-      "G6 건축허가 결정",
-      "G0 허가·착공",
-      "G1 시공·법정검사",
-      "G2 시정·완공",
-      "G3 사용허가 신청",
-      "G4 최종검사·결정"
+      "G4 환경허가 결정"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "G0 사전정보 신청",
-        "label": "사전계획정보(Informação prévia) 신청",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "신청서 2부, 신축 토지사용수익권(DUAT) 또는 기존건축 권원, 설명서, 위치도, 세금증빙을 제출하고 신축·증축이면 배치·높이·층수·면적·용도를 표시한 추가도면을 낸다.",
-        "action": "신청서 2부, 신축 토지사용수익권(DUAT) 또는 기존건축 권원, 설명서, 위치도, 세금증빙을 제출하고 신축·증축이면 배치·높이·층수·면적·용도를 표시한 추가도면을 낸다.",
-        "outputs": [
-          "사전정보 신청서·권원·계획기초도서"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사전정보 신청자료",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2; Decree 2/2004 Article 9"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G0 사전정보 신청",
-        "label": "접수·도시화부서 회부",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "지방자치단체·지구 사무국(municipal/district secretariat)이 신청을 접수해 도시화·건축 담당부서(urbanisation and construction)로 보내고 필지·계획자료를 대조한다.",
-        "action": "지방자치단체·지구 사무국(municipal/district secretariat)이 신청을 접수해 도시화·건축 담당부서(urbanisation and construction)로 보내고 필지·계획자료를 대조한다.",
-        "outputs": [
-          "접수기록·담당부서 회부"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사전정보 내부처리",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — secretariat referral"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 현장·계획 회신",
-        "label": "필지 현장방문·계획조건 검토",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "기술부서가 대상지를 방문해 위치·경계·현황을 확인하고 적용 계획수단(planning instruments), 용도·배치·높이·면적 등 건축조건에 대한 기술의견을 작성한다.",
-        "action": "기술부서가 대상지를 방문해 위치·경계·현황을 확인하고 적용 계획수단(planning instruments), 용도·배치·높이·면적 등 건축조건에 대한 기술의견을 작성한다.",
-        "outputs": [
-          "현장방문 기록·기술의견"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "현장방문·의견작성",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — site visit and technical opinion"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 현장·계획 회신",
-        "label": "사전계획정보 공식회신",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "관할기관이 적용 계획도구와 건축 요구조건을 행정결정(despacho)으로 확정해 신청인에게 통지한다.",
-        "action": "관할기관이 적용 계획도구와 건축 요구조건을 행정결정(despacho)으로 확정해 신청인에게 통지한다.",
-        "outputs": [
-          "사전계획정보 행정결정·계획조건"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사전정보 결정·통지",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — opinion, despacho and communication"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G2 건축프로젝트 심사",
-        "label": "건축프로젝트·책임서 작성",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "사전정보 조건에 맞춰 건축프로젝트, 설명서, 토지사용수익권·소유권, 계획·측량도와 설계자 책임확약서(termo de responsabilidade)를 작성한다.",
-        "action": "사전정보 조건에 맞춰 건축프로젝트, 설명서, 토지사용수익권·소유권, 계획·측량도와 설계자 책임확약서(termo de responsabilidade)를 작성한다.",
-        "outputs": [
-          "건축프로젝트·설계자 책임서·권원도서"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축프로젝트 신청자료",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — architectural-project dossier"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G2 건축프로젝트 심사",
-        "label": "건축프로젝트 기술심사·결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "건축사·물리계획가·기술자가 신청의 장애요소와 계획·건축 적합성을 심사하고 건축프로젝트 승인 또는 보완·거부 행정결정을 내린다.",
-        "action": "건축사·물리계획가·기술자가 신청의 장애요소와 계획·건축 적합성을 심사하고 건축프로젝트 승인 또는 보완·거부 행정결정을 내린다.",
-        "outputs": [
-          "건축프로젝트 승인 행정결정 또는 보완·거부통지"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축프로젝트 기술심사",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — technical appraisal and architectural approval"
-            ]
-          }
-        ],
-        "gateOrders": [
-          2
-        ]
-      },
-      {
-        "id": "B07",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G2 건축프로젝트 심사",
-        "label": "건축프로젝트 보완·재심",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "기술심사 지적에 따라 배치·건축·권원자료를 수정해 관할 기술부서에 재제출한다.",
-        "action": "기술심사 지적에 따라 배치·건축·권원자료를 수정해 관할 기술부서에 재제출한다.",
-        "outputs": [
-          "수정 건축프로젝트·보완답변"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "프로젝트 심사·보완",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — appraisal of obstacles to approval"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G3 보완설계 심사",
-        "label": "구조·상하수·설비 보완설계 제출",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "건축프로젝트 승인통지 후 구조안정, 민간 상하수 연결, 적용 전기기계·운송설비 설계와 각 설계자 책임서를 정해진 기간 안에 제출한다.",
-        "action": "건축프로젝트 승인통지 후 구조안정, 민간 상하수 연결, 적용 전기기계·운송설비 설계와 각 설계자 책임서를 정해진 기간 안에 제출한다.",
-        "outputs": [
-          "구조·상하수·설비 보완설계·책임서"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "moph"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "보완설계 제출",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — complementary projects after architectural approval"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B09",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G3 보완설계 심사",
-        "label": "보완설계 정합성 심사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "관할기관이 구조·상하수·설비 설계가 승인 건축프로젝트와 일치하는지 심사하고 불일치·누락이 있으면 보완을 요구한다.",
-        "action": "관할기관이 구조·상하수·설비 설계가 승인 건축프로젝트와 일치하는지 심사하고 불일치·누락이 있으면 보완을 요구한다.",
-        "outputs": [
-          "보완설계 적합의견 또는 보완요구"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "moph"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "보완설계 일치심사",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — conformity of complementary projects"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B10",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G3 보완설계 심사",
-        "label": "보완설계 수정·재제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "구조·상하수·설비 설계의 불일치와 누락을 수정하고 책임서와 함께 다시 제출해 적합성 심사를 받는다.",
-        "action": "구조·상하수·설비 설계의 불일치와 누락을 수정하고 책임서와 함께 다시 제출해 적합성 심사를 받는다.",
-        "outputs": [
-          "수정 보완설계·재심기록"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "moph"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "보완설계 적합화",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — complementary-project conformity"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B11",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 건축허가 결정",
-        "label": "건축허가 발급결정·수수료",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "보완설계가 승인 건축프로젝트와 일치하면 관할기관이 프로젝트 승인을 통지하고 법정 수수료 납부 후 건축허가(licença de construção)를 발급하거나 이유를 붙여 거부한다.",
-        "action": "보완설계가 승인 건축프로젝트와 일치하면 관할기관이 프로젝트 승인을 통지하고 법정 수수료 납부 후 건축허가(licença de construção)를 발급하거나 이유를 붙여 거부한다.",
-        "outputs": [
-          "건축허가·승인도서·수수료 영수증 또는 거부통지"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축허가 발급",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — project approval and construction licence"
-            ]
-          }
-        ],
-        "gateOrders": [
-          3
-        ]
-      },
-      {
-        "id": "B12",
         "lane": "건축주·신청인",
         "stage": "G0 환경과정 개시",
         "label": "환경 사전평가서류 제출",
@@ -417,7 +62,7 @@
         "refs": [
           {
             "source": "AIA 과정개시",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "Pre-feasibility and process-initiation workflow"
             ]
@@ -432,7 +77,7 @@
         ]
       },
       {
-        "id": "B13",
+        "id": "B02",
         "lane": "환경·소방·검사기관",
         "stage": "G1 A+/A/B/C 분류",
         "label": "A+·A·B·C 공식분류",
@@ -461,11 +106,11 @@
           }
         ],
         "gateOrders": [
-          4
+          1
         ]
       },
       {
-        "id": "B14",
+        "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "G2 조사범위·공중참여",
         "label": "A+/A 환경사전타당성·범위설정서(EPDA)·과업지시서(TdR) 또는 B 과업지시서 작성",
@@ -487,7 +132,7 @@
         "refs": [
           {
             "source": "AIA 분류별 선행도서",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "A+/A EPDA and ToR; B ToR"
             ]
@@ -495,7 +140,7 @@
         ]
       },
       {
-        "id": "B15",
+        "id": "B04",
         "lane": "현지 설계·시공 전문가",
         "stage": "G2 조사범위·공중참여",
         "label": "C등급 우수환경관리관행절차(PBPGA) 작성",
@@ -517,7 +162,7 @@
         "refs": [
           {
             "source": "C-category 관리도구",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "Category C PBPGA/manual route"
             ]
@@ -525,7 +170,7 @@
         ]
       },
       {
-        "id": "B16",
+        "id": "B05",
         "lane": "환경·소방·검사기관",
         "stage": "G2 조사범위·공중참여",
         "label": "과업지시서 승인·A+ 독립검토자 지정",
@@ -562,7 +207,7 @@
         ]
       },
       {
-        "id": "B17",
+        "id": "B06",
         "lane": "현지 설계·시공 전문가",
         "stage": "G2 조사범위·공중참여",
         "label": "법정 공중참여 실시",
@@ -584,7 +229,7 @@
         "refs": [
           {
             "source": "A+/A/B 공중참여",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "Decree 54/2015 public participation; Ministerial Diploma 130/2006"
             ]
@@ -592,7 +237,7 @@
         ]
       },
       {
-        "id": "B18",
+        "id": "B07",
         "lane": "현지 설계·시공 전문가",
         "stage": "G3 평가서 심사·보완",
         "label": "환경영향평가·간이환경평가(EAS)·우수환경관리관행절차 최종제출",
@@ -614,7 +259,7 @@
         "refs": [
           {
             "source": "분류별 최종 평가도서",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "REIA, REAS and PBPGA routes"
             ]
@@ -622,7 +267,7 @@
         ]
       },
       {
-        "id": "B19",
+        "id": "B08",
         "lane": "환경·소방·검사기관",
         "stage": "G3 평가서 심사·보완",
         "label": "환경기술위원회·독립검토 심사",
@@ -652,7 +297,7 @@
         ]
       },
       {
-        "id": "B20",
+        "id": "B09",
         "lane": "현지 설계·시공 전문가",
         "stage": "G3 평가서 심사·보완",
         "label": "환경평가서·관리계획 보완",
@@ -674,7 +319,7 @@
         "refs": [
           {
             "source": "AIA 보완심사",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "study review, revision and approval workflow"
             ]
@@ -682,7 +327,7 @@
         ]
       },
       {
-        "id": "B21",
+        "id": "B10",
         "lane": "환경·소방·검사기관",
         "stage": "G4 환경허가 결정",
         "label": "환경허가 공식결정",
@@ -704,818 +349,109 @@
         "refs": [
           {
             "source": "환경허가 발급",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
+            "instrumentId": "MOZ-ENV-DECREE-54-2015",
             "provisions": [
               "Environmental-study approval and installation licence"
             ]
           }
         ],
         "gateOrders": [
-          5
-        ]
-      },
-      {
-        "id": "B22",
-        "lane": "건축주·신청인",
-        "stage": "G5 건축허가 접수·심사",
-        "label": "환경허가 포함 건축허가 신청",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "환경허가와 토지사용수익권·건축프로젝트·설계자 책임서·보완설계를 관할 지방자치단체·지구행정청에 제출해 건축허가를 신청한다.",
-        "action": "환경허가와 토지사용수익권·건축프로젝트·설계자 책임서·보완설계를 관할 지방자치단체·지구행정청에 제출해 건축허가를 신청한다.",
-        "outputs": [
-          "완비 건축허가 신청"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축프로젝트·허가 신청",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B23",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G5 건축허가 접수·심사",
-        "label": "건축·보완설계 기술심사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "기술부서가 환경조건, 승인 건축프로젝트와 구조·상하수·설비 보완설계의 일치·안전성을 심사하고 보완 필요사항을 통지한다.",
-        "action": "기술부서가 환경조건, 승인 건축프로젝트와 구조·상하수·설비 보완설계의 일치·안전성을 심사하고 보완 필요사항을 통지한다.",
-        "outputs": [
-          "건축기술 심사의견·보완요구"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "moph"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축·보완설계 심사",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — appraisal and complementary-project conformity"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B24",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G5 건축허가 접수·심사",
-        "label": "건축허가도서 보완·재심",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "환경허가조건과 기술심사 지적을 반영해 건축·구조·설비도서를 수정하고 관할기관에 재제출한다.",
-        "action": "환경허가조건과 기술심사 지적을 반영해 건축·구조·설비도서를 수정하고 관할기관에 재제출한다.",
-        "outputs": [
-          "수정 허가도서·보완답변"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "moph"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "설계 적합화",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B25",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G6 건축허가 결정",
-        "label": "건축허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "관할기관이 환경허가와 건축·보완설계 적합성을 확인해 수수료 납부 후 건축허가(licença de construção)를 발급하거나 보완·거부를 통지한다.",
-        "action": "관할기관이 환경허가와 건축·보완설계 적합성을 확인해 수수료 납부 후 건축허가(licença de construção)를 발급하거나 보완·거부를 통지한다.",
-        "outputs": [
-          "건축허가·승인도서 또는 거부통지"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축허가 발급",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — construction licence after complementary-project approval"
-            ]
-          }
-        ],
-        "gateOrders": [
-          6
-        ]
-      },
-      {
-        "id": "B26",
-        "lane": "건축주·신청인",
-        "stage": "G0 허가·착공",
-        "label": "건축허가·수수료·승인도서 확보",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "건축허가(licença de construção) 수수료를 납부하고 승인 건축·구조·상하수·설비도서와 환경허가조건을 확보한 뒤 허가기간 안에 공사를 개시한다.",
-        "action": "건축허가(licença de construção) 수수료를 납부하고 승인 건축·구조·상하수·설비도서와 환경허가조건을 확보한 뒤 허가기간 안에 공사를 개시한다.",
-        "outputs": [
-          "유효 건축허가·승인도서·환경허가조건"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "environment-authority"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축허가 발급·기간",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — licence issuance and extension"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B27",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G0 허가·착공",
-        "label": "승인도서·책임설계에 따른 시공",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "책임전문가와 시공자가 승인 건축·보완설계, 허가조건과 환경관리도구에 따라 공사를 수행하고 검사·변경기록을 유지한다.",
-        "action": "책임전문가와 시공자가 승인 건축·보완설계, 허가조건과 환경관리도구에 따라 공사를 수행하고 검사·변경기록을 유지한다.",
-        "outputs": [
-          "공사기록·전문가 감독·환경관리 기록"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "environment-authority"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "허가에 따른 공사",
-            "instrumentId": "MOZ-RLOP-2-2004",
-            "provisions": [
-              "Licensed works and professional responsibility"
-            ]
-          },
-          {
-            "source": "환경관리 이행",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
-            "provisions": [
-              "Implementation of approved environmental instrument"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B28",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 시공·법정검사",
-        "label": "지방자치단체 공사준수 검사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "지방자치단체가 법령 제2/2004호(Decree 2/2004) 제33조에 따라 현장을 검사해 건축허가·승인도서와 기술조건 준수를 감독한다.",
-        "action": "지방자치단체가 법령 제2/2004호(Decree 2/2004) 제33조에 따라 현장을 검사해 건축허가·승인도서와 기술조건 준수를 감독한다.",
-        "outputs": [
-          "현장검사 기록·적합 또는 시정통지"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "공사감독 권한",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2; Decree 2/2004 Article 33"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B29",
-        "lane": "환경·소방·검사기관",
-        "stage": "G1 시공·법정검사",
-        "label": "환경허가·관리도구 이행검사",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "환경기관이 공사 중 승인 환경영향평가(EIA)·간이환경평가(EAS)·우수환경관리관행절차(PBPGA)와 환경허가조건, 모니터링·저감조치 이행을 검사·감사한다.",
-        "action": "환경기관이 공사 중 승인 환경영향평가(EIA)·간이환경평가(EAS)·우수환경관리관행절차(PBPGA)와 환경허가조건, 모니터링·저감조치 이행을 검사·감사한다.",
-        "outputs": [
-          "환경검사·감사 기록·시정요구"
-        ],
-        "authorityIds": [
-          "environment-authority"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "환경감사·검사",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
-            "provisions": [
-              "Environmental audit and inspection requirements"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B30",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G1 시공·법정검사",
-        "label": "공정 계속·시정 공식판단",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "건축·환경 검사결과에 따라 관할기관이 공정 계속 또는 시정·중지·허가조건 이행을 통지하고 재검사 범위를 정한다.",
-        "action": "건축·환경 검사결과에 따라 관할기관이 공정 계속 또는 시정·중지·허가조건 이행을 통지하고 재검사 범위를 정한다.",
-        "outputs": [
-          "공정 계속 확인 또는 시정·중지통지"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "environment-authority"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "건축공사 감독",
-            "instrumentId": "MOZ-RLOP-2-2004",
-            "provisions": [
-              "Article 33"
-            ]
-          },
-          {
-            "source": "환경검사",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
-            "provisions": [
-              "Inspection and compliance verification"
-            ]
-          }
-        ],
-        "gateOrders": [
-          7
-        ]
-      },
-      {
-        "id": "B31",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G2 시정·완공",
-        "label": "부적합 시정·재검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "건축·환경 검사 지적을 시정하고 변경승인이 필요한 부분은 사전승인을 받은 뒤 증빙과 함께 재검사를 요청한다.",
-        "action": "건축·환경 검사 지적을 시정하고 변경승인이 필요한 부분은 사전승인을 받은 뒤 증빙과 함께 재검사를 요청한다.",
-        "outputs": [
-          "시정완료 자료·변경승인·재검사 기록"
-        ],
-        "authorityIds": [
-          "municipality-district",
-          "environment-authority"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "허가준수 감독",
-            "instrumentId": "MOZ-RLOP-2-2004",
-            "provisions": [
-              "Article 33"
-            ]
-          },
-          {
-            "source": "환경 시정이행",
-            "instrumentId": "MOZ-GOV-EIA-FLOW",
-            "provisions": [
-              "Corrective measures and reinspection"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B32",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G2 시정·완공",
-        "label": "완공도서·사용허가 자료 준비",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "공사완료 후 현행 건축허가 사본, 승인 프로젝트 도면과 세금증빙 등 사용허가 신청자료를 정리한다.",
-        "action": "공사완료 후 현행 건축허가 사본, 승인 프로젝트 도면과 세금증빙 등 사용허가 신청자료를 정리한다.",
-        "outputs": [
-          "완공도서·현행 건축허가·세금증빙"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사용허가 신청자료",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — utilisation-licence documents"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B33",
-        "lane": "건축주·신청인",
-        "stage": "G3 사용허가 신청",
-        "label": "사용허가 신청",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "단일 신청서 2부, 유효 건축허가 사본, 승인 프로젝트 도면과 세금증빙을 관할 지방자치단체·지구행정청에 제출해 사용허가를 신청한다.",
-        "action": "단일 신청서 2부, 유효 건축허가 사본, 승인 프로젝트 도면과 세금증빙을 관할 지방자치단체·지구행정청에 제출해 사용허가를 신청한다.",
-        "outputs": [
-          "사용허가 신청 접수기록"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사용허가 신청",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Section 4.1.2 — application after completion"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B34",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 최종검사·결정",
-        "label": "완공건물 사용 전 현장검사(Vistoria)",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "지방자치단체 기술팀이 완공건물을 현장검사해 승인 프로젝트 이행과 안전·위생·상하수·전력 등 사용조건을 확인한다.",
-        "action": "지방자치단체 기술팀이 완공건물을 현장검사해 승인 프로젝트 이행과 안전·위생·상하수·전력 등 사용조건을 확인한다.",
-        "outputs": [
-          "사용 전 현장검사 기록·적합의견 또는 시정요구"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "완공 현장검사·사용조건",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Sections 4.1 and 4.1.2 — site inspection and utilisation licence"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B35",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "G4 최종검사·결정",
-        "label": "최종검사 지적 시정·재검",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "사용 전 현장검사에서 확인된 승인도서·안전·위생·설비 미비를 시정하고 증빙과 함께 재검사를 요청한다.",
-        "action": "사용 전 현장검사에서 확인된 승인도서·안전·위생·설비 미비를 시정하고 증빙과 함께 재검사를 요청한다.",
-        "outputs": [
-          "시정완료 증빙·재검사 기록"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사용허가 적합성 확인",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Sections 4.1 and 4.1.2"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B36",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "G4 최종검사·결정",
-        "label": "사용허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "axis",
-        "note": "현장검사에서 완공사업의 안전·위생·물·전력과 승인 프로젝트 준수가 확인되면 지방자치단체가 사용허가를 발급하고, 부적합이면 시정·거부를 통지한다.",
-        "action": "현장검사에서 완공사업의 안전·위생·물·전력과 승인 프로젝트 준수가 확인되면 지방자치단체가 사용허가를 발급하고, 부적합이면 시정·거부를 통지한다.",
-        "outputs": [
-          "사용허가 또는 시정·거부통지"
-        ],
-        "authorityIds": [
-          "municipality-district"
-        ],
-        "requirementIds": [
-          "MOZ-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "사용허가 발급",
-            "instrumentId": "MOZ-PDUL-URBAN-GUIDE",
-            "provisions": [
-              "Sections 4.1 and 4.1.2 — utilisation licence"
-            ]
-          }
-        ],
-        "gateOrders": [
-          8
+          2
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS05-01",
         "source": "B01",
         "target": "B02",
-        "type": "sequence",
-        "label": "사전정보 접수"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "기술부서 회부"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "현장·계획의견"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "계획조건"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B06",
-        "type": "sequence",
-        "label": "건축프로젝트"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B06",
-        "target": "B08",
-        "type": "sequence",
-        "label": "건축 승인"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B06",
-        "target": "B07",
-        "type": "message",
-        "label": "설계보완"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B07",
-        "target": "B06",
-        "type": "loop",
-        "label": "수정안 재심"
-      },
-      {
-        "id": "BS04-09",
-        "source": "B08",
-        "target": "B09",
-        "type": "sequence",
-        "label": "보완설계"
-      },
-      {
-        "id": "BS04-10",
-        "source": "B09",
-        "target": "B11",
-        "type": "sequence",
-        "label": "정합성 확인"
-      },
-      {
-        "id": "BS04-11",
-        "source": "B09",
-        "target": "B10",
-        "type": "message",
-        "label": "불일치·누락"
-      },
-      {
-        "id": "BS04-12",
-        "source": "B10",
-        "target": "B09",
-        "type": "loop",
-        "label": "보완설계 재심"
-      },
-      {
-        "id": "BX05",
-        "source": "B11",
-        "target": "B12",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B12",
-        "target": "B13",
         "type": "sequence",
         "label": "사전평가"
       },
       {
         "id": "BS05-02",
-        "source": "B13",
-        "target": "B14",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "A+/A/B"
       },
       {
         "id": "BS05-03",
-        "source": "B13",
-        "target": "B15",
+        "source": "B02",
+        "target": "B04",
         "type": "sequence",
         "label": "C 경로"
       },
       {
         "id": "BS05-04",
-        "source": "B14",
-        "target": "B16",
+        "source": "B03",
+        "target": "B05",
         "type": "sequence",
         "label": "범위설정서·과업지시서"
       },
       {
         "id": "BS05-05",
-        "source": "B16",
-        "target": "B17",
+        "source": "B05",
+        "target": "B06",
         "type": "sequence",
         "label": "승인 조사범위"
       },
       {
         "id": "BS05-06",
-        "source": "B17",
-        "target": "B18",
+        "source": "B06",
+        "target": "B07",
         "type": "sequence",
         "label": "공중의견"
       },
       {
         "id": "BS05-07",
-        "source": "B15",
-        "target": "B18",
+        "source": "B04",
+        "target": "B07",
         "type": "sequence",
         "label": "우수환경관리관행절차"
       },
       {
         "id": "BS05-08",
-        "source": "B18",
-        "target": "B19",
+        "source": "B07",
+        "target": "B08",
         "type": "sequence",
         "label": "평가서 접수"
       },
       {
         "id": "BS05-09",
-        "source": "B19",
-        "target": "B21",
+        "source": "B08",
+        "target": "B10",
         "type": "sequence",
         "label": "승인권고"
       },
       {
         "id": "BS05-10",
-        "source": "B19",
-        "target": "B20",
+        "source": "B08",
+        "target": "B09",
         "type": "message",
         "label": "추가조사·보완"
       },
       {
         "id": "BS05-11",
-        "source": "B20",
-        "target": "B19",
+        "source": "B09",
+        "target": "B08",
         "type": "loop",
         "label": "환경 재심"
-      },
-      {
-        "id": "BS05-12",
-        "source": "B21",
-        "target": "B22",
-        "type": "sequence",
-        "label": "환경허가"
-      },
-      {
-        "id": "BS05-13",
-        "source": "B22",
-        "target": "B23",
-        "type": "sequence",
-        "label": "건축허가 접수"
-      },
-      {
-        "id": "BS05-14",
-        "source": "B23",
-        "target": "B25",
-        "type": "sequence",
-        "label": "기술적합"
-      },
-      {
-        "id": "BS05-15",
-        "source": "B23",
-        "target": "B24",
-        "type": "message",
-        "label": "설계보완"
-      },
-      {
-        "id": "BS05-16",
-        "source": "B24",
-        "target": "B23",
-        "type": "loop",
-        "label": "건축 재심"
-      },
-      {
-        "id": "BX06",
-        "source": "B25",
-        "target": "B26",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS06-01",
-        "source": "B26",
-        "target": "B27",
-        "type": "sequence",
-        "label": "허가조건"
-      },
-      {
-        "id": "BS06-02",
-        "source": "B27",
-        "target": "B28",
-        "type": "sequence",
-        "label": "건축검사"
-      },
-      {
-        "id": "BS06-03",
-        "source": "B27",
-        "target": "B29",
-        "type": "sequence",
-        "label": "환경검사"
-      },
-      {
-        "id": "BS06-04",
-        "source": "B28",
-        "target": "B30",
-        "type": "sequence",
-        "label": "건축검사 결과"
-      },
-      {
-        "id": "BS06-05",
-        "source": "B29",
-        "target": "B30",
-        "type": "sequence",
-        "label": "환경검사 결과"
-      },
-      {
-        "id": "BS06-06",
-        "source": "B30",
-        "target": "B32",
-        "type": "sequence",
-        "label": "공정 적합"
-      },
-      {
-        "id": "BS06-07",
-        "source": "B30",
-        "target": "B31",
-        "type": "message",
-        "label": "시정·중지"
-      },
-      {
-        "id": "BS06-08",
-        "source": "B31",
-        "target": "B30",
-        "type": "loop",
-        "label": "시정 재검사"
-      },
-      {
-        "id": "BS06-09",
-        "source": "B32",
-        "target": "B33",
-        "type": "sequence",
-        "label": "완공자료"
-      },
-      {
-        "id": "BS06-10",
-        "source": "B33",
-        "target": "B34",
-        "type": "sequence",
-        "label": "최종검사"
-      },
-      {
-        "id": "BS06-11",
-        "source": "B34",
-        "target": "B36",
-        "type": "sequence",
-        "label": "사용 적합"
-      },
-      {
-        "id": "BS06-12",
-        "source": "B34",
-        "target": "B35",
-        "type": "message",
-        "label": "최종 시정"
-      },
-      {
-        "id": "BS06-13",
-        "source": "B35",
-        "target": "B34",
-        "type": "loop",
-        "label": "시정 후 재검"
       }
     ]
   },
   "publicModels": [
     {
-      "id": "site-urban",
-      "slug": "mozambique-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "모잠비크 사전계획정보·건축프로젝트·건축허가",
-      "oneLiner": "DUAT·지적경계와 관할 도시계획·토지이용계획으로 필지별 개발지표와 인입조건을 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "정부 도시토지관리 지침이 Decree 2/2004 제9조와 연결한 informação prévia 신청·현장방문·회신, 건축프로젝트·보완설계 심사와 licença de construção 발급을 실제 행정순서로 재구성했다.",
+      "id": "permit-environment",
+      "slug": "mozambique-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "모잠비크 A+/A/B/C 국가 환경평가·환경허가 절차",
+      "oneLiner": "Decree 54/2015에 따른 A+·A·B·C 전국 환경분류와 유형별 평가·환경허가를 관리한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Decree 54/2015와 국가 환경법령대장(SGLA)에서 모잠비크 전역에 적용되는 과정개시, A+/A/B/C 분류, EPDA·TdR, EIA·EAS·PBPGA, 공중참여, 기술·독립심사, 보완과 설치단계 환경허가 절차만 확인했다. 그 밖의 비환경 인허가 절차는 이 축의 검증 범위가 아니다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "민간건축은 관할 지방자치단체(municipality) 또는 지구행정청(district administration)이 처리한다. 사전정보 회신으로 계획도구와 필지조건을 확인한 뒤 건축프로젝트와 보완설계를 순차 승인받는다.",
+      "publicationScope": "national",
+      "procedureScope": "모잠비크 전역의 개발사업은 Decree 54/2015에 따른 환경 사전평가로 A+, A, B 또는 C를 분류받는다. A+/A는 전면 환경영향평가(EIA), B는 간이환경평가(EAS), C는 우수환경관리관행절차(PBPGA) 경로를 거쳐 관할 환경기관의 설치단계 환경허가 결정을 받는다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1526,11 +462,10 @@
         "B07",
         "B08",
         "B09",
-        "B10",
-        "B11"
+        "B10"
       ],
       "requirementIds": [
-        "MOZ-BLD-REQ-004"
+        "MOZ-BLD-REQ-005"
       ],
       "questionIds": [
         "MOZ-BLD-Q-001",
@@ -1540,9 +475,7 @@
       "conclusionIds": [
         "MOZ-BLD-C-001"
       ],
-      "siteOverlayIds": [
-        "MOZ-LOCAL-OVERLAY-001"
-      ],
+      "siteOverlayIds": [],
       "fieldworkChecklistIds": [
         "MOZ-BLD-F-001",
         "MOZ-BLD-F-002",
@@ -1550,452 +483,103 @@
       ],
       "edges": [
         {
-          "id": "M04-E01",
+          "id": "M05-E01",
           "source": "B01",
           "target": "B02",
-          "type": "sequence",
-          "label": "사전정보 접수"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "기술부서 회부"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "현장·계획의견"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "계획조건"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B06",
-          "type": "sequence",
-          "label": "건축프로젝트"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B06",
-          "target": "B08",
-          "type": "sequence",
-          "label": "건축 승인"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B06",
-          "target": "B07",
-          "type": "message",
-          "label": "설계보완"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B07",
-          "target": "B06",
-          "type": "loop",
-          "label": "수정안 재심"
-        },
-        {
-          "id": "M04-E09",
-          "source": "B08",
-          "target": "B09",
-          "type": "sequence",
-          "label": "보완설계"
-        },
-        {
-          "id": "M04-E10",
-          "source": "B09",
-          "target": "B11",
-          "type": "sequence",
-          "label": "정합성 확인"
-        },
-        {
-          "id": "M04-E11",
-          "source": "B09",
-          "target": "B10",
-          "type": "message",
-          "label": "불일치·누락"
-        },
-        {
-          "id": "M04-E12",
-          "source": "B10",
-          "target": "B09",
-          "type": "loop",
-          "label": "보완설계 재심"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "건축프로젝트·허가 승인",
-          "action": "수수료 납부 후 건축허가와 승인도서에 따라 착공"
-        },
-        {
-          "state": "rework",
-          "label": "건축·보완설계 수정",
-          "action": "심사의견을 반영해 해당 기술심사 단계에 재제출"
-        },
-        {
-          "state": "reject",
-          "label": "계획 또는 허가 거부",
-          "action": "공식 사유에 따라 입지·계획·설계를 변경해 재신청하거나 불복 검토"
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "mozambique-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "모잠비크 A+/A/B/C 환경허가·건축허가",
-      "oneLiner": "지방 건축허가와 A+·A·B·C 환경분류·licenca ambiental을 별도 Gate로 연결한다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "Decree 54/2015의 과정개시·A+/A/B/C 분류·EPDA/TdR·EIA/EAS/PBPGA·공중참여·기술심사·환경허가와 Decree 2/2004 건축프로젝트·보완설계·건축허가를 두 공식 Gate로 연결했다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "모든 개발사업은 환경 사전평가로 A+, A, B 또는 C를 분류받는다. A+/A는 전면 환경영향평가(EIA), B는 간이환경조사(simplified environmental study), C는 승인받은 우수관행 지침(good-practice instrument) 경로이며 환경허가 뒤 관할 지방자치단체·지구행정청(municipality/district)이 건축허가를 결정한다.",
-      "nodeIds": [
-        "B12",
-        "B13",
-        "B14",
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21",
-        "B22",
-        "B23",
-        "B24",
-        "B25"
-      ],
-      "requirementIds": [
-        "MOZ-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "MOZ-BLD-Q-004",
-        "MOZ-BLD-Q-005",
-        "MOZ-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "MOZ-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "MOZ-BLD-F-004",
-        "MOZ-BLD-F-005",
-        "MOZ-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B12",
-          "target": "B13",
           "type": "sequence",
           "label": "사전평가"
         },
         {
           "id": "M05-E02",
-          "source": "B13",
-          "target": "B14",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "A+/A/B"
         },
         {
           "id": "M05-E03",
-          "source": "B13",
-          "target": "B15",
+          "source": "B02",
+          "target": "B04",
           "type": "sequence",
           "label": "C 경로"
         },
         {
           "id": "M05-E04",
-          "source": "B14",
-          "target": "B16",
+          "source": "B03",
+          "target": "B05",
           "type": "sequence",
           "label": "범위설정서·과업지시서"
         },
         {
           "id": "M05-E05",
-          "source": "B16",
-          "target": "B17",
+          "source": "B05",
+          "target": "B06",
           "type": "sequence",
           "label": "승인 조사범위"
         },
         {
           "id": "M05-E06",
-          "source": "B17",
-          "target": "B18",
+          "source": "B06",
+          "target": "B07",
           "type": "sequence",
           "label": "공중의견"
         },
         {
           "id": "M05-E07",
-          "source": "B15",
-          "target": "B18",
+          "source": "B04",
+          "target": "B07",
           "type": "sequence",
           "label": "우수환경관리관행절차"
         },
         {
           "id": "M05-E08",
-          "source": "B18",
-          "target": "B19",
+          "source": "B07",
+          "target": "B08",
           "type": "sequence",
           "label": "평가서 접수"
         },
         {
           "id": "M05-E09",
-          "source": "B19",
-          "target": "B21",
+          "source": "B08",
+          "target": "B10",
           "type": "sequence",
           "label": "승인권고"
         },
         {
           "id": "M05-E10",
-          "source": "B19",
-          "target": "B20",
+          "source": "B08",
+          "target": "B09",
           "type": "message",
           "label": "추가조사·보완"
         },
         {
           "id": "M05-E11",
-          "source": "B20",
-          "target": "B19",
+          "source": "B09",
+          "target": "B08",
           "type": "loop",
           "label": "환경 재심"
-        },
-        {
-          "id": "M05-E12",
-          "source": "B21",
-          "target": "B22",
-          "type": "sequence",
-          "label": "환경허가"
-        },
-        {
-          "id": "M05-E13",
-          "source": "B22",
-          "target": "B23",
-          "type": "sequence",
-          "label": "건축허가 접수"
-        },
-        {
-          "id": "M05-E14",
-          "source": "B23",
-          "target": "B25",
-          "type": "sequence",
-          "label": "기술적합"
-        },
-        {
-          "id": "M05-E15",
-          "source": "B23",
-          "target": "B24",
-          "type": "message",
-          "label": "설계보완"
-        },
-        {
-          "id": "M05-E16",
-          "source": "B24",
-          "target": "B23",
-          "type": "loop",
-          "label": "건축 재심"
         }
       ],
       "decisionBranches": [
         {
           "state": "success",
-          "label": "환경·건축허가 승인",
-          "action": "환경관리조건과 승인도서에 따라 착공"
+          "label": "환경허가 승인",
+          "action": "설치단계 환경허가와 환경관리조건을 사업설계·시행조건에 반영"
         },
         {
           "state": "rework",
-          "label": "평가서·설계 보완",
-          "action": "환경영향평가·간이환경평가·우수환경관리관행절차 또는 건축도서를 수정해 해당 기술심사에 재제출"
+          "label": "환경평가서·관리도구 보완",
+          "action": "환경영향평가·간이환경평가·우수환경관리관행절차와 답변서를 수정해 환경기술심사에 재제출"
         },
         {
           "state": "reject",
-          "label": "환경 또는 건축허가 거부",
-          "action": "공식 사유에 따라 입지·사업·설계를 변경해 재신청하거나 불복 검토"
-        }
-      ]
-    },
-    {
-      "id": "control-completion",
-      "slug": "mozambique-control-completion-construction-regulations",
-      "priority": 6,
-      "name": "모잠비크 시공감독·환경검사·사용허가",
-      "oneLiner": "등록 책임기술자·시공자, 지방검사와 licenca de utilizacao를 시설 인계 전 조건으로 관리한다.",
-      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "Decree 2/2004 제33조의 municipality 공사감독, 정부 지침의 허가기간·연장·완공 후 사용허가 신청자료·현장검사·사용허가와 환경허가 이행검사를 연결했다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "관할 지방자치단체·지구행정청(municipality/district)은 건축허가에 따른 공사를 감독하고 완공 후 사용허가(licença de utilização)를 결정한다. 환경기관은 승인 관리도구와 환경허가조건 이행을 별도로 검사한다.",
-      "nodeIds": [
-        "B26",
-        "B27",
-        "B28",
-        "B29",
-        "B30",
-        "B31",
-        "B32",
-        "B33",
-        "B34",
-        "B35",
-        "B36"
-      ],
-      "requirementIds": [
-        "MOZ-BLD-REQ-006"
-      ],
-      "questionIds": [
-        "MOZ-BLD-Q-007",
-        "MOZ-BLD-Q-008",
-        "MOZ-BLD-Q-009"
-      ],
-      "conclusionIds": [
-        "MOZ-BLD-C-003"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "MOZ-BLD-F-007",
-        "MOZ-BLD-F-008",
-        "MOZ-BLD-F-009"
-      ],
-      "edges": [
-        {
-          "id": "M06-E01",
-          "source": "B26",
-          "target": "B27",
-          "type": "sequence",
-          "label": "허가조건"
-        },
-        {
-          "id": "M06-E02",
-          "source": "B27",
-          "target": "B28",
-          "type": "sequence",
-          "label": "건축검사"
-        },
-        {
-          "id": "M06-E03",
-          "source": "B27",
-          "target": "B29",
-          "type": "sequence",
-          "label": "환경검사"
-        },
-        {
-          "id": "M06-E04",
-          "source": "B28",
-          "target": "B30",
-          "type": "sequence",
-          "label": "건축검사 결과"
-        },
-        {
-          "id": "M06-E05",
-          "source": "B29",
-          "target": "B30",
-          "type": "sequence",
-          "label": "환경검사 결과"
-        },
-        {
-          "id": "M06-E06",
-          "source": "B30",
-          "target": "B32",
-          "type": "sequence",
-          "label": "공정 적합"
-        },
-        {
-          "id": "M06-E07",
-          "source": "B30",
-          "target": "B31",
-          "type": "message",
-          "label": "시정·중지"
-        },
-        {
-          "id": "M06-E08",
-          "source": "B31",
-          "target": "B30",
-          "type": "loop",
-          "label": "시정 재검사"
-        },
-        {
-          "id": "M06-E09",
-          "source": "B32",
-          "target": "B33",
-          "type": "sequence",
-          "label": "완공자료"
-        },
-        {
-          "id": "M06-E10",
-          "source": "B33",
-          "target": "B34",
-          "type": "sequence",
-          "label": "최종검사"
-        },
-        {
-          "id": "M06-E11",
-          "source": "B34",
-          "target": "B36",
-          "type": "sequence",
-          "label": "사용 적합"
-        },
-        {
-          "id": "M06-E12",
-          "source": "B34",
-          "target": "B35",
-          "type": "message",
-          "label": "최종 시정"
-        },
-        {
-          "id": "M06-E13",
-          "source": "B35",
-          "target": "B34",
-          "type": "loop",
-          "label": "시정 후 재검"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "사용허가 발급",
-          "action": "사용허가 발급 뒤 승인용도로 사용"
-        },
-        {
-          "state": "rework",
-          "label": "공사·최종검사 시정",
-          "action": "건축·환경·사용조건 지적을 시정하고 해당 검사로 회귀"
-        },
-        {
-          "state": "reject",
-          "label": "사용허가 거부·공사중지",
-          "action": "사용·공사를 중단하고 공식 사유에 따라 적합화·재신청 또는 불복 검토"
+          "label": "환경허가 거부",
+          "action": "공식 사유에 따라 입지·사업·환경관리방안을 변경해 재신청하거나 적법한 불복 경로를 검토"
         }
       ]
     }
   ],
   "authorities": [
-    {
-      "id": "municipality-district",
-      "name": "Competent municipality or district administration",
-      "nameKo": "관할 지방자치단체 또는 지구 행정기관",
-      "role": "지역계획·도시토지·민간건축 허가, 검사와 사용허가를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://www.portaldogoverno.gov.mz/"
-    },
-    {
-      "id": "moph",
-      "name": "Ministry of Public Works, Housing and Water Resources",
-      "nameKo": "공공사업·주택·수자원부",
-      "role": "건축·공공시설·기술규정과 중앙 품질정책을 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://portaldogoverno.gov.mz/ministerios/ministerio-das-obras-publicas-habitacao-e-recursos-hidricos/"
-    },
     {
       "id": "environment-authority",
       "name": "National Directorate of Environment and Provincial Environmental Services",
@@ -2006,32 +590,6 @@
     }
   ],
   "instruments": [
-    {
-      "id": "MOZ-RLOP-2-2004",
-      "title": "Decreto n.º 2/2004 — Regime de Licenciamento de Obras Particulares",
-      "titleKo": "시행령 제2/2004호 민간건축공사 허가제도",
-      "kind": "regulation",
-      "status": "in_force",
-      "issuedOn": "2004-03-31",
-      "officialUrl": "https://www.portaldogoverno.gov.mz/por/content/download/11502/91354/version/1/file/BR_112_III_SERIE_2019.pdf",
-      "verificationLevel": "law-linked",
-      "note": "지방 계획문서가 인용하는 국가 허가체계다. 대상 지방정부의 후속 조례와 현행 적용판을 확인한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "정부 도시·지방개발사업(PDUL)의 공식 ‘Guião de Gestão de Terras Urbanas’ 제4.1.2절이 Decree 2/2004를 사전정보·건축프로젝트·건축허가·검사·사용허가의 적용 근거로 명시하는 것을 확인했다."
-    },
-    {
-      "id": "MOZ-MAPUTO-BYLAW-2018",
-      "title": "Municipal Building and Urbanisation Regulation — Maputo official example",
-      "titleKo": "마푸투시 건축·도시화 규정(지방 집행 예시)",
-      "kind": "regulation",
-      "status": "continuity_unverified",
-      "officialUrl": "https://www.portaldogoverno.gov.mz/por/content/download/9467/72978/version/1/file/BR_136_III_SE%CC%81RIE_2018.pdf",
-      "officialPdfUrl": "https://www.portaldogoverno.gov.mz/por/content/download/9467/72978/version/1/file/BR_136_III_SE%CC%81RIE_2018.pdf",
-      "verificationLevel": "source-linked",
-      "note": "건축허가·책임기술자·검사·licenca de utilizacao의 마푸투 집행 예시로만 사용한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "모잠비크 정부포털의 Boletim da República n.º 136, III Série(2018) 공식 PDF 경로와 마푸투시 건축·도시화 규정 수록정보를 확인했다. 다만 이후 개정·폐지 통합본과 마푸투 외 지역 적용 가능성은 공식 대장에서 확정되지 않아 continuity_unverified를 유지한다."
-    },
     {
       "id": "MOZ-ENV-DECREE-54-2015",
       "title": "Decreto n.º 54/2015 — Regulamento sobre o Processo de Avaliacao do Impacto Ambiental",
@@ -2046,31 +604,6 @@
       "statusBasis": "국립인쇄소(INM) 공식 관보 페이지의 2015년 제104호 보충판과 환경허가관리시스템(SGLA) 법령대장, 정부 환경절차 매뉴얼이 Decree 54/2015를 환경평가 절차의 근거로 계속 제시하는 것을 대조했다."
     },
     {
-      "id": "MOZ-ENV-LAW-20-97",
-      "title": "Lei do Ambiente n.º 20/97, de 1 de Outubro",
-      "titleKo": "환경법 제20/97호",
-      "kind": "act",
-      "status": "in_force",
-      "issuedOn": "1997-10-01",
-      "officialUrl": "https://sgla.mta.gov.mz/contact/arquivos_list1",
-      "verificationLevel": "law-linked",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "환경허가관리시스템(SGLA) 공식 법령대장과 정부 환경절차 매뉴얼이 Environment Law 20/97을 Decree 54/2015의 모법으로 계속 제시하는 것을 확인했다."
-    },
-    {
-      "id": "MOZ-PDUL-URBAN-GUIDE",
-      "title": "Methodological Guide for Urban Land Management",
-      "titleKo": "모잠비크 도시토지관리 방법론 지침",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "정부 도시·지방개발사업(PDUL) 공식 서버가 ‘Guião de Gestão de Terras Urbanas’ PDF를 기준일 현재 직접 제공하고, 제4.1.2절에서 건축 관련 행정순서를 설명하는 것을 확인했다.",
-      "officialUrl": "https://pdul.gov.mz/layout/set/print/content/download/804/4443/version/1/file/Gui%C3%A3o%2Bde%2BGest%C3%A3o%2Bde%2BTerras%2BUrbanas%2BHRes.pdf",
-      "officialPdfUrl": "https://pdul.gov.mz/layout/set/print/content/download/804/4443/version/1/file/Gui%C3%A3o%2Bde%2BGest%C3%A3o%2Bde%2BTerras%2BUrbanas%2BHRes.pdf",
-      "verificationLevel": "source-linked",
-      "note": "Decree 2/2004에 따른 사전정보·건축프로젝트·보완설계·건축허가·사용허가의 실제 행정순서를 정부가 설명한다."
-    },
-    {
       "id": "MOZ-SGLA-EIA-REGISTER",
       "title": "SGLA official environmental-assessment document register",
       "titleKo": "모잠비크 환경허가관리시스템(SGLA) 공식 법령대장",
@@ -2080,285 +613,143 @@
       "statusBasis": "토지환경부 환경허가관리시스템(SGLA)의 공식 ‘arquivos’ 법령·자료대장 경로를 확인했다. 기준일 접속은 시간초과였으므로 개별 파일은 INM 관보와 정부 절차 매뉴얼로 교차확인했다.",
       "officialUrl": "https://sgla.mta.gov.mz/contact/arquivos_list1",
       "verificationLevel": "source-linked"
-    },
-    {
-      "id": "MOZ-GOV-EIA-FLOW",
-      "title": "Government environmental-assessment workflow under Decree 54/2015",
-      "titleKo": "모잠비크 정부 환경영향평가 절차도",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Maputo Metropolitan Urban Mobility Project의 공식 2023 환경관리 절차매뉴얼이 Decree 54/2015에 따른 사전평가·분류·보고서·참여·환경허가 흐름을 도식과 본문으로 제시하는 것을 확인했다.",
-      "officialUrl": "https://movemaputo.gov.mz/wp-content/uploads/2023/10/Manual-de-Procedimentos-de-Boas-Praticas-de-Gestao-Ambiental-para-a-Reabilitacao-do-Edificio-do-PMUAMM.pdf",
-      "officialPdfUrl": "https://movemaputo.gov.mz/wp-content/uploads/2023/10/Manual-de-Procedimentos-de-Boas-Praticas-de-Gestao-Ambiental-para-a-Reabilitacao-do-Edificio-do-PMUAMM.pdf",
-      "verificationLevel": "source-linked"
     }
   ],
   "requirements": [
-    {
-      "id": "MOZ-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "모잠비크에서 신축·증축·용도변경 또는 도시개발을 추진하는 ODA 건축사업",
-      "requirement": "건축허가와 환경신청은 적법한 DUAT와 필지자료를 전제로 하며 실제 토지이용·높이·배치·이격·주차는 지방 plan de estrutura·PGU·세부규정이 정한다. 침수·사이클론·배수·지반과 상하수·전력 인입능력을 함께 확인한다.",
-      "authorityIds": [
-        "municipality-district",
-        "moph"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "MOZ-RLOP-2-2004",
-          "provisions": [
-            "private works and municipal authorization framework"
-          ]
-        },
-        {
-          "instrumentId": "MOZ-MAPUTO-BYLAW-2018",
-          "provisions": [
-            "local urban indices and permit example"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "DUAT·지적도·경계측량",
-        "관할 구조계획·PGU·토지이용분류",
-        "필지별 지표·높이·이격·주차",
-        "사이클론·침수·배수·지반·유틸리티 용량"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
     {
       "id": "MOZ-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
       "status": "conditional",
-      "applicability": "지방 건축허가가 필요한 공사와 환경 사전평가·licenca ambiental 대상 사업",
-      "requirement": "관할 지방정부는 projeto de arquitectura·기술도서와 책임기술자를 심사해 공사허가를 발급한다. 시행령 제54/2015호는 모든 잠재영향 사업을 사전평가해 A+·A·B·C로 분류하고 유형별 연구·공공참여·환경허가를 요구한다.",
+      "applicability": "Decree 54/2015의 환경 사전평가·A+/A/B/C 분류와 설치단계 환경허가 대상 개발사업",
+      "requirement": "모잠비크 환경기관은 개발사업의 사전평가를 통해 A+, A, B 또는 C를 공식 분류한다. A+/A는 전면 환경영향평가, B는 간이환경평가, C는 우수환경관리관행절차를 적용하며, 범위설정·과업지시서, 공중참여, 기술·독립심사와 보완을 거쳐 설치단계 환경허가를 결정한다.",
       "authorityIds": [
-        "municipality-district",
         "environment-authority"
       ],
       "legalBasis": [
         {
-          "instrumentId": "MOZ-RLOP-2-2004",
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
           "provisions": [
-            "building works licensing framework"
+            "Pre-feasibility and process-initiation workflow"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-SGLA-EIA-REGISTER",
+          "provisions": [
+            "Decree 54/2015"
           ]
         },
         {
           "instrumentId": "MOZ-ENV-DECREE-54-2015",
           "provisions": [
-            "Arts. 4, 7 and 8; A+, A, B, C categorisation"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "건축주·DUAT 보유자·허가권자",
-        "건축·기술도서·책임자 신고",
-        "SPA 환경분류·평가·licenca 결정",
-        "현행 수수료·접수·보완·실제 전체기간"
-      ],
-      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
-    },
-    {
-      "id": "MOZ-BLD-REQ-006",
-      "stage": "completion",
-      "topic": "기술기준·검사·보험·준공·사용승인",
-      "status": "conditional",
-      "applicability": "허가를 받아 시공하고 사용허가 또는 준공확인이 필요한 건축물",
-      "requirement": "허가대상 공사는 관할에 등록된 적정 전문등급의 책임기술자가 지휘하고 승인도서 변경은 사전승인을 받아야 한다. 지방정부의 현장·최종검사와 licenca de utilizacao 요구를 확인하며 시험·소방·설비·as-built·보험·하자조건을 계약에 포함한다.",
-      "authorityIds": [
-        "municipality-district",
-        "moph"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "MOZ-MAPUTO-BYLAW-2018",
-          "provisions": [
-            "Arts. 97 onward; licensed works, technical responsibility and use licence"
+            "Categories A+, A, B and C"
           ]
         },
         {
-          "instrumentId": "MOZ-RLOP-2-2004",
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
           "provisions": [
-            "works supervision and completion framework"
+            "A+/A EPDA and ToR; B ToR"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "Category C PBPGA/manual route"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "A+/A/B assessment modalities"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-SGLA-EIA-REGISTER",
+          "provisions": [
+            "Ministerial Diploma 118/2022"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "Decree 54/2015 public participation; Ministerial Diploma 130/2006"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "REIA, REAS and PBPGA routes"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "Technical Evaluation Committee and assessment review"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "study review, revision and approval workflow"
+          ]
+        },
+        {
+          "instrumentId": "MOZ-ENV-DECREE-54-2015",
+          "provisions": [
+            "Environmental-study approval and installation licence"
           ]
         }
       ],
       "evidenceToObtain": [
-        "현지 설계자·기술자·시공자 등록",
-        "착공·중간검사·승인변경 기록",
-        "시험·소방·설비시운전·as-built",
-        "licenca de utilizacao·보험·비용견적"
+        "환경절차 개시·사전평가 접수기록",
+        "A+/A/B/C 공식 분류통지",
+        "EPDA·TdR 또는 PBPGA와 공중참여 기록",
+        "EIA·EAS·PBPGA 최종본·기술·독립심사·보완기록",
+        "설치단계 환경허가·조건 또는 거부통지"
       ],
-      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
+      "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
     }
   ],
   "permitPath": [
     {
       "order": 1,
-      "gate": "관할기관 사전계획정보 공식회신",
-      "decision": "현장·계획검토를 토대로 대상 필지에 적용되는 계획도구와 건축조건을 공식 회신한다.",
-      "dependsOn": [],
-      "output": "사전계획정보 행정결정 또는 부정적 회신"
-    },
-    {
-      "order": 2,
-      "gate": "건축프로젝트 공식결정",
-      "decision": "관할 기술부서가 계획·건축 적합성을 심사해 건축프로젝트 승인, 보완 또는 거부를 결정한다.",
-      "dependsOn": [
-        1
-      ],
-      "output": "건축프로젝트 승인 행정결정 또는 공식 보완·거부통지"
-    },
-    {
-      "order": 3,
-      "gate": "관할기관 건축허가 공식결정",
-      "decision": "승인 건축프로젝트와 보완설계의 일치를 확인해 수수료 납부 후 건축허가를 발급하거나 보완·거부한다.",
-      "dependsOn": [
-        2
-      ],
-      "output": "건축허가·승인도서 또는 공식 보완·거부통지"
-    },
-    {
-      "order": 4,
       "gate": "환경기관 A+/A/B/C 공식분류",
       "decision": "사전평가를 토대로 전면 환경영향평가, 간이조사 또는 우수관행 지침 경로를 공식 결정한다.",
       "dependsOn": [],
       "output": "A+/A/B/C 분류통지 또는 사전부적합 통지"
     },
     {
-      "order": 5,
+      "order": 2,
       "gate": "환경기관 환경허가 공식결정",
       "decision": "A+/A 환경영향평가, B 간이환경평가 또는 C 우수환경관리관행절차를 심사해 설치 환경허가·조건·보완 또는 거부를 결정한다.",
       "dependsOn": [
-        4
+        1
       ],
       "output": "설치 환경허가 또는 공식 보완·거부통지"
-    },
-    {
-      "order": 6,
-      "gate": "관할기관 건축허가 공식결정",
-      "decision": "환경허가·건축프로젝트·보완설계를 심사해 건축허가를 발급하거나 보완·거부한다.",
-      "dependsOn": [
-        5
-      ],
-      "output": "건축허가·승인도서 또는 공식 보완·거부통지"
-    },
-    {
-      "order": 7,
-      "gate": "건축·환경 공사준수 판단",
-      "decision": "관할기관이 승인도서·환경조건 준수 여부를 확인해 공정 계속 또는 시정·중지를 결정한다.",
-      "dependsOn": [],
-      "output": "공정 계속 확인 또는 공식 시정·중지통지"
-    },
-    {
-      "order": 8,
-      "gate": "지방자치단체 사용허가 공식결정",
-      "decision": "완공건물의 승인도서·안전·위생·기반시설 조건을 검사해 사용허가를 발급하거나 시정·거부한다.",
-      "dependsOn": [
-        7
-      ],
-      "output": "사용허가 또는 공식 시정·거부통지"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "MOZ-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "MOZ-RLOP-2-2004",
-          "provisions": [
-            "private works and municipal authorization framework"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "MOZ-BLD-Q-001",
       "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지 DUAT와 관할계획상 허용용도·개발지표·높이·이격·주차·재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "DUAT·지적도·경계측량",
-        "관할 구조계획·PGU·토지이용분류",
-        "필지별 지표·높이·이격·주차",
-        "사이클론·침수·배수·지반·유틸리티 용량"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "MOZ-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "MOZ-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "DUAT·지방 도시계획의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "DUAT·지적도·경계측량",
-        "관할 구조계획·PGU·토지이용분류",
-        "필지별 지표·높이·이격·주차",
-        "사이클론·침수·배수·지반·유틸리티 용량"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "MOZ-BLD-Q-004",
-      "blocking": true,
       "stage": "permit",
-      "question": "본 사업의 지방 건축허가와 A+·A·B·C 환경유형, 환경허가의 선행관계·서류·실제 기간은 무엇인가?",
+      "question": "본 사업의 A+/A/B/C 환경분류, 유형별 평가도구·공중참여·기술심사·보완과 설치단계 환경허가 결정은 무엇인가?",
       "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
       "evidenceNeeded": [
-        "건축주·DUAT 보유자·허가권자",
-        "건축·기술도서·책임자 신고",
-        "SPA 환경분류·평가·licenca 결정",
-        "현행 수수료·접수·보완·실제 전체기간"
+        "환경절차 개시·사전평가 접수기록",
+        "A+/A/B/C 공식 분류통지",
+        "EPDA·TdR 또는 PBPGA와 공중참여 기록",
+        "EIA·EAS·PBPGA 최종본·기술·독립심사·보완기록",
+        "설치단계 환경허가·조건 또는 거부통지"
       ],
       "confirmWith": [
-        "municipality-district",
         "environment-authority"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "MOZ-BLD-Q-005",
+      "id": "MOZ-BLD-Q-002",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -2369,79 +760,25 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "municipality-district",
         "environment-authority"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "MOZ-BLD-Q-006",
+      "id": "MOZ-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
-      "question": "건축허가·환경 Category A+~C의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
+      "question": "Decree 54/2015·SGLA 환경허가의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
       "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
       "evidenceNeeded": [
-        "건축주·DUAT 보유자·허가권자",
-        "건축·기술도서·책임자 신고",
-        "SPA 환경분류·평가·licenca 결정",
-        "현행 수수료·접수·보완·실제 전체기간"
+        "환경절차 개시·사전평가 접수기록",
+        "A+/A/B/C 공식 분류통지",
+        "EPDA·TdR 또는 PBPGA와 공중참여 기록",
+        "EIA·EAS·PBPGA 최종본·기술·독립심사·보완기록",
+        "설치단계 환경허가·조건 또는 거부통지"
       ],
       "confirmWith": [
-        "municipality-district",
         "environment-authority"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "MOZ-BLD-Q-007",
-      "blocking": true,
-      "stage": "completion",
-      "question": "대상 지방의 전문자격·검사·보험과 준공·licenca de utilizacao의 절차·비용·실제 기간은 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "현지 설계자·기술자·시공자 등록",
-        "착공·중간검사·승인변경 기록",
-        "시험·소방·설비시운전·as-built",
-        "licenca de utilizacao·보험·비용견적"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "MOZ-BLD-Q-008",
-      "blocking": true,
-      "stage": "completion",
-      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "전문가·시공자·검사기관 등록증과 보험증권",
-        "검사계획·시험성적서·변경승인 기록",
-        "준공·소방·사용승인 체크리스트와 실제 견적"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "MOZ-BLD-Q-009",
-      "blocking": false,
-      "stage": "completion",
-      "question": "책임기술자·licenca de utilizacao의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "현지 설계자·기술자·시공자 등록",
-        "착공·중간검사·승인변경 기록",
-        "시험·소방·설비시운전·as-built",
-        "licenca de utilizacao·보험·비용견적"
-      ],
-      "confirmWith": [
-        "municipality-district",
-        "moph"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2450,84 +787,30 @@
     {
       "id": "MOZ-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "MOZ-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "MOZ-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "MOZ-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "MOZ-BLD-F-005",
+      "id": "MOZ-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "MOZ-BLD-F-006",
+      "id": "MOZ-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
-    },
-    {
-      "id": "MOZ-BLD-F-007",
-      "phase": "시장조사",
-      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
-      "output": "적격기관·보험 대장"
-    },
-    {
-      "id": "MOZ-BLD-F-008",
-      "phase": "기관협의",
-      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
-      "output": "검사·준공·개장 Hold Point 표"
-    },
-    {
-      "id": "MOZ-BLD-F-009",
-      "phase": "보고서 반영",
-      "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
     }
   ],
   "reportReadyConclusions": [
     {
       "id": "MOZ-BLD-C-001",
       "confidence": "conditional",
-      "text": "마푸투 규정이나 국가 일반체계를 다른 지방에 일반화하지 말고 대상 지방정부의 계획·DUAT·필지수치를 먼저 확정해야 한다.",
+      "text": "A+/A/B/C 분류가 평가범위와 심사경로를 결정하므로 관할 환경기관의 공식 분류와 설치단계 환경허가·조건을 사업 시행 전 독립 Gate로 관리한다.",
       "basis": [
-        "MOZ-RLOP-2-2004",
-        "MOZ-MAPUTO-BYLAW-2018"
-      ]
-    },
-    {
-      "id": "MOZ-BLD-C-002",
-      "confidence": "conditional",
-      "text": "환경 Category에 따라 연구범위와 승인기관이 달라지므로 SPA 분류 없이 건축허가 일정만으로 착공일을 산정하지 않는다.",
-      "basis": [
-        "MOZ-RLOP-2-2004",
-        "MOZ-ENV-DECREE-54-2015"
-      ]
-    },
-    {
-      "id": "MOZ-BLD-C-003",
-      "confidence": "conditional",
-      "text": "공사완료와 적법한 사용개시는 별개이므로 대상 지방의 사용허가를 인계·개장 Hold Point로 명시한다.",
-      "basis": [
-        "MOZ-MAPUTO-BYLAW-2018",
-        "MOZ-RLOP-2-2004"
+        "MOZ-ENV-DECREE-54-2015",
+        "MOZ-SGLA-EIA-REGISTER"
       ]
     }
   ]

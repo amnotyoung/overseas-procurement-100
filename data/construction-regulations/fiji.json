@@ -9,12 +9,12 @@
     "iso3": "FJI",
     "region": "아시아·태평양"
   },
-  "purpose": "피지 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "피지 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "공중보건(건축)규정 1959·건축허가·승인시스템(BPAS) 개발·건축·점유 절차·환경관리(EIA 절차)규정 2007·산업안전보건(일반 작업장 조건)규정 2003·공중보건(국가건축기준)규정 2004의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "피지 환경관리법 2005·환경관리(EIA 절차)규정 2007의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,373 +24,241 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "피지 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "피지 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
-      "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 권원·계획구역",
-      "S2 개발신청 도서",
-      "S3 공식접수",
-      "S4 계획심사·보완",
-      "S5 개발결정",
-      "P1 개발결정·환경분류",
-      "P2 환경영향평가·기술도서",
-      "P3 환경·관계기관 심사",
-      "P4 건축접수",
-      "P5 건축심사·보완",
-      "P6 허가결정",
-      "C1 책임자·착공",
-      "C2 단계검사",
-      "C3 시정·재검사",
-      "C4 완료·NFA 검사",
-      "C5 완료보완",
-      "C6 점유결정"
+      "E1 신청",
+      "E2 선별·분류",
+      "E3 범위설정·평가서",
+      "E4 기술·공개심사·보완",
+      "E5 환경결정"
     ],
     "nodes": [
       {
         "id": "B01",
         "lane": "건축주·신청인",
-        "stage": "S1 권원·계획구역",
-        "label": "토지권원·소유자 동의 확정",
+        "stage": "E1 신청",
+        "label": "환경영향평가 절차 신청",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인이 freehold·lease·iTaukei 권원, 임대·토지소유자 동의와 적법한 신청권한을 정리해 대상 필지를 특정한다.",
-        "action": "신청인이 freehold·lease·iTaukei 권원, 임대·토지소유자 동의와 적법한 신청권한을 정리해 대상 필지를 특정한다.",
+        "note": "사업제안자가 개발제안의 위치·규모·활동·예상영향과 법정 첨부자료를 환경당국에 제출해 환경영향평가 절차를 개시한다.",
+        "action": "사업제안자가 개발제안의 위치·규모·활동·예상영향과 법정 첨부자료를 환경당국에 제출해 환경영향평가 절차를 개시한다.",
         "outputs": [
-          "권원·임대·토지소유자 동의자료"
+          "환경영향평가 신청·접수기록"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "BPAS Development Permission",
-            "instrumentId": "FJI-BPAS",
+            "source": "Environment Management Act",
+            "instrumentId": "FJI-EMA-2005",
             "provisions": [
-              "Stage 1 applicant and land-ownership documentation"
+              "national EIA application and administration framework"
+            ]
+          },
+          {
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
+            "provisions": [
+              "Part 1 application and preliminary information"
             ]
           }
         ]
       },
       {
         "id": "B02",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S1 권원·계획구역",
-        "label": "도시계획구역·도시계획안 확정",
+        "lane": "환경·소방·검사기관",
+        "stage": "E2 선별·분류",
+        "label": "환경영향평가 선별·공식분류",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할기관이 대상지가 고시 town planning area인지와 적용 scheme·지방 건축규정·subdivision 조건을 특정한다.",
-        "action": "관할기관이 대상지가 고시 town planning area인지와 적용 scheme·지방 건축규정·subdivision 조건을 특정한다.",
+        "note": "환경국·환경영향평가 행정관이 사업의 성격·규모·입지와 잠재영향을 검토해 환경영향평가 필요 여부, 분류와 후속 처리경로를 서면 확정한다.",
+        "action": "환경국·환경영향평가 행정관이 사업의 성격·규모·입지와 잠재영향을 검토해 환경영향평가 필요 여부, 분류와 후속 처리경로를 서면 확정한다.",
         "outputs": [
-          "적용 계획구역·도시계획안·관할 확정"
+          "환경영향평가 대상 여부·분류·처리경로"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "Town Planning Act 현행본",
-            "instrumentId": "FJI-TOWN-PLANNING-ACT",
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
             "provisions": [
-              "section 6; declared town planning areas and applicable schemes"
+              "Parts 1-2 screening, classification and processing authority"
             ]
           }
         ]
       },
       {
         "id": "B03",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S2 개발신청 도서",
-        "label": "개발제안·필지조건 도서 작성",
-        "emphasis": "normal",
+        "lane": "환경·소방·검사기관",
+        "stage": "E3 범위설정·평가서",
+        "label": "범위설정(scoping)·과업지시서(TOR) 확정",
+        "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "책임전문가가 예정 용도·배치·도로·배수·토공·위험·기반시설 자료를 적용 scheme과 대조해 개발신청 도서를 작성한다.",
-        "action": "책임전문가가 예정 용도·배치·도로·배수·토공·위험·기반시설 자료를 적용 scheme과 대조해 개발신청 도서를 작성한다.",
+        "note": "환경영향평가 대상이면 환경영향평가 행정관이 주요 쟁점·대안·조사범위·공중참여 요건을 설정하고 평가서 과업지시서를 확정한다.",
+        "action": "환경영향평가 대상이면 환경영향평가 행정관이 주요 쟁점·대안·조사범위·공중참여 요건을 설정하고 평가서 과업지시서를 확정한다.",
         "outputs": [
-          "개발허가 신청도서"
+          "승인 범위설정·과업지시서"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "BPAS Approval to Develop",
-            "instrumentId": "FJI-BPAS",
+            "source": "Environment Management Act",
+            "instrumentId": "FJI-EMA-2005",
             "provisions": [
-              "Stage 1 Development Permission application and development proposal documents"
+              "EIA study framework"
+            ]
+          },
+          {
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
+            "provisions": [
+              "Parts 2-3 scoping and terms of reference"
             ]
           }
         ]
       },
       {
         "id": "B04",
-        "lane": "건축주·신청인",
-        "stage": "S3 공식접수",
-        "label": "시·타운 의회 개발신청 접수",
+        "lane": "현지 설계·시공 전문가",
+        "stage": "E3 범위설정·평가서",
+        "label": "환경영향평가 보고서 작성·제출",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인이 개발제안과 권원·도면을 관할 City/Town Council 또는 지정 BPAS 경로에 제출해 DTCP 검토를 개시한다.",
-        "action": "신청인이 개발제안과 권원·도면을 관할 City/Town Council 또는 지정 BPAS 경로에 제출해 DTCP 검토를 개시한다.",
+        "note": "등록 환경전문가가 승인된 범위와 과업지시서에 따라 영향·대안·저감조치·환경관리계획을 조사해 환경영향평가 보고서를 제출한다.",
+        "action": "등록 환경전문가가 승인된 범위와 과업지시서에 따라 영향·대안·저감조치·환경관리계획을 조사해 환경영향평가 보고서를 제출한다.",
         "outputs": [
-          "개발신청 접수·사건기록"
+          "환경영향평가 보고서·환경관리계획"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "BPAS Development Permission",
-            "instrumentId": "FJI-BPAS",
+            "source": "Environment Management Act",
+            "instrumentId": "FJI-EMA-2005",
             "provisions": [
-              "Stage 1 lodging with competent local authority and DTCP process"
+              "EIA study and report requirements"
+            ]
+          },
+          {
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
+            "provisions": [
+              "Parts 3-4 EIA study and report submission"
             ]
           }
         ]
       },
       {
         "id": "B05",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 계획심사·보완",
-        "label": "완비성·도시계획안·기술심사",
-        "emphasis": "key",
+        "lane": "환경·소방·검사기관",
+        "stage": "E4 기술·공개심사·보완",
+        "label": "기술심사·공개·의견수렴",
+        "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "관할 지방정부와 DTCP가 제출도서의 완비성, 토지이용·배치·진입·배수와 적용 scheme·관련기관 조건을 심사한다.",
-        "action": "관할 지방정부와 DTCP가 제출도서의 완비성, 토지이용·배치·진입·배수와 적용 scheme·관련기관 조건을 심사한다.",
+        "note": "환경영향평가 행정관이 보고서의 완비성과 기술내용을 심사하고 법정 공개·공중의견 수렴 및 관계기관 검토를 실시해 결정자료를 정리한다.",
+        "action": "환경영향평가 행정관이 보고서의 완비성과 기술내용을 심사하고 법정 공개·공중의견 수렴 및 관계기관 검토를 실시해 결정자료를 정리한다.",
         "outputs": [
-          "계획·기술심사·관계기관 의견"
+          "기술심사·공개의견·관계기관 검토기록"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "Town Planning Act·BPAS",
-            "instrumentId": "FJI-TOWN-PLANNING-ACT",
+            "source": "Environment Management Act",
+            "instrumentId": "FJI-EMA-2005",
             "provisions": [
-              "development control under applicable town planning scheme"
+              "EIA review and public participation framework"
             ]
           },
           {
-            "source": "BPAS Approval to Develop",
-            "instrumentId": "FJI-BPAS",
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
             "provisions": [
-              "Stage 1 official assessment and development conditions"
+              "Parts 3-4 report review and public participation"
             ]
           }
         ]
       },
       {
         "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 계획심사·보완",
-        "label": "추가정보·계획수정 요구",
-        "emphasis": "bottleneck",
+        "lane": "건축주·신청인",
+        "stage": "E4 기술·공개심사·보완",
+        "label": "추가정보·평가서 보완",
+        "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청이 미완비이거나 scheme·기술조건과 불일치하면 관할기관이 필요한 추가정보·계획수정을 서면 통지한다.",
-        "action": "신청이 미완비이거나 scheme·기술조건과 불일치하면 관할기관이 필요한 추가정보·계획수정을 서면 통지한다.",
+        "note": "환경당국의 추가조사·대안·저감조치·공개의견 반영 요구에 따라 보고서와 환경관리계획을 수정해 재제출한다.",
+        "action": "환경당국의 추가조사·대안·저감조치·공개의견 반영 요구에 따라 보고서와 환경관리계획을 수정해 재제출한다.",
         "outputs": [
-          "추가정보·계획수정 통지"
+          "보완 환경영향평가 보고서·답변서"
         ],
         "authorityIds": [
-          "dtcp-local-authority"
+          "doe"
         ],
         "requirementIds": [
-          "FJI-BLD-REQ-004"
+          "FJI-BLD-REQ-005"
         ],
         "questionIds": [],
         "refs": [
           {
-            "source": "BPAS Development Permission",
-            "instrumentId": "FJI-BPAS",
+            "source": "EIA Process Regulations",
+            "instrumentId": "FJI-EIA-REG-2007",
             "provisions": [
-              "development application review and conditions before decision"
+              "further information, report amendment and reassessment"
             ]
           }
         ]
       },
       {
         "id": "B07",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S4 계획심사·보완",
-        "label": "개발도서 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 계획·도로·배수·기관의견을 보완하고 수정 개발도서를 제출해 재심사를 받는다.",
-        "action": "책임전문가가 계획·도로·배수·기관의견을 보완하고 수정 개발도서를 제출해 재심사를 받는다.",
-        "outputs": [
-          "보완 개발도서·재접수 기록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Development Permission",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "resubmission of revised development proposal for approval"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S5 개발결정",
-        "label": "개발허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 City/Town Council과 DTCP가 개발제안을 승인·조건부 승인 또는 불허하고 결정문과 승인도서를 교부한다.",
-        "action": "관할 City/Town Council과 DTCP가 개발제안을 승인·조건부 승인 또는 불허하고 결정문과 승인도서를 교부한다.",
-        "outputs": [
-          "개발허가·조건 또는 불허통지"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Develop",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 1 Development Permission decision"
-            ]
-          },
-          {
-            "source": "Town Planning Act",
-            "instrumentId": "FJI-TOWN-PLANNING-ACT",
-            "provisions": [
-              "development permission framework"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B09",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P1 개발결정·환경분류",
-        "label": "개발허가 선행결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 City/Town Council과 DTCP가 대상지 개발승인과 조건을 먼저 공식 확정한다.",
-        "action": "관할 City/Town Council과 DTCP가 대상지 개발승인과 조건을 먼저 공식 확정한다.",
-        "outputs": [
-          "개발허가·승인조건 또는 불허"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Develop",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 1"
-            ]
-          }
-        ],
-        "gateOrders": [
-          2
-        ]
-      },
-      {
-        "id": "B10",
-        "lane": "건축주·신청인",
-        "stage": "P1 개발결정·환경분류",
-        "label": "환경제안서·선별(screening) 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "사업자가 제안서와 입지·규모·활동자료를 환경국에 제출해 EIA 스크리닝을 신청한다.",
-        "action": "사업자가 제안서와 입지·규모·활동자료를 환경국에 제출해 EIA 스크리닝을 신청한다.",
-        "outputs": [
-          "환경 선별 접수"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS EIA 절차",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 2"
-            ]
-          },
-          {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "Parts 1-2 screening and classification"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B11",
         "lane": "환경·소방·검사기관",
-        "stage": "P2 환경영향평가·기술도서",
-        "label": "환경영향평가 대상·처리기관 공식분류",
+        "stage": "E5 환경결정",
+        "label": "환경영향평가 공식결정",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "환경국·EIA 행정관이 Part 1·2·3 분류, EIA 필요 여부와 처리기관·후속 환경도구를 결정한다.",
-        "action": "환경국·EIA 행정관이 Part 1·2·3 분류, EIA 필요 여부와 처리기관·후속 환경도구를 결정한다.",
+        "note": "환경국·환경영향평가 행정관이 선별 또는 심사결과에 따라 비대상 확인, 승인·조건부 승인 또는 불승인을 서면 결정한다.",
+        "action": "환경국·환경영향평가 행정관이 선별 또는 심사결과에 따라 비대상 확인, 승인·조건부 승인 또는 불승인을 서면 결정한다.",
         "outputs": [
-          "환경영향평가 비대상·분류·처리경로"
+          "서면 환경결정·승인조건 또는 불승인"
         ],
         "authorityIds": [
           "doe"
@@ -401,167 +269,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "Parts 1-3 project screening and processing authority"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B12",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P2 환경영향평가·기술도서",
-        "label": "범위설정(scoping)·평가범위서(TOR)·환경영향평가 보고서 작성",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "EIA 대상이면 등록 환경전문가가 scoping·승인 TOR에 따라 영향조사·완화·환경관리계획과 보고서를 작성한다.",
-        "action": "EIA 대상이면 등록 환경전문가가 scoping·승인 TOR에 따라 영향조사·완화·환경관리계획과 보고서를 작성한다.",
-        "outputs": [
-          "평가범위서·환경영향평가 보고서·환경관리계획"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Environment Management Act·EIA Regulations",
+            "source": "Environment Management Act",
             "instrumentId": "FJI-EMA-2005",
             "provisions": [
-              "EIA study and approval process"
-            ]
-          },
-          {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "Parts 2-4; scoping, terms of reference, study and review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B13",
-        "lane": "환경·소방·검사기관",
-        "stage": "P3 환경·관계기관 심사",
-        "label": "환경 기술·공개심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "EIA 행정관이 보고서의 완비성·기술내용을 심사하고 적용되는 공개·의견수렴과 관계기관 검토를 진행한다.",
-        "action": "EIA 행정관이 보고서의 완비성·기술내용을 심사하고 적용되는 공개·의견수렴과 관계기관 검토를 진행한다.",
-        "outputs": [
-          "환경 기술심사·공개의견 기록"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "Parts 3-4; report review and public participation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B14",
-        "lane": "건축주·신청인",
-        "stage": "P3 환경·관계기관 심사",
-        "label": "환경 추가정보·수정 요구",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "자료·분석·완화조치가 부족하면 EIA 행정관이 추가정보나 보고서 수정을 요구한다.",
-        "action": "자료·분석·완화조치가 부족하면 EIA 행정관이 추가정보나 보고서 수정을 요구한다.",
-        "outputs": [
-          "환경 보완·수정 통지"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "request for further information during EIA review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B15",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P3 환경·관계기관 심사",
-        "label": "환경보고서 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경전문가가 추가정보·수정본을 제출해 환경 기술심사를 다시 받는다.",
-        "action": "환경전문가가 추가정보·수정본을 제출해 환경 기술심사를 다시 받는다.",
-        "outputs": [
-          "보완 환경영향평가·답변서"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "EIA Process Regulations",
-            "instrumentId": "FJI-EIA-REG-2007",
-            "provisions": [
-              "supplementation and reassessment of EIA report"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B16",
-        "lane": "환경·소방·검사기관",
-        "stage": "P3 환경·관계기관 심사",
-        "label": "환경영향평가 비대상·승인·불승인 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "환경국·EIA 행정관이 비대상 확인 또는 EIA 승인·조건부 승인·불승인을 서면 결정한다.",
-        "action": "환경국·EIA 행정관이 비대상 확인 또는 EIA 승인·조건부 승인·불승인을 서면 결정한다.",
-        "outputs": [
-          "비대상 결정 또는 환경승인·조건·불승인"
-        ],
-        "authorityIds": [
-          "doe"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS EIA 절차",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 2 environmental decision"
+              "national EIA approval decision framework"
             ]
           },
           {
@@ -573,989 +284,81 @@
           }
         ],
         "gateOrders": [
-          3
-        ]
-      },
-      {
-        "id": "B17",
-        "lane": "환경·소방·검사기관",
-        "stage": "P2 환경영향평가·기술도서",
-        "label": "수자원공사 연결·공학도서 승인",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "해당 사업이 WAF 상하수 연결을 신청·검사받고 등록기술자가 도로·배수·전력·가로등·소화전 engineering plans를 관계기관에 제출해 승인받는다.",
-        "action": "해당 사업이 WAF 상하수 연결을 신청·검사받고 등록기술자가 도로·배수·전력·가로등·소화전 engineering plans를 관계기관에 제출해 승인받는다.",
-        "outputs": [
-          "수자원공사 연결·공학도서 승인"
-        ],
-        "authorityIds": [
-          "waf",
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS utility and engineering approvals",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Steps 3-4"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B18",
-        "lane": "환경·소방·검사기관",
-        "stage": "P3 환경·관계기관 심사",
-        "label": "소방청 화재안전·산업안전보건 작업장 동의",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "NFA가 구조적 화재안전도서를 심사하고, 작업장 용도이면 OHS가 NFA 승인도서·구조확인서를 병행 심사한다.",
-        "action": "NFA가 구조적 화재안전도서를 심사하고, 작업장 용도이면 OHS가 NFA 승인도서·구조확인서를 병행 심사한다.",
-        "outputs": [
-          "소방청 구조화재안전승인·산업안전보건 동의"
-        ],
-        "authorityIds": [
-          "nfa",
-          "nohs"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS fire and workplace approvals",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Steps 5-6"
-            ]
-          },
-          {
-            "source": "National Fire Service Act",
-            "instrumentId": "FJI-NFS-ACT",
-            "provisions": [
-              "section 11A"
-            ]
-          },
-          {
-            "source": "General Workplace Conditions Regulations",
-            "instrumentId": "FJI-GWC-REG-2003",
-            "provisions": [
-              "regulation 64"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B19",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P4 건축접수",
-        "label": "최종 건축허가 도서 통합",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 개발·환경·WAF·engineering·NFA·OHS 결정과 최종 건축·구조·설비도서를 하나의 허가 expediente로 통합한다.",
-        "action": "책임전문가가 개발·환경·WAF·engineering·NFA·OHS 결정과 최종 건축·구조·설비도서를 하나의 허가 expediente로 통합한다.",
-        "outputs": [
-          "완비 건축허가 신청도서"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority",
-          "doe",
-          "waf",
-          "nfa",
-          "nohs"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Construct on Site",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 7 supporting approvals and final plans"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B20",
-        "lane": "건축주·신청인",
-        "stage": "P4 건축접수",
-        "label": "시·타운 의회 건축허가 접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "소유자와 책임전문가가 완비도서를 관할 City/Town Council에 제출해 Building Permit 심사를 개시한다.",
-        "action": "소유자와 책임전문가가 완비도서를 관할 City/Town Council에 제출해 Building Permit 심사를 개시한다.",
-        "outputs": [
-          "건축허가 접수·사건기록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Construct on Site",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 7 lodgement"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B21",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P5 건축심사·보완",
-        "label": "완비성·건축기술 통합심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 지방정부가 관계기관 승인, 전문서명, Public Health (Building) Regulations와 National Building Code 적합성을 심사한다.",
-        "action": "관할 지방정부가 관계기관 승인, 전문서명, Public Health (Building) Regulations와 National Building Code 적합성을 심사한다.",
-        "outputs": [
-          "건축허가 기술심사 기록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "regulations 15-26; building application and approval"
-            ]
-          },
-          {
-            "source": "National Building Code",
-            "instrumentId": "FJI-NBC-REG-2004",
-            "provisions": [
-              "regulation 3"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B22",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P5 건축심사·보완",
-        "label": "건축도서 결함·불일치 통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "누락·기술불일치 또는 관계기관 조건 미반영이 있으면 지방정부가 보완·수정사항을 통지한다.",
-        "action": "누락·기술불일치 또는 관계기관 조건 미반영이 있으면 지방정부가 보완·수정사항을 통지한다.",
-        "outputs": [
-          "건축허가 보완·수정 통지"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Construct on Site",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 7 completeness and technical corrections"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B23",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P5 건축심사·보완",
-        "label": "건축도서 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 지적 분야의 도면·승인·조건을 보완해 지방정부에 재제출한다.",
-        "action": "책임전문가가 지적 분야의 도면·승인·조건을 보완해 지방정부에 재제출한다.",
-        "outputs": [
-          "보완 허가도서·재접수 기록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Construct on Site",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "resubmission after Step 7 deficiencies"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B24",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P6 허가결정",
-        "label": "건축허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 City/Town Council이 최종도서와 관계기관 승인을 확인해 Building Permit·조건을 발급하거나 불허한다.",
-        "action": "관할 City/Town Council이 최종도서와 관계기관 승인을 확인해 Building Permit·조건을 발급하거나 불허한다.",
-        "outputs": [
-          "건축허가·승인도서·조건 또는 불허"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Approval to Construct on Site",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 2 Step 7 official Building Permit decision"
-            ]
-          }
-        ],
-        "gateOrders": [
-          4
-        ]
-      },
-      {
-        "id": "B25",
-        "lane": "건축주·신청인",
-        "stage": "C1 책임자·착공",
-        "label": "Qualified Person·시공책임자 지정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "소유자가 승인도서 분야별 qualified person과 시공책임자를 지정하고 유효 Building Permit·승인조건을 현장에 비치한다.",
-        "action": "소유자가 승인도서 분야별 qualified person과 시공책임자를 지정하고 유효 Building Permit·승인조건을 현장에 비치한다.",
-        "outputs": [
-          "책임자 지정·유효 허가·현장도서"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Building Permit·QP Directory",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "qualified persons and approved building permit documentation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B26",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C1 책임자·착공",
-        "label": "착공통지·검사 hold point 계획",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 착공과 foundation·structure·drainage·completion 등 요구검사 시점을 관할 building surveyor와 확인해 공정에 반영한다.",
-        "action": "책임전문가가 착공과 foundation·structure·drainage·completion 등 요구검사 시점을 관할 building surveyor와 확인해 공정에 반영한다.",
-        "outputs": [
-          "착공·단계검사 계획"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "regulations 8 and 12-13; inspection and completion controls"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B27",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C2 단계검사",
-        "label": "공정별 검사요청·시험자료 제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "각 hold point 전에 책임자가 검사요청과 현장·재료·배수·구조 시험자료를 제출한다.",
-        "action": "각 hold point 전에 책임자가 검사요청과 현장·재료·배수·구조 시험자료를 제출한다.",
-        "outputs": [
-          "단계검사 요청·시험기록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "building surveyor inspection during construction"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B28",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C2 단계검사",
-        "label": "Building Surveyor 단계검사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 building surveyor가 시공상태를 승인도서·National Building Code와 대조해 다음 공정 진행 여부와 결함을 기록한다.",
-        "action": "관할 building surveyor가 시공상태를 승인도서·National Building Code와 대조해 다음 공정 진행 여부와 결함을 기록한다.",
-        "outputs": [
-          "단계검사 적합기록 또는 결함목록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "National Building Code·건축규정",
-            "instrumentId": "FJI-NBC-REG-2004",
-            "provisions": [
-              "regulation 3; National Building Code applies to all occupancy classes"
-            ]
-          },
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "construction inspection powers"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B29",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C3 시정·재검사",
-        "label": "현장결함·무단변경 시정통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "승인도서·기준과 다른 시공이면 surveyor가 결함 시정, 추가시험 또는 변경승인 취득을 요구한다.",
-        "action": "승인도서·기준과 다른 시공이면 surveyor가 결함 시정, 추가시험 또는 변경승인 취득을 요구한다.",
-        "outputs": [
-          "시정·추가시험·변경승인 요구"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "inspection and compliance with approved plans"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B30",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C3 시정·재검사",
-        "label": "현장 시정·단계 재검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임자가 결함을 시정하고 필요한 변경도서·시험결과를 제출해 같은 단계의 재검사를 요청한다.",
-        "action": "책임자가 결함을 시정하고 필요한 변경도서·시험결과를 제출해 같은 단계의 재검사를 요청한다.",
-        "outputs": [
-          "시정완료·재검사 요청"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "correction and repeat inspection before completion"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B31",
-        "lane": "건축주·신청인",
-        "stage": "C4 완료·NFA 검사",
-        "label": "완료·점유검사 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "공사완료 후 소유자가 책임전문가 완료확인, 검사·시험·as-built와 관계기관 자료를 제출해 Certificate of Occupancy를 신청한다.",
-        "action": "공사완료 후 소유자가 책임전문가 완료확인, 검사·시험·as-built와 관계기관 자료를 제출해 Certificate of Occupancy를 신청한다.",
-        "outputs": [
-          "완료·점유검사 신청도서"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Certificate of Occupancy",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 3 occupancy application and completion documentation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B32",
-        "lane": "환경·소방·검사기관",
-        "stage": "C4 완료·NFA 검사",
-        "label": "NFA 완공 화재안전 검사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "NFA Structural Fire Safety 부서가 완성건축물의 승인 화재안전도서·피난·소방설비를 검사해 적합 또는 보완을 통지한다.",
-        "action": "NFA Structural Fire Safety 부서가 완성건축물의 승인 화재안전도서·피난·소방설비를 검사해 적합 또는 보완을 통지한다.",
-        "outputs": [
-          "NFA 완공 화재검사 승인 또는 결함통지"
-        ],
-        "authorityIds": [
-          "nfa"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "National Fire Service Act·BPAS",
-            "instrumentId": "FJI-NFS-ACT",
-            "provisions": [
-              "section 11A; inspection and certification of structural fire safety"
-            ]
-          },
-          {
-            "source": "BPAS Fire Safety resources",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "completion fire inspection linked to occupancy"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B33",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C4 완료·NFA 검사",
-        "label": "지방정부 최종 완료검사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "building surveyor가 완성공사를 승인도서·허가조건·National Building Code·검사기록과 대조한다.",
-        "action": "building surveyor가 완성공사를 승인도서·허가조건·National Building Code·검사기록과 대조한다.",
-        "outputs": [
-          "최종검사 적합 또는 완료결함목록"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "regulations 12-13 and Form 2; completion and permit to occupy"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B34",
-        "lane": "환경·소방·검사기관",
-        "stage": "C5 완료보완",
-        "label": "완료·화재결함 보완통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "NFA 또는 지방검사에서 결함이 확인되면 적용 기관이 현장시정·시험·도서보완과 재검사를 요구한다.",
-        "action": "NFA 또는 지방검사에서 결함이 확인되면 적용 기관이 현장시정·시험·도서보완과 재검사를 요구한다.",
-        "outputs": [
-          "완료결함·재검사 통지"
-        ],
-        "authorityIds": [
-          "nfa",
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Certificate of Occupancy",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "agency compliance required before occupancy approval"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B35",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C5 완료보완",
-        "label": "완료결함 시정·재검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임자가 결함을 시정하고 검사·as-built 자료를 갱신해 NFA 또는 지방정부 재검사를 요청한다.",
-        "action": "책임자가 결함을 시정하고 검사·as-built 자료를 갱신해 NFA 또는 지방정부 재검사를 요청한다.",
-        "outputs": [
-          "완료시정 증빙·재검사 요청"
-        ],
-        "authorityIds": [
-          "nfa",
-          "dtcp-local-authority"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "BPAS Certificate of Occupancy",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "reinspection after completion deficiencies are corrected"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B36",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C6 점유결정",
-        "label": "Completion·Occupancy 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "관할 지방정부가 완료·소방 적합성을 확인해 Certificate of Completion and Permit to Occupy 또는 BPAS Certificate of Occupancy를 발급하거나 거부한다.",
-        "action": "관할 지방정부가 완료·소방 적합성을 확인해 Certificate of Completion and Permit to Occupy 또는 BPAS Certificate of Occupancy를 발급하거나 거부한다.",
-        "outputs": [
-          "Completion·Occupancy 증명 또는 거부통지"
-        ],
-        "authorityIds": [
-          "dtcp-local-authority",
-          "nfa"
-        ],
-        "requirementIds": [
-          "FJI-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "Public Health (Building) Regulations",
-            "instrumentId": "FJI-PH-BUILDING-REG-1959",
-            "provisions": [
-              "regulations 12-13 and Form 2; completion certificate and permit to occupy"
-            ]
-          },
-          {
-            "source": "BPAS Certificate of Occupancy",
-            "instrumentId": "FJI-BPAS",
-            "provisions": [
-              "Stage 3 official occupancy decision"
-            ]
-          }
-        ],
-        "gateOrders": [
-          5
+          1
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS05-01",
         "source": "B01",
         "target": "B02",
         "type": "sequence",
-        "label": "권원확정"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "계획구역"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "개발도서"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "공식접수"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B08",
-        "type": "sequence",
-        "label": "계획 적합"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B05",
-        "target": "B06",
-        "type": "message",
-        "label": "추가정보"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B06",
-        "target": "B07",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B07",
-        "target": "B05",
-        "type": "loop",
-        "label": "보완 후 계획 재심사"
-      },
-      {
-        "id": "BX05",
-        "source": "B08",
-        "target": "B09",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B09",
-        "target": "B10",
-        "type": "message",
-        "label": "환경영향평가 선별"
+        "label": "신청접수"
       },
       {
         "id": "BS05-02",
-        "source": "B09",
-        "target": "B17",
-        "type": "sequence",
-        "label": "관계기관 승인"
-      },
-      {
-        "id": "BS05-03",
-        "source": "B10",
-        "target": "B11",
-        "type": "sequence",
-        "label": "환경접수"
-      },
-      {
-        "id": "BS05-04",
-        "source": "B11",
-        "target": "B12",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "환경영향평가 대상"
       },
       {
-        "id": "BS05-05",
-        "source": "B11",
-        "target": "B16",
+        "id": "BS05-03",
+        "source": "B02",
+        "target": "B07",
         "type": "sequence",
-        "label": "비대상"
+        "label": "환경영향평가 비대상"
+      },
+      {
+        "id": "BS05-04",
+        "source": "B03",
+        "target": "B04",
+        "type": "sequence",
+        "label": "승인 범위·과업지시서"
+      },
+      {
+        "id": "BS05-05",
+        "source": "B04",
+        "target": "B05",
+        "type": "sequence",
+        "label": "평가서 제출"
       },
       {
         "id": "BS05-06",
-        "source": "B12",
-        "target": "B13",
+        "source": "B05",
+        "target": "B07",
         "type": "sequence",
-        "label": "환경영향평가 보고서"
+        "label": "심사완료"
       },
       {
         "id": "BS05-07",
-        "source": "B13",
-        "target": "B16",
-        "type": "sequence",
-        "label": "환경 적합"
+        "source": "B05",
+        "target": "B06",
+        "type": "message",
+        "label": "추가정보·수정요구"
       },
       {
         "id": "BS05-08",
-        "source": "B13",
-        "target": "B14",
-        "type": "message",
-        "label": "추가정보"
-      },
-      {
-        "id": "BS05-09",
-        "source": "B14",
-        "target": "B15",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS05-10",
-        "source": "B15",
-        "target": "B13",
+        "source": "B06",
+        "target": "B05",
         "type": "loop",
-        "label": "보완 후 환경 재심사"
-      },
-      {
-        "id": "BS05-11",
-        "source": "B17",
-        "target": "B18",
-        "type": "sequence",
-        "label": "기술·유틸리티"
-      },
-      {
-        "id": "BS05-12",
-        "source": "B18",
-        "target": "B19",
-        "type": "sequence",
-        "label": "소방청·산업안전보건"
-      },
-      {
-        "id": "BS05-13",
-        "source": "B16",
-        "target": "B19",
-        "type": "message",
-        "label": "환경결정"
-      },
-      {
-        "id": "BS05-14",
-        "source": "B19",
-        "target": "B20",
-        "type": "sequence",
-        "label": "최종도서"
-      },
-      {
-        "id": "BS05-15",
-        "source": "B20",
-        "target": "B21",
-        "type": "sequence",
-        "label": "공식접수"
-      },
-      {
-        "id": "BS05-16",
-        "source": "B21",
-        "target": "B24",
-        "type": "sequence",
-        "label": "건축 적합"
-      },
-      {
-        "id": "BS05-17",
-        "source": "B21",
-        "target": "B22",
-        "type": "message",
-        "label": "결함·불일치"
-      },
-      {
-        "id": "BS05-18",
-        "source": "B22",
-        "target": "B23",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS05-19",
-        "source": "B23",
-        "target": "B21",
-        "type": "loop",
-        "label": "보완 후 건축 재심사"
-      },
-      {
-        "id": "BX06",
-        "source": "B24",
-        "target": "B25",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS06-01",
-        "source": "B25",
-        "target": "B26",
-        "type": "sequence",
-        "label": "책임자 지정"
-      },
-      {
-        "id": "BS06-02",
-        "source": "B26",
-        "target": "B27",
-        "type": "sequence",
-        "label": "검사계획"
-      },
-      {
-        "id": "BS06-03",
-        "source": "B27",
-        "target": "B28",
-        "type": "sequence",
-        "label": "검사요청"
-      },
-      {
-        "id": "BS06-04",
-        "source": "B28",
-        "target": "B31",
-        "type": "sequence",
-        "label": "단계 적합"
-      },
-      {
-        "id": "BS06-05",
-        "source": "B28",
-        "target": "B29",
-        "type": "message",
-        "label": "현장결함"
-      },
-      {
-        "id": "BS06-06",
-        "source": "B29",
-        "target": "B30",
-        "type": "sequence",
-        "label": "시정통지"
-      },
-      {
-        "id": "BS06-07",
-        "source": "B30",
-        "target": "B28",
-        "type": "loop",
-        "label": "시정 후 단계 재검사"
-      },
-      {
-        "id": "BS06-08",
-        "source": "B31",
-        "target": "B32",
-        "type": "message",
-        "label": "NFA 검사"
-      },
-      {
-        "id": "BS06-09",
-        "source": "B31",
-        "target": "B33",
-        "type": "sequence",
-        "label": "완료검사"
-      },
-      {
-        "id": "BS06-10",
-        "source": "B32",
-        "target": "B33",
-        "type": "message",
-        "label": "화재결과"
-      },
-      {
-        "id": "BS06-11",
-        "source": "B33",
-        "target": "B36",
-        "type": "sequence",
-        "label": "완료 적합"
-      },
-      {
-        "id": "BS06-12",
-        "source": "B32",
-        "target": "B34",
-        "type": "message",
-        "label": "화재결함"
-      },
-      {
-        "id": "BS06-13",
-        "source": "B33",
-        "target": "B34",
-        "type": "message",
-        "label": "완료결함"
-      },
-      {
-        "id": "BS06-14",
-        "source": "B34",
-        "target": "B35",
-        "type": "sequence",
-        "label": "보완통지"
-      },
-      {
-        "id": "BS06-15",
-        "source": "B35",
-        "target": "B33",
-        "type": "loop",
-        "label": "시정 후 완료 재검사"
+        "label": "보완 후 기술·공개 재심사"
       }
     ]
   },
   "publicModels": [
     {
-      "id": "site-urban",
-      "slug": "fiji-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "피지 토지권원·도시계획(Town Planning)·개발허가(Development Permission) 절차",
-      "oneLiner": "토지권원과 DTCP 개발허가·town planning·subdivision 적합성으로 용도·배치·도로·배수조건을 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "Town Planning Act 현행본과 BPAS Stage 1을 대조해 토지권원·적용 scheme 확인부터 Development Permission 결정까지의 실제 절차를 구성했다. 필지별 수치는 해당 town planning area·scheme·지방규정에서 확정한다.",
+      "id": "permit-environment",
+      "slug": "fiji-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "피지 국가 환경영향평가(EIA) 신청·심사·환경결정 절차",
+      "oneLiner": "Environment Management Act와 EIA Process Regulations에 따른 전국 환경영향평가 선별·분류·심사·환경결정을 관리한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "Environment Management Act 2005와 Environment Management (EIA Process) Regulations 2007에서 피지 전역에 적용되는 환경영향평가 신청, 선별·분류, 범위설정·과업지시서, 평가서 작성, 기술·공개심사, 보완과 환경결정 절차만 확인했다. 그 밖의 비환경 인허가 절차는 이 축의 검증 범위가 아니다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "대상지의 토지권원과 고시 도시계획구역(town planning area)·도시계획안(scheme)을 확정하고 관할 시·타운 의회(City/Town Council)·도시·지역계획국(DTCP)에 개발허가를 신청해 공식 개발결정을 받는 절차다.",
+      "publicationScope": "national",
+      "procedureScope": "피지 전역의 개발제안에 대해 환경국·환경영향평가 행정관이 Environment Management Act 2005와 EIA Process Regulations 2007에 따라 환경영향평가 적용 여부를 선별·분류하고, 필요한 평가와 심사를 거쳐 서면 환경결정을 내리는 국가 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1563,11 +366,10 @@
         "B04",
         "B05",
         "B06",
-        "B07",
-        "B08"
+        "B07"
       ],
       "requirementIds": [
-        "FJI-BLD-REQ-004"
+        "FJI-BLD-REQ-005"
       ],
       "questionIds": [
         "FJI-BLD-Q-001",
@@ -1577,9 +379,7 @@
       "conclusionIds": [
         "FJI-BLD-C-001"
       ],
-      "siteOverlayIds": [
-        "FJI-LOCAL-OVERLAY-001"
-      ],
+      "siteOverlayIds": [],
       "fieldworkChecklistIds": [
         "FJI-BLD-F-001",
         "FJI-BLD-F-002",
@@ -1587,454 +387,82 @@
       ],
       "edges": [
         {
-          "id": "M04-E01",
+          "id": "M05-E01",
           "source": "B01",
           "target": "B02",
           "type": "sequence",
-          "label": "권원확정"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "계획구역"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "개발도서"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "공식접수"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B08",
-          "type": "sequence",
-          "label": "계획 적합"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B05",
-          "target": "B06",
-          "type": "message",
-          "label": "추가정보"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B06",
-          "target": "B07",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B07",
-          "target": "B05",
-          "type": "loop",
-          "label": "보완 후 계획 재심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "개발허가 발급",
-          "action": "승인조건을 건축허가신청시스템(BPAS) 건축도면·환경·관계기관 승인에 반영한다."
-        },
-        {
-          "state": "rework",
-          "label": "추가정보·조건부",
-          "action": "계획·도로·배수자료를 보완해 개발심사로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "개발 불허",
-          "action": "해당 개발안으로 건축허가를 진행하지 않고 적법한 재설계·불복·대체부지를 검토한다."
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "fiji-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "피지 건축허가신청시스템(BPAS) 개발·환경영향평가(EIA)·관계기관·건축허가(Building Permit) 절차",
-      "oneLiner": "개발허가·건축도면 승인과 EIA screening·처리를 BPAS에서 병행하고 소방·OHS·유틸리티 승인을 묶는다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "피지 정부 BPAS Stage 2의 개발승인·환경·유틸리티·엔지니어링·NFA·OHS·현장 건축승인을 실제 순서로 분해하고, EIA와 건축심사의 보완회귀를 명시했다. Suva 사례기관은 실제 사업지 City/Town Council로 치환한다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "개발허가(Development Permission) 이후 환경영향평가 선별·평가와 수자원공사(WAF)·공학도서(engineering plans)·소방청(NFA)·산업안전보건(OHS) 동의를 통합해 관할 시·타운 의회(City/Town Council)의 건축허가 결정을 받는 건축허가신청시스템 법정·공식 경로다.",
-      "nodeIds": [
-        "B09",
-        "B10",
-        "B11",
-        "B12",
-        "B13",
-        "B14",
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21",
-        "B22",
-        "B23",
-        "B24"
-      ],
-      "requirementIds": [
-        "FJI-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "FJI-BLD-Q-004",
-        "FJI-BLD-Q-005",
-        "FJI-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "FJI-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "FJI-BLD-F-004",
-        "FJI-BLD-F-005",
-        "FJI-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B09",
-          "target": "B10",
-          "type": "message",
-          "label": "환경영향평가 선별"
+          "label": "신청접수"
         },
         {
           "id": "M05-E02",
-          "source": "B09",
-          "target": "B17",
-          "type": "sequence",
-          "label": "관계기관 승인"
-        },
-        {
-          "id": "M05-E03",
-          "source": "B10",
-          "target": "B11",
-          "type": "sequence",
-          "label": "환경접수"
-        },
-        {
-          "id": "M05-E04",
-          "source": "B11",
-          "target": "B12",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "환경영향평가 대상"
         },
         {
-          "id": "M05-E05",
-          "source": "B11",
-          "target": "B16",
+          "id": "M05-E03",
+          "source": "B02",
+          "target": "B07",
           "type": "sequence",
-          "label": "비대상"
+          "label": "환경영향평가 비대상"
+        },
+        {
+          "id": "M05-E04",
+          "source": "B03",
+          "target": "B04",
+          "type": "sequence",
+          "label": "승인 범위·과업지시서"
+        },
+        {
+          "id": "M05-E05",
+          "source": "B04",
+          "target": "B05",
+          "type": "sequence",
+          "label": "평가서 제출"
         },
         {
           "id": "M05-E06",
-          "source": "B12",
-          "target": "B13",
+          "source": "B05",
+          "target": "B07",
           "type": "sequence",
-          "label": "환경영향평가 보고서"
+          "label": "심사완료"
         },
         {
           "id": "M05-E07",
-          "source": "B13",
-          "target": "B16",
-          "type": "sequence",
-          "label": "환경 적합"
+          "source": "B05",
+          "target": "B06",
+          "type": "message",
+          "label": "추가정보·수정요구"
         },
         {
           "id": "M05-E08",
-          "source": "B13",
-          "target": "B14",
-          "type": "message",
-          "label": "추가정보"
-        },
-        {
-          "id": "M05-E09",
-          "source": "B14",
-          "target": "B15",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M05-E10",
-          "source": "B15",
-          "target": "B13",
+          "source": "B06",
+          "target": "B05",
           "type": "loop",
-          "label": "보완 후 환경 재심사"
-        },
-        {
-          "id": "M05-E11",
-          "source": "B17",
-          "target": "B18",
-          "type": "sequence",
-          "label": "기술·유틸리티"
-        },
-        {
-          "id": "M05-E12",
-          "source": "B18",
-          "target": "B19",
-          "type": "sequence",
-          "label": "소방청·산업안전보건"
-        },
-        {
-          "id": "M05-E13",
-          "source": "B16",
-          "target": "B19",
-          "type": "message",
-          "label": "환경결정"
-        },
-        {
-          "id": "M05-E14",
-          "source": "B19",
-          "target": "B20",
-          "type": "sequence",
-          "label": "최종도서"
-        },
-        {
-          "id": "M05-E15",
-          "source": "B20",
-          "target": "B21",
-          "type": "sequence",
-          "label": "공식접수"
-        },
-        {
-          "id": "M05-E16",
-          "source": "B21",
-          "target": "B24",
-          "type": "sequence",
-          "label": "건축 적합"
-        },
-        {
-          "id": "M05-E17",
-          "source": "B21",
-          "target": "B22",
-          "type": "message",
-          "label": "결함·불일치"
-        },
-        {
-          "id": "M05-E18",
-          "source": "B22",
-          "target": "B23",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M05-E19",
-          "source": "B23",
-          "target": "B21",
-          "type": "loop",
-          "label": "보완 후 건축 재심사"
+          "label": "보완 후 기술·공개 재심사"
         }
       ],
       "decisionBranches": [
         {
           "state": "success",
-          "label": "건축허가 발급",
-          "action": "환경·관계기관·건축허가 조건을 공사계약·착공요건에 반영한다."
+          "label": "비대상 확인·환경승인",
+          "action": "서면 환경결정과 승인조건을 사업설계·환경관리계획·시행조건에 반영한다."
         },
         {
           "state": "rework",
-          "label": "환경·건축 보완",
-          "action": "통지된 환경연구·관계기관·건축도서를 보완해 해당 심사로 회귀한다."
+          "label": "추가정보·평가서 보완",
+          "action": "요구된 조사·대안·저감조치·공개의견 반영자료를 보완해 기술·공개심사로 회귀한다."
         },
         {
           "state": "reject",
-          "label": "환경·건축 불승인",
-          "action": "불승인 사유를 해소할 적법한 재신청 경로가 없으면 착공하지 않는다."
-        }
-      ]
-    },
-    {
-      "id": "control-completion",
-      "slug": "fiji-control-completion-construction-regulations",
-      "priority": 6,
-      "name": "피지 공사검사·NFA 완공검사·점유허가서(Certificate of Occupancy)",
-      "oneLiner": "National Building Code, 단계검사·화재안전과 Certificate of Completion/Occupancy를 사용개시 Gate로 둔다.",
-      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "Public Health (Building) Regulations의 공사검사·완료·점유 조항과 BPAS Stage 3 Certificate of Occupancy, NFA 완공 화재검사를 연결해 실제 완료절차를 구성했다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "유효 Building Permit과 승인도서로 공사하고 법정 단계검사·시정을 거쳐 NFA 화재검사와 관할 지방정부의 완료·점유 결정을 받는 절차다.",
-      "nodeIds": [
-        "B25",
-        "B26",
-        "B27",
-        "B28",
-        "B29",
-        "B30",
-        "B31",
-        "B32",
-        "B33",
-        "B34",
-        "B35",
-        "B36"
-      ],
-      "requirementIds": [
-        "FJI-BLD-REQ-006"
-      ],
-      "questionIds": [
-        "FJI-BLD-Q-007",
-        "FJI-BLD-Q-008",
-        "FJI-BLD-Q-009"
-      ],
-      "conclusionIds": [
-        "FJI-BLD-C-003"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "FJI-BLD-F-007",
-        "FJI-BLD-F-008",
-        "FJI-BLD-F-009"
-      ],
-      "edges": [
-        {
-          "id": "M06-E01",
-          "source": "B25",
-          "target": "B26",
-          "type": "sequence",
-          "label": "책임자 지정"
-        },
-        {
-          "id": "M06-E02",
-          "source": "B26",
-          "target": "B27",
-          "type": "sequence",
-          "label": "검사계획"
-        },
-        {
-          "id": "M06-E03",
-          "source": "B27",
-          "target": "B28",
-          "type": "sequence",
-          "label": "검사요청"
-        },
-        {
-          "id": "M06-E04",
-          "source": "B28",
-          "target": "B31",
-          "type": "sequence",
-          "label": "단계 적합"
-        },
-        {
-          "id": "M06-E05",
-          "source": "B28",
-          "target": "B29",
-          "type": "message",
-          "label": "현장결함"
-        },
-        {
-          "id": "M06-E06",
-          "source": "B29",
-          "target": "B30",
-          "type": "sequence",
-          "label": "시정통지"
-        },
-        {
-          "id": "M06-E07",
-          "source": "B30",
-          "target": "B28",
-          "type": "loop",
-          "label": "시정 후 단계 재검사"
-        },
-        {
-          "id": "M06-E08",
-          "source": "B31",
-          "target": "B32",
-          "type": "message",
-          "label": "NFA 검사"
-        },
-        {
-          "id": "M06-E09",
-          "source": "B31",
-          "target": "B33",
-          "type": "sequence",
-          "label": "완료검사"
-        },
-        {
-          "id": "M06-E10",
-          "source": "B32",
-          "target": "B33",
-          "type": "message",
-          "label": "화재결과"
-        },
-        {
-          "id": "M06-E11",
-          "source": "B33",
-          "target": "B36",
-          "type": "sequence",
-          "label": "완료 적합"
-        },
-        {
-          "id": "M06-E12",
-          "source": "B32",
-          "target": "B34",
-          "type": "message",
-          "label": "화재결함"
-        },
-        {
-          "id": "M06-E13",
-          "source": "B33",
-          "target": "B34",
-          "type": "message",
-          "label": "완료결함"
-        },
-        {
-          "id": "M06-E14",
-          "source": "B34",
-          "target": "B35",
-          "type": "sequence",
-          "label": "보완통지"
-        },
-        {
-          "id": "M06-E15",
-          "source": "B35",
-          "target": "B33",
-          "type": "loop",
-          "label": "시정 후 완료 재검사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "점유증명 발급",
-          "action": "발급된 점유범위와 조건에 따라 건물을 인계·사용한다."
-        },
-        {
-          "state": "rework",
-          "label": "현장·완료결함",
-          "action": "현장·화재·도서결함을 시정해 해당 검사로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "점유 거부",
-          "action": "공식 점유승인 전 건물을 사용·개장하지 않는다."
+          "label": "환경 불승인",
+          "action": "불승인 사유를 해소할 적법한 변경·재신청 또는 불복 경로가 확인되지 않으면 사업을 진행하지 않는다."
         }
       ]
     }
   ],
   "authorities": [
-    {
-      "id": "dtcp-local-authority",
-      "name": "Department of Town and Country Planning and competent Local Authority",
-      "nameKo": "도시농촌계획국(DTCP)·관할 지방정부",
-      "role": "개발허가·건축도면 승인·건축허가, 현장검사와 점유증명을 담당",
-      "verificationLevel": "law-linked",
-      "officialUrl": "https://www.businessnow.gov.fj/construction-permits/"
-    },
     {
       "id": "doe",
       "name": "Department of Environment and EIA Administrator",
@@ -2042,61 +470,9 @@
       "role": "EIA screening·분류·TOR·보고서 심사와 환경승인을 담당",
       "verificationLevel": "law-linked",
       "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF_LOF.VOL19.SGM_LOF.CAP141B.EPRFJ07.BODY"
-    },
-    {
-      "id": "nfa",
-      "name": "National Fire Authority",
-      "nameKo": "국가소방청(NFA)",
-      "role": "구조적 화재안전 도면승인과 완공 화재검사를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://www.businessnow.gov.fj/construction-permits/resources/"
-    },
-    {
-      "id": "waf",
-      "name": "Water Authority of Fiji",
-      "nameKo": "피지 수도공사(WAF)",
-      "role": "신규 상수도·하수도 연결 신청, 현장검사와 연결 완료를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://www.businessnow.gov.fj/new-water-waste-water-connection/"
-    },
-    {
-      "id": "nohs",
-      "name": "National Occupational Health and Safety Services",
-      "nameKo": "국가 산업안전보건서비스(OHS)",
-      "role": "작업장 용도의 신축·변경·해체 도면을 심사하고 설계동의를 담당",
-      "verificationLevel": "source-linked",
-      "officialUrl": "https://www.businessnow.gov.fj/workplace-design/"
     }
   ],
   "instruments": [
-    {
-      "id": "FJI-PH-BUILDING-REG-1959",
-      "title": "Public Health (Building) Regulations 1959",
-      "titleKo": "공중보건(건축)규정 1959",
-      "kind": "decree",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 통합본 갱신 2026-07-12",
-      "scope": "multi-level",
-      "scopeLabel": "고시 적용지역 · 지방 건축규정 병행",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF.CAP111.PHBRFJ59.BODY",
-      "verificationLevel": "law-linked",
-      "note": "현행 통합본에서 허가·검사·준공·점유를 확인했다. Regulation 3의 고시지역과 Suva·Lautoka 등 지방 건축규정의 적용범위는 별도 scope로 판정한다."
-    },
-    {
-      "id": "FJI-NBC-REG-2004",
-      "title": "Public Health (National Building Code) Regulations 2004",
-      "titleKo": "공중보건(국가건축기준)규정 2004",
-      "kind": "decree",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 통합본 갱신 2026-07-12",
-      "scope": "national",
-      "scopeLabel": "Fiji 전역 · 모든 점유등급",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF.CAP111.PHRFJ04.BODY",
-      "verificationLevel": "law-linked",
-      "note": "현행 통합본은 National Building Code가 모든 점유등급에 적용되고 불일치하는 하위 규정보다 우선한다고 명시한다. 2023 코드는 아직 Second Draft이므로 법정본으로 쓰지 않는다."
-    },
     {
       "id": "FJI-EIA-REG-2007",
       "title": "Environment Management (EIA Process) Regulations 2007",
@@ -2112,34 +488,6 @@
       "note": "현행 규정이다. EIA·후속환경계획·비대상 여부는 Part 1·2·3 스크리닝 결과로 사업별 판정한다."
     },
     {
-      "id": "FJI-BPAS",
-      "title": "Building Permits and Approvals System (BPAS) — development, building and occupancy process",
-      "titleKo": "건축허가·승인시스템(BPAS) 개발·건축·점유 절차",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "BusinessNOW Fiji 현행 BPAS 서비스·2026-03 Citizen Centre User Guide·QP Directory",
-      "scope": "multi-level",
-      "scopeLabel": "정부 통합절차 · 관할 지방정부별",
-      "officialUrl": "https://www.businessnow.gov.fj/construction-permits/",
-      "verificationLevel": "source-linked",
-      "note": "2026년 정부 플랫폼과 3월 사용자 안내서가 Development Permission, Building Plan Approval, Certificate of Occupancy 3단계를 운영 중이다. 지방정부별 적용은 scope로 따로 본다."
-    },
-    {
-      "id": "FJI-TOWN-PLANNING-ACT",
-      "title": "Town Planning Act",
-      "titleKo": "피지 도시계획법",
-      "kind": "act",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 2022 개정 반영",
-      "scope": "subnational",
-      "scopeLabel": "고시 Town Planning Area·해당 Scheme",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF_LOF.VOL12.SGM_LOF.CAP139.TPAFJ46.BODY",
-      "verificationLevel": "law-linked",
-      "note": "2022 개정까지 반영된 현행 통합본이다. Section 6상 대상지가 고시된 town planning area와 어느 scheme에 속하는지는 적용범위로 따로 확인한다."
-    },
-    {
       "id": "FJI-EMA-2005",
       "title": "Environment Management Act 2005",
       "titleKo": "피지 환경관리법 2005",
@@ -2152,309 +500,134 @@
       "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF_LOF.VOL19.SGM_LOF.CAP141B.EMAFJ05.BODY",
       "verificationLevel": "law-linked",
       "note": "2020 개정을 반영한 현행 통합본이다. EIA 대상과 처리기관은 사업 스크리닝 결과로 판정한다."
-    },
-    {
-      "id": "FJI-NFS-ACT",
-      "title": "National Fire Service Act 1994",
-      "titleKo": "피지 국가소방서비스법 1994",
-      "kind": "act",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 2023 개정 포함·갱신 2026-06-29",
-      "scope": "national",
-      "scopeLabel": "Fiji 전역 · 화재안전 대상 건축물",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF.CAP129.NFAFJ94.BODY",
-      "verificationLevel": "law-linked",
-      "note": "Section 11A가 Structural Fire Safety Department의 건축물 검사·인증 권한을 규정하고 현행 BPAS가 Step 5로 운영한다."
-    },
-    {
-      "id": "FJI-HSW-ACT",
-      "title": "Health and Safety at Work Act",
-      "titleKo": "피지 산업안전보건법",
-      "kind": "act",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 통합본 갱신 2026-07-08",
-      "scope": "national",
-      "scopeLabel": "Fiji 전역 · 작업장 용도",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF.CAP99A.HSWAFJ96.BODY",
-      "verificationLevel": "law-linked",
-      "note": "현행법이다. 작업장 용도의 신축·변경·해체에 대한 설계심사는 2003 General Workplace Conditions Regulations와 BPAS에서 직접 확인한다."
-    },
-    {
-      "id": "FJI-GWC-REG-2003",
-      "title": "Health and Safety at Work (General Workplace Conditions) Regulations 2003",
-      "titleKo": "산업안전보건(일반 작업장 조건)규정 2003",
-      "kind": "decree",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false; BPAS 작업장 설계절차 대조",
-      "scope": "national",
-      "scopeLabel": "Fiji 전역 · 작업장 용도",
-      "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF.CAP99A.SWRFJ03.BODY",
-      "verificationLevel": "law-linked",
-      "note": "Regulation 64의 작업장 설계 제출·심사 근거를 BPAS Step 6과 연결한다."
     }
   ],
   "requirements": [
-    {
-      "id": "FJI-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "피지에서 신축·증축·외관변경·용도변경·토공·도로개설을 추진하는 사업",
-      "requirement": "개발행위는 먼저 Development Permission을 받아야 하며 건축부지는 Town Planning·Subdivision 법체계와 지역 계획을 충족해야 한다. 필지별 용도·coverage·높이·이격·주차, cyclone·flood·coastal risk와 물·하수·전력 용량을 확인한다.",
-      "authorityIds": [
-        "dtcp-local-authority"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "FJI-PH-BUILDING-REG-1959",
-          "provisions": [
-            "Regulations 29-47 and town-planning conformity"
-          ]
-        },
-        {
-          "instrumentId": "FJI-BPAS",
-          "provisions": [
-            "Stage 1 Development Permission"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "freehold·lease·iTaukei 권원과 토지소유자 동의",
-        "DTCP 계획·Development Permission",
-        "필지별 coverage·높이·이격·주차·도로·배수",
-        "cyclone·flood·coastal·지반·유틸리티 확인"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
     {
       "id": "FJI-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
       "status": "conditional",
-      "applicability": "건축·개발허가 대상 공사와 환경영향 가능 개발제안",
-      "requirement": "정부 BPAS는 개발허가, 건축도면 승인, 건축허가를 단계화하고 EIA screening, 환경처리, 소방·OHS·도로·물·전력 승인을 연결한다. EIA 규정에 따라 Part 1·2·3 분류와 처리기관·TOR·승인조건을 확정해야 한다.",
+      "applicability": "Environment Management Act와 EIA Process Regulations에 따른 환경영향평가 선별·환경결정 대상 개발제안",
+      "requirement": "피지 환경당국은 개발제안의 위치·규모·잠재영향을 선별·분류하고, 환경영향평가 대상이면 범위설정·과업지시서, 평가서·환경관리계획, 기술·공개심사와 보완을 거쳐 비대상 확인, 승인·조건부 승인 또는 불승인을 서면 결정한다.",
       "authorityIds": [
-        "dtcp-local-authority",
-        "doe",
-        "waf",
-        "nfa",
-        "nohs"
+        "doe"
       ],
       "legalBasis": [
         {
-          "instrumentId": "FJI-PH-BUILDING-REG-1959",
+          "instrumentId": "FJI-EMA-2005",
           "provisions": [
-            "Regulations 15-26"
+            "national EIA application and administration framework"
           ]
         },
         {
           "instrumentId": "FJI-EIA-REG-2007",
           "provisions": [
-            "Parts 2-4"
+            "Part 1 application and preliminary information"
           ]
         },
         {
-          "instrumentId": "FJI-BPAS",
+          "instrumentId": "FJI-EIA-REG-2007",
           "provisions": [
-            "Stages 1-2 and inter-agency approvals"
+            "Parts 1-2 screening, classification and processing authority"
           ]
         },
         {
-          "instrumentId": "FJI-GWC-REG-2003",
+          "instrumentId": "FJI-EMA-2005",
           "provisions": [
-            "Regulation 64 workplace design"
+            "EIA study framework"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EIA-REG-2007",
+          "provisions": [
+            "Parts 2-3 scoping and terms of reference"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EMA-2005",
+          "provisions": [
+            "EIA study and report requirements"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EIA-REG-2007",
+          "provisions": [
+            "Parts 3-4 EIA study and report submission"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EMA-2005",
+          "provisions": [
+            "EIA review and public participation framework"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EIA-REG-2007",
+          "provisions": [
+            "Parts 3-4 report review and public participation"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EIA-REG-2007",
+          "provisions": [
+            "further information, report amendment and reassessment"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EMA-2005",
+          "provisions": [
+            "national EIA approval decision framework"
+          ]
+        },
+        {
+          "instrumentId": "FJI-EIA-REG-2007",
+          "provisions": [
+            "Part 4 EIA decision"
           ]
         }
       ],
       "evidenceToObtain": [
-        "개발주체·토지소유자·관할 확정",
-        "Development·Building Plan·Building Permit 체크리스트",
-        "EIA screening·분류·TOR·승인",
-        "NFA·OHS·도로·물·전력 승인과 실제 수수료·기간"
+        "환경영향평가 신청·접수기록",
+        "선별·분류·처리경로 통지",
+        "범위설정·과업지시서·평가서·환경관리계획",
+        "기술·공개심사·보완기록",
+        "서면 환경결정·승인조건"
       ],
       "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
-    },
-    {
-      "id": "FJI-BLD-REQ-006",
-      "stage": "completion",
-      "topic": "기술기준·검사·보험·준공·사용승인",
-      "status": "conditional",
-      "applicability": "공중보건 건축규정과 National Building Code 적용대상 공사",
-      "requirement": "National Building Code는 모든 점유등급의 최소 기술기준이고, 지방 building surveyor는 공사 중·완공 검사를 실시한다. 준공 후 Certificate of Completion and Permit to Occupy 또는 BPAS Certificate of Occupancy를 받아야 사용 가능하다.",
-      "authorityIds": [
-        "dtcp-local-authority",
-        "nfa"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "FJI-NBC-REG-2004",
-          "provisions": [
-            "Regulation 3"
-          ]
-        },
-        {
-          "instrumentId": "FJI-PH-BUILDING-REG-1959",
-          "provisions": [
-            "Regulations 8, 12-13 and Form 2"
-          ]
-        },
-        {
-          "instrumentId": "FJI-BPAS",
-          "provisions": [
-            "Stage 3 Certificate of Occupancy"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "적용 National Building Code·표준 목록",
-        "현지 설계·구조·소방 qualified person",
-        "foundation·structure·roof·completion 검사기록",
-        "화재검사·Certificate of Occupancy·보험 견적"
-      ],
-      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
   "permitPath": [
     {
       "order": 1,
-      "gate": "관할기관 개발허가 공식결정",
-      "decision": "관할 지방정부와 도시·지역계획국이 개발제안의 적용 도시계획안 적합성과 조건을 확정해 승인 또는 불허한다.",
+      "gate": "환경당국 환경영향평가 공식결정",
+      "decision": "환경당국이 환경영향평가 비대상, 승인·조건부 승인 또는 불승인을 서면 확정한다.",
       "dependsOn": [],
-      "output": "개발허가·승인조건 또는 불허통지"
-    },
-    {
-      "order": 2,
-      "gate": "개발허가 공식결정",
-      "decision": "관할기관이 본 개발의 계획 적합성과 승인조건을 결정한다.",
-      "dependsOn": [],
-      "output": "개발허가 또는 불허통지"
-    },
-    {
-      "order": 3,
-      "gate": "환경국·환경영향평가 행정관 환경 공식결정",
-      "decision": "환경당국이 비대상, 승인·조건부 승인 또는 불승인을 확정한다.",
-      "dependsOn": [
-        2
-      ],
       "output": "서면 환경결정·조건 또는 불승인"
-    },
-    {
-      "order": 4,
-      "gate": "관할 지방정부 건축허가 공식결정",
-      "decision": "관할 지방정부가 완비도서와 관계기관 결정을 통합심사해 건축허가·조건 또는 불허를 확정한다.",
-      "dependsOn": [
-        2,
-        3
-      ],
-      "output": "건축허가·승인도서·조건 또는 불허"
-    },
-    {
-      "order": 5,
-      "gate": "Certificate of Completion·Occupancy 공식결정",
-      "decision": "관할 지방정부가 완성공사의 승인도서·National Building Code·화재안전 적합성을 확인해 점유를 허가하거나 거부한다.",
-      "dependsOn": [],
-      "output": "Certificate of Completion and Permit to Occupy·Certificate of Occupancy 또는 거부"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "FJI-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "FJI-PH-BUILDING-REG-1959",
-          "provisions": [
-            "Regulations 29-47 and town-planning conformity"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "FJI-BLD-Q-001",
       "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 토지권원·적용 계획·Development Permission과 실제 건축수치·재해·유틸리티 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "stage": "permit",
+      "question": "본 개발제안의 환경영향평가 대상 여부와 분류, 필요한 범위설정·평가서·공중참여·보완 및 최종 환경결정은 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
       "evidenceNeeded": [
-        "freehold·lease·iTaukei 권원과 토지소유자 동의",
-        "DTCP 계획·Development Permission",
-        "필지별 coverage·높이·이격·주차·도로·배수",
-        "cyclone·flood·coastal·지반·유틸리티 확인"
+        "환경영향평가 신청·접수기록",
+        "선별·분류·처리경로 통지",
+        "범위설정·과업지시서·평가서·환경관리계획",
+        "기술·공개심사·보완기록",
+        "서면 환경결정·승인조건"
       ],
       "confirmWith": [
-        "dtcp-local-authority"
+        "doe"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
       "id": "FJI-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "FJI-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "Development Permission·부지규제의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "freehold·lease·iTaukei 권원과 토지소유자 동의",
-        "DTCP 계획·Development Permission",
-        "필지별 coverage·높이·이격·주차·도로·배수",
-        "cyclone·flood·coastal·지반·유틸리티 확인"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "FJI-BLD-Q-004",
-      "blocking": true,
-      "stage": "permit",
-      "question": "본 사업의 개발·건축허가와 EIA 분류·처리기관, 소방·OHS·유틸리티 승인 선후관계는 무엇인가?",
-      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
-      "evidenceNeeded": [
-        "개발주체·토지소유자·관할 확정",
-        "Development·Building Plan·Building Permit 체크리스트",
-        "EIA screening·분류·TOR·승인",
-        "NFA·OHS·도로·물·전력 승인과 실제 수수료·기간"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority",
-        "doe",
-        "waf",
-        "nfa",
-        "nohs"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "FJI-BLD-Q-005",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -2465,85 +638,25 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "dtcp-local-authority",
-        "doe",
-        "waf",
-        "nfa",
-        "nohs"
+        "doe"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "FJI-BLD-Q-006",
+      "id": "FJI-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
-      "question": "BPAS·EIA screening의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
+      "question": "Environment Management Act·EIA Process Regulations의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
       "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
       "evidenceNeeded": [
-        "개발주체·토지소유자·관할 확정",
-        "Development·Building Plan·Building Permit 체크리스트",
-        "EIA screening·분류·TOR·승인",
-        "NFA·OHS·도로·물·전력 승인과 실제 수수료·기간"
+        "환경영향평가 신청·접수기록",
+        "선별·분류·처리경로 통지",
+        "범위설정·과업지시서·평가서·환경관리계획",
+        "기술·공개심사·보완기록",
+        "서면 환경결정·승인조건"
       ],
       "confirmWith": [
-        "dtcp-local-authority",
-        "doe",
-        "waf",
-        "nfa",
-        "nohs"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "FJI-BLD-Q-007",
-      "blocking": true,
-      "stage": "completion",
-      "question": "필요 qualified person·법정 단계검사·NFA 승인과 Certificate of Occupancy의 실제 비용·기간은 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "적용 National Building Code·표준 목록",
-        "현지 설계·구조·소방 qualified person",
-        "foundation·structure·roof·completion 검사기록",
-        "화재검사·Certificate of Occupancy·보험 견적"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority",
-        "nfa"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "FJI-BLD-Q-008",
-      "blocking": true,
-      "stage": "completion",
-      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "전문가·시공자·검사기관 등록증과 보험증권",
-        "검사계획·시험성적서·변경승인 기록",
-        "준공·소방·사용승인 체크리스트와 실제 견적"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority",
-        "nfa"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "FJI-BLD-Q-009",
-      "blocking": false,
-      "stage": "completion",
-      "question": "National Building Code·Certificate of Occupancy의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "적용 National Building Code·표준 목록",
-        "현지 설계·구조·소방 qualified person",
-        "foundation·structure·roof·completion 검사기록",
-        "화재검사·Certificate of Occupancy·보험 견적"
-      ],
-      "confirmWith": [
-        "dtcp-local-authority",
-        "nfa"
+        "doe"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2552,87 +665,30 @@
     {
       "id": "FJI-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "FJI-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "FJI-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "FJI-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "FJI-BLD-F-005",
+      "id": "FJI-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "FJI-BLD-F-006",
+      "id": "FJI-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
-    },
-    {
-      "id": "FJI-BLD-F-007",
-      "phase": "시장조사",
-      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
-      "output": "적격기관·보험 대장"
-    },
-    {
-      "id": "FJI-BLD-F-008",
-      "phase": "기관협의",
-      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
-      "output": "검사·준공·개장 Hold Point 표"
-    },
-    {
-      "id": "FJI-BLD-F-009",
-      "phase": "보고서 반영",
-      "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
     }
   ],
   "reportReadyConclusions": [
     {
       "id": "FJI-BLD-C-001",
       "confidence": "conditional",
-      "text": "피지는 건축허가 전에 토지권원과 개발허가를 닫아야 하며, 국가 건축기준만으로 필지의 개발 가능 규모를 확정할 수 없다.",
+      "text": "피지 전역의 대상 개발제안은 환경당국의 서면 비대상 확인 또는 환경승인·조건을 확보하고 불승인 사유를 해소하기 전에는 환경평가 절차가 완료된 것으로 보지 않는다.",
       "basis": [
-        "FJI-PH-BUILDING-REG-1959",
-        "FJI-BPAS"
-      ]
-    },
-    {
-      "id": "FJI-BLD-C-002",
-      "confidence": "conditional",
-      "text": "피지는 개발허가·환경평가·건축허가가 연결되지만 서로 대체되지 않으므로 BPAS의 각 기관 완료조건을 통합 일정으로 관리해야 한다.",
-      "basis": [
-        "FJI-PH-BUILDING-REG-1959",
-        "FJI-EIA-REG-2007",
-        "FJI-BPAS",
-        "FJI-GWC-REG-2003"
-      ]
-    },
-    {
-      "id": "FJI-BLD-C-003",
-      "confidence": "conditional",
-      "text": "피지에서는 공사완료와 점유허가가 별개이므로 단계검사와 화재안전·점유증명을 인계·개장 선행조건으로 둬야 한다.",
-      "basis": [
-        "FJI-NBC-REG-2004",
-        "FJI-PH-BUILDING-REG-1959",
-        "FJI-BPAS"
+        "FJI-EMA-2005",
+        "FJI-EIA-REG-2007"
       ]
     }
   ]

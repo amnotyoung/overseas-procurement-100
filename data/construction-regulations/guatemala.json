@@ -9,12 +9,12 @@
     "iso3": "GTM",
     "region": "중남미"
   },
-  "purpose": "과테말라 ODA 건축사업의 도시계획·부지, 건축허가·환경심사, 기술검사·보험·준공 핵심 제도 3종을 공식 출처와 현지 확인질문으로 정리한다.",
+  "purpose": "과테말라 ODA 건축사업에서 전국 공통으로 확인된 건축허가·환경심사를 공식 출처와 현지 확인질문으로 정리한다.",
   "verification": {
     "status": "law-linked",
     "verifiedAt": "2026-08-07",
-    "method": "지방자치법전, 의회법령 제12-2002호(개정 포함)·관할 시 도시계획·건축규정(과테말라시 POT 공식 예시)·환경평가·통제·모니터링 규정(RECSA), 정부협정 제137-2016호(개정 포함)·재난감축기준 NRD-1 구조안전기준(협정 제01-2021호)·재난감축기준 NRD-2 공공이용 건축물 최소안전기준(협정 CN-3-2025)의 공식 법령·정부 서비스 페이지에서 제도 존재, 담당기관과 적용범위를 확인했다.",
-    "scope": "국가 기본판은 핵심 제도 3종과 공식 진입경로를 확인한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
+    "method": "MARN RECSA 개정문·환경평가 공식 서비스 안내·환경평가·통제·모니터링 규정(RECSA), 정부협정 제137-2016호(개정 포함)의 공식 법령·정부 서비스 페이지에서 전국 공통 제도와 적용범위를 확인했다.",
+    "scope": "전국 공통으로 확인된 절차만 공개한다. 조문 전수대조와 개별 필지·시설의 최종 적용판정은 상세조사에서 수행한다.",
     "limitations": [
       "비공식 한국어 요약이며 법률자문이나 관할기관의 유권해석을 대신하지 않는다.",
       "자료의 현행·운영 상태는 사이트가 자료별 상태·확인일·판단근거로 관리한다. 최신 개정 추적이 끝나지 않은 자료만 검증 예외로 별도 표시한다.",
@@ -24,500 +24,26 @@
   "processBoard": {
     "schema_version": 1,
     "profile": "gov",
-    "title": "과테말라 건축 법·제도 3축 통합 흐름",
-    "subtitle": "필지 적합성 → 건축·환경허가 → 검사·준공·사용승인",
+    "title": "과테말라 전국 공통 건축 법·제도 흐름",
+    "subtitle": "건축허가·환경심사",
     "lanes": [
       "건축주·신청인",
       "현지 설계·시공 전문가",
-      "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
-      "S1 필지·도시공간계획 조회",
-      "S2 절차등급·도서",
-      "S3 공식접수",
-      "S4 기술심사·보완",
-      "S5 도시계획 결정",
-      "P1 분류·허가도서",
-      "P2 공식접수",
-      "P3 시청결정·환경 완비성",
-      "P4 건축결정·환경 기술심사",
-      "P5 공식결정",
-      "P6 환경허가증",
-      "C1 재난저감규정 접수",
-      "C2 재난저감규정 심사·결정",
-      "C3 공사착수·감독",
-      "C4 변경·시정",
-      "C5 완료검사·시정",
-      "C6 사용결정"
+      "E1 환경범주·도구",
+      "E2 MARN 공식접수",
+      "E3 완비성·보완",
+      "E4 기술·공개의견 심사",
+      "E5 환경승인 결정",
+      "E6 환경허가증"
     ],
     "nodes": [
       {
         "id": "B01",
-        "lane": "건축주·신청인",
-        "stage": "S1 필지·도시공간계획 조회",
-        "label": "소유권·지적필지·신청권한 확정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "소유자 또는 적법한 대리인이 등기권원, 지적식별정보, 납세·대리권 자료로 신청 대상 필지와 권한을 확정한다.",
-        "action": "소유자 또는 적법한 대리인이 등기권원, 지적식별정보, 납세·대리권 자료로 신청 대상 필지와 권한을 확정한다.",
-        "outputs": [
-          "권원·지적·신청권한 자료"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT·단일창구 공식안내",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "forms and supporting-document requirements before filing"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B02",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S1 필지·도시공간계획 조회",
-        "label": "도시공간계획 G 구역·보완계획 대조",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "현지 책임전문가가 도시공간계획 지도와 보완계획에서 필지의 G 구역, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
-        "action": "현지 책임전문가가 도시공간계획 지도와 보완계획에서 필지의 G 구역, 도로·정렬선, 위험·문화재·기반시설 제한과 예정용도를 대조한다.",
-        "outputs": [
-          "필지별 도시공간계획·제약조건표"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 현행 통합문",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "territorial zones, supplementary plans and parcel development parameters"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B03",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S2 절차등급·도서",
-        "label": "DCT·JOT 절차등급 판정",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "토지관리국(Dirección de Control Territorial, DCT)이 사업의 도시공간계획 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
-        "action": "토지관리국(Dirección de Control Territorial, DCT)이 사업의 도시공간계획 절차등급을 판정해 DCT 직접결정, JOT 심의, 인접자 의견수렴 또는 시의회 연계 여부를 정한다.",
-        "outputs": [
-          "적용 절차등급·심의경로"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 공식 FAQ",
-            "instrumentId": "GTM-LOCAL-POT-EXAMPLE",
-            "provisions": [
-              "four POT procedure tiers and competent decision bodies"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B04",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S2 절차등급·도서",
-        "label": "도시계획 신청도서 작성",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 도시공간계획 적합성 자료 및 요구 의견서를 작성한다.",
-        "action": "판정된 절차등급에 맞춰 위치·경계, 예정용도·면적·높이·주차와 도시공간계획 적합성 자료 및 요구 의견서를 작성한다.",
-        "outputs": [
-          "서명된 도시계획 신청도서"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 결정절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 65-67; DCT and JOT review routes"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B05",
-        "lane": "건축주·신청인",
-        "stage": "S3 공식접수",
-        "label": "단일창구(Ventanilla Única) 공식접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인이 단일창구에 정해진 양식과 첨부자료를 제출하고 전산 접수증과 사건 조회정보를 받는다.",
-        "action": "신청인이 단일창구에 정해진 양식과 첨부자료를 제출하고 전산 접수증과 사건 조회정보를 받는다.",
-        "outputs": [
-          "접수증·사건번호·조회정보"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 Ventanilla Unica 절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "filing, intake review, system registration and notification"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B06",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 기술심사·보완",
-        "label": "도시공간계획 기술·법률 적합심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 필지·사업자료를 도시공간계획 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
-        "action": "DCT가 필지·사업자료를 도시공간계획 규범범위와 제출요건에 대조하고 필요 시 JOT 심의·인접자 의견절차를 진행한다.",
-        "outputs": [
-          "DCT 검토보고·JOT 또는 의견수렴 기록"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 현행 통합문",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 65-67; technical verification, JOT referral and neighbour consultation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B07",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S4 기술심사·보완",
-        "label": "누락·도시공간계획 불일치 보완통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "단일창구 또는 DCT가 누락서류, 규범범위 초과나 기술 불일치를 특정해 신청인에게 보완 또는 계획수정을 통지한다.",
-        "action": "단일창구 또는 DCT가 누락서류, 규범범위 초과나 기술 불일치를 특정해 신청인에게 보완 또는 계획수정을 통지한다.",
-        "outputs": [
-          "보완·계획수정 통지"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 Ventanilla Unica 절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "incomplete applications are returned; corrections are refiled through the single window"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B08",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "S4 기술심사·보완",
-        "label": "도시계획 자료 보완·재접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 지적·용도·규모·도면의 지적사항을 수정하고 단일창구를 통해 보완본을 재제출한다.",
-        "action": "책임전문가가 지적·용도·규모·도면의 지적사항을 수정하고 단일창구를 통해 보완본을 재제출한다.",
-        "outputs": [
-          "보완도서·재접수 기록"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 건축허가 서류안내",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "all dossier corrections are submitted through Ventanilla Unica"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B09",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "S5 도시계획 결정",
-        "label": "DCT·JOT 도시계획 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "적용 경로의 권한기관이 도시공간계획 적합 여부와 조건을 확정하고 보고서(informe), 의견서(dictamen), 허가서(autorización) 또는 불승인 통지를 발급한다.",
-        "action": "적용 경로의 권한기관이 도시공간계획 적합 여부와 조건을 확정하고 보고서(informe), 의견서(dictamen), 허가서(autorización) 또는 불승인 통지를 발급한다.",
-        "outputs": [
-          "도시계획 적합결정·조건 또는 불승인 통지"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-004"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 결정절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 65-67; issuance of report, licence, opinion or authorization by the applicable route"
-            ]
-          }
-        ],
-        "gateOrders": [
-          1
-        ]
-      },
-      {
-        "id": "B10",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P1 분류·허가도서",
-        "label": "건축허가 책임자·도서 확정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "시가 인정하는 책임전문가가 승인된 도시공간계획(Plan de Ordenamiento Territorial, POT) 조건, 건축·구조·설비도서, 권원, 재난저감규정(Normas de Reducción de Desastres, NRD) 제1·2호 적용자료와 관계기관 요구자료를 구성한다.",
-        "action": "시가 인정하는 책임전문가가 승인된 도시공간계획(Plan de Ordenamiento Territorial, POT) 조건, 건축·구조·설비도서, 권원, 재난저감규정(Normas de Reducción de Desastres, NRD) 제1·2호 적용자료와 관계기관 요구자료를 구성한다.",
-        "outputs": [
-          "서명·봉인된 공사허가 신청도서"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality",
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 건축공사 규정",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 80, 82 and 85; works licence, prior authorization and licence conditions"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B11",
-        "lane": "건축주·신청인",
-        "stage": "P2 공식접수",
-        "label": "건축허가 단일창구 접수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "신청인이 단일창구(Ventanilla Única)에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
-        "action": "신청인이 단일창구(Ventanilla Única)에 허가신청서와 완비도서를 제출하고 사건번호·접수증을 받는다.",
-        "outputs": [
-          "건축허가 접수증·사건번호"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 Ventanilla Unica 절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "submission, completeness intake and system registration"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B12",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P3 시청결정·환경 완비성",
-        "label": "건축도서 완비성·기술심사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 권원·책임전문가·도면의 완비성과 도시공간계획·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
-        "action": "DCT가 권원·책임전문가·도면의 완비성과 도시공간계획·건축·구조·안전기준 및 필요한 의견·허가의 충족 여부를 심사한다.",
-        "outputs": [
-          "DCT 기술·법률 심사기록"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 건축공사 규정",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 65 and 80-85; project-parameter verification and works licence review"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B13",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P3 시청결정·환경 완비성",
-        "label": "건축도서 보완·수정 통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 누락, 규정 불일치 또는 관계기관 자료 부족을 특정해 단일창구 경로로 보완·수정을 통지한다.",
-        "action": "DCT가 누락, 규정 불일치 또는 관계기관 자료 부족을 특정해 단일창구 경로로 보완·수정을 통지한다.",
-        "outputs": [
-          "건축허가 보완통지"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 건축허가 서류안내",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "technical observations and dossier corrections through Ventanilla Unica"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B14",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "P3 시청결정·환경 완비성",
-        "label": "건축도서 보완·재심사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 지적사항을 반영해 도면·계산·관계기관 자료를 수정하고 단일창구에 보완본을 다시 제출한다.",
-        "action": "책임전문가가 지적사항을 반영해 도면·계산·관계기관 자료를 수정하고 단일창구에 보완본을 다시 제출한다.",
-        "outputs": [
-          "보완 허가도서·재접수 기록"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 Ventanilla Unica 절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-VU-GUIDE",
-            "provisions": [
-              "corrections refiled through the single-window dossier"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B15",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "P4 건축결정·환경 기술심사",
-        "label": "공사허가 공식결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 공사허가를 발급하거나 불승인을 통지한다.",
-        "action": "DCT 또는 적용 권한기관이 심사를 마치고 승인도서·조건을 포함한 공사허가를 발급하거나 불승인을 통지한다.",
-        "outputs": [
-          "공사허가·승인도서·조건 또는 불승인"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-005"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 건축허가 규정",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 61, 80, 82 and 85; official works-licence decision and conditions"
-            ]
-          }
-        ],
-        "gateOrders": [
-          2
-        ]
-      },
-      {
-        "id": "B16",
         "lane": "환경·소방·검사기관",
-        "stage": "P1 분류·허가도서",
+        "stage": "E1 환경범주·도구",
         "label": "법정 환경분류목록(Listado Taxativo) 환경범주 판정",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -545,9 +71,9 @@
         ]
       },
       {
-        "id": "B17",
+        "id": "B02",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P1 분류·허가도서",
+        "stage": "E1 환경범주·도구",
         "label": "범주별 환경도구 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -558,7 +84,7 @@
           "범주별 환경도구·첨부도서"
         ],
         "authorityIds": [
-          "gtm-active-professionals",
+          "gtm-environment-consultants",
           "gtm-marn"
         ],
         "requirementIds": [
@@ -576,9 +102,9 @@
         ]
       },
       {
-        "id": "B18",
+        "id": "B03",
         "lane": "건축주·신청인",
-        "stage": "P2 공식접수",
+        "stage": "E2 MARN 공식접수",
         "label": "MARN 접수·수수료 납부",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -606,9 +132,9 @@
         ]
       },
       {
-        "id": "B19",
+        "id": "B04",
         "lane": "환경·소방·검사기관",
-        "stage": "P3 시청결정·환경 완비성",
+        "stage": "E3 완비성·보완",
         "label": "법률·기술요건 완비성 심사",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
@@ -636,9 +162,9 @@
         ]
       },
       {
-        "id": "B20",
+        "id": "B05",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P3 시청결정·환경 완비성",
+        "stage": "E3 완비성·보완",
         "label": "환경자료 보완·재접수",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -649,7 +175,7 @@
           "보완 환경도구·재접수 기록"
         ],
         "authorityIds": [
-          "gtm-active-professionals",
+          "gtm-environment-consultants",
           "gtm-marn"
         ],
         "requirementIds": [
@@ -667,9 +193,9 @@
         ]
       },
       {
-        "id": "B21",
+        "id": "B06",
         "lane": "환경·소방·검사기관",
-        "stage": "P4 건축결정·환경 기술심사",
+        "stage": "E4 기술·공개의견 심사",
         "label": "범주별 기술·공개의견 심사",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -697,9 +223,9 @@
         ]
       },
       {
-        "id": "B22",
+        "id": "B07",
         "lane": "건축주·신청인",
-        "stage": "P4 건축결정·환경 기술심사",
+        "stage": "E4 기술·공개의견 심사",
         "label": "환경 추가정보·수정 요구",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
@@ -727,9 +253,9 @@
         ]
       },
       {
-        "id": "B23",
+        "id": "B08",
         "lane": "현지 설계·시공 전문가",
-        "stage": "P4 건축결정·환경 기술심사",
+        "stage": "E4 기술·공개의견 심사",
         "label": "환경도구 수정·기술 재심사",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -740,7 +266,7 @@
           "수정 환경도구·보완답변"
         ],
         "authorityIds": [
-          "gtm-active-professionals",
+          "gtm-environment-consultants",
           "gtm-marn"
         ],
         "requirementIds": [
@@ -758,9 +284,9 @@
         ]
       },
       {
-        "id": "B24",
+        "id": "B09",
         "lane": "환경·소방·검사기관",
-        "stage": "P5 공식결정",
+        "stage": "E5 환경승인 결정",
         "label": "환경승인 결정서(resolution) 결정",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -787,13 +313,13 @@
           }
         ],
         "gateOrders": [
-          3
+          1
         ]
       },
       {
-        "id": "B25",
+        "id": "B10",
         "lane": "건축주·신청인",
-        "stage": "P6 환경허가증",
+        "stage": "E6 환경허가증",
         "label": "환경허가증 신청·납부",
         "emphasis": "normal",
         "kind": "official-guidance",
@@ -821,9 +347,9 @@
         ]
       },
       {
-        "id": "B26",
+        "id": "B11",
         "lane": "환경·소방·검사기관",
-        "stage": "P6 환경허가증",
+        "stage": "E6 환경허가증",
         "label": "MARN 환경허가증 발급결정",
         "emphasis": "key",
         "kind": "official-guidance",
@@ -850,891 +376,109 @@
           }
         ],
         "gateOrders": [
-          4
-        ]
-      },
-      {
-        "id": "B27",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C1 재난저감규정 접수",
-        "label": "재난저감규정 제2호 안전평가 도서 작성",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 재난저감규정 제1호 구조자료를 적용 범위에 맞춰 작성한다.",
-        "action": "책임전문가가 공공이용 건축물의 수용인원, 피난경로·출구, 표지, 비상계획과 재난저감규정 제1호 구조자료를 적용 범위에 맞춰 작성한다.",
-        "outputs": [
-          "재난저감규정 제2호 평가도서·구조안전 자료"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED NRD-2 현행 공식안내",
-            "instrumentId": "GTM-NRD2-2025",
-            "provisions": [
-              "public-use occupancy, egress, signage and emergency-plan requirements"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B28",
-        "lane": "건축주·신청인",
-        "stage": "C1 재난저감규정 접수",
-        "label": "SIPROCODE 재난저감규정 제2호 자료제출",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "적용 사업의 실행기관 또는 신청인이 SIPROCODE에 도서와 요구자료를 등록·제출한다.",
-        "action": "적용 사업의 실행기관 또는 신청인이 SIPROCODE에 도서와 요구자료를 등록·제출한다.",
-        "outputs": [
-          "SIPROCODE 제출·사건기록"
-        ],
-        "authorityIds": [
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED SIPROCODE 공식절차",
-            "instrumentId": "GTM-CONRED-SIPROCODE-GUIDE",
-            "provisions": [
-              "executing-unit upload and formal submission of project information"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B29",
-        "lane": "환경·소방·검사기관",
-        "stage": "C2 재난저감규정 심사·결정",
-        "label": "CONRED 재난저감규정 제2호 기술평가",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "CONRED가 제출요건과 사업정보를 확인하고 재난저감규정 제2호 안전기준에 대한 기술평가를 수행한다.",
-        "action": "CONRED가 제출요건과 사업정보를 확인하고 재난저감규정 제2호 안전기준에 대한 기술평가를 수행한다.",
-        "outputs": [
-          "재난저감규정 제2호 기술평가기록"
-        ],
-        "authorityIds": [
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED SIPROCODE 공식절차",
-            "instrumentId": "GTM-CONRED-SIPROCODE-GUIDE",
-            "provisions": [
-              "verification of requirements, project information and NRD-2 compliance"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B30",
-        "lane": "건축주·신청인",
-        "stage": "C2 재난저감규정 심사·결정",
-        "label": "재난저감규정 제2호 수정·명확화 요구",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "CONRED가 기준 미충족이나 정보 부족을 특정해 수정(modificación) 또는 명확화(aclaración) 요구를 발행한다.",
-        "action": "CONRED가 기준 미충족이나 정보 부족을 특정해 수정(modificación) 또는 명확화(aclaración) 요구를 발행한다.",
-        "outputs": [
-          "재난저감규정 제2호 수정·명확화 요구"
-        ],
-        "authorityIds": [
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED SIPROCODE 공식절차",
-            "instrumentId": "GTM-CONRED-SIPROCODE-GUIDE",
-            "provisions": [
-              "issuance of modification or clarification requirement"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B31",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C2 재난저감규정 심사·결정",
-        "label": "재난저감규정 제2호 보완·재평가",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 피난·수용인원·표지·비상계획 자료를 수정해 SIPROCODE로 다시 제출한다.",
-        "action": "책임전문가가 피난·수용인원·표지·비상계획 자료를 수정해 SIPROCODE로 다시 제출한다.",
-        "outputs": [
-          "수정 재난저감규정 제2호 도서·재제출 기록"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED SIPROCODE 공식절차",
-            "instrumentId": "GTM-CONRED-SIPROCODE-GUIDE",
-            "provisions": [
-              "response to modification or clarification and re-evaluation"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B32",
-        "lane": "환경·소방·검사기관",
-        "stage": "C2 재난저감규정 심사·결정",
-        "label": "재난저감규정 제2호 평가보고서(Informe de Evaluación) 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "CONRED가 적합성을 확인해 SIPROCODE에서 내려받을 수 있는 공식 평가보고서를 발급하거나 미충족 결정을 통지한다.",
-        "action": "CONRED가 적합성을 확인해 SIPROCODE에서 내려받을 수 있는 공식 평가보고서를 발급하거나 미충족 결정을 통지한다.",
-        "outputs": [
-          "재난저감규정 제2호 평가보고서 또는 미충족 통지"
-        ],
-        "authorityIds": [
-          "gtm-conred"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "CONRED SIPROCODE 공식절차",
-            "instrumentId": "GTM-CONRED-SIPROCODE-GUIDE",
-            "provisions": [
-              "issuance and download of the Evaluation Report"
-            ]
-          }
-        ],
-        "gateOrders": [
-          5
-        ]
-      },
-      {
-        "id": "B33",
-        "lane": "건축주·신청인",
-        "stage": "C3 공사착수·감독",
-        "label": "허가조건·승인도서로 공사착수",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "유효한 공사허가(Licencia de Obra), 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
-        "action": "유효한 공사허가(Licencia de Obra), 승인도서와 책임전문가를 갖춘 뒤 공사에 착수하고 현장에 허가·도서를 비치한다.",
-        "outputs": [
-          "합법적 착공·현장 허가도서"
-        ],
-        "authorityIds": [
-          "gtm-municipality",
-          "gtm-active-professionals"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 공사조건",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 85; licence conditions, approved plans and access for inspection"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B34",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C3 공사착수·감독",
-        "label": "DCT 공사 중 적합감독",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 현장 출입과 승인도서 확인을 통해 허가 프로젝트와 조건에 맞게 시공되는지 감독한다.",
-        "action": "DCT가 현장 출입과 승인도서 확인을 통해 허가 프로젝트와 조건에 맞게 시공되는지 감독한다.",
-        "outputs": [
-          "공사검사·감독기록"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 현행 통합문",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 64; supervision of authorized works and access to plans and licence"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B35",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C4 변경·시정",
-        "label": "무단변경·불일치 시정통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "승인도서 또는 허가조건과 다른 공사에 대해 DCT가 시정·중지 또는 변경허가 취득을 요구한다.",
-        "action": "승인도서 또는 허가조건과 다른 공사에 대해 DCT가 시정·중지 또는 변경허가 취득을 요구한다.",
-        "outputs": [
-          "시정·중지·변경허가 요구"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 공사조건",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 85; prior authorization for modifications and inspection access"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B36",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C4 변경·시정",
-        "label": "시정·변경허가 후 재검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 현장불일치를 시정하거나 변경도서를 승인받아 공사를 정합화하고 재검사를 요청한다.",
-        "action": "책임전문가가 현장불일치를 시정하거나 변경도서를 승인받아 공사를 정합화하고 재검사를 요청한다.",
-        "outputs": [
-          "시정완료·변경승인·재검사 요청"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 공사조건",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 85; authorized modifications and continued supervision"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B37",
-        "lane": "건축주·신청인",
-        "stage": "C5 완료검사·시정",
-        "label": "공사적합 완료검사 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 공사적합증명 검사를 요청한다.",
-        "action": "공사완료 후 신청인이 승인도서·변경승인과 완료자료를 제출해 공사적합증명 검사를 요청한다.",
-        "outputs": [
-          "완료검사 신청·완료도서"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 완료절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 64 and 88; final conformity verification"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B38",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C5 완료검사·시정",
-        "label": "DCT 최종 적합검사",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 공사적합 여부를 검사한다.",
-        "action": "DCT가 완성공사를 허가 프로젝트·승인도서·조건과 대조해 공사적합 여부를 검사한다.",
-        "outputs": [
-          "최종검사 기록·적합 또는 결함목록"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 완료절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 88; verification that construction conforms to the authorized project"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B39",
-        "lane": "환경·소방·검사기관",
-        "stage": "C5 완료검사·시정",
-        "label": "완료검사 결함·불일치 통지",
-        "emphasis": "bottleneck",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "완성공사가 승인도서와 다르면 DCT가 물리적 시정 또는 필요한 변경정합화 사항을 특정한다.",
-        "action": "완성공사가 승인도서와 다르면 DCT가 물리적 시정 또는 필요한 변경정합화 사항을 특정한다.",
-        "outputs": [
-          "완료검사 결함·불일치 통지"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 완료절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 88; conformity required before certificate issuance"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B40",
-        "lane": "현지 설계·시공 전문가",
-        "stage": "C5 완료검사·시정",
-        "label": "완료결함 시정·재검사",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "책임전문가가 결함을 시정하고 변경승인·완료자료를 정리해 최종검사를 다시 요청한다.",
-        "action": "책임전문가가 결함을 시정하고 변경승인·완료자료를 정리해 최종검사를 다시 요청한다.",
-        "outputs": [
-          "완료시정 증빙·재검사 요청"
-        ],
-        "authorityIds": [
-          "gtm-active-professionals",
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 완료절차",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 85 and 88; authorized changes and final conformity"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B41",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C6 사용결정",
-        "label": "공사적합증명서 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 공사적합증명서를 발급하거나 미적합 결정을 통지한다.",
-        "action": "DCT가 승인 프로젝트에 맞게 완성되었음을 확인해 공사적합증명서를 발급하거나 미적합 결정을 통지한다.",
-        "outputs": [
-          "공사적합증명서 또는 미적합 통지"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT 완료·사용 규정",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "article 88; conformity certificate authorizing occupancy of the completed work"
-            ]
-          }
-        ],
-        "gateOrders": [
-          6
-        ]
-      },
-      {
-        "id": "B42",
-        "lane": "건축주·신청인",
-        "stage": "C6 사용결정",
-        "label": "필요한 토지사용허가증 신청",
-        "emphasis": "normal",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "예정 운영에 별도 토지사용허가증 또는 공개시설 개설허가가 필요한 경우 신청인이 공사적합증명서와 운영자료를 제출한다.",
-        "action": "예정 운영에 별도 토지사용허가증 또는 공개시설 개설허가가 필요한 경우 신청인이 공사적합증명서와 운영자료를 제출한다.",
-        "outputs": [
-          "토지사용·영업 관련 허가증 신청"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT licence 종류",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 61 and 88; works licence does not replace applicable land-use or public-establishment licences"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "B43",
-        "lane": "도시계획·건축 허가기관",
-        "stage": "C6 사용결정",
-        "label": "토지사용·개장허가증 결정",
-        "emphasis": "key",
-        "kind": "official-guidance",
-        "basisScope": "node",
-        "note": "DCT 또는 해당 시 부서가 공사적합증명서와 운영용도 적합성을 확인해 필요한 토지사용·개장허가증을 발급하거나 불승인한다.",
-        "action": "DCT 또는 해당 시 부서가 공사적합증명서와 운영용도 적합성을 확인해 필요한 토지사용·개장허가증을 발급하거나 불승인한다.",
-        "outputs": [
-          "토지사용·개장허가증 또는 불승인"
-        ],
-        "authorityIds": [
-          "gtm-municipality"
-        ],
-        "requirementIds": [
-          "GTM-BLD-REQ-006"
-        ],
-        "questionIds": [],
-        "refs": [
-          {
-            "source": "과테말라시 POT licence 종류",
-            "instrumentId": "GTM-GUATEMALA-CITY-POT-2024",
-            "provisions": [
-              "articles 61 and 88; separate land-use and establishment authorization where applicable"
-            ]
-          }
-        ],
-        "gateOrders": [
-          7
+          2
         ]
       }
     ],
     "edges": [
       {
-        "id": "BS04-01",
+        "id": "BS05-01",
         "source": "B01",
         "target": "B02",
-        "type": "sequence",
-        "label": "필지확정"
-      },
-      {
-        "id": "BS04-02",
-        "source": "B02",
-        "target": "B03",
-        "type": "sequence",
-        "label": "도시공간계획 대조"
-      },
-      {
-        "id": "BS04-03",
-        "source": "B03",
-        "target": "B04",
-        "type": "sequence",
-        "label": "절차등급"
-      },
-      {
-        "id": "BS04-04",
-        "source": "B04",
-        "target": "B05",
-        "type": "sequence",
-        "label": "신청도서"
-      },
-      {
-        "id": "BS04-05",
-        "source": "B05",
-        "target": "B06",
-        "type": "sequence",
-        "label": "공식접수"
-      },
-      {
-        "id": "BS04-06",
-        "source": "B06",
-        "target": "B09",
-        "type": "sequence",
-        "label": "적합"
-      },
-      {
-        "id": "BS04-07",
-        "source": "B06",
-        "target": "B07",
-        "type": "message",
-        "label": "누락·불일치"
-      },
-      {
-        "id": "BS04-08",
-        "source": "B07",
-        "target": "B08",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS04-09",
-        "source": "B08",
-        "target": "B06",
-        "type": "loop",
-        "label": "보완 후 재심사"
-      },
-      {
-        "id": "BX05",
-        "source": "B09",
-        "target": "B10",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS05-01",
-        "source": "B10",
-        "target": "B16",
-        "type": "message",
-        "label": "병렬 환경분류"
-      },
-      {
-        "id": "BS05-02",
-        "source": "B10",
-        "target": "B11",
-        "type": "sequence",
-        "label": "건축허가 도서"
-      },
-      {
-        "id": "BS05-03",
-        "source": "B11",
-        "target": "B12",
-        "type": "sequence",
-        "label": "시청 접수"
-      },
-      {
-        "id": "BS05-04",
-        "source": "B12",
-        "target": "B15",
-        "type": "sequence",
-        "label": "건축 적합"
-      },
-      {
-        "id": "BS05-05",
-        "source": "B12",
-        "target": "B13",
-        "type": "message",
-        "label": "누락·불일치"
-      },
-      {
-        "id": "BS05-06",
-        "source": "B13",
-        "target": "B14",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS05-07",
-        "source": "B14",
-        "target": "B12",
-        "type": "loop",
-        "label": "보완 후 건축 재심사"
-      },
-      {
-        "id": "BS05-08",
-        "source": "B16",
-        "target": "B17",
         "type": "sequence",
         "label": "환경범주"
       },
       {
-        "id": "BS05-09",
-        "source": "B17",
-        "target": "B18",
+        "id": "BS05-02",
+        "source": "B02",
+        "target": "B03",
         "type": "sequence",
         "label": "환경도구"
       },
       {
-        "id": "BS05-10",
-        "source": "B18",
-        "target": "B19",
+        "id": "BS05-03",
+        "source": "B03",
+        "target": "B04",
         "type": "sequence",
         "label": "MARN 접수"
       },
       {
-        "id": "BS05-11",
-        "source": "B19",
-        "target": "B21",
+        "id": "BS05-04",
+        "source": "B04",
+        "target": "B06",
         "type": "sequence",
         "label": "완비"
       },
       {
-        "id": "BS05-12",
-        "source": "B19",
-        "target": "B20",
+        "id": "BS05-05",
+        "source": "B04",
+        "target": "B05",
         "type": "message",
         "label": "요건 누락"
       },
       {
-        "id": "BS05-13",
-        "source": "B20",
-        "target": "B19",
+        "id": "BS05-06",
+        "source": "B05",
+        "target": "B04",
         "type": "loop",
         "label": "보완 후 완비성 재심사"
       },
       {
-        "id": "BS05-14",
-        "source": "B21",
-        "target": "B24",
+        "id": "BS05-07",
+        "source": "B06",
+        "target": "B09",
         "type": "sequence",
         "label": "기술 적합"
       },
       {
-        "id": "BS05-15",
-        "source": "B21",
-        "target": "B22",
+        "id": "BS05-08",
+        "source": "B06",
+        "target": "B07",
         "type": "message",
         "label": "추가정보 필요"
       },
       {
-        "id": "BS05-16",
-        "source": "B22",
-        "target": "B23",
+        "id": "BS05-09",
+        "source": "B07",
+        "target": "B08",
         "type": "sequence",
         "label": "수정요구"
       },
       {
-        "id": "BS05-17",
-        "source": "B23",
-        "target": "B21",
+        "id": "BS05-10",
+        "source": "B08",
+        "target": "B06",
         "type": "loop",
         "label": "수정 후 기술 재심사"
       },
       {
-        "id": "BS05-18",
-        "source": "B24",
-        "target": "B25",
+        "id": "BS05-11",
+        "source": "B09",
+        "target": "B10",
         "type": "sequence",
         "label": "환경승인"
       },
       {
-        "id": "BS05-19",
-        "source": "B25",
-        "target": "B26",
+        "id": "BS05-12",
+        "source": "B10",
+        "target": "B11",
         "type": "sequence",
         "label": "환경허가증 신청"
-      },
-      {
-        "id": "BX06",
-        "source": "B26",
-        "target": "B27",
-        "type": "message",
-        "label": "다음 제도축 입력"
-      },
-      {
-        "id": "BS06-01",
-        "source": "B27",
-        "target": "B28",
-        "type": "sequence",
-        "label": "재난저감규정 도서"
-      },
-      {
-        "id": "BS06-02",
-        "source": "B28",
-        "target": "B29",
-        "type": "sequence",
-        "label": "SIPROCODE 접수"
-      },
-      {
-        "id": "BS06-03",
-        "source": "B29",
-        "target": "B32",
-        "type": "sequence",
-        "label": "재난저감규정 제2호 적합"
-      },
-      {
-        "id": "BS06-04",
-        "source": "B29",
-        "target": "B30",
-        "type": "message",
-        "label": "수정·명확화"
-      },
-      {
-        "id": "BS06-05",
-        "source": "B30",
-        "target": "B31",
-        "type": "sequence",
-        "label": "보완요구"
-      },
-      {
-        "id": "BS06-06",
-        "source": "B31",
-        "target": "B29",
-        "type": "loop",
-        "label": "보완 후 재난저감규정 재평가"
-      },
-      {
-        "id": "BS06-07",
-        "source": "B32",
-        "target": "B33",
-        "type": "sequence",
-        "label": "안전평가 완료"
-      },
-      {
-        "id": "BS06-08",
-        "source": "B33",
-        "target": "B34",
-        "type": "sequence",
-        "label": "공사착수"
-      },
-      {
-        "id": "BS06-09",
-        "source": "B34",
-        "target": "B37",
-        "type": "sequence",
-        "label": "공사 적합"
-      },
-      {
-        "id": "BS06-10",
-        "source": "B34",
-        "target": "B35",
-        "type": "message",
-        "label": "현장 불일치"
-      },
-      {
-        "id": "BS06-11",
-        "source": "B35",
-        "target": "B36",
-        "type": "sequence",
-        "label": "시정·변경"
-      },
-      {
-        "id": "BS06-12",
-        "source": "B36",
-        "target": "B34",
-        "type": "loop",
-        "label": "시정 후 공사 재검사"
-      },
-      {
-        "id": "BS06-13",
-        "source": "B37",
-        "target": "B38",
-        "type": "sequence",
-        "label": "완료검사"
-      },
-      {
-        "id": "BS06-14",
-        "source": "B38",
-        "target": "B41",
-        "type": "sequence",
-        "label": "완료 적합"
-      },
-      {
-        "id": "BS06-15",
-        "source": "B38",
-        "target": "B39",
-        "type": "message",
-        "label": "결함·불일치"
-      },
-      {
-        "id": "BS06-16",
-        "source": "B39",
-        "target": "B40",
-        "type": "sequence",
-        "label": "시정요구"
-      },
-      {
-        "id": "BS06-17",
-        "source": "B40",
-        "target": "B38",
-        "type": "loop",
-        "label": "시정 후 완료 재검사"
-      },
-      {
-        "id": "BS06-18",
-        "source": "B41",
-        "target": "B42",
-        "type": "sequence",
-        "label": "공사적합증명"
-      },
-      {
-        "id": "BS06-19",
-        "source": "B42",
-        "target": "B43",
-        "type": "sequence",
-        "label": "해당 시 개장심사"
       }
     ]
   },
   "publicModels": [
     {
-      "id": "site-urban",
-      "slug": "guatemala-site-urban-construction-regulations",
-      "priority": 4,
-      "name": "과테말라 필지규제·도시계획 결정 — 과테말라시 사례",
-      "oneLiner": "관할 municipality의 POT·토지이용 licence와 권원·지적정보로 필지별 개발조건을 확정한다.",
-      "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "지방자치단체별 절차 중 과테말라시 POT와 Ventanilla Unica의 실제 경로를 구성했다. G-zone, 건축수치, 양식과 결정기관은 과테말라시 사례이며 다른 municipality에는 해당 시의 현행 계획·조례·지적절차를 적용한다.",
+      "id": "permit-environment",
+      "slug": "guatemala-permit-environment-construction-regulations",
+      "priority": 5,
+      "name": "과테말라 MARN 환경평가·환경승인·환경허가증 절차",
+      "oneLiner": "MARN 법정 분류목록의 환경범주 판정부터 환경도구 심사·환경허가증까지 관리한다.",
+      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
+      "verificationScope": "MARN의 전국 RECSA 환경평가·승인·환경허가증 발급 경로를 공식 규정과 현행 서비스로 구성했다. 적용 환경범주와 환경도구는 신청 시점의 MARN 법정 환경분류목록(Listado Taxativo)으로 확정한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "과테말라시에서 필지를 특정하고 도시공간계획(Plan de Ordenamiento Territorial, POT)의 G 구역(G-zone)·허용용도·절차등급을 판정한 뒤 DCT 또는 JOT의 공식 도시계획 결정을 받는 절차다. 과테말라시 수치와 기관을 전국에 일반화하지 않는다.",
+      "publicationScope": "national",
+      "procedureScope": "과테말라 전역에서 MARN이 법정 환경분류목록에 따라 사업을 분류하고 범주별 환경도구의 완비성·기술·공개의견을 심사해 환경승인 결정서와 적용되는 환경허가증(licencia)을 발급하는 국가 절차다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1744,10 +488,12 @@
         "B06",
         "B07",
         "B08",
-        "B09"
+        "B09",
+        "B10",
+        "B11"
       ],
       "requirementIds": [
-        "GTM-BLD-REQ-004"
+        "GTM-BLD-REQ-005"
       ],
       "questionIds": [
         "GTM-BLD-Q-001",
@@ -1757,9 +503,7 @@
       "conclusionIds": [
         "GTM-BLD-C-001"
       ],
-      "siteOverlayIds": [
-        "GTM-LOCAL-OVERLAY-001"
-      ],
+      "siteOverlayIds": [],
       "fieldworkChecklistIds": [
         "GTM-BLD-F-001",
         "GTM-BLD-F-002",
@@ -1767,264 +511,86 @@
       ],
       "edges": [
         {
-          "id": "M04-E01",
+          "id": "M05-E01",
           "source": "B01",
           "target": "B02",
-          "type": "sequence",
-          "label": "필지확정"
-        },
-        {
-          "id": "M04-E02",
-          "source": "B02",
-          "target": "B03",
-          "type": "sequence",
-          "label": "도시공간계획 대조"
-        },
-        {
-          "id": "M04-E03",
-          "source": "B03",
-          "target": "B04",
-          "type": "sequence",
-          "label": "절차등급"
-        },
-        {
-          "id": "M04-E04",
-          "source": "B04",
-          "target": "B05",
-          "type": "sequence",
-          "label": "신청도서"
-        },
-        {
-          "id": "M04-E05",
-          "source": "B05",
-          "target": "B06",
-          "type": "sequence",
-          "label": "공식접수"
-        },
-        {
-          "id": "M04-E06",
-          "source": "B06",
-          "target": "B09",
-          "type": "sequence",
-          "label": "적합"
-        },
-        {
-          "id": "M04-E07",
-          "source": "B06",
-          "target": "B07",
-          "type": "message",
-          "label": "누락·불일치"
-        },
-        {
-          "id": "M04-E08",
-          "source": "B07",
-          "target": "B08",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M04-E09",
-          "source": "B08",
-          "target": "B06",
-          "type": "loop",
-          "label": "보완 후 재심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "도시공간계획 적합결정",
-          "action": "확정된 용도·도시계획 조건으로 공사허가(Licencia de Obra) 도서를 작성한다."
-        },
-        {
-          "state": "rework",
-          "label": "보완·조건부 결정",
-          "action": "지적·용도·규모자료를 보완하거나 조건을 계획에 반영해 재심사를 받는다."
-        },
-        {
-          "state": "reject",
-          "label": "도시공간계획 부적합",
-          "action": "해당 용도·규모의 신청을 중단하고 적법한 계획변경 또는 대체부지를 검토한다."
-        }
-      ]
-    },
-    {
-      "id": "permit-environment",
-      "slug": "guatemala-permit-environment-construction-regulations",
-      "priority": 5,
-      "name": "과테말라 건축허가·MARN 환경승인 — 과테말라시 건축허가 사례",
-      "oneLiner": "지방 건축 licence와 MARN taxative list의 환경범주·환경도구 승인을 하나의 선행일정으로 관리한다.",
-      "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
-      "verificationScope": "과테말라시 건축허가와 전국 MARN RECSA 환경평가·승인 경로를 각각 실제 절차로 구성했다. 지방 건축허가 경로는 과테말라시 사례이며 환경범주는 신청 시점의 MARN Listado Taxativo로 확정해야 한다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "과테말라시 공사허가(Licencia de Obra)와 MARN의 A·B1·B2·C 환경도구 심사·환경승인·환경허가증(licencia) 발급을 병렬로 표시한다. 두 결정은 서로 대체하지 않으며 다른 지방자치단체에는 해당 지방절차를 적용한다.",
-      "nodeIds": [
-        "B10",
-        "B11",
-        "B12",
-        "B13",
-        "B14",
-        "B15",
-        "B16",
-        "B17",
-        "B18",
-        "B19",
-        "B20",
-        "B21",
-        "B22",
-        "B23",
-        "B24",
-        "B25",
-        "B26"
-      ],
-      "requirementIds": [
-        "GTM-BLD-REQ-005"
-      ],
-      "questionIds": [
-        "GTM-BLD-Q-004",
-        "GTM-BLD-Q-005",
-        "GTM-BLD-Q-006"
-      ],
-      "conclusionIds": [
-        "GTM-BLD-C-002"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "GTM-BLD-F-004",
-        "GTM-BLD-F-005",
-        "GTM-BLD-F-006"
-      ],
-      "edges": [
-        {
-          "id": "M05-E01",
-          "source": "B10",
-          "target": "B16",
-          "type": "message",
-          "label": "병렬 환경분류"
-        },
-        {
-          "id": "M05-E02",
-          "source": "B10",
-          "target": "B11",
-          "type": "sequence",
-          "label": "건축허가 도서"
-        },
-        {
-          "id": "M05-E03",
-          "source": "B11",
-          "target": "B12",
-          "type": "sequence",
-          "label": "시청 접수"
-        },
-        {
-          "id": "M05-E04",
-          "source": "B12",
-          "target": "B15",
-          "type": "sequence",
-          "label": "건축 적합"
-        },
-        {
-          "id": "M05-E05",
-          "source": "B12",
-          "target": "B13",
-          "type": "message",
-          "label": "누락·불일치"
-        },
-        {
-          "id": "M05-E06",
-          "source": "B13",
-          "target": "B14",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M05-E07",
-          "source": "B14",
-          "target": "B12",
-          "type": "loop",
-          "label": "보완 후 건축 재심사"
-        },
-        {
-          "id": "M05-E08",
-          "source": "B16",
-          "target": "B17",
           "type": "sequence",
           "label": "환경범주"
         },
         {
-          "id": "M05-E09",
-          "source": "B17",
-          "target": "B18",
+          "id": "M05-E02",
+          "source": "B02",
+          "target": "B03",
           "type": "sequence",
           "label": "환경도구"
         },
         {
-          "id": "M05-E10",
-          "source": "B18",
-          "target": "B19",
+          "id": "M05-E03",
+          "source": "B03",
+          "target": "B04",
           "type": "sequence",
           "label": "MARN 접수"
         },
         {
-          "id": "M05-E11",
-          "source": "B19",
-          "target": "B21",
+          "id": "M05-E04",
+          "source": "B04",
+          "target": "B06",
           "type": "sequence",
           "label": "완비"
         },
         {
-          "id": "M05-E12",
-          "source": "B19",
-          "target": "B20",
+          "id": "M05-E05",
+          "source": "B04",
+          "target": "B05",
           "type": "message",
           "label": "요건 누락"
         },
         {
-          "id": "M05-E13",
-          "source": "B20",
-          "target": "B19",
+          "id": "M05-E06",
+          "source": "B05",
+          "target": "B04",
           "type": "loop",
           "label": "보완 후 완비성 재심사"
         },
         {
-          "id": "M05-E14",
-          "source": "B21",
-          "target": "B24",
+          "id": "M05-E07",
+          "source": "B06",
+          "target": "B09",
           "type": "sequence",
           "label": "기술 적합"
         },
         {
-          "id": "M05-E15",
-          "source": "B21",
-          "target": "B22",
+          "id": "M05-E08",
+          "source": "B06",
+          "target": "B07",
           "type": "message",
           "label": "추가정보 필요"
         },
         {
-          "id": "M05-E16",
-          "source": "B22",
-          "target": "B23",
+          "id": "M05-E09",
+          "source": "B07",
+          "target": "B08",
           "type": "sequence",
           "label": "수정요구"
         },
         {
-          "id": "M05-E17",
-          "source": "B23",
-          "target": "B21",
+          "id": "M05-E10",
+          "source": "B08",
+          "target": "B06",
           "type": "loop",
           "label": "수정 후 기술 재심사"
         },
         {
-          "id": "M05-E18",
-          "source": "B24",
-          "target": "B25",
+          "id": "M05-E11",
+          "source": "B09",
+          "target": "B10",
           "type": "sequence",
           "label": "환경승인"
         },
         {
-          "id": "M05-E19",
-          "source": "B25",
-          "target": "B26",
+          "id": "M05-E12",
+          "source": "B10",
+          "target": "B11",
           "type": "sequence",
           "label": "환경허가증 신청"
         }
@@ -2032,230 +598,23 @@
       "decisionBranches": [
         {
           "state": "success",
-          "label": "건축허가·환경결정 충족",
-          "action": "모든 적용 허가·환경조건을 입찰·착공조건에 반영하고 유효기간 내 착공한다."
+          "label": "환경승인·환경허가증 확보",
+          "action": "MARN 결정서와 적용되는 환경허가증의 조건을 환경관리계획·계약·착공 선행조건에 반영한다."
         },
         {
           "state": "rework",
-          "label": "보완·조건부 승인",
-          "action": "시청 또는 MARN의 보완·조건을 도서와 환경관리계획에 반영해 해당 심사로 회귀한다."
+          "label": "완비성·기술 보완 또는 조건부 승인",
+          "action": "MARN이 통지한 누락·추가정보·승인조건을 환경도구와 관리조치에 반영해 해당 심사단계로 재제출한다."
         },
         {
           "state": "reject",
-          "label": "건축 또는 환경 불승인",
-          "action": "불승인 사유를 해소할 적법한 재설계·재신청 가능성이 없으면 해당 안으로 착공하지 않는다."
-        }
-      ]
-    },
-    {
-      "id": "control-completion",
-      "slug": "guatemala-control-completion-construction-regulations",
-      "priority": 6,
-      "name": "과테말라 재난저감규정(Normas de Reducción de Desastres, NRD) 안전검토·공사검사·사용결정 — 과테말라시 완료절차 사례",
-      "oneLiner": "현행 등록 전문가, NRD-1 구조안전·NRD-2 피난안전과 지방검사·obra conforme를 개장 Gate로 둔다.",
-      "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
-      "verificationScope": "과테말라시 POT의 공사감독·obra conforme와 CONRED SIPROCODE의 NRD-2 평가절차를 구성했다. CONRED 경로는 해당 공공이용·공공투자 사업에 적용하고, 지방 최종검사·사용서류 명칭은 관할 municipality별로 달라진다.",
-      "procedureStatus": "official-source-linked",
-      "procedureScope": "공공이용 건축물의 재난저감규정 제2호 설계평가, 허가조건에 따른 공사 중 DCT 감독, 준공 후 공사적합증명서(constancia de obra conforme)와 필요한 토지사용허가증(Licencia de Uso del Suelo) 결정을 표시한다.",
-      "nodeIds": [
-        "B27",
-        "B28",
-        "B29",
-        "B30",
-        "B31",
-        "B32",
-        "B33",
-        "B34",
-        "B35",
-        "B36",
-        "B37",
-        "B38",
-        "B39",
-        "B40",
-        "B41",
-        "B42",
-        "B43"
-      ],
-      "requirementIds": [
-        "GTM-BLD-REQ-006"
-      ],
-      "questionIds": [
-        "GTM-BLD-Q-007",
-        "GTM-BLD-Q-008",
-        "GTM-BLD-Q-009"
-      ],
-      "conclusionIds": [
-        "GTM-BLD-C-003"
-      ],
-      "siteOverlayIds": [],
-      "fieldworkChecklistIds": [
-        "GTM-BLD-F-007",
-        "GTM-BLD-F-008",
-        "GTM-BLD-F-009"
-      ],
-      "edges": [
-        {
-          "id": "M06-E01",
-          "source": "B27",
-          "target": "B28",
-          "type": "sequence",
-          "label": "재난저감규정 도서"
-        },
-        {
-          "id": "M06-E02",
-          "source": "B28",
-          "target": "B29",
-          "type": "sequence",
-          "label": "SIPROCODE 접수"
-        },
-        {
-          "id": "M06-E03",
-          "source": "B29",
-          "target": "B32",
-          "type": "sequence",
-          "label": "재난저감규정 제2호 적합"
-        },
-        {
-          "id": "M06-E04",
-          "source": "B29",
-          "target": "B30",
-          "type": "message",
-          "label": "수정·명확화"
-        },
-        {
-          "id": "M06-E05",
-          "source": "B30",
-          "target": "B31",
-          "type": "sequence",
-          "label": "보완요구"
-        },
-        {
-          "id": "M06-E06",
-          "source": "B31",
-          "target": "B29",
-          "type": "loop",
-          "label": "보완 후 재난저감규정 재평가"
-        },
-        {
-          "id": "M06-E07",
-          "source": "B32",
-          "target": "B33",
-          "type": "sequence",
-          "label": "안전평가 완료"
-        },
-        {
-          "id": "M06-E08",
-          "source": "B33",
-          "target": "B34",
-          "type": "sequence",
-          "label": "공사착수"
-        },
-        {
-          "id": "M06-E09",
-          "source": "B34",
-          "target": "B37",
-          "type": "sequence",
-          "label": "공사 적합"
-        },
-        {
-          "id": "M06-E10",
-          "source": "B34",
-          "target": "B35",
-          "type": "message",
-          "label": "현장 불일치"
-        },
-        {
-          "id": "M06-E11",
-          "source": "B35",
-          "target": "B36",
-          "type": "sequence",
-          "label": "시정·변경"
-        },
-        {
-          "id": "M06-E12",
-          "source": "B36",
-          "target": "B34",
-          "type": "loop",
-          "label": "시정 후 공사 재검사"
-        },
-        {
-          "id": "M06-E13",
-          "source": "B37",
-          "target": "B38",
-          "type": "sequence",
-          "label": "완료검사"
-        },
-        {
-          "id": "M06-E14",
-          "source": "B38",
-          "target": "B41",
-          "type": "sequence",
-          "label": "완료 적합"
-        },
-        {
-          "id": "M06-E15",
-          "source": "B38",
-          "target": "B39",
-          "type": "message",
-          "label": "결함·불일치"
-        },
-        {
-          "id": "M06-E16",
-          "source": "B39",
-          "target": "B40",
-          "type": "sequence",
-          "label": "시정요구"
-        },
-        {
-          "id": "M06-E17",
-          "source": "B40",
-          "target": "B38",
-          "type": "loop",
-          "label": "시정 후 완료 재검사"
-        },
-        {
-          "id": "M06-E18",
-          "source": "B41",
-          "target": "B42",
-          "type": "sequence",
-          "label": "공사적합증명"
-        },
-        {
-          "id": "M06-E19",
-          "source": "B42",
-          "target": "B43",
-          "type": "sequence",
-          "label": "해당 시 개장심사"
-        }
-      ],
-      "decisionBranches": [
-        {
-          "state": "success",
-          "label": "안전·완료·사용 승인",
-          "action": "재난저감규정 평가와 공사적합증명서 및 적용되는 사용허가증을 확보한 범위에서 건물을 사용·개장한다."
-        },
-        {
-          "state": "rework",
-          "label": "시정·변경정합화",
-          "action": "안전도서 또는 현장·완료결함을 시정하고 해당 검사·평가로 회귀한다."
-        },
-        {
-          "state": "reject",
-          "label": "미적합·사용불가",
-          "action": "공식 미적합이 해소되지 않으면 점유·개장을 중단한다."
+          "label": "환경도구 불승인·신청 종결",
+          "action": "불승인·각하 사유를 해소할 적법한 수정·재신청이 완료되기 전에는 환경승인을 전제로 하는 사업을 진행하지 않는다."
         }
       ]
     }
   ],
   "authorities": [
-    {
-      "id": "gtm-municipality",
-      "name": "Competent municipality",
-      "nameKo": "관할 지방자치단체",
-      "role": "자치규정에 따라 토지이용·개발·건축허가, 공사검사와 완료·사용승인을 담당",
-      "verificationLevel": "law-linked",
-      "officialUrl": "https://www.congreso.gob.gt/detalle_pdf/decretos/252"
-    },
     {
       "id": "gtm-marn",
       "name": "Ministry of Environment and Natural Resources",
@@ -2265,47 +624,14 @@
       "officialUrl": "https://www.marn.gob.gt/"
     },
     {
-      "id": "gtm-conred",
-      "name": "National Coordinator for Disaster Reduction",
-      "nameKo": "국가재난감축조정청(CONRED)",
-      "role": "NRD-1 구조안전과 NRD-2 공공이용 건축물 안전·피난요건을 관리·지원",
-      "verificationLevel": "law-linked",
-      "officialUrl": "https://conred.gob.gt/nrd-2/"
-    },
-    {
-      "id": "gtm-active-professionals",
-      "name": "Active licensed architects and engineers accepted by the municipality",
-      "nameKo": "관할 시청이 인정하는 현행 등록 건축사·기술자",
-      "role": "허가도서·구조계산·NRD 평가와 공사책임 도서를 서명·봉인",
+      "id": "gtm-environment-consultants",
+      "name": "Qualified environmental consultant or professional",
+      "nameKo": "적격 환경컨설턴트·전문가",
+      "role": "MARN 범주에 맞는 환경도구와 보완자료를 작성·수정",
       "verificationLevel": "source-linked"
     }
   ],
   "instruments": [
-    {
-      "id": "GTM-MUNICIPAL-CODE-12-2002",
-      "title": "Municipal Code — Congressional Decree No. 12-2002, as amended",
-      "titleKo": "지방자치법전, 의회법령 제12-2002호(개정 포함)",
-      "kind": "code",
-      "status": "continuity_unverified",
-      "issuedOn": "2002-02-04",
-      "officialUrl": "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/12-02.pdf",
-      "officialPdfUrl": "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/12-02.pdf",
-      "verificationLevel": "law-linked",
-      "note": "도시계획·개발·건축허가는 지방자치단체별 규정과 절차가 핵심이다. 2026년 개정까지 최신 통합문을 확인한다.",
-      "statusBasis": "과테말라 의회 공식 법령검색에서 Decree 12-2002 원문과 2026-02-25 시행된 Decree 5-2026 개정까지 확인했다. 다만 연결 PDF는 2002년 비통합 원문이고 건축·개발허가 절차는 지방자치단체별 조례에 따르므로, 2026년 개정을 반영한 공식 통합문과 과테말라시 밖 대상지의 관할 조례는 별도 확정이 필요하다."
-    },
-    {
-      "id": "GTM-LOCAL-POT-EXAMPLE",
-      "title": "Applicable municipal land-use and construction regulations; Guatemala City POT as an official example",
-      "titleKo": "관할 시 도시계획·건축규정(과테말라시 POT 공식 예시)",
-      "kind": "local-regulation",
-      "status": "in_force",
-      "officialUrl": "https://pot.muniguate.com/reglamento_pot/reglamento.php",
-      "verificationLevel": "source-linked",
-      "note": "과테말라시 POT는 전국 공통규정이 아니다. 실제 사업지 municipality의 현행 규정·지도·수수료표를 적용한다.",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "과테말라시가 POT 현행 통합문·조문별 웹판과 4개 절차등급 안내를 공식 사이트에 현재 게시"
-    },
     {
       "id": "GTM-RECSA-137-2016",
       "title": "Environmental Evaluation, Control and Monitoring Regulation — Government Agreement No. 137-2016, as amended",
@@ -2319,53 +645,6 @@
       "statusBasis": "MARN 공식 RECSA·개정문과 범주별 환경평가·licence 서비스를 함께 대조"
     },
     {
-      "id": "GTM-NRD1-2021",
-      "title": "NRD-1 Structural Safety Standard — Agreement No. 01-2021",
-      "titleKo": "재난감축기준 NRD-1 구조안전기준(협정 제01-2021호)",
-      "kind": "standard",
-      "status": "in_force",
-      "issuedOn": "2021-05-12",
-      "officialUrl": "https://conred.gob.gt/actualizacion-a-la-norma-para-la-reduccion-de-desastres-numero-1/",
-      "verificationLevel": "law-linked",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "CONRED가 Agreement 01-2021 NRD-1을 현행 구조안전기준으로 공식 게시"
-    },
-    {
-      "id": "GTM-NRD2-2025",
-      "title": "NRD-2 Minimum Safety Standard for Public-Use Buildings — Agreement CN-3-2025",
-      "titleKo": "재난감축기준 NRD-2 공공이용 건축물 최소안전기준(협정 CN-3-2025)",
-      "kind": "standard",
-      "status": "in_force",
-      "issuedOn": "2025-01-01",
-      "officialUrl": "https://conred.gob.gt/nrd-2/",
-      "verificationLevel": "law-linked",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "CONRED가 Agreement CN-3-2025 NRD-2와 SIPROCODE 평가경로를 현행 공식 페이지에 게시"
-    },
-    {
-      "id": "GTM-GUATEMALA-CITY-POT-2024",
-      "title": "Guatemala City Territorial Ordering Plan — current official consolidated text",
-      "titleKo": "과테말라시 국토정비계획(POT) 현행 공식 통합문",
-      "kind": "local-regulation",
-      "status": "in_force",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "과테말라시 공식 사이트가 2024 PDF를 POT 현행 통합문으로 게시",
-      "officialUrl": "https://www.muniguate.com/wp-content/uploads/2024/08/PLAN-DE-ORDENAMIENTO-TERRITORIAL-DEL-MUNICIPIO-DE-GUATEMALA.pdf",
-      "officialPdfUrl": "https://www.muniguate.com/wp-content/uploads/2024/08/PLAN-DE-ORDENAMIENTO-TERRITORIAL-DEL-MUNICIPIO-DE-GUATEMALA.pdf",
-      "verificationLevel": "source-linked"
-    },
-    {
-      "id": "GTM-GUATEMALA-CITY-VU-GUIDE",
-      "title": "Guatemala City Ventanilla Unica procedure and construction-licence dossier guide",
-      "titleKo": "과테말라시 단일창구 접수절차·건축허가 서류안내",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "Ventanilla Unica 공식 페이지가 접수·완비성 확인·보완·통지 절차를 현재 운영 안내",
-      "officialUrl": "https://vu.muniguate.com/index.php?id=1",
-      "verificationLevel": "source-linked"
-    },
-    {
       "id": "GTM-MARN-RECSA-REFORM",
       "title": "MARN official consolidated reforms to RECSA and environmental-evaluation services",
       "titleKo": "MARN RECSA 개정문·환경평가 공식 서비스 안내",
@@ -2376,276 +655,137 @@
       "officialUrl": "https://www.marn.gob.gt/Descargar/1399/reformas-recsa/28117/reforma-recsa.pdf",
       "officialPdfUrl": "https://www.marn.gob.gt/Descargar/1399/reformas-recsa/28117/reforma-recsa.pdf",
       "verificationLevel": "source-linked"
-    },
-    {
-      "id": "GTM-CONRED-SIPROCODE-GUIDE",
-      "title": "CONRED SIPROCODE official filing and NRD-2 evaluation procedure",
-      "titleKo": "CONRED SIPROCODE 접수·NRD-2 평가 공식절차",
-      "kind": "official-guidance",
-      "status": "current_official",
-      "statusCheckedOn": "2026-08-07",
-      "statusBasis": "CONRED SIPROCODE 공식 페이지가 제출·검토·보완·평가보고서 발급 경로를 현재 게시",
-      "officialUrl": "https://conred.gob.gt/siprocode/",
-      "verificationLevel": "source-linked"
     }
   ],
   "requirements": [
-    {
-      "id": "GTM-BLD-REQ-004",
-      "stage": "site-and-land",
-      "topic": "필지 권원·도시계획·부지조건",
-      "status": "conditional",
-      "applicability": "과테말라에서 신축·증축·용도변경·도시개발을 추진하는 사업",
-      "requirement": "과테말라는 지방자치단체가 도시계획·건축규정을 집행하므로 해당 municipality의 POT·zoning·건축규정을 먼저 특정해야 한다. 과테말라시의 POT는 공식 예시일 뿐이며, 실제 필지의 허용용도·건축가능면적·높이·이격·주차와 위험·기반시설 조건은 관할 자료로 확인한다.",
-      "authorityIds": [
-        "gtm-municipality"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "GTM-MUNICIPAL-CODE-12-2002",
-          "provisions": [
-            "municipal territorial planning and urbanization authorization"
-          ]
-        },
-        {
-          "instrumentId": "GTM-LOCAL-POT-EXAMPLE",
-          "provisions": [
-            "local land-use and works licensing; parcel parameters"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "등기·지적·경계·소유자 권한",
-        "관할 POT·zoning·servidumbre·문화재 조건",
-        "필지별 건폐·용적·높이·이격·주차",
-        "지반·지진·사면·침수·배수·도로·상하수·전력 용량"
-      ],
-      "reportUse": "부지 적법성 Gate와 규모·배치 상한, 수원국 토지·기반시설 분담조건에 연결한다."
-    },
     {
       "id": "GTM-BLD-REQ-005",
       "stage": "permit",
       "topic": "사업분류·건축허가·환경심사",
       "status": "conditional",
-      "applicability": "지방 건축허가 대상 공사와 MARN 환경평가·등록 대상 사업",
-      "requirement": "관할 municipality는 토지이용·건축 licence와 관계기관 의견을 요구하고, MARN은 RECSA와 최신 Listado Taxativo에 따라 A·B1·B2·C 등 범주와 제출할 환경도구를 결정한다. 환경 resolution/licence가 필요한 시점과 지방허가의 선후관계는 서면으로 확인한다.",
+      "applicability": "MARN 환경평가·등록 대상 사업",
+      "requirement": "환경천연자원부(MARN)는 RECSA와 법정 환경분류목록에 따라 사업을 분류하고 범주별 환경도구의 완비성·기술·공개의견을 심사해 환경승인 결정서와 적용되는 환경허가증을 발급한다.",
       "authorityIds": [
-        "gtm-municipality",
-        "gtm-marn"
+        "gtm-marn",
+        "gtm-environment-consultants"
       ],
       "legalBasis": [
         {
-          "instrumentId": "GTM-LOCAL-POT-EXAMPLE",
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
           "provisions": [
-            "local land-use and construction licence"
+            "article 19; project categories A, B1, B2 and C"
           ]
         },
         {
           "instrumentId": "GTM-RECSA-137-2016",
           "provisions": [
-            "environmental instruments, categorization, control and follow-up"
+            "environmental instruments and supporting documentation by category"
+          ]
+        },
+        {
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
+          "provisions": [
+            "filing route and category review initiation"
+          ]
+        },
+        {
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
+          "provisions": [
+            "article 22 Quater; legal and technical requirements review and cure period"
+          ]
+        },
+        {
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
+          "provisions": [
+            "article 22 Quater; five-day cure and rejection if not cured"
+          ]
+        },
+        {
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
+          "provisions": [
+            "articles 23-26, 30 and 45; category review, opinions, site visit and public view"
+          ]
+        },
+        {
+          "instrumentId": "GTM-RECSA-137-2016",
+          "provisions": [
+            "technical adviser review, opinions, site visit and request for corrections or ampliaciones"
+          ]
+        },
+        {
+          "instrumentId": "GTM-RECSA-137-2016",
+          "provisions": [
+            "corrections and technical re-evaluation"
+          ]
+        },
+        {
+          "instrumentId": "GTM-RECSA-137-2016",
+          "provisions": [
+            "environmental-instrument approval resolution and control conditions"
+          ]
+        },
+        {
+          "instrumentId": "GTM-MARN-RECSA-REFORM",
+          "provisions": [
+            "article 60 BIS; licence request following approval of the environmental instrument"
+          ]
+        },
+        {
+          "instrumentId": "GTM-RECSA-137-2016",
+          "provisions": [
+            "environmental licence issuance after approved instrument and compliance with conditions"
           ]
         }
       ],
       "evidenceToObtain": [
-        "건축주·권원자·지방 허가권자",
-        "토지이용·건축 licence 도서와 사전동의",
-        "최신 Listado Taxativo 범주·환경도구·MARN resolution/licence",
-        "실제 수수료·보완관행·전체 인허가 기간"
+        "사업설명·입지·규모·환경영향 자료",
+        "최신 Listado Taxativo 범주와 요구 환경도구",
+        "MARN 접수·보완·기술·공개의견 심사기록",
+        "환경승인 결정서·환경허가증·실제 수수료와 처리기간"
       ],
       "reportUse": "인허가 매트릭스, 현지 설계용역 범위, 일정·수수료와 수원기관 역할에 연결한다."
-    },
-    {
-      "id": "GTM-BLD-REQ-006",
-      "stage": "completion",
-      "topic": "기술기준·검사·보험·준공·사용승인",
-      "status": "conditional",
-      "applicability": "구조안전 검토와 공공이용 안전 또는 지방 완료승인이 필요한 건축물",
-      "requirement": "허가도서와 구조계산은 관할기관이 인정하는 active professional이 서명하고, 구조·지진안전은 NRD-1, 공공이용 건축물의 피난·수용인원·표지·비상계획은 현행 NRD-2를 반영한다. 지방정부의 단계검사와 최종 constancia/certificate 명칭·요건을 확인해 발급 전 사용하지 않는다.",
-      "authorityIds": [
-        "gtm-municipality",
-        "gtm-conred",
-        "gtm-active-professionals"
-      ],
-      "legalBasis": [
-        {
-          "instrumentId": "GTM-NRD1-2021",
-          "provisions": [
-            "national structural-safety requirements"
-          ]
-        },
-        {
-          "instrumentId": "GTM-NRD2-2025",
-          "provisions": [
-            "public-use occupancy load, egress, emergency plan and safety review"
-          ]
-        },
-        {
-          "instrumentId": "GTM-LOCAL-POT-EXAMPLE",
-          "provisions": [
-            "inspection and constancia de obra conforme in Guatemala City as a local example"
-          ]
-        }
-      ],
-      "evidenceToObtain": [
-        "active 건축사·기술자 등록·서명·보험 여부",
-        "NRD-1 구조계산·지반·재료시험",
-        "NRD-2 평가·수용인원·피난·비상계획 승인",
-        "지방 단계검사·as-built·최종 적합·사용서류"
-      ],
-      "reportUse": "감리·검사·보험·시공계약 패키지와 준공·개장 선행조건에 연결한다."
     }
   ],
   "permitPath": [
     {
       "order": 1,
-      "gate": "과테말라시 도시공간계획 공식결정",
-      "decision": "DCT·JOT 또는 적용 권한기관이 필지와 제안사업의 도시공간계획 적합성·조건을 공식 확정한다.",
-      "dependsOn": [],
-      "output": "도시계획 적합결정·조건 또는 불승인 통지"
-    },
-    {
-      "order": 2,
-      "gate": "과테말라시 공사허가 공식결정",
-      "decision": "권한기관이 완비도서의 도시공간계획·건축·안전기준 적합성을 심사해 공사허가, 조건부 허가 또는 불승인을 확정한다.",
-      "dependsOn": [],
-      "output": "공사허가·승인도서·조건 또는 불승인"
-    },
-    {
-      "order": 3,
       "gate": "MARN 환경도구 공식결정",
       "decision": "MARN이 적용 범주의 환경도구를 승인·조건부 승인하거나 불승인한다.",
       "dependsOn": [],
       "output": "환경승인 결정서·조건 또는 불승인"
     },
     {
-      "order": 4,
+      "order": 2,
       "gate": "MARN 환경허가증 공식결정",
       "decision": "MARN이 승인 결정서의 후속요건을 확인해 환경허가증 발급 여부를 확정한다.",
       "dependsOn": [
-        3
+        1
       ],
       "output": "환경허가증 또는 미발급 통지"
-    },
-    {
-      "order": 5,
-      "gate": "CONRED 재난저감규정 제2호 공식평가 결정",
-      "decision": "적용 사업의 재난저감규정 제2호 기술도서 적합 여부를 평가해 평가보고서를 발급하거나 보완·미충족 처리한다.",
-      "dependsOn": [],
-      "output": "재난저감규정 제2호 평가보고서 또는 미충족 통지"
-    },
-    {
-      "order": 6,
-      "gate": "과테말라시 공사적합증명서 공식결정",
-      "decision": "DCT가 완성공사의 승인도서·조건 적합성을 확인해 공사적합증명서를 발급하거나 미적합 처리한다.",
-      "dependsOn": [
-        5
-      ],
-      "output": "공사적합증명서 또는 미적합 통지"
-    },
-    {
-      "order": 7,
-      "gate": "과테말라시 적용 토지사용·개장허가증 결정",
-      "decision": "별도 운영허가증 대상이면 관할 시 부서가 완성건축물의 승인용도 사용·개장 여부를 공식 확정한다.",
-      "dependsOn": [
-        6
-      ],
-      "output": "토지사용·개장허가증 또는 불승인"
     }
   ],
-  "siteOverlays": [
-    {
-      "id": "GTM-LOCAL-OVERLAY-001",
-      "area": "대상 필지의 관할 지방정부·계획구역·특구",
-      "status": "unresolved",
-      "rule": "국가 법체계가 계획·허가의 틀을 정하더라도 실제 필지의 허용용도와 수치기준은 지방계획·조례·특구규정·재해지도에서 확정해야 한다.",
-      "legalBasis": [
-        {
-          "instrumentId": "GTM-MUNICIPAL-CODE-12-2002",
-          "provisions": [
-            "municipal territorial planning and urbanization authorization"
-          ]
-        }
-      ],
-      "missingEvidence": [
-        "필지 식별정보",
-        "현행 계획도·조례",
-        "관할기관의 필지별 규제확인서"
-      ],
-      "consequence": "확인 전에는 건폐율·용적률·높이·이격·주차를 국가 공통 수치로 단정하지 않는다."
-    }
-  ],
+  "siteOverlays": [],
   "openQuestions": [
     {
       "id": "GTM-BLD-Q-001",
       "blocking": true,
-      "stage": "site-and-land",
-      "question": "사업지 municipality의 현행 계획·건축규정과 필지별 용도·밀도·높이·이격·주차·재해·유틸리티 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
+      "stage": "permit",
+      "question": "본 사업의 최신 MARN 범주·환경도구·공개의견 절차와 환경승인·허가증 선행관계는 무엇인가?",
+      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
       "evidenceNeeded": [
-        "등기·지적·경계·소유자 권한",
-        "관할 POT·zoning·servidumbre·문화재 조건",
-        "필지별 건폐·용적·높이·이격·주차",
-        "지반·지진·사면·침수·배수·도로·상하수·전력 용량"
+        "사업설명·입지·규모·환경영향 자료",
+        "최신 Listado Taxativo 범주와 요구 환경도구",
+        "MARN 접수·보완·기술·공개의견 심사기록",
+        "환경승인 결정서·환경허가증·실제 수수료와 처리기간"
       ],
       "confirmWith": [
-        "gtm-municipality"
+        "gtm-marn",
+        "gtm-environment-consultants"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
       "id": "GTM-BLD-Q-002",
-      "blocking": true,
-      "stage": "site-and-land",
-      "question": "대상 필지의 용도지역, 허용용도, 건폐율·용적률·높이·이격·주차와 재해·기반시설 조건은 무엇인가?",
-      "whyItMatters": "공간프로그램, 배치, 층수, 공사비와 부지 적합성을 결정한다.",
-      "evidenceNeeded": [
-        "필지 권원·지적도·경계측량",
-        "현행 토지이용계획·용도지역 확인서",
-        "필지별 개발기준표와 기반시설 인입확약"
-      ],
-      "confirmWith": [
-        "gtm-municipality"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "GTM-BLD-Q-003",
-      "blocking": false,
-      "stage": "site-and-land",
-      "question": "municipality POT·토지이용의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "등기·지적·경계·소유자 권한",
-        "관할 POT·zoning·servidumbre·문화재 조건",
-        "필지별 건폐·용적·높이·이격·주차",
-        "지반·지진·사면·침수·배수·도로·상하수·전력 용량"
-      ],
-      "confirmWith": [
-        "gtm-municipality"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "GTM-BLD-Q-004",
-      "blocking": true,
-      "stage": "permit",
-      "question": "본 사업의 지방 건축허가 종류와 최신 MARN 범주·환경도구·승인 선행관계는 무엇인가?",
-      "whyItMatters": "설계 서명권, 제출도서, 관계기관 협의, 인허가 일정과 비용을 결정한다.",
-      "evidenceNeeded": [
-        "건축주·권원자·지방 허가권자",
-        "토지이용·건축 licence 도서와 사전동의",
-        "최신 Listado Taxativo 범주·환경도구·MARN resolution/licence",
-        "실제 수수료·보완관행·전체 인허가 기간"
-      ],
-      "confirmWith": [
-        "gtm-municipality",
-        "gtm-marn"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "GTM-BLD-Q-005",
       "blocking": true,
       "stage": "permit",
       "question": "본 사업의 건축주·신청인·허가권자, 시설분류와 환경평가 유형, 필수 선행동의는 무엇인가?",
@@ -2656,82 +796,26 @@
         "환경 스크리닝 결정과 최신 허가 체크리스트·수수료표"
       ],
       "confirmWith": [
-        "gtm-municipality",
-        "gtm-marn"
+        "gtm-marn",
+        "gtm-environment-consultants"
       ],
       "owner": "수원기관·현지 건축전문가"
     },
     {
-      "id": "GTM-BLD-Q-006",
+      "id": "GTM-BLD-Q-003",
       "blocking": false,
       "stage": "permit",
-      "question": "지방 건축허가·MARN RECSA의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
+      "question": "MARN RECSA 환경평가·허가의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
       "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
       "evidenceNeeded": [
-        "건축주·권원자·지방 허가권자",
-        "토지이용·건축 licence 도서와 사전동의",
-        "최신 Listado Taxativo 범주·환경도구·MARN resolution/licence",
-        "실제 수수료·보완관행·전체 인허가 기간"
+        "사업설명·입지·규모·환경영향 자료",
+        "최신 Listado Taxativo 범주와 요구 환경도구",
+        "MARN 접수·보완·기술·공개의견 심사기록",
+        "환경승인 결정서·환경허가증·실제 수수료와 처리기간"
       ],
       "confirmWith": [
-        "gtm-municipality",
-        "gtm-marn"
-      ],
-      "owner": "현지 건축전문가·조사총괄"
-    },
-    {
-      "id": "GTM-BLD-Q-007",
-      "blocking": true,
-      "stage": "completion",
-      "question": "현지 전문가와 NRD 검토기관, 지방검사·최종 사용승인의 실제 서류·비용·기간은 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "active 건축사·기술자 등록·서명·보험 여부",
-        "NRD-1 구조계산·지반·재료시험",
-        "NRD-2 평가·수용인원·피난·비상계획 승인",
-        "지방 단계검사·as-built·최종 적합·사용서류"
-      ],
-      "confirmWith": [
-        "gtm-municipality",
-        "gtm-conred",
-        "gtm-active-professionals"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "GTM-BLD-Q-008",
-      "blocking": true,
-      "stage": "completion",
-      "question": "현지 설계자·시공자·검사기관의 자격, 의무보험, 중간검사와 준공·소방·사용승인 절차는 무엇인가?",
-      "whyItMatters": "조달 패키지, 품질책임, 보험료, 검사 Hold Point와 개장 가능일을 결정한다.",
-      "evidenceNeeded": [
-        "전문가·시공자·검사기관 등록증과 보험증권",
-        "검사계획·시험성적서·변경승인 기록",
-        "준공·소방·사용승인 체크리스트와 실제 견적"
-      ],
-      "confirmWith": [
-        "gtm-municipality",
-        "gtm-conred",
-        "gtm-active-professionals"
-      ],
-      "owner": "수원기관·현지 건축전문가"
-    },
-    {
-      "id": "GTM-BLD-Q-009",
-      "blocking": false,
-      "stage": "completion",
-      "question": "NRD-1·NRD-2·완료승인의 사업별 적용조건을 어떤 원본·공문·현장기록으로 입증할 것인가?",
-      "whyItMatters": "공개된 국가 기본경로와 실제 필지·시설·관할의 적용판정을 분리해 보고서의 과단정을 막는다.",
-      "evidenceNeeded": [
-        "active 건축사·기술자 등록·서명·보험 여부",
-        "NRD-1 구조계산·지반·재료시험",
-        "NRD-2 평가·수용인원·피난·비상계획 승인",
-        "지방 단계검사·as-built·최종 적합·사용서류"
-      ],
-      "confirmWith": [
-        "gtm-municipality",
-        "gtm-conred",
-        "gtm-active-professionals"
+        "gtm-marn",
+        "gtm-environment-consultants"
       ],
       "owner": "현지 건축전문가·조사총괄"
     }
@@ -2740,85 +824,30 @@
     {
       "id": "GTM-BLD-F-001",
       "phase": "출국 전",
-      "check": "권원·지적도·계획도·측량·지반·침수·기반시설 자료를 문서번호와 함께 요청한다.",
-      "output": "부지 자료 인벤토리와 결측대장"
-    },
-    {
-      "id": "GTM-BLD-F-002",
-      "phase": "기관협의",
-      "check": "관할 계획기관에 필지별 수치와 특구·재해·문화재 등 중첩규제를 서면 확인한다.",
-      "output": "필지 규제표와 기관 확인공문"
-    },
-    {
-      "id": "GTM-BLD-F-003",
-      "phase": "보고서 반영",
-      "check": "도시계획·부지규제의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "도시계획·부지규제 근거대장·보고서 반영표"
-    },
-    {
-      "id": "GTM-BLD-F-004",
-      "phase": "출국 전",
       "check": "사업주체·연면적·층수·용도·재실인원·공공사업 여부를 정리해 사전분류 질문서를 보낸다.",
       "output": "사업분류표와 기관 질의서"
     },
     {
-      "id": "GTM-BLD-F-005",
+      "id": "GTM-BLD-F-002",
       "phase": "기관협의",
       "check": "건축·환경기관과 최신 접수창구, 선행동의, 수수료, 보완정지와 실제 처리기간을 확인한다.",
       "output": "인허가 일정·비용 매트릭스"
     },
     {
-      "id": "GTM-BLD-F-006",
+      "id": "GTM-BLD-F-003",
       "phase": "보고서 반영",
       "check": "건축허가·환경심사의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
       "output": "건축허가·환경심사 근거대장·보고서 반영표"
-    },
-    {
-      "id": "GTM-BLD-F-007",
-      "phase": "시장조사",
-      "check": "현지 등록 설계자·시공자·검사기관·보험사의 자격과 유효기간을 감독기관에서 대조한다.",
-      "output": "적격기관·보험 대장"
-    },
-    {
-      "id": "GTM-BLD-F-008",
-      "phase": "기관협의",
-      "check": "착공통지, 중간검사, 준공도서, 소방·사용승인과 개장 조건을 순서대로 확인한다.",
-      "output": "검사·준공·개장 Hold Point 표"
-    },
-    {
-      "id": "GTM-BLD-F-009",
-      "phase": "보고서 반영",
-      "check": "기술검사·보험·준공제도의 확인·미확인·조건부 항목을 분리하고 근거문서 번호와 설계·일정·예산 영향을 연결한다.",
-      "output": "기술검사·보험·준공제도 근거대장·보고서 반영표"
     }
   ],
   "reportReadyConclusions": [
     {
       "id": "GTM-BLD-C-001",
       "confidence": "conditional",
-      "text": "과테말라시 기준을 전국에 복사하지 말고 사업지 municipality와 필지번호를 먼저 고정한 뒤 개념설계 수치를 확정한다.",
+      "text": "과테말라 전역의 대상 사업은 MARN의 범주판정·환경도구 심사·환경승인 결정과 적용되는 환경허가증 발급을 독립 환경 Gate로 관리해야 한다.",
       "basis": [
-        "GTM-MUNICIPAL-CODE-12-2002",
-        "GTM-LOCAL-POT-EXAMPLE"
-      ]
-    },
-    {
-      "id": "GTM-BLD-C-002",
-      "confidence": "conditional",
-      "text": "지방 licence와 MARN 환경승인은 서로 대체하지 않으므로 taxative code와 사업지 municipality를 조기에 확정해 일정을 통합한다.",
-      "basis": [
-        "GTM-LOCAL-POT-EXAMPLE",
+        "GTM-MARN-RECSA-REFORM",
         "GTM-RECSA-137-2016"
-      ]
-    },
-    {
-      "id": "GTM-BLD-C-003",
-      "confidence": "conditional",
-      "text": "NRD 검토와 지방 완료승인을 입찰서·검사계획·인계조건에 넣고 공공이용 개장 전 최종 승인증빙을 확보한다.",
-      "basis": [
-        "GTM-NRD1-2021",
-        "GTM-NRD2-2025",
-        "GTM-LOCAL-POT-EXAMPLE"
       ]
     }
   ]
