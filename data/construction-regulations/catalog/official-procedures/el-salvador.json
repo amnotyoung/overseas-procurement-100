@@ -69,90 +69,1222 @@
   ],
   "systems": {
     "site-urban": {
-      "verificationScope": "주택부가 직접 처리하는 지역의 factibilidad 공식절차와 AMSS의 OPAMSS 사전검토 유형을 구성했다. AMSS 밖에서는 해당 municipality의 계획·조례 또는 위임 기술사무소 관할을 먼저 확정한다.",
+      "verificationScope": "지방계획·조례가 없는 관할에서는 전국 주택도시부 서비스가 입지판정과 건축선을 발급한다. 아래 절차는 그 전국 경로를 표시하며, 자체 계획을 둔 관할은 해당 계획·조례로 확정한다.",
       "officialProcedure": {
-        "name": "엘살바도르 입지·도로·배수·용도지역(zoning) 사전결정",
         "coverage": "official-source-linked",
         "scope": "관할을 확정한 뒤 입지적합확인(Calificación de Lugar), 건축선(Línea de Construcción), 우수배수 타당성(Factibilidad de Aguas Lluvias), 도로·용도지역 검토(Revisión Vial y Zonificación)를 신청해 공식 결정문(resolución)을 받는 절차다. OPAMSS 수치·서식은 AMSS에만 적용한다.",
-        "stages": ["S1 관할·필지", "S2 사전타당성(factibilidad) 도서", "S3 접수·납부", "S4 기술·기술검토위원회(CRT) 심사", "S5 공식결정"],
-        "steps": [
-          {"lane":"건축주·신청인","stage":0,"label":"AMSS·지방 관할기관 확정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"사업지가 AMSS인지, 현행 지방계획·조례가 있는지 확인해 OPAMSS, municipality·위임사무소 또는 주택부 중 실제 처리기관을 확정한다.","output":"관할·적용계획 확정기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 Urbanismo y construcción 서비스","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["national service applies where municipalities lack local plans and ordinances"]}]},
-          {"lane":"건축주·신청인","stage":0,"label":"권원·지적(catastro)·신청권한 확정","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"소유권·지적·경계와 소유자 또는 대리인의 신청권한을 정리해 대상 필지를 특정한다.","output":"권원·지적·대리권 자료","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 현행 사전검토 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["property, cadastral and owner documentation by prior-review type"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":1,"label":"사전검토 유형·필지자료 작성","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"등록전문가가 용도변경·밀도·건축강도, 도로 전면, 우수배수와 계획구역을 대조해 적용 사전타당성 유형과 도면을 작성한다.","output":"입지적합·건축선·배수·도로·용도지역 신청도서","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"AMSS RLDOTAMSS","instrumentId":"SLV-AMSS-LDOT-REGS","provisions":["article VIII.7; Calificación de Lugar, Línea de Construcción and other prior procedures"]}]},
-          {"lane":"건축주·신청인","stage":2,"label":"관할 민원처리부(Área de Trámites) 접수","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"신청인이 해당 사전타당성 양식과 첨부도서를 관할 접수창구 또는 전자시스템에 제출한다.","output":"사전검토 접수기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 Urbanismo y construcción 서비스","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["step 1; user submits completed form and supporting documents"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":2,"label":"완비성 확인·납부명령 발행","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"접수담당자가 자료 완비성과 요건충족을 확인하고 미완비이면 반환하며, 완비이면 납부명령서(Mandamiento de Pago)를 발행한다.","output":"완비접수·납부명령 또는 반환","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["steps 2-3; completeness check, return if incomplete, payment order and receipt"]}]},
-          {"lane":"건축주·신청인","stage":2,"label":"수수료 납부·사건접수표(contraseña) 수령","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"신청인이 지정 수납처에 수수료를 납부하고 영수증을 제출해 사건접수표를 받는다.","output":"납부영수증·사건접수표","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["step 3; payment, receipt submission and case password"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":3,"label":"입지·도로·배수·용도지역 기술심사","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"담당전문가와 기술검토위원회가 신청유형별 필지·계획·도로·우수배수 조건을 검토해 승인·반환·거부 권고를 작성한다.","output":"기술검토·위원회 추천 회의록(acta)","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["professional review, CRT recommendation and resolution workflow"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":3,"label":"누락·기술불일치 반환통지","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"완비성 또는 기술심사에서 정보가 부족하거나 조건을 충족하지 않으면 사건서류(expediente)를 보완·수정 대상으로 반환한다.","output":"반환·보완·수정 통지","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["return of expediente for lack of information and final approved, denied or returned outcomes"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":3,"label":"사전타당성 도서 보완·재접수","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"등록전문가가 반환사유를 반영해 필지·도로·배수·용도지역 자료를 보완하고 같은 절차에 재접수한다.","output":"보완도서·재접수 기록","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["returned expediente and resubmission after information is completed"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":4,"label":"사전타당성 공식결정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"권한자가 기술검토위원회 회의록에 따라 결정문과 도면을 서명하고 접수부서가 신청인에게 승인·거부 또는 반환결과를 교부한다.","output":"사전검토 승인 결정문·도면 또는 거부","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 처리절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["steps 11-15; signature, regional return and delivery of approved, denied or returned resolution"]}],"permitGate":{"key":"site-factibilidad-resolution","gate":"입지·도로·배수·용도지역 공식결정","decision":"관할기관이 적용 사전검토의 승인조건·거부 또는 보완반환을 공식 확정한다.","output":"사전타당성 결정문·승인도면 또는 거부","dependsOn":[]}}
+        "stages": [
+          "S1 관할·필지",
+          "S2 사전타당성(factibilidad) 도서",
+          "S3 접수·납부",
+          "S4 기술·기술검토위원회(CRT) 심사",
+          "S5 공식결정"
         ],
-        "edges":[[0,1,"sequence","관할확정"],[1,2,"sequence","필지확정"],[2,3,"sequence","신청도서"],[3,4,"sequence","공식접수"],[4,5,"sequence","완비"],[5,6,"sequence","납부완료"],[6,9,"sequence","승인권고"],[4,7,"message","미완비 반환"],[6,7,"message","기술보완"],[7,8,"sequence","보완요구"],[8,4,"loop","보완 후 재접수·심사"]],
-        "decisionBranches":[
-          {"state":"success","label":"사전타당성 승인","action":"확정된 입지·도로·배수·용도지역 조건으로 허가도서를 작성한다."},
-          {"state":"rework","label":"반환·조건부","action":"반환사유·조건을 보완해 완비성 또는 기술심사로 회귀한다."},
-          {"state":"reject","label":"사전검토 거부","action":"해당 안을 중단하고 적법한 변경·대체부지를 검토한다."}
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "AMSS·지방 관할기관 확정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업지가 AMSS인지, 현행 지방계획·조례가 있는지 확인해 OPAMSS, municipality·위임사무소 또는 주택부 중 실제 처리기관을 확정한다.",
+            "output": "관할·적용계획 확정기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 Urbanismo y construcción 서비스",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "national service applies where municipalities lack local plans and ordinances"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "권원·지적(catastro)·신청권한 확정",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유권·지적·경계와 소유자 또는 대리인의 신청권한을 정리해 대상 필지를 특정한다.",
+            "output": "권원·지적·대리권 자료",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 현행 사전검토 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "property, cadastral and owner documentation by prior-review type"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "사전검토 유형·필지자료 작성",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 용도·밀도·건축강도, 도로 전면과 우수배수 조건을 대조해 신청유형과 도면을 작성한다.",
+            "output": "입지적합·건축선·배수·도로·용도지역 신청도서",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "도시계획건설법",
+                "instrumentId": "SLV-URBAN-CONSTRUCTION-LAW",
+                "provisions": [
+                  "urban planning and construction permit framework"
+                ]
+              },
+              {
+                "source": "주택도시부 도시허가 서비스",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "permit application with documents and requirements in the corresponding form"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "관할 민원처리부(Área de Trámites) 접수",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 해당 사전타당성 양식과 첨부도서를 관할 접수창구 또는 전자시스템에 제출한다.",
+            "output": "사전검토 접수기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 Urbanismo y construcción 서비스",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "step 1; user submits completed form and supporting documents"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완비성 확인·납부명령 발행",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "접수담당자가 자료 완비성과 요건충족을 확인하고 미완비이면 반환하며, 완비이면 납부명령서(Mandamiento de Pago)를 발행한다.",
+            "output": "완비접수·납부명령 또는 반환",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "steps 2-3; completeness check, return if incomplete, payment order and receipt"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "수수료 납부·사건접수표(contraseña) 수령",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 지정 수납처에 수수료를 납부하고 영수증을 제출해 사건접수표를 받는다.",
+            "output": "납부영수증·사건접수표",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "step 3; payment, receipt submission and case password"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "입지·도로·배수·용도지역 기술심사",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "담당전문가와 기술검토위원회가 신청유형별 필지·계획·도로·우수배수 조건을 검토해 승인·반환·거부 권고를 작성한다.",
+            "output": "기술검토·위원회 추천 회의록(acta)",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "professional review, CRT recommendation and resolution workflow"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "누락·기술불일치 반환통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "완비성 또는 기술심사에서 정보가 부족하거나 조건을 충족하지 않으면 사건서류(expediente)를 보완·수정 대상으로 반환한다.",
+            "output": "반환·보완·수정 통지",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "return of expediente for lack of information and final approved, denied or returned outcomes"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "사전타당성 도서 보완·재접수",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 반환사유를 반영해 필지·도로·배수·용도지역 자료를 보완하고 같은 절차에 재접수한다.",
+            "output": "보완도서·재접수 기록",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "returned expediente and resubmission after information is completed"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 4,
+            "label": "사전타당성 공식결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "권한자가 기술검토위원회 회의록에 따라 결정문과 도면을 서명하고 접수부서가 신청인에게 승인·거부 또는 반환결과를 교부한다.",
+            "output": "사전검토 승인 결정문·도면 또는 거부",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 처리절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "steps 11-15; signature, regional return and delivery of approved, denied or returned resolution"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "site-factibilidad-resolution",
+              "gate": "입지·도로·배수·용도지역 공식결정",
+              "decision": "관할기관이 적용 사전검토의 승인조건·거부 또는 보완반환을 공식 확정한다.",
+              "output": "사전타당성 결정문·승인도면 또는 거부",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "관할확정"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "필지확정"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "신청도서"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "공식접수"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "완비"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "납부완료"
+          ],
+          [
+            6,
+            9,
+            "sequence",
+            "승인권고"
+          ],
+          [
+            4,
+            7,
+            "message",
+            "미완비 반환"
+          ],
+          [
+            6,
+            7,
+            "message",
+            "기술보완"
+          ],
+          [
+            7,
+            8,
+            "sequence",
+            "보완요구"
+          ],
+          [
+            8,
+            4,
+            "loop",
+            "보완 후 재접수·심사"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "사전타당성 승인",
+            "action": "확정된 입지·도로·배수·용도지역 조건으로 허가도서를 작성한다."
+          },
+          {
+            "state": "rework",
+            "label": "반환·조건부",
+            "action": "반환사유·조건을 보완해 완비성 또는 기술심사로 회귀한다."
+          },
+          {
+            "state": "reject",
+            "label": "사전검토 거부",
+            "action": "해당 안을 중단하고 적법한 변경·대체부지를 검토한다."
+          }
         ]
       }
     },
     "permit-environment": {
       "verificationScope": "주택부 직접관할 지역의 construction/parcelación permit 공식절차와 MARN 2025 N1·N2·N3 SEA 평가경로를 구성했다. AMSS에서는 같은 법체계 아래 OPAMSS 현행 양식·요건을 적용한다.",
       "officialProcedure": {
-        "name":"엘살바도르 건축·토지분할허가(construction/parcelación permit)와 MARN N1·N2·N3 결정",
-        "coverage":"official-source-linked",
-        "scope":"등록전문가가 사전검토 조건을 반영한 허가도서를 관할기관에 제출해 허가 결정문을 받고, MARN 환경평가시스템(SEA)에서 2025 분류에 따른 비대상·기술평가·환경영향평가(EsIA) 경로와 환경허가 결정을 받는 절차다.",
-        "stages":["P1 허가·환경 준비","P2 공식접수·분류","P3 기술심사","P4 보완·환경영향평가","P5 공식결정"],
-        "steps":[
-          {"lane":"현지 설계·시공 전문가","stage":0,"label":"등록전문가 허가도서 작성","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"국가등록 설계자·시공책임자가 승인된 사전검토, 권원, 건축·구조·설비도면, 관계기관 사전타당성과 적용 기술자료를 작성·서명한다.","output":"서명된 건축·토지분할허가 도서","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"주택부 전문가 등록시스템","instrumentId":"SLV-PROFESSIONAL-REGISTRY-SERVICE","provisions":["legal registration of architects, engineers, designers and builders under Law articles 4 and 8"]}]},
-          {"lane":"건축주·신청인","stage":1,"label":"건축·토지분할허가 공식접수","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"신청인이 적용 양식·도서를 관할 민원처리부 또는 OPAMSS 전자시스템에 제출한다.","output":"허가 접수기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 Urbanismo y construcción 서비스","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["permit application with documents and requirements in the corresponding form"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":2,"label":"완비성·기술·위원회 허가심사","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"접수부서가 완비성과 납부를 확인하고 담당전문가·기술검토위원회가 사전검토 조건, 도면과 기술기준을 심사해 추천 회의록을 작성한다.","output":"완비·기술심사·위원회 추천기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 permit 절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["steps 1-10; filing, completeness, payment, technical review and CRT recommendation"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":3,"label":"허가도서 반환·보완통지","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"미완비 또는 기술불일치이면 관할기관이 누락·수정사항을 특정해 사건서류를 반환한다.","output":"허가 보완·반환통지","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 permit 절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["incomplete expediente returned and final return for lack of information"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":3,"label":"허가도서 보완·재심사","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"등록전문가가 반환사유를 반영해 도면·계산·사전타당성을 보완하고 재접수한다.","output":"보완 허가도서·재접수 기록","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"주택부 공식 permit 절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["returned dossier completed and submitted again for review"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":4,"label":"건축·토지분할허가 결정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"권한자가 기술검토위원회 추천에 따라 결정문·승인도면을 서명해 승인, 거부 또는 보완반환 결과를 교부한다.","output":"건축·토지분할허가·승인도면 또는 거부","authorityIds":["slv-permit-authority"],"refs":[{"source":"주택부 공식 permit 절차","instrumentId":"SLV-MIVI-URBAN-SERVICE","provisions":["steps 11-15; signed resolution and plans, delivered as approved, denied or returned"]}],"permitGate":{"key":"construction-parceling-permit","gate":"건축·토지분할허가 공식결정","decision":"관할기관이 완비도서와 기술검토 결과에 따라 허가를 승인·거부 또는 보완반환한다.","output":"허가 결정문·승인도면 또는 거부","dependsOn":[]}},
-          {"lane":"건축주·신청인","stage":0,"label":"환경평가시스템 환경양식(Formulario Ambiental) 등록","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"사업자가 환경평가시스템에 사업·활동·입지·규모·환경정보와 첨부자료를 입력해 환경양식을 제출한다.","output":"환경평가시스템 환경양식 접수·사건기록","authorityIds":["slv-marn"],"refs":[{"source":"MARN 환경분석·평가 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["environmental form submission before project execution and categorization"]}]},
-          {"lane":"환경·소방·검사기관","stage":1,"label":"사전분석·현장확인·N1/N2/N3 분류","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"MARN이 환경양식, 현장과 2025 분류기준을 분석해 N1 저영향, N2 경미영향 또는 N3 중·고영향으로 공식 분류한다.","output":"N1·N2·N3 분류·평가경로","authorityIds":["slv-marn"],"refs":[{"source":"MARN 2025 환경분류 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["N1, N2 and N3 analysis levels and documentation consequences"]}]},
-          {"lane":"환경·소방·검사기관","stage":2,"label":"N1 비평가·공식회신(pronunciamiento) 검토","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"N1이면 원칙적으로 환경평가·자료제출 의무가 없으며, 신청인이 공식 회신을 요구한 경우 MARN이 해당 회신을 처리한다.","output":"N1 비대상 회신 또는 분류기록","authorityIds":["slv-marn"],"refs":[{"source":"MARN 2025 환경분류 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["N1 does not require environmental evaluation or documentation; form may be filed for a pronouncement"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":2,"label":"N2 기술환경자료 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"N2이면 환경전문가가 경미영향에 필요한 특정 기술환경정보와 관리조치를 작성해 SEA에 제출한다.","output":"N2 기술환경자료·관리조치","authorityIds":["slv-marn","slv-professional-registry"],"refs":[{"source":"MARN 2025 환경분류 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["N2 requires environmental form with specific technical-environmental information"]}]},
-          {"lane":"환경·소방·검사기관","stage":2,"label":"N3 과업지시서(TdR) 발행","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"N3이면 MARN이 중·고영향 사업의 환경영향평가 작성범위와 평가조건을 담은 과업지시서를 발행한다.","output":"N3 환경영향평가 과업지시서","authorityIds":["slv-marn"],"refs":[{"source":"MARN 2025 환경분류 공식문","instrumentId":"SLV-ENV-LAW-CAT-2025","provisions":["N3 moderate-high impact requires Terms of Reference and Environmental Impact Study"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":3,"label":"N3 환경영향평가·환경관리프로그램 제출","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"공인 환경서비스 제공자가 과업지시서에 따라 환경영향평가와 환경관리프로그램을 작성하고 환경평가시스템에 제출한다.","output":"N3 환경영향평가·환경관리프로그램","authorityIds":["slv-marn","slv-professional-registry"],"refs":[{"source":"MARN 2025 환경분류 안내","instrumentId":"SLV-ENV-LAW-CAT-2025","provisions":["N3 requires environmental impact study and management program"]}]},
-          {"lane":"환경·소방·검사기관","stage":3,"label":"범주별 기술평가·추가정보 요구","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"MARN이 N2 기술자료 또는 N3 EsIA·관리프로그램을 평가하고 필요 시 추가정보·수정·보완을 요구한다.","output":"환경 기술평가·보완통지","authorityIds":["slv-marn"],"refs":[{"source":"MARN 환경분석·평가 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["analysis and evaluation of environmental form and applicable study documentation"]}]},
-          {"lane":"건축주·신청인","stage":3,"label":"환경자료 보완·재제출","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"환경전문가가 통지사항을 반영해 기술자료·EsIA·관리프로그램을 보완하고 신청인이 SEA에 재제출한다.","output":"보완 환경자료·재제출 기록","authorityIds":["slv-marn","slv-professional-registry"],"refs":[{"source":"MARN 환경분석·평가 가이드","instrumentId":"SLV-MARN-EVAL-GUIDE-2025","provisions":["supplementation and re-evaluation of environmental documentation"]}]},
-          {"lane":"환경·소방·검사기관","stage":4,"label":"MARN 환경 공식결정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"MARN이 N1 비대상 회신 또는 N2·N3 평가결과에 따른 환경허가·조건을 발급하거나 불승인한다.","output":"비대상 회신·환경허가·조건 또는 불승인","authorityIds":["slv-marn"],"refs":[{"source":"MARN 환경허가 공식서비스","instrumentId":"SLV-ENV-LAW-CAT-2025","provisions":["environmental authorization following N1-N3 categorization and evaluation"]}],"permitGate":{"key":"marn-environmental-decision","gate":"MARN N1·N2·N3 환경 공식결정","decision":"MARN이 분류·평가결과에 따라 비대상, 환경허가·조건 또는 불승인을 공식 확정한다.","output":"MARN 환경결정·허가 또는 불승인","dependsOn":[]}}
+        "coverage": "official-source-linked",
+        "scope": "등록전문가가 사전검토 조건을 반영한 허가도서를 관할기관에 제출해 허가 결정문을 받고, MARN 환경평가시스템(SEA)에서 2025 분류에 따른 비대상·기술평가·환경영향평가(EsIA) 경로와 환경허가 결정을 받는 절차다.",
+        "stages": [
+          "P1 허가·환경 준비",
+          "P2 공식접수·분류",
+          "P3 기술심사",
+          "P4 보완·환경영향평가",
+          "P5 공식결정"
         ],
-        "edges":[[0,6,"message","병렬 SEA 등록"],[0,1,"sequence","허가도서"],[1,2,"sequence","허가접수"],[2,5,"sequence","허가 적합"],[2,3,"message","허가 보완"],[3,4,"sequence","반환"],[4,2,"loop","보완 후 허가 재심사"],[6,7,"sequence","환경양식"],[7,8,"sequence","N1"],[7,9,"sequence","N2"],[7,10,"sequence","N3"],[10,11,"sequence","TdR"],[9,12,"sequence","N2 자료"],[11,12,"sequence","N3 EsIA"],[12,14,"sequence","환경 적합"],[12,13,"message","추가정보"],[13,12,"loop","보완 후 환경 재평가"],[8,14,"sequence","N1 회신"]],
-        "decisionBranches":[
-          {"state":"success","label":"permit·환경결정 충족","action":"승인도면과 환경조건을 착공·계약 조건에 반영한다."},
-          {"state":"rework","label":"반환·환경보완","action":"허가도서 또는 환경자료를 보완해 해당 심사로 회귀한다."},
-          {"state":"reject","label":"허가·환경 불승인","action":"불승인 사유를 해소할 적법한 재신청 경로가 없으면 착공하지 않는다."}
+        "steps": [
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "등록전문가 허가도서 작성",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "국가등록 설계자·시공책임자가 승인된 사전검토, 권원, 건축·구조·설비도면, 관계기관 사전타당성과 적용 기술자료를 작성·서명한다.",
+            "output": "서명된 건축·토지분할허가 도서",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 전문가 등록시스템",
+                "instrumentId": "SLV-PROFESSIONAL-REGISTRY-SERVICE",
+                "provisions": [
+                  "legal registration of architects, engineers, designers and builders under Law articles 4 and 8"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "건축·토지분할허가 공식접수",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 적용 양식·도서를 관할 민원처리부 또는 OPAMSS 전자시스템에 제출한다.",
+            "output": "허가 접수기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 Urbanismo y construcción 서비스",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "permit application with documents and requirements in the corresponding form"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완비성·기술·위원회 허가심사",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "접수부서가 완비성과 납부를 확인하고 담당전문가·기술검토위원회가 사전검토 조건, 도면과 기술기준을 심사해 추천 회의록을 작성한다.",
+            "output": "완비·기술심사·위원회 추천기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 permit 절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "steps 1-10; filing, completeness, payment, technical review and CRT recommendation"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "허가도서 반환·보완통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "미완비 또는 기술불일치이면 관할기관이 누락·수정사항을 특정해 사건서류를 반환한다.",
+            "output": "허가 보완·반환통지",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 permit 절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "incomplete expediente returned and final return for lack of information"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "허가도서 보완·재심사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 반환사유를 반영해 도면·계산·사전타당성을 보완하고 재접수한다.",
+            "output": "보완 허가도서·재접수 기록",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 permit 절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "returned dossier completed and submitted again for review"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 4,
+            "label": "건축·토지분할허가 결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "권한자가 기술검토위원회 추천에 따라 결정문·승인도면을 서명해 승인, 거부 또는 보완반환 결과를 교부한다.",
+            "output": "건축·토지분할허가·승인도면 또는 거부",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 공식 permit 절차",
+                "instrumentId": "SLV-MIVI-URBAN-SERVICE",
+                "provisions": [
+                  "steps 11-15; signed resolution and plans, delivered as approved, denied or returned"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "construction-parceling-permit",
+              "gate": "건축·토지분할허가 공식결정",
+              "decision": "관할기관이 완비도서와 기술검토 결과에 따라 허가를 승인·거부 또는 보완반환한다.",
+              "output": "허가 결정문·승인도면 또는 거부",
+              "dependsOn": []
+            }
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "환경평가시스템 환경양식(Formulario Ambiental) 등록",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업자가 환경평가시스템에 사업·활동·입지·규모·환경정보와 첨부자료를 입력해 환경양식을 제출한다.",
+            "output": "환경평가시스템 환경양식 접수·사건기록",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 환경분석·평가 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "environmental form submission before project execution and categorization"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "사전분석·현장확인·N1/N2/N3 분류",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "MARN이 환경양식, 현장과 2025 분류기준을 분석해 N1 저영향, N2 경미영향 또는 N3 중·고영향으로 공식 분류한다.",
+            "output": "N1·N2·N3 분류·평가경로",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 2025 환경분류 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "N1, N2 and N3 analysis levels and documentation consequences"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "N1 비평가·공식회신(pronunciamiento) 검토",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "N1이면 원칙적으로 환경평가·자료제출 의무가 없으며, 신청인이 공식 회신을 요구한 경우 MARN이 해당 회신을 처리한다.",
+            "output": "N1 비대상 회신 또는 분류기록",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 2025 환경분류 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "N1 does not require environmental evaluation or documentation; form may be filed for a pronouncement"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "N2 기술환경자료 작성",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "N2이면 환경전문가가 경미영향에 필요한 특정 기술환경정보와 관리조치를 작성해 SEA에 제출한다.",
+            "output": "N2 기술환경자료·관리조치",
+            "authorityIds": [
+              "slv-marn",
+              "slv-professional-registry"
+            ],
+            "refs": [
+              {
+                "source": "MARN 2025 환경분류 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "N2 requires environmental form with specific technical-environmental information"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "N3 과업지시서(TdR) 발행",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "N3이면 MARN이 중·고영향 사업의 환경영향평가 작성범위와 평가조건을 담은 과업지시서를 발행한다.",
+            "output": "N3 환경영향평가 과업지시서",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 2025 환경분류 공식문",
+                "instrumentId": "SLV-ENV-LAW-CAT-2025",
+                "provisions": [
+                  "N3 moderate-high impact requires Terms of Reference and Environmental Impact Study"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "N3 환경영향평가·환경관리프로그램 제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "공인 환경서비스 제공자가 과업지시서에 따라 환경영향평가와 환경관리프로그램을 작성하고 환경평가시스템에 제출한다.",
+            "output": "N3 환경영향평가·환경관리프로그램",
+            "authorityIds": [
+              "slv-marn",
+              "slv-professional-registry"
+            ],
+            "refs": [
+              {
+                "source": "MARN 2025 환경분류 안내",
+                "instrumentId": "SLV-ENV-LAW-CAT-2025",
+                "provisions": [
+                  "N3 requires environmental impact study and management program"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "범주별 기술평가·추가정보 요구",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "MARN이 N2 기술자료 또는 N3 EsIA·관리프로그램을 평가하고 필요 시 추가정보·수정·보완을 요구한다.",
+            "output": "환경 기술평가·보완통지",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 환경분석·평가 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "analysis and evaluation of environmental form and applicable study documentation"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "환경자료 보완·재제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "환경전문가가 통지사항을 반영해 기술자료·EsIA·관리프로그램을 보완하고 신청인이 SEA에 재제출한다.",
+            "output": "보완 환경자료·재제출 기록",
+            "authorityIds": [
+              "slv-marn",
+              "slv-professional-registry"
+            ],
+            "refs": [
+              {
+                "source": "MARN 환경분석·평가 가이드",
+                "instrumentId": "SLV-MARN-EVAL-GUIDE-2025",
+                "provisions": [
+                  "supplementation and re-evaluation of environmental documentation"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 4,
+            "label": "MARN 환경 공식결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "MARN이 N1 비대상 회신 또는 N2·N3 평가결과에 따른 환경허가·조건을 발급하거나 불승인한다.",
+            "output": "비대상 회신·환경허가·조건 또는 불승인",
+            "authorityIds": [
+              "slv-marn"
+            ],
+            "refs": [
+              {
+                "source": "MARN 환경허가 공식서비스",
+                "instrumentId": "SLV-ENV-LAW-CAT-2025",
+                "provisions": [
+                  "environmental authorization following N1-N3 categorization and evaluation"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "marn-environmental-decision",
+              "gate": "MARN N1·N2·N3 환경 공식결정",
+              "decision": "MARN이 분류·평가결과에 따라 비대상, 환경허가·조건 또는 불승인을 공식 확정한다.",
+              "output": "MARN 환경결정·허가 또는 불승인",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [
+            0,
+            6,
+            "message",
+            "병렬 SEA 등록"
+          ],
+          [
+            0,
+            1,
+            "sequence",
+            "허가도서"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "허가접수"
+          ],
+          [
+            2,
+            5,
+            "sequence",
+            "허가 적합"
+          ],
+          [
+            2,
+            3,
+            "message",
+            "허가 보완"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "반환"
+          ],
+          [
+            4,
+            2,
+            "loop",
+            "보완 후 허가 재심사"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "환경양식"
+          ],
+          [
+            7,
+            8,
+            "sequence",
+            "N1"
+          ],
+          [
+            7,
+            9,
+            "sequence",
+            "N2"
+          ],
+          [
+            7,
+            10,
+            "sequence",
+            "N3"
+          ],
+          [
+            10,
+            11,
+            "sequence",
+            "TdR"
+          ],
+          [
+            9,
+            12,
+            "sequence",
+            "N2 자료"
+          ],
+          [
+            11,
+            12,
+            "sequence",
+            "N3 EsIA"
+          ],
+          [
+            12,
+            14,
+            "sequence",
+            "환경 적합"
+          ],
+          [
+            12,
+            13,
+            "message",
+            "추가정보"
+          ],
+          [
+            13,
+            12,
+            "loop",
+            "보완 후 환경 재평가"
+          ],
+          [
+            8,
+            14,
+            "sequence",
+            "N1 회신"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "permit·환경결정 충족",
+            "action": "승인도면과 환경조건을 착공·계약 조건에 반영한다."
+          },
+          {
+            "state": "rework",
+            "label": "반환·환경보완",
+            "action": "허가도서 또는 환경자료를 보완해 해당 심사로 회귀한다."
+          },
+          {
+            "state": "reject",
+            "label": "허가·환경 불승인",
+            "action": "불승인 사유를 해소할 적법한 재신청 경로가 없으면 착공하지 않는다."
+          }
         ]
       }
     },
     "control-completion": {
       "verificationScope": "AMSS의 OPAMSS Recepción de Obra Final 절차와 증빙을 상세 사례로 구성했다. AMSS 밖에서는 주택부·municipality·위임사무소의 recepción 양식과 현장검사 절차를 적용한다.",
       "officialProcedure": {
-        "name":"엘살바도르 공사검사·공사인수(Recepción de Obra) — OPAMSS 사례",
-        "coverage":"official-source-linked",
-        "scope":"국가등록 공사책임자(Director de Obra)·감독자(Supervisor)가 현장일지(bitácora)와 시공적합성을 관리하고 OPAMSS 검사·유틸리티·소방 증빙을 거쳐 부분 또는 최종 공사인수 결정문(resolución)을 받는 절차다.",
-        "stages":["C1 책임자·착공","C2 공사추적·검사","C3 완료도서","C4 공사인수 검사·보완","C5 공식결정"],
-        "steps":[
-          {"lane":"건축주·신청인","stage":0,"label":"등록 공사책임자·감독자·시공자(Constructor) 지정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"소유자가 국가등록 범위가 유효한 공사책임자, 구조 감독자와 시공자를 지정한다.","output":"책임전문가 지정·등록증빙","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"주택부 국가전문가 등록서비스","instrumentId":"SLV-PROFESSIONAL-REGISTRY-SERVICE","provisions":["legal authorization of registered architects, engineers, designers and builders"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":0,"label":"승인도면·조건으로 착공·현장일지 개시","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"책임전문가가 유효 허가·승인도면과 조건으로 공사를 개시하고 현장일지와 검사·시험기록을 유지한다.","output":"착공·승인도서·현장일지","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"OPAMSS 현행 공사·recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["construction under approved permit and site log signed by professionals and inspectors"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":1,"label":"OPAMSS 공사추적·현장검사","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"permit resolución에서 정한 경우 OPAMSS가 현장방문으로 승인공사의 범위·조건 이행을 확인하고 bitácora에 기록한다.","output":"OPAMSS 현장검사·추적기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 절차가이드·recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["OPAMSS follow-up visits or photographic report where required by construction permit"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":1,"label":"현장 불일치·시정통지","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"승인도면·조건과 다른 시공 또는 미완료 요구가 있으면 OPAMSS가 시정·자료보완을 기록·통지한다.","output":"현장 시정·보완통지","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 공사추적·recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["pending requirements recorded in site log and verified before final reception"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":1,"label":"현장 시정·재검사","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"Director·Supervisor가 현장을 시정하고 필요한 변경승인·시험자료를 정리해 추적검사를 다시 받는다.","output":"시정완료·재검사 기록","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"OPAMSS 공사추적·recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["site log closure requires no outstanding project requirements"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":2,"label":"양호시공확인(Buena Obra)·완료도서 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"공사책임자와 구조 감독자가 양호시공·적합성(conformidad) 보고서, 수리도면·면적표와 폐쇄된 현장일지를 작성·서명한다.","output":"양호시공확인·완료도면·폐쇄 현장일지","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"OPAMSS 최종 recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["signed conformity reports, plans, area table and closed site log with no pending requirements"]}]},
-          {"lane":"환경·소방·검사기관","stage":2,"label":"유틸리티·소방·분야별 완료증빙","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"해당되는 ANDA 상하수·배수, 전력 가동승인(habilitación), 소방안전 인증과 허가에 명시된 분야별 승인·종결확인(finiquito)을 확보한다.","output":"상하수·전력·소방·분야별 완료승인","authorityIds":["slv-fire-utilities","slv-permit-authority"],"refs":[{"source":"OPAMSS 유형별 recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["water, sewer, drainage, electricity habilitation and Fire Corps safety certification where applicable"]}]},
-          {"lane":"건축주·신청인","stage":3,"label":"OPAMSS 공사인수 신청","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"신청인이 적용 공사인수서식(RO)을 전자작성하고 책임전문가 보고서·완료도서·현장일지·유틸리티·소방 증빙을 제출한다.","output":"부분·최종 공사인수 공식접수","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 현행 recepción 신청요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["online RO forms and supporting documents for partial or final works reception"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":3,"label":"완료도서·현장 적합검사","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"OPAMSS가 완료도서·bitácora·분야별 증빙을 확인하고 현장이 승인 permit과 조건대로 시공되었는지 검사한다.","output":"recepción 심사·현장검사 기록","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 공사완료 공식절차","instrumentId":"SLV-AMSS-LDOT-REGS","provisions":["article VII.14 and works-reception verification against approved construction permit"]}]},
-          {"lane":"환경·소방·검사기관","stage":3,"label":"recepción 결함·미비 통지","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node","action":"미완료공사·서류미비·유틸리티 또는 소방조건 미충족이 있으면 OPAMSS가 시정·보완사항을 통지한다.","output":"recepción 결함·보완통지","authorityIds":["slv-permit-authority","slv-fire-utilities"],"refs":[{"source":"OPAMSS 최종 recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["closed site log must show no pending requirements; applicable certifications required"]}]},
-          {"lane":"현지 설계·시공 전문가","stage":3,"label":"완료결함 시정·재검사","emphasis":"normal","kind":"official-guidance","basisScope":"node","action":"책임전문가가 현장·완료도서·분야별 증빙을 보완해 recepción 재검사를 요청한다.","output":"완료시정 증빙·재검사 요청","authorityIds":["slv-professional-registry","slv-permit-authority"],"refs":[{"source":"OPAMSS recepción 요건","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["completion of pending works and documentation before final reception"]}]},
-          {"lane":"도시계획·건축 허가기관","stage":4,"label":"공사인수 공식결정","emphasis":"key","kind":"official-guidance","basisScope":"node","action":"OPAMSS가 허가와 완료조건의 적합성을 확인해 부분 또는 최종 공사인수 결정문을 발급하거나 미적합 처리한다.","output":"공사인수 결정문 또는 미적합 통지","authorityIds":["slv-permit-authority"],"refs":[{"source":"OPAMSS 현행 recepción 서비스","instrumentId":"SLV-OPAMSS-REQUIREMENTS","provisions":["partial and final works-reception procedures and required completion evidence"]}],"permitGate":{"key":"opamss-works-reception","gate":"OPAMSS 공사인수 공식결정","decision":"OPAMSS가 완성공사의 승인 허가·조건 적합성을 확인해 부분·최종 공사인수를 승인하거나 미적합 처리한다.","output":"공사인수 결정문 또는 미적합 통지","dependsOn":[]}}
+        "coverage": "official-source-linked",
+        "scope": "국가등록 공사책임자(Director de Obra)·감독자(Supervisor)가 현장일지(bitácora)와 시공적합성을 관리하고 OPAMSS 검사·유틸리티·소방 증빙을 거쳐 부분 또는 최종 공사인수 결정문(resolución)을 받는 절차다.",
+        "stages": [
+          "C1 책임자·착공",
+          "C2 공사추적·검사",
+          "C3 완료도서",
+          "C4 공사인수 검사·보완",
+          "C5 공식결정"
         ],
-        "edges":[[0,1,"sequence","책임자 지정"],[1,2,"sequence","착공·bitácora"],[2,5,"sequence","공사 적합"],[2,3,"message","현장 불일치"],[3,4,"sequence","시정통지"],[4,2,"loop","시정 후 공사 재검사"],[5,6,"sequence","완료도서"],[6,7,"sequence","분야별 승인"],[7,8,"sequence","recepción 접수"],[8,11,"sequence","완료 적합"],[8,9,"message","결함·미비"],[9,10,"sequence","보완통지"],[10,8,"loop","시정 후 recepción 재검사"]],
-        "decisionBranches":[
-          {"state":"success","label":"공사인수 승인","action":"최종 공사인수와 적용되는 운영·환경승인을 확보한 범위에서 인계·사용한다."},
-          {"state":"rework","label":"공사·완료 보완","action":"현장·bitácora·유틸리티·소방 미비를 시정하고 해당 검사로 회귀한다."},
-          {"state":"reject","label":"공사인수 미적합","action":"미적합이 해소되지 않으면 건물을 사용·개장하지 않는다."}
+        "steps": [
+          {
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "등록 공사책임자·감독자·시공자(Constructor) 지정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "소유자가 국가등록 범위가 유효한 공사책임자, 구조 감독자와 시공자를 지정한다.",
+            "output": "책임전문가 지정·등록증빙",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "주택부 국가전문가 등록서비스",
+                "instrumentId": "SLV-PROFESSIONAL-REGISTRY-SERVICE",
+                "provisions": [
+                  "legal authorization of registered architects, engineers, designers and builders"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "승인도면·조건으로 착공·현장일지 개시",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "책임전문가가 유효 허가·승인도면과 조건으로 공사를 개시하고 현장일지와 검사·시험기록을 유지한다.",
+            "output": "착공·승인도서·현장일지",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 현행 공사·recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "construction under approved permit and site log signed by professionals and inspectors"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "OPAMSS 공사추적·현장검사",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "permit resolución에서 정한 경우 OPAMSS가 현장방문으로 승인공사의 범위·조건 이행을 확인하고 bitácora에 기록한다.",
+            "output": "OPAMSS 현장검사·추적기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 절차가이드·recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "OPAMSS follow-up visits or photographic report where required by construction permit"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "현장 불일치·시정통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "승인도면·조건과 다른 시공 또는 미완료 요구가 있으면 OPAMSS가 시정·자료보완을 기록·통지한다.",
+            "output": "현장 시정·보완통지",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 공사추적·recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "pending requirements recorded in site log and verified before final reception"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 1,
+            "label": "현장 시정·재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Director·Supervisor가 현장을 시정하고 필요한 변경승인·시험자료를 정리해 추적검사를 다시 받는다.",
+            "output": "시정완료·재검사 기록",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 공사추적·recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "site log closure requires no outstanding project requirements"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 2,
+            "label": "양호시공확인(Buena Obra)·완료도서 작성",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "공사책임자와 구조 감독자가 양호시공·적합성(conformidad) 보고서, 수리도면·면적표와 폐쇄된 현장일지를 작성·서명한다.",
+            "output": "양호시공확인·완료도면·폐쇄 현장일지",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 최종 recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "signed conformity reports, plans, area table and closed site log with no pending requirements"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "유틸리티·소방·분야별 완료증빙",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "해당되는 ANDA 상하수·배수, 전력 가동승인(habilitación), 소방안전 인증과 허가에 명시된 분야별 승인·종결확인(finiquito)을 확보한다.",
+            "output": "상하수·전력·소방·분야별 완료승인",
+            "authorityIds": [
+              "slv-fire-utilities",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 유형별 recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "water, sewer, drainage, electricity habilitation and Fire Corps safety certification where applicable"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "건축주·신청인",
+            "stage": 3,
+            "label": "OPAMSS 공사인수 신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 적용 공사인수서식(RO)을 전자작성하고 책임전문가 보고서·완료도서·현장일지·유틸리티·소방 증빙을 제출한다.",
+            "output": "부분·최종 공사인수 공식접수",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 현행 recepción 신청요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "online RO forms and supporting documents for partial or final works reception"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "완료도서·현장 적합검사",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 완료도서와 분야별 증빙을 확인하고 현장이 승인 허가와 조건대로 시공되었는지 검사한다.",
+            "output": "recepción 심사·현장검사 기록",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "도시계획건설법",
+                "instrumentId": "SLV-URBAN-CONSTRUCTION-LAW",
+                "provisions": [
+                  "works reception and verification against the approved construction permit"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "환경·소방·검사기관",
+            "stage": 3,
+            "label": "recepción 결함·미비 통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "미완료공사·서류미비·유틸리티 또는 소방조건 미충족이 있으면 OPAMSS가 시정·보완사항을 통지한다.",
+            "output": "recepción 결함·보완통지",
+            "authorityIds": [
+              "slv-permit-authority",
+              "slv-fire-utilities"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 최종 recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "closed site log must show no pending requirements; applicable certifications required"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "완료결함 시정·재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "책임전문가가 현장·완료도서·분야별 증빙을 보완해 recepción 재검사를 요청한다.",
+            "output": "완료시정 증빙·재검사 요청",
+            "authorityIds": [
+              "slv-professional-registry",
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS recepción 요건",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "completion of pending works and documentation before final reception"
+                ]
+              }
+            ]
+          },
+          {
+            "lane": "도시계획·건축 허가기관",
+            "stage": 4,
+            "label": "공사인수 공식결정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "OPAMSS가 허가와 완료조건의 적합성을 확인해 부분 또는 최종 공사인수 결정문을 발급하거나 미적합 처리한다.",
+            "output": "공사인수 결정문 또는 미적합 통지",
+            "authorityIds": [
+              "slv-permit-authority"
+            ],
+            "refs": [
+              {
+                "source": "OPAMSS 현행 recepción 서비스",
+                "instrumentId": "SLV-OPAMSS-REQUIREMENTS",
+                "provisions": [
+                  "partial and final works-reception procedures and required completion evidence"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "opamss-works-reception",
+              "gate": "OPAMSS 공사인수 공식결정",
+              "decision": "OPAMSS가 완성공사의 승인 허가·조건 적합성을 확인해 부분·최종 공사인수를 승인하거나 미적합 처리한다.",
+              "output": "공사인수 결정문 또는 미적합 통지",
+              "dependsOn": []
+            }
+          }
+        ],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "책임자 지정"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "착공·bitácora"
+          ],
+          [
+            2,
+            5,
+            "sequence",
+            "공사 적합"
+          ],
+          [
+            2,
+            3,
+            "message",
+            "현장 불일치"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "시정통지"
+          ],
+          [
+            4,
+            2,
+            "loop",
+            "시정 후 공사 재검사"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "완료도서"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "분야별 승인"
+          ],
+          [
+            7,
+            8,
+            "sequence",
+            "recepción 접수"
+          ],
+          [
+            8,
+            11,
+            "sequence",
+            "완료 적합"
+          ],
+          [
+            8,
+            9,
+            "message",
+            "결함·미비"
+          ],
+          [
+            9,
+            10,
+            "sequence",
+            "보완통지"
+          ],
+          [
+            10,
+            8,
+            "loop",
+            "시정 후 recepción 재검사"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "공사인수 승인",
+            "action": "최종 공사인수와 적용되는 운영·환경승인을 확보한 범위에서 인계·사용한다."
+          },
+          {
+            "state": "rework",
+            "label": "공사·완료 보완",
+            "action": "현장·bitácora·유틸리티·소방 미비를 시정하고 해당 검사로 회귀한다."
+          },
+          {
+            "state": "reject",
+            "label": "공사인수 미적합",
+            "action": "미적합이 해소되지 않으면 건물을 사용·개장하지 않는다."
+          }
         ]
       }
     }

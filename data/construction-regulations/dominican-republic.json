@@ -58,10 +58,10 @@
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
-        "action": "소유자 또는 적법한 대리인이 부동산 título, Plano de Mensura Catastral, 법인·대리권 자료로 대상 필지와 신청권한을 확정한다.",
+        "note": "건축주가 권원증서와 지적측량, 공증 대리권을 갖춘다.",
+        "action": "건축주가 권원증서와 지적측량, 공증 대리권을 갖춘다.",
         "outputs": [
-          "권원·지적측량·신청권한 자료"
+          "권원·지적·대리권 자료철"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -72,10 +72,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "R-021 §2.3.1.1",
+            "instrumentId": "DOM-R021-576-06",
             "provisions": [
-              "property title, cadastral survey and notarized owner authorization"
+              "sections 2.3.1.1-2.3.1.2; project classification, plans and professional signatures"
             ]
           }
         ]
@@ -84,14 +84,14 @@
         "id": "B02",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 신청도서",
-        "label": "위치·예정용도·규모자료 작성",
+        "label": "사업분류·위치·규모자료 작성",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "전문가가 필지 위치, 현재·예정용도, 사업규모와 해당 도시계획·특별구역 조건을 대조해 신청자료를 작성한다.",
-        "action": "전문가가 필지 위치, 현재·예정용도, 사업규모와 해당 도시계획·특별구역 조건을 대조해 신청자료를 작성한다.",
+        "note": "전문가가 사업을 R-021 분류에 따라 구분하고 위치·예정용도·규모 자료를 작성한다.",
+        "action": "전문가가 사업을 R-021 분류에 따라 구분하고 위치·예정용도·규모 자료를 작성한다.",
         "outputs": [
-          "토지이용 신청서·위치·사업개요"
+          "사업분류·위치·규모 자료"
         ],
         "authorityIds": [
           "dom-codia-professionals",
@@ -103,10 +103,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 요건",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "R-021 §2.3.1.1",
+            "instrumentId": "DOM-R021-576-06",
             "provisions": [
-              "application form, property location and land-use description"
+              "sections 2.3.1.1-2.3.1.2; project classification, plans and professional signatures"
             ]
           }
         ]
@@ -115,14 +115,14 @@
         "id": "B03",
         "lane": "현지 설계·시공 전문가",
         "stage": "S2 신청도서",
-        "label": "특별구역 사전 이의없음확인(no-objection) 확보",
+        "label": "관할 시 토지이용 확인 신청",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
-        "action": "Gazcue·Zona Colonial 등 적용구역이면 문화유산 담당기관의 Certificado de No Objeción 등 선행의견을 확보한다.",
+        "note": "건축주가 대상 필지를 관할하는 시에 토지이용 확인을 신청한다.",
+        "action": "건축주가 대상 필지를 관할하는 시에 토지이용 확인을 신청한다.",
         "outputs": [
-          "적용 특별구역 이의없음확인"
+          "토지이용 확인 신청 접수"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -133,10 +133,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "환경허가 절차 요건",
+            "instrumentId": "DOM-ENV-AUTHORIZATION-SERVICE",
             "provisions": [
-              "DNPM no-objection required for Gazcue or Zona Colonial"
+              "project registration, property title, cadastral survey, municipal land-use no-objection and filing"
             ]
           }
         ]
@@ -145,14 +145,14 @@
         "id": "B04",
         "lane": "건축주·신청인",
         "stage": "S3 공식접수",
-        "label": "ADN 토지이용 인증 공식접수",
+        "label": "특별보호구역 사전확인",
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인이 정해진 양식과 디지털·종이 첨부자료를 ADN에 제출해 토지이용 인증 절차를 개시한다.",
-        "action": "신청인이 정해진 양식과 디지털·종이 첨부자료를 ADN에 제출해 토지이용 인증 절차를 개시한다.",
+        "note": "대상 필지가 특별보호·유산구역에 해당하면 해당 기관의 사전 확인을 받는다.",
+        "action": "대상 필지가 특별보호·유산구역에 해당하면 해당 기관의 사전 확인을 받는다.",
         "outputs": [
-          "Certificación de Uso de Suelo 접수"
+          "특별구역 사전확인 결과"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -163,10 +163,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "건설·건축 규제법",
+            "instrumentId": "DOM-LAW-160-21-687-82",
             "provisions": [
-              "in-person filing of form and digitized supporting documents"
+              "national building and construction regulation mandate"
             ]
           }
         ]
@@ -175,14 +175,14 @@
         "id": "B05",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 도시계획 심사·보완",
-        "label": "도시계획·허용용도 기술심사",
+        "label": "허용용도·계획 적합성 심사",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "ADN 도시계획부서가 mensura와 필지위치를 관할 계획·조례에 대조해 허용용도와 적용 도시계획 조건을 심사한다.",
-        "action": "ADN 도시계획부서가 mensura와 필지위치를 관할 계획·조례에 대조해 허용용도와 적용 도시계획 조건을 심사한다.",
+        "note": "관할 시가 대상 필지에 허용되는 용도와 계획 적합성을 심사한다.",
+        "action": "관할 시가 대상 필지에 허용되는 용도와 계획 적합성을 심사한다.",
         "outputs": [
-          "용도·도시계획 검토기록"
+          "허용용도 심사 결과"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -193,10 +193,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "환경허가 절차 요건",
+            "instrumentId": "DOM-ENV-AUTHORIZATION-SERVICE",
             "provisions": [
-              "certification of the use permitted in the territory"
+              "project registration, property title, cadastral survey, municipal land-use no-objection and filing"
             ]
           }
         ]
@@ -205,14 +205,14 @@
         "id": "B06",
         "lane": "도시계획·건축 허가기관",
         "stage": "S4 도시계획 심사·보완",
-        "label": "누락·계획불일치 보완통지",
+        "label": "누락·불일치 보완통지",
         "emphasis": "bottleneck",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "요건 누락이나 계획불일치가 있으면 담당부서가 추가자료·정정 또는 사업계획 수정을 신청인에게 요구한다.",
-        "action": "요건 누락이나 계획불일치가 있으면 담당부서가 추가자료·정정 또는 사업계획 수정을 신청인에게 요구한다.",
+        "note": "자료 누락이나 계획 불일치가 있으면 보완을 통지한다.",
+        "action": "자료 누락이나 계획 불일치가 있으면 보완을 통지한다.",
         "outputs": [
-          "보완·계획수정 통지"
+          "보완 통지"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -223,10 +223,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 요건",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "R-021 §2.3.1.2.2",
+            "instrumentId": "DOM-R021-576-06",
             "provisions": [
-              "required application, ownership, survey, location and special-area documents"
+              "section 2.3.1.2.2; filing with Central or Regional Plan Processing Office"
             ]
           }
         ]
@@ -239,10 +239,10 @@
         "emphasis": "normal",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "신청인과 전문가가 누락·불일치를 보완하고 수정자료를 제출해 도시계획 재심사를 받는다.",
-        "action": "신청인과 전문가가 누락·불일치를 보완하고 수정자료를 제출해 도시계획 재심사를 받는다.",
+        "note": "건축주가 누락 자료를 보완해 재심사를 받는다.",
+        "action": "건축주가 누락 자료를 보완해 재심사를 받는다.",
         "outputs": [
-          "보완자료·재접수 기록"
+          "보완 자료·재심사 기록"
         ],
         "authorityIds": [
           "dom-codia-professionals",
@@ -254,10 +254,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "R-021 §2.3.1.2.2",
+            "instrumentId": "DOM-R021-576-06",
             "provisions": [
-              "applicant follow-up and complete supporting documents"
+              "section 2.3.1.2.2; filing with Central or Regional Plan Processing Office"
             ]
           }
         ]
@@ -266,14 +266,14 @@
         "id": "B08",
         "lane": "도시계획·건축 허가기관",
         "stage": "S5 용도인증 결정",
-        "label": "토지이용 인증서(Certificación de Uso de Suelo) 결정",
+        "label": "토지이용 확인서 발급",
         "emphasis": "key",
         "kind": "official-guidance",
         "basisScope": "node",
-        "note": "ADN이 해당 필지의 허용용도와 조건을 인증서로 발급하거나 부적합·불가 결정을 통지한다.",
-        "action": "ADN이 해당 필지의 허용용도와 조건을 인증서로 발급하거나 부적합·불가 결정을 통지한다.",
+        "note": "관할 시가 허용용도를 확인하는 증명을 발급해 건축허가 접수요건을 충족시킨다.",
+        "action": "관할 시가 허용용도를 확인하는 증명을 발급해 건축허가 접수요건을 충족시킨다.",
         "outputs": [
-          "토지이용 인증서·조건 또는 부적합 통지"
+          "토지이용 확인서"
         ],
         "authorityIds": [
           "dom-municipality"
@@ -284,10 +284,10 @@
         "questionIds": [],
         "refs": [
           {
-            "source": "ADN 토지이용 인증 공식서비스",
-            "instrumentId": "DOM-ADN-LANDUSE-SERVICE",
+            "source": "환경허가 절차 요건",
+            "instrumentId": "DOM-ENV-AUTHORIZATION-SERVICE",
             "provisions": [
-              "official certification of permitted land use"
+              "project registration, property title, cadastral survey, municipal land-use no-objection and filing"
             ]
           }
         ],
@@ -1407,12 +1407,13 @@
       "id": "site-urban",
       "slug": "dominican-republic-site-urban-construction-regulations",
       "priority": 4,
-      "name": "도미니카공화국 필지·토지이용 결정 — 국가구(Distrito Nacional) 사례",
+      "nationalFramework": "established",
+      "name": "도미니카공화국 도시계획·부지규제",
       "oneLiner": "권원·mensura catastral과 관할 ayuntamiento의 용도인증·no-objection으로 필지별 개발조건을 확정한다.",
       "purpose": "대상 필지의 권원과 토지이용 적합성, 용도지역·건폐율·용적률·높이·이격·주차, 재해·지반과 기반시설 인입조건을 개념설계 전에 확인하는 제도축",
-      "verificationScope": "전국 지방분권 체계 중 Distrito Nacional의 실제 Certificación de Uso de Suelo 절차를 공식 사례로 구성했다. 용도·밀도·높이·주차·수수료는 다른 ayuntamiento에 일반화하지 않는다.",
+      "verificationScope": "토지이용 확인은 관할 시가 발급하지만, 그 확인을 건축허가 요건으로 요구하는 근거는 전국 규정 R-021과 환경허가 절차다. 아래 절차는 그 전국 요건을 표시한다.",
       "procedureStatus": "official-source-linked",
-      "procedureScope": "국가구에서 권원증서(título)·지적측량(mensura)으로 필지를 특정하고 국가구 시청(ADN)의 도시계획 심사를 거쳐 허용용도를 공식 인증받는 절차다. 다른 지방은 관할 시청(ayuntamiento)의 현행 조례·서비스를 적용한다.",
+      "procedureScope": "R-021이 요구하는 사업분류·권원·부지자료와 관할 시 토지이용 확인을 건축허가 접수 전에 갖추는 전국 공통 흐름이다. 필지별 허용용도와 수치는 대상지 시 계획으로 확정한다.",
       "nodeIds": [
         "B01",
         "B02",
@@ -1522,7 +1523,8 @@
       "id": "permit-environment",
       "slug": "dominican-republic-permit-environment-construction-regulations",
       "priority": 5,
-      "name": "도미니카공화국 주택건축부(MIVHED) 건축허가·환경부 A-D 승인",
+      "nationalFramework": "established",
+      "name": "도미니카공화국 건축허가·환경심사",
       "oneLiner": "시청 용도·no-objection, MIVHED 건축 licence와 환경부 A·B·C·D 승인을 순서대로 연결한다.",
       "purpose": "건축주·허가권자와 현지 책임설계자, 시설·위험 분류, 환경 스크리닝과 건축허가의 선후관계·서류·수수료·기간을 확인하는 제도축",
       "verificationScope": "MIVHED R-021의 도면접수·승인·licence 절차와 환경부의 2024 A-D 분류·현행 디지털 평가절차를 구성했다. 지방 사전승인과 특정 분야 관계기관 의견은 사업지·용도별로 적용한다.",
@@ -1698,7 +1700,8 @@
       "id": "control-completion",
       "slug": "dominican-republic-control-completion-construction-regulations",
       "priority": 6,
-      "name": "도미니카공화국 R-004 공사감리·단계검사·최종인증",
+      "nationalFramework": "established",
+      "name": "도미니카공화국 기술검사·보험·준공제도",
       "oneLiner": "CODIA 등록 책임자·MIVHED habilitación 전문가, 단계검사와 최종검사 승인증을 사용개시 Gate로 둔다.",
       "purpose": "설계·시공 자격, 기술검사와 공사보험, 착공·중간검사·변경관리, 준공·소방·사용승인과 운영 인계조건을 확인하는 제도축",
       "verificationScope": "MIVHED R-004 조문의 공사책임·단계검사·최종검사 경로를 구성했다. 실제 검사 hold point와 habilitación 전문기관은 공사유형·규모별 R-004 적용판정과 MIVHED 배정에 따른다.",
@@ -1884,6 +1887,9 @@
   "instruments": [
     {
       "id": "DOM-LOCAL-LANDUSE",
+      "scope": "local",
+      "scopeLabel": "관할 시",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "Applicable municipal land-use plan and ordinances; Distrito Nacional land-use certification as an official example",
       "titleKo": "관할 시 도시계획·토지이용 조례(국가구역청 ADN 용도인증 공식 예시)",
       "kind": "local-regulation",
@@ -1953,6 +1959,9 @@
     },
     {
       "id": "DOM-ADN-LANDUSE-SERVICE",
+      "scope": "local",
+      "scopeLabel": "국가구역(Distrito Nacional)",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "Distrito Nacional official Land-Use Certification service",
       "titleKo": "국가구역청(ADN) 토지이용 인증 공식서비스",
       "kind": "official-guidance",

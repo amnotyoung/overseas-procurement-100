@@ -44,6 +44,9 @@
     },
     {
       "id": "GHA-GCMA-PERMIT-GUIDE",
+      "scope": "local",
+      "scopeLabel": "가센트럴 지방의회(GCMA)",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "Ga Central Municipal Assembly building-permit procedure",
       "titleKo": "가 센트럴 시의회 건축허가 공식 절차",
       "kind": "official-guidance",
@@ -56,6 +59,9 @@
     },
     {
       "id": "GHA-AMA-PERMIT-GUIDE",
+      "scope": "local",
+      "scopeLabel": "아크라 광역의회(AMA)",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "Accra Metropolitan Assembly permitting guidelines",
       "titleKo": "아크라 광역의회 인허가 지침",
       "kind": "official-guidance",
@@ -93,9 +99,8 @@
   ],
   "systems": {
     "site-urban": {
-      "verificationScope": "Act 925의 전국 개발허가 의무·전문가 서명·집행 조문과 GCMA의 공개 8단계 처리절차를 직접 연결했다. 절차 순서와 기한은 GCMA 대표 사례이며 다른 MMDA는 자체 Fee-Fixing Resolution과 회의일정을 적용한다.",
+      "verificationScope": "개발·건축허가는 토지이용공간계획법이 계획허가기관의 권한으로 전국에 정한다. 아래 절차는 그 법정 골격이며, 필지별 계획조건은 관할 지방의회의 현행 계획으로 확정한다.",
       "officialProcedure": {
-        "name": "가나 개발·건축허가 — Ga Central MMDA 대표 사례",
         "coverage": "official-source-linked",
         "scope": "법률 제925호(Act 925) 제113조~제117조의 개발허가 체계는 전국 MMDA에 적용된다. 아래 접수·합동검사·위원회 순서는 가 센트럴 시의회(Ga Central Municipal Assembly)의 공식 서비스 사례이며, 대상지가 다른 MMDA이면 그 의회의 서식·수수료·회의일정으로 바꾼다.",
         "stages": [
@@ -113,17 +118,16 @@
             "kind": "official-guidance",
             "action": "토지권원 확인서와 배치도(site plan)·구획도(block plan)·건축도면(building plans)을 준비하고, 법정 대상 도서는 등록 건축사·기술자가 작성·서명한다.",
             "output": "권원확인서와 전문가 서명 계획·건축도서",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "Act 925 전문가 인증",
+                "source": "토지이용공간계획법 제113·114조",
                 "instrumentId": "GHA-LUSP-ACT-925",
-                "provisions": ["Sections 113-114"]
-              },
-              {
-                "source": "GCMA Stage 1",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stage 1 — basic requirements"]
+                "provisions": [
+                  "Sections 113-114"
+                ]
               }
             ]
           },
@@ -133,19 +137,18 @@
             "label": "개발·건축허가 신청 접수",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "건축허가 신청서(BPA)와 물리계획부 제1호 서식(PPD Form 1)을 완성해 필수 첨부도서와 함께 GCMA 물리계획부(Physical Planning Department)에 제출하고 처리수수료 공식 영수증을 받는다.",
+            "action": "건축허가 신청서와 계획기관이 정한 신청서식을 완성해 필수 첨부도서와 함께 관할 지방의회 물리계획부에 제출하고 처리수수료 공식 영수증을 받는다.",
             "output": "신청접수 기록·처리수수료 영수증",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 접수절차",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stages 2-3 — completion and submission of forms"]
-              },
-              {
-                "source": "Act 925 허가·수수료",
+                "source": "토지이용공간계획법 제113·116·117조",
                 "instrumentId": "GHA-LUSP-ACT-925",
-                "provisions": ["Sections 113, 116-117"]
+                "provisions": [
+                  "Sections 113, 116-117"
+                ]
               }
             ]
           },
@@ -157,12 +160,16 @@
             "kind": "official-guidance",
             "action": "접수담당자가 누락·정정사항을 알리고 검사일을 정한 뒤 합동기술소위원회(Joint Technical Sub-Committee)가 신청인과 현장을 확인한다.",
             "output": "완비확인·현장검사 기록",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 접수·검사",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stages 3-4 — corrections, inspection and processing"]
+                "source": "토지이용공간계획법 제113·116·117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113, 116-117"
+                ]
               }
             ]
           },
@@ -174,12 +181,16 @@
             "kind": "official-guidance",
             "action": "관계 부서·기관이 신청을 예비평가하고 합동기술소위원회가 계획·구조·관계기관 의견을 종합해 공간계획위원회(Spatial Planning Committee) 권고안을 만든다.",
             "output": "부서검토서·기술소위원회 권고",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA Stage 4",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stage 4 — preliminary assessments and Joint Technical Sub-Committee"]
+                "source": "토지이용공간계획법 제115·118·119·160조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 115, 118-119, 160"
+                ]
               }
             ]
           },
@@ -191,12 +202,16 @@
             "kind": "official-guidance",
             "action": "접수 또는 기술심사에서 통지된 정정·추가사항을 반영해 수정도서와 관계기관 자료를 다시 제출한다.",
             "output": "수정도서·보완 재접수 기록",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 보완안내",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stages 3-4 — corrections or additions and technical assessment"]
+                "source": "토지이용공간계획법 제113·116·117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113, 116-117"
+                ]
               }
             ]
           },
@@ -206,14 +221,18 @@
             "label": "허가수수료 통지·납부",
             "emphasis": "normal",
             "kind": "official-guidance",
-            "action": "의회가 게시·우편으로 고지한 건축허가 수수료를 시 공사부(Municipal Works Department)에 납부한다. 영수증 자체는 허가증이 아니다.",
+            "action": "계획허가기관이 고지한 건축허가 수수료를 지방의회 공사부에 납부한다. 영수증 자체는 허가증이 아니다.",
             "output": "건축허가 수수료 납부영수증",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 수수료 단계",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stages 5-6 — fee notification and payment"]
+                "source": "토지이용공간계획법 제113~117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113-117"
+                ]
               }
             ]
           },
@@ -225,12 +244,16 @@
             "kind": "official-guidance",
             "action": "계획허가기관(Planning Authority)이 기술소위원회 평가를 토대로 신청을 승인·조건부 승인 또는 거부하고 신청인에게 결정을 통지한다.",
             "output": "승인·조건부 승인 또는 거부 통지",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 최종승인",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stage 7 — final approval and notification"]
+                "source": "토지이용공간계획법 제113~117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113-117"
+                ]
               }
             ],
             "permitGate": {
@@ -247,45 +270,100 @@
             "label": "서명된 건축허가증 수령",
             "emphasis": "key",
             "kind": "official-guidance",
-            "action": "승인된 경우 시 공사부에서 시 기술자(Municipal Engineer)가 서명한 건축허가증과 승인조건을 수령한다.",
+            "action": "승인된 경우 시 공사부에서 지방의회 기술책임자가 서명한 건축허가증과 승인조건을 수령한다.",
             "output": "서명 건축허가증·승인도서",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
               {
-                "source": "GCMA 허가발급",
-                "instrumentId": "GHA-GCMA-PERMIT-GUIDE",
-                "provisions": ["Stage 8 — issue and collection of building permit"]
+                "source": "토지이용공간계획법 제113~117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113-117"
+                ]
               }
             ]
           }
         ],
         "edges": [
-          [0, 1, "sequence", "서명도서"],
-          [1, 2, "sequence", "완비접수"],
-          [2, 3, "sequence", "검사기록"],
-          [3, 5, "sequence", "기술권고"],
-          [3, 4, "message", "정정·추가 요구 시"],
-          [4, 3, "loop", "보완도서 재심사"],
-          [5, 6, "sequence", "납부확인"],
-          [6, 7, "sequence", "승인 시 발급"]
+          [
+            0,
+            1,
+            "sequence",
+            "서명도서"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "완비접수"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "검사기록"
+          ],
+          [
+            3,
+            5,
+            "sequence",
+            "기술권고"
+          ],
+          [
+            3,
+            4,
+            "message",
+            "정정·추가 요구 시"
+          ],
+          [
+            4,
+            3,
+            "loop",
+            "보완도서 재심사"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "납부확인"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "승인 시 발급"
+          ]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "승인·조건부 승인", "action": "수수료 납부와 승인조건을 확인하고 서명된 허가증을 수령"},
-          {"state": "rework", "label": "정정·추가요구", "action": "정정·추가도서 제출 단계로 돌아가 기술소위원회 재심사를 받음"},
-          {"state": "reject", "label": "거부", "action": "거부사유를 확인하고 설계변경·재신청 또는 Act 925의 불복경로를 검토"}
+          {
+            "state": "success",
+            "label": "승인·조건부 승인",
+            "action": "수수료 납부와 승인조건을 확인하고 서명된 허가증을 수령"
+          },
+          {
+            "state": "rework",
+            "label": "정정·추가요구",
+            "action": "정정·추가도서 제출 단계로 돌아가 기술소위원회 재심사를 받음"
+          },
+          {
+            "state": "reject",
+            "label": "거부",
+            "action": "거부사유를 확인하고 설계변경·재신청 또는 Act 925의 불복경로를 검토"
+          }
         ]
       }
     },
     "permit-environment": {
-      "verificationScope": "EPA의 현행 Act 1124·L.I. 2504 허가대장과 디지털 신청포털, Act 925 조문 및 GCMA 공식 처리절차를 결합했다. 환경허가가 건축허가 제출서류인 대표 MMDA 경로를 표시한다.",
+      "verificationScope": "환경허가는 환경청이, 건축허가는 토지이용공간계획법상 계획허가기관이 집행한다. 두 절차의 접수·심사·결정 단계를 법정 조문으로 연결했다.",
       "officialProcedure": {
-        "name": "가나 환경허가·건축허가 — EPA·Ga Central MMDA 사례",
         "coverage": "official-source-linked",
         "scope": "EPA 환경허가는 법률 제1124호(Act 1124)와 입법문서 제2504호(L.I. 2504)의 전국 절차다. 건축허가 접수 이후 순서는 Ga Central MMDA 대표 사례이며 다른 MMDA에서는 해당 의회의 관계기관·서식·수수료를 적용한다.",
         "stages": [
-          "G0 EPA 등록·분류",
+          "G0 환경등록·분류",
           "G1 환경평가·결정",
-          "G2 MMDA 접수·심사",
+          "G2 접수·심사",
           "G3 허가결정"
         ],
         "steps": [
@@ -297,10 +375,24 @@
             "kind": "official-guidance",
             "action": "사업시행자 명의로 EPA 고객 포털(Client Portal) 계정을 등록하고 대상 사업·부지정보와 필수문서를 올려 환경허가 신청을 제출한다.",
             "output": "EPA 전자신청번호·접수기록",
-            "authorityIds": ["epa-ghana"],
+            "authorityIds": [
+              "epa-ghana"
+            ],
             "refs": [
-              {"source": "EPA 디지털 신청", "instrumentId": "GHA-EPA-CLIENT-PORTAL", "provisions": ["Digital applications; document upload; integrated payments; status tracking"]},
-              {"source": "현행 환경허가 근거", "instrumentId": "GHA-ENV-LI-2504", "provisions": ["registration and environmental permitting framework"]}
+              {
+                "source": "EPA 디지털 신청",
+                "instrumentId": "GHA-EPA-CLIENT-PORTAL",
+                "provisions": [
+                  "Digital applications; document upload; integrated payments; status tracking"
+                ]
+              },
+              {
+                "source": "현행 환경허가 근거",
+                "instrumentId": "GHA-ENV-LI-2504",
+                "provisions": [
+                  "registration and environmental permitting framework"
+                ]
+              }
             ]
           },
           {
@@ -311,10 +403,24 @@
             "kind": "official-guidance",
             "action": "EPA가 사업유형·규모·입지와 제출자료를 심사해 직접 허가, 추가 환경자료 또는 상세 환경평가가 필요한 경로를 정한다.",
             "output": "환경평가 경로·추가자료 요구",
-            "authorityIds": ["epa-ghana"],
+            "authorityIds": [
+              "epa-ghana"
+            ],
             "refs": [
-              {"source": "L.I. 2504 환경평가", "instrumentId": "GHA-ENV-LI-2504", "provisions": ["registration, screening and environmental assessment route"]},
-              {"source": "Act 1124 환경규제권", "instrumentId": "GHA-ENV-ACT-1124", "provisions": ["environmental assessment and permitting framework"]}
+              {
+                "source": "L.I. 2504 환경평가",
+                "instrumentId": "GHA-ENV-LI-2504",
+                "provisions": [
+                  "registration, screening and environmental assessment route"
+                ]
+              },
+              {
+                "source": "Act 1124 환경규제권",
+                "instrumentId": "GHA-ENV-ACT-1124",
+                "provisions": [
+                  "environmental assessment and permitting framework"
+                ]
+              }
             ]
           },
           {
@@ -325,10 +431,24 @@
             "kind": "official-guidance",
             "action": "EPA가 정한 범위에 따라 예비평가·상세 환경영향평가, 관리계획과 관계기관 의견을 작성해 포털로 제출한다.",
             "output": "환경평가서·관리계획·보완자료",
-            "authorityIds": ["epa-ghana"],
+            "authorityIds": [
+              "epa-ghana"
+            ],
             "refs": [
-              {"source": "L.I. 2504 평가절차", "instrumentId": "GHA-ENV-LI-2504", "provisions": ["assessment report, scoping and supporting information where required"]},
-              {"source": "EPA 전자제출", "instrumentId": "GHA-EPA-CLIENT-PORTAL", "provisions": ["Secure document upload"]}
+              {
+                "source": "L.I. 2504 평가절차",
+                "instrumentId": "GHA-ENV-LI-2504",
+                "provisions": [
+                  "assessment report, scoping and supporting information where required"
+                ]
+              },
+              {
+                "source": "EPA 전자제출",
+                "instrumentId": "GHA-EPA-CLIENT-PORTAL",
+                "provisions": [
+                  "Secure document upload"
+                ]
+              }
             ]
           },
           {
@@ -339,10 +459,24 @@
             "kind": "official-guidance",
             "action": "EPA가 환경평가서와 보완자료를 검토하고 필요한 경우 추가정보·수정을 요구해 재검토한다.",
             "output": "환경 기술검토 의견·보완요구 또는 결정안",
-            "authorityIds": ["epa-ghana"],
+            "authorityIds": [
+              "epa-ghana"
+            ],
             "refs": [
-              {"source": "L.I. 2504 심사", "instrumentId": "GHA-ENV-LI-2504", "provisions": ["review, further information and permit decision"]},
-              {"source": "EPA 진행상태 통지", "instrumentId": "GHA-EPA-CLIENT-PORTAL", "provisions": ["Real-time status and notifications"]}
+              {
+                "source": "L.I. 2504 심사",
+                "instrumentId": "GHA-ENV-LI-2504",
+                "provisions": [
+                  "review, further information and permit decision"
+                ]
+              },
+              {
+                "source": "EPA 진행상태 통지",
+                "instrumentId": "GHA-EPA-CLIENT-PORTAL",
+                "provisions": [
+                  "Real-time status and notifications"
+                ]
+              }
             ]
           },
           {
@@ -353,10 +487,24 @@
             "kind": "official-guidance",
             "action": "EPA가 환경허가를 발급하거나 조건을 붙이고, 요건 미충족 시 보완 또는 거부 결정을 전자적으로 통지한다.",
             "output": "환경허가·조건·보완 또는 거부 결정",
-            "authorityIds": ["epa-ghana"],
+            "authorityIds": [
+              "epa-ghana"
+            ],
             "refs": [
-              {"source": "EPA 현행 허가대장", "instrumentId": "GHA-ENV-LI-2504", "provisions": ["environmental permits issued under Act 1124 and L.I. 2504"]},
-              {"source": "EPA permit service", "instrumentId": "GHA-EPA-CLIENT-PORTAL", "provisions": ["Permit applications and approval tracking"]}
+              {
+                "source": "EPA 현행 허가대장",
+                "instrumentId": "GHA-ENV-LI-2504",
+                "provisions": [
+                  "environmental permits issued under Act 1124 and L.I. 2504"
+                ]
+              },
+              {
+                "source": "EPA permit service",
+                "instrumentId": "GHA-EPA-CLIENT-PORTAL",
+                "provisions": [
+                  "Permit applications and approval tracking"
+                ]
+              }
             ],
             "permitGate": {
               "key": "environmental-permit-decision",
@@ -374,10 +522,17 @@
             "kind": "official-guidance",
             "action": "권원·전문가 서명도서와 EPA 환경허가증(permit), 소방·구조·토질 등 해당 첨부자료를 관할 MMDA에 제출한다.",
             "output": "MMDA 완비접수·처리수수료 영수증",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
-              {"source": "MMDA 허가서류", "instrumentId": "GHA-MMDA-PERMIT-GUIDE", "provisions": ["official permit dossier and conditional clearances"]},
-              {"source": "GCMA 제출절차", "instrumentId": "GHA-GCMA-PERMIT-GUIDE", "provisions": ["Stages 1-3"]}
+              {
+                "source": "전국 건축허가 안내",
+                "instrumentId": "GHA-MMDA-PERMIT-GUIDE",
+                "provisions": [
+                  "official permit dossier and conditional clearances"
+                ]
+              }
             ]
           },
           {
@@ -388,9 +543,17 @@
             "kind": "official-guidance",
             "action": "합동기술소위원회(Joint Technical Sub-Committee)가 현장을 검사하고 관계 부서·기관의 계획·건축·환경·소방 의견을 종합한다.",
             "output": "현장검사서·기술소위원회 권고",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
-              {"source": "GCMA Stage 4", "instrumentId": "GHA-GCMA-PERMIT-GUIDE", "provisions": ["site inspection, preliminary assessment and Joint Technical Sub-Committee"]}
+              {
+                "source": "토지이용공간계획법 제115·118·119·160조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 115, 118-119, 160"
+                ]
+              }
             ]
           },
           {
@@ -401,9 +564,17 @@
             "kind": "official-guidance",
             "action": "MMDA가 통지한 정정·추가사항과 관계기관 조건을 반영한 도서를 재제출해 기술심사를 다시 받는다.",
             "output": "보완도서·재심사 기록",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
-              {"source": "GCMA 보완절차", "instrumentId": "GHA-GCMA-PERMIT-GUIDE", "provisions": ["Stages 3-4 — corrections, additions and reassessment"]}
+              {
+                "source": "토지이용공간계획법 제113·116·117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113, 116-117"
+                ]
+              }
             ]
           },
           {
@@ -414,43 +585,113 @@
             "kind": "official-guidance",
             "action": "계획허가기관(Planning Authority)이 기술권고와 납부확인을 바탕으로 승인·조건부 승인 또는 거부를 결정하고 승인 시 허가증을 발급한다.",
             "output": "건축허가증·승인조건 또는 거부통지",
-            "authorityIds": ["gcma"],
+            "authorityIds": [
+              "gcma"
+            ],
             "refs": [
-              {"source": "GCMA 최종결정·발급", "instrumentId": "GHA-GCMA-PERMIT-GUIDE", "provisions": ["Stages 5-8"]},
-              {"source": "Act 925 개발허가", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 113-117"]}
+              {
+                "source": "토지이용공간계획법 제113~117조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113-117"
+                ]
+              }
             ],
             "permitGate": {
               "key": "building-permit-decision",
               "gate": "관할 MMDA의 건축허가 공식결정",
               "decision": "관할 MMDA가 환경허가와 건축도서 심사 결과에 따라 승인·조건부 승인, 보완 또는 거부를 결정한다.",
               "output": "서명 건축허가증·조건 또는 거부통지",
-              "dependsOn": ["environmental-permit-decision"]
+              "dependsOn": [
+                "environmental-permit-decision"
+              ]
             }
           }
         ],
         "edges": [
-          [0, 1, "sequence", "환경신청"],
-          [1, 2, "sequence", "평가요구"],
-          [2, 3, "sequence", "평가서 제출"],
-          [3, 4, "sequence", "심사완료"],
-          [3, 2, "loop", "추가정보·수정 요구 시"],
-          [4, 5, "sequence", "환경허가 첨부"],
-          [5, 6, "sequence", "완비접수"],
-          [6, 8, "sequence", "기술권고"],
-          [6, 7, "message", "보완요구 시"],
-          [7, 6, "loop", "보완도서 재심사"]
+          [
+            0,
+            1,
+            "sequence",
+            "환경신청"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "평가요구"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "평가서 제출"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "심사완료"
+          ],
+          [
+            3,
+            2,
+            "loop",
+            "추가정보·수정 요구 시"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "환경허가 첨부"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "완비접수"
+          ],
+          [
+            6,
+            8,
+            "sequence",
+            "기술권고"
+          ],
+          [
+            6,
+            7,
+            "message",
+            "보완요구 시"
+          ],
+          [
+            7,
+            6,
+            "loop",
+            "보완도서 재심사"
+          ]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "환경·건축허가", "action": "두 공식 허가와 조건을 승인도서·착공조건에 반영"},
-          {"state": "rework", "label": "추가정보·보완", "action": "환경자료 또는 건축 보완도서 단계로 돌아가 재심사"},
-          {"state": "reject", "label": "환경거부·건축거부", "action": "해당 신청을 종료하고 거부사유에 따른 설계변경·재신청 또는 불복 검토"}
+          {
+            "state": "success",
+            "label": "환경·건축허가",
+            "action": "두 공식 허가와 조건을 승인도서·착공조건에 반영"
+          },
+          {
+            "state": "rework",
+            "label": "추가정보·보완",
+            "action": "환경자료 또는 건축 보완도서 단계로 돌아가 재심사"
+          },
+          {
+            "state": "reject",
+            "label": "환경거부·건축거부",
+            "action": "해당 신청을 종료하고 거부사유에 따른 설계변경·재신청 또는 불복 검토"
+          }
         ]
       }
     },
     "control-completion": {
-      "verificationScope": "Act 925 제115·118~119·158~161조의 검사·집행·Certificate of Habitation과 AMA·MMDA 공식 준공 안내를 연결했다. 단계검사 운영은 MMDA별 현장통지 방식이 다를 수 있다.",
+      "verificationScope": "공사 중 검사와 거주·사용증명은 토지이용공간계획법이 전국 공통으로 정한다. 검사시점과 제출도서는 대상 건축물의 용도·규모로 확정한다.",
       "officialProcedure": {
-        "name": "가나 공사검사·거주·사용증명서(Certificate of Habitation) — MMDA 절차",
         "coverage": "official-source-linked",
         "scope": "법률 제925호(Act 925)의 승인도서 준수, MMDA 검사·집행과 거주·사용증명서 의무는 전국 체계다. 검사예약·수수료·발급창구는 대상 MMDA의 공고를 적용한다.",
         "stages": [
@@ -468,10 +709,25 @@
             "kind": "official-guidance",
             "action": "개발·건축허가와 승인도서·조건을 확보한 뒤 등록전문가의 책임 아래 허가내용과 건축기준에 맞춰 공사를 시작한다.",
             "output": "유효 허가증·승인도서·착공기록",
-            "authorityIds": ["mmda", "gsa"],
+            "authorityIds": [
+              "mmda",
+              "gsa"
+            ],
             "refs": [
-              {"source": "Act 925 허가준수", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 113-117"]},
-              {"source": "Ghana Building Code", "instrumentId": "GHA-BUILDING-CODE-2018", "provisions": ["design and construction standards"]}
+              {
+                "source": "Act 925 허가준수",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 113-117"
+                ]
+              },
+              {
+                "source": "Ghana Building Code",
+                "instrumentId": "GHA-BUILDING-CODE-2018",
+                "provisions": [
+                  "design and construction standards"
+                ]
+              }
             ]
           },
           {
@@ -482,10 +738,24 @@
             "kind": "official-guidance",
             "action": "계획·건축검사단(Planning and Building Inspectorate Unit)이 공사단계별로 현장을 검사해 승인도서·허가조건·법정기준 준수를 확인한다.",
             "output": "단계검사 기록·시정의견",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "Act 925 inspectorate", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 158-159"]},
-              {"source": "MMDA 준수검사", "instrumentId": "GHA-MMDA-PERMIT-GUIDE", "provisions": ["inspection and compliance with approved drawings"]}
+              {
+                "source": "Act 925 inspectorate",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 158-159"
+                ]
+              },
+              {
+                "source": "MMDA 준수검사",
+                "instrumentId": "GHA-MMDA-PERMIT-GUIDE",
+                "provisions": [
+                  "inspection and compliance with approved drawings"
+                ]
+              }
             ]
           },
           {
@@ -496,9 +766,17 @@
             "kind": "official-guidance",
             "action": "허가조건 위반이나 무단변경이 확인되면 MMDA가 시정·공사정지 통지를 하고 필요하면 허가를 취소하거나 조건을 추가한다.",
             "output": "시정·정지·조건변경 또는 허가취소 통지",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "Act 925 위반대응", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 115, 118-119, 160"]}
+              {
+                "source": "Act 925 위반대응",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 115, 118-119, 160"
+                ]
+              }
             ]
           },
           {
@@ -509,9 +787,17 @@
             "kind": "official-guidance",
             "action": "시정통지의 지정사항을 반영하고 수정·시험자료와 함께 MMDA에 재검사를 요청해 다음 공정 진행 여부를 확인받는다.",
             "output": "시정완료 자료·재검사 기록",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "Act 925 enforcement", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 118-119, 159-160"]}
+              {
+                "source": "Act 925 enforcement",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 118-119, 159-160"
+                ]
+              }
             ]
           },
           {
@@ -522,10 +808,24 @@
             "kind": "official-guidance",
             "action": "공사완료 후 점유 전에 관할 MMDA에 서면으로 완공건물 검사를 요청하고 거주용 준공증명서(Certificate of Completion for Habitation)를 신청한다.",
             "output": "준공·거주증명 신청서·검사요청",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "Act 925 점유금지", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Section 161"]},
-              {"source": "AMA completion procedure", "instrumentId": "GHA-AMA-PERMIT-GUIDE", "provisions": ["Section 2.8 — Certificate of Completion for Habitation"]}
+              {
+                "source": "토지이용공간계획법 제161조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Section 161"
+                ]
+              },
+              {
+                "source": "전국 건축허가 안내",
+                "instrumentId": "GHA-MMDA-PERMIT-GUIDE",
+                "provisions": [
+                  "completion inspection and certificate of habitation"
+                ]
+              }
             ]
           },
           {
@@ -536,10 +836,24 @@
             "kind": "official-guidance",
             "action": "MMDA 공사부(Works Department)가 완공건물의 승인도서·건축기준·보건안전·설비 준수를 검사하고 미비사항이 있으면 시정을 요구한다.",
             "output": "최종검사서·시정요구 또는 발급권고",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "MMDA habitation inspection", "instrumentId": "GHA-MMDA-PERMIT-GUIDE", "provisions": ["completion inspection and certificate of habitation"]},
-              {"source": "Act 925 검사·증명", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 159-161"]}
+              {
+                "source": "MMDA habitation inspection",
+                "instrumentId": "GHA-MMDA-PERMIT-GUIDE",
+                "provisions": [
+                  "completion inspection and certificate of habitation"
+                ]
+              },
+              {
+                "source": "Act 925 검사·증명",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 159-161"
+                ]
+              }
             ]
           },
           {
@@ -550,10 +864,24 @@
             "kind": "official-guidance",
             "action": "최종검사에서 적합하면 MMDA가 거주·사용증명서를 발급하고, 부적합하면 시정 후 재검사 또는 발급거부를 통지한다.",
             "output": "거주·사용증명서 또는 시정·거부통지",
-            "authorityIds": ["mmda"],
+            "authorityIds": [
+              "mmda"
+            ],
             "refs": [
-              {"source": "Act 925 habitation certificate", "instrumentId": "GHA-LUSP-ACT-925", "provisions": ["Sections 160(f), 161"]},
-              {"source": "AMA completion guide", "instrumentId": "GHA-AMA-PERMIT-GUIDE", "provisions": ["Section 2.8"]}
+              {
+                "source": "토지이용공간계획법 제160(f)·161조",
+                "instrumentId": "GHA-LUSP-ACT-925",
+                "provisions": [
+                  "Sections 160(f), 161"
+                ]
+              },
+              {
+                "source": "전국 건축허가 안내",
+                "instrumentId": "GHA-MMDA-PERMIT-GUIDE",
+                "provisions": [
+                  "completion inspection and certificate of habitation"
+                ]
+              }
             ],
             "permitGate": {
               "key": "habitation-certificate-decision",
@@ -565,19 +893,71 @@
           }
         ],
         "edges": [
-          [0, 1, "sequence", "허가조건에 따른 검사"],
-          [1, 4, "sequence", "단계검사 적합"],
-          [1, 2, "message", "부적합 발견 시"],
-          [2, 3, "sequence", "시정통지"],
-          [3, 1, "loop", "시정 후 재검사"],
-          [4, 5, "sequence", "최종검사 요청"],
-          [5, 6, "sequence", "발급권고"],
-          [5, 3, "loop", "최종검사 시정요구"]
+          [
+            0,
+            1,
+            "sequence",
+            "허가조건에 따른 검사"
+          ],
+          [
+            1,
+            4,
+            "sequence",
+            "단계검사 적합"
+          ],
+          [
+            1,
+            2,
+            "message",
+            "부적합 발견 시"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "시정통지"
+          ],
+          [
+            3,
+            1,
+            "loop",
+            "시정 후 재검사"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "최종검사 요청"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "발급권고"
+          ],
+          [
+            5,
+            3,
+            "loop",
+            "최종검사 시정요구"
+          ]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "거주·사용 적합", "action": "Certificate of Habitation 발급 후에만 건물을 점유·사용"},
-          {"state": "rework", "label": "시정·재검사", "action": "지적사항을 시정하고 해당 단계 또는 최종검사를 다시 요청"},
-          {"state": "reject", "label": "발급거부·허가취소", "action": "점유를 중단하고 공식 거부·집행사유에 따라 재시공·재신청 또는 불복 검토"}
+          {
+            "state": "success",
+            "label": "거주·사용 적합",
+            "action": "Certificate of Habitation 발급 후에만 건물을 점유·사용"
+          },
+          {
+            "state": "rework",
+            "label": "시정·재검사",
+            "action": "지적사항을 시정하고 해당 단계 또는 최종검사를 다시 요청"
+          },
+          {
+            "state": "reject",
+            "label": "발급거부·허가취소",
+            "action": "점유를 중단하고 공식 거부·집행사유에 따라 재시공·재신청 또는 불복 검토"
+          }
         ]
       }
     }

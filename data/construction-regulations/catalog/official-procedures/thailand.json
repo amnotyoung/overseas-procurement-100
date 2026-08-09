@@ -36,11 +36,10 @@
   ],
   "systems": {
     "site-urban": {
-      "verificationScope": "태국의 계획수치는 지역 comprehensive plan·장관규칙·지방조례가 정한다. 아래 절차는 별도 전국 입지허가를 가정하지 않고 방콕 건축허가 안에서 수행되는 필지·도시계획 적합성 심사를 대표사례로 표시한다.",
+      "verificationScope": "태국의 계획수치는 대상지의 종합계획·장관규칙이 정한다. 아래 절차는 별도 전국 입지허가를 가정하지 않고 건축물관리법이 정한 허가심사 안의 필지·도시계획 적합성 판단을 표시한다.",
       "officialProcedure": {
-        "name": "태국 도시계획·부지규제 — 방콕 건축허가 내 계획심사 사례",
         "coverage": "official-source-linked",
-        "scope": "방콕의 건축허가 신청서(B.1) 절차 중 토지·배치·도시계획 적합성 판단을 분리한 흐름이다. 실제 용적률(FAR)·공지율(OSR)·높이·이격·주차는 대상지의 유효 종합계획(comprehensive plan)과 지방조례로 교체한다.",
+        "scope": "건축물관리법 제21·25·27조의 허가절차 안에서 수행되는 토지·배치·도시계획 적합성 판단을 분리한 전국 공통 흐름이다. 용적률·공지율·높이·이격·주차 수치는 대상지의 유효 종합계획(comprehensive plan)과 장관규칙으로 확정한다.",
         "stages": [
           "G0 필지·계획도서",
           "G1 완비접수",
@@ -55,50 +54,62 @@
             "emphasis": "key",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "신청인이 토지권원·신원·대리권, 위치도와 배치·평면·입면·단면 및 필요한 계산서를 준비한다.",
+            "action": "신청인이 토지권원·신원·대리권과 위치도, 배치·평면·입면·단면 도서 및 필요한 구조계산서를 준비한다.",
             "output": "필지권원·위치·배치·건축계획 신청도서",
-            "authorityIds": ["local-official"],
+            "authorityIds": [
+              "local-official"
+            ],
             "refs": [
               {
-                "source": "방콕시 B.1 허가서비스",
-                "instrumentId": "THA-BMA-PERMIT",
-                "provisions": ["B.1 application; site layout, drawings, specifications and calculations; 2021 ministerial-rule documents"]
+                "source": "건축물관리법 제21조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 21: permit required to construct, alter, demolish or relocate a building"
+                ]
               }
             ]
           },
           {
             "lane": "건축주·신청인",
             "stage": 1,
-            "label": "관할 건축통제사무소(Building Control Office)·구청 접수",
+            "label": "관할 지방공무원 앞 허가신청 제출",
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "신청인이 방콕 Building Control Office, 관할 50개 구청 토목부서 또는 BMA OSS에 필지·건축 신청도서를 제출한다.",
+            "action": "신청인이 대상지를 관할하는 지방공무원(local official)에게 건축·개축·이전·철거 허가신청과 도서를 제출한다.",
             "output": "건축허가 신청접수·온라인 신청번호",
-            "authorityIds": ["local-official"],
+            "authorityIds": [
+              "local-official"
+            ],
             "refs": [
               {
-                "source": "방콕시 B.1 접수채널",
-                "instrumentId": "THA-BMA-PERMIT",
-                "provisions": ["Building Control Office, district offices and BMA OSS service channels"]
+                "source": "건축물관리법 제21조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 21: application filed with the local official having jurisdiction"
+                ]
               }
             ]
           },
           {
             "lane": "도시계획·건축 허가기관",
             "stage": 1,
-            "label": "서류·필지정보 완비성 확인",
+            "label": "신청서류·필지정보 완비성 확인",
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "담당 공무원이 신청서·토지·도면 자료의 완비성을 확인하고 완비 시 접수증을 발급해 지방공무원 심사로 넘긴다.",
+            "action": "관할 지방공무원이 신청서와 토지·도면 자료의 완비성을 확인하고 법정 심사기간을 기산한다.",
             "output": "완비접수증 또는 서류보완 통지",
-            "authorityIds": ["local-official"],
+            "authorityIds": [
+              "local-official"
+            ],
             "refs": [
               {
-                "source": "방콕시 B.1 처리단계",
-                "instrumentId": "THA-BMA-PERMIT",
-                "provisions": ["Officer verifies documents and information; complete applications receive a receipt"]
+                "source": "건축물관리법 제25조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 25: the local official examines the application upon receipt"
+                ]
               }
             ]
           },
@@ -111,17 +122,24 @@
             "basisScope": "node",
             "action": "관할 지방공무원이 유효 도시계획, 건축물관리법·장관규칙과 지방조례에 따라 용도·배치·도로·공지·주차 등 필지 적합성을 심사한다.",
             "output": "도시계획·부지규제 심사의견",
-            "authorityIds": ["local-official", "dpt-planning"],
+            "authorityIds": [
+              "local-official",
+              "dpt-planning"
+            ],
             "refs": [
               {
                 "source": "도시계획법·방콕 허가심사",
                 "instrumentId": "THA-TOWN-PLANNING-ACT-2019",
-                "provisions": ["Comprehensive-plan and land-use control applicable to building-permit review"]
+                "provisions": [
+                  "Comprehensive-plan and land-use control applicable to building-permit review"
+                ]
               },
               {
                 "source": "건축물관리법",
                 "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
-                "provisions": ["Sections 21, 25 and 27; local-official plan review and correction power"]
+                "provisions": [
+                  "Sections 21, 25 and 27; local-official plan review and correction power"
+                ]
               }
             ]
           },
@@ -132,14 +150,18 @@
             "emphasis": "normal",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "제27조 수정명령 또는 계획심사 지적이 있으면 신청인과 면허전문가가 배치·도면을 수정해 정해진 기간 안에 재제출한다.",
+            "action": "제27조 수정명령 또는 계획적합성 지적이 있으면 신청인과 면허전문가가 배치·도면을 수정해 정해진 기간 안에 재제출한다.",
             "output": "수정 배치·건축도면·재심사 기록",
-            "authorityIds": ["local-official"],
+            "authorityIds": [
+              "local-official"
+            ],
             "refs": [
               {
-                "source": "방콕시 B.1 보완절차",
-                "instrumentId": "THA-BMA-PERMIT",
-                "provisions": ["Building Control Act Section 27 correction order; revised plans re-examined within the service procedure"]
+                "source": "건축물관리법 제27조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 27: correction order and re-examination of revised drawings"
+                ]
               }
             ]
           },
@@ -150,14 +172,18 @@
             "emphasis": "bottleneck",
             "kind": "official-guidance",
             "basisScope": "node",
-            "action": "관할 지방공무원이 필지·계획 적합성을 포함한 심사를 종결해 허가 가능한 계획인지 또는 부적합·불허인지 통지한다.",
+            "action": "관할 지방공무원이 필지·계획 적합성 심사를 종결해 허가 가능 여부를 법정기간 안에 통지한다.",
             "output": "계획적합 조건이 반영된 허가결정 또는 불허통지",
-            "authorityIds": ["local-official"],
+            "authorityIds": [
+              "local-official"
+            ],
             "refs": [
               {
-                "source": "방콕시 건축허가 결정",
-                "instrumentId": "THA-BMA-PERMIT",
-                "provisions": ["Building Control Act Section 25: permit or non-permit notification after plan review"]
+                "source": "건축물관리법 제25조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 25: permit or refusal notified within the statutory period"
+                ]
               }
             ],
             "permitGate": {
@@ -170,185 +196,552 @@
           }
         ],
         "edges": [
-          [0, 1, "sequence", "계획도서"],
-          [1, 2, "sequence", "신청접수"],
-          [2, 3, "sequence", "완비확인"],
-          [3, 5, "sequence", "계획적합"],
-          [3, 4, "message", "수정명령 시"],
-          [4, 3, "loop", "수정도면 재심사"]
+          [
+            0,
+            1,
+            "sequence",
+            "계획도서"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "신청접수"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "완비확인"
+          ],
+          [
+            3,
+            5,
+            "sequence",
+            "계획적합"
+          ],
+          [
+            3,
+            4,
+            "message",
+            "수정명령 시"
+          ],
+          [
+            4,
+            3,
+            "loop",
+            "수정도면 재심사"
+          ]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "계획·부지 적합", "action": "확정된 토지이용·배치조건을 건축허가와 실시설계에 반영"},
-          {"state": "rework", "label": "도면수정 명령", "action": "제27조 지적에 따라 배치·도면을 수정하고 재심사"},
-          {"state": "reject", "label": "계획 부적합·불허", "action": "불허사유를 확인하고 설계변경 또는 법정 이의·재신청 경로 검토"}
+          {
+            "state": "success",
+            "label": "계획·부지 적합",
+            "action": "확정된 토지이용·배치조건을 건축허가와 실시설계에 반영"
+          },
+          {
+            "state": "rework",
+            "label": "도면수정 명령",
+            "action": "제27조 지적에 따라 배치·도면을 수정하고 재심사"
+          },
+          {
+            "state": "reject",
+            "label": "계획 부적합·불허",
+            "action": "불허사유를 확인하고 설계변경 또는 법정 이의·재신청 경로 검토"
+          }
         ]
       }
     },
     "permit-environment": {
-      "verificationScope": "건축허가는 지방정부, IEE·EIA·EHIA는 ONEP 체계와 사업승인기관이 처리한다. 건축허가 단계는 방콕시 B.1 공식 서비스를 대표사례로 하며 비방콕 지역은 관할 지방정부 절차로 교체한다.",
+      "verificationScope": "환경심사는 국가환경정책계획국이, 건축허가는 관할 지방공무원이 건축물관리법에 따라 집행한다. 두 절차의 접수·심사·결정 단계를 법정 조문 기준으로 연결했다.",
       "officialProcedure": {
-        "name": "태국 건축허가·환경심사 — 방콕·국가환경정책계획국(ONEP) 사례",
         "coverage": "official-source-linked",
-        "scope": "건축물관리법(Building Control Act) 제21·25·27조의 방콕 허가절차와 국가환경정책계획국의 초기환경검토(IEE)·환경영향평가(EIA)·환경건강영향평가(EHIA) 심사를 병렬로 표시한다. 환경보고서 대상·결정기관은 최신 사업유형 고시와 규모문턱으로 확정한다.",
-        "stages": ["G4 환경분류·제출", "G5 환경심사·결정", "G6 건축허가 접수", "G7 기술심사·결정"],
+        "scope": "국가환경정책계획국(ONEP)의 초기환경검토·환경영향평가·환경건강영향평가 심사와 건축물관리법 제21·25·27조의 건축허가 절차를 병렬로 표시한다. 환경보고서 대상·결정기관은 최신 사업유형 고시와 규모문턱으로 확정한다.",
+        "stages": [
+          "G4 환경분류·제출",
+          "G5 환경심사·결정",
+          "G6 건축허가 접수",
+          "G7 기술심사·결정"
+        ],
         "steps": [
           {
-            "lane": "건축주·신청인", "stage": 0,
-            "label": "초기환경검토·환경영향평가·환경건강영향평가 대상유형 판정", "emphasis": "key",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "초기환경검토·환경영향평가·환경건강영향평가 대상유형 판정",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "사업유형·규모·입지를 최신 환경평가 대상 고시에 대조해 IEE, EIA, EHIA 또는 비대상 경로와 결정기관을 정한다.",
             "output": "환경평가 유형·결정기관·보고서 경로",
-            "authorityIds": ["onep-eia"],
-            "refs": [{"source": "ONEP Smart EIA Plus", "instrumentId": "THA-ONEP-EIA", "provisions": ["Current IEE/EIA/EHIA project classification and submission register"]}]
+            "authorityIds": [
+              "onep-eia"
+            ],
+            "refs": [
+              {
+                "source": "ONEP Smart EIA Plus",
+                "instrumentId": "THA-ONEP-EIA",
+                "provisions": [
+                  "Current IEE/EIA/EHIA project classification and submission register"
+                ]
+              }
+            ]
           },
           {
-            "lane": "건축주·신청인", "stage": 0,
-            "label": "환경보고서 작성·전자제출", "emphasis": "normal",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "환경보고서 작성·전자제출",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "등록 환경전문가가 요구 형식의 보고서와 대안·저감·공중참여 자료를 작성하고 ONEP 전자시스템 또는 관할기관에 제출한다.",
             "output": "환경평가 보고서·접수번호",
-            "authorityIds": ["onep-eia"],
-            "refs": [{"source": "ONEP 환경보고서 제출", "instrumentId": "THA-ONEP-EIA", "provisions": ["Smart EIA Plus report submission and status workflow"]}]
+            "authorityIds": [
+              "onep-eia"
+            ],
+            "refs": [
+              {
+                "source": "ONEP 환경보고서 제출",
+                "instrumentId": "THA-ONEP-EIA",
+                "provisions": [
+                  "Smart EIA Plus report submission and status workflow"
+                ]
+              }
+            ]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 1,
-            "label": "국가환경정책계획국·전문위원회 완비성·기술심사", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "국가환경정책계획국·전문위원회 완비성·기술심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "ONEP와 권한 있는 전문가위원회가 보고서 완비성·영향·저감대책과 필요한 공중참여를 심사하고 추가정보·수정을 요구할 수 있다.",
             "output": "전문심사의견·추가정보 요구·결정안",
-            "authorityIds": ["onep-eia"],
-            "refs": [{"source": "ONEP IEE/EIA/EHIA 심사", "instrumentId": "THA-ONEP-EIA", "provisions": ["Report receipt, expert review, revision and approval-status stages"]}]
+            "authorityIds": [
+              "onep-eia"
+            ],
+            "refs": [
+              {
+                "source": "ONEP IEE/EIA/EHIA 심사",
+                "instrumentId": "THA-ONEP-EIA",
+                "provisions": [
+                  "Report receipt, expert review, revision and approval-status stages"
+                ]
+              }
+            ]
           },
           {
-            "lane": "환경·소방·검사기관", "stage": 1,
-            "label": "환경보고서 동의·부동의 공식결정", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "환경보고서 동의·부동의 공식결정",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "전문심사와 사업유형별 권한절차를 거쳐 환경보고서 동의, 조건, 재검토 또는 부동의를 공식 통지한다.",
             "output": "환경보고서 동의서·조건 또는 부동의 통지",
-            "authorityIds": ["onep-eia"],
-            "refs": [{"source": "ONEP 환경결정 대장", "instrumentId": "THA-ONEP-EIA", "provisions": ["Approval letter number and report-consideration status in Smart EIA Plus"]}],
-            "permitGate": {"key": "environment-approval", "gate": "환경보고서 동의 공식결정", "decision": "ONEP 체계와 관할 승인기관이 해당 사업의 IEE·EIA·EHIA 동의 여부와 조건을 결정한다.", "output": "환경동의서·조건 또는 부동의 통지", "dependsOn": []}
+            "authorityIds": [
+              "onep-eia"
+            ],
+            "refs": [
+              {
+                "source": "ONEP 환경결정 대장",
+                "instrumentId": "THA-ONEP-EIA",
+                "provisions": [
+                  "Approval letter number and report-consideration status in Smart EIA Plus"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "environment-approval",
+              "gate": "환경보고서 동의 공식결정",
+              "decision": "ONEP 체계와 관할 승인기관이 해당 사업의 IEE·EIA·EHIA 동의 여부와 조건을 결정한다.",
+              "output": "환경동의서·조건 또는 부동의 통지",
+              "dependsOn": []
+            }
           },
           {
-            "lane": "건축주·신청인", "stage": 2,
-            "label": "건축·변경·철거·이전 허가신청", "emphasis": "key",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "신청인이 B.1 신청서, 토지·신원자료, 위치·배치·건축도면 5세트와 해당 계산·전문면허 서류를 관할기관 또는 BMA OSS에 제출한다.",
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "건축·변경·철거·이전 허가신청",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 관할 지방공무원에게 허가신청서와 도면·구조계산서를 제출한다.",
             "output": "건축허가 신청·접수기록",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 B.1 허가서비스", "instrumentId": "THA-BMA-PERMIT", "provisions": ["Application form B.1; five drawing sets; calculations; service channels"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제21조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 21: application to construct, alter, demolish or relocate"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2,
-            "label": "서류완비 확인·접수증 발급", "emphasis": "normal",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "담당 공무원이 신청도서의 완비성을 확인하고 완비한 신청에 접수증을 발급해 지방공무원 기술심사로 이송한다.",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "서류완비 확인·접수 처리",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 지방공무원이 서류 완비성을 확인하고 기술심사로 넘긴다.",
             "output": "완비접수증 또는 서류보완 통지",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 B.1 접수절차", "instrumentId": "THA-BMA-PERMIT", "provisions": ["Document verification, receipt and referral to local official"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제25조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 25: receipt and examination of a complete application"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3,
-            "label": "배치·건축·구조·전문자 기술심사", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "배치·건축·구조·전문자 기술심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "관할 지방공무원이 배치도·도면·시방·계산과 면허 건축사·기술자 요건을 심사하고 제27조에 따라 수정명령을 할 수 있다.",
             "output": "기술심사의견·수정명령 또는 허가결정안",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "건축물관리법 허가심사", "instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Sections 25-27; plan review, licensed professionals and correction order"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 허가심사",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Sections 25-27; plan review, licensed professionals and correction order"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3,
-            "label": "건축허가·불허 공식통지", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "관할 지방공무원이 심사를 종결해 허가서를 발급하거나 불허사유를 통지한다. 방콕 서비스의 45일은 법정 통지기한이며 연장·보완기간은 별도다.",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "건축허가·불허 공식통지",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 지방공무원이 신청일부터 45일 이내에 허가 또는 불허를 통지하고, 법정 사유가 있으면 기간을 연장한다.",
             "output": "건축허가서·조건 또는 불허통지",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 B.1 허가결정", "instrumentId": "THA-BMA-PERMIT", "provisions": ["Building Control Act Section 25; decision within 45 days, extendable twice; permit or non-permit notice"]}],
-            "permitGate": {"key": "building-permit", "gate": "지방공무원의 건축허가 공식결정", "decision": "관할 지방공무원이 건축·변경·철거·이전 허가 또는 불허를 공식 통지한다.", "output": "건축허가서·조건 또는 불허통지", "dependsOn": []}
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제25조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 25: decision within 45 days, extendable by law"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "building-permit",
+              "gate": "지방공무원의 건축허가 공식결정",
+              "decision": "관할 지방공무원이 건축·변경·철거·이전 허가 또는 불허를 공식 통지한다.",
+              "output": "건축허가서·조건 또는 불허통지",
+              "dependsOn": []
+            }
           }
         ],
         "edges": [
-          [0, 1, "sequence", "환경유형 확정"], [1, 2, "sequence", "보고서 접수"], [2, 3, "sequence", "전문심사 완료"],
-          [2, 1, "loop", "추가정보·수정보고서 요구 시"], [0, 4, "message", "병렬 건축허가 준비"],
-          [3, 6, "message", "해당 시 환경동의 조건"], [4, 5, "sequence", "B.1 접수"], [5, 6, "sequence", "완비확인"],
-          [6, 7, "sequence", "심사종결"], [6, 4, "loop", "제27조 수정명령 시"]
+          [
+            0,
+            1,
+            "sequence",
+            "환경유형 확정"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "보고서 접수"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "전문심사 완료"
+          ],
+          [
+            2,
+            1,
+            "loop",
+            "추가정보·수정보고서 요구 시"
+          ],
+          [
+            0,
+            4,
+            "message",
+            "병렬 건축허가 준비"
+          ],
+          [
+            3,
+            6,
+            "message",
+            "해당 시 환경동의 조건"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "B.1 접수"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "완비확인"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "심사종결"
+          ],
+          [
+            6,
+            4,
+            "loop",
+            "제27조 수정명령 시"
+          ]
         ],
         "decisionBranches": [
-          {"state": "success", "label": "환경동의·건축허가", "action": "환경·건축 허가조건을 승인도서와 착공조건에 반영"},
-          {"state": "rework", "label": "보고서·도면 수정", "action": "환경 추가정보 또는 제27조 수정도면을 제출해 해당 심사를 재개"},
-          {"state": "reject", "label": "환경부동의·건축불허", "action": "공식 사유를 확인하고 법정 이의·재신청 또는 사업·설계 변경 검토"}
+          {
+            "state": "success",
+            "label": "환경동의·건축허가",
+            "action": "환경·건축 허가조건을 승인도서와 착공조건에 반영"
+          },
+          {
+            "state": "rework",
+            "label": "보고서·도면 수정",
+            "action": "환경 추가정보 또는 제27조 수정도면을 제출해 해당 심사를 재개"
+          },
+          {
+            "state": "reject",
+            "label": "환경부동의·건축불허",
+            "action": "공식 사유를 확인하고 법정 이의·재신청 또는 사업·설계 변경 검토"
+          }
         ]
       }
     },
     "control-completion": {
-      "verificationScope": "Building Control Act의 시공·전문면허·사용통제 규정과 방콕시 TS.1·TS.2 완료증명 서비스를 연결했다. 비방콕 지역은 관할 지방정부의 검사·양식으로 교체한다.",
+      "verificationScope": "공사 중 검사와 완료 후 사용증명은 건축물관리법이 관할 지방공무원의 권한으로 정한다. 사용통제 건축물의 분류와 검사시점은 대상 건축물의 용도·규모로 확정한다.",
       "officialProcedure": {
-        "name": "태국 기술검사·공사완료·사용증명 — 방콕 사례",
         "coverage": "official-source-linked",
-        "scope": "허가도서 시공과 지방공무원 검사, 제32조 사용통제 건축물의 공사완료 신청서(TS.1)·공사완료 증명서(TS.2) 흐름이다. 모든 건축물에 동일한 완료증명이 필요한 것으로 일반화하지 않는다.",
-        "stages": ["G8 허가시공", "G9 검사·완료신청", "G10 적합성 심사", "G11 완료증명"],
+        "scope": "건축물관리법 제26·32조의 면허전문자 시공, 공사 중 검사, 사용통제 건축물의 완료검사와 사용증명 발급까지의 전국 공통 흐름이다.",
+        "stages": [
+          "G8 허가시공",
+          "G9 검사·완료신청",
+          "G10 적합성 심사",
+          "G11 완료증명"
+        ],
         "steps": [
           {
-            "lane": "현지 설계·시공 전문가", "stage": 0,
-            "label": "면허전문자 책임 아래 승인도서 시공", "emphasis": "key",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "면허전문자 책임 아래 승인도서 시공",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "제26조 대상 건축·공학 업무는 적정 면허 보유자가 책임지고 허가조건·승인도서에 따라 시공·감독한다.",
             "output": "전문면허·시공감독·품질기록",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "건축물관리법 전문자 요건", "instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Section 26; licensed controlled architecture and engineering professionals"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 전문자 요건",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 26; licensed controlled architecture and engineering professionals"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 1,
-            "label": "공사 중 현장검사·위반시정", "emphasis": "normal",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "공사 중 현장검사·위반시정",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "관할 지방공무원이 공사의 허가·승인도서 적합성을 검사하고 위반에는 시정·중지 등 법정조치를 한다.",
             "output": "현장검사 기록·시정 또는 중지명령",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "건축물관리법 집행", "instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Local-official building inspection and enforcement powers"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 집행",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Local-official building inspection and enforcement powers"
+                ]
+              }
+            ]
           },
           {
-            "lane": "건축주·신청인", "stage": 1,
-            "label": "사용통제 건축물 분류·공사완료 신청", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "공사완료 후 건축주가 제32조 사용통제 대상 여부를 확인하고 해당하면 TS.1 신청서와 토지·허가·완료도서를 관할기관 또는 BMA OSS에 제출한다.",
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "사용통제 건축물 분류·공사완료 신고",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "건축주가 사용통제 건축물 해당 여부를 확인하고 공사완료를 관할 지방공무원에게 신고한다.",
             "output": "공사완료 증명 신청·접수기록",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 사용통제 건축물 완료증명", "instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["TS.1 application for construction, alteration or relocation certificate of controlled-use building"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제32조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 32: controlled-use buildings require a completion and use certificate"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2,
-            "label": "완료도서 완비성·허가이력 확인", "emphasis": "normal",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "담당 공무원이 TS.1 신청, 기존 허가·승인도서와 전문자·완료자료의 완비성을 확인하고 현장검사로 넘긴다.",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완료도서 완비성·허가이력 확인",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 지방공무원이 완료도서와 허가이력의 일치를 확인한다.",
             "output": "완비접수 또는 준공도서 보완통지",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 TS.1·TS.2 서비스", "instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["Application evidence and document-verification stage"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제32조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 32: verification of completion evidence against the permit"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 2,
-            "label": "완공건축물 현장·사용적합성 검사", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완공건축물 현장·사용적합성 검사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
             "action": "관할 지방공무원이 완공상태를 승인도서·허가조건과 제32조 사용통제 요건에 대조하고 미비하면 시정·보완을 요구한다.",
             "output": "완료검사 기록·시정요구 또는 증명결정안",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "건축물관리법 제32조 완료검사", "instrumentId": "THA-BUILDING-CONTROL-ACT-1979", "provisions": ["Section 32 controlled-use building completion and use-control certification"]}]
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제32조 완료검사",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 32 controlled-use building completion and use-control certification"
+                ]
+              }
+            ]
           },
           {
-            "lane": "도시계획·건축 허가기관", "stage": 3,
-            "label": "공사완료 증명 발급·거부", "emphasis": "bottleneck",
-            "kind": "official-guidance", "basisScope": "node",
-            "action": "관할 지방공무원이 사용통제 건축물의 적합성을 확인해 TS.2 공사완료 증명을 발급하거나 시정·거부를 공식 통지한다.",
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "사용증명 발급·거부",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "관할 지방공무원이 검사 결과에 따라 사용증명서를 발급하거나 거부한다.",
             "output": "공사완료 증명·조건 또는 거부통지",
-            "authorityIds": ["local-official"],
-            "refs": [{"source": "방콕시 공사완료 증명 결정", "instrumentId": "THA-BMA-CERTIFICATE", "provisions": ["TS.1/TS.2 construction certificate service for controlled-use buildings"]}],
-            "permitGate": {"key": "completion-certificate", "gate": "지방공무원의 사용통제 건축물 완료증명 결정", "decision": "관할 지방공무원이 완공건축물의 사용통제 적합성과 합법적 사용개시 여부를 결정한다.", "output": "완료증명·조건 또는 거부통지", "dependsOn": []}
+            "authorityIds": [
+              "local-official"
+            ],
+            "refs": [
+              {
+                "source": "건축물관리법 제32조",
+                "instrumentId": "THA-BUILDING-CONTROL-ACT-1979",
+                "provisions": [
+                  "Section 32: issue or refusal of the certificate of use"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "completion-certificate",
+              "gate": "지방공무원의 사용통제 건축물 완료증명 결정",
+              "decision": "관할 지방공무원이 완공건축물의 사용통제 적합성과 합법적 사용개시 여부를 결정한다.",
+              "output": "완료증명·조건 또는 거부통지",
+              "dependsOn": []
+            }
           }
         ],
-        "edges": [[0, 1, "sequence", "허가시공"], [1, 2, "sequence", "공사완료"], [2, 3, "sequence", "TS.1 접수"], [3, 4, "sequence", "완비확인"], [4, 5, "sequence", "검사적합"], [4, 2, "loop", "준공도서·현장 시정 시"]],
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "허가시공"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "공사완료"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "TS.1 접수"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "완비확인"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "검사적합"
+          ],
+          [
+            4,
+            2,
+            "loop",
+            "준공도서·현장 시정 시"
+          ]
+        ],
         "decisionBranches": [
-          {"state": "success", "label": "완료증명 발급", "action": "증명서의 용도·사용조건에 따라 개장·인계"},
-          {"state": "rework", "label": "완료도서·현장시정", "action": "지적사항을 시정하고 완료신청 보완·재검사"},
-          {"state": "reject", "label": "완료증명 거부", "action": "거부사유 해소 전 사용하지 않고 공식 이의·재신청 경로 진행"}
+          {
+            "state": "success",
+            "label": "완료증명 발급",
+            "action": "증명서의 용도·사용조건에 따라 개장·인계"
+          },
+          {
+            "state": "rework",
+            "label": "완료도서·현장시정",
+            "action": "지적사항을 시정하고 완료신청 보완·재검사"
+          },
+          {
+            "state": "reject",
+            "label": "완료증명 거부",
+            "action": "거부사유 해소 전 사용하지 않고 공식 이의·재신청 경로 진행"
+          }
         ]
       }
     }

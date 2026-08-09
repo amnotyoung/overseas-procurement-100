@@ -17,7 +17,9 @@
       "status": "in_force",
       "statusCheckedOn": "2026-08-07",
       "statusBasis": "미얀마 정부 건설문서 포털의 MNBC 2025 Part 1·2 현행 원문에서 planning/building permit, 단계별 검사와 BCC 조항을 직접 대조",
-      "articlesChecked": ["Sections 1.3.1-1.3.5"],
+      "articlesChecked": [
+        "Sections 1.3.1-1.3.5"
+      ],
       "verificationLevel": "article-verified"
     },
     {
@@ -25,7 +27,9 @@
       "status": "in_force",
       "statusCheckedOn": "2026-08-07",
       "statusBasis": "미얀마 정부 건설문서 포털의 MNBC 2025 Part 6·7 현행 원문에서 시공관리·검사 관련 절을 직접 대조",
-      "articlesChecked": ["Part 7 Sections 7.5.1.6-7.5.1.6.2"],
+      "articlesChecked": [
+        "Part 7 Sections 7.5.1.6-7.5.1.6.2"
+      ],
       "verificationLevel": "article-verified"
     },
     {
@@ -45,7 +49,11 @@
       "status": "in_force",
       "statusCheckedOn": "2026-08-07",
       "statusBasis": "YCDC 공식 사이트와 미얀마 정부 문서포털이 2022 Development Permit Rules and Regulations를 현재 공개하고 개발허가·완료증명 절차를 운영",
-      "articlesChecked": ["Articles 11-21", "Articles 24-31", "Articles 38-39"],
+      "articlesChecked": [
+        "Articles 11-21",
+        "Articles 24-31",
+        "Articles 38-39"
+      ],
       "verificationLevel": "article-verified"
     },
     {
@@ -72,6 +80,9 @@
     },
     {
       "id": "MMR-YCDC-BP-MANUAL",
+      "scope": "local",
+      "scopeLabel": "양곤시 개발위원회(YCDC)",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "YCDC Manual of Procedure for Building Permit in Yangon",
       "titleKo": "YCDC 양곤 건축허가 절차매뉴얼",
       "kind": "official-guidance",
@@ -83,6 +94,9 @@
     },
     {
       "id": "MMR-YCDC-YBPS",
+      "scope": "local",
+      "scopeLabel": "양곤시 개발위원회(YCDC)",
+      "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
       "title": "Yangon Building Permit System",
       "titleKo": "양곤 건축허가시스템(YBPS)",
       "kind": "official-guidance",
@@ -95,267 +109,1021 @@
   ],
   "systems": {
     "site-urban": {
-      "verificationScope": "미얀마 전역에 단일 지방허가 절차가 같지 않으므로, 아래는 양곤 YCDC Development Permit Rules 2022의 대표경로다. 양곤 밖에서는 해당 State/Region·Development Committee의 법정절차로 대체한다.",
+      "verificationScope": "국가건축코드 제1편·제2편이 계획·건축·건축통제 행정을 전국 기준으로 정한다. 필지별 용도·밀도 수치는 대상지 관할 개발기관의 현행 계획으로 확정한다.",
       "officialProcedure": {
-        "name": "미얀마 도시계획·부지규제 — 양곤 YCDC 개발허가(Development Permit)",
         "coverage": "article-linked",
         "scope": "YCDC Development Permit Rules 2022 Articles 11-21과 38-39에 따른 절차분류, 사전협의, 기술인프라 동의, 신청·예비·기준·공중심사와 허가·불허결정이다.",
-        "stages": ["G0 적용·사전협의", "G1 신청·완비", "G2 계획·공중심사", "G3 개발허가 결정"],
+        "stages": [
+          "G0 적용·사전협의",
+          "G1 신청·완비",
+          "G2 계획·공중심사",
+          "G3 개발허가 결정"
+        ],
         "steps": [
           {
-            "lane":"도시계획·건축 허가기관","stage":0,"label":"개발허가 대상·절차유형 분류","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC가 개발행위 유형·규모와 부록(Appendix) 1 기준에 따라 허가대상 여부 및 간이·일반·특별 절차(Simplified, Normal, Special procedure)를 분류한다.",
-            "output":"개발허가 대상·절차유형·관할확정",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 6 and Appendix 1; development activities requiring permit", "Article 12(21); Simplified, Normal and Special procedures"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 0,
+            "label": "개발허가 대상·절차유형 분류",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 개발행위 유형·규모와 부록(Appendix) 1 기준에 따라 허가대상 여부 및 간이·일반·특별 절차(Simplified, Normal, Special procedure)를 분류한다.",
+            "output": "개발허가 대상·절차유형·관할확정",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.3항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.3; registered-professional construction documents, site plan and special inspection"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":0,"label":"YCDC 사전협의·계획조건 확인","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"신청인이 개발개념·필지자료를 가지고 YCDC와 사전협의해 제출범위, 적용절차, 도시계획·보전·공공공간 조건과 필요한 관계기관 의견을 확인한다.",
-            "output":"사전협의 기록·적용 계획조건",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 13; prior consultation", "Article 20; development-permit criteria"]}]
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "사전협의·계획조건 확인",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "신청인이 개발개념·필지자료를 가지고 허가기관과 사전협의해 제출범위, 적용절차, 도시계획·보전·공공공간 조건과 필요한 관계기관 의견을 확인한다.",
+            "output": "사전협의 기록·적용 계획조건",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.3항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.3; registered-professional construction documents, site plan and special inspection"
+                ]
+              }
+            ]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"등록전문가 개발계획·인프라 도서 작성","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"등록전문가가 필지·토지권리, 개발유형, 배치·도로·오픈스페이스·상하수도 등 부록 3 도서를 작성하고 기술인프라 관리자와 필요한 동의를 조정한다.",
-            "output":"개발계획·기술인프라 동의·전문가 서명도서",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 16; professional responsibilities", "Article 18; consent of technical-infrastructure administrators", "Appendix 3; supporting documents"]}]
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "등록전문가 개발계획·인프라 도서 작성",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 필지·토지권리, 개발유형, 배치·도로·오픈스페이스·상하수도 등 부록 3 도서를 작성하고 기술인프라 관리자와 필요한 동의를 조정한다.",
+            "output": "개발계획·기술인프라 동의·전문가 서명도서",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.3항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.3; registered-professional construction documents, site plan and special inspection"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":1,"label":"신청수수료·개발허가 서면신청", "emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"개발자가 신청수수료를 납부하고 개발자·토지·위치·면적·기간·개발유형과 지원도서를 포함한 서면신청을 YCDC에 제출한다.",
-            "output":"개발허가 신청·수수료·접수기록",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 11; application fee", "Article 12(20)-(22); application contents, procedure and supporting documents"]}]
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "신청수수료·개발허가 서면신청",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "개발자가 신청수수료를 납부하고 개발자·토지·위치·면적·기간·개발유형과 지원도서를 포함한 서면신청을 허가기관에 제출한다.",
+            "output": "개발허가 신청·수수료·접수기록",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"신규개발 예비검토·완비확인","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC가 신규개발의 신청·도서 완비성과 계획개념을 예비검토하고, 누락·불일치 및 본심사에 필요한 추가정보를 특정한다.",
-            "output":"예비검토·완비의견·보완목록",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 14; preliminary review of new developments", "Appendix 3; required supporting documents"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "신규개발 예비검토·완비확인",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 신규개발의 신청·도서 완비성과 계획개념을 예비검토하고, 누락·불일치 및 본심사에 필요한 추가정보를 특정한다.",
+            "output": "예비검토·완비의견·보완목록",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"개발기준·인프라·공중심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC가 도시계획·용도지역(zoning)·보전·도로·배수·오픈스페이스 등 Article 20·부록 2 기준과 인프라 동의를 검토하고, 해당 대형·영향 개발은 인접주민 공청회와 양곤주정부(Yangon Regional Government) 승인을 거친다.",
-            "output":"개발기준 심사의견·공청회·상위승인 기록",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 20 and Appendix 2; development-permit criteria", "Article 38; public hearings", "Article 39; Yangon Regional Government approval"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "개발기준·인프라·공중심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 도시계획·용도지역(zoning)·보전·도로·배수·오픈스페이스 등 Article 20·부록 2 기준과 인프라 동의를 검토하고, 해당 대형·영향 개발은 인접주민 공청회와 양곤주정부(Yangon Regional Government) 승인을 거친다.",
+            "output": "개발기준 심사의견·공청회·상위승인 기록",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"누락·개발계획 보완·재신청","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"예비·본심사에서 수정이 요구되면 개발자와 등록전문가가 신청도서·계획·인프라 동의와 공청회 대응자료를 보완해 YCDC에 재제출한다.",
-            "output":"수정 개발계획·보완답변·재접수",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 24; resubmission for major changes", "Article 25; permission of revisions", "Article 21(38)-(41); grant or refusal disposition"]}]
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "누락·개발계획 보완·재신청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "예비·본심사에서 수정이 요구되면 개발자와 등록전문가가 신청도서·계획·인프라 동의와 공청회 대응자료를 보완해 허가기관에 재제출한다.",
+            "output": "수정 개발계획·보완답변·재접수",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"30일 내 개발허가·불허 서면결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC가 신청을 받은 뒤 30일 이내 허가 또는 불허를 결정하며, 허가 시 서면 개발허가를 발급하고 불허 시 사유를 서면 통지·공개한다.",
-            "output":"개발허가·조건 또는 사유부 불허통지",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Development Permit Rules 2022","instrumentId":"MMR-YCDC-DEVELOPMENT-PERMIT-2022","provisions":["Article 21(38)-(41); grant/not grant within 30 days, written permit or reasons and public announcement"]}],
-            "permitGate":{"key":"development-permit","gate":"YCDC 개발허가 공식결정","decision":"도시계획·개발기준·인프라·공중절차 적합성을 확인해 개발허가를 발급하거나 사유부 불허한다.","output":"개발허가·조건 또는 불허통지","dependsOn":[]}
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "30일 내 개발허가·불허 서면결정",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 신청을 받은 뒤 30일 이내 허가 또는 불허를 결정하며, 허가 시 서면 개발허가를 발급하고 불허 시 사유를 서면 통지·공개한다.",
+            "output": "개발허가·조건 또는 사유부 불허통지",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "development-permit",
+              "gate": "YCDC 개발허가 공식결정",
+              "decision": "도시계획·개발기준·인프라·공중절차 적합성을 확인해 개발허가를 발급하거나 사유부 불허한다.",
+              "output": "개발허가·조건 또는 불허통지",
+              "dependsOn": []
+            }
           }
         ],
-        "edges":[[0,1,"sequence","적용절차 확정"],[1,2,"sequence","사전조건 전달"],[2,3,"sequence","지원도서 완성"],[3,4,"sequence","개발허가 접수"],[4,5,"sequence","완비확인"],[5,7,"sequence","개발기준 적합"],[4,6,"message","완비·자료 보완"],[5,6,"message","계획·공청회 보완"],[6,3,"loop","수정신청 재접수"]],
-        "decisionBranches":[
-          {"state":"success","label":"개발허가 발급","action":"개발허가 조건을 건축허가 도서와 공사·완료검사에 반영"},
-          {"state":"rework","label":"개발계획·인프라 보완","action":"YCDC 의견에 따라 수정·재제출해 예비·기준심사로 회귀"},
-          {"state":"reject","label":"개발허가 불허","action":"서면사유에 따라 계획변경·재신청 또는 Article 37 불복신청(appeal) 검토"}
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "적용절차 확정"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "사전조건 전달"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "지원도서 완성"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "개발허가 접수"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "완비확인"
+          ],
+          [
+            5,
+            7,
+            "sequence",
+            "개발기준 적합"
+          ],
+          [
+            4,
+            6,
+            "message",
+            "완비·자료 보완"
+          ],
+          [
+            5,
+            6,
+            "message",
+            "계획·공청회 보완"
+          ],
+          [
+            6,
+            3,
+            "loop",
+            "수정신청 재접수"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "개발허가 발급",
+            "action": "개발허가 조건을 건축허가 도서와 공사·완료검사에 반영"
+          },
+          {
+            "state": "rework",
+            "label": "개발계획·인프라 보완",
+            "action": "YCDC 의견에 따라 수정·재제출해 예비·기준심사로 회귀"
+          },
+          {
+            "state": "reject",
+            "label": "개발허가 불허",
+            "action": "서면사유에 따라 계획변경·재신청 또는 Article 37 불복신청(appeal) 검토"
+          }
         ]
       }
     },
     "permit-environment": {
-      "verificationScope":"전국 ECD 환경심사와 양곤 YCDC 중위험 건축물 YBPS 절차를 연결한 대표경로다. 양곤 밖의 건축허가는 해당 State/Region·Development Committee 절차로, 저위험·고위험은 YBPS의 별도 risk path로 대체한다.",
+      "verificationScope": "환경평가는 환경보전법과 평가절차가, 건축허가는 국가건축코드 제1.3.2항이 정한다.",
       "officialProcedure": {
-        "name":"미얀마 건축허가·환경심사 — ECD 환경준수증명(ECC)·양곤 중위험 건축허가(Building Permit)",
-        "coverage":"official-source-linked",
-        "scope":"환경영향평가 절차(EIA Procedure) 616/2015의 사업제안서(Project Proposal)·심사(screening)·초기환경검토(IEE)·환경영향평가(EIA)·보완·환경준수증명과 YCDC YBPS 중위험 건축허가의 신청·현장·기술심사·원칙승인(Approval in Principle)·BP-003 결정을 연결했다.",
-        "stages":["G4 ECD 분류·평가","G5 환경심사·환경준수증명","G6 YBPS 신청·원칙승인","G7 전문심사·건축허가"],
-        "steps":[
+        "coverage": "official-source-linked",
+        "scope": "환경영향평가 절차(EIA Procedure) 616/2015의 사업제안서(Project Proposal)·심사(screening)·초기환경검토(IEE)·환경영향평가(EIA)·보완·환경준수증명과 YCDC 건축허가 시스템 중위험 건축허가의 신청·현장·기술심사·원칙승인(Approval in Principle)·BP-003 결정을 연결했다.",
+        "stages": [
+          "G4 ECD 분류·평가",
+          "G5 환경심사·환경준수증명",
+          "G6 YBPS 신청·원칙승인",
+          "G7 전문심사·건축허가"
+        ],
+        "steps": [
           {
-            "lane":"건축주·신청인","stage":0,"label":"ECD 사업제안서 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업자가 사업개요·규모·위치·예상 환경사회영향과 제안 평가유형을 담은 Project Proposal과 공식 신청서를 ECD에 제출한다.",
-            "output":"사업제안서·심사 신청·접수기록",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"ECD Project Proposal 안내","instrumentId":"MMR-ECD-PROJECT-PROPOSAL","provisions":["EIA Procedure Article 2 definition; Project Proposal content and submission form"]}]
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "ECD 사업제안서 제출",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업자가 사업개요·규모·위치·예상 환경사회영향과 제안 평가유형을 담은 Project Proposal과 공식 신청서를 ECD에 제출한다.",
+            "output": "사업제안서·심사 신청·접수기록",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "ECD Project Proposal 안내",
+                "instrumentId": "MMR-ECD-PROJECT-PROPOSAL",
+                "provisions": [
+                  "EIA Procedure Article 2 definition; Project Proposal content and submission form"
+                ]
+              }
+            ]
           },
           {
-            "lane":"환경·소방·검사기관","stage":0,"label":"15근무일 환경영향평가·초기환경검토·비대상 심사 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"ECD가 완비 Project Proposal을 Annex A와 사업규모·입지·위험요인에 대조해 EIA, IEE 또는 Non-IEE/EIA로 분류하고 15근무일 이내 사업자에게 통지한다.",
-            "output":"환경평가 유형·관할·심사 통지",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"ECD Project Proposal 안내","instrumentId":"MMR-ECD-PROJECT-PROPOSAL","provisions":["EIA Procedure Articles 23-30 and Annex A; categorization and notice within 15 working days"]}]
+            "lane": "환경·소방·검사기관",
+            "stage": 0,
+            "label": "15근무일 환경영향평가·초기환경검토·비대상 심사 결정",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "ECD가 완비 Project Proposal을 Annex A와 사업규모·입지·위험요인에 대조해 EIA, IEE 또는 Non-IEE/EIA로 분류하고 15근무일 이내 사업자에게 통지한다.",
+            "output": "환경평가 유형·관할·심사 통지",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "ECD Project Proposal 안내",
+                "instrumentId": "MMR-ECD-PROJECT-PROPOSAL",
+                "provisions": [
+                  "EIA Procedure Articles 23-30 and Annex A; categorization and notice within 15 working days"
+                ]
+              }
+            ]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"환경영향평가 범위설정·과업지시서 또는 초기환경검토 조사·공중협의","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"승인된 환경전문가가 EIA 대상은 Scoping Report·TOR와 초기 공중협의를 거쳐 승인 TOR에 따라 조사하고, IEE 대상은 해당 범위의 영향조사·공중참여를 수행한다.",
-            "output":"승인 범위설정·과업지시서 또는 초기환경검토 조사기록·공중협의",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"ECD EIA 시스템 안내","instrumentId":"MMR-ECD-EIA-GUIDANCE","provisions":["EIA path: study team, Scoping and TOR; IEE path; public consultation"]}]
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "환경영향평가 범위설정·과업지시서 또는 초기환경검토 조사·공중협의",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "승인된 환경전문가가 EIA 대상은 Scoping Report·TOR와 초기 공중협의를 거쳐 승인 TOR에 따라 조사하고, IEE 대상은 해당 범위의 영향조사·공중참여를 수행한다.",
+            "output": "승인 범위설정·과업지시서 또는 초기환경검토 조사기록·공중협의",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "ECD EIA 시스템 안내",
+                "instrumentId": "MMR-ECD-EIA-GUIDANCE",
+                "provisions": [
+                  "EIA path: study team, Scoping and TOR; IEE path; public consultation"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":1,"label":"환경영향평가·초기환경검토 보고서·환경관리계획(EMP) 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"사업자가 조사·대안·영향·완화·공중의견을 반영한 EIA 또는 IEE 보고서와 Environmental Management Plan을 ECD에 제출해 검토를 신청한다.",
-            "output":"환경영향평가·초기환경검토 보고서·환경관리계획·공중참여 기록",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"ECD EIA 시스템 안내","instrumentId":"MMR-ECD-EIA-GUIDANCE","provisions":["investigation and review of EIA/IEE reports; EMP preparation"]}]
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "환경영향평가·초기환경검토 보고서·환경관리계획(EMP) 제출",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "사업자가 조사·대안·영향·완화·공중의견을 반영한 EIA 또는 IEE 보고서와 Environmental Management Plan을 ECD에 제출해 검토를 신청한다.",
+            "output": "환경영향평가·초기환경검토 보고서·환경관리계획·공중참여 기록",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "ECD EIA 시스템 안내",
+                "instrumentId": "MMR-ECD-EIA-GUIDANCE",
+                "provisions": [
+                  "investigation and review of EIA/IEE reports; EMP preparation"
+                ]
+              }
+            ]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"ECD 완비·기술심사·환경준수증명 결정안","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"ECD가 보고서의 완비성·영향평가·완화·모니터링과 공중의견 반영을 심사해 승인조건, 보완요구 또는 거부권고를 작성한다.",
-            "output":"환경 기술심사의견·환경준수증명 결정안",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"EIA Procedure 616/2015","instrumentId":"MMR-EIA-PROCEDURE-616-2015","provisions":["IEE/EIA review and Environmental Compliance Certificate process"]},{"source":"ECD EIA 시스템 안내","instrumentId":"MMR-ECD-EIA-GUIDANCE","provisions":["investigation and review process; issuance of ECC"]}]
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "ECD 완비·기술심사·환경준수증명 결정안",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "ECD가 보고서의 완비성·영향평가·완화·모니터링과 공중의견 반영을 심사해 승인조건, 보완요구 또는 거부권고를 작성한다.",
+            "output": "환경 기술심사의견·환경준수증명 결정안",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "EIA Procedure 616/2015",
+                "instrumentId": "MMR-EIA-PROCEDURE-616-2015",
+                "provisions": [
+                  "IEE/EIA review and Environmental Compliance Certificate process"
+                ]
+              },
+              {
+                "source": "ECD EIA 시스템 안내",
+                "instrumentId": "MMR-ECD-EIA-GUIDANCE",
+                "provisions": [
+                  "investigation and review process; issuance of ECC"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":1,"label":"환경보고서·환경관리계획 보완·재심사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"ECD가 수정·추가조사를 요구하면 사업자와 환경전문가가 EIA/IEE·EMP와 공중참여 대응을 보완해 재제출한다.",
-            "output":"수정 환경영향평가·초기환경검토·환경관리계획·보완답변",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"EIA Procedure 616/2015","instrumentId":"MMR-EIA-PROCEDURE-616-2015","provisions":["review, revision and resubmission before environmental decision"]}]
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "환경보고서·환경관리계획 보완·재심사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "ECD가 수정·추가조사를 요구하면 사업자와 환경전문가가 EIA/IEE·EMP와 공중참여 대응을 보완해 재제출한다.",
+            "output": "수정 환경영향평가·초기환경검토·환경관리계획·보완답변",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "EIA Procedure 616/2015",
+                "instrumentId": "MMR-EIA-PROCEDURE-616-2015",
+                "provisions": [
+                  "review, revision and resubmission before environmental decision"
+                ]
+              }
+            ]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"환경준수증명 공식결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"MONREC/ECD가 심사결과에 따라 환경조건·EMP를 포함한 ECC를 발급하거나 부적합 사유로 거부한다.",
-            "output":"환경준수증명·환경조건 또는 거부결정",
-            "authorityIds":["mmr-ecd"],
-            "refs":[{"source":"ECD EIA 체계 소개","instrumentId":"MMR-EIA-PROCEDURE-616-2015","provisions":["EIA Procedure defines EIA/IEE process and Environmental Compliance Certificate"]},{"source":"ECD EIA 시스템 안내","instrumentId":"MMR-ECD-EIA-GUIDANCE","provisions":["Issuance of ECC"]}],
-            "permitGate":{"key":"environmental-compliance-certificate","gate":"MONREC/ECD의 환경준수증명 공식결정","decision":"환경평가·관리계획과 환경조건을 승인해 환경준수증명을 발급하거나 사유부 거부한다.","output":"환경준수증명·환경조건 또는 거부결정","dependsOn":[]}
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "환경준수증명 공식결정",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "MONREC/ECD가 심사결과에 따라 환경조건·EMP를 포함한 ECC를 발급하거나 부적합 사유로 거부한다.",
+            "output": "환경준수증명·환경조건 또는 거부결정",
+            "authorityIds": [
+              "mmr-ecd"
+            ],
+            "refs": [
+              {
+                "source": "ECD EIA 체계 소개",
+                "instrumentId": "MMR-EIA-PROCEDURE-616-2015",
+                "provisions": [
+                  "EIA Procedure defines EIA/IEE process and Environmental Compliance Certificate"
+                ]
+              },
+              {
+                "source": "ECD EIA 시스템 안내",
+                "instrumentId": "MMR-ECD-EIA-GUIDANCE",
+                "provisions": [
+                  "Issuance of ECC"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "environmental-compliance-certificate",
+              "gate": "MONREC/ECD의 환경준수증명 공식결정",
+              "decision": "환경평가·관리계획과 환경조건을 승인해 환경준수증명을 발급하거나 사유부 거부한다.",
+              "output": "환경준수증명·환경조건 또는 거부결정",
+              "dependsOn": []
+            }
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"YBPS 위험분류·BP-001·환경준수증명·건축도서 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"등록전문가가 YBPS Building Categorization Module에서 위험등급을 확정하고, 중위험 BP-001, 토지·D-MAP, 건축도면·책임서·필요한 ECC를 업로드한다.",
-            "output":"YBPS 중위험 건축허가 신청·접수번호",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 5.6; medium-risk approval-in-principle documents including ECC where necessary", "Section 5.8 step 1; BCM categorization and BP-001 upload"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.2.3; registered-professional construction documents, site plan and special inspections"]}]
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "위험분류·환경준수증명·건축도서 제출",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 건축물 분류기준에서 위험등급을 확정하고, 중위험 BP-001, 토지·D-MAP, 건축도면·책임서·필요한 ECC를 업로드한다.",
+            "output": "건축허가 시스템 중위험 건축허가 신청·접수번호",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.3항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.3; registered-professional construction documents, site plan and special inspection"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"완비·수수료·현장검사·기초 기술심사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC 기술검토자가 신청완비·위험분류를 확인하고 수수료 고지를 발행한 뒤 DAIS 현장검사와 토지·환경·상하수도·건축규정 기초심사를 병행한다.",
-            "output":"완비확인·납부·현장체크리스트·기초심사의견",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 5.8 steps 2-8; completeness, SFI, payment, DAIS site inspection and technical report"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "완비·수수료·현장검사·기초 기술심사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관 기술검토자가 신청완비·위험분류를 확인하고 수수료 고지를 발행한 뒤 담당부서 현장검사와 토지·환경·상하수도·건축규정 기초심사를 병행한다.",
+            "output": "완비확인·납부·현장체크리스트·기초심사의견",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"원칙승인·추가 전문도서 요구","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"Head of Development Area 또는 해당 심의기구가 기초심사 결과를 결정해 적합 시 Approval in Principle을 발행하고 구조·기초·소방·물·오수 등 후속 전문도서를 요구한다.",
-            "output":"원칙승인·후속 전문도서 목록",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 5.8 steps 9-15; review bodies, decision and AP-001 or modification/refusal"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "원칙승인·추가 전문도서 요구",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "개발구역 책임자 또는 해당 심의기구가 기초심사 결과를 결정해 적합 시 Approval in Principle을 발행하고 구조·기초·소방·물·오수 등 후속 전문도서를 요구한다.",
+            "output": "원칙승인·후속 전문도서 목록",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":3,"label":"구조·기초·소방·유틸리티 전문도서 보완","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"Approval in Principle 또는 modification notice에 따라 등록전문가가 구조계산·지반·말뚝, 물·오수, 소방승인도면과 책임서를 작성·수정해 YBPS에 재제출한다.",
-            "output":"수정·완성 전문설계·소방의견·보완답변",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 5.6 items 14-24; medium-risk final permit documents", "Section 5.8 steps 15-17; additional documents, completeness and multidisciplinary scrutiny"]}]
+            "lane": "현지 설계·시공 전문가",
+            "stage": 3,
+            "label": "구조·기초·소방·유틸리티 전문도서 보완",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "Approval in Principle 또는 modification notice에 따라 등록전문가가 구조계산·지반·말뚝, 물·오수, 소방승인도면과 책임서를 작성·수정해 허가기관에 재제출한다.",
+            "output": "수정·완성 전문설계·소방의견·보완답변",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.3항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.3; registered-professional construction documents, site plan and special inspection"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"다부서 기술심사·BP-003 발급·거부 결정","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC 건축·구조·배수·상수도 담당부서가 최종 도서를 심사하고 책임자가 결정한다. 적합 시 수수료·보증금 납부 후 BP-003과 현장정보서를 발급하고, 미흡하면 수정통지 또는 중대결함 거부통지를 한다.",
-            "output":"BP-003·승인도서·현장정보 또는 수정·거부통지",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 5.8 steps 17-22; multidisciplinary review, final decision, BP-003, fees, guarantee and modification notice"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"]}],
-            "permitGate":{"key":"building-permit","gate":"YCDC 중위험 건축허가 공식결정","decision":"현장·건축·구조·설비·소방·환경 적합성을 확인해 BP-003을 발급하거나 수정·거부를 서면결정한다.","output":"BP-003·승인도서 또는 수정·거부통지","dependsOn":["environmental-compliance-certificate"]}
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "다부서 기술심사·BP-003 발급·거부 결정",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관 건축·구조·배수·상수도 담당부서가 최종 도서를 심사하고 책임자가 결정한다. 적합 시 수수료·보증금 납부 후 BP-003과 현장정보서를 발급하고, 미흡하면 수정통지 또는 중대결함 거부통지를 한다.",
+            "output": "BP-003·승인도서·현장정보 또는 수정·거부통지",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.4~1.3.2.9항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.2.4-1.3.2.9; fees, approval/revision and written permit or refusal"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "building-permit",
+              "gate": "YCDC 중위험 건축허가 공식결정",
+              "decision": "현장·건축·구조·설비·소방·환경 적합성을 확인해 BP-003을 발급하거나 수정·거부를 서면결정한다.",
+              "output": "BP-003·승인도서 또는 수정·거부통지",
+              "dependsOn": [
+                "environmental-compliance-certificate"
+              ]
+            }
           }
         ],
-        "edges":[[0,1,"sequence","사업제안서 접수"],[1,2,"sequence","환경영향평가·초기환경검토 분류"],[2,3,"sequence","환경조사 완료"],[3,4,"sequence","환경보고서 심사"],[4,6,"sequence","환경 적합"],[4,5,"message","환경 보완요구"],[5,3,"loop","수정 환경보고서 재접수"],[6,7,"sequence","환경준수증명 반영"],[7,8,"sequence","YBPS 접수"],[8,9,"sequence","기초심사 적합"],[9,10,"sequence","원칙승인·전문도서 요구"],[10,11,"sequence","전문도서 재접수"],[8,10,"message","완비·도서 수정통지"],[11,10,"loop","최종 수정통지 재심사"]],
-        "decisionBranches":[
-          {"state":"success","label":"환경준수증명·BP-003 발급","action":"환경·건축허가 조건과 승인도서에 따라 착공통지"},
-          {"state":"rework","label":"환경보고서·건축전문도서 보완","action":"ECD 또는 YCDC 수정통지에 따라 해당 심사로 회귀"},
-          {"state":"reject","label":"환경준수증명 또는 건축허가 거부","action":"서면 거부사유에 따라 입지·규모·설계 변경 후 재신청·불복신청 검토"}
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "사업제안서 접수"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "환경영향평가·초기환경검토 분류"
+          ],
+          [
+            2,
+            3,
+            "sequence",
+            "환경조사 완료"
+          ],
+          [
+            3,
+            4,
+            "sequence",
+            "환경보고서 심사"
+          ],
+          [
+            4,
+            6,
+            "sequence",
+            "환경 적합"
+          ],
+          [
+            4,
+            5,
+            "message",
+            "환경 보완요구"
+          ],
+          [
+            5,
+            3,
+            "loop",
+            "수정 환경보고서 재접수"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "환경준수증명 반영"
+          ],
+          [
+            7,
+            8,
+            "sequence",
+            "YBPS 접수"
+          ],
+          [
+            8,
+            9,
+            "sequence",
+            "기초심사 적합"
+          ],
+          [
+            9,
+            10,
+            "sequence",
+            "원칙승인·전문도서 요구"
+          ],
+          [
+            10,
+            11,
+            "sequence",
+            "전문도서 재접수"
+          ],
+          [
+            8,
+            10,
+            "message",
+            "완비·도서 수정통지"
+          ],
+          [
+            11,
+            10,
+            "loop",
+            "최종 수정통지 재심사"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "환경준수증명·BP-003 발급",
+            "action": "환경·건축허가 조건과 승인도서에 따라 착공통지"
+          },
+          {
+            "state": "rework",
+            "label": "환경보고서·건축전문도서 보완",
+            "action": "ECD 또는 YCDC 수정통지에 따라 해당 심사로 회귀"
+          },
+          {
+            "state": "reject",
+            "label": "환경준수증명 또는 건축허가 거부",
+            "action": "서면 거부사유에 따라 입지·규모·설계 변경 후 재신청·불복신청 검토"
+          }
         ]
       }
     },
     "control-completion": {
-      "verificationScope":"양곤 YCDC YBPS의 실제 Notification of Inspection Approval·Building Completion Certificate 절차와 MNBC 2025 공통 검사원칙을 연결했다. 양곤 밖은 해당 Development Committee 검사·BCC 절차로 대체한다.",
+      "verificationScope": "단계검사·검사중지점과 준공증명은 국가건축코드 제1.3.4항이 전국 기준으로 정한다.",
       "officialProcedure": {
-        "name":"미얀마 기술검사·준공제도 — 양곤 검사승인통지(Notification of Inspection Approval, NIA)·건축물준공증명서(Building Completion Certificate, BCC)",
-        "coverage":"official-source-linked",
-        "scope":"MNBC Part 1 Sections 1.3.4-1.3.5와 YCDC Manual Sections 9-10의 착공통지, 단계검사·부적합통지(NFA) 시정·검사승인통지, BCC-001·합동검사·BCC-002 절차다.",
-        "stages":["G8 착공통지","G9 단계검사·검사승인통지","G10 준공증명 신청·합동검사","G11 준공증명 결정"],
-        "steps":[
+        "coverage": "official-source-linked",
+        "scope": "MNBC Part 1 Sections 1.3.4-1.3.5와 YCDC Manual Sections 9-10의 착공통지, 단계검사·부적합통지(NFA) 시정·검사승인통지, BCC-001·합동검사·BCC-002 절차다.",
+        "stages": [
+          "G8 착공통지",
+          "G9 단계검사·검사승인통지",
+          "G10 준공증명 신청·합동검사",
+          "G11 준공증명 결정"
+        ],
+        "steps": [
           {
-            "lane":"건축주·신청인","stage":0,"label":"착공·굴착·말뚝 공사통지 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"허가보유자와 등록전문가가 공사유형에 맞는 NC-001, NC-002 또는 NC-003을 YBPS에 제출하고 BP-003·승인도서를 현장에 비치한다.",
-            "output":"착공통지·유효 건축허가·현장 승인도서",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 9.6; NC-001/NC-002/NC-003 and inspection notification forms"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.2.7; permit and approved documents at site"]}]
+            "lane": "건축주·신청인",
+            "stage": 0,
+            "label": "착공·굴착·말뚝 공사통지 제출",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가보유자와 등록전문가가 공사유형에 맞는 NC-001, NC-002 또는 NC-003을 허가기관에 제출하고 BP-003·승인도서를 현장에 비치한다.",
+            "output": "착공통지·유효 건축허가·현장 승인도서",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.2.7항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.2.7; permit and approved documents at site"
+                ]
+              }
+            ]
           },
           {
-            "lane":"현지 설계·시공 전문가","stage":0,"label":"승인설계 시공·검사중지점(Hold Point) 통지","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"등록전문가가 승인도서에 따라 공사를 감독하고 각 법정 검사공정이 노출·접근 가능한 상태에서 NI-001 또는 township 지시 NI-002로 검사를 요청한다.",
-            "output":"시공감독 기록·공정검사 통지",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Sections 1.3.4.1-1.3.4.5; accessible work, phase inspections and permit-holder request"]},{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 9.6; NI-001 and NI-002"]}]
+            "lane": "현지 설계·시공 전문가",
+            "stage": 0,
+            "label": "승인설계 시공·검사중지점(Hold Point) 통지",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "등록전문가가 승인도서에 따라 공사를 감독하고 각 법정 검사공정이 노출·접근 가능한 상태에서 NI-001 또는 관할 구 지시 NI-002로 검사를 요청한다.",
+            "output": "시공감독 기록·공정검사 통지",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.1~1.3.4.5항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.4.1-1.3.4.5; accessible work, phase inspections and permit-holder request"
+                ]
+              }
+            ]
           },
           {
-            "lane":"환경·소방·검사기관","stage":1,"label":"DAIS·승인검사기관 단계별 현장검사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"DAIS와 위험등급상 필요한 승인검사기관이 계획·개발, 굴착·말뚝·구조·설비 등 단계별 현장을 검사하고 전자 checklist와 검사기록을 작성한다.",
-            "output":"단계검사 점검표(checklist)·적합 또는 불일치 기록",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Sections 1.3.4.3-1.3.4.4; phase-by-phase inspections and approved agencies"]},{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 9; DAIS/HPBC inspection and checklist workflow"]}]
+            "lane": "환경·소방·검사기관",
+            "stage": 1,
+            "label": "담당부서·승인검사기관 단계별 현장검사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "담당부서와 위험등급상 필요한 승인검사기관이 계획·개발, 굴착·말뚝·구조·설비 등 단계별 현장을 검사하고 전자 checklist와 검사기록을 작성한다.",
+            "output": "단계검사 점검표(checklist)·적합 또는 불일치 기록",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.3~1.3.4.4항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Sections 1.3.4.3-1.3.4.4; phase-by-phase inspections and approved agencies"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":1,"label":"부적합통지 불일치 시정·재검사 요청","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"검사 불일치에 대한 NFA-001/002를 받으면 허가보유자·전문가가 해당 공정을 시정하고 덮거나 후속공정을 진행하기 전에 재검사를 요청한다.",
-            "output":"시정공사·부적합통지 답변·재검사 기록",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 9.2 and 9.7; Notification of Further Action or Inspection Approval"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.4.6; noncompliant work corrected and not concealed until authorized"]}]
+            "lane": "건축주·신청인",
+            "stage": 1,
+            "label": "부적합통지 불일치 시정·재검사 요청",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "검사 불일치에 대한 NFA-001/002를 받으면 허가보유자·전문가가 해당 공정을 시정하고 덮거나 후속공정을 진행하기 전에 재검사를 요청한다.",
+            "output": "시정공사·부적합통지 답변·재검사 기록",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.6항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.6; correction before approval"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":1,"label":"검사승인통지서 NIA-001 승인·후속공정 해제","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"검사결과 적합하면 YCDC가 Notification of Inspection Approval(NIA-001)을 발행해 해당 Hold Point 이후 공사를 허용하고, 다음 검사공정까지 같은 절차를 반복한다.",
-            "output":"검사승인통지서 NIA-001·공정승인·후속검사 조건",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 9.2 and 9.7; NIA-001 or NFA result"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.4.6; approval required before proceeding beyond inspection point"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 1,
+            "label": "검사승인통지서 NIA-001 승인·후속공정 해제",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "검사결과 적합하면 허가기관이 Notification of Inspection Approval(NIA-001)을 발행해 해당 Hold Point 이후 공사를 허용하고, 다음 검사공정까지 같은 절차를 반복한다.",
+            "output": "검사승인통지서 NIA-001·공정승인·후속검사 조건",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.6항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.6; approval required before proceeding beyond inspection point"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"BCC-001·준공도면(as-built)·관계기관 증명 제출","emphasis":"key","kind":"official-guidance","basisScope":"node",
-            "action":"공사완료 후 등록전문가가 BCC-001, as-built 건축·구조·설비도서와 해당 세무·승강기·전력·소방 등 관계기관 추천서·증명서를 YBPS에 제출한다.",
-            "output":"BCC-001·준공도면·관계기관 증명·접수번호",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 10.6; BCC application, as-built documents and recommendation letters", "Section 10.8 step 1; BCC-001 upload"]}]
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "BCC-001·준공도면(as-built)·관계기관 증명 제출",
+            "emphasis": "key",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "공사완료 후 등록전문가가 BCC-001, as-built 건축·구조·설비도서와 해당 세무·승강기·전력·소방 등 관계기관 추천서·증명서를 허가기관에 제출한다.",
+            "output": "BCC-001·준공도면·관계기관 증명·접수번호",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.7항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.7; building-official inspection before completion certificate"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":2,"label":"준공증명 완비확인·검사수수료 고지","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"DAIS 담당자가 BCC 신청과 첨부의 완비성을 확인하고 완비 시 Scrutinization Fees Invoice를 전자 발행해 납부 후 합동검사를 배정한다.",
-            "output":"준공증명 완비확인·수수료 납부·검사일정",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 10.8 steps 2-5; file check, SFI, payment and joint inspection planning"]}]
+            "lane": "도시계획·건축 허가기관",
+            "stage": 2,
+            "label": "준공증명 완비확인·검사수수료 고지",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "담당부서 담당자가 BCC 신청과 첨부의 완비성을 확인하고 완비 시 Scrutinization Fees Invoice를 전자 발행해 납부 후 합동검사를 배정한다.",
+            "output": "준공증명 완비확인·수수료 납부·검사일정",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.7항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.7; building-official inspection before completion certificate"
+                ]
+              }
+            ]
           },
           {
-            "lane":"환경·소방·검사기관","stage":2,"label":"DAIS·소방·상수·오수 합동 준공검사","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"DAIS, Fire Services, 상수도·배수하수 부서와 위험등급상 필요한 기관이 현장을 방문해 as-built, 허가조건, 화재·물·오수·구조 적합성을 합동검사한다.",
-            "output":"합동 준공검사 점검표·기관증명·판정",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 10.5 and 10.8; DAIS, Fire, water, drainage/sewage and HPBC joint inspections"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.4.7; building-official inspection before completion certificate"]}]
+            "lane": "환경·소방·검사기관",
+            "stage": 2,
+            "label": "합동 준공검사",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "담당부서, 소방, 상수도·배수하수 부서와 위험등급상 필요한 기관이 현장을 방문해 as-built, 허가조건, 화재·물·오수·구조 적합성을 합동검사한다.",
+            "output": "합동 준공검사 점검표·기관증명·판정",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.7항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.7; building-official inspection before completion certificate"
+                ]
+              }
+            ]
           },
           {
-            "lane":"건축주·신청인","stage":2,"label":"준공불일치 준공증명 보완·재검사","emphasis":"normal","kind":"official-guidance","basisScope":"node",
-            "action":"합동검사에서 도면·현장·증명 불일치가 확인되면 건축주와 전문자가 시정공사·수정 as-built·추가증명을 제출해 관련 기관 재검사를 받는다.",
-            "output":"시정공사·수정 준공도면·재검사 기록",
-            "authorityIds":["mmr-ycdc","mmr-professionals-fire"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 10 procedure; incomplete/rejected file completion and joint inspection compliance"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.4.6; correction before approval"]}]
+            "lane": "건축주·신청인",
+            "stage": 2,
+            "label": "준공불일치 준공증명 보완·재검사",
+            "emphasis": "normal",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "합동검사에서 도면·현장·증명 불일치가 확인되면 건축주와 전문자가 시정공사·수정 as-built·추가증명을 제출해 관련 기관 재검사를 받는다.",
+            "output": "시정공사·수정 준공도면·재검사 기록",
+            "authorityIds": [
+              "mmr-ycdc",
+              "mmr-professionals-fire"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.6항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.6; correction before approval"
+                ]
+              }
+            ]
           },
           {
-            "lane":"도시계획·건축 허가기관","stage":3,"label":"준공증명서 BCC-002 발급·사용승인 또는 거부","emphasis":"bottleneck","kind":"official-guidance","basisScope":"node",
-            "action":"YCDC가 합동검사 적합과 완비증명을 확인해 Building Completion Certificate BCC-002에 허가번호·주소·소유자·용도·조건을 기재해 발급하며, 미시정이면 거부한다. BCC 전 사용·점유는 금지된다.",
-            "output":"BCC-002·승인용도·조건 또는 거부결정",
-            "authorityIds":["mmr-ycdc"],
-            "refs":[{"source":"YCDC Building Permit Manual","instrumentId":"MMR-YCDC-BP-MANUAL","provisions":["Section 10.7-10.8; Building Completion Certificate BCC-002 result"]},{"source":"MNBC 2025 Part 1","instrumentId":"MMR-MNBC-2025-PART-1-2","provisions":["Section 1.3.4.7; no use/occupancy before certificate and certificate contents"]}],
-            "permitGate":{"key":"building-completion-certificate","gate":"YCDC 건축물준공증명서 공식결정","decision":"합동 준공검사와 준공도면·관계기관 증명을 확인해 BCC-002를 발급하거나 거부한다.","output":"BCC-002·승인용도 또는 거부결정","dependsOn":[]}
+            "lane": "도시계획·건축 허가기관",
+            "stage": 3,
+            "label": "준공증명서 BCC-002 발급·사용승인 또는 거부",
+            "emphasis": "bottleneck",
+            "kind": "official-guidance",
+            "basisScope": "node",
+            "action": "허가기관이 합동검사 적합과 완비증명을 확인해 Building Completion Certificate BCC-002에 허가번호·주소·소유자·용도·조건을 기재해 발급하며, 미시정이면 거부한다. BCC 전 사용·점유는 금지된다.",
+            "output": "BCC-002·승인용도·조건 또는 거부결정",
+            "authorityIds": [
+              "mmr-ycdc"
+            ],
+            "refs": [
+              {
+                "source": "국가건축코드 제1.3.4.7항",
+                "instrumentId": "MMR-MNBC-2025-PART-1-2",
+                "provisions": [
+                  "Section 1.3.4.7; no use/occupancy before certificate and certificate contents"
+                ]
+              }
+            ],
+            "permitGate": {
+              "key": "building-completion-certificate",
+              "gate": "YCDC 건축물준공증명서 공식결정",
+              "decision": "합동 준공검사와 준공도면·관계기관 증명을 확인해 BCC-002를 발급하거나 거부한다.",
+              "output": "BCC-002·승인용도 또는 거부결정",
+              "dependsOn": []
+            }
           }
         ],
-        "edges":[[0,1,"sequence","착공·검사계획"],[1,2,"sequence","공정검사 요청"],[2,4,"sequence","공정 적합"],[2,3,"message","부적합통지 시정요구"],[3,1,"loop","시정 후 검사 재통지"],[4,5,"sequence","전 공정 검사승인·완료"],[5,6,"sequence","준공증명 신청"],[6,7,"sequence","합동검사 배정"],[7,9,"sequence","준공 적합"],[7,8,"message","준공 보완요구"],[8,7,"loop","시정 후 합동 재검사"]],
-        "decisionBranches":[
-          {"state":"success","label":"검사승인통지·BCC-002 발급","action":"준공증명서에 기재된 용도·조건으로 사용·점유"},
-          {"state":"rework","label":"부적합통지·준공불일치 시정","action":"해당 공정 또는 합동 준공검사로 회귀"},
-          {"state":"reject","label":"중대위반·준공증명 거부","action":"서면사유에 따라 시정·변경허가·재신청 또는 불복신청 검토"}
+        "edges": [
+          [
+            0,
+            1,
+            "sequence",
+            "착공·검사계획"
+          ],
+          [
+            1,
+            2,
+            "sequence",
+            "공정검사 요청"
+          ],
+          [
+            2,
+            4,
+            "sequence",
+            "공정 적합"
+          ],
+          [
+            2,
+            3,
+            "message",
+            "부적합통지 시정요구"
+          ],
+          [
+            3,
+            1,
+            "loop",
+            "시정 후 검사 재통지"
+          ],
+          [
+            4,
+            5,
+            "sequence",
+            "전 공정 검사승인·완료"
+          ],
+          [
+            5,
+            6,
+            "sequence",
+            "준공증명 신청"
+          ],
+          [
+            6,
+            7,
+            "sequence",
+            "합동검사 배정"
+          ],
+          [
+            7,
+            9,
+            "sequence",
+            "준공 적합"
+          ],
+          [
+            7,
+            8,
+            "message",
+            "준공 보완요구"
+          ],
+          [
+            8,
+            7,
+            "loop",
+            "시정 후 합동 재검사"
+          ]
+        ],
+        "decisionBranches": [
+          {
+            "state": "success",
+            "label": "검사승인통지·BCC-002 발급",
+            "action": "준공증명서에 기재된 용도·조건으로 사용·점유"
+          },
+          {
+            "state": "rework",
+            "label": "부적합통지·준공불일치 시정",
+            "action": "해당 공정 또는 합동 준공검사로 회귀"
+          },
+          {
+            "state": "reject",
+            "label": "중대위반·준공증명 거부",
+            "action": "서면사유에 따라 시정·변경허가·재신청 또는 불복신청 검토"
+          }
         ]
       }
     }

@@ -24,6 +24,22 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { toBoard } from "./board_adapter.mjs";
 
+// build_construction_boards.mjs와 같은 규칙으로 라벨을 줄인 뒤 채점한다.
+// 렌더와 채점이 다른 그래프를 보면 지표가 화면을 설명하지 못한다.
+function displayEdges(edges) {
+  const outgoing = new Map();
+  for (const edge of edges) {
+    outgoing.set(edge.source, (outgoing.get(edge.source) || 0) + 1);
+  }
+  return edges.map((edge) => {
+    if (edge.label && edge.type === "sequence" && (outgoing.get(edge.source) || 0) < 2) {
+      const { label, ...rest } = edge;
+      return rest;
+    }
+    return edge;
+  });
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = dirname(HERE);
 const INST_DIR = join(ROOT, "data", "institutions");
@@ -103,7 +119,7 @@ for (const f of constructionFiles) {
       lanes: item.processBoard.lanes.filter((lane) => usedLanes.has(lane)),
       stages: item.processBoard.stages.filter((stage) => usedStages.has(stage)),
       nodes,
-      edges: spec.edges,
+      edges: displayEdges(spec.edges),
     });
   }
 }

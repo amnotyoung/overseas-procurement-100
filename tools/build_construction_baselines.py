@@ -755,11 +755,35 @@ def build_country(profile: dict[str, Any], as_of: str) -> dict[str, Any]:
                 "type": "loop",
                 "label": loop_label,
             })
+        # 전국에 발행됐어도 주·지방의 채택으로 효력이 완성되는 근거만 있는 축은
+        # 통일 제도가 있는 것처럼 읽히면 안 된다. 근거에서 직접 계산해 표시한다.
+        instrument_scopes = {
+            item["id"]: item.get("scope") for item in profile["instruments"]
+        }
+        axis_instrument_ids = {
+            ref["instrumentId"]
+            for node_id in model_node_ids
+            for ref in next(
+                (node["refs"] for node in nodes if node["id"] == node_id), []
+            )
+            if ref.get("instrumentId")
+        }
+        national_framework = (
+            "adoption-dependent"
+            if any(
+                instrument_scopes.get(item) == "adoption-dependent"
+                for item in axis_instrument_ids
+            )
+            else "established"
+        )
         models.append({
             "id": system_key,
             "slug": model_slug,
             "priority": meta["priority"],
-            "name": workflow.get("name", f"{profile['name']} {meta['name']}"),
+            "nationalFramework": national_framework,
+            # 공개 제목은 조달 3축과 같은 `국가명 + 제도명` 형식으로 고정한다.
+            # 국가별 절차명은 지역 창구·사례 이름을 달고 오기 쉬워 제목으로 쓰지 않는다.
+            "name": f"{profile['name']} {meta['name']}",
             "oneLiner": system["oneLiner"],
             "purpose": meta["purpose"],
             "verificationScope": system["verificationScope"],

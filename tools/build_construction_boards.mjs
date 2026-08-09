@@ -38,6 +38,35 @@ function fail(message) {
   process.exit(1);
 }
 
+// 구조도에 실제로 그릴 간선 라벨만 남긴다.  곧장 다음 단계로 이어지는 간선은
+// 화살표만으로 읽히고, 거기까지 라벨을 달면 갈림길과 보완회귀가 글자에 묻힌다.
+// 선택이 필요한 곳 — 나가는 길이 둘 이상인 분기, 병렬 흐름 사이의 전달,
+// 보완회귀 — 에만 남기고 나머지는 카드 상세에서 읽게 한다.
+// 공개 화면은 축마다 절차구간을 G1부터 다시 매긴다(build_site.py). 감사용 SVG가
+// 원천 생애주기 번호(G0·G4·C3 …)를 그대로 쓰면 같은 축을 두 번호로 읽게 된다.
+function renumberStages(stages) {
+  const map = new Map();
+  stages.forEach((stage, index) => {
+    const [, label = stage] = stage.match(/^\S+\s+(.*)$/) || [];
+    map.set(stage, `G${index + 1} ${label}`);
+  });
+  return map;
+}
+
+function displayEdges(edges) {
+  const outgoing = new Map();
+  for (const edge of edges) {
+    outgoing.set(edge.source, (outgoing.get(edge.source) || 0) + 1);
+  }
+  return edges.map((edge) => {
+    if (edge.label && edge.type === "sequence" && (outgoing.get(edge.source) || 0) < 2) {
+      const { label, ...rest } = edge;
+      return rest;
+    }
+    return edge;
+  });
+}
+
 if (!existsSync(BOARD_CLI)) {
   fail("korea100studio is not installed; run `npm ci` first");
 }
@@ -76,6 +105,8 @@ for (const file of files) {
     const nodes = sourceBoard.nodes.filter((node) => nodeIds.has(node.id));
     const usedLanes = new Set(nodes.map((node) => node.lane));
     const usedStages = new Set(nodes.map((node) => node.stage));
+    const axisStages = sourceBoard.stages.filter((stage) => usedStages.has(stage));
+    const stageLabels = renumberStages(axisStages);
     targets.push({
       id: spec.slug,
       outputName: `${spec.slug}.svg`,
@@ -85,9 +116,9 @@ for (const file of files) {
         title: spec.name,
         subtitle: spec.oneLiner,
         lanes: sourceBoard.lanes.filter((lane) => usedLanes.has(lane)),
-        stages: sourceBoard.stages.filter((stage) => usedStages.has(stage)),
-        nodes,
-        edges: spec.edges,
+        stages: axisStages.map((stage) => stageLabels.get(stage)),
+        nodes: nodes.map((node) => ({ ...node, stage: stageLabels.get(node.stage) })),
+        edges: displayEdges(spec.edges),
       },
     });
   }
