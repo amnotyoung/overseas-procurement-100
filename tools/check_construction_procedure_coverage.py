@@ -17,6 +17,27 @@ ALLOWED_STATUS = {"official-source-linked", "article-linked", "article-verified"
 INTERNAL_KINDS = {"field-verification", "project-control"}
 CURRENT_SOURCE_STATUSES = {"in_force", "current_official"}
 CURRENTNESS_EXCEPTION_STATUSES = {"continuity_unverified", "pending", "superseded"}
+# 공개 3축은 전국 제도만 싣는다.  주·시·지방행정기관 관할 자료는 대장에는 남기되
+# 공개 절차의 근거로는 쓰지 않는다.  판정은 자료의 `scope` 필드에서만 읽고,
+# 제목·설명 문구를 문자열로 뒤지지 않는다 — 문구는 바꿔 쓰면 그만이기 때문이다.
+SUBNATIONAL_SCOPES = {"local", "subnational"}
+# 전국에 발행됐지만 주·지방의 채택으로 효력이 완성되는 자료.  전국 골격으로는
+# 쓰되, 그 사실을 축에 표시하지 않으면 통일 제도가 있는 것처럼 읽힌다.
+ADOPTION_SCOPES = {"adoption-dependent"}
+# 표준 축 제목.  조달 3축과 같은 `국가명 + 제도명` 형식을 유지한다.
+AXIS_TITLES = {
+    "site-urban": "도시계획·부지규제",
+    "permit-environment": "건축허가·환경심사",
+    "control-completion": "기술검사·보험·준공제도",
+}
+# 행위주체는 기능 중심 중립 용어 4종으로 고정한다.  같은 역할을 나라마다 다른
+# 이름으로 부르면 국가 간 비교가 끊기고, 구조도 레인도 나라마다 달라 보인다.
+BOARD_LANES = {
+    "건축주·신청인",
+    "현지 설계·시공 전문가",
+    "도시계획·건축 허가기관",
+    "환경·소방·검사기관",
+}
 
 
 def nonempty_text(value: object) -> bool:
@@ -114,6 +135,59 @@ def validate_overlay_axis(
         errors.append(f"{prefix}: every decision branch needs label and action")
 
 
+def check_axis_jurisdiction(data: dict, errors: list[str]) -> None:
+    """공개 3축이 전국 제도만 싣는지 자료의 관할 필드로 확인한다.
+
+    지역 관할 자료를 절차 근거로 쓰면 국가 제도로 읽히는 화면에 특정 주·시의
+    절차가 실린다.  축을 감추는 대신 그 근거를 전국 법령·전국 서비스로 바꾸게
+    한다 — 협력국마다 3축을 공개한다는 약속은 그대로 두기 위해서다.
+    """
+    slug = data.get("slug", "?")
+    instruments = {item["id"]: item for item in data.get("instruments", [])}
+    nodes = {item["id"]: item for item in data.get("processBoard", {}).get("nodes", [])}
+    country_name = data.get("country", {}).get("name", "")
+
+    stray_lanes = sorted({item.get("lane") for item in nodes.values()} - BOARD_LANES)
+    if stray_lanes:
+        errors.append(
+            f"{slug}: board lanes {stray_lanes} are outside the shared four actor groups"
+        )
+
+    for model in data.get("publicModels", []):
+        axis = model.get("id", "?")
+        expected_title = f"{country_name} {AXIS_TITLES[axis]}" if axis in AXIS_TITLES else None
+        if expected_title and model.get("name") != expected_title:
+            errors.append(
+                f"{slug}:{axis}: public title is {model.get('name')!r}; "
+                f"expected {expected_title!r}"
+            )
+        offenders: dict[str, list[str]] = {}
+        adoption_sources: set[str] = set()
+        for node_id in model.get("nodeIds", []):
+            for ref in nodes.get(node_id, {}).get("refs", []) or []:
+                instrument = instruments.get(ref.get("instrumentId"))
+                if not instrument:
+                    continue
+                if instrument.get("scope") in SUBNATIONAL_SCOPES:
+                    offenders.setdefault(instrument["id"], []).append(node_id)
+                elif instrument.get("scope") in ADOPTION_SCOPES:
+                    adoption_sources.add(instrument["id"])
+        for instrument_id, node_ids in sorted(offenders.items()):
+            scope = instruments[instrument_id].get("scope")
+            label = instruments[instrument_id].get("scopeLabel", "")
+            errors.append(
+                f"{slug}:{axis}: nodes {node_ids} cite {scope} material "
+                f"{instrument_id} ({label}); a public axis must rest on nationwide sources"
+            )
+        # 전국 통일 제도가 없는 나라를 있는 것처럼 보이게 두지 않는다.
+        if adoption_sources and model.get("nationalFramework") != "adoption-dependent":
+            errors.append(
+                f"{slug}:{axis}: rests on adoption-dependent material "
+                f"{sorted(adoption_sources)} but does not declare "
+                "nationalFramework='adoption-dependent'"
+            )
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -153,6 +227,7 @@ def main() -> int:
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
         countries += 1
+        check_axis_jurisdiction(data, errors)
         for model in construction_to_models(data):
             models += 1
             slug = model["slug"]

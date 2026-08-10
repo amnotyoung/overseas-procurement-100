@@ -2,7 +2,7 @@
 <html lang="ko"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>네팔 ODA 사업 발굴·형성 절차 | 그 나라 조달은 어떻게 할까</title>
+<title>네팔 ODA 사업 발굴·형성 절차 | 그 나라, 조달하고 건축하려면?</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{overflow-x:hidden}
@@ -50,7 +50,12 @@ header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-s
 header.site nav a{color:var(--muted);text-decoration:none}
 header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
 .asof{color:var(--muted);font-size:12px}
-
+@media (max-width:760px){
+  header.site .wrap{height:auto;min-height:58px;flex-wrap:wrap;padding-block:10px;gap:5px 12px}
+  .brand-sub{display:none}
+  header.site nav{width:100%;margin-left:0;gap:14px;overflow-x:auto;padding:2px 0 4px}
+  header.site nav a{white-space:nowrap}
+}
 .hero{padding:44px 0 30px}
 .eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
@@ -104,6 +109,7 @@ td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
 .badge.ok{background:var(--key-bg);color:var(--key)}
 .badge.info{background:var(--info-bg);color:var(--info)}
 .badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.back{background:var(--back-bg);color:var(--back)}
 .badge.bad{background:var(--bad-bg);color:var(--bad)}
 .badge.muted{background:var(--soft);color:var(--muted)}
 
@@ -126,7 +132,8 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile:last-child{border-right:0}
 .tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
 .tile span{font-size:11.5px;color:var(--muted)}
-.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+.tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
+.tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
@@ -136,16 +143,38 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .hd-row .legend{margin-left:auto}
 
-.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
-.board{position:relative;min-width:940px}
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+.board{position:relative;min-width:940px;padding-bottom:52px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.board-scroll-hint{display:none;color:var(--muted);font-size:11.5px;text-align:right;margin:-8px 2px 8px}
+.decision-branches{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
+.decision-branches .branch-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.decision-branches .branch-hd b{font-size:13px}
+.decision-branches .branch-hd span{font-size:12px;color:var(--muted)}
+.decision-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.decision-branch{display:grid;grid-template-columns:auto auto 1fr;gap:6px 8px;align-items:center;
+  padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);font-size:12.5px}
+.decision-branch .branch-arrow{grid-row:1 / span 2;font-size:21px;font-weight:800;line-height:1}
+.decision-branch b{font-size:13px}
+.decision-branch > span:last-child{grid-column:2 / -1;color:var(--muted);line-height:1.55}
+.decision-branch[data-state="success"]{border-color:var(--key)}
+.decision-branch[data-state="success"] .branch-arrow{color:var(--key)}
+.decision-branch[data-state="rework"]{border-color:var(--back)}
+.decision-branch[data-state="rework"] .branch-arrow{color:var(--back)}
+.decision-branch[data-state="reject"]{border-color:var(--bad)}
+.decision-branch[data-state="reject"] .branch-arrow{color:var(--bad)}
+@media (max-width:820px){.decision-branch-grid{grid-template-columns:1fr}}
 .brow{display:grid;border-bottom:1px solid var(--line)}
 .brow:last-child{border-bottom:0}
 .brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
 /* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
-  display:flex;flex-direction:column;gap:26px;justify-content:center}
+  display:flex;flex-direction:column;gap:32px;justify-content:center}
+.brow:not(.head) .bcell{padding-block:40px}
 .bcell:last-child{border-right:0}
+.brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
+.brow.head .bcell:first-child{z-index:5;background:var(--soft)}
 .brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
 .stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
 .stage-t{font-size:13px;font-weight:700}
@@ -154,8 +183,12 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
   border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
   width:100%;display:block;transition:box-shadow .12s,border-color .12s}
 .node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node:focus-visible{outline:3px solid color-mix(in srgb,var(--key) 35%,transparent);outline-offset:2px}
 .node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
   display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .tags{display:flex;align-items:center;gap:4px;letter-spacing:0}
+.node .kind-tag{font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;
+  background:var(--soft);color:var(--muted);white-space:nowrap}
 .node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
 .node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
 .node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
@@ -165,6 +198,23 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
 .node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
 .node.dim{opacity:.34}
+/* 순차 라벨은 "다음 단계로 넘어간다"는 이미 자명한 정보를 짧게 되풀이하는
+   경우가 많아 상시 표시하면 분기 조건 라벨까지 묻힌다. 기본은 숨기고 카드를
+   가리키거나 포커스할 때, 또는 아래 토글로 드러낸다. 배치는 숨긴 상태에서도
+   미리 계산해 두므로 드러날 때 위치가 흔들리지 않는다. */
+.edge-label-group[data-edge-kind="sequence"]{opacity:0;transition:opacity .12s}
+.edge-label-group[data-edge-kind="sequence"].lit{opacity:1}
+.board.show-all-labels .edge-label-group[data-edge-kind="sequence"]{opacity:1}
+.legend-toggle{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;
+  color:var(--muted);cursor:pointer;user-select:none}
+.legend-toggle input{margin:0;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.edge-label-group{transition:none}}
+@media (max-width:760px){
+  .board-scroll-hint{display:block}
+  .board{min-width:var(--mobile-board-width)!important}
+  .board .brow{grid-template-columns:130px repeat(var(--stage-count),190px)!important}
+  .board .bcell{padding-inline:10px}
+}
 
 .drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
   max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
@@ -180,27 +230,64 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .kv dd{margin:3px 0 0}
 .kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
+  gap:16px;align-items:start}
+.card{min-width:0;border:1px solid var(--line);border-radius:11px;padding:17px 19px}
 .card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
 .card.span2{grid-column:span 2}
 @media (max-width:820px){.card.span2{grid-column:span 1}}
 ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
 ol.steps li{margin-bottom:5px}
+.step-output{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.workflow-disclosure{margin:0 0 12px;padding:10px 12px;border-left:3px solid var(--info);
+  background:var(--info-bg);color:var(--fg);font-size:12.5px;line-height:1.65}
+.official-gates{list-style:none;padding:0;margin:0;counter-reset:none}
+.official-gate{padding:14px 0;border-bottom:1px dashed var(--line)}
+.official-gate:last-child{border-bottom:0;padding-bottom:0}
+.official-gate:first-child{padding-top:0}
+.official-gate .gate-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.official-gate .gate-title b{font-size:13.5px}
+.official-gate > p{margin:0 0 9px;font-size:13px;line-height:1.65}
+.gate-meta{display:grid;grid-template-columns:max-content 1fr;gap:5px 10px;margin:0;font-size:12.5px;line-height:1.55}
+.gate-meta dt{color:var(--muted);font-weight:700}.gate-meta dd{margin:0;min-width:0}
+.gate-basis{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gate-basis a,.gate-basis .law-name{min-width:0;font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.gate-basis .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
 ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
 ul.plain li{margin-bottom:6px}
-.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law{min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .law:last-child{border-bottom:0}
-.law .nm{font-weight:600}
-.law .ar{color:var(--muted);font-size:12.5px}
+.law-copy{min-width:0}
+.law .nm{display:block;min-width:0;font-weight:600;line-height:1.5;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar{display:block;min-width:0;margin-top:2px;color:var(--muted);font-size:12.5px;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar:empty{display:none}
+.law-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;margin-top:6px}
+.law-meta:empty{display:none}
+.law-meta .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+.law-meta .badge::before,.gate-basis .badge::before,.auth .badge::before{flex:none}
 .docset{margin-bottom:13px}
 .docset b{font-size:12.5px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
-.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);gap:10px;
+  align-items:start;min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .auth:last-child{border-bottom:0}
-.auth b{flex:none;max-width:42%;font-size:13px}
-.auth span{color:var(--muted);font-size:12.5px}
+.auth b{min-width:0;max-width:none;font-size:13px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+.auth span{min-width:0;color:var(--muted);font-size:12.5px;word-break:keep-all;overflow-wrap:anywhere}
+.auth .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+@media (max-width:620px){.auth{grid-template-columns:1fr;gap:4px}}
+.field-application{grid-column:1/-1;padding:0}
+.field-application summary{display:flex;align-items:center;gap:12px;min-width:0;padding:17px 19px;
+  cursor:pointer;list-style:none;font-size:13.5px;font-weight:700}
+.field-application summary::-webkit-details-marker{display:none}
+.field-application summary small{margin-left:auto;color:var(--muted);font-size:11.5px;font-weight:600}
+.field-application summary::after{content:"⌄";color:var(--muted);font-size:16px;line-height:1;
+  transition:transform .15s ease}
+.field-application[open] summary::after{transform:rotate(180deg)}
+.field-application .field-application-body{padding:0 19px 17px}
+.field-application .workflow-disclosure{margin-top:0}
 
 .disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
 .disc[data-sev="high"]{border-left-color:var(--bad)}
@@ -258,6 +345,103 @@ ul.plain li{margin-bottom:6px}
 .note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
 .note::before{content:"·";position:absolute;left:4px}
 
+.feature-callout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;
+  margin:0 0 24px;padding:20px 22px;border:1px solid var(--key);border-radius:12px;
+  background:var(--key-bg);text-decoration:none}
+.feature-callout:hover{box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.feature-callout b{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:3px}
+.feature-callout p{margin:0;color:var(--muted);font-size:13.5px}
+.feature-callout .go{color:var(--key);font-weight:800;font-size:13px;white-space:nowrap}
+@media (max-width:620px){.feature-callout{grid-template-columns:1fr}.feature-callout .go{margin-top:2px}}
+
+.country-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.country-card{border:1px solid var(--line);border-radius:13px;padding:21px;background:var(--bg)}
+.country-card .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.country-card h2{font-size:20px;margin:13px 0 5px;letter-spacing:-.02em}
+.country-card p{font-size:13.5px;color:var(--muted);line-height:1.7;margin:0}
+.country-card .metrics{display:flex;gap:16px;flex-wrap:wrap;margin:17px 0}
+.country-card .metrics b{display:block;font-size:18px;line-height:1.2}
+.country-card .metrics span{font-size:11px;color:var(--muted)}
+.country-card .btn{display:inline-flex;text-decoration:none;color:var(--key);font-weight:700}
+.studio-preview{margin:18px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.studio-preview .viewport{height:330px;overflow:hidden;position:relative}
+.studio-preview .viewport::after{content:"";position:absolute;inset:auto 0 0;height:80px;
+  background:linear-gradient(transparent,#fff);pointer-events:none}
+.studio-preview img{display:block;width:100%;min-width:720px;height:auto}
+.studio-preview .caption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:10px 12px;border-top:1px solid var(--line);color:#3d4048;font-size:11.5px}
+.studio-preview .caption b{font-size:12px;color:#191b20}
+.studio-board-shell{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.studio-board-view{overflow:auto;background:#fff}
+.studio-board-view img{display:block;width:100%;min-width:1120px;height:auto}
+.studio-board-shell figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  flex-wrap:wrap;margin:0;padding:11px 14px;border-top:1px solid #d9dbe1;color:#51545d;font-size:12px}
+.studio-board-shell figcaption a{color:#3157a4}
+@media (max-width:760px){
+  .studio-preview .viewport{height:280px}.studio-preview img{min-width:660px}
+  .studio-board-view img{min-width:980px}
+}
+
+.decision-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px}
+.decision{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:16px 17px}
+.decision[data-state="confirmed"]{border-left-color:var(--key)}
+.decision[data-state="conditional"]{border-left-color:var(--warn)}
+.decision[data-state="unresolved"]{border-left-color:var(--bad)}
+.decision p{font-size:13.5px;line-height:1.72;margin:9px 0 0}
+.decision .sources{font-size:11.5px;color:var(--muted);margin-top:10px}
+
+.gateflow{counter-reset:gate;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gate-step{display:grid;grid-template-columns:42px minmax(150px,.55fr) minmax(260px,1fr) minmax(150px,.55fr);
+  gap:14px;align-items:start;padding:15px 17px;border-bottom:1px solid var(--line)}
+.gate-step:last-child{border-bottom:0}
+.gate-step::before{counter-increment:gate;content:counter(gate);width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;background:var(--key-bg);color:var(--key);font-weight:800;font-size:12px}
+.gate-step b{font-size:13.5px}.gate-step p{font-size:13px;margin:0;color:var(--muted);line-height:1.65}
+.gate-step .out{font-size:12px;color:var(--fg);padding-left:12px;border-left:1px solid var(--line)}
+@media (max-width:760px){
+  .gate-step{grid-template-columns:34px 1fr;gap:6px 10px}
+  .gate-step p,.gate-step .out{grid-column:2}.gate-step .out{padding:7px 0 0;border-left:0;border-top:1px dashed var(--line)}
+}
+
+.blocker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px}
+.blocker{border:1px solid var(--bad);border-radius:10px;padding:16px 17px;background:var(--bad-bg)}
+.blocker .stage{color:var(--bad);font-size:11px;font-weight:800;letter-spacing:.03em}
+.blocker h3{font-size:14.5px;line-height:1.55;margin:7px 0 10px}
+.blocker p{font-size:12.5px;color:var(--muted);line-height:1.65;margin:0}
+.blocker ul{font-size:12.5px;margin:9px 0 0;padding-left:18px}
+
+.req-groups{display:flex;flex-direction:column;gap:11px}
+.req-group{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
+.req-group summary{cursor:pointer;list-style:none;padding:14px 17px;font-weight:800;font-size:14px;background:var(--soft)}
+.req-group summary::-webkit-details-marker{display:none}
+.req-group summary::after{content:"＋";float:right;color:var(--muted)}
+.req-group[open] summary::after{content:"－"}
+.req-items{padding:4px 17px}
+.req-item{padding:16px 0;border-bottom:1px dashed var(--line)}
+.req-item:last-child{border-bottom:0}
+.req-item .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.req-item h3{font-size:14px;margin:0}
+.req-item p{font-size:13px;line-height:1.7;margin:5px 0}
+.req-item .minor{color:var(--muted);font-size:12.5px}
+
+.overlay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:13px}
+.overlay{border:1px solid var(--line);border-radius:10px;padding:16px 17px}
+.overlay h3{font-size:14px;margin:10px 0 7px}.overlay p{font-size:13px;line-height:1.7;margin:5px 0}
+.overlay .missing{color:var(--bad)}
+
+.anchor-row{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0 0}
+.anchor-row a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--bg)}
+.anchor-row a:hover{border-color:var(--key);color:var(--key)}
+.data-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.data-table-wrap table{min-width:780px}
+
+@media (max-width:360px){
+  .wrap{padding-inline:16px}
+  .cards,.decision-list,.overlay-grid,.blocker-grid,.country-cards{grid-template-columns:minmax(0,1fr)}
+  .card,.decision,.overlay,.blocker,.country-card{min-width:0}
+  .subnav select{max-width:100%}
+}
+
 footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
 footer.site a{color:var(--muted)}
 </style>
@@ -276,8 +460,8 @@ footer.site a{color:var(--muted)}
 </script>
 </head><body>
 <header class="site"><div class="wrap">
-  <a class="brand" href="../../index.html">그 나라 조달은 어떻게 할까</a>
-  <span class="brand-sub">협력국 조달제도 안내</span>
+  <a class="brand" href="../../index.html">그 나라, 조달하고 건축하려면?</a>
+  <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
     <a href="../../index.html">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
@@ -289,29 +473,32 @@ footer.site a{color:var(--muted)}
 
 <div class="subnav"><div class="wrap">
   <label for="sel">제도 선택</label>
-  <select id="sel" style="min-width:280px"><option value="ghana-bidding-system">01 · 가나 입찰제도</option><option value="ghana-procurement-governance">02 · 가나 조달 거버넌스</option><option value="ghana-oda-project-pipeline">03 · 가나 ODA 사업형성</option><option value="guatemala-bidding-system">04 · 과테말라 입찰제도</option><option value="guatemala-procurement-governance">05 · 과테말라 조달 거버넌스</option><option value="guatemala-oda-project-pipeline">06 · 과테말라 ODA 사업형성</option><option value="nigeria-bidding-system">07 · 나이지리아 입찰제도</option><option value="nigeria-procurement-governance">08 · 나이지리아 조달 거버넌스</option><option value="nigeria-oda-project-pipeline">09 · 나이지리아 ODA 사업형성</option><option value="nepal-bidding-system">10 · 네팔 입찰제도</option><option value="nepal-procurement-governance">11 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline" selected>12 · 네팔 ODA 사업형성</option><option value="koica-bidding-system">13 · 대한민국(KOICA·발주자) 입찰제도</option><option value="koica-procurement-governance">14 · 대한민국(KOICA·발주자) 조달 거버넌스</option><option value="koica-oda-project-pipeline">15 · 대한민국(KOICA·발주자) ODA 사업형성</option><option value="dominican-republic-bidding-system">16 · 도미니카공화국 입찰제도</option><option value="dominican-republic-procurement-governance">17 · 도미니카공화국 조달 거버넌스</option><option value="dominican-republic-oda-project-pipeline">18 · 도미니카공화국 ODA 사업형성</option><option value="timor-leste-bidding-system">19 · 동티모르 입찰제도</option><option value="timor-leste-procurement-governance">20 · 동티모르 조달 거버넌스</option><option value="timor-leste-oda-project-pipeline">21 · 동티모르 ODA 사업형성</option><option value="laos-bidding-system">22 · 라오스 입찰제도</option><option value="laos-procurement-governance">23 · 라오스 조달 거버넌스</option><option value="laos-oda-project-pipeline">24 · 라오스 ODA 사업형성</option><option value="rwanda-bidding-system">25 · 르완다 입찰제도</option><option value="rwanda-procurement-governance">26 · 르완다 조달 거버넌스</option><option value="rwanda-oda-project-pipeline">27 · 르완다 ODA 사업형성</option><option value="morocco-bidding-system">28 · 모로코 입찰제도</option><option value="morocco-procurement-governance">29 · 모로코 조달 거버넌스</option><option value="morocco-oda-project-pipeline">30 · 모로코 ODA 사업형성</option><option value="mozambique-bidding-system">31 · 모잠비크 입찰제도</option><option value="mozambique-procurement-governance">32 · 모잠비크 조달 거버넌스</option><option value="mozambique-oda-project-pipeline">33 · 모잠비크 ODA 사업형성</option><option value="mongolia-bidding-system">34 · 몽골 입찰제도</option><option value="mongolia-procurement-governance">35 · 몽골 조달 거버넌스</option><option value="mongolia-oda-project-pipeline">36 · 몽골 ODA 사업형성</option><option value="myanmar-bidding-system">37 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">38 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">39 · 미얀마 ODA 사업형성</option><option value="bangladesh-bidding-system">40 · 방글라데시 입찰제도</option><option value="bangladesh-procurement-governance">41 · 방글라데시 조달 거버넌스</option><option value="bangladesh-oda-project-pipeline">42 · 방글라데시 ODA 사업형성</option><option value="vietnam-bidding-system">43 · 베트남 입찰제도</option><option value="vietnam-procurement-governance">44 · 베트남 조달 거버넌스</option><option value="vietnam-oda-project-pipeline">45 · 베트남 ODA 사업형성</option><option value="bolivia-bidding-system">46 · 볼리비아 입찰제도</option><option value="bolivia-procurement-governance">47 · 볼리비아 조달 거버넌스</option><option value="bolivia-oda-project-pipeline">48 · 볼리비아 ODA 사업형성</option><option value="senegal-bidding-system">49 · 세네갈 입찰제도</option><option value="senegal-procurement-governance">50 · 세네갈 조달 거버넌스</option><option value="senegal-oda-project-pipeline">51 · 세네갈 ODA 사업형성</option><option value="sri-lanka-bidding-system">52 · 스리랑카 입찰제도</option><option value="sri-lanka-procurement-governance">53 · 스리랑카 조달 거버넌스</option><option value="sri-lanka-oda-project-pipeline">54 · 스리랑카 ODA 사업형성</option><option value="azerbaijan-bidding-system">55 · 아제르바이잔 입찰제도</option><option value="azerbaijan-procurement-governance">56 · 아제르바이잔 조달 거버넌스</option><option value="azerbaijan-oda-project-pipeline">57 · 아제르바이잔 ODA 사업형성</option><option value="ecuador-bidding-system">58 · 에콰도르 입찰제도</option><option value="ecuador-procurement-governance">59 · 에콰도르 조달 거버넌스</option><option value="ecuador-oda-project-pipeline">60 · 에콰도르 ODA 사업형성</option><option value="ethiopia-bidding-system">61 · 에티오피아 입찰제도</option><option value="ethiopia-procurement-governance">62 · 에티오피아 조달 거버넌스</option><option value="ethiopia-oda-project-pipeline">63 · 에티오피아 ODA 사업형성</option><option value="el-salvador-bidding-system">64 · 엘살바도르 입찰제도</option><option value="el-salvador-procurement-governance">65 · 엘살바도르 조달 거버넌스</option><option value="el-salvador-oda-project-pipeline">66 · 엘살바도르 ODA 사업형성</option><option value="jordan-bidding-system">67 · 요르단 입찰제도</option><option value="jordan-procurement-governance">68 · 요르단 조달 거버넌스</option><option value="jordan-oda-project-pipeline">69 · 요르단 ODA 사업형성</option><option value="uganda-bidding-system">70 · 우간다 입찰제도</option><option value="uganda-procurement-governance">71 · 우간다 조달 거버넌스</option><option value="uganda-oda-project-pipeline">72 · 우간다 ODA 사업형성</option><option value="uzbekistan-bidding-system">73 · 우즈베키스탄 입찰제도</option><option value="uzbekistan-procurement-governance">74 · 우즈베키스탄 조달 거버넌스</option><option value="uzbekistan-oda-project-pipeline">75 · 우즈베키스탄 ODA 사업형성</option><option value="ukraine-bidding-system">76 · 우크라이나 입찰제도</option><option value="ukraine-procurement-governance">77 · 우크라이나 조달 거버넌스</option><option value="ukraine-oda-project-pipeline">78 · 우크라이나 ODA 사업형성</option><option value="egypt-bidding-system">79 · 이집트 입찰제도</option><option value="egypt-procurement-governance">80 · 이집트 조달 거버넌스</option><option value="egypt-oda-project-pipeline">81 · 이집트 ODA 사업형성</option><option value="indonesia-bidding-system">82 · 인도네시아 입찰제도</option><option value="indonesia-procurement-governance">83 · 인도네시아 조달 거버넌스</option><option value="indonesia-oda-project-pipeline">84 · 인도네시아 ODA 사업형성</option><option value="cameroon-bidding-system">85 · 카메룬 입찰제도</option><option value="cameroon-procurement-governance">86 · 카메룬 조달 거버넌스</option><option value="cameroon-oda-project-pipeline">87 · 카메룬 ODA 사업형성</option><option value="cambodia-bidding-system">88 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">89 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">90 · 캄보디아 ODA 사업형성</option><option value="kenya-bidding-system">91 · 케냐 입찰제도</option><option value="kenya-procurement-governance">92 · 케냐 조달 거버넌스</option><option value="kenya-oda-project-pipeline">93 · 케냐 ODA 사업형성</option><option value="cote-divoire-bidding-system">94 · 코트디부아르 입찰제도</option><option value="cote-divoire-procurement-governance">95 · 코트디부아르 조달 거버넌스</option><option value="cote-divoire-oda-project-pipeline">96 · 코트디부아르 ODA 사업형성</option><option value="colombia-bidding-system">97 · 콜롬비아 입찰제도</option><option value="colombia-procurement-governance">98 · 콜롬비아 조달 거버넌스</option><option value="colombia-oda-project-pipeline">99 · 콜롬비아 ODA 사업형성</option><option value="dr-congo-bidding-system">100 · 콩고민주공화국(DR콩고) 입찰제도</option><option value="dr-congo-procurement-governance">101 · 콩고민주공화국(DR콩고) 조달 거버넌스</option><option value="dr-congo-oda-project-pipeline">102 · 콩고민주공화국(DR콩고) ODA 사업형성</option><option value="kyrgyzstan-bidding-system">103 · 키르기스스탄 입찰제도</option><option value="kyrgyzstan-procurement-governance">104 · 키르기스스탄 조달 거버넌스</option><option value="kyrgyzstan-oda-project-pipeline">105 · 키르기스스탄 ODA 사업형성</option><option value="tajikistan-bidding-system">106 · 타지키스탄 입찰제도</option><option value="tajikistan-procurement-governance">107 · 타지키스탄 조달 거버넌스</option><option value="tajikistan-oda-project-pipeline">108 · 타지키스탄 ODA 사업형성</option><option value="tanzania-bidding-system">109 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance">110 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">111 · 탄자니아 ODA 사업형성</option><option value="thailand-bidding-system">112 · 태국 입찰제도</option><option value="thailand-procurement-governance">113 · 태국 조달 거버넌스</option><option value="thailand-oda-project-pipeline">114 · 태국 ODA 사업형성</option><option value="tunisia-bidding-system">115 · 튀니지 입찰제도</option><option value="tunisia-procurement-governance">116 · 튀니지 조달 거버넌스</option><option value="tunisia-oda-project-pipeline">117 · 튀니지 ODA 사업형성</option><option value="paraguay-bidding-system">118 · 파라과이 입찰제도</option><option value="paraguay-procurement-governance">119 · 파라과이 조달 거버넌스</option><option value="paraguay-oda-project-pipeline">120 · 파라과이 ODA 사업형성</option><option value="pakistan-bidding-system">121 · 파키스탄 입찰제도</option><option value="pakistan-procurement-governance">122 · 파키스탄 조달 거버넌스</option><option value="pakistan-oda-project-pipeline">123 · 파키스탄 ODA 사업형성</option><option value="palestine-bidding-system">124 · 팔레스타인 입찰제도</option><option value="palestine-procurement-governance">125 · 팔레스타인 조달 거버넌스</option><option value="palestine-oda-project-pipeline">126 · 팔레스타인 ODA 사업형성</option><option value="peru-bidding-system">127 · 페루 입찰제도</option><option value="peru-procurement-governance">128 · 페루 조달 거버넌스</option><option value="peru-oda-project-pipeline">129 · 페루 ODA 사업형성</option><option value="fiji-bidding-system">130 · 피지 입찰제도</option><option value="fiji-procurement-governance">131 · 피지 조달 거버넌스</option><option value="fiji-oda-project-pipeline">132 · 피지 ODA 사업형성</option><option value="philippines-bidding-system">133 · 필리핀 입찰제도</option><option value="philippines-procurement-governance">134 · 필리핀 조달 거버넌스</option><option value="philippines-oda-project-pipeline">135 · 필리핀 ODA 사업형성</option></select>
+  <select id="sel" style="min-width:280px"><option value="nepal-bidding-system">01 · 네팔 입찰제도</option><option value="nepal-procurement-governance">02 · 네팔 조달 거버넌스</option><option value="nepal-oda-project-pipeline" selected>03 · 네팔 ODA 사업형성</option><option value="nepal-site-urban-construction-regulations">04 · 네팔 도시계획·부지규제</option><option value="nepal-permit-environment-construction-regulations">05 · 네팔 건축허가·환경심사</option><option value="nepal-control-completion-construction-regulations">06 · 네팔 기술검사·보험·준공제도</option></select>
   <a class="btn" href="../nepal-procurement-governance/index.html" style="text-decoration:none">← 이전</a>
-  <a class="btn" href="../koica-bidding-system/index.html" style="text-decoration:none">다음 →</a>
-  <span class="pos">12/135</span>
+  <a class="btn" href="../nepal-site-urban-construction-regulations/index.html" style="text-decoration:none">다음 →</a>
+  <span class="pos">전체 제도 21/267 · 이 국가 3/6</span>
 </div></div>
 
 <div class="wrap dtl-hd">
   <div class="row">
-    <span class="badge plain muted">NO 12</span>
+    <span class="badge plain muted">NO 03</span>
     <span class="badge plain muted">네팔 · Nepal</span>
     <span class="badge plain muted">ODA 사업형성</span>
     <span class="badge ok">조문 대조 완료</span>
+
     <span class="badge bad">확인사항 4건</span>
   </div>
   <h1>네팔 ODA 사업 발굴·형성 절차</h1>
   <p class="one">재무부를 단일 관문으로 하는 수원체계에서 N-2년 PCP 제출부터 RoD·MoU 체결까지 이어지는 무상원조 사업 형성 파이프라인</p>
   <div class="tiles">
     <div class="tile"><b>14</b><span>절차 노드</span></div>
+
     <div class="tile"><b>4</b><span>행위 레인</span></div>
     <div class="tile"><b>5</b><span>게이트</span></div>
     <div class="tile ok"><b>53</b><span>대조 조문</span></div>
-    <div class="tile bad"><b>4</b><span>현행 기준 (필수 확인 1)</span></div>
-    <div class="tile warn"><b>0</b><span>현장 검증</span></div>
+    <div class="tile bad"><b>4</b><span>현행 확인사항 (필수 확인 1)</span></div>
+
+    <div class="tile warn"><b>0</b><span>ODA 적용 확인</span></div>
   </div>
 </div>
 
@@ -325,41 +512,46 @@ footer.site a{color:var(--muted)}
     <div class="legend">
       <span><i style="background:var(--key)"></i>핵심 단계</span>
       <span><i style="background:var(--warn)"></i>유의</span>
-      <span><i style="background:var(--back)"></i>보완 회귀</span>
+      <span><i style="background:var(--muted)"></i>절차 순서 · 갈림길 외 라벨은 카드 선택 시</span>
+      <span><i style="background:var(--info)"></i>기관 간 입력</span>
+      <span><i style="background:var(--back)"></i>앞 단계로 되돌아가는 경로</span>
+      <label class="legend-toggle"><input type="checkbox" id="labelall">순차 라벨 모두 보기</label>
     </div>
   </div>
-  <div class="boardwrap"><div class="board" id="board">
-    <svg class="edges" id="edges"></svg>
+  <div class="board-scroll-hint" aria-hidden="true">← 좌우로 넘겨 전체 절차 보기 →</div>
+  <div class="boardwrap"><div class="board" id="board" style="min-width:1130px;--mobile-board-width:1080px;--stage-count:5">
+    <svg class="edges" id="edges" aria-hidden="true"></svg>
     <div class="brow head" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">레인 \ 게이트</span></div><div class="bcell"><span class="stage-k">G0</span><span class="stage-t">사전승인</span></div><div class="bcell"><span class="stage-k">G1</span><span class="stage-t">발굴·PCP</span></div><div class="bcell"><span class="stage-k">G2</span><span class="stage-t">검토·예비조사</span></div><div class="bcell"><span class="stage-k">G3</span><span class="stage-t">기획·심사</span></div><div class="bcell"><span class="stage-k">G4</span><span class="stage-t">공식화</span></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">네팔 수원기관·소관부처</span></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G0 사전승인"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G1 발굴·PCP"><button class="node" data-id="P03" data-tone="key">
-  <span class="id">P03<span class="tag">핵심</span></span>
+  <span class="id"><span>P03</span><span class="tags"><span class="tag">핵심</span></span></span>
   <span class="nm">사업 발굴·형성 협의</span></button><button class="node" data-id="P04" data-tone="key">
-  <span class="id">P04<span class="tag">핵심</span></span>
+  <span class="id"><span>P04</span><span class="tags"><span class="tag">핵심</span></span></span>
   <span class="nm">PCP 작성</span></button></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G3 기획·심사"></div><div class="bcell" data-lane="네팔 수원기관·소관부처" data-stage="G4 공식화"><button class="node" data-id="P12">
-  <span class="id">P12</span>
+  <span class="id"><span>P12</span><span class="tags"></span></span>
   <span class="nm">협의의사록(RoD) 체결</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">네팔 재무부</span></div><div class="bcell" data-lane="네팔 재무부" data-stage="G0 사전승인"><button class="node" data-id="P01" data-tone="warn">
-  <span class="id">P01<span class="tag">유의</span></span>
+  <span class="id"><span>P01</span><span class="tags"><span class="tag">유의</span></span></span>
   <span class="nm">재무부 사전 승인 확보</span></button></div><div class="bcell" data-lane="네팔 재무부" data-stage="G1 발굴·PCP"><button class="node" data-id="P05">
-  <span class="id">P05</span>
+  <span class="id"><span>P05</span><span class="tags"></span></span>
   <span class="nm">상급부처·재무부 검토</span></button><button class="node" data-id="P06">
-  <span class="id">P06</span>
+  <span class="id"><span>P06</span><span class="tags"></span></span>
   <span class="nm">재무부 공한 첨부 PCP 제출</span></button></div><div class="bcell" data-lane="네팔 재무부" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="네팔 재무부" data-stage="G3 기획·심사"></div><div class="bcell" data-lane="네팔 재무부" data-stage="G4 공식화"><button class="node" data-id="P14" data-tone="warn">
-  <span class="id">P14<span class="tag">유의</span></span>
+  <span class="id"><span>P14</span><span class="tags"><span class="tag">유의</span></span></span>
   <span class="nm">사업수행 지원 — 비자·조세면제</span></button><button class="node" data-id="P15" data-tone="back">
-  <span class="id">P15<span class="tag">회귀</span></span>
+  <span class="id"><span>P15</span><span class="tags"><span class="tag">회귀</span></span></span>
   <span class="nm">지역 개발파트너 회의·이행 점검</span></button></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">KOICA</span></div><div class="bcell" data-lane="KOICA" data-stage="G0 사전승인"></div><div class="bcell" data-lane="KOICA" data-stage="G1 발굴·PCP"></div><div class="bcell" data-lane="KOICA" data-stage="G2 검토·예비조사"><button class="node" data-id="P07">
-  <span class="id">P07</span>
+  <span class="id"><span>P07</span><span class="tags"></span></span>
   <span class="nm">PCP 검토위원회</span></button><button class="node" data-id="P08">
-  <span class="id">P08</span>
+  <span class="id"><span>P08</span><span class="tags"></span></span>
   <span class="nm">예비조사</span></button></div><div class="bcell" data-lane="KOICA" data-stage="G3 기획·심사"><button class="node" data-id="P09">
-  <span class="id">P09</span>
+  <span class="id"><span>P09</span><span class="tags"></span></span>
   <span class="nm">기획조사</span></button><button class="node" data-id="P10">
-  <span class="id">P10</span>
+  <span class="id"><span>P10</span><span class="tags"></span></span>
   <span class="nm">PD 작성 및 심사위원회</span></button></div><div class="bcell" data-lane="KOICA" data-stage="G4 공식화"></div></div><div class="brow" style="grid-template-columns:180px repeat(5,minmax(190px,1fr))"><div class="bcell"><span class="lane-t">대한민국 정부</span></div><div class="bcell" data-lane="대한민국 정부" data-stage="G0 사전승인"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G1 발굴·PCP"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G2 검토·예비조사"></div><div class="bcell" data-lane="대한민국 정부" data-stage="G3 기획·심사"><button class="node" data-id="P11">
-  <span class="id">P11</span>
+  <span class="id"><span>P11</span><span class="tags"></span></span>
   <span class="nm">예산요구</span></button></div><div class="bcell" data-lane="대한민국 정부" data-stage="G4 공식화"><button class="node" data-id="P13">
-  <span class="id">P13</span>
+  <span class="id"><span>P13</span><span class="tags"></span></span>
   <span class="nm">양해각서(MoU) 체결</span></button></div></div>
   </div></div>
+
 </section>
 
 <section class="blk">
@@ -367,17 +559,24 @@ footer.site a{color:var(--muted)}
   <p class="desc">국가개발계획 우선순위에 따라 원조사업을 선정하고, 재무부를 단일 창구로 삼아 공여기관과의 접촉·협상·협정 체결을 일원화함으로써 수원국의 주인의식과 재원관리 책무성을 확보한다.</p>
   <div class="cards">
     <div class="card span2"><h3>절차</h3><ol class="steps"><li>수원기관이 공여기관과 접촉하기 전 재무부의 사전 승인을 받는다 — 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결 모두 포함 (FAMP §3.3.2(k))</li><li>공여기관도 원조 동원에 앞서 재무부 승인을 받는다 (FAMP §3.3.5(b))</li><li>수원기관이 사업 준비성 체크리스트에 따라 재무부에 사업제안서 제출 — KOICA 사업은 PCP를 N-2년 기준으로 작성 (FAMP §3.3.2(b))</li><li>수원기관 상급부처 및 재무부 검토</li><li>재무부 공한과 함께 PCP를 KOICA 네팔사무소에 제출</li><li>KOICA 본부 PCP 검토위원회 심사 → 통과 시 예비조사 실시</li><li>예비조사 결과로 사업제안서 최종 승인 시 기획조사 실시</li><li>기획조사 산출물인 PD(Project Document) 도출 후 PD 심사위원회 심사</li><li>위원회 통과 시 대한민국 재정당국에 예산요구</li><li>소관부처와 협의의사록(RoD) 체결</li><li>주네팔 대한민국대사관 ↔ 네팔 재무부 간 양해각서(MoU) 체결 — 재무부가 정부를 대표해 서명 (FAMP §3.3.1(d))</li><li>MoU에 근거해 PMC 파견인력 비자·노동허가 지원, 조세면제는 개별 협정과 현행법에 따름 (FAMP §3.6.1)</li></ol></div>
+
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">네팔 정부가 수원하는 대외원조 전반에 적용된다. 무상원조는 원칙적으로 세금 납부에 사용할 수 없고, 차관 재원 사업에는 조세면제 조항을 원칙적으로 넣지 않으며, 국내에서 충분히 생산되는 물품의 수입에는 면제를 부여하지 않는다(FAMP §3.6.1). 현물 지원은 소관부처 추천을 받아 재무부가 현행법에 따라 조세면제를 부여할 수 있다. 2019년 정책의 &#x27;양허성 차관은 사업당 1천만 달러 초과만 수용&#x27; 문턱은 2025년 정책에서 삭제됐다.</p></div>
-    <div class="card"><h3>법적 근거</h3><div class="law"><span class="nm"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></span><span class="ar">§3.2, §3.3.1, §3.3.2, §3.3.5, §3.6.1, §3.7</span><span class="badge plain muted" style="margin-left:auto">지침·정책</span></div><div class="law"><span class="nm">Public Debt Management Act, 2079 (2022)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">Financial Procedure and Fiscal Accountability Act, 2076 (2019)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">법률</span></div><div class="law"><span class="nm">협의의사록(Record of Discussion, RoD)</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">양자합의</span></div><div class="law"><span class="nm">양해각서(Memorandum of Understanding, MoU) — 주네팔 대한민국대사관 ↔ 네팔 재무부</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">양자합의</span></div><div class="law"><span class="nm">KOICA 사업심사 가이드라인 및 PCP·PD 심사 일정</span><span class="ar"></span><span class="badge plain muted" style="margin-left:auto">공여기관 규정</span></div></div>
+    <div class="card"><h3>법적 근거</h3><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></span><span class="ar">§3.2, §3.3.1, §3.3.2, §3.3.5, §3.6.1, §3.7</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm">Public Debt Management Act, 2079 (2022)</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">법률</span></div></div><div class="law"><div class="law-copy"><span class="nm">Financial Procedure and Fiscal Accountability Act, 2076 (2019)</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">법률</span></div></div><div class="law"><div class="law-copy"><span class="nm">협의의사록(Record of Discussion, RoD)</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">양자합의</span></div></div><div class="law"><div class="law-copy"><span class="nm">양해각서(Memorandum of Understanding, MoU) — 주네팔 대한민국대사관 ↔ 네팔 재무부</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">양자합의</span></div></div><div class="law"><div class="law-copy"><span class="nm">KOICA 사업심사 가이드라인 및 PCP·PD 심사 일정</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">공여기관 규정</span></div></div></div>
+
+
     <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://mof.gov.np/divisions/ierd/" target="_blank" rel="noopener">재무부(MoF) 국제경제관계국</a></b><span>대외원조 동원의 단일 창구(focal point). 개발파트너와의 서신·요청·협상·재정협정 서명을 정부를 대표해 수행. 차관 협상 전 내각의 원칙적 동의와 협상 권한을 확보하고 현물 지원의 조세면제를 승인</span></div><div class="auth"><b>수원기관 및 상급 소관부처</b><span>사업 발굴, 사업 준비성 체크리스트에 따른 제안서 제출, 협상 대표 지명, 사업책임자 임명, RoD 체결 당사자. 공여기관 접촉 전 재무부 사전 승인 필요</span></div><div class="auth"><b><a class="ref" href="https://npc.gov.np/" target="_blank" rel="noopener">국가계획위원회(NPC)</a></b><span>개발협력 조정기구의 위원으로 참여. 2019년 정책에 있던 &#x27;사업 제안 시 NPC 동의&#x27; 요건은 2025년 정책에서 삭제됨</span></div><div class="auth"><b><a class="ref" href="https://koica.go.kr/sites/nepal_kr/index.do" target="_blank" rel="noopener">KOICA 네팔사무소</a></b><span>PCP 접수, 현지 협의, 사업 형성 지원</span></div><div class="auth"><b><a class="ref" href="https://www.koica.go.kr/sites/koica_kr/index.do" target="_blank" rel="noopener">KOICA 본부</a></b><span>PCP 검토위원회·PD 심사위원회 운영, 예비조사·기획조사 실시 결정</span></div><div class="auth"><b><a class="ref" href="https://np.mofa.go.kr/np-ko/index.do" target="_blank" rel="noopener">주네팔 대한민국대사관</a></b><span>네팔 재무부와 MoU 체결 당사자</span></div><div class="auth"><b>주·지방정부</b><span>관할 구역 사업 발굴 및 소관부처를 거쳐 재무부에 제안. 협상 대표 지명, 현물 지원은 재무부 승인 필요</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">네팔 재무부(MoF) 국제경제관계국, 수원기관 및 상급 소관부처, 주·지방정부, 국가계획위원회(NPC), KOICA 네팔사무소, KOICA 본부, 주네팔 대한민국대사관, 대한민국 재정당국, 사업수행 PMC</p></div>
     <div class="card"><h3>제출서류</h3><div class="docset"><b>수원기관·소관부처</b><div class="chips"><span class="chip">재무부 사전 승인 (공여기관 접촉·제안·협상·서신·MoU 체결 전, FAMP §3.3.2(k))</span><span class="chip">사업 준비성 체크리스트에 따른 사업제안서 (FAMP §3.3.2(b))</span><span class="chip">사업제안서(Project Concept Paper, PCP) — KOICA 사업</span><span class="chip">협상 대표 지명서 (FAMP §3.3.2(c))</span></div></div><div class="docset"><b>네팔 재무부</b><div class="chips"><span class="chip">PCP 송부 공한</span><span class="chip">재정협정(financing agreement) (FAMP §3.3.1(d))</span><span class="chip">차관 협상 전 내각 원칙동의·협상권한 (FAMP §3.3.1(e))</span><span class="chip">현물 지원 조세면제 승인 (FAMP §3.6.1(d))</span></div></div><div class="docset"><b>공여기관(개발파트너)</b><div class="chips"><span class="chip">원조 동원 전 재무부 승인 (FAMP §3.3.5(b))</span><span class="chip">향후 3~5년 지원 규모·중점분야 통보 (FAMP §3.3.5(c))</span><span class="chip">대외원조정보시스템 보고 (FAMP §3.3.5(i))</span></div></div><div class="docset"><b>KOICA</b><div class="chips"><span class="chip">PCP 검토위원회 결과</span><span class="chip">예비조사 보고서</span><span class="chip">기획조사 결과</span><span class="chip">사업기획문서(Project Document, PD)</span><span class="chip">PD 심사위원회 결과</span></div></div><div class="docset"><b>양국 정부</b><div class="chips"><span class="chip">협의의사록(RoD)</span><span class="chip">양해각서(MoU)</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>재무부 사전 승인 없이 수원기관과 먼저 접촉하면 정책 위반이 된다. 공여기관 역시 원조 동원에 앞서 재무부 승인을 받아야 한다 (FAMP §3.3.2(k), §3.3.5(b))</li><li>조세면제가 2019년 정책보다 좁아졌다. 무상원조는 원칙적으로 세금 납부에 쓸 수 없고, 국내에서 충분히 생산되는 물품 수입에는 면제가 없다 — 기자재 조달 시 원산지와 세부담을 사업비에 반영해야 한다 (FAMP §3.6.1(a)(c))</li><li>N-2년 PCP 제출 구조라 사업 착수까지 최소 2년 이상의 리드타임이 필요하다</li><li>PCP 검토위원회와 PD 심사위원회 두 개의 게이트를 모두 통과해야 예산요구로 넘어간다</li><li>연방제 시행·확산으로 사업 추진 책임과 권한이 지방으로 분산되면서 과도기적 비효율과 혼선이 발생. 재무부뿐 아니라 관련 중앙부처와 지방부처 모두와 협의해야 한다</li><li>기술협력 재원으로 차량·장비를 구매하거나 해외 연수·훈련에 참가하려면 재무부 사전 승인이 필요하다 (FAMP §3.3.2(j))</li><li>행정절차 지연, 환율 변동, 보수적인 비자 발급 운영</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>기업 진출 시 현지 파트너 협력이 사실상 필수 요건</li><li>2022년 부패인식지수(CPI) 35점/100점, 180개국 중 108위</li><li>연방제 전환에 따른 협의 대상 다변화로 이해관계자 파악 부담 증가</li></ul></div>
-    <div class="card"><h3>현장 검증 필요</h3><ul class="plain"></ul></div>
-    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a></div></div>
+    <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../nepal-site-urban-construction-regulations/index.html">네팔 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../nepal-permit-environment-construction-regulations/index.html">네팔 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../nepal-control-completion-construction-regulations/index.html">네팔 기술검사·보험·준공제도</a></div></div>
+
   </div>
 </section>
+
+
+
+
 
 <section class="blk">
   <h2>법령 원문</h2>
@@ -503,29 +702,29 @@ footer.site a{color:var(--muted)}
       <p style="margin:0;font-size:13.5px;line-height:1.7">FAMP 2025 §3.1.3, §3.2, §3.3.1, §3.3.2, §3.3.5, §3.6.1, §3.7과 Public Procurement Act 현행 §§8, 14, 20~21, 41~46, 47~52A, 59, 65~67, Public Procurement Rules 현행 rr.53, 84~85, 104, 110, 120A, 129를 확인했다.</p>
       <p style="margin:12px 0 0;font-size:12.5px;color:var(--muted)">확인일 2026-07-23 · 자료집 기준일 2026-02-23</p>
     </div>
-    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025 (वैदेशिक सहायता परिचालन नीति, २०८२) — English Translation</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2</span><span class="ar">확인 2026-07-23 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://giwmscdntwo.gov.np/media/pdf_upload/print_copy_IDCMP-2019_Eng-fullpage_20191107071739_ku6pxnl.pdf" target="_blank" rel="noopener">International Development Cooperation Policy, 2019 — FAMP 2025 §3.7.1로 폐지됨</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.2.11, §3.3.1, §3.4.2, §4.1.1, §5.2.1~§5.2.4 (대조 이력 보존용)</span><span class="ar">확인 2026-07-22 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://hr.parliament.gov.np/en/bills/TqsiRdta" target="_blank" rel="noopener">Public Procurement (Second Amendment) Act, 2083 — Parliament authentication record</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §§8, 14, 20~21, 23, 25~27, 30, 36, 40~46, 47~52A, 54, 59, 61A~62A, 65~67, 74</span><span class="ar">확인 2026-07-28 · Federal Parliament of Nepal</span></li><li><a class="ref" href="https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/" target="_blank" rel="noopener">Public Procurement (Second Amendment) Ordinance, 2083 — official Gazette text used for article-by-article amendment comparison</a><span class="badge plain muted" style="margin-left:6px">명령·조례</span><span class="ar">대조 조문 Amending §§1~31; amended PPA §§2, 8, 10~14, 23, 25~27, 30, 36, 40~46, 50, 52A, 54, 58A~59, 61A~62A, 65~67, 74</span><span class="ar">확인 2026-07-28 · Public Procurement Monitoring Office, Government of Nepal</span></li><li><a class="ref" href="https://ppmo.gov.np/content/13339/public-procurement--fifteenth-amendment--rules--2083/" target="_blank" rel="noopener">Public Procurement (Fifteenth Amendment) Rules, 2083</a><span class="badge plain muted" style="margin-left:6px">시행규칙</span><span class="ar">대조 조문 rr.31, 52~53, 70, 84~85, 104, 110, 120A, 129; Fifteenth Amendment rr.1~2</span><span class="ar">확인 2026-07-28 · Public Procurement Monitoring Office, Government of Nepal</span></li><li><a class="ref" href="https://pefa.gov.np/public/uploads/97716822-NP-Gandaki-Apr2025-PFMPR-SN-Public%20with%20PEFA%20Check.pdf" target="_blank" rel="noopener">Electronic Procurement System Operation Directive, 2023 — §5 application summarized in official PEFA assessment</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §5; PPR rr.31, 70, 84~85 threshold application</span><span class="ar">확인 2026-07-28 · Government of Nepal / PEFA Secretariat</span></li><li><a class="ref" href="https://mof.gov.np/divisions/ierd/" target="_blank" rel="noopener">네팔 재무부 국제경제관계국 부서 페이지</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">확인 2026-07-23 · Ministry of Finance, Government of Nepal</span></li></ul></div>
+    <div class="card"><h3>대조에 쓴 원문</h3><ul class="srcs" style="padding-left:16px;margin:0"><li><a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025 (वैदेशिक सहायता परिचालन नीति, २०८२) — English Translation</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2</span><span class="ar">원문 확인 2026-07-23 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://giwmscdntwo.gov.np/media/pdf_upload/print_copy_IDCMP-2019_Eng-fullpage_20191107071739_ku6pxnl.pdf" target="_blank" rel="noopener">International Development Cooperation Policy, 2019 — FAMP 2025 §3.7.1로 폐지됨</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §3.2.11, §3.3.1, §3.4.2, §4.1.1, §5.2.1~§5.2.4 (대조 이력 보존용)</span><span class="ar">원문 확인 2026-07-22 · Government of Nepal, Ministry of Finance</span></li><li><a class="ref" href="https://hr.parliament.gov.np/en/bills/TqsiRdta" target="_blank" rel="noopener">Public Procurement (Second Amendment) Act, 2083 — Parliament authentication record</a><span class="badge plain muted" style="margin-left:6px">법률</span><span class="ar">대조 조문 §§8, 14, 20~21, 23, 25~27, 30, 36, 40~46, 47~52A, 54, 59, 61A~62A, 65~67, 74</span><span class="ar">원문 확인 2026-07-28 · Federal Parliament of Nepal</span></li><li><a class="ref" href="https://ppmo.gov.np/content/13300/public-procurement--second-amendment--ordinance--2083/" target="_blank" rel="noopener">Public Procurement (Second Amendment) Ordinance, 2083 — official Gazette text used for article-by-article amendment comparison</a><span class="badge plain muted" style="margin-left:6px">명령·조례</span><span class="ar">대조 조문 Amending §§1~31; amended PPA §§2, 8, 10~14, 23, 25~27, 30, 36, 40~46, 50, 52A, 54, 58A~59, 61A~62A, 65~67, 74</span><span class="ar">원문 확인 2026-07-28 · Public Procurement Monitoring Office, Government of Nepal</span></li><li><a class="ref" href="https://ppmo.gov.np/content/13339/public-procurement--fifteenth-amendment--rules--2083/" target="_blank" rel="noopener">Public Procurement (Fifteenth Amendment) Rules, 2083</a><span class="badge plain muted" style="margin-left:6px">시행규칙</span><span class="ar">대조 조문 rr.31, 52~53, 70, 84~85, 104, 110, 120A, 129; Fifteenth Amendment rr.1~2</span><span class="ar">원문 확인 2026-07-28 · Public Procurement Monitoring Office, Government of Nepal</span></li><li><a class="ref" href="https://pefa.gov.np/public/uploads/97716822-NP-Gandaki-Apr2025-PFMPR-SN-Public%20with%20PEFA%20Check.pdf" target="_blank" rel="noopener">Electronic Procurement System Operation Directive, 2023 — §5 application summarized in official PEFA assessment</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">대조 조문 §5; PPR rr.31, 70, 84~85 threshold application</span><span class="ar">원문 확인 2026-07-28 · Government of Nepal / PEFA Secretariat</span></li><li><a class="ref" href="https://mof.gov.np/divisions/ierd/" target="_blank" rel="noopener">네팔 재무부 국제경제관계국 부서 페이지</a><span class="badge plain muted" style="margin-left:6px">지침·정책</span><span class="ar">원문 확인 2026-07-23 · Ministry of Finance, Government of Nepal</span></li></ul></div>
     <div class="card span2"><h3>주의</h3><p class="note">2026년판 기준자료가 Foreign Aid Mobilization Policy 2025를 수원체계 근거로 반영한 것을 확인했다. 본 레코드는 정책 원문 §3.3·§3.6·§3.7을 기준으로 세부 절차와 조세 범위를 정리했다.</p><p class="note">승계된 것 — 재무부 단일 창구(§3.3.1(a)), 정부기관의 접촉 전 재무부 사전승인(§3.3.2(k), 종전 §5.2.2와 문언 거의 동일), 공여기관의 재무부 경유 의무(§3.3.5(b), 종전 §5.2.3 전단), 재무부의 협상·재정협정 서명(§3.3.1(d)).</p><p class="note">삭제된 것 — 정부기관 사업 제안 시 국가계획위원회(NPC) 동의 요건(종전 §5.2.3 후단), 양허성 차관 사업당 1천만 달러 문턱(종전 §3.4.2).</p><p class="note">축소된 것 — 조세면제. 종전에는 협정상 면제를 전제로 부담 주체를 정했으나, 2025년 정책은 무상원조를 세금 납부에 쓰지 않고 차관 사업에 면제 조항을 넣지 않으며 국내 생산이 충분한 물품 수입에 면제를 부여하지 않는다(§3.6.1(a)(b)(c)).</p><p class="note">신설된 것 — 차관 협상 전 내각(각료회의)의 원칙적 동의와 협상 권한 확보(§3.3.1(e)), 사업 준비성 체크리스트에 따른 제안서 제출(§3.3.2(b)), 외국인 근로자·자원봉사자 비자 및 노동허가 근거(§3.6.1(f)(g)).</p><p class="note">영문본은 번역본이며, 원문에 &#x27;영문본과 네팔어본이 충돌하면 네팔어본이 유효하다&#x27;는 단서가 붙어 있다.</p><p class="note">FAMP는 사업 형성·정부 승인 체계를 규율하지만 입찰보증률이나 조달방법 금액 기준을 직접 정하지 않는다. 네팔 공공기관이 공공재원으로 조달하는 단계의 수치는 현행 PPA/PPR에서 별도로 확인했다.</p><p class="note">PPMO의 제15차 시행규칙 개정은 2026-07-14부터 효력이 발생했으며 r.120A의 특별 계약기간 연장 절차를 바꿨다. 조달방법 문턱·보증·불복 기준은 함께 대조한 현행 조문을 적용했다.</p></div>
   </div>
 
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
-    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 법적 해석·적용 타당성·개정 반영 여부는 별도 검토 대상입니다.
+    조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 관할·필지·시설에 따른 사업 적용판정은 별도입니다.
   </p>
 </section>
 </div>
 
 <dialog class="drawer" id="dlg"><div class="pane">
-  <button class="close" onclick="document.getElementById('dlg').close()">×</button>
+  <button class="close" aria-label="상세 닫기" onclick="document.getElementById('dlg').close()">×</button>
   <div id="dbody"></div>
 </div></dialog>
 <footer class="site"><div class="wrap">
-  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
-  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조<br>
+  국가별 조달·ODA 건축 법제의 기준일 현재 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  자료별 현행·운영 상태는 표시된 확인일과 판단근거로 사이트가 관리합니다. 실제 사업에서는 기준일 이후 변경사항과 해당 공고·대상지에 대한 관할기관의 최종 적용판정을 확인해야 합니다.<br>
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 및 각국 정부 공식 법령·관보<br>
   제도 추가·정정 제안 · Threads <a href="https://www.threads.net/@amnotyoung.k" target="_blank" rel="me noopener noreferrer">@amnotyoung.k</a>
 </div></footer>
 <script>
-var NODES={"P01": {"id": "P01", "name": "재무부 사전 승인 확보", "lane": "네팔 재무부", "stage": "G0 사전승인", "type": "gateway", "status": "risk", "actor": "네팔 재무부", "action": "수원기관이 공여기관과 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결을 하기 전에 재무부 승인을 받아야 한다. 공여기관도 원조 동원 전 재무부 승인 대상이다.", "blocker": "사업 접촉 전에 재무부 사전승인 경로를 먼저 확인해야 한다", "confidence": 0.95, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(k)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.5(b)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P03": {"id": "P03", "name": "사업 발굴·형성 협의", "lane": "네팔 수원기관·소관부처", "stage": "G1 발굴·PCP", "type": "task", "status": "current", "actor": "수원기관 · KOICA 네팔사무소", "action": "공여기관과 수원기관 부처가 협의해 사업을 발굴·형성한다. 소관부처는 대외원조가 필요한 사업 목록을 미리 작성해 둔다.", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(a)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P04": {"id": "P04", "name": "PCP 작성", "lane": "네팔 수원기관·소관부처", "stage": "G1 발굴·PCP", "type": "task", "status": "current", "actor": "수원기관", "action": "사업 준비성 체크리스트에 따라 제안서를 작성한다. KOICA 사업은 N-2년 기준으로 PCP를 작성한다.", "output_documents": ["사업제안서(PCP)", "사업 준비성 체크리스트"], "deadline": "사업 시행 2년 전(N-2년)", "confidence": 0.8, "blocker": "PCP 작성·제출 주체와 재무부·수원기관의 역할 분담을 확인해야 한다", "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(b)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P05": {"id": "P05", "name": "상급부처·재무부 검토", "lane": "네팔 재무부", "stage": "G1 발굴·PCP", "type": "gateway", "status": "waiting", "actor": "수원기관 상급부처 · 재무부", "action": "국가개발계획에 따른 우선순위 부합 여부를 검토한다. 주·지방정부 제안은 소관부처를 거쳐 재무부로 올라온다.", "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(e)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P06": {"id": "P06", "name": "재무부 공한 첨부 PCP 제출", "lane": "네팔 재무부", "stage": "G1 발굴·PCP", "type": "task", "status": "waiting", "actor": "네팔 재무부", "action": "PCP를 재무부 공한과 함께 KOICA 네팔사무소에 제출한다.", "output_documents": ["재무부 공한", "PCP"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.1(a)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P07": {"id": "P07", "name": "PCP 검토위원회", "lane": "KOICA", "stage": "G2 검토·예비조사", "type": "gateway", "status": "waiting", "actor": "KOICA 본부", "action": "본부 가이드라인 및 지정 일정에 따라 검토위원회를 개최한다.", "confidence": 0.65, "legal_basis": [{"law": "KOICA 사업심사 가이드라인", "article": "—", "url": ""}], "confidence_reason": "공식 조문은 연결했으나 세부 적용·운영 범위에 남은 불확실성을 반영한 보수적 점수"}, "P08": {"id": "P08", "name": "예비조사", "lane": "KOICA", "stage": "G2 검토·예비조사", "type": "task", "status": "waiting", "actor": "KOICA", "action": "위원회 통과 시 실시한다.", "output_documents": ["예비조사 보고서"], "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"}, "P09": {"id": "P09", "name": "기획조사", "lane": "KOICA", "stage": "G3 기획·심사", "type": "task", "status": "waiting", "actor": "KOICA", "action": "본부에서 사업제안서를 승인하면 실시한다.", "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"}, "P10": {"id": "P10", "name": "PD 작성 및 심사위원회", "lane": "KOICA", "stage": "G3 기획·심사", "type": "gateway", "status": "waiting", "actor": "KOICA 본부", "action": "예비조사·기획조사를 바탕으로 사업 기획 주요 내용을 담은 PD를 도출하고 심사위원회를 거친다. 네팔 측 소관부처는 기술적 사항에 의견을 내고 사업문서를 확정한다.", "output_documents": ["사업기획문서(PD)"], "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P11": {"id": "P11", "name": "예산요구", "lane": "대한민국 정부", "stage": "G3 기획·심사", "type": "task", "status": "waiting", "actor": "KOICA → 대한민국 재정당국", "action": "위원회 통과 시 재정당국에 예산을 요구한다.", "confidence": 0.85, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"}, "P12": {"id": "P12", "name": "협의의사록(RoD) 체결", "lane": "네팔 수원기관·소관부처", "stage": "G4 공식화", "type": "task", "status": "waiting", "actor": "KOICA · 네팔 소관부처", "action": "기획조사를 통해 확정된 사업 내용을 바탕으로 체결한다. 소관부처는 협상 대표를 지명한다.", "output_documents": ["협의의사록(RoD)"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(c)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P13": {"id": "P13", "name": "양해각서(MoU) 체결", "lane": "대한민국 정부", "stage": "G4 공식화", "type": "gateway", "status": "waiting", "actor": "주네팔 대한민국대사관 · 네팔 재무부", "action": "RoD 체결 이후 양국 정부 간 MoU를 체결한다. 네팔 측은 재무부가 정부를 대표해 서명한다.", "output_documents": ["양해각서(MoU)"], "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.1(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.2(k)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P14": {"id": "P14", "name": "사업수행 지원 — 비자·조세면제", "lane": "네팔 재무부", "stage": "G4 공식화", "type": "task", "status": "risk", "actor": "네팔 재무부 · PMC", "action": "협정과 현행법에 따라 파견인력의 비자·노동허가를 지원한다. 조세면제는 범위가 제한된다 — 무상원조는 원칙적으로 세금 납부에 쓸 수 없고, 차관 재원 사업에는 면제 조항을 넣지 않으며, 국내 생산이 충분한 물품 수입에는 면제가 없다. 현물 지원은 소관부처 추천으로 재무부가 면제를 부여할 수 있다.", "output_documents": ["마스터리스트(Master List)", "사업비자·노동허가"], "deadline": "관세면제 절차 약 3개월(2019년 정책 시기 실무 경험치)", "blocker": "면제 대상 자체가 좁아져, 국내 생산이 충분한 기자재는 마스터리스트를 내도 면제를 못 받을 수 있다", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.6.1(a)(b)(c)(d)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.6.1(f)(g)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}, "P15": {"id": "P15", "name": "지역 개발파트너 회의·이행 점검", "lane": "네팔 재무부", "stage": "G4 공식화", "type": "notice", "status": "loop", "actor": "네팔 정부 · 개발 파트너", "action": "지역 개발파트너 회의를 연 2회 또는 필요에 따라 열어 정책 이행과 현안을 조정한다. 개발파트너는 회계연도 종료 후 2개월 내 지원 실적을 대외원조정보시스템에 보고한다.", "deadline": "연 2회 · 보고는 회계연도 종료 후 2개월 내", "confidence": 0.9, "legal_basis": [{"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.1.3", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}, {"law": "Foreign Aid Mobilization Policy, 2025", "article": "§3.3.5(i)", "url": "https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/"}], "confidence_reason": "노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값"}};
-var EDGES=[{"id": "E01", "source": "P01", "target": "P03", "type": "sequence", "label": "승인 후 접촉"}, {"id": "E03", "source": "P03", "target": "P04", "type": "sequence"}, {"id": "E04", "source": "P04", "target": "P05", "type": "sequence"}, {"id": "E05", "source": "P05", "target": "P06", "type": "sequence"}, {"id": "E06", "source": "P06", "target": "P07", "type": "message", "label": "PCP 접수"}, {"id": "E07", "source": "P07", "target": "P08", "type": "sequence", "label": "위원회 통과"}, {"id": "E08", "source": "P07", "target": "P04", "type": "loop", "label": "부결 시 재작성"}, {"id": "E09", "source": "P08", "target": "P09", "type": "sequence", "label": "본부 승인"}, {"id": "E10", "source": "P09", "target": "P10", "type": "sequence"}, {"id": "E11", "source": "P10", "target": "P11", "type": "sequence", "label": "심사 통과"}, {"id": "E12", "source": "P10", "target": "P09", "type": "loop", "label": "보완 요구"}, {"id": "E13", "source": "P11", "target": "P12", "type": "sequence"}, {"id": "E14", "source": "P12", "target": "P13", "type": "sequence"}, {"id": "E15", "source": "P13", "target": "P14", "type": "sequence"}, {"id": "E16", "source": "P14", "target": "P15", "type": "sequence"}, {"id": "E17", "source": "P15", "target": "P03", "type": "loop", "label": "차기 사업 발굴 환류"}];
+var NODES={"P01":{"id":"P01","name":"재무부 사전 승인 확보","lane":"네팔 재무부","stage":"G0 사전승인","type":"gateway","status":"risk","actor":"네팔 재무부","action":"수원기관이 공여기관과 요청·제안·협상·정보제공·개념서 서신교환·MoU 체결을 하기 전에 재무부 승인을 받아야 한다. 공여기관도 원조 동원 전 재무부 승인 대상이다.","blocker":"사업 접촉 전에 재무부 사전승인 경로를 먼저 확인해야 한다","confidence":0.95,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(k)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""},{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.5(b)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P01"},"P03":{"id":"P03","name":"사업 발굴·형성 협의","lane":"네팔 수원기관·소관부처","stage":"G1 발굴·PCP","type":"task","status":"current","actor":"수원기관 · KOICA 네팔사무소","action":"공여기관과 수원기관 부처가 협의해 사업을 발굴·형성한다. 소관부처는 대외원조가 필요한 사업 목록을 미리 작성해 둔다.","confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(a)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P03"},"P04":{"id":"P04","name":"PCP 작성","lane":"네팔 수원기관·소관부처","stage":"G1 발굴·PCP","type":"task","status":"current","actor":"수원기관","action":"사업 준비성 체크리스트에 따라 제안서를 작성한다. KOICA 사업은 N-2년 기준으로 PCP를 작성한다.","output_documents":["사업제안서(PCP)","사업 준비성 체크리스트"],"deadline":"사업 시행 2년 전(N-2년)","confidence":0.8,"blocker":"PCP 작성·제출 주체와 재무부·수원기관의 역할 분담을 확인해야 한다","legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(b)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P04"},"P05":{"id":"P05","name":"상급부처·재무부 검토","lane":"네팔 재무부","stage":"G1 발굴·PCP","type":"gateway","status":"waiting","actor":"수원기관 상급부처 · 재무부","action":"국가개발계획에 따른 우선순위 부합 여부를 검토한다. 주·지방정부 제안은 소관부처를 거쳐 재무부로 올라온다.","confidence":0.85,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(e)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P05"},"P06":{"id":"P06","name":"재무부 공한 첨부 PCP 제출","lane":"네팔 재무부","stage":"G1 발굴·PCP","type":"task","status":"waiting","actor":"네팔 재무부","action":"PCP를 재무부 공한과 함께 KOICA 네팔사무소에 제출한다.","output_documents":["재무부 공한","PCP"],"confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.1(a)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P06"},"P07":{"id":"P07","name":"PCP 검토위원회","lane":"KOICA","stage":"G2 검토·예비조사","type":"gateway","status":"waiting","actor":"KOICA 본부","action":"본부 가이드라인 및 지정 일정에 따라 검토위원회를 개최한다.","confidence":0.65,"legal_basis":[{"law":"KOICA 사업심사 가이드라인","article":"—","url":"https://www.koica.go.kr/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"공식 조문은 연결했으나 세부 적용·운영 범위에 남은 불확실성을 반영한 보수적 점수","display_id":"P07"},"P08":{"id":"P08","name":"예비조사","lane":"KOICA","stage":"G2 검토·예비조사","type":"task","status":"waiting","actor":"KOICA","action":"위원회 통과 시 실시한다.","output_documents":["예비조사 보고서"],"confidence":0.85,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"현행 공식 원문의 적용범위·절차 조문과 연결","display_id":"P08"},"P09":{"id":"P09","name":"기획조사","lane":"KOICA","stage":"G3 기획·심사","type":"task","status":"waiting","actor":"KOICA","action":"본부에서 사업제안서를 승인하면 실시한다.","confidence":0.85,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"현행 공식 원문의 적용범위·절차 조문과 연결","display_id":"P09"},"P10":{"id":"P10","name":"PD 작성 및 심사위원회","lane":"KOICA","stage":"G3 기획·심사","type":"gateway","status":"waiting","actor":"KOICA 본부","action":"예비조사·기획조사를 바탕으로 사업 기획 주요 내용을 담은 PD를 도출하고 심사위원회를 거친다. 네팔 측 소관부처는 기술적 사항에 의견을 내고 사업문서를 확정한다.","output_documents":["사업기획문서(PD)"],"confidence":0.85,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(d)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P10"},"P11":{"id":"P11","name":"예산요구","lane":"대한민국 정부","stage":"G3 기획·심사","type":"task","status":"waiting","actor":"KOICA → 대한민국 재정당국","action":"위원회 통과 시 재정당국에 예산을 요구한다.","confidence":0.85,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.1.3, §3.2, §3.3.1(a)(d)(e), §3.3.2(b)(c)(j)(k), §3.3.5(b)(c)(i), §3.6.1(a)~(g), §3.7.1, §3.7.2","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"현행 공식 원문의 적용범위·절차 조문과 연결","display_id":"P11"},"P12":{"id":"P12","name":"협의의사록(RoD) 체결","lane":"네팔 수원기관·소관부처","stage":"G4 공식화","type":"task","status":"waiting","actor":"KOICA · 네팔 소관부처","action":"기획조사를 통해 확정된 사업 내용을 바탕으로 체결한다. 소관부처는 협상 대표를 지명한다.","output_documents":["협의의사록(RoD)"],"confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(c)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P12"},"P13":{"id":"P13","name":"양해각서(MoU) 체결","lane":"대한민국 정부","stage":"G4 공식화","type":"gateway","status":"waiting","actor":"주네팔 대한민국대사관 · 네팔 재무부","action":"RoD 체결 이후 양국 정부 간 MoU를 체결한다. 네팔 측은 재무부가 정부를 대표해 서명한다.","output_documents":["양해각서(MoU)"],"confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.1(d)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""},{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.2(k)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P13"},"P14":{"id":"P14","name":"사업수행 지원 — 비자·조세면제","lane":"네팔 재무부","stage":"G4 공식화","type":"task","status":"risk","actor":"네팔 재무부 · PMC","action":"협정과 현행법에 따라 파견인력의 비자·노동허가를 지원한다. 조세면제는 범위가 제한된다 — 무상원조는 원칙적으로 세금 납부에 쓸 수 없고, 차관 재원 사업에는 면제 조항을 넣지 않으며, 국내 생산이 충분한 물품 수입에는 면제가 없다. 현물 지원은 소관부처 추천으로 재무부가 면제를 부여할 수 있다.","output_documents":["마스터리스트(Master List)","사업비자·노동허가"],"deadline":"관세면제 절차 약 3개월(2019년 정책 시기 실무 경험치)","blocker":"면제 대상 자체가 좁아져, 국내 생산이 충분한 기자재는 마스터리스트를 내도 면제를 못 받을 수 있다","confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.6.1(a)(b)(c)(d)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""},{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.6.1(f)(g)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P14"},"P15":{"id":"P15","name":"지역 개발파트너 회의·이행 점검","lane":"네팔 재무부","stage":"G4 공식화","type":"notice","status":"loop","actor":"네팔 정부 · 개발 파트너","action":"지역 개발파트너 회의를 연 2회 또는 필요에 따라 열어 정책 이행과 현안을 조정한다. 개발파트너는 회계연도 종료 후 2개월 내 지원 실적을 대외원조정보시스템에 보고한다.","deadline":"연 2회 · 보고는 회계연도 종료 후 2개월 내","confidence":0.9,"legal_basis":[{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.1.3","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""},{"law":"Foreign Aid Mobilization Policy, 2025","article":"§3.3.5(i)","url":"https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","display_id":"P15"}};
+var EDGES=[{"id":"E01","source":"P01","target":"P03","type":"sequence","label":"승인 후 접촉"},{"id":"E03","source":"P03","target":"P04","type":"sequence"},{"id":"E04","source":"P04","target":"P05","type":"sequence"},{"id":"E05","source":"P05","target":"P06","type":"sequence"},{"id":"E06","source":"P06","target":"P07","type":"message","label":"PCP 접수"},{"id":"E07","source":"P07","target":"P08","type":"sequence","label":"위원회 통과"},{"id":"E08","source":"P07","target":"P04","type":"loop","label":"부결 시 재작성"},{"id":"E09","source":"P08","target":"P09","type":"sequence","label":"본부 승인"},{"id":"E10","source":"P09","target":"P10","type":"sequence"},{"id":"E11","source":"P10","target":"P11","type":"sequence","label":"심사 통과"},{"id":"E12","source":"P10","target":"P09","type":"loop","label":"보완 요구"},{"id":"E13","source":"P11","target":"P12","type":"sequence"},{"id":"E14","source":"P12","target":"P13","type":"sequence"},{"id":"E15","source":"P13","target":"P14","type":"sequence"},{"id":"E16","source":"P14","target":"P15","type":"sequence"},{"id":"E17","source":"P15","target":"P03","type":"loop","label":"차기 사업 발굴 환류"}];
 
 var _sel=document.getElementById('sel');
 if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
@@ -539,8 +738,9 @@ function draw(){
   svg.setAttribute('width',board.scrollWidth); svg.setAttribute('height',board.scrollHeight);
   var cs=getComputedStyle(document.documentElement);
   var C={sequence:cs.getPropertyValue('--muted').trim(),
-         message:cs.getPropertyValue('--back').trim(),
-         loop:cs.getPropertyValue('--warn').trim()};
+         message:cs.getPropertyValue('--info').trim(),
+         loop:cs.getPropertyValue('--back').trim()};
+  var BG=cs.getPropertyValue('--bg').trim();
   var d='<defs>';
   ['sequence','message','loop'].forEach(function(t){
     d+='<marker id="m-'+t+'" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">'
@@ -552,7 +752,9 @@ function draw(){
                             r:rc.right-bb.left+board.scrollLeft, b:rc.bottom-bb.top+board.scrollTop,
                             w:rc.width, h:rc.height};}
   function box(id){
-    var el=board.querySelector('.node[data-id="'+id+'"]');
+    var el=Array.prototype.find.call(
+      board.querySelectorAll('.node'),function(node){return node.dataset.id===id;}
+    );
     if(!el)return null; return rel(el.getBoundingClientRect());
   }
 
@@ -564,6 +766,12 @@ function draw(){
   // 장애물(모든 노드)과 거터(노드 없는 띠) 실측
   var OB=[];
   board.querySelectorAll('.node').forEach(function(el){ var r=box(el.dataset.id); r.id=el.dataset.id; OB.push(r); });
+  // 단계 머리글과 각 행의 행위주체 셀도 텍스트 장애물이다. 카드만 피하면
+  // 긴 회귀 라벨이 머리글 뒤로 올라가거나 행위주체명을 가릴 수 있다.
+  var TB=[];
+  board.querySelectorAll('.brow.head .bcell,.brow:not(.head) .bcell:first-child').forEach(function(el){
+    TB.push(rel(el.getBoundingClientRect()));
+  });
   var rowGut=[], colGut=[];
   board.querySelectorAll('.brow:not(.head)').forEach(function(el){ var r=rel(el.getBoundingClientRect());
     rowGut.push(r.y+9); rowGut.push(r.b-9); });
@@ -586,6 +794,32 @@ function draw(){
 
   function route(a,b,ed){
     var acx=a.x+a.w/2,acy=a.y+a.h/2,bcx=b.x+b.w/2,bcy=b.y+b.h/2, e1=ed.source,e2=ed.target, cs=[];
+    // 보완 회귀는 source 오른쪽 거터로 빠진 뒤 target 행의 위·아래 여백을
+    // 거쳐 진입한다. target 중심 높이로 곧장 되돌리면 같은 행의 중간 카드를
+    // 관통할 수 있으므로, 실측한 행 거터 후보를 장애물 수·길이로 비교한다.
+    if(ed.type==='loop'&&ed.label){
+      var maxRight=Math.max(a.r,b.r), gx0=Math.min(board.scrollWidth-4,maxRight+28);
+      var gxVals=[gx0,board.scrollWidth-4], loopCandidates=[];
+      colGut.forEach(function(gx){if(gx>maxRight+10)gxVals.push(gx);});
+      gxVals=gxVals.filter(function(gx,i){return gx>maxRight+6&&gxVals.indexOf(gx)===i;});
+      var gyVals=rowGut.filter(function(gy){return gy<b.y-6||gy>b.b+6;});
+      gxVals.forEach(function(gx){
+        gyVals.forEach(function(gy){
+          var above=gy<b.y;
+          var tp={x:bcx,y:above?b.y:b.b};
+          var pre={x:bcx,y:tp.y+(above?-GAP:GAP)};
+          loopCandidates.push(score([
+            {x:a.r,y:acy},{x:gx,y:acy},{x:gx,y:gy},{x:bcx,y:gy},pre,tp
+          ],e1,e2));
+        });
+      });
+      // 극단적으로 거터 후보가 없는 단일 행 보드에서도 선은 계속 표시한다.
+      loopCandidates.push(score([
+        {x:a.r,y:acy},{x:gx0,y:acy},{x:gx0,y:bcy},{x:b.r+GAP,y:bcy},{x:b.r,y:bcy}
+      ],e1,e2));
+      loopCandidates.sort(function(x,y){return x.p-y.p||x.l-y.l;});
+      return loopCandidates[0];
+    }
     // 세로 계열 — a의 위/아래 변에서 나가 b의 위/아래 변으로
     var below=bcy>acy, sp={x:acx,y:below?a.b:a.y}, tp={x:bcx,y:below?b.y:b.b}, tg={x:tp.x,y:tp.y+(below?-GAP:GAP)};
     cs.push(score([sp,{x:sp.x,y:tg.y},tg,tp],e1,e2));                                   // 직선/L
@@ -602,9 +836,6 @@ function draw(){
     rowGut.forEach(function(gy){                                                          // 행 거터 우회
       var as={x:acx,y:gy>acy?a.b:a.y};
       cs.push(score([as,{x:acx,y:gy},{x:tp2.x,y:gy},tg2,tp2],e1,e2)); });
-    // 회귀선 — 아래로 크게 우회 (되돌아가는 흐름을 시각적으로 구분)
-    if(ed.type==='loop'){ var gy=Math.max(a.b,b.b)+26;
-      cs.push(score([{x:acx,y:a.b},{x:acx,y:gy},{x:bcx,y:gy},{x:bcx,y:b.b+GAP},{x:bcx,y:b.b}],e1,e2)); }
     cs=cs.filter(function(c){return c.pts.length>=2;});
     cs.sort(function(x,y){ return x.p-y.p || x.l-y.l; });
     return cs[0];
@@ -623,68 +854,374 @@ function draw(){
     var e=pts[pts.length-1]; return d+' L'+rnd(e.x)+' '+rnd(e.y);
   }
 
+  var labelJobs=[],pathSegs=[],allArrows=[];
   EDGES.forEach(function(ed){
     var a=box(ed.source),b=box(ed.target); if(!a||!b)return;
-    var t=ed.type||'sequence', rt=route(a,b,ed);
-    d+='<path d="'+orthPath(rt.pts)+'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
+    var t=ed.type||'sequence', rt=route(a,b,ed), pts=uniq(rt.pts);
+    /* 라벨 배경이 남의 연결선을 덮어 선이 끊겨 보이는 것을 막으려면 모든
+       연결선의 위치를 알아야 한다. 라벨 없는 엣지도 덮이면 똑같이 끊겨
+       보이므로 전부 모은다. 엣지 객체 참조를 그대로 담아 자기 경로인지
+       판정한다 — id 문자열 비교는 id가 없을 때 전부 자기 것이 된다. */
+    for(var si=0;si<pts.length-1;si++)
+      pathSegs.push({x1:pts[si].x,y1:pts[si].y,x2:pts[si+1].x,y2:pts[si+1].y,ed:ed});
+    var tip=pts[pts.length-1];
+    allArrows.push({x:tip.x-11,y:tip.y-11,r:tip.x+11,b:tip.y+11});
+    d+='<path class="edge-path" data-edge-id="'+ed.id+'" d="'+orthPath(rt.pts)
+      +'" fill="none" stroke="'+C[t]+'" stroke-width="1.5" opacity="'
       +(t==='sequence'?'.55':'.8')+'"'+(t!=='sequence'?' stroke-dasharray="4 3"':'')
       +' marker-end="url(#m-'+t+')"/>';
+    if(ed.label) labelJobs.push({ed:ed,rt:rt,color:C[t],sourceBox:a,targetBox:b});
   });
   svg.innerHTML=d;
+
+  // 한 노드에서 순차선이 두 갈래 이상 나가면 그건 전이가 아니라 결정이다.
+  // 그 라벨("상세평가 면제"/"상세평가 요구")이 없으면 왜 선이 갈라지는지
+  // 읽을 수 없으므로, 갈림길의 순차 라벨은 접지 않고 상시 표시한다.
+  var seqOut={};
+  EDGES.forEach(function(x){ if((x.type||'sequence')==='sequence') seqOut[x.source]=(seqOut[x.source]||0)+1; });
+  function isBranch(ed){ return (ed.type||'sequence')==='sequence' && seqOut[ed.source]>1; }
+
+  // 보완·분기선은 긴 우회 경로를 쓰므로 먼저 라벨 자리를 확보한다.
+  // 상시 표시되는 갈림길 라벨이 그다음, 접힌 순차 라벨이 마지막이다.
+  // 최신 엔진의 안정 정렬로 원래 상대순서는 유지된다.
+  labelJobs.sort(function(a,b){
+    function tier(j){ var t=j.ed.type||'sequence'; return t!=='sequence'?0:(isBranch(j.ed)?1:2); }
+    return tier(a)-tier(b);
+  });
+
+  /* 라벨은 경로와 별도 2차 배치한다. 실제 글자 폭을 잰 뒤 카드·화살촉·
+     다른 라벨과 겹치지 않는 후보를 고르므로 세로선 중점에 긴 문구를
+     얹어 카드 뒤로 잘리던 문제를 막는다. */
+  var NS='http://www.w3.org/2000/svg', labelBoxes=[],leaderSegments=[];
+  // 라벨 없는 엣지의 화살촉도 가려지면 안 되므로 전체 엣지 기준으로 둔다.
+  var arrowBoxes=allArrows;
+  function overlaps(a,b){return a.x<b.r&&a.r>b.x&&a.y<b.b&&a.b>b.y;}
+  function overlapArea(a,b){
+    return Math.max(0,Math.min(a.r,b.r)-Math.max(a.x,b.x))*
+           Math.max(0,Math.min(a.b,b.b)-Math.max(a.y,b.y));
+  }
+  function labelCandidates(rt,w,h,sourceBox,targetBox){
+    var pts=uniq(rt.pts),segs=[],fractions=[.5,.33,.67,.2,.8];
+    // 인접 카드 사이 거터가 좁은 경우에도 카드 한 줄 밖까지 탐색한다.
+    var sideOffsets=[3,7,19,31,43,55,71,87,103,119,135,151,167,183,199,215];
+    for(var i=0;i<pts.length-1;i++){
+      var a=pts[i],b=pts[i+1],horizontal=Math.abs(a.y-b.y)<.5;
+      var length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);
+      if(length>8) segs.push({a:a,b:b,horizontal:horizontal,length:length});
+    }
+    segs.sort(function(a,b){return (b.horizontal-a.horizontal)||b.length-a.length;});
+    var out=[];
+    if(rt.label) out.push({x:rt.label.x,y:rt.label.y,offset:0,anchor:rt.label});
+    // 같은 행·열의 카드 사이 라벨은 카드 사이의 실제 연결선에 먼저 붙인다.
+    // 그 자리가 막힐 때만 카드 바깥 후보를 써서 라벨이 고아처럼 멀어지지
+    // 않으면서도 카드나 단계 제목 뒤에 가려지지 않게 한다.
+    if(sourceBox&&targetBox){
+      var sx=sourceBox.x+sourceBox.w/2,sy=sourceBox.y+sourceBox.h/2;
+      var tx=targetBox.x+targetBox.w/2,ty=targetBox.y+targetBox.h/2;
+      if(Math.abs(sy-ty)<=Math.max(sourceBox.h,targetBox.h)*.45){
+        var left=sx<=tx?sourceBox:targetBox,right=sx<=tx?targetBox:sourceBox;
+        var gapX=(left.r+right.x)/2;
+        var attachY=(sy+ty)/2;
+        for(var hi=0;hi<segs.length;hi++){
+          var hs=segs[hi];
+          if(hs.horizontal&&gapX>=Math.min(hs.a.x,hs.b.x)-.5&&gapX<=Math.max(hs.a.x,hs.b.x)+.5){
+            attachY=hs.a.y; break;
+          }
+        }
+        var hAnchor={x:gapX,y:attachY};
+        out.push({x:gapX,y:Math.min(sourceBox.y,targetBox.y)-h/2-5,offset:4,anchor:hAnchor});
+        out.push({x:gapX,y:Math.max(sourceBox.b,targetBox.b)+h/2+5,offset:8,anchor:hAnchor});
+      }
+      if(Math.abs(sx-tx)<=Math.max(sourceBox.w,targetBox.w)*.45){
+        var top=sy<=ty?sourceBox:targetBox,bottom=sy<=ty?targetBox:sourceBox;
+        var gapY=(top.b+bottom.y)/2;
+        var attachX=(sx+tx)/2;
+        for(var vi=0;vi<segs.length;vi++){
+          var vs=segs[vi];
+          if(!vs.horizontal&&gapY>=Math.min(vs.a.y,vs.b.y)-.5&&gapY<=Math.max(vs.a.y,vs.b.y)+.5){
+            attachX=vs.a.x; break;
+          }
+        }
+        var vAnchor={x:attachX,y:gapY};
+        out.push({x:attachX+w/2+7,y:gapY,offset:2,anchor:vAnchor});
+        out.push({x:attachX-w/2-7,y:gapY,offset:3,anchor:vAnchor});
+        out.push({x:Math.min(sourceBox.x,targetBox.x)-w/2-7,y:gapY,offset:6,anchor:vAnchor});
+        out.push({x:Math.max(sourceBox.r,targetBox.r)+w/2+7,y:gapY,offset:10,anchor:vAnchor});
+      }
+    }
+    segs.forEach(function(seg){
+      fractions.forEach(function(f){
+        var x=seg.a.x+(seg.b.x-seg.a.x)*f,y=seg.a.y+(seg.b.y-seg.a.y)*f;
+        // 빈 선 구간에는 흰 배경 라벨을 선 위에 직접 놓는다. 라벨과 선의
+        // 소속관계가 가장 분명하고, 충돌 시에만 아래의 측면 후보로 밀린다.
+        var anchor={x:x,y:y};
+        out.push({x:x,y:y,offset:0,anchor:anchor});
+        if(seg.horizontal){
+          sideOffsets.forEach(function(gap){
+            [-(h/2+gap),h/2+gap].forEach(function(o){
+              out.push({x:x,y:y+o,offset:Math.abs(o),anchor:anchor});
+            });
+          });
+        }else{
+          sideOffsets.forEach(function(gap){
+            [-(w/2+gap),w/2+gap].forEach(function(o){
+              out.push({x:x+o,y:y,offset:Math.abs(o),anchor:anchor});
+            });
+          });
+        }
+      });
+    });
+    return out;
+  }
+  function candidateBox(p,w,h){
+    return {x:p.x-w/2,y:p.y-h/2,r:p.x+w/2,b:p.y+h/2,w:w,h:h};
+  }
+  function leaderSegment(box,p){
+    var anchor=p.anchor;
+    if(!anchor)return null;
+    var x2=Math.max(box.x,Math.min(anchor.x,box.r));
+    var y2=Math.max(box.y,Math.min(anchor.y,box.b));
+    if(Math.hypot(anchor.x-x2,anchor.y-y2)<=24)return null;
+    return {x1:anchor.x,y1:anchor.y,x2:x2,y2:y2};
+  }
+  function segmentHitsBox(seg,o){
+    // 테두리를 따라가는 선은 허용하되 카드·머리글·행위주체 셀 내부를
+    // 통과하는 리더선은 source/target 구분 없이 후보 점수에 반영한다.
+    var M=1.5,L=o.x+M,R=o.r-M,T=o.y+M,B=o.b-M;
+    if(L>=R||T>=B)return false;
+    var dx=seg.x2-seg.x1,dy=seg.y2-seg.y1,t0=0,t1=1;
+    function clip(p,q){
+      if(Math.abs(p)<.000001)return q>=0;
+      var t=q/p;
+      if(p<0){if(t>t1)return false;if(t>t0)t0=t;}
+      else {if(t<t0)return false;if(t<t1)t1=t;}
+      return true;
+    }
+    return clip(-dx,seg.x1-L)&&clip(dx,R-seg.x1)
+      &&clip(-dy,seg.y1-T)&&clip(dy,B-seg.y1)&&t1>=t0;
+  }
+  function segmentCoverLength(s,box){
+    // 직교 세그먼트가 라벨 박스에 가려지는 길이. route()의 점은 전부 직교라
+    // 나눗셈 없이 겹친 구간 길이만 재면 된다. 테두리에 스치는 선은 제외한다.
+    var M=1;
+    if(Math.abs(s.y1-s.y2)<.5){
+      if(s.y1<=box.y+M||s.y1>=box.b-M)return 0;
+      return Math.max(0,Math.min(Math.max(s.x1,s.x2),box.r)-Math.max(Math.min(s.x1,s.x2),box.x));
+    }
+    if(Math.abs(s.x1-s.x2)<.5){
+      if(s.x1<=box.x+M||s.x1>=box.r-M)return 0;
+      return Math.max(0,Math.min(Math.max(s.y1,s.y2),box.b)-Math.max(Math.min(s.y1,s.y2),box.y));
+    }
+    return 0;
+  }
+  function labelPenalty(box,p,own,limit){
+    var score=p.offset||0;
+    if(limit===undefined)limit=Infinity;
+    if(box.x<4)score+=(4-box.x)*100000;
+    if(box.y<4)score+=(4-box.y)*100000;
+    if(box.r>board.scrollWidth-4)score+=(box.r-board.scrollWidth+4)*100000;
+    if(box.b>board.scrollHeight-4)score+=(box.b-board.scrollHeight+4)*100000;
+    if(score>=limit)return score;
+    OB.forEach(function(o){
+      var padded={x:o.x-6,y:o.y-6,r:o.r+6,b:o.b+6};
+      if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
+    });
+    if(score>=limit)return score;
+    TB.forEach(function(o){
+      var padded={x:o.x-4,y:o.y-4,r:o.r+4,b:o.b+4};
+      if(overlaps(box,padded))score+=1000000+overlapArea(box,padded)*1000;
+    });
+    if(score>=limit)return score;
+    /* 남의 연결선을 덮으면 그 선이 끊어져 보인다. 가린 길이에 비례해 매긴다 —
+       수직 교차는 라벨 높이(~18px)만 가려 점선처럼 보이지만, 평행하게 얹히면
+       라벨 폭 전체가 사라져 "선이 끊겼다"로 읽힌다. 자기 경로 위에 얹는 것은
+       라벨과 선의 소속을 분명히 하려는 의도된 배치이므로 제외한다. */
+    pathSegs.forEach(function(s){
+      if(s.ed===own)return;
+      var cov=segmentCoverLength(s,box);
+      if(cov>2)score+=80000+cov*5000;
+    });
+    if(score>=limit)return score;
+    arrowBoxes.forEach(function(o){if(overlaps(box,o))score+=250000+overlapArea(box,o)*100;});
+    labelBoxes.forEach(function(o){if(overlaps(box,o))score+=750000+overlapArea(box,o)*1000;});
+    var leader=leaderSegment(box,p);
+    if(leader){
+      // 일반 거리 점수와 화살촉 패널티보다 크게 두되 라벨·카드 겹침보다는
+      // 낮게 두어, 카드 내부를 가로지르는 리더선보다 빈 거터를 우선한다.
+      OB.forEach(function(o){if(segmentHitsBox(leader,o))score+=500000;});
+      TB.forEach(function(o){if(segmentHitsBox(leader,o))score+=500000;});
+      labelBoxes.forEach(function(o){if(segmentHitsBox(leader,o))score+=500000;});
+    }
+    // 현재 라벨도 앞서 확정된 리더선을 덮지 않게 하여 어느 연결선의
+    // 설명인지 시각적으로 뒤바뀌는 일을 막는다.
+    leaderSegments.forEach(function(seg){if(segmentHitsBox(seg,box))score+=500000;});
+    return score;
+  }
+  labelJobs.forEach(function(job){
+    var group=document.createElementNS(NS,'g'); group.setAttribute('class','edge-label-group');
+    group.setAttribute('data-edge-id',job.ed.id);
+    group.setAttribute('data-edge-kind',isBranch(job.ed)?'sequence-branch':(job.ed.type||'sequence'));
+    group.setAttribute('data-edge-source',job.ed.source);
+    group.setAttribute('data-edge-target',job.ed.target);
+    var bg=document.createElementNS(NS,'rect'); bg.setAttribute('class','edge-label-bg');
+    bg.setAttribute('rx','4'); bg.setAttribute('fill',BG); bg.setAttribute('fill-opacity','.96');
+    var txt=document.createElementNS(NS,'text'); txt.setAttribute('class','edge-label');
+    txt.setAttribute('x','0'); txt.setAttribute('y','0'); txt.setAttribute('text-anchor','middle');
+    txt.setAttribute('dominant-baseline','central'); txt.setAttribute('fill',job.color);
+    txt.setAttribute('font-size','10'); txt.setAttribute('font-weight','700');
+    txt.style.visibility='hidden'; txt.textContent=job.ed.label;
+    var title=document.createElementNS(NS,'title'); title.textContent=txt.textContent;
+    group.appendChild(bg); group.appendChild(txt); group.appendChild(title); svg.appendChild(group);
+    var measured=txt.getBBox(),w=Math.max(measured.width,txt.getComputedTextLength())+7;
+    var h=Math.max(measured.height,12)+5;
+    var candidates=labelCandidates(job.rt,w,h,job.sourceBox,job.targetBox);
+    /* 점수는 offset에 음이 아닌 패널티만 더하므로 score >= offset 이 늘 성립한다.
+       offset 오름차순으로 보면 bestScore <= 현재 offset 인 순간 남은 후보는
+       전부 개선 불가다. 후보 수백 개 중 대개 수십 개만 평가하고 끝난다. */
+    candidates.sort(function(x,y){return (x.offset||0)-(y.offset||0);});
+    var best=null,bestScore=Infinity;
+    for(var ci=0;ci<candidates.length;ci++){
+      var p=candidates[ci];
+      if(bestScore<=(p.offset||0))break;
+      var b=candidateBox(p,w,h),s=labelPenalty(b,p,job.ed,bestScore);
+      if(s<bestScore){best={p:p,box:b};bestScore=s;}
+    }
+    if(!best){
+      var first=uniq(job.rt.pts)[0]; best={p:{x:first.x,y:first.y,anchor:first},box:candidateBox(first,w,h)};
+    }
+    var lead=leaderSegment(best.box,best.p);
+    if(lead){
+      var leader=document.createElementNS(NS,'line');
+      leader.setAttribute('class','edge-label-leader');
+      leader.setAttribute('x1',rnd(lead.x1)); leader.setAttribute('y1',rnd(lead.y1));
+      leader.setAttribute('x2',rnd(lead.x2)); leader.setAttribute('y2',rnd(lead.y2));
+      leader.setAttribute('stroke',job.color); leader.setAttribute('stroke-width','1');
+      leader.setAttribute('stroke-dasharray','2 2'); leader.setAttribute('opacity','.55');
+      group.insertBefore(leader,bg);
+      leaderSegments.push(lead);
+    }
+    labelBoxes.push(best.box);
+    bg.setAttribute('x',rnd(best.box.x)); bg.setAttribute('y',rnd(best.box.y));
+    bg.setAttribute('width',rnd(w)); bg.setAttribute('height',rnd(h));
+    bg.setAttribute('stroke',job.color); bg.setAttribute('stroke-opacity','.18');
+    txt.setAttribute('x',rnd(best.p.x)); txt.setAttribute('y',rnd(best.p.y));
+    /* 패널티로도 못 피한 겹침이 남으면 불투명 사각형을 고집하지 않는다.
+       배경을 낮추고 글자 획 주변만 배경색으로 둘러(헤일로) 선이 라벨 뒤로
+       이어져 보이게 한다. 지도 라벨의 표준 기법이며, 가리는 면적이 사각형
+       전체에서 글자 윤곽으로 줄어 "선이 끊겼다"로 읽히지 않는다. */
+    var residual=0;
+    pathSegs.forEach(function(s){ if(s.ed!==job.ed) residual+=segmentCoverLength(s,best.box); });
+    if(residual>2){
+      bg.setAttribute('fill-opacity','.55');
+      txt.setAttribute('paint-order','stroke');
+      txt.setAttribute('stroke',BG); txt.setAttribute('stroke-width','3');
+      txt.setAttribute('stroke-linejoin','round');
+      group.setAttribute('data-covers',rnd(residual));
+    }
+    txt.style.visibility='visible';
+  });
 }
 
-var KIND={"act": "법률", "regulation": "시행규칙", "ordinance": "명령·조례", "directive": "지침·정책", "standard-document": "표준문서", "treaty-agreement": "양자합의", "donor-rule": "공여기관 규정", "practice": "현장 관행"};
 function openNode(id){
   var n=NODES[id]; if(!n)return;
-  var h='<span class="badge plain muted">'+n.id+'</span> '
+  var h='<span class="badge plain muted">'+(n.display_id||n.id)+'</span> '
        +'<span class="badge plain muted">'+n.lane+'</span> '
-       +'<span class="badge plain muted">'+n.stage+'</span>';
+       +'<span class="badge plain muted">'+n.stage+'</span>'
+       +(n.workflow_kind_label?' <span class="badge info">'+n.workflow_kind_label+'</span>':'');
   h+='<h3>'+n.name+'</h3>';
   h+='<dl class="kv">';
   h+='<dt>담당</dt><dd>'+n.actor+'</dd>';
+  if(n.consulted_authorities) h+='<dt>협의·관할기관</dt><dd>'+n.consulted_authorities+'</dd>';
   if(n.action) h+='<dt>내용</dt><dd>'+n.action+'</dd>';
+  if(n.applicability) h+='<dt>적용 조건</dt><dd>'+n.applicability+'</dd>';
   if(n.deadline) h+='<dt>기한</dt><dd>'+n.deadline+'</dd>';
   if(n.output_documents&&n.output_documents.length)
     h+='<dt>산출 문서</dt><dd>'+n.output_documents.join(' · ')+'</dd>';
   if(n.blocker) h+='<dt>병목</dt><dd style="color:var(--warn)">'+n.blocker+'</dd>';
   if(n.legal_basis&&n.legal_basis.length){
-    h+='<dt>근거 조문</dt><dd>'+n.legal_basis.map(function(l){
+    var basisLabel=n.basis_scope==='axis'?'축 전체 관련 제도 근거'
+      :(n.workflow_kind==='statutory'?'근거 조문':'관련 제도 근거');
+    h+='<dt>'+basisLabel+'</dt><dd>'+n.legal_basis.map(function(l){
       var nm=l.url?'<a class="ref" href="'+l.url+'" target="_blank" rel="noopener">'+l.law+'</a>':l.law;
-      return '<div style="margin-bottom:4px">'+nm+' <code>'+l.article+'</code></div>';}).join('')+'</dd>';
+      var meta=(l.kind?' <span class="badge plain muted">'+l.kind+'</span>':'')
+        +(l.scope_label?' <span class="badge info">'+l.scope_label+'</span>':'')
+        +(l.verification?' <span class="badge '+l.verification_tone+'">'+l.verification+'</span>':'');
+      return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
+        +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}).join('')+'</dd>';
   }
   if(typeof n.confidence==='number'){
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
   }
   if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
+  if(n.evidence_status) h+='<dt>근거 상태</dt><dd>'+n.evidence_status+'</dd>';
+  if(n.report_use) h+='<dt>보고서 반영</dt><dd>'+n.report_use+'</dd>';
+  if(n.permit_gates&&n.permit_gates.length){
+    h+='<dt>연결 Gate</dt><dd>'+n.permit_gates.map(function(g){
+      var dep=g.depends_on&&g.depends_on.length?' · 선행 Gate '+g.depends_on.map(function(x){return 'G'+x;}).join(', '):'';
+      return '<div style="margin-bottom:8px"><b>G'+g.order+' '+g.gate+'</b>'+dep
+        +'<div>'+g.decision+'</div><div style="color:var(--muted)">산출물 · '+g.output+'</div></div>';}).join('')+'</dd>';
+  }
+  if(n.open_questions&&n.open_questions.length){
+    h+='<dt>현장 확인질문</dt><dd>'+n.open_questions.map(function(q){
+      return '<div style="margin-bottom:10px"><span class="badge '+(q.blocking?'bad':'muted')+'">'
+        +(q.blocking?'Gate 차단':'추가 확인')+'</span> <code>'+q.id+'</code><div>'+q.question+'</div>'
+        +'<div style="color:var(--muted)">영향 · '+q.why+'</div>'
+        +'<div style="color:var(--muted)">확인기관 · '+q.confirm_with.join(' · ')+'</div>'
+        +'<div style="color:var(--muted)">증빙 · '+q.evidence.join(' · ')+'</div></div>';}).join('')+'</dd>';
+  }
   var ins=EDGES.filter(function(x){return x.target===id}),
       outs=EDGES.filter(function(x){return x.source===id});
+  /* 보드에서 순차 라벨을 접어 두므로 여기가 전이 문구를 빠짐없이 보는 자리다.
+     한 줄로 이어붙이면 묻히므로 연결 종류별 배지로 세워 준다. */
+  function edgeLine(otherId,x){
+    var tone=x.type==='loop'?'back':(x.type==='message'?'info':'muted');
+    return '<div style="margin-bottom:5px">'+(NODES[otherId]?NODES[otherId].name:otherId)
+      +(x.label?' <span class="badge '+tone+'">'+x.label+'</span>':'')+'</div>';
+  }
   if(ins.length) h+='<dt>선행</dt><dd>'+ins.map(function(x){
-    return (NODES[x.source]?NODES[x.source].name:x.source)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+    return edgeLine(x.source,x);}).join('')+'</dd>';
   if(outs.length) h+='<dt>후속</dt><dd>'+outs.map(function(x){
-    return (NODES[x.target]?NODES[x.target].name:x.target)+(x.label?' ('+x.label+')':'');}).join(' · ')+'</dd>';
+    return edgeLine(x.target,x);}).join('')+'</dd>';
   h+='</dl>';
   document.getElementById('dbody').innerHTML=h;
   document.getElementById('dlg').showModal();
 }
 
+/* 인접 카드 강조와 숨긴 순차 라벨 노출을 한 곳에서 처리한다. focus·blur를 함께
+   걸어 마우스 없이 Tab만으로도 같은 정보에 닿게 한다 — 카드는 button이라 원래
+   포커스를 받는데 지금까지 hover에만 반응해 키보드에서는 강조가 동작하지 않았다. */
+function peek(id,on){
+  var rel={};rel[id]=1;
+  EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
+  document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',on&&!rel[o.dataset.id])});
+  var sv=document.getElementById('edges'); if(!sv)return;
+  sv.querySelectorAll('.edge-label-group').forEach(function(g){
+    g.classList.toggle('lit', on && (g.getAttribute('data-edge-source')===id
+                                   ||g.getAttribute('data-edge-target')===id));
+  });
+}
 document.querySelectorAll('.node').forEach(function(b){
   b.addEventListener('click',function(){openNode(b.dataset.id)});
-  b.addEventListener('mouseenter',function(){
-    var id=b.dataset.id;
-    var rel={};rel[id]=1;
-    EDGES.forEach(function(x){if(x.source===id)rel[x.target]=1;if(x.target===id)rel[x.source]=1;});
-    document.querySelectorAll('.node').forEach(function(o){o.classList.toggle('dim',!rel[o.dataset.id])});
-  });
-  b.addEventListener('mouseleave',function(){
-    document.querySelectorAll('.node').forEach(function(o){o.classList.remove('dim')});
-  });
+  b.addEventListener('mouseenter',function(){peek(b.dataset.id,true)});
+  b.addEventListener('focus',function(){peek(b.dataset.id,true)});
+  b.addEventListener('mouseleave',function(){peek(b.dataset.id,false)});
+  b.addEventListener('blur',function(){peek(b.dataset.id,false)});
+});
+var _all=document.getElementById('labelall');
+if(_all) _all.addEventListener('change',function(){
+  var bd=document.getElementById('board');
+  if(bd) bd.classList.toggle('show-all-labels',this.checked);
 });
 document.getElementById('dlg').addEventListener('click',function(ev){
   if(ev.target===this) this.close();
 });
 
-addEventListener('load',draw); addEventListener('resize',draw);
-new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+// 리사이즈는 연속으로 쏟아지므로 프레임당 한 번으로 모은다.
+var _raf=0;
+function redraw(){ if(_raf)return; _raf=requestAnimationFrame(function(){_raf=0;draw();}); }
+addEventListener('load',draw); addEventListener('resize',redraw);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
+new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 </script>
 </body></html>

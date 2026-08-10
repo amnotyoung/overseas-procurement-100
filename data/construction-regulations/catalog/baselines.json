@@ -316,7 +316,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "토지권원과 master plan·zoning·토지이용규정 적합성을 건축등급 심사 전에 확정한다.",
+          "oneLiner": "토지권원과 광역계획·용도지역·토지이용규정 적합성을 건축등급 심사 전에 확정한다.",
           "summary": "공식 건축허가 서비스는 토지권원과 함께 master plan, zoning map, 특정 토지이용규정·도시관리·환경기준에 맞는 설계를 요구한다. 필지별 허용용도·밀도·높이·이격·주차·배수는 관할 계획도와 서면 확인으로 확정해야 한다.",
           "applicability": "라오스에서 신축·증축·용도변경·대수선·철거 후 재건축을 추진하는 사업",
           "authorityIds": ["provincial-governor", "provincial-pwt", "district-pwt"],
@@ -325,7 +325,7 @@
             {"instrumentId": "LAO-CONSTRUCTION-LAW-2009", "provisions": []}
           ],
           "evidence": ["토지권원", "master plan·zoning map", "필지별 토지이용·도로·배수조건", "승인 측량·기반시설 인입확약"],
-          "decisionQuestion": "대상 필지에 적용되는 master plan·zoning·토지이용규정과 건축 가능 규모·주차·배수 조건은 무엇인가?",
+          "decisionQuestion": "대상 필지에 적용되는 광역계획·용도지역·토지이용규정과 건축 가능 규모·주차·배수 조건은 무엇인가?",
           "conclusion": "라오스 건축허가는 토지권원과 계획 적합성을 전제로 하므로, 전국 건축물 등급만으로 부지별 규모를 확정하지 말고 관할 계획도와 규정을 먼저 확보해야 한다.",
           "verificationScope": "라오스 산업통상부 공식 기업환경데이터베이스의 건축허가 절차와 도시계획법·건설법 목록을 확인했다. 계획도·수치와 토지권원은 현지 확인 대상이다.",
           "referenceLabel": "개정 도시계획법 제40/NA호"
@@ -430,7 +430,7 @@
           "verificationLevel": "law-linked"
         },
         {
-          "id": "BGD-RAJUK-ECPS",
+          "id": "BGD-RAJUK-ECPS", "scope": "local", "scopeLabel": "다카 수도권 개발청(RAJUK) 관할구역", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "RAJUK Electronic Construction Permitting System",
           "titleKo": "RAJUK 전자 건축허가시스템",
           "kind": "official-guidance",
@@ -461,7 +461,7 @@
           "note": "주택공공사업부의 공식 건축규정 페이지가 BNBC 2020을 게시한다. 공표일·적용판은 상세조사에서 재확인한다."
         },
         {
-          "id": "BGD-RAJUK-OCCUPANCY",
+          "id": "BGD-RAJUK-OCCUPANCY", "scope": "local", "scopeLabel": "다카 수도권 개발청(RAJUK) 관할구역", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "RAJUK ECPS Occupancy Certificate service",
           "titleKo": "RAJUK 사용승인 서비스",
           "kind": "official-guidance",
@@ -1116,7 +1116,7 @@
           "note": "ONEP의 현행 EIA 대장과 건축물·토지개발 대상 고시를 연결한다. 프로젝트 유형별 최신 문턱은 원문 고시로 재확인한다."
         },
         {
-          "id": "THA-BMA-PERMIT",
+          "id": "THA-BMA-PERMIT", "scope": "local", "scopeLabel": "방콕 광역행정구(BMA)", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Bangkok construction, alteration, demolition or relocation permit service",
           "titleKo": "방콕시 건축·변경·철거·이전 허가 서비스",
           "kind": "official-guidance",
@@ -1126,7 +1126,7 @@
           "note": "방콕에만 적용되는 공식 예시다. 다른 지방정부의 서식·수수료·처리관행으로 일반화하지 않는다."
         },
         {
-          "id": "THA-BMA-CERTIFICATE",
+          "id": "THA-BMA-CERTIFICATE", "scope": "local", "scopeLabel": "방콕 광역행정구(BMA)", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Bangkok certificate for completed controlled-use buildings",
           "titleKo": "방콕시 사용통제 건축물 공사완료 증명 서비스",
           "kind": "official-guidance",
@@ -1242,8 +1242,9 @@
           "issuedOn": "1997-12-06",
           "statusCheckedOn": "2026-08-07",
           "statusBasis": "Pak-EPA 현행 기능·EIA Directorate 집행 안내와 2026 Islamabad EIA 공고",
-          "scope": "subnational",
-          "scopeLabel": "ICT·연방 관할",
+          "scope": "multi-level",
+          "scopeLabel": "연방·주 병존",
+          "scopeBasis": "연방 의회가 제정한 법률이며 18차 개정 뒤 주 환경보호청이 함께 집행한다",
           "officialUrl": "https://pakistancode.gov.pk/pdffiles/administrator17094efb999f9a865461eb1498175947.pdf",
           "officialPdfUrl": "https://pakistancode.gov.pk/pdffiles/administrator17094efb999f9a865461eb1498175947.pdf",
           "verificationLevel": "law-linked",
@@ -1257,8 +1258,9 @@
           "status": "in_force",
           "statusCheckedOn": "2026-08-07",
           "statusBasis": "Pak-EPA 현행 규정대장·EIA Directorate 집행 안내; 2022안은 별도 draft로 게시",
-          "scope": "subnational",
-          "scopeLabel": "Islamabad Capital Territory (ICT)",
+          "scope": "multi-level",
+          "scopeLabel": "연방·주 병존",
+          "scopeBasis": "연방 규칙이며 주 환경보호청이 함께 집행한다",
           "officialUrl": "https://www.environment.gov.pk/Detail/MDUzMDI1OGItYWYzZC00NzQ0LTlhZWItZjYzY2RkOTkyZGVh",
           "verificationLevel": "source-linked",
           "note": "Pak-EPA가 ICT에서 2000 규정을 현재 집행하며 2022안은 아직 초안이다. ICT 밖은 해당 주 환경규정을 적용한다."
@@ -1295,7 +1297,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "대상지 개발청·지방정부와 zoning·master plan을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
+          "oneLiner": "대상지 개발청·지방정부와 용도지역·광역계획을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.",
           "summary": "파키스탄에는 전국 단일 필지규제가 아니라 주·개발청·지방정부별 master plan, zoning과 building regulations가 적용된다. 이슬라마바드 CDA 절차는 참고사례일 뿐이며 대상지의 권원·계획·도로·재해·유틸리티 자료로 별도 확정해야 한다.",
           "applicability": "파키스탄에서 신축·증축·용도변경·단지개발을 추진하는 ODA 건축사업",
           "authorityIds": ["local-development-authority", "pec-pcatp"],
@@ -1609,8 +1611,9 @@
           "status": "in_force",
           "statusCheckedOn": "2026-08-07",
           "statusBasis": "Laws of Fiji 현행 계층 API: Active·IsRepealed false, 2022 개정 반영",
-          "scope": "subnational",
-          "scopeLabel": "고시 Town Planning Area·해당 Scheme",
+          "scope": "national",
+          "scopeLabel": "전국(적용은 고시 Town Planning Area)",
+          "scopeBasis": "의회가 제정한 전국 법률이며, 고시지역 한정은 법의 적용범위이지 관할 단위가 아니다",
           "officialUrl": "https://www.laws.gov.fj/api/retrieve_html/LOF_LOF.VOL12.SGM_LOF.CAP139.TPAFJ46.BODY",
           "verificationLevel": "law-linked",
           "note": "2022 개정까지 반영된 현행 통합본이다. Section 6상 대상지가 고시된 town planning area와 어느 scheme에 속하는지는 적용범위로 따로 확인한다."
@@ -1972,7 +1975,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "토지권원과 대상 LGU의 CLUP·zoning ordinance·Locational Clearance로 용도·밀도·높이·이격·주차를 확정한다.",
+          "oneLiner": "토지권원과 대상 지방자치단체의 종합토지이용계획·용도지역 조례·입지확인로 용도·밀도·높이·이격·주차를 확정한다.",
           "summary": "National Building Code는 전국 최소기준이지만 토지이용·밀도·예외는 LGU의 CLUP와 zoning ordinance가 결정한다. Locational Clearance를 통해 용도적합성을 확인하고 필지별 PSO·FAR·BHL·setback·parking, road right-of-way와 hazard 조건을 확정한다.",
           "applicability": "필리핀 LGU에서 신축·증축·수선·용도변경·개발을 추진하는 ODA 건축사업",
           "authorityIds": ["lgu-zoning", "lgu-building-official"],
@@ -2240,7 +2243,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "토지권원과 관할 MMDA의 구조·지역계획 및 zoning으로 필지별 개발기준을 확정한다.",
+          "oneLiner": "토지권원과 관할 지방의회의 구조·지역계획 및 용도지역으로 필지별 개발기준을 확정한다.",
           "summary": "Act 925 체계에서 MMDA는 승인된 공간계획과 개발관리 기준에 따라 개발허가를 처리한다. 필지 권원·경계, 허용용도, plot coverage·FAR·높이·이격·주차, 도로·배수·홍수·유틸리티는 대상 MMDA의 계획·zoning과 공식 부지검토로 확정한다.",
           "applicability": "가나 MMDA 관할에서 신축·증축·용도변경·부지개발을 추진하는 ODA 건축사업",
           "authorityIds": ["mmda", "luspa"],
@@ -2255,9 +2258,9 @@
           "referenceLabel": "Act 925·MMDA 개발허가"
         },
         "permit-environment": {
-          "oneLiner": "MMDA 개발·건축허가와 EPA 환경허가, 소방·교통·수문 등 조건부 clearance를 통합 매핑한다.",
+          "oneLiner": "지방의회 개발·건축허가와 EPA 환경허가, 소방·교통·수문 등 조건부 clearance를 통합 매핑한다.",
           "summary": "관할 MMDA는 토지·계획·전문설계 도서를 심사해 개발·건축허가를 발급한다. 사업 규모·용도·입지에 따라 EPA 환경허가와 소방, 교통영향, 수문·지반 등 관계기관 확인이 요구될 수 있으므로 건축허가와 환경승인의 선후관계를 확정한다.",
-          "applicability": "MMDA 개발·건축허가와 Act 1124·L.I. 2504상 환경심사 대상 사업",
+          "applicability": "지방의회 개발·건축허가와 Act 1124·L.I. 2504상 환경심사 대상 사업",
           "authorityIds": ["mmda", "epa-ghana"],
           "basis": [
             {"instrumentId": "GHA-LUSP-ACT-925", "provisions": ["development permit and professional submission framework"]},
@@ -2271,19 +2274,19 @@
           "referenceLabel": "MMDA 허가·EPA 환경허가"
         },
         "control-completion": {
-          "oneLiner": "GS 1207:2018, 등록 전문가, MMDA 검사와 Certificate of Habitation을 인계 전 필수조건으로 둔다.",
-          "summary": "설계·시공은 Ghana Building Code와 승인도서를 따라야 하고 등록 건축사·기술자가 책임도서를 작성한다. MMDA 단계·최종검사, 소방·설비 확인과 Certificate of Habitation 또는 점유승인 요구를 확인하며 전문책임·공사보험·시험·하자조건을 계약에 반영한다.",
+          "oneLiner": "GS 1207:2018, 등록 전문가, 지방의회 검사와 거주·사용증명서을 인계 전 필수조건으로 둔다.",
+          "summary": "설계·시공은 Ghana Building Code와 승인도서를 따라야 하고 등록 건축사·기술자가 책임도서를 작성한다. MMDA 단계·최종검사, 소방·설비 확인과 거주·사용증명서 또는 점유승인 요구를 확인하며 전문책임·공사보험·시험·하자조건을 계약에 반영한다.",
           "applicability": "Ghana Building Code와 MMDA 검사·점유통제 대상 건축물",
           "authorityIds": ["mmda", "gsa"],
           "basis": [
             {"instrumentId": "GHA-BUILDING-CODE-2018", "provisions": ["minimum building design and construction standards"]},
             {"instrumentId": "GHA-LUSP-ACT-925", "provisions": ["registered professionals and enforcement framework"]}
           ],
-          "evidence": ["등록 건축사·기술자·시공자 자격", "적용 코드·검사·시험계획", "소방·설비·as-built·최종검사", "Certificate of Habitation·보험·실제 비용"],
-          "decisionQuestion": "현지 전문자격·검사·보험과 Certificate of Habitation 발급의 서류·비용·실제 기간은 무엇인가?",
+          "evidence": ["등록 건축사·기술자·시공자 자격", "적용 코드·검사·시험계획", "소방·설비·as-built·최종검사", "거주·사용증명서·보험·실제 비용"],
+          "decisionQuestion": "현지 전문자격·검사·보험과 거주·사용증명서 발급의 서류·비용·실제 기간은 무엇인가?",
           "conclusion": "가나에서는 공사완료와 합법적 점유를 구분해 MMDA의 최종검사와 거주·사용증명을 준공 인계조건으로 관리해야 한다.",
           "verificationScope": "GSA의 공식 Building Code 페이지, Act 925와 MMDA의 공식 준공·거주증명 안내를 연결했다. 현지 전문가·검사기관·보험사는 시장조사 대상이다.",
-          "referenceLabel": "GS 1207:2018·Certificate of Habitation"
+          "referenceLabel": "GS 1207:2018·거주·사용증명서"
         }
       }
     },
@@ -2330,7 +2333,7 @@
       ],
       "instruments": [
         {
-          "id": "NGA-NBC-2006",
+          "id": "NGA-NBC-2006", "scope": "adoption-dependent", "scopeLabel": "전국 코드·주별 채택", "scopeBasis": "연방 코드이나 실제 채택·집행은 주별 법·규정에서 확정된다",
           "title": "National Building Code of Nigeria, 2006",
           "titleKo": "나이지리아 국가건축기준 2006",
           "kind": "code",
@@ -2353,7 +2356,7 @@
           "note": "EAD가 사업등록·현장확인·screening/scoping·TOR·심사·EIA permit을 현행 업무로 명시한다."
         },
         {
-          "id": "NGA-LAGOS-PLANNING-LAW-2010",
+          "id": "NGA-LAGOS-PLANNING-LAW-2010", "scope": "multi-level", "scopeLabel": "연방·주 병존", "scopeBasis": "연방 의회가 제정한 법률이며 18차 개정 뒤 주 기관이 함께 집행한다",
           "title": "Lagos State Urban and Regional Planning and Development Law, 2010, as amended",
           "titleKo": "라고스주 도시·지역계획·개발법 2010(개정 포함)",
           "kind": "act",
@@ -2363,7 +2366,7 @@
           "note": "라고스주의 공식 지방 집행 예시다. 대상 주·FCT의 자체 법률·계획·기관을 대체하지 않는다."
         },
         {
-          "id": "NGA-LAGOS-PERMIT-CONTROL",
+          "id": "NGA-LAGOS-PERMIT-CONTROL", "scope": "multi-level", "scopeLabel": "연방·주 병존", "scopeBasis": "연방 규칙이며 주 환경보호청이 함께 집행한다",
           "title": "Lagos State e-Planning Permit and LASBCA building-control procedures",
           "titleKo": "라고스주 전자 계획허가·건축통제 절차",
           "kind": "official-guidance",
@@ -2512,7 +2515,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "국가·지방 도시계획과 필지 zoning을 BPMIS·OSC에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
+          "oneLiner": "국가·지방 도시계획과 필지 용도지역을 전자허가·단일창구에서 확인해 용도·밀도·높이·이격·주차를 확정한다.",
           "summary": "2019 도시계획·건축 규정과 관할 Master Plan·detailed plan이 필지 개발 가능성을 결정한다. 토지권원·parcel ID와 zoning을 기준으로 허용용도, plot coverage·FAR·높이·이격·주차, 경사지·배수·재해·유틸리티 조건을 OSC에 서면 확인한다.",
           "applicability": "르완다에서 신축·증축·용도변경 또는 부지개발을 추진하는 건축사업",
           "authorityIds": ["district-osc", "rha"],
@@ -2731,7 +2734,7 @@
           "note": "지방 계획문서가 인용하는 국가 허가체계다. 대상 지방정부의 후속 조례와 현행 적용판을 확인한다."
         },
         {
-          "id": "MOZ-MAPUTO-BYLAW-2018",
+          "id": "MOZ-MAPUTO-BYLAW-2018", "scope": "local", "scopeLabel": "마푸투시", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Municipal Building and Urbanisation Regulation — Maputo official example",
           "titleKo": "마푸투시 건축·도시화 규정(지방 집행 예시)",
           "kind": "regulation",
@@ -2877,7 +2880,7 @@
           "note": "허가기관이 투자·영업허가 전 환경요건 이행을 확인하도록 하는 기본법이다. 연방·지역별 최신 절차와 대체입법 여부를 확인한다."
         },
         {
-          "id": "ETH-CONSTRUCTION-PERMIT-PORTAL",
+          "id": "ETH-CONSTRUCTION-PERMIT-PORTAL", "scope": "local", "scopeLabel": "아디스아바바 집행 사례", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Ethiopian Business Portal — Construction Permits",
           "titleKo": "에티오피아 비즈니스포털 건축허가 절차",
           "kind": "official-guidance",
@@ -3904,7 +3907,7 @@
           "note": "도시계획·개발·건축허가는 지방자치단체별 규정과 절차가 핵심이다. 2026년 개정까지 최신 통합문을 확인한다."
         },
         {
-          "id": "GTM-LOCAL-POT-EXAMPLE",
+          "id": "GTM-LOCAL-POT-EXAMPLE", "scope": "local", "scopeLabel": "관할 시", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Applicable municipal land-use and construction regulations; Guatemala City POT as an official example",
           "titleKo": "관할 시 도시계획·건축규정(과테말라시 POT 공식 예시)",
           "kind": "local-regulation",
@@ -3946,7 +3949,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "관할 municipality의 POT·토지이용 licence와 권원·지적정보로 필지별 개발조건을 확정한다.",
+          "oneLiner": "관할 시의 도시계획·토지이용 허가와 권원·지적정보로 필지별 개발조건을 확정한다.",
           "summary": "과테말라는 지방자치단체가 도시계획·건축규정을 집행하므로 해당 municipality의 POT·zoning·건축규정을 먼저 특정해야 한다. 과테말라시의 POT는 공식 예시일 뿐이며, 실제 필지의 허용용도·건축가능면적·높이·이격·주차와 위험·기반시설 조건은 관할 자료로 확인한다.",
           "applicability": "과테말라에서 신축·증축·용도변경·도시개발을 추진하는 사업",
           "authorityIds": ["gtm-municipality"],
@@ -4036,7 +4039,7 @@
       ],
       "instruments": [
         {
-          "id": "DOM-LOCAL-LANDUSE",
+          "id": "DOM-LOCAL-LANDUSE", "scope": "local", "scopeLabel": "관할 시", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Applicable municipal land-use plan and ordinances; Distrito Nacional land-use certification as an official example",
           "titleKo": "관할 시 도시계획·토지이용 조례(국가구역청 ADN 용도인증 공식 예시)",
           "kind": "local-regulation",
@@ -4178,7 +4181,7 @@
       ],
       "instruments": [
         {
-          "id": "BOL-LOCAL-LUSU-EXAMPLE",
+          "id": "BOL-LOCAL-LUSU-EXAMPLE", "scope": "local", "scopeLabel": "관할 시", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Applicable municipal land-use and building regulations; La Paz LUSU and permit procedure as an official example",
           "titleKo": "관할 시 토지이용·건축규정(라파스 LUSU·허가절차 공식 예시)",
           "kind": "local-regulation",
@@ -4186,6 +4189,21 @@
           "officialUrl": "https://lapaz.bo/otorgacion-de-permiso-de-construccion-en-linea/",
           "verificationLevel": "source-linked",
           "note": "라파스 LUSU·7일 안내·요율은 전국 공통이 아니다. 실제 GAM의 현행 법규·지도·수수료표를 적용한다."
+        },
+        {
+          "id": "BOL-MOPSV-BUILDING-GUIDES",
+          "scope": "national",
+          "scopeLabel": "전국(지방정부 준거 지침)",
+          "scopeBasis": "중앙부처가 장관결의로 승인해 전국 지방정부가 건축규정을 세울 때 따르도록 발행한 기술지침",
+          "title": "Bolivian technical guides for building construction, works inspection and supervision (MOPSV)",
+          "titleKo": "볼리비아 건축공사·공사감독·공사감리 기술 가이드라인(공공사업주택부)",
+          "kind": "official-guidance",
+          "status": "current_official",
+          "statusCheckedOn": "2026-08-07",
+          "statusBasis": "공공사업주택부 기술 가이드라인 공개 페이지가 건축·감독·감리 지침을 현재 게시",
+          "officialUrl": "https://www.oopp.gob.bo/guias-tecnicas/",
+          "verificationLevel": "source-linked",
+          "note": "장관결의로 승인된 전국 기술지침이다. 실제 건축허가는 자치시가 자체 규정으로 집행하므로 대상지 시정부의 건축규정을 별도로 확인한다."
         },
         {
           "id": "BOL-NBDS-2023",
@@ -4311,7 +4329,7 @@
           "note": "2026년 7월 7일 관보 제320호 개정까지 반영한 최신 통합문과 시행경과를 허가 전에 확인한다."
         },
         {
-          "id": "ECU-LOCAL-PUGS",
+          "id": "ECU-LOCAL-PUGS", "scope": "local", "scopeLabel": "관할 캔톤", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Applicable cantonal PUGS, urban-planning ordinance and building-licensing rules",
           "titleKo": "관할 cantón PUGS·도시계획조례·건축허가규정",
           "kind": "local-regulation",
@@ -4341,7 +4359,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "등기·지적과 관할 cantón의 PUGS·조례로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+          "oneLiner": "등기·지적과 관할 캔톤의 토지이용계획·조례로 필지별 용도·건축가능규모·높이·주차를 확정한다.",
           "summary": "LOOTUGS 아래 각 municipal/metropolitan GAD의 PDOT·PUGS와 조례가 토지분류·용도·건축형태를 구체화한다. 필지의 informe de regulación 또는 동등한 규제증명을 확보하고 지진·사면·화산·침수·배수·상하수·전력 조건을 별도 조사한다.",
           "applicability": "에콰도르에서 신축·증축·용도변경 또는 urbanizacion을 추진하는 사업",
           "authorityIds": ["ecu-municipal-gad", "ecu-miduvi"],
@@ -4349,7 +4367,7 @@
             {"instrumentId": "ECU-LOOTUGS-2016-2026", "provisions": ["territorial planning, land classification and municipal land-use management"]},
             {"instrumentId": "ECU-LOCAL-PUGS", "provisions": ["cantonal zoning, parcel parameters and local development rights"]}
           ],
-          "evidence": ["등기·catastro·경계·권원자", "현행 PUGS·zoning·보호·servidumbre", "필지별 COS/CUS·edificabilidad·높이·이격·주차", "지반·지진·사면·화산·침수·배수·상하수·전력 용량"],
+          "evidence": ["등기·catastro·경계·권원자", "현행 PUGS·zoning·보호·servidumbre", "필지별 COS/CUS·건축가능규모·높이·이격·주차", "지반·지진·사면·화산·침수·배수·상하수·전력 용량"],
           "decisionQuestion": "사업지 GAD와 필지의 실제 용도·COS/CUS·높이·이격·주차·위험·기반시설 조건은 무엇인가?",
           "conclusion": "Quito나 Guayaquil 수치를 전국값으로 쓰지 말고 해당 cantón의 PUGS·필지 규제증명과 현장조사를 개념설계 전에 확정한다.",
           "verificationScope": "LOOTUGS와 GAD별 PUGS 집행구조를 확인했다. 2026 개정 시행경과·필지 수치·기반시설은 현지 확인 대상이다.",
@@ -4438,7 +4456,7 @@
           "verificationLevel": "law-linked"
         },
         {
-          "id": "SLV-AMSS-LDOT-REGS",
+          "id": "SLV-AMSS-LDOT-REGS", "scope": "subnational", "scopeLabel": "산살바도르 광역권(AMSS)", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Law and Regulation on Territorial Development and Planning of the San Salvador Metropolitan Area, current compilation",
           "titleKo": "산살바도르 광역권 국토개발·계획법 및 시행규정 현행본",
           "kind": "local-regulation",
@@ -4461,7 +4479,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "관할기관의 calificación de lugar·linea de construcción·도로·배수·zoning으로 필지별 개발조건을 확정한다.",
+          "oneLiner": "관할기관의 입지판정·건축선·도로·배수·용도지역으로 필지별 개발조건을 확정한다.",
           "summary": "AMSS에서는 OPAMSS의 광역계획·RLDOTAMSS가 적용되고, 다른 지역은 주택부·municipality·위임 기술사무소의 계획과 조례를 확인한다. 권원·지적, calificación de lugar, línea, 도로·우수·상하수·전력 factibilidad를 확보하고 지진·사면·화산·침수 위험을 조사한다.",
           "applicability": "엘살바도르에서 신축·증축·용도변경 또는 parcelacion을 추진하는 사업",
           "authorityIds": ["slv-permit-authority"],
@@ -4593,7 +4611,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "등기·지적과 관할 POT·부분계획·도시규정으로 필지별 용도·edificabilidad·높이·주차를 확정한다.",
+          "oneLiner": "등기·지적과 관할 도시계획·부분계획·도시규정으로 필지별 용도·건축가능규모·높이·주차를 확정한다.",
           "summary": "Law 388 아래 municipality/district의 POT와 이를 발전·보완하는 계획·도시규정이 토지분류, 처리구역, 용도와 건축가능범위를 정한다. matrícula inmobiliaria·catastro·필지규제와 위험·보호·공공부담을 확인하고 지반·침수·사면·유틸리티 용량을 조사한다.",
           "applicability": "콜롬비아에서 신축·증축·용도변경·urbanización 또는 parcelación을 추진하는 사업",
           "authorityIds": ["col-license-authority"],
@@ -4601,8 +4619,8 @@
             {"instrumentId": "COL-LAW-388-POT", "provisions": ["POT hierarchy, urban actions and licence conformity"]},
             {"instrumentId": "COL-DECREE-1077-2015", "provisions": ["urban licence classes and application requirements"]}
           ],
-          "evidence": ["matrícula inmobiliaria·catastro·경계·권원자", "현행 POT·부분계획·처리·용도·보호·부담", "필지별 점유·edificabilidad·높이·이격·주차", "지반·지진·사면·침수·배수·도로·상하수·전력 용량"],
-          "decisionQuestion": "대상 필지의 현행 POT 규제와 실제 용도·edificabilidad·높이·이격·주차·위험·부담은 무엇인가?",
+          "evidence": ["matrícula inmobiliaria·catastro·경계·권원자", "현행 POT·부분계획·처리·용도·보호·부담", "필지별 점유·건축가능규모·높이·이격·주차", "지반·지진·사면·침수·배수·도로·상하수·전력 용량"],
+          "decisionQuestion": "대상 필지의 현행 POT 규제와 실제 용도·건축가능규모·높이·이격·주차·위험·부담은 무엇인가?",
           "conclusion": "Bogotá 등 다른 도시의 수치를 일반화하지 말고 관할 POT·필지 규제증명과 현장 기반시설 조사를 개념설계 전에 확정한다.",
           "verificationScope": "Law 388·Decree 1077의 POT·도시허가 구조를 확인했다. 필지별 수치·부담·위험·유틸리티는 현지 확인 대상이다.",
           "referenceLabel": "POT·필지 도시규제"
@@ -4684,7 +4702,7 @@
           "verificationLevel": "law-linked"
         },
         {
-          "id": "PRY-LOCAL-PLANNING-BUILDING-ORDINANCES",
+          "id": "PRY-LOCAL-PLANNING-BUILDING-ORDINANCES", "scope": "local", "scopeLabel": "관할 시", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Applicable municipal urban-planning, building and fire-safety ordinances",
           "titleKo": "관할 시 도시계획·건축·소방안전 조례",
           "kind": "ordinance",
@@ -5485,7 +5503,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "토지권리·지적과 comprehensive plan·zoning·detailed plan, 필지조건으로 실제 개발범위를 확정한다.",
+          "oneLiner": "토지권리·지적과 종합계획·용도지역·상세계획, 필지조건으로 실제 개발범위를 확정한다.",
           "summary": "Law 3038-VI 아래 지방계획문서와 Urban Planning Cadastre가 토지용도·기능구역·제한을 정하고, 대상에 따라 urban-planning conditions and restrictions 또는 building passport가 설계입력이 된다. 지뢰·불발탄·전쟁피해, 지반·침수·유틸리티 상태도 현장조사한다.",
           "applicability": "우크라이나에서 신축·재건축·복구·대수선 또는 용도변경을 추진하는 사업",
           "authorityIds": ["ukr-local-planning-authority"],
@@ -6024,7 +6042,7 @@
           "verificationLevel": "law-linked"
         },
         {
-          "id": "MMR-YCDC-DEVELOPMENT-PERMIT-2022",
+          "id": "MMR-YCDC-DEVELOPMENT-PERMIT-2022", "scope": "local", "scopeLabel": "양곤시 개발위원회(YCDC)", "scopeBasis": "발행주체가 특정 주·시·지방행정기관이고 자료 본문이 해당 관할에 한정된다",
           "title": "Yangon City Development Committee Development Permit Rules and Regulations, 2022",
           "titleKo": "양곤도시개발위원회 개발허가 규정 2022",
           "kind": "regulation",
@@ -6037,7 +6055,7 @@
       ],
       "systems": {
         "site-urban": {
-          "oneLiner": "토지권리·지역 zoning과 planning/development permit 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.",
+          "oneLiner": "토지권리·용도지역과 계획·개발허가 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.",
           "summary": "MNBC 2025 제1부는 주요 토지개발에 planning permit과 zoning 적합성을 요구하고, 신청자료에 plot ratio, built-up ratio, 높이·주차·인프라와 주변환경을 포함한다. 그러나 실제 당국과 수치는 YCDC·MCDC·Nay Pyi Taw 또는 관할 development affairs 체계와 지역계획에 따라 달라지므로 토지유형·전용 가능성, 지진·단층·연약지반·침수·사이클론·배수와 유틸리티 용량을 필지별로 확인한다.",
           "applicability": "미얀마에서 신축·증축·개축·용도변경 또는 주요 토지개발을 추진하는 ODA 건축사업",
           "authorityIds": ["mmr-local-building-authority", "mmr-construction-ministry"],

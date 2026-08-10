@@ -2,7 +2,7 @@
 <html lang="ko"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>그 나라 조달은 어떻게 할까</title>
+<title>그 나라, 조달하고 건축하려면?</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{overflow-x:hidden}
@@ -50,7 +50,12 @@ header.site nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-s
 header.site nav a{color:var(--muted);text-decoration:none}
 header.site nav a:hover,header.site nav a[aria-current]{color:var(--fg)}
 .asof{color:var(--muted);font-size:12px}
-
+@media (max-width:760px){
+  header.site .wrap{height:auto;min-height:58px;flex-wrap:wrap;padding-block:10px;gap:5px 12px}
+  .brand-sub{display:none}
+  header.site nav{width:100%;margin-left:0;gap:14px;overflow-x:auto;padding:2px 0 4px}
+  header.site nav a{white-space:nowrap}
+}
 .hero{padding:44px 0 30px}
 .eyebrow{display:flex;align-items:center;gap:10px;color:var(--key);font-weight:700;font-size:12.5px;letter-spacing:.02em}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--key)}
@@ -104,6 +109,7 @@ td.name p{margin:3px 0 0;color:var(--muted);font-size:12.5px;line-height:1.5;
 .badge.ok{background:var(--key-bg);color:var(--key)}
 .badge.info{background:var(--info-bg);color:var(--info)}
 .badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.back{background:var(--back-bg);color:var(--back)}
 .badge.bad{background:var(--bad-bg);color:var(--bad)}
 .badge.muted{background:var(--soft);color:var(--muted)}
 
@@ -126,7 +132,8 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile:last-child{border-right:0}
 .tile b{display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
 .tile span{font-size:11.5px;color:var(--muted)}
-.tile.ok b{color:var(--key)} .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
+.tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
+.tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
@@ -136,16 +143,38 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .hd-row{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .hd-row .legend{margin-left:auto}
 
-.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto}
-.board{position:relative;min-width:940px}
+.boardwrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+.board{position:relative;min-width:940px;padding-bottom:52px}
 .board svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.board-scroll-hint{display:none;color:var(--muted);font-size:11.5px;text-align:right;margin:-8px 2px 8px}
+.decision-branches{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
+.decision-branches .branch-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.decision-branches .branch-hd b{font-size:13px}
+.decision-branches .branch-hd span{font-size:12px;color:var(--muted)}
+.decision-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.decision-branch{display:grid;grid-template-columns:auto auto 1fr;gap:6px 8px;align-items:center;
+  padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);font-size:12.5px}
+.decision-branch .branch-arrow{grid-row:1 / span 2;font-size:21px;font-weight:800;line-height:1}
+.decision-branch b{font-size:13px}
+.decision-branch > span:last-child{grid-column:2 / -1;color:var(--muted);line-height:1.55}
+.decision-branch[data-state="success"]{border-color:var(--key)}
+.decision-branch[data-state="success"] .branch-arrow{color:var(--key)}
+.decision-branch[data-state="rework"]{border-color:var(--back)}
+.decision-branch[data-state="rework"] .branch-arrow{color:var(--back)}
+.decision-branch[data-state="reject"]{border-color:var(--bad)}
+.decision-branch[data-state="reject"] .branch-arrow{color:var(--bad)}
+@media (max-width:820px){.decision-branch-grid{grid-template-columns:1fr}}
 .brow{display:grid;border-bottom:1px solid var(--line)}
 .brow:last-child{border-bottom:0}
 .brow.head{background:var(--soft);position:sticky;top:0;z-index:3}
 /* gap은 같은 셀에 세로로 쌓인 노드 사이로 화살표가 지나갈 통로다. 좁히면 화살촉이 뭉갠다. */
 .bcell{padding:14px 12px;border-right:1px solid var(--line);min-height:64px;
-  display:flex;flex-direction:column;gap:26px;justify-content:center}
+  display:flex;flex-direction:column;gap:32px;justify-content:center}
+.brow:not(.head) .bcell{padding-block:40px}
 .bcell:last-child{border-right:0}
+.brow .bcell:first-child{position:sticky;left:0;z-index:3;background:var(--bg);box-shadow:1px 0 0 var(--line)}
+.brow.head .bcell:first-child{z-index:5;background:var(--soft)}
 .brow.head .bcell{min-height:0;padding:11px 12px;justify-content:flex-start}
 .stage-k{font-weight:800;font-size:12px;color:var(--key);letter-spacing:.02em}
 .stage-t{font-size:13px;font-weight:700}
@@ -154,8 +183,12 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
   border-radius:9px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit;
   width:100%;display:block;transition:box-shadow .12s,border-color .12s}
 .node:hover{border-color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.node:focus-visible{outline:3px solid color-mix(in srgb,var(--key) 35%,transparent);outline-offset:2px}
 .node .id{font-size:10.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;
   display:flex;justify-content:space-between;align-items:center;gap:8px}
+.node .tags{display:flex;align-items:center;gap:4px;letter-spacing:0}
+.node .kind-tag{font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;
+  background:var(--soft);color:var(--muted);white-space:nowrap}
 .node .nm{font-size:13px;font-weight:700;margin-top:3px;letter-spacing:-.01em;line-height:1.4}
 .node .tag{font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px}
 .node[data-tone="key"]{border-color:var(--key);background:var(--key-bg)}
@@ -165,6 +198,23 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .node[data-tone="back"]{border-color:var(--back);background:var(--back-bg)}
 .node[data-tone="back"] .tag{background:var(--back);color:var(--bg)}
 .node.dim{opacity:.34}
+/* 순차 라벨은 "다음 단계로 넘어간다"는 이미 자명한 정보를 짧게 되풀이하는
+   경우가 많아 상시 표시하면 분기 조건 라벨까지 묻힌다. 기본은 숨기고 카드를
+   가리키거나 포커스할 때, 또는 아래 토글로 드러낸다. 배치는 숨긴 상태에서도
+   미리 계산해 두므로 드러날 때 위치가 흔들리지 않는다. */
+.edge-label-group[data-edge-kind="sequence"]{opacity:0;transition:opacity .12s}
+.edge-label-group[data-edge-kind="sequence"].lit{opacity:1}
+.board.show-all-labels .edge-label-group[data-edge-kind="sequence"]{opacity:1}
+.legend-toggle{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;
+  color:var(--muted);cursor:pointer;user-select:none}
+.legend-toggle input{margin:0;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.edge-label-group{transition:none}}
+@media (max-width:760px){
+  .board-scroll-hint{display:block}
+  .board{min-width:var(--mobile-board-width)!important}
+  .board .brow{grid-template-columns:130px repeat(var(--stage-count),190px)!important}
+  .board .bcell{padding-inline:10px}
+}
 
 .drawer{position:fixed;inset:0;z-index:100;display:none;width:100vw;height:100vh;
   max-width:100vw;max-height:100vh;margin:0;padding:0;border:0;background:transparent;overflow:hidden}
@@ -180,27 +230,64 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .kv dd{margin:3px 0 0}
 .kv code{font-size:12.5px;background:var(--soft);padding:1px 6px;border-radius:4px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.card{border:1px solid var(--line);border-radius:11px;padding:17px 19px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
+  gap:16px;align-items:start}
+.card{min-width:0;border:1px solid var(--line);border-radius:11px;padding:17px 19px}
 .card h3{margin:0 0 11px;font-size:13.5px;letter-spacing:.01em}
 .card.span2{grid-column:span 2}
 @media (max-width:820px){.card.span2{grid-column:span 1}}
 ol.steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.75}
 ol.steps li{margin-bottom:5px}
+.step-output{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.workflow-disclosure{margin:0 0 12px;padding:10px 12px;border-left:3px solid var(--info);
+  background:var(--info-bg);color:var(--fg);font-size:12.5px;line-height:1.65}
+.official-gates{list-style:none;padding:0;margin:0;counter-reset:none}
+.official-gate{padding:14px 0;border-bottom:1px dashed var(--line)}
+.official-gate:last-child{border-bottom:0;padding-bottom:0}
+.official-gate:first-child{padding-top:0}
+.official-gate .gate-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.official-gate .gate-title b{font-size:13.5px}
+.official-gate > p{margin:0 0 9px;font-size:13px;line-height:1.65}
+.gate-meta{display:grid;grid-template-columns:max-content 1fr;gap:5px 10px;margin:0;font-size:12.5px;line-height:1.55}
+.gate-meta dt{color:var(--muted);font-weight:700}.gate-meta dd{margin:0;min-width:0}
+.gate-basis{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gate-basis a,.gate-basis .law-name{min-width:0;font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.gate-basis .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
 ul.plain{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
 ul.plain li{margin-bottom:6px}
-.law{display:flex;gap:9px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.law{min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .law:last-child{border-bottom:0}
-.law .nm{font-weight:600}
-.law .ar{color:var(--muted);font-size:12.5px}
+.law-copy{min-width:0}
+.law .nm{display:block;min-width:0;font-weight:600;line-height:1.5;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar{display:block;min-width:0;margin-top:2px;color:var(--muted);font-size:12.5px;
+  word-break:keep-all;overflow-wrap:anywhere}
+.law .ar:empty{display:none}
+.law-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;margin-top:6px}
+.law-meta:empty{display:none}
+.law-meta .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+.law-meta .badge::before,.gate-basis .badge::before,.auth .badge::before{flex:none}
 .docset{margin-bottom:13px}
 .docset b{font-size:12.5px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .chip{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
-.auth{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.auth{display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);gap:10px;
+  align-items:start;min-width:0;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .auth:last-child{border-bottom:0}
-.auth b{flex:none;max-width:42%;font-size:13px}
-.auth span{color:var(--muted);font-size:12.5px}
+.auth b{min-width:0;max-width:none;font-size:13px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+.auth span{min-width:0;color:var(--muted);font-size:12.5px;word-break:keep-all;overflow-wrap:anywhere}
+.auth .badge{max-width:100%;white-space:normal;word-break:keep-all;line-height:1.35}
+@media (max-width:620px){.auth{grid-template-columns:1fr;gap:4px}}
+.field-application{grid-column:1/-1;padding:0}
+.field-application summary{display:flex;align-items:center;gap:12px;min-width:0;padding:17px 19px;
+  cursor:pointer;list-style:none;font-size:13.5px;font-weight:700}
+.field-application summary::-webkit-details-marker{display:none}
+.field-application summary small{margin-left:auto;color:var(--muted);font-size:11.5px;font-weight:600}
+.field-application summary::after{content:"⌄";color:var(--muted);font-size:16px;line-height:1;
+  transition:transform .15s ease}
+.field-application[open] summary::after{transform:rotate(180deg)}
+.field-application .field-application-body{padding:0 19px 17px}
+.field-application .workflow-disclosure{margin-top:0}
 
 .disc{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:17px 19px;margin-bottom:15px}
 .disc[data-sev="high"]{border-left-color:var(--bad)}
@@ -258,6 +345,103 @@ ul.plain li{margin-bottom:6px}
 .note{font-size:13.5px;line-height:1.7;color:var(--muted);margin:0 0 8px;padding-left:15px;position:relative}
 .note::before{content:"·";position:absolute;left:4px}
 
+.feature-callout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;
+  margin:0 0 24px;padding:20px 22px;border:1px solid var(--key);border-radius:12px;
+  background:var(--key-bg);text-decoration:none}
+.feature-callout:hover{box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.feature-callout b{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:3px}
+.feature-callout p{margin:0;color:var(--muted);font-size:13.5px}
+.feature-callout .go{color:var(--key);font-weight:800;font-size:13px;white-space:nowrap}
+@media (max-width:620px){.feature-callout{grid-template-columns:1fr}.feature-callout .go{margin-top:2px}}
+
+.country-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.country-card{border:1px solid var(--line);border-radius:13px;padding:21px;background:var(--bg)}
+.country-card .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.country-card h2{font-size:20px;margin:13px 0 5px;letter-spacing:-.02em}
+.country-card p{font-size:13.5px;color:var(--muted);line-height:1.7;margin:0}
+.country-card .metrics{display:flex;gap:16px;flex-wrap:wrap;margin:17px 0}
+.country-card .metrics b{display:block;font-size:18px;line-height:1.2}
+.country-card .metrics span{font-size:11px;color:var(--muted)}
+.country-card .btn{display:inline-flex;text-decoration:none;color:var(--key);font-weight:700}
+.studio-preview{margin:18px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.studio-preview .viewport{height:330px;overflow:hidden;position:relative}
+.studio-preview .viewport::after{content:"";position:absolute;inset:auto 0 0;height:80px;
+  background:linear-gradient(transparent,#fff);pointer-events:none}
+.studio-preview img{display:block;width:100%;min-width:720px;height:auto}
+.studio-preview .caption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:10px 12px;border-top:1px solid var(--line);color:#3d4048;font-size:11.5px}
+.studio-preview .caption b{font-size:12px;color:#191b20}
+.studio-board-shell{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.studio-board-view{overflow:auto;background:#fff}
+.studio-board-view img{display:block;width:100%;min-width:1120px;height:auto}
+.studio-board-shell figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;
+  flex-wrap:wrap;margin:0;padding:11px 14px;border-top:1px solid #d9dbe1;color:#51545d;font-size:12px}
+.studio-board-shell figcaption a{color:#3157a4}
+@media (max-width:760px){
+  .studio-preview .viewport{height:280px}.studio-preview img{min-width:660px}
+  .studio-board-view img{min-width:980px}
+}
+
+.decision-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px}
+.decision{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:16px 17px}
+.decision[data-state="confirmed"]{border-left-color:var(--key)}
+.decision[data-state="conditional"]{border-left-color:var(--warn)}
+.decision[data-state="unresolved"]{border-left-color:var(--bad)}
+.decision p{font-size:13.5px;line-height:1.72;margin:9px 0 0}
+.decision .sources{font-size:11.5px;color:var(--muted);margin-top:10px}
+
+.gateflow{counter-reset:gate;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gate-step{display:grid;grid-template-columns:42px minmax(150px,.55fr) minmax(260px,1fr) minmax(150px,.55fr);
+  gap:14px;align-items:start;padding:15px 17px;border-bottom:1px solid var(--line)}
+.gate-step:last-child{border-bottom:0}
+.gate-step::before{counter-increment:gate;content:counter(gate);width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;background:var(--key-bg);color:var(--key);font-weight:800;font-size:12px}
+.gate-step b{font-size:13.5px}.gate-step p{font-size:13px;margin:0;color:var(--muted);line-height:1.65}
+.gate-step .out{font-size:12px;color:var(--fg);padding-left:12px;border-left:1px solid var(--line)}
+@media (max-width:760px){
+  .gate-step{grid-template-columns:34px 1fr;gap:6px 10px}
+  .gate-step p,.gate-step .out{grid-column:2}.gate-step .out{padding:7px 0 0;border-left:0;border-top:1px dashed var(--line)}
+}
+
+.blocker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px}
+.blocker{border:1px solid var(--bad);border-radius:10px;padding:16px 17px;background:var(--bad-bg)}
+.blocker .stage{color:var(--bad);font-size:11px;font-weight:800;letter-spacing:.03em}
+.blocker h3{font-size:14.5px;line-height:1.55;margin:7px 0 10px}
+.blocker p{font-size:12.5px;color:var(--muted);line-height:1.65;margin:0}
+.blocker ul{font-size:12.5px;margin:9px 0 0;padding-left:18px}
+
+.req-groups{display:flex;flex-direction:column;gap:11px}
+.req-group{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
+.req-group summary{cursor:pointer;list-style:none;padding:14px 17px;font-weight:800;font-size:14px;background:var(--soft)}
+.req-group summary::-webkit-details-marker{display:none}
+.req-group summary::after{content:"＋";float:right;color:var(--muted)}
+.req-group[open] summary::after{content:"－"}
+.req-items{padding:4px 17px}
+.req-item{padding:16px 0;border-bottom:1px dashed var(--line)}
+.req-item:last-child{border-bottom:0}
+.req-item .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.req-item h3{font-size:14px;margin:0}
+.req-item p{font-size:13px;line-height:1.7;margin:5px 0}
+.req-item .minor{color:var(--muted);font-size:12.5px}
+
+.overlay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:13px}
+.overlay{border:1px solid var(--line);border-radius:10px;padding:16px 17px}
+.overlay h3{font-size:14px;margin:10px 0 7px}.overlay p{font-size:13px;line-height:1.7;margin:5px 0}
+.overlay .missing{color:var(--bad)}
+
+.anchor-row{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0 0}
+.anchor-row a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--bg)}
+.anchor-row a:hover{border-color:var(--key);color:var(--key)}
+.data-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.data-table-wrap table{min-width:780px}
+
+@media (max-width:360px){
+  .wrap{padding-inline:16px}
+  .cards,.decision-list,.overlay-grid,.blocker-grid,.country-cards{grid-template-columns:minmax(0,1fr)}
+  .card,.decision,.overlay,.blocker,.country-card{min-width:0}
+  .subnav select{max-width:100%}
+}
+
 footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-size:12.5px;line-height:1.8}
 footer.site a{color:var(--muted)}
 </style>
@@ -276,8 +460,8 @@ footer.site a{color:var(--muted)}
 </script>
 </head><body>
 <header class="site"><div class="wrap">
-  <a class="brand" href="index.html">그 나라 조달은 어떻게 할까</a>
-  <span class="brand-sub">협력국 조달제도 안내</span>
+  <a class="brand" href="index.html">그 나라, 조달하고 건축하려면?</a>
+  <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
     <a href="index.html" aria-current="page">제도 대장</a>
     <a href="verification/index.html">검증 대장</a>
@@ -287,24 +471,24 @@ footer.site a{color:var(--muted)}
 </div></header>
 
 <div class="wrap hero">
-  <div class="eyebrow">자료집에서 원문으로</div>
-  <h1>그 나라 조달은 어떻게 할까?</h1>
-  <p class="lede">협력국 입찰에 처음 들어가더라도 괜찮습니다.</p>
-  <p class="lede">자료집에 흩어진 절차를 담당자·서류·기한이 보이는 한 장으로 정리하고, 근거는 각국 법령 원문까지 대조했습니다.</p>
-  <p class="meta">제도 135개 · 45개국 · 조문 대조 완료 135개 · 자료집 기준일 2026-07-29</p>
+  <div class="eyebrow">조달 절차와 건축 법·제도</div>
+  <h1>그 나라, 조달하고 건축하려면?</h1>
+  <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
+  <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+  <p class="meta">조달 제도 135개 · 건축 제도 132개 · 전체 267개 제도 · 조문 대조 완료 141개 · 기준일 2026-08-07</p>
 </div>
 
 <div class="statbar"><div class="wrap">
   <div class="search">
     <label for="q">검 색</label>
     <input id="q" placeholder="제도 · 국가 · 키워드" autocomplete="off">
-    <span class="count" id="cnt">전체 135건</span>
+    <span class="count" id="cnt">전체 267건</span>
   </div>
   <div class="stats">
-    <div class="stat"><b>135</b><span>제도</span></div>
+    <div class="stat"><b>267</b><span>제도</span></div>
     <div class="stat"><b>45</b><span>국가</span></div>
-    <div class="stat"><b>1008</b><span>절차 노드</span></div>
-    <div class="stat ok"><b>135</b><span>조문 대조 완료</span></div>
+    <div class="stat"><b>2394</b><span>절차 노드</span></div>
+    <div class="stat ok"><b>141</b><span>조문 대조 완료</span></div>
     <div class="stat bad"><b>173</b><span>현행 기준 반영</span></div>
   </div>
 </div></div>
@@ -313,18 +497,18 @@ footer.site a{color:var(--muted)}
   <aside class="side">
     <div class="grp">
       <h3>국가별 바로가기</h3>
-      <button aria-pressed="true" data-f="c" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">135</span></button>
-      <button aria-pressed="false" data-f="c" data-v="가나"><i class="dot"></i>가나<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="과테말라"><i class="dot"></i>과테말라<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="나이지리아"><i class="dot"></i>나이지리아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="네팔"><i class="dot"></i>네팔<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="대한민국(KOICA·발주자)"><i class="dot"></i>대한민국(KOICA·발주자)<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="도미니카공화국"><i class="dot"></i>도미니카공화국<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="동티모르"><i class="dot"></i>동티모르<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="라오스"><i class="dot"></i>라오스<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="르완다"><i class="dot"></i>르완다<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="모로코"><i class="dot"></i>모로코<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="모잠비크"><i class="dot"></i>모잠비크<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="몽골"><i class="dot"></i>몽골<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="미얀마"><i class="dot"></i>미얀마<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="방글라데시"><i class="dot"></i>방글라데시<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="베트남"><i class="dot"></i>베트남<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="볼리비아"><i class="dot"></i>볼리비아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="세네갈"><i class="dot"></i>세네갈<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="스리랑카"><i class="dot"></i>스리랑카<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="아제르바이잔"><i class="dot"></i>아제르바이잔<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="에콰도르"><i class="dot"></i>에콰도르<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="에티오피아"><i class="dot"></i>에티오피아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="엘살바도르"><i class="dot"></i>엘살바도르<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="요르단"><i class="dot"></i>요르단<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="우간다"><i class="dot"></i>우간다<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="우즈베키스탄"><i class="dot"></i>우즈베키스탄<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="우크라이나"><i class="dot"></i>우크라이나<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="이집트"><i class="dot"></i>이집트<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="인도네시아"><i class="dot"></i>인도네시아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="카메룬"><i class="dot"></i>카메룬<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="캄보디아"><i class="dot"></i>캄보디아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="케냐"><i class="dot"></i>케냐<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="코트디부아르"><i class="dot"></i>코트디부아르<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="콜롬비아"><i class="dot"></i>콜롬비아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="DR콩고"><i class="dot"></i>콩고민주공화국(DR콩고)<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="키르기스스탄"><i class="dot"></i>키르기스스탄<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="타지키스탄"><i class="dot"></i>타지키스탄<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="탄자니아"><i class="dot"></i>탄자니아<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="태국"><i class="dot"></i>태국<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="튀니지"><i class="dot"></i>튀니지<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="파라과이"><i class="dot"></i>파라과이<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="파키스탄"><i class="dot"></i>파키스탄<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="팔레스타인"><i class="dot"></i>팔레스타인<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="페루"><i class="dot"></i>페루<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="피지"><i class="dot"></i>피지<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="필리핀"><i class="dot"></i>필리핀<span class="n">3</span></button>
+      <button aria-pressed="true" data-f="c" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">267</span></button>
+      <button aria-pressed="false" data-f="c" data-v="가나"><i class="dot"></i>가나<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="과테말라"><i class="dot"></i>과테말라<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="나이지리아"><i class="dot"></i>나이지리아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="네팔"><i class="dot"></i>네팔<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="대한민국(KOICA·발주자)"><i class="dot"></i>대한민국(KOICA·발주자)<span class="n">3</span></button><button aria-pressed="false" data-f="c" data-v="도미니카공화국"><i class="dot"></i>도미니카공화국<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="동티모르"><i class="dot"></i>동티모르<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="라오스"><i class="dot"></i>라오스<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="르완다"><i class="dot"></i>르완다<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="모로코"><i class="dot"></i>모로코<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="모잠비크"><i class="dot"></i>모잠비크<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="몽골"><i class="dot"></i>몽골<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="미얀마"><i class="dot"></i>미얀마<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="방글라데시"><i class="dot"></i>방글라데시<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="베트남"><i class="dot"></i>베트남<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="볼리비아"><i class="dot"></i>볼리비아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="세네갈"><i class="dot"></i>세네갈<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="스리랑카"><i class="dot"></i>스리랑카<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="아제르바이잔"><i class="dot"></i>아제르바이잔<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="에콰도르"><i class="dot"></i>에콰도르<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="에티오피아"><i class="dot"></i>에티오피아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="엘살바도르"><i class="dot"></i>엘살바도르<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="요르단"><i class="dot"></i>요르단<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="우간다"><i class="dot"></i>우간다<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="우즈베키스탄"><i class="dot"></i>우즈베키스탄<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="우크라이나"><i class="dot"></i>우크라이나<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="이집트"><i class="dot"></i>이집트<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="인도네시아"><i class="dot"></i>인도네시아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="카메룬"><i class="dot"></i>카메룬<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="캄보디아"><i class="dot"></i>캄보디아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="케냐"><i class="dot"></i>케냐<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="코트디부아르"><i class="dot"></i>코트디부아르<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="콜롬비아"><i class="dot"></i>콜롬비아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="DR콩고"><i class="dot"></i>콩고민주공화국(DR콩고)<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="키르기스스탄"><i class="dot"></i>키르기스스탄<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="타지키스탄"><i class="dot"></i>타지키스탄<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="탄자니아"><i class="dot"></i>탄자니아<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="태국"><i class="dot"></i>태국<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="튀니지"><i class="dot"></i>튀니지<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="파라과이"><i class="dot"></i>파라과이<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="파키스탄"><i class="dot"></i>파키스탄<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="팔레스타인"><i class="dot"></i>팔레스타인<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="페루"><i class="dot"></i>페루<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="피지"><i class="dot"></i>피지<span class="n">6</span></button><button aria-pressed="false" data-f="c" data-v="필리핀"><i class="dot"></i>필리핀<span class="n">6</span></button>
     </div>
     <div class="grp">
       <h3>제도 축</h3>
-      <button aria-pressed="true" data-f="a" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">135</span></button>
-      <button aria-pressed="false" data-f="a" data-v="bidding"><i class="dot"></i>입찰제도<span class="n">45</span></button><button aria-pressed="false" data-f="a" data-v="governance"><i class="dot"></i>조달 거버넌스<span class="n">45</span></button><button aria-pressed="false" data-f="a" data-v="pipeline"><i class="dot"></i>ODA 사업형성<span class="n">45</span></button>
+      <button aria-pressed="true" data-f="a" data-v=""><i class="dot" style="background:var(--fg)"></i>전체<span class="n">267</span></button>
+      <button aria-pressed="false" data-f="a" data-v="bidding"><i class="dot"></i>입찰제도<span class="n">45</span></button><button aria-pressed="false" data-f="a" data-v="governance"><i class="dot"></i>조달 거버넌스<span class="n">45</span></button><button aria-pressed="false" data-f="a" data-v="pipeline"><i class="dot"></i>ODA 사업형성<span class="n">45</span></button><button aria-pressed="false" data-f="a" data-v="construction"><i class="dot"></i>건축 법·제도<span class="n">132</span></button>
     </div>
   </aside>
 
   <main class="panel">
-    <div class="panel-hd">제도 대장 <span>· <span id="hcnt">135</span>개 결과</span></div>
+    <div class="panel-hd">제도 대장 <span>· <span id="hcnt">267</span>개 결과</span></div>
     <table>
       <thead><tr><th>NO</th><th>제도</th><th>국가</th><th>축</th><th>검증</th><th>대조 결과</th></tr></thead>
       <tbody id="tb"><tr data-c="가나" data-a="bidding"
@@ -354,9 +538,36 @@ footer.site a{color:var(--muted)}
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="가나" data-a="construction"
+  data-s="가나 도시계획·부지규제 토지권원과 관할 지방의회의 구조·지역계획 및 용도지역으로 필지별 개발기준을 확정한다. ghana">
+  <td class="no">04</td>
+  <td class="name"><a href="model/ghana-site-urban-construction-regulations/index.html">가나 도시계획·부지규제</a>
+    <p>토지권원과 관할 지방의회의 구조·지역계획 및 용도지역으로 필지별 개발기준을 확정한다.</p></td>
+  <td><span class="badge plain muted">가나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="가나" data-a="construction"
+  data-s="가나 건축허가·환경심사 지방의회 개발·건축허가와 epa 환경허가, 소방·교통·수문 등 조건부 clearance를 통합 매핑한다. ghana">
+  <td class="no">05</td>
+  <td class="name"><a href="model/ghana-permit-environment-construction-regulations/index.html">가나 건축허가·환경심사</a>
+    <p>지방의회 개발·건축허가와 EPA 환경허가, 소방·교통·수문 등 조건부 clearance를 통합 매핑한다.</p></td>
+  <td><span class="badge plain muted">가나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="가나" data-a="construction"
+  data-s="가나 기술검사·보험·준공제도 gs 1207:2018, 등록 전문가, 지방의회 검사와 거주·사용증명서을 인계 전 필수조건으로 둔다. ghana">
+  <td class="no">06</td>
+  <td class="name"><a href="model/ghana-control-completion-construction-regulations/index.html">가나 기술검사·보험·준공제도</a>
+    <p>GS 1207:2018, 등록 전문가, 지방의회 검사와 거주·사용증명서을 인계 전 필수조건으로 둔다.</p></td>
+  <td><span class="badge plain muted">가나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="과테말라" data-a="bidding"
   data-s="과테말라 공공조달 입찰제도 과테말라 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 guatemala">
-  <td class="no">04</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/guatemala-bidding-system/index.html">과테말라 공공조달 입찰제도</a>
     <p>과테말라 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">과테말라</span></td>
@@ -365,7 +576,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="과테말라" data-a="governance"
   data-s="과테말라 조달 거버넌스·감독체계 과테말라 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 guatemala">
-  <td class="no">05</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/guatemala-procurement-governance/index.html">과테말라 조달 거버넌스·감독체계</a>
     <p>과테말라 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">과테말라</span></td>
@@ -374,16 +585,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="과테말라" data-a="pipeline"
   data-s="과테말라 oda 사업 발굴·형성 절차 과테말라 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 guatemala">
-  <td class="no">06</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/guatemala-oda-project-pipeline/index.html">과테말라 ODA 사업 발굴·형성 절차</a>
     <p>과테말라 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">과테말라</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="과테말라" data-a="construction"
+  data-s="과테말라 도시계획·부지규제 관할 시의 도시계획·토지이용 허가와 권원·지적정보로 필지별 개발조건을 확정한다. guatemala">
+  <td class="no">04</td>
+  <td class="name"><a href="model/guatemala-site-urban-construction-regulations/index.html">과테말라 도시계획·부지규제</a>
+    <p>관할 시의 도시계획·토지이용 허가와 권원·지적정보로 필지별 개발조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">과테말라</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="과테말라" data-a="construction"
+  data-s="과테말라 건축허가·환경심사 지방 건축 licence와 marn taxative list의 환경범주·환경도구 승인을 하나의 선행일정으로 관리한다. guatemala">
+  <td class="no">05</td>
+  <td class="name"><a href="model/guatemala-permit-environment-construction-regulations/index.html">과테말라 건축허가·환경심사</a>
+    <p>지방 건축 licence와 MARN taxative list의 환경범주·환경도구 승인을 하나의 선행일정으로 관리한다.</p></td>
+  <td><span class="badge plain muted">과테말라</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="과테말라" data-a="construction"
+  data-s="과테말라 기술검사·보험·준공제도 현행 등록 전문가, nrd-1 구조안전·nrd-2 피난안전과 지방검사·obra conforme를 개장 gate로 둔다. guatemala">
+  <td class="no">06</td>
+  <td class="name"><a href="model/guatemala-control-completion-construction-regulations/index.html">과테말라 기술검사·보험·준공제도</a>
+    <p>현행 등록 전문가, NRD-1 구조안전·NRD-2 피난안전과 지방검사·obra conforme를 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">과테말라</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="나이지리아" data-a="bidding"
   data-s="나이지리아 공공조달 입찰제도 finance act 2020 개정 ppa와 2025년 현행 공문에 따라 공개경쟁을 기본으로 하고, 물품·비컨설팅 ₦1bn·공사 ₦5bn 이상 경쟁입찰 기준과 14일 정지기간을 적용하는 연방 조달체계 nigeria">
-  <td class="no">07</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/nigeria-bidding-system/index.html">나이지리아 공공조달 입찰제도</a>
     <p>Finance Act 2020 개정 PPA와 2025년 현행 공문에 따라 공개경쟁을 기본으로 하고, 물품·비컨설팅 ₦1bn·공사 ₦5bn 이상 경쟁입찰 기준과 14일 정지기간을 적용하는 연방 조달체계</p></td>
   <td><span class="badge plain muted">나이지리아</span></td>
@@ -392,7 +630,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="나이지리아" data-a="governance"
   data-s="나이지리아 조달 거버넌스·감독체계 ncpp의 정책·기준 승인, bpp의 no objection·감사·불만 재심, 3부 입찰위원회의 금액별 승인을 연결한 연방 조달 감독체계 nigeria">
-  <td class="no">08</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/nigeria-procurement-governance/index.html">나이지리아 조달 거버넌스·감독체계</a>
     <p>NCPP의 정책·기준 승인, BPP의 No Objection·감사·불만 재심, 3부 입찰위원회의 금액별 승인을 연결한 연방 조달 감독체계</p></td>
   <td><span class="badge plain muted">나이지리아</span></td>
@@ -401,16 +639,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="나이지리아" data-a="pipeline"
   data-s="나이지리아 oda 사업 발굴·형성 절차 예산·계획부터 방식선택, 금액별 승인, ncb/icb/컨설팅 표준 일정, 계약·보고까지 현행 연방 조달규칙을 반영한 oda 사업 형성 경로 nigeria">
-  <td class="no">09</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/nigeria-oda-project-pipeline/index.html">나이지리아 ODA 사업 발굴·형성 절차</a>
     <p>예산·계획부터 방식선택, 금액별 승인, NCB/ICB/컨설팅 표준 일정, 계약·보고까지 현행 연방 조달규칙을 반영한 ODA 사업 형성 경로</p></td>
   <td><span class="badge plain muted">나이지리아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="나이지리아" data-a="construction"
+  data-s="나이지리아 도시계획·부지규제 대상 주·fct의 계획법·개발계획과 필지 권원으로 용도·밀도·높이·이격·주차를 확정한다. nigeria">
+  <td class="no">04</td>
+  <td class="name"><a href="model/nigeria-site-urban-construction-regulations/index.html">나이지리아 도시계획·부지규제</a>
+    <p>대상 주·FCT의 계획법·개발계획과 필지 권원으로 용도·밀도·높이·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">나이지리아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="나이지리아" data-a="construction"
+  data-s="나이지리아 건축허가·환경심사 주·fct 계획·건축허가와 연방 ead의 환경영향평가(eia) 등록·스크리닝·permit 경로를 분리해 연결한다. nigeria">
+  <td class="no">05</td>
+  <td class="name"><a href="model/nigeria-permit-environment-construction-regulations/index.html">나이지리아 건축허가·환경심사</a>
+    <p>주·FCT 계획·건축허가와 연방 EAD의 환경영향평가(EIA) 등록·스크리닝·permit 경로를 분리해 연결한다.</p></td>
+  <td><span class="badge plain muted">나이지리아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="나이지리아" data-a="construction"
+  data-s="나이지리아 기술검사·보험·준공제도 주별 코드 채택, 등록 전문가, 착공·단계검사·보험과 사용적합성증명을 계약·인계 gate로 둔다. nigeria">
+  <td class="no">06</td>
+  <td class="name"><a href="model/nigeria-control-completion-construction-regulations/index.html">나이지리아 기술검사·보험·준공제도</a>
+    <p>주별 코드 채택, 등록 전문가, 착공·단계검사·보험과 사용적합성증명을 계약·인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">나이지리아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="네팔" data-a="bidding"
   data-s="네팔 공공조달 입찰제도 공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 ppmo가 표준을 관장하는 조달 체계 nepal">
-  <td class="no">10</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도</a>
     <p>공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 PPMO가 표준을 관장하는 조달 체계</p></td>
   <td><span class="badge plain muted">네팔</span></td>
@@ -419,7 +684,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 3</span></td>
 </tr><tr data-c="네팔" data-a="governance"
   data-s="네팔 조달 거버넌스·감독체계 총리실 산하 ppmo가 표준·정책·전자조달포털·블랙리스트를 관장하되 개별 조달에는 법적으로 관여하지 못하고, 분쟁은 독립 검토위원회가 다루는 이원 구조 nepal">
-  <td class="no">11</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계</a>
     <p>총리실 산하 PPMO가 표준·정책·전자조달포털·블랙리스트를 관장하되 개별 조달에는 법적으로 관여하지 못하고, 분쟁은 독립 검토위원회가 다루는 이원 구조</p></td>
   <td><span class="badge plain muted">네팔</span></td>
@@ -428,16 +693,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 2</span></td>
 </tr><tr data-c="네팔" data-a="pipeline"
   data-s="네팔 oda 사업 발굴·형성 절차 재무부를 단일 관문으로 하는 수원체계에서 n-2년 pcp 제출부터 rod·mou 체결까지 이어지는 무상원조 사업 형성 파이프라인 nepal">
-  <td class="no">12</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차</a>
     <p>재무부를 단일 관문으로 하는 수원체계에서 N-2년 PCP 제출부터 RoD·MoU 체결까지 이어지는 무상원조 사업 형성 파이프라인</p></td>
   <td><span class="badge plain muted">네팔</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 4</span></td>
+</tr><tr data-c="네팔" data-a="construction"
+  data-s="네팔 도시계획·부지규제 지방정부 조례와 필지계획을 기준으로 권원·도로·용도·밀도·높이·재해조건을 먼저 확정한다. nepal">
+  <td class="no">04</td>
+  <td class="name"><a href="model/nepal-site-urban-construction-regulations/index.html">네팔 도시계획·부지규제</a>
+    <p>지방정부 조례와 필지계획을 기준으로 권원·도로·용도·밀도·높이·재해조건을 먼저 확정한다.</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="네팔" data-a="construction"
+  data-s="네팔 건축허가·환경심사 지방 건축도면 승인과 환경연구 유형을 사업 규모·입지·용도에 따라 병행 분류한다. nepal">
+  <td class="no">05</td>
+  <td class="name"><a href="model/nepal-permit-environment-construction-regulations/index.html">네팔 건축허가·환경심사</a>
+    <p>지방 건축도면 승인과 환경연구 유형을 사업 규모·입지·용도에 따라 병행 분류한다.</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="네팔" data-a="construction"
+  data-s="네팔 기술검사·보험·준공제도 nbc 적용판, 등록 기술자, 시공검사와 지방정부 준공·사용 절차를 계약 전에 잠근다. nepal">
+  <td class="no">06</td>
+  <td class="name"><a href="model/nepal-control-completion-construction-regulations/index.html">네팔 기술검사·보험·준공제도</a>
+    <p>NBC 적용판, 등록 기술자, 시공검사와 지방정부 준공·사용 절차를 계약 전에 잠근다.</p></td>
+  <td><span class="badge plain muted">네팔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="대한민국(KOICA·발주자)" data-a="bidding"
   data-s="koica 현지입찰 시공자 선정(적격심사) 현지입찰 시설공사에서 예정가격 이하 최저가 입찰자부터 계약이행능력을 심사해 종합평점이 적격통과점수(95점, 100억원 이상 92점) 이상이면 낙찰자로 결정하는 발주자 측 적격심사 제도 republic of korea (koica)">
-  <td class="no">13</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/koica-bidding-system/index.html">KOICA 현지입찰 시공자 선정(적격심사)</a>
     <p>현지입찰 시설공사에서 예정가격 이하 최저가 입찰자부터 계약이행능력을 심사해 종합평점이 적격통과점수(95점, 100억원 이상 92점) 이상이면 낙찰자로 결정하는 발주자 측 적격심사 제도</p></td>
   <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
@@ -446,7 +738,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="대한민국(KOICA·발주자)" data-a="governance"
   data-s="koica 국제조달 경로 선택·감독 국외조달을 현지입찰·국제입찰·수원국 조달시스템(ucs) 세 경로로 나누고, 계약심의위원회·입찰참가자격 제한·수원국 시스템 이용 시의 사무소 사전 서면 승인으로 감독하는 발주자 거버넌스 republic of korea (koica)">
-  <td class="no">14</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/koica-procurement-governance/index.html">KOICA 국제조달 경로 선택·감독</a>
     <p>국외조달을 현지입찰·국제입찰·수원국 조달시스템(UCS) 세 경로로 나누고, 계약심의위원회·입찰참가자격 제한·수원국 시스템 이용 시의 사무소 사전 서면 승인으로 감독하는 발주자 거버넌스</p></td>
   <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
@@ -455,7 +747,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="대한민국(KOICA·발주자)" data-a="pipeline"
   data-s="koica 조달·계약 집행 절차 사업부서 조달의뢰부터 예정가격 산정·입찰·낙찰·계약체결·이행·검수·대가지급·하자담보까지 이어지는 koica의 조달·계약 집행 파이프라인 republic of korea (koica)">
-  <td class="no">15</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/koica-oda-project-pipeline/index.html">KOICA 조달·계약 집행 절차</a>
     <p>사업부서 조달의뢰부터 예정가격 산정·입찰·낙찰·계약체결·이행·검수·대가지급·하자담보까지 이어지는 KOICA의 조달·계약 집행 파이프라인</p></td>
   <td><span class="badge plain muted">대한민국(KOICA·발주자)</span></td>
@@ -464,7 +756,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="도미니카공화국" data-a="bidding"
   data-s="도미니카공화국 공공조달 입찰제도 도미니카공화국 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 dominican republic">
-  <td class="no">16</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/dominican-republic-bidding-system/index.html">도미니카공화국 공공조달 입찰제도</a>
     <p>도미니카공화국 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">도미니카공화국</span></td>
@@ -473,7 +765,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="도미니카공화국" data-a="governance"
   data-s="도미니카공화국 조달 거버넌스·감독체계 도미니카공화국 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 dominican republic">
-  <td class="no">17</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/dominican-republic-procurement-governance/index.html">도미니카공화국 조달 거버넌스·감독체계</a>
     <p>도미니카공화국 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">도미니카공화국</span></td>
@@ -482,16 +774,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="도미니카공화국" data-a="pipeline"
   data-s="도미니카공화국 oda 사업 발굴·형성 절차 도미니카공화국 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 dominican republic">
-  <td class="no">18</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/dominican-republic-oda-project-pipeline/index.html">도미니카공화국 ODA 사업 발굴·형성 절차</a>
     <p>도미니카공화국 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">도미니카공화국</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="도미니카공화국" data-a="construction"
+  data-s="도미니카공화국 도시계획·부지규제 권원·mensura catastral과 관할 ayuntamiento의 용도인증·no-objection으로 필지별 개발조건을 확정한다. dominican republic">
+  <td class="no">04</td>
+  <td class="name"><a href="model/dominican-republic-site-urban-construction-regulations/index.html">도미니카공화국 도시계획·부지규제</a>
+    <p>권원·mensura catastral과 관할 ayuntamiento의 용도인증·no-objection으로 필지별 개발조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">도미니카공화국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="도미니카공화국" data-a="construction"
+  data-s="도미니카공화국 건축허가·환경심사 시청 용도·no-objection, mivhed 건축 licence와 환경부 a·b·c·d 승인을 순서대로 연결한다. dominican republic">
+  <td class="no">05</td>
+  <td class="name"><a href="model/dominican-republic-permit-environment-construction-regulations/index.html">도미니카공화국 건축허가·환경심사</a>
+    <p>시청 용도·no-objection, MIVHED 건축 licence와 환경부 A·B·C·D 승인을 순서대로 연결한다.</p></td>
+  <td><span class="badge plain muted">도미니카공화국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="도미니카공화국" data-a="construction"
+  data-s="도미니카공화국 기술검사·보험·준공제도 codia 등록 책임자·mivhed habilitación 전문가, 단계검사와 최종검사 승인증을 사용개시 gate로 둔다. dominican republic">
+  <td class="no">06</td>
+  <td class="name"><a href="model/dominican-republic-control-completion-construction-regulations/index.html">도미니카공화국 기술검사·보험·준공제도</a>
+    <p>CODIA 등록 책임자·MIVHED habilitación 전문가, 단계검사와 최종검사 승인증을 사용개시 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">도미니카공화국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="동티모르" data-a="bidding"
   data-s="동티모르 공공조달 입찰제도 동티모르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 timor-leste">
-  <td class="no">19</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/timor-leste-bidding-system/index.html">동티모르 공공조달 입찰제도</a>
     <p>동티모르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">동티모르</span></td>
@@ -500,7 +819,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="동티모르" data-a="governance"
   data-s="동티모르 조달 거버넌스·감독체계 동티모르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 timor-leste">
-  <td class="no">20</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/timor-leste-procurement-governance/index.html">동티모르 조달 거버넌스·감독체계</a>
     <p>동티모르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">동티모르</span></td>
@@ -509,16 +828,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="동티모르" data-a="pipeline"
   data-s="동티모르 oda 사업 발굴·형성 절차 동티모르 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 timor-leste">
-  <td class="no">21</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/timor-leste-oda-project-pipeline/index.html">동티모르 ODA 사업 발굴·형성 절차</a>
     <p>동티모르 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">동티모르</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="동티모르" data-a="construction"
+  data-s="동티모르 도시계획·부지규제 토지권원과 관할 계획도·도시관리수단에 맞춘 개발 가능성을 건축허가 전에 확인한다. timor-leste">
+  <td class="no">04</td>
+  <td class="name"><a href="model/timor-leste-site-urban-construction-regulations/index.html">동티모르 도시계획·부지규제</a>
+    <p>토지권원과 관할 계획도·도시관리수단에 맞춘 개발 가능성을 건축허가 전에 확인한다.</p></td>
+  <td><span class="badge plain muted">동티모르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="동티모르" data-a="construction"
+  data-s="동티모르 건축허가·환경심사 건축·사용허가와 환경 환경등급(category) 결정을 별도 gate로 두고 선후관계를 관할기관과 확정한다. timor-leste">
+  <td class="no">05</td>
+  <td class="name"><a href="model/timor-leste-permit-environment-construction-regulations/index.html">동티모르 건축허가·환경심사</a>
+    <p>건축·사용허가와 환경 환경등급(Category) 결정을 별도 Gate로 두고 선후관계를 관할기관과 확정한다.</p></td>
+  <td><span class="badge plain muted">동티모르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="동티모르" data-a="construction"
+  data-s="동티모르 기술검사·보험·준공제도 책임기술자·시공감독·준공검사와 건축물 사용허가를 하나의 인계조건으로 관리한다. timor-leste">
+  <td class="no">06</td>
+  <td class="name"><a href="model/timor-leste-control-completion-construction-regulations/index.html">동티모르 기술검사·보험·준공제도</a>
+    <p>책임기술자·시공감독·준공검사와 건축물 사용허가를 하나의 인계조건으로 관리한다.</p></td>
+  <td><span class="badge plain muted">동티모르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="라오스" data-a="bidding"
   data-s="라오스 공공조달 입찰제도 라오스 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 lao people&#x27;s democratic republic">
-  <td class="no">22</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/laos-bidding-system/index.html">라오스 공공조달 입찰제도</a>
     <p>라오스 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">라오스</span></td>
@@ -527,7 +873,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="라오스" data-a="governance"
   data-s="라오스 조달 거버넌스·감독체계 라오스 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 lao people&#x27;s democratic republic">
-  <td class="no">23</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/laos-procurement-governance/index.html">라오스 조달 거버넌스·감독체계</a>
     <p>라오스 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">라오스</span></td>
@@ -536,16 +882,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="라오스" data-a="pipeline"
   data-s="라오스 oda 사업 발굴·형성 절차 라오스 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 lao people&#x27;s democratic republic">
-  <td class="no">24</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/laos-oda-project-pipeline/index.html">라오스 ODA 사업 발굴·형성 절차</a>
     <p>라오스 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">라오스</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="라오스" data-a="construction"
+  data-s="라오스 도시계획·부지규제 토지권원과 광역계획·용도지역·토지이용규정 적합성을 건축등급 심사 전에 확정한다. lao people&#x27;s democratic republic">
+  <td class="no">04</td>
+  <td class="name"><a href="model/laos-site-urban-construction-regulations/index.html">라오스 도시계획·부지규제</a>
+    <p>토지권원과 광역계획·용도지역·토지이용규정 적합성을 건축등급 심사 전에 확정한다.</p></td>
+  <td><span class="badge plain muted">라오스</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="라오스" data-a="construction"
+  data-s="라오스 건축허가·환경심사 면적·높이·통제건축물·환경영향 여부로 허가권자를 분류하고 완비서류 기준 심사일정을 잡는다. lao people&#x27;s democratic republic">
+  <td class="no">05</td>
+  <td class="name"><a href="model/laos-permit-environment-construction-regulations/index.html">라오스 건축허가·환경심사</a>
+    <p>면적·높이·통제건축물·환경영향 여부로 허가권자를 분류하고 완비서류 기준 심사일정을 잡는다.</p></td>
+  <td><span class="badge plain muted">라오스</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="라오스" data-a="construction"
+  data-s="라오스 기술검사·보험·준공제도 허가기관의 공사 중 최소 2회 검사와 준공통지·적합증명 절차를 공정 hold point로 반영한다. lao people&#x27;s democratic republic">
+  <td class="no">06</td>
+  <td class="name"><a href="model/laos-control-completion-construction-regulations/index.html">라오스 기술검사·보험·준공제도</a>
+    <p>허가기관의 공사 중 최소 2회 검사와 준공통지·적합증명 절차를 공정 Hold Point로 반영한다.</p></td>
+  <td><span class="badge plain muted">라오스</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="르완다" data-a="bidding"
   data-s="르완다 공공조달 입찰제도 르완다 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 rwanda">
-  <td class="no">25</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/rwanda-bidding-system/index.html">르완다 공공조달 입찰제도</a>
     <p>르완다 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">르완다</span></td>
@@ -554,7 +927,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="르완다" data-a="governance"
   data-s="르완다 조달 거버넌스·감독체계 르완다 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 rwanda">
-  <td class="no">26</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/rwanda-procurement-governance/index.html">르완다 조달 거버넌스·감독체계</a>
     <p>르완다 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">르완다</span></td>
@@ -563,16 +936,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="르완다" data-a="pipeline"
   data-s="르완다 oda 사업 발굴·형성 절차 르완다 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 rwanda">
-  <td class="no">27</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/rwanda-oda-project-pipeline/index.html">르완다 ODA 사업 발굴·형성 절차</a>
     <p>르완다 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">르완다</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="르완다" data-a="construction"
+  data-s="르완다 도시계획·부지규제 국가·지방 도시계획과 필지 용도지역을 전자허가·단일창구에서 확인해 용도·밀도·높이·이격·주차를 확정한다. rwanda">
+  <td class="no">04</td>
+  <td class="name"><a href="model/rwanda-site-urban-construction-regulations/index.html">르완다 도시계획·부지규제</a>
+    <p>국가·지방 도시계획과 필지 용도지역을 전자허가·단일창구에서 확인해 용도·밀도·높이·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">르완다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="르완다" data-a="construction"
+  data-s="르완다 건축허가·환경심사 건축물 환경등급(category)와 osc·rha 허가권, 환경법상 환경영향평가(eia) 분류를 bpmis 접수 전에 확정한다. rwanda">
+  <td class="no">05</td>
+  <td class="name"><a href="model/rwanda-permit-environment-construction-regulations/index.html">르완다 건축허가·환경심사</a>
+    <p>건축물 환경등급(Category)와 OSC·RHA 허가권, 환경법상 환경영향평가(EIA) 분류를 BPMIS 접수 전에 확정한다.</p></td>
+  <td><span class="badge plain muted">르완다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="르완다" data-a="construction"
+  data-s="르완다 기술검사·보험·준공제도 등록 전문가, 코드 준수, bpmis 검사통지와 최종 점유허가(occupancy permit)을 개장 전 gate로 둔다. rwanda">
+  <td class="no">06</td>
+  <td class="name"><a href="model/rwanda-control-completion-construction-regulations/index.html">르완다 기술검사·보험·준공제도</a>
+    <p>등록 전문가, 코드 준수, BPMIS 검사통지와 최종 점유허가(Occupancy Permit)을 개장 전 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">르완다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="모로코" data-a="bidding"
   data-s="모로코 공공조달 입찰제도 모로코 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 morocco">
-  <td class="no">28</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/morocco-bidding-system/index.html">모로코 공공조달 입찰제도</a>
     <p>모로코 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모로코</span></td>
@@ -581,7 +981,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="모로코" data-a="governance"
   data-s="모로코 조달 거버넌스·감독체계 모로코 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 morocco">
-  <td class="no">29</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/morocco-procurement-governance/index.html">모로코 조달 거버넌스·감독체계</a>
     <p>모로코 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모로코</span></td>
@@ -590,16 +990,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="모로코" data-a="pipeline"
   data-s="모로코 oda 사업 발굴·형성 절차 모로코 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 morocco">
-  <td class="no">30</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/morocco-oda-project-pipeline/index.html">모로코 ODA 사업 발굴·형성 절차</a>
     <p>모로코 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모로코</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="모로코" data-a="construction"
+  data-s="모로코 도시계획·부지규제 토지등기와 관할 도시계획청의 note de renseignements urbanistiques로 필지별 계획수치를 확정한다. morocco">
+  <td class="no">04</td>
+  <td class="name"><a href="model/morocco-site-urban-construction-regulations/index.html">모로코 도시계획·부지규제</a>
+    <p>토지등기와 관할 도시계획청의 note de renseignements urbanistiques로 필지별 계획수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">모로코</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="모로코" data-a="construction"
+  data-s="모로코 건축허가·환경심사 코뮌 건축허가와 환경영향연구(eie)·nie 환경수용성 결정을 분리해 선후관계·서류·기간을 확정한다. morocco">
+  <td class="no">05</td>
+  <td class="name"><a href="model/morocco-permit-environment-construction-regulations/index.html">모로코 건축허가·환경심사</a>
+    <p>코뮌 건축허가와 환경영향연구(EIE)·NIE 환경수용성 결정을 분리해 선후관계·서류·기간을 확정한다.</p></td>
+  <td><span class="badge plain muted">모로코</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="모로코" data-a="construction"
+  data-s="모로코 기술검사·보험·준공제도 등록 건축사·기술자, 착공·현장기록·기술검사와 비주거 적합증명서(certificat de conformite)를 개장 gate로 둔다. morocco">
+  <td class="no">06</td>
+  <td class="name"><a href="model/morocco-control-completion-construction-regulations/index.html">모로코 기술검사·보험·준공제도</a>
+    <p>등록 건축사·기술자, 착공·현장기록·기술검사와 비주거 적합증명서(certificat de conformite)를 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">모로코</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="모잠비크" data-a="bidding"
   data-s="모잠비크 공공조달 입찰제도 모잠비크 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mozambique">
-  <td class="no">31</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/mozambique-bidding-system/index.html">모잠비크 공공조달 입찰제도</a>
     <p>모잠비크 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모잠비크</span></td>
@@ -608,7 +1035,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="모잠비크" data-a="governance"
   data-s="모잠비크 조달 거버넌스·감독체계 모잠비크 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mozambique">
-  <td class="no">32</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/mozambique-procurement-governance/index.html">모잠비크 조달 거버넌스·감독체계</a>
     <p>모잠비크 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모잠비크</span></td>
@@ -617,16 +1044,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="모잠비크" data-a="pipeline"
   data-s="모잠비크 oda 사업 발굴·형성 절차 모잠비크 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mozambique">
-  <td class="no">33</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/mozambique-oda-project-pipeline/index.html">모잠비크 ODA 사업 발굴·형성 절차</a>
     <p>모잠비크 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">모잠비크</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="모잠비크" data-a="construction"
+  data-s="모잠비크 도시계획·부지규제 duat·지적경계와 관할 도시계획·토지이용계획으로 필지별 개발지표와 인입조건을 확정한다. mozambique">
+  <td class="no">04</td>
+  <td class="name"><a href="model/mozambique-site-urban-construction-regulations/index.html">모잠비크 도시계획·부지규제</a>
+    <p>DUAT·지적경계와 관할 도시계획·토지이용계획으로 필지별 개발지표와 인입조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">모잠비크</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="모잠비크" data-a="construction"
+  data-s="모잠비크 건축허가·환경심사 지방 건축허가와 a+·a·b·c 환경분류·licenca ambiental을 별도 gate로 연결한다. mozambique">
+  <td class="no">05</td>
+  <td class="name"><a href="model/mozambique-permit-environment-construction-regulations/index.html">모잠비크 건축허가·환경심사</a>
+    <p>지방 건축허가와 A+·A·B·C 환경분류·licenca ambiental을 별도 Gate로 연결한다.</p></td>
+  <td><span class="badge plain muted">모잠비크</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="모잠비크" data-a="construction"
+  data-s="모잠비크 기술검사·보험·준공제도 등록 책임기술자·시공자, 지방검사와 사용허가(licenca de utilizacao)를 시설 인계 전 조건으로 관리한다. mozambique">
+  <td class="no">06</td>
+  <td class="name"><a href="model/mozambique-control-completion-construction-regulations/index.html">모잠비크 기술검사·보험·준공제도</a>
+    <p>등록 책임기술자·시공자, 지방검사와 사용허가(licenca de utilizacao)를 시설 인계 전 조건으로 관리한다.</p></td>
+  <td><span class="badge plain muted">모잠비크</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="몽골" data-a="bidding"
   data-s="몽골 공공조달 입찰제도 몽골 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mongolia">
-  <td class="no">34</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/mongolia-bidding-system/index.html">몽골 공공조달 입찰제도</a>
     <p>몽골 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">몽골</span></td>
@@ -635,7 +1089,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="몽골" data-a="governance"
   data-s="몽골 조달 거버넌스·감독체계 몽골 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mongolia">
-  <td class="no">35</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/mongolia-procurement-governance/index.html">몽골 조달 거버넌스·감독체계</a>
     <p>몽골 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">몽골</span></td>
@@ -644,16 +1098,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="몽골" data-a="pipeline"
   data-s="몽골 oda 사업 발굴·형성 절차 몽골 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 mongolia">
-  <td class="no">36</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/mongolia-oda-project-pipeline/index.html">몽골 ODA 사업 발굴·형성 절차</a>
     <p>몽골 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">몽골</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="몽골" data-a="construction"
+  data-s="몽골 도시계획·부지규제 토지권리·지적과 승인 총괄·부분계획, 위치결정·기술조건으로 부지 개발가능성을 확정한다. mongolia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/mongolia-site-urban-construction-regulations/index.html">몽골 도시계획·부지규제</a>
+    <p>토지권리·지적과 승인 총괄·부분계획, 위치결정·기술조건으로 부지 개발가능성을 확정한다.</p></td>
+  <td><span class="badge plain muted">몽골</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="몽골" data-a="construction"
+  data-s="몽골 건축허가·환경심사 건축물 등급별 설계검증·공사허가와 일반·상세 환경영향평가 결정을 연계한다. mongolia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/mongolia-permit-environment-construction-regulations/index.html">몽골 건축허가·환경심사</a>
+    <p>건축물 등급별 설계검증·공사허가와 일반·상세 환경영향평가 결정을 연계한다.</p></td>
+  <td><span class="badge plain muted">몽골</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="몽골" data-a="construction"
+  data-s="몽골 기술검사·보험·준공제도 건축주 기술감리·설계자 검토·국가검사와 commissioning·점유허가서(occupancy certificate)를 사용 gate로 둔다. mongolia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/mongolia-control-completion-construction-regulations/index.html">몽골 기술검사·보험·준공제도</a>
+    <p>건축주 기술감리·설계자 검토·국가검사와 commissioning·점유허가서(occupancy certificate)를 사용 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">몽골</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="미얀마" data-a="bidding"
   data-s="미얀마 공공조달 입찰제도 2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계 myanmar">
-  <td class="no">37</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도</a>
     <p>2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계</p></td>
   <td><span class="badge plain muted">미얀마</span></td>
@@ -662,7 +1143,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="미얀마" data-a="governance"
   data-s="미얀마 조달 거버넌스·감독체계 중앙 조달청이 아니라 발주기관별 입찰위원회가 집행·기록·1차 이의처리를 맡고, 제한·직접조달의 고액 건은 상위 승인을 받으며, 불복 시 기획재정부가 부처합동 이의해결팀을 구성하는 분권형 체계 myanmar">
-  <td class="no">38</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a>
     <p>중앙 조달청이 아니라 발주기관별 입찰위원회가 집행·기록·1차 이의처리를 맡고, 제한·직접조달의 고액 건은 상위 승인을 받으며, 불복 시 기획재정부가 부처합동 이의해결팀을 구성하는 분권형 체계</p></td>
   <td><span class="badge plain muted">미얀마</span></td>
@@ -671,16 +1152,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="미얀마" data-a="pipeline"
   data-s="미얀마 oda 사업 발굴·형성 절차 수원부처·개발파트너가 사업개념을 만들고 mifer 산하 대외경제관계국(ferd)을 단일창구로 고위 승인·협정 협상·서명·aims 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요 myanmar">
-  <td class="no">39</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/myanmar-oda-project-pipeline/index.html">미얀마 ODA 사업 발굴·형성 절차</a>
     <p>수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요</p></td>
   <td><span class="badge plain muted">미얀마</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="미얀마" data-a="construction"
+  data-s="미얀마 도시계획·부지규제 토지권리·용도지역과 계획·개발허가 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다. myanmar">
+  <td class="no">04</td>
+  <td class="name"><a href="model/myanmar-site-urban-construction-regulations/index.html">미얀마 도시계획·부지규제</a>
+    <p>토지권리·용도지역과 계획·개발허가 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="미얀마" data-a="construction"
+  data-s="미얀마 건축허가·환경심사 관할 planning/건축허가(building permit)와 ecd의 non-초기환경검토(iee)/환경영향평가(eia)·초기환경검토·환경영향평가 스크리닝 및 ecc를 병행한다. myanmar">
+  <td class="no">05</td>
+  <td class="name"><a href="model/myanmar-permit-environment-construction-regulations/index.html">미얀마 건축허가·환경심사</a>
+    <p>관할 planning/건축허가(building permit)와 ECD의 Non-초기환경검토(IEE)/환경영향평가(EIA)·초기환경검토·환경영향평가 스크리닝 및 ECC를 병행한다.</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="미얀마" data-a="construction"
+  data-s="미얀마 기술검사·보험·준공제도 등록전문가·승인검사기관·소방검사 기록을 누적해 building completion certificate와 점유조건을 닫는다. myanmar">
+  <td class="no">06</td>
+  <td class="name"><a href="model/myanmar-control-completion-construction-regulations/index.html">미얀마 기술검사·보험·준공제도</a>
+    <p>등록전문가·승인검사기관·소방검사 기록을 누적해 Building Completion Certificate와 점유조건을 닫는다.</p></td>
+  <td><span class="badge plain muted">미얀마</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="방글라데시" data-a="bidding"
   data-s="방글라데시 공공조달 입찰제도 방글라데시 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 bangladesh">
-  <td class="no">40</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/bangladesh-bidding-system/index.html">방글라데시 공공조달 입찰제도</a>
     <p>방글라데시 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">방글라데시</span></td>
@@ -689,7 +1197,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="방글라데시" data-a="governance"
   data-s="방글라데시 조달 거버넌스·감독체계 방글라데시 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 bangladesh">
-  <td class="no">41</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/bangladesh-procurement-governance/index.html">방글라데시 조달 거버넌스·감독체계</a>
     <p>방글라데시 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">방글라데시</span></td>
@@ -698,16 +1206,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="방글라데시" data-a="pipeline"
   data-s="방글라데시 oda 사업 발굴·형성 절차 방글라데시 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 bangladesh">
-  <td class="no">42</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/bangladesh-oda-project-pipeline/index.html">방글라데시 ODA 사업 발굴·형성 절차</a>
     <p>방글라데시 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">방글라데시</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="방글라데시" data-a="construction"
+  data-s="방글라데시 도시계획·부지규제 권원과 land use clearance, dap·master plan 적합성을 먼저 닫고 필지별 수치를 확정한다. bangladesh">
+  <td class="no">04</td>
+  <td class="name"><a href="model/bangladesh-site-urban-construction-regulations/index.html">방글라데시 도시계획·부지규제</a>
+    <p>권원과 Land Use Clearance, DAP·master plan 적합성을 먼저 닫고 필지별 수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">방글라데시</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="방글라데시" data-a="construction"
+  data-s="방글라데시 건축허가·환경심사 건축허가·대형특수사업 승인과 환경분류·환경허가를 별도 경로로 병행 관리한다. bangladesh">
+  <td class="no">05</td>
+  <td class="name"><a href="model/bangladesh-permit-environment-construction-regulations/index.html">방글라데시 건축허가·환경심사</a>
+    <p>건축허가·대형특수사업 승인과 환경분류·환경허가를 별도 경로로 병행 관리한다.</p></td>
+  <td><span class="badge plain muted">방글라데시</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="방글라데시" data-a="construction"
+  data-s="방글라데시 기술검사·보험·준공제도 bnbc 2020, 등록 기술자·공사모니터링과 사용승인을 준공·개장 선행조건으로 둔다. bangladesh">
+  <td class="no">06</td>
+  <td class="name"><a href="model/bangladesh-control-completion-construction-regulations/index.html">방글라데시 기술검사·보험·준공제도</a>
+    <p>BNBC 2020, 등록 기술자·공사모니터링과 사용승인을 준공·개장 선행조건으로 둔다.</p></td>
+  <td><span class="badge plain muted">방글라데시</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="베트남" data-a="bidding"
   data-s="베트남 공공조달 입찰제도 베트남 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 viet nam">
-  <td class="no">43</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/vietnam-bidding-system/index.html">베트남 공공조달 입찰제도</a>
     <p>베트남 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">베트남</span></td>
@@ -716,7 +1251,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="베트남" data-a="governance"
   data-s="베트남 조달 거버넌스·감독체계 베트남 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 viet nam">
-  <td class="no">44</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/vietnam-procurement-governance/index.html">베트남 조달 거버넌스·감독체계</a>
     <p>베트남 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">베트남</span></td>
@@ -725,16 +1260,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="베트남" data-a="pipeline"
   data-s="베트남 oda 사업 발굴·형성 절차 베트남 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 viet nam">
-  <td class="no">45</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/vietnam-oda-project-pipeline/index.html">베트남 ODA 사업 발굴·형성 절차</a>
     <p>베트남 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">베트남</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="베트남" data-a="construction"
+  data-s="베트남 도시계획·부지규제 토지사용권과 승인 계획·건축관리규정에 맞춰 필지의 용도·규모·접도·기반시설 조건을 먼저 잠근다. viet nam">
+  <td class="no">04</td>
+  <td class="name"><a href="model/vietnam-site-urban-construction-regulations/index.html">베트남 도시계획·부지규제</a>
+    <p>토지사용권과 승인 계획·건축관리규정에 맞춰 필지의 용도·규모·접도·기반시설 조건을 먼저 잠근다.</p></td>
+  <td><span class="badge plain muted">베트남</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="베트남" data-a="construction"
+  data-s="베트남 건축허가·환경심사 사업·공사 등급에 따른 설계심사·건축허가와 환경분류·환경허가를 별도 경로로 매핑한다. viet nam">
+  <td class="no">05</td>
+  <td class="name"><a href="model/vietnam-permit-environment-construction-regulations/index.html">베트남 건축허가·환경심사</a>
+    <p>사업·공사 등급에 따른 설계심사·건축허가와 환경분류·환경허가를 별도 경로로 매핑한다.</p></td>
+  <td><span class="badge plain muted">베트남</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="베트남" data-a="construction"
+  data-s="베트남 기술검사·보험·준공제도 자격 있는 설계·감리·시공자, 품질검사와 준공인수·사용조건을 계약 hold point로 관리한다. viet nam">
+  <td class="no">06</td>
+  <td class="name"><a href="model/vietnam-control-completion-construction-regulations/index.html">베트남 기술검사·보험·준공제도</a>
+    <p>자격 있는 설계·감리·시공자, 품질검사와 준공인수·사용조건을 계약 Hold Point로 관리한다.</p></td>
+  <td><span class="badge plain muted">베트남</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="볼리비아" data-a="bidding"
   data-s="볼리비아 공공조달 입찰제도 2025년 현행 nb-sabs 기준 볼리비아 조달방법·기한·보증·불복 절차 bolivia">
-  <td class="no">46</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/bolivia-bidding-system/index.html">볼리비아 공공조달 입찰제도</a>
     <p>2025년 현행 NB-SABS 기준 볼리비아 조달방법·기한·보증·불복 절차</p></td>
   <td><span class="badge plain muted">볼리비아</span></td>
@@ -743,7 +1305,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="볼리비아" data-a="governance"
   data-s="볼리비아 조달 거버넌스·감독체계 ds 0181 기준 mefp·mae·rpc/rpa·평가위원회·sicoes의 권한과 행정불복 체계 bolivia">
-  <td class="no">47</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/bolivia-procurement-governance/index.html">볼리비아 조달 거버넌스·감독체계</a>
     <p>DS 0181 기준 MEFP·MAE·RPC/RPA·평가위원회·SICOES의 권한과 행정불복 체계</p></td>
   <td><span class="badge plain muted">볼리비아</span></td>
@@ -752,16 +1314,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="볼리비아" data-a="pipeline"
   data-s="볼리비아 oda 사업 발굴·형성 절차 vipfe·sisin의 사업등록·투자예산·외부재원 협상과 후속 nb-sabs 조달 절차 bolivia">
-  <td class="no">48</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/bolivia-oda-project-pipeline/index.html">볼리비아 ODA 사업 발굴·형성 절차</a>
     <p>VIPFE·SISIN의 사업등록·투자예산·외부재원 협상과 후속 NB-SABS 조달 절차</p></td>
   <td><span class="badge plain muted">볼리비아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="볼리비아" data-a="construction"
+  data-s="볼리비아 도시계획·부지규제 관할 gam의 토지이용지도·지적증명과 필지별 cartilla로 용도·형태·높이·주차를 확정한다. bolivia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/bolivia-site-urban-construction-regulations/index.html">볼리비아 도시계획·부지규제</a>
+    <p>관할 GAM의 토지이용지도·지적증명과 필지별 cartilla로 용도·형태·높이·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">볼리비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="볼리비아" data-a="construction"
+  data-s="볼리비아 건축허가·환경심사 gam 건축허가와 aac의 fnca 분류·irap·환경 licence를 입지·규모별로 연결한다. bolivia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/bolivia-permit-environment-construction-regulations/index.html">볼리비아 건축허가·환경심사</a>
+    <p>GAM 건축허가와 AAC의 FNCA 분류·IRAP·환경 licence를 입지·규모별로 연결한다.</p></td>
+  <td><span class="badge plain muted">볼리비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="볼리비아" data-a="construction"
+  data-s="볼리비아 기술검사·보험·준공제도 등록 전문가·nbds 구조안전, gam 동행검사와 승인 준공도면(as-built)·준공서류를 인계 gate로 둔다. bolivia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/bolivia-control-completion-construction-regulations/index.html">볼리비아 기술검사·보험·준공제도</a>
+    <p>등록 전문가·NBDS 구조안전, GAM 동행검사와 승인 준공도면(as-built)·준공서류를 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">볼리비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="세네갈" data-a="bidding"
   data-s="세네갈 공공조달 입찰제도 세네갈 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 senegal">
-  <td class="no">49</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/senegal-bidding-system/index.html">세네갈 공공조달 입찰제도</a>
     <p>세네갈 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">세네갈</span></td>
@@ -770,7 +1359,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="세네갈" data-a="governance"
   data-s="세네갈 조달 거버넌스·감독체계 세네갈 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 senegal">
-  <td class="no">50</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/senegal-procurement-governance/index.html">세네갈 조달 거버넌스·감독체계</a>
     <p>세네갈 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">세네갈</span></td>
@@ -779,16 +1368,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="세네갈" data-a="pipeline"
   data-s="세네갈 oda 사업 발굴·형성 절차 세네갈 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 senegal">
-  <td class="no">51</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/senegal-oda-project-pipeline/index.html">세네갈 ODA 사업 발굴·형성 절차</a>
     <p>세네갈 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">세네갈</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="세네갈" data-a="construction"
+  data-s="세네갈 도시계획·부지규제 지적식별번호(nicad)·권원 접수부터 상세도시계획(pud)·부지기준 심사, 보완과 도시계획 적합 결정까지의 법정 절차를 표시한다. senegal">
+  <td class="no">04</td>
+  <td class="name"><a href="model/senegal-site-urban-construction-regulations/index.html">세네갈 도시계획·부지규제</a>
+    <p>지적식별번호(NICAD)·권원 접수부터 상세도시계획(PUD)·부지기준 심사, 보완과 도시계획 적합 결정까지의 법정 절차를 표시한다.</p></td>
+  <td><span class="badge plain muted">세네갈</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="세네갈" data-a="construction"
+  data-s="세네갈 건축허가·환경심사 건축주·허가권자, 대중이용시설(erp)·환경평가 분류와 완비접수부터 허가까지의 법정 경로를 확정한다. senegal">
+  <td class="no">05</td>
+  <td class="name"><a href="model/senegal-permit-environment-construction-regulations/index.html">세네갈 건축허가·환경심사</a>
+    <p>건축주·허가권자, 대중이용시설(ERP)·환경평가 분류와 완비접수부터 허가까지의 법정 경로를 확정한다.</p></td>
+  <td><span class="badge plain muted">세네갈</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="세네갈" data-a="construction"
+  data-s="세네갈 기술검사·보험·준공제도 인가 검사기관·보험을 착공 전에 계약하고 시공·변경·적합증명·대중이용시설(erp) 개장까지 증빙을 잇는다. senegal">
+  <td class="no">06</td>
+  <td class="name"><a href="model/senegal-control-completion-construction-regulations/index.html">세네갈 기술검사·보험·준공제도</a>
+    <p>인가 검사기관·보험을 착공 전에 계약하고 시공·변경·적합증명·대중이용시설(ERP) 개장까지 증빙을 잇는다.</p></td>
+  <td><span class="badge plain muted">세네갈</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="스리랑카" data-a="bidding"
   data-s="스리랑카 공공조달 입찰제도 스리랑카 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 sri lanka">
-  <td class="no">52</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/sri-lanka-bidding-system/index.html">스리랑카 공공조달 입찰제도</a>
     <p>스리랑카 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">스리랑카</span></td>
@@ -797,7 +1413,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="스리랑카" data-a="governance"
   data-s="스리랑카 조달 거버넌스·감독체계 스리랑카 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 sri lanka">
-  <td class="no">53</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/sri-lanka-procurement-governance/index.html">스리랑카 조달 거버넌스·감독체계</a>
     <p>스리랑카 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">스리랑카</span></td>
@@ -806,16 +1422,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="스리랑카" data-a="pipeline"
   data-s="스리랑카 oda 사업 발굴·형성 절차 스리랑카 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 sri lanka">
-  <td class="no">54</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/sri-lanka-oda-project-pipeline/index.html">스리랑카 ODA 사업 발굴·형성 절차</a>
     <p>스리랑카 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">스리랑카</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="스리랑카" data-a="construction"
+  data-s="스리랑카 도시계획·부지규제 uda 선언구역·지방계획과 필지권원·street line·building line·재해조건으로 개발 가능 규모를 확정한다. sri lanka">
+  <td class="no">04</td>
+  <td class="name"><a href="model/sri-lanka-site-urban-construction-regulations/index.html">스리랑카 도시계획·부지규제</a>
+    <p>UDA 선언구역·지방계획과 필지권원·street line·building line·재해조건으로 개발 가능 규모를 확정한다.</p></td>
+  <td><span class="badge plain muted">스리랑카</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="스리랑카" data-a="construction"
+  data-s="스리랑카 건축허가·환경심사 uda·지방정부 개발허가와 cea의 prescribed project·초기환경검토(iee)/환경영향평가(eia) 판정을 병행하고 외부 clearance를 묶는다. sri lanka">
+  <td class="no">05</td>
+  <td class="name"><a href="model/sri-lanka-permit-environment-construction-regulations/index.html">스리랑카 건축허가·환경심사</a>
+    <p>UDA·지방정부 개발허가와 CEA의 prescribed project·초기환경검토(IEE)/환경영향평가(EIA) 판정을 병행하고 외부 clearance를 묶는다.</p></td>
+  <td><span class="badge plain muted">스리랑카</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="스리랑카" data-a="construction"
+  data-s="스리랑카 기술검사·보험·준공제도 qualified person의 공사감독, 단계검사·nbro 적합확인과 certificate of conformity를 사용개시 전 gate로 둔다. sri lanka">
+  <td class="no">06</td>
+  <td class="name"><a href="model/sri-lanka-control-completion-construction-regulations/index.html">스리랑카 기술검사·보험·준공제도</a>
+    <p>qualified person의 공사감독, 단계검사·NBRO 적합확인과 Certificate of Conformity를 사용개시 전 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">스리랑카</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="아제르바이잔" data-a="bidding"
   data-s="아제르바이잔 공공조달 입찰제도 2026년 7월 현행법 기준 아제르바이잔 공공조달 입찰방법·기한·보증·불복 절차 azerbaijan">
-  <td class="no">55</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/azerbaijan-bidding-system/index.html">아제르바이잔 공공조달 입찰제도</a>
     <p>2026년 7월 현행법 기준 아제르바이잔 공공조달 입찰방법·기한·보증·불복 절차</p></td>
   <td><span class="badge plain muted">아제르바이잔</span></td>
@@ -824,7 +1467,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="아제르바이잔" data-a="governance"
   data-s="아제르바이잔 조달 거버넌스·감독체계 2026년 7월 현행법 기준 아제르바이잔 구매기관·조달위원회·감독기관의 권한과 불복체계 azerbaijan">
-  <td class="no">56</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/azerbaijan-procurement-governance/index.html">아제르바이잔 조달 거버넌스·감독체계</a>
     <p>2026년 7월 현행법 기준 아제르바이잔 구매기관·조달위원회·감독기관의 권한과 불복체계</p></td>
   <td><span class="badge plain muted">아제르바이잔</span></td>
@@ -833,16 +1476,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="아제르바이잔" data-a="pipeline"
   data-s="아제르바이잔 oda 사업 발굴·형성 절차 2026년 7월 현행법 기준 아제르바이잔 기술지원·무상원조 협정의 협상승인·서명·등록·조달 절차 azerbaijan">
-  <td class="no">57</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/azerbaijan-oda-project-pipeline/index.html">아제르바이잔 ODA 사업 발굴·형성 절차</a>
     <p>2026년 7월 현행법 기준 아제르바이잔 기술지원·무상원조 협정의 협상승인·서명·등록·조달 절차</p></td>
   <td><span class="badge plain muted">아제르바이잔</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="아제르바이잔" data-a="construction"
+  data-s="아제르바이잔 도시계획·부지규제 토지권리와 general/detailed plan·urban-planning justification으로 필지별 건축조건을 확정한다. azerbaijan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/azerbaijan-site-urban-construction-regulations/index.html">아제르바이잔 도시계획·부지규제</a>
+    <p>토지권리와 general/detailed plan·urban-planning justification으로 필지별 건축조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">아제르바이잔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="아제르바이잔" data-a="construction"
+  data-s="아제르바이잔 건축허가·환경심사 관할기관의 건설허가·설계전문심사와 법정목록 환경영향평가(eia)·국가생태전문심사를 대상별로 연계한다. azerbaijan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/azerbaijan-permit-environment-construction-regulations/index.html">아제르바이잔 건축허가·환경심사</a>
+    <p>관할기관의 건설허가·설계전문심사와 법정목록 환경영향평가(EIA)·국가생태전문심사를 대상별로 연계한다.</p></td>
+  <td><span class="badge plain muted">아제르바이잔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="아제르바이잔" data-a="construction"
+  data-s="아제르바이잔 기술검사·보험·준공제도 기술·설계감리와 관계기관 준공 act를 모아 별도 사용허가를 받은 뒤 개장한다. azerbaijan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/azerbaijan-control-completion-construction-regulations/index.html">아제르바이잔 기술검사·보험·준공제도</a>
+    <p>기술·설계감리와 관계기관 준공 act를 모아 별도 사용허가를 받은 뒤 개장한다.</p></td>
+  <td><span class="badge plain muted">아제르바이잔</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="에콰도르" data-a="bidding"
   data-s="에콰도르 공공조달 입찰제도 에콰도르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ecuador">
-  <td class="no">58</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/ecuador-bidding-system/index.html">에콰도르 공공조달 입찰제도</a>
     <p>에콰도르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에콰도르</span></td>
@@ -851,7 +1521,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="에콰도르" data-a="governance"
   data-s="에콰도르 조달 거버넌스·감독체계 에콰도르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ecuador">
-  <td class="no">59</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/ecuador-procurement-governance/index.html">에콰도르 조달 거버넌스·감독체계</a>
     <p>에콰도르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에콰도르</span></td>
@@ -860,16 +1530,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="에콰도르" data-a="pipeline"
   data-s="에콰도르 oda 사업 발굴·형성 절차 에콰도르 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ecuador">
-  <td class="no">60</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/ecuador-oda-project-pipeline/index.html">에콰도르 ODA 사업 발굴·형성 절차</a>
     <p>에콰도르 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에콰도르</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="에콰도르" data-a="construction"
+  data-s="에콰도르 도시계획·부지규제 등기·지적과 관할 캔톤의 토지이용계획·조례로 필지별 용도·건축가능규모·높이·주차를 확정한다. ecuador">
+  <td class="no">04</td>
+  <td class="name"><a href="model/ecuador-site-urban-construction-regulations/index.html">에콰도르 도시계획·부지규제</a>
+    <p>등기·지적과 관할 캔톤의 토지이용계획·조례로 필지별 용도·건축가능규모·높이·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">에콰도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="에콰도르" data-a="construction"
+  data-s="에콰도르 건축허가·환경심사 gad 건축 licence와 suia의 certificate·registro·licencia 환경경로를 영향·입지별로 연결한다. ecuador">
+  <td class="no">05</td>
+  <td class="name"><a href="model/ecuador-permit-environment-construction-regulations/index.html">에콰도르 건축허가·환경심사</a>
+    <p>GAD 건축 licence와 SUIA의 certificate·registro·licencia 환경경로를 영향·입지별로 연결한다.</p></td>
+  <td><span class="badge plain muted">에콰도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="에콰도르" data-a="construction"
+  data-s="에콰도르 기술검사·보험·준공제도 nec 책임전문가·검사, 소방 점유허가와 gad 최종 공사적합성 증명을 사용개시 gate로 둔다. ecuador">
+  <td class="no">06</td>
+  <td class="name"><a href="model/ecuador-control-completion-construction-regulations/index.html">에콰도르 기술검사·보험·준공제도</a>
+    <p>NEC 책임전문가·검사, 소방 점유허가와 GAD 최종 공사적합성 증명을 사용개시 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">에콰도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="에티오피아" data-a="bidding"
   data-s="에티오피아 공공조달 입찰제도 에티오피아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ethiopia">
-  <td class="no">61</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/ethiopia-bidding-system/index.html">에티오피아 공공조달 입찰제도</a>
     <p>에티오피아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에티오피아</span></td>
@@ -878,7 +1575,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="에티오피아" data-a="governance"
   data-s="에티오피아 조달 거버넌스·감독체계 에티오피아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ethiopia">
-  <td class="no">62</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/ethiopia-procurement-governance/index.html">에티오피아 조달 거버넌스·감독체계</a>
     <p>에티오피아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에티오피아</span></td>
@@ -887,16 +1584,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="에티오피아" data-a="pipeline"
   data-s="에티오피아 oda 사업 발굴·형성 절차 에티오피아 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ethiopia">
-  <td class="no">63</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/ethiopia-oda-project-pipeline/index.html">에티오피아 ODA 사업 발굴·형성 절차</a>
     <p>에티오피아 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">에티오피아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="에티오피아" data-a="construction"
+  data-s="에티오피아 도시계획·부지규제 도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다. ethiopia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/ethiopia-site-urban-construction-regulations/index.html">에티오피아 도시계획·부지규제</a>
+    <p>도시 임차권·지적정보와 관할 구조·지역계획의 plan agreement로 필지별 설계한계를 확정한다.</p></td>
+  <td><span class="badge plain muted">에티오피아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="에티오피아" data-a="construction"
+  data-s="에티오피아 건축허가·환경심사 설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다. ethiopia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/ethiopia-permit-environment-construction-regulations/index.html">에티오피아 건축허가·환경심사</a>
+    <p>설계승인·건축허가권자와 연방 또는 지역 환경영향평가 승인기관을 관할별로 확정한다.</p></td>
+  <td><span class="badge plain muted">에티오피아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="에티오피아" data-a="construction"
+  data-s="에티오피아 기술검사·보험·준공제도 ebcs와 등록 전문가·시공자, 현장감독·책임보험 및 건축물 사용허가(building use permit)을 인계 gate로 둔다. ethiopia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/ethiopia-control-completion-construction-regulations/index.html">에티오피아 기술검사·보험·준공제도</a>
+    <p>EBCS와 등록 전문가·시공자, 현장감독·책임보험 및 건축물 사용허가(building use permit)을 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">에티오피아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="엘살바도르" data-a="bidding"
   data-s="엘살바도르 공공조달 입찰제도 엘살바도르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 el salvador">
-  <td class="no">64</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/el-salvador-bidding-system/index.html">엘살바도르 공공조달 입찰제도</a>
     <p>엘살바도르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">엘살바도르</span></td>
@@ -905,7 +1629,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="엘살바도르" data-a="governance"
   data-s="엘살바도르 조달 거버넌스·감독체계 엘살바도르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 el salvador">
-  <td class="no">65</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/el-salvador-procurement-governance/index.html">엘살바도르 조달 거버넌스·감독체계</a>
     <p>엘살바도르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">엘살바도르</span></td>
@@ -914,16 +1638,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="엘살바도르" data-a="pipeline"
   data-s="엘살바도르 oda 사업 발굴·형성 절차 엘살바도르 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 el salvador">
-  <td class="no">66</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/el-salvador-oda-project-pipeline/index.html">엘살바도르 ODA 사업 발굴·형성 절차</a>
     <p>엘살바도르 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">엘살바도르</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="엘살바도르" data-a="construction"
+  data-s="엘살바도르 도시계획·부지규제 관할기관의 입지판정·건축선·도로·배수·용도지역으로 필지별 개발조건을 확정한다. el salvador">
+  <td class="no">04</td>
+  <td class="name"><a href="model/el-salvador-site-urban-construction-regulations/index.html">엘살바도르 도시계획·부지규제</a>
+    <p>관할기관의 입지판정·건축선·도로·배수·용도지역으로 필지별 개발조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">엘살바도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="엘살바도르" data-a="construction"
+  data-s="엘살바도르 건축허가·환경심사 관할 건축허가와 marn sea의 2025 n1·n2·n3 환경분류·허가를 하나의 일정으로 관리한다. el salvador">
+  <td class="no">05</td>
+  <td class="name"><a href="model/el-salvador-permit-environment-construction-regulations/index.html">엘살바도르 건축허가·환경심사</a>
+    <p>관할 건축허가와 MARN SEA의 2025 N1·N2·N3 환경분류·허가를 하나의 일정으로 관리한다.</p></td>
+  <td><span class="badge plain muted">엘살바도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="엘살바도르" data-a="construction"
+  data-s="엘살바도르 기술검사·보험·준공제도 국가등록 전문가·director de obra, 단계검사와 recepción de obra를 사용개시 gate로 둔다. el salvador">
+  <td class="no">06</td>
+  <td class="name"><a href="model/el-salvador-control-completion-construction-regulations/index.html">엘살바도르 기술검사·보험·준공제도</a>
+    <p>국가등록 전문가·director de obra, 단계검사와 recepción de obra를 사용개시 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">엘살바도르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="요르단" data-a="bidding"
   data-s="요르단 공공조달 입찰제도 요르단 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 jordan">
-  <td class="no">67</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/jordan-bidding-system/index.html">요르단 공공조달 입찰제도</a>
     <p>요르단 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">요르단</span></td>
@@ -932,7 +1683,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="요르단" data-a="governance"
   data-s="요르단 조달 거버넌스·감독체계 요르단 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 jordan">
-  <td class="no">68</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/jordan-procurement-governance/index.html">요르단 조달 거버넌스·감독체계</a>
     <p>요르단 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">요르단</span></td>
@@ -941,16 +1692,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="요르단" data-a="pipeline"
   data-s="요르단 oda 사업 발굴·형성 절차 요르단 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 jordan">
-  <td class="no">69</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/jordan-oda-project-pipeline/index.html">요르단 ODA 사업 발굴·형성 절차</a>
     <p>요르단 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">요르단</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="요르단" data-a="construction"
+  data-s="요르단 도시계획·부지규제 토지등기·지적과 관할 구조계획·용도지역·필지규칙으로 실제 건축가능 수치를 확정한다. jordan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/jordan-site-urban-construction-regulations/index.html">요르단 도시계획·부지규제</a>
+    <p>토지등기·지적과 관할 구조계획·용도지역·필지규칙으로 실제 건축가능 수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">요르단</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="요르단" data-a="construction"
+  data-s="요르단 건축허가·환경심사 계획기관의 건축허가와 환경부 환경등급(category) 1–4 분류·동의/환경영향평가(eia)를 독립 선행조건으로 묶는다. jordan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/jordan-permit-environment-construction-regulations/index.html">요르단 건축허가·환경심사</a>
+    <p>계획기관의 건축허가와 환경부 환경등급(Category) 1–4 분류·동의/환경영향평가(EIA)를 독립 선행조건으로 묶는다.</p></td>
+  <td><span class="badge plain muted">요르단</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="요르단" data-a="construction"
+  data-s="요르단 기술검사·보험·준공제도 등록 설계·시공·감리, jnbc 코드검사와 civil defense·점유허가를 개장 gate로 둔다. jordan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/jordan-control-completion-construction-regulations/index.html">요르단 기술검사·보험·준공제도</a>
+    <p>등록 설계·시공·감리, JNBC 코드검사와 Civil Defense·점유허가를 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">요르단</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="우간다" data-a="bidding"
   data-s="우간다 공공조달 입찰제도 우간다 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uganda">
-  <td class="no">70</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/uganda-bidding-system/index.html">우간다 공공조달 입찰제도</a>
     <p>우간다 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우간다</span></td>
@@ -959,7 +1737,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우간다" data-a="governance"
   data-s="우간다 조달 거버넌스·감독체계 우간다 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uganda">
-  <td class="no">71</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/uganda-procurement-governance/index.html">우간다 조달 거버넌스·감독체계</a>
     <p>우간다 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우간다</span></td>
@@ -968,16 +1746,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우간다" data-a="pipeline"
   data-s="우간다 oda 사업 발굴·형성 절차 우간다 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uganda">
-  <td class="no">72</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/uganda-oda-project-pipeline/index.html">우간다 ODA 사업 발굴·형성 절차</a>
     <p>우간다 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우간다</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="우간다" data-a="construction"
+  data-s="우간다 도시계획·부지규제 토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다. uganda">
+  <td class="no">04</td>
+  <td class="name"><a href="model/uganda-site-urban-construction-regulations/index.html">우간다 도시계획·부지규제</a>
+    <p>토지권원과 지방 physical development plan·planning consent로 용도·밀도·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">우간다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우간다" data-a="construction"
+  data-s="우간다 건축허가·환경심사 building committee 건축허가와 nema project brief·환경·사회영향평가(esia) 유형을 분류해 선행조건을 연결한다. uganda">
+  <td class="no">05</td>
+  <td class="name"><a href="model/uganda-permit-environment-construction-regulations/index.html">우간다 건축허가·환경심사</a>
+    <p>Building Committee 건축허가와 NEMA Project Brief·환경·사회영향평가(ESIA) 유형을 분류해 선행조건을 연결한다.</p></td>
+  <td><span class="badge plain muted">우간다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우간다" data-a="construction"
+  data-s="우간다 기술검사·보험·준공제도 등록 전문가, 국가코드·단계검사와 점유허가(occupation permit)을 시설 사용 전 법정 gate로 둔다. uganda">
+  <td class="no">06</td>
+  <td class="name"><a href="model/uganda-control-completion-construction-regulations/index.html">우간다 기술검사·보험·준공제도</a>
+    <p>등록 전문가, 국가코드·단계검사와 점유허가(occupation permit)을 시설 사용 전 법정 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">우간다</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="우즈베키스탄" data-a="bidding"
   data-s="우즈베키스탄 공공조달 입찰제도 우즈베키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uzbekistan">
-  <td class="no">73</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/uzbekistan-bidding-system/index.html">우즈베키스탄 공공조달 입찰제도</a>
     <p>우즈베키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우즈베키스탄</span></td>
@@ -986,7 +1791,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우즈베키스탄" data-a="governance"
   data-s="우즈베키스탄 조달 거버넌스·감독체계 우즈베키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uzbekistan">
-  <td class="no">74</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/uzbekistan-procurement-governance/index.html">우즈베키스탄 조달 거버넌스·감독체계</a>
     <p>우즈베키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우즈베키스탄</span></td>
@@ -995,16 +1800,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우즈베키스탄" data-a="pipeline"
   data-s="우즈베키스탄 oda 사업 발굴·형성 절차 우즈베키스탄 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 uzbekistan">
-  <td class="no">75</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/uzbekistan-oda-project-pipeline/index.html">우즈베키스탄 ODA 사업 발굴·형성 절차</a>
     <p>우즈베키스탄 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우즈베키스탄</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="우즈베키스탄" data-a="construction"
+  data-s="우즈베키스탄 도시계획·부지규제 토지권리·지적과 승인 general/detailed plan·건축계획과제로 실제 부지조건을 고정한다. uzbekistan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/uzbekistan-site-urban-construction-regulations/index.html">우즈베키스탄 도시계획·부지규제</a>
+    <p>토지권리·지적과 승인 general/detailed plan·건축계획과제로 실제 부지조건을 고정한다.</p></td>
+  <td><span class="badge plain muted">우즈베키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우즈베키스탄" data-a="construction"
+  data-s="우즈베키스탄 건축허가·환경심사 위험범주별 설계협의·전문심사·착공등록과 3개 환경범주 국가환경전문심사를 연계한다. uzbekistan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/uzbekistan-permit-environment-construction-regulations/index.html">우즈베키스탄 건축허가·환경심사</a>
+    <p>위험범주별 설계협의·전문심사·착공등록과 3개 환경범주 국가환경전문심사를 연계한다.</p></td>
+  <td><span class="badge plain muted">우즈베키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우즈베키스탄" data-a="construction"
+  data-s="우즈베키스탄 기술검사·보험·준공제도 건축주 기술감리·설계자 감리·시공자 내부통제와 국가검사·사용승인을 인계 gate로 둔다. uzbekistan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/uzbekistan-control-completion-construction-regulations/index.html">우즈베키스탄 기술검사·보험·준공제도</a>
+    <p>건축주 기술감리·설계자 감리·시공자 내부통제와 국가검사·사용승인을 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">우즈베키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="우크라이나" data-a="bidding"
   data-s="우크라이나 공공조달 입찰제도 우크라이나 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ukraine">
-  <td class="no">76</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/ukraine-bidding-system/index.html">우크라이나 공공조달 입찰제도</a>
     <p>우크라이나 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우크라이나</span></td>
@@ -1013,7 +1845,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우크라이나" data-a="governance"
   data-s="우크라이나 조달 거버넌스·감독체계 우크라이나 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ukraine">
-  <td class="no">77</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/ukraine-procurement-governance/index.html">우크라이나 조달 거버넌스·감독체계</a>
     <p>우크라이나 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우크라이나</span></td>
@@ -1022,16 +1854,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="우크라이나" data-a="pipeline"
   data-s="우크라이나 oda 사업 발굴·형성 절차 우크라이나 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 ukraine">
-  <td class="no">78</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/ukraine-oda-project-pipeline/index.html">우크라이나 ODA 사업 발굴·형성 절차</a>
     <p>우크라이나 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">우크라이나</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="우크라이나" data-a="construction"
+  data-s="우크라이나 도시계획·부지규제 토지권리·지적과 종합계획·용도지역·상세계획, 필지조건으로 실제 개발범위를 확정한다. ukraine">
+  <td class="no">04</td>
+  <td class="name"><a href="model/ukraine-site-urban-construction-regulations/index.html">우크라이나 도시계획·부지규제</a>
+    <p>토지권리·지적과 종합계획·용도지역·상세계획, 필지조건으로 실제 개발범위를 확정한다.</p></td>
+  <td><span class="badge plain muted">우크라이나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우크라이나" data-a="construction"
+  data-s="우크라이나 건축허가·환경심사 cc1·cc2·cc3 결과등급별 통지/허가와 법정 1·2범주 환경영향평가(eia) 결론을 전자건설시스템에서 연계한다. ukraine">
+  <td class="no">05</td>
+  <td class="name"><a href="model/ukraine-permit-environment-construction-regulations/index.html">우크라이나 건축허가·환경심사</a>
+    <p>CC1·CC2·CC3 결과등급별 통지/허가와 법정 1·2범주 환경영향평가(EIA) 결론을 전자건설시스템에서 연계한다.</p></td>
+  <td><span class="badge plain muted">우크라이나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="우크라이나" data-a="construction"
+  data-s="우크라이나 기술검사·보험·준공제도 자격전문가의 author/technical supervision과 cc별 declaration/certificate를 점유·인계 gate로 둔다. ukraine">
+  <td class="no">06</td>
+  <td class="name"><a href="model/ukraine-control-completion-construction-regulations/index.html">우크라이나 기술검사·보험·준공제도</a>
+    <p>자격전문가의 author/technical supervision과 CC별 declaration/certificate를 점유·인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">우크라이나</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="이집트" data-a="bidding"
   data-s="이집트 공공조달 입찰제도 이집트 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 egypt">
-  <td class="no">79</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/egypt-bidding-system/index.html">이집트 공공조달 입찰제도</a>
     <p>이집트 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">이집트</span></td>
@@ -1040,7 +1899,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="이집트" data-a="governance"
   data-s="이집트 조달 거버넌스·감독체계 이집트 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 egypt">
-  <td class="no">80</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/egypt-procurement-governance/index.html">이집트 조달 거버넌스·감독체계</a>
     <p>이집트 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">이집트</span></td>
@@ -1049,16 +1908,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="이집트" data-a="pipeline"
   data-s="이집트 oda 사업 발굴·형성 절차 이집트 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 egypt">
-  <td class="no">81</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/egypt-oda-project-pipeline/index.html">이집트 ODA 사업 발굴·형성 절차</a>
     <p>이집트 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">이집트</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="이집트" data-a="construction"
+  data-s="이집트 도시계획·부지규제 토지배정·등기와 관할 도시의 strategic/detailed plan·building requirements로 필지 수치를 확정한다. egypt">
+  <td class="no">04</td>
+  <td class="name"><a href="model/egypt-site-urban-construction-regulations/index.html">이집트 도시계획·부지규제</a>
+    <p>토지배정·등기와 관할 도시의 strategic/detailed plan·building requirements로 필지 수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">이집트</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="이집트" data-a="construction"
+  data-s="이집트 건축허가·환경심사 지방·nuca 건축허가와 caa-eeaa의 a·b·c 환경영향평가(eia) 분류를 착공 전 통합 매핑한다. egypt">
+  <td class="no">05</td>
+  <td class="name"><a href="model/egypt-permit-environment-construction-regulations/index.html">이집트 건축허가·환경심사</a>
+    <p>지방·NUCA 건축허가와 CAA-EEAA의 A·B·C 환경영향평가(EIA) 분류를 착공 전 통합 매핑한다.</p></td>
+  <td><span class="badge plain muted">이집트</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="이집트" data-a="construction"
+  data-s="이집트 기술검사·보험·준공제도 등록 엔지니어, 감리·단계검사와 building fitness/occupancy 증명을 시설 개장 전 gate로 둔다. egypt">
+  <td class="no">06</td>
+  <td class="name"><a href="model/egypt-control-completion-construction-regulations/index.html">이집트 기술검사·보험·준공제도</a>
+    <p>등록 엔지니어, 감리·단계검사와 building fitness/occupancy 증명을 시설 개장 전 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">이집트</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="인도네시아" data-a="bidding"
   data-s="인도네시아 공공조달 입찰제도 인도네시아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 indonesia">
-  <td class="no">82</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/indonesia-bidding-system/index.html">인도네시아 공공조달 입찰제도</a>
     <p>인도네시아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">인도네시아</span></td>
@@ -1067,7 +1953,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="인도네시아" data-a="governance"
   data-s="인도네시아 조달 거버넌스·감독체계 인도네시아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 indonesia">
-  <td class="no">83</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/indonesia-procurement-governance/index.html">인도네시아 조달 거버넌스·감독체계</a>
     <p>인도네시아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">인도네시아</span></td>
@@ -1076,16 +1962,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="인도네시아" data-a="pipeline"
   data-s="인도네시아 oda 사업 발굴·형성 절차 인도네시아 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 indonesia">
-  <td class="no">84</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/indonesia-oda-project-pipeline/index.html">인도네시아 ODA 사업 발굴·형성 절차</a>
     <p>인도네시아 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">인도네시아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="인도네시아" data-a="construction"
+  data-s="인도네시아 도시계획·부지규제 토지권원과 rdtr·rtrw 기반 kkpr를 먼저 확보하고 필지의 kdb·klb·높이·이격·주차·재해조건을 확정한다. indonesia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/indonesia-site-urban-construction-regulations/index.html">인도네시아 도시계획·부지규제</a>
+    <p>토지권원과 RDTR·RTRW 기반 KKPR를 먼저 확보하고 필지의 KDB·KLB·높이·이격·주차·재해조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">인도네시아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="인도네시아" data-a="construction"
+  data-s="인도네시아 건축허가·환경심사 pbg 기술승인과 amdal·ukl-upl·sppl 환경분류·환경승인을 별도 선행조건으로 연결한다. indonesia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/indonesia-permit-environment-construction-regulations/index.html">인도네시아 건축허가·환경심사</a>
+    <p>PBG 기술승인과 AMDAL·UKL-UPL·SPPL 환경분류·환경승인을 별도 선행조건으로 연결한다.</p></td>
+  <td><span class="badge plain muted">인도네시아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="인도네시아" data-a="construction"
+  data-s="인도네시아 기술검사·보험·준공제도 등록전문가·단계검사·시험과 slf를 준공·사용개시의 법정 gate로 관리한다. indonesia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/indonesia-control-completion-construction-regulations/index.html">인도네시아 기술검사·보험·준공제도</a>
+    <p>등록전문가·단계검사·시험과 SLF를 준공·사용개시의 법정 Gate로 관리한다.</p></td>
+  <td><span class="badge plain muted">인도네시아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="카메룬" data-a="bidding"
   data-s="카메룬 공공조달 입찰제도 카메룬 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 cameroon">
-  <td class="no">85</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/cameroon-bidding-system/index.html">카메룬 공공조달 입찰제도</a>
     <p>카메룬 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">카메룬</span></td>
@@ -1094,7 +2007,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="카메룬" data-a="governance"
   data-s="카메룬 조달 거버넌스·감독체계 카메룬 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 cameroon">
-  <td class="no">86</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/cameroon-procurement-governance/index.html">카메룬 조달 거버넌스·감독체계</a>
     <p>카메룬 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">카메룬</span></td>
@@ -1103,16 +2016,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="카메룬" data-a="pipeline"
   data-s="카메룬 oda 사업 발굴·형성 절차 카메룬 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 cameroon">
-  <td class="no">87</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/cameroon-oda-project-pipeline/index.html">카메룬 ODA 사업 발굴·형성 절차</a>
     <p>카메룬 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">카메룬</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="카메룬" data-a="construction"
+  data-s="카메룬 도시계획·부지규제 소유권과 certificat d&#x27;urbanisme로 필지 계획·servitude·공공시설 및 실제 개발수치를 확정한다. cameroon">
+  <td class="no">04</td>
+  <td class="name"><a href="model/cameroon-site-urban-construction-regulations/index.html">카메룬 도시계획·부지규제</a>
+    <p>소유권과 certificat d&#x27;urbanisme로 필지 계획·servitude·공공시설 및 실제 개발수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">카메룬</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="카메룬" data-a="construction"
+  data-s="카메룬 건축허가·환경심사 시장 건축허가와 minepded의 nie·간이/상세 환경영향연구(eies)·cce를 별도 gate로 연결한다. cameroon">
+  <td class="no">05</td>
+  <td class="name"><a href="model/cameroon-permit-environment-construction-regulations/index.html">카메룬 건축허가·환경심사</a>
+    <p>시장 건축허가와 MINEPDED의 NIE·간이/상세 환경영향연구(EIES)·CCE를 별도 Gate로 연결한다.</p></td>
+  <td><span class="badge plain muted">카메룬</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="카메룬" data-a="construction"
+  data-s="카메룬 기술검사·보험·준공제도 등록 건축사·기술자, 코뮌 현장방문·완료신고와 적합증명서(certificat de conformite)를 개장조건으로 둔다. cameroon">
+  <td class="no">06</td>
+  <td class="name"><a href="model/cameroon-control-completion-construction-regulations/index.html">카메룬 기술검사·보험·준공제도</a>
+    <p>등록 건축사·기술자, 코뮌 현장방문·완료신고와 적합증명서(certificat de conformite)를 개장조건으로 둔다.</p></td>
+  <td><span class="badge plain muted">카메룬</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="캄보디아" data-a="bidding"
   data-s="캄보디아 공공조달 입찰제도 품목 구분 없이 공개입찰·가격경쟁·비교견적·직접계약의 4개 방식을 금액구간으로 나누되, 수의계약 선호로 공개 정보가 적은 조달 체계 — 2023년 새 조달법으로 근거가 교체됨 cambodia">
-  <td class="no">88</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a>
     <p>품목 구분 없이 공개입찰·가격경쟁·비교견적·직접계약의 4개 방식을 금액구간으로 나누되, 수의계약 선호로 공개 정보가 적은 조달 체계 — 2023년 새 조달법으로 근거가 교체됨</p></td>
   <td><span class="badge plain muted">캄보디아</span></td>
@@ -1121,7 +2061,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="캄보디아" data-a="governance"
   data-s="캄보디아 조달 거버넌스·감독체계 경제재무부(mef) 아래 국내재원은 공공조달국(gdpp), 외부재원은 국제협력차관관리국(gdicdm)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐 cambodia">
-  <td class="no">89</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계</a>
     <p>경제재무부(MEF) 아래 국내재원은 공공조달국(GDPP), 외부재원은 국제협력차관관리국(GDICDM)이 관장하는 재원별 이원 구조로, 조달이 분권화돼 정부기관별 직접조달 한도가 정해짐</p></td>
   <td><span class="badge plain muted">캄보디아</span></td>
@@ -1130,16 +2070,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge warn">확인사항 1</span></td>
 </tr><tr data-c="캄보디아" data-a="pipeline"
   data-s="캄보디아 oda 사업 발굴·형성 절차 무상은 cdc/crdb, 유상은 경제재무부(mef)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 koica 예비조사·pd 심사로 형성되는 절차 cambodia">
-  <td class="no">90</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/cambodia-oda-project-pipeline/index.html">캄보디아 ODA 사업 발굴·형성 절차</a>
     <p>무상은 CDC/CRDB, 유상은 경제재무부(MEF)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 KOICA 예비조사·PD 심사로 형성되는 절차</p></td>
   <td><span class="badge plain muted">캄보디아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="캄보디아" data-a="construction"
+  data-s="캄보디아 도시계획·부지규제 토지권원과 적용 master plan·land-use plan·지역규정으로 용도·배치·높이·이격·주차·인프라 조건을 먼저 확정한다. cambodia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/cambodia-site-urban-construction-regulations/index.html">캄보디아 도시계획·부지규제</a>
+    <p>토지권원과 적용 master plan·land-use plan·지역규정으로 용도·배치·높이·이격·주차·인프라 조건을 먼저 확정한다.</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="캄보디아" data-a="construction"
+  data-s="캄보디아 건축허가·환경심사 규모·용도별 건설허가권자와 환경평가·환경승인 유형을 분류하고 실제 접수·수수료·기간을 확인한다. cambodia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/cambodia-permit-environment-construction-regulations/index.html">캄보디아 건축허가·환경심사</a>
+    <p>규모·용도별 건설허가권자와 환경평가·환경승인 유형을 분류하고 실제 접수·수수료·기간을 확인한다.</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="캄보디아" data-a="construction"
+  data-s="캄보디아 기술검사·보험·준공제도 허가받은 설계·시공·검사주체, 공사검사·인증과 사용증명을 준공·개장 gate로 묶는다. cambodia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/cambodia-control-completion-construction-regulations/index.html">캄보디아 기술검사·보험·준공제도</a>
+    <p>허가받은 설계·시공·검사주체, 공사검사·인증과 사용증명을 준공·개장 Gate로 묶는다.</p></td>
+  <td><span class="badge plain muted">캄보디아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="케냐" data-a="bidding"
   data-s="케냐 공공조달 입찰제도 케냐 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kenya">
-  <td class="no">91</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/kenya-bidding-system/index.html">케냐 공공조달 입찰제도</a>
     <p>케냐 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">케냐</span></td>
@@ -1148,7 +2115,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="케냐" data-a="governance"
   data-s="케냐 조달 거버넌스·감독체계 케냐 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kenya">
-  <td class="no">92</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/kenya-procurement-governance/index.html">케냐 조달 거버넌스·감독체계</a>
     <p>케냐 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">케냐</span></td>
@@ -1157,16 +2124,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="케냐" data-a="pipeline"
   data-s="케냐 oda 사업 발굴·형성 절차 케냐 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kenya">
-  <td class="no">93</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/kenya-oda-project-pipeline/index.html">케냐 ODA 사업 발굴·형성 절차</a>
     <p>케냐 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">케냐</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="케냐" data-a="construction"
+  data-s="케냐 도시계획·부지규제 토지등기·survey와 카운티 physical/local plan·개발허가(development permission)으로 필지 수치를 확정한다. kenya">
+  <td class="no">04</td>
+  <td class="name"><a href="model/kenya-site-urban-construction-regulations/index.html">케냐 도시계획·부지규제</a>
+    <p>토지등기·survey와 카운티 physical/local plan·개발허가(development permission)으로 필지 수치를 확정한다.</p></td>
+  <td><span class="badge plain muted">케냐</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="케냐" data-a="construction"
+  data-s="케냐 건축허가·환경심사 카운티 개발·건축허가와 nema의 spr·cpr·환경영향평가(eia) study·licence 경로를 선행순서대로 확정한다. kenya">
+  <td class="no">05</td>
+  <td class="name"><a href="model/kenya-permit-environment-construction-regulations/index.html">케냐 건축허가·환경심사</a>
+    <p>카운티 개발·건축허가와 NEMA의 SPR·CPR·환경영향평가(EIA) Study·licence 경로를 선행순서대로 확정한다.</p></td>
+  <td><span class="badge plain muted">케냐</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="케냐" data-a="construction"
+  data-s="케냐 기술검사·보험·준공제도 nca 프로젝트·시공자 등록, nbc 2024 검사와 카운티 occupation certificate를 인계 gate로 둔다. kenya">
+  <td class="no">06</td>
+  <td class="name"><a href="model/kenya-control-completion-construction-regulations/index.html">케냐 기술검사·보험·준공제도</a>
+    <p>NCA 프로젝트·시공자 등록, NBC 2024 검사와 카운티 occupation certificate를 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">케냐</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="코트디부아르" data-a="bidding"
   data-s="코트디부아르 공공조달 입찰제도 코트디부아르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 côte d&#x27;ivoire">
-  <td class="no">94</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/cote-divoire-bidding-system/index.html">코트디부아르 공공조달 입찰제도</a>
     <p>코트디부아르 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">코트디부아르</span></td>
@@ -1175,7 +2169,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="코트디부아르" data-a="governance"
   data-s="코트디부아르 조달 거버넌스·감독체계 코트디부아르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 côte d&#x27;ivoire">
-  <td class="no">95</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/cote-divoire-procurement-governance/index.html">코트디부아르 조달 거버넌스·감독체계</a>
     <p>코트디부아르 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">코트디부아르</span></td>
@@ -1184,16 +2178,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="코트디부아르" data-a="pipeline"
   data-s="코트디부아르 oda 사업 발굴·형성 절차 코트디부아르 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 côte d&#x27;ivoire">
-  <td class="no">96</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/cote-divoire-oda-project-pipeline/index.html">코트디부아르 ODA 사업 발굴·형성 절차</a>
     <p>코트디부아르 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">코트디부아르</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="코트디부아르" data-a="construction"
+  data-s="코트디부아르 도시계획·부지규제 acd·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다. côte d&#x27;ivoire">
+  <td class="no">04</td>
+  <td class="name"><a href="model/cote-divoire-site-urban-construction-regulations/index.html">코트디부아르 도시계획·부지규제</a>
+    <p>ACD·토지식별과 도시계획·lotissement 규정으로 필지별 용도·밀도·높이·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">코트디부아르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="코트디부아르" data-a="construction"
+  data-s="코트디부아르 건축허가·환경심사 gupc 건축허가와 ande의 환경영향연구(eies)·cies·배제결정을 유형·입지별로 연결한다. côte d&#x27;ivoire">
+  <td class="no">05</td>
+  <td class="name"><a href="model/cote-divoire-permit-environment-construction-regulations/index.html">코트디부아르 건축허가·환경심사</a>
+    <p>GUPC 건축허가와 ANDE의 환경영향연구(EIES)·CIES·배제결정을 유형·입지별로 연결한다.</p></td>
+  <td><span class="badge plain muted">코트디부아르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="코트디부아르" data-a="construction"
+  data-s="코트디부아르 기술검사·보험·준공제도 등록 전문가·기술검사, chantier 보험·10년 책임과 적합증명서(certificat de conformite)를 개장 gate로 둔다. côte d&#x27;ivoire">
+  <td class="no">06</td>
+  <td class="name"><a href="model/cote-divoire-control-completion-construction-regulations/index.html">코트디부아르 기술검사·보험·준공제도</a>
+    <p>등록 전문가·기술검사, chantier 보험·10년 책임과 적합증명서(certificat de conformite)를 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">코트디부아르</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="콜롬비아" data-a="bidding"
   data-s="콜롬비아 공공조달 입찰제도 콜롬비아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 colombia">
-  <td class="no">97</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/colombia-bidding-system/index.html">콜롬비아 공공조달 입찰제도</a>
     <p>콜롬비아 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">콜롬비아</span></td>
@@ -1202,7 +2223,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="콜롬비아" data-a="governance"
   data-s="콜롬비아 조달 거버넌스·감독체계 콜롬비아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 colombia">
-  <td class="no">98</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/colombia-procurement-governance/index.html">콜롬비아 조달 거버넌스·감독체계</a>
     <p>콜롬비아 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">콜롬비아</span></td>
@@ -1211,16 +2232,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="콜롬비아" data-a="pipeline"
   data-s="콜롬비아 oda 사업 발굴·형성 절차 콜롬비아 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 colombia">
-  <td class="no">99</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/colombia-oda-project-pipeline/index.html">콜롬비아 ODA 사업 발굴·형성 절차</a>
     <p>콜롬비아 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">콜롬비아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="콜롬비아" data-a="construction"
+  data-s="콜롬비아 도시계획·부지규제 등기·지적과 관할 도시계획·부분계획·도시규정으로 필지별 용도·건축가능규모·높이·주차를 확정한다. colombia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/colombia-site-urban-construction-regulations/index.html">콜롬비아 도시계획·부지규제</a>
+    <p>등기·지적과 관할 도시계획·부분계획·도시규정으로 필지별 용도·건축가능규모·높이·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">콜롬비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="콜롬비아" data-a="construction"
+  data-s="콜롬비아 건축허가·환경심사 curador/시의 urbanística licence와 법정대상 환경 licence·개별 환경허가를 정확히 선별한다. colombia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/colombia-permit-environment-construction-regulations/index.html">콜롬비아 건축허가·환경심사</a>
+    <p>curador/시의 urbanística licence와 법정대상 환경 licence·개별 환경허가를 정확히 선별한다.</p></td>
+  <td><span class="badge plain muted">콜롬비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="콜롬비아" data-a="construction"
+  data-s="콜롬비아 기술검사·보험·준공제도 nsr-10 책임전문가·독립 기술감리와 certificado técnico de ocupación을 점유 gate로 둔다. colombia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/colombia-control-completion-construction-regulations/index.html">콜롬비아 기술검사·보험·준공제도</a>
+    <p>NSR-10 책임전문가·독립 기술감리와 certificado técnico de ocupación을 점유 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">콜롬비아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="DR콩고" data-a="bidding"
   data-s="dr콩고 공공조달 입찰제도 dr콩고 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 democratic republic of the congo">
-  <td class="no">100</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/dr-congo-bidding-system/index.html">DR콩고 공공조달 입찰제도</a>
     <p>DR콩고 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">DR콩고</span></td>
@@ -1229,7 +2277,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="DR콩고" data-a="governance"
   data-s="dr콩고 조달 거버넌스·감독체계 dr콩고 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 democratic republic of the congo">
-  <td class="no">101</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/dr-congo-procurement-governance/index.html">DR콩고 조달 거버넌스·감독체계</a>
     <p>DR콩고 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">DR콩고</span></td>
@@ -1238,16 +2286,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="DR콩고" data-a="pipeline"
   data-s="dr콩고 oda 사업 발굴·형성 절차 dr콩고 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 democratic republic of the congo">
-  <td class="no">102</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/dr-congo-oda-project-pipeline/index.html">DR콩고 ODA 사업 발굴·형성 절차</a>
     <p>DR콩고 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">DR콩고</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="DR콩고" data-a="construction"
+  data-s="dr콩고 도시계획·부지규제 토지권원·지적경계와 관할 계획·도로·지역별 건축처방을 확인해 필지 규제표를 확정한다. democratic republic of the congo">
+  <td class="no">04</td>
+  <td class="name"><a href="model/dr-congo-site-urban-construction-regulations/index.html">DR콩고 도시계획·부지규제</a>
+    <p>토지권원·지적경계와 관할 계획·도로·지역별 건축처방을 확인해 필지 규제표를 확정한다.</p></td>
+  <td><span class="badge plain muted">DR콩고</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="DR콩고" data-a="construction"
+  data-s="dr콩고 건축허가·환경심사 대상지의 gupec 운영 여부와 최종 허가권자, 환경·사회영향평가 유형을 함께 확정한다. democratic republic of the congo">
+  <td class="no">05</td>
+  <td class="name"><a href="model/dr-congo-permit-environment-construction-regulations/index.html">DR콩고 건축허가·환경심사</a>
+    <p>대상지의 GUPEC 운영 여부와 최종 허가권자, 환경·사회영향평가 유형을 함께 확정한다.</p></td>
+  <td><span class="badge plain muted">DR콩고</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="DR콩고" data-a="construction"
+  data-s="dr콩고 기술검사·보험·준공제도 현지 자격기술자, gupec·관할기관의 단계검사와 적합성증명서를 사용개시 전 gate로 관리한다. democratic republic of the congo">
+  <td class="no">06</td>
+  <td class="name"><a href="model/dr-congo-control-completion-construction-regulations/index.html">DR콩고 기술검사·보험·준공제도</a>
+    <p>현지 자격기술자, GUPEC·관할기관의 단계검사와 적합성증명서를 사용개시 전 Gate로 관리한다.</p></td>
+  <td><span class="badge plain muted">DR콩고</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="키르기스스탄" data-a="bidding"
   data-s="키르기스스탄 공공조달 입찰제도 키르기스스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kyrgyzstan">
-  <td class="no">103</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/kyrgyzstan-bidding-system/index.html">키르기스스탄 공공조달 입찰제도</a>
     <p>키르기스스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">키르기스스탄</span></td>
@@ -1256,7 +2331,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="키르기스스탄" data-a="governance"
   data-s="키르기스스탄 조달 거버넌스·감독체계 키르기스스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kyrgyzstan">
-  <td class="no">104</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/kyrgyzstan-procurement-governance/index.html">키르기스스탄 조달 거버넌스·감독체계</a>
     <p>키르기스스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">키르기스스탄</span></td>
@@ -1265,16 +2340,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="키르기스스탄" data-a="pipeline"
   data-s="키르기스스탄 oda 사업 발굴·형성 절차 키르기스스탄 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 kyrgyzstan">
-  <td class="no">105</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/kyrgyzstan-oda-project-pipeline/index.html">키르기스스탄 ODA 사업 발굴·형성 절차</a>
     <p>키르기스스탄 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">키르기스스탄</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="키르기스스탄" data-a="construction"
+  data-s="키르기스스탄 도시계획·부지규제 토지권리·지적과 승인계획·토지이용규칙, 도시계획결론으로 실제 필지조건을 확정한다. kyrgyzstan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/kyrgyzstan-site-urban-construction-regulations/index.html">키르기스스탄 도시계획·부지규제</a>
+    <p>토지권리·지적과 승인계획·토지이용규칙, 도시계획결론으로 실제 필지조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">키르기스스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="키르기스스탄" data-a="construction"
+  data-s="키르기스스탄 건축허가·환경심사 도시계획결론·설계협의/전문심사·공사등록과 ovos·i–iii 국가환경전문심사를 연계한다. kyrgyzstan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/kyrgyzstan-permit-environment-construction-regulations/index.html">키르기스스탄 건축허가·환경심사</a>
+    <p>도시계획결론·설계협의/전문심사·공사등록과 OVOS·I–III 국가환경전문심사를 연계한다.</p></td>
+  <td><span class="badge plain muted">키르기스스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="키르기스스탄" data-a="construction"
+  data-s="키르기스스탄 기술검사·보험·준공제도 면허·자격전문가와 국가·설계자·기술감리, 완공 적합성평가·사용인수를 인계 gate로 둔다. kyrgyzstan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/kyrgyzstan-control-completion-construction-regulations/index.html">키르기스스탄 기술검사·보험·준공제도</a>
+    <p>면허·자격전문가와 국가·설계자·기술감리, 완공 적합성평가·사용인수를 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">키르기스스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="타지키스탄" data-a="bidding"
   data-s="타지키스탄 공공조달 입찰제도 타지키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tajikistan">
-  <td class="no">106</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/tajikistan-bidding-system/index.html">타지키스탄 공공조달 입찰제도</a>
     <p>타지키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">타지키스탄</span></td>
@@ -1283,7 +2385,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="타지키스탄" data-a="governance"
   data-s="타지키스탄 조달 거버넌스·감독체계 타지키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tajikistan">
-  <td class="no">107</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/tajikistan-procurement-governance/index.html">타지키스탄 조달 거버넌스·감독체계</a>
     <p>타지키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">타지키스탄</span></td>
@@ -1292,16 +2394,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="타지키스탄" data-a="pipeline"
   data-s="타지키스탄 oda 사업 발굴·형성 절차 타지키스탄 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tajikistan">
-  <td class="no">108</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/tajikistan-oda-project-pipeline/index.html">타지키스탄 ODA 사업 발굴·형성 절차</a>
     <p>타지키스탄 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">타지키스탄</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="타지키스탄" data-a="construction"
+  data-s="타지키스탄 도시계획·부지규제 토지사용권·지적과 승인 도시계획문서를 대조해 필지의 실제 개발조건과 재해·기반시설 한계를 확정한다. tajikistan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/tajikistan-site-urban-construction-regulations/index.html">타지키스탄 도시계획·부지규제</a>
+    <p>토지사용권·지적과 승인 도시계획문서를 대조해 필지의 실제 개발조건과 재해·기반시설 한계를 확정한다.</p></td>
+  <td><span class="badge plain muted">타지키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="타지키스탄" data-a="construction"
+  data-s="타지키스탄 건축허가·환경심사 면허 설계도서의 국가전문심사·착공허가 경로와 환경영향평가(eia)·국가환경전문심사를 병행 분류한다. tajikistan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/tajikistan-permit-environment-construction-regulations/index.html">타지키스탄 건축허가·환경심사</a>
+    <p>면허 설계도서의 국가전문심사·착공허가 경로와 환경영향평가(EIA)·국가환경전문심사를 병행 분류한다.</p></td>
+  <td><span class="badge plain muted">타지키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="타지키스탄" data-a="construction"
+  data-s="타지키스탄 기술검사·보험·준공제도 면허 참여자·국가통제·설계자/기술감리 기록을 누적해 법정 사용인수와 재산등록까지 닫는다. tajikistan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/tajikistan-control-completion-construction-regulations/index.html">타지키스탄 기술검사·보험·준공제도</a>
+    <p>면허 참여자·국가통제·설계자/기술감리 기록을 누적해 법정 사용인수와 재산등록까지 닫는다.</p></td>
+  <td><span class="badge plain muted">타지키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge ok">조문 대조 완료</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="탄자니아" data-a="bidding"
   data-s="탄자니아 공공조달 입찰제도 ppra가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(nest) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨 tanzania">
-  <td class="no">109</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도</a>
     <p>PPRA가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(NeST) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨</p></td>
   <td><span class="badge plain muted">탄자니아</span></td>
@@ -1310,7 +2439,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 3</span></td>
 </tr><tr data-c="탄자니아" data-a="governance"
   data-s="탄자니아 조달 거버넌스·감독체계 재정기획부 산하 공공조달규제청(ppra)이 표준·정책·전자조달(nest)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함 tanzania">
-  <td class="no">110</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계</a>
     <p>재정기획부 산하 공공조달규제청(PPRA)이 표준·정책·전자조달(NeST)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함</p></td>
   <td><span class="badge plain muted">탄자니아</span></td>
@@ -1319,16 +2448,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="탄자니아" data-a="pipeline"
   data-s="탄자니아 oda 사업 발굴·형성 절차 재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, pcp 제출부터 예비·기획조사를 거쳐 재정기획부와 rd 체결로 공식화되는 사업 형성 절차 tanzania">
-  <td class="no">111</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a>
     <p>재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, PCP 제출부터 예비·기획조사를 거쳐 재정기획부와 RD 체결로 공식화되는 사업 형성 절차</p></td>
   <td><span class="badge plain muted">탄자니아</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="탄자니아" data-a="construction"
+  data-s="탄자니아 도시계획·부지규제 권원·계획구역·개발동의와 용도지역·공간기준으로 필지별 개발가능 범위를 확정한다. tanzania">
+  <td class="no">04</td>
+  <td class="name"><a href="model/tanzania-site-urban-construction-regulations/index.html">탄자니아 도시계획·부지규제</a>
+    <p>권원·계획구역·개발동의와 용도지역·공간기준으로 필지별 개발가능 범위를 확정한다.</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="탄자니아" data-a="construction"
+  data-s="탄자니아 건축허가·환경심사 지방 계획기관의 개발동의·건축허가와 nemc의 a·b1·b2·특별 범주 환경결정을 선행조건으로 묶는다. tanzania">
+  <td class="no">05</td>
+  <td class="name"><a href="model/tanzania-permit-environment-construction-regulations/index.html">탄자니아 건축허가·환경심사</a>
+    <p>지방 계획기관의 개발동의·건축허가와 NEMC의 A·B1·B2·특별 범주 환경결정을 선행조건으로 묶는다.</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="탄자니아" data-a="construction"
+  data-s="탄자니아 기술검사·보험·준공제도 등록 전문가·시공자와 crb 프로젝트 등록, 단계검사·form 10 점유증명서를 개장 gate로 둔다. tanzania">
+  <td class="no">06</td>
+  <td class="name"><a href="model/tanzania-control-completion-construction-regulations/index.html">탄자니아 기술검사·보험·준공제도</a>
+    <p>등록 전문가·시공자와 CRB 프로젝트 등록, 단계검사·Form 10 점유증명서를 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">탄자니아</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="태국" data-a="bidding"
   data-s="태국 공공조달 입찰제도 태국 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 thailand">
-  <td class="no">112</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/thailand-bidding-system/index.html">태국 공공조달 입찰제도</a>
     <p>태국 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">태국</span></td>
@@ -1337,7 +2493,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="태국" data-a="governance"
   data-s="태국 조달 거버넌스·감독체계 태국 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 thailand">
-  <td class="no">113</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/thailand-procurement-governance/index.html">태국 조달 거버넌스·감독체계</a>
     <p>태국 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">태국</span></td>
@@ -1346,16 +2502,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="태국" data-a="pipeline"
   data-s="태국 oda 사업 발굴·형성 절차 태국 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 thailand">
-  <td class="no">114</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/thailand-oda-project-pipeline/index.html">태국 ODA 사업 발굴·형성 절차</a>
     <p>태국 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">태국</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="태국" data-a="construction"
+  data-s="태국 도시계획·부지규제 토지권원과 적용 comprehensive plan·용도지역·지방조례로 용도·far·높이·공지를 먼저 확정한다. thailand">
+  <td class="no">04</td>
+  <td class="name"><a href="model/thailand-site-urban-construction-regulations/index.html">태국 도시계획·부지규제</a>
+    <p>토지권원과 적용 comprehensive plan·용도지역·지방조례로 용도·FAR·높이·공지를 먼저 확정한다.</p></td>
+  <td><span class="badge plain muted">태국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="태국" data-a="construction"
+  data-s="태국 건축허가·환경심사 지방 건축허가와 onep의 초기환경검토(iee)·환경영향평가(eia)·ehia 대상판정을 별도 gate로 병행한다. thailand">
+  <td class="no">05</td>
+  <td class="name"><a href="model/thailand-permit-environment-construction-regulations/index.html">태국 건축허가·환경심사</a>
+    <p>지방 건축허가와 ONEP의 초기환경검토(IEE)·환경영향평가(EIA)·EHIA 대상판정을 별도 Gate로 병행한다.</p></td>
+  <td><span class="badge plain muted">태국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="태국" data-a="construction"
+  data-s="태국 기술검사·보험·준공제도 면허 전문자·공사검사와 통제용도 건축물의 완료증명을 사용개시 gate로 관리한다. thailand">
+  <td class="no">06</td>
+  <td class="name"><a href="model/thailand-control-completion-construction-regulations/index.html">태국 기술검사·보험·준공제도</a>
+    <p>면허 전문자·공사검사와 통제용도 건축물의 완료증명을 사용개시 Gate로 관리한다.</p></td>
+  <td><span class="badge plain muted">태국</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="튀니지" data-a="bidding"
   data-s="튀니지 공공조달 입찰제도 튀니지 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tunisia">
-  <td class="no">115</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/tunisia-bidding-system/index.html">튀니지 공공조달 입찰제도</a>
     <p>튀니지 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">튀니지</span></td>
@@ -1364,7 +2547,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="튀니지" data-a="governance"
   data-s="튀니지 조달 거버넌스·감독체계 튀니지 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tunisia">
-  <td class="no">116</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/tunisia-procurement-governance/index.html">튀니지 조달 거버넌스·감독체계</a>
     <p>튀니지 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">튀니지</span></td>
@@ -1373,16 +2556,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="튀니지" data-a="pipeline"
   data-s="튀니지 oda 사업 발굴·형성 절차 튀니지 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 tunisia">
-  <td class="no">117</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/tunisia-oda-project-pipeline/index.html">튀니지 ODA 사업 발굴·형성 절차</a>
     <p>튀니지 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">튀니지</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="튀니지" data-a="construction"
+  data-s="튀니지 도시계획·부지규제 권원·pau와 rgu를 대조해 필지별 용도·밀도·높이·이격·주차를 확정한다. tunisia">
+  <td class="no">04</td>
+  <td class="name"><a href="model/tunisia-site-urban-construction-regulations/index.html">튀니지 도시계획·부지규제</a>
+    <p>권원·PAU와 RGU를 대조해 필지별 용도·밀도·높이·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">튀니지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="튀니지" data-a="construction"
+  data-s="튀니지 건축허가·환경심사 commune의 permis de bâtir와 anpe의 환경영향연구(eie) 또는 환경 시방·조건서(cahier des charges)를 유형·입지별로 연결한다. tunisia">
+  <td class="no">05</td>
+  <td class="name"><a href="model/tunisia-permit-environment-construction-regulations/index.html">튀니지 건축허가·환경심사</a>
+    <p>commune의 permis de bâtir와 ANPE의 환경영향연구(EIE) 또는 환경 시방·조건서(cahier des charges)를 유형·입지별로 연결한다.</p></td>
+  <td><span class="badge plain muted">튀니지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="튀니지" data-a="construction"
+  data-s="튀니지 기술검사·보험·준공제도 등록 건축사·기술검사와 법정 10년책임보험, récolement·permis d&#x27;occuper를 인계 gate로 둔다. tunisia">
+  <td class="no">06</td>
+  <td class="name"><a href="model/tunisia-control-completion-construction-regulations/index.html">튀니지 기술검사·보험·준공제도</a>
+    <p>등록 건축사·기술검사와 법정 10년책임보험, récolement·permis d&#x27;occuper를 인계 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">튀니지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="파라과이" data-a="bidding"
   data-s="파라과이 공공조달 입찰제도 파라과이 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 paraguay">
-  <td class="no">118</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/paraguay-bidding-system/index.html">파라과이 공공조달 입찰제도</a>
     <p>파라과이 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파라과이</span></td>
@@ -1391,7 +2601,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="파라과이" data-a="governance"
   data-s="파라과이 조달 거버넌스·감독체계 파라과이 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 paraguay">
-  <td class="no">119</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/paraguay-procurement-governance/index.html">파라과이 조달 거버넌스·감독체계</a>
     <p>파라과이 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파라과이</span></td>
@@ -1400,16 +2610,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="파라과이" data-a="pipeline"
   data-s="파라과이 oda 사업 발굴·형성 절차 파라과이 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 paraguay">
-  <td class="no">120</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/paraguay-oda-project-pipeline/index.html">파라과이 ODA 사업 발굴·형성 절차</a>
     <p>파라과이 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파라과이</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="파라과이" data-a="construction"
+  data-s="파라과이 도시계획·부지규제 등기·지적과 관할 pout·용도지역·건축조례로 필지별 개발가능 범위를 확정한다. paraguay">
+  <td class="no">04</td>
+  <td class="name"><a href="model/paraguay-site-urban-construction-regulations/index.html">파라과이 도시계획·부지규제</a>
+    <p>등기·지적과 관할 POUT·용도지역·건축조례로 필지별 개발가능 범위를 확정한다.</p></td>
+  <td><span class="badge plain muted">파라과이</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="파라과이" data-a="construction"
+  data-s="파라과이 건축허가·환경심사 시의 사전 건축허가와 mades의 환경영향평가(eia)/ede·환경영향평가서(dia) 대상판정을 별도 선행조건으로 묶는다. paraguay">
+  <td class="no">05</td>
+  <td class="name"><a href="model/paraguay-permit-environment-construction-regulations/index.html">파라과이 건축허가·환경심사</a>
+    <p>시의 사전 건축허가와 MADES의 환경영향평가(EIA)/EDE·환경영향평가서(DIA) 대상판정을 별도 선행조건으로 묶는다.</p></td>
+  <td><span class="badge plain muted">파라과이</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="파라과이" data-a="construction"
+  data-s="파라과이 기술검사·보험·준공제도 책임전문가·시 단계검사와 소방·붕괴 안전, 관할 사용·영업 habilitación을 개장 gate로 둔다. paraguay">
+  <td class="no">06</td>
+  <td class="name"><a href="model/paraguay-control-completion-construction-regulations/index.html">파라과이 기술검사·보험·준공제도</a>
+    <p>책임전문가·시 단계검사와 소방·붕괴 안전, 관할 사용·영업 habilitación을 개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">파라과이</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="파키스탄" data-a="bidding"
   data-s="파키스탄 공공조달 입찰제도 파키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 pakistan">
-  <td class="no">121</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/pakistan-bidding-system/index.html">파키스탄 공공조달 입찰제도</a>
     <p>파키스탄 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파키스탄</span></td>
@@ -1418,7 +2655,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="파키스탄" data-a="governance"
   data-s="파키스탄 조달 거버넌스·감독체계 파키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 pakistan">
-  <td class="no">122</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/pakistan-procurement-governance/index.html">파키스탄 조달 거버넌스·감독체계</a>
     <p>파키스탄 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파키스탄</span></td>
@@ -1427,16 +2664,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="파키스탄" data-a="pipeline"
   data-s="파키스탄 oda 사업 발굴·형성 절차 파키스탄 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 pakistan">
-  <td class="no">123</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/pakistan-oda-project-pipeline/index.html">파키스탄 ODA 사업 발굴·형성 절차</a>
     <p>파키스탄 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">파키스탄</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="파키스탄" data-a="construction"
+  data-s="파키스탄 도시계획·부지규제 대상지 개발청·지방정부와 용도지역·광역계획을 먼저 특정해 권원·용도·far·높이·이격·주차를 확정한다. pakistan">
+  <td class="no">04</td>
+  <td class="name"><a href="model/pakistan-site-urban-construction-regulations/index.html">파키스탄 도시계획·부지규제</a>
+    <p>대상지 개발청·지방정부와 용도지역·광역계획을 먼저 특정해 권원·용도·FAR·높이·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">파키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="파키스탄" data-a="construction"
+  data-s="파키스탄 건축허가·환경심사 지방 건축도면 승인과 관할 epa의 환경 스크리닝·초기환경검토(iee)·환경영향평가(eia)를 별도 경로로 매핑한다. pakistan">
+  <td class="no">05</td>
+  <td class="name"><a href="model/pakistan-permit-environment-construction-regulations/index.html">파키스탄 건축허가·환경심사</a>
+    <p>지방 건축도면 승인과 관할 EPA의 환경 스크리닝·초기환경검토(IEE)·환경영향평가(EIA)를 별도 경로로 매핑한다.</p></td>
+  <td><span class="badge plain muted">파키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="파키스탄" data-a="construction"
+  data-s="파키스탄 기술검사·보험·준공제도 bcp 적용판, pec·pcatp 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다. pakistan">
+  <td class="no">06</td>
+  <td class="name"><a href="model/pakistan-control-completion-construction-regulations/index.html">파키스탄 기술검사·보험·준공제도</a>
+    <p>BCP 적용판, PEC·PCATP 전문자격, 단계검사와 관할 준공·점유증명을 인계조건으로 관리한다.</p></td>
+  <td><span class="badge plain muted">파키스탄</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="팔레스타인" data-a="bidding"
   data-s="팔레스타인 공공조달 입찰제도 팔레스타인 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 palestine">
-  <td class="no">124</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/palestine-bidding-system/index.html">팔레스타인 공공조달 입찰제도</a>
     <p>팔레스타인 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">팔레스타인</span></td>
@@ -1445,7 +2709,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="팔레스타인" data-a="governance"
   data-s="팔레스타인 조달 거버넌스·감독체계 팔레스타인 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 palestine">
-  <td class="no">125</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/palestine-procurement-governance/index.html">팔레스타인 조달 거버넌스·감독체계</a>
     <p>팔레스타인 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">팔레스타인</span></td>
@@ -1454,16 +2718,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="팔레스타인" data-a="pipeline"
   data-s="팔레스타인 oda 사업 발굴·형성 절차 팔레스타인 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 palestine">
-  <td class="no">126</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/palestine-oda-project-pipeline/index.html">팔레스타인 ODA 사업 발굴·형성 절차</a>
     <p>팔레스타인 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">팔레스타인</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="팔레스타인" data-a="construction"
+  data-s="팔레스타인 도시계획·부지규제 부지의 실제 통제권자와 적용 계획법부터 확정한 뒤 구조·상세계획의 필지 수치와 위험·기반시설을 확인한다. palestine">
+  <td class="no">04</td>
+  <td class="name"><a href="model/palestine-site-urban-construction-regulations/index.html">팔레스타인 도시계획·부지규제</a>
+    <p>부지의 실제 통제권자와 적용 계획법부터 확정한 뒤 구조·상세계획의 필지 수치와 위험·기반시설을 확인한다.</p></td>
+  <td><span class="badge plain muted">팔레스타인</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="팔레스타인" data-a="construction"
+  data-s="팔레스타인 건축허가·환경심사 관할 위원회의 건축·착공허가와 eqa의 환경영향평가(eia) 유형·사전 환경승인을 하나의 선행조건표로 묶는다. palestine">
+  <td class="no">05</td>
+  <td class="name"><a href="model/palestine-permit-environment-construction-regulations/index.html">팔레스타인 건축허가·환경심사</a>
+    <p>관할 위원회의 건축·착공허가와 EQA의 환경영향평가(EIA) 유형·사전 환경승인을 하나의 선행조건표로 묶는다.</p></td>
+  <td><span class="badge plain muted">팔레스타인</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="팔레스타인" data-a="construction"
+  data-s="팔레스타인 기술검사·보험·준공제도 등록 감리·공정별 타설검사·민방위 확인과 적합증명을 모아 점유허가 전 사용을 차단한다. palestine">
+  <td class="no">06</td>
+  <td class="name"><a href="model/palestine-control-completion-construction-regulations/index.html">팔레스타인 기술검사·보험·준공제도</a>
+    <p>등록 감리·공정별 타설검사·민방위 확인과 적합증명을 모아 점유허가 전 사용을 차단한다.</p></td>
+  <td><span class="badge plain muted">팔레스타인</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="페루" data-a="bidding"
   data-s="페루 공공조달 입찰제도 페루 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 peru">
-  <td class="no">127</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/peru-bidding-system/index.html">페루 공공조달 입찰제도</a>
     <p>페루 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">페루</span></td>
@@ -1472,7 +2763,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="페루" data-a="governance"
   data-s="페루 조달 거버넌스·감독체계 페루 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 peru">
-  <td class="no">128</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/peru-procurement-governance/index.html">페루 조달 거버넌스·감독체계</a>
     <p>페루 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">페루</span></td>
@@ -1481,16 +2772,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 2</span></td>
 </tr><tr data-c="페루" data-a="pipeline"
   data-s="페루 oda 사업 발굴·형성 절차 페루 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 peru">
-  <td class="no">129</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/peru-oda-project-pipeline/index.html">페루 ODA 사업 발굴·형성 절차</a>
     <p>페루 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">페루</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 2</span></td>
+</tr><tr data-c="페루" data-a="construction"
+  data-s="페루 도시계획·부지규제 등기·지적과 관할 계획·certificado de parámetros로 필지별 용도·건축가능 수치를 고정한다. peru">
+  <td class="no">04</td>
+  <td class="name"><a href="model/peru-site-urban-construction-regulations/index.html">페루 도시계획·부지규제</a>
+    <p>등기·지적과 관할 계획·Certificado de Parámetros로 필지별 용도·건축가능 수치를 고정한다.</p></td>
+  <td><span class="badge plain muted">페루</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="페루" data-a="construction"
+  data-s="페루 건축허가·환경심사 municipality의 a–d licence 모드와 seia 환경등급(category) i·ii·iii 환경인증을 대상별로 연결한다. peru">
+  <td class="no">05</td>
+  <td class="name"><a href="model/peru-permit-environment-construction-regulations/index.html">페루 건축허가·환경심사</a>
+    <p>municipality의 A–D licence 모드와 SEIA 환경등급(Category) I·II·III 환경인증을 대상별로 연결한다.</p></td>
+  <td><span class="badge plain muted">페루</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="페루" data-a="construction"
+  data-s="페루 기술검사·보험·준공제도 rne 책임전문가·시 공사통제와 conformidad·declaratoria, 용도별 itse를 점유·개장 gate로 둔다. peru">
+  <td class="no">06</td>
+  <td class="name"><a href="model/peru-control-completion-construction-regulations/index.html">페루 기술검사·보험·준공제도</a>
+    <p>RNE 책임전문가·시 공사통제와 conformidad·declaratoria, 용도별 ITSE를 점유·개장 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">페루</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="피지" data-a="bidding"
   data-s="피지 공공조달 입찰제도 피지 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 fiji">
-  <td class="no">130</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/fiji-bidding-system/index.html">피지 공공조달 입찰제도</a>
     <p>피지 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">피지</span></td>
@@ -1499,7 +2817,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="피지" data-a="governance"
   data-s="피지 조달 거버넌스·감독체계 피지 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 fiji">
-  <td class="no">131</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/fiji-procurement-governance/index.html">피지 조달 거버넌스·감독체계</a>
     <p>피지 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">피지</span></td>
@@ -1508,16 +2826,43 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="피지" data-a="pipeline"
   data-s="피지 oda 사업 발굴·형성 절차 피지 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 fiji">
-  <td class="no">132</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/fiji-oda-project-pipeline/index.html">피지 ODA 사업 발굴·형성 절차</a>
     <p>피지 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">피지</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge warn">확인사항 1</span></td>
+</tr><tr data-c="피지" data-a="construction"
+  data-s="피지 도시계획·부지규제 토지권원과 dtcp 개발허가·town planning·subdivision 적합성으로 용도·배치·도로·배수조건을 확정한다. fiji">
+  <td class="no">04</td>
+  <td class="name"><a href="model/fiji-site-urban-construction-regulations/index.html">피지 도시계획·부지규제</a>
+    <p>토지권원과 DTCP 개발허가·town planning·subdivision 적합성으로 용도·배치·도로·배수조건을 확정한다.</p></td>
+  <td><span class="badge plain muted">피지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="피지" data-a="construction"
+  data-s="피지 건축허가·환경심사 개발허가·건축도면 승인과 환경영향평가(eia) 사전선별(screening)·처리를 bpas에서 병행하고 소방·ohs·유틸리티 승인을 묶는다. fiji">
+  <td class="no">05</td>
+  <td class="name"><a href="model/fiji-permit-environment-construction-regulations/index.html">피지 건축허가·환경심사</a>
+    <p>개발허가·건축도면 승인과 환경영향평가(EIA) 사전선별(screening)·처리를 BPAS에서 병행하고 소방·OHS·유틸리티 승인을 묶는다.</p></td>
+  <td><span class="badge plain muted">피지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="피지" data-a="construction"
+  data-s="피지 기술검사·보험·준공제도 national building code, 단계검사·화재안전과 certificate of completion/occupancy를 사용개시 gate로 둔다. fiji">
+  <td class="no">06</td>
+  <td class="name"><a href="model/fiji-control-completion-construction-regulations/index.html">피지 기술검사·보험·준공제도</a>
+    <p>National Building Code, 단계검사·화재안전과 Certificate of Completion/Occupancy를 사용개시 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">피지</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr><tr data-c="필리핀" data-a="bidding"
   data-s="필리핀 공공조달 입찰제도 필리핀 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 philippines">
-  <td class="no">133</td>
+  <td class="no">01</td>
   <td class="name"><a href="model/philippines-bidding-system/index.html">필리핀 공공조달 입찰제도</a>
     <p>필리핀 자료집에 기재된 공공조달 입찰제도를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">필리핀</span></td>
@@ -1526,7 +2871,7 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="필리핀" data-a="governance"
   data-s="필리핀 조달 거버넌스·감독체계 필리핀 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 philippines">
-  <td class="no">134</td>
+  <td class="no">02</td>
   <td class="name"><a href="model/philippines-procurement-governance/index.html">필리핀 조달 거버넌스·감독체계</a>
     <p>필리핀 자료집에 기재된 조달 거버넌스·감독체계를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">필리핀</span></td>
@@ -1535,22 +2880,49 @@ footer.site a{color:var(--muted)}
   <td><span class="badge bad">확인사항 1</span></td>
 </tr><tr data-c="필리핀" data-a="pipeline"
   data-s="필리핀 oda 사업 발굴·형성 절차 필리핀 자료집에 기재된 oda 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램 philippines">
-  <td class="no">135</td>
+  <td class="no">03</td>
   <td class="name"><a href="model/philippines-oda-project-pipeline/index.html">필리핀 ODA 사업 발굴·형성 절차</a>
     <p>필리핀 자료집에 기재된 ODA 사업 발굴·형성 절차를 기관·단계·문서 기준으로 구조화한 1차 다이어그램</p></td>
   <td><span class="badge plain muted">필리핀</span></td>
   <td style="font-size:13px;color:var(--muted)">ODA 사업형성</td>
   <td><span class="badge ok">조문 대조 완료</span></td>
   <td><span class="badge bad">확인사항 1</span></td>
+</tr><tr data-c="필리핀" data-a="construction"
+  data-s="필리핀 도시계획·부지규제 토지권원과 대상 지방자치단체의 종합토지이용계획·용도지역 조례·입지확인로 용도·밀도·높이·이격·주차를 확정한다. philippines">
+  <td class="no">04</td>
+  <td class="name"><a href="model/philippines-site-urban-construction-regulations/index.html">필리핀 도시계획·부지규제</a>
+    <p>토지권원과 대상 지방자치단체의 종합토지이용계획·용도지역 조례·입지확인로 용도·밀도·높이·이격·주차를 확정한다.</p></td>
+  <td><span class="badge plain muted">필리핀</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="필리핀" data-a="construction"
+  data-s="필리핀 건축허가·환경심사 lgu 건축·부대설비 허가와 emb의 ecc·cnc coverage를 분류하고 bfp·전문기관 clearance를 연결한다. philippines">
+  <td class="no">05</td>
+  <td class="name"><a href="model/philippines-permit-environment-construction-regulations/index.html">필리핀 건축허가·환경심사</a>
+    <p>LGU 건축·부대설비 허가와 EMB의 ECC·CNC coverage를 분류하고 BFP·전문기관 clearance를 연결한다.</p></td>
+  <td><span class="badge plain muted">필리핀</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
+</tr><tr data-c="필리핀" data-a="construction"
+  data-s="필리핀 기술검사·보험·준공제도 면허 설계·시공자, obo·bfp 검사와 점유허가서(certificate of occupancy)·fsic를 사용개시 전 gate로 둔다. philippines">
+  <td class="no">06</td>
+  <td class="name"><a href="model/philippines-control-completion-construction-regulations/index.html">필리핀 기술검사·보험·준공제도</a>
+    <p>면허 설계·시공자, OBO·BFP 검사와 점유허가서(Certificate of Occupancy)·FSIC를 사용개시 전 Gate로 둔다.</p></td>
+  <td><span class="badge plain muted">필리핀</span></td>
+  <td style="font-size:13px;color:var(--muted)">건축 법·제도</td>
+  <td><span class="badge info">원문 링크 연결</span></td>
+  <td><span class="badge muted plain">—</span></td>
 </tr></tbody>
     </table>
     <div class="empty" id="none" hidden>조건에 맞는 제도가 없습니다.</div>
   </main>
 </div>
 <footer class="site"><div class="wrap">
-  자료집 기준일 기준으로 작성된 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
-  조달법은 개정이 잦습니다 — 실제 입찰 전 발주처 공고문과 현행 법령을 확인해야 합니다.<br>
-  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 · 현행 기준 출처는 각 제도의 검증 블록 참조<br>
+  국가별 조달·ODA 건축 법제의 기준일 현재 참고자료입니다. 법률 자문이나 해당국 정부·KOICA의 공식 해석이 아닙니다.<br>
+  자료별 현행·운영 상태는 표시된 확인일과 판단근거로 사이트가 관리합니다. 실제 사업에서는 기준일 이후 변경사항과 해당 공고·대상지에 대한 관할기관의 최종 적용판정을 확인해야 합니다.<br>
+  1차 출처 KOICA 2026 국가별 개발협력사업 참여전략 자료집 및 각국 정부 공식 법령·관보<br>
   제도 추가·정정 제안 · Threads <a href="https://www.threads.net/@amnotyoung.k" target="_blank" rel="me noopener noreferrer">@amnotyoung.k</a>
 </div></footer>
 <script>
@@ -1575,5 +2947,10 @@ document.querySelectorAll('.side button').forEach(function(b){
     apply();
   });
 });
+var initialAxis=new URLSearchParams(location.search).get('axis');
+if(initialAxis){
+  var initialButton=document.querySelector('.side button[data-f="a"][data-v="'+initialAxis+'"]');
+  if(initialButton) initialButton.click();
+}
 </script>
 </body></html>

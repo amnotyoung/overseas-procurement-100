@@ -46,6 +46,7 @@
     {
       "id": "site-urban",
       "slug": "senegal-site-urban-construction-regulations",
+      "nationalFramework": "established",
       "priority": 4,
       "name": "세네갈 도시계획·부지규제",
       "oneLiner": "NICAD·권원 접수부터 PUD·부지기준 심사, 보완과 도시계획 적합 결정까지의 법정 절차를 표시한다.",
@@ -146,6 +147,7 @@
     {
       "id": "permit-environment",
       "slug": "senegal-permit-environment-construction-regulations",
+      "nationalFramework": "established",
       "priority": 5,
       "name": "세네갈 건축허가·환경심사",
       "oneLiner": "건축주·허가권자, ERP·환경평가 분류와 완비접수부터 허가까지의 법정 경로를 확정한다.",
@@ -266,6 +268,7 @@
     {
       "id": "control-completion",
       "slug": "senegal-control-completion-construction-regulations",
+      "nationalFramework": "established",
       "priority": 6,
       "name": "세네갈 기술검사·보험·준공제도",
       "oneLiner": "인가 검사기관·보험을 착공 전에 계약하고 시공·변경·적합증명·ERP 개장까지 증빙을 잇는다.",
@@ -389,8 +392,8 @@
     "subtitle": "필지·PUD 적합성부터 건축허가, 적합증명·ERP 공중개방까지",
     "lanes": [
       "건축주·신청인",
-      "등록 설계·시공 전문가",
-      "도시계획·건축 당국",
+      "현지 설계·시공 전문가",
+      "도시계획·건축 허가기관",
       "환경·소방·검사기관"
     ],
     "stages": [
@@ -446,7 +449,7 @@
       },
       {
         "id": "B01A",
-      "lane": "도시계획·건축 당국",
+      "lane": "도시계획·건축 허가기관",
         "stage": "G0 부지·권원",
       "label": "Cadastre의 NICAD·지적경계·권원 대조",
         "emphasis": "key",
@@ -482,7 +485,7 @@
       },
       {
         "id": "B02",
-        "lane": "도시계획·건축 당국",
+        "lane": "도시계획·건축 허가기관",
         "stage": "G0 부지·권원",
         "label": "PUD·도시계획 적합성 확인",
         "emphasis": "bottleneck",
@@ -529,7 +532,7 @@
       },
       {
         "id": "B02A",
-      "lane": "도시계획·건축 당국",
+      "lane": "도시계획·건축 허가기관",
         "stage": "G0A 계획·개발수치",
       "label": "PUD 적용수치·주차·중첩규제 심사",
         "emphasis": "bottleneck",
@@ -639,7 +642,7 @@
       },
       {
         "id": "B04",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G1 사업분류·책임체계",
         "label": "ODAS 책임건축사·설계 BET 역할 확정",
         "emphasis": "key",
@@ -724,7 +727,7 @@
       },
       {
         "id": "B06",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G0B 현장·기반시설",
         "label": "지반·침수·배수·유틸리티 조건 확정",
         "emphasis": "lead",
@@ -770,7 +773,7 @@
       },
       {
         "id": "B06A",
-        "lane": "도시계획·건축 당국",
+        "lane": "도시계획·건축 허가기관",
         "stage": "G0B 현장·기반시설",
         "label": "배수·유틸리티 용량·인입확약 확인",
         "emphasis": "normal",
@@ -806,7 +809,7 @@
       },
       {
         "id": "B06B",
-      "lane": "도시계획·건축 당국",
+      "lane": "도시계획·건축 허가기관",
         "stage": "G0C 부지조건 확정",
       "label": "부지·도시계획 적합 공식결정",
         "emphasis": "bottleneck",
@@ -859,7 +862,7 @@
       },
       {
         "id": "B06D",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G2 환경·기본설계",
         "label": "구조·에너지·음향 설계기준 통합",
         "emphasis": "lead",
@@ -939,7 +942,7 @@
       },
       {
         "id": "B08",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G3 관계기관 사전협의",
         "label": "허가도서·관계기관 의견 통합",
         "emphasis": "normal",
@@ -1016,7 +1019,7 @@
       },
       {
         "id": "B10",
-        "lane": "도시계획·건축 당국",
+        "lane": "도시계획·건축 허가기관",
         "stage": "G4 건축허가",
         "label": "관계기관 협의·건축허가 발급",
         "emphasis": "bottleneck",
@@ -1110,7 +1113,7 @@
       },
       {
         "id": "B12",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G5 착공 선행조건",
         "label": "지반·구조 비자·굴착 승인 확인",
         "emphasis": "key",
@@ -1154,7 +1157,7 @@
       },
       {
         "id": "B13",
-        "lane": "등록 설계·시공 전문가",
+        "lane": "현지 설계·시공 전문가",
         "stage": "G6 시공·변경·검사",
         "label": "승인도서 시공·품질·HSE·폐기물 기록",
         "emphasis": "lead",
@@ -1213,7 +1216,7 @@
       },
       {
         "id": "B14",
-        "lane": "도시계획·건축 당국",
+        "lane": "도시계획·건축 허가기관",
         "stage": "G6 시공·변경·검사",
         "label": "변경승인·중간검사",
         "emphasis": "bottleneck",
@@ -1288,7 +1291,7 @@
       },
       {
         "id": "B16",
-        "lane": "도시계획·건축 당국",
+        "lane": "도시계획·건축 허가기관",
         "stage": "G7 준공·적합",
         "label": "적합검사·적합증명서 발급",
         "emphasis": "key",

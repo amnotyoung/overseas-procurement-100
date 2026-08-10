@@ -517,6 +517,29 @@ def construction_navigation_label(value: str) -> str:
     return _CONSTRUCTION_NAV_ORIGINAL_RE.sub("", value).strip()
 
 
+def board_display_edges(edges: list[dict]) -> list[dict]:
+    """구조도에 실제로 그릴 간선 라벨만 남긴다.
+
+    한 단계에서 다음 단계로 곧장 이어지는 간선은 화살표만으로 읽힌다.  거기까지
+    라벨을 달면 노드 사이 여백이 글자로 가득 차 정작 갈림길과 보완회귀가 묻힌다.
+    선택이 필요한 곳 — 나가는 길이 둘 이상인 분기, 병렬 흐름 사이의 전달,
+    보완회귀 — 에만 라벨을 남기고 나머지는 카드 상세에서 읽게 한다.
+    """
+    outgoing: dict[str, int] = {}
+    for edge in edges:
+        outgoing[edge["source"]] = outgoing.get(edge["source"], 0) + 1
+    display = []
+    for edge in edges:
+        if (
+            edge.get("label")
+            and edge.get("type") == "sequence"
+            and outgoing.get(edge["source"], 0) < 2
+        ):
+            edge = {key: value for key, value in edge.items() if key != "label"}
+        display.append(edge)
+    return display
+
+
 def construction_model_board(d: dict, model_spec: dict | None) -> dict:
     """전체 생애주기 보드에서 공개 제도축에 필요한 노드만 투영한다."""
     if not model_spec:
@@ -534,7 +557,7 @@ def construction_model_board(d: dict, model_spec: dict | None) -> dict:
         "lanes": [item for item in source["lanes"] if item in used_lanes],
         "stages": [item for item in source["stages"] if item in used_stages],
         "nodes": nodes,
-        "edges": model_spec["edges"],
+        "edges": board_display_edges(model_spec["edges"]),
     }
 
 
@@ -976,6 +999,9 @@ def construction_to_model(d: dict, model_spec: dict | None = None) -> dict:
         "countryKey": country_key,
         "name": model_spec["name"] if model_spec else f'{d["country"]["name"]} ODA 건축 인허가·검사·개장',
         "priority": model_spec["priority"] if model_spec else 4,
+        "nationalFramework": (
+            model_spec.get("nationalFramework", "established") if model_spec else "established"
+        ),
         "axis": "construction",
         "country": d["country"],
         "asOfDate": d["asOfDate"],
@@ -2046,6 +2072,15 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         f'{e(c.get("procedureScope", ""))}</p>'
         if d["axis"] == "construction" and c.get("procedureScope") else ""
     )
+    # 전국 통일 절차가 없는 나라를 있는 것처럼 읽히게 두지 않는다.
+    framework_notice = (
+        '<p class="workflow-disclosure"><b>전국 통일 제도 없음</b> · '
+        '이 축의 근거는 전국에 발행됐지만 주·지방의 채택으로 효력이 완성된다. '
+        '실제 허가요건·서식·기한은 대상지 관할 규정으로 확정한다.</p>'
+        if d["axis"] == "construction"
+        and d.get("nationalFramework") == "adoption-dependent" else ""
+    )
+    procedure_scope = framework_notice + procedure_scope
     official_gate_card = (
         f'<div class="card span2"><h3>공식 결정 Gate · {len(official_gate_data)}개</h3>'
         '<p class="workflow-disclosure">위 절차 중 관할기관이 공식 문서를 발급하거나 처분하는 '
