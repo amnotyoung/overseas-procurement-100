@@ -1641,22 +1641,33 @@ footer.site a{color:var(--muted)}
 """
 
 INDEX_CSS = """
-.gearup-banner-wrap{padding-bottom:32px}
-.gearup-banner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;
-  padding:20px 22px;border:1px solid var(--line);border-left:4px solid var(--info);border-radius:12px;
+.home-hero{display:grid;grid-template-columns:minmax(0,1fr) 290px;align-items:center;gap:50px}
+.home-hero .hero-copy{min-width:0}
+.gearup-promo{min-width:0}
+.gearup-banner{display:flex;min-height:220px;flex-direction:column;padding:22px;
+  border:1px solid var(--line);border-left:4px solid var(--info);border-radius:12px;
   background:linear-gradient(135deg,var(--info-bg),var(--bg));text-decoration:none}
 .gearup-banner:hover{border-color:var(--info)}
 .gearup-banner:focus-visible{outline:3px solid var(--info);outline-offset:3px}
-.gearup-banner .kicker{display:block;margin-bottom:3px;color:var(--info);font-size:11.5px;font-weight:800;
+.gearup-banner .kicker{display:block;color:var(--info);font-size:11.5px;font-weight:800;
   letter-spacing:.04em}
-.gearup-banner .title{display:block;font-size:18px;font-weight:800;letter-spacing:-.02em}
-.gearup-banner .copy{display:block;margin-top:2px;color:var(--muted);font-size:13px;line-height:1.55}
-.gearup-banner .cta{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:var(--info);
+.gearup-banner .title{display:block;margin-top:7px;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.gearup-banner .copy{display:block;margin-top:7px;color:var(--muted);font-size:13px;line-height:1.55}
+.gearup-banner .cta{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:20px;
+  white-space:nowrap;color:var(--info);
   font-size:13px;font-weight:800}
-.gearup-disclosure{margin:7px 4px 0;color:var(--muted);font-size:11.5px;line-height:1.55}
+.gearup-disclosure{margin:7px 3px 0;color:var(--muted);font-size:11px;line-height:1.5}
+@media (max-width:1040px){
+  .home-hero{grid-template-columns:1fr;gap:22px}
+  .gearup-banner{display:grid;min-height:0;grid-template-columns:minmax(0,1fr) auto;align-items:center;
+    gap:18px;padding:18px 20px}
+  .gearup-banner .title{font-size:18px}
+  .gearup-banner .copy{max-width:62ch;margin-top:2px}
+  .gearup-banner .cta{margin-top:0;padding-top:0}
+}
 @media (max-width:640px){
   .gearup-banner{grid-template-columns:1fr;gap:12px;padding:18px}
-  .gearup-banner .cta{justify-self:start}
+  .gearup-banner .cta{justify-self:start;margin-top:0;padding-top:0}
 }
 """
 
@@ -1773,24 +1784,25 @@ def build_index(items: list[dict]) -> str:
         for k, n in axes.items())
 
     body = f"""
-<div class="wrap hero">
-  <div class="eyebrow">조달 절차와 건축 법·제도</div>
-  <h1>{e(SITE_TITLE)}</h1>
-  <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
-  <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
-  <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
-</div>
-
-<div class="wrap gearup-banner-wrap">
-  <a class="gearup-banner" href="https://www.gearup.co.kr/" target="_blank" rel="noopener noreferrer" aria-label="KOICA GearUp 바로가기, 새 창에서 열림">
-    <span>
-      <span class="kicker">기업 ODA 진출 지원</span>
-      <span class="title">KOICA GearUp</span>
-      <span class="copy">역량진단부터 맞춤 컨설팅, KOICA·MDB·UN 글로벌 조달정보까지 한곳에서 확인하세요.</span>
-    </span>
-    <span class="cta">GearUp 바로가기 <span aria-hidden="true">↗</span></span>
-  </a>
-  <p class="gearup-disclosure">외부 사이트로 이동합니다. 본 사이트는 KOICA·GearUp과 공식 제휴 또는 후원 관계가 없습니다.</p>
+<div class="wrap hero home-hero">
+  <div class="hero-copy">
+    <div class="eyebrow">조달 절차와 건축 법·제도</div>
+    <h1>{e(SITE_TITLE)}</h1>
+    <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
+    <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+    <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
+  </div>
+  <aside class="gearup-promo" aria-label="기업 ODA 진출 지원 외부 서비스">
+    <a class="gearup-banner" href="https://www.gearup.co.kr/" target="_blank" rel="noopener noreferrer" aria-label="KOICA GearUp 바로가기, 새 창에서 열림">
+      <span>
+        <span class="kicker">기업 ODA 진출 지원</span>
+        <span class="title">KOICA GearUp</span>
+        <span class="copy">역량진단부터 맞춤 컨설팅, KOICA·MDB·UN 글로벌 조달정보까지 한곳에서 확인하세요.</span>
+      </span>
+      <span class="cta">GearUp 바로가기 <span aria-hidden="true">↗</span></span>
+    </a>
+    <p class="gearup-disclosure">외부 사이트로 이동합니다. 본 사이트는 KOICA·GearUp과 공식 제휴 또는 후원 관계가 없습니다.</p>
+  </aside>
 </div>
 
 <div class="statbar"><div class="wrap">
