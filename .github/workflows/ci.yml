@@ -26,6 +26,9 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
+      - name: Audit all Node dependencies, including development tools
+        run: npm audit
+
       - name: Validate institution records
         run: |
           python tools/validate.py
