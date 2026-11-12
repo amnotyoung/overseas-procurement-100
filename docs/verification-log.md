@@ -857,44 +857,44 @@
 ### 현행법·정량요건
 
 - 제도: [모잠비크 공공조달 입찰제도](../data/institutions/mozambique-bidding-system.json) · `mozambique-bidding-system-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- 근거: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **실무 확인** — 실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.
 
-*산출물 반영* — 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+*산출물 반영* — 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
 ### 현행법·정량요건
 
 - 제도: [모잠비크 ODA 사업 발굴·형성 절차](../data/institutions/mozambique-oda-project-pipeline.json) · `mozambique-oda-project-pipeline-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- 근거: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **실무 확인** — 실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.
 
-*산출물 반영* — 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+*산출물 반영* — 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
 ### 현행법·정량요건
 
 - 제도: [모잠비크 조달 거버넌스·감독체계](../data/institutions/mozambique-procurement-governance.json) · `mozambique-procurement-governance-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- 근거: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **실무 확인** — 실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.
 
-*산출물 반영* — 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+*산출물 반영* — 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
 ### 공식 원문·현행성·정량요건
 
@@ -1263,7 +1263,7 @@
 ### 현행 기관·법령
 
 - 제도: [필리핀 공공조달 입찰제도](../data/institutions/philippines-bidding-system.json) · `philippines-bidding-system-D01`
-- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1291,7 +1291,7 @@
 ### 현행 기관·법령
 
 - 제도: [필리핀 조달 거버넌스·감독체계](../data/institutions/philippines-procurement-governance.json) · `philippines-procurement-governance-D01`
-- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2466,7 +2466,7 @@
 
 **실무 확인** — 입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일을 적용하며 운송·보관 관련 항목은 계약 특약 여부를 따로 확인한다.
 
-*산출물 반영* — 입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.
+*산출물 반영* — 표의 좌우 열을 구별하고, 탄자니아 측 근거를 2024년 규칙 제23조 제6항·제29조 제2항으로 갱신했다.
 
 ### 현행 기관·법령
 
@@ -2710,11 +2710,11 @@
 - **모로코 ODA 사업 발굴·형성 절차** — Decree 2-22-431은 2023-09-01부터 종전 Decree 2-12-349를 폐지했다. 다만 시행 전 개시 절차와 교체 전 하위규정에는 제170조 경과조치가 적용된다.
 - **모로코 ODA 사업 발굴·형성 절차** — 공사 이행보증 3%는 조달령의 보편 규칙이 아니라 CCAG-T 제15조의 기본값이며 특별시방서가 달리 정할 수 있다. 실제 입찰에서는 계약유형별 일반조건·CPS와 재원협정을 함께 확인한다.
 - **모잠비크 공공조달 입찰제도** — 제79/2022호는 공포 90일 후 시행되며 제4조가 제5/2016호, 제71/2020호, 제53/2021호와 제89/2021호를 폐지한다.
-- **모잠비크 공공조달 입찰제도** — 2026-05-19 국무회의는 제79/2022호 개정·재공포안을 승인했지만 검증일 현재 INM 공보에서 개정령 번호·원문을 확인하지 못했다. 따라서 확인되지 않은 개정내용은 적용하지 않고 현행 UFSA 공고가 계속 인용하는 제79/2022호 공포문을 기준으로 했다.
+- **모잠비크 공공조달 입찰제도** — 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다.
 - **모잠비크 조달 거버넌스·감독체계** — 제79/2022호는 공포 90일 후 시행되며 제4조가 제5/2016호, 제71/2020호, 제53/2021호와 제89/2021호를 폐지한다.
-- **모잠비크 조달 거버넌스·감독체계** — 2026-05-19 국무회의는 제79/2022호 개정·재공포안을 승인했지만 검증일 현재 INM 공보에서 개정령 번호·원문을 확인하지 못했다. 따라서 확인되지 않은 개정내용은 적용하지 않고 현행 UFSA 공고가 계속 인용하는 제79/2022호 공포문을 기준으로 했다.
+- **모잠비크 조달 거버넌스·감독체계** — 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다.
 - **모잠비크 ODA 사업 발굴·형성 절차** — 제79/2022호는 공포 90일 후 시행되며 제4조가 제5/2016호, 제71/2020호, 제53/2021호와 제89/2021호를 폐지한다.
-- **모잠비크 ODA 사업 발굴·형성 절차** — 2026-05-19 국무회의는 제79/2022호 개정·재공포안을 승인했지만 검증일 현재 INM 공보에서 개정령 번호·원문을 확인하지 못했다. 따라서 확인되지 않은 개정내용은 적용하지 않고 현행 UFSA 공고가 계속 인용하는 제79/2022호 공포문을 기준으로 했다.
+- **모잠비크 ODA 사업 발굴·형성 절차** — 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다.
 - **몽골 공공조달 입찰제도** — 기존에 연결된 2005년 법률 영문본은 2024-01-01 시행된 2023년 전면개정법으로 대체했다. 현행 통합본문은 2026-05-01 개정까지 반영한다.
 - **몽골 공공조달 입찰제도** — 실제 참여 시에는 해당 공고의 재원협정, lot별 예산가, 최신 표준문서와 전자조달 공고를 함께 확인한다.
 - **몽골 조달 거버넌스·감독체계** — 기존에 연결된 2005년 법률 영문본은 2024-01-01 시행된 2023년 전면개정법으로 대체했다. 현행 통합본문은 2026-05-01 개정까지 반영한다.
@@ -3063,7 +3063,6 @@
 - **피지 ODA 사업 발굴·형성 절차** — 재무부가 국제협력·개발파트너 조정을 담당하고, ODA 현금보조와 현물원조는 예산 보충자료에서 정부 재원계획으로 관리된다.
 - **피지 ODA 사업 발굴·형성 절차** — 원조사업 조달에도 Procurement Regulations가 적용되며, 원조기관이 공급자를 지정하는 경우 regs.29(3)(iii) 또는 48(1)(b)의 명시적 예외 요건을 확인해야 한다.
 - **필리핀 공공조달 입찰제도** — RA 12009는 2024-08-13 발효했고 IRR은 2025-02-25 발효했다. RA 9184는 §115로 폐지됐지만 IRR 발효 전 시작된 조달에는 경과지침이 적용된다.
-- **필리핀 공공조달 입찰제도** — 현행 GPPB IRR 1st Edition은 2026-03-30 기준 통합본이며 보증률과 protest fee까지 포함한다.
 - **필리핀 조달 거버넌스·감독체계** — RA 12009는 2024-08-13 발효했고 IRR은 2025-02-25 발효했다. RA 9184는 폐지됐으며 진행 중 조달은 Circular 01-2025 경과기준을 따른다.
 - **필리핀 조달 거버넌스·감독체계** — GPPB는 정책·표준, HoPE는 승인·protest, BAC는 조달절차와 재심을 담당한다.
 - **필리핀 ODA 사업 발굴·형성 절차** — RA 12009는 2024-08-13 발효했고 시행규칙은 2025-02-25 발효했다. RA 9184는 RA 12009 제115조로 폐지됐으며 경과사업은 제113조와 GPPB Circular 01-2025를 따른다.

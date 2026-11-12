@@ -46,6 +46,15 @@ def finding_title(field):
     return title.replace("canvas.authorities", "담당 기관").replace(" 및 process", " 및 업무 절차")
 
 
+def guide_comparisons(model):
+    """자료집과 공식 규정을 대조한 항목. 구판 법령 인용이 함께 있는 사례도 포함한다."""
+    yield from model.get("guideComparisons", [])
+    for quote in model.get("sourceQuotes", []):
+        comparison = quote.get("comparison")
+        if comparison and comparison.get("guideCitation"):
+            yield comparison
+
+
 def web_url(value):
     if not isinstance(value, str):
         return False

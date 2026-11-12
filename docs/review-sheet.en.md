@@ -915,10 +915,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 51. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Bidding system
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — Decree 46/2026 amended and republished the Regulation. Article 53 retains at least 21 days for an open tender, counted from the later of notice publication and availability of tender documents.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -932,10 +932,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 52. [HIGH] Current legal basis check
 
 - Institution: Mozambique — ODA project pipeline
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — Decree 46/2026 amended and republished the Regulation. Article 53 retains at least 21 days for an open tender, counted from the later of notice publication and availability of tender documents.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -949,10 +949,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 53. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Procurement governance
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — Decree 46/2026 amended and republished the Regulation. Article 53 retains at least 21 days for an open tender, counted from the later of notice publication and availability of tender documents.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -1424,7 +1424,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 80. [HIGH] Current legal basis check
 
 - Institution: Philippines — Bidding system
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.
@@ -1458,7 +1458,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 82. [HIGH] Current legal basis check
 
 - Institution: Philippines — Procurement governance
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.

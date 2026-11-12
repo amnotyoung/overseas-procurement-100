@@ -81,7 +81,7 @@
       }
     ],
     "bottlenecks": [
-      "2026-05-19 국무회의가 제79/2022호 개정·재공포안을 승인했지만 검증일 현재 공식 공보의 개정령 번호·원문을 확인하지 못했다. 새 공포문이 나오면 시행일과 변경 조문을 즉시 재대조해야 한다.",
+      "일반 공개입찰의 제출기간을 계산할 때 공고일과 입찰서류가 실제로 제공된 날짜를 모두 확인한다.",
       "실제 입찰은 재원협정, 공고, 표준입찰서류가 정한 제출시각·등록·통화·보증 형식과 국내우대 조건을 함께 확인해야 한다."
     ],
     "entryBarriers": [
@@ -103,8 +103,8 @@
   ],
   "fieldVerification": [
     {
-      "item": "현행 법령·시행·폐지 및 2026년 개정안 상태",
-      "question": "제79/2022호의 시행·종전령 폐지와 2026년 개정·재공포안의 공포 여부를 공식 원문에서 확인했는가?",
+      "item": "개정·재공포본의 공개입찰 기한",
+      "question": "제46/2026호 재공포본 제53조에서 일반 공개입찰의 제안 준비기간과 기산점을 확인했는가?",
       "status": "confirmed"
     },
     {
@@ -120,7 +120,7 @@
     "scope": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284; Diploma Ministerial 46/2024; 2026 official practice and amendment-status notices.",
     "notes": [
       "제79/2022호는 공포 90일 후 시행되며 제4조가 제5/2016호, 제71/2020호, 제53/2021호와 제89/2021호를 폐지한다.",
-      "2026-05-19 국무회의는 제79/2022호 개정·재공포안을 승인했지만 검증일 현재 INM 공보에서 개정령 번호·원문을 확인하지 못했다. 따라서 확인되지 않은 개정내용은 적용하지 않고 현행 UFSA 공고가 계속 인용하는 제79/2022호 공포문을 기준으로 했다."
+      "2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다."
     ],
     "sources": [
       {
@@ -191,6 +191,14 @@
         "publisher": "Ministério da Economia e Finanças",
         "officialUrl": "https://www.mef.gov.mz/index.php/todas-publicacoes/instrumentos-de-gestao-economica-e-social/guiao-de-orientacoes-metodologicas/1914-guiao-unico-cfmp-pesoe-po-ogdps-bdpo-e-bdpesoe-2024/file",
         "retrievedOn": "2026-07-28"
+      },
+      {
+        "law": "Decreto n.º 46/2026, de 5 de Agosto · republicação",
+        "kind": "regulation",
+        "publisher": "Instituto Nacional de Segurança Social",
+        "retrievedOn": "2026-11-13",
+        "officialUrl": "https://www.inss.gov.mz/2026/09/02/inss-reflecte-sobre-a-contratacao-publica/",
+        "note": "제46/2026호의 개정 사실을 확인하는 정부기관 안내."
       }
     ],
     "discrepancies": [
@@ -198,15 +206,15 @@
         "severity": "high",
         "field": "canvas.legalBasis·procedure / 현행법·정량요건",
         "sourceText": "기존 모델은 노동법·'가능한 법률' 같은 추출 오류를 법적 근거로 포함하고 공개입찰 기간을 일률적으로 최소 30일이라고 설명했으며 금액·보증·불복 절차를 확정하지 않았다.",
-        "actualText": "현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.",
-        "citation": "Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281",
+        "actualText": "2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.",
+        "citation": "Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto",
         "impact": "잘못된 법적 근거·기한·기준금액은 조달방식 선택, 입찰 준비와 불복권 행사에 직접적인 오류를 일으킬 수 있다.",
-        "action": "손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.",
+        "action": "2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.",
         "userAction": "실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.",
         "review": {
           "topic": "Current procurement rules and quantified requirements",
           "guideSays": "기존 모델은 손상된 법적 근거와 일률적 30일 공고기간을 사용하고 정량요건을 확정하지 않았다.",
-          "lawSays": "제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.",
+          "lawSays": "Decree 46/2026 amended and republished the Regulation. Article 53 retains at least 21 days for an open tender, counted from the later of notice publication and availability of tender documents.",
           "impact": "잘못된 법적 근거·기한·기준금액은 조달방식 선택, 입찰 준비와 불복권 행사에 직접적인 오류를 일으킬 수 있다.",
           "verify": "Check the live notice, financing agreement, standard documents, submission time and security form."
         },
@@ -216,12 +224,16 @@
         "upstream": {
           "priority": "정정 요망",
           "state": "not-reported",
-          "suggestedText": "손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다."
+          "suggestedText": "2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다."
         },
         "citationSources": [
           {
             "title": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
             "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
+          },
+          {
+            "title": "관보 제148호 재공포본 · 제53조 (사본)",
+            "url": "https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026"
           }
         ]
       }
@@ -231,11 +243,11 @@
       "instrumentStatus": [
         {
           "instrument": "Decreto n.º 79/2022, de 30 de Dezembro",
-          "status": "in-force",
-          "checkedOn": "2026-07-29",
+          "status": "amended",
+          "checkedOn": "2026-11-13",
           "effectiveDate": "Decree art.5: 90 days after publication on 2022-12-30",
           "evidenceUrl": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file",
-          "finding": "제1조가 공공조달규정을 승인하고 제5조가 공포 90일 후 시행을 정한다. 2026-05-19 국무회의가 개정·재공포안을 승인했으나 검증일 현재 INM에서 개정령 번호·공포문을 확인하지 못했고 2026년 UFSA 공고도 제79/2022호를 계속 인용하므로, 공포되지 않은 변경내용은 현행 규칙으로 적용하지 않았다."
+          "finding": "2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다."
         },
         {
           "instrument": "Decretos n.os 5/2016, 71/2020, 53/2021 e 89/2021",

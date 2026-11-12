@@ -23,7 +23,7 @@ import shutil
 from pathlib import Path
 from urllib.parse import urlencode
 
-from procurement_evidence import REQUIREMENTS, finding_title
+from procurement_evidence import REQUIREMENTS, finding_title, guide_comparisons
 
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
@@ -1819,11 +1819,8 @@ def redirect_page(target: str, title: str) -> str:
 def guide_shortcuts(model, *, catalog=False):
     """자료집 원문과 절차 노드가 모두 연결된 대조 항목으로 바로 이동한다."""
     links = []
-    for quote in model.get("sourceQuotes", []):
-        comparison = quote.get("comparison") or {}
-        guide = comparison.get("guideCitation")
-        if not guide:
-            continue
+    for comparison in guide_comparisons(model):
+        guide = comparison["guideCitation"]
         path = f'model/{model["slug"]}/index.html' if catalog else ""
         country = country_display_name(model["country"]["name"]) + " · " if catalog else ""
         label = f'{country}{guide["label"]} · {comparison["title"]} 대조'
@@ -1869,10 +1866,8 @@ def build_index(items: list[dict]) -> str:
             '<span class="badge muted plain">—</span>'
         )
         search_terms = [d["name"], d["oneLiner"], d["country"]["nameEn"]]
-        for quote in d.get("sourceQuotes", []):
-            comparison = quote.get("comparison") or {}
-            if comparison.get("guideCitation"):
-                search_terms.extend([comparison["title"], comparison["guideCitation"]["label"]])
+        for comparison in guide_comparisons(d):
+            search_terms.extend([comparison["title"], comparison["guideCitation"]["label"]])
         rows.append(f"""<tr data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
   data-s="{e(' '.join(search_terms).lower())}">
   <td class="no">{d['priority']:02d}</td>
@@ -2334,23 +2329,28 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             current = (f'<div><strong>{e(comparison["currentEdition"])}</strong>'
                        f'<p>{e(comparison["summary"])}</p>'
                        f'{link(e(comparison["sourceLabel"]), comparison["sourceUrl"])} · 대조일 {e(comparison["checkedOn"])}</div>')
-            guide = comparison.get("guideCitation")
-            if guide:
-                citation = (f'{comparison["summary"]}\n{comparison["currentEdition"]} · 대조일 {comparison["checkedOn"]}\n'
-                            f'{comparison["sourceUrl"]}')
-                node_comparisons[guide["nodeId"]] = (
-                    f'<dt>자료집 대조</dt><dd><details class="guide-comparison"><summary>{e(guide["label"])}과 대조</summary>'
-                    f'<p><b>자료집 문구</b><br>“{e(guide["quote"])}” · {link("자료집 발췌", guide["url"])}</p>'
-                    f'<p><b>{e(comparison["currentEdition"])}</b><br>{e(comparison["summary"])}<br>'
-                    f'{link(e(comparison["sourceLabel"]), comparison["sourceUrl"])} · 대조일 {e(comparison["checkedOn"])}</p>'
-                    f'<button class="btn" type="button" data-copy-citation>인용 문장과 출처 복사</button>'
-                    f'<small role="status"></small><textarea hidden readonly rows="5" aria-label="복사할 문장과 출처">{e(citation)}</textarea>'
-                    f'</details></dd>'
-                )
             comparisons.append(f'<article class="qc" id="edition-{quote_number}"><h3>{e(comparison["title"])}</h3>'
                                f'<div class="edition-pair">{current}{original}</div></article>')
         else:
             quote_cards.append(f'<article class="qc">{original}<small>원문 확인 {e(source.get("retrievedOn") or "확인일 미상")}</small></article>')
+    for comparison in guide_comparisons(d):
+        guide = comparison["guideCitation"]
+        citation = (f'{comparison["summary"]}\n{comparison["currentEdition"]} · 대조일 {comparison["checkedOn"]}\n'
+                    f'{comparison["sourceUrl"]}')
+        extra_links = []
+        for source in comparison.get("additionalSources", []):
+            extra_links.append(link(e(source["title"]), source["url"]))
+            citation += f'\n{source["title"]}: {source["url"]}'
+        references = " · ".join([link(e(comparison["sourceLabel"]), comparison["sourceUrl"]), *extra_links])
+        node_comparisons[guide["nodeId"]] = (
+            f'<dt>자료집 대조</dt><dd><details class="guide-comparison"><summary>{e(guide["label"])}과 대조</summary>'
+            f'<p><b>자료집 문구</b><br>“{e(guide["quote"])}” · {link("자료집 원문", guide["url"])}</p>'
+            f'<p><b>{e(comparison["currentEdition"])}</b><br>{e(comparison["summary"])}<br>'
+            f'{references} · 대조일 {e(comparison["checkedOn"])}</p>'
+            f'<button class="btn" type="button" data-copy-citation>인용 문장과 출처 복사</button>'
+            f'<small role="status"></small><textarea hidden readonly rows="5" aria-label="복사할 문장과 출처">{e(citation)}</textarea>'
+            f'</details></dd>'
+        )
     quotes_html = "".join(quote_cards)
     comparison_html = "".join(comparisons)
     country_list = "../../index.html?" + urlencode({"country": country_slug(d)}) + "#results"

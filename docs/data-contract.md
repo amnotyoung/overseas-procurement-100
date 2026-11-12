@@ -172,6 +172,8 @@ sourceRefs: Array<{
 
 발췌한 자료의 `verification.sources[].quoteEdition`에 판본과 개정 상태를 기록한다. 구판 문구와 후속 판본이 달라진 조항은 발췌의 `comparison`에 제목(`title`), 구판(`edition`), 비교 판본(`currentEdition`), 확인한 차이(`summary`), 원문(`sourceUrl`, `sourceLabel`), 조항 확인일(`checkedOn`)을 함께 둔다. 이 날짜는 해당 조항의 대조일이다. 자료집 문구를 특정 단계와 비교할 때는 선택 필드 `comparison.guideCitation`에 해당 노드 ID(`nodeId`), 자료집 연도·쪽(`label`), 발췌문(`quote`), 출처(`url`)를 기록한다.
 
+자료집 자체의 문구와 현행 규정의 차이는 제도 최상위 `guideComparisons[]`에도 기록할 수 있다. 이때 `title`, `guideCitation`, `currentEdition`, `summary`, `sourceUrl`, `sourceLabel`, `checkedOn`을 넣고, 경과규정 등 추가 근거는 `additionalSources: [{title, url}]`에 둔다. 원문 PDF의 해당 쪽과 표의 행·열을 확인하고 법령의 적용 시점·대상을 맞춘다. 자료집에 없는 정보나 기존 모델의 추출 오류는 이 비교에 넣지 않는다.
+
 한국어 서술만으로는 현지에서 발주처와 다툴 때 근거가 되지 못한다. 우리 요약이 아니라
 **법령 조문 원문 그 자체**를 제시할 수 있어야 한다. `sourceQuotes`는 대조에 실제로 쓴
 핵심 조문의 영문 verbatim을 담는다 — 그대로 복사해 현장에서 인용할 수 있는 형태다.

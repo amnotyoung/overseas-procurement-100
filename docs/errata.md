@@ -575,13 +575,13 @@
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **산출물 반영**
 
-> 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+> 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
-**근거** — Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+**근거** — Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 
 
 ---
@@ -592,13 +592,13 @@
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **산출물 반영**
 
-> 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+> 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
-**근거** — Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+**근거** — Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 
 
 ---
@@ -609,13 +609,13 @@
 
 **현행 기준**
 
-> 현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.
+> 2026년 8월 5일 관보 제148호에 제46/2026호가 공포되어 제79/2022호의 규정을 개정·재공포했다. 이번 추가 대조 범위는 일반 공개입찰의 제53조 제출기간이다. 제53조는 공고일과 서류 제공일 중 늦은 날부터 최소 21일을 보장한다.
 
 **산출물 반영**
 
-> 손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다.
+> 2026년 개정령 공포 여부를 갱신하고 제53조의 일반 공개입찰 기한을 확인했다.
 
-**근거** — Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+**근거** — Decreto 79/2022, Regulamento art.53(1)–(2); Decreto 46/2026, de 5 de Agosto · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [관보 제148호 재공포본 · 제53조 (사본)](<https://pt.scribd.com/document/1073283556/BR-148-I-SERIE-2026>)
 
 
 ---
@@ -2264,7 +2264,7 @@
 
 > RA 9184 중심 설명을 현행 RA 12009 체계와 전환규정으로 바꾸고 GPPB·BAC·PhilGEPS 역할을 분리했다.
 
-**근거** — RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+**근거** — RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 
 
 ---
@@ -2281,7 +2281,7 @@
 
 > RA 9184 중심 설명을 현행 RA 12009 체계와 전환규정으로 바꾸고 GPPB·BAC·PhilGEPS 역할을 분리했다.
 
-**근거** — RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+**근거** — RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 
 
 ---
@@ -2364,7 +2364,7 @@
 
 **산출물 반영**
 
-> 입찰·이행보증에 더해 하자보증(유보금 reg.329(2))·하자담보기간(reg.329(7))도 계약 위임임을 원문으로 확인해 applicability·notes·sourceQuotes에 반영했다. 확정된 값과 대응 없는 항목(운송 지체상금)을 구분해 명시하고, verification.status를 article-verified로 유지한다.
+> 표의 좌우 열을 구별하고, 탄자니아 측 근거를 2024년 규칙 제23조 제6항·제29조 제2항으로 갱신했다.
 
 **근거** — Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
 
