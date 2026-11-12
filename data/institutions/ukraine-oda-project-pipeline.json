@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "우크라이나 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "우크라이나 정부, 연수사업의 경우 공무원 인사혁신처(National Agency of Ukraine on Civil Service), 유상원조의 경우 경제부 (Ministry of Economy), 인프라부 및 수원기관이 참여하는 전략투자위원회(Strategic Investment Council), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "우크라이나 내각사무처, 수혜 중앙·지방기관 및 실행기관, 경제부·재무부 및 관련 투자심사기구, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -34,7 +34,11 @@
     "authorities": [
       {
         "name": "우크라이나 내각사무처",
-        "role": "국제기술원조의 공식 요청, 등록·재등록, 조정·모니터링과 정보시스템을 담당한다."
+        "role": "국제기술원조의 공식 요청, 등록·재등록, 조정·모니터링과 정보시스템을 담당한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "수혜 중앙·지방기관 및 실행기관",
@@ -76,7 +80,8 @@
     "entryBarriers": [
       "입찰문서의 우크라이나어 요건, 전자서명·Prozorro 등록과 제재·수익소유자 확인을 공고별로 충족해야 한다.",
       "입찰보증과 이행보증의 요구 여부·형식은 Art.25·27 상한 안에서 개별 입찰문서가 정한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -195,7 +200,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "원조유형별 기관을 구분하고 무상 국제기술원조의 내각사무처 법정 경로를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Cabinet Resolution No.153 of 15 February 2002",
+            "url": "https://zakon.rada.gov.ua/laws/show/153-2002-%D0%BF/paran18"
+          },
+          {
+            "title": "Official English translation of Resolution No.153 procedure",
+            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -296,15 +311,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 32,
+          "end": 34,
+          "excerpt": "∙ (사업시행기관) 내각사무처를 통해, 신규사업 발굴 가이드라인 통보 ∙ (내각사무처) 중앙부처(지방자치단체) 대상 신규사업 발굴 가이드라인 안내 ∙ (사업시행기관-수원기관) PCP 작성 협의"
+        }
       },
       {
         "id": "P02",
@@ -315,15 +327,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 34,
+          "end": 35,
+          "excerpt": "∙ (사업시행기관-수원기관) PCP 작성 협의 ∙ (수원기관) 내각사무처에 PCP 최종본 제출"
+        }
       },
       {
         "id": "P03",
@@ -332,17 +341,15 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "연수사업의 경우 공무원 인사혁신처(National Agency of Ukraine on Civil Servi",
+        "actor": "우크라이나 내각사무처",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 35,
+          "end": 37,
+          "excerpt": "∙ (수원기관) 내각사무처에 PCP 최종본 제출 ∙ (내각사무처) 개발우선순위 및 국가개발계획 부합 여부를 고려, PCP 적성성 최종검토를 거쳐, 아국 공관(KOICA)에 PCP 제출(수총기관 서한 포함)"
+        }
       },
       {
         "id": "P04",
@@ -351,17 +358,15 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "연수사업의 경우 공무원 인사혁신처(National Agency of Ukraine on Civil Servi",
+        "actor": "우크라이나 내각사무처",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 36,
+          "end": 37,
+          "excerpt": "∙ (내각사무처) 개발우선순위 및 국가개발계획 부합 여부를 고려, PCP 적성성 최종검토를 거쳐, 아국 공관(KOICA)에 PCP 제출(수총기관 서한 포함)"
+        }
       },
       {
         "id": "P05",
@@ -372,15 +377,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 41,
+          "end": 41,
+          "excerpt": "- KOICA 사무소, 예비조사를 실시하여 사업규모/기간 및 사업방향 결정"
+        }
       },
       {
         "id": "P06",
@@ -391,15 +393,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/ukraine.txt",
+          "start": 41,
+          "end": 43,
+          "excerpt": "- KOICA 사무소, 예비조사를 실시하여 사업규모/기간 및 사업방향 결정 - KOICA 사무소, 기획조사를 실시하여 사업범위 및 지원 세부내역 확정, Record of Discussion 체결"
+        }
       },
       {
         "id": "P07",
@@ -408,17 +407,10 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "연수사업의 경우 공무원 인사혁신처(National Agency of Ukraine on Civil Servi",
+        "actor": "해당 협정의 양측 서명권자",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Official English translation of Resolution No.153 procedure",
-            "article": "English cross-check of the international technical-assistance registration procedure",
-            "url": "https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       }
     ],
     "edges": [
@@ -460,7 +452,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

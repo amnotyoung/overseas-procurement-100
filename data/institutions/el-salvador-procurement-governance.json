@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "엘살바도르의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "엘살바도르 정부, 엘살바도르 국가조달청(Dirección Nacional de Compras, DINAC), 국가조달청(DINAC), 전자공공조달 시스템(COMPRASAL), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "국가공공구매국(DINAC), 개별 공공기관 계약단위, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
@@ -46,11 +46,17 @@
     "authorities": [
       {
         "name": "국가공공구매국(DINAC)",
-        "role": "공공구매의 국가 규제기관으로 규범·감독·통제·현대화와 COMPRASAL 운영을 담당한다."
+        "role": "공공구매의 국가 규제기관으로 규범·감독·통제·현대화와 COMPRASAL 운영을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "개별 공공기관 계약단위",
-        "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
@@ -80,7 +86,8 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -222,7 +229,13 @@
         },
         "id": "el-salvador-procurement-governance-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -363,15 +376,12 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.39~44; Reglamento arts.39~41; 2026 Policy section V.1; current commerce-sector minimum wage",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/el-salvador.txt",
+          "start": 119,
+          "end": 121,
+          "excerpt": "l 입찰절차: 발주기관은 연간 조달계획(PAC)을 수립·공개한 후 전자공공조달시스템(COMPRASAL)을 통해 입찰을 공고하고, 평가 및 계약 체결, 이행·감독 절차를 진행함."
+        }
       },
       {
         "id": "P02",
@@ -380,17 +390,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가공공구매국(DINAC)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.39~44; Reglamento arts.39~41; 2026 Policy section V.1; current commerce-sector minimum wage",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -399,17 +404,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "국가공공구매국(DINAC)",
+        "actor": "개별 공공기관 계약단위",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -420,15 +420,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -439,15 +431,13 @@
         "status": "risk",
         "actor": "국가공공구매국(DINAC)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "arts.2~3, 10, 17, 22, 38~44, 89~90, 119~126, 188 and 191~192",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/el-salvador.txt",
+          "start": 64,
+          "end": 66,
+          "excerpt": "이행점검·통제국 ∙ 공공조달 관련 감사, 조사 및 통제 활동 수행 ∙ 공공조달법(LCP) 가이드라인 및 표준 서식 제정"
+        }
       },
       {
         "id": "P06",
@@ -456,17 +446,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "국가공공구매국(DINAC)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 732 of 2023 — TACOP terminology reforms",
-            "article": "LCP arts.119~122 as amended by Decreto 732; Reglamento arts.69~79",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/2744AFE6-8BC4-44D1-B248-49AAB82A6543.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -477,15 +462,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.123~126; Reglamento arts.66~68",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -527,7 +506,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

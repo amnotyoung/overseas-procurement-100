@@ -34,11 +34,17 @@
     "authorities": [
       {
         "name": "재무부 조달관리국(Public Procurement Agency)",
-        "role": "2025년 통합 재무부 체계에서 조달정책·법령·국가전자조달시스템과 감독을 담당한다."
+        "role": "2025년 통합 재무부 체계에서 조달정책·법령·국가전자조달시스템과 감독을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "사업주·발주기관·전문조달조직",
-        "role": "계획·입찰서류·공고·평가·승인·계약관리를 수행한다."
+        "role": "계획·입찰서류·공고·평가·승인·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "국가전자조달시스템(VNEPS)",
@@ -169,7 +175,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "손상·구법 법령명과 기관 오인을 제거하고 현행 법령·절차·정량기준으로 교체했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025",
+            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf"
+          },
+          {
+            "title": "Nghị định 214/2025/NĐ-CP on contractor selection",
+            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -278,15 +294,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP on contractor selection",
-            "article": "Decree 214/2025 Arts.78(4), 80(4) and 81; Bidding Law Art.21",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -295,17 +303,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "재무부 조달관리국(Public Procurement Agency)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP on contractor selection",
-            "article": "Decree 214/2025 Arts.78(4), 80(4) and 81; Bidding Law Art.21",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -314,17 +317,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "재무부 조달관리국(Public Procurement Agency)",
+        "actor": "사업주·발주기관·전문조달조직",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP on contractor selection",
-            "article": "Decree 214/2025 Arts.28(2), 65(2) and 81(2)(b)",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -335,15 +333,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP on contractor selection",
-            "article": "Decree 214/2025 Arts.28(2), 65(2) and 81(2)(b)",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -354,15 +344,13 @@
         "status": "risk",
         "actor": "재무부 조달관리국(Public Procurement Agency)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025",
-            "article": "Arts.3, 14, 21~29, 68 and 89; Laws 22/2023, 57/2024 and 90/2025 consolidated",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/vietnam.txt",
+          "start": 186,
+          "end": 189,
+          "excerpt": "공공 프로젝트 입찰 계획 심사 및 평가 조달부 입찰 결과 적절성 감독 및 입찰 활동에 대한 사후 감사 수행 입찰법 및 관련 시행령, 시행규칙의 초안 작성"
+        }
       },
       {
         "id": "P06",
@@ -371,17 +359,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "재무부 조달관리국(Public Procurement Agency)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP on contractor selection",
-            "article": "Bidding Law Art.89; Decree 214/2025 Arts.137~139",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -392,15 +375,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025",
-            "article": "Bidding Law Art.68; Decree 214/2025 Art.140",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -442,7 +419,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

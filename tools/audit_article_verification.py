@@ -20,6 +20,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from procurement_evidence import node_errors
+
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
 AXES = {"bidding", "governance", "pipeline"}
@@ -115,23 +117,7 @@ def audit(data: dict) -> list[str]:
                 problems.append(f"requirements-{key}-url")
 
     for node in data.get("process", {}).get("nodes", []):
-        node_id = node.get("id", "?")
-        if not node.get("confidence_reason"):
-            problems.append(f"node-{node_id}-confidence-reason")
-        confidence = node.get("confidence")
-        if not isinstance(confidence, (int, float)):
-            problems.append(f"node-{node_id}-confidence")
-        bases = node.get("legal_basis")
-        if not isinstance(bases, list) or not bases:
-            problems.append(f"node-{node_id}-legal-basis")
-            continue
-        for basis in bases:
-            if not all(basis.get(field) for field in ("law", "article", "url")):
-                problems.append(f"node-{node_id}-legal-basis-fields")
-                break
-            if not str(basis.get("url", "")).startswith(("http://", "https://")):
-                problems.append(f"node-{node_id}-legal-basis-url")
-                break
+        problems.extend(f"node-{node['id']}-{problem}" for problem in node_errors(data, node))
 
     return problems
 

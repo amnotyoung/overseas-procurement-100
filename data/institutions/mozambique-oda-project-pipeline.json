@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "모잠비크 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "모잠비크 정부, 모잠비크는 수원총괄기관이 외교부(Ministry of Foreign Affairs and Cooperation), 및 재경부 (Ministry of Finance and Economy), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제재정부(MEF), 외교협력부·부문 실행기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -49,7 +49,10 @@
     "authorities": [
       {
         "name": "경제재정부(MEF)",
-        "role": "국가계획·예산·내외채와 대외금융협정, 외부재원 목록·재정협력을 조정한다."
+        "role": "국가계획·예산·내외채와 대외금융협정, 외부재원 목록·재정협력을 조정한다.",
+        "processNodes": [
+          "P04"
+        ]
       },
       {
         "name": "외교협력부·부문 실행기관",
@@ -83,7 +86,8 @@
     ],
     "entryBarriers": [
       "외국기업은 개별 공고의 Cadastro Único 등록, 현지 인허가·세무, 포르투갈어 문서, 국내우대와 보증 발급요건을 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -213,7 +217,13 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
+            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -306,15 +316,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 24,
+          "end": 27,
+          "excerpt": "l 사업 발굴(N-2년) : 협력사업을 희망하는 현지의 정부부처(교육부, 농업부 등) 및 기관 혹은 국제기구가 사업요청서(Project Concept Paper)를 작성하여 공관 및 KOICA에 제출함. 제출된 사업은 통상 사업 착수까지 2년이 소요됨. (2026년에 제출시, 2028년 착수)"
+        }
       },
       {
         "id": "P02",
@@ -325,15 +332,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 24,
+          "end": 27,
+          "excerpt": "l 사업 발굴(N-2년) : 협력사업을 희망하는 현지의 정부부처(교육부, 농업부 등) 및 기관 혹은 국제기구가 사업요청서(Project Concept Paper)를 작성하여 공관 및 KOICA에 제출함. 제출된 사업은 통상 사업 착수까지 2년이 소요됨. (2026년에 제출시, 2028년 착수)"
+        }
       },
       {
         "id": "P03",
@@ -342,17 +346,10 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "경제재정부(MEF)·외교협력부",
+        "actor": "사업유형별 우선순위 심사기관",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       },
       {
         "id": "P04",
@@ -361,17 +358,15 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제재정부(MEF)·외교협력부",
+        "actor": "경제재정부(MEF)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 24,
+          "end": 27,
+          "excerpt": "l 사업 발굴(N-2년) : 협력사업을 희망하는 현지의 정부부처(교육부, 농업부 등) 및 기관 혹은 국제기구가 사업요청서(Project Concept Paper)를 작성하여 공관 및 KOICA에 제출함. 제출된 사업은 통상 사업 착수까지 2년이 소요됨. (2026년에 제출시, 2028년 착수)"
+        }
       },
       {
         "id": "P05",
@@ -382,15 +377,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "l PCP 심사 및 예비 조사(N-1년) : 사업요청을 토대로 KOICA 사무소의 조사 및 검토를 거쳐, 본부에서 심사함. 심사를 통과한 사업의 경우, 한국/현지 전문가를 선발하여 예비조사를 실시하며 사업 추진 배경, 활동 및 예산 계획 등의 타당성을 검토 결과를 토대로 사업 착수 1년 전 사업심사를 실시함."
+        }
       },
       {
         "id": "P06",
@@ -401,15 +393,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 35,
+          "end": 39,
+          "excerpt": "위한 구체적인 계획을 수립함(심층 기획조사). l 신규사업 사업 확정 및 착수(N) : 우리 정부의 예산 심의를 통해 사업이 확정되면, 심층기획조사 내용을"
+        }
       },
       {
         "id": "P07",
@@ -418,17 +407,14 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제재정부(MEF)·외교협력부",
+        "actor": "KOICA 사무소 · 수원부처",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 39,
+          "end": 42,
+          "excerpt": "토대로 집행계획을 수립함. 이를 토대로 사업수행기업/기관을 선정하여 사업을 추진함. - 한편, 집행계획 수립 전후 KOICA 사무소에서는 수원부처와 협의의사록(Record of Discussions)을 체결함. 협의의사록을 근거로 수원국 내 사업이 공식화됨."
+        }
       }
     ],
     "edges": [
@@ -470,7 +456,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

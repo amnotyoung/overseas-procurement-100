@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "모잠비크의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "모잠비크 정부, 재무부(Ministry of Finance and Economy), 모잠비크 재무부 조달감독·기능실(UFSA), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "조달감독기능실(UFSA), 각 공공기관의 조달관리집행단위(UGEA), 권한기관(Autoridade Competente), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -41,11 +41,17 @@
     "authorities": [
       {
         "name": "조달감독기능실(UFSA)",
-        "role": "국가조달 규정·감독·조정, 단일 공급자·시공자 등록부와 전자조달 체계를 관리한다."
+        "role": "국가조달 규정·감독·조정, 단일 공급자·시공자 등록부와 전자조달 체계를 관리한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "각 공공기관의 조달관리집행단위(UGEA)",
-        "role": "기관별 계획·공고·평가·계약체결과 관리를 수행한다."
+        "role": "기관별 계획·공고·평가·계약체결과 관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "권한기관(Autoridade Competente)",
@@ -79,7 +85,8 @@
     ],
     "entryBarriers": [
       "외국기업은 개별 공고의 Cadastro Único 등록, 현지 인허가·세무, 포르투갈어 문서, 국내우대와 보증 발급요건을 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -195,7 +202,13 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
+            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -288,15 +301,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.35(3)(e), 76, 88 and 93~94",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -305,17 +310,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "조달감독기능실(UFSA)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.35(3)(e), 76, 88 and 93~94",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -324,17 +324,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "조달감독기능실(UFSA)",
+        "actor": "각 공공기관의 조달관리집행단위(UGEA)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -345,15 +340,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -364,15 +351,13 @@
         "status": "risk",
         "actor": "조달감독기능실(UFSA)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/mozambique.txt",
+          "start": 118,
+          "end": 121,
+          "excerpt": "- 재무부(Ministry of Finance and Economy) 산하의 조달감독기능실(UFSA, Unidade Funcional de Supervisão das Aquisições)이 조달 규정의 입안·조정·감독, 조달 시스템(e-SISTAFE) 관리, 공무원 조달 훈련, 공급자 데이터베이스(Cadastro Único) 관리 등 규제 및 총괄 기능을 전담"
+        }
       },
       {
         "id": "P06",
@@ -381,17 +366,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "발주기관·관할 상급기관",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.278~281",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -402,15 +382,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.106, 108 and 109",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -452,7 +426,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

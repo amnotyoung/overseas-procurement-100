@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "페루의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "페루 정부, 조달 지침(Directivas), 및 공공조달 디지털 플랫폼(PLADICOP), 중재 판결 데이터베이스 및 분쟁해결위원회(JRD), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "효율적공공계약전문기관(OECE), 공공조달경제총국(DGA–MEF), 개별 계약기관, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Ley No 32069, Ley General de Contrataciones Públicas(국가계약법)",
-        "kind": "act"
-      },
-      {
-        "law": "민간 참여에 의한 지역 및 지방 공공투자법(LEY No 29230, 2008년 발효)",
-        "kind": "act"
-      },
-      {
-        "law": "이하 공공조달법",
-        "kind": "act"
       },
       {
         "law": "Ley n.º 32069 — Ley General de Contrataciones Públicas",
@@ -50,7 +38,10 @@
     "authorities": [
       {
         "name": "효율적공공계약전문기관(OECE)",
-        "role": "공공계약 규범의 해석·감독·지원과 공급자·중재 관련 등록 및 PLADICOP 운영을 담당한다."
+        "role": "공공계약 규범의 해석·감독·지원과 공급자·중재 관련 등록 및 PLADICOP 운영을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "공공조달경제총국(DGA–MEF)",
@@ -58,18 +49,20 @@
       },
       {
         "name": "개별 계약기관",
-        "role": "조달전략·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "조달전략·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 국가계약감독기관(Organismo Especializado para las Contrataciones",
-      "2. 이에 따라 감독 중심 기관에서 공공 가치 창출",
-      "3. OECE는 페루 국민의 이익을 위해 공공기관이 수행하는 공공계약 프로세스를 감독하고 조달 과정 초기",
-      "4. 조달을 담당하는 실국 업무를 총괄하는 사무국(Secretaría General)이 있음",
-      "5. 규제기술국(Direccion Tecnico Normativa), 감독 및 기술지원국(Dirección de Supervisión y",
-      "6. 효과적인 계약 체결 및 비용 대비 성과Value for Money) 원칙에 따른 공공 가치 창출 감독 및 장려",
-      "7. 법령에 명시된 계약 체결 방법 감독 (시행령에서 정한 예외 사례 제외)",
-      "8. 행정절차단일문서(TUPA) 및 현행 지침에 의거한 이해당사자 요청 시 감독 수행"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 개별 계약기관 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 효율적공공계약전문기관(OECE) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 페루의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -90,7 +83,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -210,7 +205,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "도구·문서의 기관 오인을 제거하고 OECE·MEF-DGA·계약기관 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
+            "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
+          },
+          {
+            "title": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
+            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+          },
+          {
+            "title": "OECE current Law 32069 compendium and DS 001-2026-EF commencement notice",
+            "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -235,7 +244,21 @@
           "state": "not-reported",
           "suggestedText": "현행 통합법·시행령의 개정 시행일과 정량·불복 요건을 조문별 반영했다."
         },
-        "id": "peru-procurement-governance-D02"
+        "id": "peru-procurement-governance-D02",
+        "citationSources": [
+          {
+            "title": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
+            "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
+          },
+          {
+            "title": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
+            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
+          },
+          {
+            "title": "OECE current Law 32069 compendium and DS 001-2026-EF commencement notice",
+            "url": "https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -352,15 +375,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
-            "article": "Law 32069 Arts.34, 50, 53~55; Regulation Arts.53, 93~100",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -369,17 +384,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "효율적공공계약전문기관(OECE)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
-            "article": "Law 32069 Arts.34, 50, 53~55; Regulation Arts.53, 93~100",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -388,17 +398,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "효율적공공계약전문기관(OECE)",
+        "actor": "개별 계약기관",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
-            "article": "Regulation Arts.64, 66~68, 82~83, 90 and 304",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -409,15 +414,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
-            "article": "Regulation Arts.64, 66~68, 82~83, 90 and 304",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -428,15 +425,8 @@
         "status": "risk",
         "actor": "효율적공공계약전문기관(OECE)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05",
-            "article": "Arts.1~15, 30~35, 45~61, 72~75, 85 and complementary/derogatory provisions; scope, authorities, minor contracts, methods, exceptions, contract securities, appeals, transition and repeal",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -445,17 +435,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "효율적공공계약전문기관(OECE)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
-            "article": "Law 32069 Arts.72~75; Regulation Arts.302~310",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -466,15 +451,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09",
-            "article": "Law 32069 Arts.60~61; Regulation Arts.113~119 and 138~139",
-            "url": "https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -516,7 +495,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

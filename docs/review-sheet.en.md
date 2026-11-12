@@ -23,7 +23,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 01. [HIGH] Current legal basis check
 
 - Institution: Bangladesh — Bidding system
-- Legal basis: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page
+- Legal basis: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · [Public Procurement Rules 2025](<https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html>) · [Bangladesh e-Government Procurement system](<https://www.bppa.gov.bd/e-gp.html>)
 - KOICA guide: p.47-59
 
 **Current legal basis** — PPR 2025 took effect with the amended PPA 2006 on 28 September 2025; e-GP is mandatory, and BPPA is the procurement authority.
@@ -40,7 +40,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 02. [HIGH] Current legal basis check
 
 - Institution: Bangladesh — Procurement governance
-- Legal basis: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page
+- Legal basis: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · [Public Procurement Rules 2025](<https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html>) · [Bangladesh e-Government Procurement system](<https://www.bppa.gov.bd/e-gp.html>)
 - KOICA guide: p.47-59
 
 **Current legal basis** — PPR 2025 took effect with the amended PPA 2006 on 28 September 2025; e-GP is mandatory, and BPPA is the procurement authority.
@@ -59,7 +59,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 03. [HIGH] Current legal basis check
 
 - Institution: Bolivia — ODA project pipeline
-- Legal basis: VIPFE official functions; National Public Investment System Basic Rules arts.28-29
+- Legal basis: VIPFE official functions; National Public Investment System Basic Rules arts.28-29 · [VIPFE statutory functions](<https://www.planificacion.gob.bo/institucion/vipfe/info>) · [Normas Básicas del Sistema Nacional de Inversión Pública](<https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — VIPFE manages external finance and international cooperation; arts.28-29 require SISIN registration, appraisal and additional external-finance conditions.
@@ -78,7 +78,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 04. [HIGH] Current legal basis check
 
 - Institution: Cameroon — ODA project pipeline
-- Legal basis: MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999)
+- Legal basis: MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999) · [MINEPAT Directorate General of Economy functions](<https://minepat.gov.cm/dg-conomie/>) · Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets (2026-11-12 발행처 파일 주소에서 HTTP 404 응답. 기관 기능은 함께 연결한 MINEPAT 자료에서 확인할 수 있습니다.)
 - KOICA guide: p.149-159
 
 **Current legal basis** — MINEPAT coordinates international partners, loan agreements and the project bank; an official circular requires reporting from the financing-search stage.
@@ -97,7 +97,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 05. [HIGH] Current legal basis check
 
 - Institution: Colombia — Bidding system
-- Legal basis: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal
+- Legal basis: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · [Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304>) · [Ley 1150 de 2007](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686>)
 - KOICA guide: p.81-97
 
 **Current legal basis** — Laws 80 of 1993 and 1150 of 2007 form the core framework; ANCP–Colombia Compra Eficiente leads national procurement policy and SECOP, while each contracting entity conducts its procedure.
@@ -114,7 +114,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 06. [HIGH] Current legal basis check
 
 - Institution: Colombia — ODA project pipeline
-- Legal basis: APC-Colombia official role and Director General functions
+- Legal basis: APC-Colombia official role and Director General functions · [APC-Colombia statutory role and functions](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688>)
 - KOICA guide: p.81-97
 
 **Current legal basis** — APC-Colombia is the national lead and official interlocutor for international development cooperation and approves and coordinates non-reimbursable technical and financial cooperation.
@@ -131,7 +131,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 07. [HIGH] Current legal basis check
 
 - Institution: Colombia — Procurement governance
-- Legal basis: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal
+- Legal basis: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · [Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304>) · [Ley 1150 de 2007](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686>)
 - KOICA guide: p.81-97
 
 **Current legal basis** — Laws 80 of 1993 and 1150 of 2007 form the core framework; ANCP–Colombia Compra Eficiente leads national procurement policy and SECOP, while each contracting entity conducts its procedure.
@@ -150,12 +150,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 08. [HIGH] Current legal basis check
 
 - Institution: Côte d'Ivoire — Bidding system
-- Legal basis: Ordonnance 2019-679; Ordonnance 2018-594; DGMP official regulation catalogue
+- Legal basis: Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · [Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics](<https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf>) · [Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP](<https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf>)
 - KOICA guide: p.175-185
 
-**Current legal basis** — Ordinance 2019-679 is the current code; DGMP handles administration and control, ANRMP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.
+**Current legal basis** — Ordinance 2019-679 is the current code; DGMP handles administration and control, ARCOP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.
 
-**✔ Verify** — Distinguish the contracting authority and COJO from DGMP control and the ANRMP review route, and check current thresholds.
+**✔ Verify** — Distinguish the contracting authority and COJO from DGMP control and the ARCOP review route, and check current thresholds.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -167,7 +167,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 09. [HIGH] Current legal basis check
 
 - Institution: Côte d'Ivoire — ODA project pipeline
-- Legal basis: Ministry of Plan DGCOD official functions; Décret 2015-475 as amended
+- Legal basis: Ministry of Plan DGCOD official functions; Décret 2015-475 as amended · [DGCOD official functions](<https://www.plan.gouv.ci/detail_structure/66>) · [Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires](<https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf>) · [Décret n°2019-299 du 3 avril 2019 modifiant le Décret n°2015-475](<https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf>)
 - KOICA guide: p.175-185
 
 **Current legal basis** — The Ministry of Plan's DGCOD has formal responsibility for development-cooperation coordination, partner frameworks and preparation of loan and grant negotiations.
@@ -184,12 +184,12 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 10. [HIGH] Current legal basis check
 
 - Institution: Côte d'Ivoire — Procurement governance
-- Legal basis: Ordonnance 2019-679; Ordonnance 2018-594; DGMP official regulation catalogue
+- Legal basis: Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · [Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics](<https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf>) · [Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP](<https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf>)
 - KOICA guide: p.175-185
 
-**Current legal basis** — Ordinance 2019-679 is the current code; DGMP handles administration and control, ANRMP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.
+**Current legal basis** — Ordinance 2019-679 is the current code; DGMP handles administration and control, ARCOP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.
 
-**✔ Verify** — Distinguish the contracting authority and COJO from DGMP control and the ANRMP review route, and check current thresholds.
+**✔ Verify** — Distinguish the contracting authority and COJO from DGMP control and the ARCOP review route, and check current thresholds.
 
 **Office result** *(fill and return)* —
 - Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`
@@ -203,7 +203,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 11. [HIGH] Current legal basis check
 
 - Institution: Democratic Republic of the Congo — Bidding system
-- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
+- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · [Loi n°10/010 du 27 avril 2010 relative aux marchés publics](<https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf>) · [Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics](<https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf>)
 - KOICA guide: p.5-15
 
 **Current legal basis** — Law 10/010 and its decrees separate ARMP regulation and review, DGCMP prior control, and procurement execution by the contracting authority's procurement unit.
@@ -220,7 +220,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 12. [HIGH] Current legal basis check
 
 - Institution: Democratic Republic of the Congo — ODA project pipeline
-- Legal basis: Ministry of Plan — Direction de la Coordination des Ressources Extérieures official functions
+- Legal basis: Ministry of Plan — Direction de la Coordination des Ressources Extérieures official functions · [Direction de la Coordination des Ressources Extérieures — official functions](<https://plan.gouv.cd/secretariat-general-2/direction-de-la-coordination-des-ressources-exterieures/>)
 - KOICA guide: p.5-15
 
 **Current legal basis** — The Ministry of Plan's Directorate for Coordination of External Resources formally coordinates development cooperation and the mobilization and use of external resources with finance and cooperation authorities.
@@ -237,7 +237,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 13. [HIGH] Current legal basis check
 
 - Institution: Democratic Republic of the Congo — Procurement governance
-- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
+- Legal basis: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · [Loi n°10/010 du 27 avril 2010 relative aux marchés publics](<https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf>) · [Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics](<https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf>)
 - KOICA guide: p.5-15
 
 **Current legal basis** — Law 10/010 and its decrees separate ARMP regulation and review, DGCMP prior control, and procurement execution by the contracting authority's procurement unit.
@@ -256,7 +256,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 14. [HIGH] Current legal basis check
 
 - Institution: Dominican Republic — Bidding system
-- Legal basis: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26
+- Legal basis: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · [Resolución PNP-01-2026 — implementación de Ley 47-25](<https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/>) · [Ley núm. 47-25 de Contrataciones Públicas](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf>) · [Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf>)
 - KOICA guide: p.19-39
 
 **Current legal basis** — Law 47-25 and Decree 52-26 apply from 29 January 2026; procedures begun earlier remain under the former regime, and restricted tendering was removed from the new framework.
@@ -273,7 +273,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 15. [HIGH] Current legal basis check
 
 - Institution: Dominican Republic — ODA project pipeline
-- Legal basis: Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice
+- Legal basis: Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice · [Ley núm. 45-25 — Ministerio de Hacienda y Economía 및 국제협력 권한 이전](<https://www.presidencia.gob.do/noticias/presidente-abinader-promulga-ley-que-dispone-fusion-del-ministerio-de-hacienda-y-el>)
 - KOICA guide: p.19-39
 
 **Current legal basis** — Law 45-25 abolished MEPyD and transferred non-reimbursable international-cooperation powers and legal succession of existing agreements to the Ministry of the Presidency; an R/D is a document, not an institution.
@@ -290,7 +290,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 16. [HIGH] Current legal basis check
 
 - Institution: Dominican Republic — Procurement governance
-- Legal basis: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26
+- Legal basis: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · [Resolución PNP-01-2026 — implementación de Ley 47-25](<https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/>) · [Ley núm. 47-25 de Contrataciones Públicas](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf>) · [Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf>)
 - KOICA guide: p.19-39
 
 **Current legal basis** — Law 47-25 and Decree 52-26 apply from 29 January 2026; procedures begun earlier remain under the former regime, and restricted tendering was removed from the new framework.
@@ -309,7 +309,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 17. [HIGH] Current legal basis check
 
 - Institution: Ecuador — Bidding system
-- Legal basis: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356
+- Legal basis: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · [Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf>) · [Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf>) · [Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP](<https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356>)
 - KOICA guide: p.57-69
 
 **Current legal basis** — SERCOP is the governing body; SOCE is an electronic system and LOSNCP is the statute. The October 2025 LOSNCP and Decree 193, as amended in 2026, form the current framework.
@@ -326,7 +326,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 18. [HIGH] Current legal basis check
 
 - Institution: Ecuador — ODA project pipeline
-- Legal basis: COPLAFIP arts.65–69; MREMH official functions and SIGECI registration procedure
+- Legal basis: COPLAFIP arts.65–69; MREMH official functions and SIGECI registration procedure · [Código Orgánico de Planificación y Finanzas Públicas, arts.65–69](<https://www.planificacion.gob.ec/wp-content/uploads/2024/02/CODIGO-ORGANICO-DE-PLANIFICACION-Y-FINANZAS-PUBLICAS.pdf>) · [MREMH international-cooperation functions](<https://www.cancilleria.gob.ec/2020/06/16/subsecretaria-de-asuntos-multilaterales/>) · [SIGECI project-registration procedure](<https://www.cancilleria.gob.ec/2020/07/30/certificado-de-registro-de-programas-y-proyectos-de-cooperacion-internacional-no-reembolsable/>)
 - KOICA guide: p.57-69
 
 **Current legal basis** — MREMH coordinates, negotiates and registers non-reimbursable cooperation, while COPLAFIP articles 65–69 govern planning, approval and registration.
@@ -343,7 +343,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 19. [HIGH] Current legal basis check
 
 - Institution: Ecuador — Procurement governance
-- Legal basis: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356
+- Legal basis: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · [Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf>) · [Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf>) · [Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP](<https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356>)
 - KOICA guide: p.57-69
 
 **Current legal basis** — SERCOP is the governing body; SOCE is an electronic system and LOSNCP is the statute. The October 2025 LOSNCP and Decree 193, as amended in 2026, form the current framework.
@@ -362,7 +362,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 20. [HIGH] Current legal basis check
 
 - Institution: Egypt — Bidding system
-- Legal basis: Law 182/2018; Executive Regulations; GAGS official procurement mandate
+- Legal basis: Law 182/2018; Executive Regulations; GAGS official procurement mandate · [Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities](<https://www.nib.gov.eg/PDF/library/Low182_2018.pdf>) · [Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019](<https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf>)
 - KOICA guide: p.133-147
 
 **Current legal basis** — Law 182/2018 and its executive regulations govern public-entity contracts; GAGS sets controls and inspects compliance, while administrative entities conduct procurements.
@@ -379,7 +379,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 21. [HIGH] Current legal basis check
 
 - Institution: Egypt — ODA project pipeline
-- Legal basis: Presidential Decree 303/2004 mandate; MPEDIC 2024 merger and annual report
+- Legal basis: Presidential Decree 303/2004 mandate; MPEDIC 2024 merger and annual report · [Presidential Decree No. 303 of 2004 — international cooperation mandate](<https://moic.gov.eg/page/ministers-statement>) · [2024 ministry merger and integrated development-financing framework](<https://moic.gov.eg/page/annual-report-2024>)
 - KOICA guide: p.133-147
 
 **Current legal basis** — The merged MPEDIC integrates planning and international cooperation and coordinates external financing, while finance and sector entities retain fiscal and implementation roles.
@@ -396,7 +396,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 22. [HIGH] Current legal basis check
 
 - Institution: Egypt — Procurement governance
-- Legal basis: Law 182/2018; Executive Regulations; GAGS official procurement mandate
+- Legal basis: Law 182/2018; Executive Regulations; GAGS official procurement mandate · [Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities](<https://www.nib.gov.eg/PDF/library/Low182_2018.pdf>) · [Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019](<https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf>)
 - KOICA guide: p.133-147
 
 **Current legal basis** — Law 182/2018 and its executive regulations govern public-entity contracts; GAGS sets controls and inspects compliance, while administrative entities conduct procurements.
@@ -415,7 +415,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 23. [HIGH] Current legal basis check
 
 - Institution: El Salvador — Bidding system
-- Legal basis: Decretos Legislativos 652 and 653; DINAC official institutional page
+- Legal basis: Decretos Legislativos 652 and 653; DINAC official institutional page · [Decreto Legislativo n.º 652 — Ley de Compras Públicas](<https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf>)
 - KOICA guide: p.71-79
 
 **Current legal basis** — Legislative Decrees 652 and 653 establish the 2023 framework; DINAC is the regulator, COMPRASAL is the platform, and contracting entities execute procedures.
@@ -432,7 +432,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 24. [HIGH] Current legal basis check
 
 - Institution: El Salvador — ODA project pipeline
-- Legal basis: ESCO official institutional framework and functions
+- Legal basis: ESCO official institutional framework and functions · [Decreto Ejecutivo n.º 24 de 29 de junio de 2020 — creación de ESCO](<https://esco.gob.sv/marco-institucional/>) · [Sistema Integrado de Información de la Cooperación Internacional](<https://portal.esco.gob.sv/>)
 - KOICA guide: p.71-79
 
 **Current legal basis** — ESCO coordinates and channels government cooperation needs and supports project planning, formulation, submission, approval and implementation oversight.
@@ -449,7 +449,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 25. [HIGH] Current legal basis check
 
 - Institution: El Salvador — Procurement governance
-- Legal basis: Decretos Legislativos 652 and 653; DINAC official institutional page
+- Legal basis: Decretos Legislativos 652 and 653; DINAC official institutional page · [Decreto Legislativo n.º 652 — Ley de Compras Públicas](<https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf>)
 - KOICA guide: p.71-79
 
 **Current legal basis** — Legislative Decrees 652 and 653 establish the 2023 framework; DINAC is the regulator, COMPRASAL is the platform, and contracting entities execute procedures.
@@ -468,7 +468,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 26. [HIGH] Current legal basis check
 
 - Institution: Ethiopia — Bidding system
-- Legal basis: Proclamation 1333/2024; Directive 1073/2025
+- Legal basis: Proclamation 1333/2024; Directive 1073/2025 · [Federal Public Procurement and Property Administration Proclamation No. 1333/2024](<https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf>) · [Federal Government Public Procurement Directive No. 1073/2025](<https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf>)
 - KOICA guide: p.95-115
 
 **Current legal basis** — Proclamation 1333/2024 establishes the current federal framework and FPPA regulator; Directive 1073/2025 details implementation.
@@ -485,7 +485,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 27. [HIGH] Current legal basis check
 
 - Institution: Ethiopia — Procurement governance
-- Legal basis: Proclamation 1333/2024; Directive 1073/2025
+- Legal basis: Proclamation 1333/2024; Directive 1073/2025 · [Federal Public Procurement and Property Administration Proclamation No. 1333/2024](<https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf>) · [Federal Government Public Procurement Directive No. 1073/2025](<https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf>)
 - KOICA guide: p.95-115
 
 **Current legal basis** — Proclamation 1333/2024 establishes the current federal framework and FPPA regulator; Directive 1073/2025 details implementation.
@@ -504,7 +504,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 28. [HIGH] Current legal basis check
 
 - Institution: Fiji — Bidding system
-- Legal basis: Procurement Regulations 2010 regs.4–5
+- Legal basis: Procurement Regulations 2010 regs.4–5 · [Procurement Regulations 2010 (Legal Notice No.81)](<https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf>)
 - KOICA guide: p.165-175
 
 **Current legal basis** — Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.
@@ -521,7 +521,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 29. [HIGH] Current legal basis check
 
 - Institution: Fiji — Procurement governance
-- Legal basis: Procurement Regulations 2010 regs.4–5
+- Legal basis: Procurement Regulations 2010 regs.4–5 · [Procurement Regulations 2010 (Legal Notice No.81)](<https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf>)
 - KOICA guide: p.165-175
 
 **Current legal basis** — Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.
@@ -540,7 +540,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 30. [HIGH] Current legal basis check
 
 - Institution: Ghana — Bidding system
-- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
+- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · [Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139](<https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf>) · [Public Procurement (Amendment) Act, 2025 (Act 1139)](<https://ppa.gov.gh/public-procurement-training-for-2026/>) · [Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)](<https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/>) · [Mandatory use of the Ghana Electronic Procurement System (GHANEPS)](<https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf>)
 - KOICA guide: p.17-29
 
 **Current legal basis** — Act 663 as amended by Acts 914 and 1139 governs the system; L.I. 2516 supplies the current thresholds, PPA regulates, entity bodies execute, and GHANEPS is mandatory.
@@ -557,7 +557,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 31. [HIGH] Current legal basis check
 
 - Institution: Ghana — Procurement governance
-- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
+- Legal basis: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · [Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139](<https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf>) · [Public Procurement (Amendment) Act, 2025 (Act 1139)](<https://ppa.gov.gh/public-procurement-training-for-2026/>) · [Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)](<https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/>) · [Mandatory use of the Ghana Electronic Procurement System (GHANEPS)](<https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf>)
 - KOICA guide: p.17-29
 
 **Current legal basis** — Act 663 as amended by Acts 914 and 1139 governs the system; L.I. 2516 supplies the current thresholds, PPA regulates, entity bodies execute, and GHANEPS is mandatory.
@@ -576,7 +576,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 32. [HIGH] Current legal basis check
 
 - Institution: Guatemala — Bidding system
-- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
+- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · [Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento](<https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf>) · [Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS](<https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf>)
 - KOICA guide: p.5-17
 
 **Current legal basis** — Decree 57-92 and amended Agreement 122-2016 are the current core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
@@ -593,7 +593,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 33. [HIGH] Current legal basis check
 
 - Institution: Guatemala — ODA project pipeline
-- Legal basis: SEGEPLAN official mandate; Internal Regulation art.27; CINR Project Guide
+- Legal basis: SEGEPLAN official mandate; Internal Regulation art.27; CINR Project Guide · [SEGEPLAN Subsecretaría de Cooperación y Alianzas para el Desarrollo — official mandate](<https://portal.segeplan.gob.gt/segeplan/?page_id=16>) · [SEGEPLAN Reglamento Orgánico Interno, art.27](<https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/09/ROI-8agosto2023-1.pdf>) · [Guía Orientadora de Programas y Proyectos de Cooperación Internacional No Reembolsable, 6th ed.](<https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/02/Guia-Orientadora-Programas-y-Proyectos-de-Cooperacion-Internacional-No-Reembolsable-6ta.-edic.pdf>)
 - KOICA guide: p.5-17
 
 **Current legal basis** — SEGEPLAN leads non-reimbursable cooperation policy, prioritization, negotiation, registration and coordination; MINFIN and MINEX retain financial and diplomatic responsibilities.
@@ -610,7 +610,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 34. [HIGH] Current legal basis check
 
 - Institution: Guatemala — Procurement governance
-- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
+- Legal basis: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · [Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento](<https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf>) · [Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS](<https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf>)
 - KOICA guide: p.5-17
 
 **Current legal basis** — Decree 57-92 and amended Agreement 122-2016 are the current core rules; DIGAE regulates procurement and GUATECOMPRAS, while GUATECOMPRAS is a system and RGAE is a supplier registry.
@@ -629,7 +629,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 35. [HIGH] Current legal basis check
 
 - Institution: Indonesia — Bidding system
-- Legal basis: Perpres 46/2025 and LKPP official legal database
+- Legal basis: Perpres 46/2025 and LKPP official legal database · [Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018](<https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025>) · [Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah](<https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025>)
 - KOICA guide: p.93-107
 
 **Current legal basis** — Presidential Regulation 46/2025 amends the framework; LKPP sets policy, while PA/KPA, PPK and procurement groups execute agency procedures.
@@ -646,7 +646,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 36. [HIGH] Current legal basis check
 
 - Institution: Indonesia — Procurement governance
-- Legal basis: Perpres 46/2025 and LKPP official legal database
+- Legal basis: Perpres 46/2025 and LKPP official legal database · [Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018](<https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025>) · [Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah](<https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025>)
 - KOICA guide: p.93-107
 
 **Current legal basis** — Presidential Regulation 46/2025 amends the framework; LKPP sets policy, while PA/KPA, PPK and procurement groups execute agency procedures.
@@ -665,7 +665,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 37. [HIGH] Current legal basis check
 
 - Institution: Jordan — Bidding system
-- Legal basis: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials
+- Legal basis: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · [Government Procurement By-law No. 8 of 2022, as amended](<https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769>) · [Current Government Procurement By-law and Instructions register](<https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — The 2022 by-law establishes the PPC and PCC, while central and entity-level procurers execute procurement through JONEPS.
@@ -682,7 +682,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 38. [HIGH] Current legal basis check
 
 - Institution: Jordan — ODA project pipeline
-- Legal basis: Planning and International Cooperation Law No. 10 of 2024 arts. 5, 10–11
+- Legal basis: Planning and International Cooperation Law No. 10 of 2024 arts. 5, 10–11 · [Planning and International Cooperation Law No. 10 of 2024, arts. 5, 8, 10–12](<https://www.mop.gov.jo/En/Pages/Planning_Law>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — Law 10/2024 makes MOPIC the liaison with foreign funding sources and requires requests through the ministry and Cabinet approval for acceptance and implementation.
@@ -699,7 +699,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 39. [HIGH] Current legal basis check
 
 - Institution: Jordan — Procurement governance
-- Legal basis: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials
+- Legal basis: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · [Government Procurement By-law No. 8 of 2022, as amended](<https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769>) · [Current Government Procurement By-law and Instructions register](<https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — The 2022 by-law establishes the PPC and PCC, while central and entity-level procurers execute procurement through JONEPS.
@@ -718,7 +718,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 40. [HIGH] Current legal basis check
 
 - Institution: Kenya — Bidding system
-- Legal basis: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025
+- Legal basis: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · [Public Procurement and Asset Disposal Act 2015, revised edition 2022](<https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31>) · [Public Procurement and Asset Disposal Regulations 2020](<https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31>) · [PPRA Circular 02/2025 — transition to the Electronic Government Procurement System](<https://ppra.go.ke/ppra-circular-02-2025/>)
 - KOICA guide: p.161-173
 
 **Current legal basis** — The Treasury sets policy, PPRA regulates, PPARB reviews challenges, entities execute, and 2025 circulars require transition to e-GPS.
@@ -735,7 +735,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 41. [HIGH] Current legal basis check
 
 - Institution: Kenya — Procurement governance
-- Legal basis: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025
+- Legal basis: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · [Public Procurement and Asset Disposal Act 2015, revised edition 2022](<https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31>) · [Public Procurement and Asset Disposal Regulations 2020](<https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31>) · [PPRA Circular 02/2025 — transition to the Electronic Government Procurement System](<https://ppra.go.ke/ppra-circular-02-2025/>)
 - KOICA guide: p.161-173
 
 **Current legal basis** — The Treasury sets policy, PPRA regulates, PPARB reviews challenges, entities execute, and 2025 circulars require transition to e-GPS.
@@ -754,7 +754,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 42. [HIGH] Current legal basis check
 
 - Institution: Kyrgyzstan — Bidding system
-- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
+- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · [Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)](<https://cbd.minjust.gov.kg/112361/edition/1279682/ru>) · [Law No. 10 of 29 January 2026 amending the Law On Public Procurement](<https://cbd.minjust.gov.kg/4-5701/edition/46464/ru>) · [Unified public procurement portal](<https://zakupki.gov.kg/>)
 - KOICA guide: p.85-97
 
 **Current legal basis** — Law No.27/2022, as amended through Law No.10/2026, assigns procurement and review roles and requires use of the official .kg portal.
@@ -771,7 +771,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 43. [HIGH] Current legal basis check
 
 - Institution: Kyrgyzstan — Procurement governance
-- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
+- Legal basis: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · [Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)](<https://cbd.minjust.gov.kg/112361/edition/1279682/ru>) · [Law No. 10 of 29 January 2026 amending the Law On Public Procurement](<https://cbd.minjust.gov.kg/4-5701/edition/46464/ru>) · [Unified public procurement portal](<https://zakupki.gov.kg/>)
 - KOICA guide: p.85-97
 
 **Current legal basis** — Law No.27/2022, as amended through Law No.10/2026, assigns procurement and review roles and requires use of the official .kg portal.
@@ -790,7 +790,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 44. [HIGH] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — Bidding system
-- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
+- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register](<https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf>)
 - KOICA guide: p.31-45
 
 **Current legal basis** — Law No.30/NA and Instruction No.0477/MOF remain the operative framework in current PPMD materials and 2026 notices.
@@ -807,7 +807,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 45. [HIGH] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — Procurement governance
-- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
+- Legal basis: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register](<https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf>)
 - KOICA guide: p.31-45
 
 **Current legal basis** — Law No.30/NA and Instruction No.0477/MOF remain the operative framework in current PPMD materials and 2026 notices.
@@ -826,7 +826,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 46. [HIGH] Current legal basis check
 
 - Institution: Mongolia — Bidding system
-- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - KOICA guide: p.5-23
 
 **Current legal basis** — 2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.
@@ -843,7 +843,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 47. [HIGH] Current legal basis check
 
 - Institution: Mongolia — ODA project pipeline
-- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - KOICA guide: p.5-23
 
 **Current legal basis** — 2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.
@@ -860,7 +860,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 48. [HIGH] Current legal basis check
 
 - Institution: Mongolia — Procurement governance
-- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- Legal basis: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - KOICA guide: p.5-23
 
 **Current legal basis** — 2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.
@@ -879,7 +879,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 49. [HIGH] Current legal basis check
 
 - Institution: Morocco — Bidding system
-- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - KOICA guide: p.59-71
 
 **Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
@@ -896,7 +896,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 50. [HIGH] Current legal basis check
 
 - Institution: Morocco — Procurement governance
-- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - KOICA guide: p.59-71
 
 **Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
@@ -915,7 +915,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 51. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Bidding system
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
@@ -932,7 +932,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 52. [HIGH] Current legal basis check
 
 - Institution: Mozambique — ODA project pipeline
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
@@ -949,7 +949,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 53. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Procurement governance
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
@@ -968,7 +968,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 54. [HIGH] Current legal basis check
 
 - Institution: Myanmar — Bidding system
-- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - KOICA guide: p.1-8
 
 **Current legal basis** — 공식 관보에 제1/2022호 전체가 수록되고 2025·2026년 정부 자료가 제1/2022호와 제1/2017호의 계속 적용을 확인한다.
@@ -985,7 +985,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 55. [HIGH] Current legal basis check
 
 - Institution: Myanmar — ODA project pipeline
-- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - KOICA guide: p.웹페이지
 
 **Current legal basis** — 공식 관보에 제1/2022호 전체가 수록되고 2025·2026년 정부 자료가 제1/2022호와 제1/2017호의 계속 적용을 확인한다.
@@ -1002,7 +1002,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 56. [HIGH] Current legal basis check
 
 - Institution: Myanmar — Procurement governance
-- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- Legal basis: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - KOICA guide: p.2-8
 
 **Current legal basis** — 공식 관보에 제1/2022호 전체가 수록되고 2025·2026년 정부 자료가 제1/2022호와 제1/2017호의 계속 적용을 확인한다.
@@ -1021,7 +1021,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 57. [HIGH] Current legal basis check
 
 - Institution: Nepal — Bidding system
-- Legal basis: Public Procurement Rules, 2064 (2007) r.39(1)(d)
+- Legal basis: Public Procurement Rules, 2064 (2007) r.39(1)(d) · [Public Procurement Rules, 2064 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf>)
 - KOICA guide: p.11-13
 
 **Current legal basis** — Public Procurement Rules 2064 (2007) r.39(1)(d) requires the attested copy of the agent's Permanent Account Number (PAN) Registration Certificate and a letter of acceptance to become an agent.
@@ -1038,7 +1038,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 58. [HIGH] Current legal basis check
 
 - Institution: Nepal — ODA project pipeline
-- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b)
+- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - KOICA guide: p.8
 
 **Current legal basis** — Foreign Aid Mobilization Policy 2025 §3.3.2(k) requires government agencies to obtain prior Ministry of Finance approval before seeking aid, making proposals, negotiating, sharing information, corresponding on concept papers, or signing MoUs; §3.3.5(b) requires development partners to obtain Ministry approval before mobilizing any aid.
@@ -1057,7 +1057,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 59. [HIGH] Current legal basis check
 
 - Institution: Nigeria — Bidding system
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.
@@ -1074,7 +1074,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 60. [HIGH] Current legal basis check
 
 - Institution: Nigeria — ODA project pipeline
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.
@@ -1091,7 +1091,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 61. [HIGH] Current legal basis check
 
 - Institution: Nigeria — Procurement governance
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.
@@ -1110,7 +1110,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 62. [HIGH] Current legal basis check
 
 - Institution: Pakistan — Bidding system
-- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — 현행 PPR·e-PADS·불만규정이 금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1127,7 +1127,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 63. [HIGH] Current legal basis check
 
 - Institution: Pakistan — ODA project pipeline
-- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — 현행 PPR·e-PADS·불만규정이 금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1144,7 +1144,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 64. [HIGH] Current legal basis check
 
 - Institution: Pakistan — Procurement governance
-- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- Legal basis: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — 현행 PPR·e-PADS·불만규정이 금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1163,7 +1163,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 65. [HIGH] Current legal basis check
 
 - Institution: Palestine — Bidding system
-- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — 현행 통합 법률·규정과 개정문이 관할금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1180,7 +1180,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 66. [HIGH] Current legal basis check
 
 - Institution: Palestine — Bidding system
-- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — Decree-Law 26/2025 legally merged them into the Ministry of Finance and Planning and transferred both portfolios.
@@ -1197,7 +1197,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 67. [HIGH] Current legal basis check
 
 - Institution: Palestine — ODA project pipeline
-- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — 현행 통합 법률·규정과 개정문이 관할금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1214,7 +1214,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 68. [HIGH] Current legal basis check
 
 - Institution: Palestine — ODA project pipeline
-- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — Decree-Law 26/2025 legally merged them into the Ministry of Finance and Planning and transferred both portfolios.
@@ -1231,7 +1231,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 69. [HIGH] Current legal basis check
 
 - Institution: Palestine — Procurement governance
-- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- Legal basis: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — 현행 통합 법률·규정과 개정문이 관할금액, 기한, 보증, 불복과 예외를 구체적으로 정한다.
@@ -1248,7 +1248,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 70. [HIGH] Current legal basis check
 
 - Institution: Palestine — Procurement governance
-- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- Legal basis: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - KOICA guide: p.119-127
 
 **Current legal basis** — Decree-Law 26/2025 legally merged them into the Ministry of Finance and Planning and transferred both portfolios.
@@ -1267,7 +1267,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 71. [HIGH] Current legal basis check
 
 - Institution: Paraguay — Bidding system
-- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
@@ -1284,7 +1284,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 72. [HIGH] Current legal basis check
 
 - Institution: Paraguay — ODA project pipeline
-- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
@@ -1301,7 +1301,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 73. [HIGH] Current legal basis check
 
 - Institution: Paraguay — Procurement governance
-- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- Legal basis: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Decree 2264/2024 repealed Decree 9823/2023, and the 2026 DNCP digest consolidates the current law, decree and 2025 resolutions.
@@ -1320,7 +1320,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 74. [HIGH] Current legal basis check
 
 - Institution: Peru — Bidding system
-- Legal basis: Ley 32069; DS 009-2025-EF; OECE consolidated legislation
+- Legal basis: Ley 32069; DS 009-2025-EF; OECE consolidated legislation · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — Law 32069 and DS 009-2025-EF govern the current system; OECE and MEF-DGA have oversight and policy roles, while PLADICOP and databases are tools.
@@ -1337,7 +1337,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 75. [HIGH] Current legal basis check
 
 - Institution: Peru — Bidding system
-- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — Law 32069 and the regulation as amended through DS 001-2026-EF establish the current methods, deadlines, performance security and appeal route.
@@ -1354,7 +1354,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 76. [HIGH] Current legal basis check
 
 - Institution: Peru — ODA project pipeline
-- Legal basis: APCI institutional page; Ley 27692; Ley 28875 SINDCINR framework
+- Legal basis: APCI institutional page; Ley 27692; Ley 28875 SINDCINR framework · [Ley N.º 27692 — Ley de Creación de la APCI, as amended](<https://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/7e1812336c5963630525799f005ed9c1/%24file/3.ley_n_27692_de_creacion_de_la_apci_y_sus_modificatorias.pdf>) · [Ley N.º 28875 and current SINDCINR institutional framework](<https://www.gob.pe/31107-sistema-nacional-descentralizado-de-cooperacion-internacional-no-reembolsable-sindcinr>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — MRE leads SINDCINR and APCI serves as its executive secretariat, linking supply and demand and managing, negotiating and supervising cooperation.
@@ -1371,7 +1371,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 77. [HIGH] Current legal basis check
 
 - Institution: Peru — ODA project pipeline
-- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — Law 32069 and the regulation as amended through DS 001-2026-EF establish the current methods, deadlines, performance security and appeal route.
@@ -1388,7 +1388,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 78. [HIGH] Current legal basis check
 
 - Institution: Peru — Procurement governance
-- Legal basis: Ley 32069; DS 009-2025-EF; OECE consolidated legislation
+- Legal basis: Ley 32069; DS 009-2025-EF; OECE consolidated legislation · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — Law 32069 and DS 009-2025-EF govern the current system; OECE and MEF-DGA have oversight and policy roles, while PLADICOP and databases are tools.
@@ -1405,7 +1405,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 79. [HIGH] Current legal basis check
 
 - Institution: Peru — Procurement governance
-- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- Legal basis: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - KOICA guide: p.115-127
 
 **Current legal basis** — Law 32069 and the regulation as amended through DS 001-2026-EF establish the current methods, deadlines, performance security and appeal route.
@@ -1424,7 +1424,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 80. [HIGH] Current legal basis check
 
 - Institution: Philippines — Bidding system
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.
@@ -1441,7 +1441,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 81. [HIGH] Current legal basis check
 
 - Institution: Philippines — ODA project pipeline
-- Legal basis: DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review
+- Legal basis: DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review · [2025 DEPDev/ICC Guidelines for review and approval of programs and projects](<https://depdev.gov.ph/wp-content/uploads/2025/10/Guidelines-and-Procedures-on-the-Review-and-Approval-of-New-and-Ongoing-Programs-and-Projects-Requiring-Economy-and-Development-Council-Investment-Coordination-Committee-Action.pdf>) · [Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — DEPDev succeeded NEDA and the 2025 DEPDev/ICC guidelines govern review, approval and reappraisal of covered ODA programs and projects.
@@ -1458,7 +1458,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 82. [HIGH] Current legal basis check
 
 - Institution: Philippines — Procurement governance
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.
@@ -1477,7 +1477,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 83. [HIGH] Current legal basis check
 
 - Institution: Rwanda — Bidding system
-- Legal basis: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance
+- Legal basis: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Umucyo current procurement law list and RPPA 2024 clarification](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — Law 031/2022 is the current act; RPPA supervises, entities procure, IRP reviews and Umucyo is the electronic channel.
@@ -1494,7 +1494,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 84. [HIGH] Current legal basis check
 
 - Institution: Rwanda — Bidding system
-- Legal basis: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183
+- Legal basis: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183 · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Ministerial Order n° 001/23/10/TC relating to public procurement](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Legal_Instruments/MINISTERIAL_ORDER/Ministerial_Order_for_p.p_new_Law.pdf>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — Law 031/2022 and Order 001/23/10/TC establish the current rules and expressly repeal the former law and 2020 order.
@@ -1511,7 +1511,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 85. [HIGH] Current legal basis check
 
 - Institution: Rwanda — ODA project pipeline
-- Legal basis: MINECOFIN External Finance Directorate mandate
+- Legal basis: MINECOFIN External Finance Directorate mandate · [MINECOFIN External Finance Directorate mandate](<https://www.minecofin.gov.rw/1/corporate-services-department-2>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — MINECOFIN's External Finance Directorate is the key government entry point for ODA, concessional loans and partner coordination.
@@ -1528,7 +1528,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 86. [HIGH] Current legal basis check
 
 - Institution: Rwanda — ODA project pipeline
-- Legal basis: MINECOFIN EFD mandate; Public Debt Procedure Manual (2024); official policy update (2026-07-02)
+- Legal basis: MINECOFIN EFD mandate; Public Debt Procedure Manual (2024); official policy update (2026-07-02) · [MINECOFIN External Finance Directorate mandate](<https://www.minecofin.gov.rw/1/corporate-services-department-2>) · [Public Debt Procedure Manual, 10 May 2024](<https://www.minecofin.gov.rw/index.php?eID=dumpFile&f=99728&t=f&token=f4e493d5e601b8ad7e68dcfc894021bc3290d017>) · [Rwanda Development Cooperation Policy operationalization update](<https://www.minecofin.gov.rw/news-detail/development-partners-and-government-review-next-steps-for-operationalizing-rwandas-development-cooperation-policy>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — The July 2026 official update describes the successor policy as still moving toward approval; EFD's mandate and the 2024 manual establish the operational route.
@@ -1545,7 +1545,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 87. [HIGH] Current legal basis check
 
 - Institution: Rwanda — Procurement governance
-- Legal basis: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance
+- Legal basis: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Umucyo current procurement law list and RPPA 2024 clarification](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — Law 031/2022 is the current act; RPPA supervises, entities procure, IRP reviews and Umucyo is the electronic channel.
@@ -1562,7 +1562,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 88. [HIGH] Current legal basis check
 
 - Institution: Rwanda — Procurement governance
-- Legal basis: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183
+- Legal basis: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183 · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Ministerial Order n° 001/23/10/TC relating to public procurement](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Legal_Instruments/MINISTERIAL_ORDER/Ministerial_Order_for_p.p_new_Law.pdf>)
 - KOICA guide: p.43-57
 
 **Current legal basis** — Law 031/2022 and Order 001/23/10/TC establish the current rules and expressly repeal the former law and 2020 order.
@@ -1581,7 +1581,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 89. [HIGH] Current legal basis check
 
 - Institution: Senegal — Bidding system
-- Legal basis: Decree 2022-2295; ARCOP official mandate and APPEL platform
+- Legal basis: Decree 2022-2295; ARCOP official mandate and APPEL platform · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [ARCOP current application of Décret 2022-2295](<https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf>) · [ARCOP · APPEL 단계적 도입과 적용 모듈](<https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — Decree 2022-2295 replaced the 2014 code; ARCOP regulates, DCMP performs prior control, entities procure and APPEL is the platform.
@@ -1598,7 +1598,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 90. [HIGH] Current legal basis check
 
 - Institution: Senegal — Bidding system
-- Legal basis: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807
+- Legal basis: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807 · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [Décret n° 2026-807 du 22 avril 2026 — secret-defence procurement control](<https://arcop.sn/2026/05/05/la-reforme-des-marches-et-projets-de-ppp-susceptibles-detre-classes-secret-defense-une-avancee-remarquable-dans-la-recherche-de-la-performance-dans-lac/>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — The 2023 orders set DRP and security thresholds; Décret 2026-807 adds classification and prior control for secret-defence procurement.
@@ -1615,7 +1615,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 91. [HIGH] Current legal basis check
 
 - Institution: Senegal — ODA project pipeline
-- Legal basis: DGCFEDSP official mandate
+- Legal basis: DGCFEDSP official mandate · [MEPC mission and DGCFEDSP external-finance mandate](<https://www.economie.gouv.sn/index.php/en/node/131>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — DGCFEDSP prepares financing requests, negotiates loans and grants, manages externally financed investment and monitors results and audits.
@@ -1632,7 +1632,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 92. [HIGH] Current legal basis check
 
 - Institution: Senegal — ODA project pipeline
-- Legal basis: MEPC mission; DGCFEDSP mandate; SND 2025–2029; Code Art.3
+- Legal basis: MEPC mission; DGCFEDSP mandate; SND 2025–2029; Code Art.3 · [MEPC mission and DGCFEDSP external-finance mandate](<https://www.economie.gouv.sn/index.php/en/node/131>) · [Vision Sénégal 2050 — Stratégie nationale de Développement 2025–2029](<https://economie.gouv.sn/sites/default/files/2025-04/snd.pdf>) · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — SND 2025–2029 is the current strategy and DGCFEDSP prepares requests, negotiates grants/loans and monitors externally financed projects.
@@ -1649,7 +1649,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 93. [HIGH] Current legal basis check
 
 - Institution: Senegal — Procurement governance
-- Legal basis: Decree 2022-2295; ARCOP official mandate and APPEL platform
+- Legal basis: Decree 2022-2295; ARCOP official mandate and APPEL platform · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [ARCOP current application of Décret 2022-2295](<https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf>) · [ARCOP · APPEL 단계적 도입과 적용 모듈](<https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — Decree 2022-2295 replaced the 2014 code; ARCOP regulates, DCMP performs prior control, entities procure and APPEL is the platform.
@@ -1666,7 +1666,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 94. [HIGH] Current legal basis check
 
 - Institution: Senegal — Procurement governance
-- Legal basis: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807
+- Legal basis: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807 · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [Décret n° 2026-807 du 22 avril 2026 — secret-defence procurement control](<https://arcop.sn/2026/05/05/la-reforme-des-marches-et-projets-de-ppp-susceptibles-detre-classes-secret-defense-une-avancee-remarquable-dans-la-recherche-de-la-performance-dans-lac/>)
 - KOICA guide: p.85-93
 
 **Current legal basis** — The 2023 orders set DRP and security thresholds; Décret 2026-807 adds classification and prior control for secret-defence procurement.
@@ -1685,7 +1685,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 95. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — Bidding system
-- Legal basis: Gazette No.2412/01; Procurement Guidelines and Manual 2024
+- Legal basis: Gazette No.2412/01; Procurement Guidelines and Manual 2024 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — 2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.
@@ -1702,7 +1702,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 96. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — Bidding system
-- Legal basis: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7
+- Legal basis: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — The current Guidelines, Manual and supplements set authority limits, deadlines, securities, appeals and exceptions.
@@ -1719,7 +1719,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 97. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — ODA project pipeline
-- Legal basis: ERD official mandate and circulars
+- Legal basis: ERD official mandate and circulars · [External Resources Department mandate and current circulars](<https://www.erd.gov.lk/index.php?Itemid=219&id=55&lang=en&option=com_content&view=article>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — ERD가 외부재원 동원·개발파트너 협의·실행기관 지원의 정점기관이고 NPD는 국가계획·사업우선순위를 담당한다.
@@ -1736,7 +1736,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 98. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — ODA project pipeline
-- Legal basis: Public Financial Management Act No.44 of 2024 policy; NPD Operational Manual; ERD circulars; Guidelines 1.4.1
+- Legal basis: Public Financial Management Act No.44 of 2024 policy; NPD Operational Manual; ERD circulars; Guidelines 1.4.1 · [Public Financial Management Act No.44 of 2024 — project-proposal submission policy](<https://www.erd.gov.lk/index.php?Itemid=218&id=54&lang=en&option=com_content&view=article>) · [Operational Manual for Project Submission and NPD Project Submission Format](<https://www.erd.gov.lk/2019/OperationalManualProjectSubmissionFormat.pdf>) · [External Resources Department mandate and current circulars](<https://www.erd.gov.lk/index.php?Itemid=219&id=55&lang=en&option=com_content&view=article>) · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — NPD appraises project proposals; ERD coordinates external finance, and mandatory donor rules may prevail.
@@ -1753,7 +1753,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 99. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — Procurement governance
-- Legal basis: Gazette No.2412/01; Procurement Guidelines and Manual 2024
+- Legal basis: Gazette No.2412/01; Procurement Guidelines and Manual 2024 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — 2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.
@@ -1770,7 +1770,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 100. [HIGH] Current legal basis check
 
 - Institution: Sri Lanka — Procurement governance
-- Legal basis: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7
+- Legal basis: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - KOICA guide: p.81-91
 
 **Current legal basis** — The current Guidelines, Manual and supplements set authority limits, deadlines, securities, appeals and exceptions.
@@ -1789,7 +1789,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 101. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — Bidding system
-- Legal basis: Law No.1955 arts.1–2, 5, 14
+- Legal basis: Law No.1955 arts.1–2, 5, 14 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — Law 1955(2023, 2025 개정)가 현행법이며 권한기관·인증 조달기관·전자포털 체계다. 공여국·외국은행·IFI가 전부 또는 일부 재원하는 국가투자사업은 법 적용에서 제외될 수 있다.
@@ -1806,7 +1806,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 102. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — Bidding system
-- Legal basis: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24
+- Legal basis: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>) · [Government Decree No.362 of 24 June 2025 — Rules of Public Procurement Procedures, as amended by Decree No.310 of 28 May 2026](<https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169536>) · [Law No.2203 on the State Budget for 2026, as amended by Law No.2256 of 27 April 2026](<https://mmih.tj/SEARCH/DocumentView?DocumentId=171486>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — Decree 362 as amended in 2026 and the 2026 Budget Law set current thresholds, periods, securities and review deadlines.
@@ -1823,7 +1823,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 103. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — ODA project pipeline
-- Legal basis: External Assistance Rules; official Committee and Ministry mandates
+- Legal basis: External Assistance Rules; official Committee and Ministry mandates · [Government Decree No.95 of 25 February 2017 — Rules on Attraction, Use, Coordination and Monitoring of External Assistance, as amended 28 November 2023](<https://egov.tj/site/sarmoyaguzori?lang=en>) · [Ministry of Economic Development and Trade mandate](<https://egov.tj/site/rushdiiktisod?lang=ru>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — 국가투자·국유재산관리위원회가 외부원조 규칙과 투자정책을 담당하고 경제개발무역부가 국가전략·투자프로그램을 조정한다.
@@ -1840,7 +1840,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 104. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — ODA project pipeline
-- Legal basis: Law No.2173 Arts.7~9; Decree No.95 external-assistance rules; Procurement Law Art.2
+- Legal basis: Law No.2173 Arts.7~9; Decree No.95 external-assistance rules; Procurement Law Art.2 · [Law No.2173 of 14 May 2025 On Investment and Encouragement of Investment Activity](<https://mmk.tj/system/files/Legislation/2173_tj.pdf>) · [Government Decree No.95 of 25 February 2017 — Rules on Attraction, Use, Coordination and Monitoring of External Assistance, as amended 28 November 2023](<https://egov.tj/site/sarmoyaguzori?lang=en>) · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — Law 2173 governs state-investment and external-aid coordination; Procurement Law Art.2 excludes specified donor-funded state investment projects.
@@ -1857,7 +1857,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 105. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — Procurement governance
-- Legal basis: Law No.1955 arts.1–2, 5, 14
+- Legal basis: Law No.1955 arts.1–2, 5, 14 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — Law 1955(2023, 2025 개정)가 현행법이며 권한기관·인증 조달기관·전자포털 체계다. 공여국·외국은행·IFI가 전부 또는 일부 재원하는 국가투자사업은 법 적용에서 제외될 수 있다.
@@ -1874,7 +1874,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 106. [HIGH] Current legal basis check
 
 - Institution: Tajikistan — Procurement governance
-- Legal basis: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24
+- Legal basis: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>) · [Government Decree No.362 of 24 June 2025 — Rules of Public Procurement Procedures, as amended by Decree No.310 of 28 May 2026](<https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169536>) · [Law No.2203 on the State Budget for 2026, as amended by Law No.2256 of 27 April 2026](<https://mmih.tj/SEARCH/DocumentView?DocumentId=171486>)
 - KOICA guide: p.99-117
 
 **Current legal basis** — Decree 362 as amended in 2026 and the 2026 Budget Law set current thresholds, periods, securities and review deadlines.
@@ -1893,7 +1893,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 107. [HIGH] Current legal basis check
 
 - Institution: Tanzania — Bidding system
-- Legal basis: Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)
+- Legal basis: Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>) · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
 - KOICA guide: p.193-194
 
 **Current legal basis** — Public Procurement Act No. 10 of 2023 §131(1) repealed the 2011 Act; the new Act took effect on 17 June 2024 (GN 455). The current regulations are the Public Procurement Regulations 2024; their official English version was published as GN No. 261 of 2025.
@@ -1910,7 +1910,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 108. [HIGH] Current legal basis check
 
 - Institution: Tanzania — ODA project pipeline
-- Legal basis: MoF divisions; revised DCF; financing guidelines
+- Legal basis: MoF divisions; revised DCF; financing guidelines · [External Finance Division and Debt Management Division official mandates](<https://mof.go.tz/divisions>) · [Development Cooperation Framework 2017/18–2029/30 (revised 2022/23)](<https://www.mof.go.tz/uploads/documents/en-1747807046-Development%20Cooperation%20Framework%20%28DCF%29.pdf>) · [Guidelines for Project Planning and Negotiations for Raising Loans, Issuing Guarantees and Receiving Grants](<https://repository.mof.go.tz/items/49afd5c3-5fc9-45a4-98d1-fcb99a9fe01d>)
 - KOICA guide: p.190-191
 
 **Current legal basis** — 재무부 External Finance Division이 외부재원·협력정책·협정·ODA 기록·모니터링을, Debt Management Division이 차입·보증·채무를 담당하며 DCF가 공통 틀이다.
@@ -1927,7 +1927,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 109. [HIGH] Current legal basis check
 
 - Institution: Tanzania — Procurement governance
-- Legal basis: Public Procurement Act, No. 10 of 2023 §8, §74, §131(1)
+- Legal basis: Public Procurement Act, No. 10 of 2023 §8, §74, §131(1) · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>)
 - KOICA guide: p.192
 
 **Current legal basis** — PPA 2023 §8 keeps PPRA in existence but under the new Act; it adds the power to set price caps (§74) and mandatory NeST e-procurement. The 2011 Act was repealed by §131(1).
@@ -1946,7 +1946,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 110. [HIGH] Current legal basis check
 
 - Institution: Thailand — Bidding system
-- Legal basis: Act Arts.7, 55~56, 62, 66, 114~119; Regulation cls.28~32, 51~54, 166~170
+- Legal basis: Act Arts.7, 55~56, 62, 66, 114~119; Regulation cls.28~32, 51~54, 166~170 · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — Act Arts.55~56, 66, 114~119와 Regulation cls.28~32, 51, 166~170이 현행 방식·기간·보증·불복을 정하고 Act Art.7이 협정상 다른 조달규칙을 우선시한다.
@@ -1963,7 +1963,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 111. [HIGH] Current legal basis check
 
 - Institution: Thailand — ODA project pipeline
-- Legal basis: TICA official mandate and ODA institutional overview
+- Legal basis: TICA official mandate and ODA institutional overview · [TICA vision and mandate](<https://tica-thaigov.mfa.go.th/en/page/vision-and-authority?menu=5f47761072148c085f3a287e>) · [Thailand ODA institutional overview](<https://tica-thaigov.mfa.go.th/en/content/overview?cate=5d7da8d015e39c3fbc007463>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — TICA under the Ministry of Foreign Affairs administers cooperation with foreign governments and coordinates and supervises public and private aid plans and projects.
@@ -1980,7 +1980,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 112. [HIGH] Current legal basis check
 
 - Institution: Thailand — ODA project pipeline
-- Legal basis: TICA Mandate items 1~8 and ODA Overview; Procurement Act Art.7(4)~(5)
+- Legal basis: TICA Mandate items 1~8 and ODA Overview; Procurement Act Art.7(4)~(5) · [TICA vision and mandate](<https://tica-thaigov.mfa.go.th/en/page/vision-and-authority?menu=5f47761072148c085f3a287e>) · [Thailand ODA institutional overview](<https://tica-thaigov.mfa.go.th/en/content/overview?cate=5d7da8d015e39c3fbc007463>) · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — TICA는 국제개발협력 조정·집행 및 태국에 대한 외국 ODA 지출을 담당할 수 있지만, 공식 ODA 개요는 기관의 직접 기술협력 요청도 허용한다. Act Art.7은 원조협정이 다른 조달규칙을 정하면 그 규칙을 적용한다.
@@ -1997,7 +1997,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 113. [HIGH] Current legal basis check
 
 - Institution: Thailand — Procurement governance
-- Legal basis: Act Arts.24~45, 66, 114~119; Regulation No.3 (2026) cls.1~6 and 180~181
+- Legal basis: Act Arts.24~45, 66, 114~119; Regulation No.3 (2026) cls.1~6 and 180~181 · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, No.3, B.E. 2569 (2026)](<https://ratchakitcha.soc.go.th/documents/121888.pdf>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — 발주기관이 7영업일 내 1차 판단하고 불인정 사건은 항소심사위원회가 30일(15일씩 최대 2회 연장) 내 심사한다. 2026년 제3차 개정은 건설업자 성과평가 체계를 교체했다.
@@ -2016,7 +2016,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 114. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Bidding system
-- Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
+- Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [CNA current legal regime, standard documents and forms](<https://www.cna.gov.tl/en/documents-and-forms/>) · [Government implementation notice for the new Code](<https://timor-leste.gov.tl/?lang=en&p=46597&print=1>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.
@@ -2033,7 +2033,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 115. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Bidding system
-- Legal basis: Decree-Law 25/2025 Arts.2~4; Code Arts.41, 83 and 86~88
+- Legal basis: Decree-Law 25/2025 Arts.2~4; Code Arts.41, 83 and 86~88 · [Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf>) · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — 2026년 시행 신법 Arts.41, 83, 86~88은 50,000/200,000 USD 방식기준과 1,000 USD 간소 직접조달을 정하고, 국내공급자에게 최대 10% 우대·현지내용 조건을 두되 100,000 USD 이하의 일률적 외국업체 배제는 두지 않는다.
@@ -2050,7 +2050,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 116. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — ODA project pipeline
-- Legal basis: Ministry of Finance Aid Transparency Portal mandate
+- Legal basis: Ministry of Finance Aid Transparency Portal mandate · [Aid Transparency Portal mandate and current repository](<https://www.aidtransparency.gov.tl/portal/node/1>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — 재무부의 대외재원동원관리국·DPMU가 비차관 원조와 ATP를 관리하고 재무·계획·부문기관이 차관·투자계획·사업실행을 분담한다.
@@ -2067,7 +2067,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 117. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — ODA project pipeline
-- Legal basis: Code Art.85; Ministry of Finance Aid Transparency Portal mandate
+- Legal basis: Code Art.85; Ministry of Finance Aid Transparency Portal mandate · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [Aid Transparency Portal mandate and current repository](<https://www.aidtransparency.gov.tl/portal/node/1>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — Code Art.85는 공여협정에 맞춘 조정을 허용하되 방식·최소기간·단계·구제·공개 약화를 제한한다. 재무부 DPMU·ATP는 비차관 원조 조정·기록 경로이며 차관·예산·계획·실행 역할은 별도 확인한다.
@@ -2084,7 +2084,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 118. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Procurement governance
-- Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
+- Legal basis: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [CNA current legal regime, standard documents and forms](<https://www.cna.gov.tl/en/documents-and-forms/>) · [Government implementation notice for the new Code](<https://timor-leste.gov.tl/?lang=en&p=46597&print=1>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.
@@ -2101,7 +2101,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 119. [HIGH] Current legal basis check
 
 - Institution: Timor-Leste — Procurement governance
-- Legal basis: Decree-Law 25/2025 Art.2; Code Arts.104~108 and 136~141
+- Legal basis: Decree-Law 25/2025 Art.2; Code Arts.104~108 and 136~141 · [Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf>) · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>)
 - KOICA guide: p.21-29
 
 **Current legal basis** — 제25/2025호가 시행을 2026년 1월 1일로 연기했고 Code Arts.104~108, 136~141이 보증과 이의·상급심·사법구제를 정한다.
@@ -2120,7 +2120,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 120. [HIGH] Current legal basis check
 
 - Institution: Tunisia — Bidding system
-- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Decree Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181 set the quantitative and procedural rules; Circular No.5/2023 addresses qualifying foreign-financed procurement.
@@ -2137,7 +2137,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 121. [HIGH] Current legal basis check
 
 - Institution: Tunisia — ODA project pipeline
-- Legal basis: Ministry of Economy and Planning cooperation mandate; Ministry of Finance DGGDPCF and DGASGP mandates
+- Legal basis: Ministry of Economy and Planning cooperation mandate; Ministry of Finance DGGDPCF and DGASGP mandates · [Ministry of Economy and Planning bilateral-cooperation mandate](<https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/>) · [Ministry of Finance DGGDPCF and major-project follow-up mandates](<https://www.finances.gov.tn/ar/structures-du-ministere/aladart-alamt-lltsrf-fy-aldyn-almwmy-waltawn-almaly>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Economy and Planning coordinates cooperation, Finance's DGGDPCF handles external credit and financial agreements, and foreign affairs and sector entities handle diplomatic and implementation roles.
@@ -2154,7 +2154,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 122. [HIGH] Current legal basis check
 
 - Institution: Tunisia — ODA project pipeline
-- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Decree Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181 set the quantitative and procedural rules; Circular No.5/2023 addresses qualifying foreign-financed procurement.
@@ -2171,7 +2171,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 123. [HIGH] Current legal basis check
 
 - Institution: Tunisia — Procurement governance
-- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- Legal basis: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Decree Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181 set the quantitative and procedural rules; Circular No.5/2023 addresses qualifying foreign-financed procurement.
@@ -2190,7 +2190,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 124. [HIGH] Current legal basis check
 
 - Institution: Uganda — Bidding system
-- Legal basis: PPDA Act Cap.205; PPDA official legal-update notice
+- Legal basis: PPDA Act Cap.205; PPDA official legal-update notice · [PPDA Act, Cap.205 — 7th Revised Edition](<https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf>)
 - KOICA guide: p.117-131
 
 **Current legal basis** — The revised statute is cited as PPDA Act Cap.205; PPDA regulates, entity organs execute and eGP is the electronic system.
@@ -2207,7 +2207,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 125. [HIGH] Current legal basis check
 
 - Institution: Uganda — Procurement governance
-- Legal basis: PPDA Act Cap.205; PPDA official legal-update notice
+- Legal basis: PPDA Act Cap.205; PPDA official legal-update notice · [PPDA Act, Cap.205 — 7th Revised Edition](<https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf>)
 - KOICA guide: p.117-131
 
 **Current legal basis** — The revised statute is cited as PPDA Act Cap.205; PPDA regulates, entity organs execute and eGP is the electronic system.
@@ -2226,7 +2226,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 126. [HIGH] Current legal basis check
 
 - Institution: Ukraine — Bidding system
-- Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
+- Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · [Law of Ukraine No. 922-VIII On Public Procurement](<https://zakon.rada.gov.ua/laws/show/922-19?lang=en>) · [Cabinet Resolution No.1178 of 12 October 2022](<https://zakon.rada.gov.ua/go/1178-2022-%D0%BF>) · [Ministry of Economy procurement consultations and Prozorro guidance](<https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&tag=ZapitiKoristuvachiv&tagId=7758c77b-e410-44ea-a07d-37f1799e11e5>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — Law 922-VIII applies together with Resolution 1178 wartime features; the Ministry is the authorized body, procurers execute, and Prozorro is the system.
@@ -2243,7 +2243,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 127. [HIGH] Current legal basis check
 
 - Institution: Ukraine — ODA project pipeline
-- Legal basis: Cabinet Resolution 153/2002, current revision and official translation
+- Legal basis: Cabinet Resolution 153/2002, current revision and official translation · [Cabinet Resolution No.153 of 15 February 2002](<https://zakon.rada.gov.ua/laws/show/153-2002-%D0%BF/paran18>) · [Official English translation of Resolution No.153 procedure](<https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — Resolution 153 assigns official requests, registration, coordination and monitoring of international technical assistance to the Secretariat of the Cabinet of Ministers.
@@ -2260,7 +2260,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 128. [HIGH] Current legal basis check
 
 - Institution: Ukraine — Procurement governance
-- Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
+- Legal basis: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · [Law of Ukraine No. 922-VIII On Public Procurement](<https://zakon.rada.gov.ua/laws/show/922-19?lang=en>) · [Cabinet Resolution No.1178 of 12 October 2022](<https://zakon.rada.gov.ua/go/1178-2022-%D0%BF>) · [Ministry of Economy procurement consultations and Prozorro guidance](<https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&tag=ZapitiKoristuvachiv&tagId=7758c77b-e410-44ea-a07d-37f1799e11e5>)
 - KOICA guide: p.73-83
 
 **Current legal basis** — Law 922-VIII applies together with Resolution 1178 wartime features; the Ministry is the authorized body, procurers execute, and Prozorro is the system.
@@ -2279,7 +2279,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 129. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — Bidding system
-- Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
+- Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>) · [Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027](<https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf>)
 - KOICA guide: p.57-71
 
 **Current legal basis** — ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.
@@ -2296,7 +2296,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 130. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — ODA project pipeline
-- Legal basis: MIIT official mandate; Law ZRU-684 art.2
+- Legal basis: MIIT official mandate; Law ZRU-684 art.2 · [Ministry of Investment, Industry and Trade mandate](<https://gov.uz/en/miit/sections/view/7580>) · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>)
 - KOICA guide: p.57-71
 
 **Current legal basis** — 투자산업통상부가 외부 무상지원·IFI 협력을 조정하고 경제재정부가 재정·조달을 담당한다. ZRU-684 제2조는 공여조건이 다른 절차를 정하지 않는 한 외국 원조·차관 조달에 적용된다.
@@ -2313,7 +2313,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 131. [HIGH] Current legal basis check
 
 - Institution: Uzbekistan — Procurement governance
-- Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
+- Legal basis: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>) · [Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027](<https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf>)
 - KOICA guide: p.57-71
 
 **Current legal basis** — ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.
@@ -2332,7 +2332,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 132. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Bidding system
-- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
+- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · [Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf>) · [Nghị định 214/2025/NĐ-CP on contractor selection](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf>)
 - KOICA guide: p.61-79
 
 **Current legal basis** — Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.
@@ -2349,7 +2349,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 133. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — ODA project pipeline
-- Legal basis: Decree 242/2025 Arts.8, 12~47 and 99
+- Legal basis: Decree 242/2025 Arts.8, 12~47 and 99 · [Nghị định 242/2025/NĐ-CP on ODA and concessional loans](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/242-cp.signed.pdf>)
 - KOICA guide: p.61-79
 
 **Current legal basis** — Decree 242/2025가 2025년 9월 10일부터 구 Decrees 114/2021·20/2023을 대체하며 통합 재무부가 ODA·양허성차관 협정·재정 경로를 담당한다.
@@ -2366,7 +2366,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 134. [HIGH] Current legal basis check
 
 - Institution: Viet Nam — Procurement governance
-- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
+- Legal basis: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · [Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf>) · [Nghị định 214/2025/NĐ-CP on contractor selection](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf>)
 - KOICA guide: p.61-79
 
 **Current legal basis** — Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.
@@ -2385,7 +2385,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 135. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — Bidding system
-- Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
+- Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · [Public Procurement — regulator functions, portal and complaint route](<https://competition.gov.az/en/page/home/dovlet-satinalmalari>) · [Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement](<https://e-qanun.az/framework/54966>)
 - KOICA guide: p.25-39
 
 **Current legal basis** — The State Service for Antimonopoly and Consumer Market Control under the Ministry of Economy implements procurement policy, monitors legality and contracts, investigates disputes and runs the unified portal.
@@ -2402,7 +2402,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 136. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — ODA project pipeline
-- Legal basis: Ministry of Economy, Decree No. 388; Grant agreements registration page
+- Legal basis: Ministry of Economy, Decree No. 388; Grant agreements registration page · [Decree No. 388 on Rules for Concluding and Approving Technical Assistance and Grant Agreements](<https://e-qanun.az/framework/11551>) · [Cabinet Decision No. 216 of 5 June 2015 approving the Rules for Registration of Grant Agreements](<https://e-qanun.az/framework/30212>)
 - KOICA guide: p.25-39
 
 **Current legal basis** — Official sources confirm Cabinet rules for technical-assistance and grant agreements and Ministry of Economy registration functions, but not one universal KOICA request route.
@@ -2419,7 +2419,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 137. [MEDIUM] Current legal basis check
 
 - Institution: Azerbaijan — Procurement governance
-- Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
+- Legal basis: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · [Public Procurement — regulator functions, portal and complaint route](<https://competition.gov.az/en/page/home/dovlet-satinalmalari>) · [Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement](<https://e-qanun.az/framework/54966>)
 - KOICA guide: p.25-39
 
 **Current legal basis** — The State Service for Antimonopoly and Consumer Market Control under the Ministry of Economy implements procurement policy, monitors legality and contracts, investigates disputes and runs the unified portal.
@@ -2438,7 +2438,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 138. [MEDIUM] Current legal basis check
 
 - Institution: Bangladesh — ODA project pipeline
-- Legal basis: ERD Allocation of Business; Planning Commission Handbook for DPP
+- Legal basis: ERD Allocation of Business; Planning Commission Handbook for DPP · [Allocation of Business — Economic Relations Division](<https://erd.gov.bd/pages/static-pages/694032c535ce18e1c0562157>) · [Handbook for Development Project Proposal](<https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-plandiv/2024/12/42f38d333ca64c298486a47cfb4ab4ce.pdf>)
 - KOICA guide: p.47-59
 
 **Current legal basis** — ERD mobilizes and negotiates external aid, while the implementing agency, ministry and Planning Commission perform DPP formulation and appraisal.
@@ -2457,7 +2457,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 139. [MEDIUM] Current legal basis check
 
 - Institution: Bolivia — Bidding system
-- Legal basis: MEFP, DS 0181 compiled text; SICOES official portal
+- Legal basis: MEFP, DS 0181 compiled text; SICOES official portal · [Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023](<https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf>) · [Sistema de Contrataciones Estatales (SICOES)](<https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — MEFP is the governing ministry for NB-SABS; SICOES is the procurement information system and RUPE is the supplier registry.
@@ -2474,7 +2474,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 140. [MEDIUM] Current legal basis check
 
 - Institution: Bolivia — Procurement governance
-- Legal basis: MEFP, DS 0181 compiled text; SICOES official portal
+- Legal basis: MEFP, DS 0181 compiled text; SICOES official portal · [Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023](<https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf>) · [Sistema de Contrataciones Estatales (SICOES)](<https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php>)
 - KOICA guide: p.41-55
 
 **Current legal basis** — MEFP is the governing ministry for NB-SABS; SICOES is the procurement information system and RUPE is the supplier registry.
@@ -2493,7 +2493,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 141. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — Bidding system
-- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page
+- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page · [Law on Public Procurement, 2023 (크메르어 원문)](<https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf>) · [경제재무부 공공조달국(GDPP)](<http://gdpp.gov.kh/>)
 - KOICA guide: p.117
 
 **Current legal basis** — Cambodia's Law on Public Procurement 2012 was abrogated by the new Law on Public Procurement 2023 (Royal Kram NS/RKM/0523/005, promulgated 16 May 2023), which adds consulting-services procurement, implementation procedures, heavier penalties (imprisonment for individuals, fines up to KHR 100 million), and MEF post-review/inspection powers. Its implementing regulations are still in draft, so the 2012-era sub-decrees remain in force until replaced.
@@ -2510,7 +2510,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 142. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — ODA project pipeline
-- Legal basis: CDC ODA Database; MEF public-investment framework
+- Legal basis: CDC ODA Database; MEF public-investment framework · [Cambodia ODA Database and CDCB development-cooperation mandate](<https://oda.cdc.gov.kh/>) · [Public Investment Management System and externally financed project framework](<https://gdde.mef.gov.kh/private/83c8a60785c28e>)
 - KOICA guide: p.112-113
 
 **Current legal basis** — CDC 산하 CDCB가 정부 전체 ODA 정보·파트너 조정을 담당하고 MEF가 외부재원 공공투자의 준비·재정·관리체계를 운영한다.
@@ -2527,7 +2527,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 143. [MEDIUM] Current legal basis check
 
 - Institution: Cambodia — Procurement governance
-- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department
+- Legal basis: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department · [Law on Public Procurement, 2023 (크메르어 원문)](<https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf>) · [경제재무부 공공조달국(GDPP)](<http://gdpp.gov.kh/>)
 - KOICA guide: p.114-116
 
 **Current legal basis** — The 2023 Law on Public Procurement adds MEF post-review and ad-hoc inspection powers and raises penalties to imprisonment for individuals and fines for legal entities. The GDPP/GDICDM two-track structure itself matches the guide.
@@ -2546,7 +2546,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 144. [MEDIUM] Current legal basis check
 
 - Institution: Cameroon — Bidding system
-- Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal
+- Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal · [Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics](<https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf>) · [ARMP official procurement publications](<https://armp.cm/details?id_publication=18592&type_publication=DEC-ATTR>)
 - KOICA guide: p.149-159
 
 **Current legal basis** — The procurement system also assigns regulatory functions to ARMP and execution duties to the project owner; article 3 covers bilateral and multilateral external-aid financing.
@@ -2563,7 +2563,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 145. [MEDIUM] Current legal basis check
 
 - Institution: Cameroon — Procurement governance
-- Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal
+- Legal basis: Décret No. 2018/366 arts.1-3; ARMP official portal · [Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics](<https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf>) · [ARMP official procurement publications](<https://armp.cm/details?id_publication=18592&type_publication=DEC-ATTR>)
 - KOICA guide: p.149-159
 
 **Current legal basis** — The procurement system also assigns regulatory functions to ARMP and execution duties to the project owner; article 3 covers bilateral and multilateral external-aid financing.
@@ -2582,7 +2582,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 146. [MEDIUM] Current legal basis check
 
 - Institution: Ethiopia — ODA project pipeline
-- Legal basis: Ministry of Finance bilateral and IFI cooperation directorate mandates
+- Legal basis: Ministry of Finance bilateral and IFI cooperation directorate mandates · [Ministry of Finance bilateral-cooperation mandate](<https://www.mofed.gov.et/ministry-en/directorates/bilateral-cooperation-directorate/>) · [Ministry of Finance international-financial-institutions cooperation mandate](<https://www.mofed.gov.et/ministry-en/directorates/international-financial-institutions-co-operation-directorate/>)
 - KOICA guide: p.95-115
 
 **Current legal basis** — The Ministry's bilateral and IFI directorates mobilize and negotiate external resources and coordinate partner missions and agreements.
@@ -2601,7 +2601,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 147. [MEDIUM] Current legal basis check
 
 - Institution: Fiji — ODA project pipeline
-- Legal basis: Ministry of Finance core responsibilities
+- Legal basis: Ministry of Finance core responsibilities · [Ministry of Finance core responsibility for development cooperation](<https://www.finance.gov.fj/core-responsibilities/>)
 - KOICA guide: p.165-175
 
 **Current legal basis** — 재무부는 정부 전체 개발협력·재정·조달과 SDG 모니터링을 담당하고 외교부와 부문기관이 외교경로·사업준비·실행을 분담한다.
@@ -2620,7 +2620,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 148. [MEDIUM] Current legal basis check
 
 - Institution: Ghana — ODA project pipeline
-- Legal basis: MoF ERM overview and functions; PFM Act 921; Constitution art.181
+- Legal basis: MoF ERM overview and functions; PFM Act 921; Constitution art.181 · [가나 재무부 양자 대외재원동원국의 법적 권한](<https://www.mofep.gov.gh/node/242>) · [가나 재무부 양자 대외재원동원국의 기능](<https://mofep.gov.gh/index.php/divisions/erm-b/functions>) · [Public Financial Management Act, 2016 (Act 921)](<https://mofep.gov.gh/sites/default/files/acts/PUBLIC-FINANCIAL-MANAGEMENT-ACT-2016.pdf>)
 - KOICA guide: p.17-29
 
 **Current legal basis** — The Finance ERM divisions source external resources, coordinate development cooperation and record ODA under the PFM and constitutional framework.
@@ -2639,7 +2639,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 149. [MEDIUM] Current legal basis check
 
 - Institution: Indonesia — ODA project pipeline
-- Legal basis: Bappenas Regulation 2/2025 arts.273–274
+- Legal basis: Bappenas Regulation 2/2025 arts.273–274 · [Peraturan Menteri PPN/Kepala Bappenas n.º 2/2025, arts.273–274](<https://www.bappenas.go.id/index.php/unit-kerja/0804>)
 - KOICA guide: p.93-107
 
 **Current legal basis** — Bappenas' Directorate for Foreign Financing and Grants coordinates planning, allocation and monitoring, with finance and sector institutions handling financial and execution functions.
@@ -2658,7 +2658,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 150. [MEDIUM] Current legal basis check
 
 - Institution: Kenya — ODA project pipeline
-- Legal basis: National Treasury Resource Mobilization mandate; External Resources Estimates Handbook
+- Legal basis: National Treasury Resource Mobilization mandate; External Resources Estimates Handbook · [National Treasury Resource Mobilization Department mandate](<https://www.treasury.go.ke/index.php/resource-mobilization>)
 - KOICA guide: p.161-173
 
 **Current legal basis** — Treasury's Resource Mobilization Department undertakes foreign borrowing and grants and coordinates development-partner missions under the PFM and external-resources framework.
@@ -2677,7 +2677,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 151. [MEDIUM] Current legal basis check
 
 - Institution: Kyrgyzstan — ODA project pipeline
-- Legal basis: Cabinet and Ministry of Finance official mandates
+- Legal basis: Cabinet and Ministry of Finance official mandates · [Cabinet of Ministers official legal and institutional framework](<https://www.gov.kg/ru>) · [Ministry of Finance public-finance and procurement functions](<https://www.minfin.kg/>)
 - KOICA guide: p.85-97
 
 **Current legal basis** — 재무부가 재정·대외차입을, 경제상무부와 부문기관이 우선순위·사업준비를, 내각이 중요 정부결정을 담당한다.
@@ -2696,7 +2696,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 152. [MEDIUM] Current legal basis check
 
 - Institution: Lao People's Democratic Republic — ODA project pipeline
-- Legal basis: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials
+- Legal basis: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [2026 official PPMD procurement notice applying Law No.30/NA and Instruction No.0477/MOF](<https://ppmd.mof.gov.la/storage/177130072233.%20RFQ%20for%20Furniture_WSSISP-Signed%20by%20DG-DWS-10%20Feb%202026-2-Full.pdf>)
 - KOICA guide: p.31-45
 
 **Current legal basis** — Foreign grants and loans are government funds under art.3, while a donor agreement's specific procurement rules apply under Instruction clause 2.
@@ -2715,7 +2715,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 153. [MEDIUM] Current legal basis check
 
 - Institution: Morocco — ODA project pipeline
-- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- Legal basis: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - KOICA guide: p.59-71
 
 **Current legal basis** — Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.
@@ -2734,7 +2734,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 154. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — Bidding system
-- Legal basis: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63
+- Legal basis: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63 · [Public Procurement Rules, 2064 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf>) · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 - KOICA guide: p.11-13
 
 **Current legal basis** — Rule 141 belongs to the Public Procurement Rules 2064 (2007), not the Act; the substantive basis is Section 63 of the Public Procurement Act 2063 (2007). The Act has only 76 sections, so no Section 141 exists.
@@ -2751,7 +2751,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 155. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — ODA project pipeline
-- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a)
+- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - KOICA guide: p.8
 
 **Current legal basis** — FAMP 2025 §3.3.2(a)(b) has line ministries prepare a project list and submit proposals to the Ministry per a project readiness checklist; the Ministry receives, reviews and forwards. The preparer is the line ministry.
@@ -2768,7 +2768,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 156. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — ODA project pipeline
-- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d)
+- Legal basis: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - KOICA guide: p.14
 
 **Current legal basis** — FAMP 2025 §3.6.1: (a) grants shall generally not be used for tax payments; (b) loan-funded projects shall generally not include tax-exemption provisions; (c) no exemption for importing goods sufficiently produced within Nepal.
@@ -2785,7 +2785,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 157. [MEDIUM] Current legal basis check
 
 - Institution: Nepal — Procurement governance
-- Legal basis: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2)
+- Legal basis: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2) · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 - KOICA guide: p.10
 
 **Current legal basis** — PPA 2063 (2007) §65(1)(f) gives PPMO the power to set up and operate the procurement website; §65(2) bars PPMO from involving in any manner in other entities' procurement proceedings or resolving disputes. Individual tenders are published and contracted by each procuring entity.
@@ -2804,7 +2804,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 158. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — Bidding system
-- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — The 2024 Manual separates project preparation/approval, concept clearance, donor request and negotiations.
@@ -2821,7 +2821,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 159. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — ODA project pipeline
-- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — The 2024 Manual separates project preparation/approval, concept clearance, donor request and negotiations.
@@ -2838,7 +2838,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 160. [MEDIUM] Current legal basis check
 
 - Institution: Pakistan — Procurement governance
-- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- Legal basis: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - KOICA guide: p.149-163
 
 **Current legal basis** — The 2024 Manual separates project preparation/approval, concept clearance, donor request and negotiations.
@@ -2857,7 +2857,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 161. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — Bidding system
-- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
@@ -2874,7 +2874,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 162. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — ODA project pipeline
-- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
@@ -2891,7 +2891,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 163. [MEDIUM] Current legal basis check
 
 - Institution: Paraguay — Procurement governance
-- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- Legal basis: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - KOICA guide: p.99-113
 
 **Current legal basis** — Law 7158/2023 absorbed STP into MEF; VEP–DGCID and MRE coordinate non-reimbursable cooperation.
@@ -2910,7 +2910,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 164. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
-- Legal basis: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
+- Legal basis: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지 · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>) · [PPRA 새 조달법 시행 공지 (2024-06-17)](<https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024>)
 - KOICA guide: p.195
 
 **Current legal basis** — PPA 2023 mandates the National e-Procurement System of Tanzania (NeST) for all procurement, replacing the former TANePS.
@@ -2927,7 +2927,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 165. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
-- Legal basis: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
+- Legal basis: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
 - KOICA guide: p.193-194
 
 **Current legal basis** — PPR 2024 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is 'the period specified in the contract' (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no 'transport/storage' liquidated-damages category.
@@ -2946,7 +2946,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 166. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Bidding system
-- Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
+- Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — The 2017 Act and Ministry of Finance Regulation govern the system; CGD oversees it and each state agency conducts its procurement.
@@ -2963,7 +2963,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 167. [MEDIUM] Current legal basis check
 
 - Institution: Thailand — Procurement governance
-- Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation
+- Legal basis: 2017 Public Procurement Act and Ministry of Finance Regulation · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - KOICA guide: p.129-147
 
 **Current legal basis** — The 2017 Act and Ministry of Finance Regulation govern the system; CGD oversees it and each state agency conducts its procurement.
@@ -2982,7 +2982,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 168. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Bidding system
-- Legal basis: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3
+- Legal basis: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [Décret gouvernemental n° 2018-416 du 11 mai 2018](<https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Decree 2014-1039 governs procurement; HAICOP supervises, procuring entities execute and TUNEPS is the electronic system under the 2018 manual.
@@ -2999,7 +2999,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 169. [MEDIUM] Current legal basis check
 
 - Institution: Tunisia — Procurement governance
-- Legal basis: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3
+- Legal basis: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [Décret gouvernemental n° 2018-416 du 11 mai 2018](<https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/>)
 - KOICA guide: p.205-213
 
 **Current legal basis** — Decree 2014-1039 governs procurement; HAICOP supervises, procuring entities execute and TUNEPS is the electronic system under the 2018 manual.
@@ -3018,7 +3018,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 170. [MEDIUM] Current legal basis check
 
 - Institution: Uganda — ODA project pipeline
-- Legal basis: MoFPED DARC mandate; Development Policy and Performance Portal
+- Legal basis: MoFPED DARC mandate; Development Policy and Performance Portal · [MoFPED Development Assistance and Regional Cooperation mandate](<https://archive.finance.go.ug/node/6>)
 - KOICA guide: p.117-131
 
 **Current legal basis** — DARC mobilizes external resources and coordinates partners, negotiations and agreements, while government coordination bodies and sector entities oversee policy and implementation.

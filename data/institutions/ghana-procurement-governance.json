@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "가나의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "가나 정부, 가나 공공조달청 (Public Procurement Authority, PPA), 지역수준의 조달 정보 제공 (Kumasi), 지역수준의 조달 정보 제공 (Takoradi), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공조달청(PPA), 조달기관·조달부서·기관입찰위원회, GHANEPS, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -42,11 +42,17 @@
     "authorities": [
       {
         "name": "공공조달청(PPA)",
-        "role": "공공조달 정책·기준·표준문서·감독과 법정 승인 기능을 담당한다."
+        "role": "공공조달 정책·기준·표준문서·감독과 법정 승인 기능을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "조달기관·조달부서·기관입찰위원회",
-        "role": "기관별 계획·공고·평가·승인·계약관리를 수행한다."
+        "role": "기관별 계획·공고·평가·승인·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "GHANEPS",
@@ -81,7 +87,8 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -190,7 +197,25 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "지역 정보창구의 기관 오인을 제거하고 개정법·PPA·조달기관·GHANEPS 역할을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
+            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
+          },
+          {
+            "title": "Public Procurement (Amendment) Act, 2025 (Act 1139)",
+            "url": "https://ppa.gov.gh/public-procurement-training-for-2026/"
+          },
+          {
+            "title": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
+            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
+          },
+          {
+            "title": "Mandatory use of the Ghana Electronic Procurement System (GHANEPS)",
+            "url": "https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -299,15 +324,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
-            "article": "Act 663 ss.34A~43; L.I. 2516 reg.3 and substituted Fifth Schedule",
-            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -316,17 +333,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달청(PPA)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
-            "article": "Act 663 ss.34A~43; L.I. 2516 reg.3 and substituted Fifth Schedule",
-            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -335,17 +347,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공조달청(PPA)",
+        "actor": "조달기관·조달부서·기관입찰위원회",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -356,15 +363,12 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 305,
+          "end": 309,
+          "excerpt": "- 발주기관과 입찰참가자 간 연락은 서면으로 이루어져야하며 기타 형태의 연락은 서명으로 언급 및 확인받아야 함 - 발주기관은 조달 절차와 관련한 모든 정보를 기록, 유지할 의무가 있음. 그러나 법 집행을 방해하는 경우, 공공의 이익에 반할 경우, 당사자들의 합법적인 상업적 이익을 방해하는 경우, 불공정 경쟁 방지법을 위반하는 경우 공개하지 않음"
+        }
       },
       {
         "id": "P05",
@@ -375,15 +379,8 @@
         "status": "risk",
         "actor": "공공조달청(PPA)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -392,17 +389,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공조달청(PPA)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "Act 663 ss.78~81; L.I. 2466 regs.78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -413,15 +405,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.50 and 65(7); L.I. 2466 reg.29(5) and Second Schedule Notice of Acceptance",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -463,7 +449,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

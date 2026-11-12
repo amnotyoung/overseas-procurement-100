@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "이집트의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "이집트 정부, 년 공공조달계약법(Law No. 182, Regulating Contracts Entered by Public Entities), 및 탐사는 관련 장관 또는 주지사의 승인 이후 이집트광물자원청 (General Egyptian Mineral Resources Authority), 이집트전력청(Egyptian Electricity Authority), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "정부서비스청(GAGS), 개별 행정기관·계약담당부서, 정부계약 포털, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -41,11 +41,17 @@
     "authorities": [
       {
         "name": "정부서비스청(GAGS)",
-        "role": "법률 182/2018에 따른 구매 통제기준·해석·점검, 공통품목 중앙구매, 공급자 등록과 정부계약 포털 지원을 담당한다."
+        "role": "법률 182/2018에 따른 구매 통제기준·해석·점검, 공통품목 중앙구매, 공급자 등록과 정부계약 포털 지원을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "개별 행정기관·계약담당부서",
-        "role": "수요계획·입찰서류·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "수요계획·입찰서류·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "정부계약 포털",
@@ -79,7 +85,8 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -188,7 +195,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "절단된 법령명과 부문기관 오인을 제거하고 GAGS·계약기관·전자포털 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities",
+            "url": "https://www.nib.gov.eg/PDF/library/Low182_2018.pdf"
+          },
+          {
+            "title": "Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019",
+            "url": "https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -297,15 +314,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities",
-            "article": "Law No.182/2018 arts.7, 59 and 62~63",
-            "url": "https://www.nib.gov.eg/PDF/library/Low182_2018.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -314,17 +323,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "년 공공조달계약법(Law No. 182, Regulating Contracts Entered by Publi",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities",
-            "article": "Law No.182/2018 arts.7, 59 and 62~63",
-            "url": "https://www.nib.gov.eg/PDF/library/Low182_2018.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -333,17 +337,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "년 공공조달계약법(Law No. 182, Regulating Contracts Entered by Publi",
+        "actor": "개별 행정기관·계약담당부서",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019",
-            "article": "Executive Regulations arts.46~47",
-            "url": "https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -354,15 +353,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019",
-            "article": "Executive Regulations arts.46~47",
-            "url": "https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -371,17 +362,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "년 공공조달계약법(Law No. 182, Regulating Contracts Entered by Publi",
+        "actor": "정부서비스청(GAGS)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities",
-            "article": "promulgation arts.1, 3 and 5; substantive arts.5, 7, 9, 16, 22, 39~42, 59, 62~63, 69 and 75~80",
-            "url": "https://www.nib.gov.eg/PDF/library/Low182_2018.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -390,17 +374,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "년 공공조달계약법(Law No. 182, Regulating Contracts Entered by Publi",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Awareness Bulletin No. 2 of 2026 — Public Contract Complaints Office",
-            "article": "Law No.182/2018 arts.5 and 39; Executive Regulations art.6; Prime Minister Decision No.665/2021 art.5",
-            "url": "https://assets.mof.gov.eg/files/39ea4f40-1d8c-11f1-85e3-3188bd54013e.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -411,15 +390,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities",
-            "article": "Law No.182/2018 arts.40~42; Executive Regulations art.82 as amended",
-            "url": "https://www.nib.gov.eg/PDF/library/Low182_2018.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -461,7 +434,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

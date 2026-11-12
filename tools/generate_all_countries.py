@@ -15,6 +15,9 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
+from procurement_evidence import ROLE_ACTORS, canvas_projections
+from procurement_summary import sync_manifest
+
 
 ROOT = Path(__file__).resolve().parent.parent
 PDF_DIR = next(p for p in ROOT.iterdir() if p.is_dir() and "자료집" in unicodedata.normalize("NFC", p.name))
@@ -178,72 +181,8 @@ def split_sections(text: str) -> tuple[str, str]:
     return text[:cut], text[cut:]
 
 
-def legal_basis(text: str, axis: str, document: str) -> list[dict]:
-    candidates: list[str] = []
-    # 명칭 경계가 명확한 괄호·인용부호 안의 법령만 채택한다. 일반 서술에
-    # '법'이라는 글자가 포함됐다는 이유로 법령명으로 오인하지 않는다.
-    patterns = [
-        r"「([^」]{4,120}(?:법|법률|법령|규정|조례|지침)[^」]{0,30})」",
-        r"((?:Public |Government |National |State |Foreign |External )"
-        r"[A-Z][A-Za-z0-9 ,.'’()/-]{2,100}?(?:Law|Act|Code|Decree|Regulations?|Directive)"
-        r"(?:\s*(?:No\.?|Number)?\s*[\w./-]+)?)",
-        r"([가-힣A-Za-z· ]{2,55}(?:법률|조달법|계약법|원조정책|조달규정|시행규정))"
-        r"(?:\s*\([^)\n]{3,100}\))?",
-    ]
-    for pattern in patterns:
-        for match in re.finditer(pattern, text, re.I):
-            name = re.sub(r"\s+", " ", match.group(1)).strip(" -:.,")
-            if 4 <= len(name) <= 140 and name not in candidates:
-                candidates.append(name)
-            if len(candidates) == 3:
-                break
-        if len(candidates) == 3:
-            break
-    result = [{"law": document, "lawKo": "KOICA 참여전략 자료집", "kind": "donor-rule"}]
-    kind = "act" if axis != "pipeline" else "directive"
-    result.extend({"law": x, "kind": kind} for x in candidates)
-    return result
-
-
-def urls(text: str) -> list[str]:
-    found = re.findall(r"https?://[^\s<>()]+", text)
-    return list(dict.fromkeys(x.rstrip(".,") for x in found))[:4]
-
-
-def authority_names(text: str, axis: str, country: Country) -> list[dict]:
-    keys = ("조달", "재무", "기획", "원조", "Ministry", "Authority", "위원회", "Agency")
-    names: list[str] = []
-    org_patterns = [
-        r"정부 조직도\s*:\s*([^\n]{3,100})",
-        r"([가-힣· ]{2,35}\s*\([A-Z][A-Za-z0-9& ,.'’/-]{2,85}\))",
-    ]
-    for pattern in org_patterns:
-        for match in re.finditer(pattern, text):
-            short = re.sub(r"\s+", " ", match.group(1)).strip(" -:,")
-            if any(k.lower() in short.lower() for k in keys) and short not in names:
-                names.append(short)
-            if len(names) == 3:
-                break
-        if len(names) == 3:
-            break
-    if not names:
-        fallback = "수원총괄기관" if axis == "pipeline" else "조달 총괄기관 및 발주기관"
-        names = [f"{country.name} {fallback}"]
-    role = {
-        "bidding": "자료집에 기재된 입찰 공고·평가·낙찰·계약 절차를 수행한다.",
-        "governance": "자료집에 기재된 조달 정책·공고·감독 또는 집행 기능을 담당한다.",
-        "pipeline": "자료집에 기재된 사업수요 취합·우선순위 검토·공식 요청 절차를 담당한다.",
-    }[axis]
-    return [{"name": n, "role": role} for n in names]
-
-
 def canvas(axis: str, country: Country, pipeline_text: str, procurement_text: str, document: str) -> dict:
     scope = pipeline_text if axis == "pipeline" else procurement_text
-    proc_keys = {
-        "bidding": ("공고", "제출", "개찰", "평가", "낙찰", "계약", "입찰"),
-        "governance": ("총괄", "조직", "감독", "공고", "전자조달", "이의", "분쟁"),
-        "pipeline": ("발굴", "PCP", "제출", "검토", "예비조사", "기획조사", "협약", "RD", "MOU"),
-    }[axis]
     purpose = {
         "bidding": f"{country.name} 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
         "governance": f"{country.name}의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
@@ -254,17 +193,6 @@ def canvas(axis: str, country: Country, pipeline_text: str, procurement_text: st
         f"자료집에 기재된 {country.name}의 공공조달 또는 개발협력 사업을 대상으로 한다."
         + (f" 자료집 발췌: {applicable_detail}" if applicable_detail else "")
     )
-    selected = [s for s in sentences(scope) if any(k.lower() in s.lower() for k in proc_keys)]
-    procedure = selected[:8]
-    generic = {
-        "bidding": ["조달계획 및 방식 결정", "입찰공고 게시", "입찰서류 교부", "입찰서 제출", "개찰", "평가 및 낙찰", "계약 체결"],
-        "governance": ["조달계획 수립", "공고·전자조달 등록", "입찰 집행", "감독·모니터링", "이의·분쟁 처리", "계약관리"],
-        "pipeline": ["사업수요 발굴", "PCP 작성", "수원기관 검토", "수원총괄기관 공식 제출", "KOICA 예비조사", "기획조사·사업 확정", "RD·MOU 등 공식화"],
-    }[axis]
-    for item in generic:
-        if len(procedure) >= 7:
-            break
-        procedure.append(item)
     docs = {
         "bidding": ["입찰공고", "입찰서 및 자격증빙", "가격·기술 제안", "낙찰통지서", "계약서"],
         "governance": ["조달계획", "입찰공고", "평가보고서", "이의·분쟁 관련 문서", "계약관리 기록"],
@@ -274,13 +202,14 @@ def canvas(axis: str, country: Country, pipeline_text: str, procurement_text: st
         "자료집 기반 1차 구조화이므로 실제 참여 전 발주기관 공고와 현행 규정을 다시 확인해야 한다.",
         "금액·기한·제출서류와 외국기업 참여요건은 개별 공고에서 재확인해야 한다.",
     ]
-    authorities = authority_names(scope, axis, country)
     return {
         "purpose": purpose,
-        "stakeholders": f"{country.name} 정부, {', '.join(a['name'] for a in authorities)}, 발주·수원부처, 국내외 입찰자, KOICA",
-        "legalBasis": legal_basis(scope, axis, document),
-        "authorities": authorities,
-        "procedure": [f"{i}. {x}" for i, x in enumerate(procedure[:8], 1)],
+        "stakeholders": "",
+        "stakeholdersFromAuthorities": True,
+        "legalBasis": [{"law": document, "lawKo": "KOICA 참여전략 자료집", "kind": "donor-rule"}],
+        "authorities": [],
+        "procedure": [],
+        "procedureFromNodes": True,
         "applicability": applicable,
         "submittedDocuments": [{"actor": "참여기관·입찰자", "documents": docs}],
         "bottlenecks": bottleneck,
@@ -288,8 +217,7 @@ def canvas(axis: str, country: Country, pipeline_text: str, procurement_text: st
     }
 
 
-def process(axis: str, country: Country, scope: str, authorities: list[dict]) -> dict:
-    authority = authorities[0]["name"][:60]
+def process(axis: str) -> dict:
     if axis == "pipeline":
         lanes = ["수원부처", "수원총괄기관", "KOICA"]
         stages = ["G1 발굴", "G2 공식요청", "G3 조사·심사", "G4 공식화"]
@@ -357,11 +285,11 @@ def process(axis: str, country: Country, scope: str, authorities: list[dict]) ->
                 "RD·MOU 공식화": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
             },
         }[axis][name]
-        actor = authority if lane not in ("입찰자", "KOICA", "수원부처", "발주기관") else lane
+        actor = ROLE_ACTORS.get(name, lane)
         nodes.append({
             "id": f"P{i:02d}", "name": name, "lane": lane, "stage": stage,
             "type": typ, "status": status, "actor": actor, "action": action,
-            "confidence": 0.65,
+            "basisStatus": "pending",
         })
     edges = [
         {"id": f"E{i:02d}", "source": f"P{i:02d}", "target": f"P{i+1:02d}", "type": "sequence"}
@@ -382,7 +310,6 @@ def process(axis: str, country: Country, scope: str, authorities: list[dict]) ->
 def institution(axis: str, country: Country, region: dict, pipeline_text: str, procurement_text: str) -> dict:
     suffix, label, inst_type = AXES[axis]
     slug = f"{country.slug}-{suffix}"
-    scope = pipeline_text if axis == "pipeline" else procurement_text
     cv = canvas(axis, country, pipeline_text, procurement_text, region["document"])
     related = [f"{country.slug}-{v[0]}" for key, v in AXES.items() if key != axis]
     source_section = {
@@ -390,7 +317,7 @@ def institution(axis: str, country: Country, region: dict, pipeline_text: str, p
         "governance": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계",
         "pipeline": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차",
     }[axis]
-    return {
+    data = {
         "slug": slug,
         "name": f"{country.name} {label}",
         "oneLiner": f"{country.name} 자료집에 기재된 {label}를 기관·단계·문서 기준으로 구조화한 1차 다이어그램",
@@ -435,8 +362,10 @@ def institution(axis: str, country: Country, region: dict, pipeline_text: str, p
                 "nextStep": "공식 법령 원문을 확보해 기관명·금액·기한·제출서류와 절차를 조문 단위로 대조한다.",
             }],
         },
-        "process": process(axis, country, scope, cv["authorities"]),
+        "process": process(axis),
     }
+    cv.update(canvas_projections(data))
+    return data
 
 
 def update_manifest() -> None:
@@ -460,15 +389,9 @@ def update_manifest() -> None:
             })
             item["institutions"] = {
                 axis: {
+                    **item.get("institutions", {}).get(axis, {}),
                     "slug": f"{country.slug}-{spec[0]}",
                     "status": "done",
-                    **(
-                        item.get("institutions", {}).get(axis, {})
-                        if item.get("institutions", {}).get(axis, {}).get("verification") != "source-document"
-                        else {}
-                    ),
-                    "verification": item.get("institutions", {}).get(axis, {}).get("verification", "source-document"),
-                    "discrepancies": item.get("institutions", {}).get(axis, {}).get("discrepancies", 0),
                 }
                 for axis, spec in AXES.items()
             }
@@ -476,6 +399,7 @@ def update_manifest() -> None:
     # 자료집 미수록 보강국과 KOICA 발주자 레코드는 기존 순서대로 보존한다.
     ordered.extend(c for c in manifest["countries"] if c["slug"] not in {x["slug"] for x in ordered})
     manifest["countries"] = ordered
+    sync_manifest(manifest, [json.loads(p.read_text()) for p in OUT.glob("*.json")])
     path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -493,7 +417,7 @@ def main() -> None:
                 if target.exists():
                     old = json.loads(target.read_text(encoding="utf-8"))
                     method = old.get("verification", {}).get("method", "")
-                    if not method.startswith("KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지"):
+                    if old.get("verification", {}).get("status") != "source-document" or not method.startswith("KOICA 2026 지역별 참여전략 자료집의 해당 국가 페이지"):
                         skipped += 1
                         continue
                 data = institution(axis, country, region, pipeline_text, procurement_text)

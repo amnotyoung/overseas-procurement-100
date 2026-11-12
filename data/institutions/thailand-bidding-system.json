@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "태국 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "태국 정부, 재무부 회계감독국(CGD, Comptroller General’s Department), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부 회계감독국(CGD), 개별 국가기관 조달책임자·위원회, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
@@ -42,7 +42,11 @@
       },
       {
         "name": "개별 국가기관 조달책임자·위원회",
-        "role": "계획·사양·공고·평가·승인·계약관리를 수행한다."
+        "role": "계획·사양·공고·평가·승인·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
@@ -73,7 +77,8 @@
     ],
     "entryBarriers": [
       "e-GP 등록, 태국어 공고, 공고별 자격·면허·현지 수행요건과 5,000,000 THB 초과 입찰보증을 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -188,7 +193,17 @@
         },
         "id": "thailand-bidding-system-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Public Procurement and Supplies Administration Act, B.E. 2560 (2017)",
+            "url": "https://law.prd.go.th/th/content/page/index/id/234612"
+          },
+          {
+            "title": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
+            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -213,7 +228,17 @@
           "state": "not-reported",
           "suggestedText": "현행 방식기준·공고기간·보증·불복 및 원조협정 예외를 반영했다."
         },
-        "id": "thailand-bidding-system-D02"
+        "id": "thailand-bidding-system-D02",
+        "citationSources": [
+          {
+            "title": "Public Procurement and Supplies Administration Act, B.E. 2560 (2017)",
+            "url": "https://law.prd.go.th/th/content/page/index/id/234612"
+          },
+          {
+            "title": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
+            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -322,15 +347,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.55~56; Regulation cls.28~32; 2017 threshold Ministerial Regulation cl.1",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -341,15 +360,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.62 and 66; Regulation cls.51~54",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -360,20 +373,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Regulation cls.166 and 168",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          },
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.62 and 66; Regulation cls.51~54",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -384,20 +386,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.62 and 66; Regulation cls.51~54",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          },
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.55~56; Regulation cls.28~32; 2017 threshold Ministerial Regulation cl.1",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -406,17 +397,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "재무부 회계감독국(CGD)",
+        "actor": "개별 국가기관 조달책임자·위원회",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Supplies Administration Act, B.E. 2560 (2017)",
-            "article": "Arts.2~11, 55~68, 93~102 and 114~123; commencement, repeal, scope/exceptions, planning, methods, publication, award, contracts and appeals",
-            "url": "https://law.prd.go.th/th/content/page/index/id/234612"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/thailand.txt",
+          "start": 472,
+          "end": 477,
+          "excerpt": "④ 질의응답 (필요시) ⑤ 입찰서 제출 ⑥ 입찰 개봉 입찰 참가자 입찰 참가자 발주기관 ⇨ ⇨ - e-GP 시스템, 혹은 지정된 ⇨ - TOR에 대한 질의 방식으로 제출 - 지정된 일시에 입찰서 개봉"
+        }
       },
       {
         "id": "P06",
@@ -425,17 +414,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "재무부 회계감독국(CGD)",
+        "actor": "개별 국가기관 조달책임자·위원회",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Act Arts.62 and 66; Regulation cls.51~54",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/thailand.txt",
+          "start": 485,
+          "end": 489,
+          "excerpt": "발주기관 발주기관 입찰 참가자 - 평가위원회 구성 ⇨ ⇨ - 최고점수 또는 최저가*적격기준 ⇨ - e-GP 시스템, 혹은 지정된 - 물품 및 단순 공사:가격 중심"
+        }
       },
       {
         "id": "P07",
@@ -446,15 +433,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended",
-            "article": "Regulation cls.167~172",
-            "url": "https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [

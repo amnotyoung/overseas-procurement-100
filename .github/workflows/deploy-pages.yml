@@ -54,6 +54,7 @@ jobs:
           python3 tools/build_site.py
           npm run build:construction-boards
           python3 tools/check_construction_site.py
+          python3 tools/check_procurement_site.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

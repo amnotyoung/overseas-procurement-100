@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "필리핀 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "필리핀 정부, 수원 체계는 국가경제개발청(NEDA, National Economic Development Authority), 재무부(DOF, Department of Finance), 재무부(DOF), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제기획개발부(DEPDev)·투자조정위원회(ICC), 재무부(DOF)·사업 주관기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
@@ -34,7 +34,10 @@
     "authorities": [
       {
         "name": "경제기획개발부(DEPDev)·투자조정위원회(ICC)",
-        "role": "ODA 사업의 경제·사회·재정 타당성을 심사하고 승인·재심사가 필요한 사업을 조정한다."
+        "role": "ODA 사업의 경제·사회·재정 타당성을 심사하고 승인·재심사가 필요한 사업을 조정한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "재무부(DOF)·사업 주관기관",
@@ -42,14 +45,13 @@
       }
     ],
     "procedure": [
-      "1. 하고, 그 결과를 매년 6월 말까지 국회에 제출하도록 되어 있음",
-      "2. 경제개발청(NEDA)은 이사회(ExCom, NEDA Board Executive Committee)와 사무국으로",
-      "3. 출처 : https://neda.gov.ph/neda-board/",
-      "4. Committee)가 총 7개 있으며, 이 중 투자조정위원회(ICC, Investment Coordination Committee)는",
-      "5. 무상원조 사업 발굴은 주로 각 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성하여 해당 필리핀",
-      "6. 부합하는지 등을 검토한 후 해당 검토의견을 포함한 승인 공한을 외교부(DFA)로 송부함",
-      "7. 유상원조 사업 발굴은 필리핀 수원부처가 사업 발굴 및 사업 제안서 작성하여 이를 경제개발청(NEDA)에",
-      "8. 요청을 위해서는 관련 기관의 R/D문안 검토 및 그에 따른 승인(Endorsement) 확보가 선행되어야 함"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
+      "3. 국가 우선순위 검토 · 경제기획개발부(DEPDev)·투자조정위원회(ICC) — 수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
+      "4. 공식 사업요청 · 사업유형별 공식 요청기관 — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · KOICA · 수원부처 (중앙정부 사업) — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 필리핀의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -70,7 +72,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -237,7 +241,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "NEDA를 DEPDev/ICC 현행 체계로 갱신하고 DOF·주관기관 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "2025 DEPDev/ICC Guidelines for review and approval of programs and projects",
+            "url": "https://depdev.gov.ph/wp-content/uploads/2025/10/Guidelines-and-Procedures-on-the-Review-and-Approval-of-New-and-Ongoing-Programs-and-Projects-Requiring-Economy-and-Development-Council-Investment-Coordination-Committee-Action.pdf"
+          },
+          {
+            "title": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
+            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -264,15 +278,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 47,
+          "end": 50,
+          "excerpt": "l 무상원조 사업 발굴은 주로 각 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성하여 해당 필리핀 수원부처(혹은 지방정부)가 경제개발청(NEDA)에 공식 사업요청서를 첨부하여 승인을 요청함. - 경제개발청(NEDA)은 각 정부 부처로부터 사업요청서를 접수하면 해당 사업이 필리핀 국가개발계획에"
+        }
       },
       {
         "id": "P02",
@@ -283,15 +294,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 47,
+          "end": 50,
+          "excerpt": "l 무상원조 사업 발굴은 주로 각 공여기관이 해당 수원기관 부처와 협의를 통해 발굴, 형성하여 해당 필리핀 수원부처(혹은 지방정부)가 경제개발청(NEDA)에 공식 사업요청서를 첨부하여 승인을 요청함. - 경제개발청(NEDA)은 각 정부 부처로부터 사업요청서를 접수하면 해당 사업이 필리핀 국가개발계획에"
+        }
       },
       {
         "id": "P03",
@@ -300,17 +308,15 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "수원 체계는 국가경제개발청(NEDA, National Economic Development Authority",
+        "actor": "경제기획개발부(DEPDev)·투자조정위원회(ICC)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 50,
+          "end": 52,
+          "excerpt": "- 경제개발청(NEDA)은 각 정부 부처로부터 사업요청서를 접수하면 해당 사업이 필리핀 국가개발계획에 부합하는지 등을 검토한 후 해당 검토의견을 포함한 승인 공한을 외교부(DFA)로 송부함. - 외교부는 경제개발청(NEDA) 공한을 바탕으로, 공여국에 프로젝트를 승인함."
+        }
       },
       {
         "id": "P04",
@@ -319,17 +325,15 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "수원 체계는 국가경제개발청(NEDA, National Economic Development Authority",
+        "actor": "사업유형별 공식 요청기관",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 50,
+          "end": 53,
+          "excerpt": "- 경제개발청(NEDA)은 각 정부 부처로부터 사업요청서를 접수하면 해당 사업이 필리핀 국가개발계획에 부합하는지 등을 검토한 후 해당 검토의견을 포함한 승인 공한을 외교부(DFA)로 송부함. - 외교부는 경제개발청(NEDA) 공한을 바탕으로, 공여국에 프로젝트를 승인함. ※ 지방정부: NEDA가 외교부에 승인서 발급 후 원조 사업 서명"
+        }
       },
       {
         "id": "P05",
@@ -340,15 +344,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 70,
+          "end": 74,
+          "excerpt": "- 필리핀 수원부처(혹은 지방정부)의 공식 사업요청서가 접수되면, 해당 부처 혹은 지방정부와 협의를 거쳐 타당성 조사를 진행함. 해당 수원부처 혹은 지방정부를 포함한 유관 기관과의 협의를 통해 조사 일정이 확정되면, 조사단 상세정보와 함께 공한을 통해 공식 협조를 요청함. - 타당성 조사 과정에서 주요 부서 및 유관기관들과의 협의를 통해 사업에 대한 주요 내용 및 분담사항 등을 담은 R/D(협의의사록) 문안을 상호합의 함."
+        }
       },
       {
         "id": "P06",
@@ -359,15 +360,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 76,
+          "end": 79,
+          "excerpt": "l 신규사업 확정 및 공식화 절차 - 신규사업 확정을 위해서는 경제개발청(NEDA) 및 외교부(DFA), 재무부(DOF) 및 대통령실의 사업승인(SA)을 통한 수원부처와의 R/D 체결을 통한 공식화 절차가 필요함. 대통령실로 사업승인"
+        }
       },
       {
         "id": "P07",
@@ -376,17 +374,14 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "수원 체계는 국가경제개발청(NEDA, National Economic Development Authority",
+        "actor": "KOICA · 수원부처 (중앙정부 사업)",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations",
-            "article": "RA 8182 §§2-11, 14; ODA IRR Rules I-VI",
-            "url": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/philippines.txt",
+          "start": 78,
+          "end": 82,
+          "excerpt": "- 신규사업 확정을 위해서는 경제개발청(NEDA) 및 외교부(DFA), 재무부(DOF) 및 대통령실의 사업승인(SA)을 통한 수원부처와의 R/D 체결을 통한 공식화 절차가 필요함. 대통령실로 사업승인 요청을 위해서는 관련 기관의 R/D문안 검토 및 그에 따른 승인(Endorsement) 확보가 선행되어야 함. - 단, 동 절차는 중앙부처의 경우에만 해당되며 수원기관이 지방정부인 경우에는 R/D 문안에 대한 경제개발청(NEDA)측 검토 후에 대통령실 승인 필요 없이 지방정부의 장과 R/D 체결이 가능함."
+        }
       }
     ],
     "edges": [
@@ -428,7 +423,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

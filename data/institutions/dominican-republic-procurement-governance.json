@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "도미니카공화국의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "도미니카공화국 정부, 공공조달청2) (Dirección General de Contrataciones Públicas, 재무부(Ministerio de Hacienda), 산하 공공조달청(DGCP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공계약총국(DGCP), 개별 계약기관의 구매·계약 단위, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
@@ -42,22 +42,27 @@
     "authorities": [
       {
         "name": "공공계약총국(DGCP)",
-        "role": "국가공공계약시스템의 규제기관으로 정책·규범·전자조달시스템(SECP)과 감독을 총괄한다."
+        "role": "국가공공계약시스템의 규제기관으로 정책·규범·전자조달시스템(SECP)과 감독을 총괄한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "개별 계약기관의 구매·계약 단위",
-        "role": "계획·사전연구·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "계획·사전연구·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 정부 조직도 : 공공조달청2) (Dirección General de Contrataciones Públicas,",
-      "2. 공공조달 및 구매계약에 대한 기본 규범 설정과 감독 기능을 담당하도록 규정",
-      "3. 추진하는 구조가 일반적이었으며, 이 경우 DGCP는 입찰 공고의 전자조달포털 관리, 절차 적정성에",
-      "4. 대한 사후 모니터링, 조달 담당자 교육 및 가이드라인 제공 등 지원·감독 중심의 역할 수행",
-      "5. 통합되어, 재정·경제부(Ministerio de Hacienda y Economía)로 행정조직 개편",
-      "6. 동 법률은 전자조달시스템을 중심으로 조달 절차의 표준화 및 투명성 강화를 목표로 하며, 공공조달청의",
-      "7. 규범 설정, 감독 및 통제 기능을 전반적으로 강화하는 내용 포함",
-      "8. DGCP가 설정한 통합 규범과 전자조달 시스템 하에서 보다 중앙집중적 관리 예상"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 개별 계약기관의 구매·계약 단위 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 공공계약총국(DGCP) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 도미니카공화국의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 소액구매 ∙ 공공조달청(DGCP)이 정한 기준 금액 이하의 소액구매에 적용되는 절차",
     "submittedDocuments": [
@@ -78,7 +83,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -253,7 +260,21 @@
         },
         "id": "dominican-republic-procurement-governance-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Resolución PNP-01-2026 — implementación de Ley 47-25",
+            "url": "https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/"
+          },
+          {
+            "title": "Ley núm. 47-25 de Contrataciones Públicas",
+            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
+          },
+          {
+            "title": "Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25",
+            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -280,15 +301,12 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Resolución PNP-03-2026 — umbrales 2026",
-            "article": "Ley 47-25 arts.55~67, especially arts.57~59; PNP-03-2026 RESUELVE PRIMERO~OCTAVO",
-            "url": "https://www.dgcp.gob.do/wp-content/uploads/page/PNP-03-2026_UMBRALES.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/dominican-republic.txt",
+          "start": 359,
+          "end": 361,
+          "excerpt": "① 조달 계획(Planificación) 및 시장조사 - 각 기관은 조달 실시 전 연간 조달계획 및 시장조사(Estudios Previos)를 수립한다. 이 단계는 DGCP 매뉴얼에서 사전 조사 및 계획 단계로 규정"
+        }
       },
       {
         "id": "P02",
@@ -297,17 +315,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공계약총국(DGCP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Resolución PNP-03-2026 — umbrales 2026",
-            "article": "Ley 47-25 arts.55~67, especially arts.57~59; PNP-03-2026 RESUELVE PRIMERO~OCTAVO",
-            "url": "https://www.dgcp.gob.do/wp-content/uploads/page/PNP-03-2026_UMBRALES.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -316,17 +329,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공계약총국(DGCP)",
+        "actor": "개별 계약기관의 구매·계약 단위",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley núm. 47-25 de Contrataciones Públicas",
-            "article": "Ley 47-25 arts.96 and 100~104, especially art.101",
-            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -337,15 +345,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley núm. 47-25 de Contrataciones Públicas",
-            "article": "Ley 47-25 arts.96 and 100~104, especially art.101",
-            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -356,15 +356,13 @@
         "status": "risk",
         "actor": "공공계약총국(DGCP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ley núm. 47-25 de Contrataciones Públicas",
-            "article": "arts.2~3, 7~12, 17~29, 55~80, 162~166, 179~190, 200~220, 245~248",
-            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/dominican-republic.txt",
+          "start": 309,
+          "end": 313,
+          "excerpt": "- 입찰절차는 일반적으로 입찰 공고, 입찰서 제출, 기술 및 가격 평가, 낙찰자 선정, 계약 체결의 단계로 진행. 외국기업의 입찰 참여도 원칙적으로 허용되며, 국내기업과 동등한 대우를 받으나 세금 등록, 보증서 제출, 스페인어 서류 제출 등 법적·행정적 요건 충족 필요 - 입찰 및 계약 과정 전반은 공공조달청(DGCP)의 감독을 받으며, 절차 위반이나 부정행위가 발생할 경우, 입찰 무효, 계약 해지, 업체 제재 등의 조치 가능"
+        }
       },
       {
         "id": "P06",
@@ -373,17 +371,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공계약총국(DGCP)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley núm. 47-25 de Contrataciones Públicas",
-            "article": "Ley 47-25 arts.200~210; Decreto 52-26 arts.234~240",
-            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -394,15 +387,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25",
-            "article": "Ley 47-25 arts.162~166; Decreto 52-26 arts.205~208",
-            "url": "https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -444,7 +431,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

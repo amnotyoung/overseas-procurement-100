@@ -54,11 +54,17 @@
       },
       {
         "name": "공공조달정책고등위원회(HCPPP)",
-        "role": "조달정책·규정·표준문서·Shiraa 운영·모니터링과 분쟁심사부를 통한 2차 불복을 담당한다."
+        "role": "조달정책·규정·표준문서·Shiraa 운영·모니터링과 분쟁심사부를 통한 2차 불복을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "공공사업주택부 중앙입찰국·개별 발주기관",
-        "role": "관할금액과 조달유형에 따라 공사·공학자문 또는 기관 자체조달의 계획·공고·평가·계약을 집행한다."
+        "role": "관할금액과 조달유형에 따라 공사·공학자문 또는 기관 자체조달의 계획·공고·평가·계약을 집행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "LACS·수원부처·KOICA",
@@ -243,7 +249,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "현행 통합본문과 개정문으로 관할금액·기한·보증·불복·예외를 조문별 확정했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement Law No. 8 of 2014, consolidated as amended",
+            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/"
+          },
+          {
+            "title": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
+            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
+          },
+          {
+            "title": "Regulation No. 7 of 2021 amending Public Procurement Regulations",
+            "url": "https://mjr.ogb.gov.ps/Decrees/Details/30664"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -268,7 +288,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "법률명령 제26/2025호에 따라 재무부와 기획국제협력부의 재무기획부 통합을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
+            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
+          },
+          {
+            "title": "Current Government — Minister of Finance and Planning",
+            "url": "https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -393,15 +423,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Official procurement FAQ and Procedures Manual",
-            "article": "Law Arts.20, 22~29; Regulations Arts.65, 106 and Annex A as amended by Regulation 7/2021 Arts.14, 18; HCPPP current FAQ",
-            "url": "https://www.shiraa.gov.ps/FAQ"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -410,17 +432,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달정책고등위원회(HCPPP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Official procurement FAQ and Procedures Manual",
-            "article": "Law Arts.20, 22~29; Regulations Arts.65, 106 and Annex A as amended by Regulation 7/2021 Arts.14, 18; HCPPP current FAQ",
-            "url": "https://www.shiraa.gov.ps/FAQ"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -429,17 +446,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공조달정책고등위원회(HCPPP)",
+        "actor": "공공사업주택부 중앙입찰국·개별 발주기관",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
-            "article": "Law Arts.37 and 41; Regulations Arts.65(4)~(5), 109, 140~150 and 153",
-            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -450,15 +462,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
-            "article": "Law Arts.37 and 41; Regulations Arts.65(4)~(5), 109, 140~150 and 153",
-            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -469,15 +473,8 @@
         "status": "risk",
         "actor": "공공조달정책고등위원회(HCPPP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Law No. 8 of 2014, consolidated as amended",
-            "article": "Arts.2~4, 6~20, 22~29, 33~42, 56~58 and 73~79; scope, agreement priority, institutions, methods, notice, award, securities, complaints and commencement",
-            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -486,17 +483,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공조달정책고등위원회(HCPPP)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
-            "article": "Law Arts.41 and 56~58; Regulations Arts.138~150",
-            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -507,15 +499,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
-            "article": "Law Art.41(3); Regulations Arts.106(8), 153~154 and 164",
-            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -557,7 +543,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

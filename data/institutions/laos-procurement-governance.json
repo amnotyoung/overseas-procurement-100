@@ -15,20 +15,12 @@
   },
   "canvas": {
     "purpose": "라오스의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "라오스 정부, 라오스 평가 및 공공조달국(DEPP), 공공조달국(Department of Evaluation and Public Procurement, DEPP), 기획투자부(MPI), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부 공공조달관리부(PPMD), 사업주체(Project Owner)·조달위원회, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "l 공공조달법",
-        "kind": "act"
-      },
-      {
-        "law": "각 팀의 업무는 공공조달법",
-        "kind": "act"
       },
       {
         "law": "Law on Public Procurement No. 30/NA of 2 November 2017",
@@ -46,22 +38,27 @@
     "authorities": [
       {
         "name": "재무부 공공조달관리부(PPMD)",
-        "role": "조달법·하위지침·표준문서, 감독·역량강화와 제도운영을 담당한다."
+        "role": "조달법·하위지침·표준문서, 감독·역량강화와 제도운영을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "사업주체(Project Owner)·조달위원회",
-        "role": "부처·기관·지방정부·공기업 단위로 계획·입찰·평가·계약을 집행한다."
+        "role": "부처·기관·지방정부·공기업 단위로 계획·입찰·평가·계약을 집행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 라오스 정부 조직상 우리나라의 조달청처럼 중앙 조달 집행 전담 조직은 부재하며, 각 부처가 직접입찰 및",
-      "2. 조달은 각 부처가 하되, 조달 시스템의 관리·감독은 라오스 재무부 국유자산관리국 산하 ‘평가 및",
-      "3. 전체 발주 정보를 실시간으로 제공하는 고도화된 전자조달 시스템이 구축되지 않아, 개별 사업 부서를",
-      "4. 공공조달법 제15조에 따라 국제 경쟁 입찰을 제외한 대부분의 공고가 라오스어로 제공되어 외국 기업의",
-      "5. 정부 조직도 : 라오스 평가 및 공공조달국(DEPP)",
-      "6. 입찰 공고~계약까지의 전 과정 상시 모니터링 및 현장 점검",
-      "7. 발주처-입찰자 간 분쟁 조정 및 시정 조치 명령",
-      "8. 공고기간 - 공개입찰(국내/국제): 최소 35일 이상"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 사업주체(Project Owner)·조달위원회 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 재무부 공공조달관리부(PPMD) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 라오스의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: (적용 대상) 금액과 무관하게 특수 상황 적용",
     "submittedDocuments": [
@@ -82,7 +79,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -182,7 +181,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "중복·기관 오인을 제거하고 현행 법률·시행지침, PPMD·사업주체 역할과 정량 절차를 조문 단위로 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law on Public Procurement No. 30/NA of 2 November 2017",
+            "url": "https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf"
+          },
+          {
+            "title": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
+            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
+          },
+          {
+            "title": "Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register",
+            "url": "https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -283,15 +296,12 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Law arts.17~18 and 23; Instruction clauses 3.1~3.4; Procurement Manual Flowcharts 1~3",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/laos.txt",
+          "start": 281,
+          "end": 284,
+          "excerpt": "(Procurement Legislation) - 발주처 및 민간 기업 대상 조달 법규 교육 수행 조달 계획 승인팀 - 부처별 연간 조달계획 및 예산 적합성 검토·승인 (General and Approval of - 공개경쟁 외 입찰 방식(수의계약 등) 적용 적정성 심사"
+        }
       },
       {
         "id": "P02",
@@ -300,17 +310,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "재무부 공공조달관리부(PPMD)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Law arts.17~18 and 23; Instruction clauses 3.1~3.4; Procurement Manual Flowcharts 1~3",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -319,17 +324,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "재무부 공공조달관리부(PPMD)",
+        "actor": "사업주체(Project Owner)·조달위원회",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Instruction clause 4.1.3 and clause 16.2 implementing Law arts.18 and 47",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -340,15 +340,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Instruction clause 4.1.3 and clause 16.2 implementing Law arts.18 and 47",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -359,15 +351,13 @@
         "status": "risk",
         "actor": "재무부 공공조달관리부(PPMD)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Public Procurement No. 30/NA of 2 November 2017",
-            "article": "arts.1~7, 17~18, 23, 29~34, 43~48, 67~72 and 86~90",
-            "url": "https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/laos.txt",
+          "start": 261,
+          "end": 264,
+          "excerpt": "l 조달은 각 부처가 하되, 조달 시스템의 관리·감독은 라오스 재무부 국유자산관리국 산하 ‘평가 및 공공조달국(Department of Evaluation and Public Procurement, DEPP)’이 담당하고 있음."
+        }
       },
       {
         "id": "P06",
@@ -376,17 +366,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "재무부 공공조달관리부(PPMD)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Law arts.46 and 67~72; Instruction clause 15; Procurement Manual Part VI §§11.1~11.4",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -397,15 +382,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement",
-            "article": "Law arts.30 and 32~34; Instruction clauses 7~9",
-            "url": "https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -447,7 +426,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

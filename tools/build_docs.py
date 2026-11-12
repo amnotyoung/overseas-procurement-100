@@ -11,6 +11,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from procurement_summary import write_summaries
+
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
 DOCS = ROOT / "docs"
@@ -30,6 +32,18 @@ VERIF_LABEL = {
     "source-document": "자료집 기재",
     "needs-review": "재검토 필요",
 }
+
+
+def citation_markdown(item):
+    links = []
+    for ref in item.get("citationSources", []):
+        label = ref["title"]
+        if ref.get("accessStatus") != "unavailable":
+            label = f"[{label}](<{ref['url']}>)"
+        if ref.get("accessNote"):
+            label += f" ({ref['accessNote']})"
+        links.append(label)
+    return item["citation"] + (" · " + " · ".join(links) if links else "")
 
 
 def load() -> list[dict]:
@@ -94,7 +108,7 @@ def build_verification_log(items: list[dict]) -> str:
             a(f"### {x['field']}")
             a("")
             a(f"- 제도: [{d['name']}](../data/institutions/{d['slug']}.json) · `{x['id']}`")
-            a(f"- 근거: {x['citation']}")
+            a(f"- 근거: {citation_markdown(x)}")
             fc = x.get("fieldCheck")
             if fc:
                 fc_ko = {"confirmed": "✔ 확인됨", "refuted": "✗ 반증됨(우리 판단 오류)",
@@ -194,7 +208,7 @@ def build_errata(items: list[dict]) -> str:
         a("")
         a(f"> {x['action']}")
         a("")
-        a(f"**근거** — {x['citation']}")
+        a(f"**근거** — {citation_markdown(x)}")
         a("")
         a("")
         a("---")
@@ -278,7 +292,7 @@ def build_review_sheet(items: list[dict]) -> str:
         a(f"### {i:02d}. [{SEV_EN[x['severity']]}] Current legal basis check{done_mark}")
         a("")
         a(f"- Institution: {d['country']['nameEn']} — {AXIS_EN.get(d['axis'], d['axis'])}")
-        a(f"- Legal basis: {x['citation']}")
+        a(f"- Legal basis: {citation_markdown(x)}")
         ref = d["sourceRefs"][0] if d["sourceRefs"] else {}
         page = x.get("sourcePage") or ref.get("pages", "?")
         a(f"- KOICA guide: p.{page}")
@@ -295,8 +309,8 @@ def build_review_sheet(items: list[dict]) -> str:
         else:
             a("**Office result** *(fill and return)* —")
             a("- Status: `[ ] confirmed`  `[ ] refuted`  `[ ] partial`")
-            a("- Finding: ")
-            a("- Checked by / date: ")
+            a("- Finding:")
+            a("- Checked by / date:")
         a("")
         a("---")
         a("")
@@ -321,6 +335,7 @@ def main() -> int:
         print("제도 데이터가 없습니다.")
         return 1
 
+    write_summaries(items)
     (DOCS / "verification-log.md").write_text(build_verification_log(items), encoding="utf-8")
     (DOCS / "errata.md").write_text(build_errata(items), encoding="utf-8")
     (DOCS / "review-sheet.en.md").write_text(build_review_sheet(items), encoding="utf-8")
@@ -328,7 +343,7 @@ def main() -> int:
     n_d = sum(len(d["verification"].get("discrepancies", [])) for d in items)
     n_u = sum(1 for d in items for x in d["verification"].get("discrepancies", []) if x.get("upstream"))
     n_r = sum(1 for d in items for x in d["verification"].get("discrepancies", []) if x.get("review"))
-    print(f"문서 생성 완료 — 제도 {len(items)} · 확인사항 {n_d} · 출처 연결 {n_u} · 영어 검토 {n_r}")
+    print(f"문서 생성 완료 — 제도 {len(items)} · 확인사항 {n_d} · 반영 출처 대장 {n_u} · 영어 검토 {n_r}")
     print(f"  {DOCS / 'verification-log.md'}")
     print(f"  {DOCS / 'errata.md'}")
     print(f"  {DOCS / 'review-sheet.en.md'}")

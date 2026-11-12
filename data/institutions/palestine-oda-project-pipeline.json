@@ -50,7 +50,11 @@
     "authorities": [
       {
         "name": "재무기획부",
-        "role": "법률명령 제26/2025호에 따라 재무·기획·국제협력 기능을 통합 승계하고, 원조조정·재정승인과 일반물자국의 중앙조달을 담당한다."
+        "role": "법률명령 제26/2025호에 따라 재무·기획·국제협력 기능을 통합 승계하고, 원조조정·재정승인과 일반물자국의 중앙조달을 담당한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "공공조달정책고등위원회(HCPPP)",
@@ -243,7 +247,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "현행 통합본문과 개정문으로 관할금액·기한·보증·불복·예외를 조문별 확정했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement Law No. 8 of 2014, consolidated as amended",
+            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/"
+          },
+          {
+            "title": "Public Procurement Regulations No. 5 of 2014, consolidated as amended",
+            "url": "https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/"
+          },
+          {
+            "title": "Regulation No. 7 of 2021 amending Public Procurement Regulations",
+            "url": "https://mjr.ogb.gov.ps/Decrees/Details/30664"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -268,7 +286,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "법률명령 제26/2025호에 따라 재무부와 기획국제협력부의 재무기획부 통합을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
+            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
+          },
+          {
+            "title": "Current Government — Minister of Finance and Planning",
+            "url": "https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -393,15 +421,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 43,
+          "end": 47,
+          "excerpt": "1 수시 - 사업 사전 발굴 ∙ 팔레스타인 각 부처 또는 유관기관 2 N-2년 - 재무·기획부에 사업제안서(PCP) 제출"
+        }
       },
       {
         "id": "P02",
@@ -412,15 +437,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 46,
+          "end": 47,
+          "excerpt": "2 N-2년 - 재무·기획부에 사업제안서(PCP) 제출"
+        }
       },
       {
         "id": "P03",
@@ -431,15 +453,13 @@
         "status": "risk",
         "actor": "재무기획부",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 49,
+          "end": 50,
+          "excerpt": "3 N-2년 - 사업제안서 검토 후 우선순위를 선정, KOICA사무소 제출"
+        }
       },
       {
         "id": "P04",
@@ -450,15 +470,13 @@
         "status": "waiting",
         "actor": "재무기획부",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 49,
+          "end": 50,
+          "excerpt": "3 N-2년 - 사업제안서 검토 후 우선순위를 선정, KOICA사무소 제출"
+        }
       },
       {
         "id": "P05",
@@ -469,15 +487,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 57,
+          "end": 59,
+          "excerpt": "5 N-2년 10월~ - 절차 및 우선순위에 따라 예비조사 대상 사업 선정 6 ∙ 예비조사 실시 후 최종 사업 선정 N-1년 3월"
+        }
       },
       {
         "id": "P06",
@@ -488,15 +503,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 59,
+          "end": 59,
+          "excerpt": "6 ∙ 예비조사 실시 후 최종 사업 선정 N-1년 3월"
+        }
       },
       {
         "id": "P07",
@@ -505,17 +517,14 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재무기획부",
+        "actor": "KOICA · 관계부처",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation",
-            "article": "Arts.1~4; merger into the Ministry of Finance and Planning, transfer of both ministries' functions, implementation and conflicting-law repeal",
-            "url": "https://mjr.ogb.gov.ps/Decrees/Details/34131"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/palestine.txt",
+          "start": 60,
+          "end": 60,
+          "excerpt": "7 ∙ 관계부처와 협의의사록(R/D) 체결 N-1년 4분기 또는 N년"
+        }
       }
     ],
     "edges": [
@@ -557,7 +566,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "우즈베키스탄 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "우즈베키스탄 정부, 우즈베키스탄 경제재정부 (Ministry of Economy and Finance, MoEF), 우즈베키스탄의 통관은 관세위원회(State Customs Committee of the Republic of Uzbekistan), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제재정부, 국가발주기관·조달위원회, 전자조달시스템 운영자, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -38,7 +38,11 @@
       },
       {
         "name": "국가발주기관·조달위원회",
-        "role": "계획·절차선정·공고·평가·낙찰·계약을 수행한다."
+        "role": "계획·절차선정·공고·평가·낙찰·계약을 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "전자조달시스템 운영자",
@@ -76,7 +80,8 @@
     "entryBarriers": [
       "공식 조달정보는 우즈베크어로 게시되며 다른 언어본은 우즈베크어 내용과 일치해야 한다.",
       "전자시스템 등록, 수익소유자·세금체납·이해충돌 확인과 공고별 제안·이행보증 형식을 충족해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -171,7 +176,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "기관·법령 추출 오류를 제거하고 현행 법률·정책·집행주체를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
+            "url": "https://lex.uz/docs/5382983"
+          },
+          {
+            "title": "Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027",
+            "url": "https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -264,15 +279,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.49, 51¹, 52, 56, 64 and 70²",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -283,15 +292,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.53, 58, 61, 66, 67, 69 and 70⁴",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -302,20 +305,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.20 and 39",
-            "url": "https://lex.uz/docs/5382983"
-          },
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.53, 58, 61, 66, 67, 69 and 70⁴",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -326,20 +318,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.53, 58, 61, 66, 67, 69 and 70⁴",
-            "url": "https://lex.uz/docs/5382983"
-          },
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.49, 51¹, 52, 56, 64 and 70²",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -348,17 +329,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "경제재정부",
+        "actor": "국가발주기관·조달위원회",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "Arts.2~3, 17~20, 25~41, 43~79 and 85; current edition dated 24 July 2026",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 142,
+          "end": 143,
+          "excerpt": "- 조달계획 수립 → 입찰공고 게시(전자조달시스템) → 입찰서 제출 → 평가위원회 심사 → 낙찰자 선정 → 계약체결 → 이행 및 사후관리"
+        }
       },
       {
         "id": "P06",
@@ -367,17 +346,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "경제재정부",
+        "actor": "국가발주기관·조달위원회",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.53, 58, 61, 66, 67, 69 and 70⁴",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 142,
+          "end": 144,
+          "excerpt": "- 조달계획 수립 → 입찰공고 게시(전자조달시스템) → 입찰서 제출 → 평가위원회 심사 → 낙찰자 선정 → 계약체결 → 이행 및 사후관리"
+        }
       },
       {
         "id": "P07",
@@ -388,15 +365,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
-            "article": "ZRU-684 Arts.39, 63 and 70",
-            "url": "https://lex.uz/docs/5382983"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -438,7 +409,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

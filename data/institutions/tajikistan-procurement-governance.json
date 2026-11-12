@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "타지키스탄의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "타지키스탄 정부, 공공조달청(Agency on Public Procurement of Goods, Works, 러시아 국가표준위원회 인증 국가표준규격(GOST), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "정부 산하 물품·공사·서비스 공공조달청, 인증·일반 조달기관, 통합 전자조달포털, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -34,11 +34,17 @@
     "authorities": [
       {
         "name": "정부 산하 물품·공사·서비스 공공조달청",
-        "role": "공공조달 정책·규정, 통합 전자조달포털, 감독·모니터링과 조달기관 지원을 담당한다."
+        "role": "공공조달 정책·규정, 통합 전자조달포털, 감독·모니터링과 조달기관 지원을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "인증·일반 조달기관",
-        "role": "기관 역량·인증범위에 따라 계획·전자입찰·평가·계약을 수행한다."
+        "role": "기관 역량·인증범위에 따라 계획·전자입찰·평가·계약을 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "통합 전자조달포털",
@@ -46,14 +52,13 @@
       }
     ],
     "procedure": [
-      "1. 현재, 공공조달 플램폼(https://zakupki.gov.tj/tj/)을 통해 공공조달계획, 입찰공고, 적격업체등록,",
-      "2. 정부 조직도 : 공공조달청(Agency on Public Procurement of Goods, Works",
-      "3. 발주기관은 입찰 공고 전 사전적격심사를 실시함",
-      "4. 가격을 표기하지 않고 입찰 공고하며 첫 번째 단계에서 조달 기관은 모든 적격 입찰자와 논의하여",
-      "5. 입찰 공고 입찰보증금**은 기술적격 및 물품 및 서비스",
-      "6. 수정 발생 시 업무일 기준 10일 추가 / 긴급 조달 필요 시 10일 이내 공고는 가능.",
-      "7. 입찰자들이 조달 절차 중에 조달 기관의 입찰 위원회의 불법적인 행위나 결정에 대해 이의제기를 할",
-      "8. 입찰 또는 특정 사업 참가자는 관련 허가를 사전에 득하여야 하며, 발주처는 해당 내용을 입찰공고문에"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 인증·일반 조달기관 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 정부 산하 물품·공사·서비스 공공조달청 — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "Law No.1955 제1~2조와 제5조의 국가재원·조달기관에 적용한다. 공여국·외국은행·가입 IFI 재원의 국가투자사업, 특수재산조달청, PPP, 대통령실 정부시설건설국, 국제조약 조달은 적용제외·특별규칙을 먼저 확인한다.",
     "submittedDocuments": [
@@ -74,7 +79,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -202,7 +209,13 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "손상된 추출을 정정하고 현행법·기관·전자조달 및 원조사업 예외를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025",
+            "url": "https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -227,7 +240,21 @@
           "state": "not-reported",
           "suggestedText": "2026년 개정 절차규칙과 계산지표에 따른 정량·불복 요건을 반영했다."
         },
-        "id": "tajikistan-procurement-governance-D02"
+        "id": "tajikistan-procurement-governance-D02",
+        "citationSources": [
+          {
+            "title": "Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025",
+            "url": "https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85"
+          },
+          {
+            "title": "Government Decree No.362 of 24 June 2025 — Rules of Public Procurement Procedures, as amended by Decree No.310 of 28 May 2026",
+            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169536"
+          },
+          {
+            "title": "Law No.2203 on the State Budget for 2026, as amended by Law No.2256 of 27 April 2026",
+            "url": "https://mmih.tj/SEARCH/DocumentView?DocumentId=171486"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -352,15 +379,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Tajikistan verified procurement instrument",
-            "article": "Law Arts.16, 18, 49 and 52; Rules paras.190 and 219~221; 2026 Budget Law Art.24(1)",
-            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169537"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -369,17 +388,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가 공공조달 권한기관",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Tajikistan verified procurement instrument",
-            "article": "Law Arts.16, 18, 49 and 52; Rules paras.190 and 219~221; 2026 Budget Law Art.24(1)",
-            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169537"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -388,17 +402,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "국가 공공조달 권한기관",
+        "actor": "인증·일반 조달기관",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Tajikistan verified procurement instrument",
-            "article": "Law Arts.31, 33 and 39; Rules paras.149~152, 163~165 and 342~348",
-            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169537"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -409,15 +418,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Tajikistan verified procurement instrument",
-            "article": "Law Arts.31, 33 and 39; Rules paras.149~152, 163~165 and 342~348",
-            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169537"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -426,17 +427,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "국가 공공조달 권한기관",
+        "actor": "정부 산하 물품·공사·서비스 공공조달청",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025",
-            "article": "Arts.1~18, 22~23, 30~33, 39~52, 60~65 and 73~76; scope, authority, portal, planning, deadlines, securities, methods, appeals, contract and repeal",
-            "url": "https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -445,17 +439,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "국가 공공조달 권한기관",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Tajikistan verified procurement instrument",
-            "article": "Law Arts.60~63; Rules paras.342~375",
-            "url": "https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169537"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -466,15 +455,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025",
-            "article": "Law Art.39(2)~(4); Rules paras.389~394",
-            "url": "https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -516,7 +499,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

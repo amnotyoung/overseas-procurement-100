@@ -10,6 +10,9 @@ import re
 import sys
 from pathlib import Path
 
+from procurement_evidence import canvas_projections, node_errors, web_url
+from procurement_summary import summary_errors
+
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
 
@@ -148,6 +151,13 @@ def check(path: Path) -> None:
                 if q.get("law") and q["law"] not in source_laws:
                     warn(slug, f"sourceQuotes[{i}].law가 verification.sources에 없음 — 원문 URL 연결 안 됨: {q['law']!r}")
 
+    for entry in fv or []:
+        if isinstance(entry, str):
+            continue
+        if not (isinstance(entry, dict) and entry.get("item") and entry.get("question")
+                and entry.get("status") in FIELDCHECK_STATUS):
+            err(slug, "fieldVerification 항목·질문·상태 오류")
+
     # --- sourceRefs ---
     refs = data.get("sourceRefs")
     if not isinstance(refs, list) or not refs:
@@ -190,6 +200,14 @@ def check(path: Path) -> None:
                           "citation", "impact", "action", "userAction"):
                 if not d.get(field):
                     err(slug, f"verification.discrepancies[{i}].{field} 누락")
+            refs = d.get("citationSources")
+            if not isinstance(refs, list) or not any(
+                isinstance(ref, dict) and ref.get("accessStatus") != "unavailable" for ref in refs
+            ) or any(
+                not isinstance(ref, dict) or not ref.get("title") or not web_url(ref.get("url"))
+                for ref in refs
+            ):
+                err(slug, f"discrepancies[{i}].citationSources 원문 링크 누락")
             if d.get("severity") not in SEVERITIES:
                 err(slug, f"discrepancies[{i}].severity가 3종 밖: {d.get('severity')!r}")
             if d.get("id") and not d["id"].startswith(slug):
@@ -270,21 +288,17 @@ def check(path: Path) -> None:
             if not n.get("actor"):
                 err(slug, f"노드 {nid}에 actor 누락")
             c = n.get("confidence")
-            if c is not None and not (0 <= c <= 1):
+            if c is not None and (type(c) not in (int, float) or not 0 <= c <= 1):
                 err(slug, f"노드 {nid}의 confidence가 0~1 밖: {c}")
             if v.get("status") == "article-verified":
-                if not n.get("confidence_reason"):
-                    err(slug, f"article-verified 노드 {nid}에 confidence_reason 누락")
-                bases = n.get("legal_basis")
-                if not isinstance(bases, list) or not bases:
-                    err(slug, f"article-verified 노드 {nid}에 legal_basis 누락")
-                else:
-                    for j, basis in enumerate(bases):
-                        for field in ("law", "article", "url"):
-                            if not basis.get(field):
-                                err(slug, f"노드 {nid}.legal_basis[{j}].{field} 누락")
-            if c is not None and c < 0.8 and nid not in {x.get("id") for x in process.get("nodes", []) if x.get("blocker")}:
-                pass  # confidence<0.8은 UI에서 '현장 검증 필요' 배지로 처리. 오류 아님.
+                for problem in node_errors(data, n):
+                    err(slug, f"노드 {nid}: {problem}")
+        for key, value in canvas_projections(data).items():
+            if canvas.get(key) != value:
+                err(slug, f"canvas.{key}와 현재 절차·기관이 다름")
+        for authority in data["canvas"].get("authorities", []):
+            if set(authority.get("processNodes", [])) - node_ids:
+                err(slug, f"기관 {authority['name']}: processNodes에 없는 노드")
 
         edge_ids: set[str] = set()
         for e in process.get("edges", []):
@@ -338,6 +352,8 @@ def main() -> int:
             if r not in slugs:
                 warn(d.get("slug", f.stem), f"related의 {r!r}가 아직 작성되지 않음")
 
+    if not errors:
+        errors.extend(summary_errors([json.loads(f.read_text()) for f in files]))
     print(f"검증 대상: {len(files)}개 제도\n")
     if warnings:
         print("경고")

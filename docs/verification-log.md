@@ -157,7 +157,7 @@
 ### verification / 현행 조달규칙 및 canvas.authorities
 
 - 제도: [방글라데시 공공조달 입찰제도](../data/institutions/bangladesh-bidding-system.json) · `bangladesh-bidding-system-D01`
-- 근거: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page
+- 근거: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · [Public Procurement Rules 2025](<https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html>) · [Bangladesh e-Government Procurement system](<https://www.bppa.gov.bd/e-gp.html>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -171,7 +171,7 @@
 ### verification / 현행 조달규칙 및 canvas.authorities
 
 - 제도: [방글라데시 조달 거버넌스·감독체계](../data/institutions/bangladesh-procurement-governance.json) · `bangladesh-procurement-governance-D01`
-- 근거: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page
+- 근거: BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · [Public Procurement Rules 2025](<https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html>) · [Bangladesh e-Government Procurement system](<https://www.bppa.gov.bd/e-gp.html>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -185,7 +185,7 @@
 ### canvas.authorities / 수원총괄기관 및 process
 
 - 제도: [볼리비아 ODA 사업 발굴·형성 절차](../data/institutions/bolivia-oda-project-pipeline.json) · `bolivia-oda-project-pipeline-D01`
-- 근거: VIPFE official functions; National Public Investment System Basic Rules arts.28-29
+- 근거: VIPFE official functions; National Public Investment System Basic Rules arts.28-29 · [VIPFE statutory functions](<https://www.planificacion.gob.bo/institucion/vipfe/info>) · [Normas Básicas del Sistema Nacional de Inversión Pública](<https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -199,7 +199,7 @@
 ### process / 외부재원 사업 조정기관
 
 - 제도: [카메룬 ODA 사업 발굴·형성 절차](../data/institutions/cameroon-oda-project-pipeline.json) · `cameroon-oda-project-pipeline-D01`
-- 근거: MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999)
+- 근거: MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999) · [MINEPAT Directorate General of Economy functions](<https://minepat.gov.cm/dg-conomie/>) · Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets (2026-11-12 발행처 파일 주소에서 HTTP 404 응답. 기관 기능은 함께 연결한 MINEPAT 자료에서 확인할 수 있습니다.)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -213,7 +213,7 @@
 ### canvas.legalBasis·authorities / 현행 조달법·기관
 
 - 제도: [콜롬비아 공공조달 입찰제도](../data/institutions/colombia-bidding-system.json) · `colombia-bidding-system-D01`
-- 근거: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal
+- 근거: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · [Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304>) · [Ley 1150 de 2007](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -227,7 +227,7 @@
 ### canvas.authorities / 국제협력 총괄기관
 
 - 제도: [콜롬비아 ODA 사업 발굴·형성 절차](../data/institutions/colombia-oda-project-pipeline.json) · `colombia-oda-project-pipeline-D01`
-- 근거: APC-Colombia official role and Director General functions
+- 근거: APC-Colombia official role and Director General functions · [APC-Colombia statutory role and functions](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -241,7 +241,7 @@
 ### canvas.legalBasis·authorities / 현행 조달법·기관
 
 - 제도: [콜롬비아 조달 거버넌스·감독체계](../data/institutions/colombia-procurement-governance.json) · `colombia-procurement-governance-D01`
-- 근거: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal
+- 근거: Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · [Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304>) · [Ley 1150 de 2007](<https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -255,21 +255,21 @@
 ### canvas.authorities·legalBasis / 조달기관과 법령
 
 - 제도: [코트디부아르 공공조달 입찰제도](../data/institutions/cote-divoire-bidding-system.json) · `cote-divoire-bidding-system-D01`
-- 근거: Ordonnance 2019-679; Ordonnance 2018-594; DGMP official regulation catalogue
+- 근거: Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · [Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics](<https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf>) · [Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP](<https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ANRMP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다.
+> 현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ARCOP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다. Ordonnance 2025-32 제1·49조에 따라 종전 ANRMP가 ARCOP으로 개편됐다.
 
-**실무 확인** — 입찰서류의 발주기관·COJO와 ANRMP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.
+**실무 확인** — 입찰서류의 발주기관·COJO와 ARCOP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.
 
-*산출물 반영* — DGMP·ANRMP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.
+*산출물 반영* — DGMP·ARCOP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.
 
 ### canvas.authorities / 개발협력 조정기관
 
 - 제도: [코트디부아르 ODA 사업 발굴·형성 절차](../data/institutions/cote-divoire-oda-project-pipeline.json) · `cote-divoire-oda-project-pipeline-D01`
-- 근거: Ministry of Plan DGCOD official functions; Décret 2015-475 as amended
+- 근거: Ministry of Plan DGCOD official functions; Décret 2015-475 as amended · [DGCOD official functions](<https://www.plan.gouv.ci/detail_structure/66>) · [Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires](<https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf>) · [Décret n°2019-299 du 3 avril 2019 modifiant le Décret n°2015-475](<https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -283,21 +283,21 @@
 ### canvas.authorities·legalBasis / 조달기관과 법령
 
 - 제도: [코트디부아르 조달 거버넌스·감독체계](../data/institutions/cote-divoire-procurement-governance.json) · `cote-divoire-procurement-governance-D01`
-- 근거: Ordonnance 2019-679; Ordonnance 2018-594; DGMP official regulation catalogue
+- 근거: Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · [Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics](<https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf>) · [Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP](<https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
-> 현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ANRMP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다.
+> 현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ARCOP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다. Ordonnance 2025-32 제1·49조에 따라 종전 ANRMP가 ARCOP으로 개편됐다.
 
-**실무 확인** — 입찰서류의 발주기관·COJO와 ANRMP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.
+**실무 확인** — 입찰서류의 발주기관·COJO와 ARCOP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.
 
-*산출물 반영* — DGMP·ANRMP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.
+*산출물 반영* — DGMP·ARCOP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.
 
 ### canvas.legalBasis·procedure / 2026년 법체계 전환
 
 - 제도: [도미니카공화국 공공조달 입찰제도](../data/institutions/dominican-republic-bidding-system.json) · `dominican-republic-bidding-system-D01`
-- 근거: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26
+- 근거: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · [Resolución PNP-01-2026 — implementación de Ley 47-25](<https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/>) · [Ley núm. 47-25 de Contrataciones Públicas](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf>) · [Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -311,7 +311,7 @@
 ### canvas.authorities / 무상협력 총괄기관
 
 - 제도: [도미니카공화국 ODA 사업 발굴·형성 절차](../data/institutions/dominican-republic-oda-project-pipeline.json) · `dominican-republic-oda-project-pipeline-D01`
-- 근거: Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice
+- 근거: Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice · [Ley núm. 45-25 — Ministerio de Hacienda y Economía 및 국제협력 권한 이전](<https://www.presidencia.gob.do/noticias/presidente-abinader-promulga-ley-que-dispone-fusion-del-ministerio-de-hacienda-y-el>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -325,7 +325,7 @@
 ### canvas.legalBasis·procedure / 2026년 법체계 전환
 
 - 제도: [도미니카공화국 조달 거버넌스·감독체계](../data/institutions/dominican-republic-procurement-governance.json) · `dominican-republic-procurement-governance-D01`
-- 근거: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26
+- 근거: DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · [Resolución PNP-01-2026 — implementación de Ley 47-25](<https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/>) · [Ley núm. 47-25 de Contrataciones Públicas](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf>) · [Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25](<https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -339,7 +339,7 @@
 ### canvas.authorities·legalBasis / 조달 거버넌스
 
 - 제도: [DR콩고 공공조달 입찰제도](../data/institutions/dr-congo-bidding-system.json) · `dr-congo-bidding-system-D01`
-- 근거: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
+- 근거: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · [Loi n°10/010 du 27 avril 2010 relative aux marchés publics](<https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf>) · [Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics](<https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -353,7 +353,7 @@
 ### canvas.authorities / 외부재원 조정기관
 
 - 제도: [DR콩고 ODA 사업 발굴·형성 절차](../data/institutions/dr-congo-oda-project-pipeline.json) · `dr-congo-oda-project-pipeline-D01`
-- 근거: Ministry of Plan — Direction de la Coordination des Ressources Extérieures official functions
+- 근거: Ministry of Plan — Direction de la Coordination des Ressources Extérieures official functions · [Direction de la Coordination des Ressources Extérieures — official functions](<https://plan.gouv.cd/secretariat-general-2/direction-de-la-coordination-des-ressources-exterieures/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -367,7 +367,7 @@
 ### canvas.authorities·legalBasis / 조달 거버넌스
 
 - 제도: [DR콩고 조달 거버넌스·감독체계](../data/institutions/dr-congo-procurement-governance.json) · `dr-congo-procurement-governance-D01`
-- 근거: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12
+- 근거: Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · [Loi n°10/010 du 27 avril 2010 relative aux marchés publics](<https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf>) · [Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics](<https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -381,7 +381,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에콰도르 공공조달 입찰제도](../data/institutions/ecuador-bidding-system.json) · `ecuador-bidding-system-D01`
-- 근거: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356
+- 근거: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · [Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf>) · [Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf>) · [Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP](<https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -395,7 +395,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에콰도르 ODA 사업 발굴·형성 절차](../data/institutions/ecuador-oda-project-pipeline.json) · `ecuador-oda-project-pipeline-D01`
-- 근거: COPLAFIP arts.65–69; MREMH official functions and SIGECI registration procedure
+- 근거: COPLAFIP arts.65–69; MREMH official functions and SIGECI registration procedure · [Código Orgánico de Planificación y Finanzas Públicas, arts.65–69](<https://www.planificacion.gob.ec/wp-content/uploads/2024/02/CODIGO-ORGANICO-DE-PLANIFICACION-Y-FINANZAS-PUBLICAS.pdf>) · [MREMH international-cooperation functions](<https://www.cancilleria.gob.ec/2020/06/16/subsecretaria-de-asuntos-multilaterales/>) · [SIGECI project-registration procedure](<https://www.cancilleria.gob.ec/2020/07/30/certificado-de-registro-de-programas-y-proyectos-de-cooperacion-internacional-no-reembolsable/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -409,7 +409,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에콰도르 조달 거버넌스·감독체계](../data/institutions/ecuador-procurement-governance.json) · `ecuador-procurement-governance-D01`
-- 근거: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356
+- 근거: SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · [Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf>) · [Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356](<https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf>) · [Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP](<https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -423,7 +423,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [이집트 공공조달 입찰제도](../data/institutions/egypt-bidding-system.json) · `egypt-bidding-system-D01`
-- 근거: Law 182/2018; Executive Regulations; GAGS official procurement mandate
+- 근거: Law 182/2018; Executive Regulations; GAGS official procurement mandate · [Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities](<https://www.nib.gov.eg/PDF/library/Low182_2018.pdf>) · [Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019](<https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -437,7 +437,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [이집트 ODA 사업 발굴·형성 절차](../data/institutions/egypt-oda-project-pipeline.json) · `egypt-oda-project-pipeline-D01`
-- 근거: Presidential Decree 303/2004 mandate; MPEDIC 2024 merger and annual report
+- 근거: Presidential Decree 303/2004 mandate; MPEDIC 2024 merger and annual report · [Presidential Decree No. 303 of 2004 — international cooperation mandate](<https://moic.gov.eg/page/ministers-statement>) · [2024 ministry merger and integrated development-financing framework](<https://moic.gov.eg/page/annual-report-2024>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -451,7 +451,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [이집트 조달 거버넌스·감독체계](../data/institutions/egypt-procurement-governance.json) · `egypt-procurement-governance-D01`
-- 근거: Law 182/2018; Executive Regulations; GAGS official procurement mandate
+- 근거: Law 182/2018; Executive Regulations; GAGS official procurement mandate · [Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities](<https://www.nib.gov.eg/PDF/library/Low182_2018.pdf>) · [Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019](<https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -465,7 +465,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [엘살바도르 공공조달 입찰제도](../data/institutions/el-salvador-bidding-system.json) · `el-salvador-bidding-system-D01`
-- 근거: Decretos Legislativos 652 and 653; DINAC official institutional page
+- 근거: Decretos Legislativos 652 and 653; DINAC official institutional page · [Decreto Legislativo n.º 652 — Ley de Compras Públicas](<https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -479,7 +479,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [엘살바도르 ODA 사업 발굴·형성 절차](../data/institutions/el-salvador-oda-project-pipeline.json) · `el-salvador-oda-project-pipeline-D01`
-- 근거: ESCO official institutional framework and functions
+- 근거: ESCO official institutional framework and functions · [Decreto Ejecutivo n.º 24 de 29 de junio de 2020 — creación de ESCO](<https://esco.gob.sv/marco-institucional/>) · [Sistema Integrado de Información de la Cooperación Internacional](<https://portal.esco.gob.sv/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -493,7 +493,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [엘살바도르 조달 거버넌스·감독체계](../data/institutions/el-salvador-procurement-governance.json) · `el-salvador-procurement-governance-D01`
-- 근거: Decretos Legislativos 652 and 653; DINAC official institutional page
+- 근거: Decretos Legislativos 652 and 653; DINAC official institutional page · [Decreto Legislativo n.º 652 — Ley de Compras Públicas](<https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -507,7 +507,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에티오피아 공공조달 입찰제도](../data/institutions/ethiopia-bidding-system.json) · `ethiopia-bidding-system-D01`
-- 근거: Proclamation 1333/2024; Directive 1073/2025
+- 근거: Proclamation 1333/2024; Directive 1073/2025 · [Federal Public Procurement and Property Administration Proclamation No. 1333/2024](<https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf>) · [Federal Government Public Procurement Directive No. 1073/2025](<https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -521,7 +521,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에티오피아 조달 거버넌스·감독체계](../data/institutions/ethiopia-procurement-governance.json) · `ethiopia-procurement-governance-D01`
-- 근거: Proclamation 1333/2024; Directive 1073/2025
+- 근거: Proclamation 1333/2024; Directive 1073/2025 · [Federal Public Procurement and Property Administration Proclamation No. 1333/2024](<https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf>) · [Federal Government Public Procurement Directive No. 1073/2025](<https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -535,7 +535,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [피지 공공조달 입찰제도](../data/institutions/fiji-bidding-system.json) · `fiji-bidding-system-D01`
-- 근거: Procurement Regulations 2010 regs.4–5
+- 근거: Procurement Regulations 2010 regs.4–5 · [Procurement Regulations 2010 (Legal Notice No.81)](<https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -549,7 +549,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [피지 조달 거버넌스·감독체계](../data/institutions/fiji-procurement-governance.json) · `fiji-procurement-governance-D01`
-- 근거: Procurement Regulations 2010 regs.4–5
+- 근거: Procurement Regulations 2010 regs.4–5 · [Procurement Regulations 2010 (Legal Notice No.81)](<https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -563,7 +563,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [가나 공공조달 입찰제도](../data/institutions/ghana-bidding-system.json) · `ghana-bidding-system-D01`
-- 근거: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
+- 근거: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · [Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139](<https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf>) · [Public Procurement (Amendment) Act, 2025 (Act 1139)](<https://ppa.gov.gh/public-procurement-training-for-2026/>) · [Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)](<https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/>) · [Mandatory use of the Ghana Electronic Procurement System (GHANEPS)](<https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -577,7 +577,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [가나 조달 거버넌스·감독체계](../data/institutions/ghana-procurement-governance.json) · `ghana-procurement-governance-D01`
-- 근거: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive
+- 근거: Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · [Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139](<https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf>) · [Public Procurement (Amendment) Act, 2025 (Act 1139)](<https://ppa.gov.gh/public-procurement-training-for-2026/>) · [Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)](<https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/>) · [Mandatory use of the Ghana Electronic Procurement System (GHANEPS)](<https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -591,7 +591,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [과테말라 공공조달 입찰제도](../data/institutions/guatemala-bidding-system.json) · `guatemala-bidding-system-D01`
-- 근거: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
+- 근거: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · [Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento](<https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf>) · [Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS](<https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -605,7 +605,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [과테말라 ODA 사업 발굴·형성 절차](../data/institutions/guatemala-oda-project-pipeline.json) · `guatemala-oda-project-pipeline-D01`
-- 근거: SEGEPLAN official mandate; Internal Regulation art.27; CINR Project Guide
+- 근거: SEGEPLAN official mandate; Internal Regulation art.27; CINR Project Guide · [SEGEPLAN Subsecretaría de Cooperación y Alianzas para el Desarrollo — official mandate](<https://portal.segeplan.gob.gt/segeplan/?page_id=16>) · [SEGEPLAN Reglamento Orgánico Interno, art.27](<https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/09/ROI-8agosto2023-1.pdf>) · [Guía Orientadora de Programas y Proyectos de Cooperación Internacional No Reembolsable, 6th ed.](<https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/02/Guia-Orientadora-Programas-y-Proyectos-de-Cooperacion-Internacional-No-Reembolsable-6ta.-edic.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -619,7 +619,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [과테말라 조달 거버넌스·감독체계](../data/institutions/guatemala-procurement-governance.json) · `guatemala-procurement-governance-D01`
-- 근거: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022
+- 근거: Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · [Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas](<https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/>) · [Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento](<https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf>) · [Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS](<https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -633,7 +633,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [인도네시아 공공조달 입찰제도](../data/institutions/indonesia-bidding-system.json) · `indonesia-bidding-system-D01`
-- 근거: Perpres 46/2025 and LKPP official legal database
+- 근거: Perpres 46/2025 and LKPP official legal database · [Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018](<https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025>) · [Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah](<https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -647,7 +647,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [인도네시아 조달 거버넌스·감독체계](../data/institutions/indonesia-procurement-governance.json) · `indonesia-procurement-governance-D01`
-- 근거: Perpres 46/2025 and LKPP official legal database
+- 근거: Perpres 46/2025 and LKPP official legal database · [Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018](<https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025>) · [Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah](<https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -661,7 +661,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [요르단 공공조달 입찰제도](../data/institutions/jordan-bidding-system.json) · `jordan-bidding-system-D01`
-- 근거: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials
+- 근거: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · [Government Procurement By-law No. 8 of 2022, as amended](<https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769>) · [Current Government Procurement By-law and Instructions register](<https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -675,7 +675,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [요르단 ODA 사업 발굴·형성 절차](../data/institutions/jordan-oda-project-pipeline.json) · `jordan-oda-project-pipeline-D01`
-- 근거: Planning and International Cooperation Law No. 10 of 2024 arts. 5, 10–11
+- 근거: Planning and International Cooperation Law No. 10 of 2024 arts. 5, 10–11 · [Planning and International Cooperation Law No. 10 of 2024, arts. 5, 8, 10–12](<https://www.mop.gov.jo/En/Pages/Planning_Law>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -689,7 +689,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [요르단 조달 거버넌스·감독체계](../data/institutions/jordan-procurement-governance.json) · `jordan-procurement-governance-D01`
-- 근거: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials
+- 근거: Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · [Government Procurement By-law No. 8 of 2022, as amended](<https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769>) · [Current Government Procurement By-law and Instructions register](<https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -703,7 +703,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [케냐 공공조달 입찰제도](../data/institutions/kenya-bidding-system.json) · `kenya-bidding-system-D01`
-- 근거: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025
+- 근거: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · [Public Procurement and Asset Disposal Act 2015, revised edition 2022](<https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31>) · [Public Procurement and Asset Disposal Regulations 2020](<https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31>) · [PPRA Circular 02/2025 — transition to the Electronic Government Procurement System](<https://ppra.go.ke/ppra-circular-02-2025/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -717,7 +717,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [케냐 조달 거버넌스·감독체계](../data/institutions/kenya-procurement-governance.json) · `kenya-procurement-governance-D01`
-- 근거: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025
+- 근거: PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · [Public Procurement and Asset Disposal Act 2015, revised edition 2022](<https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31>) · [Public Procurement and Asset Disposal Regulations 2020](<https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31>) · [PPRA Circular 02/2025 — transition to the Electronic Government Procurement System](<https://ppra.go.ke/ppra-circular-02-2025/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -731,7 +731,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [키르기스스탄 공공조달 입찰제도](../data/institutions/kyrgyzstan-bidding-system.json) · `kyrgyzstan-bidding-system-D01`
-- 근거: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
+- 근거: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · [Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)](<https://cbd.minjust.gov.kg/112361/edition/1279682/ru>) · [Law No. 10 of 29 January 2026 amending the Law On Public Procurement](<https://cbd.minjust.gov.kg/4-5701/edition/46464/ru>) · [Unified public procurement portal](<https://zakupki.gov.kg/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -745,7 +745,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [키르기스스탄 조달 거버넌스·감독체계](../data/institutions/kyrgyzstan-procurement-governance.json) · `kyrgyzstan-procurement-governance-D01`
-- 근거: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal
+- 근거: Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · [Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)](<https://cbd.minjust.gov.kg/112361/edition/1279682/ru>) · [Law No. 10 of 29 January 2026 amending the Law On Public Procurement](<https://cbd.minjust.gov.kg/4-5701/edition/46464/ru>) · [Unified public procurement portal](<https://zakupki.gov.kg/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -759,7 +759,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 공공조달 입찰제도](../data/institutions/laos-bidding-system.json) · `laos-bidding-system-D01`
-- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
+- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register](<https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -773,7 +773,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 조달 거버넌스·감독체계](../data/institutions/laos-procurement-governance.json) · `laos-procurement-governance-D01`
-- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual
+- 근거: Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register](<https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -787,7 +787,7 @@
 ### canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 - 제도: [몽골 공공조달 입찰제도](../data/institutions/mongolia-bidding-system.json) · `mongolia-bidding-system-D01`
-- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -801,7 +801,7 @@
 ### canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 - 제도: [몽골 ODA 사업 발굴·형성 절차](../data/institutions/mongolia-oda-project-pipeline.json) · `mongolia-oda-project-pipeline-D01`
-- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -815,7 +815,7 @@
 ### canvas.legalBasis·procedure / 현행 조달법·정량절차
 
 - 제도: [몽골 조달 거버넌스·감독체계](../data/institutions/mongolia-procurement-governance.json) · `mongolia-procurement-governance-D01`
-- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025
+- 근거: Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · [Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)](<https://legalinfo.mn/mn/detail?lawId=16760359992351>) · [Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement](<https://legalinfo.mn/mn/detail?lawId=17047839105111>) · [Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents](<https://legalinfo.mn/mn/detail?lawId=16960768160991>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -829,7 +829,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [모로코 공공조달 입찰제도](../data/institutions/morocco-bidding-system.json) · `morocco-bidding-system-D01`
-- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -843,7 +843,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [모로코 조달 거버넌스·감독체계](../data/institutions/morocco-procurement-governance.json) · `morocco-procurement-governance-D01`
-- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -857,7 +857,7 @@
 ### canvas.legalBasis·procedure / 현행법·정량요건
 
 - 제도: [모잠비크 공공조달 입찰제도](../data/institutions/mozambique-bidding-system.json) · `mozambique-bidding-system-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -871,7 +871,7 @@
 ### canvas.legalBasis·procedure / 현행법·정량요건
 
 - 제도: [모잠비크 ODA 사업 발굴·형성 절차](../data/institutions/mozambique-oda-project-pipeline.json) · `mozambique-oda-project-pipeline-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -885,7 +885,7 @@
 ### canvas.legalBasis·procedure / 현행법·정량요건
 
 - 제도: [모잠비크 조달 거버넌스·감독체계](../data/institutions/mozambique-procurement-governance.json) · `mozambique-procurement-governance-D01`
-- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281
+- 근거: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -899,7 +899,7 @@
 ### verification / 공식 원문·현행성·정량요건
 
 - 제도: [미얀마 공공조달 입찰제도](../data/institutions/myanmar-bidding-system.json) · `myanmar-bidding-system-D01`
-- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -913,7 +913,7 @@
 ### verification / 공식 원문·현행성·정량요건
 
 - 제도: [미얀마 ODA 사업 발굴·형성 절차](../data/institutions/myanmar-oda-project-pipeline.json) · `myanmar-oda-project-pipeline-D01`
-- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -927,7 +927,7 @@
 ### verification / 공식 원문·현행성·정량요건
 
 - 제도: [미얀마 조달 거버넌스·감독체계](../data/institutions/myanmar-procurement-governance.json) · `myanmar-procurement-governance-D01`
-- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice
+- 근거: Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · [Office of the State Administration Council Directive No. 1/2022](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf>) · [President’s Office Directive No. 1/2017](<https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf>) · [Myanmar Gazette Vol.78 No.20 — current tender-committee orders](<https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf>) · [Global New Light of Myanmar tender notice, June 2026](<https://www.moi.gov.mm/nlm/file-download/download/public/5153>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -941,7 +941,7 @@
 ### canvas.submittedDocuments[외국인 입찰자].documents
 
 - 제도: [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) · `nepal-bidding-system-D01`
-- 근거: Public Procurement Rules, 2064 (2007) r.39(1)(d)
+- 근거: Public Procurement Rules, 2064 (2007) r.39(1)(d) · [Public Procurement Rules, 2064 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -955,7 +955,7 @@
 ### canvas.procedure / 사업 발굴 착수 지점
 
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D01`
-- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b)
+- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -969,7 +969,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 공공조달 입찰제도](../data/institutions/nigeria-bidding-system.json) · `nigeria-bidding-system-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -983,7 +983,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 ODA 사업 발굴·형성 절차](../data/institutions/nigeria-oda-project-pipeline.json) · `nigeria-oda-project-pipeline-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -997,7 +997,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 조달 거버넌스·감독체계](../data/institutions/nigeria-procurement-governance.json) · `nigeria-procurement-governance-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1011,7 +1011,7 @@
 ### 현행 개정법·기준금액·기한·보증·불복·예외
 
 - 제도: [파키스탄 공공조달 입찰제도](../data/institutions/pakistan-bidding-system.json) · `pakistan-bidding-system-D01`
-- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1025,7 +1025,7 @@
 ### 현행 개정법·기준금액·기한·보증·불복·예외
 
 - 제도: [파키스탄 ODA 사업 발굴·형성 절차](../data/institutions/pakistan-oda-project-pipeline.json) · `pakistan-oda-project-pipeline-D01`
-- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1039,7 +1039,7 @@
 ### 현행 개정법·기준금액·기한·보증·불복·예외
 
 - 제도: [파키스탄 조달 거버넌스·감독체계](../data/institutions/pakistan-procurement-governance.json) · `pakistan-procurement-governance-D01`
-- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14
+- 근거: PPR 2004 rr.3, 5, 12~14, 20~25, 35, 39, 42 and 48~49; E-Pak regs.3 and 13~14 · [Public Procurement Rules, 2004](<https://epms.ppra.gov.pk/public/procurement-rules>) · [E-Pak-Procurement Regulations, 2023](<https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1053,7 +1053,7 @@
 ### 현행 조달법·관할금액·기한·보증·불복·예외
 
 - 제도: [팔레스타인 공공조달 입찰제도](../data/institutions/palestine-bidding-system.json) · `palestine-bidding-system-D01`
-- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1067,7 +1067,7 @@
 ### 재무부·기획국제협력부 통합 및 ODA 공식창구
 
 - 제도: [팔레스타인 공공조달 입찰제도](../data/institutions/palestine-bidding-system.json) · `palestine-bidding-system-D02`
-- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1081,7 +1081,7 @@
 ### 현행 조달법·관할금액·기한·보증·불복·예외
 
 - 제도: [팔레스타인 ODA 사업 발굴·형성 절차](../data/institutions/palestine-oda-project-pipeline.json) · `palestine-oda-project-pipeline-D01`
-- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1095,7 +1095,7 @@
 ### 재무부·기획국제협력부 통합 및 ODA 공식창구
 
 - 제도: [팔레스타인 ODA 사업 발굴·형성 절차](../data/institutions/palestine-oda-project-pipeline.json) · `palestine-oda-project-pipeline-D02`
-- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1109,7 +1109,7 @@
 ### 현행 조달법·관할금액·기한·보증·불복·예외
 
 - 제도: [팔레스타인 조달 거버넌스·감독체계](../data/institutions/palestine-procurement-governance.json) · `palestine-procurement-governance-D01`
-- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18
+- 근거: Procurement Law 8/2014 Arts.2~4, 20~29, 41~42, 56~58; Regulations 5/2014 Arts.65, 79, 106, 138~164; Regulation 7/2021 Arts.14 and 18 · [Public Procurement Law No. 8 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/19/>) · [Public Procurement Regulations No. 5 of 2014, consolidated as amended](<https://mjr.ogb.gov.ps/MergedLegislations/ViewText/115/>) · [Regulation No. 7 of 2021 amending Public Procurement Regulations](<https://mjr.ogb.gov.ps/Decrees/Details/30664>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1123,7 +1123,7 @@
 ### 재무부·기획국제협력부 통합 및 ODA 공식창구
 
 - 제도: [팔레스타인 조달 거버넌스·감독체계](../data/institutions/palestine-procurement-governance.json) · `palestine-procurement-governance-D02`
-- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13
+- 근거: Decree-Law 26/2025 Arts.1~4; Prime Minister's Office, 2026-07-13 · [Decree-Law No. 26 of 2025 merging Finance and Planning/International Cooperation](<https://mjr.ogb.gov.ps/Decrees/Details/34131>) · [Current Government — Minister of Finance and Planning](<https://www.pmo.pna.ps/en/Article/6179/PM-Mustafa-Calls-for-Immediate-Budget-Support-to-Maintain-Essential-Services%2C-Ensure-Continuity-of-Institutions%2C-and-Sustain-Reform-Agenda-Implementation>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1137,7 +1137,7 @@
 ### 현행 시행령·정량요건·구제절차
 
 - 제도: [파라과이 공공조달 입찰제도](../data/institutions/paraguay-bidding-system.json) · `paraguay-bidding-system-D01`
-- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1151,7 +1151,7 @@
 ### 현행 시행령·정량요건·구제절차
 
 - 제도: [파라과이 ODA 사업 발굴·형성 절차](../data/institutions/paraguay-oda-project-pipeline.json) · `paraguay-oda-project-pipeline-D01`
-- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1165,7 +1165,7 @@
 ### 현행 시행령·정량요건·구제절차
 
 - 제도: [파라과이 조달 거버넌스·감독체계](../data/institutions/paraguay-procurement-governance.json) · `paraguay-procurement-governance-D01`
-- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended
+- 근거: Ley 7021 Arts.14, 33~51, 61, 71, 127~131, 158~160; Decreto 2264 Arts.42~76, 105, 119, 191~220, 235; Res.230/2025; Res.234/2025 as amended · [Ley N.º 7021/2022 de Suministro y Contrataciones Públicas](<https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf>) · [Decreto N.º 2264/2024 reglamentario de la Ley 7021](<https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264>) · [Resolución DNCP N.º 234/2025, amended by N.º 3955/2025](<https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1179,7 +1179,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [페루 공공조달 입찰제도](../data/institutions/peru-bidding-system.json) · `peru-bidding-system-D01`
-- 근거: Ley 32069; DS 009-2025-EF; OECE consolidated legislation
+- 근거: Ley 32069; DS 009-2025-EF; OECE consolidated legislation · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1193,7 +1193,7 @@
 ### 현행 법령·정량요건·구제절차
 
 - 제도: [페루 공공조달 입찰제도](../data/institutions/peru-bidding-system.json) · `peru-bidding-system-D02`
-- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1207,7 +1207,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [페루 ODA 사업 발굴·형성 절차](../data/institutions/peru-oda-project-pipeline.json) · `peru-oda-project-pipeline-D01`
-- 근거: APCI institutional page; Ley 27692; Ley 28875 SINDCINR framework
+- 근거: APCI institutional page; Ley 27692; Ley 28875 SINDCINR framework · [Ley N.º 27692 — Ley de Creación de la APCI, as amended](<https://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/7e1812336c5963630525799f005ed9c1/%24file/3.ley_n_27692_de_creacion_de_la_apci_y_sus_modificatorias.pdf>) · [Ley N.º 28875 and current SINDCINR institutional framework](<https://www.gob.pe/31107-sistema-nacional-descentralizado-de-cooperacion-internacional-no-reembolsable-sindcinr>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1221,7 +1221,7 @@
 ### 현행 법령·정량요건·구제절차
 
 - 제도: [페루 ODA 사업 발굴·형성 절차](../data/institutions/peru-oda-project-pipeline.json) · `peru-oda-project-pipeline-D02`
-- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1235,7 +1235,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [페루 조달 거버넌스·감독체계](../data/institutions/peru-procurement-governance.json) · `peru-procurement-governance-D01`
-- 근거: Ley 32069; DS 009-2025-EF; OECE consolidated legislation
+- 근거: Ley 32069; DS 009-2025-EF; OECE consolidated legislation · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1249,7 +1249,7 @@
 ### 현행 법령·정량요건·구제절차
 
 - 제도: [페루 조달 거버넌스·감독체계](../data/institutions/peru-procurement-governance.json) · `peru-procurement-governance-D02`
-- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium
+- 근거: Law 32069 Arts.34, 50, 53~61, 72~75; Regulation Arts.64~69, 90, 100~119, 302~310; OECE current compendium · [Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05](<https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184>) · [Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09](<https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235>) · [OECE current Law 32069 compendium and DS 001-2026-EF commencement notice](<https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1263,7 +1263,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [필리핀 공공조달 입찰제도](../data/institutions/philippines-bidding-system.json) · `philippines-bidding-system-D01`
-- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025
+- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1277,7 +1277,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [필리핀 ODA 사업 발굴·형성 절차](../data/institutions/philippines-oda-project-pipeline.json) · `philippines-oda-project-pipeline-D01`
-- 근거: DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review
+- 근거: DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review · [2025 DEPDev/ICC Guidelines for review and approval of programs and projects](<https://depdev.gov.ph/wp-content/uploads/2025/10/Guidelines-and-Procedures-on-the-Review-and-Approval-of-New-and-Ongoing-Programs-and-Projects-Requiring-Economy-and-Development-Council-Investment-Coordination-Committee-Action.pdf>) · [Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1291,7 +1291,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [필리핀 조달 거버넌스·감독체계](../data/institutions/philippines-procurement-governance.json) · `philippines-procurement-governance-D01`
-- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025
+- 근거: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1305,7 +1305,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [르완다 공공조달 입찰제도](../data/institutions/rwanda-bidding-system.json) · `rwanda-bidding-system-D01`
-- 근거: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance
+- 근거: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Umucyo current procurement law list and RPPA 2024 clarification](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1319,7 +1319,7 @@
 ### 현행 시행령·정량요건·불복절차
 
 - 제도: [르완다 공공조달 입찰제도](../data/institutions/rwanda-bidding-system.json) · `rwanda-bidding-system-D02`
-- 근거: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183
+- 근거: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183 · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Ministerial Order n° 001/23/10/TC relating to public procurement](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Legal_Instruments/MINISTERIAL_ORDER/Ministerial_Order_for_p.p_new_Law.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1333,7 +1333,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [르완다 ODA 사업 발굴·형성 절차](../data/institutions/rwanda-oda-project-pipeline.json) · `rwanda-oda-project-pipeline-D01`
-- 근거: MINECOFIN External Finance Directorate mandate
+- 근거: MINECOFIN External Finance Directorate mandate · [MINECOFIN External Finance Directorate mandate](<https://www.minecofin.gov.rw/1/corporate-services-department-2>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1347,7 +1347,7 @@
 ### 개발협력정책 현행성·EFD 사업형성 경로
 
 - 제도: [르완다 ODA 사업 발굴·형성 절차](../data/institutions/rwanda-oda-project-pipeline.json) · `rwanda-oda-project-pipeline-D02`
-- 근거: MINECOFIN EFD mandate; Public Debt Procedure Manual (2024); official policy update (2026-07-02)
+- 근거: MINECOFIN EFD mandate; Public Debt Procedure Manual (2024); official policy update (2026-07-02) · [MINECOFIN External Finance Directorate mandate](<https://www.minecofin.gov.rw/1/corporate-services-department-2>) · [Public Debt Procedure Manual, 10 May 2024](<https://www.minecofin.gov.rw/index.php?eID=dumpFile&f=99728&t=f&token=f4e493d5e601b8ad7e68dcfc894021bc3290d017>) · [Rwanda Development Cooperation Policy operationalization update](<https://www.minecofin.gov.rw/news-detail/development-partners-and-government-review-next-steps-for-operationalizing-rwandas-development-cooperation-policy>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1361,7 +1361,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [르완다 조달 거버넌스·감독체계](../data/institutions/rwanda-procurement-governance.json) · `rwanda-procurement-governance-D01`
-- 근거: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance
+- 근거: Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Umucyo current procurement law list and RPPA 2024 clarification](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1375,7 +1375,7 @@
 ### 현행 시행령·정량요건·불복절차
 
 - 제도: [르완다 조달 거버넌스·감독체계](../data/institutions/rwanda-procurement-governance.json) · `rwanda-procurement-governance-D02`
-- 근거: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183
+- 근거: Law 031/2022 Arts.3, 31~32, 47~50, 60~61, 168~172; Order 001/23/10/TC Arts.43~45, 69~75, 109, 173~183 · [Law n° 031/2022 of 21/11/2022 governing public procurement](<https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d>) · [Ministerial Order n° 001/23/10/TC relating to public procurement](<https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Legal_Instruments/MINISTERIAL_ORDER/Ministerial_Order_for_p.p_new_Law.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1389,35 +1389,35 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [세네갈 공공조달 입찰제도](../data/institutions/senegal-bidding-system.json) · `senegal-bidding-system-D01`
-- 근거: Decree 2022-2295; ARCOP official mandate and APPEL platform
+- 근거: Decree 2022-2295; ARCOP official mandate and APPEL platform · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [ARCOP current application of Décret 2022-2295](<https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf>) · [ARCOP · APPEL 단계적 도입과 적용 모듈](<https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
 > Decree 2022-2295가 종전 2014 법전을 대체했고 ARCOP이 독립규제, DCMP가 사전통제, 조달기관이 집행하며 APPEL은 전자플랫폼이다.
 
-**실무 확인** — APPEL 공고에서 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.
+**실무 확인** — 해당 발주기관 공고에서 APPEL 적용 여부와 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.
 
 *산출물 반영* — 구법·구기관명을 현행 법전·ARCOP 체계로 바꾸고 DCMP·조달기관·APPEL 역할을 분리했다.
 
 ### 현행 하위규정·정량요건·2026 비밀조달 통제
 
 - 제도: [세네갈 공공조달 입찰제도](../data/institutions/senegal-bidding-system.json) · `senegal-bidding-system-D02`
-- 근거: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807
+- 근거: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807 · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [Décret n° 2026-807 du 22 avril 2026 — secret-defence procurement control](<https://arcop.sn/2026/05/05/la-reforme-des-marches-et-projets-de-ppp-susceptibles-detre-classes-secret-defense-une-avancee-remarquable-dans-la-recherche-de-la-performance-dans-lac/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
 > 2023년 Arrêtés 007118·007120·007121이 DRP와 보증 정량기준을 정하고, Décret 2026-807이 비밀·국방 조달에 분류위원회·사전승인·가격·계약 통제를 추가했다.
 
-**실무 확인** — 실제 참여 시 APPEL 공고, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.
+**실무 확인** — 실제 참여 시 공고의 APPEL 적용 여부, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.
 
 *산출물 반영* — 2023년 시행명령과 2026년 특별규정을 포함해 현행성 및 6개 정량·절차 영역을 조문 단위로 대조하고 unresolved를 해소했다.
 
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [세네갈 ODA 사업 발굴·형성 절차](../data/institutions/senegal-oda-project-pipeline.json) · `senegal-oda-project-pipeline-D01`
-- 근거: DGCFEDSP official mandate
+- 근거: DGCFEDSP official mandate · [MEPC mission and DGCFEDSP external-finance mandate](<https://www.economie.gouv.sn/index.php/en/node/131>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1431,7 +1431,7 @@
 ### 현행 국가전략·대외재원 사업형성 경로
 
 - 제도: [세네갈 ODA 사업 발굴·형성 절차](../data/institutions/senegal-oda-project-pipeline.json) · `senegal-oda-project-pipeline-D02`
-- 근거: MEPC mission; DGCFEDSP mandate; SND 2025–2029; Code Art.3
+- 근거: MEPC mission; DGCFEDSP mandate; SND 2025–2029; Code Art.3 · [MEPC mission and DGCFEDSP external-finance mandate](<https://www.economie.gouv.sn/index.php/en/node/131>) · [Vision Sénégal 2050 — Stratégie nationale de Développement 2025–2029](<https://economie.gouv.sn/sites/default/files/2025-04/snd.pdf>) · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1445,35 +1445,35 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [세네갈 조달 거버넌스·감독체계](../data/institutions/senegal-procurement-governance.json) · `senegal-procurement-governance-D01`
-- 근거: Decree 2022-2295; ARCOP official mandate and APPEL platform
+- 근거: Decree 2022-2295; ARCOP official mandate and APPEL platform · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [ARCOP current application of Décret 2022-2295](<https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf>) · [ARCOP · APPEL 단계적 도입과 적용 모듈](<https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
 > Decree 2022-2295가 종전 2014 법전을 대체했고 ARCOP이 독립규제, DCMP가 사전통제, 조달기관이 집행하며 APPEL은 전자플랫폼이다.
 
-**실무 확인** — APPEL 공고에서 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.
+**실무 확인** — 해당 발주기관 공고에서 APPEL 적용 여부와 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.
 
 *산출물 반영* — 구법·구기관명을 현행 법전·ARCOP 체계로 바꾸고 DCMP·조달기관·APPEL 역할을 분리했다.
 
 ### 현행 하위규정·정량요건·2026 비밀조달 통제
 
 - 제도: [세네갈 조달 거버넌스·감독체계](../data/institutions/senegal-procurement-governance.json) · `senegal-procurement-governance-D02`
-- 근거: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807
+- 근거: Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807 · [Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics](<https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf>) · [Décret n° 2026-807 du 22 avril 2026 — secret-defence procurement control](<https://arcop.sn/2026/05/05/la-reforme-des-marches-et-projets-de-ppp-susceptibles-detre-classes-secret-defense-une-avancee-remarquable-dans-la-recherche-de-la-performance-dans-lac/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
 
 > 2023년 Arrêtés 007118·007120·007121이 DRP와 보증 정량기준을 정하고, Décret 2026-807이 비밀·국방 조달에 분류위원회·사전승인·가격·계약 통제를 추가했다.
 
-**실무 확인** — 실제 참여 시 APPEL 공고, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.
+**실무 확인** — 실제 참여 시 공고의 APPEL 적용 여부, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.
 
 *산출물 반영* — 2023년 시행명령과 2026년 특별규정을 포함해 현행성 및 6개 정량·절차 영역을 조문 단위로 대조하고 unresolved를 해소했다.
 
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [스리랑카 공공조달 입찰제도](../data/institutions/sri-lanka-bidding-system.json) · `sri-lanka-bidding-system-D01`
-- 근거: Gazette No.2412/01; Procurement Guidelines and Manual 2024
+- 근거: Gazette No.2412/01; Procurement Guidelines and Manual 2024 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1487,7 +1487,7 @@
 ### 현행 개정본·정량요건·불복 및 공여협정 예외
 
 - 제도: [스리랑카 공공조달 입찰제도](../data/institutions/sri-lanka-bidding-system.json) · `sri-lanka-bidding-system-D02`
-- 근거: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7
+- 근거: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1501,7 +1501,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [스리랑카 ODA 사업 발굴·형성 절차](../data/institutions/sri-lanka-oda-project-pipeline.json) · `sri-lanka-oda-project-pipeline-D01`
-- 근거: ERD official mandate and circulars
+- 근거: ERD official mandate and circulars · [External Resources Department mandate and current circulars](<https://www.erd.gov.lk/index.php?Itemid=219&id=55&lang=en&option=com_content&view=article>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1515,7 +1515,7 @@
 ### 현행 공공투자·외부재원 사업형성 및 조달연계
 
 - 제도: [스리랑카 ODA 사업 발굴·형성 절차](../data/institutions/sri-lanka-oda-project-pipeline.json) · `sri-lanka-oda-project-pipeline-D02`
-- 근거: Public Financial Management Act No.44 of 2024 policy; NPD Operational Manual; ERD circulars; Guidelines 1.4.1
+- 근거: Public Financial Management Act No.44 of 2024 policy; NPD Operational Manual; ERD circulars; Guidelines 1.4.1 · [Public Financial Management Act No.44 of 2024 — project-proposal submission policy](<https://www.erd.gov.lk/index.php?Itemid=218&id=54&lang=en&option=com_content&view=article>) · [Operational Manual for Project Submission and NPD Project Submission Format](<https://www.erd.gov.lk/2019/OperationalManualProjectSubmissionFormat.pdf>) · [External Resources Department mandate and current circulars](<https://www.erd.gov.lk/index.php?Itemid=219&id=55&lang=en&option=com_content&view=article>) · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1529,7 +1529,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [스리랑카 조달 거버넌스·감독체계](../data/institutions/sri-lanka-procurement-governance.json) · `sri-lanka-procurement-governance-D01`
-- 근거: Gazette No.2412/01; Procurement Guidelines and Manual 2024
+- 근거: Gazette No.2412/01; Procurement Guidelines and Manual 2024 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1543,7 +1543,7 @@
 ### 현행 개정본·정량요건·불복 및 공여협정 예외
 
 - 제도: [스리랑카 조달 거버넌스·감독체계](../data/institutions/sri-lanka-procurement-governance.json) · `sri-lanka-procurement-governance-D02`
-- 근거: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7
+- 근거: Guidelines 1.4, 1.4.1, 3.1, 5.9, 5.19, 8.4~8.5; Manual 2.9, 5.9, 5.19, 6.3, 8.4~8.5.7 · [Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)](<https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf>) · [Procurement Manual 2024 for Goods, Works and Non-Consulting Services](<https://nprocom.gov.lk/manuals/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1557,7 +1557,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [타지키스탄 공공조달 입찰제도](../data/institutions/tajikistan-bidding-system.json) · `tajikistan-bidding-system-D01`
-- 근거: Law No.1955 arts.1–2, 5, 14
+- 근거: Law No.1955 arts.1–2, 5, 14 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1571,7 +1571,7 @@
 ### 2025·2026 절차규칙 개정·정량요건·불복
 
 - 제도: [타지키스탄 공공조달 입찰제도](../data/institutions/tajikistan-bidding-system.json) · `tajikistan-bidding-system-D02`
-- 근거: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24
+- 근거: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>) · [Government Decree No.362 of 24 June 2025 — Rules of Public Procurement Procedures, as amended by Decree No.310 of 28 May 2026](<https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169536>) · [Law No.2203 on the State Budget for 2026, as amended by Law No.2256 of 27 April 2026](<https://mmih.tj/SEARCH/DocumentView?DocumentId=171486>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1585,7 +1585,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [타지키스탄 ODA 사업 발굴·형성 절차](../data/institutions/tajikistan-oda-project-pipeline.json) · `tajikistan-oda-project-pipeline-D01`
-- 근거: External Assistance Rules; official Committee and Ministry mandates
+- 근거: External Assistance Rules; official Committee and Ministry mandates · [Government Decree No.95 of 25 February 2017 — Rules on Attraction, Use, Coordination and Monitoring of External Assistance, as amended 28 November 2023](<https://egov.tj/site/sarmoyaguzori?lang=en>) · [Ministry of Economic Development and Trade mandate](<https://egov.tj/site/rushdiiktisod?lang=ru>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1599,7 +1599,7 @@
 ### 2025 투자법·외부원조 사업형성 및 재원조달 경계
 
 - 제도: [타지키스탄 ODA 사업 발굴·형성 절차](../data/institutions/tajikistan-oda-project-pipeline.json) · `tajikistan-oda-project-pipeline-D02`
-- 근거: Law No.2173 Arts.7~9; Decree No.95 external-assistance rules; Procurement Law Art.2
+- 근거: Law No.2173 Arts.7~9; Decree No.95 external-assistance rules; Procurement Law Art.2 · [Law No.2173 of 14 May 2025 On Investment and Encouragement of Investment Activity](<https://mmk.tj/system/files/Legislation/2173_tj.pdf>) · [Government Decree No.95 of 25 February 2017 — Rules on Attraction, Use, Coordination and Monitoring of External Assistance, as amended 28 November 2023](<https://egov.tj/site/sarmoyaguzori?lang=en>) · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1613,7 +1613,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [타지키스탄 조달 거버넌스·감독체계](../data/institutions/tajikistan-procurement-governance.json) · `tajikistan-procurement-governance-D01`
-- 근거: Law No.1955 arts.1–2, 5, 14
+- 근거: Law No.1955 arts.1–2, 5, 14 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1627,7 +1627,7 @@
 ### 2025·2026 절차규칙 개정·정량요건·불복
 
 - 제도: [타지키스탄 조달 거버넌스·감독체계](../data/institutions/tajikistan-procurement-governance.json) · `tajikistan-procurement-governance-D02`
-- 근거: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24
+- 근거: Procurement Law Arts.31~32, 39, 49, 52, 60~63; Rules paras.149~165, 190, 219~228, 342~375, 389~394; Budget Law Art.24 · [Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025](<https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85>) · [Government Decree No.362 of 24 June 2025 — Rules of Public Procurement Procedures, as amended by Decree No.310 of 28 May 2026](<https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=169536>) · [Law No.2203 on the State Budget for 2026, as amended by Law No.2256 of 27 April 2026](<https://mmih.tj/SEARCH/DocumentView?DocumentId=171486>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1641,7 +1641,7 @@
 ### canvas.legalBasis / 근거 법령의 현행 여부
 
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D01`
-- 근거: Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)
+- 근거: Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>) · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1655,7 +1655,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [탄자니아 ODA 사업 발굴·형성 절차](../data/institutions/tanzania-oda-project-pipeline.json) · `tanzania-oda-project-pipeline-D01`
-- 근거: MoF divisions; revised DCF; financing guidelines
+- 근거: MoF divisions; revised DCF; financing guidelines · [External Finance Division and Debt Management Division official mandates](<https://mof.go.tz/divisions>) · [Development Cooperation Framework 2017/18–2029/30 (revised 2022/23)](<https://www.mof.go.tz/uploads/documents/en-1747807046-Development%20Cooperation%20Framework%20%28DCF%29.pdf>) · [Guidelines for Project Planning and Negotiations for Raising Loans, Issuing Guarantees and Receiving Grants](<https://repository.mof.go.tz/items/49afd5c3-5fc9-45a4-98d1-fcb99a9fe01d>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1669,7 +1669,7 @@
 ### canvas.legalBasis / PPRA 근거 법령의 현행 여부
 
 - 제도: [탄자니아 조달 거버넌스·감독체계](../data/institutions/tanzania-procurement-governance.json) · `tanzania-procurement-governance-D01`
-- 근거: Public Procurement Act, No. 10 of 2023 §8, §74, §131(1)
+- 근거: Public Procurement Act, No. 10 of 2023 §8, §74, §131(1) · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1683,7 +1683,7 @@
 ### 현행 정량요건·대외원조 예외
 
 - 제도: [태국 공공조달 입찰제도](../data/institutions/thailand-bidding-system.json) · `thailand-bidding-system-D02`
-- 근거: Act Arts.7, 55~56, 62, 66, 114~119; Regulation cls.28~32, 51~54, 166~170
+- 근거: Act Arts.7, 55~56, 62, 66, 114~119; Regulation cls.28~32, 51~54, 166~170 · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1697,7 +1697,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [태국 ODA 사업 발굴·형성 절차](../data/institutions/thailand-oda-project-pipeline.json) · `thailand-oda-project-pipeline-D01`
-- 근거: TICA official mandate and ODA institutional overview
+- 근거: TICA official mandate and ODA institutional overview · [TICA vision and mandate](<https://tica-thaigov.mfa.go.th/en/page/vision-and-authority?menu=5f47761072148c085f3a287e>) · [Thailand ODA institutional overview](<https://tica-thaigov.mfa.go.th/en/content/overview?cate=5d7da8d015e39c3fbc007463>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1711,7 +1711,7 @@
 ### TICA 승인경로·공여재원 조달규칙
 
 - 제도: [태국 ODA 사업 발굴·형성 절차](../data/institutions/thailand-oda-project-pipeline.json) · `thailand-oda-project-pipeline-D02`
-- 근거: TICA Mandate items 1~8 and ODA Overview; Procurement Act Art.7(4)~(5)
+- 근거: TICA Mandate items 1~8 and ODA Overview; Procurement Act Art.7(4)~(5) · [TICA vision and mandate](<https://tica-thaigov.mfa.go.th/en/page/vision-and-authority?menu=5f47761072148c085f3a287e>) · [Thailand ODA institutional overview](<https://tica-thaigov.mfa.go.th/en/content/overview?cate=5d7da8d015e39c3fbc007463>) · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1725,7 +1725,7 @@
 ### 2026 개정·감독·불복
 
 - 제도: [태국 조달 거버넌스·감독체계](../data/institutions/thailand-procurement-governance.json) · `thailand-procurement-governance-D02`
-- 근거: Act Arts.24~45, 66, 114~119; Regulation No.3 (2026) cls.1~6 and 180~181
+- 근거: Act Arts.24~45, 66, 114~119; Regulation No.3 (2026) cls.1~6 and 180~181 · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, No.3, B.E. 2569 (2026)](<https://ratchakitcha.soc.go.th/documents/121888.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1739,7 +1739,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [동티모르 공공조달 입찰제도](../data/institutions/timor-leste-bidding-system.json) · `timor-leste-bidding-system-D01`
-- 근거: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
+- 근거: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [CNA current legal regime, standard documents and forms](<https://www.cna.gov.tl/en/documents-and-forms/>) · [Government implementation notice for the new Code](<https://timor-leste.gov.tl/?lang=en&p=46597&print=1>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1753,7 +1753,7 @@
 ### 신법 시행·방식기준·국내공급자 우대
 
 - 제도: [동티모르 공공조달 입찰제도](../data/institutions/timor-leste-bidding-system.json) · `timor-leste-bidding-system-D02`
-- 근거: Decree-Law 25/2025 Arts.2~4; Code Arts.41, 83 and 86~88
+- 근거: Decree-Law 25/2025 Arts.2~4; Code Arts.41, 83 and 86~88 · [Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf>) · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1767,7 +1767,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [동티모르 ODA 사업 발굴·형성 절차](../data/institutions/timor-leste-oda-project-pipeline.json) · `timor-leste-oda-project-pipeline-D01`
-- 근거: Ministry of Finance Aid Transparency Portal mandate
+- 근거: Ministry of Finance Aid Transparency Portal mandate · [Aid Transparency Portal mandate and current repository](<https://www.aidtransparency.gov.tl/portal/node/1>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1781,7 +1781,7 @@
 ### 개발파트너 재원 적응·원조조정 경로
 
 - 제도: [동티모르 ODA 사업 발굴·형성 절차](../data/institutions/timor-leste-oda-project-pipeline.json) · `timor-leste-oda-project-pipeline-D02`
-- 근거: Code Art.85; Ministry of Finance Aid Transparency Portal mandate
+- 근거: Code Art.85; Ministry of Finance Aid Transparency Portal mandate · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [Aid Transparency Portal mandate and current repository](<https://www.aidtransparency.gov.tl/portal/node/1>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1795,7 +1795,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [동티모르 조달 거버넌스·감독체계](../data/institutions/timor-leste-procurement-governance.json) · `timor-leste-procurement-governance-D01`
-- 근거: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice
+- 근거: Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>) · [CNA current legal regime, standard documents and forms](<https://www.cna.gov.tl/en/documents-and-forms/>) · [Government implementation notice for the new Code](<https://timor-leste.gov.tl/?lang=en&p=46597&print=1>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1809,7 +1809,7 @@
 ### 신법 현행성·보증·불복
 
 - 제도: [동티모르 조달 거버넌스·감독체계](../data/institutions/timor-leste-procurement-governance.json) · `timor-leste-procurement-governance-D02`
-- 근거: Decree-Law 25/2025 Art.2; Code Arts.104~108 and 136~141
+- 근거: Decree-Law 25/2025 Art.2; Code Arts.104~108 and 136~141 · [Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf>) · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1823,7 +1823,7 @@
 ### 정량기준·보증·불복·대외재원 예외
 
 - 제도: [튀니지 공공조달 입찰제도](../data/institutions/tunisia-bidding-system.json) · `tunisia-bidding-system-D02`
-- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1837,7 +1837,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [튀니지 ODA 사업 발굴·형성 절차](../data/institutions/tunisia-oda-project-pipeline.json) · `tunisia-oda-project-pipeline-D01`
-- 근거: Ministry of Economy and Planning cooperation mandate; Ministry of Finance DGGDPCF and DGASGP mandates
+- 근거: Ministry of Economy and Planning cooperation mandate; Ministry of Finance DGGDPCF and DGASGP mandates · [Ministry of Economy and Planning bilateral-cooperation mandate](<https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/>) · [Ministry of Finance DGGDPCF and major-project follow-up mandates](<https://www.finances.gov.tn/ar/structures-du-ministere/aladart-alamt-lltsrf-fy-aldyn-almwmy-waltawn-almaly>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1851,7 +1851,7 @@
 ### 정량기준·보증·불복·대외재원 예외
 
 - 제도: [튀니지 ODA 사업 발굴·형성 절차](../data/institutions/tunisia-oda-project-pipeline.json) · `tunisia-oda-project-pipeline-D02`
-- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1865,7 +1865,7 @@
 ### 정량기준·보증·불복·대외재원 예외
 
 - 제도: [튀니지 조달 거버넌스·감독체계](../data/institutions/tunisia-procurement-governance.json) · `tunisia-procurement-governance-D02`
-- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023
+- 근거: Décret 2014-1039 Arts.1, 5, 50, 53, 57, 74~76, 105~112 and 180~181; Circular No.5/2023 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [HAICOP current legal and regulatory framework, including Circular No.5/2023](<https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1879,7 +1879,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우간다 공공조달 입찰제도](../data/institutions/uganda-bidding-system.json) · `uganda-bidding-system-D01`
-- 근거: PPDA Act Cap.205; PPDA official legal-update notice
+- 근거: PPDA Act Cap.205; PPDA official legal-update notice · [PPDA Act, Cap.205 — 7th Revised Edition](<https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1893,7 +1893,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우간다 조달 거버넌스·감독체계](../data/institutions/uganda-procurement-governance.json) · `uganda-procurement-governance-D01`
-- 근거: PPDA Act Cap.205; PPDA official legal-update notice
+- 근거: PPDA Act Cap.205; PPDA official legal-update notice · [PPDA Act, Cap.205 — 7th Revised Edition](<https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1907,7 +1907,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우크라이나 공공조달 입찰제도](../data/institutions/ukraine-bidding-system.json) · `ukraine-bidding-system-D01`
-- 근거: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
+- 근거: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · [Law of Ukraine No. 922-VIII On Public Procurement](<https://zakon.rada.gov.ua/laws/show/922-19?lang=en>) · [Cabinet Resolution No.1178 of 12 October 2022](<https://zakon.rada.gov.ua/go/1178-2022-%D0%BF>) · [Ministry of Economy procurement consultations and Prozorro guidance](<https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&tag=ZapitiKoristuvachiv&tagId=7758c77b-e410-44ea-a07d-37f1799e11e5>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1921,7 +1921,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우크라이나 ODA 사업 발굴·형성 절차](../data/institutions/ukraine-oda-project-pipeline.json) · `ukraine-oda-project-pipeline-D01`
-- 근거: Cabinet Resolution 153/2002, current revision and official translation
+- 근거: Cabinet Resolution 153/2002, current revision and official translation · [Cabinet Resolution No.153 of 15 February 2002](<https://zakon.rada.gov.ua/laws/show/153-2002-%D0%BF/paran18>) · [Official English translation of Resolution No.153 procedure](<https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1935,7 +1935,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우크라이나 조달 거버넌스·감독체계](../data/institutions/ukraine-procurement-governance.json) · `ukraine-procurement-governance-D01`
-- 근거: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform
+- 근거: Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · [Law of Ukraine No. 922-VIII On Public Procurement](<https://zakon.rada.gov.ua/laws/show/922-19?lang=en>) · [Cabinet Resolution No.1178 of 12 October 2022](<https://zakon.rada.gov.ua/go/1178-2022-%D0%BF>) · [Ministry of Economy procurement consultations and Prozorro guidance](<https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&tag=ZapitiKoristuvachiv&tagId=7758c77b-e410-44ea-a07d-37f1799e11e5>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1949,7 +1949,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우즈베키스탄 공공조달 입찰제도](../data/institutions/uzbekistan-bidding-system.json) · `uzbekistan-bidding-system-D01`
-- 근거: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
+- 근거: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>) · [Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027](<https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1963,7 +1963,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우즈베키스탄 ODA 사업 발굴·형성 절차](../data/institutions/uzbekistan-oda-project-pipeline.json) · `uzbekistan-oda-project-pipeline-D01`
-- 근거: MIIT official mandate; Law ZRU-684 art.2
+- 근거: MIIT official mandate; Law ZRU-684 art.2 · [Ministry of Investment, Industry and Trade mandate](<https://gov.uz/en/miit/sections/view/7580>) · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1977,7 +1977,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우즈베키스탄 조달 거버넌스·감독체계](../data/institutions/uzbekistan-procurement-governance.json) · `uzbekistan-procurement-governance-D01`
-- 근거: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024
+- 근거: Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · [Law No.ZRU-684 of 22 April 2021 On Public Procurement](<https://lex.uz/docs/5382983>) · [Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027](<https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -1991,7 +1991,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [베트남 공공조달 입찰제도](../data/institutions/vietnam-bidding-system.json) · `vietnam-bidding-system-D01`
-- 근거: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
+- 근거: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · [Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf>) · [Nghị định 214/2025/NĐ-CP on contractor selection](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2005,7 +2005,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [베트남 ODA 사업 발굴·형성 절차](../data/institutions/vietnam-oda-project-pipeline.json) · `vietnam-oda-project-pipeline-D01`
-- 근거: Decree 242/2025 Arts.8, 12~47 and 99
+- 근거: Decree 242/2025 Arts.8, 12~47 and 99 · [Nghị định 242/2025/NĐ-CP on ODA and concessional loans](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/242-cp.signed.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2019,7 +2019,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [베트남 조달 거버넌스·감독체계](../data/institutions/vietnam-procurement-governance.json) · `vietnam-procurement-governance-D01`
-- 근거: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146
+- 근거: Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · [Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf>) · [Nghị định 214/2025/NĐ-CP on contractor selection](<https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2037,7 +2037,7 @@
 ### canvas.authorities / 조달 감독기관
 
 - 제도: [아제르바이잔 공공조달 입찰제도](../data/institutions/azerbaijan-bidding-system.json) · `azerbaijan-bidding-system-D01`
-- 근거: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
+- 근거: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · [Public Procurement — regulator functions, portal and complaint route](<https://competition.gov.az/en/page/home/dovlet-satinalmalari>) · [Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement](<https://e-qanun.az/framework/54966>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2051,7 +2051,7 @@
 ### canvas.authorities / 보조금·기술지원 공식화
 
 - 제도: [아제르바이잔 ODA 사업 발굴·형성 절차](../data/institutions/azerbaijan-oda-project-pipeline.json) · `azerbaijan-oda-project-pipeline-D01`
-- 근거: Ministry of Economy, Decree No. 388; Grant agreements registration page
+- 근거: Ministry of Economy, Decree No. 388; Grant agreements registration page · [Decree No. 388 on Rules for Concluding and Approving Technical Assistance and Grant Agreements](<https://e-qanun.az/framework/11551>) · [Cabinet Decision No. 216 of 5 June 2015 approving the Rules for Registration of Grant Agreements](<https://e-qanun.az/framework/30212>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2065,7 +2065,7 @@
 ### canvas.authorities / 조달 감독기관
 
 - 제도: [아제르바이잔 조달 거버넌스·감독체계](../data/institutions/azerbaijan-procurement-governance.json) · `azerbaijan-procurement-governance-D01`
-- 근거: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023)
+- 근거: State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · [Public Procurement — regulator functions, portal and complaint route](<https://competition.gov.az/en/page/home/dovlet-satinalmalari>) · [Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement](<https://e-qanun.az/framework/54966>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2079,7 +2079,7 @@
 ### process / 국내 DPP 심사와 외부원조 동원 경로
 
 - 제도: [방글라데시 ODA 사업 발굴·형성 절차](../data/institutions/bangladesh-oda-project-pipeline.json) · `bangladesh-oda-project-pipeline-D01`
-- 근거: ERD Allocation of Business; Planning Commission Handbook for DPP
+- 근거: ERD Allocation of Business; Planning Commission Handbook for DPP · [Allocation of Business — Economic Relations Division](<https://erd.gov.bd/pages/static-pages/694032c535ce18e1c0562157>) · [Handbook for Development Project Proposal](<https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-plandiv/2024/12/42f38d333ca64c298486a47cfb4ab4ce.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2093,7 +2093,7 @@
 ### canvas.authorities / 주무기관과 정보시스템
 
 - 제도: [볼리비아 공공조달 입찰제도](../data/institutions/bolivia-bidding-system.json) · `bolivia-bidding-system-D01`
-- 근거: MEFP, DS 0181 compiled text; SICOES official portal
+- 근거: MEFP, DS 0181 compiled text; SICOES official portal · [Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023](<https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf>) · [Sistema de Contrataciones Estatales (SICOES)](<https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2107,7 +2107,7 @@
 ### canvas.authorities / 주무기관과 정보시스템
 
 - 제도: [볼리비아 조달 거버넌스·감독체계](../data/institutions/bolivia-procurement-governance.json) · `bolivia-procurement-governance-D01`
-- 근거: MEFP, DS 0181 compiled text; SICOES official portal
+- 근거: MEFP, DS 0181 compiled text; SICOES official portal · [Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023](<https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf>) · [Sistema de Contrataciones Estatales (SICOES)](<https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2121,7 +2121,7 @@
 ### canvas.legalBasis / 근거 조달법의 현행 여부
 
 - 제도: [캄보디아 공공조달 입찰제도](../data/institutions/cambodia-bidding-system.json) · `cambodia-bidding-system-D01`
-- 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page
+- 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page · [Law on Public Procurement, 2023 (크메르어 원문)](<https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf>) · [경제재무부 공공조달국(GDPP)](<http://gdpp.gov.kh/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2135,7 +2135,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [캄보디아 ODA 사업 발굴·형성 절차](../data/institutions/cambodia-oda-project-pipeline.json) · `cambodia-oda-project-pipeline-D01`
-- 근거: CDC ODA Database; MEF public-investment framework
+- 근거: CDC ODA Database; MEF public-investment framework · [Cambodia ODA Database and CDCB development-cooperation mandate](<https://oda.cdc.gov.kh/>) · [Public Investment Management System and externally financed project framework](<https://gdde.mef.gov.kh/private/83c8a60785c28e>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2149,7 +2149,7 @@
 ### canvas.legalBasis / 감독체계 근거 법령 및 신설 권한
 
 - 제도: [캄보디아 조달 거버넌스·감독체계](../data/institutions/cambodia-procurement-governance.json) · `cambodia-procurement-governance-D01`
-- 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department
+- 근거: Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department · [Law on Public Procurement, 2023 (크메르어 원문)](<https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf>) · [경제재무부 공공조달국(GDPP)](<http://gdpp.gov.kh/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2163,7 +2163,7 @@
 ### canvas.authorities / 규제기관 누락
 
 - 제도: [카메룬 공공조달 입찰제도](../data/institutions/cameroon-bidding-system.json) · `cameroon-bidding-system-D01`
-- 근거: Décret No. 2018/366 arts.1-3; ARMP official portal
+- 근거: Décret No. 2018/366 arts.1-3; ARMP official portal · [Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics](<https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf>) · [ARMP official procurement publications](<https://armp.cm/details?id_publication=18592&type_publication=DEC-ATTR>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2177,7 +2177,7 @@
 ### canvas.authorities / 규제기관 누락
 
 - 제도: [카메룬 조달 거버넌스·감독체계](../data/institutions/cameroon-procurement-governance.json) · `cameroon-procurement-governance-D01`
-- 근거: Décret No. 2018/366 arts.1-3; ARMP official portal
+- 근거: Décret No. 2018/366 arts.1-3; ARMP official portal · [Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics](<https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf>) · [ARMP official procurement publications](<https://armp.cm/details?id_publication=18592&type_publication=DEC-ATTR>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2191,7 +2191,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [에티오피아 ODA 사업 발굴·형성 절차](../data/institutions/ethiopia-oda-project-pipeline.json) · `ethiopia-oda-project-pipeline-D01`
-- 근거: Ministry of Finance bilateral and IFI cooperation directorate mandates
+- 근거: Ministry of Finance bilateral and IFI cooperation directorate mandates · [Ministry of Finance bilateral-cooperation mandate](<https://www.mofed.gov.et/ministry-en/directorates/bilateral-cooperation-directorate/>) · [Ministry of Finance international-financial-institutions cooperation mandate](<https://www.mofed.gov.et/ministry-en/directorates/international-financial-institutions-co-operation-directorate/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2205,7 +2205,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [피지 ODA 사업 발굴·형성 절차](../data/institutions/fiji-oda-project-pipeline.json) · `fiji-oda-project-pipeline-D01`
-- 근거: Ministry of Finance core responsibilities
+- 근거: Ministry of Finance core responsibilities · [Ministry of Finance core responsibility for development cooperation](<https://www.finance.gov.fj/core-responsibilities/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2219,7 +2219,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [가나 ODA 사업 발굴·형성 절차](../data/institutions/ghana-oda-project-pipeline.json) · `ghana-oda-project-pipeline-D01`
-- 근거: MoF ERM overview and functions; PFM Act 921; Constitution art.181
+- 근거: MoF ERM overview and functions; PFM Act 921; Constitution art.181 · [가나 재무부 양자 대외재원동원국의 법적 권한](<https://www.mofep.gov.gh/node/242>) · [가나 재무부 양자 대외재원동원국의 기능](<https://mofep.gov.gh/index.php/divisions/erm-b/functions>) · [Public Financial Management Act, 2016 (Act 921)](<https://mofep.gov.gh/sites/default/files/acts/PUBLIC-FINANCIAL-MANAGEMENT-ACT-2016.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2233,7 +2233,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [인도네시아 ODA 사업 발굴·형성 절차](../data/institutions/indonesia-oda-project-pipeline.json) · `indonesia-oda-project-pipeline-D01`
-- 근거: Bappenas Regulation 2/2025 arts.273–274
+- 근거: Bappenas Regulation 2/2025 arts.273–274 · [Peraturan Menteri PPN/Kepala Bappenas n.º 2/2025, arts.273–274](<https://www.bappenas.go.id/index.php/unit-kerja/0804>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2247,7 +2247,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [케냐 ODA 사업 발굴·형성 절차](../data/institutions/kenya-oda-project-pipeline.json) · `kenya-oda-project-pipeline-D01`
-- 근거: National Treasury Resource Mobilization mandate; External Resources Estimates Handbook
+- 근거: National Treasury Resource Mobilization mandate; External Resources Estimates Handbook · [National Treasury Resource Mobilization Department mandate](<https://www.treasury.go.ke/index.php/resource-mobilization>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2261,7 +2261,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [키르기스스탄 ODA 사업 발굴·형성 절차](../data/institutions/kyrgyzstan-oda-project-pipeline.json) · `kyrgyzstan-oda-project-pipeline-D01`
-- 근거: Cabinet and Ministry of Finance official mandates
+- 근거: Cabinet and Ministry of Finance official mandates · [Cabinet of Ministers official legal and institutional framework](<https://www.gov.kg/ru>) · [Ministry of Finance public-finance and procurement functions](<https://www.minfin.kg/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2275,7 +2275,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [라오스 ODA 사업 발굴·형성 절차](../data/institutions/laos-oda-project-pipeline.json) · `laos-oda-project-pipeline-D01`
-- 근거: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials
+- 근거: Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials · [Law on Public Procurement No. 30/NA of 2 November 2017](<https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf>) · [Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement](<https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf>) · [2026 official PPMD procurement notice applying Law No.30/NA and Instruction No.0477/MOF](<https://ppmd.mof.gov.la/storage/177130072233.%20RFQ%20for%20Furniture_WSSISP-Signed%20by%20DG-DWS-10%20Feb%202026-2-Full.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2289,7 +2289,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [모로코 ODA 사업 발굴·형성 절차](../data/institutions/morocco-oda-project-pipeline.json) · `morocco-oda-project-pipeline-D01`
-- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15
+- 근거: Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · [Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics](<https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&MOD=AJPERES>) · [Décret n° 2-14-394 approuvant le CCAG-T](<https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2303,7 +2303,7 @@
 ### canvas.bottlenecks / 대리인 위반 시 제재 근거
 
 - 제도: [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) · `nepal-bidding-system-D02`
-- 근거: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63
+- 근거: Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63 · [Public Procurement Rules, 2064 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf>) · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2317,7 +2317,7 @@
 ### canvas.procedure / PCP 작성 주체
 
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D03`
-- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a)
+- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2331,7 +2331,7 @@
 ### canvas.bottlenecks / 조세·관세 면제 범위
 
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D04`
-- 근거: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d)
+- 근거: Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2345,7 +2345,7 @@
 ### canvas.authorities / 입찰공고 주체
 
 - 제도: [네팔 조달 거버넌스·감독체계](../data/institutions/nepal-procurement-governance.json) · `nepal-procurement-governance-D01`
-- 근거: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2)
+- 근거: Public Procurement Act, 2063 (2007) §65(1)(f), §65(2) · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2359,7 +2359,7 @@
 ### 외자사업 발굴·승인·협상 경로
 
 - 제도: [파키스탄 공공조달 입찰제도](../data/institutions/pakistan-bidding-system.json) · `pakistan-bidding-system-D02`
-- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2373,7 +2373,7 @@
 ### 외자사업 발굴·승인·협상 경로
 
 - 제도: [파키스탄 ODA 사업 발굴·형성 절차](../data/institutions/pakistan-oda-project-pipeline.json) · `pakistan-oda-project-pipeline-D02`
-- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2387,7 +2387,7 @@
 ### 외자사업 발굴·승인·협상 경로
 
 - 제도: [파키스탄 조달 거버넌스·감독체계](../data/institutions/pakistan-procurement-governance.json) · `pakistan-procurement-governance-D02`
-- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II
+- 근거: Manual for Development Projects 2024 paras.1.21~1.24, 2.07~2.16, 2.42~2.45 and 3.60~3.75; Rules of Business 1973 Schedule II · [Manual for Development Projects 2024](<https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf>) · [Rules of Business, 1973, Schedule II — Economic Affairs Division functions](<https://ead.gov.pk/Overview>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2401,7 +2401,7 @@
 ### 현행 ODA 총괄기관
 
 - 제도: [파라과이 공공조달 입찰제도](../data/institutions/paraguay-bidding-system.json) · `paraguay-bidding-system-D02`
-- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2415,7 +2415,7 @@
 ### 현행 ODA 총괄기관
 
 - 제도: [파라과이 ODA 사업 발굴·형성 절차](../data/institutions/paraguay-oda-project-pipeline.json) · `paraguay-oda-project-pipeline-D02`
-- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2429,7 +2429,7 @@
 ### 현행 ODA 총괄기관
 
 - 제도: [파라과이 조달 거버넌스·감독체계](../data/institutions/paraguay-procurement-governance.json) · `paraguay-procurement-governance-D02`
-- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate
+- 근거: Ley 7158/2023 Arts.1, 7, 9 and 20; MEF VEP–DGCID official mandate · [Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas](<https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas>) · [MEF international development cooperation mandate and Mapa de Cooperantes](<https://www.mef.gov.py/en/node/5023>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2443,7 +2443,7 @@
 ### canvas.applicability / 전자조달 시스템
 
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D02`
-- 근거: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지
+- 근거: Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지 · [Public Procurement Act, No. 10 of 2023](<https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf>) · [PPRA 새 조달법 시행 공지 (2024-06-17)](<https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2457,7 +2457,7 @@
 ### canvas.applicability / 보증률
 
 - 제도: [탄자니아 공공조달 입찰제도](../data/institutions/tanzania-bidding-system.json) · `tanzania-bidding-system-D03`
-- 근거: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule
+- 근거: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2471,7 +2471,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [태국 공공조달 입찰제도](../data/institutions/thailand-bidding-system.json) · `thailand-bidding-system-D01`
-- 근거: 2017 Public Procurement Act and Ministry of Finance Regulation
+- 근거: 2017 Public Procurement Act and Ministry of Finance Regulation · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2485,7 +2485,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [태국 조달 거버넌스·감독체계](../data/institutions/thailand-procurement-governance.json) · `thailand-procurement-governance-D01`
-- 근거: 2017 Public Procurement Act and Ministry of Finance Regulation
+- 근거: 2017 Public Procurement Act and Ministry of Finance Regulation · [Public Procurement and Supplies Administration Act, B.E. 2560 (2017)](<https://law.prd.go.th/th/content/page/index/id/234612>) · [Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended](<https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2499,7 +2499,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [튀니지 공공조달 입찰제도](../data/institutions/tunisia-bidding-system.json) · `tunisia-bidding-system-D01`
-- 근거: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3
+- 근거: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [Décret gouvernemental n° 2018-416 du 11 mai 2018](<https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2513,7 +2513,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [튀니지 조달 거버넌스·감독체계](../data/institutions/tunisia-procurement-governance.json) · `tunisia-procurement-governance-D01`
-- 근거: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3
+- 근거: Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · [Décret n° 2014-1039 du 13 mars 2014 — consolidated text](<https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/>) · [Décret gouvernemental n° 2018-416 du 11 mai 2018](<https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2527,7 +2527,7 @@
 ### canvas.authorities·legalBasis / 현행 기관·법령
 
 - 제도: [우간다 ODA 사업 발굴·형성 절차](../data/institutions/uganda-oda-project-pipeline.json) · `uganda-oda-project-pipeline-D01`
-- 근거: MoFPED DARC mandate; Development Policy and Performance Portal
+- 근거: MoFPED DARC mandate; Development Policy and Performance Portal · [MoFPED Development Assistance and Regional Cooperation mandate](<https://archive.finance.go.ug/node/6>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -2545,7 +2545,7 @@
 ### canvas.legalBasis.articles
 
 - 제도: [네팔 공공조달 입찰제도](../data/institutions/nepal-bidding-system.json) · `nepal-bidding-system-D03`
-- 근거: Public Procurement Act, 2063 (2007) §8, §11, §13, §41
+- 근거: Public Procurement Act, 2063 (2007) §8, §11, §13, §41 · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 
 **현행 기준**
 
@@ -2558,7 +2558,7 @@
 ### canvas.bottlenecks / 누락된 실무 제약
 
 - 제도: [네팔 ODA 사업 발굴·형성 절차](../data/institutions/nepal-oda-project-pipeline.json) · `nepal-oda-project-pipeline-D05`
-- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(j)
+- 근거: Foreign Aid Mobilization Policy, 2025 §3.3.2(j) · [Foreign Aid Mobilization Policy, 2025](<https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/>)
 
 **현행 기준**
 
@@ -2571,7 +2571,7 @@
 ### canvas.authorities[PPMO].role
 
 - 제도: [네팔 조달 거버넌스·감독체계](../data/institutions/nepal-procurement-governance.json) · `nepal-procurement-governance-D02`
-- 근거: Public Procurement Act, 2063 (2007) §65(1)(a)~(n), §65(3)
+- 근거: Public Procurement Act, 2063 (2007) §65(1)(a)~(n), §65(3) · [Public Procurement Act, 2063 (2007)](<https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf>)
 
 **현행 기준**
 
@@ -2924,7 +2924,7 @@
 - **코트디부아르 공공조달 입찰제도** — 입찰보증은 예정금액의 1~1.5%, 이행보증은 계약금액의 3~5%이며 법정 예외를 별도로 구분했다.
 - **코트디부아르 조달 거버넌스·감독체계** — Code art.9에 따라 집행·통제·규제 기능은 분리되고 통제·규제는 독립적으로 수행된다.
 - **코트디부아르 조달 거버넌스·감독체계** — 낙찰제안의 DGMP 사전검증 기준은 지방정부 1억 CFA, 그 밖의 기관 3억 CFA이며 그 미만은 사후통제 대상이다.
-- **코트디부아르 조달 거버넌스·감독체계** — ANRMP 이의경로와 발주기관·COJO·DGMP의 집행·평가·통제 역할을 구분했다.
+- **코트디부아르 조달 거버넌스·감독체계** — ARCOP 이의경로와 발주기관·COJO·DGMP의 집행·평가·통제 역할을 구분했다.
 - **코트디부아르 ODA 사업 발굴·형성 절차** — PTF와 정부는 타당성조사·평가서·금융협정 초안을 협상하고, 연간활동계획과 조달계획은 PTF의 의견 또는 비이의 승인을 받아 국가예산·SIGFIP·SIGMAP에 연결한다.
 - **코트디부아르 ODA 사업 발굴·형성 절차** — 국제금융협정과 PTF 지침은 국내 Code와 충돌하는 범위에서 우선하고, PTF 사전심사 대상은 비이의 승인 전 공고할 수 없다.
 - **코트디부아르 ODA 사업 발굴·형성 절차** — 2019-299는 2015-475의 계약 서명·승인과 해지에 관한 arts.17·19를 개정했으므로 원문 구조를 그대로 현행 규칙으로 오인하지 않도록 반영했다.

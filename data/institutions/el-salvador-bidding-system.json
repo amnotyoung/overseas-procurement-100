@@ -50,7 +50,11 @@
       },
       {
         "name": "개별 공공기관 계약단위",
-        "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
@@ -223,7 +227,13 @@
         },
         "id": "el-salvador-bidding-system-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -364,15 +374,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.39~44; Reglamento arts.39~41; 2026 Policy section V.1; current commerce-sector minimum wage",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -383,15 +387,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -402,20 +400,7 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.123~124",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          },
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P04",
@@ -426,20 +411,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          },
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.39~44; Reglamento arts.39~41; 2026 Policy section V.1; current commerce-sector minimum wage",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -448,17 +422,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "국가공공구매국(DINAC)",
+        "actor": "개별 공공기관 계약단위",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "arts.2~3, 10, 17, 22, 38~44, 89~90, 119~126, 188 and 191~192",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -467,17 +434,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가공공구매국(DINAC)",
+        "actor": "개별 공공기관 계약단위",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.22 and 89~90; Reglamento arts.46~47",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/el-salvador.txt",
+          "start": 119,
+          "end": 121,
+          "excerpt": "l 입찰절차: 발주기관은 연간 조달계획(PAC)을 수립·공개한 후 전자공공조달시스템(COMPRASAL)을 통해 입찰을 공고하고, 평가 및 계약 체결, 이행·감독 절차를 진행함."
+        }
       },
       {
         "id": "P07",
@@ -488,15 +453,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
-            "article": "LCP arts.123~126; Reglamento arts.66~68",
-            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -538,7 +497,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

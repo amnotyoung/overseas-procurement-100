@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "NCPP·BPP·회계책임자·입찰위원회·최고승인기구의 법정 권한과 2025년 기준별 감독·보고·불복 관계를 정리한다.",
-    "stakeholders": "나이지리아 정부, 나이지리아 공공조달국 (BPP), 고액·중요 조달사업에 대한 사전 검토(No Objection), 공공조달법(PPA 2007), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "국가공공조달위원회(NCPP), 공공조달국(BPP), 연방·의회·사법부 입찰위원회 및 회계책임자, 연방집행위원회(FEC)·국회의회입찰위원회·국가사법위원회 입찰위원회, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "Public Procurement Act 2007 (Act No. 14), as amended by Finance Act 2020",
@@ -49,11 +49,17 @@
       },
       {
         "name": "공공조달국(BPP)",
-        "role": "PPA 제5~6조에 따라 기준 집행, No Objection, 감사·감시, 표준문서, 불만 재심과 제재를 담당한다."
+        "role": "PPA 제5~6조에 따라 기준 집행, No Objection, 감사·감시, 표준문서, 불만 재심과 제재를 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "연방·의회·사법부 입찰위원회 및 회계책임자",
-        "role": "Finance Act 2020 제64~66조와 2025년 공문 표 1의 금액구간에 따라 계획·평가·승인·계약을 수행한다."
+        "role": "Finance Act 2020 제64~66조와 2025년 공문 표 1의 금액구간에 따라 계획·평가·승인·계약을 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "연방집행위원회(FEC)·국회의회입찰위원회·국가사법위원회 입찰위원회",
@@ -88,7 +94,8 @@
     ],
     "entryBarriers": [
       "현행 표준입찰문서는 외국 입찰자의 현지조달·등록·법인요건을 TDS와 함께 적용하므로 국제입찰자는 공고별 현지투입률, BPP 등록, 법인·세무·보증은행 요건을 확인한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -218,7 +225,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "Finance Act 2020과 2025년 공문을 우선 적용해 현행 기준·기한·보증·불복·예외를 조문별로 정정했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Finance Act 2020",
+            "url": "https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf"
+          },
+          {
+            "title": "Public Procurement Act 2007, Act No.14",
+            "url": "https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf"
+          },
+          {
+            "title": "Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines",
+            "url": "https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -319,15 +340,12 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines",
-            "article": "PPA ss.2, 6, 25(1), 41 and 44~45; Circular Ref. 59780/S.2/B/532 Tables 1~2",
-            "url": "https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/nigeria.txt",
+          "start": 165,
+          "end": 167,
+          "excerpt": "(1) 발주기관의 조달 계획 수립 및 입찰 방식 결정 (2) 입찰 공고 게시:입찰 참여 조건, 제출 기한, 평가 기준 명시"
+        }
       },
       {
         "id": "P02",
@@ -336,17 +354,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가공공조달위원회(NCPP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines",
-            "article": "PPA ss.2, 6, 25(1), 41 and 44~45; Circular Ref. 59780/S.2/B/532 Tables 1~2",
-            "url": "https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -355,17 +368,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "국가공공조달위원회(NCPP)",
+        "actor": "연방·의회·사법부 입찰위원회 및 회계책임자",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines",
-            "article": "Finance Act 2020 s.68 substituting PPA s.25(2); PPA ss.23(4)~(5), 48 and 54; Circular Ref. 59780/S.2/B/532 Table 3 and ¶11",
-            "url": "https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -376,15 +384,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines",
-            "article": "Finance Act 2020 s.68 substituting PPA s.25(2); PPA ss.23(4)~(5), 48 and 54; Circular Ref. 59780/S.2/B/532 Table 3 and ¶11",
-            "url": "https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -393,17 +393,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "국가공공조달위원회(NCPP)",
+        "actor": "공공조달국(BPP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act 2007, Act No.14",
-            "article": "ss.1~6, 15~26, 35~45, 48, 53~54, 58~61; original ss.15, 24, 25(2), 35, 36 and 58(2) checked as amended",
-            "url": "https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -412,17 +405,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "국가공공조달위원회(NCPP)",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Complaints Procedures under PPA 2007",
-            "article": "PPA s.54(1)~(7); BPP Nine-Step Complaints Procedure; Circular Ref. 59780/S.2/B/532 ¶11",
-            "url": "https://bpp.gov.ng/wp-content/uploads/2019/01/Complaints_Procedures_Under_PPA_2007-Updated.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "입찰자는 원인 인지 후 15영업일 안에 회계책임자에게 서면 이의를 내고 회계책임자는 15영업일 안에 결정한다. 결정 불복은 통지 후 10영업일 안에 BPP에 제기하며 BPP 접수 시 후속행위가 정지되고 21영업일 안에 결정한다. BPP 불복·무응답은 30일 안에 연방고등법원에 제소한다. 2025년 공문은 낙찰의향 통지 후 14일 정지기간을 추가하므로 계약 전 구제를 보전하려면 더 이른 14일 안에 제기한다.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -433,15 +420,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Finance Act 2020",
-            "article": "Finance Act 2020 ss.71~72 substituting PPA ss.35~36; current BPP Goods/Works SBD ITT/TDS and GCC",
-            "url": "https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -483,7 +464,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   },

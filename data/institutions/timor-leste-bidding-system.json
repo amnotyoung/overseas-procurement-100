@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "동티모르 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "동티모르 정부, 인프라기금관리위원회 (CAFI/Council for Administration of the Infrastructure Fund), 국가개발기관(National Development Agency), 조달청(National Procurement Commission), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "국가조달위원회(CNA/NPC), 재무부, 계약기관·조달책임자·평가주체, CAFI·계획투자기관, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
@@ -46,7 +46,11 @@
       },
       {
         "name": "계약기관·조달책임자·평가주체",
-        "role": "권한·위임에 따라 계획·절차개시·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "권한·위임에 따라 계획·절차개시·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "CAFI·계획투자기관",
@@ -81,7 +85,8 @@
     ],
     "entryBarriers": [
       "국가공급자 최대 10% 우대, 물품 30%·공사 40% 물자 또는 80% 인력·서비스 60% 인력의 현지내용 요건, 공급자등록과 공고별 자격을 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -201,7 +206,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "현행 신법과 시행일을 반영하고 조달규제·집행·공공투자 승인 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
+          },
+          {
+            "title": "CNA current legal regime, standard documents and forms",
+            "url": "https://www.cna.gov.tl/en/documents-and-forms/"
+          },
+          {
+            "title": "Government implementation notice for the new Code",
+            "url": "https://timor-leste.gov.tl/?lang=en&p=46597&print=1"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -226,7 +245,17 @@
           "state": "not-reported",
           "suggestedText": "2026 시행 신법의 방식기준과 국내공급자 우대·현지내용 체계로 정정했다."
         },
-        "id": "timor-leste-bidding-system-D02"
+        "id": "timor-leste-bidding-system-D02",
+        "citationSources": [
+          {
+            "title": "Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf"
+          },
+          {
+            "title": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -335,15 +364,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.34~42 and 83",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -354,15 +377,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.66, 68, 69, 84 and 102",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -373,20 +390,7 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.50(2)(t) and 104~108",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          },
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.66, 68, 69, 84 and 102",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P04",
@@ -397,20 +401,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.66, 68, 69, 84 and 102",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          },
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.34~42 and 83",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -419,17 +412,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "인프라기금관리위원회 (CAFI/Council for Administration of the Infrastru",
+        "actor": "계약기관·조달책임자·평가주체",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "enacting Arts.2~5 and Code Arts.1~18, 34~55, 58~88, 93~109 and 136~150; transition, repeal, scope, methods, thresholds, deadlines, donor finance, preferences, contract securities and remedies",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -438,17 +424,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "인프라기금관리위원회 (CAFI/Council for Administration of the Infrastru",
+        "actor": "계약기관·조달책임자·평가주체",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.66, 68, 69, 84 and 102",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -459,15 +438,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
-            "article": "Code Arts.104~108",
-            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [

@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "르완다의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "르완다 정부, 르완다 공공조달청 (RPPA), 재정경제기획부(MINECOFIN), 르완다 공공조달법(Rwanda Public Procurement Law), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "르완다 공공조달청(RPPA), 조달기관·입찰위원회, 독립심사패널(IRP), Umucyo, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Public Procurement Law",
-        "kind": "act"
-      },
-      {
-        "law": "Public Procurement Regulations",
-        "kind": "act"
-      },
-      {
-        "law": "공공조달 기본법인 법률",
-        "kind": "act"
       },
       {
         "law": "Law n° 031/2022 of 21/11/2022 governing public procurement",
@@ -50,11 +38,17 @@
     "authorities": [
       {
         "name": "르완다 공공조달청(RPPA)",
-        "role": "공공조달의 조직·분석·감독, 정부자문·표준문서·역량강화와 Umucyo 운영지원을 담당한다."
+        "role": "공공조달의 조직·분석·감독, 정부자문·표준문서·역량강화와 Umucyo 운영지원을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "조달기관·입찰위원회",
-        "role": "계획·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "계획·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "독립심사패널(IRP)",
@@ -66,14 +60,13 @@
       }
     ],
     "procedure": [
-      "1. 정부 조직도 : 르완다 공공조달청 (RPPA)",
-      "2. 재정경제기획부(MINECOFIN) 산하 기관으로, 정부 내 조달 관련 기관들의 총괄 모니터링 및 역량강화를",
-      "3. 공공조달 업무 전반 조직화, 분석 및 감독 보장",
-      "4. 공공조달 조직 운영 관련 정책 및 전략에 대해 정부 및 모든 공공조달 기관에 자문 제공",
-      "5. 이의 신청 접수 및 분석: 발주기관의 결정(작위 또는 부작위)으로 공공조달 법령을 위반한 경우",
-      "6. 적격성 및 타당성 판단: 이의신청이 절차 요건을 충족하는지 여부와 법 위반 등 실질적 근거",
-      "7. 적용 범위: 입찰서 제출부터 계약 쳬결 단계까지 적용, 계약 이행 단계의 분쟁은 적용 대상에서",
-      "8. 따라 이루어지도록 공공조달 제도의 규율, 감독 및 발전 담당"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 조달기관·입찰위원회 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 르완다 공공조달청(RPPA) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 이의 제기 단계별 관할기관 (아래 구제 절차 참조) — 입찰자는 위반 인지 후 7일 안에 발주기관에 이의하고, 불복 또는 7일 내 무응답이면 통지일부터 7일 안에 IRP에 항소한다. 두 단계 모두 해당 조달을 정지시키며 IRP는 15일 안에 결정하되 최대 15일 연장할 수 있다. 평가결과 항소수수료는 2,000만 이하 5만, 3억 이하 10만, 10억 이하 30만, 10억 초과 50만 RWF다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "Law 031/2022 제3조에 따라 조달기관의 공사·물품·컨설팅·비컨설팅 조달에 적용한다. 기밀 국방·안보와 장관령상 외교공관·특수기관·긴급·혁신은 별도 규칙을 따르고, 정부·개발파트너 협정의 상충 조달규칙은 협정이 우선한다.",
     "submittedDocuments": [
@@ -94,7 +87,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -214,7 +209,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "구법·법령의 기관 오인을 제거하고 2022년 현행법과 RPPA·IRP·조달기관·Umucyo 역할을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law n° 031/2022 of 21/11/2022 governing public procurement",
+            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
+          },
+          {
+            "title": "Umucyo current procurement law list and RPPA 2024 clarification",
+            "url": "https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -239,7 +244,17 @@
           "state": "not-reported",
           "suggestedText": "2023년 현행 시행명령의 정량·보증·불복 요건과 구법 폐지를 조문별 반영했다."
         },
-        "id": "rwanda-procurement-governance-D02"
+        "id": "rwanda-procurement-governance-D02",
+        "citationSources": [
+          {
+            "title": "Law n° 031/2022 of 21/11/2022 governing public procurement",
+            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
+          },
+          {
+            "title": "Ministerial Order n° 001/23/10/TC relating to public procurement",
+            "url": "https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Legal_Instruments/MINISTERIAL_ORDER/Ministerial_Order_for_p.p_new_Law.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -356,15 +371,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Umucyo current procurement law list and RPPA 2024 clarification",
-            "article": "Order 001/23/10/TC Arts.69, 72, 73 and 75; RPPA 2024 clarification",
-            "url": "https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -373,17 +380,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "르완다 공공조달청(RPPA)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Umucyo current procurement law list and RPPA 2024 clarification",
-            "article": "Order 001/23/10/TC Arts.69, 72, 73 and 75; RPPA 2024 clarification",
-            "url": "https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -392,17 +394,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "르완다 공공조달청(RPPA)",
+        "actor": "조달기관·입찰위원회",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law n° 031/2022 of 21/11/2022 governing public procurement",
-            "article": "Law 031/2022 Arts.31, 48~50; Order 001/23/10/TC Arts.51, 70~72 and 75",
-            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -413,15 +410,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law n° 031/2022 of 21/11/2022 governing public procurement",
-            "article": "Law 031/2022 Arts.31, 48~50; Order 001/23/10/TC Arts.51, 70~72 and 75",
-            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -432,15 +421,13 @@
         "status": "risk",
         "actor": "르완다 공공조달청(RPPA)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law n° 031/2022 of 21/11/2022 governing public procurement",
-            "article": "Arts.3~9, 31~32, 47~50, 60~61, 71~72 and 168~172; scope, e-procurement, bodies, tender periods, securities, review, transition, repeal and commencement",
-            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/rwanda.txt",
+          "start": 105,
+          "end": 108,
+          "excerpt": "행정 및 재정 ∙ 르완다 공공기관의 물품·용역·공사 조달이 효율성, 투명성 및 가성비(가치 대비 비용)원칙에 따라 이루어지도록 공공조달 제도의 규율, 감독 및 발전 담당"
+        }
       },
       {
         "id": "P06",
@@ -449,17 +436,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "르완다 공공조달청(RPPA)",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law n° 031/2022 of 21/11/2022 governing public procurement",
-            "article": "Law 031/2022 Arts.47~50; Order 001/23/10/TC Arts.173~180",
-            "url": "https://www.rppa.gov.rw/index.php?eID=dumpFile&f=57729&t=f&token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "입찰자는 위반 인지 후 7일 안에 발주기관에 이의하고, 불복 또는 7일 내 무응답이면 통지일부터 7일 안에 IRP에 항소한다. 두 단계 모두 해당 조달을 정지시키며 IRP는 15일 안에 결정하되 최대 15일 연장할 수 있다. 평가결과 항소수수료는 2,000만 이하 5만, 3억 이하 10만, 10억 이하 30만, 10억 초과 50만 RWF다.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -470,15 +451,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Umucyo current procurement law list and RPPA 2024 clarification",
-            "article": "Law 031/2022 Arts.60~61; Order 001/23/10/TC Art.109; RPPA 2024 clarification",
-            "url": "https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -520,7 +495,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

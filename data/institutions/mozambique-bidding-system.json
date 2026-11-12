@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "모잠비크 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "모잠비크 정부, 재무부(Ministry of Finance and Economy), 모잠비크 재무부 조달감독·기능실(UFSA), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "조달감독기능실(UFSA), 각 공공기관의 조달관리집행단위(UGEA), 권한기관(Autoridade Competente), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -45,7 +45,11 @@
       },
       {
         "name": "각 공공기관의 조달관리집행단위(UGEA)",
-        "role": "기관별 계획·공고·평가·계약체결과 관리를 수행한다."
+        "role": "기관별 계획·공고·평가·계약체결과 관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "권한기관(Autoridade Competente)",
@@ -79,7 +83,8 @@
     ],
     "entryBarriers": [
       "외국기업은 개별 공고의 Cadastro Único 등록, 현지 인허가·세무, 포르투갈어 문서, 국내우대와 보증 발급요건을 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -195,7 +200,13 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "손상된 근거와 일률적 30일 설명을 제거하고 현행 조문별 방식·기준금액·기한·보증·불복·예외 및 개정안 미공포 상태를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
+            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -288,15 +299,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.35(3)(e), 76, 88 and 93~94",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -307,15 +312,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -326,20 +325,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.105 and 108",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          },
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -350,20 +338,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          },
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.35(3)(e), 76, 88 and 93~94",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -372,17 +349,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "발주기관 UGEA·평가위원회",
+        "actor": "각 공공기관의 조달관리집행단위(UGEA)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Decree arts.1~5; Regulation arts.1~13, 34~37, 47~55, 64~66, 68~78, 83, 88~109, 278~284",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -391,17 +361,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "발주기관 UGEA·평가위원회",
+        "actor": "각 공공기관의 조달관리집행단위(UGEA)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.51, 53, 55, 73, 78, 83, 90 and 93",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -412,15 +375,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública",
-            "article": "Regulation arts.106, 108 and 109",
-            "url": "https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -462,7 +419,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

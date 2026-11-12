@@ -15,20 +15,12 @@
   },
   "canvas": {
     "purpose": "에티오피아 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "에티오피아 정부, 에티오피아 재무부(Ministry of Finance), 월 제정된 신규 조달법 (Proclamation No. 133/2024), 재무부(MoF), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "연방공공조달·재산청(FPPA), 재무부, 연방 공공기관, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "월 제정된 신규 조달법",
-        "kind": "act"
-      },
-      {
-        "law": "신규 조달법",
-        "kind": "act"
       },
       {
         "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
@@ -50,18 +42,21 @@
       },
       {
         "name": "연방 공공기관",
-        "role": "조달계획·공고·평가·계약체결과 자산관리를 수행한다."
+        "role": "조달계획·공고·평가·계약체결과 자산관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
-      "1. 사업범위 프로젝트 종료 평가 수행 및 결과 보고",
-      "2. 사업범위 Beshasha 지역 상수도 및 위생시설 공사에 대한 시공 감리 및 계약 관리",
-      "3. 에티오피아 시장의 경우, 분야별 공공입찰 시장이 주류임",
-      "4. 의약품 시장 70%이상 정부기관 입찰이며, 자국 생산품 우선 구매 정책 강화 추세임",
-      "5. 공공입찰시장의 경우, 신규 조달법에 따라 전자조달(e-GP) 시스템 사용이 의무화됨",
-      "6. 국제입찰 : 변동환율제 도입(2024.7)으로 인한 외화 부족 심화로 결제 통화 비중과 LC 개설 가능 여부",
-      "7. 필수 제출 서류 : Bid Bond(은행 보증서), Technical Specification(기술사양), Local Registration or Approval",
-      "8. 만약 입찰 후보자가 해당 공공기관에서 근무한 경력이 있는 전 직원인 경우, 그가 입찰서 (제안서)를"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 연방 공공기관 — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다. (단계 근거 확인 필요)",
+      "6. 평가·낙찰 · 연방 공공기관 — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다. (단계 근거 확인 필요)",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 에티오피아의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 : 변동환율제 도입(2024.7)으로 인한 외화 부족 심화로 결제 통화 비중과 LC 개설 가능 여부",
     "submittedDocuments": [
@@ -82,7 +77,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -167,7 +164,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "법령번호를 정정하고 법령의 기관 오인을 제거해 FPPA·재무부·조달기관 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
+            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
+          },
+          {
+            "title": "Federal Government Public Procurement Directive No. 1073/2025",
+            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -260,15 +267,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive arts.53~55, 63~64; Proclamation arts.33 and 35",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -279,15 +280,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -298,20 +293,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.116; Proclamation art.52",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          },
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -322,20 +306,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          },
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive arts.53~55, 63~64; Proclamation arts.33 and 35",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -344,17 +317,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "연방공공조달·재산청(FPPA)",
+        "actor": "연방 공공기관",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -363,17 +329,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "연방공공조달·재산청(FPPA)",
+        "actor": "연방 공공기관",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -384,15 +343,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.136",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -434,7 +387,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

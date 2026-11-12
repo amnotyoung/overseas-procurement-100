@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "코트디부아르의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "코트디부아르 정부, 입찰위원회(COJO, Commission d’Ouverture et de Jugement des Offres), 공공시장 행정조정위원회(CAC, Commission Administrative de Conciliation), 정부조달협력(GPA), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공조달총국(DGMP), 국가공공조달규제청(ARCOP), 발주기관 및 개찰·평가위원회(COJO), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "국제입찰 공고 진행 및 조달규정",
-        "kind": "act"
-      },
-      {
-        "law": "공공조달법",
-        "kind": "act"
-      },
-      {
-        "law": "l 코트디부아르 공공조달규정",
-        "kind": "act"
       },
       {
         "law": "Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics",
@@ -43,7 +31,7 @@
         "kind": "regulation"
       },
       {
-        "law": "Ordonnance n°2018-594 portant création, organisation et fonctionnement de l'ANRMP",
+        "law": "Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP",
         "kind": "regulation"
       }
     ],
@@ -53,23 +41,28 @@
         "role": "공공조달 행정·사전통제와 절차 운영을 담당한다."
       },
       {
-        "name": "국가공공조달규제청(ANRMP)",
-        "role": "조달체계를 독립적으로 규제하고 이의·분쟁 및 제재 절차를 담당한다."
+        "name": "국가공공조달규제청(ARCOP)",
+        "role": "조달체계를 독립적으로 규제하고 이의·분쟁 및 제재 절차를 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "발주기관 및 개찰·평가위원회(COJO)",
-        "role": "발주계획·입찰서류·개찰·평가·낙찰 제안을 수행한다."
+        "role": "발주계획·입찰서류·개찰·평가·낙찰 제안을 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 역할 : 코트디부아르 정부발주 입찰, 국제입찰 공고 진행 및 조달규정 준수여부 감독",
-      "2. 공공조달 全 과정에서 기관 간 분쟁이 발생할 경우 조정하는 역할을 담당하며, 국무총리 (위원장), 사법부",
-      "3. 재무국 및 금융감독관 소속 위원 3인으로 구성",
-      "4. △새로운 형태의 공공조달방식 도입(설계시공 일괄입찰 등), △전자조달시스템 도입, △건설·물품·용역의",
-      "5. 입찰공고: 국가조달정보집(Journal des Marchés Publics)에 필수 게재하며, 현지 주요 일간지 (Fraternité",
-      "6. Matin, Abidjan.net 등), 라디오, 방송(RTI) 등 매체에서 공고",
-      "7. 입찰위원회의 평가결과에 대해 조달청 및 공여기구 측이 ‘이의 없음(ANO, Avis de Non Objection)’으로",
-      "8. 7 시공 수행 안전·노동·세무 준수 감독기관"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 발주기관 및 개찰·평가위원회(COJO) — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 국가공공조달규제청(ARCOP) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 이의 제기 단계별 관할기관 (아래 구제 절차 참조) — 선행이의는 7영업일 내 원결정기관에 제기하고, 5영업일 내 무응답·불리한 결정 후 5영업일 내 ARCOP로 간다. ARCOP는 접수가능성 10영업일, 본안은 그 결정 뒤 최대 15영업일 내 판단한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 코트디부아르의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 역할 : 코트디부아르 정부발주 입찰, 국제입찰 공고 진행 및 조달규정 준수여부 감독",
     "submittedDocuments": [
@@ -90,7 +83,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -119,12 +114,12 @@
   "verification": {
     "status": "article-verified",
     "verifiedAt": "2026-07-29",
-    "method": "Ordonnance 2019-679과 Décrets 2021-869·2021-870의 기관분리, 사전·사후통제, 승인, 이의 및 정량요건 조문을 직접 대조하고 DGMP·ANRMP의 현행 역할과 연결했다.",
+    "method": "Ordonnance 2019-679과 Décrets 2021-869·2021-870의 기관분리, 사전·사후통제, 승인, 이의 및 정량요건 조문을 직접 대조하고 DGMP·ARCOP의 현행 역할과 연결했다.",
     "scope": "Code arts.2~20, 63, 75~83, 93~104, 143~159와 Décret 2021-869 arts.1~10, Décret 2021-870 arts.1~7을 확인했다.",
     "notes": [
       "Code art.9에 따라 집행·통제·규제 기능은 분리되고 통제·규제는 독립적으로 수행된다.",
       "낙찰제안의 DGMP 사전검증 기준은 지방정부 1억 CFA, 그 밖의 기관 3억 CFA이며 그 미만은 사후통제 대상이다.",
-      "ANRMP 이의경로와 발주기관·COJO·DGMP의 집행·평가·통제 역할을 구분했다."
+      "ARCOP 이의경로와 발주기관·COJO·DGMP의 집행·평가·통제 역할을 구분했다."
     ],
     "sources": [
       {
@@ -159,12 +154,12 @@
         "articlesChecked": "arts.1~7 전체"
       },
       {
-        "law": "Ordonnance n°2018-594 portant création, organisation et fonctionnement de l'ANRMP",
+        "law": "Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP",
         "kind": "regulation",
-        "publisher": "ANRMP",
-        "officialUrl": "https://www.anrmp.ci/images/PDF/JO_L-ordonnance-N-2018-594-du-27-juin-2018.pdf",
-        "retrievedOn": "2026-07-29",
-        "articlesChecked": "독립 규제·불복·제재 기능과 현행 기관 지위"
+        "publisher": "ARCOP",
+        "officialUrl": "https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf",
+        "retrievedOn": "2026-11-12",
+        "articlesChecked": "제1~3조 · ARCOP의 승계·독립성·감사·분쟁해결, 제49조 · 2018년 명령의 설립조항 외 폐지"
       }
     ],
     "articleAudit": {
@@ -222,7 +217,7 @@
         "complaints": {
           "status": "confirmed",
           "articles": "Code arts.143~148",
-          "finding": "선행이의는 7영업일 내 원결정기관에 제기하고, 5영업일 내 무응답·불리한 결정 후 5영업일 내 ANRMP로 간다. ANRMP는 접수가능성 10영업일, 본안은 그 결정 뒤 최대 15영업일 내 판단한다.",
+          "finding": "선행이의는 7영업일 내 원결정기관에 제기하고, 5영업일 내 무응답·불리한 결정 후 5영업일 내 ARCOP로 간다. ARCOP는 접수가능성 10영업일, 본안은 그 결정 뒤 최대 15영업일 내 판단한다.",
           "evidenceUrl": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
         },
         "exceptions": {
@@ -237,27 +232,37 @@
       {
         "field": "canvas.authorities·legalBasis / 조달기관과 법령",
         "sourceText": "자료집 추출본은 COJO·행정조정위원회와 정부조달협정(GPA)을 모두 담당기관처럼 배열하고 법령명을 일반적인 '공공조달법'으로 표시한다.",
-        "actualText": "현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ANRMP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다.",
-        "citation": "Ordonnance 2019-679; Ordonnance 2018-594; DGMP official regulation catalogue",
+        "actualText": "현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ARCOP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다. Ordonnance 2025-32 제1·49조에 따라 종전 ANRMP가 ARCOP으로 개편됐다.",
+        "citation": "Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue",
         "impact": "통제·규제·평가 주체를 혼동하면 이의제기와 승인 경로를 잘못 선택할 수 있다.",
-        "action": "DGMP·ANRMP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.",
-        "userAction": "입찰서류의 발주기관·COJO와 ANRMP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.",
+        "action": "DGMP·ARCOP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다.",
+        "userAction": "입찰서류의 발주기관·COJO와 ARCOP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.",
         "severity": "high",
         "review": {
           "topic": "Procurement law and separation of institutional roles",
           "guideSays": "The extraction lists COJO, an administrative conciliation body and the GPA as if all were procurement authorities.",
-          "lawSays": "Ordinance 2019-679 is the current code; DGMP handles administration and control, ANRMP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.",
+          "lawSays": "Ordinance 2019-679 is the current code; DGMP handles administration and control, ARCOP handles independent regulation and review, and the contracting authority and COJO conduct opening and evaluation. The GPA is not an authority.",
           "impact": "Conflating control, regulation and evaluation can send approvals or complaints to the wrong body.",
-          "verify": "Distinguish the contracting authority and COJO from DGMP control and the ANRMP review route, and check current thresholds."
+          "verify": "Distinguish the contracting authority and COJO from DGMP control and the ARCOP review route, and check current thresholds."
         },
         "upstream": {
           "priority": "정정 요망",
           "state": "not-reported",
-          "suggestedText": "DGMP·ANRMP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다."
+          "suggestedText": "DGMP·ARCOP·발주기관/COJO의 역할을 분리하고 GPA 기관 오인을 제거했다."
         },
         "id": "cote-divoire-procurement-governance-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics",
+            "url": "https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf"
+          },
+          {
+            "title": "Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP",
+            "url": "https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -284,15 +289,12 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°2021-869 du 15 décembre 2021 fixant les seuils",
-            "article": "Code arts.5~6, 63, 75 and 83; Décret 2021-869 arts.1~9",
-            "url": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cote-divoire.txt",
+          "start": 123,
+          "end": 125,
+          "excerpt": "l 사전준비: 입찰진행 n-1년 10월 전까지 조달청이 입찰수요를 확인하여 공공조달 계획 수립 - 공공조달 계획 승인은 입찰진행 n-1년 10월 15일까지는 완료되어야하며, n-1년 12월 15일까지"
+        }
       },
       {
         "id": "P02",
@@ -301,17 +303,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "입찰위원회(COJO, Commission d’Ouverture et de Jugement des Offres",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°2021-869 du 15 décembre 2021 fixant les seuils",
-            "article": "Code arts.5~6, 63, 75 and 83; Décret 2021-869 arts.1~9",
-            "url": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -320,17 +317,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "입찰위원회(COJO, Commission d’Ouverture et de Jugement des Offres",
+        "actor": "발주기관 및 개찰·평가위원회(COJO)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Côte d'Ivoire verified procurement instrument",
-            "article": "Code arts.20, 63~64, 70, 75~78, 144~145; Décret 2021-869 art.6",
-            "url": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -341,15 +333,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Côte d'Ivoire verified procurement instrument",
-            "article": "Code arts.20, 63~64, 70, 75~78, 144~145; Décret 2021-869 art.6",
-            "url": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -358,17 +342,16 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "입찰위원회(COJO, Commission d’Ouverture et de Jugement des Offres",
+        "actor": "국가공공조달규제청(ARCOP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
+        "actorScope": "authority",
         "legal_basis": [
           {
-            "law": "Décret n°2021-869 du 15 décembre 2021 fixant les seuils",
-            "article": "arts.1~10 전체",
-            "url": "https://www.marchespublics.ci/uploads/doc/SEUIL.pdf"
+            "law": "Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP",
+            "article": "Art. 2 · 조달·이행에 대한 독립 감사",
+            "url": "https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf"
           }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        ]
       },
       {
         "id": "P06",
@@ -377,17 +360,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "입찰위원회(COJO, Commission d’Ouverture et de Jugement des Offres",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Côte d'Ivoire verified procurement instrument",
-            "article": "Code arts.143~148",
-            "url": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "선행이의는 7영업일 내 원결정기관에 제기하고, 5영업일 내 무응답·불리한 결정 후 5영업일 내 ARCOP로 간다. ARCOP는 접수가능성 10영업일, 본안은 그 결정 뒤 최대 15영업일 내 판단한다.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -398,15 +375,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Côte d'Ivoire verified procurement instrument",
-            "article": "Code arts.97~99; Décret 2021-870 arts.2~5",
-            "url": "https://www.marchespublics.ci/uploads/doc/CODE_MARCHES_PUBLICS_24_JUIL_2019_VF.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -448,7 +419,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

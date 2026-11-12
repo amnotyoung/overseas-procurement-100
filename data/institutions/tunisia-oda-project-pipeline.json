@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "튀니지 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "튀니지 정부, 튀니지 수원총괄기관, 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제기획부 국제협력 조직, 재무부 DGGDPCF·대형사업 감사추적총국, 외교부·부문 실행기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -42,7 +42,10 @@
     "authorities": [
       {
         "name": "경제기획부 국제협력 조직",
-        "role": "양자·다자·지역 금융·기술협력과 개발사업을 관계부처·외교부와 조정한다."
+        "role": "양자·다자·지역 금융·기술협력과 개발사업을 관계부처·외교부와 조정한다.",
+        "processNodes": [
+          "P04"
+        ]
       },
       {
         "name": "재무부 DGGDPCF·대형사업 감사추적총국",
@@ -81,7 +84,8 @@
     ],
     "entryBarriers": [
       "사업제안 단계의 수원부처 소유권·우선순위·재원구조와 실행 단계의 TUNEPS 등록, 외국기업 등가서류·보증·세무요건을 분리해 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -164,7 +168,7 @@
         "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
         "kind": "directive",
         "publisher": "Ministère de l’Économie et de la Planification",
-        "officialUrl": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/",
+        "officialUrl": "https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/",
         "retrievedOn": "2026-07-29",
         "articlesChecked": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions"
       },
@@ -201,7 +205,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "익명 수원총괄기관을 현행 조직으로 구체화하고 원조유형별 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ministry of Economy and Planning bilateral-cooperation mandate",
+            "url": "https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/"
+          },
+          {
+            "title": "Ministry of Finance DGGDPCF and major-project follow-up mandates",
+            "url": "https://www.finances.gov.tn/ar/structures-du-ministere/aladart-alamt-lltsrf-fy-aldyn-almwmy-waltawn-almaly"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -226,7 +240,17 @@
           "state": "not-reported",
           "suggestedText": "현행 통합본문의 하한·간소절차·공고·보증·불복과 승인된 국제협정·외국재원 예외를 조문별로 반영했다."
         },
-        "id": "tunisia-oda-project-pipeline-D02"
+        "id": "tunisia-oda-project-pipeline-D02",
+        "citationSources": [
+          {
+            "title": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
+            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
+          },
+          {
+            "title": "HAICOP current legal and regulatory framework, including Circular No.5/2023",
+            "url": "https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -335,15 +359,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 28,
+          "end": 32,
+          "excerpt": "- ① 관련 수원부처(총리실, 환경부 등)가 사업요청서 (PCP)를 작성하여, ② 수원총괄기관인 경제기획부에 발송하고, ③ 경제기획부는 관련 부처의 요청서를 취합, 검토하여 우선순위를 부여하여 외교부로 발송하여, ④ 외교부가 KOICA 사무소로 제출 ∙ 통상 N-2년전에 사업을 준비(2027년 사업의 경우 2025년에 사업을 발굴, 추진)"
+        }
       },
       {
         "id": "P02",
@@ -354,15 +375,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "- ① 관련 수원부처(총리실, 환경부 등)가 사업요청서 (PCP)를 작성하여, ② 수원총괄기관인 경제기획부에 발송하고, ③ 경제기획부는 관련 부처의 요청서를 취합, 검토하여 우선순위를 부여하여 외교부로 발송하여, ④ 외교부가 KOICA 사무소로 제출 ∙ 통상 N-2년전에 사업을 준비(2027년 사업의 경우 2025년에 사업을 발굴, 추진)"
+        }
       },
       {
         "id": "P03",
@@ -371,17 +389,15 @@
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "경제기획부 국제협력총위원회",
+        "actor": "사업유형별 우선순위 심사기관",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "- ① 관련 수원부처(총리실, 환경부 등)가 사업요청서 (PCP)를 작성하여, ② 수원총괄기관인 경제기획부에 발송하고, ③ 경제기획부는 관련 부처의 요청서를 취합, 검토하여 우선순위를 부여하여 외교부로 발송하여, ④ 외교부가 KOICA 사무소로 제출 ∙ 통상 N-2년전에 사업을 준비(2027년 사업의 경우 2025년에 사업을 발굴, 추진)"
+        }
       },
       {
         "id": "P04",
@@ -390,17 +406,15 @@
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제기획부 국제협력총위원회",
+        "actor": "경제기획부 국제협력 조직",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "- ① 관련 수원부처(총리실, 환경부 등)가 사업요청서 (PCP)를 작성하여, ② 수원총괄기관인 경제기획부에 발송하고, ③ 경제기획부는 관련 부처의 요청서를 취합, 검토하여 우선순위를 부여하여 외교부로 발송하여, ④ 외교부가 KOICA 사무소로 제출 ∙ 통상 N-2년전에 사업을 준비(2027년 사업의 경우 2025년에 사업을 발굴, 추진)"
+        }
       },
       {
         "id": "P05",
@@ -411,15 +425,7 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -430,15 +436,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 40,
+          "end": 42,
+          "excerpt": "l 신규사업 확정 및 공식화는 KOICA에서 공식 서한을 작성하여, 외교부를 경유, 최종적으로 수원총괄기관으로 전달됨."
+        }
       },
       {
         "id": "P07",
@@ -447,17 +450,10 @@
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제기획부 국제협력총위원회",
+        "actor": "해당 협정의 양측 서명권자",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
-            "article": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions",
-            "url": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       }
     ],
     "edges": [
@@ -499,7 +495,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }
