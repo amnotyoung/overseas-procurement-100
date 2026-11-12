@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>탄자니아 공공조달 입찰제도 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,7 +136,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
@@ -229,7 +230,6 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -504,7 +504,7 @@ footer.site a{color:var(--muted)}
   <p class="one">PPRA가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(NeST) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨</p>
 
   <div class="scope-note"><b>대조 범위</b> 현행 법률·규정(PPA 2023, PPR 2024)의 시행·폐지 상태, Sixth Schedule 조달방식별 금액, Tenth·Eleventh Schedules 최소기간, 보증(regs.23–30), 이의·상소(PPA §§119–125; PPR regs.107–109, 238), 공여자·단일공급·긴급 예외를 조문 단위로 대조했다.<br><b>확인일</b> 2026-07-23 · 실무 필수 확인 1건 · 근거 미연결 3단계<br>
-    <b>실무 확인</b> 개별 공고의 제출기한·참가자격·보증액 · <a href="#sources">근거 자료 보기</a></div>
+    <a href="#sources">검증·출처 보기</a></div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>11</b><span>절차 노드</span></div>
@@ -514,9 +514,8 @@ footer.site a{color:var(--muted)}
     <div class="tile ok"><b>3</b><span>검토 자료</span></div>
     <div class="tile bad"><b>3</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
+    <div class="tile warn"><b>2</b><span>등록된 사업별 확인 항목</span></div>
   </div>
-  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
@@ -577,7 +576,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b><a class="ref" href="https://www.ppra.go.tz/" target="_blank" rel="noopener">공공조달규제청(PPRA)</a></b><span>조달 가이드라인·표준입찰서류 제정, 법 이행 모니터링, 가격상한(price cap) 설정, 부당행위 조사, NeST 운영 감독</span></div><div class="auth"><b>발주 공공기관(procuring entity)</b><span>입찰공고·서류작성·개찰·평가·낙찰·계약, 보증 금액·형태를 입찰서류에 명시</span></div><div class="auth"><b>재정기획부(MoF)</b><span>PPRA 소관 부처. 조달 규정 제정</span></div><div class="auth"><b>은행·보험사</b><span>입찰보증·이행보증·선금보증·하자보증 발행. 외국 발행분도 입찰서류 요건 충족 시 거부 불가</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">발주 공공기관(procuring entity), 국내외 입찰자, 공공조달규제청(PPRA), 재정기획부, 입찰·이행 보증을 발행하는 은행·보험사, 산업별 발주 공기업(TANESCO·TANROADS·TPDC 등), 탄자니아투자청(TIC), 기업등록청(BRELA)</p></div>
-    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>입찰자(공통)</b><div class="chips"><span class="chip">입찰서(NeST 전자제출)</span><span class="chip">입찰보증(bid security) 또는 입찰보증선언 — 인증수표·신용장·은행지급보증·보험증서 (PPR 2024 reg.23(5), Third Schedule)</span><span class="chip">사업자등록(BRELA) 규정준수 인증서</span><span class="chip">납세자식별번호(TIN) 인증서</span><span class="chip">유효한 세금공제 인증서</span><span class="chip">TIC 서비스 이용료 지불 영수증</span></div></div><div class="docset"><b>낙찰자</b><div class="chips"><span class="chip">이행보증(performance security) (reg.29)</span><span class="chip">선금보증(선금 수령 시)</span><span class="chip">하자보증(하자담보기간)</span></div></div><div class="docset"><b>발주 공공기관</b><div class="chips"><span class="chip">표준입찰서류</span><span class="chip">입찰공고</span><span class="chip">평가보고서</span><span class="chip">낙찰통지서</span><span class="chip">조달계약서</span></div></div><p>기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. <a href="#sources">근거 보기</a></p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>입찰자(공통)</b><div class="chips"><span class="chip">입찰서(NeST 전자제출)</span><span class="chip">입찰보증(bid security) 또는 입찰보증선언 — 인증수표·신용장·은행지급보증·보험증서 (PPR 2024 reg.23(5), Third Schedule)</span><span class="chip">사업자등록(BRELA) 규정준수 인증서</span><span class="chip">납세자식별번호(TIN) 인증서</span><span class="chip">유효한 세금공제 인증서</span><span class="chip">TIC 서비스 이용료 지불 영수증</span></div></div><div class="docset"><b>낙찰자</b><div class="chips"><span class="chip">이행보증(performance security) (reg.29)</span><span class="chip">선금보증(선금 수령 시)</span><span class="chip">하자보증(하자담보기간)</span></div></div><div class="docset"><b>발주 공공기관</b><div class="chips"><span class="chip">표준입찰서류</span><span class="chip">입찰공고</span><span class="chip">평가보고서</span><span class="chip">낙찰통지서</span><span class="chip">조달계약서</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>현행 PPA 2023과 PPR 2024를 기준으로 입찰방법·전자조달·보증 요건을 확인해야 한다</li><li>보증 금액은 규정에 고정되지 않고 입찰서류와 계약에 위임되므로(reg.23(6), reg.29(2), reg.329), 발주 건별 확인이 필요하다</li><li>전 조달의 NeST(국가전자조달시스템) 처리가 의무화돼, 시스템 등록·전자입찰 역량이 없으면 참여 자체가 막힌다</li><li>PPA 2023이 지역업체·현지생산품 우대를 강화해, 외국 기업은 현지 파트너십 없이는 평가에서 불리할 수 있다</li><li>탄자니아의 다소 느린 행정처리로 인허가·등록에 시간 여유가 필요하다</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>지사의 모든 주주·발기인이 탄자니아 국적이어도 외국 기업으로 분류 — 외국인 조달 규율 적용</li><li>선적 전 적합성 확인(PVoC) 제도로 수입 기자재에 CoC(적합성인증서) 필요, 검사비 FOB의 0.25~0.50%</li><li>낮은 노동 생산성</li><li>본토와 잔지바르 자치정부의 이원 행정</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차</a><a class="chip" style="text-decoration:none" href="../tanzania-site-urban-construction-regulations/index.html">탄자니아 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../tanzania-permit-environment-construction-regulations/index.html">탄자니아 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../tanzania-control-completion-construction-regulations/index.html">탄자니아 기술검사·보험·준공제도</a></div></div>

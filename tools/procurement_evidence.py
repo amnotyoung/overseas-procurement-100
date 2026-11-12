@@ -38,7 +38,11 @@ def finding_title(field):
         "canvas.legalBasis.articles": "법령 조문 표기",
         "canvas.authorities[PPMO].role": "공공조달모니터링국(PPMO)의 권한",
     }
-    title = titles.get(field, field.partition(" / ")[2] or field)
+    if field in titles:
+        return titles[field]
+    if not field.startswith(("canvas.", "process / ", "verification / ")):
+        return field
+    title = field.partition(" / ")[2] or field
     return title.replace("canvas.authorities", "담당 기관").replace(" 및 process", " 및 업무 절차")
 
 

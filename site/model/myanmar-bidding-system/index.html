@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>미얀마 공공조달 입찰제도 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,7 +136,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
@@ -229,7 +230,6 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -504,7 +504,7 @@ footer.site a{color:var(--muted)}
   <p class="one">2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계</p>
 
   <div class="scope-note"><b>대조 범위</b> Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 1건 · 근거 미연결 0단계 · 개별 요건만 연결 2단계<br>
-    <b>실무 확인</b> 개별 공고의 제출기한·참가자격·보증액 · <a href="#sources">근거 자료 보기</a></div>
+    <a href="#sources">검증·출처 보기</a></div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>9</b><span>절차 노드</span></div>
@@ -514,9 +514,8 @@ footer.site a{color:var(--muted)}
     <div class="tile ok"><b>5</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
+    <div class="tile warn"><b>2</b><span>등록된 사업별 확인 항목</span></div>
   </div>
-  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
@@ -573,7 +572,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b>발주부서·기관별 입찰위원회(Tender Committee)</b><span>조달방식 선택, 가격제안 요청·공개입찰 실시, 입찰서 접수·평가, 낙찰·계약 관리</span></div><div class="auth"><b>연방급 기관·연방부처·네피도위원회·주/지역 정부 관리위원회</b><span>제한입찰·직접조달 금액이 1억 짯 미만인 경우 해당 방식 사용을 회의로 결정</span></div><div class="auth"><b>국정관리평의회 의장 또는 연방정부</b><span>제한입찰·직접조달 금액이 1억 짯 이상인 경우 사전 승인</span></div><div class="auth"><b>차관·무상원조 제공 국제·협력기관</b><span>외부재원 조달에 자체 규정이 있으면 그 규정을 적용하고, 없으면 미얀마 지침 적용</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">연방급 기관·연방부처·네피도위원회·주/지역 정부의 발주부서, 발주부서별 입찰위원회, 국내외 입찰자, 기관 관리위원회, 국정관리평의회 의장 또는 연방정부, 차관·무상원조 제공 국제·협력기관</p></div>
-    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>입찰자</b><div class="chips"><span class="chip">입찰서 또는 가격제안서</span><span class="chip">입찰서류가 정한 기술제안·가격제안</span><span class="chip">입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙</span><span class="chip">입찰보증(요구되는 경우)</span></div></div><div class="docset"><b>외국기업 낙찰자</b><div class="chips"><span class="chip">계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)</span><span class="chip">입찰서류가 정한 이행보증</span></div></div><div class="docset"><b>발주부서·입찰위원회</b><div class="chips"><span class="chip">승인예산·조달계획</span><span class="chip">입찰공고·초청장</span><span class="chip">사양·평가기준·계약조건</span><span class="chip">평가보고서·낙찰결정·계약서</span></div></div><p>기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. <a href="#sources">근거 보기</a></p></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>입찰자</b><div class="chips"><span class="chip">입찰서 또는 가격제안서</span><span class="chip">입찰서류가 정한 기술제안·가격제안</span><span class="chip">입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙</span><span class="chip">입찰보증(요구되는 경우)</span></div></div><div class="docset"><b>외국기업 낙찰자</b><div class="chips"><span class="chip">계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)</span><span class="chip">입찰서류가 정한 이행보증</span></div></div><div class="docset"><b>발주부서·입찰위원회</b><div class="chips"><span class="chip">승인예산·조달계획</span><span class="chip">입찰공고·초청장</span><span class="chip">사양·평가기준·계약조건</span><span class="chip">평가보고서·낙찰결정·계약서</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.</li><li>외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../myanmar-oda-project-pipeline/index.html">미얀마 ODA 사업 발굴·형성 절차</a><a class="chip" style="text-decoration:none" href="../myanmar-site-urban-construction-regulations/index.html">미얀마 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../myanmar-permit-environment-construction-regulations/index.html">미얀마 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../myanmar-control-completion-construction-regulations/index.html">미얀마 기술검사·보험·준공제도</a></div></div>

@@ -170,7 +170,7 @@ sourceRefs: Array<{
 
 ### 4.5a sourceQuotes (현장 대응용 원문 인용)
 
-발췌한 자료의 `verification.sources[].quoteEdition`에 판본과 개정 상태를 기록한다. 구판 문구와 후속 판본이 달라진 조항은 발췌의 `comparison`에 제목(`title`), 구판(`edition`), 비교 판본(`currentEdition`), 확인한 차이(`summary`), 원문(`sourceUrl`, `sourceLabel`), 조항 확인일(`checkedOn`)을 함께 둔다. 이 날짜는 해당 조항의 대조일이다.
+발췌한 자료의 `verification.sources[].quoteEdition`에 판본과 개정 상태를 기록한다. 구판 문구와 후속 판본이 달라진 조항은 발췌의 `comparison`에 제목(`title`), 구판(`edition`), 비교 판본(`currentEdition`), 확인한 차이(`summary`), 원문(`sourceUrl`, `sourceLabel`), 조항 확인일(`checkedOn`)을 함께 둔다. 이 날짜는 해당 조항의 대조일이다. 자료집 문구를 특정 단계와 비교할 때는 선택 필드 `comparison.guideCitation`에 해당 노드 ID(`nodeId`), 자료집 연도·쪽(`label`), 발췌문(`quote`), 출처(`url`)를 기록한다.
 
 한국어 서술만으로는 현지에서 발주처와 다툴 때 근거가 되지 못한다. 우리 요약이 아니라
 **법령 조문 원문 그 자체**를 제시할 수 있어야 한다. `sourceQuotes`는 대조에 실제로 쓴

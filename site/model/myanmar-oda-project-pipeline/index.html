@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>미얀마 ODA 사업 발굴·형성 절차 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,7 +136,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
@@ -229,7 +230,6 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -504,7 +504,7 @@ footer.site a{color:var(--muted)}
   <p class="one">수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요</p>
 
   <div class="scope-note"><b>대조 범위</b> Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 1건 · 근거 미연결 2단계<br>
-    <b>실무 확인</b> 수원총괄기관과 해당 사업의 공식 요청 경로 · <a href="#sources">근거 자료 보기</a></div>
+    <a href="#sources">검증·출처 보기</a></div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>10</b><span>절차 노드</span></div>
@@ -514,9 +514,8 @@ footer.site a{color:var(--muted)}
     <div class="tile ok"><b>8</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
+    <div class="tile warn"><b>2</b><span>등록된 사업별 확인 항목</span></div>
   </div>
-  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
@@ -575,7 +574,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b>투자대외경제관계부(MIFER) 대외경제관계국(FERD)</b><span>외부 무상·차관·기술지원의 정부 초점기관으로 제안 상신·협상·협정·정부 간 조정·AIMS와 사업모니터링을 담당한다.</span></div><div class="auth"><b>개발원조조정단위(DACU)</b><span>FERD를 사무국으로 두고 개발원조 정책·효과성 조정을 수행한다.</span></div><div class="auth"><b>경제위원회·국가행정평의회 관련 승인회의</b><span>MIFER 현행 공식 페이지에 따라 서명 전 협정안 등 고위 승인을 담당한다.</span></div><div class="auth"><b>수원부처·주·지역정부·실행기관</b><span>사업을 제안·준비하고 예산·PMU/PSC·분기보고를 통해 실행한다.</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">투자대외경제관계부(MIFER), 대외경제관계국(FERD), 개발원조조정단위(DACU), 관련 수원부처·주/지역 정부, 고위 승인기관, 경제위원회, 개발파트너(PID), 프로젝트관리단(PMU)·운영위원회(PSC), 기획부서·사업평가진도보고부서</p></div>
-    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>선도 수원부처·정부기관</b><div class="chips"><span class="chip">Concept Proposal Form 또는 사업개념서</span><span class="chip">사업/프로그램 설계문서</span><span class="chip">재원·예산계획</span><span class="chip">예비 조달계획</span><span class="chip">협정·MoU 초안</span><span class="chip">주/지역 정부 제안의 최고책임자 사전승인</span></div></div><div class="docset"><b>FERD·DACU·고위 승인기관</b><div class="chips"><span class="chip">관계기관 검토의견</span><span class="chip">DACU 검토·승인 또는 고위 승인 상신안</span><span class="chip">법률의견 취합본</span><span class="chip">최종 협정·MoU·Exchange of Notes 승인안</span></div></div><div class="docset"><b>개발파트너·수원부처</b><div class="chips"><span class="chip">서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes</span><span class="chip">AIMS 사업등록 정보</span><span class="chip">PMU·PSC 회의록</span><span class="chip">분기 이행보고서</span></div></div></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>선도 수원부처·정부기관</b><div class="chips"><span class="chip">Concept Proposal Form 또는 사업개념서</span><span class="chip">사업/프로그램 설계문서</span><span class="chip">재원·예산계획</span><span class="chip">예비 조달계획</span><span class="chip">협정·MoU 초안</span><span class="chip">주/지역 정부 제안의 최고책임자 사전승인</span></div></div><div class="docset"><b>FERD·DACU·고위 승인기관</b><div class="chips"><span class="chip">관계기관 검토의견</span><span class="chip">DACU 검토·승인 또는 고위 승인 상신안</span><span class="chip">법률의견 취합본</span><span class="chip">최종 협정·MoU·Exchange of Notes 승인안</span></div></div><div class="docset"><b>개발파트너·수원부처</b><div class="chips"><span class="chip">서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes</span><span class="chip">AIMS 사업등록 정보</span><span class="chip">PMU·PSC 회의록</span><span class="chip">분기 이행보고서</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.</li><li>외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../myanmar-site-urban-construction-regulations/index.html">미얀마 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../myanmar-permit-environment-construction-regulations/index.html">미얀마 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../myanmar-control-completion-construction-regulations/index.html">미얀마 기술검사·보험·준공제도</a></div></div>

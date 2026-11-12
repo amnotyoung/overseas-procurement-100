@@ -1362,7 +1362,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
@@ -1456,7 +1456,6 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -1702,7 +1701,7 @@ GUIDE_SHORTCUT_JS = """
     else if (dialog.open) dialog.close();
   });
   dialog.addEventListener('close', () => {
-    if (location.hash.startsWith('#guide-')) history.replaceState(history.state, '', location.pathname + location.search);
+    if (location.hash.startsWith('#guide-')) history.replaceState(history.state, '', location.href.split('#')[0]);
   });
   followShortcut();
 })();
@@ -1712,14 +1711,9 @@ CATALOG_JS = Path(__file__).with_name("catalog_navigation.js").read_text(encodin
 DETAIL_NAV_JS = Path(__file__).with_name("detail_navigation.js").read_text(encoding="utf-8")
 
 INDEX_CSS = """
-.country-picker{display:inline-flex;align-items:center;gap:8px;font-weight:600}
-.writing-route{margin-bottom:14px}.writing-route summary{cursor:pointer;font-weight:600;padding:8px 0}
-.writing-route p,.writing-route a{font-size:13px}.writing-route p{margin:10px 0;color:var(--muted)}
-.writing-route ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin:0;padding:0;list-style:none}
-.writing-route li{border-top:2px solid var(--line);padding-block:8px}
-.writing-route strong,.writing-route a{display:block;margin-bottom:5px}
+.country-picker{display:none;align-items:center;gap:8px;font-weight:600}
 .cols main{min-width:0}.cols .panel{overflow:auto}
-@media(max-width:820px){.side .grp:first-child{display:none}.side .grp:last-child{display:flex;flex-wrap:wrap;gap:4px;margin:0}.side .grp:last-child button{width:auto}.side .grp:last-child h3{width:100%}}
+@media(max-width:820px){.country-picker{display:inline-flex}.side .grp:first-child{display:none}.side .grp:last-child{display:flex;flex-wrap:wrap;gap:4px;margin:0}.side .grp:last-child button{width:auto}.side .grp:last-child h3{width:100%}}
 
 .home-hero{display:grid;grid-template-columns:minmax(0,1fr) 290px;align-items:center;gap:50px}
 .home-hero .hero-copy{min-width:0}
@@ -1786,6 +1780,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
     return f"""<!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+{'<base href="about:srcdoc">' if standalone else ''}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>
 <style>{CSS}{extra_css}</style>
@@ -1821,14 +1816,6 @@ def redirect_page(target: str, title: str) -> str:
 
 # ─────────────────────────────────────────────────────────── 목록
 
-PRACTICAL_CHECKS = {
-    "pipeline": "수원총괄기관과 해당 사업의 공식 요청 경로",
-    "bidding": "개별 공고의 제출기한·참가자격·보증액",
-    "governance": "조달 방식과 심급별 관할기관",
-    "construction": "대상지·용도·시설 규모에 따른 적용 조건",
-}
-
-
 def guide_shortcuts(model, *, catalog=False):
     """자료집 원문과 절차 노드가 모두 연결된 대조 항목으로 바로 이동한다."""
     links = []
@@ -1843,27 +1830,6 @@ def guide_shortcuts(model, *, catalog=False):
         links.append(f'<a class="guide-shortcut" '
                      f'href="{e(path)}#guide-{e(guide["nodeId"])}">{e(label)}</a>')
     return "".join(links)
-
-
-def writing_route(country, models):
-    groups = []
-    for title, axes, anchor in (
-        ("사업형성", ("pipeline",), "practice"),
-        ("조달 참여", ("bidding", "governance"), "practice"),
-        ("기업 유의사항", ("bidding",), "business"),
-        ("건축 인허가", ("construction",), "practice"),
-    ):
-        links = []
-        for model in models:
-            if model["axis"] not in axes:
-                continue
-            name = "제출서류·진입장벽" if anchor == "business" else model["name"].removeprefix(country + " ")
-            links.append(f'<a href="model/{e(model["slug"])}/index.html#{anchor}">{e(name)}</a>')
-        if links:
-            groups.append(f'<li><strong>{title}</strong>{"".join(links)}</li>')
-    return (f'<details class="writing-route" data-country="{e(country_slug(models[0]))}" hidden>'
-            f'<summary>{e(country_display_name(country))} 자료집 작성에 활용</summary><ol>{"".join(groups)}</ol>'
-            '<p>발주계획은 발주기관 공고에서, 기업 진출 사례는 해당 기업·사업의 실적 자료에서 확인하세요.</p></details>')
 
 
 def build_index(items: list[dict]) -> str:
@@ -1886,10 +1852,6 @@ def build_index(items: list[dict]) -> str:
     construction_count = sum(1 for d in items if d["axis"] == "construction")
 
     country_keys = {d["country"]["name"]: country_slug(d) for d in items}
-    grouped = {}
-    for model in items:
-        grouped.setdefault(model["country"]["name"], []).append(model)
-    routes = "".join(writing_route(country, models) for country, models in grouped.items())
     options = "".join(f'<option value="{e(country_keys[name])}">{e(country_display_name(name))}</option>'
                       for name in sorted(countries, key=country_name_sort_key))
     rows = []
@@ -1983,7 +1945,6 @@ def build_index(items: list[dict]) -> str:
   </aside>
 
   <main id="results">
-    {routes}
     <div class="panel">
     <div class="panel-hd">제도 대장 <span>· <span id="hcnt">{len(items)}</span>개 결과</span></div>
     <table>
@@ -2392,9 +2353,6 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             quote_cards.append(f'<article class="qc">{original}<small>원문 확인 {e(source.get("retrievedOn") or "확인일 미상")}</small></article>')
     quotes_html = "".join(quote_cards)
     comparison_html = "".join(comparisons)
-    comparison_links = "".join(f' · <a href="#edition-{i}">{e(q["comparison"]["title"])} 판본 비교</a>'
-                               for i, q in enumerate(quotes, 1) if q.get("comparison"))
-
     country_list = "../../index.html?" + urlencode({"country": country_slug(d)}) + "#results"
     subnav = "" if standalone else f"""
 <div class="subnav"><div class="wrap">
@@ -2416,7 +2374,6 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 f'이 제도축 {e(c["procedureStatusLabel"])}</span>'
             )
 
-    practical_check = PRACTICAL_CHECKS[d["axis"]]
     unresolved_steps = sum(n.get("basisStatus") == "pending" for n in nodes)
     if d["axis"] == "construction":
         remaining = [f"현행성 추가 확인 {currentness_issues}개 자료"]
@@ -2442,7 +2399,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <p class="one">{e(d['oneLiner'])}</p>
   {f'<nav class="guide-entry" aria-label="자료집 작성자 바로가기">{guide_shortcuts(d)}</nav>' if node_comparisons else ''}
   <div class="scope-note"><b>대조 범위</b> {e(v["scope"])}<br><b>확인일</b> {e(v["verifiedAt"])} · {e(" · ".join(remaining))}<br>
-    <b>실무 확인</b> {e(practical_check)} · <a href="#sources">근거 자료 보기</a>{comparison_links}</div>
+    <a href="#sources">검증·출처 보기</a></div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>{len(nodes)}</b><span>{e(node_metric_label)}</span></div>
@@ -2452,9 +2409,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
     <div class="tile{' bad' if status_metric_bad else ' ok' if d['axis'] == 'construction' else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
     {f'<div class="tile warn"><b>{currentness_issues}</b><span>사이트 최신성 검증 중</span></div>' if d['axis'] == 'construction' and currentness_issues else ''}
-    <div class="tile warn"><b>{field_count}</b><span>사업별 확인 항목</span></div>
+    <div class="tile{' warn' if field_count else ''}"><b>{field_count}</b><span>등록된 사업별 확인 항목</span></div>
   </div>
-  <p class="meta">{"등록된 사업별 확인 질문이 없습니다. 이 수치는 적용 사례 수를 집계하지 않습니다." if not field_count else "사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다."}</p>
 </div>
 
 <div class="wrap">
@@ -2493,7 +2449,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     {status_exception_card}
     <div class="card"><h3>권한 기관</h3>{auths}</div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['stakeholders'])}</p></div>
-    <div class="card" id="business"><h3>제출서류</h3>{docs}{'<p>기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. <a href="#sources">근거 보기</a></p>' if d['axis'] == 'bidding' else ''}</div>
+    <div class="card"><h3>제출서류</h3>{docs}</div>
     {bottleneck_card}
     {f'<div class="card"><h3>진입장벽</h3><ul class="plain">{barr}</ul></div>' if barr else ''}
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
@@ -3360,7 +3316,7 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
     body = f"""
 {subnav}
-<div class="wrap dtl-hd" id="summary">
+<div class="wrap dtl-hd">
   <div class="row">
     <span class="badge ok">{e(CONSTRUCTION_VERIFY_LABEL[d['verification']['status']])}</span>
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>

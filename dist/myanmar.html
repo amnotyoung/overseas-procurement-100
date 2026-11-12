@@ -35,6 +35,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo"
 <div class="frames"><iframe class="fr active" data-i="0" title="미얀마 공공조달 입찰제도" loading="eager" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 공공조달 입찰제도 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -169,7 +170,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -263,7 +264,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -523,7 +523,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-29 · 실무 필수 확인 1건 · 근거 미연결 0단계 · 개별 요건만 연결 2단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 개별 공고의 제출기한·참가자격·보증액 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;9&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -533,9 +533,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;5&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -592,7 +591,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;발주부서·기관별 입찰위원회(Tender Committee)&lt;/b&gt;&lt;span&gt;조달방식 선택, 가격제안 요청·공개입찰 실시, 입찰서 접수·평가, 낙찰·계약 관리&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;연방급 기관·연방부처·네피도위원회·주/지역 정부 관리위원회&lt;/b&gt;&lt;span&gt;제한입찰·직접조달 금액이 1억 짯 미만인 경우 해당 방식 사용을 회의로 결정&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;국정관리평의회 의장 또는 연방정부&lt;/b&gt;&lt;span&gt;제한입찰·직접조달 금액이 1억 짯 이상인 경우 사전 승인&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;차관·무상원조 제공 국제·협력기관&lt;/b&gt;&lt;span&gt;외부재원 조달에 자체 규정이 있으면 그 규정을 적용하고, 없으면 미얀마 지침 적용&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;연방급 기관·연방부처·네피도위원회·주/지역 정부의 발주부서, 발주부서별 입찰위원회, 국내외 입찰자, 기관 관리위원회, 국정관리평의회 의장 또는 연방정부, 차관·무상원조 제공 국제·협력기관&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;입찰서 또는 가격제안서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 기술제안·가격제안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰보증(요구되는 경우)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;외국기업 낙찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 이행보증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주부서·입찰위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;승인예산·조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰공고·초청장&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사양·평가기준·계약조건&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서·낙찰결정·계약서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. &lt;a href=&quot;#sources&quot;&gt;근거 보기&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;입찰서 또는 가격제안서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 기술제안·가격제안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰보증(요구되는 경우)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;외국기업 낙찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰서류가 정한 이행보증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주부서·입찰위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;승인예산·조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰공고·초청장&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사양·평가기준·계약조건&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서·낙찰결정·계약서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.&lt;/li&gt;&lt;li&gt;외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1229,6 +1228,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="1" title="미얀마 조달 거버넌스·감독체계" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 조달 거버넌스·감독체계 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -1363,7 +1363,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -1457,7 +1457,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -1717,7 +1716,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;중앙 조달청이 아니라 발주기관별 입찰위원회가 집행·기록·1차 이의처리를 맡고, 제한·직접조달의 고액 건은 상위 승인을 받으며, 불복 시 기획재정부가 부처합동 이의해결팀을 구성하는 분권형 체계&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-29 · 실무 필수 확인 1건 · 근거 미연결 4단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 조달 방식과 심급별 관할기관 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -1727,9 +1726,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;5&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -1788,7 +1786,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;발주기관별 입찰위원회(Tender Committee)&lt;/b&gt;&lt;span&gt;조달의 중심 집행기관. 방식·공고·평가·낙찰·계약을 관리하고 이의제기의 1차 사실조사를 수행&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;입찰접수·평가위원회&lt;/b&gt;&lt;span&gt;입찰서를 접수·개찰하고 공고된 기준으로 평가해 권고가 포함된 평가보고서를 입찰위원회에 제출&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;품질평가·인수위원회&lt;/b&gt;&lt;span&gt;납품 재화·서비스의 품질과 계약 사양 충족 여부를 검사하고 인수·거부 및 영수증 발급&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;기관 관리위원회&lt;/b&gt;&lt;span&gt;1억 짯 미만 제한입찰·직접조달 방식 사용을 회의로 결정&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;국정관리평의회 의장 또는 연방정부&lt;/b&gt;&lt;span&gt;1억 짯 이상 제한입찰·직접조달 방식 사용 승인&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;기획재정부(Ministry of Planning and Finance)&lt;/b&gt;&lt;span&gt;입찰위원회 결정에 불복한 이의가 있으면 연방정부 허가를 받아 3명 이상 부처 대표로 이의해결팀 구성&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;연방급 기관·연방부처·네피도위원회·주/지역 정부, 발주기관별 입찰위원회, 입찰접수·평가위원회, 품질평가·인수위원회, 기관 관리위원회, 국정관리평의회 의장 또는 연방정부, 기획재정부, 부처합동 이의해결팀, 입찰자·공급자&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰접수·평가위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;개찰기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가기준별 심사결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;낙찰 권고가 포함된 평가보고서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;품질평가·인수위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;품질·사양 검사결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;인수·거부 기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;물품 영수증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;접수 입찰서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰위원회 회의기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;계약서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;지급정보·영수증&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;기타 관련문서 — 최소 3년 보관&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;이의제기 입찰자·이의해결팀&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;충분한 증거가 첨부된 이의신청&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;이의 접수·심사기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;최종 결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰접수·평가위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;개찰기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가기준별 심사결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;낙찰 권고가 포함된 평가보고서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;품질평가·인수위원회&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;품질·사양 검사결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;인수·거부 기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;물품 영수증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;접수 입찰서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰위원회 회의기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;계약서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;지급정보·영수증&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;기타 관련문서 — 최소 3년 보관&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;이의제기 입찰자·이의해결팀&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;충분한 증거가 첨부된 이의신청&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;이의 접수·심사기록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;최종 결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.&lt;/li&gt;&lt;li&gt;외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2425,6 +2423,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="2" title="미얀마 ODA 사업 발굴·형성 절차" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 ODA 사업 발굴·형성 절차 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -2559,7 +2558,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -2653,7 +2652,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -2913,7 +2911,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-29 · 실무 필수 확인 1건 · 근거 미연결 2단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 수원총괄기관과 해당 사업의 공식 요청 경로 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -2923,9 +2921,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;8&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -2984,7 +2981,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;투자대외경제관계부(MIFER) 대외경제관계국(FERD)&lt;/b&gt;&lt;span&gt;외부 무상·차관·기술지원의 정부 초점기관으로 제안 상신·협상·협정·정부 간 조정·AIMS와 사업모니터링을 담당한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;개발원조조정단위(DACU)&lt;/b&gt;&lt;span&gt;FERD를 사무국으로 두고 개발원조 정책·효과성 조정을 수행한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;경제위원회·국가행정평의회 관련 승인회의&lt;/b&gt;&lt;span&gt;MIFER 현행 공식 페이지에 따라 서명 전 협정안 등 고위 승인을 담당한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;수원부처·주·지역정부·실행기관&lt;/b&gt;&lt;span&gt;사업을 제안·준비하고 예산·PMU/PSC·분기보고를 통해 실행한다.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;투자대외경제관계부(MIFER), 대외경제관계국(FERD), 개발원조조정단위(DACU), 관련 수원부처·주/지역 정부, 고위 승인기관, 경제위원회, 개발파트너(PID), 프로젝트관리단(PMU)·운영위원회(PSC), 기획부서·사업평가진도보고부서&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;선도 수원부처·정부기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;Concept Proposal Form 또는 사업개념서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업/프로그램 설계문서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;재원·예산계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;예비 조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;협정·MoU 초안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;주/지역 정부 제안의 최고책임자 사전승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;FERD·DACU·고위 승인기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;관계기관 검토의견&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;DACU 검토·승인 또는 고위 승인 상신안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;법률의견 취합본&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;최종 협정·MoU·Exchange of Notes 승인안&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;개발파트너·수원부처&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;AIMS 사업등록 정보&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;PMU·PSC 회의록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;분기 이행보고서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;선도 수원부처·정부기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;Concept Proposal Form 또는 사업개념서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업/프로그램 설계문서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;재원·예산계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;예비 조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;협정·MoU 초안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;주/지역 정부 제안의 최고책임자 사전승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;FERD·DACU·고위 승인기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;관계기관 검토의견&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;DACU 검토·승인 또는 고위 승인 상신안&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;법률의견 취합본&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;최종 협정·MoU·Exchange of Notes 승인안&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;개발파트너·수원부처&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;AIMS 사업등록 정보&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;PMU·PSC 회의록&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;분기 이행보고서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.&lt;/li&gt;&lt;li&gt;외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -3621,6 +3618,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="3" title="미얀마 도시계획·부지규제" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 도시계획·부지규제 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -3755,7 +3753,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -3849,7 +3847,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -4109,7 +4106,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;토지권리·용도지역과 계획·개발허가 조건으로 필지 수치·재해·인프라 한계를 먼저 확정한다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; 국가건축코드 제1편·제2편이 계획·건축·건축통제 행정을 전국 기준으로 정한다. 필지별 용도·밀도 수치는 대상지 관할 개발기관의 현행 계획으로 확정한다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;8&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -4119,9 +4116,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;2/2&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -4176,7 +4172,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.myanmar.gov.mm/web/guest/construction/document&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;건설부&lt;/a&gt;&lt;/b&gt;&lt;span&gt;Myanmar National Building Code와 국가 건축·도시 기술기준을 발간 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;관할 개발계획·건축당국 또는 도시/개발위원회&lt;/b&gt;&lt;span&gt;지역 법에 따라 planning/development permit, 건축허가(building permit), 검사와 준공·점유증명을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;등록전문가 심의기관·승인검사기관·소방국&lt;/b&gt;&lt;span&gt;설계·감리 전문자격, 시험·검사와 건축물 화재안전 확인을 담당 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://ycdc.gov.mm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;양곤도시개발위원회 도시계획·건축기술 부서&lt;/a&gt;&lt;/b&gt;&lt;span&gt;양곤시 개발허가, YBPS 건축허가, 공정검사와 건축준공증명(BCC)을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;건설부, 관할 개발계획·건축당국 또는 도시/개발위원회, 등록전문가 심의기관·승인검사기관·소방국, 양곤도시개발위원회 도시계획·건축기술 부서&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;01 YCDC 개발허가 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;개발허가·조건 또는 불허통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;01 YCDC 개발허가 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;개발허가·조건 또는 불허통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -4795,6 +4791,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="4" title="미얀마 건축허가·환경심사" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 건축허가·환경심사 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -4929,7 +4926,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -5023,7 +5020,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -5283,7 +5279,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;관할 planning/건축허가(building permit)와 ECD의 Non-초기환경검토(IEE)/환경영향평가(EIA)·초기환경검토·환경영향평가 스크리닝 및 ECC를 병행한다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; 환경평가는 환경보전법과 평가절차가, 건축허가는 국가건축코드 제1.3.2항이 정한다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;12&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -5293,9 +5289,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;5&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;5/5&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -5358,7 +5353,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.myanmar.gov.mm/web/guest/construction/document&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;건설부&lt;/a&gt;&lt;/b&gt;&lt;span&gt;Myanmar National Building Code와 국가 건축·도시 기술기준을 발간 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;관할 개발계획·건축당국 또는 도시/개발위원회&lt;/b&gt;&lt;span&gt;지역 법에 따라 planning/development permit, 건축허가, 검사와 준공·점유증명을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.ecd.gov.mm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;천연자원환경보전부 환경보전국(ECD)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;Project Proposal 스크리닝, 초기환경검토/환경영향평가 검토와 Environmental Compliance Certificate를 담당 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;등록전문가 심의기관·승인검사기관·소방국&lt;/b&gt;&lt;span&gt;설계·감리 전문자격, 시험·검사와 건축물 화재안전 확인을 담당 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://ycdc.gov.mm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;양곤도시개발위원회 도시계획·건축기술 부서&lt;/a&gt;&lt;/b&gt;&lt;span&gt;양곤시 개발허가, YBPS 건축허가, 공정검사와 건축준공증명(BCC)을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;건설부, 관할 개발계획·건축당국 또는 도시/개발위원회, 천연자원환경보전부 환경보전국(ECD), 등록전문가 심의기관·승인검사기관·소방국, 양곤도시개발위원회 도시계획·건축기술 부서&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;02 MONREC/ECD의 환경준수증명 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경준수증명·환경조건 또는 거부결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;03 YCDC 중위험 건축허가 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;BP-003·승인도서 또는 수정·거부통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;02 MONREC/ECD의 환경준수증명 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경준수증명·환경조건 또는 거부결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;03 YCDC 중위험 건축허가 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;BP-003·승인도서 또는 수정·거부통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -5973,6 +5968,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="5" title="미얀마 기술검사·보험·준공제도" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;미얀마 기술검사·보험·준공제도 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -6107,7 +6103,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -6201,7 +6197,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -6461,7 +6456,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;등록전문가·승인검사기관·소방검사 기록을 누적해 Building Completion Certificate와 점유조건을 닫는다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; 단계검사·검사중지점과 준공증명은 국가건축코드 제1.3.4항이 전국 기준으로 정한다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -6471,9 +6466,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;2/2&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -6532,7 +6526,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.myanmar.gov.mm/web/guest/construction/document&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;건설부&lt;/a&gt;&lt;/b&gt;&lt;span&gt;Myanmar National Building Code와 국가 건축·도시 기술기준을 발간 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;관할 개발계획·건축당국 또는 도시/개발위원회&lt;/b&gt;&lt;span&gt;지역 법에 따라 planning/development permit, 건축허가(building permit), 검사와 준공·점유증명을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;등록전문가 심의기관·승인검사기관·소방국&lt;/b&gt;&lt;span&gt;설계·감리 전문자격, 시험·검사와 건축물 화재안전 확인을 담당 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://ycdc.gov.mm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;양곤도시개발위원회 도시계획·건축기술 부서&lt;/a&gt;&lt;/b&gt;&lt;span&gt;양곤시 개발허가, YBPS 건축허가, 공정검사와 건축준공증명(BCC)을 집행 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;건설부, 관할 개발계획·건축당국 또는 도시/개발위원회, 등록전문가 심의기관·승인검사기관·소방국, 양곤도시개발위원회 도시계획·건축기술 부서&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;04 YCDC 건축물준공증명서 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;BCC-002·승인용도 또는 거부결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;04 YCDC 건축물준공증명서 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;BCC-002·승인용도 또는 거부결정&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;미얀마 건축허가·환경심사&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>캄보디아 ODA 사업 발굴·형성 절차 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,7 +136,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
@@ -229,7 +230,6 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -504,7 +504,7 @@ footer.site a{color:var(--muted)}
   <p class="one">무상은 CDC/CRDB, 유상은 경제재무부(MEF)로 수원총괄이 분리된 구조에서, 부처 수요를 총괄기관이 국가전략과 대조해 개발파트너에 전달하고 KOICA 예비조사·PD 심사로 형성되는 절차</p>
 
   <div class="scope-note"><b>대조 범위</b> CDC/CDCB·MEF의 사업 형성·외부재원 관리 경로와, 형성 후 집행되는 외부재원 조달의 적용규정·금액기준·기한·보증·이의·예외 및 현행성을 확인했다.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 0건 · 근거 미연결 0단계<br>
-    <b>실무 확인</b> 수원총괄기관과 해당 사업의 공식 요청 경로 · <a href="#sources">근거 자료 보기</a></div>
+    <a href="#sources">검증·출처 보기</a></div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>9</b><span>절차 노드</span></div>
@@ -514,9 +514,8 @@ footer.site a{color:var(--muted)}
     <div class="tile ok"><b>7</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항</span></div>
 
-    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
+    <div class="tile warn"><b>2</b><span>등록된 사업별 확인 항목</span></div>
   </div>
-  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
@@ -573,7 +572,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b>캄보디아개발위원회(CDC) 캄보디아개발협력이사회(CDCB/구 CRDB)</b><span>개발협력 정책·파트너 조정과 정부 전체 ODA 데이터베이스를 관리한다.</span></div><div class="auth"><b>경제재무부(MEF)</b><span>외부재원 포함 공공투자 관리·재정심사·차관과 국가예산 연계를 담당한다.</span></div><div class="auth"><b>부문부처·실행기관</b><span>국가계획에 맞춰 사업을 발굴·준비·제출하고 승인 후 조달·실행한다.</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">캄보디아개발위원회(CDC) 재건개발이사회(CRDB, 무상 총괄), 경제재무부(MEF, 유상 총괄), 각 수원부처·기관, 개발협력파트너(DP), KOICA 캄보디아사무소·본부, 대한민국 외교부·기획재정부·국무조정실</p></div>
-    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>각 수원부처·기관</b><div class="chips"><span class="chip">협력사업 수요서</span><span class="chip">사업수요 공식 제출 서한</span><span class="chip">(유상) 사업요청서</span></div></div><div class="docset"><b>CDC/CRDB · MEF</b><div class="chips"><span class="chip">국가발전전략·우선순위 검토 결과</span><span class="chip">DP 앞 수요 전달</span></div></div><div class="docset"><b>KOICA</b><div class="chips"><span class="chip">사업제안서(Project Concept Paper, PCP)</span><span class="chip">예비조사 보고서</span><span class="chip">사업계획서(Project Document, PD)</span></div></div></div>
+    <div class="card"><h3>제출서류</h3><div class="docset"><b>각 수원부처·기관</b><div class="chips"><span class="chip">협력사업 수요서</span><span class="chip">사업수요 공식 제출 서한</span><span class="chip">(유상) 사업요청서</span></div></div><div class="docset"><b>CDC/CRDB · MEF</b><div class="chips"><span class="chip">국가발전전략·우선순위 검토 결과</span><span class="chip">DP 앞 수요 전달</span></div></div><div class="docset"><b>KOICA</b><div class="chips"><span class="chip">사업제안서(Project Concept Paper, PCP)</span><span class="chip">예비조사 보고서</span><span class="chip">사업계획서(Project Document, PD)</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>무상·유상 수원총괄기관이 분리돼 있어(무상 CDC/CRDB·유상 MEF) 사업 성격에 따라 총괄 창구가 다르다</li><li>사업 형성(CDC/CRDB·MEF)과 조달 집행(외부재원 GDICDM·SOP 2019)의 주체가 달라, 형성 단계와 집행 단계에서 상대하는 기관이 바뀐다</li><li>부처별 사업 추진 선호방식이 상이해 태세가 다르다</li><li>일부 캄보디아 재원이 동원되면 수원부처가 MEF 절차를 추가로 밟아야 한다</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>부처별·재원별로 절차가 갈려 사업 초기에 총괄기관(무상 CDC/CRDB·유상 MEF)을 정확히 특정해야 함</li><li>수요제출 공식 서한이 형성 단계마다 확인되므로 문서 절차 관리가 중요</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../cambodia-site-urban-construction-regulations/index.html">캄보디아 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../cambodia-permit-environment-construction-regulations/index.html">캄보디아 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../cambodia-control-completion-construction-regulations/index.html">캄보디아 기술검사·보험·준공제도</a></div></div>

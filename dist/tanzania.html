@@ -35,6 +35,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo"
 <div class="frames"><iframe class="fr active" data-i="0" title="탄자니아 공공조달 입찰제도" loading="eager" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 공공조달 입찰제도 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -169,7 +170,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -263,7 +264,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -523,7 +523,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;PPRA가 규율하는 경쟁입찰 체계로, 입찰·이행·선금·하자 4종 보증과 전자조달(NeST) 의무화를 축으로 하며 2024년 새 조달법으로 근거가 교체됨&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; 현행 법률·규정(PPA 2023, PPR 2024)의 시행·폐지 상태, Sixth Schedule 조달방식별 금액, Tenth·Eleventh Schedules 최소기간, 보증(regs.23–30), 이의·상소(PPA §§119–125; PPR regs.107–109, 238), 공여자·단일공급·긴급 예외를 조문 단위로 대조했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-23 · 실무 필수 확인 1건 · 근거 미연결 3단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 개별 공고의 제출기한·참가자격·보증액 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;11&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -533,9 +533,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -596,7 +595,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.ppra.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;공공조달규제청(PPRA)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;조달 가이드라인·표준입찰서류 제정, 법 이행 모니터링, 가격상한(price cap) 설정, 부당행위 조사, NeST 운영 감독&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;발주 공공기관(procuring entity)&lt;/b&gt;&lt;span&gt;입찰공고·서류작성·개찰·평가·낙찰·계약, 보증 금액·형태를 입찰서류에 명시&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;재정기획부(MoF)&lt;/b&gt;&lt;span&gt;PPRA 소관 부처. 조달 규정 제정&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;은행·보험사&lt;/b&gt;&lt;span&gt;입찰보증·이행보증·선금보증·하자보증 발행. 외국 발행분도 입찰서류 요건 충족 시 거부 불가&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;발주 공공기관(procuring entity), 국내외 입찰자, 공공조달규제청(PPRA), 재정기획부, 입찰·이행 보증을 발행하는 은행·보험사, 산업별 발주 공기업(TANESCO·TANROADS·TPDC 등), 탄자니아투자청(TIC), 기업등록청(BRELA)&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자(공통)&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;입찰서(NeST 전자제출)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰보증(bid security) 또는 입찰보증선언 — 인증수표·신용장·은행지급보증·보험증서 (PPR 2024 reg.23(5), Third Schedule)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업자등록(BRELA) 규정준수 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;납세자식별번호(TIN) 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;유효한 세금공제 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;TIC 서비스 이용료 지불 영수증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;낙찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;이행보증(performance security) (reg.29)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;선금보증(선금 수령 시)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;하자보증(하자담보기간)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주 공공기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;표준입찰서류&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰공고&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;낙찰통지서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달계약서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. &lt;a href=&quot;#sources&quot;&gt;근거 보기&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자(공통)&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;입찰서(NeST 전자제출)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰보증(bid security) 또는 입찰보증선언 — 인증수표·신용장·은행지급보증·보험증서 (PPR 2024 reg.23(5), Third Schedule)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업자등록(BRELA) 규정준수 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;납세자식별번호(TIN) 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;유효한 세금공제 인증서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;TIC 서비스 이용료 지불 영수증&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;낙찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;이행보증(performance security) (reg.29)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;선금보증(선금 수령 시)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;하자보증(하자담보기간)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주 공공기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;표준입찰서류&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;입찰공고&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;평가보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;낙찰통지서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달계약서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;현행 PPA 2023과 PPR 2024를 기준으로 입찰방법·전자조달·보증 요건을 확인해야 한다&lt;/li&gt;&lt;li&gt;보증 금액은 규정에 고정되지 않고 입찰서류와 계약에 위임되므로(reg.23(6), reg.29(2), reg.329), 발주 건별 확인이 필요하다&lt;/li&gt;&lt;li&gt;전 조달의 NeST(국가전자조달시스템) 처리가 의무화돼, 시스템 등록·전자입찰 역량이 없으면 참여 자체가 막힌다&lt;/li&gt;&lt;li&gt;PPA 2023이 지역업체·현지생산품 우대를 강화해, 외국 기업은 현지 파트너십 없이는 평가에서 불리할 수 있다&lt;/li&gt;&lt;li&gt;탄자니아의 다소 느린 행정처리로 인허가·등록에 시간 여유가 필요하다&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;지사의 모든 주주·발기인이 탄자니아 국적이어도 외국 기업으로 분류 — 외국인 조달 규율 적용&lt;/li&gt;&lt;li&gt;선적 전 적합성 확인(PVoC) 제도로 수입 기자재에 CoC(적합성인증서) 필요, 검사비 FOB의 0.25~0.50%&lt;/li&gt;&lt;li&gt;낮은 노동 생산성&lt;/li&gt;&lt;li&gt;본토와 잔지바르 자치정부의 이원 행정&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1271,6 +1270,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="1" title="탄자니아 조달 거버넌스·감독체계" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 조달 거버넌스·감독체계 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -1405,7 +1405,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -1499,7 +1499,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -1759,7 +1758,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;재정기획부 산하 공공조달규제청(PPRA)이 표준·정책·전자조달(NeST)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; PPA 2023 §§1–5, 8–10, 38, 49–86, 112–125, 131과 PPR 2024 regs.1, 9–11, 23–30, 64–65, 78, 107–109, 150–166, 238 및 Sixth·Ninth–Eleventh Schedules를 확인했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-23 · 실무 필수 확인 1건 · 근거 미연결 0단계 · 개별 요건만 연결 2단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 조달 방식과 심급별 관할기관 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -1769,9 +1768,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;4&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -1830,7 +1828,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.ppra.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;공공조달규제청(PPRA)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;정부·지방정부·법정기관에 조달원칙 자문(§10(a)), 조달시스템 성과 모니터링·보고(§10(b)), 표준입찰서류 제정·발급(§10(d)), 가이드라인 발급(§10(f)), 조달기회·낙찰 데이터 공표(§10(g)), 발주기관 정기 점검(§10(h)), 낙찰·이행 모니터링(§10(i)), 가격상한 설정(§74)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.mof.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;재정기획부(MoF)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;PPRA 소관 부처. 조달 규정(PPR 2024) 제정&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;발주 공공기관·회계책임관&lt;/b&gt;&lt;span&gt;조달 집행 책임. 회계책임관(accounting officer)이 조달 결정 책임 (§38)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;공공조달상소청(PPAA)&lt;/b&gt;&lt;span&gt;조달 관련 이의·상소 심리 (독립 상소기구)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;공공조달규제청(PPRA), 재정기획부(MoF), 발주 공공기관(procuring entity)과 회계책임관(accounting officer), 산업별 발주 공기업(TANESCO·TANROADS·TPDC·DAWASA 등), 입찰자, 공공조달상소청(PPAA)&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;PPRA&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;표준입찰서류(standardised tendering documents, §10(d))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 가이드라인(guidelines, §10(f))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 성과 보고서(performance report, §10(b))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;가격상한 고시(price cap, §74)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;점검 결과(inspection findings, §10(h))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주 공공기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 기록·절차 문서(정기 점검 대상)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;NeST 등록 조달 데이터&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;이의신청서(발주기관)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;상소신청서(PPAA)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;PPRA&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;표준입찰서류(standardised tendering documents, §10(d))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 가이드라인(guidelines, §10(f))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 성과 보고서(performance report, §10(b))&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;가격상한 고시(price cap, §74)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;점검 결과(inspection findings, §10(h))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;발주 공공기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;조달계획&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;조달 기록·절차 문서(정기 점검 대상)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;NeST 등록 조달 데이터&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;입찰자&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;이의신청서(발주기관)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;상소신청서(PPAA)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;PPRA의 현행 근거는 2024-06-17 시행된 Public Procurement Act 2023이다&lt;/li&gt;&lt;li&gt;PPRA는 개별 조달절차의 집행·분쟁해결 기관이 아니라 감독·자문기관이다. 개별 입찰 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 다뤄진다&lt;/li&gt;&lt;li&gt;PPRA는 §74에 따라 특정 물품·공사·용역의 가격상한(price cap)을 설정할 수 있다&lt;/li&gt;&lt;li&gt;전 조달의 NeST 처리가 의무화돼, 발주기관·입찰자 모두 시스템 등록·운영 역량이 필요하다&lt;/li&gt;&lt;li&gt;본토와 잔지바르 자치정부의 이원 행정으로 관할 확인이 필요하다&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;PPRA 데이터 공표 시스템(NeST)이 조달기회 파악의 단일 창구 — 등록·모니터링 역량 필요&lt;/li&gt;&lt;li&gt;산업별 발주 공기업이 분산돼 있어(TANESCO·TANROADS·TPDC 등) 공고 채널을 개별 파악해야 함&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2467,6 +2465,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="2" title="탄자니아 ODA 사업 발굴·형성 절차" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 ODA 사업 발굴·형성 절차 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -2601,7 +2600,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -2695,7 +2694,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -2955,7 +2953,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;재정기획부가 원조를 총괄하되 실질 수원은 개별 부처가 담당하는 이원 구조로, PCP 제출부터 예비·기획조사를 거쳐 재정기획부와 RD 체결로 공식화되는 사업 형성 절차&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; DCF Ch.2 및 Ch.4 §§4.1–4.6, PPA 2023 §§1–5, 49–86, 119–125, 131, PPR 2024 regs.1, 9–11, 23–30, 107–109, 150–166, 238과 Sixth·Tenth·Eleventh Schedules를 확인했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-07-28 · 실무 필수 확인 1건 · 근거 미연결 0단계&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 수원총괄기관과 해당 사업의 공식 요청 경로 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;span&gt;절차 노드&lt;/span&gt;&lt;/div&gt;
@@ -2965,9 +2963,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;7&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile bad&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;현행 확인사항 (필수 확인 1)&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -3026,7 +3023,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;재무부 대외금융국(External Finance Division)&lt;/b&gt;&lt;span&gt;무상원조·양허성차관 등 외부재원을 동원하고 개발협력 정책·협정·ODA 기록·사업모니터링을 담당한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;재무부 부채관리국&lt;/b&gt;&lt;span&gt;외부차입·보증·채무전략과 부채 데이터베이스를 담당한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;부문부처·실행기관&lt;/b&gt;&lt;span&gt;국가계획과 예산에 맞춰 사업을 제안·준비·집행·보고한다.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;정부·개발파트너 협의체&lt;/b&gt;&lt;span&gt;Development Cooperation Framework 아래 정책대화·공여조정을 수행한다.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;재정기획부(MoF) 원조조화부서(External Finance Department), 개별 소관부처(사업 수행기관), 대통령 직속 공공행정서비스실(연수 총괄), 개발협력포럼(DCF)·개발파트너그룹(DPG), KOICA 탄자니아사무소, KOICA 본부, 주탄자니아 대한민국대사관, 국세청(TRA), NGO 등록청&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;개별 소관부처&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;사업요청서(Project Concept Paper, PCP)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;원조사업요청(재정기획부 승인 대상)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;타당성조사 자료&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;재정기획부&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;원조사업요청 승인&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;협의의사록(RD)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;면세·환급 승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;KOICA&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;예비조사 보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;기획조사 결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업집행계획서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;민관협력 후원기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;약정서·계약서(NGO 등록청 제출)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;개별 소관부처&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;사업요청서(Project Concept Paper, PCP)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;원조사업요청(재정기획부 승인 대상)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;타당성조사 자료&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;재정기획부&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;원조사업요청 승인&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;협의의사록(RD)&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;면세·환급 승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;KOICA&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;예비조사 보고서&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;기획조사 결과&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;사업집행계획서&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;민관협력 후원기관&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;약정서·계약서(NGO 등록청 제출)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;유의사항 · 병목&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;개별 부처와 직접 사업을 발굴하더라도 재정기획부의 최종 원조사업요청 승인이 없으면 진행되지 않는다&lt;/li&gt;&lt;li&gt;재정기획부는 총괄·조화 창구이나 실질 수원은 개별 부처라, 사업마다 소관부처와 재정기획부 양쪽과 협의해야 한다&lt;/li&gt;&lt;li&gt;면세·환급이 재정기획부 승인 + 국세청(TRA) 협조 이중 절차라 시간이 소요된다&lt;/li&gt;&lt;li&gt;본토와 잔지바르 자치정부의 이원 행정으로 관할·협의 대상이 갈릴 수 있다&lt;/li&gt;&lt;li&gt;탄자니아의 다소 느린 행정처리로 승인·조사 단계에 시간 여유가 필요하다&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;진입장벽&lt;/h3&gt;&lt;ul class=&quot;plain&quot;&gt;&lt;li&gt;WFK 봉사단은 총괄 중앙부처가 없어 파견분야별 개별부처 승인 + 고용노동부 노동허가 + 이민청 비자를 각각 받아야 함&lt;/li&gt;&lt;li&gt;사업 예산 확보가 개별 부처 책임이라 부처 재정 여건에 좌우됨&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -3660,6 +3657,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="3" title="탄자니아 도시계획·부지규제" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 도시계획·부지규제 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -3794,7 +3792,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -3888,7 +3886,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -4148,7 +4145,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;권원·계획구역·개발동의와 용도지역·공간기준으로 필지별 개발가능 범위를 확정한다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; Tanzania Mainland 계획구역에 적용되는 Urban Planning Act, GN 93 공간기준과 GN 80 Form 1·Form 2의 토지이용·구조 이중서명 경로를 실제 순서로 연결했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;8&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -4158,9 +4155,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;3/3&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -4215,7 +4211,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.tausi.tamisemi.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;관할 도시계획기관·지방정부(LGA)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;개발동의, 건축허가, 현장검사와 신축건물 점유증명서를 처리 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.lands.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;토지·주택·인간정주개발부&lt;/a&gt;&lt;/b&gt;&lt;span&gt;도시계획법, 공간기준·용도지역·건축규정과 계획구역 정책을 담당 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;관할 도시계획기관·지방정부(LGA), 토지·주택·인간정주개발부&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;01 계획기관의 제2호 서식 계획·건축결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제2호 서식 허가·조건 또는 이유부 불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;01 계획기관의 제2호 서식 계획·건축결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제2호 서식 허가·조건 또는 이유부 불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 건축허가·환경심사&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -4834,6 +4830,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="4" title="탄자니아 건축허가·환경심사" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 건축허가·환경심사 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -4968,7 +4965,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -5062,7 +5059,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -5322,7 +5318,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;지방 계획기관의 개발동의·건축허가와 NEMC의 A·B1·B2·특별 범주 환경결정을 선행조건으로 묶는다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; NEMC 2026 현행 온라인 절차와 2018 개정 환경영향평가 규칙의 A·B1·B2·Special 분류, Project Brief·평가범위 설정/평가범위·환경영향평가·certificate 흐름을 GN 80 Form 1·2 허가와 별도 Gate로 연결했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;14&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -5332,9 +5328,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;4&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;4/4&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -5401,7 +5396,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.tausi.tamisemi.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;관할 도시계획기관·지방정부(LGA)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;개발동의, 건축허가, 현장검사와 신축건물 점유증명서를 처리 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.nemc.or.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;국가환경관리위원회(NEMC)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;A·B1·B2·특별 범주 환경스크리닝, 환경영향평가(EIA) 심사·모니터링을 담당 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;관할 도시계획기관·지방정부(LGA), 국가환경관리위원회(NEMC)&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;02 국가환경관리위원회 환경범주 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경범주·평가경로 통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;03 환경영향평가 인증서 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경영향평가 인증서·조건 또는 이유부 거부&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;04 계획기관의 제2호 서식 건축허가 결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제2호 서식 허가·승인도서·조건 또는 이유부 불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;02 국가환경관리위원회 환경범주 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경범주·평가경로 통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;03 환경영향평가 인증서 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;환경영향평가 인증서·조건 또는 이유부 거부&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;04 계획기관의 제2호 서식 건축허가 결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제2호 서식 허가·승인도서·조건 또는 이유부 불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 기술검사·보험·준공제도&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -6016,6 +6011,7 @@ new MutationObserver(redraw).observe(document.documentElement,{attributes:true,a
 &lt;/body&gt;&lt;/html&gt;"></iframe><iframe class="fr" data-i="5" title="탄자니아 기술검사·보험·준공제도" loading="lazy" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;base href=&quot;about:srcdoc&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;탄자니아 기술검사·보험·준공제도 | 그 나라, 조달하고 건축하려면?&lt;/title&gt;
 &lt;style&gt;
@@ -6150,7 +6146,7 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
-[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;business&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
+[id=&quot;summary&quot;],[id=&quot;practice&quot;],[id=&quot;sources&quot;],[id=&quot;results&quot;]{scroll-margin-top:6rem}
 .section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
 .scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
 .edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair&gt;div{padding:12px;background:var(--soft);border-radius:8px}[id^=&quot;edition-&quot;]{scroll-margin-top:6rem}
@@ -6244,7 +6240,6 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
 .guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
-.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
 .guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
@@ -6504,7 +6499,7 @@ footer.site a{color:var(--muted)}
   &lt;p class=&quot;one&quot;&gt;등록 전문가·시공자와 CRB 프로젝트 등록, 단계검사·Form 10 점유증명서를 개장 Gate로 둔다.&lt;/p&gt;
 
   &lt;div class=&quot;scope-note&quot;&gt;&lt;b&gt;대조 범위&lt;/b&gt; GN 80 제10~21조의 착공·은폐 전 통지·검사·시정·완료·Form 10과 CRB의 현행 21일 내/착공 전 프로젝트 등록·14일 보완·번호 표지·완료 피드백을 연결했다.&lt;br&gt;&lt;b&gt;확인일&lt;/b&gt; 2026-08-07 · 현행성 추가 확인 0개 자료&lt;br&gt;
-    &lt;b&gt;실무 확인&lt;/b&gt; 대상지·용도·시설 규모에 따른 적용 조건 · &lt;a href=&quot;#sources&quot;&gt;근거 자료 보기&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;#sources&quot;&gt;검증·출처 보기&lt;/a&gt;&lt;/div&gt;
   &lt;nav class=&quot;section-nav&quot; aria-label=&quot;상세 페이지 목차&quot;&gt;&lt;a href=&quot;#summary&quot;&gt;핵심 요약&lt;/a&gt;&lt;a href=&quot;#practice&quot;&gt;실무 절차&lt;/a&gt;&lt;a href=&quot;#sources&quot;&gt;검증·출처&lt;/a&gt;&lt;/nav&gt;
   &lt;div class=&quot;tiles&quot;&gt;
     &lt;div class=&quot;tile&quot;&gt;&lt;b&gt;14&lt;/b&gt;&lt;span&gt;절차 단계&lt;/span&gt;&lt;/div&gt;
@@ -6514,9 +6509,8 @@ footer.site a{color:var(--muted)}
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;4&lt;/b&gt;&lt;span&gt;검토 자료&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;tile ok&quot;&gt;&lt;b&gt;4/4&lt;/b&gt;&lt;span&gt;현행·운영 확인&lt;/span&gt;&lt;/div&gt;
 
-    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;tile warn&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;span&gt;등록된 사업별 확인 항목&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;meta&quot;&gt;사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;wrap&quot;&gt;
@@ -6583,7 +6577,7 @@ footer.site a{color:var(--muted)}
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;권한 기관&lt;/h3&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.tausi.tamisemi.go.tz/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;관할 도시계획기관·지방정부(LGA)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;개발동의, 건축허가, 현장검사와 신축건물 점유증명서를 처리 &lt;span class=&quot;badge info&quot;&gt;원문 링크 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;auth&quot;&gt;&lt;b&gt;&lt;a class=&quot;ref&quot; href=&quot;https://www.crb.go.tz/ProjectRegistration&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;건축사·적산사등록원(AQRB)·기술사등록원(ERB)·시공자등록원(CRB)&lt;/a&gt;&lt;/b&gt;&lt;span&gt;전문가·업체 등록과 법정대상 건설프로젝트 등록·현장 스티커를 관리 &lt;span class=&quot;badge info&quot;&gt;공식자료 연결&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;이해관계자&lt;/h3&gt;&lt;p style=&quot;margin:0;font-size:13.5px;line-height:1.7&quot;&gt;관할 도시계획기관·지방정부(LGA), 건축사·적산사등록원(AQRB)·기술사등록원(ERB)·시공자등록원(CRB)&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card&quot; id=&quot;business&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;05 시공자등록위원회 프로젝트 등록 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;프로젝트 등록번호 또는 이유부 보완·불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;06 계획기관 시공단계 적합판정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;단계 적합확인 또는 시정·중지명령&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;07 제10호 서식 점유증명 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제10호 서식 점유증명서 또는 보완·거부통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;제출서류&lt;/h3&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;05 시공자등록위원회 프로젝트 등록 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;프로젝트 등록번호 또는 이유부 보완·불승인&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;06 계획기관 시공단계 적합판정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;단계 적합확인 또는 시정·중지명령&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;docset&quot;&gt;&lt;b&gt;07 제10호 서식 점유증명 공식결정&lt;/b&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;제10호 서식 점유증명서 또는 보완·거부통지&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 
 
     &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;관련 제도&lt;/h3&gt;&lt;div class=&quot;chips&quot;&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 공공조달 입찰제도&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 조달 거버넌스·감독체계&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 ODA 사업 발굴·형성 절차&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 도시계획·부지규제&lt;/span&gt;&lt;span class=&quot;chip&quot;&gt;탄자니아 건축허가·환경심사&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;

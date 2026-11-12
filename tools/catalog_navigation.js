@@ -2,7 +2,6 @@ const searchBox = document.querySelector('#q');
 const countrySelect = document.querySelector('#country-select');
 const filterButtons = [...document.querySelectorAll('.side button[data-f]')];
 const rows = [...document.querySelector('#tb').rows];
-const guides = [...document.querySelectorAll('.writing-route')];
 const params = new URLSearchParams(location.search);
 const filters = {c: '', a: ''};
 for (const [key, parameter] of [['c', 'country'], ['a', 'axis']]) {
@@ -19,7 +18,6 @@ function applyFilters() {
       (filters.a && row.dataset.a !== filters.a) || (term && !row.dataset.s.includes(term)));
     if (!row.hidden) count++;
   }
-  for (const group of guides) group.hidden = group.dataset.country !== filters.c;
   countrySelect.value = filters.c;
   for (const button of filterButtons) button.setAttribute('aria-pressed', String(filters[button.dataset.f] === button.dataset.v));
   document.querySelector('#cnt').textContent = (term || filters.c || filters.a) ? count + '건 표시' : '전체 ' + count + '건';
@@ -35,7 +33,7 @@ function applyFilters() {
   try { history.replaceState(history.state, '', current); } catch {}
   // A link also carries the selection when opened in a new tab or copied.
   const suffix = '?list=' + encodeURIComponent(state.toString());
-  for (const link of document.querySelectorAll('#tb tr:not([hidden]) a, .writing-route:not([hidden]) a')) {
+  for (const link of document.querySelectorAll('#tb tr:not([hidden]) a')) {
     const base = link.dataset.base || (link.dataset.base = link.getAttribute('href'));
     const [path, fragment] = base.split('#');
     link.setAttribute('href', path + suffix + (fragment ? '#' + fragment : ''));
