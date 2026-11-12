@@ -13,11 +13,17 @@ searchBox.value = params.get('q') || '';
 
 function applyFilters() {
   const term = searchBox.value.trim().toLowerCase();
-  let count = 0;
+  const visibleModels = new Set();
   for (const row of rows) {
     row.hidden = Boolean((filters.c && row.dataset.c !== filters.c) ||
       (filters.a && row.dataset.a !== filters.a) || (term && !row.dataset.s.includes(term)));
-    if (!row.hidden) count++;
+    if (!row.hidden) visibleModels.add(row.dataset.model);
+  }
+  const count = visibleModels.size;
+  const entry = document.querySelector('.guide-entry');
+  if (entry) {
+    for (const link of entry.querySelectorAll('a')) link.hidden = !visibleModels.has(link.dataset.model);
+    entry.hidden = !entry.querySelector('a:not([hidden])');
   }
   for (const group of guides) group.hidden = group.dataset.country !== filters.c;
   countrySelect.value = filters.c;
@@ -35,7 +41,7 @@ function applyFilters() {
   try { history.replaceState(history.state, '', current); } catch {}
   // A link also carries the selection when opened in a new tab or copied.
   const suffix = '?list=' + encodeURIComponent(state.toString());
-  for (const link of document.querySelectorAll('#tb tr:not([hidden]) a, .writing-route:not([hidden]) a')) {
+  for (const link of document.querySelectorAll('#tb tr:not([hidden]) a, .writing-route:not([hidden]) a, .guide-entry a:not([hidden])')) {
     const base = link.dataset.base || (link.dataset.base = link.getAttribute('href'));
     const [path, fragment] = base.split('#');
     link.setAttribute('href', path + suffix + (fragment ? '#' + fragment : ''));

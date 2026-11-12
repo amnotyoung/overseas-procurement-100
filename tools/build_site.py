@@ -1455,6 +1455,9 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
+.guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
@@ -1681,6 +1684,30 @@ footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--mut
 footer.site a{color:var(--muted)}
 """
 
+GUIDE_SHORTCUT_JS = """
+(function () {
+  const dialog = document.getElementById('dlg');
+  function followShortcut() {
+    if (!location.hash.startsWith('#guide-')) return;
+    const id = location.hash.slice(7);
+    if (!Object.hasOwn(NODES, id) || !NODES[id].guide_comparison) return;
+    openNode(id);
+    const comparison = dialog.querySelector('details.guide-comparison');
+    comparison.open = true;
+    comparison.querySelector('summary').focus({preventScroll: true});
+    comparison.scrollIntoView({block: 'center'});
+  }
+  window.addEventListener('hashchange', () => {
+    if (location.hash.startsWith('#guide-')) followShortcut();
+    else if (dialog.open) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    if (location.hash.startsWith('#guide-')) history.replaceState(history.state, '', location.pathname + location.search);
+  });
+  followShortcut();
+})();
+"""
+
 CATALOG_JS = Path(__file__).with_name("catalog_navigation.js").read_text(encoding="utf-8")
 DETAIL_NAV_JS = Path(__file__).with_name("detail_navigation.js").read_text(encoding="utf-8")
 
@@ -1802,6 +1829,22 @@ WRITING_SECTIONS = {
 }
 
 
+def guide_shortcuts(model, *, catalog=False):
+    """자료집 원문과 절차 노드가 모두 연결된 대조 항목으로 바로 이동한다."""
+    links = []
+    for quote in model.get("sourceQuotes", []):
+        comparison = quote.get("comparison") or {}
+        guide = comparison.get("guideCitation")
+        if not guide:
+            continue
+        path = f'model/{model["slug"]}/index.html' if catalog else ""
+        country = country_display_name(model["country"]["name"]) + " · " if catalog else ""
+        label = f'{country}{guide["label"]} · {comparison["title"]} 대조'
+        links.append(f'<a class="guide-shortcut" data-model="{e(model["slug"])}" '
+                     f'href="{e(path)}#guide-{e(guide["nodeId"])}">{e(label)}</a>')
+    return "".join(links)
+
+
 def writing_route(country, models):
     groups = []
     for title, axes, anchor in (
@@ -1845,6 +1888,7 @@ def build_index(items: list[dict]) -> str:
     grouped = {}
     for model in items:
         grouped.setdefault(model["country"]["name"], []).append(model)
+    shortcuts = "".join(guide_shortcuts(model, catalog=True) for model in items)
     routes = "".join(writing_route(country, models) for country, models in grouped.items())
     options = "".join(f'<option value="{e(country_keys[name])}">{e(country_display_name(name))}</option>'
                       for name in sorted(countries, key=country_name_sort_key))
@@ -1862,11 +1906,16 @@ def build_index(items: list[dict]) -> str:
             f'<span class="badge {"bad" if hi else "warn"}">확인사항 {nd}</span>' if nd else
             '<span class="badge muted plain">—</span>'
         )
-        rows.append(f"""<tr data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
-  data-s="{e((d['name'] + ' ' + d['oneLiner'] + ' ' + d['country']['nameEn']).lower())}">
+        search_terms = [d["name"], d["oneLiner"], d["country"]["nameEn"]]
+        for quote in d.get("sourceQuotes", []):
+            comparison = quote.get("comparison") or {}
+            if comparison.get("guideCitation"):
+                search_terms.extend([comparison["title"], comparison["guideCitation"]["label"]])
+        rows.append(f"""<tr data-model="{e(d['slug'])}" data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
+  data-s="{e(' '.join(search_terms).lower())}">
   <td class="no">{d['priority']:02d}</td>
   <td class="name"><a href="model/{e(d['slug'])}/index.html">{e(d['name'])}</a>
-    <p>{e(d['oneLiner'])}</p></td>
+    <p>{e(d['oneLiner'])}</p>{guide_shortcuts(d, catalog=True)}</td>
   <td><span class="badge plain muted">{e(d['country']['name'])}</span></td>
   <td style="font-size:13px;color:var(--muted)">{e(AXIS_LABEL[d['axis']])}</td>
   <td><span class="badge {grade_tone}">{e(grade_label)}</span></td>
@@ -1888,6 +1937,7 @@ def build_index(items: list[dict]) -> str:
     <h1>{e(SITE_TITLE)}</h1>
     <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
     <p class="lede">입찰·사업형성과 건축 인허가 절차를 국가별로 찾아보세요. 각 제도에 조문을 대조한 범위와 공식 자료를 연결한 범위를 표시합니다.</p>
+    {f'<nav class="guide-entry" aria-label="자료집 작성자 바로가기"><strong>자료집 문구 확인</strong>{shortcuts}</nav>' if shortcuts else ''}
     <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
   </div>
   <aside class="gearup-promo" aria-label="기업 ODA 진출 지원 외부 서비스">
@@ -2395,6 +2445,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   </div>
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
+  {f'<nav class="guide-entry" aria-label="자료집 작성자 바로가기">{guide_shortcuts(d)}</nav>' if node_comparisons else ''}
   <div class="scope-note"><strong>{e(writing_title)} 자료집에 활용</strong> · {e(writing_use)}<br>
     <b>대조 범위</b> {e(v["scope"])}<br><b>확인일</b> {e(v["verifiedAt"])} · {e(" · ".join(remaining))}<br>
     <b>작성 전 확인</b> {e(writing_check)} · <a href="#sources">근거 자료 보기</a>{comparison_links}</div>
@@ -3084,6 +3135,8 @@ addEventListener('load',draw); addEventListener('resize',redraw);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 new MutationObserver(redraw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
+    if node_comparisons:
+        js += GUIDE_SHORTCUT_JS
     return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone, list_href=country_list)
 
 

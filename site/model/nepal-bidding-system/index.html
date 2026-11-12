@@ -228,6 +228,9 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.guide-entry strong{font-size:13px}.guide-entry[hidden],.guide-shortcut[hidden]{display:none}
+.guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
 .guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
@@ -499,6 +502,7 @@ footer.site a{color:var(--muted)}
   </div>
   <h1>네팔 공공조달 입찰제도</h1>
   <p class="one">공개입찰을 원칙으로 하고 직접구매를 6개 법정 사유로만 허용하는, 총리실 산하 PPMO가 표준을 관장하는 조달 체계</p>
+  <nav class="guide-entry" aria-label="자료집 작성자 바로가기"><a class="guide-shortcut" data-model="nepal-bidding-system" href="#guide-P07">2026년 자료집 12쪽 · 입찰보증 산정 기준 대조</a></nav>
   <div class="scope-note"><strong>조달 참여 자료집에 활용</strong> · 입찰 준비, 제출서류와 평가 절차<br>
     <b>대조 범위</b> PPA 2063의 2026년 제2차 개정법과 PPR 2064의 제14·15차 개정까지 반영해 조달방식별 기준금액, 공고기한, 입찰보증, 계약이행보증, 불복절차와 예외를 조문 단위로 대조했다.<br><b>확인일</b> 2026-07-22 · 실무 필수 확인 1건 · 근거 미연결 0단계<br>
     <b>작성 전 확인</b> 개별 공고의 제출기한·참가자격·보증액 · <a href="#sources">근거 자료 보기</a> · <a href="#edition-4">입찰보증 산정 기준 판본 비교</a></div>
@@ -1245,5 +1249,27 @@ function redraw(){ if(_raf)return; _raf=requestAnimationFrame(function(){_raf=0;
 addEventListener('load',draw); addEventListener('resize',redraw);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+(function () {
+  const dialog = document.getElementById('dlg');
+  function followShortcut() {
+    if (!location.hash.startsWith('#guide-')) return;
+    const id = location.hash.slice(7);
+    if (!Object.hasOwn(NODES, id) || !NODES[id].guide_comparison) return;
+    openNode(id);
+    const comparison = dialog.querySelector('details.guide-comparison');
+    comparison.open = true;
+    comparison.querySelector('summary').focus({preventScroll: true});
+    comparison.scrollIntoView({block: 'center'});
+  }
+  window.addEventListener('hashchange', () => {
+    if (location.hash.startsWith('#guide-')) followShortcut();
+    else if (dialog.open) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    if (location.hash.startsWith('#guide-')) history.replaceState(history.state, '', location.pathname + location.search);
+  });
+  followShortcut();
+})();
 </script>
 </body></html>

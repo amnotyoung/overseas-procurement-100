@@ -41,6 +41,7 @@ def check_cards(page, expected):
 
 
 def main():
+    catalog = (SITE / "index.html").read_text()
     discrepancies = []
     count = 0
     for path in sorted((ROOT / "data/institutions").glob("*.json")):
@@ -64,6 +65,11 @@ def main():
         if data["slug"] == "nepal-bidding-system":
             comparison = next(q["comparison"] for q in data["sourceQuotes"] if q.get("comparison"))
             guide = comparison["guideCitation"]
+            shortcut = f'#guide-{guide["nodeId"]}'
+            for content, href in ((page, shortcut), (catalog, f'model/{data["slug"]}/index.html{shortcut}')):
+                entry = re.search(r'<nav class="guide-entry".*?</nav>', content, re.S)
+                if not entry or f'href="{href}"' not in entry[0]:
+                    raise ValueError("네팔 자료집 대조 바로가기 누락")
             targets = [node_id for node_id, view in nodes.items() if view.get("guide_comparison")]
             panel = nodes["P07"].get("guide_comparison", "")
             if targets != ["P07"] or not all(html.escape(t) in panel for t in
