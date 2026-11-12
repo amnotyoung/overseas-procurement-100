@@ -66,10 +66,10 @@ def main():
             comparison = next(q["comparison"] for q in data["sourceQuotes"] if q.get("comparison"))
             guide = comparison["guideCitation"]
             shortcut = f'#guide-{guide["nodeId"]}'
-            for content, href in ((page, shortcut), (catalog, f'model/{data["slug"]}/index.html{shortcut}')):
-                entry = re.search(r'<nav class="guide-entry".*?</nav>', content, re.S)
-                if not entry or f'href="{href}"' not in entry[0]:
-                    raise ValueError("네팔 자료집 대조 바로가기 누락")
+            entry = re.search(r'<nav class="guide-entry".*?</nav>', page, re.S)
+            row = re.search(r'<tr data-c="nepal" data-a="bidding".*?</tr>', catalog, re.S)
+            if not entry or f'href="{shortcut}"' not in entry[0] or not row or f'index.html{shortcut}"' not in row[0]:
+                raise ValueError("네팔 입찰제도 목록·상세에서 대조 항목 접근 불가")
             targets = [node_id for node_id, view in nodes.items() if view.get("guide_comparison")]
             panel = nodes["P07"].get("guide_comparison", "")
             if targets != ["P07"] or not all(html.escape(t) in panel for t in

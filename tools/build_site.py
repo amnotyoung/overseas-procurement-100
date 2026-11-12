@@ -1712,10 +1712,10 @@ CATALOG_JS = Path(__file__).with_name("catalog_navigation.js").read_text(encodin
 DETAIL_NAV_JS = Path(__file__).with_name("detail_navigation.js").read_text(encoding="utf-8")
 
 INDEX_CSS = """
-.writer-start{padding:18px 20px;margin-bottom:16px;border:1px solid var(--line);border-radius:12px}
-.writer-start label,.writing-route strong{font-weight:700}.writer-start select{margin-inline-start:12px}
-.writer-start p,.writing-route a{font-size:13px}.writer-start p{margin:12px 0 0;color:var(--muted)}
-.writing-route h3{font-size:16px;margin:18px 0 10px}.writing-route ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.country-picker{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.writing-route{margin-bottom:14px}.writing-route summary{cursor:pointer;font-weight:600;padding:8px 0}
+.writing-route p,.writing-route a{font-size:13px}.writing-route p{margin:10px 0;color:var(--muted)}
+.writing-route ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin:0;padding:0;list-style:none}
 .writing-route li{border-top:2px solid var(--line);padding-block:8px}
 .writing-route strong,.writing-route a{display:block;margin-bottom:5px}
 .cols main{min-width:0}.cols .panel{overflow:auto}
@@ -1821,11 +1821,11 @@ def redirect_page(target: str, title: str) -> str:
 
 # ─────────────────────────────────────────────────────────── 목록
 
-WRITING_SECTIONS = {
-    "pipeline": ("사업형성", "수요 발굴, 사업요청과 승인 절차", "수원총괄기관과 해당 사업의 공식 요청 경로"),
-    "bidding": ("조달 참여", "입찰 준비, 제출서류와 평가 절차", "개별 공고의 제출기한·참가자격·보증액"),
-    "governance": ("조달 참여", "발주·감독·이의심사 기관의 역할", "조달 방식과 심급별 관할기관"),
-    "construction": ("건축 인허가", "사업 단계별 인허가·검사와 관할기관", "대상지·용도·시설 규모에 따른 적용 조건"),
+PRACTICAL_CHECKS = {
+    "pipeline": "수원총괄기관과 해당 사업의 공식 요청 경로",
+    "bidding": "개별 공고의 제출기한·참가자격·보증액",
+    "governance": "조달 방식과 심급별 관할기관",
+    "construction": "대상지·용도·시설 규모에 따른 적용 조건",
 }
 
 
@@ -1840,7 +1840,7 @@ def guide_shortcuts(model, *, catalog=False):
         path = f'model/{model["slug"]}/index.html' if catalog else ""
         country = country_display_name(model["country"]["name"]) + " · " if catalog else ""
         label = f'{country}{guide["label"]} · {comparison["title"]} 대조'
-        links.append(f'<a class="guide-shortcut" data-model="{e(model["slug"])}" '
+        links.append(f'<a class="guide-shortcut" '
                      f'href="{e(path)}#guide-{e(guide["nodeId"])}">{e(label)}</a>')
     return "".join(links)
 
@@ -1861,8 +1861,9 @@ def writing_route(country, models):
             links.append(f'<a href="model/{e(model["slug"])}/index.html#{anchor}">{e(name)}</a>')
         if links:
             groups.append(f'<li><strong>{title}</strong>{"".join(links)}</li>')
-    return (f'<div class="writing-route" data-country="{e(country_slug(models[0]))}" hidden>'
-            f'<h3>{e(country_display_name(country))} 자료집 작성 순서</h3><ol>{"".join(groups)}</ol></div>')
+    return (f'<details class="writing-route" data-country="{e(country_slug(models[0]))}" hidden>'
+            f'<summary>{e(country_display_name(country))} 자료집 작성에 활용</summary><ol>{"".join(groups)}</ol>'
+            '<p>발주계획은 발주기관 공고에서, 기업 진출 사례는 해당 기업·사업의 실적 자료에서 확인하세요.</p></details>')
 
 
 def build_index(items: list[dict]) -> str:
@@ -1888,7 +1889,6 @@ def build_index(items: list[dict]) -> str:
     grouped = {}
     for model in items:
         grouped.setdefault(model["country"]["name"], []).append(model)
-    shortcuts = "".join(guide_shortcuts(model, catalog=True) for model in items)
     routes = "".join(writing_route(country, models) for country, models in grouped.items())
     options = "".join(f'<option value="{e(country_keys[name])}">{e(country_display_name(name))}</option>'
                       for name in sorted(countries, key=country_name_sort_key))
@@ -1911,7 +1911,7 @@ def build_index(items: list[dict]) -> str:
             comparison = quote.get("comparison") or {}
             if comparison.get("guideCitation"):
                 search_terms.extend([comparison["title"], comparison["guideCitation"]["label"]])
-        rows.append(f"""<tr data-model="{e(d['slug'])}" data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
+        rows.append(f"""<tr data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
   data-s="{e(' '.join(search_terms).lower())}">
   <td class="no">{d['priority']:02d}</td>
   <td class="name"><a href="model/{e(d['slug'])}/index.html">{e(d['name'])}</a>
@@ -1937,7 +1937,6 @@ def build_index(items: list[dict]) -> str:
     <h1>{e(SITE_TITLE)}</h1>
     <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
     <p class="lede">입찰·사업형성과 건축 인허가 절차를 국가별로 찾아보세요. 각 제도에 조문을 대조한 범위와 공식 자료를 연결한 범위를 표시합니다.</p>
-    {f'<nav class="guide-entry" aria-label="자료집 작성자 바로가기"><strong>자료집 문구 확인</strong>{shortcuts}</nav>' if shortcuts else ''}
     <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
   </div>
   <aside class="gearup-promo" aria-label="기업 ODA 진출 지원 외부 서비스">
@@ -1955,10 +1954,11 @@ def build_index(items: list[dict]) -> str:
 
 <div class="statbar"><div class="wrap">
   <div class="search">
-    <label for="q">검 색</label>
+    <label for="q">검색</label>
     <input id="q" placeholder="제도 · 국가 · 키워드" autocomplete="off">
     <span class="count" id="cnt">전체 {len(items)}건</span>
   </div>
+  <label class="country-picker">국가 <select id="country-select"><option value="">전체 국가</option>{options}</select></label>
   <div class="stats">
     <div class="stat"><b>{len(items)}</b><span>제도</span></div>
     <div class="stat"><b>{len(countries)}</b><span>국가</span></div>
@@ -1983,12 +1983,7 @@ def build_index(items: list[dict]) -> str:
   </aside>
 
   <main id="results">
-    <div class="writer-start">
-      <label for="country-select">자료집을 작성할 국가</label>
-      <select id="country-select"><option value="">전체 국가</option>{options}</select>
-      {routes}
-      <p>발주계획은 발주기관의 최신 공고에서, 기업 진출 사례는 해당 사업·기업의 실적 자료에서 별도로 확인하세요.</p>
-    </div>
+    {routes}
     <div class="panel">
     <div class="panel-hd">제도 대장 <span>· <span id="hcnt">{len(items)}</span>개 결과</span></div>
     <table>
@@ -2421,7 +2416,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 f'이 제도축 {e(c["procedureStatusLabel"])}</span>'
             )
 
-    writing_title, writing_use, writing_check = WRITING_SECTIONS[d["axis"]]
+    practical_check = PRACTICAL_CHECKS[d["axis"]]
     unresolved_steps = sum(n.get("basisStatus") == "pending" for n in nodes)
     if d["axis"] == "construction":
         remaining = [f"현행성 추가 확인 {currentness_issues}개 자료"]
@@ -2446,9 +2441,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
   {f'<nav class="guide-entry" aria-label="자료집 작성자 바로가기">{guide_shortcuts(d)}</nav>' if node_comparisons else ''}
-  <div class="scope-note"><strong>{e(writing_title)} 자료집에 활용</strong> · {e(writing_use)}<br>
-    <b>대조 범위</b> {e(v["scope"])}<br><b>확인일</b> {e(v["verifiedAt"])} · {e(" · ".join(remaining))}<br>
-    <b>작성 전 확인</b> {e(writing_check)} · <a href="#sources">근거 자료 보기</a>{comparison_links}</div>
+  <div class="scope-note"><b>대조 범위</b> {e(v["scope"])}<br><b>확인일</b> {e(v["verifiedAt"])} · {e(" · ".join(remaining))}<br>
+    <b>실무 확인</b> {e(practical_check)} · <a href="#sources">근거 자료 보기</a>{comparison_links}</div>
   <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>{len(nodes)}</b><span>{e(node_metric_label)}</span></div>
