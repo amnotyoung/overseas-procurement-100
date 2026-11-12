@@ -135,6 +135,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -463,7 +469,7 @@ footer.site a{color:var(--muted)}
   <a class="brand" href="../../index.html">그 나라, 조달하고 건축하려면?</a>
   <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
-    <a href="../../index.html">제도 대장</a>
+    <a href="../../index.html?country=myanmar#results">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
     <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -472,6 +478,7 @@ footer.site a{color:var(--muted)}
 
 
 <div class="subnav"><div class="wrap">
+  <a id="catalog-return" href="../../index.html?country=myanmar#results">미얀마 목록으로 돌아가기</a>
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px"><option value="myanmar-bidding-system">01 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">02 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline" selected>03 · 미얀마 ODA 사업형성</option><option value="myanmar-site-urban-construction-regulations">04 · 미얀마 도시계획·부지규제</option><option value="myanmar-permit-environment-construction-regulations">05 · 미얀마 건축허가·환경심사</option><option value="myanmar-control-completion-construction-regulations">06 · 미얀마 기술검사·보험·준공제도</option></select>
   <a class="btn" href="../myanmar-procurement-governance/index.html" style="text-decoration:none">← 이전</a>
@@ -479,31 +486,36 @@ footer.site a{color:var(--muted)}
   <span class="pos">전체 제도 72/267 · 이 국가 3/6</span>
 </div></div>
 
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge plain muted">NO 03</span>
     <span class="badge plain muted">미얀마 · Myanmar</span>
     <span class="badge plain muted">ODA 사업형성</span>
     <span class="badge ok">조문 대조 완료</span>
 
-    <span class="badge bad">확인사항 1건</span>
+
   </div>
   <h1>미얀마 ODA 사업 발굴·형성 절차</h1>
   <p class="one">수원부처·개발파트너가 사업개념을 만들고 MIFER 산하 대외경제관계국(FERD)을 단일창구로 고위 승인·협정 협상·서명·AIMS 등록·분기 모니터링까지 연결하는 절차 — 2021년 이후 최종 승인기관 명칭은 재확인 필요</p>
+  <div class="scope-note"><strong>사업형성 자료집에 활용</strong> · 수요 발굴, 사업요청과 승인 절차<br>
+    <b>대조 범위</b> Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 1건 · 직접 근거 확인 대기 2단계<br>
+    <b>작성 전 확인</b> 수원총괄기관과 해당 사업의 공식 요청 경로 · <a href="#sources">근거 자료 보기</a></div>
+  <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>10</b><span>절차 노드</span></div>
 
     <div class="tile"><b>4</b><span>행위 레인</span></div>
     <div class="tile"><b>5</b><span>게이트</span></div>
-    <div class="tile ok"><b>9</b><span>대조 조문</span></div>
+    <div class="tile ok"><b>8</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>ODA 적용 확인</span></div>
+    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
   </div>
+  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
-<section class="blk">
+<section class="blk" id="practice">
   <div class="hd-row">
     <div>
       <h2>업무구조도</h2>
@@ -550,7 +562,7 @@ footer.site a{color:var(--muted)}
   <h2>한 장 캔버스</h2>
   <p class="desc">수원부처와 개발파트너가 국가·부문 우선순위에 맞는 사업을 발굴하고, MIFER 산하 FERD 단일창구를 통해 정부 고위 승인, 양자 협정·MoU·교환각서 협상과 서명, AIMS 등록, 이행 모니터링으로 연결한다.</p>
   <div class="cards">
-    <div class="card span2"><h3>절차</h3><ol class="steps"><li>수원부처·정부기관과 개발파트너가 국가·부문·지역계획에 맞는 사업수요와 선도기관을 정한다.</li><li>사업개념서와 관련 문서를 FERD 단일창구에 제출하고 주·지역 제안은 해당 최고책임자의 사전승인을 받는다(2020 DAP §6.2, Annex A §10.1).</li><li>FERD가 관계부처 의견과 DACU·필요한 고위 승인 절차를 조정한 뒤 승인된 제안을 개발파트너에 공식 전달한다.</li><li>개발파트너의 심사와 함께 수원기관이 설계·예산·조달계획을 구체화하고 FERD가 협정·MoU·교환각서 초안의 법률의견과 협상을 조정한다.</li><li>권한기관 승인과 서명 후 FERD·AIMS에 사업정보를 등록하고 PMU·PSC가 실행·분기보고를 담당한다(2020 DAP §§6.3~6.4, Annex A §§10.2~10.4).</li><li>사업 조달은 재원 제공기관의 별도 규정이 있으면 이를 적용하고, 없으면 제1/2022호와 충돌하지 않는 범위의 제1/2017호를 적용한다(제1/2017호 ¶48(g), 제1/2022호 ¶28).</li></ol></div>
+    <div class="card span2"><h3>절차</h3><p><button class="btn" id="copy-steps" type="button">단계 목록 복사</button> <small role="status" id="copy-status"></small></p><ol class="steps" id="readable-steps"><li>수원부처·정부기관과 개발파트너가 국가·부문·지역계획에 맞는 사업수요와 선도기관을 정한다.</li><li>사업개념서와 관련 문서를 FERD 단일창구에 제출하고 주·지역 제안은 해당 최고책임자의 사전승인을 받는다(2020 DAP §6.2, Annex A §10.1).</li><li>FERD가 관계부처 의견과 DACU·필요한 고위 승인 절차를 조정한 뒤 승인된 제안을 개발파트너에 공식 전달한다.</li><li>개발파트너의 심사와 함께 수원기관이 설계·예산·조달계획을 구체화하고 FERD가 협정·MoU·교환각서 초안의 법률의견과 협상을 조정한다.</li><li>권한기관 승인과 서명 후 FERD·AIMS에 사업정보를 등록하고 PMU·PSC가 실행·분기보고를 담당한다(2020 DAP §§6.3~6.4, Annex A §§10.2~10.4).</li><li>사업 조달은 재원 제공기관의 별도 규정이 있으면 이를 적용하고, 없으면 제1/2022호와 충돌하지 않는 범위의 제1/2017호를 적용한다(제1/2017호 ¶48(g), 제1/2022호 ¶28).</li></ol></div>
 
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">미얀마 정부기관과 공식 협정·MoU·교환각서로 연결되는 무상·양허성 차관·기술협력 사업의 발굴·승인·실행에 적용한다. 정부 승인 없이 개발파트너가 독립 집행하는 사업은 DAP 정부승인 경로 밖이며, 정부조달은 재원협정의 별도 조달규정 또는 국내 지침을 적용한다.</p></div>
     <div class="card"><h3>법적 근거</h3><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Myanmar Development Assistance Policy, September 2020</a></span><span class="ar">§§6.1-6.4, Annex A §§10.1-10.4</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">MIFER/FERD official functions and responsibilities</a></span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm">양자 개발협력협정·MoU·Exchange of Notes</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">양자합의</span></div></div><div class="law"><div class="law-copy"><span class="nm">개발파트너별 사업형성·승인·조달 규정</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">공여기관 규정</span></div></div><div class="law"><div class="law-copy"><span class="nm">MIFER/FERD current official functions and approval route</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a></span><span class="ar">¶¶1~16, 25~28</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a></span><span class="ar">¶¶3~50 (제1/2022호와 충돌하지 않는 범위)</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm">재원 제공 국제·협력기관의 조달규정</span><span class="ar">Directive No. 1/2017 ¶48(g)</span></div><div class="law-meta"><span class="badge plain muted">공여기관 규정</span></div></div></div>
@@ -558,7 +570,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b>투자대외경제관계부(MIFER) 대외경제관계국(FERD)</b><span>외부 무상·차관·기술지원의 정부 초점기관으로 제안 상신·협상·협정·정부 간 조정·AIMS와 사업모니터링을 담당한다.</span></div><div class="auth"><b>개발원조조정단위(DACU)</b><span>FERD를 사무국으로 두고 개발원조 정책·효과성 조정을 수행한다.</span></div><div class="auth"><b>경제위원회·국가행정평의회 관련 승인회의</b><span>MIFER 현행 공식 페이지에 따라 서명 전 협정안 등 고위 승인을 담당한다.</span></div><div class="auth"><b>수원부처·주·지역정부·실행기관</b><span>사업을 제안·준비하고 예산·PMU/PSC·분기보고를 통해 실행한다.</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">투자대외경제관계부(MIFER), 대외경제관계국(FERD), 개발원조조정단위(DACU), 관련 수원부처·주/지역 정부, 고위 승인기관, 경제위원회, 개발파트너(PID), 프로젝트관리단(PMU)·운영위원회(PSC), 기획부서·사업평가진도보고부서</p></div>
-    <div class="card"><h3>제출서류</h3><div class="docset"><b>선도 수원부처·정부기관</b><div class="chips"><span class="chip">Concept Proposal Form 또는 사업개념서</span><span class="chip">사업/프로그램 설계문서</span><span class="chip">재원·예산계획</span><span class="chip">예비 조달계획</span><span class="chip">협정·MoU 초안</span><span class="chip">주/지역 정부 제안의 최고책임자 사전승인</span></div></div><div class="docset"><b>FERD·DACU·고위 승인기관</b><div class="chips"><span class="chip">관계기관 검토의견</span><span class="chip">DACU 검토·승인 또는 고위 승인 상신안</span><span class="chip">법률의견 취합본</span><span class="chip">최종 협정·MoU·Exchange of Notes 승인안</span></div></div><div class="docset"><b>개발파트너·수원부처</b><div class="chips"><span class="chip">서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes</span><span class="chip">AIMS 사업등록 정보</span><span class="chip">PMU·PSC 회의록</span><span class="chip">분기 이행보고서</span></div></div></div>
+    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>선도 수원부처·정부기관</b><div class="chips"><span class="chip">Concept Proposal Form 또는 사업개념서</span><span class="chip">사업/프로그램 설계문서</span><span class="chip">재원·예산계획</span><span class="chip">예비 조달계획</span><span class="chip">협정·MoU 초안</span><span class="chip">주/지역 정부 제안의 최고책임자 사전승인</span></div></div><div class="docset"><b>FERD·DACU·고위 승인기관</b><div class="chips"><span class="chip">관계기관 검토의견</span><span class="chip">DACU 검토·승인 또는 고위 승인 상신안</span><span class="chip">법률의견 취합본</span><span class="chip">최종 협정·MoU·Exchange of Notes 승인안</span></div></div><div class="docset"><b>개발파트너·수원부처</b><div class="chips"><span class="chip">서명된 Grant/Concessional Loan Agreement·MoU·Exchange of Notes</span><span class="chip">AIMS 사업등록 정보</span><span class="chip">PMU·PSC 회의록</span><span class="chip">분기 이행보고서</span></div></div></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.</li><li>외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도</a><a class="chip" style="text-decoration:none" href="../myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../myanmar-site-urban-construction-regulations/index.html">미얀마 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../myanmar-permit-environment-construction-regulations/index.html">미얀마 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../myanmar-control-completion-construction-regulations/index.html">미얀마 기술검사·보험·준공제도</a></div></div>
@@ -570,55 +582,14 @@ footer.site a{color:var(--muted)}
 
 
 
-<section class="blk">
-  <h2>법령 원문</h2>
-  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
-    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
-  <div class="quotes"><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.1 — MIFER as a Single Window</a></span>
-    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
-  </div>
-  <div class="qtext">The Ministry of Investment and Foreign Economic Relations shall be the single window for the submission of all cases requiring the DACU’s consideration prior to submission to the Economic Committee.</div>
-  <p class="qgist">개발원조 안건은 MIFER가 DACU·경제위원회 심의의 단일창구다.</p>
+<section class="blk" id="sources"><h2>검증·출처</h2>
 
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.3 — Phase 2: Project/Programme Concept Approval</a></span>
-    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
-  </div>
-  <div class="qtext">Once a project/programme concept has been agreed, the Government Entity shall submit all relevant documentation to FERD who shall prepare the case for submission to the DACU. The DACU will review the proposal and may either offer an endorsement, allowing for full Project/Programme development to begin, or convey the case to the Economic Committee for further review and approval.</div>
-  <p class="qgist">합의된 사업개념은 FERD를 통해 DACU가 검토하고 승인 또는 상위 심의로 보낸다.</p>
+<details class="source-fold"><summary>법령 원문과 판본 · 5개 발췌</summary>
+  <p class="desc">판본과 개정 상태를 먼저 확인하세요. 조문 번호를 누르면 발췌한 원문을 열 수 있습니다.</p>
+  <div class="quotes"><article class="qc"><div><strong>2020년 9월 정책판 · 발췌 이후 개정 여부 별도 확인</strong><p><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.1 — MIFER as a Single Window</a> · Myanmar Development Assistance Policy, September 2020</p><div class="qtext">The Ministry of Investment and Foreign Economic Relations shall be the single window for the submission of all cases requiring the DACU’s consideration prior to submission to the Economic Committee.</div><p class="qgist">개발원조 안건은 MIFER가 DACU·경제위원회 심의의 단일창구다.</p></div><small>원문 확인 2026-07-26</small></article><article class="qc"><div><strong>2020년 9월 정책판 · 발췌 이후 개정 여부 별도 확인</strong><p><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">§6.3 — Phase 2: Project/Programme Concept Approval</a> · Myanmar Development Assistance Policy, September 2020</p><div class="qtext">Once a project/programme concept has been agreed, the Government Entity shall submit all relevant documentation to FERD who shall prepare the case for submission to the DACU. The DACU will review the proposal and may either offer an endorsement, allowing for full Project/Programme development to begin, or convey the case to the Economic Committee for further review and approval.</div><p class="qgist">합의된 사업개념은 FERD를 통해 DACU가 검토하고 승인 또는 상위 심의로 보낸다.</p></div><small>원문 확인 2026-07-26</small></article><article class="qc"><div><strong>2020년 9월 정책판 · 발췌 이후 개정 여부 별도 확인</strong><p><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 3</a> · Myanmar Development Assistance Policy, September 2020</p><div class="qtext">By now, the Lead Government Entity shall have gathered sufficient information to prepare the following documents (or documents comparable in nature): a draft Project/Programme/Concessional Loan Design; a draft Financing Plan; an Indicative Procurement Plan; and a draft Agreement/MoU.</div><p class="qgist">최종 승인 단계에는 설계·재원·조달계획·협정 초안을 함께 준비한다.</p></div><small>원문 확인 2026-07-26</small></article><article class="qc"><div><strong>2020년 9월 정책판 · 발췌 이후 개정 여부 별도 확인</strong><p><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 8</a> · Myanmar Development Assistance Policy, September 2020</p><div class="qtext">Within two weeks of a Grant Agreement/MoU or Concessional Loan Agreement being signed, the Lead Government Entity shall submit to FERD for its records a copy of that Agreement/MoU and any other relevant documentation.</div><p class="qgist">협정 서명 후 2주 이내 FERD에 문서 사본을 제출한다는 2020 정책 기준이다.</p></div><small>원문 확인 2026-07-26</small></article><article class="qc"><div><strong>기관 기능 안내 웹페이지 · 판번호와 개정 이력 미표시</strong><p><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">Duties and Responsibilities of the Asia and America Division</a> · MIFER/FERD official functions and responsibilities</p><div class="qtext">Responsibility to submit the projects proposal proposed by the relevant ministries in order to get the approval of the higher level organizations and after that, sending the project proposals to PIDs for their approval and assistance officially; Initiating and coordinating for the signing of Memorandum of Understanding (MOU), Exchange of Letters and Exchange of Notes between the two countries after the proposed projects approved by PIDs’ side;</div><p class="qgist">FERD는 수원부처 제안을 고위 승인에 상신하고 PID 승인 뒤 양자 문서 서명을 조정한다.</p></div><small>원문 확인 2026-07-26</small></article></div>
+</details>
 
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 3</a></span>
-    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
-  </div>
-  <div class="qtext">By now, the Lead Government Entity shall have gathered sufficient information to prepare the following documents (or documents comparable in nature): a draft Project/Programme/Concessional Loan Design; a draft Financing Plan; an Indicative Procurement Plan; and a draft Agreement/MoU.</div>
-  <p class="qgist">최종 승인 단계에는 설계·재원·조달계획·협정 초안을 함께 준비한다.</p>
-
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf" target="_blank" rel="noopener">Annex A §10.3 Step 8</a></span>
-    <span class="badge plain muted">Myanmar Development Assistance Policy, September 2020</span>
-  </div>
-  <div class="qtext">Within two weeks of a Grant Agreement/MoU or Concessional Loan Agreement being signed, the Lead Government Entity shall submit to FERD for its records a copy of that Agreement/MoU and any other relevant documentation.</div>
-  <p class="qgist">협정 서명 후 2주 이내 FERD에 문서 사본을 제출한다는 2020 정책 기준이다.</p>
-
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://mifer.gov.mm/en/about-ferd" target="_blank" rel="noopener">Duties and Responsibilities of the Asia and America Division</a></span>
-    <span class="badge plain muted">MIFER/FERD official functions and responsibilities</span>
-  </div>
-  <div class="qtext">Responsibility to submit the projects proposal proposed by the relevant ministries in order to get the approval of the higher level organizations and after that, sending the project proposals to PIDs for their approval and assistance officially; Initiating and coordinating for the signing of Memorandum of Understanding (MOU), Exchange of Letters and Exchange of Notes between the two countries after the proposed projects approved by PIDs’ side;</div>
-  <p class="qgist">FERD는 수원부처 제안을 고위 승인에 상신하고 PID 승인 뒤 양자 문서 서명을 조정한다.</p>
-
-</div></div>
-</section>
-
-<section class="blk">
-  <h2>현행 기준 반영 1건</h2>
+<details class="source-fold"><summary>현행 기준 반영 1건 · 필수 확인 1건</summary>
   <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
     출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="high">
@@ -627,7 +598,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">미얀마</span>
     <span class="badge plain muted">D01</span>
   </div>
-  <h3>verification / 공식 원문·현행성·정량요건</h3>
+  <h3>공식 원문·현행성·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>정보부 관보 제75권 제16호에 제1/2022호 전체 원문이 수록되어 있고 2025년 관보가 이를 재적용한다. 제1/2017호는 충돌 부분만 후법 우선이며, 2026년 정부신문 입찰도 제23~24항을 계속 적용한다.</div>
   <p class="cite">확인 출처 · Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a> · <a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a> · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf" target="_blank" rel="noopener">Myanmar Gazette Vol.78 No.20 — current tender-committee orders</a> · <a class="ref" href="https://www.moi.gov.mm/nlm/file-download/download/public/5153" target="_blank" rel="noopener">Global New Light of Myanmar tender notice, June 2026</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 제출시각, 보증서 양식·발급은행, 공여협정 및 기관별 이의접수 방법을 확인한다.</div>
@@ -641,10 +612,9 @@ footer.site a{color:var(--muted)}
 
   <p class="act-row">산출물 반영 — 공식 관보 원문과 2025·2026년 정부 적용자료로 현행성을 확정하고 정량·절차 요건을 조문별로 대조했다.</p>
 </div>
-</section>
+</details>
 
-<section class="blk">
-  <h2>검증</h2>
+<details class="source-fold"><summary>검증 방법과 전체 출처</summary>
   <p class="desc">정보부 공식 관보 제75권 제16호의 제1/2022호 미얀마어 원문을 전 조문 대조하고, 제1/2017호 공식 정부 게시본·영문 편의번역, 2025년 관보와 2026년 정부신문 실제 입찰을 교차 확인해 시행·우선관계, 기준금액, 기한, 입찰·이행보증, 이의와 예외를 확정했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
@@ -658,6 +628,7 @@ footer.site a{color:var(--muted)}
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 관할·필지·시설에 따른 사업 적용판정은 별도입니다.
   </p>
+</details>
 </section>
 </div>
 
@@ -675,8 +646,49 @@ footer.site a{color:var(--muted)}
 var NODES={"P01":{"id":"P01","name":"수요·지원 가능성 협의","lane":"수원부처","stage":"G1 발굴","type":"task","status":"current","actor":"수원부처 · 개발파트너","action":"사회경제 개발수요와 지원 가능성을 협의한다.","legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"Annex A §10.2, Step 1","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P01"},"P02":{"id":"P02","name":"선도기관·정합성 확인","lane":"수원부처","stage":"G1 발굴","type":"gateway","status":"current","actor":"선도 정부기관","action":"선도기관을 정하고 국가·부문·지역 계획, 진행·계획 사업과의 중복을 검토한다.","output_documents":["초기 사업개념","정합성 검토"],"legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"Annex A §10.2, Steps 1–2","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P02"},"P03":{"id":"P03","name":"FERD 단일창구 제출","lane":"MIFER·FERD·DACU","stage":"G2 개념승인","type":"notice","status":"current","actor":"선도 정부기관 · FERD","action":"사업개념서와 관련 문서를 FERD에 제출한다.","output_documents":["Concept Proposal Form","관련 검토문서"],"confidence":0.85,"legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"§6.3","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P03"},"P04":{"id":"P04","name":"DACU·고위 개념승인","lane":"MIFER·FERD·DACU","stage":"G2 개념승인","type":"gateway","status":"risk","actor":"DACU · 고위 승인기관","action":"FERD가 검토·상신을 조정하고 승인된 제안을 개발파트너에 공식 전달한다.","blocker":"2026년 현재 DACU·고위 승인기관의 정확한 명칭·권한 미확인","legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"§6.3; Annex A §10.2, Steps 3–4","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P04"},"P05":{"id":"P05","name":"PID 자체심사·전체설계","lane":"개발파트너","stage":"G3 설계·협상","type":"task","status":"waiting","actor":"개발파트너 · 수원부처","action":"자체 심사와 함께 사업설계·재원·예산·예비 조달계획을 구체화한다.","output_documents":["사업설계","재원계획","예산","예비 조달계획"],"legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"§6.4; Annex A §10.3, Step 1","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P05"},"P06":{"id":"P06","name":"협정안 법률검토·협상","lane":"MIFER·FERD·DACU","stage":"G3 설계·협상","type":"task","status":"waiting","actor":"FERD · 관계부처 · 개발파트너","action":"FERD가 법률의견을 취합하고 협정·MoU·교환각서 최종안을 협상한다.","output_documents":["법률의견","최종 협정·MoU·Exchange of Notes 초안"],"legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"Annex A §10.3, Steps 6–7 (concessional loans)","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P06"},"P07":{"id":"P07","name":"정부 고위 최종승인","lane":"고위 승인·이행","stage":"G4 승인·서명","type":"gateway","status":"risk","actor":"경제·정부 고위 승인기관","action":"최종 협정안과 사업설계를 승인한다. 서명 전에 현행 승인기관·권한을 확인한다.","blocker":"2020 DAP와 현재 MIFER 페이지의 기관 경로가 다름","legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"Annex A §10.3, Steps 3–5 (by financing instrument)","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P07"},"P08":{"id":"P08","name":"협정 서명·AIMS 등록","lane":"개발파트너","stage":"G4 승인·서명","type":"notice","status":"waiting","actor":"권한 있는 정부기관 · 개발파트너 · FERD","action":"협정·MoU·교환각서를 서명하고 FERD·AIMS에 사업정보와 문서를 등록한다.","output_documents":["서명 협정·MoU·Exchange of Notes","AIMS 등록정보"],"legal_basis":[{"law":"Myanmar Development Assistance Policy, September 2020","article":"Annex A §10.3, Steps 6 and 8","url":"https://lift-fund.org/sites/lift-fund.org/files/publication/gov_myanmar-dap_2020-compressed.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"procurement_evidence":"","display_id":"P08"},"P09":{"id":"P09","name":"PMU·PSC 이행","lane":"고위 승인·이행","stage":"G5 이행","type":"task","status":"waiting","actor":"수원부처 · 개발파트너 · PMU/PSC","action":"사업을 이행하고 PMU·PSC 회의로 진도·제약사항을 관리한다.","output_documents":["PMU·PSC 회의록","이행보고서"],"basisStatus":"pending","procurement_evidence":"\u003cdt\u003e단계별 근거\u003c/dt\u003e\u003cdd\u003e이 단계의 직접 근거는 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P09"},"P10":{"id":"P10","name":"분기보고·조정","lane":"MIFER·FERD·DACU","stage":"G5 이행","type":"system","status":"loop","actor":"FERD 개발관리조정과","action":"3개월 보고를 수집·분석하고 제약사항·중복을 조정해 상위기관과 기획·평가부서에 보고한다.","output_documents":["분기 진도보고","제약사항 분석"],"basisStatus":"pending","procurement_evidence":"\u003cdt\u003e단계별 근거\u003c/dt\u003e\u003cdd\u003e이 단계의 직접 근거는 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P10"}};
 var EDGES=[{"id":"E01","source":"P01","target":"P02","type":"sequence"},{"id":"E02","source":"P02","target":"P03","type":"sequence"},{"id":"E03","source":"P03","target":"P04","type":"sequence"},{"id":"E04","source":"P04","target":"P05","type":"message","label":"공식 전달"},{"id":"E05","source":"P05","target":"P06","type":"sequence"},{"id":"E06","source":"P06","target":"P07","type":"sequence"},{"id":"E07","source":"P07","target":"P08","type":"message","label":"승인"},{"id":"E08","source":"P08","target":"P09","type":"sequence"},{"id":"E09","source":"P09","target":"P10","type":"message","label":"분기보고"},{"id":"E10","source":"P10","target":"P09","type":"loop","label":"제약 조정"}];
 
-var _sel=document.getElementById('sel');
-if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+const listState = new URLSearchParams(location.search).get('list');
+if (listState !== null) {
+  const input = new URLSearchParams(listState);
+  const state = new URLSearchParams();
+  for (const key of ['country', 'axis', 'q']) if (input.get(key)) state.set(key, input.get(key));
+  const listLink = document.querySelector('header.site nav a');
+  const back = document.querySelector('#catalog-return');
+  if (back && listLink) {
+    const href = '../../index.html' + (state.size ? '?' + state.toString() : '') + '#results';
+    back.href = listLink.href = href;
+    back.textContent = '보고 있던 목록으로 돌아가기';
+    for (const link of document.querySelectorAll('a[href^="../"]')) {
+      const url = new URL(link.href);
+      if (url.pathname.includes('/model/')) {
+        url.searchParams.set('list', state.toString());
+        link.href = url.href;
+      }
+    }
+  }
+}
+const selector = document.querySelector('#sel');
+if (selector) selector.addEventListener('change', () => {
+  const url = new URL('../' + selector.value + '/index.html', location.href);
+  if (listState !== null) url.searchParams.set('list', listState);
+  location.assign(url.href);
+});
+document.querySelector('#copy-steps').addEventListener('click', async () => {
+  const list = document.querySelector('#readable-steps');
+  const status = document.querySelector('#copy-status');
+  const text = [...list.children].map((item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = '단계 목록을 복사했습니다.';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(list);
+    const selection = getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = '목록을 선택했습니다. 기기의 복사 기능을 사용하세요.';
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){

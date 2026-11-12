@@ -54,6 +54,12 @@ def main():
         for item in data["fieldVerification"]:
             if isinstance(item, dict) and html.escape(item["question"]) not in page:
                 raise ValueError(f"{path.stem}: 현장 질문 누락")
+        if re.search(r"<h3>[^<]*(?:canvas\.|verification /|process /)", page):
+            raise ValueError(f"{path.stem}: 내부 필드 경로가 독자용 제목에 노출됐습니다")
+        if data["slug"] == "nepal-bidding-system":
+            panel = re.search(r'<div class="edition-pair">(.+?)</article>', page, re.S)
+            if not panel or not all(term in panel[1] for term in ("2~3%", "2.5%", "2007년", "제16차")):
+                raise ValueError("네팔 입찰보증의 산정 기준과 비교 판본 누락")
         nodes = json.loads(re.search(r"^var NODES=(.+);$", page, re.M)[1])
         for node in data["process"]["nodes"]:
             rendered = nodes[node["id"]]

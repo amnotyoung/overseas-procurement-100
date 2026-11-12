@@ -135,6 +135,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -463,7 +469,7 @@ footer.site a{color:var(--muted)}
   <a class="brand" href="../../index.html">그 나라, 조달하고 건축하려면?</a>
   <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
-    <a href="../../index.html">제도 대장</a>
+    <a href="../../index.html?country=myanmar#results">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
     <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -472,6 +478,7 @@ footer.site a{color:var(--muted)}
 
 
 <div class="subnav"><div class="wrap">
+  <a id="catalog-return" href="../../index.html?country=myanmar#results">미얀마 목록으로 돌아가기</a>
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px"><option value="myanmar-bidding-system" selected>01 · 미얀마 입찰제도</option><option value="myanmar-procurement-governance">02 · 미얀마 조달 거버넌스</option><option value="myanmar-oda-project-pipeline">03 · 미얀마 ODA 사업형성</option><option value="myanmar-site-urban-construction-regulations">04 · 미얀마 도시계획·부지규제</option><option value="myanmar-permit-environment-construction-regulations">05 · 미얀마 건축허가·환경심사</option><option value="myanmar-control-completion-construction-regulations">06 · 미얀마 기술검사·보험·준공제도</option></select>
   <a class="btn" href="../mongolia-control-completion-construction-regulations/index.html" style="text-decoration:none">← 이전</a>
@@ -479,31 +486,36 @@ footer.site a{color:var(--muted)}
   <span class="pos">전체 제도 70/267 · 이 국가 1/6</span>
 </div></div>
 
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge plain muted">NO 01</span>
     <span class="badge plain muted">미얀마 · Myanmar</span>
     <span class="badge plain muted">입찰제도</span>
     <span class="badge ok">조문 대조 완료</span>
 
-    <span class="badge bad">확인사항 1건</span>
+
   </div>
   <h1>미얀마 공공조달 입찰제도</h1>
   <p class="one">2022년 국정관리평의회 사무처 지침을 우선 적용해 가격제안요청·공개·제한·2단계·직접조달의 5개 방식을 운용하고, 2천만/2억 짯을 기준으로 공고 채널과 기간을 달리하는 체계</p>
+  <div class="scope-note"><strong>조달 참여 자료집에 활용</strong> · 입찰 준비, 제출서류와 평가 절차<br>
+    <b>대조 범위</b> Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶3~50, especially ¶¶16~26, 37~48; Myanmar Gazette Vol.78 No.20 current application; June 2026 official tender notice.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 1건 · 직접 근거 확인 대기 0단계<br>
+    <b>작성 전 확인</b> 개별 공고의 제출기한·참가자격·보증액 · <a href="#sources">근거 자료 보기</a></div>
+  <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>9</b><span>절차 노드</span></div>
 
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>5</b><span>게이트</span></div>
-    <div class="tile ok"><b>7</b><span>대조 조문</span></div>
+    <div class="tile ok"><b>5</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>ODA 적용 확인</span></div>
+    <div class="tile warn"><b>2</b><span>사업별 확인 항목</span></div>
   </div>
+  <p class="meta">사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다.</p>
 </div>
 
 <div class="wrap">
-<section class="blk">
+<section class="blk" id="practice">
   <div class="hd-row">
     <div>
       <h2>업무구조도</h2>
@@ -548,7 +560,7 @@ footer.site a{color:var(--muted)}
   <h2>한 장 캔버스</h2>
   <p class="desc">승인예산으로 수행하는 정부의 공사·재화·서비스 조달을 공개경쟁을 원칙으로 집행하되, 소액·복잡성·시장제한·긴급성에 따라 가격제안요청·제한입찰·2단계입찰·직접조달을 허용한다.</p>
   <div class="cards">
-    <div class="card span2"><h3>절차</h3><ol class="steps"><li>발주기관이 승인예산을 확인하고 조달계획·사양·평가기준·계약조건을 마련해 입찰위원회 승인을 받는다(제1/2017호 ¶¶16~20).</li><li>원칙은 공개입찰이며, 2천만 MMK 미만 단순 공사·시판 물품·서비스는 신뢰 가능한 3개 이상 업체의 가격제안, 기술·계약요건을 미리 확정하기 어려우면 2단계 입찰을 사용할 수 있다(제1/2022호 ¶¶3~6).</li><li>제한·직접조달은 법정 사유에 한하고, 1억 MMK 미만은 기관 관리위원회, 1억 MMK 초과는 권한기관의 승인을 받는다(제1/2022호 ¶¶7~9).</li><li>2천만~2억 MMK 공개입찰은 게시판에 7일 전, 2억 MMK 초과는 국영신문 2회와 부처 웹사이트에 14일 전 공고한다(제1/2022호 ¶10).</li><li>입찰자는 입찰서류에 따라 자격·기술·가격서류와 입찰가의 1% 입찰보증을 제출하고, 평가위원회가 공고된 기준으로 개찰·평가한다(제1/2017호 ¶¶22~30).</li><li>권한기관 승인 후 낙찰자를 공고·통지하고 낙찰자는 계약 전 계약가의 10% 이행보증을 제출한다. 가격제안 방식에는 이행보증을 요구하지 않는다(제1/2017호 ¶37).</li><li>입찰선정 이의는 증거를 갖춰 입찰위원회에 제기하고 불복 시 기획재정부가 구성한 3인 이상 부처합동 이의해결팀이 최종 결정한다(제1/2017호 ¶¶46~47).</li><li>발주기관은 계약 발효부터 완료까지 이행·지급·변경을 관리하고 관련 입찰·평가·계약기록을 최소 3년 보관한다(제1/2022호 ¶¶14~16; 제1/2017호 ¶43).</li></ol></div>
+    <div class="card span2"><h3>절차</h3><p><button class="btn" id="copy-steps" type="button">단계 목록 복사</button> <small role="status" id="copy-status"></small></p><ol class="steps" id="readable-steps"><li>발주기관이 승인예산을 확인하고 조달계획·사양·평가기준·계약조건을 마련해 입찰위원회 승인을 받는다(제1/2017호 ¶¶16~20).</li><li>원칙은 공개입찰이며, 2천만 MMK 미만 단순 공사·시판 물품·서비스는 신뢰 가능한 3개 이상 업체의 가격제안, 기술·계약요건을 미리 확정하기 어려우면 2단계 입찰을 사용할 수 있다(제1/2022호 ¶¶3~6).</li><li>제한·직접조달은 법정 사유에 한하고, 1억 MMK 미만은 기관 관리위원회, 1억 MMK 초과는 권한기관의 승인을 받는다(제1/2022호 ¶¶7~9).</li><li>2천만~2억 MMK 공개입찰은 게시판에 7일 전, 2억 MMK 초과는 국영신문 2회와 부처 웹사이트에 14일 전 공고한다(제1/2022호 ¶10).</li><li>입찰자는 입찰서류에 따라 자격·기술·가격서류와 입찰가의 1% 입찰보증을 제출하고, 평가위원회가 공고된 기준으로 개찰·평가한다(제1/2017호 ¶¶22~30).</li><li>권한기관 승인 후 낙찰자를 공고·통지하고 낙찰자는 계약 전 계약가의 10% 이행보증을 제출한다. 가격제안 방식에는 이행보증을 요구하지 않는다(제1/2017호 ¶37).</li><li>입찰선정 이의는 증거를 갖춰 입찰위원회에 제기하고 불복 시 기획재정부가 구성한 3인 이상 부처합동 이의해결팀이 최종 결정한다(제1/2017호 ¶¶46~47).</li><li>발주기관은 계약 발효부터 완료까지 이행·지급·변경을 관리하고 관련 입찰·평가·계약기록을 최소 3년 보관한다(제1/2022호 ¶¶14~16; 제1/2017호 ¶43).</li></ol></div>
 
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">연방급 기관·연방부처·네피도위원회·주/지역 정부가 승인예산으로 수행하는 공사·물품·서비스 조달에 적용한다. 국방·국가안보, 장학·훈련, 공무원·임시근로자 채용, 토지·기존 건물 매입은 제1/2022호 제25항의 적용 제외다.</p></div>
     <div class="card"><h3>법적 근거</h3><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a></span><span class="ar">¶¶1~16, 25~28</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a></span><span class="ar">¶¶3~50 (제1/2022호와 충돌하지 않는 범위)</span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div><div class="law"><div class="law-copy"><span class="nm">재원 제공 국제·협력기관의 조달규정</span><span class="ar">Directive No. 1/2017 ¶48(g)</span></div><div class="law-meta"><span class="badge plain muted">공여기관 규정</span></div></div></div>
@@ -556,7 +568,7 @@ footer.site a{color:var(--muted)}
 
     <div class="card"><h3>권한 기관</h3><div class="auth"><b>발주부서·기관별 입찰위원회(Tender Committee)</b><span>조달방식 선택, 가격제안 요청·공개입찰 실시, 입찰서 접수·평가, 낙찰·계약 관리</span></div><div class="auth"><b>연방급 기관·연방부처·네피도위원회·주/지역 정부 관리위원회</b><span>제한입찰·직접조달 금액이 1억 짯 미만인 경우 해당 방식 사용을 회의로 결정</span></div><div class="auth"><b>국정관리평의회 의장 또는 연방정부</b><span>제한입찰·직접조달 금액이 1억 짯 이상인 경우 사전 승인</span></div><div class="auth"><b>차관·무상원조 제공 국제·협력기관</b><span>외부재원 조달에 자체 규정이 있으면 그 규정을 적용하고, 없으면 미얀마 지침 적용</span></div></div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">연방급 기관·연방부처·네피도위원회·주/지역 정부의 발주부서, 발주부서별 입찰위원회, 국내외 입찰자, 기관 관리위원회, 국정관리평의회 의장 또는 연방정부, 차관·무상원조 제공 국제·협력기관</p></div>
-    <div class="card"><h3>제출서류</h3><div class="docset"><b>입찰자</b><div class="chips"><span class="chip">입찰서 또는 가격제안서</span><span class="chip">입찰서류가 정한 기술제안·가격제안</span><span class="chip">입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙</span><span class="chip">입찰보증(요구되는 경우)</span></div></div><div class="docset"><b>외국기업 낙찰자</b><div class="chips"><span class="chip">계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)</span><span class="chip">입찰서류가 정한 이행보증</span></div></div><div class="docset"><b>발주부서·입찰위원회</b><div class="chips"><span class="chip">승인예산·조달계획</span><span class="chip">입찰공고·초청장</span><span class="chip">사양·평가기준·계약조건</span><span class="chip">평가보고서·낙찰결정·계약서</span></div></div></div>
+    <div class="card" id="business"><h3>제출서류</h3><div class="docset"><b>입찰자</b><div class="chips"><span class="chip">입찰서 또는 가격제안서</span><span class="chip">입찰서류가 정한 기술제안·가격제안</span><span class="chip">입찰서류가 정한 법인·납세·경험·재무·기술능력 증빙</span><span class="chip">입찰보증(요구되는 경우)</span></div></div><div class="docset"><b>외국기업 낙찰자</b><div class="chips"><span class="chip">계약 체결 전 미얀마 법인등록 증빙(President’s Office Directive No. 1/2017 ¶42)</span><span class="chip">입찰서류가 정한 이행보증</span></div></div><div class="docset"><b>발주부서·입찰위원회</b><div class="chips"><span class="chip">승인예산·조달계획</span><span class="chip">입찰공고·초청장</span><span class="chip">사양·평가기준·계약조건</span><span class="chip">평가보고서·낙찰결정·계약서</span></div></div><p>기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. <a href="#sources">근거 보기</a></p></div>
     <div class="card"><h3>유의사항 · 병목</h3><ul class="plain"><li>제1/2017호 제46~47항은 이의신청·결정 기한과 자동 정지효를 두지 않으므로 실제 공고와 발주기관의 접수절차를 확인해야 한다.</li><li>외부재원·국제입찰은 재원협정, 제재·대표성 검토, 공고의 등록·통화·보증은행·서류언어 요건을 함께 확인해야 한다.</li></ul></div>
     <div class="card"><h3>진입장벽</h3><ul class="plain"><li>외국기업은 낙찰 후 계약 전 미얀마 법인등록, 현지 세무·인허가, 공고별 대사관 확인·언어·보증은행 및 제재 준수요건을 확인해야 한다.</li></ul></div>
     <div class="card"><h3>관련 제도</h3><div class="chips"><a class="chip" style="text-decoration:none" href="../myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계</a><a class="chip" style="text-decoration:none" href="../myanmar-oda-project-pipeline/index.html">미얀마 ODA 사업 발굴·형성 절차</a><a class="chip" style="text-decoration:none" href="../myanmar-site-urban-construction-regulations/index.html">미얀마 도시계획·부지규제</a><a class="chip" style="text-decoration:none" href="../myanmar-permit-environment-construction-regulations/index.html">미얀마 건축허가·환경심사</a><a class="chip" style="text-decoration:none" href="../myanmar-control-completion-construction-regulations/index.html">미얀마 기술검사·보험·준공제도</a></div></div>
@@ -568,55 +580,14 @@ footer.site a{color:var(--muted)}
 
 
 
-<section class="blk">
-  <h2>법령 원문</h2>
-  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
-    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
-  <div class="quotes"><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶¶3-5</a></span>
-    <span class="badge plain muted">Office of the State Administration Council Directive No. 1/2022</span>
-  </div>
-  <div class="qtext">Departments and organisations of Union-level organisations, Union Ministries, the Nay Pyi Taw Council and Region and State governments shall use the following tendering methods when engaging in procurement: (a) Request for a price proposal; (b) unrestricted tendering; (c) restricted tendering; (d) two-stage tendering; (e) direct procurement. ... Procurements shall be made by the method of unrestricted tendering where anyone may submit a tender, except in the cases set forth in paragraphs 4, 6, 7 and 8 of this directive.</div>
-  <p class="qgist">5개 조달방식을 두되 공개입찰을 원칙으로 한다.</p>
+<section class="blk" id="sources"><h2>검증·출처</h2>
 
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶10(a)-(c)</a></span>
-    <span class="badge plain muted">Office of the State Administration Council Directive No. 1/2022</span>
-  </div>
-  <div class="qtext">For purchases under 20 million kyats, the tender committee may solicit price proposals from at least 3 reliable companies without having to call an unrestricted tender; unrestricted calls for tenders for purchases from 20 million kyats to 200 million kyats must be prominently announced 7 days before the tender opening date ... unrestricted calls for tenders for purchases above 200 million kyats ... [must] be advertised at least twice in state-owned newspapers at least 14 days before the tender opening date. The same shall be announced on the ministry’s website at least 14 days in advance.</div>
-  <p class="qgist">2천만/2억 짯 구간에 따라 가격제안·게시판 7일·신문과 웹 14일로 갈린다.</p>
+<details class="source-fold"><summary>법령 원문과 판본 · 5개 발췌</summary>
+  <p class="desc">판본과 개정 상태를 먼저 확인하세요. 조문 번호를 누르면 발췌한 원문을 열 수 있습니다.</p>
+  <div class="quotes"><article class="qc"><div><strong>2022년 지침 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶¶3-5</a> · Office of the State Administration Council Directive No. 1/2022</p><div class="qtext">Departments and organisations of Union-level organisations, Union Ministries, the Nay Pyi Taw Council and Region and State governments shall use the following tendering methods when engaging in procurement: (a) Request for a price proposal; (b) unrestricted tendering; (c) restricted tendering; (d) two-stage tendering; (e) direct procurement. ... Procurements shall be made by the method of unrestricted tendering where anyone may submit a tender, except in the cases set forth in paragraphs 4, 6, 7 and 8 of this directive.</div><p class="qgist">5개 조달방식을 두되 공개입찰을 원칙으로 한다.</p></div><small>원문 확인 2026-07-29</small></article><article class="qc"><div><strong>2022년 지침 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶10(a)-(c)</a> · Office of the State Administration Council Directive No. 1/2022</p><div class="qtext">For purchases under 20 million kyats, the tender committee may solicit price proposals from at least 3 reliable companies without having to call an unrestricted tender; unrestricted calls for tenders for purchases from 20 million kyats to 200 million kyats must be prominently announced 7 days before the tender opening date ... unrestricted calls for tenders for purchases above 200 million kyats ... [must] be advertised at least twice in state-owned newspapers at least 14 days before the tender opening date. The same shall be announced on the ministry’s website at least 14 days in advance.</div><p class="qgist">2천만/2억 짯 구간에 따라 가격제안·게시판 7일·신문과 웹 14일로 갈린다.</p></div><small>원문 확인 2026-07-29</small></article><article class="qc"><div><strong>2022년 지침 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶¶8-9</a> · Office of the State Administration Council Directive No. 1/2022</p><div class="qtext">Direct procurement may be made in any of the following situations. ... When using the tendering methods in paragraphs 7 and 8 above, purchases of less than 100 million kyats may be decided by a meeting of the management committee ... and purchases above 100 million kyats may be made with the approval of the chairman of the State Administration Council or the Union government.</div><p class="qgist">제한입찰·직접조달의 1억 짯 이상 건은 상위 승인이 필요하다.</p></div><small>원문 확인 2026-07-29</small></article><article class="qc"><div><strong>2022년 지침 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶28</a> · Office of the State Administration Council Directive No. 1/2022</p><div class="qtext">If there are contradictions between the directives and the notification in paragraph 27 above and this directive, this directive shall prevail.</div><p class="qgist">2017·2018·2020 지침과 충돌하면 2022 지침이 우선한다.</p></div><small>원문 확인 2026-07-29</small></article><article class="qc"><div><strong>2017년 지침 · 2022년 지침과 충돌하는 부분은 후속 지침 우선</strong><p><a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">¶48(g)</a> · President’s Office Directive No. 1/2017</p><div class="qtext">The purchasing, procurement of services and hiring of consultants shall be done in compliance with the rules and regulations specified by the international or partner organizations that provide the corresponding loan or grant; if there are no such rules and regulations, this directive shall be complied with.</div><p class="qgist">차관·무상원조 제공기관의 조달규정이 있으면 그 규정을 우선 적용한다.</p></div><small>원문 확인 2026-07-29</small></article></div>
+</details>
 
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶¶8-9</a></span>
-    <span class="badge plain muted">Office of the State Administration Council Directive No. 1/2022</span>
-  </div>
-  <div class="qtext">Direct procurement may be made in any of the following situations. ... When using the tendering methods in paragraphs 7 and 8 above, purchases of less than 100 million kyats may be decided by a meeting of the management committee ... and purchases above 100 million kyats may be made with the approval of the chairman of the State Administration Council or the Union government.</div>
-  <p class="qgist">제한입찰·직접조달의 1억 짯 이상 건은 상위 승인이 필요하다.</p>
-
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">¶28</a></span>
-    <span class="badge plain muted">Office of the State Administration Council Directive No. 1/2022</span>
-  </div>
-  <div class="qtext">If there are contradictions between the directives and the notification in paragraph 27 above and this directive, this directive shall prevail.</div>
-  <p class="qgist">2017·2018·2020 지침과 충돌하면 2022 지침이 우선한다.</p>
-
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">¶48(g)</a></span>
-    <span class="badge plain muted">President’s Office Directive No. 1/2017</span>
-  </div>
-  <div class="qtext">The purchasing, procurement of services and hiring of consultants shall be done in compliance with the rules and regulations specified by the international or partner organizations that provide the corresponding loan or grant; if there are no such rules and regulations, this directive shall be complied with.</div>
-  <p class="qgist">차관·무상원조 제공기관의 조달규정이 있으면 그 규정을 우선 적용한다.</p>
-
-</div></div>
-</section>
-
-<section class="blk">
-  <h2>현행 기준 반영 1건</h2>
+<details class="source-fold"><summary>현행 기준 반영 1건 · 필수 확인 1건</summary>
   <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
     출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="high">
@@ -625,7 +596,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">미얀마</span>
     <span class="badge plain muted">D01</span>
   </div>
-  <h3>verification / 공식 원문·현행성·정량요건</h3>
+  <h3>공식 원문·현행성·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>정보부 관보 제75권 제16호에 제1/2022호 전체 원문이 수록되어 있고 2025년 관보가 이를 재적용한다. 제1/2017호는 충돌 부분만 후법 우선이며, 2026년 정부신문 입찰도 제23~24항을 계속 적용한다.</div>
   <p class="cite">확인 출처 · Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a> · <a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a> · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf" target="_blank" rel="noopener">Myanmar Gazette Vol.78 No.20 — current tender-committee orders</a> · <a class="ref" href="https://www.moi.gov.mm/nlm/file-download/download/public/5153" target="_blank" rel="noopener">Global New Light of Myanmar tender notice, June 2026</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 제출시각, 보증서 양식·발급은행, 공여협정 및 기관별 이의접수 방법을 확인한다.</div>
@@ -639,10 +610,9 @@ footer.site a{color:var(--muted)}
 
   <p class="act-row">산출물 반영 — 공식 관보 원문과 2025·2026년 정부 적용자료로 현행성을 확정하고 정량·절차 요건을 조문별로 대조했다.</p>
 </div>
-</section>
+</details>
 
-<section class="blk">
-  <h2>검증</h2>
+<details class="source-fold"><summary>검증 방법과 전체 출처</summary>
   <p class="desc">정보부 공식 관보 제75권 제16호의 제1/2022호 미얀마어 원문을 전 조문 대조하고, 제1/2017호 공식 정부 게시본·영문 편의번역, 2025년 관보와 2026년 정부신문 실제 입찰을 교차 확인해 시행·우선관계, 기준금액, 기한, 입찰·이행보증, 이의와 예외를 확정했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
@@ -656,6 +626,7 @@ footer.site a{color:var(--muted)}
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 관할·필지·시설에 따른 사업 적용판정은 별도입니다.
   </p>
+</details>
 </section>
 </div>
 
@@ -673,8 +644,49 @@ footer.site a{color:var(--muted)}
 var NODES={"P01":{"id":"P01","name":"예산·조달계획 확인","lane":"발주부서·입찰위원회","stage":"G0 계획","type":"task","status":"done","actor":"발주부서·입찰위원회","action":"승인예산, 사업범위, 예상금액을 확인하고 조달계획을 세운다.","output_documents":["승인예산","조달계획"],"confidence":0.9,"legal_basis":[{"law":"President’s Office Directive No. 1/2017","article":"¶¶17-19","url":"https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P01"},"P02":{"id":"P02","name":"조달방식 선택","lane":"발주부서·입찰위원회","stage":"G1 방식·승인","type":"gateway","status":"current","actor":"입찰위원회","action":"가격제안요청·공개·제한·2단계·직접조달 중 요건에 맞는 방식을 정한다. 공개입찰이 원칙이다.","confidence":0.9,"legal_basis":[{"law":"Office of the State Administration Council Directive No. 1/2022","article":"¶¶3-8","url":"https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P02"},"P03":{"id":"P03","name":"제한·직접조달 승인","lane":"승인기관","stage":"G1 방식·승인","type":"gateway","status":"risk","actor":"기관 관리위원회 · 국정관리평의회 의장 또는 연방정부","action":"제한·직접조달은 1억 짯 미만 기관 관리위원회, 1억 짯 이상 상위 승인을 받는다.","blocker":"상위 승인 전에는 제한·직접조달로 진행할 수 없음","confidence":0.85,"legal_basis":[{"law":"Office of the State Administration Council Directive No. 1/2022","article":"¶9","url":"https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P03"},"P04":{"id":"P04","name":"입찰서류 작성","lane":"발주부서·입찰위원회","stage":"G1 방식·승인","type":"task","status":"waiting","actor":"발주부서·입찰위원회","action":"공고, 사양, 지시사항, 평가계획, 계약조건을 작성한다.","output_documents":["입찰공고","사양서","평가기준","계약조건"],"confidence":0.85,"legal_basis":[{"law":"President’s Office Directive No. 1/2017","article":"¶¶19-20","url":"https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P04"},"P05":{"id":"P05","name":"금액별 공고","lane":"발주부서·입찰위원회","stage":"G2 공고·제출","type":"notice","status":"current","actor":"입찰위원회","action":"2천만~2억 짯은 게시판 7일, 2억 짯 초과는 국영신문 2회와 부처 웹사이트 14일 공고한다.","confidence":0.9,"legal_basis":[{"law":"Office of the State Administration Council Directive No. 1/2022","article":"¶10","url":"https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P05"},"P06":{"id":"P06","name":"입찰서 제출","lane":"입찰자","stage":"G2 공고·제출","type":"task","status":"waiting","actor":"입찰자","action":"입찰서류가 정한 형식·기한에 기술·가격·자격서류와 보증을 제출한다.","output_documents":["입찰서","기술·가격제안","자격증빙","입찰보증(요구 시)"],"requirementRefs":["deadlines"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 기한\u003c/dt\u003e\u003cdd\u003e2천만~2억 MMK 공개입찰은 개찰 7일 전, 2억 MMK 초과는 국영신문 최소 2회와 부처 웹사이트에 14일 전 공고한다. 일반 입찰유효기간은 제출일부터 최대 2개월이며 대형·복잡 사업은 위원회가 정한다. 컨설팅 제안 준비기간은 최소 30일이고, 공사 입찰은 회계연도 시작 2개월 안에 진행한다. · \u003ca class=\"ref\" href=\"https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf\" target=\"_blank\" rel=\"noopener\"\u003eDirective No.1/2022 ¶¶10, 12 and 26; Directive No.1/2017 ¶¶21 and 26(a)\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P06"},"P07":{"id":"P07","name":"개찰·평가","lane":"발주부서·입찰위원회","stage":"G3 평가","type":"task","status":"waiting","actor":"입찰위원회","action":"공고된 기술·가격·자격 기준으로 평가하고 결과보고서를 작성한다.","output_documents":["개찰기록","평가보고서"],"confidence":0.85,"legal_basis":[{"law":"President’s Office Directive No. 1/2017","article":"¶¶23-30","url":"https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P07"},"P08":{"id":"P08","name":"낙찰·계약","lane":"발주부서·입찰위원회","stage":"G4 계약","type":"gateway","status":"waiting","actor":"입찰위원회 · 낙찰자","action":"낙찰을 통지하고 필요한 등록·이행보증을 확인한 뒤 계약을 체결한다.","output_documents":["낙찰통지","이행보증","계약서"],"requirementRefs":["performanceSecurity"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 계약이행보증\u003c/dt\u003e\u003cdd\u003e낙찰자는 입찰서류가 정한 기간 안에 중앙은행 인정은행의 계약가 10% 이행보증을 제출한 뒤 계약을 체결한다. 가격제안 방식은 이행보증 면제다. 선급금은 계약가 10% 이하이며 같은 금액의 선급금보증을 요구한다. · \u003ca class=\"ref\" href=\"https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf\" target=\"_blank\" rel=\"noopener\"\u003eDirective No.1/2017 ¶¶37 and 39\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P08"},"P09":{"id":"P09","name":"계약관리","lane":"발주부서·입찰위원회","stage":"G4 계약","type":"task","status":"waiting","actor":"발주부서·계약관리자","action":"계약 발효부터 완료까지 납품·공정·지급·변경·분쟁을 관리한다.","confidence":0.85,"legal_basis":[{"law":"Office of the State Administration Council Directive No. 1/2022","article":"¶¶14-16","url":"https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P09"}};
 var EDGES=[{"id":"E01","source":"P01","target":"P02","type":"sequence"},{"id":"E02","source":"P02","target":"P03","type":"message","label":"제한·직접"},{"id":"E03","source":"P02","target":"P04","type":"sequence","label":"공개·가격·2단계"},{"id":"E04","source":"P03","target":"P04","type":"message","label":"승인"},{"id":"E05","source":"P04","target":"P05","type":"sequence"},{"id":"E06","source":"P05","target":"P06","type":"sequence"},{"id":"E07","source":"P06","target":"P07","type":"sequence"},{"id":"E08","source":"P07","target":"P08","type":"sequence"},{"id":"E09","source":"P08","target":"P09","type":"sequence"}];
 
-var _sel=document.getElementById('sel');
-if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+const listState = new URLSearchParams(location.search).get('list');
+if (listState !== null) {
+  const input = new URLSearchParams(listState);
+  const state = new URLSearchParams();
+  for (const key of ['country', 'axis', 'q']) if (input.get(key)) state.set(key, input.get(key));
+  const listLink = document.querySelector('header.site nav a');
+  const back = document.querySelector('#catalog-return');
+  if (back && listLink) {
+    const href = '../../index.html' + (state.size ? '?' + state.toString() : '') + '#results';
+    back.href = listLink.href = href;
+    back.textContent = '보고 있던 목록으로 돌아가기';
+    for (const link of document.querySelectorAll('a[href^="../"]')) {
+      const url = new URL(link.href);
+      if (url.pathname.includes('/model/')) {
+        url.searchParams.set('list', state.toString());
+        link.href = url.href;
+      }
+    }
+  }
+}
+const selector = document.querySelector('#sel');
+if (selector) selector.addEventListener('change', () => {
+  const url = new URL('../' + selector.value + '/index.html', location.href);
+  if (listState !== null) url.searchParams.set('list', listState);
+  location.assign(url.href);
+});
+document.querySelector('#copy-steps').addEventListener('click', async () => {
+  const list = document.querySelector('#readable-steps');
+  const status = document.querySelector('#copy-status');
+  const text = [...list.children].map((item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = '단계 목록을 복사했습니다.';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(list);
+    const selection = getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = '목록을 선택했습니다. 기기의 복사 기능을 사용하세요.';
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){

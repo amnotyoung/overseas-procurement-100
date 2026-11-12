@@ -141,6 +141,12 @@ def check(path: Path) -> None:
         else:
             source_laws = {s.get("law") for s in data.get("verification", {}).get("sources", [])}
             for i, q in enumerate(sq):
+                comparison = q.get("comparison")
+                if comparison is not None and (
+                    not isinstance(comparison, dict) or not web_url(comparison.get("sourceUrl"))
+                    or not all(comparison.get(key) for key in ("title", "edition", "currentEdition", "summary", "sourceLabel", "checkedOn"))
+                ):
+                    err(slug, f"sourceQuotes[{i}].comparison 판본 대조 정보 누락")
                 for field in ("law", "article", "quote", "gist"):
                     if not q.get(field):
                         err(slug, f"sourceQuotes[{i}].{field} 누락")

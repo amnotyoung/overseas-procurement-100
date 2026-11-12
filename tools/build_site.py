@@ -21,8 +21,9 @@ import json
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import urlencode
 
-from procurement_evidence import REQUIREMENTS
+from procurement_evidence import REQUIREMENTS, finding_title
 
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
@@ -1217,7 +1218,7 @@ def disc_card(d: dict, x: dict, *, link: str = "") -> str:
     <span class="badge plain muted">{e(d['country']['name'])}</span>
     {head_link}
   </div>
-  <h3>{e(x['field'])}</h3>
+  <h3>{e(finding_title(x['field']))}</h3>
   <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
   <p class="cite">확인 출처 · {citation_html(x)}</p>
   <div class="todo"><b>실무 확인</b>{el(x['userAction'])}</div>
@@ -1361,6 +1362,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="business"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -1672,7 +1679,19 @@ footer.site{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--mut
 footer.site a{color:var(--muted)}
 """
 
+CATALOG_JS = Path(__file__).with_name("catalog_navigation.js").read_text(encoding="utf-8")
+DETAIL_NAV_JS = Path(__file__).with_name("detail_navigation.js").read_text(encoding="utf-8")
+
 INDEX_CSS = """
+.writer-start{padding:18px 20px;margin-bottom:16px;border:1px solid var(--line);border-radius:12px}
+.writer-start label,.writing-route strong{font-weight:700}.writer-start select{margin-inline-start:12px}
+.writer-start p,.writing-route a{font-size:13px}.writer-start p{margin:12px 0 0;color:var(--muted)}
+.writing-route h3{font-size:16px;margin:18px 0 10px}.writing-route ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.writing-route li{border-top:2px solid var(--line);padding-block:8px}
+.writing-route strong,.writing-route a{display:block;margin-bottom:5px}
+.cols main{min-width:0}.cols .panel{overflow:auto}
+@media(max-width:820px){.side .grp:first-child{display:none}.side .grp:last-child{display:flex;flex-wrap:wrap;gap:4px;margin:0}.side .grp:last-child button{width:auto}.side .grp:last-child h3{width:100%}}
+
 .home-hero{display:grid;grid-template-columns:minmax(0,1fr) 290px;align-items:center;gap:50px}
 .home-hero .hero-copy{min-width:0}
 .gearup-promo{min-width:0}
@@ -1719,7 +1738,7 @@ JS_THEME = """
 
 
 def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str = "",
-         extra_css: str = "", standalone: bool = False) -> str:
+         extra_css: str = "", standalone: bool = False, list_href: str | None = None) -> str:
     up = "../" * depth if depth else ""
     # standalone(배포용 단독 파일)은 사이트 내부로 나가는 메뉴를 없앤다 — 받는 사람에게
     # 다른 파일이 없으므로 깨질 링크를 애초에 두지 않는다. 테마 토글만 남긴다.
@@ -1729,7 +1748,7 @@ def page(title: str, body: str, *, depth: int = 0, nav: str = "", extra_js: str 
   <a class="brand" href="{up}index.html">{e(SITE_TITLE)}</a>
   <span class="brand-sub">{e(SITE_SUB)}</span>
   <nav>
-    <a href="{up}index.html"{' aria-current="page"' if nav == "list" else ''}>제도 대장</a>
+    <a href="{e(list_href) if list_href else up + 'index.html'}"{' aria-current="page"' if nav == "list" else ''}>제도 대장</a>
     <a href="{up}verification/index.html"{' aria-current="page"' if nav == "verify" else ''}>검증 대장</a>
     <a href="{up}errata/index.html"{' aria-current="page"' if nav == "errata" else ''}>반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -1773,6 +1792,34 @@ def redirect_page(target: str, title: str) -> str:
 
 # ─────────────────────────────────────────────────────────── 목록
 
+WRITING_SECTIONS = {
+    "pipeline": ("사업형성", "수요 발굴, 사업요청과 승인 절차", "수원총괄기관과 해당 사업의 공식 요청 경로"),
+    "bidding": ("조달 참여", "입찰 준비, 제출서류와 평가 절차", "개별 공고의 제출기한·참가자격·보증액"),
+    "governance": ("조달 참여", "발주·감독·이의심사 기관의 역할", "조달 방식과 심급별 관할기관"),
+    "construction": ("건축 인허가", "사업 단계별 인허가·검사와 관할기관", "대상지·용도·시설 규모에 따른 적용 조건"),
+}
+
+
+def writing_route(country, models):
+    groups = []
+    for title, axes, anchor in (
+        ("사업형성", ("pipeline",), "practice"),
+        ("조달 참여", ("bidding", "governance"), "practice"),
+        ("기업 유의사항", ("bidding",), "business"),
+        ("건축 인허가", ("construction",), "practice"),
+    ):
+        links = []
+        for model in models:
+            if model["axis"] not in axes:
+                continue
+            name = "제출서류·진입장벽" if anchor == "business" else model["name"].removeprefix(country + " ")
+            links.append(f'<a href="model/{e(model["slug"])}/index.html#{anchor}">{e(name)}</a>')
+        if links:
+            groups.append(f'<li><strong>{title}</strong>{"".join(links)}</li>')
+    return (f'<div class="writing-route" data-country="{e(country_slug(models[0]))}" hidden>'
+            f'<h3>{e(country_display_name(country))} 자료집 작성 순서</h3><ol>{"".join(groups)}</ol></div>')
+
+
 def build_index(items: list[dict]) -> str:
     countries: dict[str, int] = {}
     axes: dict[str, int] = {}
@@ -1782,33 +1829,50 @@ def build_index(items: list[dict]) -> str:
 
     nodes = sum(len(d.get("process", {}).get("nodes", [])) for d in items)
     discs = sum(len(d["verification"].get("discrepancies", [])) for d in items)
-    verified = sum(1 for d in items if d["verification"]["status"] == "article-verified")
+    def index_grade(model):
+        if model["axis"] == "construction":
+            return model["canvas"]["procedureStatus"]
+        return model["verification"]["status"]
+
+    verified = sum(index_grade(d) == "article-verified" for d in items)
     asof = max(d["asOfDate"] for d in items)
     procurement_count = sum(1 for d in items if d["axis"] != "construction")
     construction_count = sum(1 for d in items if d["axis"] == "construction")
 
+    country_keys = {d["country"]["name"]: country_slug(d) for d in items}
+    grouped = {}
+    for model in items:
+        grouped.setdefault(model["country"]["name"], []).append(model)
+    routes = "".join(writing_route(country, models) for country, models in grouped.items())
+    options = "".join(f'<option value="{e(country_keys[name])}">{e(country_display_name(name))}</option>'
+                      for name in sorted(countries, key=country_name_sort_key))
     rows = []
     for d in items:
-        v = d["verification"]["status"]
+        v = index_grade(d)
+        if d["axis"] == "construction":
+            grade_label = CONSTRUCTION_PROCEDURE_STATUS_LABEL[v]
+            grade_tone = CONSTRUCTION_PROCEDURE_STATUS_TONE[v]
+        else:
+            grade_label, grade_tone = VERIF_LABEL[v], VERIF_TONE[v]
         nd = len(d["verification"].get("discrepancies", []))
         hi = sum(1 for x in d["verification"].get("discrepancies", []) if x["severity"] == "high")
         disc_badge = (
             f'<span class="badge {"bad" if hi else "warn"}">확인사항 {nd}</span>' if nd else
             '<span class="badge muted plain">—</span>'
         )
-        rows.append(f"""<tr data-c="{e(d['country']['name'])}" data-a="{e(d['axis'])}"
+        rows.append(f"""<tr data-c="{e(country_slug(d))}" data-a="{e(d['axis'])}"
   data-s="{e((d['name'] + ' ' + d['oneLiner'] + ' ' + d['country']['nameEn']).lower())}">
   <td class="no">{d['priority']:02d}</td>
   <td class="name"><a href="model/{e(d['slug'])}/index.html">{e(d['name'])}</a>
     <p>{e(d['oneLiner'])}</p></td>
   <td><span class="badge plain muted">{e(d['country']['name'])}</span></td>
   <td style="font-size:13px;color:var(--muted)">{e(AXIS_LABEL[d['axis']])}</td>
-  <td><span class="badge {VERIF_TONE[v]}">{e(VERIF_LABEL[v])}</span></td>
+  <td><span class="badge {grade_tone}">{e(grade_label)}</span></td>
   <td>{disc_badge}</td>
 </tr>""")
 
     side_c = "".join(
-        f'<button aria-pressed="false" data-f="c" data-v="{e(k)}"><i class="dot"></i>{e(country_display_name(k))}<span class="n">{n}</span></button>'
+        f'<button aria-pressed="false" data-f="c" data-v="{e(country_keys[k])}"><i class="dot"></i>{e(country_display_name(k))}<span class="n">{n}</span></button>'
         for k, n in sorted(countries.items(), key=lambda x: country_name_sort_key(x[0]))
     )
     side_a = "".join(
@@ -1821,7 +1885,7 @@ def build_index(items: list[dict]) -> str:
     <div class="eyebrow">조달 절차와 건축 법·제도</div>
     <h1>{e(SITE_TITLE)}</h1>
     <p class="lede">협력국에서 처음 조달하거나 건축사업을 준비할 때, 어디서부터 확인해야 할까요?</p>
-    <p class="lede">입찰·사업형성 절차와 건축 법·제도를 담당기관·서류·기한·인허가가 보이는 실행 경로로 정리하고, 근거는 각국 공식 원문까지 대조했습니다.</p>
+    <p class="lede">입찰·사업형성과 건축 인허가 절차를 국가별로 찾아보세요. 각 제도에 조문을 대조한 범위와 공식 자료를 연결한 범위를 표시합니다.</p>
     <p class="meta">조달 제도 {procurement_count}개 · 건축 제도 {construction_count}개 · 전체 {len(items)}개 제도 · 조문 대조 완료 {verified}개 · 기준일 {e(asof)}</p>
   </div>
   <aside class="gearup-promo" aria-label="기업 ODA 진출 지원 외부 서비스">
@@ -1866,44 +1930,25 @@ def build_index(items: list[dict]) -> str:
     </div>
   </aside>
 
-  <main class="panel">
+  <main id="results">
+    <div class="writer-start">
+      <label for="country-select">자료집을 작성할 국가</label>
+      <select id="country-select"><option value="">전체 국가</option>{options}</select>
+      {routes}
+      <p>발주계획은 발주기관의 최신 공고에서, 기업 진출 사례는 해당 사업·기업의 실적 자료에서 별도로 확인하세요.</p>
+    </div>
+    <div class="panel">
     <div class="panel-hd">제도 대장 <span>· <span id="hcnt">{len(items)}</span>개 결과</span></div>
     <table>
       <thead><tr><th>NO</th><th>제도</th><th>국가</th><th>축</th><th>검증</th><th>대조 결과</th></tr></thead>
       <tbody id="tb">{''.join(rows)}</tbody>
     </table>
     <div class="empty" id="none" hidden>조건에 맞는 제도가 없습니다.</div>
+    </div>
   </main>
 </div>"""
 
-    js = """
-var q=document.getElementById('q'),tb=document.getElementById('tb'),
-    cnt=document.getElementById('cnt'),hcnt=document.getElementById('hcnt'),
-    none=document.getElementById('none'),F={c:'',a:''};
-function apply(){
-  var t=q.value.trim().toLowerCase(),n=0;
-  Array.prototype.forEach.call(tb.rows,function(r){
-    var ok=(!F.c||r.dataset.c===F.c)&&(!F.a||r.dataset.a===F.a)&&(!t||r.dataset.s.indexOf(t)>=0);
-    r.hidden=!ok; if(ok)n++;
-  });
-  cnt.textContent=(t||F.c||F.a)?(n+'건 표시'):('전체 '+n+'건');
-  hcnt.textContent=n; none.hidden=n>0;
-}
-q.addEventListener('input',apply);
-document.querySelectorAll('.side button').forEach(function(b){
-  b.addEventListener('click',function(){
-    var f=b.dataset.f;F[f]=b.dataset.v;
-    document.querySelectorAll('.side button[data-f="'+f+'"]').forEach(function(x){
-      x.setAttribute('aria-pressed',String(x===b));});
-    apply();
-  });
-});
-var initialAxis=new URLSearchParams(location.search).get('axis');
-if(initialAxis){
-  var initialButton=document.querySelector('.side button[data-f="a"][data-v="'+initialAxis+'"]');
-  if(initialButton) initialButton.click();
-}
-"""
+    js = CATALOG_JS
     return page(SITE_TITLE, body, nav="list", extra_js=js, extra_css=INDEX_CSS)
 
 
@@ -1950,14 +1995,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             "노드를 누르면 단계별 근거, 관련 요건과 추가 확인사항이 열립니다."
         )
 
-    # 조문 대조 수
-    checked = sum(len([a for a in (s.get("articlesChecked") or "").split(",") if a.strip()])
-                  for s in v.get("sources", []))
-    evidence_metric = checked
-    evidence_metric_label = "대조 조문"
-    if d["axis"] == "construction" and not checked:
-        evidence_metric = len(v.get("sources", []))
-        evidence_metric_label = "공식 출처"
+    evidence_metric = len(v.get("sources", []))
+    evidence_metric_label = "검토 자료"
     stage_metric_label = "절차 구간" if d["axis"] == "construction" else "게이트"
     node_metric_label = "절차 단계" if d["axis"] == "construction" else "절차 노드"
     if d["axis"] == "construction":
@@ -2270,20 +2309,35 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     # 원문 근거 — 현장에서 그대로 인용할 조문 verbatim
     quotes = d.get("sourceQuotes", [])
-    quotes_html = "".join(
-        f"""<div class="qc">
-  <div class="qhd">
-    <span class="qart">{link(e(q["article"]), surl.get(q["law"]))}</span>
-    <span class="badge plain muted">{e(q["law"])}</span>
-  </div>
-  <div class="qtext">{e(q["quote"])}</div>
-  <p class="qgist">{el(q["gist"])}</p>
-  {f'<details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">{e(q["ko"])}</p></details>' if q.get("ko") else ''}
-</div>"""
-        for q in quotes)
+    sources_by_law = {source["law"]: source for source in v.get("sources", [])}
+    quote_cards = []
+    comparisons = []
+    for quote_number, q in enumerate(quotes, 1):
+        source = sources_by_law.get(q["law"], {})
+        comparison = q.get("comparison")
+        original = (f'<div class="qtext">{e(q["quote"])}</div><p class="qgist">{el(q["gist"])}</p>')
+        if q.get("ko"):
+            original += f'<details><summary>한국어 직역</summary><p class="qko">{e(q["ko"])}</p></details>'
+        original = (f'<div><strong>{e(comparison["edition"] if comparison else source.get("quoteEdition", "인용 판본·개정 여부 미확인"))}</strong>'
+                    f'<p>{link(e(q["article"]), source.get("officialUrl"))} · {e(q["law"])}</p>'
+                    f'{original}</div>')
+        if comparison:
+            current = (f'<div><strong>{e(comparison["currentEdition"])}</strong>'
+                       f'<p>{e(comparison["summary"])}</p>'
+                       f'{link(e(comparison["sourceLabel"]), comparison["sourceUrl"])} · 대조일 {e(comparison["checkedOn"])}</div>')
+            comparisons.append(f'<article class="qc" id="edition-{quote_number}"><h3>{e(comparison["title"])}</h3>'
+                               f'<div class="edition-pair">{current}{original}</div></article>')
+        else:
+            quote_cards.append(f'<article class="qc">{original}<small>원문 확인 {e(source.get("retrievedOn") or "확인일 미상")}</small></article>')
+    quotes_html = "".join(quote_cards)
+    comparison_html = "".join(comparisons)
+    comparison_links = "".join(f' · <a href="#edition-{i}">{e(q["comparison"]["title"])} 판본 비교</a>'
+                               for i, q in enumerate(quotes, 1) if q.get("comparison"))
 
+    country_list = "../../index.html?" + urlencode({"country": country_slug(d)}) + "#results"
     subnav = "" if standalone else f"""
 <div class="subnav"><div class="wrap">
+  <a id="catalog-return" href="{e(country_list)}">{e(country_display_name(d["country"]["name"]))} 목록으로 돌아가기</a>
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px">{opts}</select>
   <a class="btn" {'href="../' + e(prev["slug"]) + '/index.html"' if prev else 'disabled'} style="text-decoration:none">← 이전</a>
@@ -2301,20 +2355,28 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 f'이 제도축 {e(c["procedureStatusLabel"])}</span>'
             )
 
+    writing_title, writing_use, writing_check = WRITING_SECTIONS[d["axis"]]
+    unresolved_steps = sum(n.get("basisStatus") == "pending" for n in nodes)
+    remaining = [f"실무 필수 확인 {hi}건", f"직접 근거 확인 대기 {unresolved_steps}단계"] if d["axis"] != "construction" else [f"현행성 추가 확인 {currentness_issues}개 자료"]
+    field_count = len(d["fieldVerification"])
     body = f"""
 {subnav}
 
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge plain muted">NO {d['priority']:02d}</span>
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
     <span class="badge plain muted">{e(AXIS_LABEL[d['axis']])}</span>
-    <span class="badge {VERIF_TONE[v['status']]}">{e(VERIF_LABEL[v['status']])}</span>
+    <span class="badge {VERIF_TONE[v['status']]}">{'국가 자료 · ' if procedure_badge else ''}{e(VERIF_LABEL[v['status']])}</span>
     {procedure_badge}
-    {f'<span class="badge bad">확인사항 {len(discs)}건</span>' if discs else ''}
+
   </div>
   <h1>{e(d['name'])}</h1>
   <p class="one">{e(d['oneLiner'])}</p>
+  <div class="scope-note"><strong>{e(writing_title)} 자료집에 활용</strong> · {e(writing_use)}<br>
+    <b>대조 범위</b> {e(v["scope"])}<br><b>확인일</b> {e(v["verifiedAt"])} · {e(" · ".join(remaining))}<br>
+    <b>작성 전 확인</b> {e(writing_check)} · <a href="#sources">근거 자료 보기</a>{comparison_links}</div>
+  <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>{len(nodes)}</b><span>{e(node_metric_label)}</span></div>
     {f'<div class="tile info"><b>{len(c.get("officialGates", []))}</b><span>공식 결정 Gate</span></div>' if d['axis'] == 'construction' else ''}
@@ -2323,12 +2385,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     <div class="tile ok"><b>{evidence_metric}</b><span>{e(evidence_metric_label)}</span></div>
     <div class="tile{' bad' if status_metric_bad else ' ok' if d['axis'] == 'construction' else ''}"><b>{status_metric}</b><span>{e(status_metric_label)}</span></div>
     {f'<div class="tile warn"><b>{currentness_issues}</b><span>사이트 최신성 검증 중</span></div>' if d['axis'] == 'construction' and currentness_issues else ''}
-    <div class="tile warn"><b>{len(d['fieldVerification'])}</b><span>ODA 적용 확인</span></div>
+    <div class="tile warn"><b>{field_count}</b><span>사업별 확인 항목</span></div>
   </div>
+  <p class="meta">{"등록된 사업별 확인 질문이 없습니다. 이 수치는 적용 사례 수를 집계하지 않습니다." if not field_count else "사업별 확인 항목은 작성자가 현지에서 점검할 질문 수입니다."}</p>
 </div>
 
 <div class="wrap">
-<section class="blk">
+<section class="blk" id="practice">
   <div class="hd-row">
     <div>
       <h2>{e(board_title)}</h2>
@@ -2355,7 +2418,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <h2>한 장 캔버스</h2>
   <p class="desc">{e(c['purpose'])}</p>
   <div class="cards">
-    <div class="card span2"><h3>{e(procedure_heading)}</h3>{disclosure}{procedure_scope}<ol class="steps">{steps}</ol></div>
+    <div class="card span2"><h3>{e(procedure_heading)}</h3>{disclosure}{procedure_scope}<p><button class="btn" id="copy-steps" type="button">단계 목록 복사</button> <small role="status" id="copy-status"></small></p><ol class="steps" id="readable-steps">{steps}</ol></div>
     {official_gate_card}
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['applicability'])}</p></div>
     <div class="card"><h3>법적 근거</h3>{legal_basis_body}</div>
@@ -2363,7 +2426,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     {status_exception_card}
     <div class="card"><h3>권한 기관</h3>{auths}</div>
     <div class="card"><h3>이해관계자</h3><p style="margin:0;font-size:13.5px;line-height:1.7">{e(c['stakeholders'])}</p></div>
-    <div class="card"><h3>제출서류</h3>{docs}</div>
+    <div class="card" id="business"><h3>제출서류</h3>{docs}{'<p>기업 유의사항 작성 시 공고별 자격·보증·기한을 재확인하세요. <a href="#sources">근거 보기</a></p>' if d['axis'] == 'bidding' else ''}</div>
     {bottleneck_card}
     {f'<div class="card"><h3>진입장벽</h3><ul class="plain">{barr}</ul></div>' if barr else ''}
     <div class="card"><h3>관련 제도</h3><div class="chips">{rel}</div></div>
@@ -2383,22 +2446,20 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <div class="overlay-grid">{overlays}</div>
 </section>''' if overlays else ''}
 
-{f'''<section class="blk">
-  <h2>법령 원문</h2>
-  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
-    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
+<section class="blk" id="sources"><h2>검증·출처</h2>
+{comparison_html}
+{f'''<details class="source-fold"><summary>법령 원문과 판본 · {len(quote_cards)}개 발췌</summary>
+  <p class="desc">판본과 개정 상태를 먼저 확인하세요. 조문 번호를 누르면 발췌한 원문을 열 수 있습니다.</p>
   <div class="quotes">{quotes_html}</div>
-</section>''' if quotes else ''}
+</details>''' if quote_cards else ''}
 
-{f'''<section class="blk">
-  <h2>현행 기준 반영 {len(discs)}건</h2>
+{f'''<details class="source-fold"><summary>현행 기준 반영 {len(discs)}건 · 필수 확인 {hi}건</summary>
   <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
     출처는 각 항목에 연결했으며{"" if standalone else ' <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다'}.</p>
   {disc_html}
-</section>''' if discs else ''}
+</details>''' if discs else ''}
 
-<section class="blk">
-  <h2>검증</h2>
+<details class="source-fold"><summary>검증 방법과 전체 출처</summary>
   <p class="desc">{e(v['method'])}</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
@@ -2412,6 +2473,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     {e(verification_caveat)}
   </p>
+</details>
 </section>
 </div>
 
@@ -2499,8 +2561,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 var NODES={script_json(node_view)};
 var EDGES={script_json(edge_view)};
 
-var _sel=document.getElementById('sel');
-if(_sel) _sel.addEventListener('change',function(){{ location.href='../'+this.value+'/index.html'; }});
+{DETAIL_NAV_JS}
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){{
@@ -2998,7 +3059,7 @@ addEventListener('load',draw); addEventListener('resize',redraw);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
 new MutationObserver(redraw).observe(document.documentElement,{{attributes:true,attributeFilter:['data-theme']}});
 """
-    return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone)
+    return page(f"{d['name']} | {SITE_TITLE}", body, depth=2, extra_js=js, standalone=standalone, list_href=country_list)
 
 
 # ─────────────────────────────────────────────────────────── ODA 건축 법·제도
@@ -3227,7 +3288,7 @@ def build_construction_detail(d: dict, all_items: list[dict], procurement_items:
 
     body = f"""
 {subnav}
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge ok">{e(CONSTRUCTION_VERIFY_LABEL[d['verification']['status']])}</span>
     <span class="badge plain muted">{e(d['country']['name'])} · {e(d['country']['nameEn'])}</span>
@@ -3443,7 +3504,7 @@ def build_errata(items: list[dict]) -> str:
     <span class="badge plain muted">{e(d['country']['name'])}</span>
     <span class="badge plain muted">{origin}</span>
   </div>
-  <h3>{e(x['field'])}</h3>
+  <h3>{e(finding_title(x['field']))}</h3>
   <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
   <p class="cite">확인 출처 · {citation_html(x)}</p>
   <p class="act-row">산출물 반영 — {el(x['action'])}</p>
