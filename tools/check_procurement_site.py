@@ -61,6 +61,14 @@ def main():
             if not panel or not all(term in panel[1] for term in ("2~3%", "2.5%", "2007년", "제16차")):
                 raise ValueError("네팔 입찰보증의 산정 기준과 비교 판본 누락")
         nodes = json.loads(re.search(r"^var NODES=(.+);$", page, re.M)[1])
+        if data["slug"] == "nepal-bidding-system":
+            comparison = next(q["comparison"] for q in data["sourceQuotes"] if q.get("comparison"))
+            guide = comparison["guideCitation"]
+            targets = [node_id for node_id, view in nodes.items() if view.get("guide_comparison")]
+            panel = nodes["P07"].get("guide_comparison", "")
+            if targets != ["P07"] or not all(html.escape(t) in panel for t in
+                    (guide["quote"], guide["url"], comparison["summary"], comparison["sourceUrl"])):
+                raise ValueError("네팔 P07 자료집·개정 조문 대조 누락")
         for node in data["process"]["nodes"]:
             rendered = nodes[node["id"]]
             evidence = rendered["procurement_evidence"]

@@ -262,6 +262,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -748,6 +750,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -1169,6 +1188,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
@@ -1475,6 +1495,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -1921,6 +1943,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -2342,6 +2381,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
@@ -2648,6 +2688,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -3091,6 +3133,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -3512,6 +3571,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
@@ -3818,6 +3878,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -4242,6 +4304,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -4663,6 +4742,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
@@ -4969,6 +5049,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -5401,6 +5483,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -5822,6 +5921,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
@@ -6128,6 +6228,8 @@ section.blk &gt; .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -6560,6 +6662,23 @@ document.querySelector(&#x27;#copy-steps&#x27;).addEventListener(&#x27;click&#x2
   }
 });
 
+document.querySelector(&#x27;#dbody&#x27;).addEventListener(&#x27;click&#x27;, async event =&gt; {
+  const button = event.target.closest(&#x27;[data-copy-citation]&#x27;);
+  if (!button) return;
+  const section = button.closest(&#x27;details&#x27;);
+  const field = section.querySelector(&#x27;textarea&#x27;);
+  const status = section.querySelector(&#x27;[role=&quot;status&quot;]&#x27;);
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = &#x27;인용 문장과 출처를 복사했습니다.&#x27;;
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = &#x27;선택된 문장과 출처를 복사하세요.&#x27;;
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -6981,6 +7100,7 @@ function openNode(id){
       return &#x27;&lt;div style=&quot;margin-bottom:9px&quot;&gt;&#x27;+nm+&#x27; &lt;code&gt;&#x27;+l.article+&#x27;&lt;/code&gt;&#x27;+meta
         +(l.note?&#x27;&lt;div style=&quot;margin-top:3px;color:var(--muted)&quot;&gt;&#x27;+l.note+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;}).join(&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence===&#x27;number&#x27;){
     h+=&#x27;&lt;dt&gt;법령 근거 확신도&lt;/dt&gt;&lt;dd&gt;&#x27;+n.confidence.toFixed(2)
       +(n.confidence&lt;0.8?&#x27; &lt;span class=&quot;badge warn&quot;&gt;현장 검증 필요&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/dd&gt;&#x27;;

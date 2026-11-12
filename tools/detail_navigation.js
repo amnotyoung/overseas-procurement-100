@@ -40,3 +40,20 @@ document.querySelector('#copy-steps').addEventListener('click', async () => {
     status.textContent = '목록을 선택했습니다. 기기의 복사 기능을 사용하세요.';
   }
 });
+
+document.querySelector('#dbody').addEventListener('click', async event => {
+  const button = event.target.closest('[data-copy-citation]');
+  if (!button) return;
+  const section = button.closest('details');
+  const field = section.querySelector('textarea');
+  const status = section.querySelector('[role="status"]');
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = '인용 문장과 출처를 복사했습니다.';
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = '선택된 문장과 출처를 복사하세요.';
+  }
+});

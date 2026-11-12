@@ -228,6 +228,8 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -748,6 +750,23 @@ document.querySelector('#copy-steps').addEventListener('click', async () => {
   }
 });
 
+document.querySelector('#dbody').addEventListener('click', async event => {
+  const button = event.target.closest('[data-copy-citation]');
+  if (!button) return;
+  const section = button.closest('details');
+  const field = section.querySelector('textarea');
+  const status = section.querySelector('[role="status"]');
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = '인용 문장과 출처를 복사했습니다.';
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = '선택된 문장과 출처를 복사하세요.';
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -1169,6 +1188,7 @@ function openNode(id){
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}).join('')+'</dd>';
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence==='number'){
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';

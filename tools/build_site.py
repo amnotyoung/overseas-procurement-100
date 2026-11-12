@@ -1455,6 +1455,8 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -2312,6 +2314,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     sources_by_law = {source["law"]: source for source in v.get("sources", [])}
     quote_cards = []
     comparisons = []
+    node_comparisons = {}
     for quote_number, q in enumerate(quotes, 1):
         source = sources_by_law.get(q["law"], {})
         comparison = q.get("comparison")
@@ -2325,6 +2328,19 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
             current = (f'<div><strong>{e(comparison["currentEdition"])}</strong>'
                        f'<p>{e(comparison["summary"])}</p>'
                        f'{link(e(comparison["sourceLabel"]), comparison["sourceUrl"])} · 대조일 {e(comparison["checkedOn"])}</div>')
+            guide = comparison.get("guideCitation")
+            if guide:
+                citation = (f'{comparison["summary"]}\n{comparison["currentEdition"]} · 대조일 {comparison["checkedOn"]}\n'
+                            f'{comparison["sourceUrl"]}')
+                node_comparisons[guide["nodeId"]] = (
+                    f'<dt>자료집 대조</dt><dd><details class="guide-comparison"><summary>{e(guide["label"])}과 대조</summary>'
+                    f'<p><b>자료집 문구</b><br>“{e(guide["quote"])}” · {link("자료집 발췌", guide["url"])}</p>'
+                    f'<p><b>{e(comparison["currentEdition"])}</b><br>{e(comparison["summary"])}<br>'
+                    f'{link(e(comparison["sourceLabel"]), comparison["sourceUrl"])} · 대조일 {e(comparison["checkedOn"])}</p>'
+                    f'<button class="btn" type="button" data-copy-citation>인용 문장과 출처 복사</button>'
+                    f'<small role="status"></small><textarea hidden readonly rows="5" aria-label="복사할 문장과 출처">{e(citation)}</textarea>'
+                    f'</details></dd>'
+                )
             comparisons.append(f'<article class="qc" id="edition-{quote_number}"><h3>{e(comparison["title"])}</h3>'
                                f'<div class="edition-pair">{current}{original}</div></article>')
         else:
@@ -2492,6 +2508,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     node_view = {}
     for n in nodes:
         nv = dict(n)
+        if n["id"] in node_comparisons:
+            nv["guide_comparison"] = node_comparisons[n["id"]]
         if d["axis"] != "construction":
             nv["procurement_evidence"] = procurement_node_sources(d, n)
             nv.pop("guideRef", None)
@@ -2989,6 +3007,7 @@ function openNode(id){{
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}}).join('')+'</dd>';
   }}
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence==='number'){{
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
