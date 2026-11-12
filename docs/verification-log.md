@@ -969,7 +969,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 공공조달 입찰제도](../data/institutions/nigeria-bidding-system.json) · `nigeria-bidding-system-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -983,7 +983,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 ODA 사업 발굴·형성 절차](../data/institutions/nigeria-oda-project-pipeline.json) · `nigeria-oda-project-pipeline-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**
@@ -997,7 +997,7 @@
 ### 현행법·기준금액·공고기한·보증·불복·예외
 
 - 제도: [나이지리아 조달 거버넌스·감독체계](../data/institutions/nigeria-procurement-governance.json) · `nigeria-procurement-governance-D01`
-- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- 근거: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - 사무소 확인: 미회신 (영어 검토 시트에 확인 대기)
 
 **현행 기준**

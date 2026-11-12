@@ -1057,7 +1057,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 59. [HIGH] Current legal basis check
 
 - Institution: Nigeria — Bidding system
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.
@@ -1074,7 +1074,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 60. [HIGH] Current legal basis check
 
 - Institution: Nigeria — ODA project pipeline
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.
@@ -1091,7 +1091,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 61. [HIGH] Current legal basis check
 
 - Institution: Nigeria — Procurement governance
-- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://www.bpp.gov.ng/wp-content/uploads/2017/11/Public-Procurement-Act-2007pdf.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
+- Legal basis: Finance Act 2020 ss.63~74, 80; PPA ss.26, 39~43, 54; Circular Ref. 59780/S.2/B/532 Tables 1~3 and ¶¶2~19 · [Finance Act 2020](<https://atrs.firs.gov.ng/uploads/finance-act-2020_signed.pdf>) · [Public Procurement Act 2007, Act No.14](<https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf>) · [Approval for the Revision of Subsisting Service-Wide Prior Review and Monetary Thresholds Implementation Guidelines](<https://bpp-storage.s3.eu-west-2.amazonaws.com/wp-content/uploads/2026/06/13075204/scan0068.pdf>)
 - KOICA guide: p.A203~A249
 
 **Current legal basis** — Finance Act 2020의 대체조문과 2025년 서비스 전반 공문이 현행 적용범위·기준·일정을 정한다.

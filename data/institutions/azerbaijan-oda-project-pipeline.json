@@ -239,7 +239,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -284,7 +284,7 @@
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
@@ -300,7 +300,7 @@
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
@@ -331,34 +331,34 @@
       },
       {
         "id": "P06",
-        "name": "기획·사업 확정",
+        "name": "사업협의·R/D 체결",
         "lane": "KOICA",
         "stage": "G3 조사·심사",
         "type": "gateway",
         "status": "waiting",
-        "actor": "대한민국 대사관 · 아제르바이잔 외교부",
-        "action": "사업 확정을 위해 대사관과 외교부 간 정부 합의문서를 교환한다.",
-        "guideRef": {
-          "path": "sources/koica-2026/middle-east-cis/azerbaijan.txt",
-          "start": 66,
-          "end": 68,
-          "excerpt": "④ 신규사업 확정 및 공식화 - 정부 간 합의를 위한 대사관-아제르바이잔 외교부 간 구상서(Note Verbale) 체결"
-        }
-      },
-      {
-        "id": "P07",
-        "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
-        "stage": "G4 공식화",
-        "type": "notice",
-        "status": "waiting",
         "actor": "KOICA · 사업수행부처",
-        "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
+        "action": "KOICA와 사업수행부처가 사업협의를 거쳐 협의의사록을 체결한다.",
         "guideRef": {
           "path": "sources/koica-2026/middle-east-cis/azerbaijan.txt",
           "start": 60,
           "end": 64,
           "excerpt": "③ KOICA 사업협의 실시 및 Record of Discussion(R/D, 협의의사록) 체결 - KOICA 사업협의 조사 실시 후 사업수행부처와 R/D 체결 - 동 협의안에 대해 사업수행부처, 관련 중앙부처(재경부, 법무부, 세무부, 관세청, 외교부, 경제부 등) 및 총리실 등이 검토하고 각 부처의 의견을 반영 - 이 단계에서 각 부처의견 종합을 위해 장시간이 소요됨(최소 약 1년 ~ 최대 2년 이상)"
+        }
+      },
+      {
+        "id": "P07",
+        "name": "정부 간 합의·공식화",
+        "lane": "사업 조정·협정 당사자",
+        "stage": "G4 공식화",
+        "type": "notice",
+        "status": "waiting",
+        "actor": "대한민국 대사관 · 아제르바이잔 외교부",
+        "action": "한국 대사관과 아제르바이잔 외교부가 구상서를 교환한다.",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/azerbaijan.txt",
+          "start": 66,
+          "end": 68,
+          "excerpt": "④ 신규사업 확정 및 공식화 - 정부 간 합의를 위한 대사관-아제르바이잔 외교부 간 구상서(Note Verbale) 체결"
         }
       }
     ],

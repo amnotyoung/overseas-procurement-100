@@ -219,16 +219,16 @@ def canvas(axis: str, country: Country, pipeline_text: str, procurement_text: st
 
 def process(axis: str) -> dict:
     if axis == "pipeline":
-        lanes = ["수원부처", "수원총괄기관", "KOICA"]
+        lanes = ["수원부처", "사업 조정·협정 당사자", "KOICA"]
         stages = ["G1 발굴", "G2 공식요청", "G3 조사·심사", "G4 공식화"]
         spec = [
             ("수요 발굴", "수원부처", stages[0], "task", "current", ("발굴", "수요")),
             ("PCP·요청서 작성", "수원부처", stages[0], "task", "current", ("PCP", "사업제안서", "요청서")),
-            ("국가 우선순위 검토", "수원총괄기관", stages[1], "gateway", "risk", ("우선순위", "검토")),
-            ("공식 사업요청", "수원총괄기관", stages[1], "notice", "waiting", ("공문", "제출", "요청")),
+            ("국가 우선순위 검토", lanes[1], stages[1], "gateway", "risk", ("우선순위", "검토")),
+            ("공식 사업요청", lanes[1], stages[1], "notice", "waiting", ("공문", "제출", "요청")),
             ("예비조사·타당성 검토", "KOICA", stages[2], "task", "waiting", ("예비조사", "타당성")),
             ("기획·사업 확정", "KOICA", stages[2], "gateway", "waiting", ("기획조사", "확정", "심사")),
-            ("RD·MOU 공식화", "수원총괄기관", stages[3], "notice", "waiting", ("RD", "R/D", "MOU", "협약")),
+            ("RD·MOU 공식화", lanes[1], stages[3], "notice", "waiting", ("RD", "R/D", "MOU", "협약")),
         ]
     elif axis == "governance":
         lanes = ["발주기관", "조달 총괄·전자조달", "감독·분쟁기관"]
