@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "튀니지의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "튀니지 정부, 튀니지 공공조달상위위원회 (HAICOP), 튀니지 전자조달 관련 데이터 및 통계 발표 (TUNEPS unit), 공공조달은 모두 공공조달상위위원회(HAICOP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공계약상위기관(HAICOP), 발주기관·조달위원회, TUNEPS, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -42,11 +42,17 @@
     "authorities": [
       {
         "name": "공공계약상위기관(HAICOP)",
-        "role": "상급 통제·감사위원회, 조달감시·조사위원회, 국가조달관측소와 TUNEPS 단위를 통해 통제·구제·제도운영을 담당한다."
+        "role": "상급 통제·감사위원회, 조달감시·조사위원회, 국가조달관측소와 TUNEPS 단위를 통해 통제·구제·제도운영을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "발주기관·조달위원회",
-        "role": "수요·조달방식·공고·개찰·평가·낙찰·계약집행을 수행하고 권한별 통제위원회 심사를 받는다."
+        "role": "수요·조달방식·공고·개찰·평가·낙찰·계약집행을 수행하고 권한별 통제위원회 심사를 받는다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "TUNEPS",
@@ -81,7 +87,8 @@
     ],
     "entryBarriers": [
       "비거주 입찰자는 본국의 비파산·법인등록 등가서류, 세무·사회보장 증빙, 부패방지 서약, 입찰보증과 TUNEPS 등록·전자제출 요건을 공고별 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -164,7 +171,7 @@
         "law": "Ministry of Economy and Planning bilateral-cooperation mandate",
         "kind": "directive",
         "publisher": "Ministère de l’Économie et de la Planification",
-        "officialUrl": "https://www.mdici.gov.tn/le-ministere/le-comite-general-de-la-cooperation-internationale/le-ministere-presentation-du-ministere-cooperation-bilaterale/",
+        "officialUrl": "https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/",
         "retrievedOn": "2026-07-29",
         "articlesChecked": "Bilateral and multilateral cooperation coordination, programming and interministerial routing functions"
       },
@@ -196,7 +203,17 @@
         },
         "id": "tunisia-procurement-governance-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
+            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
+          },
+          {
+            "title": "Décret gouvernemental n° 2018-416 du 11 mai 2018",
+            "url": "https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -221,7 +238,17 @@
           "state": "not-reported",
           "suggestedText": "현행 통합본문의 하한·간소절차·공고·보증·불복과 승인된 국제협정·외국재원 예외를 조문별로 반영했다."
         },
-        "id": "tunisia-procurement-governance-D02"
+        "id": "tunisia-procurement-governance-D02",
+        "citationSources": [
+          {
+            "title": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
+            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
+          },
+          {
+            "title": "HAICOP current legal and regulatory framework, including Circular No.5/2023",
+            "url": "https://www.marchespublics.gov.tn/ar/%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8%D9%8A-?page=24"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -330,15 +357,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.5 and 50~51",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -347,17 +366,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공계약상위기관(HAICOP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.5 and 50~51",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -366,17 +380,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공계약상위기관(HAICOP)",
+        "actor": "발주기관·조달위원회",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.32, 53, 74~76, 180~181",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -387,15 +396,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.32, 53, 74~76, 180~181",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -406,15 +407,13 @@
         "status": "risk",
         "actor": "공공계약상위기관(HAICOP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Arts.1~6, 29~32, 41~53, 55~77, 102~112, 147~170 and 180~194; scope, thresholds, methods, publication, securities, control, remedies, repeal and commencement",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/tunisia.txt",
+          "start": 61,
+          "end": 65,
+          "excerpt": "- 공공 구매 분야와 관련된 세미나 및 워크샵 개최 - 공공 구매 분야와 관련된 표준 문서 개발 - 입찰 절차 감사: 공공조달 입찰 과정의 공정성과 투명성을 조사 - 프로젝트 조건 확인: 관할 프로젝트의 행정, 재정 및 기술적 측면을 프로젝트 관점에서 공공조달 감사 및"
+        }
       },
       {
         "id": "P06",
@@ -423,17 +422,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공계약상위기관(HAICOP)",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.32, 74~75 and 180~184",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "불리한 조달결정은 게시·통지 후 5영업일 안에 발주기관에 이의하며 발주기관은 5영업일 안에 결정하지 않으면 기각으로 본다. 그 결정 또는 묵시적 기각 후 5영업일 안에 HAICOP의 조달감시·조사위원회에 재심을 청구한다. 발주기관은 절차·계약통지를 정지하고 위원회는 완전한 답변자료 수령 후 최대 20영업일 안에 결정한다.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -444,15 +437,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2014-1039 du 13 mars 2014 — consolidated text",
-            "article": "Décret 2014-1039 Arts.105~112",
-            "url": "https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -494,7 +481,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

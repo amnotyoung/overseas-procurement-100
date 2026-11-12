@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "DR콩고 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "DR콩고 정부, DR콩고 조달 총괄기관 및 발주기관, 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공조달규제청(ARMP), 공공조달통제총국(DGCMP), 발주기관 조달사업관리셀(CGMP/CGPMP), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -46,18 +46,21 @@
       },
       {
         "name": "발주기관 조달사업관리셀(CGMP/CGPMP)",
-        "role": "계획·입찰서류·절차 진행과 계약관리를 수행한다."
+        "role": "계획·입찰서류·절차 진행과 계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
-      "1. 모든 국가발주 프로젝트는 공공 입찰에 의거하도록 규정되어 있으나, 다음과 같은 예외규정을 통해 입찰",
-      "2. 없이 수의계약으로 프로젝트 사업자를 선정하고 있음",
-      "3. 프로젝트 추진과 관련, 사전 계약관계가 있을 경우",
-      "4. 경우에 따라 외국계 기업체 참여가 불가능한 경우도 있으니 (지역 및 국가 우선권 부여 등) 입찰공고문상의",
-      "5. 통상적으로 DR콩고 기업에 대한 용역, 서비스 공급 또는 계약의 총가액 30%를 하청하거나 DR콩고출신",
-      "6. 전문가를 40% 이상 사용할 계획인 외국 입찰자에게도 우선권이 부여됨",
-      "7. 입찰 일정, 입찰보증금 납부, 서류제출 기한, 구비서류 목록 등 면밀히 검토하여야 하며, 단독 참여를",
-      "8. 프로젝트 입찰 참가 시 콩고은행에 예금구좌 보유 및 일정금액(프로젝트 규모에 따라 수만달러)의"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 발주기관 조달사업관리셀(CGMP/CGPMP) — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다. (단계 근거 확인 필요)",
+      "6. 평가·낙찰 · 발주기관 조달사업관리셀(CGMP/CGPMP) — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다. (단계 근거 확인 필요)",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 DR콩고의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -78,7 +81,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -244,7 +249,17 @@
         },
         "id": "dr-congo-bidding-system-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Loi n°10/010 du 27 avril 2010 relative aux marchés publics",
+            "url": "https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf"
+          },
+          {
+            "title": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
+            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -271,15 +286,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°10/34 du 28 décembre 2010 fixant les seuils",
-            "article": "Décret 10/34 arts.9, 11~15; Décret 23/12 art.82",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2021/09/DECRET_10-34_fixant_le_seuil.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -290,15 +299,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.35~36; Décret 23/12 art.83",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -309,20 +312,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.50 and 52; Décret 23/12 arts.157~160",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          },
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.35~36; Décret 23/12 art.83",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -333,20 +325,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.35~36; Décret 23/12 art.83",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          },
-          {
-            "law": "Décret n°10/34 du 28 décembre 2010 fixant les seuils",
-            "article": "Décret 10/34 arts.9, 11~15; Décret 23/12 art.82",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2021/09/DECRET_10-34_fixant_le_seuil.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -355,17 +336,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "공공조달규제청(ARMP)",
+        "actor": "발주기관 조달사업관리셀(CGMP/CGPMP)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Loi n°10/010 du 27 avril 2010 relative aux marchés publics",
-            "article": "arts.1~2, 20~23, 34~36, 41~42, 50~52, 73~76, 82~85",
-            "url": "https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -374,17 +348,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달규제청(ARMP)",
+        "actor": "발주기관 조달사업관리셀(CGMP/CGPMP)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.35~36; Décret 23/12 art.83",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -395,15 +362,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics",
-            "article": "Loi 10/010 arts.51~52; Décret 23/12 arts.161~165",
-            "url": "https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -445,7 +406,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

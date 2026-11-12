@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "과테말라의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "과테말라 정부, 과테말라 재무부(MINFIN), 전자조달시스템(GUATECOMPRAS), 개인·법인 여부와 무관하게 모두 국가조달등록청(RGAE), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부 국가조달총국(DIGAE), 개별 발주기관·입찰위원회, 국가공급자등록부(RGAE), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
@@ -42,7 +42,10 @@
       },
       {
         "name": "개별 발주기관·입찰위원회",
-        "role": "계획·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "계획·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "국가공급자등록부(RGAE)",
@@ -50,14 +53,13 @@
       }
     ],
     "procedure": [
-      "1. 정부 조직도 : 과테말라 재무부(MINFIN)",
-      "2. 국가조달총괄국 - 공공조달 총괄(계약, 규제, 승인, 시스템 등)",
-      "3. 국가계약법에 따라 재무부가 운영하는 전자조달시스템으로, 모든 과테말라 공공기관은 당 시스템을",
-      "4. (제43조) ∙ GUATECOMPRAS에 전자 조달공고 게시",
-      "5. 입찰공고문 준비(입찰 기준, 상세요강, 건축계획 등)",
-      "6. 자카파 주 중등 시범학교 시설 ’25년 10월 ~ 전자조달시스템",
-      "7. 케찰테낭고 주 식수 공급 체계 ’25년 11월 ~ 전자조달시스템",
-      "8. 산호세피눌라 산호세피눌라 시 도로 개선 전자조달시스템"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 개별 발주기관·입찰위원회 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 해당 조달의 감독·감사기관 — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 과테말라의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -78,7 +80,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -187,7 +191,25 @@
         },
         "id": "guatemala-procurement-governance-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
+            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
+          },
+          {
+            "title": "Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas",
+            "url": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/"
+          },
+          {
+            "title": "Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento",
+            "url": "https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf"
+          },
+          {
+            "title": "Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS",
+            "url": "https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -304,15 +326,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.17, 38 and 43(a)~(b); Reglamento arts.26~27",
-            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -321,17 +335,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "재무부 국가조달총국(DIGAE)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.17, 38 and 43(a)~(b); Reglamento arts.26~27",
-            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -340,17 +349,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "재무부 국가조달총국(DIGAE)",
+        "actor": "개별 발주기관·입찰위원회",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.23, 35, 39, 41, 43(b)~(c), 47 and 101; Reglamento arts.22~23 Bis and 53",
-            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -361,15 +365,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.23, 35, 39, 41, 43(b)~(c), 47 and 101; Reglamento arts.22~23 Bis and 53",
-            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -378,17 +374,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "재무부 국가조달총국(DIGAE)",
+        "actor": "해당 조달의 감독·감사기관",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "arts.1, 17, 23, 35, 38~39, 41, 43~44, 47, 64~65, 69~70, 99~102 and 107~108",
-            "url": "https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -397,17 +386,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "재무부 국가조달총국(DIGAE)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.35 and 99~102; Reglamento arts.22~23 Bis",
-            "url": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -418,15 +402,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas",
-            "article": "Ley arts.65 and 69; Reglamento arts.53, 55~56",
-            "url": "https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -468,7 +446,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

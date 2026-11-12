@@ -55,6 +55,15 @@ def collect() -> dict[str, list[str]]:
         for lb in d["canvas"].get("legalBasis", []):
             add(lb.get("url"), f"{slug} · 법적근거 {lb['law']}")
         v = d.get("verification", {})
+        for x in v.get("discrepancies", []):
+            for ref in x.get("citationSources", []):
+                add(ref["url"], f"{slug} · 정정 근거 {x['id']}")
+        for node in d.get("process", {}).get("nodes", []):
+            for basis in node.get("legal_basis", []):
+                add(basis.get("url"), f"{slug} · 단계 {node['id']}")
+            for key in node.get("requirementRefs", []):
+                ref = v["articleAudit"]["requirements"][key]
+                add(ref["evidenceUrl"], f"{slug} · 단계 {node['id']} · {key}")
         for s in v.get("sources", []):
             add(s.get("officialUrl"), f"{slug} · 원문 {s['law']}")
         for u in v.get("unresolved", []):

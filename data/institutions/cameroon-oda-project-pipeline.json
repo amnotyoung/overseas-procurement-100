@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "카메룬 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "카메룬 정부, 유상원조의 경우 재무부(MINFI/Ministry of Finance), 경제기획부(MINEPAT), 국가채무관리위원회(NDMC/National Debt Management Committee), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제기획국토개발부(MINEPAT), 수원부처·사업주관기관, 재무부(MINFI)·국가채무 관련 심사기구, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -26,7 +26,11 @@
     "authorities": [
       {
         "name": "경제기획국토개발부(MINEPAT)",
-        "role": "국제·양자 파트너 조정, 차관협약의 발굴·협상·최종화, 국가 사업은행과 공공투자 프로그램을 담당한다."
+        "role": "국제·양자 파트너 조정, 차관협약의 발굴·협상·최종화, 국가 사업은행과 공공투자 프로그램을 담당한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "수원부처·사업주관기관",
@@ -38,13 +42,13 @@
       }
     ],
     "procedure": [
-      "1. (발굴) 무상원조 사업의 경우, 경제기획부(MINEPAT) 신흥공여국협력국에서 사업 발굴을 전담하고 있음",
-      "2. 카메룬 각 부처와 지방정부에서 제안한 사업을 자체 검토 후 차관 및 장관 승인을 거쳐 공관 및",
-      "3. KOICA사무소로 PCP(Project Concept Paper) 양식에 맞춰서 제출함",
-      "4. PCP에 대한 KOICA의 내부 심사 후 내/외부 전문가로 구성된 출장단의 예비조사를 거쳐 우리 정부의",
-      "5. 사업 내용의 구체화를 위한 심층기획조사를 실시하고 사업집행계획을 수립함",
-      "6. 약정(MOU)인 RD(Record of Discussion)을 체결함",
-      "7. 사업에 대한 약정이 체결되고 있으나 각 정부 검토, 승인까지 3개월 이상 소요됨"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
+      "3. 국가 우선순위 검토 · 경제기획국토개발부(MINEPAT) — 수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
+      "4. 공식 사업요청 · 경제기획국토개발부(MINEPAT) — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · KOICA · 수원부처 — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 카메룬의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -65,7 +69,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -224,7 +230,19 @@
         },
         "id": "cameroon-oda-project-pipeline-D01",
         "sourcePage": "149-159",
-        "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차"
+        "sourceSection": "Ⅱ. 협력국 개발협력 추진 체계 - 수원체계·사업 발굴 절차",
+        "citationSources": [
+          {
+            "title": "MINEPAT Directorate General of Economy functions",
+            "url": "https://minepat.gov.cm/dg-conomie/"
+          },
+          {
+            "title": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
+            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf",
+            "accessNote": "2026-11-12 발행처 파일 주소에서 HTTP 404 응답. 기관 기능은 함께 연결한 MINEPAT 자료에서 확인할 수 있습니다.",
+            "accessStatus": "unavailable"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -232,7 +250,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -251,15 +269,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "l (발굴) 무상원조 사업의 경우, 경제기획부(MINEPAT) 신흥공여국협력국에서 사업 발굴을 전담하고 있음. 카메룬 각 부처와 지방정부에서 제안한 사업을 자체 검토 후 차관 및 장관 승인을 거쳐 공관 및 KOICA사무소로 PCP(Project Concept Paper) 양식에 맞춰서 제출함."
+        }
       },
       {
         "id": "P02",
@@ -270,53 +285,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 31,
+          "end": 32,
+          "excerpt": "카메룬 각 부처와 지방정부에서 제안한 사업을 자체 검토 후 차관 및 장관 승인을 거쳐 공관 및 KOICA사무소로 PCP(Project Concept Paper) 양식에 맞춰서 제출함."
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
         "actor": "경제기획국토개발부(MINEPAT)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 29,
+          "end": 32,
+          "excerpt": "l (발굴) 무상원조 사업의 경우, 경제기획부(MINEPAT) 신흥공여국협력국에서 사업 발굴을 전담하고 있음. 카메룬 각 부처와 지방정부에서 제안한 사업을 자체 검토 후 차관 및 장관 승인을 거쳐 공관 및 KOICA사무소로 PCP(Project Concept Paper) 양식에 맞춰서 제출함."
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "경제기획국토개발부(MINEPAT)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 31,
+          "end": 32,
+          "excerpt": "카메룬 각 부처와 지방정부에서 제안한 사업을 자체 검토 후 차관 및 장관 승인을 거쳐 공관 및 KOICA사무소로 PCP(Project Concept Paper) 양식에 맞춰서 제출함."
+        }
       },
       {
         "id": "P05",
@@ -327,15 +335,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 33,
+          "end": 35,
+          "excerpt": "- PCP에 대한 KOICA의 내부 심사 후 내/외부 전문가로 구성된 출장단의 예비조사를 거쳐 우리 정부의 최종 심사를 받아 무상원조 사업으로 확정됨."
+        }
       },
       {
         "id": "P06",
@@ -346,34 +351,28 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 38,
+          "end": 41,
+          "excerpt": "- 사업 내용의 구체화를 위한 심층기획조사를 실시하고 사업집행계획을 수립함. - 각 사업별로 구속력은 없으나 사업 내용 및 분담사항을 정의하기 위한 KOICA-수원부처 사이의 기관간 약정(MOU)인 RD(Record of Discussion)을 체결함."
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제기획국토개발부(MINEPAT)",
+        "actor": "KOICA · 수원부처",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets",
-            "article": "외부재원 탐색·기술지원 요청 전 보고 및 체결 협약 보고 의무",
-            "url": "https://minepat.gov.cm/wp-content/uploads/2023/03/12345-version-finale-en-francais-P3-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/cameroon.txt",
+          "start": 38,
+          "end": 41,
+          "excerpt": "- 사업 내용의 구체화를 위한 심층기획조사를 실시하고 사업집행계획을 수립함. - 각 사업별로 구속력은 없으나 사업 내용 및 분담사항을 정의하기 위한 KOICA-수원부처 사이의 기관간 약정(MOU)인 RD(Record of Discussion)을 체결함."
+        }
       }
     ],
     "edges": [
@@ -415,7 +414,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

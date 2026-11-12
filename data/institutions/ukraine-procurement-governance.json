@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "우크라이나의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "우크라이나 정부, 발주자는 전자조달시스템(Prozorro), 간이조달 수의시담 가능 (Simplified Procurement), 체결의 투명성을 기하기 위해 수의계약 체결 경위를 전자조달시스템(Prozorro), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "경제부(Ministry of Economy), 조달기관의 권한담당자, 국영기업 Prozorro·전자조달시스템, 반독점위원회(AMCU)·국가감사원, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "국제기준에 부합하는 조달규정",
-        "kind": "act"
-      },
-      {
-        "law": "년에 우크라이나 공공조달법",
-        "kind": "act"
-      },
-      {
-        "law": "가 조달정책 총괄기관으로서 국제기준에 부합하는 조달법",
-        "kind": "act"
       },
       {
         "law": "Law of Ukraine No. 922-VIII On Public Procurement, current revision",
@@ -54,7 +42,10 @@
       },
       {
         "name": "조달기관의 권한담당자",
-        "role": "계획·공고·절차·평가·계약공개를 수행한다."
+        "role": "계획·공고·절차·평가·계약공개를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "국영기업 Prozorro·전자조달시스템",
@@ -62,7 +53,10 @@
       },
       {
         "name": "반독점위원회(AMCU)·국가감사원",
-        "role": "각각 조달 이의심사와 법정 범위의 통제를 담당한다."
+        "role": "각각 조달 이의심사와 법정 범위의 통제를 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       }
     ],
     "procedure": [
@@ -96,7 +90,8 @@
     "entryBarriers": [
       "입찰문서의 우크라이나어 요건, 전자서명·Prozorro 등록과 제재·수익소유자 확인을 공고별로 충족해야 한다.",
       "입찰보증과 이행보증의 요구 여부·형식은 Art.25·27 상한 안에서 개별 입찰문서가 정한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -215,7 +210,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "절차·시스템의 기관 오인을 제거하고 현행 전시 특례와 경제부·조달기관·Prozorro·심사기관 역할을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law of Ukraine No. 922-VIII On Public Procurement",
+            "url": "https://zakon.rada.gov.ua/laws/show/922-19?lang=en"
+          },
+          {
+            "title": "Cabinet Resolution No.1178 of 12 October 2022",
+            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
+          },
+          {
+            "title": "Ministry of Economy procurement consultations and Prozorro guidance",
+            "url": "https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&tag=ZapitiKoristuvachiv&tagId=7758c77b-e410-44ea-a07d-37f1799e11e5"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -316,15 +325,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cabinet Resolution No.1178 of 12 October 2022",
-            "article": "Resolution 1178 points 9~13",
-            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -333,17 +334,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cabinet Resolution No.1178 of 12 October 2022",
-            "article": "Resolution 1178 points 9~13",
-            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -352,17 +348,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "조달기관의 권한담당자",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cabinet Resolution No.1178 of 12 October 2022",
-            "article": "Resolution 1178 points 24, 54 and 55~67",
-            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -373,15 +364,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cabinet Resolution No.1178 of 12 October 2022",
-            "article": "Resolution 1178 points 24, 54 and 55~67",
-            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -390,17 +373,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "반독점위원회(AMCU)·국가감사원",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law of Ukraine No. 922-VIII On Public Procurement",
-            "article": "Arts.3, 6, 10, 18, 25, 27, 33, 40, 41 and final/transitional provisions",
-            "url": "https://zakon.rada.gov.ua/laws/show/922-19?lang=en"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -409,17 +385,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "경제부(Ministry of Economy)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cabinet Resolution No.1178 of 12 October 2022",
-            "article": "Law 922-VIII Art.18; Resolution 1178 points 52~67",
-            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -430,15 +401,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law of Ukraine No. 922-VIII On Public Procurement",
-            "article": "Law 922-VIII Art.27",
-            "url": "https://zakon.rada.gov.ua/laws/show/922-19?lang=en"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -480,7 +445,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

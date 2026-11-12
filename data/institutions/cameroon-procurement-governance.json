@@ -15,30 +15,21 @@
   },
   "canvas": {
     "purpose": "카메룬의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "카메룬 정부, 공공계약부(MINMAP, Ministry of Public Contracts), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공계약부(MINMAP, Ministry of Public Contracts), 공공계약규제청(ARMP, Public Contracts Regulatory Agency), 발주기관(Maître d'Ouvrage), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Public Contracts",
-        "kind": "act"
-      },
-      {
-        "law": "공공 계약은 공공계약법",
-        "kind": "act"
-      },
-      {
-        "law": "현지 법률",
-        "kind": "act"
       }
     ],
     "authorities": [
       {
         "name": "공공계약부(MINMAP, Ministry of Public Contracts)",
-        "role": "공공계약 정책·절차 통제와 조달집행 감독을 담당한다."
+        "role": "공공계약 정책·절차 통제와 조달집행 감독을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "공공계약규제청(ARMP, Public Contracts Regulatory Agency)",
@@ -46,17 +37,20 @@
       },
       {
         "name": "발주기관(Maître d'Ouvrage)",
-        "role": "필요·계획·조달절차·계약이행을 담당한다."
+        "role": "필요·계획·조달절차·계약이행을 담당한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 입찰공고의 유형 : 입찰 요청서는 국내(카메룬 국민 또는 카메룬에 본사나 거주지가 있는 법인)와",
-      "2. 입찰공고 후 입찰서 파일은 각 후보자의 요청에 따라 후보자에게 제공됨",
-      "3. 입찰 공고는 공공 계약 규정을 담당하는 기관 또는 그와 같은 권한을 지닌 기관에 의해 언론에 공개하여",
-      "4. 입찰서 제출 기한은 견적 요청 등으로 시급할 경우 입찰 공고 발표 날로부터 20일로 단축될 수 있고,",
-      "5. 조달계획 수립",
-      "6. 공고·전자조달 등록",
-      "7. 입찰 집행"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 발주기관(Maître d'Ouvrage) — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 공공계약부(MINMAP, Ministry of Public Contracts) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 카메룬의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 제한 입찰 ∙ 입찰서의 제출 기한의 범위는 국내입찰의 경우 15~21일(근무일 기준), 국제입찰의 경우",
     "submittedDocuments": [
@@ -77,7 +71,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -208,7 +204,17 @@
         },
         "id": "cameroon-procurement-governance-D01",
         "sourcePage": "149-159",
-        "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계"
+        "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계",
+        "citationSources": [
+          {
+            "title": "Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics",
+            "url": "https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf"
+          },
+          {
+            "title": "ARMP official procurement publications",
+            "url": "https://armp.cm/details?id_publication=18592&type_publication=DEC-ATTR"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -235,15 +241,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.4~5, 27~32, 112~113",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -252,17 +250,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공계약부(MINMAP, Ministry of Public Contracts)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.4~5, 27~32, 112~113",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -271,17 +264,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "공공계약부(MINMAP, Ministry of Public Contracts)",
+        "actor": "발주기관(Maître d'Ouvrage)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.77, 88~89, 107, 175~176",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -292,15 +280,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.77, 88~89, 107, 175~176",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -311,15 +291,8 @@
         "status": "risk",
         "actor": "공공계약부(MINMAP, Ministry of Public Contracts)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics",
-            "article": "arts.1~5, 6~50, 54~72, 85~113, 137~143, 158, 170~187, 188~208; 특히 arts.24~50, 72, 90, 137~142, 170~179, 206~208",
-            "url": "https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -328,17 +301,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "공공계약부(MINMAP, Ministry of Public Contracts)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.49, 170~177, 186~187",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -349,15 +317,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Cameroon verified procurement instrument",
-            "article": "Code arts.137~142",
-            "url": "https://minfi.gov.cm/wp-content/uploads/2023/06/INTEGRAL_Publics_contracts_Code_ULTIMATE.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -399,7 +361,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

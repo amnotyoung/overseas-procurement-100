@@ -54,7 +54,11 @@
       },
       {
         "name": "연방 발주기관",
-        "role": "조달계획·공고·평가·낙찰·계약관리, 홀수 GRC 구성과 1차 불만처리를 수행한다."
+        "role": "조달계획·공고·평가·낙찰·계약관리, 홀수 GRC 구성과 1차 불만처리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "경제부 경제사무국(EAD)",
@@ -226,7 +230,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "현행 개정문과 관보 규정으로 금액·기한·보증·불복·예외를 조문별 확정했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement Rules, 2004",
+            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
+          },
+          {
+            "title": "E-Pak-Procurement Regulations, 2023",
+            "url": "https://ppra.gov.pk/media?file=L3VwbG9hZHMvZG93bmxvYWRzL2Rvd25sb2FkXzE3Njg0MDcyMzZfMDA1NDJiNTNkYzFhNTdiZi5wZGY%3D"
+          }
+        ]
       },
       {
         "severity": "medium",
@@ -251,7 +265,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "사업승인과 EAD의 공여기관 요청·협상 경로를 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Manual for Development Projects 2024",
+            "url": "https://www.pc.gov.pk/uploads/archives/Manual-for-Development-Project-2024.pdf"
+          },
+          {
+            "title": "Rules of Business, 1973, Schedule II — Economic Affairs Division functions",
+            "url": "https://ead.gov.pk/Overview"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -368,15 +392,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.12(1)~(2), 14, 20~21 and 42(a)~(b), (e); PPRA current forms index",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -387,15 +405,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.13(1)~(3), 28(1), 35, 43 and 45; E-Pak regs.9(6), 13 and 14",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -406,20 +418,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.23(2)(k), 25 and 26(4); E-Pak regs.10(4), 11 and 14",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          },
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.13(1)~(3), 28(1), 35, 43 and 45; E-Pak regs.9(6), 13 and 14",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -430,20 +431,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.13(1)~(3), 28(1), 35, 43 and 45; E-Pak regs.9(6), 13 and 14",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          },
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.12(1)~(2), 14, 20~21 and 42(a)~(b), (e); PPRA current forms index",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -452,17 +442,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "공공조달규제청(PPRA)",
+        "actor": "연방 발주기관",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulatory Authority Ordinance, 2002",
-            "article": "ss.1~5, 16~17, 20A~21A and 26~27; commencement, federal procuring-agency definition, PPRA functions, grievance mechanism and exemption power",
-            "url": "https://ppra.gov.pk/assets/docs/ordinance2020.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/pakistan.txt",
+          "start": 226,
+          "end": 228,
+          "excerpt": "- (적격심사) 서비스, 토목공사, 턴키 프로젝트(일괄 수주계약), 고액 및 복합 기술 장비와 관련이 있는 경우, 입찰자의 사전적격심사 실시가 가능함. ∙ 조달기관은 입찰자들에게 서류나 정보 혹은 설명을 요구할 수 있고 적격심사결과를 모든 입찰자에게"
+        }
       },
       {
         "id": "P06",
@@ -471,17 +459,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달규제청(PPRA)",
+        "actor": "연방 발주기관",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.13(1)~(3), 28(1), 35, 43 and 45; E-Pak regs.9(6), 13 and 14",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/asia-pacific/pakistan.txt",
+          "start": 246,
+          "end": 250,
+          "excerpt": "- (입찰서 평가) 입찰제안서는 지정된 날짜, 장소, 시간(참가 종료 시점부터 최소 30분 이후)에 입찰자 혹은 그 대리인의 입회하에 개봉되어야 함. ∙ 입찰 시작 후에는 입찰 내용 변경이 불가하며 조달기관은 입찰제안서 수락 전 입찰을 거부할 수 있음. ∙ 조달기관의 요청으로 입찰 내용 확인이 필요할 경우 이에 대한 요청 및 응답은 모두 서면으로 진행함. ∙ 계약체결 최소 15일 전까지 조달기관은 입찰결과와 승낙 또는 거부의 정당한 사유와 함께"
+        }
       },
       {
         "id": "P07",
@@ -492,15 +478,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Rules, 2004",
-            "article": "PPR 2004 rr.23(2)(k) and 39; E-Pak reg.14(6)~(7)",
-            "url": "https://epms.ppra.gov.pk/public/procurement-rules"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -542,7 +522,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

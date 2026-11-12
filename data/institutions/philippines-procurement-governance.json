@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "필리핀의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "필리핀 정부, 필리핀 정부조달정책위원회 (GPPB, Government Procurement Policy Board), 조달기관의 이행 여부 점검 기능을 수행하는 정부조달정책위원회 (Government Procurement Policy Board), 동 위원회는 정부 기관 간 위원회(Inter-agency body), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "정부조달정책위원회(GPPB)·기술지원실(GPPB-TSO), 조달기관·입찰낙찰위원회(BAC), PhilGEPS, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "외국인 투자법(RA7042)",
-        "kind": "act"
-      },
-      {
-        "law": "Government Procurement Reform Act",
-        "kind": "act"
-      },
-      {
-        "law": "로 정부조달법",
-        "kind": "act"
       },
       {
         "law": "Republic Act n.º 12009 — New Government Procurement Act",
@@ -54,7 +42,10 @@
       },
       {
         "name": "조달기관·입찰낙찰위원회(BAC)",
-        "role": "조달계획·시장조사·공고·평가·낙찰추천과 계약관리를 수행한다."
+        "role": "조달계획·시장조사·공고·평가·낙찰추천과 계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "PhilGEPS",
@@ -62,13 +53,13 @@
       }
     ],
     "procedure": [
-      "1. 위원회는 정부조달법 시행령에 따라 기술·행정지원을 하는 별도 조직으로 Technical Support",
-      "2. 전자조달시스템(Phil-GEPS) 성능·효과 모니터링",
-      "3. 사전 조달회의 → 입찰공고 → 사전 입찰회의",
-      "4. 단계로, PhilGEPS 또는 발주기관 홈페이지, 계약 규모가 큰 경우 신문에 공고",
-      "5. 조달계획 수립",
-      "6. 공고·전자조달 등록",
-      "7. 입찰 집행"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 조달기관·입찰낙찰위원회(BAC) — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 해당 조달의 감독·감사기관 — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 필리핀의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -89,7 +80,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -239,7 +232,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "RA 9184 중심 설명을 현행 RA 12009 체계와 전환규정으로 바꾸고 GPPB·BAC·PhilGEPS 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Republic Act n.º 12009 — New Government Procurement Act",
+            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
+          },
+          {
+            "title": "GPPB Circular on RA 12009 transitory provisions",
+            "url": "https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -266,15 +269,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §§32.1, 34.1–34.3, 84.2–84.3",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -283,17 +278,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "정부조달정책위원회(GPPB)·기술지원실(GPPB-TSO)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §§32.1, 34.1–34.3, 84.2–84.3",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -302,17 +292,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "정부조달정책위원회(GPPB)·기술지원실(GPPB-TSO)",
+        "actor": "조달기관·입찰낙찰위원회(BAC)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §§51.2, 54.5, 67",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -323,15 +308,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §§51.2, 54.5, 67",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -340,17 +317,10 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "정부조달정책위원회(GPPB)·기술지원실(GPPB-TSO)",
+        "actor": "해당 조달의 감독·감사기관",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "RA §§4, 10–18, 28–41, 42–49, 54–57, 66–69, 83–87, 91, 113–117",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -359,17 +329,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "정부조달정책위원회(GPPB)·기술지원실(GPPB-TSO)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §§83–85",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -380,15 +345,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Republic Act n.º 12009 — New Government Procurement Act",
-            "article": "IRR §68",
-            "url": "https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -430,7 +389,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

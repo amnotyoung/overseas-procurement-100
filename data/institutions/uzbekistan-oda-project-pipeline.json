@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "우즈베키스탄 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "우즈베키스탄 정부, 우즈베키스탄 수원총괄기관, 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "투자산업통상부, 경제재정부·재무당국, 부문 실행기관·내각, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -34,7 +34,11 @@
     "authorities": [
       {
         "name": "투자산업통상부",
-        "role": "외국 정부·국제기구·IFI 협력, 외국 무상원조·기술지원과 투자사업의 유치·조정을 담당한다."
+        "role": "외국 정부·국제기구·IFI 협력, 외국 무상원조·기술지원과 투자사업의 유치·조정을 담당한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "경제재정부·재무당국",
@@ -76,7 +80,8 @@
     "entryBarriers": [
       "공식 조달정보는 우즈베크어로 게시되며 다른 언어본은 우즈베크어 내용과 일치해야 한다.",
       "전자시스템 등록, 수익소유자·세금체납·이해충돌 확인과 공고별 제안·이행보증 형식을 충족해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -171,7 +176,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "익명 기관을 현행 부처로 특정하고 재원유형별 조정·재정·조달 역할을 연결했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ministry of Investment, Industry and Trade mandate",
+            "url": "https://gov.uz/en/miit/sections/view/7580"
+          },
+          {
+            "title": "Law No.ZRU-684 of 22 April 2021 On Public Procurement",
+            "url": "https://lex.uz/docs/5382983"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -245,7 +260,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -264,15 +279,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 27,
+          "end": 30,
+          "excerpt": "- 내각령 768(2021.12.29.)에 따르면 MIIT에서는 매년 3월 1일까지 전 부처 및 기관으로부터 사업제안서를 접수함. 이후, 사업 제안의 우선순위 및 타당성을 4월 1일까지 검토함. 이후 4월 중순까지 ODA 유치를 위한 제안서를 선정하고 이를 공식 홈페이지에 게시함. MIIT의 ODA 사업 모니터링은"
+        }
       },
       {
         "id": "P02",
@@ -283,53 +295,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 27,
+          "end": 30,
+          "excerpt": "- 내각령 768(2021.12.29.)에 따르면 MIIT에서는 매년 3월 1일까지 전 부처 및 기관으로부터 사업제안서를 접수함. 이후, 사업 제안의 우선순위 및 타당성을 4월 1일까지 검토함. 이후 4월 중순까지 ODA 유치를 위한 제안서를 선정하고 이를 공식 홈페이지에 게시함. MIIT의 ODA 사업 모니터링은"
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
         "actor": "투자산업통상부",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 29,
+          "end": 33,
+          "excerpt": "사업제안서를 접수함. 이후, 사업 제안의 우선순위 및 타당성을 4월 1일까지 검토함. 이후 4월 중순까지 ODA 유치를 위한 제안서를 선정하고 이를 공식 홈페이지에 게시함. MIIT의 ODA 사업 모니터링은 연중 이뤄짐. - (무상원조) MIIT는 유관 부처 간 우선순위 사업에 대해 공여기관과 협의를 시행하고, 최종 선정한 후보 사업을 내각에 제출함. 이후, 우즈베키스탄 측은 최종 선정한 우선순위 사업을 각 공여기관에 송부하고"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "투자산업통상부",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/uzbekistan.txt",
+          "start": 32,
+          "end": 35,
+          "excerpt": "- (무상원조) MIIT는 유관 부처 간 우선순위 사업에 대해 공여기관과 협의를 시행하고, 최종 선정한 후보 사업을 내각에 제출함. 이후, 우즈베키스탄 측은 최종 선정한 우선순위 사업을 각 공여기관에 송부하고 경제재정부(Ministry of Economy and Finance, 이하 MoEF)는 MIIT와 협력하여 차년도 대외 무상원조 사업 관련 우선순위 사업을 준비 및 내각에 제출"
+        }
       },
       {
         "id": "P05",
@@ -340,15 +345,7 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -359,34 +356,19 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "투자산업통상부",
+        "actor": "해당 협정의 양측 서명권자",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ministry of Investment, Industry and Trade mandate",
-            "article": "Current mandate for IFI and foreign-government finance, grants, technical assistance, investment policy and project effectiveness",
-            "url": "https://gov.uz/en/miit/sections/view/7580"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "basisStatus": "pending"
       }
     ],
     "edges": [
@@ -428,7 +410,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

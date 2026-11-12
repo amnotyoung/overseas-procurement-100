@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "우간다 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "우간다 정부, 재정기획경제개발부(MoFPED), 재정기획경제발전부에 서면으로 사업제안서(PCP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재정기획경제개발부 개발지원·지역협력국(DARC), 총리실 정책조정체계·부문 실행기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -38,7 +38,10 @@
     "authorities": [
       {
         "name": "재정기획경제개발부 개발지원·지역협력국(DARC)",
-        "role": "대외재원 동원, 개발파트너 조정, 양자·다자 협상·협정과 원조 활용을 총괄한다."
+        "role": "대외재원 동원, 개발파트너 조정, 양자·다자 협상·협정과 원조 활용을 총괄한다.",
+        "processNodes": [
+          "P04"
+        ]
       },
       {
         "name": "총리실 정책조정체계·부문 실행기관",
@@ -46,14 +49,13 @@
       }
     ],
     "procedure": [
-      "1. 재정기획경제개발부(MoFPED)-관계부처-KOICA 간 협조 기반하여 사업수요 발굴",
-      "2. 우간다 MoFPED-KOICA 간 사업별 MOU 체결",
-      "3. 절차 원조사업 발굴 및 반영 절차(소요기간 : N-2년 기준)",
-      "4. 재정기획경제발전부에 서면으로 사업제안서(PCP) 제출 요청",
-      "5. 제출된 사업제안서를 검토 후 서면으로 공여기관에 요청",
-      "6. 제출된 사업제안서를 1차 검토 후 본부 송부",
-      "7. 절차 및 우선순위에 따라 예비조사 대상 사업 선정",
-      "8. 제출된 최종 사업 후보에 대해 외교부(무상원조), 국조실(무상/유상 원조통합) 주관 심사 후 최종 승인"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
+      "3. 국가 우선순위 검토 · 사업유형별 우선순위 심사기관 — 수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
+      "4. 공식 사업요청 · 재정기획경제개발부 개발지원·지역협력국(DARC) — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · KOICA · 재정기획경제개발부 — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 우간다의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -74,7 +76,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -180,7 +184,13 @@
         },
         "id": "uganda-oda-project-pipeline-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "MoFPED Development Assistance and Regional Cooperation mandate",
+            "url": "https://archive.finance.go.ug/node/6"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -270,7 +280,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -289,15 +299,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 25,
+          "end": 26,
+          "excerpt": "협력국 개발협력사업 발굴 절차 l 재정기획경제개발부(MoFPED)-관계부처-KOICA 간 협조 기반하여 사업수요 발굴"
+        }
       },
       {
         "id": "P02",
@@ -308,53 +315,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 38,
+          "end": 40,
+          "excerpt": "∙ 우간다 관계부처 - 재정기획경제발전부에 서면으로 사업제안서(PCP) 제출 요청"
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "재정기획경제개발부 개발지원·지역협력국(DARC)",
+        "actor": "사업유형별 우선순위 심사기관",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 41,
+          "end": 43,
+          "excerpt": "∙ 우간다 재정기획경제개발부 - 제출된 사업제안서를 검토 후 서면으로 공여기관에 요청"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "재정기획경제개발부 개발지원·지역협력국(DARC)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 41,
+          "end": 43,
+          "excerpt": "∙ 우간다 재정기획경제개발부 - 제출된 사업제안서를 검토 후 서면으로 공여기관에 요청"
+        }
       },
       {
         "id": "P05",
@@ -365,15 +365,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 47,
+          "end": 50,
+          "excerpt": "∙ KOICA 본부 - 절차 및 우선순위에 따라 예비조사 대상 사업 선정 5 ∙ 예비조사 실시 후 최종 사업 선정"
+        }
       },
       {
         "id": "P06",
@@ -384,34 +381,28 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 50,
+          "end": 55,
+          "excerpt": "5 ∙ 예비조사 실시 후 최종 사업 선정 ∙ 대한민국 외교부, 국무조정실 - 제출된 최종 사업 후보에 대해 외교부(무상원조), 국조실(무상/유상 원조통합) 주관 심사 후 최종 승인 ∙ KOICA 본부/해외사무소 - 심층기획조사 실시 후 사업 집행계획 수립"
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재정기획경제개발부 개발지원·지역협력국(DARC)",
+        "actor": "KOICA · 재정기획경제개발부",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 56,
+          "end": 56,
+          "excerpt": "7 ∙ KOICA-재정기획경제개발부간 양해 각서 체결 후 사업 실시"
+        }
       }
     ],
     "edges": [
@@ -453,7 +444,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

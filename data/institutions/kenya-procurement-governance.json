@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "케냐의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "케냐 정부, 국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Authority), 기록 관리 등 조달의 기술적 측면을 담당하는 부서 (Procurement Unit), 조달기관은 정부 입찰 포털(PPIP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "국가재무부, 공공조달규제청(PPRA), 공공조달행정심판위원회(PPARB), 조달기관·회계책임자·조달기능, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "공공조달 및 자산 매각에 관한 법률",
-        "kind": "act"
-      },
-      {
-        "law": "공공조달 및 자산 매각에 관한 법률, 2015",
-        "kind": "act"
-      },
-      {
-        "law": "Public Procurement and Asset Disposal Act",
-        "kind": "act"
       },
       {
         "law": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
@@ -54,7 +42,10 @@
       },
       {
         "name": "공공조달규제청(PPRA)",
-        "role": "조달체계를 모니터링·평가·검토하고 표준문서·지침과 법규준수를 감독한다."
+        "role": "조달체계를 모니터링·평가·검토하고 표준문서·지침과 법규준수를 감독한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "공공조달행정심판위원회(PPARB)",
@@ -62,18 +53,20 @@
       },
       {
         "name": "조달기관·회계책임자·조달기능",
-        "role": "기관별 계획·공고·평가·낙찰·계약관리를 수행하고 e-GPS를 사용한다."
+        "role": "기관별 계획·공고·평가·낙찰·계약관리를 수행하고 e-GPS를 사용한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 케냐의 조달 관련 조직구조는 2015년 「공공조달 및 자산 매각에 관한 법률」(PPADA, Public",
-      "2. 각 공공기관의 조달 수행을 감독, 현재 시스템 효율성과 조달 과정의 투명성 향상을 위해 전자 정부",
-      "3. 시스템 설계: 전자조달 촉진을 포함한 효율적인 공공조달 관리 시스템 설계",
-      "4. 재무부 - 감독 및 모니터링: 각 기관의 조달 활동을 감독, 부정행위 적발, 규정 준수 모니터링",
-      "5. 감독: 공공조달시스템 전체가 헌법과 국가적 가치에 부합하는지 평가하고 개선안 제시",
-      "6. PPRA의 산하 독립기관으로 조달 절차에서 발생한 분쟁 및 항소 심판",
-      "7. 공공조달행정심의위원회 - 분쟁 해결: 독립적인 중재자로서 분쟁해결을 위한 공정하고 중립적인 절차 제공",
-      "8. PPARB - 공정성 및 투명성 보장: 분쟁 및 이의신청을 해결함으로써 공공계약에 대한 공정한 접근과"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 조달기관·회계책임자·조달기능 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 공공조달규제청(PPRA) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 이의 제기 단계별 관할기관 (아래 구제 절차 참조) — PPARB receives review requests within 14 days, normally with a 15% refundable deposit or KES 200,000 when the tender sum is indeterminable, and must decide within 21 days. High Court review follows within 14 days.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 케냐의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 및 외국인의 입찰 참가 요건(PPADA §55)7)",
     "submittedDocuments": [
@@ -94,7 +87,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -253,7 +248,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "포털의 기관 오인을 제거하고 정책·규제·심사·집행 및 e-GPS 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
+            "url": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
+          },
+          {
+            "title": "Public Procurement and Asset Disposal Regulations 2020",
+            "url": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
+          },
+          {
+            "title": "PPRA Circular 02/2025 — transition to the Electronic Government Procurement System",
+            "url": "https://ppra.go.ke/ppra-circular-02-2025/"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -280,15 +289,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Regulations 2020",
-            "article": "Act ss.91~108; Regulations rr.26, 89~93 and Second Schedule",
-            "url": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -297,17 +298,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Autho",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Regulations 2020",
-            "article": "Act ss.91~108; Regulations rr.26, 89~93 and Second Schedule",
-            "url": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -316,17 +312,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Autho",
+        "actor": "조달기관·회계책임자·조달기능",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
-            "article": "Act ss.80, 94, 97, 125, 135, 167, 171; Regulations rr.83, 86~89, 203~205",
-            "url": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -337,15 +328,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
-            "article": "Act ss.80, 94, 97, 125, 135, 167, 171; Regulations rr.83, 86~89, 203~205",
-            "url": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -354,17 +337,15 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Autho",
+        "actor": "공공조달규제청(PPRA)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Act 2015, revised edition 2022",
-            "article": "ss.1~44, 53~64, 73~114, 134~158, 167~175, 182; 특히 ss.7~10, 27~29, 44, 61, 91~108, 142~145, 167~175",
-            "url": "https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/kenya.txt",
+          "start": 74,
+          "end": 76,
+          "excerpt": "- 국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Authority)이 중앙에서 각 공공기관의 조달 수행을 감독, 현재 시스템 효율성과 조달 과정의 투명성 향상을 위해 전자 정부 조달(e-GP, Electronic Procurement)프레임워크로 전환 중에 있음"
+        }
       },
       {
         "id": "P06",
@@ -373,17 +354,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "국가 재무부와 공공 조달 규제기관(PPRA, Public Procurement Regulatory Autho",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Regulations 2020",
-            "article": "Act ss.27~29, 167~175; Regulations rr.203~210",
-            "url": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "PPARB receives review requests within 14 days, normally with a 15% refundable deposit or KES 200,000 when the tender sum is indeterminable, and must decide within 21 days. High Court review follows within 14 days.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -394,15 +369,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement and Asset Disposal Regulations 2020",
-            "article": "Act ss.142~145; Regulations r.135",
-            "url": "https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -444,7 +413,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

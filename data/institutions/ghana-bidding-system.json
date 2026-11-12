@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "가나 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "가나 정부, 가나 공공조달청 (Public Procurement Authority, PPA), 지역수준의 조달 정보 제공 (Kumasi), 지역수준의 조달 정보 제공 (Takoradi), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공조달청(PPA), 조달기관·조달부서·기관입찰위원회, GHANEPS, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -46,7 +46,11 @@
       },
       {
         "name": "조달기관·조달부서·기관입찰위원회",
-        "role": "기관별 계획·공고·평가·승인·계약관리를 수행한다."
+        "role": "기관별 계획·공고·평가·승인·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "GHANEPS",
@@ -54,14 +58,13 @@
       }
     ],
     "procedure": [
-      "1. 공개경쟁입찰이 활용되고 외국기업에 입찰을 요청하지 않을 시 효과적인 경쟁이 성립되지",
-      "2. 입찰 초청은 판매 부수가 높은 신문에 게재되어야 함",
-      "3. 초청장이 후보자에게 도달한 후 입찰 제출일까지 최소 6주의 시간 확보 필요",
-      "4. 입찰참가자는 제안서류에 명시된 보증서류를 명시해야 함",
-      "5. 발주기관이 가나 국내에 등록된 공급자, 계약자 혹은 컨설턴트만 입찰 절차에 참여할 수",
-      "6. 입찰 요청하는 모든 사람에게 사유를 소명해야 함",
-      "7. 경쟁 ∙ 조달계약 추정가격이 「금액에 따른 입찰 구분」에 명시된 금액 이하인 경우 입찰 초청 또는",
-      "8. 조달계약 추정가격이「금액에 따른 입찰 구분」에 명시된 금액 이하인 경우 시장 물품 조달이"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 조달기관·조달부서·기관입찰위원회 — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다. (단계 근거 확인 필요)",
+      "6. 평가·낙찰 · 조달기관·조달부서·기관입찰위원회 — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다. (단계 근거 확인 필요)",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 가나의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 경쟁 ∙ 조달계약 추정가격이 「금액에 따른 입찰 구분」에 명시된 금액 이하인 경우 입찰 초청 또는",
     "submittedDocuments": [
@@ -82,7 +85,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -191,7 +196,25 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "지역 정보창구의 기관 오인을 제거하고 개정법·PPA·조달기관·GHANEPS 역할을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
+            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
+          },
+          {
+            "title": "Public Procurement (Amendment) Act, 2025 (Act 1139)",
+            "url": "https://ppa.gov.gh/public-procurement-training-for-2026/"
+          },
+          {
+            "title": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
+            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
+          },
+          {
+            "title": "Mandatory use of the Ghana Electronic Procurement System (GHANEPS)",
+            "url": "https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -300,15 +323,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
-            "article": "Act 663 ss.34A~43; L.I. 2516 reg.3 and substituted Fifth Schedule",
-            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -319,15 +336,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -338,20 +349,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 s.55; L.I. 2466 reg.52",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          },
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -362,20 +362,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          },
-          {
-            "law": "Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)",
-            "article": "Act 663 ss.34A~43; L.I. 2516 reg.3 and substituted Fifth Schedule",
-            "url": "https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -384,17 +373,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "공공조달청(PPA)",
+        "actor": "조달기관·조달부서·기관입찰위원회",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -403,17 +385,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달청(PPA)",
+        "actor": "조달기관·조달부서·기관입찰위원회",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.44(7), 45(2)(c), 79~81; L.I. 2466 regs.39(4), 46, 67, 78 and 86",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -424,15 +399,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Regulations, 2022 (L.I. 2466)",
-            "article": "Act 663 ss.50 and 65(7); L.I. 2466 reg.29(5) and Second Schedule Notice of Acceptance",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2023/05/PPA_Regulations_2022.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -474,7 +443,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

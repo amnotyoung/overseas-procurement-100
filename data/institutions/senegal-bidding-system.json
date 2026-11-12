@@ -15,20 +15,12 @@
   },
   "canvas": {
     "purpose": "세네갈 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "세네갈 정부, 공공조달규제청(ARMP), 중앙공공조달국(DCMP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "세네갈 정부, 공공계약규제청(ARCOP), 중앙공공조달국(DCMP), 발주·수원부처, 국내외 입찰자, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Public Service Contract for",
-        "kind": "act"
-      },
-      {
-        "law": "공공조달법",
-        "kind": "act"
       },
       {
         "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
@@ -58,7 +50,11 @@
       },
       {
         "name": "조달기관(autorité contractante)",
-        "role": "계획·공고·평가·낙찰·계약관리를 수행한다."
+        "role": "계획·공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "APPEL",
@@ -66,14 +62,12 @@
       }
     ],
     "procedure": [
-      "1. 중앙공공조달국(DCMP) - 계약 체결 전 절차 모니터링 및 조달 허가",
-      "2. 조달 계획 및 입찰 수주 단계의 조달활동 담당 기관",
-      "3. 조달기관(PE) - 계약, 감독, 평가 및 대금 지급 담당",
-      "4. 발주기관은 참가조건, 시한 등 입찰참여에 필요한 정보를 입찰 서류 발행 10일 전까지 공지함",
-      "5. 경쟁입찰 ∙ 2단계에서 입찰 중 수집된 정보 기반 계약담당자가 설정한 경쟁자격을 기반으로 기술제안서 제출",
-      "6. 특수상황에서 신속한 계약이 필요한 경우 제한적으로 활용",
-      "7. 제한경쟁 ∙ 제안서 접수기간 국내입찰 최소 10일, 국제입찰 15일",
-      "8. 세네갈 공공입찰법(Code des marches, 제 2014-1212호)"
+      "1. 조달기관이 조달계획과 적용 방식을 정한다.",
+      "2. 해당 금액·방식에 필요한 DCMP 사전통제를 확인한다.",
+      "3. 발주기관이 입찰조건과 제출기한을 공고한다. APPEL 이용 여부는 해당 공고에서 확인한다.",
+      "4. 입찰자는 해당 공고의 자격·서류·보증 요건에 맞춰 제출한다.",
+      "5. 조달기관이 평가·낙찰 절차를 진행하고 결과를 통지한다.",
+      "6. 적용되는 이의신청·대기기간을 거쳐 권한기관이 계약을 체결한다."
     ],
     "applicability": "Décret 2022-2295 제2~3조의 국가·지자체·공공기관·공기업 등 공공조달에 적용한다. 국제재원·조약의 상충규칙은 우선하며, 법정 적용제외·직접계약과 2026년 비밀·국방 특별통제는 별도 요건을 따른다.",
     "submittedDocuments": [
@@ -199,7 +193,7 @@
         "citation": "Decree 2022-2295; ARCOP official mandate and APPEL platform",
         "impact": "Using former institutions or code can misroute approval and review.",
         "action": "구법·구기관명을 현행 법전·ARCOP 체계로 바꾸고 DCMP·조달기관·APPEL 역할을 분리했다.",
-        "userAction": "APPEL 공고에서 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.",
+        "userAction": "해당 발주기관 공고에서 APPEL 적용 여부와 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.",
         "review": {
           "topic": "2022 procurement code and ARCOP reform",
           "guideSays": "The guide uses the former ARMP name and incomplete legal references.",
@@ -214,7 +208,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "구법·구기관명을 현행 법전·ARCOP 체계로 바꾸고 DCMP·조달기관·APPEL 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
+            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
+          },
+          {
+            "title": "ARCOP current application of Décret 2022-2295",
+            "url": "https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf"
+          },
+          {
+            "title": "ARCOP · APPEL 단계적 도입과 적용 모듈",
+            "url": "https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/"
+          }
+        ]
       },
       {
         "severity": "high",
@@ -224,7 +232,7 @@
         "citation": "Code Arts.53, 64, 77, 89~92, 114~116; Arrêtés 007118, 007120, 007121; Décret 2026-807",
         "impact": "링크만 연결된 데이터는 폐지된 보증기준이나 오래된 비밀조달 예외를 실제 절차에 잘못 적용할 수 있다.",
         "action": "2023년 시행명령과 2026년 특별규정을 포함해 현행성 및 6개 정량·절차 영역을 조문 단위로 대조하고 unresolved를 해소했다.",
-        "userAction": "실제 참여 시 APPEL 공고, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.",
+        "userAction": "실제 참여 시 공고의 APPEL 적용 여부, 최신 표준입찰서, DCMP 통제 여부, ARCOP CRD 경로와 재원협정 특별규칙을 최종 확인한다.",
         "review": {
           "topic": "Current implementing orders and quantitative rules",
           "guideSays": "The earlier model linked the 2022 Code but omitted the 2023 thresholds and the 2026 secret-defence control overlay.",
@@ -239,7 +247,17 @@
           "state": "not-reported",
           "suggestedText": "2023년 DRP·보증 정량기준과 2026년 비밀·국방 조달 통제를 반영했다."
         },
-        "id": "senegal-bidding-system-D02"
+        "id": "senegal-bidding-system-D02",
+        "citationSources": [
+          {
+            "title": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
+            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
+          },
+          {
+            "title": "Décret n° 2026-807 du 22 avril 2026 — secret-defence procurement control",
+            "url": "https://arcop.sn/2026/05/05/la-reforme-des-marches-et-projets-de-ppp-susceptibles-detre-classes-secret-defense-une-avancee-remarquable-dans-la-recherche-de-la-performance-dans-lac/"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -356,15 +374,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.53~54 and 79; Arrêté 007118 Arts.2~5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -375,15 +387,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.64, 67, 71, 85~92; Arrêté 007118 Art.5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -394,20 +400,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Art.114; Arrêté 007120 Art.1",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          },
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.64, 67, 71, 85~92; Arrêté 007118 Art.5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -418,20 +413,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.64, 67, 71, 85~92; Arrêté 007118 Art.5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          },
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.53~54 and 79; Arrêté 007118 Arts.2~5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -440,17 +424,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "공공계약규제청(ARCOP)",
+        "actor": "조달기관(autorité contractante)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Arts.2~6, 43~54, 53~92, 114~120, 141~154; scope, participation, thresholds, methods, deadlines, direct contracting, appeals, securities, control, repeal and publication",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -459,17 +436,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공계약규제청(ARCOP)",
+        "actor": "조달기관(autorité contractante)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.64, 67, 71, 85~92; Arrêté 007118 Art.5",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -480,15 +450,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
-            "article": "Code Arts.115~119; Arrêté 007121 Art.1",
-            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -530,7 +494,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

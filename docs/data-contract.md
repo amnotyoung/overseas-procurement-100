@@ -124,7 +124,11 @@ interface DocSet { actor: string; documents: string[]; }
 **1. 법령 링크는 `verification.sources`가 단일 출처다.**
 `legalBasis[].law`가 `verification.sources[].law`(또는 `officialName`)와 일치하면
 빌더가 그 `officialUrl`을 자동으로 건다. 같은 주소를 두 곳에 적지 않는다.
-프로세스 노드의 `legal_basis[].law`도 같은 방식으로 연결된다.
+절차별 직접 조문은 `process.nodes[].legal_basis`에 원문 URL과 함께 기록한다. 기관의 `canvas.authorities[].processNodes`에는 그 기관에 배정한 노드 ID를 기록한다. `python3 tools/sync_node_evidence.py`가 이 배정을 `actor`에 반영한다. 자료집 발췌와 관련 요건은 직접 대조한 조문과 구별해 표시한다. 근거가 확인되지 않은 단계는 `basisStatus: "pending"`으로 남긴다. 숫자 확신도는 노드에 직접 근거와 산정 사유가 있을 때만 사용한다.
+
+자료집에서 자동 생성됐던 기관·절차 요약에는 `stakeholdersFromAuthorities`와 `procedureFromNodes`를 표시한다. 동기화 도구는 이 필드만 최신 기관·단계에서 다시 만든다.
+
+제도 JSON을 수정한 뒤 `python3 tools/build_docs.py`를 실행하면 매니페스트와 README의 조달 집계를 함께 갱신한다.
 `sources`에 없는 문서(RoD·MoU처럼 비공개인 것)는 링크 없이 평문으로 남는다 —
 **이것이 정상 동작이다.** 링크가 없다는 사실 자체가 "공개 원문이 없다"는 정보다.
 
@@ -242,6 +246,7 @@ interface Discrepancy {
   field: string;      // 필수. 불일치가 있는 canvas 경로
   sourceText: string; // 필수. 자료집의 서술 (원문 인용)
   actualText: string; // 필수. 법령 원문의 실제 내용
+  citationSources: Array<{ title: string; url: string; accessStatus?: "unavailable"; accessNote?: string }>; // 이 항목에서 직접 열 수 있는 명시적인 출처
   citation: string;   // 필수. 확인한 조문
   impact: string;     // 필수. 실무자에게 미치는 영향
 
@@ -369,7 +374,7 @@ interface Unresolved {
 
 ```ts
 related: string[];            // 필수. 관련 제도 slug
-fieldVerification: string[];  // 필수. 현장 검증 필요 항목. 없으면 []
+fieldVerification: Array<string | { item: string; question: string; status: "confirmed" | "pending" | "partial" | "refuted" }>;  // 필수. 현장 검증 필요 항목. 없으면 []
 ```
 
 ### 4.8 process (status="full"일 때 필수)
@@ -397,6 +402,10 @@ interface ProcessNode {
   output_documents?: string[];
   deadline?: string;
   blocker?: string | null;
+  actorScope?: "authority" | "role"; // 기관별 processNodes에 연결되거나 구체 기관을 확인 중인 역할
+  guideRef?: { path: string; start: number; end: number; excerpt: string }; // 국가별 자료집 발췌의 행 번호와 원문
+  requirementRefs?: string[]; // 같은 모델 articleAudit.requirements의 관련 요건
+  basisStatus?: "pending"; // 직접 연결한 출처·요건이 없는 단계
   confidence?: number;   // 0~1. <0.8이면 UI에 "현장 검증 필요"
   confidence_reason?: string; // 점수의 증거 수준·불확실성 설명
   legal_basis?: Array<{ law: string; article: string; url: string }>;

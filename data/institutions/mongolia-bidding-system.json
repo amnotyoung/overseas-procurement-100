@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "몽골 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "몽골 정부, 몽골 조달청(State Procurement Agency, SPA), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부, 정부조달청, 발주기관·평가위원회, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -47,18 +47,21 @@
       },
       {
         "name": "발주기관·평가위원회",
-        "role": "계획·입찰·평가·계약관리와 법정 공개를 수행한다."
+        "role": "계획·입찰·평가·계약관리와 법정 공개를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
-      "1. 법률 및 규정 요약 및 관련 당국에 제안서 제출",
-      "2. 법률, 프로그램, 프로젝트, 정부 결의 및 결정 등 모니터링 및 평가",
-      "3. 공공조달법 제7조(기본원칙), 제32조(공개입찰), 제33조(2단계 공개입찰)",
-      "4. 기술·사양이 복잡한 경우 2단계 입찰(기술·가격 분리 평가) 가능",
-      "5. 최소 3개 이상의 입찰 참가사의 입찰서류 제출 필수",
-      "6. 최저가 또는 가장 유리한 조건 제시 입찰사 선정",
-      "7. 기존 계약을 기반으로 추가 구매가 필요한 경우 허용",
-      "8. 계약 금액을 초과하지 않는 범위에서 수량이 증가하는 경우에만 체결 가능"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 발주기관·평가위원회 — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
+      "6. 평가·낙찰 · 발주기관·평가위원회 — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 몽골의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 및 외국인의 입찰 참가 요건(공공조달법 제8조 3항)",
     "submittedDocuments": [
@@ -79,7 +82,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -171,7 +176,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "구법 링크와 모호한 법률명을 제거하고 현행법·최신 표준문서 및 정량 절차를 조문 단위로 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
+            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+          },
+          {
+            "title": "Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement",
+            "url": "https://legalinfo.mn/mn/detail?lawId=17047839105111"
+          },
+          {
+            "title": "Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents",
+            "url": "https://legalinfo.mn/mn/detail?lawId=16960768160991"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -272,15 +291,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement",
-            "article": "Procurement Law arts.8.3, 10.2, 10.12~10.13, 14.1~14.2 and 42.1~42.2; Government Resolution No.02/2024 clauses 1~3",
-            "url": "https://legalinfo.mn/mn/detail?lawId=17047839105111"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -291,15 +304,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.19.1~19.2, 20.1~20.7, 23.1, 24.1~24.3, 32.3 and 34.4",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -310,20 +317,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.14.1~14.9, 18.3.8, 22.7 and 23.2.5~23.3",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          },
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.19.1~19.2, 20.1~20.7, 23.1, 24.1~24.3, 32.3 and 34.4",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -334,20 +330,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.19.1~19.2, 20.1~20.7, 23.1, 24.1~24.3, 32.3 and 34.4",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          },
-          {
-            "law": "Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement",
-            "article": "Procurement Law arts.8.3, 10.2, 10.12~10.13, 14.1~14.2 and 42.1~42.2; Government Resolution No.02/2024 clauses 1~3",
-            "url": "https://legalinfo.mn/mn/detail?lawId=17047839105111"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -356,17 +341,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "재무부",
+        "actor": "발주기관·평가위원회",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 272,
+          "end": 278,
+          "excerpt": "입찰서 접수 및 개찰 ∙ 입찰 개찰 - 공고된 일시 및 절차에 따라 전자시스템으로 개찰 - 개찰 시 입찰 가격 및 주요 사항 공개 ∙ 적격성 검토 - 입찰참가자격 및 제출서류의 적합성 검토 - 요건을 충족하지 못한 입찰서는 평가 대상에서 제외"
+        }
       },
       {
         "id": "P06",
@@ -375,17 +358,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "재무부",
+        "actor": "발주기관·평가위원회",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.19.1~19.2, 20.1~20.7, 23.1, 24.1~24.3, 32.3 and 34.4",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 285,
+          "end": 290,
+          "excerpt": "절차 내용 ∙ 낙찰자 결정 - 평가 결과에 따라 낙찰자 최종 결정 낙찰자 결정 및 결과 공지 ∙ 결과 공지 - 전자조달시스템을 통해 입찰 결과 공식 공지"
+        }
       },
       {
         "id": "P07",
@@ -396,15 +377,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "Procurement Law arts.39.3.4 and 42.1~42.10",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -446,7 +421,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

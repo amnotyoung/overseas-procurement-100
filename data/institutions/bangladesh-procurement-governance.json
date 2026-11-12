@@ -15,44 +15,38 @@
   },
   "canvas": {
     "purpose": "방글라데시의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "방글라데시 정부, 방글라데시 조달체계는 기획부(Ministry of Planning), 방글라데시 공공 조달 법안 (Bangladesh Public Procurement Rules), 년 후반에 공공 조달 법(Public Procurement Act), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority), 구매기관(Procuring Entity), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Public Procurement Act",
-        "kind": "act"
-      },
-      {
-        "law": "방글라데시 공공 조달관련 법률",
-        "kind": "act"
-      },
-      {
-        "law": "l 공공조달법",
-        "kind": "act"
       }
     ],
     "authorities": [
       {
         "name": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority)",
-        "role": "공공조달 법·규칙·표준문서, e-GP 운영·감독과 조달제도 개선을 담당한다."
+        "role": "공공조달 법·규칙·표준문서, e-GP 운영·감독과 조달제도 개선을 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "구매기관(Procuring Entity)",
-        "role": "PPA 2006(개정)·PPR 2025와 표준문서에 따라 조달계획, 공고, 평가와 계약관리를 수행한다."
+        "role": "PPA 2006(개정)·PPR 2025와 표준문서에 따라 조달계획, 공고, 평가와 계약관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 조달 관련 분쟁 시 최종 중재를 위한 Review Panel 구성 및 운영",
-      "2. 모든 공공조달이 규정에 맞게 이루어지는지 감독",
-      "3. (입찰 공고) 입찰 공고는 중앙조달청 웹사이트(cptu.gov.bd)나 발주처 웹사이트에 등록되기도 하나",
-      "4. 국제 입찰의 경우 영자 일간지에 영문으로 공고",
-      "5. (입찰서 제출) 입찰 공고는 개략적인 사항만을 적시하며 세부 사양은 모두 별도로 판매되는 입찰 설명서에",
-      "6. 조달계획 수립",
-      "7. 공고·전자조달 등록"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 구매기관(Procuring Entity) — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 방글라데시의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -73,7 +67,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -221,7 +217,17 @@
         },
         "id": "bangladesh-procurement-governance-D01",
         "sourcePage": "47-59",
-        "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계"
+        "sourceSection": "Ⅲ. 협력국 개발협력 조달시장 참여방안 - 조달관련 조직체계",
+        "citationSources": [
+          {
+            "title": "Public Procurement Rules 2025",
+            "url": "https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html"
+          },
+          {
+            "title": "Bangladesh e-Government Procurement system",
+            "url": "https://www.bppa.gov.bd/e-gp.html"
+          }
+        ]
       }
     ],
     "unresolved": []
@@ -248,15 +254,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "PPR 2025 standard tender documents",
-            "article": "PPR 2025 rr.90~94; current e-RFQ/e-PG2/e-PG3/e-PW2A/e-PW3 guidance",
-            "url": "https://bppa.gov.bd/standard-documents/standard-tender-document.html"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -265,17 +263,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "PPR 2025 standard tender documents",
-            "article": "PPR 2025 rr.90~94; current e-RFQ/e-PG2/e-PG3/e-PW2A/e-PW3 guidance",
-            "url": "https://bppa.gov.bd/standard-documents/standard-tender-document.html"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -284,17 +277,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority)",
+        "actor": "구매기관(Procuring Entity)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Bangladesh verified procurement instrument",
-            "article": "PPR 2025 rr.92, 123(7), 123(9)",
-            "url": "https://www.bppa.gov.bd/upload/standarddocument/2025-10-26-15-55-41-e-PW3A.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -305,15 +293,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Bangladesh verified procurement instrument",
-            "article": "PPR 2025 rr.92, 123(7), 123(9)",
-            "url": "https://www.bppa.gov.bd/upload/standarddocument/2025-10-26-15-55-41-e-PW3A.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -324,15 +304,8 @@
         "status": "risk",
         "actor": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act 2006, as amended, and Public Procurement Rules 2025",
-            "article": "PPR 2025 시행일 2025-09-28, 154개 규칙·21개 별표, e-GP 의무화와 주요 개정사항",
-            "url": "https://bppa.gov.bd/"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -341,17 +314,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Bangladesh verified procurement instrument",
-            "article": "PPA 2006 §§29~30; PPR 2025 rr.72~77",
-            "url": "https://bppa.gov.bd/review-panel/guideline-related-applications.html"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -362,15 +330,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Bangladesh verified procurement instrument",
-            "article": "PPR 2025 rr.36(1), 123(7); e-PW2A and e-PG3",
-            "url": "https://www.bppa.gov.bd/upload/standarddocument/2025-11-10-16-39-02-e-PW2A.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -412,7 +374,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

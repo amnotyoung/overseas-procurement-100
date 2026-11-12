@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "몽골 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "몽골 정부, 몽골 무상원조 수원총괄기관은 몽골 재무부(Ministry of Finance), 재무부에 사업제안서(PCP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부, 경제개발부·부문 실행기관, 정부·국회, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
@@ -47,7 +47,11 @@
     "authorities": [
       {
         "name": "재무부",
-        "role": "정부 외국차관·원조, 예산편입·채무·보증과 재정집행을 관리한다."
+        "role": "정부 외국차관·원조, 예산편입·채무·보증과 재정집행을 관리한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "경제개발부·부문 실행기관",
@@ -59,14 +63,13 @@
       }
     ],
     "procedure": [
-      "1. 각 부처에서 발굴한 사업에 대해 몽골 측 우선순위 부여 및 개발 전략 부합도 등 자체 검토를 거쳐",
-      "2. 관련 부처 및 기관은 사업 발굴·집행·성과보고를 담당하며, 재무부에",
-      "3. 재무부가 개발협력 사업의 모니터링 및 평가, 정보제공 및 기록, PCP 접수 및 검토, RD 체결 등을",
-      "4. 담당하나, ODA 사업에 대한 RD 및 MOU는 재무부 및 수원기관이 담당",
-      "5. 해외로부터 반입되는 기자재 등의 면세(부가세 및 관세 16.5%)를 받기 위해서는 재무부와의 RD 및",
-      "6. MOU가 필수적이며, RD 및 MOU 미체결 시 면세 불인정, 통관 지연 등의 리스크가 발생하므로",
-      "7. 무상원조사업 발굴은 각 시행기관이 해당 부처와 협의하여 발굴·형성하며, 해당 수원부처 혹은",
-      "8. 지방정부를 통해 재무부에 공식 사업요청서(PCP 포함)를 송부"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
+      "3. 국가 우선순위 검토 · 재무부 — 수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
+      "4. 공식 사업요청 · 재무부 — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · 해당 협정의 양측 서명권자 — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 몽골의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -87,7 +90,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -193,7 +198,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "구법 링크와 모호한 법률명을 제거하고 현행법·최신 표준문서 및 정량 절차를 조문 단위로 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
+            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
+          },
+          {
+            "title": "Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement",
+            "url": "https://legalinfo.mn/mn/detail?lawId=17047839105111"
+          },
+          {
+            "title": "Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents",
+            "url": "https://legalinfo.mn/mn/detail?lawId=16960768160991"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -275,7 +294,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -294,15 +313,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 79,
+          "end": 80,
+          "excerpt": "- 무상원조사업 발굴은 각 시행기관이 해당 부처와 협의하여 발굴·형성하며, 해당 수원부처 혹은 지방정부를 통해 재무부에 공식 사업요청서(PCP 포함)를 송부"
+        }
       },
       {
         "id": "P02",
@@ -313,53 +329,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 79,
+          "end": 80,
+          "excerpt": "- 무상원조사업 발굴은 각 시행기관이 해당 부처와 협의하여 발굴·형성하며, 해당 수원부처 혹은 지방정부를 통해 재무부에 공식 사업요청서(PCP 포함)를 송부"
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
         "actor": "재무부",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 81,
+          "end": 83,
+          "excerpt": "- 재무부는 각 정부 부처 및 기관으로부터 사업 요청서를 접수하고, Vision 2050 등 몽골 국가 개발계획 및 몽골 정부의 수원 기조와의 부합 여부, 재정 지속가능성, 중복 사업 여부 등을 종합적으로 검토한 후, 우선순위를 부여하여 KOICA에 사업을 요청"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "재무부",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 81,
+          "end": 83,
+          "excerpt": "- 재무부는 각 정부 부처 및 기관으로부터 사업 요청서를 접수하고, Vision 2050 등 몽골 국가 개발계획 및 몽골 정부의 수원 기조와의 부합 여부, 재정 지속가능성, 중복 사업 여부 등을 종합적으로 검토한 후, 우선순위를 부여하여 KOICA에 사업을 요청"
+        }
       },
       {
         "id": "P05",
@@ -370,15 +379,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 107,
+          "end": 111,
+          "excerpt": "- 정부 차원의 사업심사를 거쳐 예비조사 대상 사업 선정 5 ∙ 예비조사 실시 N-1년 6 ∙ 기획조사 실시 1~3분기"
+        }
       },
       {
         "id": "P06",
@@ -389,34 +395,29 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 109,
+          "end": 113,
+          "excerpt": "N-1년 6 ∙ 기획조사 실시 1~3분기 7 ∙ 사업 확정"
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재무부",
+        "actor": "해당 협정의 양측 서명권자",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)",
-            "article": "arts.1~3, 7~8, 10~11, 14, 18~24, 30, 32~38, 39~43, 48, 54~60 and 62; consolidated amendments through 2026-05-01",
-            "url": "https://legalinfo.mn/mn/detail?lawId=16760359992351"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/mongolia.txt",
+          "start": 63,
+          "end": 66,
+          "excerpt": "of Foreign Affairs)가 담당. 각 공여국과 체결하는 몽골 정부의 조약 또는 협정의 체결은 외교부가 담당하나, ODA 사업에 대한 RD 및 MOU는 재무부 및 수원기관이 담당 - 해외로부터 반입되는 기자재 등의 면세(부가세 및 관세 16.5%)를 받기 위해서는 재무부와의 RD 및 MOU가 필수적이며, RD 및 MOU 미체결 시 면세 불인정, 통관 지연 등의 리스크가 발생하므로"
+        }
       }
     ],
     "edges": [
@@ -458,7 +459,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

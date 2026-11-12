@@ -22,6 +22,8 @@ import re
 import shutil
 from pathlib import Path
 
+from procurement_evidence import REQUIREMENTS
+
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
 CONSTRUCTION_DIR = ROOT / "data" / "construction-regulations"
@@ -1123,19 +1125,49 @@ def source_urls(d: dict) -> dict:
     return m
 
 
-def cite_link(d: dict, text: str) -> str:
-    """근거 표기 안의 법령명을 원문 URL로 건다. 긴 이름부터 치환해 부분 겹침을 피한다."""
-    esc = e(text)
-    holders = {}
-    for i, (law, url) in enumerate(sorted(source_urls(d).items(), key=lambda kv: -len(kv[0]))):
-        lw = e(law)
-        if lw in esc:
-            key = f"\x00{i}\x00"
-            holders[key] = f'<a class="ref" href="{e(url)}" target="_blank" rel="noopener">{lw}</a>'
-            esc = esc.replace(lw, key, 1)
-    for k, val in holders.items():
-        esc = esc.replace(k, val)
-    return esc
+def citation_html(item: dict) -> str:
+    links = []
+    for ref in item.get("citationSources", []):
+        title = e(ref["title"])
+        label = title if ref.get("accessStatus") == "unavailable" else link(title, ref["url"])
+        if ref.get("accessNote"):
+            label += f' ({e(ref["accessNote"])})'
+        links.append(label)
+    return e(item["citation"]) + (" · " + " · ".join(links) if links else "")
+
+
+def field_item_html(item) -> str:
+    if isinstance(item, str):
+        return el(item)
+    labels = {"confirmed": "확인됨", "pending": "확인 대기",
+              "partial": "일부 확인", "refuted": "불일치 확인"}
+    return (f'<b>{e(item["item"])}</b> · {el(item["question"])} '
+            f'<span class="badge plain">{e(labels[item["status"]])}</span>')
+
+
+def procurement_node_sources(data: dict, node: dict) -> str:
+    parts = []
+    guide = node.get("guideRef")
+    if guide:
+        url = (f'https://github.com/amnotyoung/overseas-procurement-100/blob/main/'
+               f'{guide["path"]}#L{guide["start"]}-L{guide["end"]}')
+        parts.append(f'<dt>2026 자료집 발췌 · 당시 절차</dt><dd>{e(guide["excerpt"])} · '
+                     f'{link("국가별 원문 발췌", url)}</dd>')
+    requirements = data["verification"].get("articleAudit", {}).get("requirements", {})
+    for key in node.get("requirementRefs", []):
+        ref = requirements[key]
+        parts.append(f'<dt>관련 요건 · {e(REQUIREMENTS[key])}</dt>'
+                     f'<dd>{e(ref["finding"])} · {link(e(ref["articles"]), ref["evidenceUrl"])}</dd>')
+    if node.get("basisStatus") == "pending":
+        parts.append('<dt>단계별 근거</dt><dd>이 단계의 직접 근거는 추가 확인이 필요합니다.</dd>')
+    elif node.get("requirementRefs") and not (node.get("legal_basis") or guide):
+        parts.append('<dt>근거 범위</dt><dd>인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.</dd>')
+    if node.get("actorScope") == "role":
+        parts.append('<dt>담당 기관</dt><dd>역할 기준 표기 · 구체적인 관할기관은 확인이 필요합니다.</dd>')
+    for authority in data["canvas"]["authorities"]:
+        if node["id"] in authority.get("processNodes", []):
+            parts.append(f'<dt>기관 역할 · {e(authority["name"])}</dt><dd>{el(authority["role"])}</dd>')
+    return "".join(parts)
 
 
 FIELDCHECK_LABEL = {
@@ -1187,7 +1219,7 @@ def disc_card(d: dict, x: dict, *, link: str = "") -> str:
   </div>
   <h3>{e(x['field'])}</h3>
   <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
-  <p class="cite">확인 출처 · {cite_link(d, x['citation'])}</p>
+  <p class="cite">확인 출처 · {citation_html(x)}</p>
   <div class="todo"><b>실무 확인</b>{el(x['userAction'])}</div>
   {_review_html(x.get('review'))}
   {_fieldcheck_html(x.get('fieldCheck'))}
@@ -1915,7 +1947,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         board_title = "업무구조도"
         board_description = (
             "제도의 결정적 단계와 유의사항·회귀 구간을 강조해 표시합니다. "
-            "노드를 누르면 근거 조문과 기한이 열립니다."
+            "노드를 누르면 단계별 근거, 관련 요건과 추가 확인사항이 열립니다."
         )
 
     # 조문 대조 수
@@ -1988,6 +2020,8 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
                 tone = NODE_TONE.get(n["status"], "")
                 tag = {"key": "핵심", "warn": "유의", "back": "회귀"}.get(tone, "")
                 kind_tag = n.get("workflow_kind_label", "") if d["axis"] == "construction" else ""
+                if d["axis"] != "construction" and n.get("basisStatus") == "pending":
+                    kind_tag = "근거 확인 필요"
                 cell += f"""<button class="node" data-id="{e(n['id'])}"{f' data-tone="{tone}"' if tone else ''}>
   <span class="id"><span>{e(n.get('display_id') or n['id'])}</span><span class="tags">{f'<span class="kind-tag">{e(kind_tag)}</span>' if kind_tag else ''}{f'<span class="tag">{tag}</span>' if tag else ''}</span></span>
   <span class="nm">{e(n['name'])}</span></button>"""
@@ -2146,7 +2180,7 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
         for x in c["submittedDocuments"])
     bott = "".join(f"<li>{el(x)}</li>" for x in c["bottlenecks"])
     barr = "".join(f"<li>{el(x)}</li>" for x in c.get("entryBarriers", []))
-    fv = "".join(f"<li>{el(x)}</li>" for x in d["fieldVerification"])
+    fv = "".join(f"<li>{field_item_html(x)}</li>" for x in d["fieldVerification"])
     bottleneck_card = (
         f'<div class="card"><h3>유의사항 · 병목</h3><ul class="plain">{bott}</ul></div>'
         if d["axis"] != "construction" and bott else ""
@@ -2390,6 +2424,9 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
     node_view = {}
     for n in nodes:
         nv = dict(n)
+        if d["axis"] != "construction":
+            nv["procurement_evidence"] = procurement_node_sources(d, n)
+            nv.pop("guideRef", None)
         if d["axis"] == "construction":
             for internal_key in (
                 "blocker", "evidence_status", "report_use", "open_questions", "question_ids"
@@ -2889,6 +2926,7 @@ function openNode(id){{
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
   }}
+  if(n.procurement_evidence) h+=n.procurement_evidence;
   if(n.confidence_reason) h+='<dt>확신도 산정 근거</dt><dd>'+n.confidence_reason+'</dd>';
   if(n.evidence_status) h+='<dt>근거 상태</dt><dd>'+n.evidence_status+'</dd>';
   if(n.report_use) h+='<dt>보고서 반영</dt><dd>'+n.report_use+'</dd>';
@@ -3353,7 +3391,7 @@ def build_verification(items: list[dict]) -> str:
     <div class="stat bad"><b>{counts['high']}</b><span>필수 확인</span></div>
     <div class="stat"><b>{counts['medium']}</b><span>추가 확인</span></div>
     <div class="stat"><b>{counts['low']}</b><span>참고</span></div>
-    <div class="stat"><b>{len(allд)}</b><span>출처 연결</span></div>
+    <div class="stat"><b>{sum(bool(x.get("citationSources")) for _, x in allд)}</b><span>출처 연결</span></div>
   </div>
 </div></div>
 
@@ -3407,7 +3445,7 @@ def build_errata(items: list[dict]) -> str:
   </div>
   <h3>{e(x['field'])}</h3>
   <div class="quote act"><b>현행 기준</b>{el(x['actualText'])}</div>
-  <p class="cite">확인 출처 · {cite_link(d, x['citation'])}</p>
+  <p class="cite">확인 출처 · {citation_html(x)}</p>
   <p class="act-row">산출물 반영 — {el(x['action'])}</p>
   <p class="act-row"><a href="../model/{e(d['slug'])}/index.html">{e(d['name'])}</a> · {e(x['id'])}</p>
 </div>""")

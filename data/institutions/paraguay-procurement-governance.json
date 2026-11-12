@@ -50,11 +50,17 @@
       },
       {
         "name": "국가공공계약국(DNCP)",
-        "role": "조달규범·표준문서·SICP·전자입찰을 운영하고 사전검증, 계약모니터링, 이의·조사·제재를 담당한다."
+        "role": "조달규범·표준문서·SICP·전자입찰을 운영하고 사전검증, 계약모니터링, 이의·조사·제재를 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "발주기관·계약운영단위(UOC)",
-        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다."
+        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       },
       {
         "name": "외교부(MRE)·수원부처·KOICA",
@@ -218,7 +224,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "Decreto 9823 폐지를 반영하고 현행 Decreto 2264·2025 DNCP 결의로 정량요건을 갱신했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          },
+          {
+            "title": "Decreto N.º 2264/2024 reglamentario de la Ley 7021",
+            "url": "https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264"
+          },
+          {
+            "title": "Resolución DNCP N.º 234/2025, amended by N.º 3955/2025",
+            "url": "https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/"
+          }
+        ]
       },
       {
         "severity": "medium",
@@ -243,7 +263,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "STP 흡수 이후 현행 MEF VEP–DGCID·MRE 협력경로를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas",
+            "url": "https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas"
+          },
+          {
+            "title": "MEF international development cooperation mandate and Mapa de Cooperantes",
+            "url": "https://www.mef.gov.py/en/node/5023"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -368,15 +398,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.34, 37, 40~42 and 51; Decreto 2264 Arts.43, 53 and 74; Resolución DNCP 230/2025 Art.7",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -385,17 +407,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.34, 37, 40~42 and 51; Decreto 2264 Arts.43, 53 and 74; Resolución DNCP 230/2025 Art.7",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -404,17 +421,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
+        "actor": "발주기관·계약운영단위(UOC)",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -425,15 +437,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -442,17 +446,15 @@
         "stage": "G3 감독",
         "type": "task",
         "status": "risk",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
+        "actor": "국가공공계약국(DNCP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Arts.1~15, 33~51, 55~62, 71, 98, 112~129 and 156~160; scope, exclusions, institutions, methods, thresholds, international bidding, publication, securities, contract, SICP, protests and transition",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 180,
+          "end": 183,
+          "excerpt": "이용자 응대 및 - 공공조달국 역량강화 시스템 구축 및 시행 역량강화부 - 내부 및 기타 유관기관 공공조달 관련 역량 교육 지원 - 계약 수행 모든 단계에서 정보 요청, 일반 및 내부 감사에서 정보 교차 검증 계약검증부 - 조달 공급자 또는 계약자의 계약 의무 이행 검증"
+        }
       },
       {
         "id": "P06",
@@ -461,17 +463,11 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
-        "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Resolución DNCP N.º 234/2025, amended by N.º 3955/2025",
-            "article": "Ley 7021 Arts.127~131 and 156; Decreto 2264 Arts.188~198 and 220; Resolución DNCP 234/2025 Arts.54~67 as amended by 3955/2025",
-            "url": "https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actor": "이의 제기 단계별 관할기관 (아래 구제 절차 참조)",
+        "action": "PBC 이의는 소액입찰·사전공개 예외조달이면 제출·개찰 2영업일 전까지, 그 밖의 절차는 3영업일 전까지 STJE에 낸다. 결과 이의는 통지 후 7영업일이다. DNCP는 접수 후 5영업일 안에 적격 여부를 판단하고 개시 후 최대 35영업일 안에 결정한다. 이의 개시는 절차를 정지하며 발주기관의 공익상 계속요청은 3영업일 안에 판단한다. 재심결정으로 행정절차가 종료되고 18영업일 안에 행정소송을 제기할 수 있다.",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -482,15 +478,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Art.71; Decreto 2264 Art.119; Resolución DNCP 230/2025 Arts.46 and 172",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -532,7 +522,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

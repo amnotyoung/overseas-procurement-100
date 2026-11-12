@@ -15,16 +15,12 @@
   },
   "canvas": {
     "purpose": "에콰도르 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "에콰도르 정부, 에콰도르 공공조달청 (SERCOP), 전자공공조달시스템(SOCE), 국가 공공조달 시스템 기본법(LOSNCP), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "국가공공조달서비스청(SERCOP), 개별 계약기관, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중남미)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "공공조달 관련 법률",
-        "kind": "act"
       },
       {
         "law": "Ley Orgánica del Sistema Nacional de Contratación Pública — reforma vigente de 7 de octubre de 2025",
@@ -42,7 +38,11 @@
       },
       {
         "name": "개별 계약기관",
-        "role": "필요성·예산·입찰서류를 준비하고 공고·평가·낙찰·계약관리를 수행한다."
+        "role": "필요성·예산·입찰서류를 준비하고 공고·평가·낙찰·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       }
     ],
     "procedure": [
@@ -73,7 +73,8 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true
   },
   "sourceRefs": [
     {
@@ -174,7 +175,21 @@
         },
         "id": "ecuador-bidding-system-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
+            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
+          },
+          {
+            "title": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
+            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
+          },
+          {
+            "title": "Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP",
+            "url": "https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -275,15 +290,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
-            "article": "LOSNCP arts.42~50, especially arts.42, 43~48 and 50",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -294,15 +303,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
-            "article": "Reglamento General arts.91 and 96",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -313,20 +316,7 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
-            "article": "LOSNCP arts.29, 33 and 84~89",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
-          },
-          {
-            "law": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
-            "article": "Reglamento General arts.91 and 96",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P04",
@@ -337,20 +327,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
-            "article": "Reglamento General arts.91 and 96",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
-          },
-          {
-            "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
-            "article": "LOSNCP arts.42~50, especially arts.42, 43~48 and 50",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -359,17 +338,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "국가공공조달서비스청(SERCOP)",
+        "actor": "개별 계약기관",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
-            "article": "arts.1~2, 29, 33, 38, 42~50, 58~60, 84~87, 115~116; disposiciones transitorias primera, tercera y cuarta; disposición final",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -378,17 +350,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "국가공공조달서비스청(SERCOP)",
+        "actor": "개별 계약기관",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356",
-            "article": "Reglamento General arts.91 and 96",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -399,15 +364,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025",
-            "article": "LOSNCP arts.84~87, especially arts.85~86",
-            "url": "https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -449,7 +408,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

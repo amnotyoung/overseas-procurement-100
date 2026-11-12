@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "요르단 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "요르단 정부, 각 수요기관에 수요조사 후 조달 (RFQ), 최종 예산은 요르단 전자 조달 시스템(JONEPS), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "정부조달정책위원회(PPC), 정부입찰부(GTD)·중앙조달기관, 개별 조달기관, 조달이의위원회(PCC), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(중동·CIS)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Government Procurement By-law No. 8",
-        "kind": "act"
-      },
-      {
-        "law": "헌법에서 법률",
-        "kind": "act"
-      },
-      {
-        "law": "특정 법률",
-        "kind": "act"
       },
       {
         "law": "Government Procurement By-law No. 8 of 2022",
@@ -54,7 +42,11 @@
       },
       {
         "name": "개별 조달기관",
-        "role": "기관 수요·계획·평가·계약관리를 수행한다."
+        "role": "기관 수요·계획·평가·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "조달이의위원회(PCC)",
@@ -62,14 +54,13 @@
       }
     ],
     "procedure": [
-      "1. 일반 물품 입찰 ∙ 공개 입찰에 의한 조달(모든 공급업체 대상)",
-      "2. 상용물품에 대해 GPD가 견적요청 ∙ 공급업체로부터 견적서를 접수하여 평가 후 업체",
-      "3. 일부 공급업체를 대상으로 견적서를 접수하여 평가",
-      "4. 50만JD ∙ 서비스 단독입찰/ ∙ 공급업체가 1개 또는 긴급한 구매인 경우",
-      "5. 이상 조달 건 - 청소, 컨설팅, 보안서비스 등 수의계약 GPD(수요기관)의 직접 계약에 의한 조달",
-      "6. 조달 2단계 입찰 ∙ 先 공급업체 선정, 後 세부 과업 및 가격 협의",
-      "7. 건축, 도로, 상하수도, 전기 ∙ 일부 공급업체를 대상으로 입찰 초청에 의한 조달",
-      "8. 기계 제한 입찰 - PQ(Pre-Qualification) 공고 후 심사하여 조달"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 개별 조달기관 — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
+      "6. 평가·낙찰 · 개별 조달기관 — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 요르단의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 및 외국인의 입찰 참가 요건(입찰법 제3조 및 15조)",
     "submittedDocuments": [
@@ -90,7 +81,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -191,7 +184,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "절차·시스템의 기관 오인을 제거하고 PPC·PCC·GTD·조달기관 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Government Procurement By-law No. 8 of 2022, as amended",
+            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
+          },
+          {
+            "title": "Current Government Procurement By-law and Instructions register",
+            "url": "https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -300,15 +303,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.39(e), 59 and 61~67",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -319,15 +316,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.27~28, 36, 51 and 53",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -338,20 +329,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.24(9), 28~29 and 35(b)(2); 2022 Procedure Instructions arts.13 and 15~16",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          },
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.27~28, 36, 51 and 53",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -362,20 +342,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.27~28, 36, 51 and 53",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          },
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.39(e), 59 and 61~67",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -384,17 +353,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "정부조달정책위원회(PPC)",
+        "actor": "개별 조달기관",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "arts.1, 3, 21, 24, 27~29, 36, 39~46, 50~53, 59~67, 82~92 and current arts.112~115; Annexes 1 and 4",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/jordan.txt",
+          "start": 186,
+          "end": 187,
+          "excerpt": "공고(JONEPS) → 질의 응답 → 제출(전자 입찰) → 평가 → 대기 및 이의 제기 → 계약 * 2026년 1월부터 모든 입찰 개찰 과정 실시간 중계 (오디오/비디오)"
+        }
       },
       {
         "id": "P06",
@@ -403,17 +370,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "정부조달정책위원회(PPC)",
+        "actor": "개별 조달기관",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Government Procurement By-law No. 8 of 2022, as amended",
-            "article": "By-law arts.27~28, 36, 51 and 53",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/middle-east-cis/jordan.txt",
+          "start": 186,
+          "end": 187,
+          "excerpt": "공고(JONEPS) → 질의 응답 → 제출(전자 입찰) → 평가 → 대기 및 이의 제기 → 계약 * 2026년 1월부터 모든 입찰 개찰 과정 실시간 중계 (오디오/비디오)"
+        }
       },
       {
         "id": "P07",
@@ -424,15 +389,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Instructions for Regulating Government Procurement Procedures of 2022",
-            "article": "By-law art.36(d); 2022 Procedure Instructions arts.15(c)~(f) and 17",
-            "url": "https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5772"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -474,7 +433,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

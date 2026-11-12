@@ -15,24 +15,12 @@
   },
   "canvas": {
     "purpose": "우간다 자료집에 기재된 공개·제한·지명·직접구매 등 조달방식과 입찰 참여요건을 한 흐름으로 정리한다.",
-    "stakeholders": "우간다 정부, 우간다 공공조달청 (PPDA: Public Procurement and Disposal, 국가 조달법(PPDA Act), 조달 (Legal and Board Affairs), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "공공조달·공공자산처분청(PPDA), 조달·처분기관의 회계책임자·계약위원회·조달부서, 전자정부조달시스템(eGP), 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "Public Procurement and Disposal of Public Assets Act",
-        "kind": "act"
-      },
-      {
-        "law": "Public Procurement and Disposal of Public Assets (Contracts",
-        "kind": "act"
-      },
-      {
-        "law": "National Building (Building Standards) Code",
-        "kind": "act"
       },
       {
         "law": "Public Procurement and Disposal of Public Assets Act, Cap. 205",
@@ -50,7 +38,11 @@
       },
       {
         "name": "조달·처분기관의 회계책임자·계약위원회·조달부서",
-        "role": "기관별 계획·입찰·평가·승인·계약관리를 수행한다."
+        "role": "기관별 계획·입찰·평가·승인·계약관리를 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "전자정부조달시스템(eGP)",
@@ -58,14 +50,13 @@
       }
     ],
     "procedure": [
-      "1. 조달 관련 법령 해석, 계약 검토, 분쟁 대응, 법률 자문 수행",
-      "2. 국가 조달법(PPDA Act) 개정 검토, 규정 제·개정 자문, 계약 문서 검토, 조달",
-      "3. 조달 성과 분석, 정책 이행 점검, 조달 규정 준수 여부 평가",
-      "4. 각 정부 부처·지방정부·공공기관이 자체 조달부서를 통해 입찰 진행",
-      "5. 입찰규모 22만미불(또는 8억 UGX) 초과, 반공개입찰 원칙(예외사항 제외)",
-      "6. 사전 적격심사에 통과한 입찰자 대상으로 시행",
-      "7. 입찰의향서(Expressions of Interest: EOIs)에 기반하여 용역계약에 주로 활용",
-      "8. 지명입찰 ∙ 기술역량이 가격보다 중요시되며, 유사 사업 수행실적이 가장 큰 영향을 미침"
+      "1. 조달계획·방식 결정 · 발주기관 — 발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
+      "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
+      "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
+      "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
+      "5. 개찰·적격심사 · 조달·처분기관의 회계책임자·계약위원회·조달부서 — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
+      "6. 평가·낙찰 · 조달·처분기관의 회계책임자·계약위원회·조달부서 — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다. (단계 근거 확인 필요)",
+      "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 우간다의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 및 외국인의 입찰 참가 요건(입찰법 제53조 및 62조)",
     "submittedDocuments": [
@@ -86,7 +77,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -197,7 +190,13 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "법령·내부기능의 기관 오인을 제거하고 최신 인용명과 규제·집행·전자시스템 역할을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "PPDA Act, Cap.205 — 7th Revised Edition",
+            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -306,15 +305,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Guideline No.1/2025 — Thresholds",
-            "article": "PPDA Act Cap.205 ss.82~90 and 131; Rules and Methods Regulations 2023 reg.6(2); Consultancy Regulations 2023 reg.6(2); Guideline 1/2025 cls.1~4",
-            "url": "https://www.ppda.go.ug/?dl=4172"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -325,15 +318,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "PPDA Regulations, 2023",
-            "article": "Rules and Methods Regulations 2023 bidding provisions; Consultancy Regulations 2023 reg.42; Administrative Review Regulations 2023 regs.4~9",
-            "url": "https://www.ppda.go.ug/ppda-regulations/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -344,20 +331,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Guideline No.3/2026 — Securities",
-            "article": "Rules and Methods Regulations 2023 reg.63(2); Consultancy Regulations 2023 reg.47(2); Guideline 3/2026 cls.2~2.3",
-            "url": "https://www.ppda.go.ug/?dl=7092"
-          },
-          {
-            "law": "PPDA Regulations, 2023",
-            "article": "Rules and Methods Regulations 2023 bidding provisions; Consultancy Regulations 2023 reg.42; Administrative Review Regulations 2023 regs.4~9",
-            "url": "https://www.ppda.go.ug/ppda-regulations/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -368,20 +344,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "PPDA Regulations, 2023",
-            "article": "Rules and Methods Regulations 2023 bidding provisions; Consultancy Regulations 2023 reg.42; Administrative Review Regulations 2023 regs.4~9",
-            "url": "https://www.ppda.go.ug/ppda-regulations/"
-          },
-          {
-            "law": "Guideline No.1/2025 — Thresholds",
-            "article": "PPDA Act Cap.205 ss.82~90 and 131; Rules and Methods Regulations 2023 reg.6(2); Consultancy Regulations 2023 reg.6(2); Guideline 1/2025 cls.1~4",
-            "url": "https://www.ppda.go.ug/?dl=4172"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -390,17 +355,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "공공조달·공공자산처분청(PPDA)",
+        "actor": "조달·처분기관의 회계책임자·계약위원회·조달부서",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "PPDA Act, Cap.205 — 7th Revised Edition",
-            "article": "기관·적용·방식·행정심사·Tribunal·지침 권한과 2024 재번호화",
-            "url": "https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/uganda.txt",
+          "start": 115,
+          "end": 117,
+          "excerpt": "∙ 각 정부 부처·지방정부·공공기관이 자체 조달부서를 통해 입찰 진행 ∙ 개찰 후 적격여부 판단 방식으로 진행 공개입찰"
+        }
       },
       {
         "id": "P06",
@@ -409,17 +372,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "공공조달·공공자산처분청(PPDA)",
+        "actor": "조달·처분기관의 회계책임자·계약위원회·조달부서",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "PPDA Regulations, 2023",
-            "article": "Rules and Methods Regulations 2023 bidding provisions; Consultancy Regulations 2023 reg.42; Administrative Review Regulations 2023 regs.4~9",
-            "url": "https://www.ppda.go.ug/ppda-regulations/"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -430,15 +386,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Guideline No.3/2026 — Securities",
-            "article": "Contracts Regulations 2023 regs.11~12; Guideline 3/2026 cls.3~4",
-            "url": "https://www.ppda.go.ug/?dl=7092"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -480,7 +430,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

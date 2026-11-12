@@ -15,20 +15,12 @@
   },
   "canvas": {
     "purpose": "에티오피아의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "에티오피아 정부, 에티오피아 재무부(Ministry of Finance), 월 제정된 신규 조달법 (Proclamation No. 133/2024), 재무부(MoF), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "연방공공조달·재산청(FPPA), 재무부, 연방 공공기관, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
         "lawKo": "KOICA 참여전략 자료집",
         "kind": "donor-rule"
-      },
-      {
-        "law": "월 제정된 신규 조달법",
-        "kind": "act"
-      },
-      {
-        "law": "신규 조달법",
-        "kind": "act"
       },
       {
         "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
@@ -42,7 +34,10 @@
     "authorities": [
       {
         "name": "연방공공조달·재산청(FPPA)",
-        "role": "연방 공공조달·재산관리의 독립 규제기관으로 법규준수·감독과 전자조달 체계를 담당한다."
+        "role": "연방 공공조달·재산관리의 독립 규제기관으로 법규준수·감독과 전자조달 체계를 담당한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "재무부",
@@ -50,18 +45,20 @@
       },
       {
         "name": "연방 공공기관",
-        "role": "조달계획·공고·평가·계약체결과 자산관리를 수행한다."
+        "role": "조달계획·공고·평가·계약체결과 자산관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. Public Procurement and Property Authority)이 조달 정책을 총괄함",
-      "2. 국영기업(SOE)을 포함한 모든 연방 공공기관의 조달 및 자산 처분을 감독함",
-      "3. 공공입찰시장의 경우, 신규 조달법에 따라 전자조달(e-GP) 시스템 사용이 의무화됨",
-      "4. 전자조달(e-GP)시스템의 의무화 확대와 까다로운 입찰 요구서류는 한국 기업으로 하여금 진입장벽으로",
-      "5. 현재 45개의 사업이 진행 중이며, 해당 자금(161억 5천만 불)은 △분쟁 지역 사회 △농업 및 토지 관리",
-      "6. 거버넌스 강화, 분쟁 피해 지역 복구, 보건 서비스 복원, 성별 폭력 피해자 심리 지원, 난민 및 실향민의",
-      "7. 발전 △평화 증진·분쟁 예방이며 2025년 기준 총 지원액은 약 7,200만 불로, 이 중 △개발협력이 약",
-      "8. 귀환하지 못하고 있으며, 암하라 지역 세력과 에리트레아군의 점령이 지속되어 분쟁 재발 위험이"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 연방 공공기관 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 연방공공조달·재산청(FPPA) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 에티오피아의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 국제입찰 : 변동환율제 도입(2024.7)으로 인한 외화 부족 심화로 결제 통화 비중과 LC 개설 가능 여부",
     "submittedDocuments": [
@@ -82,7 +79,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -167,7 +166,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "법령번호를 정정하고 법령의 기관 오인을 제거해 FPPA·재무부·조달기관 역할을 분리했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
+            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
+          },
+          {
+            "title": "Federal Government Public Procurement Directive No. 1073/2025",
+            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -260,15 +269,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive arts.53~55, 63~64; Proclamation arts.33 and 35",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -277,17 +278,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "연방공공조달·재산청(FPPA)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive arts.53~55, 63~64; Proclamation arts.33 and 35",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -296,17 +292,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "연방공공조달·재산청(FPPA)",
+        "actor": "연방 공공기관",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -317,15 +308,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.109 and Annex 6; Proclamation arts.74~76 and 81",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -336,15 +319,13 @@
         "status": "risk",
         "actor": "연방공공조달·재산청(FPPA)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 251,
+          "end": 253,
+          "excerpt": "(Proclamation No. 133/2024)에 따라 기존 ‘국(Agency)’에서 ‘청(Authority)‘으로 격상되었으며, 국영기업(SOE)을 포함한 모든 연방 공공기관의 조달 및 자산 처분을 감독함. 일정 규모 이상의 국제입찰(ICB) 진행시 FPPA의 사전 승인이 필요하며, 2025년부터는 전다조달 시스템(e-GP)사용이 모든 연방 기관에"
+        }
       },
       {
         "id": "P06",
@@ -353,17 +334,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "연방공공조달·재산청(FPPA)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "Proclamation arts.73~81; Directive arts.152~163",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -374,15 +350,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Federal Government Public Procurement Directive No. 1073/2025",
-            "article": "Directive art.136",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -424,7 +394,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

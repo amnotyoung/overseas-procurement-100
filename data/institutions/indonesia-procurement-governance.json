@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "인도네시아의 조달 총괄기관, 발주기관, 전자조달·공고 채널, 감독·분쟁 기능의 역할 관계를 정리한다.",
-    "stakeholders": "인도네시아 정부, 공공조달청 (National Public Procurement Agency, LKPP), 에 의해 지정되어 조달 관련 의사결정 및 계약체결을 담당 (PPK), 인도네시아 정부조달 참여를 위해서는 원칙적으로 현지 법인(PT PMA), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "정부조달정책원(LKPP), 예산사용자·계약담당관(PA/KPA·PPK) 및 조달작업반, 발주기관, 입찰자",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아시아 및 태평양)",
@@ -34,22 +34,27 @@
     "authorities": [
       {
         "name": "정부조달정책원(LKPP)",
-        "role": "정부조달 정책·규범·전자조달 생태계와 역량·감독을 총괄한다."
+        "role": "정부조달 정책·규범·전자조달 생태계와 역량·감독을 총괄한다.",
+        "processNodes": [
+          "P05"
+        ]
       },
       {
         "name": "예산사용자·계약담당관(PA/KPA·PPK) 및 조달작업반",
-        "role": "기관별 조달계획, 공급자 선정, 의사결정과 계약체결·관리를 수행한다."
+        "role": "기관별 조달계획, 공급자 선정, 의사결정과 계약체결·관리를 수행한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 정부 조직도 : 공공조달청 (National Public Procurement Agency, LKPP)",
-      "2. 소속 : 대통령 직속조직이나 국가개발계획부와 협력함",
-      "3. 각종 공공조달 정책, 규정, 시행 상의 관리 감독",
-      "4. 각 부처에 설립되어 있으며, 조달 업무 수행을 총괄 및 조달 절차 전반에 대한",
-      "5. 조달 규정에 따라 예산이 집행되도록 관리 및 감독",
-      "6. 개별기관의 입찰위원회를 통해 입찰준비 전 과정을 관리·감독함",
-      "7. 인도네시아 정부의 공식 전자입찰 시스템으로, 공공조달 입찰 공고부터 질의응답, 입찰서 제출 및",
-      "8. 정부기관이 직접 구매할 수 있도록 하는 전자조달 플랫폼임"
+      "1. 조달계획 수립 · 발주기관 — 발주기관이 예산과 사업수요를 조달계획으로 구체화한다. (단계 근거 확인 필요)",
+      "2. 조달방식·서류 검토 · 해당 조달의 방식·서류 심사기관 — 조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
+      "3. 공고·전자조달 게시 · 예산사용자·계약담당관(PA/KPA·PPK) 및 조달작업반 — 지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
+      "4. 입찰 집행·기록 · 발주기관 — 발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다. (단계 근거 확인 필요)",
+      "5. 절차 감독·감사 · 정부조달정책원(LKPP) — 감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다. (단계 근거 확인 필요)",
+      "6. 이의·분쟁 처리 · 해당 심급의 이의심사기관 — 입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
+      "7. 계약관리·공개 · 발주기관 — 발주기관이 계약 이행·변경·검수·지급 기록을 관리한다."
     ],
     "applicability": "자료집에 기재된 인도네시아의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -70,7 +75,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -179,7 +186,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "기관·직무·참가요건을 분리하고 2025년 현행 개정 및 외국차관·무상원조 경과규정을 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018",
+            "url": "https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025"
+          },
+          {
+            "title": "Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah",
+            "url": "https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -320,15 +337,7 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 예산과 사업수요를 조달계획으로 구체화한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah",
-            "article": "Consolidated Perpres arts.38, 41, 63 and 65",
-            "url": "https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P02",
@@ -337,17 +346,12 @@
         "stage": "G1 계획",
         "type": "gateway",
         "status": "waiting",
-        "actor": "정부조달정책원(LKPP)",
+        "actor": "해당 조달의 방식·서류 심사기관",
         "action": "조달 총괄 또는 내부 승인기관이 방식과 입찰서류의 규정 적합성을 확인한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah",
-            "article": "Consolidated Perpres arts.38, 41, 63 and 65",
-            "url": "https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P03",
@@ -356,17 +360,12 @@
         "stage": "G2 공고·집행",
         "type": "system",
         "status": "current",
-        "actor": "정부조달정책원(LKPP)",
+        "actor": "예산사용자·계약담당관(PA/KPA·PPK) 및 조달작업반",
         "action": "지정된 전자조달·공고 채널에 입찰정보를 등록·공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Peraturan LKPP Nomor 12 Tahun 2021 — Pedoman Pelaksanaan Pengadaan melalui Penyedia, as amended",
-            "article": "PerLKPP 12/2021 Lampiran I §§4.1.1 and 4.2.12~4.2.13; Lampiran II §§4.1 and 4.2.12~4.2.13",
-            "url": "https://jdih.lkpp.go.id/regulation/peraturanlkpp/peraturan-lkpp-nomor-12-tahun-2021"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P04",
@@ -377,15 +376,7 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 제출·개찰·평가·낙찰 과정을 집행하고 기록을 남긴다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Peraturan LKPP Nomor 12 Tahun 2021 — Pedoman Pelaksanaan Pengadaan melalui Penyedia, as amended",
-            "article": "PerLKPP 12/2021 Lampiran I §§4.1.1 and 4.2.12~4.2.13; Lampiran II §§4.1 and 4.2.12~4.2.13",
-            "url": "https://jdih.lkpp.go.id/regulation/peraturanlkpp/peraturan-lkpp-nomor-12-tahun-2021"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "basisStatus": "pending"
       },
       {
         "id": "P05",
@@ -396,15 +387,8 @@
         "status": "risk",
         "actor": "정부조달정책원(LKPP)",
         "action": "감독·감사기관이 법규 준수, 투명성, 부정행위 여부를 점검한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah",
-            "article": "arts.2, 30~33, 38, 41, 50, 59~61, 63, 65, 77 and 92~93",
-            "url": "https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -413,17 +397,12 @@
         "stage": "G4 구제·관리",
         "type": "gateway",
         "status": "risk",
-        "actor": "정부조달정책원(LKPP)",
+        "actor": "해당 심급의 이의심사기관",
         "action": "입찰자의 이의·불만을 정해진 기관과 절차에 따라 심사한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Peraturan LKPP Nomor 12 Tahun 2021 — Pedoman Pelaksanaan Pengadaan melalui Penyedia, as amended",
-            "article": "Consolidated Perpres arts.30, 32, 50 and 77; PerLKPP 12/2021 Lampiran I and II §§4.2.12~4.2.13",
-            "url": "https://jdih.lkpp.go.id/regulation/peraturanlkpp/peraturan-lkpp-nomor-12-tahun-2021"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "role",
+        "requirementRefs": [
+          "complaints"
+        ]
       },
       {
         "id": "P07",
@@ -434,15 +413,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "발주기관이 계약 이행·변경·검수·지급 기록을 관리한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah",
-            "article": "Consolidated Perpres arts.30~31 and 33",
-            "url": "https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -484,7 +457,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

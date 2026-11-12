@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "에티오피아 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "에티오피아 정부, 에티오피아 수원체계는 재정부(MoF, Ministry of Finance), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부 경제협력 부문, 기획개발부·부문 실행기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -38,7 +38,11 @@
     "authorities": [
       {
         "name": "재무부 경제협력 부문",
-        "role": "양자·다자 외부재원과 원조를 동원·협상하고 개발파트너 관계·협정 이행·원조효과성을 조정한다."
+        "role": "양자·다자 외부재원과 원조를 동원·협상하고 개발파트너 관계·협정 이행·원조효과성을 조정한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "기획개발부·부문 실행기관",
@@ -46,13 +50,13 @@
       }
     ],
     "procedure": [
-      "1. 원조사업 발굴 및 반영 소요기간은 통상 N-2년 기준을 따르고 있으며 재정부와는 정례협의회 등을",
-      "2. 통해서 사업발굴 및 사업진행 현황 점검 등을 논의하고 있으며, 그 절차는 아래와 같음",
-      "3. 절 차 원조사업 발굴 및 반영 절차(소요기간 : N-2년 기준)",
-      "4. 사업제안서를 검토 후 서면으로 KOICA에 요청",
-      "5. 사업제안서 정례협의회를 통해 검토 및 우선순위 부여 후 본부 송부",
-      "6. 사업수요 발굴",
-      "7. PCP 작성"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
+      "3. 국가 우선순위 검토 · 재무부 경제협력 부문 — 수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
+      "4. 공식 사업요청 · 재무부 경제협력 부문 — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · 해당 협정의 양측 서명권자 — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 에티오피아의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -73,7 +77,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -174,7 +180,17 @@
         },
         "id": "ethiopia-oda-project-pipeline-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "Ministry of Finance bilateral-cooperation mandate",
+            "url": "https://www.mofed.gov.et/ministry-en/directorates/bilateral-cooperation-directorate/"
+          },
+          {
+            "title": "Ministry of Finance international-financial-institutions cooperation mandate",
+            "url": "https://www.mofed.gov.et/ministry-en/directorates/international-financial-institutions-co-operation-directorate/"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -248,7 +264,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -267,15 +283,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 27,
+          "end": 29,
+          "excerpt": "∙ 에티오피아 관계부처 - 재정부는 관계부처와 협의를 통해서 사업제안서 접수"
+        }
       },
       {
         "id": "P02",
@@ -286,53 +299,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 27,
+          "end": 29,
+          "excerpt": "∙ 에티오피아 관계부처 - 재정부는 관계부처와 협의를 통해서 사업제안서 접수"
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
         "actor": "재무부 경제협력 부문",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 30,
+          "end": 35,
+          "excerpt": "∙ 에티오피아 재정부 - 사업제안서를 검토 후 서면으로 KOICA에 요청 ∙ 공관 및 사무소 - 사업제안서 정례협의회를 통해 검토 및 우선순위 부여 후 본부 송부"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "재무부 경제협력 부문",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 31,
+          "end": 32,
+          "excerpt": "- 사업제안서를 검토 후 서면으로 KOICA에 요청"
+        }
       },
       {
         "id": "P05",
@@ -343,15 +349,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 38,
+          "end": 41,
+          "excerpt": "- 우선순위에 따라 예비조사 대상 사업 선정 ∙ 본부 - 예비조사 실시 후 최종 사업 선정"
+        }
       },
       {
         "id": "P06",
@@ -362,34 +365,29 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 40,
+          "end": 42,
+          "excerpt": "- 예비조사 실시 후 최종 사업 선정 ∙ 사무소"
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재무부 경제협력 부문",
+        "actor": "해당 협정의 양측 서명권자",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Federal Public Procurement and Property Administration Proclamation No. 1333/2024",
-            "article": "arts.3~4, 9~12, 32~36, 52, 73~81 and 87~91",
-            "url": "https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "role",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ethiopia.txt",
+          "start": 43,
+          "end": 44,
+          "excerpt": "- 관계부처 간 양해 각서 체결 후 사업 실시"
+        }
       }
     ],
     "edges": [
@@ -431,7 +429,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

@@ -54,7 +54,11 @@
       },
       {
         "name": "발주기관·계약운영단위(UOC)",
-        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다."
+        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다.",
+        "processNodes": [
+          "P05",
+          "P06"
+        ]
       },
       {
         "name": "외교부(MRE)·수원부처·KOICA",
@@ -218,7 +222,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "Decreto 9823 폐지를 반영하고 현행 Decreto 2264·2025 DNCP 결의로 정량요건을 갱신했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          },
+          {
+            "title": "Decreto N.º 2264/2024 reglamentario de la Ley 7021",
+            "url": "https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264"
+          },
+          {
+            "title": "Resolución DNCP N.º 234/2025, amended by N.º 3955/2025",
+            "url": "https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/"
+          }
+        ]
       },
       {
         "severity": "medium",
@@ -243,7 +261,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "STP 흡수 이후 현행 MEF VEP–DGCID·MRE 협력경로를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas",
+            "url": "https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas"
+          },
+          {
+            "title": "MEF international development cooperation mandate and Mapa de Cooperantes",
+            "url": "https://www.mef.gov.py/en/node/5023"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -368,15 +396,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 적용 규정과 사업 규모에 맞는 조달방식을 결정한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.34, 37, 40~42 and 51; Decreto 2264 Arts.43, 53 and 74; Resolución DNCP 230/2025 Art.7",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "thresholds"
+        ]
       },
       {
         "id": "P02",
@@ -387,15 +409,9 @@
         "status": "current",
         "actor": "발주기관",
         "action": "발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P03",
@@ -406,20 +422,9 @@
         "status": "risk",
         "actor": "입찰자",
         "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Art.51; Decreto 2264 Art.74; Resolución DNCP 230/2025 Arts.7~8",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          },
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "bidSecurity"
+        ]
       },
       {
         "id": "P04",
@@ -430,20 +435,9 @@
         "status": "waiting",
         "actor": "입찰자",
         "action": "입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          },
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.34, 37, 40~42 and 51; Decreto 2264 Arts.43, 53 and 74; Resolución DNCP 230/2025 Art.7",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "deadlines"
+        ]
       },
       {
         "id": "P05",
@@ -452,17 +446,10 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
+        "actor": "발주기관·계약운영단위(UOC)",
         "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Arts.1~15, 33~51, 55~62, 71, 98, 112~129 and 156~160; scope, exclusions, institutions, methods, thresholds, international bidding, publication, securities, contract, SICP, protests and transition",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P06",
@@ -471,17 +458,10 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "경제재정부(MEF)·국가공공계약국(DNCP)",
+        "actor": "발주기관·계약운영단위(UOC)",
         "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Arts.47~50 and 61; Decreto 2264 Arts.61, 65~73 and 105; Resolución DNCP 230/2025 Arts.39 and 169",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "actorScope": "authority",
+        "basisStatus": "pending"
       },
       {
         "id": "P07",
@@ -492,15 +472,9 @@
         "status": "waiting",
         "actor": "발주기관",
         "action": "낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다.",
-        "confidence": 0.9,
-        "legal_basis": [
-          {
-            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
-            "article": "Ley 7021 Art.71; Decreto 2264 Art.119; Resolución DNCP 230/2025 Arts.46 and 172",
-            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
-          }
-        ],
-        "confidence_reason": "강화 검증에서 확인한 해당 요건의 공식 조문과 직접 연결"
+        "requirementRefs": [
+          "performanceSecurity"
+        ]
       }
     ],
     "edges": [
@@ -542,7 +516,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

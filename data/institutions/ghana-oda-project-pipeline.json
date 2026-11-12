@@ -15,7 +15,7 @@
   },
   "canvas": {
     "purpose": "가나 수원부처의 사업수요가 수원총괄기관 검토, KOICA 조사·심사, 정부 간 공식화로 이어지는 흐름을 정리한다.",
-    "stakeholders": "가나 정부, 재무부(Ministry of Finace, MoF), 수원체계 총괄기관은 재무부(MoF), 국가개발계획위원회(National Development Planning Commission, NDPC), 발주·수원부처, 국내외 입찰자, KOICA",
+    "stakeholders": "재무부 대외재원동원국(양자·다자), 국가개발계획위원회(NDPC)·부문 실행기관, 수원부처, KOICA",
     "legalBasis": [
       {
         "law": "KOICA 2026 국가별 개발협력사업 참여전략 자료집(아프리카)",
@@ -50,21 +50,27 @@
     "authorities": [
       {
         "name": "재무부 대외재원동원국(양자·다자)",
-        "role": "정부를 대신해 외부재원을 조달하고 양자·다자 개발협력, 협정·거래·포트폴리오와 ODA 기록을 총괄한다."
+        "role": "정부를 대신해 외부재원을 조달하고 양자·다자 개발협력, 협정·거래·포트폴리오와 ODA 기록을 총괄한다.",
+        "processNodes": [
+          "P04"
+        ]
       },
       {
         "name": "국가개발계획위원회(NDPC)·부문 실행기관",
-        "role": "국가개발계획 정합성·우선순위와 사업제안·준비·실행을 담당한다."
+        "role": "국가개발계획 정합성·우선순위와 사업제안·준비·실행을 담당한다.",
+        "processNodes": [
+          "P03"
+        ]
       }
     ],
     "procedure": [
-      "1. 경제 및 사회 개발정책 조정 프로그램 (The Coordinated Programme of Economic and Social",
-      "2. 사업 발굴 정부부처, 지방정부 등과 협의를 통해 사업수요 발굴 상시",
-      "3. 사업 제안 발굴된 사업수요에 따라 수원총괄기관인 재무부를 통해 사업제안 N-2년",
-      "4. 제안 검토 사업제안 검토를 거쳐 승인된 사업에 한하여 예비조사 실시 N-2년",
-      "5. 사업 확정 예비조사 및 사업심사위원회 결과에 따라 최종 사업 선정 N-2년",
-      "6. 사업 기획 기획조사 실시 및 집행계획 수립, 수원기관과 RD 체결 등 N-1 ~ N년",
-      "7. 사업 착수 RD 체결 이후 주가나한국대사관과 가나 외교부 간 구상서를 교환하고 사업 착수 N년"
+      "1. 수요 발굴 · 수원부처 — 수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
+      "2. PCP·요청서 작성 · 수원부처 — 발굴한 사업수요를 제안서로 정리해 재무부를 통해 제안한다.",
+      "3. 국가 우선순위 검토 · 국가개발계획위원회(NDPC)·부문 실행기관 — 국가개발계획위원회의 개발계획과 사업 수요의 정합성을 검토한다.",
+      "4. 공식 사업요청 · 재무부 대외재원동원국(양자·다자) — 수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
+      "5. 예비조사·타당성 검토 · KOICA — KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
+      "6. 기획·사업 확정 · KOICA — 조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
+      "7. RD·MOU 공식화 · KOICA · 수원기관 — KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다."
     ],
     "applicability": "자료집에 기재된 가나의 공공조달 또는 개발협력 사업을 대상으로 한다.",
     "submittedDocuments": [
@@ -85,7 +91,9 @@
     ],
     "entryBarriers": [
       "외국 기업의 등록·인허가·현지어·현지대리인 요건은 개별 공고와 담당 기관에서 확인해야 한다."
-    ]
+    ],
+    "stakeholdersFromAuthorities": true,
+    "procedureFromNodes": true
   },
   "sourceRefs": [
     {
@@ -189,7 +197,21 @@
         },
         "id": "ghana-oda-project-pipeline-D01",
         "sourcePage": "",
-        "sourceSection": ""
+        "sourceSection": "",
+        "citationSources": [
+          {
+            "title": "가나 재무부 양자 대외재원동원국의 법적 권한",
+            "url": "https://www.mofep.gov.gh/node/242"
+          },
+          {
+            "title": "가나 재무부 양자 대외재원동원국의 기능",
+            "url": "https://mofep.gov.gh/index.php/divisions/erm-b/functions"
+          },
+          {
+            "title": "Public Financial Management Act, 2016 (Act 921)",
+            "url": "https://mofep.gov.gh/sites/default/files/acts/PUBLIC-FINANCIAL-MANAGEMENT-ACT-2016.pdf"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -279,7 +301,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -298,15 +320,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 72,
+          "end": 72,
+          "excerpt": "사업 발굴 정부부처, 지방정부 등과 협의를 통해 사업수요 발굴 상시"
+        }
       },
       {
         "id": "P02",
@@ -316,54 +335,47 @@
         "type": "task",
         "status": "current",
         "actor": "수원부처",
-        "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "action": "발굴한 사업수요를 제안서로 정리해 재무부를 통해 제안한다.",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 73,
+          "end": 73,
+          "excerpt": "사업 제안 발굴된 사업수요에 따라 수원총괄기관인 재무부를 통해 사업제안 N-2년"
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "재무부 대외재원동원국(양자·다자)",
-        "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actor": "국가개발계획위원회(NDPC)·부문 실행기관",
+        "action": "국가개발계획위원회의 개발계획과 사업 수요의 정합성을 검토한다.",
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 57,
+          "end": 59,
+          "excerpt": "- 재무부(Ministry of Finace, MoF) - 수원체계 총괄기관은 재무부(MoF)이나 국가 차원의 개발계획 및 정책 등은 대통령 직속기관인 국가개발계획위원회(National Development Planning Commission, NDPC)가 담당"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
         "actor": "재무부 대외재원동원국(양자·다자)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 73,
+          "end": 73,
+          "excerpt": "사업 제안 발굴된 사업수요에 따라 수원총괄기관인 재무부를 통해 사업제안 N-2년"
+        }
       },
       {
         "id": "P05",
@@ -374,15 +386,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 74,
+          "end": 74,
+          "excerpt": "제안 검토 사업제안 검토를 거쳐 승인된 사업에 한하여 예비조사 실시 N-2년"
+        }
       },
       {
         "id": "P06",
@@ -393,34 +402,28 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 75,
+          "end": 76,
+          "excerpt": "사업 확정 예비조사 및 사업심사위원회 결과에 따라 최종 사업 선정 N-2년 사업 기획 기획조사 실시 및 집행계획 수립, 수원기관과 RD 체결 등 N-1 ~ N년"
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "재무부 대외재원동원국(양자·다자)",
+        "actor": "KOICA · 수원기관",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139",
-            "article": "ss.14, 34A~45, 50, 55, 65, 78~81 and 96; Act 914 amendment text",
-            "url": "https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/africa/ghana.txt",
+          "start": 76,
+          "end": 77,
+          "excerpt": "사업 기획 기획조사 실시 및 집행계획 수립, 수원기관과 RD 체결 등 N-1 ~ N년 사업 착수 RD 체결 이후 주가나한국대사관과 가나 외교부 간 구상서를 교환하고 사업 착수 N년"
+        }
       }
     ],
     "edges": [
@@ -462,7 +465,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }

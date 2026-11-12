@@ -46,7 +46,11 @@
     "authorities": [
       {
         "name": "경제재정부(MEF)",
-        "role": "국가공공공급체계 정책과 재정·기획을 총괄하고, VEP–DGCID를 통해 MRE와 무상 국제협력을 조정한다."
+        "role": "국가공공공급체계 정책과 재정·기획을 총괄하고, VEP–DGCID를 통해 MRE와 무상 국제협력을 조정한다.",
+        "processNodes": [
+          "P03",
+          "P04"
+        ]
       },
       {
         "name": "국가공공계약국(DNCP)",
@@ -218,7 +222,21 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "Decreto 9823 폐지를 반영하고 현행 Decreto 2264·2025 DNCP 결의로 정량요건을 갱신했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          },
+          {
+            "title": "Decreto N.º 2264/2024 reglamentario de la Ley 7021",
+            "url": "https://www.contrataciones.gov.py/buscador/marco-legal.html?nro_nombre=2264"
+          },
+          {
+            "title": "Resolución DNCP N.º 234/2025, amended by N.º 3955/2025",
+            "url": "https://www.contrataciones.gov.py/dncp/tramites-juridicos-electronicos/normativa-ley-7021-2022/"
+          }
+        ]
       },
       {
         "severity": "medium",
@@ -243,7 +261,17 @@
           "priority": "정정 요망",
           "state": "not-reported",
           "suggestedText": "STP 흡수 이후 현행 MEF VEP–DGCID·MRE 협력경로를 반영했다."
-        }
+        },
+        "citationSources": [
+          {
+            "title": "Ley N.º 7158/2023 que crea el Ministerio de Economía y Finanzas",
+            "url": "https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-y-finanzas"
+          },
+          {
+            "title": "MEF international development cooperation mandate and Mapa de Cooperantes",
+            "url": "https://www.mef.gov.py/en/node/5023"
+          }
+        ]
       }
     ],
     "unresolved": [],
@@ -349,7 +377,7 @@
   "process": {
     "lanes": [
       "수원부처",
-      "수원총괄기관",
+      "사업 조정·협정 당사자",
       "KOICA"
     ],
     "stages": [
@@ -368,15 +396,12 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 국가계획과 분야 우선순위에 맞는 개발협력 수요를 발굴한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 72,
+          "end": 75,
+          "excerpt": "l 파라과이 경제재정부는 파라과이 국가개발계획, 원조 공여국의 국별협력전략 및 사업 발굴 가이드라인 등을 고려, 정부 부처 및 지방정부, 공공기관으로부터 사업 요청서를 접수하여 부합성 및 우선순위를 검토하여 공여기관이 정한 공식 사업요청서를 송부하는 절차로 진행됨."
+        }
       },
       {
         "id": "P02",
@@ -387,53 +412,46 @@
         "status": "current",
         "actor": "수원부처",
         "action": "수원부처가 사업목표·범위·예산·수행체계를 사업요청서로 구체화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 73,
+          "end": 75,
+          "excerpt": "등을 고려, 정부 부처 및 지방정부, 공공기관으로부터 사업 요청서를 접수하여 부합성 및 우선순위를 검토하여 공여기관이 정한 공식 사업요청서를 송부하는 절차로 진행됨."
+        }
       },
       {
         "id": "P03",
         "name": "국가 우선순위 검토",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "gateway",
         "status": "risk",
-        "actor": "경제재정부 경제기획차관실 국제개발협력총국(VEP–DGCID)",
+        "actor": "경제재정부(MEF)",
         "action": "수원총괄기관이 국가전략 부합성, 중복, 재정·운영 지속가능성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 79,
+          "end": 81,
+          "excerpt": "② 경제재정부(MEF), 사업부처가 제출한 원조사업 수요 검토 - 승인하는 사업수요는 공식의견과 함께 외교부로 이관 - 반려하는 사업수요는 각 사업부처에 결과 통보"
+        }
       },
       {
         "id": "P04",
         "name": "공식 사업요청",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G2 공식요청",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제재정부 경제기획차관실 국제개발협력총국(VEP–DGCID)",
+        "actor": "경제재정부(MEF)",
         "action": "수원총괄기관이 우선순위 사업을 공식 문서로 KOICA에 요청한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "actorScope": "authority",
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 104,
+          "end": 106,
+          "excerpt": "- 파라과이 경제재정부의 공식 사업요청서 제출 후 파라과이 국가개발계획, 원조 공여국의 국별협력전략 및 사업 발굴 가이드라인 등을 고려하여 공여 기관과의 협의 검토를 통해 타당성 조사 대상 사업이 선정됨. 이후 필요 시 외부전문가 조사단을 활용하여 사업부처와 타당성 조사를 실시 검토하고, 조사"
+        }
       },
       {
         "id": "P05",
@@ -444,15 +462,12 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "KOICA와 수원기관이 현지조사와 협의를 통해 사업 타당성을 검토한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 104,
+          "end": 108,
+          "excerpt": "- 파라과이 경제재정부의 공식 사업요청서 제출 후 파라과이 국가개발계획, 원조 공여국의 국별협력전략 및 사업 발굴 가이드라인 등을 고려하여 공여 기관과의 협의 검토를 통해 타당성 조사 대상 사업이 선정됨. 이후 필요 시 외부전문가 조사단을 활용하여 사업부처와 타당성 조사를 실시 검토하고, 조사 결과를 외교부 및 경제재정부와 공유하며 조사 결과에 따라 분담사항 명시 등을 위해 협의회의록을 서명함. 이후 공여 기관 내부 절차에 따라 신규사업 확정 단계로 진행"
+        }
       },
       {
         "id": "P06",
@@ -463,34 +478,28 @@
         "status": "waiting",
         "actor": "KOICA",
         "action": "조사 결과를 사업계획으로 고도화하고 심사·예산 절차를 거쳐 확정한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 110,
+          "end": 114,
+          "excerpt": "l 신규사업 확정 및 공식화 절차 - 공여기관 내부 절차에 따라 신규사업 확정시, 공여 기관과 사업부처 간 상호 이행계획과 분담사항을 확정하고, 무상원조에 관한 기본협정에 근거하여 협의의사록(R/D) 체결을 통해 사업 공식화함 * 2011.1.3. 대한민국 정부와 파라과이공화국 정부 간의 무상원조에 관한 기본협정(FRAMEWORK AGREEMENT ON"
+        }
       },
       {
         "id": "P07",
         "name": "RD·MOU 공식화",
-        "lane": "수원총괄기관",
+        "lane": "사업 조정·협정 당사자",
         "stage": "G4 공식화",
         "type": "notice",
         "status": "waiting",
-        "actor": "경제재정부 경제기획차관실 국제개발협력총국(VEP–DGCID)",
+        "actor": "공여기관 · 사업부처",
         "action": "KOICA와 수원국 관계기관이 RD·MOU 등 합의문으로 역할과 조건을 공식화한다.",
-        "confidence": 0.85,
-        "legal_basis": [
-          {
-            "law": "MEF international development cooperation mandate and Mapa de Cooperantes",
-            "article": "Current VEP–DGCID/MRE coordination of non-reimbursable cooperation, project-demand channel and alignment with the 2025 PND Paraguay 2050",
-            "url": "https://www.mef.gov.py/en/node/5023"
-          }
-        ],
-        "confidence_reason": "현행 공식 원문의 적용범위·절차 조문과 연결"
+        "guideRef": {
+          "path": "sources/koica-2026/latin-america/paraguay.txt",
+          "start": 112,
+          "end": 114,
+          "excerpt": "- 공여기관 내부 절차에 따라 신규사업 확정시, 공여 기관과 사업부처 간 상호 이행계획과 분담사항을 확정하고, 무상원조에 관한 기본협정에 근거하여 협의의사록(R/D) 체결을 통해 사업 공식화함 * 2011.1.3. 대한민국 정부와 파라과이공화국 정부 간의 무상원조에 관한 기본협정(FRAMEWORK AGREEMENT ON"
+        }
       }
     ],
     "edges": [
@@ -532,7 +541,6 @@
       }
     ],
     "warnings": [
-      "자료집 기재사항을 구조화한 1차 다이어그램이며 현행 법령 조문 대조 전이다.",
       "개별 입찰·사업 착수 전 담당 기관에 절차, 서류, 기한을 재확인해야 한다."
     ]
   }
