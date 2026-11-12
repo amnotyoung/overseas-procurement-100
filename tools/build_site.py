@@ -2357,7 +2357,13 @@ def build_detail(d: dict, items: list[dict], *, standalone: bool = False) -> str
 
     writing_title, writing_use, writing_check = WRITING_SECTIONS[d["axis"]]
     unresolved_steps = sum(n.get("basisStatus") == "pending" for n in nodes)
-    remaining = [f"실무 필수 확인 {hi}건", f"직접 근거 확인 대기 {unresolved_steps}단계"] if d["axis"] != "construction" else [f"현행성 추가 확인 {currentness_issues}개 자료"]
+    if d["axis"] == "construction":
+        remaining = [f"현행성 추가 확인 {currentness_issues}개 자료"]
+    else:
+        remaining = [f"실무 필수 확인 {hi}건", f"근거 미연결 {unresolved_steps}단계"]
+        requirements_only = sum(bool(n.get("requirementRefs")) and not (n.get("guideRef") or n.get("legal_basis")) for n in nodes)
+        if requirements_only:
+            remaining.append(f"개별 요건만 연결 {requirements_only}단계")
     field_count = len(d["fieldVerification"])
     body = f"""
 {subnav}
