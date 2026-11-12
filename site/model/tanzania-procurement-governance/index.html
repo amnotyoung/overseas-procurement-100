@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>탄자니아 조달 거버넌스·감독체계 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,6 +136,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -222,6 +229,10 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -463,7 +474,7 @@ footer.site a{color:var(--muted)}
   <a class="brand" href="../../index.html">그 나라, 조달하고 건축하려면?</a>
   <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
-    <a href="../../index.html">제도 대장</a>
+    <a href="../../index.html?country=tanzania#results">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
     <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -472,6 +483,7 @@ footer.site a{color:var(--muted)}
 
 
 <div class="subnav"><div class="wrap">
+  <a id="catalog-return" href="../../index.html?country=tanzania#results">탄자니아 목록으로 돌아가기</a>
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px"><option value="tanzania-bidding-system">01 · 탄자니아 입찰제도</option><option value="tanzania-procurement-governance" selected>02 · 탄자니아 조달 거버넌스</option><option value="tanzania-oda-project-pipeline">03 · 탄자니아 ODA 사업형성</option><option value="tanzania-site-urban-construction-regulations">04 · 탄자니아 도시계획·부지규제</option><option value="tanzania-permit-environment-construction-regulations">05 · 탄자니아 건축허가·환경심사</option><option value="tanzania-control-completion-construction-regulations">06 · 탄자니아 기술검사·보험·준공제도</option></select>
   <a class="btn" href="../tanzania-bidding-system/index.html" style="text-decoration:none">← 이전</a>
@@ -479,31 +491,35 @@ footer.site a{color:var(--muted)}
   <span class="pos">전체 제도 215/267 · 이 국가 2/6</span>
 </div></div>
 
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge plain muted">NO 02</span>
     <span class="badge plain muted">탄자니아 · Tanzania</span>
     <span class="badge plain muted">조달 거버넌스</span>
     <span class="badge ok">조문 대조 완료</span>
 
-    <span class="badge bad">확인사항 1건</span>
+
   </div>
   <h1>탄자니아 조달 거버넌스·감독체계</h1>
   <p class="one">재정기획부 산하 공공조달규제청(PPRA)이 표준·정책·전자조달(NeST)·모니터링을 관장하는 감독체계로, 2023년 새 조달법이 가격상한 권한 등을 신설함</p>
+
+  <div class="scope-note"><b>대조 범위</b> PPA 2023 §§1–5, 8–10, 38, 49–86, 112–125, 131과 PPR 2024 regs.1, 9–11, 23–30, 64–65, 78, 107–109, 150–166, 238 및 Sixth·Ninth–Eleventh Schedules를 확인했다.<br><b>확인일</b> 2026-07-23 · 실무 필수 확인 1건 · 근거 미연결 0단계 · 개별 요건만 연결 2단계<br>
+    <a href="#sources">검증·출처 보기</a></div>
+  <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>10</b><span>절차 노드</span></div>
 
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>4</b><span>게이트</span></div>
-    <div class="tile ok"><b>17</b><span>대조 조문</span></div>
+    <div class="tile ok"><b>4</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항 (필수 확인 1)</span></div>
 
-    <div class="tile warn"><b>2</b><span>ODA 적용 확인</span></div>
+    <div class="tile warn"><b>2</b><span>등록된 사업별 확인 항목</span></div>
   </div>
 </div>
 
 <div class="wrap">
-<section class="blk">
+<section class="blk" id="practice">
   <div class="hd-row">
     <div>
       <h2>업무구조도</h2>
@@ -550,7 +566,7 @@ footer.site a{color:var(--muted)}
   <h2>한 장 캔버스</h2>
   <p class="desc">공공조달 정책·표준을 중앙에서 통일하고 법 이행을 모니터링하되, 규제기관(PPRA)이 개별 발주기관의 집행과 분리돼 자문·감독·데이터공표·점검을 수행함으로써 조달의 투명성과 책무성을 확보한다.</p>
   <div class="cards">
-    <div class="card span2"><h3>절차</h3><ol class="steps"><li>PPRA가 조달·공급 원칙을 정부·지방정부·법정기관에 자문 (§10(a))</li><li>법무장관실·전문기관과 협력해 표준입찰서류·양식 제정·갱신·발급 (§10(d))</li><li>법 시행 가이드라인 발급 (§10(f))</li><li>국가전자조달시스템(NeST) 운영 — 조달기회·낙찰 데이터 공표 (§10(g))</li><li>발주기관이 NeST를 통해 조달 집행, 회계책임관이 결정 책임 (§38)</li><li>PPRA가 발주기관 기록·절차 정기 점검 (§10(h))</li><li>PPRA가 낙찰·이행을 모니터링해 공정·적법성 확보 (§10(i))</li><li>가격상한(price cap) 설정·적용 — 신설 권한 (§74)</li><li>입찰자 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 상소</li><li>PPRA가 조달 성과를 정부에 보고, 개선 자문 (§10(b))</li></ol></div>
+    <div class="card span2"><h3>절차</h3><p><button class="btn" id="copy-steps" type="button">단계 목록 복사</button> <small role="status" id="copy-status"></small></p><ol class="steps" id="readable-steps"><li>PPRA가 조달·공급 원칙을 정부·지방정부·법정기관에 자문 (§10(a))</li><li>법무장관실·전문기관과 협력해 표준입찰서류·양식 제정·갱신·발급 (§10(d))</li><li>법 시행 가이드라인 발급 (§10(f))</li><li>국가전자조달시스템(NeST) 운영 — 조달기회·낙찰 데이터 공표 (§10(g))</li><li>발주기관이 NeST를 통해 조달 집행, 회계책임관이 결정 책임 (§38)</li><li>PPRA가 발주기관 기록·절차 정기 점검 (§10(h))</li><li>PPRA가 낙찰·이행을 모니터링해 공정·적법성 확보 (§10(i))</li><li>가격상한(price cap) 설정·적용 — 신설 권한 (§74)</li><li>입찰자 이의는 발주기관 → 공공조달상소청(PPAA) 경로로 상소</li><li>PPRA가 조달 성과를 정부에 보고, 개선 자문 (§10(b))</li></ol></div>
 
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">탄자니아의 모든 공공기관 조달에 적용된다. PPRA는 규제·감독기관이며, 개별 조달의 집행은 발주기관과 회계책임관이 담당한다. PPRA의 운영지원·역량강화자문·모니터링컴플라이언스·정보시스템·법무공보 부서가 관련 기능을 나눠 수행한다.</p></div>
     <div class="card"><h3>법적 근거</h3><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></span><span class="ar">§8(PPRA 설립), §9(목적), §10(기능), §38(회계책임관), §74(가격상한), §131(폐지)</span></div><div class="law-meta"><span class="badge plain muted">법률</span></div></div><div class="law"><div class="law-copy"><span class="nm"><a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</a></span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">시행규칙</span></div></div><div class="law"><div class="law-copy"><span class="nm">국가전자조달시스템(NeST) 운영 근거</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">지침·정책</span></div></div></div>
@@ -570,47 +586,14 @@ footer.site a{color:var(--muted)}
 
 
 
-<section class="blk">
-  <h2>법령 원문</h2>
-  <p class="desc">현장에서 발주처에 그대로 제시할 수 있는 조문 원문입니다. 우리 요약이 아니라 verbatim이며,
-    조문 번호를 누르면 원문 문서로 이동합니다. 한국어 요지 아래로 직역(참고용)을 펼칠 수 있습니다.</p>
-  <div class="quotes"><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§8(1)</a></span>
-    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
-  </div>
-  <div class="qtext">There shall continue to exist an Authority known as the Public Procurement Regulatory Authority.</div>
-  <p class="qgist">PPRA는 PPA 2023 아래 계속 존속하며 현행 법정 기능을 수행한다.</p>
-  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">공공조달규제청(PPRA)이라는 기관을 계속 존속시킨다.</p></details>
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§10(g)</a></span>
-    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
-  </div>
-  <div class="qtext">organise and maintain a system for the publication of data on public procurement opportunities, awards and any other information of public interest as may be determined by the Authority;</div>
-  <p class="qgist">PPRA는 조달기회·낙찰 데이터를 공표하는 시스템(NeST)을 운영한다.</p>
-  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">PPRA가 정하는 바에 따라 공공조달 기회·낙찰 및 그 밖의 공익 정보를 공표하는 시스템을 조직·운영한다.</p></details>
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§10(h)</a></span>
-    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
-  </div>
-  <div class="qtext">conduct periodic inspections of the records and proceedings of procuring entities to ensure full and correct application of this Act;</div>
-  <p class="qgist">PPRA는 발주기관의 기록·절차를 정기 점검한다 — 감독기관이지 집행기관이 아니다.</p>
-  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">이 법의 완전하고 정확한 적용을 보장하기 위해 발주기관의 기록과 절차를 정기적으로 점검한다.</p></details>
-</div><div class="qc">
-  <div class="qhd">
-    <span class="qart"><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§74 (definition)</a></span>
-    <span class="badge plain muted">Public Procurement Act, No. 10 of 2023</span>
-  </div>
-  <div class="qtext">&quot;price cap&quot; means an established minimum and maximum price which shall be charged for particular goods, works or services;</div>
-  <p class="qgist">가격상한은 PPRA가 특정 물품·공사·용역의 최소·최대 가격을 정하는 제도다.</p>
-  <details><summary>한국어 직역(참고 — 공식 번역 아님)</summary><p class="qko">&#x27;가격상한(price cap)&#x27;이란 특정 물품·공사·용역에 부과되는, 정해진 최소·최대 가격을 말한다.</p></details>
-</div></div>
-</section>
+<section class="blk" id="sources"><h2>검증·출처</h2>
 
-<section class="blk">
-  <h2>현행 기준 반영 1건</h2>
+<details class="source-fold"><summary>법령 원문과 판본 · 4개 발췌</summary>
+  <p class="desc">판본과 개정 상태를 먼저 확인하세요. 조문 번호를 누르면 발췌한 원문을 열 수 있습니다.</p>
+  <div class="quotes"><article class="qc"><div><strong>2023년 법률 제10호 영문판 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§8(1)</a> · Public Procurement Act, No. 10 of 2023</p><div class="qtext">There shall continue to exist an Authority known as the Public Procurement Regulatory Authority.</div><p class="qgist">PPRA는 PPA 2023 아래 계속 존속하며 현행 법정 기능을 수행한다.</p><details><summary>한국어 직역</summary><p class="qko">공공조달규제청(PPRA)이라는 기관을 계속 존속시킨다.</p></details></div><small>원문 확인 2026-07-28</small></article><article class="qc"><div><strong>2023년 법률 제10호 영문판 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§10(g)</a> · Public Procurement Act, No. 10 of 2023</p><div class="qtext">organise and maintain a system for the publication of data on public procurement opportunities, awards and any other information of public interest as may be determined by the Authority;</div><p class="qgist">PPRA는 조달기회·낙찰 데이터를 공표하는 시스템(NeST)을 운영한다.</p><details><summary>한국어 직역</summary><p class="qko">PPRA가 정하는 바에 따라 공공조달 기회·낙찰 및 그 밖의 공익 정보를 공표하는 시스템을 조직·운영한다.</p></details></div><small>원문 확인 2026-07-28</small></article><article class="qc"><div><strong>2023년 법률 제10호 영문판 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§10(h)</a> · Public Procurement Act, No. 10 of 2023</p><div class="qtext">conduct periodic inspections of the records and proceedings of procuring entities to ensure full and correct application of this Act;</div><p class="qgist">PPRA는 발주기관의 기록·절차를 정기 점검한다 — 감독기관이지 집행기관이 아니다.</p><details><summary>한국어 직역</summary><p class="qko">이 법의 완전하고 정확한 적용을 보장하기 위해 발주기관의 기록과 절차를 정기적으로 점검한다.</p></details></div><small>원문 확인 2026-07-28</small></article><article class="qc"><div><strong>2023년 법률 제10호 영문판 · 모델 확인일 기준 시행본</strong><p><a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">§74 (definition)</a> · Public Procurement Act, No. 10 of 2023</p><div class="qtext">&quot;price cap&quot; means an established minimum and maximum price which shall be charged for particular goods, works or services;</div><p class="qgist">가격상한은 PPRA가 특정 물품·공사·용역의 최소·최대 가격을 정하는 제도다.</p><details><summary>한국어 직역</summary><p class="qko">&#x27;가격상한(price cap)&#x27;이란 특정 물품·공사·용역에 부과되는, 정해진 최소·최대 가격을 말한다.</p></details></div><small>원문 확인 2026-07-28</small></article></div>
+</details>
+
+<details class="source-fold"><summary>현행 기준 반영 1건 · 필수 확인 1건</summary>
   <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
     출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="high">
@@ -619,7 +602,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <span class="badge plain muted">D01</span>
   </div>
-  <h3>canvas.legalBasis / PPRA 근거 법령의 현행 여부</h3>
+  <h3>PPRA 근거 법령의 현행 여부</h3>
   <div class="quote act"><b>현행 기준</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, No. 10 of 2023 §8, §74, §131(1) · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></p>
   <div class="todo"><b>실무 확인</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
@@ -633,10 +616,9 @@ footer.site a{color:var(--muted)}
 
   <p class="act-row">산출물 반영 — PPA 2023과 PPR 2024를 기준으로 PPRA 기능을 §10에 맞춰 정리하고 가격상한(§74)과 NeST 전자조달 요건을 반영했다.</p>
 </div>
-</section>
+</details>
 
-<section class="blk">
-  <h2>검증</h2>
+<details class="source-fold"><summary>검증 방법과 전체 출처</summary>
   <p class="desc">PPRA·재무부 공식 공표본에서 PPA 2023과 PPR 2024의 시행·개정·폐지 상태, PPRA·PPAA 권한, NeST 의무, 정량요건·보증·이의·예외를 조문과 부속표 단위로 대조했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
@@ -650,6 +632,7 @@ footer.site a{color:var(--muted)}
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 관할·필지·시설에 따른 사업 적용판정은 별도입니다.
   </p>
+</details>
 </section>
 </div>
 
@@ -667,8 +650,66 @@ footer.site a{color:var(--muted)}
 var NODES={"P01":{"id":"P01","name":"조달원칙 자문·가이드라인","lane":"PPRA","stage":"G0 표준·정책","type":"task","status":"done","actor":"PPRA","action":"정부·지방정부·법정기관에 조달원칙 자문, 가이드라인 발급.","confidence":0.85,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(a), §10(f)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P01"},"P02":{"id":"P02","name":"표준입찰서류 제정","lane":"PPRA","stage":"G0 표준·정책","type":"task","status":"done","actor":"PPRA","action":"법무장관실·전문기관과 협력해 표준입찰서류·양식 제정·발급.","output_documents":["표준입찰서류"],"confidence":0.85,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(d)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P02"},"P03":{"id":"P03","name":"NeST 운영·데이터 공표","lane":"PPRA","stage":"G0 표준·정책","type":"system","status":"current","actor":"PPRA","action":"국가전자조달시스템(NeST) 운영, 조달기회·낙찰 데이터 공표.","confidence":0.75,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(g)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"공식 조문은 연결했으나 세부 적용·운영 범위에 남은 불확실성을 반영한 보수적 점수","procurement_evidence":"","display_id":"P03"},"P04":{"id":"P04","name":"발주기관 조달 집행","lane":"발주 공공기관","stage":"G1 집행","type":"task","status":"current","actor":"발주 공공기관·회계책임관","action":"NeST로 조달을 집행하고, 회계책임관이 조달 결정 책임을 진다.","confidence":0.8,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§38","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P04"},"P05":{"id":"P05","name":"가격상한 적용","lane":"PPRA","stage":"G1 집행","type":"gateway","status":"risk","actor":"PPRA","action":"특정 물품·서비스의 최소·최대 가격상한을 설정·적용. 신설 권한.","confidence":0.7,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§74","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"공식 조문은 연결했으나 세부 적용·운영 범위에 남은 불확실성을 반영한 보수적 점수","procurement_evidence":"","display_id":"P05"},"P06":{"id":"P06","name":"정기 점검","lane":"PPRA","stage":"G2 점검","type":"task","status":"waiting","actor":"PPRA","action":"발주기관 기록·절차를 정기 점검해 법 적용의 완전성·정확성 확인.","confidence":0.85,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(h)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P06"},"P07":{"id":"P07","name":"낙찰·이행 모니터링","lane":"PPRA","stage":"G2 점검","type":"task","status":"waiting","actor":"PPRA","action":"낙찰·이행을 모니터링해 공정성·적법성 확보.","confidence":0.85,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(i)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P07"},"P08":{"id":"P08","name":"발주기관 이의신청","lane":"입찰자·상소청","stage":"G3 이의·상소","type":"task","status":"risk","actor":"입찰자","action":"입찰자가 발주기관에 이의를 신청한다.","output_documents":["이의신청서"],"requirementRefs":["complaints"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 이의·구제\u003c/dt\u003e\u003cdd\u003e인지 후 5 근무일 이내 이의, 회계책임자 5일(독립패널 7일) 내 결정, 5 근무일 이내 PPAA 상소, PPAA 40일 내 결정이다. · \u003ca class=\"ref\" href=\"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf\" target=\"_blank\" rel=\"noopener\"\u003ePPA §§119–125; PPR regs.107–109, 238\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P08"},"P09":{"id":"P09","name":"공공조달상소청(PPAA) 상소","lane":"입찰자·상소청","stage":"G3 이의·상소","type":"gateway","status":"loop","actor":"공공조달상소청","action":"발주기관 결정에 불복 시 독립 상소기구(PPAA)에 상소한다.","requirementRefs":["complaints"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 이의·구제\u003c/dt\u003e\u003cdd\u003e인지 후 5 근무일 이내 이의, 회계책임자 5일(독립패널 7일) 내 결정, 5 근무일 이내 PPAA 상소, PPAA 40일 내 결정이다. · \u003ca class=\"ref\" href=\"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf\" target=\"_blank\" rel=\"noopener\"\u003ePPA §§119–125; PPR regs.107–109, 238\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P09"},"P10":{"id":"P10","name":"성과 보고·개선 자문","lane":"PPRA","stage":"G2 점검","type":"notice","status":"waiting","actor":"PPRA","action":"조달시스템 성과를 정부에 보고하고 개선을 자문한다.","confidence":0.85,"legal_basis":[{"law":"Public Procurement Act, No. 10 of 2023","article":"§10(b)","url":"https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P10"}};
 var EDGES=[{"id":"E01","source":"P01","target":"P02","type":"sequence"},{"id":"E02","source":"P02","target":"P03","type":"sequence"},{"id":"E03","source":"P03","target":"P04","type":"message","label":"표준·포털 제공"},{"id":"E04","source":"P04","target":"P05","type":"message","label":"예정가 점검"},{"id":"E05","source":"P04","target":"P06","type":"message","label":"기록 제출"},{"id":"E06","source":"P06","target":"P07","type":"sequence"},{"id":"E07","source":"P04","target":"P08","type":"message","label":"불복"},{"id":"E08","source":"P08","target":"P09","type":"sequence","label":"재불복"},{"id":"E09","source":"P09","target":"P04","type":"loop","label":"상소 결과 반영"},{"id":"E10","source":"P07","target":"P10","type":"sequence"}];
 
-var _sel=document.getElementById('sel');
-if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+const listState = new URLSearchParams(location.search).get('list');
+if (listState !== null) {
+  const input = new URLSearchParams(listState);
+  const state = new URLSearchParams();
+  for (const key of ['country', 'axis', 'q']) if (input.get(key)) state.set(key, input.get(key));
+  const listLink = document.querySelector('header.site nav a');
+  const back = document.querySelector('#catalog-return');
+  if (back && listLink) {
+    const href = '../../index.html' + (state.size ? '?' + state.toString() : '') + '#results';
+    back.href = listLink.href = href;
+    back.textContent = '보고 있던 목록으로 돌아가기';
+    for (const link of document.querySelectorAll('a[href^="../"]')) {
+      const url = new URL(link.href);
+      if (url.pathname.includes('/model/')) {
+        url.searchParams.set('list', state.toString());
+        link.href = url.href;
+      }
+    }
+  }
+}
+const selector = document.querySelector('#sel');
+if (selector) selector.addEventListener('change', () => {
+  const url = new URL('../' + selector.value + '/index.html', location.href);
+  if (listState !== null) url.searchParams.set('list', listState);
+  location.assign(url.href);
+});
+document.querySelector('#copy-steps').addEventListener('click', async () => {
+  const list = document.querySelector('#readable-steps');
+  const status = document.querySelector('#copy-status');
+  const text = [...list.children].map((item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = '단계 목록을 복사했습니다.';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(list);
+    const selection = getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = '목록을 선택했습니다. 기기의 복사 기능을 사용하세요.';
+  }
+});
+
+document.querySelector('#dbody').addEventListener('click', async event => {
+  const button = event.target.closest('[data-copy-citation]');
+  if (!button) return;
+  const section = button.closest('details');
+  const field = section.querySelector('textarea');
+  const status = section.querySelector('[role="status"]');
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = '인용 문장과 출처를 복사했습니다.';
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = '선택된 문장과 출처를 복사하세요.';
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -1090,6 +1131,7 @@ function openNode(id){
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}).join('')+'</dd>';
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence==='number'){
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';

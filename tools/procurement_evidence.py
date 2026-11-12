@@ -31,6 +31,21 @@ GENERATED_REASONS = {
 }
 
 
+def finding_title(field):
+    """정정 대장의 원천 필드 경로를 독자가 사용할 제목으로 바꾼다."""
+    titles = {
+        "canvas.submittedDocuments[외국인 입찰자].documents": "외국인 입찰자 제출서류",
+        "canvas.legalBasis.articles": "법령 조문 표기",
+        "canvas.authorities[PPMO].role": "공공조달모니터링국(PPMO)의 권한",
+    }
+    if field in titles:
+        return titles[field]
+    if not field.startswith(("canvas.", "process / ", "verification / ")):
+        return field
+    title = field.partition(" / ")[2] or field
+    return title.replace("canvas.authorities", "담당 기관").replace(" 및 process", " 및 업무 절차")
+
+
 def web_url(value):
     if not isinstance(value, str):
         return False

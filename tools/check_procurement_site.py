@@ -41,6 +41,7 @@ def check_cards(page, expected):
 
 
 def main():
+    catalog = (SITE / "index.html").read_text()
     discrepancies = []
     count = 0
     for path in sorted((ROOT / "data/institutions").glob("*.json")):
@@ -54,7 +55,26 @@ def main():
         for item in data["fieldVerification"]:
             if isinstance(item, dict) and html.escape(item["question"]) not in page:
                 raise ValueError(f"{path.stem}: 현장 질문 누락")
+        if re.search(r"<h3>[^<]*(?:canvas\.|verification /|process /)", page):
+            raise ValueError(f"{path.stem}: 내부 필드 경로가 독자용 제목에 노출됐습니다")
+        if data["slug"] == "nepal-bidding-system":
+            panel = re.search(r'<div class="edition-pair">(.+?)</article>', page, re.S)
+            if not panel or not all(term in panel[1] for term in ("2~3%", "2.5%", "2007년", "제16차")):
+                raise ValueError("네팔 입찰보증의 산정 기준과 비교 판본 누락")
         nodes = json.loads(re.search(r"^var NODES=(.+);$", page, re.M)[1])
+        if data["slug"] == "nepal-bidding-system":
+            comparison = next(q["comparison"] for q in data["sourceQuotes"] if q.get("comparison"))
+            guide = comparison["guideCitation"]
+            shortcut = f'#guide-{guide["nodeId"]}'
+            entry = re.search(r'<nav class="guide-entry".*?</nav>', page, re.S)
+            row = re.search(r'<tr data-c="nepal" data-a="bidding".*?</tr>', catalog, re.S)
+            if not entry or f'href="{shortcut}"' not in entry[0] or not row or f'index.html{shortcut}"' not in row[0]:
+                raise ValueError("네팔 입찰제도 목록·상세에서 대조 항목 접근 불가")
+            targets = [node_id for node_id, view in nodes.items() if view.get("guide_comparison")]
+            panel = nodes["P07"].get("guide_comparison", "")
+            if targets != ["P07"] or not all(html.escape(t) in panel for t in
+                    (guide["quote"], guide["url"], comparison["summary"], comparison["sourceUrl"])):
+                raise ValueError("네팔 P07 자료집·개정 조문 대조 누락")
         for node in data["process"]["nodes"]:
             rendered = nodes[node["id"]]
             evidence = rendered["procurement_evidence"]

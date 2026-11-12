@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from procurement_evidence import finding_title
 from procurement_summary import write_summaries
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -105,7 +106,7 @@ def build_verification_log(items: list[dict]) -> str:
         a(f"## {head}")
         a("")
         for d, x in group:
-            a(f"### {x['field']}")
+            a(f"### {finding_title(x['field'])}")
             a("")
             a(f"- 제도: [{d['name']}](../data/institutions/{d['slug']}.json) · `{x['id']}`")
             a(f"- 근거: {citation_markdown(x)}")
@@ -196,7 +197,7 @@ def build_errata(items: list[dict]) -> str:
         ref = d["sourceRefs"][0] if d["sourceRefs"] else {}
         page = x.get("sourcePage") or ref.get("pages", "?")
         section = x.get("sourceSection") or ref.get("section", "")
-        a(f"## {i:02d}. {x['field']}")
+        a(f"## {i:02d}. {finding_title(x['field'])}")
         a("")
         a(f"**{SEV_LABEL[x['severity']]}** · {d['country']['name']} · 기준자료 {page}쪽 ({section})")
         a("")
@@ -224,7 +225,7 @@ def build_errata(items: list[dict]) -> str:
     a("|---|---|---|")
     for i, (d, x) in enumerate(rows, 1):
         up = x["upstream"]
-        a(f"| {i:02d} {x['field']} | {up['priority']} | {UP_STATE.get(up['state'], up['state'])} |")
+        a(f"| {i:02d} {finding_title(x['field'])} | {up['priority']} | {UP_STATE.get(up['state'], up['state'])} |")
     a("")
     a("상태값: `not-reported`(미제보) · `reported`(제보함) · `acknowledged`(발행처 확인) · "
       "`fixed`(개정판 반영) · `declined`(정정 불요 회신)")

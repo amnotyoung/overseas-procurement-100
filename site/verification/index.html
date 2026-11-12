@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>검증 대장 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,6 +136,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -222,6 +229,10 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -501,7 +512,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">가나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ghana-bidding-system/index.html">가나 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Act 663은 Acts 914 and 1139로 개정됐고 L.I. 2516이 2026-02-04부터 종전 기준금액 부속표를 대체했다. PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.</div>
   <p class="cite">확인 출처 · Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · <a class="ref" href="https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf" target="_blank" rel="noopener">Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139</a> · <a class="ref" href="https://ppa.gov.gh/public-procurement-training-for-2026/" target="_blank" rel="noopener">Public Procurement (Amendment) Act, 2025 (Act 1139)</a> · <a class="ref" href="https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/" target="_blank" rel="noopener">Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)</a> · <a class="ref" href="https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf" target="_blank" rel="noopener">Mandatory use of the Ghana Electronic Procurement System (GHANEPS)</a></p>
   <div class="todo"><b>실무 확인</b>GHANEPS 공고에서 최신 기준금액, 승인권자, 국제경쟁입찰·국내우대·불만기한을 확인한다.</div>
@@ -520,7 +531,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">가나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ghana-procurement-governance/index.html">가나 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Act 663은 Acts 914 and 1139로 개정됐고 L.I. 2516이 2026-02-04부터 종전 기준금액 부속표를 대체했다. PPA가 규제·승인, 조달기관의 부서·입찰위원회가 집행하며 GHANEPS는 의무 전자시스템이다.</div>
   <p class="cite">확인 출처 · Act 663 as amended by Acts 914 and 1139; L.I. 2516; PPA GHANEPS directive · <a class="ref" href="https://ppa.gov.gh/wp-content/uploads/2019/01/Public-Procurement-Amendment-Act-2016-ACT663_RePrinted.pdf" target="_blank" rel="noopener">Public Procurement Act, 2003 (Act 663), as amended by Acts 914 and 1139</a> · <a class="ref" href="https://ppa.gov.gh/public-procurement-training-for-2026/" target="_blank" rel="noopener">Public Procurement (Amendment) Act, 2025 (Act 1139)</a> · <a class="ref" href="https://ppa.gov.gh/the-new-l-i-public-procurement-thresholds-for-approving-authorities-and-procurement-methods-regulations-2025-l-i-2516/" target="_blank" rel="noopener">Public Procurement (Thresholds for Approving Authorities and Procurement Methods) Regulations, 2025 (L.I. 2516)</a> · <a class="ref" href="https://ppa.gov.gh/wp-content/uploads/2023/11/Mandatory-Use-of-the-Ghana-Electronic-Procurement-System-1-1.pdf" target="_blank" rel="noopener">Mandatory use of the Ghana Electronic Procurement System (GHANEPS)</a></p>
   <div class="todo"><b>실무 확인</b>GHANEPS 공고에서 최신 기준금액, 승인권자, 국제경쟁입찰·국내우대·불만기한을 확인한다.</div>
@@ -539,7 +550,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">과테말라</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/guatemala-bidding-system/index.html">과테말라 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decreto 57-92의 현행 개정본과 Acuerdo 122-2016의 현행 개정본이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.</div>
   <p class="cite">확인 출처 · Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · <a class="ref" href="https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/" target="_blank" rel="noopener">Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas</a> · <a class="ref" href="https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/" target="_blank" rel="noopener">Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas</a> · <a class="ref" href="https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf" target="_blank" rel="noopener">Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento</a> · <a class="ref" href="https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf" target="_blank" rel="noopener">Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS</a></p>
   <div class="todo"><b>실무 확인</b>공고의 NOG/NPG, RGAE 상태와 적용 선정방식·기한을 GUATECOMPRAS에서 확인한다.</div>
@@ -558,7 +569,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">과테말라</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/guatemala-procurement-governance/index.html">과테말라 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decreto 57-92의 현행 개정본과 Acuerdo 122-2016의 현행 개정본이 기본체계이며 DIGAE가 국가조달 및 GUATECOMPRAS의 규제기관이다. GUATECOMPRAS는 시스템, RGAE는 공급자 등록체계다.</div>
   <p class="cite">확인 출처 · Decreto 57-92 arts.4 Bis and 15; Acuerdo 122-2016 as amended; Resolución 001-2022 · <a class="ref" href="https://formacion.minfin.gob.gt/ley-de-contrataciones-del-estado/" target="_blank" rel="noopener">Decreto Número 57-92 — Ley de Contrataciones del Estado, texto vigente con reformas</a> · <a class="ref" href="https://formacion.minfin.gob.gt/reglamento-de-la-ley-de-contrataciones-del-estado/" target="_blank" rel="noopener">Acuerdo Gubernativo Número 122-2016 — Reglamento de la Ley de Contrataciones del Estado, texto vigente con reformas</a> · <a class="ref" href="https://www.minfin.gob.gt/images/downloads/leyes_acuerdos/acuerdogub147_130721.pdf" target="_blank" rel="noopener">Acuerdo Gubernativo Número 147-2021 — Reformas al Reglamento</a> · <a class="ref" href="https://formacion.minfin.gob.gt/wp-content/uploads/2022/02/1-001-2022.pdf" target="_blank" rel="noopener">Resolución Número 001-2022 — Normas para el uso del Sistema GUATECOMPRAS</a></p>
   <div class="todo"><b>실무 확인</b>공고의 NOG/NPG, RGAE 상태와 적용 선정방식·기한을 GUATECOMPRAS에서 확인한다.</div>
@@ -577,7 +588,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">과테말라</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/guatemala-oda-project-pipeline/index.html">과테말라 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>SEGEPLAN은 비상환 협력의 정책·우선순위·관리·협상·등록과 실행조정을 담당하고, MINFIN·MINEX는 예산·외부재원과 협정·외교 권한을 담당한다.</div>
   <p class="cite">확인 출처 · SEGEPLAN official mandate; Internal Regulation art.27; CINR Project Guide · <a class="ref" href="https://portal.segeplan.gob.gt/segeplan/?page_id=16" target="_blank" rel="noopener">SEGEPLAN Subsecretaría de Cooperación y Alianzas para el Desarrollo — official mandate</a> · <a class="ref" href="https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/09/ROI-8agosto2023-1.pdf" target="_blank" rel="noopener">SEGEPLAN Reglamento Orgánico Interno, art.27</a> · <a class="ref" href="https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/02/Guia-Orientadora-Programas-y-Proyectos-de-Cooperacion-Internacional-No-Reembolsable-6ta.-edic.pdf" target="_blank" rel="noopener">Guía Orientadora de Programas y Proyectos de Cooperación Internacional No Reembolsable, 6th ed.</a></p>
   <div class="todo"><b>실무 확인</b>제안은 SEGEPLAN 기술의견·등록, MINFIN 재원·예산, MINEX 협정 경로를 각각 확인한다.</div>
@@ -653,7 +664,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.submittedDocuments[외국인 입찰자].documents</h3>
+  <h3>외국인 입찰자 제출서류</h3>
   <div class="quote act"><b>현행 기준</b>If he/she is a local agent, the attested copy of his/her Permanent Account Number Registration Certificate and a letter of acceptance by him/her to become an agent</div>
   <p class="cite">확인 출처 · Public Procurement Rules, 2064 (2007) r.39(1)(d) · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a></p>
   <div class="todo"><b>실무 확인</b>네팔 입찰에 현지 대리인을 세운다면 대리인의 PAN 등록증명서 인증등본과 대리인 수락서를 준비한다. 주민등록 등본을 준비했다면 요구서류가 아니므로 다시 받아야 한다.</div>
@@ -672,7 +683,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.procedure / 사업 발굴 착수 지점</h3>
+  <h3>사업 발굴 착수 지점</h3>
   <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(k) — 모든 수준의 정부기관·헌법기관·공기업과 정부 출연·보조 기관은 대외원조를 구하거나, 공식 요청·제안, 협상, 정보 제공, 개념서와 제안서에 관한 서신교환, MoU 또는 협정 체결에 앞서 재무부의 사전 승인을 받아야 한다. §3.3.5(b) — 개발파트너는 어떤 형태의 대외원조를 동원하기 전에도 재무부의 승인을 받아야 한다.</div>
   <p class="cite">확인 출처 · Foreign Aid Mobilization Policy, 2025 §3.3.2(k), §3.3.5(b) · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></p>
   <div class="todo"><b>실무 확인</b>사업 발굴을 위해 수원기관 부처에 먼저 연락하지 않는다. 재무부 국제경제관계국을 통한 접촉 경로를 먼저 확인하고, 수원기관이 재무부 사전 승인을 받았는지 확인한 뒤 협의를 진행한다. 공여기관 자신도 원조 동원 전 재무부 승인 대상이다.</div>
@@ -691,7 +702,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">도미니카공화국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dominican-republic-bidding-system/index.html">도미니카공화국 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 2026년 법체계 전환</h3>
+  <h3>2026년 법체계 전환</h3>
   <div class="quote act"><b>현행 기준</b>Ley 47-25와 Decreto 52-26이 2026년 1월 29일부터 시행되었고 신규 절차는 새 체계를 따른다. 그 이전 개시 절차·계약·청산에는 종전 Ley 340-06 체계가 경과 적용되며, 제한입찰은 새 체계에서 폐지됐다.</div>
   <p class="cite">확인 출처 · DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · <a class="ref" href="https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/" target="_blank" rel="noopener">Resolución PNP-01-2026 — implementación de Ley 47-25</a> · <a class="ref" href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf" target="_blank" rel="noopener">Ley núm. 47-25 de Contrataciones Públicas</a> · <a class="ref" href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf" target="_blank" rel="noopener">Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25</a></p>
   <div class="todo"><b>실무 확인</b>절차 개시일이 2026-01-29 전인지 먼저 확인해 구법·신법 중 적용 체계를 결정한다.</div>
@@ -710,7 +721,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">도미니카공화국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dominican-republic-procurement-governance/index.html">도미니카공화국 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 2026년 법체계 전환</h3>
+  <h3>2026년 법체계 전환</h3>
   <div class="quote act"><b>현행 기준</b>Ley 47-25와 Decreto 52-26이 2026년 1월 29일부터 시행되었고 신규 절차는 새 체계를 따른다. 그 이전 개시 절차·계약·청산에는 종전 Ley 340-06 체계가 경과 적용되며, 제한입찰은 새 체계에서 폐지됐다.</div>
   <p class="cite">확인 출처 · DGCP Resolución PNP-01-2026; Ley 47-25; Decreto 52-26 · <a class="ref" href="https://www.dgcp.gob.do/noticias/dgcp-establece-pautas-para-el-inicio-de-la-implementacion-de-la-nueva-ley-num-47-25-de-contrataciones-publicas/" target="_blank" rel="noopener">Resolución PNP-01-2026 — implementación de Ley 47-25</a> · <a class="ref" href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf" target="_blank" rel="noopener">Ley núm. 47-25 de Contrataciones Públicas</a> · <a class="ref" href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%20N%C3%BAm.%2052-26.pdf" target="_blank" rel="noopener">Decreto núm. 52-26 — Reglamento de aplicación de la Ley 47-25</a></p>
   <div class="todo"><b>실무 확인</b>절차 개시일이 2026-01-29 전인지 먼저 확인해 구법·신법 중 적용 체계를 결정한다.</div>
@@ -729,7 +740,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">도미니카공화국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dominican-republic-oda-project-pipeline/index.html">도미니카공화국 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 무상협력 총괄기관</h3>
+  <h3>무상협력 총괄기관</h3>
   <div class="quote act"><b>현행 기준</b>Ley 45-25 arts.4·22~24에 따라 MEPyD는 폐지됐고 비상환 국제협력 권한과 기존 협정의 법적 승계는 대통령부(MINPRE)로 이전됐다. 협의의사록(R/D)은 기관이 아니라 공식화 문서다.</div>
   <p class="cite">확인 출처 · Ley 45-25 arts.3~4, 22~24; Presidencia 2025-07-22 promulgation notice · <a class="ref" href="https://www.presidencia.gob.do/noticias/presidente-abinader-promulga-ley-que-dispone-fusion-del-ministerio-de-hacienda-y-el" target="_blank" rel="noopener">Ley núm. 45-25 — Ministerio de Hacienda y Economía 및 국제협력 권한 이전</a></p>
   <div class="todo"><b>실무 확인</b>무상협력 제안은 대통령부의 현행 국제협력 담당조직과 SINACID 등록·무이의 절차를 확인한다.</div>
@@ -748,7 +759,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">동티모르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/timor-leste-bidding-system/index.html">동티모르 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.</div>
   <p class="cite">확인 출처 · Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · <a class="ref" href="https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf" target="_blank" rel="noopener">Decree-Law No.1/2025 — Procurement and Public Contracts Code</a> · <a class="ref" href="https://www.cna.gov.tl/en/documents-and-forms/" target="_blank" rel="noopener">CNA current legal regime, standard documents and forms</a> · <a class="ref" href="https://timor-leste.gov.tl/?lang=en&amp;p=46597&amp;print=1" target="_blank" rel="noopener">Government implementation notice for the new Code</a></p>
   <div class="todo"><b>실무 확인</b>Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route.</div>
@@ -786,7 +797,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">동티모르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/timor-leste-procurement-governance/index.html">동티모르 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree-Law 1/2025의 신 Procurement and Public Contracts Code가 2026년 1월 1일부터 적용되며 CNA·재무부·계약기관과 공공투자 승인기관의 역할이 구분된다.</div>
   <p class="cite">확인 출처 · Decree-Law 1/2025; CNA current legal regime; 2025 implementing notice · <a class="ref" href="https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf" target="_blank" rel="noopener">Decree-Law No.1/2025 — Procurement and Public Contracts Code</a> · <a class="ref" href="https://www.cna.gov.tl/en/documents-and-forms/" target="_blank" rel="noopener">CNA current legal regime, standard documents and forms</a> · <a class="ref" href="https://timor-leste.gov.tl/?lang=en&amp;p=46597&amp;print=1" target="_blank" rel="noopener">Government implementation notice for the new Code</a></p>
   <div class="todo"><b>실무 확인</b>Check the 2026 regulations, standard document, delegated authority, method, deadline, local preference and review route.</div>
@@ -824,7 +835,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">동티모르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/timor-leste-oda-project-pipeline/index.html">동티모르 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부의 대외재원동원관리국·DPMU가 비차관 원조와 ATP를 관리하고 재무·계획·부문기관이 차관·투자계획·사업실행을 분담한다.</div>
   <p class="cite">확인 출처 · Ministry of Finance Aid Transparency Portal mandate · <a class="ref" href="https://www.aidtransparency.gov.tl/portal/node/1" target="_blank" rel="noopener">Aid Transparency Portal mandate and current repository</a></p>
   <div class="todo"><b>실무 확인</b>Confirm DPMU/ATP registration, grant or loan route, plan and budget alignment, agreement and implementing entity.</div>
@@ -862,7 +873,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">라오스</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/laos-bidding-system/index.html">라오스 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.</div>
   <p class="cite">확인 출처 · Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · <a class="ref" href="https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf" target="_blank" rel="noopener">Law on Public Procurement No. 30/NA of 2 November 2017</a> · <a class="ref" href="https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf" target="_blank" rel="noopener">Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement</a> · <a class="ref" href="https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf" target="_blank" rel="noopener">Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register</a></p>
   <div class="todo"><b>실무 확인</b>공고별 최신 기준금액·기한·보증과 공여협정의 별도 절차를 확인한다.</div>
@@ -881,7 +892,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">라오스</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/laos-procurement-governance/index.html">라오스 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law No.30/NA와 Instruction No.0477/MOF가 2026년 공식 공고에도 적용되며 PPMD가 규제·검토를, 각 Project Owner/Procuring Entity가 집행을 담당한다.</div>
   <p class="cite">확인 출처 · Law No.30/NA arts.3, 6~7, 17~18, 46 and 77~80; Instruction No.0477/MOF; current PPMD Manual · <a class="ref" href="https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf" target="_blank" rel="noopener">Law on Public Procurement No. 30/NA of 2 November 2017</a> · <a class="ref" href="https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf" target="_blank" rel="noopener">Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement</a> · <a class="ref" href="https://ppmd.mof.gov.la/storage/1716281129.Procurement%20Manual_Eng_Final.pdf" target="_blank" rel="noopener">Lao PDR Procurement Manual — current English edition and revised 2022 Lao edition register</a></p>
   <div class="todo"><b>실무 확인</b>공고별 최신 기준금액·기한·보증과 공여협정의 별도 절차를 확인한다.</div>
@@ -900,7 +911,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">르완다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/rwanda-bidding-system/index.html">르완다 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 031/2022가 현행 기본법이며 RPPA는 감독·지원, 조달기관은 집행, IRP는 심사, Umucyo는 의무 전자시스템이다.</div>
   <p class="cite">확인 출처 · Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · <a class="ref" href="https://www.rppa.gov.rw/index.php?eID=dumpFile&amp;f=57729&amp;t=f&amp;token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d" target="_blank" rel="noopener">Law n° 031/2022 of 21/11/2022 governing public procurement</a> · <a class="ref" href="https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf" target="_blank" rel="noopener">Umucyo current procurement law list and RPPA 2024 clarification</a></p>
   <div class="todo"><b>실무 확인</b>Umucyo 공고에서 최신 장관령, RPPA 사전승인, 방식·기한·심사절차를 확인한다.</div>
@@ -938,7 +949,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">르완다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/rwanda-procurement-governance/index.html">르완다 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 031/2022가 현행 기본법이며 RPPA는 감독·지원, 조달기관은 집행, IRP는 심사, Umucyo는 의무 전자시스템이다.</div>
   <p class="cite">확인 출처 · Law 031/2022 arts.4–6 and procurement bodies; RPPA Umucyo guidance · <a class="ref" href="https://www.rppa.gov.rw/index.php?eID=dumpFile&amp;f=57729&amp;t=f&amp;token=f5b5293da95bb834bf6cc3f6376421b46aee8a3d" target="_blank" rel="noopener">Law n° 031/2022 of 21/11/2022 governing public procurement</a> · <a class="ref" href="https://www.rppa.gov.rw/fileadmin/user_upload/RPPA/Publications/Circulars/Guidelines_on_the_key_provisions_in_the_law_and_Ministerial_order.pdf" target="_blank" rel="noopener">Umucyo current procurement law list and RPPA 2024 clarification</a></p>
   <div class="todo"><b>실무 확인</b>Umucyo 공고에서 최신 장관령, RPPA 사전승인, 방식·기한·심사절차를 확인한다.</div>
@@ -976,7 +987,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">르완다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/rwanda-oda-project-pipeline/index.html">르완다 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>MINECOFIN 대외금융국은 ODA·양허성차관을 포함한 외부재원의 정부 단일 진입창구이며 개발파트너 조정을 담당한다.</div>
   <p class="cite">확인 출처 · MINECOFIN External Finance Directorate mandate · <a class="ref" href="https://www.minecofin.gov.rw/1/corporate-services-department-2" target="_blank" rel="noopener">MINECOFIN External Finance Directorate mandate</a></p>
   <div class="todo"><b>실무 확인</b>PCP는 EFD 공식창구, 국가예산·부채 승인, 개발파트너 협의와 실행기관 준비요건을 확인한다.</div>
@@ -1014,7 +1025,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모로코</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/morocco-bidding-system/index.html">모로코 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.</div>
   <p class="cite">확인 출처 · Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&amp;MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics</a> · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-14-394 approuvant le CCAG-T</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 예정금액·적용 CCAG/CPS, 전자제출 시각과 재원협정상 별도 조달절차를 확인한다.</div>
@@ -1033,7 +1044,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모로코</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/morocco-procurement-governance/index.html">모로코 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.</div>
   <p class="cite">확인 출처 · Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&amp;MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics</a> · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-14-394 approuvant le CCAG-T</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 예정금액·적용 CCAG/CPS, 전자제출 시각과 재원협정상 별도 조달절차를 확인한다.</div>
@@ -1052,7 +1063,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모잠비크</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mozambique-bidding-system/index.html">모잠비크 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행법·정량요건</h3>
+  <h3>현행법·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.</div>
   <p class="cite">확인 출처 · Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · <a class="ref" href="https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file" target="_blank" rel="noopener">Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.</div>
@@ -1071,7 +1082,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모잠비크</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mozambique-procurement-governance/index.html">모잠비크 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행법·정량요건</h3>
+  <h3>현행법·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.</div>
   <p class="cite">확인 출처 · Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · <a class="ref" href="https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file" target="_blank" rel="noopener">Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.</div>
@@ -1090,7 +1101,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모잠비크</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mozambique-oda-project-pipeline/index.html">모잠비크 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행법·정량요건</h3>
+  <h3>현행법·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>현행 제79/2022호는 공개입찰 21일, 제한·소액 12일, 견적 5일과 방식별 기준금액, 입찰보증 1.5% 이하, 이행보증 10% 이하, 5/3근무일 불복기한을 정한다. 2026년 개정·재공포안은 국무회의 승인만 확인되고 공포문은 확인되지 않았다.</div>
   <p class="cite">확인 출처 · Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · <a class="ref" href="https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file" target="_blank" rel="noopener">Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고에서 적용 방식, 자금협정, 표준입찰서류, 제출시각과 보증 형식을 다시 확인한다.</div>
@@ -1109,7 +1120,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">몽골</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mongolia-bidding-system/index.html">몽골 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행 조달법·정량절차</h3>
+  <h3>현행 조달법·정량절차</h3>
   <div class="quote act"><b>현행 기준</b>2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.</div>
   <p class="cite">확인 출처 · Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16760359992351" target="_blank" rel="noopener">Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=17047839105111" target="_blank" rel="noopener">Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16960768160991" target="_blank" rel="noopener">Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents</a></p>
   <div class="todo"><b>실무 확인</b>공고일의 lot별 예산가, 재원협정상 예외, 전자조달 제출기한과 최신 표준문서를 확인한다.</div>
@@ -1128,7 +1139,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">몽골</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mongolia-procurement-governance/index.html">몽골 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행 조달법·정량절차</h3>
+  <h3>현행 조달법·정량절차</h3>
   <div class="quote act"><b>현행 기준</b>2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.</div>
   <p class="cite">확인 출처 · Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16760359992351" target="_blank" rel="noopener">Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=17047839105111" target="_blank" rel="noopener">Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16960768160991" target="_blank" rel="noopener">Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents</a></p>
   <div class="todo"><b>실무 확인</b>공고일의 lot별 예산가, 재원협정상 예외, 전자조달 제출기한과 최신 표준문서를 확인한다.</div>
@@ -1147,7 +1158,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">몽골</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/mongolia-oda-project-pipeline/index.html">몽골 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.legalBasis·procedure / 현행 조달법·정량절차</h3>
+  <h3>현행 조달법·정량절차</h3>
   <div class="quote act"><b>현행 기준</b>2023년 전면개정 조달법이 2024-01-01부터 시행되고 2026년 개정까지 통합되어 있다. 공개입찰 15/20영업일, 입찰보증 0.5%, 이행보증 3%, 5영업일 불복기한이 현행 조문에 명시된다.</div>
   <p class="cite">확인 출처 · Procurement Law arts.14, 24, 32, 42 and 57~60; Resolution No.02/2024; Order A/105/2025 · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16760359992351" target="_blank" rel="noopener">Law on Procurement of Goods, Works and Services with State and Local Funds (revised edition, 16 June 2023)</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=17047839105111" target="_blank" rel="noopener">Government Resolution No.02 of 3 January 2024 on maximum budget-cost limits for procurement</a> · <a class="ref" href="https://legalinfo.mn/mn/detail?lawId=16960768160991" target="_blank" rel="noopener">Minister of Finance Order A/105 of 26 May 2025 revising standard service tender documents</a></p>
   <div class="todo"><b>실무 확인</b>공고일의 lot별 예산가, 재원협정상 예외, 전자조달 제출기한과 최신 표준문서를 확인한다.</div>
@@ -1166,7 +1177,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">미얀마</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/myanmar-bidding-system/index.html">미얀마 공공조달 입찰제도 →</a>
   </div>
-  <h3>verification / 공식 원문·현행성·정량요건</h3>
+  <h3>공식 원문·현행성·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>정보부 관보 제75권 제16호에 제1/2022호 전체 원문이 수록되어 있고 2025년 관보가 이를 재적용한다. 제1/2017호는 충돌 부분만 후법 우선이며, 2026년 정부신문 입찰도 제23~24항을 계속 적용한다.</div>
   <p class="cite">확인 출처 · Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a> · <a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a> · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf" target="_blank" rel="noopener">Myanmar Gazette Vol.78 No.20 — current tender-committee orders</a> · <a class="ref" href="https://www.moi.gov.mm/nlm/file-download/download/public/5153" target="_blank" rel="noopener">Global New Light of Myanmar tender notice, June 2026</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 제출시각, 보증서 양식·발급은행, 공여협정 및 기관별 이의접수 방법을 확인한다.</div>
@@ -1185,7 +1196,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">미얀마</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/myanmar-procurement-governance/index.html">미얀마 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>verification / 공식 원문·현행성·정량요건</h3>
+  <h3>공식 원문·현행성·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>정보부 관보 제75권 제16호에 제1/2022호 전체 원문이 수록되어 있고 2025년 관보가 이를 재적용한다. 제1/2017호는 충돌 부분만 후법 우선이며, 2026년 정부신문 입찰도 제23~24항을 계속 적용한다.</div>
   <p class="cite">확인 출처 · Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a> · <a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a> · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf" target="_blank" rel="noopener">Myanmar Gazette Vol.78 No.20 — current tender-committee orders</a> · <a class="ref" href="https://www.moi.gov.mm/nlm/file-download/download/public/5153" target="_blank" rel="noopener">Global New Light of Myanmar tender notice, June 2026</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 제출시각, 보증서 양식·발급은행, 공여협정 및 기관별 이의접수 방법을 확인한다.</div>
@@ -1204,7 +1215,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">미얀마</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/myanmar-oda-project-pipeline/index.html">미얀마 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>verification / 공식 원문·현행성·정량요건</h3>
+  <h3>공식 원문·현행성·정량요건</h3>
   <div class="quote act"><b>현행 기준</b>정보부 관보 제75권 제16호에 제1/2022호 전체 원문이 수록되어 있고 2025년 관보가 이를 재적용한다. 제1/2017호는 충돌 부분만 후법 우선이며, 2026년 정부신문 입찰도 제23~24항을 계속 적용한다.</div>
   <p class="cite">확인 출처 · Directive No.1/2022 ¶¶1~16, 25~28; Directive No.1/2017 ¶¶22, 37, 46~48; Myanmar Gazette Vol.78 No.20; GNLM June 2026 tender notice · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2022-04/Vol-75%2CNo-16.pdf" target="_blank" rel="noopener">Office of the State Administration Council Directive No. 1/2022</a> · <a class="ref" href="https://www.mopf.gov.mm/sites/default/files/upload_pdf/2018/12/Procurement%20Directive.pdf" target="_blank" rel="noopener">President’s Office Directive No. 1/2017</a> · <a class="ref" href="https://www.moi.gov.mm/ppd/sites/default/files/book-pdf/2025-05/Vol-78%2CNo-20.pdf" target="_blank" rel="noopener">Myanmar Gazette Vol.78 No.20 — current tender-committee orders</a> · <a class="ref" href="https://www.moi.gov.mm/nlm/file-download/download/public/5153" target="_blank" rel="noopener">Global New Light of Myanmar tender notice, June 2026</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 제출시각, 보증서 양식·발급은행, 공여협정 및 기관별 이의접수 방법을 확인한다.</div>
@@ -1223,7 +1234,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">방글라데시</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bangladesh-bidding-system/index.html">방글라데시 공공조달 입찰제도 →</a>
   </div>
-  <h3>verification / 현행 조달규칙 및 canvas.authorities</h3>
+  <h3>현행 조달규칙 및 담당 기관</h3>
   <div class="quote act"><b>현행 기준</b>BPPA 공식 공지에 따르면 PPR 2025가 개정 PPA 2006과 함께 2025-09-28 시행됐고 모든 공공조달의 e-GP 사용이 의무화됐다. BPPA가 조달청이며 PPR·PPA는 기관명이 아니다.</div>
   <p class="cite">확인 출처 · BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · <a class="ref" href="https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html" target="_blank" rel="noopener">Public Procurement Rules 2025</a> · <a class="ref" href="https://www.bppa.gov.bd/e-gp.html" target="_blank" rel="noopener">Bangladesh e-Government Procurement system</a></p>
   <div class="todo"><b>실무 확인</b>2025년 이후 입찰은 PPR 2025 표준문서와 e-GP 공고를 기준으로 준비하고, 과거 PPR 2008 금액기준을 재사용하지 않는다.</div>
@@ -1242,7 +1253,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">방글라데시</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bangladesh-procurement-governance/index.html">방글라데시 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>verification / 현행 조달규칙 및 canvas.authorities</h3>
+  <h3>현행 조달규칙 및 담당 기관</h3>
   <div class="quote act"><b>현행 기준</b>BPPA 공식 공지에 따르면 PPR 2025가 개정 PPA 2006과 함께 2025-09-28 시행됐고 모든 공공조달의 e-GP 사용이 의무화됐다. BPPA가 조달청이며 PPR·PPA는 기관명이 아니다.</div>
   <p class="cite">확인 출처 · BPPA, Public Procurement Rules 2025 official notice; BPPA e-GP page · <a class="ref" href="https://www.bppa.gov.bd/procurement-policy-and-procedure-documents/procurement-rules.html" target="_blank" rel="noopener">Public Procurement Rules 2025</a> · <a class="ref" href="https://www.bppa.gov.bd/e-gp.html" target="_blank" rel="noopener">Bangladesh e-Government Procurement system</a></p>
   <div class="todo"><b>실무 확인</b>2025년 이후 입찰은 PPR 2025 표준문서와 e-GP 공고를 기준으로 준비하고, 과거 PPR 2008 금액기준을 재사용하지 않는다.</div>
@@ -1261,7 +1272,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">베트남</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/vietnam-bidding-system/index.html">베트남 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.</div>
   <p class="cite">확인 출처 · Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · <a class="ref" href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf" target="_blank" rel="noopener">Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025</a> · <a class="ref" href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf" target="_blank" rel="noopener">Nghị định 214/2025/NĐ-CP on contractor selection</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고일, 재원협정, 패키지 유형·금액과 VNEPS 서류를 확인한다.</div>
@@ -1280,7 +1291,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">베트남</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/vietnam-procurement-governance/index.html">베트남 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Laws 57/2024·90/2025 개정을 합친 126/VBHN-VPQH와 Decree 214/2025가 현행 체계이며, Decree 24/2024는 2025년 8월 4일 폐지됐다.</div>
   <p class="cite">확인 출처 · Consolidated Bidding Law Arts.3, 14, 68 and 89; Decree 214/2025 Arts.28, 78~81 and 137~146 · <a class="ref" href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf" target="_blank" rel="noopener">Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025</a> · <a class="ref" href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/214nd.signed.pdf" target="_blank" rel="noopener">Nghị định 214/2025/NĐ-CP on contractor selection</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고일, 재원협정, 패키지 유형·금액과 VNEPS 서류를 확인한다.</div>
@@ -1299,7 +1310,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">베트남</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/vietnam-oda-project-pipeline/index.html">베트남 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 242/2025가 2025년 9월 10일부터 구 Decrees 114/2021·20/2023을 대체하며 통합 재무부가 ODA·양허성차관 협정·재정 경로를 담당한다.</div>
   <p class="cite">확인 출처 · Decree 242/2025 Arts.8, 12~47 and 99 · <a class="ref" href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/242-cp.signed.pdf" target="_blank" rel="noopener">Nghị định 242/2025/NĐ-CP on ODA and concessional loans</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고일, 재원협정, 패키지 유형·금액과 VNEPS 서류를 확인한다.</div>
@@ -1318,7 +1329,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">볼리비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bolivia-oda-project-pipeline/index.html">볼리비아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 수원총괄기관 및 process</h3>
+  <h3>수원총괄기관 및 업무 절차</h3>
   <div class="quote act"><b>현행 기준</b>VIPFE는 외부재원 정책·협약 관리·협상·서명과 국제협력 수요 조정을 담당한다. 공공투자사업은 SISIN 등록, 연구·평가, 기관장 의견 등의 art.28 요건과 외부재원 관련 art.29 요건을 충족해야 한다.</div>
   <p class="cite">확인 출처 · VIPFE official functions; National Public Investment System Basic Rules arts.28-29 · <a class="ref" href="https://www.planificacion.gob.bo/institucion/vipfe/info" target="_blank" rel="noopener">VIPFE statutory functions</a> · <a class="ref" href="https://www.planificacion.gob.bo/uploads/Res_Suprema_N_216768_NormasBasicasdelSistemaNacionaldeInversionPublica.pdf" target="_blank" rel="noopener">Normas Básicas del Sistema Nacional de Inversión Pública</a></p>
   <div class="todo"><b>실무 확인</b>외부재원 요청 전 VIPFE와 협의하고 SISIN 등록, 사전연구·평가, 기관장 의견 및 상환능력 요건을 확인한다.</div>
@@ -1337,7 +1348,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">세네갈</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/senegal-bidding-system/index.html">세네갈 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 2022-2295가 종전 2014 법전을 대체했고 ARCOP이 독립규제, DCMP가 사전통제, 조달기관이 집행하며 APPEL은 전자플랫폼이다.</div>
   <p class="cite">확인 출처 · Decree 2022-2295; ARCOP official mandate and APPEL platform · <a class="ref" href="https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf" target="_blank" rel="noopener">Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics</a> · <a class="ref" href="https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf" target="_blank" rel="noopener">ARCOP current application of Décret 2022-2295</a> · <a class="ref" href="https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/" target="_blank" rel="noopener">ARCOP · APPEL 단계적 도입과 적용 모듈</a></p>
   <div class="todo"><b>실무 확인</b>해당 발주기관 공고에서 APPEL 적용 여부와 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.</div>
@@ -1375,7 +1386,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">세네갈</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/senegal-procurement-governance/index.html">세네갈 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 2022-2295가 종전 2014 법전을 대체했고 ARCOP이 독립규제, DCMP가 사전통제, 조달기관이 집행하며 APPEL은 전자플랫폼이다.</div>
   <p class="cite">확인 출처 · Decree 2022-2295; ARCOP official mandate and APPEL platform · <a class="ref" href="https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf" target="_blank" rel="noopener">Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics</a> · <a class="ref" href="https://arcop.sn/wp-content/uploads/2026/02/AVIS-N%C2%B0001-2026-ARCOP-CRD-DU-21-JANVIER-2026.pdf" target="_blank" rel="noopener">ARCOP current application of Décret 2022-2295</a> · <a class="ref" href="https://arcop.sn/2026/05/20/dematerialisation-et-integration-de-nouveaux-modules-la-plateforme-appel-etend-ses-fonctionnalites/" target="_blank" rel="noopener">ARCOP · APPEL 단계적 도입과 적용 모듈</a></p>
   <div class="todo"><b>실무 확인</b>해당 발주기관 공고에서 APPEL 적용 여부와 기준금액별 DCMP 통제, 방식·기한·ARCOP 불복절차를 확인한다.</div>
@@ -1413,7 +1424,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">세네갈</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/senegal-oda-project-pipeline/index.html">세네갈 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>경제기획협력부 DGCFEDSP가 개발파트너 협력문서, 재원요청, 차관·무상협정 협상과 외부재원 사업 모니터링·감사를 담당한다.</div>
   <p class="cite">확인 출처 · DGCFEDSP official mandate · <a class="ref" href="https://www.economie.gouv.sn/index.php/en/node/131" target="_blank" rel="noopener">MEPC mission and DGCFEDSP external-finance mandate</a></p>
   <div class="todo"><b>실무 확인</b>PCP는 DGCFEDSP 재원요청, 국가계획·예산, 협정 승인과 실행기관 준비요건을 확인한다.</div>
@@ -1451,7 +1462,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">스리랑카</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/sri-lanka-bidding-system/index.html">스리랑카 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.</div>
   <p class="cite">확인 출처 · Gazette No.2412/01; Procurement Guidelines and Manual 2024 · <a class="ref" href="https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf" target="_blank" rel="noopener">Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)</a> · <a class="ref" href="https://nprocom.gov.lk/manuals/" target="_blank" rel="noopener">Procurement Manual 2024 for Goods, Works and Non-Consulting Services</a></p>
   <div class="todo"><b>실무 확인</b>Check current NPC supplements, procurement category, committee level, method, deadline and appeal route.</div>
@@ -1489,7 +1500,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">스리랑카</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/sri-lanka-procurement-governance/index.html">스리랑카 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2025년 1월 1일부터 Procurement Guidelines 2024와 Manual 2024가 적용되며 NPC는 제도·감독, PE·PC는 집행, 항소기구는 불복을 담당한다.</div>
   <p class="cite">확인 출처 · Gazette No.2412/01; Procurement Guidelines and Manual 2024 · <a class="ref" href="https://www.naosl.gov.lk/web/images/rightside_tabdoc/New-Procurement-Guidlines---English.pdf" target="_blank" rel="noopener">Procurement Guidelines 2024 for Goods, Works and Non-Consulting Services (Gazette No.2412/01)</a> · <a class="ref" href="https://nprocom.gov.lk/manuals/" target="_blank" rel="noopener">Procurement Manual 2024 for Goods, Works and Non-Consulting Services</a></p>
   <div class="todo"><b>실무 확인</b>Check current NPC supplements, procurement category, committee level, method, deadline and appeal route.</div>
@@ -1527,7 +1538,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">스리랑카</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/sri-lanka-oda-project-pipeline/index.html">스리랑카 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>ERD가 외부재원 동원·개발파트너 협의·실행기관 지원의 정점기관이고 NPD는 국가계획·사업우선순위를 담당한다.</div>
   <p class="cite">확인 출처 · ERD official mandate and circulars · <a class="ref" href="https://www.erd.gov.lk/index.php?Itemid=219&amp;id=55&amp;lang=en&amp;option=com_content&amp;view=article" target="_blank" rel="noopener">External Resources Department mandate and current circulars</a></p>
   <div class="todo"><b>실무 확인</b>Confirm the ERD engagement circular, NPD project approval, financing agreement and executing-agency readiness.</div>
@@ -1565,7 +1576,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에콰도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ecuador-bidding-system/index.html">에콰도르 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>SERCOP가 SNCP의 규제기관이고 SOCE는 전자시스템, LOSNCP는 법률이다. 2025년 10월 개정 LOSNCP와 Decreto 193 규정 및 2026년 Decreto 356 개정이 현행 체계를 이룬다.</div>
   <p class="cite">확인 출처 · SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf" target="_blank" rel="noopener">Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025</a> · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf" target="_blank" rel="noopener">Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356</a> · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356" target="_blank" rel="noopener">Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고의 게시일과 경과규정을 확인해 적용 LOSNCP·규정·SERCOP 2차규범을 결정한다.</div>
@@ -1584,7 +1595,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에콰도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ecuador-procurement-governance/index.html">에콰도르 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>SERCOP가 SNCP의 규제기관이고 SOCE는 전자시스템, LOSNCP는 법률이다. 2025년 10월 개정 LOSNCP와 Decreto 193 규정 및 2026년 Decreto 356 개정이 현행 체계를 이룬다.</div>
   <p class="cite">확인 출처 · SERCOP official LOSNCP and regulation catalogues; Decreto Ejecutivo 356 · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/2025/10/LOSNCP-RO-140-07-X-2025-1.pdf" target="_blank" rel="noopener">Ley Orgánica del Sistema Nacional de Contratación Pública (LOSNCP), texto reformado al 7 de octubre de 2025</a> · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/wp-content/uploads/downloads/2026/04/REGLAMENTO-DE-LA-LEY-ORGANICA-DEL-SISTEMA-NACIONAL-DE-CONTRATATCION-PUBLICA..pdf" target="_blank" rel="noopener">Reglamento General de la LOSNCP, Decreto Ejecutivo 193, texto reformado por Decreto 356</a> · <a class="ref" href="https://portal.compraspublicas.gob.ec/sercop/normativa/n_r_decretos/decreto-no-356" target="_blank" rel="noopener">Decreto Ejecutivo 356 — reformas al Reglamento General de la LOSNCP</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고의 게시일과 경과규정을 확인해 적용 LOSNCP·규정·SERCOP 2차규범을 결정한다.</div>
@@ -1603,7 +1614,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에콰도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ecuador-oda-project-pipeline/index.html">에콰도르 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>MREMH가 비상환 국제협력의 국가 조정·협상·등록을 담당하며, COPLAFIP arts.65–69는 비상환 협력의 계획·승인·등록 체계를 규정한다.</div>
   <p class="cite">확인 출처 · COPLAFIP arts.65–69; MREMH official functions and SIGECI registration procedure · <a class="ref" href="https://www.planificacion.gob.ec/wp-content/uploads/2024/02/CODIGO-ORGANICO-DE-PLANIFICACION-Y-FINANZAS-PUBLICAS.pdf" target="_blank" rel="noopener">Código Orgánico de Planificación y Finanzas Públicas, arts.65–69</a> · <a class="ref" href="https://www.cancilleria.gob.ec/2020/06/16/subsecretaria-de-asuntos-multilaterales/" target="_blank" rel="noopener">MREMH international-cooperation functions</a> · <a class="ref" href="https://www.cancilleria.gob.ec/2020/07/30/certificado-de-registro-de-programas-y-proyectos-de-cooperacion-internacional-no-reembolsable/" target="_blank" rel="noopener">SIGECI project-registration procedure</a></p>
   <div class="todo"><b>실무 확인</b>비상환 협력사업은 MREMH 협상·SIGECI 등록과 국가기획 투자우선순위 절차를 함께 확인한다.</div>
@@ -1622,7 +1633,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에티오피아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ethiopia-bidding-system/index.html">에티오피아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>현행 기본법은 Proclamation 1333/2024이고 FPPA가 규제기관, 재무부가 정책·지침, 각 연방 공공기관이 조달을 집행한다. Directive 1073/2025가 세부 집행기준을 제공한다.</div>
   <p class="cite">확인 출처 · Proclamation 1333/2024; Directive 1073/2025 · <a class="ref" href="https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf" target="_blank" rel="noopener">Federal Public Procurement and Property Administration Proclamation No. 1333/2024</a> · <a class="ref" href="https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf" target="_blank" rel="noopener">Federal Government Public Procurement Directive No. 1073/2025</a></p>
   <div class="todo"><b>실무 확인</b>e-GP 공고에서 연방·지역 관할, 최신 지침, 조달방식·기한·국내우대와 공여기관 규칙 적용을 확인한다.</div>
@@ -1641,7 +1652,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에티오피아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ethiopia-procurement-governance/index.html">에티오피아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>현행 기본법은 Proclamation 1333/2024이고 FPPA가 규제기관, 재무부가 정책·지침, 각 연방 공공기관이 조달을 집행한다. Directive 1073/2025가 세부 집행기준을 제공한다.</div>
   <p class="cite">확인 출처 · Proclamation 1333/2024; Directive 1073/2025 · <a class="ref" href="https://www.ppa.gov.et/wp-content/uploads/2024/10/Procurement-and-property-proclamation-2024-.pdf" target="_blank" rel="noopener">Federal Public Procurement and Property Administration Proclamation No. 1333/2024</a> · <a class="ref" href="https://www.ppa.gov.et/wp-content/uploads/2025/06/Directive_No_1073_2025_Federal_Government_Public_Procurement_Directive.pdf" target="_blank" rel="noopener">Federal Government Public Procurement Directive No. 1073/2025</a></p>
   <div class="todo"><b>실무 확인</b>e-GP 공고에서 연방·지역 관할, 최신 지침, 조달방식·기한·국내우대와 공여기관 규칙 적용을 확인한다.</div>
@@ -1660,7 +1671,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">엘살바도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/el-salvador-bidding-system/index.html">엘살바도르 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decreto 652의 Ley de Compras Públicas와 Decreto 653의 DINAC 설립법이 2023년 체계를 구성한다. DINAC은 규제기관이고 COMPRASAL은 전자조달시스템이며 계약기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · Decretos Legislativos 652 and 653; DINAC official institutional page · <a class="ref" href="https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf" target="_blank" rel="noopener">Decreto Legislativo n.º 652 — Ley de Compras Públicas</a></p>
   <div class="todo"><b>실무 확인</b>COMPRASAL 공고와 DINAC 현행 규범에서 선정방식·기한·공급자 요건을 확인한다.</div>
@@ -1679,7 +1690,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">엘살바도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/el-salvador-procurement-governance/index.html">엘살바도르 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decreto 652의 Ley de Compras Públicas와 Decreto 653의 DINAC 설립법이 2023년 체계를 구성한다. DINAC은 규제기관이고 COMPRASAL은 전자조달시스템이며 계약기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · Decretos Legislativos 652 and 653; DINAC official institutional page · <a class="ref" href="https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf" target="_blank" rel="noopener">Decreto Legislativo n.º 652 — Ley de Compras Públicas</a></p>
   <div class="todo"><b>실무 확인</b>COMPRASAL 공고와 DINAC 현행 규범에서 선정방식·기한·공급자 요건을 확인한다.</div>
@@ -1698,7 +1709,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">엘살바도르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/el-salvador-oda-project-pipeline/index.html">엘살바도르 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>ESCO는 대통령령 24(2020)에 따라 정부의 비상환 국제협력 수요를 조정·연계하고 사업 기획·형성·제출·승인 및 이행 감독을 지원한다.</div>
   <p class="cite">확인 출처 · ESCO official institutional framework and functions · <a class="ref" href="https://esco.gob.sv/marco-institucional/" target="_blank" rel="noopener">Decreto Ejecutivo n.º 24 de 29 de junio de 2020 — creación de ESCO</a> · <a class="ref" href="https://portal.esco.gob.sv/" target="_blank" rel="noopener">Sistema Integrado de Información de la Cooperación Internacional</a></p>
   <div class="todo"><b>실무 확인</b>정부기관 제안은 ESCO의 현행 사업형성·승인 절차와 MRREE 외교경로를 함께 확인한다.</div>
@@ -1717,7 +1728,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">요르단</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/jordan-bidding-system/index.html">요르단 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>By-law No. 8/2022는 PPC를 규제기구, PCC를 낙찰 전 불만검토기구로 두며 GTD·중앙조달기관과 개별 조달기관이 JONEPS에서 절차를 집행한다.</div>
   <p class="cite">확인 출처 · Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · <a class="ref" href="https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769" target="_blank" rel="noopener">Government Procurement By-law No. 8 of 2022, as amended</a> · <a class="ref" href="https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87" target="_blank" rel="noopener">Current Government Procurement By-law and Instructions register</a></p>
   <div class="todo"><b>실무 확인</b>JONEPS 공고와 최신 지침에서 관할 중앙조달기관, 기준금액, 방식과 불만기한을 확인한다.</div>
@@ -1736,7 +1747,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">요르단</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/jordan-procurement-governance/index.html">요르단 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>By-law No. 8/2022는 PPC를 규제기구, PCC를 낙찰 전 불만검토기구로 두며 GTD·중앙조달기관과 개별 조달기관이 JONEPS에서 절차를 집행한다.</div>
   <p class="cite">확인 출처 · Government Procurement By-law No. 8 of 2022; GTD/JONEPS official materials · <a class="ref" href="https://pm.gov.jo/Ar/Pages/NewsPaperDetails/5769" target="_blank" rel="noopener">Government Procurement By-law No. 8 of 2022, as amended</a> · <a class="ref" href="https://gpd.gov.jo/AR/List/%D9%86%D8%B8%D8%A7%D9%85_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A%D8%A9_%D9%88%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%D9%87" target="_blank" rel="noopener">Current Government Procurement By-law and Instructions register</a></p>
   <div class="todo"><b>실무 확인</b>JONEPS 공고와 최신 지침에서 관할 중앙조달기관, 기준금액, 방식과 불만기한을 확인한다.</div>
@@ -1755,7 +1766,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">요르단</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/jordan-oda-project-pipeline/index.html">요르단 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 10/2024 arts.5, 10 and 11에 따라 MOPIC는 외부재원의 단일 연락창구이고 정부기관의 요청은 MOPIC를 거쳐야 하며 지원 수락과 외부재원 사업에는 국무회의 승인이 요구된다.</div>
   <p class="cite">확인 출처 · Planning and International Cooperation Law No. 10 of 2024 arts. 5, 10–11 · <a class="ref" href="https://www.mop.gov.jo/En/Pages/Planning_Law" target="_blank" rel="noopener">Planning and International Cooperation Law No. 10 of 2024, arts. 5, 8, 10–12</a></p>
   <div class="todo"><b>실무 확인</b>PCP 제출 전 국가투자사업 등록, MOPIC 심사·추천 및 국무회의 승인 적용 여부를 확인한다.</div>
@@ -1774,7 +1785,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우간다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uganda-bidding-system/index.html">우간다 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2024년 7차 법령개정판 이후 공식 인용은 PPDA Act Cap.205이며 PPDA는 규제기관, 각 기관의 회계책임자·계약위원회·조달부서는 집행주체, eGP는 시스템이다.</div>
   <p class="cite">확인 출처 · PPDA Act Cap.205; PPDA official legal-update notice · <a class="ref" href="https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf" target="_blank" rel="noopener">PPDA Act, Cap.205 — 7th Revised Edition</a></p>
   <div class="todo"><b>실무 확인</b>공고일 기준 Cap.205·하위규정, 중앙·지방 관할, 기준금액·방식·행정심사 기한을 확인한다.</div>
@@ -1793,7 +1804,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우간다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uganda-procurement-governance/index.html">우간다 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2024년 7차 법령개정판 이후 공식 인용은 PPDA Act Cap.205이며 PPDA는 규제기관, 각 기관의 회계책임자·계약위원회·조달부서는 집행주체, eGP는 시스템이다.</div>
   <p class="cite">확인 출처 · PPDA Act Cap.205; PPDA official legal-update notice · <a class="ref" href="https://media.ulii.org/media/legislation/18277/source_file/da36e939c833f106/2003-1.pdf" target="_blank" rel="noopener">PPDA Act, Cap.205 — 7th Revised Edition</a></p>
   <div class="todo"><b>실무 확인</b>공고일 기준 Cap.205·하위규정, 중앙·지방 관할, 기준금액·방식·행정심사 기한을 확인한다.</div>
@@ -1812,7 +1823,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우즈베키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uzbekistan-bidding-system/index.html">우즈베키스탄 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.</div>
   <p class="cite">확인 출처 · Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · <a class="ref" href="https://lex.uz/docs/5382983" target="_blank" rel="noopener">Law No.ZRU-684 of 22 April 2021 On Public Procurement</a> · <a class="ref" href="https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf" target="_blank" rel="noopener">Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027</a></p>
   <div class="todo"><b>실무 확인</b>Check the special portal notice, current amendment, method, threshold, deadline, evaluation and complaint route.</div>
@@ -1831,7 +1842,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우즈베키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uzbekistan-procurement-governance/index.html">우즈베키스탄 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>ZRU-684가 기본법이고 경제재정부가 규제, 발주기관·조달위원회가 집행하며 전자운영자는 시스템을 제공한다. 2025–2027 조달전략도 시행 중이다.</div>
   <p class="cite">확인 출처 · Law ZRU-684 arts.17–28; Cabinet Resolution 865/2024 · <a class="ref" href="https://lex.uz/docs/5382983" target="_blank" rel="noopener">Law No.ZRU-684 of 22 April 2021 On Public Procurement</a> · <a class="ref" href="https://lex.uz/Pages/GetPdf.aspx?file=LexUz_7314267.pdf" target="_blank" rel="noopener">Cabinet Resolution No.865 of 20 December 2024 — Public Procurement Strategy 2025–2027</a></p>
   <div class="todo"><b>실무 확인</b>Check the special portal notice, current amendment, method, threshold, deadline, evaluation and complaint route.</div>
@@ -1850,7 +1861,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우즈베키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uzbekistan-oda-project-pipeline/index.html">우즈베키스탄 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>투자산업통상부가 외부 무상지원·IFI 협력을 조정하고 경제재정부가 재정·조달을 담당한다. ZRU-684 제2조는 공여조건이 다른 절차를 정하지 않는 한 외국 원조·차관 조달에 적용된다.</div>
   <p class="cite">확인 출처 · MIIT official mandate; Law ZRU-684 art.2 · <a class="ref" href="https://gov.uz/en/miit/sections/view/7580" target="_blank" rel="noopener">Ministry of Investment, Industry and Trade mandate</a> · <a class="ref" href="https://lex.uz/docs/5382983" target="_blank" rel="noopener">Law No.ZRU-684 of 22 April 2021 On Public Procurement</a></p>
   <div class="todo"><b>실무 확인</b>Classify grant, technical assistance or loan; confirm MIIT coordination, finance approval and donor-procedure exception.</div>
@@ -1869,7 +1880,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우크라이나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ukraine-bidding-system/index.html">우크라이나 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 922-VIII가 기본법이고 Resolution 1178/2022의 전시 특례가 함께 적용된다. 경제부는 권한기관, 조달기관 담당자는 집행주체, Prozorro는 전자시스템이다.</div>
   <p class="cite">확인 출처 · Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · <a class="ref" href="https://zakon.rada.gov.ua/laws/show/922-19?lang=en" target="_blank" rel="noopener">Law of Ukraine No. 922-VIII On Public Procurement</a> · <a class="ref" href="https://zakon.rada.gov.ua/go/1178-2022-%D0%BF" target="_blank" rel="noopener">Cabinet Resolution No.1178 of 12 October 2022</a> · <a class="ref" href="https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&amp;tag=ZapitiKoristuvachiv&amp;tagId=7758c77b-e410-44ea-a07d-37f1799e11e5" target="_blank" rel="noopener">Ministry of Economy procurement consultations and Prozorro guidance</a></p>
   <div class="todo"><b>실무 확인</b>공고일 현재 Resolution 1178 최신판, 예외·공개기한·이의경로와 재원협정 우선 여부를 확인한다.</div>
@@ -1888,7 +1899,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우크라이나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ukraine-procurement-governance/index.html">우크라이나 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 922-VIII가 기본법이고 Resolution 1178/2022의 전시 특례가 함께 적용된다. 경제부는 권한기관, 조달기관 담당자는 집행주체, Prozorro는 전자시스템이다.</div>
   <p class="cite">확인 출처 · Law 922-VIII; Cabinet Resolution 1178/2022; Ministry of Economy procurement reform · <a class="ref" href="https://zakon.rada.gov.ua/laws/show/922-19?lang=en" target="_blank" rel="noopener">Law of Ukraine No. 922-VIII On Public Procurement</a> · <a class="ref" href="https://zakon.rada.gov.ua/go/1178-2022-%D0%BF" target="_blank" rel="noopener">Cabinet Resolution No.1178 of 12 October 2022</a> · <a class="ref" href="https://me.gov.ua/inforez/Print/b4d6e93c-7473-469e-a050-12466d257087?lang=uk-UA&amp;tag=ZapitiKoristuvachiv&amp;tagId=7758c77b-e410-44ea-a07d-37f1799e11e5" target="_blank" rel="noopener">Ministry of Economy procurement consultations and Prozorro guidance</a></p>
   <div class="todo"><b>실무 확인</b>공고일 현재 Resolution 1178 최신판, 예외·공개기한·이의경로와 재원협정 우선 여부를 확인한다.</div>
@@ -1907,7 +1918,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우크라이나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ukraine-oda-project-pipeline/index.html">우크라이나 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Resolution 153의 현행 절차는 내각사무처를 국제기술원조의 공식 요청·등록·조정·모니터링 기관으로 두며 수혜기관과 실행기관이 사업자료를 제출·이행한다.</div>
   <p class="cite">확인 출처 · Cabinet Resolution 153/2002, current revision and official translation · <a class="ref" href="https://zakon.rada.gov.ua/laws/show/153-2002-%D0%BF/paran18" target="_blank" rel="noopener">Cabinet Resolution No.153 of 15 February 2002</a> · <a class="ref" href="https://www.kmu.gov.ua/storage/app/sites/1/%D0%9C%D0%A2%D0%94%20-%20%D0%A4%D0%B5%D0%BB%D0%B5%D0%BD%D1%8E%D0%BA/RESOLU_1.pdf" target="_blank" rel="noopener">Official English translation of Resolution No.153 procedure</a></p>
   <div class="todo"><b>실무 확인</b>사업이 국제기술원조·차관·공공투자 중 어디에 해당하는지 판정한 뒤 등록, 재정·투자심사와 수혜기관 승인 경로를 확인한다.</div>
@@ -1926,7 +1937,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">이집트</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/egypt-bidding-system/index.html">이집트 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 182/2018과 시행규정이 일반 공공계약의 기본체계이며 GAGS는 통제기준·점검·지원, 각 행정기관은 개별 조달 집행을 담당한다. 정부계약 포털은 기관이 아니다.</div>
   <p class="cite">확인 출처 · Law 182/2018; Executive Regulations; GAGS official procurement mandate · <a class="ref" href="https://www.nib.gov.eg/PDF/library/Low182_2018.pdf" target="_blank" rel="noopener">Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities</a> · <a class="ref" href="https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf" target="_blank" rel="noopener">Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고에서 적용범위, 조달방식, 현지우대, 기한과 최신 GAGS 회람을 확인한다.</div>
@@ -1945,7 +1956,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">이집트</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/egypt-procurement-governance/index.html">이집트 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 182/2018과 시행규정이 일반 공공계약의 기본체계이며 GAGS는 통제기준·점검·지원, 각 행정기관은 개별 조달 집행을 담당한다. 정부계약 포털은 기관이 아니다.</div>
   <p class="cite">확인 출처 · Law 182/2018; Executive Regulations; GAGS official procurement mandate · <a class="ref" href="https://www.nib.gov.eg/PDF/library/Low182_2018.pdf" target="_blank" rel="noopener">Law No. 182 of 2018 Regulating Contracts Concluded by Public Entities</a> · <a class="ref" href="https://www.nib.gov.eg/PDF/library/%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%D8%A9%20%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20182%20%D9%84%D8%B3%D9%86%D8%A9%202018.pdf" target="_blank" rel="noopener">Executive Regulations of Law No. 182 of 2018, Minister of Finance Decision No. 692 of 2019</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고에서 적용범위, 조달방식, 현지우대, 기한과 최신 GAGS 회람을 확인한다.</div>
@@ -1964,7 +1975,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">이집트</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/egypt-oda-project-pipeline/index.html">이집트 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2024년 통합된 MPEDIC가 계획·국제협력·개발재원을 연계하고 대외재원 기준·협상·모니터링을 조정하며 재무부와 부문기관이 재정·사업실행 역할을 분담한다.</div>
   <p class="cite">확인 출처 · Presidential Decree 303/2004 mandate; MPEDIC 2024 merger and annual report · <a class="ref" href="https://moic.gov.eg/page/ministers-statement" target="_blank" rel="noopener">Presidential Decree No. 303 of 2004 — international cooperation mandate</a> · <a class="ref" href="https://moic.gov.eg/page/annual-report-2024" target="_blank" rel="noopener">2024 ministry merger and integrated development-financing framework</a></p>
   <div class="todo"><b>실무 확인</b>사업별 MPEDIC 공식 요청·협상 경로, 재무부 보증·면세 및 부문기관 국내승인을 확인한다.</div>
@@ -1983,7 +1994,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">인도네시아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/indonesia-bidding-system/index.html">인도네시아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Perpres 16/2018은 Perpres 46/2025로 두 번째 개정됐고 LKPP는 정책기관, PA/KPA·PPK·조달작업반은 기관별 집행주체다. 현지법인 요건은 참가조건이지 기관이 아니다.</div>
   <p class="cite">확인 출처 · Perpres 46/2025 and LKPP official legal database · <a class="ref" href="https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025" target="_blank" rel="noopener">Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018</a> · <a class="ref" href="https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025" target="_blank" rel="noopener">Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah</a></p>
   <div class="todo"><b>실무 확인</b>공고와 재원협정에서 Perpres 46/2025 적용, 외국원조 협정 우선규정과 외국기업 참가조건을 각각 확인한다.</div>
@@ -2002,7 +2013,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">인도네시아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/indonesia-procurement-governance/index.html">인도네시아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Perpres 16/2018은 Perpres 46/2025로 두 번째 개정됐고 LKPP는 정책기관, PA/KPA·PPK·조달작업반은 기관별 집행주체다. 현지법인 요건은 참가조건이지 기관이 아니다.</div>
   <p class="cite">확인 출처 · Perpres 46/2025 and LKPP official legal database · <a class="ref" href="https://jdih.lkpp.go.id/regulation/peraturan-presiden/peraturan-presiden-nomor-46-tahun-2025" target="_blank" rel="noopener">Peraturan Presiden Nomor 46 Tahun 2025 — Perubahan Kedua atas Perpres 16/2018</a> · <a class="ref" href="https://jdih.lkpp.go.id/regulation/konsolidasi/konsolidasi-nomor-46-tahun-2025" target="_blank" rel="noopener">Konsolidasi Perpres 16/2018 jo. Perpres 12/2021 jo. Perpres 46/2025 — Pengadaan Barang/Jasa Pemerintah</a></p>
   <div class="todo"><b>실무 확인</b>공고와 재원협정에서 Perpres 46/2025 적용, 외국원조 협정 우선규정과 외국기업 참가조건을 각각 확인한다.</div>
@@ -2021,7 +2032,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">카메룬</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cameroon-oda-project-pipeline/index.html">카메룬 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>process / 외부재원 사업 조정기관</h3>
+  <h3>외부재원 사업 조정기관</h3>
   <div class="quote act"><b>현행 기준</b>MINEPAT 공식 기능에는 국제파트너 조정, 차관협약 발굴·협상·최종화, 국가 사업은행과 공공투자 프로그램 관리가 포함된다. 1999 총리실 회람은 외부재원 탐색이나 기술지원 요청 전부터 정부 보고를 요구한다. MINFI·채무심사는 차입의 재정조건에 관여하지만 모든 외부원조의 단일 첫 관문으로 확인되지는 않았다.</div>
   <p class="cite">확인 출처 · MINEPAT Directorate General of Economy functions; Circulaire No. 004/CAB/PM (1999) · <a class="ref" href="https://minepat.gov.cm/dg-conomie/" target="_blank" rel="noopener">MINEPAT Directorate General of Economy functions</a> · Circulaire No. 004/CAB/PM du 9 septembre 1999 relative à la coordination du financement extérieur des projets (2026-11-12 발행처 파일 주소에서 HTTP 404 응답. 기관 기능은 함께 연결한 MINEPAT 자료에서 확인할 수 있습니다.)</p>
   <div class="todo"><b>실무 확인</b>사업 발굴 초기부터 MINEPAT에 보고하고, 차입사업이면 MINFI·채무심사 절차를 별도로 확인한다.</div>
@@ -2040,7 +2051,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">케냐</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kenya-bidding-system/index.html">케냐 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>PPADA 2015(2022 개정판)와 2020 규정 아래 국가재무부는 정책, PPRA는 규제·감독, PPARB는 행정심사, 각 조달기관은 집행을 맡으며 2025년 e-GPS 전환이 의무화됐다.</div>
   <p class="cite">확인 출처 · PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · <a class="ref" href="https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31" target="_blank" rel="noopener">Public Procurement and Asset Disposal Act 2015, revised edition 2022</a> · <a class="ref" href="https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31" target="_blank" rel="noopener">Public Procurement and Asset Disposal Regulations 2020</a> · <a class="ref" href="https://ppra.go.ke/ppra-circular-02-2025/" target="_blank" rel="noopener">PPRA Circular 02/2025 — transition to the Electronic Government Procurement System</a></p>
   <div class="todo"><b>실무 확인</b>e-GPS 공고와 공고일 기준 회람에서 적용방식·기준금액·심사기한·PPIP 연계 상태를 확인한다.</div>
@@ -2059,7 +2070,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">케냐</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kenya-procurement-governance/index.html">케냐 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>PPADA 2015(2022 개정판)와 2020 규정 아래 국가재무부는 정책, PPRA는 규제·감독, PPARB는 행정심사, 각 조달기관은 집행을 맡으며 2025년 e-GPS 전환이 의무화됐다.</div>
   <p class="cite">확인 출처 · PPADA 2015 revised 2022; Regulations 2020; PPRA Circular 02/2025 · <a class="ref" href="https://new.kenyalaw.org/akn/ke/act/2015/33/eng%402022-12-31" target="_blank" rel="noopener">Public Procurement and Asset Disposal Act 2015, revised edition 2022</a> · <a class="ref" href="https://new.kenyalaw.org/akn/ke/act/ln/2020/69/eng%402022-12-31" target="_blank" rel="noopener">Public Procurement and Asset Disposal Regulations 2020</a> · <a class="ref" href="https://ppra.go.ke/ppra-circular-02-2025/" target="_blank" rel="noopener">PPRA Circular 02/2025 — transition to the Electronic Government Procurement System</a></p>
   <div class="todo"><b>실무 확인</b>e-GPS 공고와 공고일 기준 회람에서 적용방식·기준금액·심사기한·PPIP 연계 상태를 확인한다.</div>
@@ -2078,7 +2089,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">코트디부아르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cote-divoire-bidding-system/index.html">코트디부아르 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 조달기관과 법령</h3>
+  <h3>조달기관과 법령</h3>
   <div class="quote act"><b>현행 기준</b>현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ARCOP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다. Ordonnance 2025-32 제1·49조에 따라 종전 ANRMP가 ARCOP으로 개편됐다.</div>
   <p class="cite">확인 출처 · Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · <a class="ref" href="https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf" target="_blank" rel="noopener">Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics</a> · <a class="ref" href="https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf" target="_blank" rel="noopener">Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP</a></p>
   <div class="todo"><b>실무 확인</b>입찰서류의 발주기관·COJO와 ARCOP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.</div>
@@ -2097,7 +2108,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">코트디부아르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cote-divoire-procurement-governance/index.html">코트디부아르 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 조달기관과 법령</h3>
+  <h3>조달기관과 법령</h3>
   <div class="quote act"><b>현행 기준</b>현행 기본법은 Ordonnance 2019-679이며, DGMP는 행정·통제, ARCOP는 독립 규제·이의·제재, 발주기관과 COJO는 개찰·평가를 담당한다. GPA는 기관이 아니다. Ordonnance 2025-32 제1·49조에 따라 종전 ANRMP가 ARCOP으로 개편됐다.</div>
   <p class="cite">확인 출처 · Ordonnance 2019-679; Ordonnance 2025-32 arts.1–3, 49; DGMP official regulation catalogue · <a class="ref" href="https://www.marchespublics.ci/uploads/doc/Code_des_march%C3%A9s_publics_Ordonnance_n%C2%B02019-679_du_24_juillet_2019.pdf" target="_blank" rel="noopener">Ordonnance n°2019-679 du 24 juillet 2019 portant Code des marchés publics</a> · <a class="ref" href="https://arcop.ci/download/199/outils/19945/ordonnance-arcop.pdf" target="_blank" rel="noopener">Ordonnance n° 2025-32 du 15 janvier 2025 portant attributions, organisation et fonctionnement de l’ARCOP</a></p>
   <div class="todo"><b>실무 확인</b>입찰서류의 발주기관·COJO와 ARCOP 이의절차를 구분하고 최신 시행령·기준금액을 확인한다.</div>
@@ -2116,7 +2127,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">코트디부아르</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cote-divoire-oda-project-pipeline/index.html">코트디부아르 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 개발협력 조정기관</h3>
+  <h3>개발협력 조정기관</h3>
   <div class="quote act"><b>현행 기준</b>기획개발부 DGCOD에는 개발협력 전략조정, 협력틀 관리, 차관·무상협정 협상 준비·참여의 공식 기능이 있다. 다만 개별 한국 무상원조 제안의 외교공한 경로는 별도 실무확인이 필요하다.</div>
   <p class="cite">확인 출처 · Ministry of Plan DGCOD official functions; Décret 2015-475 as amended · <a class="ref" href="https://www.plan.gouv.ci/detail_structure/66" target="_blank" rel="noopener">DGCOD official functions</a> · <a class="ref" href="https://www.marchespublics.ci/uploads/doc/Decret_n°2015-475_du_1er_juillet_2015portant_procedures_et_modalites_de_gestion.pdf" target="_blank" rel="noopener">Décret n°2015-475 modifié par Décret n°2019-299 — projets financés/cofinancés par les partenaires</a> · <a class="ref" href="https://www.marchespublics.ci/uploads/doc/Decret_n°2019-299.pdf" target="_blank" rel="noopener">Décret n°2019-299 du 3 avril 2019 modifiant le Décret n°2015-475</a></p>
   <div class="todo"><b>실무 확인</b>제안 초기 DGCOD 조정 여부와 함께 해당 공여기관이 요구하는 외교공한·재정승인 경로를 확인한다.</div>
@@ -2135,7 +2146,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">콜롬비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/colombia-bidding-system/index.html">콜롬비아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis·authorities / 현행 조달법·기관</h3>
+  <h3>현행 조달법·기관</h3>
   <div class="quote act"><b>현행 기준</b>현행 공공계약의 기본축은 Ley 80 de 1993과 Ley 1150 de 2007이며, 국가공공조달청 ANCP–Colombia Compra Eficiente가 조달정책·도구와 SECOP를 총괄한다. PAA는 기관이 아니라 연간조달계획이다.</div>
   <p class="cite">확인 출처 · Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · <a class="ref" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304" target="_blank" rel="noopener">Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública</a> · <a class="ref" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686" target="_blank" rel="noopener">Ley 1150 de 2007</a></p>
   <div class="todo"><b>실무 확인</b>개별 절차는 SECOP 공고와 적용 법률을 확인하고, 국제협력기관 재원 계약은 Ley 1150 art.20의 재원비율별 적용을 별도 검토한다.</div>
@@ -2154,7 +2165,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">콜롬비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/colombia-procurement-governance/index.html">콜롬비아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis·authorities / 현행 조달법·기관</h3>
+  <h3>현행 조달법·기관</h3>
   <div class="quote act"><b>현행 기준</b>현행 공공계약의 기본축은 Ley 80 de 1993과 Ley 1150 de 2007이며, 국가공공조달청 ANCP–Colombia Compra Eficiente가 조달정책·도구와 SECOP를 총괄한다. PAA는 기관이 아니라 연간조달계획이다.</div>
   <p class="cite">확인 출처 · Ley 80 de 1993; Ley 1150 de 2007; Colombia Compra Eficiente official legal portal · <a class="ref" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=304" target="_blank" rel="noopener">Ley 80 de 1993 — Estatuto General de Contratación de la Administración Pública</a> · <a class="ref" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=184686" target="_blank" rel="noopener">Ley 1150 de 2007</a></p>
   <div class="todo"><b>실무 확인</b>개별 절차는 SECOP 공고와 적용 법률을 확인하고, 국제협력기관 재원 계약은 Ley 1150 art.20의 재원비율별 적용을 별도 검토한다.</div>
@@ -2173,7 +2184,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">콜롬비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/colombia-oda-project-pipeline/index.html">콜롬비아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 국제협력 총괄기관</h3>
+  <h3>국제협력 총괄기관</h3>
   <div class="quote act"><b>현행 기준</b>APC-Colombia는 국제개발협력의 국가 총괄기관이자 국제사회와 콜롬비아 기관 사이의 공식 창구이며, 무상 기술·재정협력 사업의 기준 설정·승인·조정을 담당한다.</div>
   <p class="cite">확인 출처 · APC-Colombia official role and Director General functions · <a class="ref" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44688" target="_blank" rel="noopener">APC-Colombia statutory role and functions</a></p>
   <div class="todo"><b>실무 확인</b>무상협력 제안은 APC-Colombia의 현행 기준과 해당 협력기관의 국가별 절차를 함께 확인한다.</div>
@@ -2192,7 +2203,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">DR콩고</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dr-congo-bidding-system/index.html">DR콩고 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 조달 거버넌스</h3>
+  <h3>조달 거버넌스</h3>
   <div class="quote act"><b>현행 기준</b>Loi 10/010은 국가·주·분권기관·공기업·공공기관 및 공공재원 보장 민간법인 조달을 규율하며, ARMP·DGCMP·발주기관 조달셀의 규제·사전통제·집행 역할이 분리된다.</div>
   <p class="cite">확인 출처 · Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · <a class="ref" href="https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf" target="_blank" rel="noopener">Loi n°10/010 du 27 avril 2010 relative aux marchés publics</a> · <a class="ref" href="https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf" target="_blank" rel="noopener">Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고의 발주 조달셀, DGCMP 통제대상 여부와 ARMP 이의절차를 각각 확인한다.</div>
@@ -2211,7 +2222,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">DR콩고</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dr-congo-procurement-governance/index.html">DR콩고 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 조달 거버넌스</h3>
+  <h3>조달 거버넌스</h3>
   <div class="quote act"><b>현행 기준</b>Loi 10/010은 국가·주·분권기관·공기업·공공기관 및 공공재원 보장 민간법인 조달을 규율하며, ARMP·DGCMP·발주기관 조달셀의 규제·사전통제·집행 역할이 분리된다.</div>
   <p class="cite">확인 출처 · Loi 10/010 arts.1-2; Décrets 10/21, 10/27, 10/32 and 23/12 · <a class="ref" href="https://www.armp-rdc.cd/wp-content/uploads/2021/12/Lois-relative-aux-marchs-publicsx.pdf" target="_blank" rel="noopener">Loi n°10/010 du 27 avril 2010 relative aux marchés publics</a> · <a class="ref" href="https://armp-rdc.cd/wp-content/uploads/2023/08/DECRET-N%C2%B023-12-DU-03-MARS-2023-PORTANT-MANUEL-DE-PROCEDURES-DES-MARCHES-PUBLICS-1.pdf" target="_blank" rel="noopener">Décret n°23/12 du 03 mars 2023 portant Manuel de procédures des marchés publics</a></p>
   <div class="todo"><b>실무 확인</b>개별 공고의 발주 조달셀, DGCMP 통제대상 여부와 ARMP 이의절차를 각각 확인한다.</div>
@@ -2230,7 +2241,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">DR콩고</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/dr-congo-oda-project-pipeline/index.html">DR콩고 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 외부재원 조정기관</h3>
+  <h3>외부재원 조정기관</h3>
   <div class="quote act"><b>현행 기준</b>기획부 외부재원조정국은 재무부·국제협력 담당부처와 함께 개발협력과 외부재원 동원·사용을 조정하고 우선투자 연계를 추적하는 공식 기능을 가진다.</div>
   <p class="cite">확인 출처 · Ministry of Plan — Direction de la Coordination des Ressources Extérieures official functions · <a class="ref" href="https://plan.gouv.cd/secretariat-general-2/direction-de-la-coordination-des-ressources-exterieures/" target="_blank" rel="noopener">Direction de la Coordination des Ressources Extérieures — official functions</a></p>
   <div class="todo"><b>실무 확인</b>사업 제안 전 기획부 외부재원조정국 및 재무·국제협력 담당기관의 최신 공문·승인 경로를 확인한다.</div>
@@ -2249,7 +2260,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">키르기스스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kyrgyzstan-bidding-system/index.html">키르기스스탄 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law No.27/2022가 2026년 제10호까지 개정된 현행 기본법이며 조달기관·Agent와 독립위원회가 법정 역할을 수행하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.</div>
   <p class="cite">확인 출처 · Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · <a class="ref" href="https://cbd.minjust.gov.kg/112361/edition/1279682/ru" target="_blank" rel="noopener">Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)</a> · <a class="ref" href="https://cbd.minjust.gov.kg/4-5701/edition/46464/ru" target="_blank" rel="noopener">Law No. 10 of 29 January 2026 amending the Law On Public Procurement</a> · <a class="ref" href="https://zakupki.gov.kg/" target="_blank" rel="noopener">Unified public procurement portal</a></p>
   <div class="todo"><b>실무 확인</b>공고별 조달방식, 제출기한, 보증형식과 국제협정의 별도 규칙을 확인한다.</div>
@@ -2268,7 +2279,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">키르기스스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kyrgyzstan-procurement-governance/index.html">키르기스스탄 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law No.27/2022가 2026년 제10호까지 개정된 현행 기본법이며 조달기관·Agent와 독립위원회가 법정 역할을 수행하고 통합포털의 정확한 도메인은 zakupki.gov.kg이다.</div>
   <p class="cite">확인 출처 · Law No.27/2022 arts.8~10 and 43~45; Law No.10/2026; unified procurement portal · <a class="ref" href="https://cbd.minjust.gov.kg/112361/edition/1279682/ru" target="_blank" rel="noopener">Law of the Kyrgyz Republic No. 27 of 14 April 2022 On Public Procurement (current edition of 29 January 2026)</a> · <a class="ref" href="https://cbd.minjust.gov.kg/4-5701/edition/46464/ru" target="_blank" rel="noopener">Law No. 10 of 29 January 2026 amending the Law On Public Procurement</a> · <a class="ref" href="https://zakupki.gov.kg/" target="_blank" rel="noopener">Unified public procurement portal</a></p>
   <div class="todo"><b>실무 확인</b>공고별 조달방식, 제출기한, 보증형식과 국제협정의 별도 규칙을 확인한다.</div>
@@ -2287,7 +2298,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">타지키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tajikistan-bidding-system/index.html">타지키스탄 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 1955(2023, 2025 개정)가 현행법이며 권한기관·인증 조달기관·전자포털 체계다. 공여국·외국은행·IFI가 전부 또는 일부 재원하는 국가투자사업은 법 적용에서 제외될 수 있다.</div>
   <p class="cite">확인 출처 · Law No.1955 arts.1–2, 5, 14 · <a class="ref" href="https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85" target="_blank" rel="noopener">Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025</a></p>
   <div class="todo"><b>실무 확인</b>Determine first whether the donor-financed investment-project exception applies, then check the governing rules and notice.</div>
@@ -2325,7 +2336,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">타지키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tajikistan-procurement-governance/index.html">타지키스탄 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law 1955(2023, 2025 개정)가 현행법이며 권한기관·인증 조달기관·전자포털 체계다. 공여국·외국은행·IFI가 전부 또는 일부 재원하는 국가투자사업은 법 적용에서 제외될 수 있다.</div>
   <p class="cite">확인 출처 · Law No.1955 arts.1–2, 5, 14 · <a class="ref" href="https://ncz.tj/content/%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8-%D1%82%D0%B0%D0%B4%D0%B6%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD-%D0%BE-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85" target="_blank" rel="noopener">Law No.1955 of 15 March 2023 On Public Procurement, as amended by Law No.2149 of 11 February 2025</a></p>
   <div class="todo"><b>실무 확인</b>Determine first whether the donor-financed investment-project exception applies, then check the governing rules and notice.</div>
@@ -2363,7 +2374,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">타지키스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tajikistan-oda-project-pipeline/index.html">타지키스탄 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>국가투자·국유재산관리위원회가 외부원조 규칙과 투자정책을 담당하고 경제개발무역부가 국가전략·투자프로그램을 조정한다.</div>
   <p class="cite">확인 출처 · External Assistance Rules; official Committee and Ministry mandates · <a class="ref" href="https://egov.tj/site/sarmoyaguzori?lang=en" target="_blank" rel="noopener">Government Decree No.95 of 25 February 2017 — Rules on Attraction, Use, Coordination and Monitoring of External Assistance, as amended 28 November 2023</a> · <a class="ref" href="https://egov.tj/site/rushdiiktisod?lang=ru" target="_blank" rel="noopener">Ministry of Economic Development and Trade mandate</a></p>
   <div class="todo"><b>실무 확인</b>Confirm the Committee registration and coordination route, state-investment-program inclusion, finance review and executing entity.</div>
@@ -2401,7 +2412,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis / 근거 법령의 현행 여부</h3>
+  <h3>근거 법령의 현행 여부</h3>
   <div class="quote act"><b>현행 기준</b>PPA 2023 §131(1)은 Public Procurement Act 2011을 폐지한다. 새 법은 2024-06-17 시행(GN 455)됐고, 현행 하위규정은 Public Procurement Regulations 2024다. 공식 영문본은 GN No. 261(2025-04-25)로 공표됐으며 reg.23(6)은 보증 금액을 입찰서류에 위임한다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, No. 10 of 2023 §131(1); Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> · <a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</a></p>
   <div class="todo"><b>실무 확인</b>발주 건의 입찰서류에서 보증 금액·형태를 직접 확인하고, NeST 등록과 지역업체 우대 요건을 사전에 점검한다.</div>
@@ -2420,7 +2431,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-procurement-governance/index.html">탄자니아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis / PPRA 근거 법령의 현행 여부</h3>
+  <h3>PPRA 근거 법령의 현행 여부</h3>
   <div class="quote act"><b>현행 기준</b>PPRA의 근거 법률이 PPA 2011에서 PPA 2023(2024-06-17 시행)으로 교체됐다. §8은 PPRA를 승계하되, §74(가격상한)·NeST 의무 등 새 권한·의무를 부여한다. PPA 2011은 §131(1)로 폐지됐다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, No. 10 of 2023 §8, §74, §131(1) · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a></p>
   <div class="todo"><b>실무 확인</b>탄자니아 조달 감독체계를 확인할 때 PPA 2023을 기준으로 삼는다. 특히 발주 예정가가 PPRA 가격상한에 걸리는지, NeST 등록이 됐는지를 사전에 점검한다.</div>
@@ -2439,7 +2450,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-oda-project-pipeline/index.html">탄자니아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부 External Finance Division이 외부재원·협력정책·협정·ODA 기록·모니터링을, Debt Management Division이 차입·보증·채무를 담당하며 DCF가 공통 틀이다.</div>
   <p class="cite">확인 출처 · MoF divisions; revised DCF; financing guidelines · <a class="ref" href="https://mof.go.tz/divisions" target="_blank" rel="noopener">External Finance Division and Debt Management Division official mandates</a> · <a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1747807046-Development%20Cooperation%20Framework%20%28DCF%29.pdf" target="_blank" rel="noopener">Development Cooperation Framework 2017/18–2029/30 (revised 2022/23)</a> · <a class="ref" href="https://repository.mof.go.tz/items/49afd5c3-5fc9-45a4-98d1-fcb99a9fe01d" target="_blank" rel="noopener">Guidelines for Project Planning and Negotiations for Raising Loans, Issuing Guarantees and Receiving Grants</a></p>
   <div class="todo"><b>실무 확인</b>Classify grant or loan and confirm External Finance, debt review, budget inclusion, agreement and tax treatment.</div>
@@ -2496,7 +2507,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">태국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/thailand-oda-project-pipeline/index.html">태국 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>외교부 산하 TICA가 외국정부·국제기구와 기술·개발협력을 관리하고 정부·민간의 원조계획·사업을 조정·감독한다.</div>
   <p class="cite">확인 출처 · TICA official mandate and ODA institutional overview · <a class="ref" href="https://tica-thaigov.mfa.go.th/en/page/vision-and-authority?menu=5f47761072148c085f3a287e" target="_blank" rel="noopener">TICA vision and mandate</a> · <a class="ref" href="https://tica-thaigov.mfa.go.th/en/content/overview?cate=5d7da8d015e39c3fbc007463" target="_blank" rel="noopener">Thailand ODA institutional overview</a></p>
   <div class="todo"><b>실무 확인</b>한국 무상협력 제안은 TICA 조정경로와 태국 실행기관의 국내 승인·재정절차를 확인한다.</div>
@@ -2572,7 +2583,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">튀니지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tunisia-oda-project-pipeline/index.html">튀니지 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>경제기획부가 협력정책·사업을 조정하고 재무부 DGGDPCF가 대외차관·금융협정, 재무부 대형사업 추적조직이 대외재원 사업요청·집행을 담당한다. 사업별 협정·예산·실행기관·조달규칙을 별도로 확정해야 한다.</div>
   <p class="cite">확인 출처 · Ministry of Economy and Planning cooperation mandate; Ministry of Finance DGGDPCF and DGASGP mandates · <a class="ref" href="https://www.mdici.gov.tn/fr/attributions-du-ministere-de-leconomie-et-de-la-planification/" target="_blank" rel="noopener">Ministry of Economy and Planning bilateral-cooperation mandate</a> · <a class="ref" href="https://www.finances.gov.tn/ar/structures-du-ministere/aladart-alamt-lltsrf-fy-aldyn-almwmy-waltawn-almaly" target="_blank" rel="noopener">Ministry of Finance DGGDPCF and major-project follow-up mandates</a></p>
   <div class="todo"><b>실무 확인</b>무상·차관 여부에 따라 경제기획부·DGGDPCF·외교부 공식경로와 실행기관 승인을 확인한다.</div>
@@ -2838,7 +2849,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">페루</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/peru-bidding-system/index.html">페루 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Ley 32069와 DS 009-2025-EF가 현행 기본체계이고 OECE와 MEF-DGA가 감독·정책을 담당한다. PLADICOP·지침·데이터베이스는 기관이 아니다.</div>
   <p class="cite">확인 출처 · Ley 32069; DS 009-2025-EF; OECE consolidated legislation · <a class="ref" href="https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184" target="_blank" rel="noopener">Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05</a> · <a class="ref" href="https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235" target="_blank" rel="noopener">Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09</a> · <a class="ref" href="https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de" target="_blank" rel="noopener">OECE current Law 32069 compendium and DS 001-2026-EF commencement notice</a></p>
   <div class="todo"><b>실무 확인</b>PLADICOP 공고와 2026년 통합 법령에서 적용 절차·기한·분쟁경로를 확인한다.</div>
@@ -2876,7 +2887,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">페루</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/peru-procurement-governance/index.html">페루 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Ley 32069와 DS 009-2025-EF가 현행 기본체계이고 OECE와 MEF-DGA가 감독·정책을 담당한다. PLADICOP·지침·데이터베이스는 기관이 아니다.</div>
   <p class="cite">확인 출처 · Ley 32069; DS 009-2025-EF; OECE consolidated legislation · <a class="ref" href="https://cdn.www.gob.pe/uploads/document/file/7594705/6444155-ley-general-de-contrataciones-publicas-con-modificaciones-al-5-12-2025.pdf?v=1768513184" target="_blank" rel="noopener">Ley N.º 32069 — Ley General de Contrataciones Públicas, consolidated to 2025-12-05</a> · <a class="ref" href="https://cdn.www.gob.pe/uploads/document/file/9295551/6444155-ref-reglamento-de-la-ley-de-contrataciones-del-estado-con-modificaciones-posteriores-hasta-08-ene-2026-2-v2.pdf?v=1768513235" target="_blank" rel="noopener">Reglamento de la Ley N.º 32069 (DS 009-2025-EF), consolidated to 2026-01-09</a> · <a class="ref" href="https://www.gob.pe/institucion/oece/colecciones/45029-ley-n-32069-ley-general-de" target="_blank" rel="noopener">OECE current Law 32069 compendium and DS 001-2026-EF commencement notice</a></p>
   <div class="todo"><b>실무 확인</b>PLADICOP 공고와 2026년 통합 법령에서 적용 절차·기한·분쟁경로를 확인한다.</div>
@@ -2914,7 +2925,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">페루</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/peru-oda-project-pipeline/index.html">페루 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>MRE가 SINDCINR의 규제기관이고 APCI가 집행사무국으로 국제기술협력의 수요·공급 연계, 사업관리·협상·감독을 담당한다.</div>
   <p class="cite">확인 출처 · APCI institutional page; Ley 27692; Ley 28875 SINDCINR framework · <a class="ref" href="https://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/7e1812336c5963630525799f005ed9c1/%24file/3.ley_n_27692_de_creacion_de_la_apci_y_sus_modificatorias.pdf" target="_blank" rel="noopener">Ley N.º 27692 — Ley de Creación de la APCI, as amended</a> · <a class="ref" href="https://www.gob.pe/31107-sistema-nacional-descentralizado-de-cooperacion-internacional-no-reembolsable-sindcinr" target="_blank" rel="noopener">Ley N.º 28875 and current SINDCINR institutional framework</a></p>
   <div class="todo"><b>실무 확인</b>비상환 기술협력은 APCI/SINDCINR 등록·조정 절차와 협력기관별 공식 요청경로를 확인한다.</div>
@@ -2952,7 +2963,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">피지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/fiji-bidding-system/index.html">피지 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.</div>
   <p class="cite">확인 출처 · Procurement Regulations 2010 regs.4–5 · <a class="ref" href="https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf" target="_blank" rel="noopener">Procurement Regulations 2010 (Legal Notice No.81)</a></p>
   <div class="todo"><b>실무 확인</b>Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route.</div>
@@ -2971,7 +2982,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">피지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/fiji-procurement-governance/index.html">피지 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Procurement Regulations 2010이 FPO를 설치하고 정책·통합구매·공고·평가·계약·준수평가 기능과 Government Tender Board의 낙찰 역할을 정한다.</div>
   <p class="cite">확인 출처 · Procurement Regulations 2010 regs.4–5 · <a class="ref" href="https://www.finance.gov.fj/wp-content/uploads/2023/12/Procurement-Regulations-2010.pdf" target="_blank" rel="noopener">Procurement Regulations 2010 (Legal Notice No.81)</a></p>
   <div class="todo"><b>실무 확인</b>Check the current regulations, agency delegation, tender notice, method, threshold, deadline and review route.</div>
@@ -2990,7 +3001,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">필리핀</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/philippines-bidding-system/index.html">필리핀 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>RA 12009 New Government Procurement Act와 IRR이 각각 2024년 8월과 2025년 2월 발효됐으며 3년 전환규정이 적용된다. GPPB는 정책기관이고 BAC·조달기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · RA 12009; 2025 IRR; GPPB Resolution 05-2025 · <a class="ref" href="https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf" target="_blank" rel="noopener">Republic Act n.º 12009 — New Government Procurement Act</a> · <a class="ref" href="https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf" target="_blank" rel="noopener">GPPB Circular on RA 12009 transitory provisions</a></p>
   <div class="todo"><b>실무 확인</b>공고일과 전환규정을 확인해 RA 9184 또는 RA 12009 적용 여부와 필수 신서식을 결정한다.</div>
@@ -3009,7 +3020,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">필리핀</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/philippines-procurement-governance/index.html">필리핀 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>RA 12009 New Government Procurement Act와 IRR이 각각 2024년 8월과 2025년 2월 발효됐으며 3년 전환규정이 적용된다. GPPB는 정책기관이고 BAC·조달기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · RA 12009; 2025 IRR; GPPB Resolution 05-2025 · <a class="ref" href="https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf" target="_blank" rel="noopener">Republic Act n.º 12009 — New Government Procurement Act</a> · <a class="ref" href="https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf" target="_blank" rel="noopener">GPPB Circular on RA 12009 transitory provisions</a></p>
   <div class="todo"><b>실무 확인</b>공고일과 전환규정을 확인해 RA 9184 또는 RA 12009 적용 여부와 필수 신서식을 결정한다.</div>
@@ -3028,7 +3039,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">필리핀</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/philippines-oda-project-pipeline/index.html">필리핀 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>구 NEDA는 DEPDev로 개편됐고 DEPDev/ICC의 2025 지침이 ODA 차관·무상 사업의 심사·승인·재심사 경로를 규율한다. DOF와 주관기관은 재정·사업준비 역할을 분담한다.</div>
   <p class="cite">확인 출처 · DEPDev 2025 ICC Guidelines; RA 8182 ODA Act and 2024 ODA Portfolio Review · <a class="ref" href="https://depdev.gov.ph/wp-content/uploads/2025/10/Guidelines-and-Procedures-on-the-Review-and-Approval-of-New-and-Ongoing-Programs-and-Projects-Requiring-Economy-and-Development-Council-Investment-Coordination-Committee-Action.pdf" target="_blank" rel="noopener">2025 DEPDev/ICC Guidelines for review and approval of programs and projects</a> · <a class="ref" href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/46091" target="_blank" rel="noopener">Republic Act No. 8182 — Official Development Assistance Act and Implementing Rules and Regulations</a></p>
   <div class="todo"><b>실무 확인</b>ODA 사업은 DEPDev/ICC 최신 심사대상·승인수준과 DOF 차관조건 및 주관기관 준비요건을 확인한다.</div>
@@ -3047,7 +3058,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">가나</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ghana-oda-project-pipeline/index.html">가나 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부 ERM 양자·다자 부서는 PFM Act 921과 헌법 181조에 따라 외부재원을 조달하고 개발협력·협정·ODA 기록을 조정하며 NDPC와 실행기관이 계획·사업 역할을 맡는다.</div>
   <p class="cite">확인 출처 · MoF ERM overview and functions; PFM Act 921; Constitution art.181 · <a class="ref" href="https://www.mofep.gov.gh/node/242" target="_blank" rel="noopener">가나 재무부 양자 대외재원동원국의 법적 권한</a> · <a class="ref" href="https://mofep.gov.gh/index.php/divisions/erm-b/functions" target="_blank" rel="noopener">가나 재무부 양자 대외재원동원국의 기능</a> · <a class="ref" href="https://mofep.gov.gh/sites/default/files/acts/PUBLIC-FINANCIAL-MANAGEMENT-ACT-2016.pdf" target="_blank" rel="noopener">Public Financial Management Act, 2016 (Act 921)</a></p>
   <div class="todo"><b>실무 확인</b>사업제안은 ERM 양자/다자 창구, NDPC 계획 정합성, 의회·재정 승인과 실행기관 준비요건을 확인한다.</div>
@@ -3066,7 +3077,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.bottlenecks / 대리인 위반 시 제재 근거</h3>
+  <h3>대리인 위반 시 제재 근거</h3>
   <div class="quote act"><b>현행 기준</b>the Public Entity shall carry out proceedings to blacklist such a bidder according to Rule 141 — 여기서 141은 법(Act)이 아니라 규칙(Rules)의 조항이며, 블랙리스트의 실체 근거는 Act §63이다.</div>
   <p class="cite">확인 출처 · Public Procurement Rules, 2064 (2007) r.39(3), r.141 / Public Procurement Act, 2063 (2007) §63 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Rules%202007.pdf" target="_blank" rel="noopener">Public Procurement Rules, 2064 (2007)</a> · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a></p>
   <div class="todo"><b>실무 확인</b>실무 준비를 바꿀 필요는 없다. 다만 블랙리스트 근거를 확인해야 할 때 법(Act)에서 제141조를 찾지 말고 규칙(Rules) r.141과 법 §63을 본다.</div>
@@ -3085,7 +3096,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities / 입찰공고 주체</h3>
+  <h3>입찰공고 주체</h3>
   <div class="quote act"><b>현행 기준</b>PPMO의 법정 권한은 조달 웹사이트의 &#x27;설치·운영&#x27;(§65(1)(f))이며, §65(2)는 &#x27;PPMO는 자기 사무소의 조달을 제외하고 다른 공공기관의 조달절차에 어떤 방식으로도 관여해서는 안 되며 그에 관해 발생한 분쟁을 해결해서도 안 된다&#x27;고 명시한다. 개별 입찰의 공고 주체는 각 발주 공공기관이다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, 2063 (2007) §65(1)(f), §65(2) · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a></p>
   <div class="todo"><b>실무 확인</b>입찰 공고는 e-GP 포털에서 찾되 계약 상대와 문의처는 개별 발주기관이다. 입찰 관련 이의는 PPMO가 아니라 발주기관장에게 7일 내 제기하고, 불복 시 검토위원회로 간다. PPMO에 제기하면 처리 권한이 없어 기한만 소진된다.</div>
@@ -3104,7 +3115,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.procedure / PCP 작성 주체</h3>
+  <h3>PCP 작성 주체</h3>
   <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(a)(b)는 소관부처가 대외원조 대상 사업 목록을 작성하고 사업 준비성 체크리스트에 따라 재무부에 제안서를 제출하도록 규정한다. 제안서 작성 주체는 소관부처이고 재무부는 접수·검토·송부 창구다.</div>
   <p class="cite">확인 출처 · Foreign Aid Mobilization Policy, 2025 §3.3.2(a), §3.3.2(b), §3.3.1(a) · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></p>
   <div class="todo"><b>실무 확인</b>PCP 작성·협의 상대는 수원기관(소관부처)으로 보되, 송부는 재무부 공한을 거친다. 착수 시 KOICA 네팔사무소에 해당 사업의 준비성 체크리스트 서식과 제출 경로를 확인한다.</div>
@@ -3123,7 +3134,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.bottlenecks / 조세·관세 면제 범위</h3>
+  <h3>조세·관세 면제 범위</h3>
   <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.6.1 — (a) 무상으로 받은 대외원조는 원칙적으로 세금 납부에 사용하지 않는다. (b) 차관 재원 사업에는 원칙적으로 조세면제 조항을 포함하지 않는다. (c) 국내에서 충분히 생산되는 물품의 수입에는 조세면제를 부여하지 않는다. (d) 현물 지원의 경우 소관부처 추천에 따라 재무부가 현행법에 따라 면제를 부여할 수 있다.</div>
   <p class="cite">확인 출처 · Foreign Aid Mobilization Policy, 2025 §3.6.1(a)(b)(c)(d) · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></p>
   <div class="todo"><b>실무 확인</b>기자재 목록을 짤 때 네팔 국내에서 충분히 생산되는 품목인지 먼저 확인한다. 해당하면 면제를 전제로 예산을 잡지 않는다. 차관 연계 사업이면 면제 조항 자체가 없을 수 있으므로 협정문에서 확인한다.</div>
@@ -3142,7 +3153,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">라오스</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/laos-oda-project-pipeline/index.html">라오스 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Law No.30/NA art.3은 정부가 받은 외국 무상원조·차관을 정부자금에 포함하고, Instruction clause 2는 공여협정이 특정 조달규칙을 정하면 이를 우선 적용하도록 한다.</div>
   <p class="cite">확인 출처 · Law No.30/NA arts.3 and 7; Instruction No.0477/MOF clause 2; Ministry of Finance/PPMD current materials · <a class="ref" href="https://ppmd.mof.gov.la/storage/1632981237.Laos%20PDR%20Public%20Procurement%20Law_English%5B23%5D.pdf" target="_blank" rel="noopener">Law on Public Procurement No. 30/NA of 2 November 2017</a> · <a class="ref" href="https://www.mof.gov.la/storage/document/32%20LAW%20ON%20PUBLIC%20PROCUREMENT.pdf" target="_blank" rel="noopener">Instruction No. 0477/MOF of 13 February 2019 on Implementation of the Law on Public Procurement</a> · <a class="ref" href="https://ppmd.mof.gov.la/storage/177130072233.%20RFQ%20for%20Furniture_WSSISP-Signed%20by%20DG-DWS-10%20Feb%202026-2-Full.pdf" target="_blank" rel="noopener">2026 official PPMD procurement notice applying Law No.30/NA and Instruction No.0477/MOF</a></p>
   <div class="todo"><b>실무 확인</b>재원협정의 조달부속서, 정부 승인, Project Owner 권한과 공여기관 사전승인을 확인한다.</div>
@@ -3161,7 +3172,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">모로코</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/morocco-oda-project-pipeline/index.html">모로코 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Decree 2-22-431이 2023-09-01부터 시행되어 종전령을 폐지했다. 공개입찰 21/40일, 간이공개 100만 MAD·10일, 입찰보증 상한 2%, 공사 이행보증 원칙 3%, 5일 이의절차가 현행 원문에 명시된다.</div>
   <p class="cite">확인 출처 · Decree 2-22-431 arts.2~3, 19, 23~25, 36, 89, 91, 142~143, 163~170; CCAG-T art.15 · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/6afbc2bd-5715-4a68-8afa-0cc19d768173/Decree%2BPublic%2Bprocurement_ENG%2Bversion.pdf?ContentCache=NONE&amp;MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics</a> · <a class="ref" href="https://www.tgr.gov.ma/wps/wcm/connect/48e2b53e-6fa9-4ee9-a6ae-bbde89b37b6f/2-14-394ccag.pdf?MOD=AJPERES" target="_blank" rel="noopener">Décret n° 2-14-394 approuvant le CCAG-T</a></p>
   <div class="todo"><b>실무 확인</b>실제 공고의 예정금액·적용 CCAG/CPS, 전자제출 시각과 재원협정상 별도 조달절차를 확인한다.</div>
@@ -3180,7 +3191,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">방글라데시</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bangladesh-oda-project-pipeline/index.html">방글라데시 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>process / 국내 DPP 심사와 외부원조 동원 경로</h3>
+  <h3>국내 DPP 심사와 외부원조 동원 경로</h3>
   <div class="quote act"><b>현행 기준</b>ERD는 외부원조 제안 심사·재원동원·협상·배분을 담당하지만, 국내 공공투자 사업은 실행기관의 DPP 작성, 소관 부처 평가, Planning Commission 부문심사와 비용별 승인 절차를 거친다.</div>
   <p class="cite">확인 출처 · ERD Allocation of Business; Planning Commission Handbook for DPP · <a class="ref" href="https://erd.gov.bd/pages/static-pages/694032c535ce18e1c0562157" target="_blank" rel="noopener">Allocation of Business — Economic Relations Division</a> · <a class="ref" href="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-plandiv/2024/12/42f38d333ca64c298486a47cfb4ab4ce.pdf" target="_blank" rel="noopener">Handbook for Development Project Proposal</a></p>
   <div class="todo"><b>실무 확인</b>KOICA 요청서와 별도로 국내 DPP 작성·부처평가·Planning Commission 심사 필요 여부를 확인한다.</div>
@@ -3199,7 +3210,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">볼리비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bolivia-bidding-system/index.html">볼리비아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities / 주무기관과 정보시스템</h3>
+  <h3>주무기관과 정보시스템</h3>
   <div class="quote act"><b>현행 기준</b>DS 0181(NB-SABS)의 공식 편찬본은 MEFP가 게시한다. SICOES는 국가계약정보시스템이고 RUPE는 공급업체 등록 기능이므로 기관이 아니다.</div>
   <p class="cite">확인 출처 · MEFP, DS 0181 compiled text; SICOES official portal · <a class="ref" href="https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf" target="_blank" rel="noopener">Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023</a> · <a class="ref" href="https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php" target="_blank" rel="noopener">Sistema de Contrataciones Estatales (SICOES)</a></p>
   <div class="todo"><b>실무 확인</b>NB-SABS와 기관별 RE-SABS를 확인하고 SICOES·RUPE 등록 및 공고는 시스템에서 별도로 처리한다.</div>
@@ -3218,7 +3229,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">볼리비아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/bolivia-procurement-governance/index.html">볼리비아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities / 주무기관과 정보시스템</h3>
+  <h3>주무기관과 정보시스템</h3>
   <div class="quote act"><b>현행 기준</b>DS 0181(NB-SABS)의 공식 편찬본은 MEFP가 게시한다. SICOES는 국가계약정보시스템이고 RUPE는 공급업체 등록 기능이므로 기관이 아니다.</div>
   <p class="cite">확인 출처 · MEFP, DS 0181 compiled text; SICOES official portal · <a class="ref" href="https://media.economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf" target="_blank" rel="noopener">Decreto Supremo No. 0181 — NB-SABS, compiled text updated to 2023</a> · <a class="ref" href="https://www.sicoes.gob.bo/portal/contrataciones/pac/pac.php" target="_blank" rel="noopener">Sistema de Contrataciones Estatales (SICOES)</a></p>
   <div class="todo"><b>실무 확인</b>NB-SABS와 기관별 RE-SABS를 확인하고 SICOES·RUPE 등록 및 공고는 시스템에서 별도로 처리한다.</div>
@@ -3237,7 +3248,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">아제르바이잔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/azerbaijan-bidding-system/index.html">아제르바이잔 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities / 조달 감독기관</h3>
+  <h3>조달 감독기관</h3>
   <div class="quote act"><b>현행 기준</b>경제부 산하 반독점·소비자시장통제청이 공공조달 정책 집행, 경쟁조달·계약이행 감시, 분쟁 조사와 통합 포털 운영을 담당한다. &#x27;Public Procurement&#x27;와 &#x27;Closed Tender&#x27;는 기관명이 아니다.</div>
   <p class="cite">확인 출처 · State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · <a class="ref" href="https://competition.gov.az/en/page/home/dovlet-satinalmalari" target="_blank" rel="noopener">Public Procurement — regulator functions, portal and complaint route</a> · <a class="ref" href="https://e-qanun.az/framework/54966" target="_blank" rel="noopener">Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement</a></p>
   <div class="todo"><b>실무 확인</b>공고는 etender.gov.az에서 확인하고, 구매기관의 결정에 불복할 경우 법정 기한 내 구매기관을 거쳐 State Service에 이의를 제기한다.</div>
@@ -3256,7 +3267,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">아제르바이잔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/azerbaijan-procurement-governance/index.html">아제르바이잔 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities / 조달 감독기관</h3>
+  <h3>조달 감독기관</h3>
   <div class="quote act"><b>현행 기준</b>경제부 산하 반독점·소비자시장통제청이 공공조달 정책 집행, 경쟁조달·계약이행 감시, 분쟁 조사와 통합 포털 운영을 담당한다. &#x27;Public Procurement&#x27;와 &#x27;Closed Tender&#x27;는 기관명이 아니다.</div>
   <p class="cite">확인 출처 · State Service for Antimonopoly and Consumer Market Control, Public Procurement official page; Law No. 988-VIQ (2023) · <a class="ref" href="https://competition.gov.az/en/page/home/dovlet-satinalmalari" target="_blank" rel="noopener">Public Procurement — regulator functions, portal and complaint route</a> · <a class="ref" href="https://e-qanun.az/framework/54966" target="_blank" rel="noopener">Law of the Republic of Azerbaijan No. 988-VIQ of 14 July 2023 On Public Procurement</a></p>
   <div class="todo"><b>실무 확인</b>공고는 etender.gov.az에서 확인하고, 구매기관의 결정에 불복할 경우 법정 기한 내 구매기관을 거쳐 State Service에 이의를 제기한다.</div>
@@ -3275,7 +3286,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">아제르바이잔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/azerbaijan-oda-project-pipeline/index.html">아제르바이잔 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities / 보조금·기술지원 공식화</h3>
+  <h3>보조금·기술지원 공식화</h3>
   <div class="quote act"><b>현행 기준</b>경제부 공식 법령 목록은 기술지원·보조금 협약 체결·승인 규칙(Decree No. 388)을 제시하고, 경제부는 일정 보조금 협약 등록을 수행한다. 모든 KOICA 무상원조 요청의 단일 창구가 내각이라는 공개 근거는 확인하지 못했다.</div>
   <p class="cite">확인 출처 · Ministry of Economy, Decree No. 388; Grant agreements registration page · <a class="ref" href="https://e-qanun.az/framework/11551" target="_blank" rel="noopener">Decree No. 388 on Rules for Concluding and Approving Technical Assistance and Grant Agreements</a> · <a class="ref" href="https://e-qanun.az/framework/30212" target="_blank" rel="noopener">Cabinet Decision No. 216 of 5 June 2015 approving the Rules for Registration of Grant Agreements</a></p>
   <div class="todo"><b>실무 확인</b>제안 전 경제부와 소관부처에 협약 등록·승인 경로를 확인하고, KOICA 공식요청 경로는 외교공한 기준으로 재확인한다.</div>
@@ -3294,7 +3305,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">에티오피아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/ethiopia-oda-project-pipeline/index.html">에티오피아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부의 양자협력국·국제금융기관협력국 등이 외부재원 동원·협상·협정 이행과 개발파트너 조정을 담당하고 기획개발부·부문기관이 계획·실행을 분담한다.</div>
   <p class="cite">확인 출처 · Ministry of Finance bilateral and IFI cooperation directorate mandates · <a class="ref" href="https://www.mofed.gov.et/ministry-en/directorates/bilateral-cooperation-directorate/" target="_blank" rel="noopener">Ministry of Finance bilateral-cooperation mandate</a> · <a class="ref" href="https://www.mofed.gov.et/ministry-en/directorates/international-financial-institutions-co-operation-directorate/" target="_blank" rel="noopener">Ministry of Finance international-financial-institutions cooperation mandate</a></p>
   <div class="todo"><b>실무 확인</b>PCP 제출 전 재무부 협력국, 국가계획 정합성, 협정·예산 및 실행기관 준비요건을 확인한다.</div>
@@ -3313,7 +3324,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">우간다</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/uganda-oda-project-pipeline/index.html">우간다 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>MoFPED의 DARC가 대외재원·개발파트너·협상·협정을 조정하고 총리실 주도의 정책조정위원회와 실행기관이 상위조정·사업실행을 분담한다.</div>
   <p class="cite">확인 출처 · MoFPED DARC mandate; Development Policy and Performance Portal · <a class="ref" href="https://archive.finance.go.ug/node/6" target="_blank" rel="noopener">MoFPED Development Assistance and Regional Cooperation mandate</a></p>
   <div class="todo"><b>실무 확인</b>PCP는 DARC 재원협상, 국가개발계획·예산 정합성, 협정 승인과 실행기관 준비요건을 확인한다.</div>
@@ -3332,7 +3343,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">인도네시아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/indonesia-oda-project-pipeline/index.html">인도네시아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Bappenas 외부재원·무상원조국은 외국차관·무상원조의 계획·배분·모니터링을 조정하며 재무부와 부문 주관기관이 재정·협정·사업실행 역할을 분담한다.</div>
   <p class="cite">확인 출처 · Bappenas Regulation 2/2025 arts.273–274 · <a class="ref" href="https://www.bappenas.go.id/index.php/unit-kerja/0804" target="_blank" rel="noopener">Peraturan Menteri PPN/Kepala Bappenas n.º 2/2025, arts.273–274</a></p>
   <div class="todo"><b>실무 확인</b>사업 제안은 Bappenas 계획목록·우선순위와 재무부 협정·예산 및 주관기관 준비요건을 확인한다.</div>
@@ -3351,7 +3362,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">카메룬</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cameroon-bidding-system/index.html">카메룬 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities / 규제기관 누락</h3>
+  <h3>규제기관 누락</h3>
   <div class="quote act"><b>현행 기준</b>2018 공공계약법 체계에는 MINMAP의 통제 기능과 별도로 ARMP의 규제 기능 및 발주기관의 집행 책임이 존재한다. Code art.3은 국가예산뿐 아니라 양자·다자 외부원조 공동재원 조달에도 적용된다.</div>
   <p class="cite">확인 출처 · Décret No. 2018/366 arts.1-3; ARMP official portal · <a class="ref" href="https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf" target="_blank" rel="noopener">Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics</a> · <a class="ref" href="https://armp.cm/details?id_publication=18592&amp;type_publication=DEC-ATTR" target="_blank" rel="noopener">ARMP official procurement publications</a></p>
   <div class="todo"><b>실무 확인</b>재원협약의 별도 조달규칙과 Code 2018/366의 적용관계를 확인하고 ARMP 공식 문서를 함께 조회한다.</div>
@@ -3370,7 +3381,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">카메룬</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cameroon-procurement-governance/index.html">카메룬 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities / 규제기관 누락</h3>
+  <h3>규제기관 누락</h3>
   <div class="quote act"><b>현행 기준</b>2018 공공계약법 체계에는 MINMAP의 통제 기능과 별도로 ARMP의 규제 기능 및 발주기관의 집행 책임이 존재한다. Code art.3은 국가예산뿐 아니라 양자·다자 외부원조 공동재원 조달에도 적용된다.</div>
   <p class="cite">확인 출처 · Décret No. 2018/366 arts.1-3; ARMP official portal · <a class="ref" href="https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf" target="_blank" rel="noopener">Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics</a> · <a class="ref" href="https://armp.cm/details?id_publication=18592&amp;type_publication=DEC-ATTR" target="_blank" rel="noopener">ARMP official procurement publications</a></p>
   <div class="todo"><b>실무 확인</b>재원협약의 별도 조달규칙과 Code 2018/366의 적용관계를 확인하고 ARMP 공식 문서를 함께 조회한다.</div>
@@ -3389,7 +3400,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">캄보디아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cambodia-bidding-system/index.html">캄보디아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis / 근거 조달법의 현행 여부</h3>
+  <h3>근거 조달법의 현행 여부</h3>
   <div class="quote act"><b>현행 기준</b>2023 공공조달법(Royal Kram NS/RKM/0523/005)은 2023-05-16 공포됐고 제86조로 2012법을 폐지했다. 제85조는 기존 시행규정을 새 규정으로 대체할 때까지 존속시키므로 Prakas 1866 금액기준과 Prakas 986 보증규정이 과도기 적용된다.</div>
   <p class="cite">확인 출처 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page · <a class="ref" href="https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf" target="_blank" rel="noopener">Law on Public Procurement, 2023 (크메르어 원문)</a> · <a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a></p>
   <div class="todo"><b>실무 확인</b>캄보디아 입찰 준비 시 2023 공공조달법을 기본 근거로 삼고, 입찰방식·금액구간·보증 요건은 개별 공고와 발주기관에서 재확인한다.</div>
@@ -3408,7 +3419,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">캄보디아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cambodia-procurement-governance/index.html">캄보디아 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.legalBasis / 감독체계 근거 법령 및 신설 권한</h3>
+  <h3>감독체계 근거 법령 및 신설 권한</h3>
   <div class="quote act"><b>현행 기준</b>현행 근거는 2023 공공조달법(Royal Kram NS/RKM/0523/005)이다. GDPP 공식 페이지는 공사·서비스·컨설팅 조달의 입찰문서 검토, 개찰·협상 참여, 계약 제안 기술평가, 개발파트너 재원 조달 감독을 주요 기능으로 공개한다.</div>
   <p class="cite">확인 출처 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); GDPP Works and Services Management Department · <a class="ref" href="https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf" target="_blank" rel="noopener">Law on Public Procurement, 2023 (크메르어 원문)</a> · <a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a></p>
   <div class="todo"><b>실무 확인</b>KOICA 무상사업은 외부재원으로 분류해 GDICDM·SOP 2019 트랙을 확인하고, 세부 감독절차와 직접조달 한도는 발주기관에서 재확인한다.</div>
@@ -3427,7 +3438,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">캄보디아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/cambodia-oda-project-pipeline/index.html">캄보디아 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>CDC 산하 CDCB가 정부 전체 ODA 정보·파트너 조정을 담당하고 MEF가 외부재원 공공투자의 준비·재정·관리체계를 운영한다.</div>
   <p class="cite">확인 출처 · CDC ODA Database; MEF public-investment framework · <a class="ref" href="https://oda.cdc.gov.kh/" target="_blank" rel="noopener">Cambodia ODA Database and CDCB development-cooperation mandate</a> · <a class="ref" href="https://gdde.mef.gov.kh/private/83c8a60785c28e" target="_blank" rel="noopener">Public Investment Management System and externally financed project framework</a></p>
   <div class="todo"><b>실무 확인</b>Confirm CDCB registration, MEF public-investment screening, financing agreement and executing-agency approval.</div>
@@ -3446,7 +3457,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">케냐</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kenya-oda-project-pipeline/index.html">케냐 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>국가재무부 자원동원부는 대외차입·무상원조·보증과 개발파트너 기술지원을 조정하고 PFM Act와 Kenya External Resources Policy가 ODA 조달·관리를 규율한다.</div>
   <p class="cite">확인 출처 · National Treasury Resource Mobilization mandate; External Resources Estimates Handbook · <a class="ref" href="https://www.treasury.go.ke/index.php/resource-mobilization" target="_blank" rel="noopener">National Treasury Resource Mobilization Department mandate</a></p>
   <div class="todo"><b>실무 확인</b>PCP는 자원동원부 재원경로, 국가계획·예산, 보증·차입 승인과 실행기관 준비요건을 확인한다.</div>
@@ -3465,7 +3476,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">키르기스스탄</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/kyrgyzstan-oda-project-pipeline/index.html">키르기스스탄 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부가 재정·대외차입을, 경제상무부와 부문기관이 우선순위·사업준비를, 내각이 중요 정부결정을 담당한다.</div>
   <p class="cite">확인 출처 · Cabinet and Ministry of Finance official mandates · <a class="ref" href="https://www.gov.kg/ru" target="_blank" rel="noopener">Cabinet of Ministers official legal and institutional framework</a> · <a class="ref" href="https://www.minfin.kg/" target="_blank" rel="noopener">Ministry of Finance public-finance and procurement functions</a></p>
   <div class="todo"><b>실무 확인</b>Confirm the financing type, Ministry of Finance review, development-plan route and Cabinet approval.</div>
@@ -3484,7 +3495,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.applicability / 전자조달 시스템</h3>
+  <h3>전자조달 시스템</h3>
   <div class="quote act"><b>현행 기준</b>PPA 2023은 전 조달을 국가전자조달시스템(NeST, National e-Procurement System of Tanzania)으로 처리하도록 의무화했다. 종전 TANePS를 대체하는 통합 시스템이다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, No. 10 of 2023 (전자조달 규정) — PPRA 시행 공지 · <a class="ref" href="https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf" target="_blank" rel="noopener">Public Procurement Act, No. 10 of 2023</a> · <a class="ref" href="https://www.ppra.go.tz/news/new-public-procurement-law-to-take-effect-on-june-17-2024" target="_blank" rel="noopener">PPRA 새 조달법 시행 공지 (2024-06-17)</a></p>
   <div class="todo"><b>실무 확인</b>탄자니아 입찰 참여 전 NeST(국가전자조달시스템) 등록을 완료하고 전자입찰 역량을 갖춘다. 종이 기반 절차를 전제로 준비하지 않는다.</div>
@@ -3503,7 +3514,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">탄자니아</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tanzania-bidding-system/index.html">탄자니아 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.applicability / 보증률</h3>
+  <h3>보증률</h3>
   <div class="quote act"><b>현행 기준</b>PPR 2024는 보증 비율을 규정에 고정하지 않고 위임한다 — 입찰보증(reg.23(6))·이행보증(reg.29(2))은 입찰서류에, 하자보증은 유보금(retention money) 방식으로 계약에(reg.329(2)), 하자담보기간도 &#x27;계약에 정한 기간&#x27;에(reg.329(7)) 맡긴다. 확정 값이 있는 것은 선금 30% 상한(reg.315(2))과 지체상금 물품 0.10~0.20%·공사 0.10~0.15%/일(reg.318(2))뿐이며, 지체상금에 &#x27;운송·보관&#x27; 항목은 없다.</div>
   <p class="cite">확인 출처 · Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule · <a class="ref" href="https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf" target="_blank" rel="noopener">Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)</a></p>
   <div class="todo"><b>실무 확인</b>입찰·이행보증 금액은 입찰서류에서, 하자보증(유보금)과 하자담보기간은 계약서에서 확인한다. 선금은 계약가 30% 상한, 지체상금은 물품 0.10~0.20%·공사 0.10~0.15%/일을 적용하며 운송·보관 관련 항목은 계약 특약 여부를 따로 확인한다.</div>
@@ -3522,7 +3533,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">태국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/thailand-bidding-system/index.html">태국 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Public Procurement and Supplies Administration Act B.E. 2560 (2017)과 재무부 규정이 기본체계이며 CGD가 감독·e-GP를 담당하고 각 국가기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · 2017 Public Procurement Act and Ministry of Finance Regulation · <a class="ref" href="https://law.prd.go.th/th/content/page/index/id/234612" target="_blank" rel="noopener">Public Procurement and Supplies Administration Act, B.E. 2560 (2017)</a> · <a class="ref" href="https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429" target="_blank" rel="noopener">Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended</a></p>
   <div class="todo"><b>실무 확인</b>e-GP 공고와 최신 재무부 하위규정에서 방식·기준금액·기한을 확인한다.</div>
@@ -3541,7 +3552,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">태국</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/thailand-procurement-governance/index.html">태국 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>Public Procurement and Supplies Administration Act B.E. 2560 (2017)과 재무부 규정이 기본체계이며 CGD가 감독·e-GP를 담당하고 각 국가기관이 절차를 집행한다.</div>
   <p class="cite">확인 출처 · 2017 Public Procurement Act and Ministry of Finance Regulation · <a class="ref" href="https://law.prd.go.th/th/content/page/index/id/234612" target="_blank" rel="noopener">Public Procurement and Supplies Administration Act, B.E. 2560 (2017)</a> · <a class="ref" href="https://finance.prd.go.th/th/content/category/detail/id/3063/iid/384429" target="_blank" rel="noopener">Ministry of Finance Regulation on Public Procurement and Supplies Administration, B.E. 2560 (2017), as amended</a></p>
   <div class="todo"><b>실무 확인</b>e-GP 공고와 최신 재무부 하위규정에서 방식·기준금액·기한을 확인한다.</div>
@@ -3560,7 +3571,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">튀니지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tunisia-bidding-system/index.html">튀니지 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2014-1039호(2018-416호 개정)가 현행 기본령이고 HAICOP은 통제·구제·제도운영, 발주기관은 집행, TUNEPS는 의무 전자시스템이다. 방식·금액·기한·보증·이의는 기본령의 개별 조문이 정한다.</div>
   <p class="cite">확인 출처 · Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · <a class="ref" href="https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/" target="_blank" rel="noopener">Décret n° 2014-1039 du 13 mars 2014 — consolidated text</a> · <a class="ref" href="https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/" target="_blank" rel="noopener">Décret gouvernemental n° 2018-416 du 11 mai 2018</a></p>
   <div class="todo"><b>실무 확인</b>TUNEPS 공고와 최신 개정에서 적용위원회·기준금액·방식·기한·불만경로를 확인한다.</div>
@@ -3579,7 +3590,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">튀니지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/tunisia-procurement-governance/index.html">튀니지 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>2014-1039호(2018-416호 개정)가 현행 기본령이고 HAICOP은 통제·구제·제도운영, 발주기관은 집행, TUNEPS는 의무 전자시스템이다. 방식·금액·기한·보증·이의는 기본령의 개별 조문이 정한다.</div>
   <p class="cite">확인 출처 · Décret 2014-1039 Arts.5, 41~77, 105~112, 147~170 and 180~181; Décret 2018-416 Arts.1~3 · <a class="ref" href="https://legislation-securite.tn/ar/latest-laws/%D8%A3%D9%85%D8%B1-%D8%B9%D8%AF%D8%AF-1039-%D9%84%D8%B3%D9%86%D8%A9-2014-%D9%85%D8%A4%D8%B1%D8%AE-%D9%81%D9%8A-13-%D9%85%D8%A7%D8%B1%D8%B3-2014-%D9%8A%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AA%D9%86%D8%B8/" target="_blank" rel="noopener">Décret n° 2014-1039 du 13 mars 2014 — consolidated text</a> · <a class="ref" href="https://legislation-securite.tn/latest-laws/decret-gouvernemental-n-2018-416-du-11-mai-2018-modifiant-et-completant-le-decret-n-2014-1039-du-13-mars-2014-portant-reglementation-des-marches-publics/" target="_blank" rel="noopener">Décret gouvernemental n° 2018-416 du 11 mai 2018</a></p>
   <div class="todo"><b>실무 확인</b>TUNEPS 공고와 최신 개정에서 적용위원회·기준금액·방식·기한·불만경로를 확인한다.</div>
@@ -3712,7 +3723,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">피지</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/fiji-oda-project-pipeline/index.html">피지 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.authorities·legalBasis / 현행 기관·법령</h3>
+  <h3>현행 기관·법령</h3>
   <div class="quote act"><b>현행 기준</b>재무부는 정부 전체 개발협력·재정·조달과 SDG 모니터링을 담당하고 외교부와 부문기관이 외교경로·사업준비·실행을 분담한다.</div>
   <p class="cite">확인 출처 · Ministry of Finance core responsibilities · <a class="ref" href="https://www.finance.gov.fj/core-responsibilities/" target="_blank" rel="noopener">Ministry of Finance core responsibility for development cooperation</a></p>
   <div class="todo"><b>실무 확인</b>Confirm the Ministry of Finance development-cooperation desk, diplomatic channel, budget inclusion and executing-agency approval.</div>
@@ -3731,7 +3742,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-bidding-system/index.html">네팔 공공조달 입찰제도 →</a>
   </div>
-  <h3>canvas.legalBasis.articles</h3>
+  <h3>법령 조문 표기</h3>
   <div class="quote act"><b>현행 기준</b>원문은 Section — Sub-section — clause 3단 체계다. 각각 §11(1)(a)(b), §8(1)(a)(4), §41(1)(a)~(f)에 해당한다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, 2063 (2007) §8, §11, §13, §41 · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a></p>
   <div class="todo"><b>실무 확인</b>원문에서 조문을 찾을 때 항(Sub-section) 단계를 넣어 §41(1)(a) 형태로 본다. 본 사이트의 인용은 이미 교정돼 있다.</div>
@@ -3744,7 +3755,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-procurement-governance/index.html">네팔 조달 거버넌스·감독체계 →</a>
   </div>
-  <h3>canvas.authorities[PPMO].role</h3>
+  <h3>공공조달모니터링국(PPMO)의 권한</h3>
   <div class="quote act"><b>현행 기준</b>§65(1)은 (a)~(n) 14개 호로 권한을 규정한다. 실무 영향이 큰 권한은 블랙리스트 해제기준 수립 및 해제 결정((j)), 검토위원회 사무국 수행(§65(3)), 입찰자·조달담당자 정기 교육((i)), 조달 연차보고서 제출((m))이다.</div>
   <p class="cite">확인 출처 · Public Procurement Act, 2063 (2007) §65(1)(a)~(n), §65(3) · <a class="ref" href="https://ntnc.org.np/sites/default/files/doc_page/Public%20Procurement%20Act%202007.pdf" target="_blank" rel="noopener">Public Procurement Act, 2063 (2007)</a></p>
   <div class="todo"><b>실무 확인</b>블랙리스트에 등재됐다면 해제 창구는 PPMO다. PPMO가 정한 해제기준에 따라 신청한다. 검토위원회 재심의 사무국도 PPMO가 맡으므로 접수 경로를 여기서 확인한다.</div>
@@ -3757,7 +3768,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">네팔</span>
     <a class="badge plain muted" style="text-decoration:none" href="../model/nepal-oda-project-pipeline/index.html">네팔 ODA 사업 발굴·형성 절차 →</a>
   </div>
-  <h3>canvas.bottlenecks / 누락된 실무 제약</h3>
+  <h3>누락된 실무 제약</h3>
   <div class="quote act"><b>현행 기준</b>FAMP 2025 §3.3.2(j) — 소관부처는 기술협력 재원을 차량·장비 구매나 해외 연수·훈련 참가에 사용하려면 재무부의 사전 승인을 받아야 한다.</div>
   <p class="cite">확인 출처 · Foreign Aid Mobilization Policy, 2025 §3.3.2(j) · <a class="ref" href="https://mof.gov.np/divisions/ierd/content/1564/foreign-aid-mobilization-policy--2025/" target="_blank" rel="noopener">Foreign Aid Mobilization Policy, 2025</a></p>
   <div class="todo"><b>실무 확인</b>기술협력 재원으로 차량·장비를 사거나 연수·훈련 해외 파견을 계획하면 재무부 사전 승인 절차를 일정에 반영한다.</div>

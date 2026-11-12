@@ -140,7 +140,23 @@ def check(path: Path) -> None:
             err(slug, "sourceQuotes는 배열이어야 함")
         else:
             source_laws = {s.get("law") for s in data.get("verification", {}).get("sources", [])}
+            node_ids = {n["id"] for n in data.get("process", {}).get("nodes", [])}
+            guide_nodes = set()
             for i, q in enumerate(sq):
+                comparison = q.get("comparison")
+                if comparison is not None and (
+                    not isinstance(comparison, dict) or not web_url(comparison.get("sourceUrl"))
+                    or not all(comparison.get(key) for key in ("title", "edition", "currentEdition", "summary", "sourceLabel", "checkedOn"))
+                ):
+                    err(slug, f"sourceQuotes[{i}].comparison 판본 대조 정보 누락")
+                if isinstance(comparison, dict) and "guideCitation" in comparison:
+                    guide = comparison["guideCitation"]
+                    if (not isinstance(guide, dict) or not isinstance(guide.get("nodeId"), str)
+                            or guide["nodeId"] not in node_ids or guide["nodeId"] in guide_nodes
+                            or not guide.get("label") or not guide.get("quote") or not web_url(guide.get("url"))):
+                        err(slug, f"sourceQuotes[{i}].guideCitation 단계·원문 연결 오류")
+                    else:
+                        guide_nodes.add(guide["nodeId"])
                 for field in ("law", "article", "quote", "gist"):
                     if not q.get(field):
                         err(slug, f"sourceQuotes[{i}].{field} 누락")

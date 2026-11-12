@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>캄보디아 공공조달 입찰제도 | 그 나라, 조달하고 건축하려면?</title>
 <style>
@@ -135,6 +136,12 @@ select,.btn{font:inherit;font-size:13.5px;color:inherit;background:var(--bg);
 .tile.ok b{color:var(--key)} .tile.info b{color:var(--info)}
 .tile.warn b{color:var(--warn)} .tile.bad b{color:var(--bad)}
 
+[id="summary"],[id="practice"],[id="sources"],[id="results"]{scroll-margin-top:6rem}
+.section-nav{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0;font-size:14px}
+.scope-note{border-left:3px solid var(--key);padding:8px 14px;max-width:85ch;font-size:14px;line-height:1.8;background:var(--soft)}
+.edition-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:1.2rem}.edition-pair>div{padding:12px;background:var(--soft);border-radius:8px}[id^="edition-"]{scroll-margin-top:6rem}
+.source-fold{border-bottom:1px solid var(--line);padding:12px 0}.source-fold>summary{font-weight:700;cursor:pointer;padding:6px 0}
+.source-fold[open]>summary{margin-bottom:12px}
 section.blk{padding:34px 0;border-top:1px solid var(--line)}
 section.blk > h2{font-size:21px;letter-spacing:-.02em;margin:0 0 6px;font-weight:800}
 section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
@@ -222,6 +229,10 @@ section.blk > .desc{color:var(--muted);font-size:13.5px;margin:0 0 20px}
 .drawer::backdrop{background:rgba(0,0,0,.34)}
 .drawer .pane{position:absolute;right:0;top:0;bottom:0;width:min(440px,92vw);background:var(--bg);
   border-left:1px solid var(--line);padding:24px;overflow:auto}
+.guide-entry{margin:12px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.guide-shortcut{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--key-bg);color:var(--key);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.guide-comparison summary{cursor:pointer;font-weight:700;color:var(--key)}
+.guide-comparison textarea{width:100%;font:inherit}.guide-comparison p{margin:10px 0}.guide-comparison small{display:block}
 .drawer h3{margin:10px 0 4px;font-size:19px;letter-spacing:-.02em}
 .drawer .close{position:absolute;right:18px;top:18px;background:none;border:0;color:var(--muted);
   font-size:22px;cursor:pointer;line-height:1;padding:4px}
@@ -463,7 +474,7 @@ footer.site a{color:var(--muted)}
   <a class="brand" href="../../index.html">그 나라, 조달하고 건축하려면?</a>
   <span class="brand-sub">협력국 조달·건축 법·제도 안내</span>
   <nav>
-    <a href="../../index.html">제도 대장</a>
+    <a href="../../index.html?country=cambodia#results">제도 대장</a>
     <a href="../../verification/index.html">검증 대장</a>
     <a href="../../errata/index.html">반영 출처</a>
     <button class="btn" style="padding:4px 10px;font-size:12px" onclick="__toggleTheme()">테마</button>
@@ -472,6 +483,7 @@ footer.site a{color:var(--muted)}
 
 
 <div class="subnav"><div class="wrap">
+  <a id="catalog-return" href="../../index.html?country=cambodia#results">캄보디아 목록으로 돌아가기</a>
   <label for="sel">제도 선택</label>
   <select id="sel" style="min-width:280px"><option value="cambodia-bidding-system" selected>01 · 캄보디아 입찰제도</option><option value="cambodia-procurement-governance">02 · 캄보디아 조달 거버넌스</option><option value="cambodia-oda-project-pipeline">03 · 캄보디아 ODA 사업형성</option><option value="cambodia-site-urban-construction-regulations">04 · 캄보디아 도시계획·부지규제</option><option value="cambodia-permit-environment-construction-regulations">05 · 캄보디아 건축허가·환경심사</option><option value="cambodia-control-completion-construction-regulations">06 · 캄보디아 기술검사·보험·준공제도</option></select>
   <a class="btn" href="../cameroon-control-completion-construction-regulations/index.html" style="text-decoration:none">← 이전</a>
@@ -479,31 +491,35 @@ footer.site a{color:var(--muted)}
   <span class="pos">전체 제도 172/267 · 이 국가 1/6</span>
 </div></div>
 
-<div class="wrap dtl-hd">
+<div class="wrap dtl-hd" id="summary">
   <div class="row">
     <span class="badge plain muted">NO 01</span>
     <span class="badge plain muted">캄보디아 · Cambodia</span>
     <span class="badge plain muted">입찰제도</span>
     <span class="badge ok">조문 대조 완료</span>
 
-    <span class="badge bad">확인사항 1건</span>
+
   </div>
   <h1>캄보디아 공공조달 입찰제도</h1>
   <p class="one">품목 구분 없이 공개입찰·가격경쟁·비교견적·직접계약의 4개 방식을 금액구간으로 나누되, 수의계약 선호로 공개 정보가 적은 조달 체계 — 2023년 새 조달법으로 근거가 교체됨</p>
+
+  <div class="scope-note"><b>대조 범위</b> 현행 법률의 적용범위·조달방식·입찰서류·낙찰·보증·이의·감독·과도기·폐지 조항과 Prakas 1866 금액기준, Prakas 986 보증률, 외부재원 SOP의 별도 기준을 대조했다.<br><b>확인일</b> 2026-07-29 · 실무 필수 확인 0건 · 근거 미연결 0단계 · 개별 요건만 연결 4단계<br>
+    <a href="#sources">검증·출처 보기</a></div>
+  <nav class="section-nav" aria-label="상세 페이지 목차"><a href="#summary">핵심 요약</a><a href="#practice">실무 절차</a><a href="#sources">검증·출처</a></nav>
   <div class="tiles">
     <div class="tile"><b>9</b><span>절차 노드</span></div>
 
     <div class="tile"><b>3</b><span>행위 레인</span></div>
     <div class="tile"><b>5</b><span>게이트</span></div>
-    <div class="tile ok"><b>18</b><span>대조 조문</span></div>
+    <div class="tile ok"><b>4</b><span>검토 자료</span></div>
     <div class="tile bad"><b>1</b><span>현행 확인사항</span></div>
 
-    <div class="tile warn"><b>5</b><span>ODA 적용 확인</span></div>
+    <div class="tile warn"><b>5</b><span>등록된 사업별 확인 항목</span></div>
   </div>
 </div>
 
 <div class="wrap">
-<section class="blk">
+<section class="blk" id="practice">
   <div class="hd-row">
     <div>
       <h2>업무구조도</h2>
@@ -548,7 +564,7 @@ footer.site a{color:var(--muted)}
   <h2>한 장 캔버스</h2>
   <p class="desc">공공조달을 금액구간에 따라 국제경쟁입찰·국내경쟁입찰·가격경쟁·비교견적·직접계약으로 나누어 발주하되, 품목(재화·공사·용역) 구분 없이 동일 제도로 평가·계약한다.</p>
   <div class="cards">
-    <div class="card span2"><h3>절차</h3><ol class="steps"><li>발주기관 조달계획 수립 및 재원 구분(국내재원 GDPP / 외부재원 GDICDM·SOP 2019)</li><li>금액구간에 따른 입찰방식 선택 — 국제경쟁·국내경쟁·가격경쟁·비교견적·직접계약</li><li>사전적격심사 또는 사후적격심사 여부 결정 (공고문에 명시)</li><li>입찰공고 — 2023법 제42~43조에 따라 입찰서류에 제출기한을 명시하고 공고를 공개</li><li>입찰서 제출 — 입찰자 수 제한 없음(경쟁방식)</li><li>평가 — 품목 무관 동일 제도. 기술평가 기준 부재 시 가격평가에 의존</li><li>낙찰·계약 체결</li><li>(외부재원) DP 조달지침이 SOP에 우선하는 경우 그 절차를 따름</li></ol></div>
+    <div class="card span2"><h3>절차</h3><p><button class="btn" id="copy-steps" type="button">단계 목록 복사</button> <small role="status" id="copy-status"></small></p><ol class="steps" id="readable-steps"><li>발주기관 조달계획 수립 및 재원 구분(국내재원 GDPP / 외부재원 GDICDM·SOP 2019)</li><li>금액구간에 따른 입찰방식 선택 — 국제경쟁·국내경쟁·가격경쟁·비교견적·직접계약</li><li>사전적격심사 또는 사후적격심사 여부 결정 (공고문에 명시)</li><li>입찰공고 — 2023법 제42~43조에 따라 입찰서류에 제출기한을 명시하고 공고를 공개</li><li>입찰서 제출 — 입찰자 수 제한 없음(경쟁방식)</li><li>평가 — 품목 무관 동일 제도. 기술평가 기준 부재 시 가격평가에 의존</li><li>낙찰·계약 체결</li><li>(외부재원) DP 조달지침이 SOP에 우선하는 경우 그 절차를 따름</li></ol></div>
 
     <div class="card"><h3>적용 대상</h3><p style="margin:0;font-size:13.5px;line-height:1.7">캄보디아 정부기관의 재화·공사·용역 조달에 적용된다. 2023법 제11조와 제85조에 따라 새 하위규정이 나올 때까지 Prakas 1866(2014)의 금액기준이 과도기 적용된다. 국제경쟁은 재화 KHR 50억 이상·공사 60억 이상·서비스 40억 이상, 국내경쟁은 재화 1억~50억·공사 1억~60억·서비스 1억~40억, shopping은 KHR 2천만~1억, canvassing은 2천만 미만이다. 제한경쟁·직접계약은 금액한도가 아니라 법정 사유와 MEF 사전승인으로 통제된다. 외부재원은 금융협정과 SOP 2019의 별도 기준을 적용한다.</p></div>
     <div class="card"><h3>법적 근거</h3><div class="law"><div class="law-copy"><span class="nm">Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005)</span><span class="ar">15장 87조 (컨설팅 조달·이행절차·벌칙 신설)</span></div><div class="law-meta"><span class="badge plain muted">법률</span></div></div><div class="law"><div class="law-copy"><span class="nm">Law on Public Procurement, 2012 (Royal Kram NS/RKM/0112/004) — 폐지</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">법률</span></div></div><div class="law"><div class="law-copy"><span class="nm">Prakas No. 1866 MEF.PrK(조달방식 금액기준)·Prakas No. 986 MEF.PrK(입찰·이행보증) — 2023법 제85조 과도기 적용</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">시행규칙</span></div></div><div class="law"><div class="law-copy"><span class="nm">외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)</span><span class="ar"></span></div><div class="law-meta"><span class="badge plain muted">표준문서</span></div></div></div>
@@ -568,10 +584,11 @@ footer.site a{color:var(--muted)}
 
 
 
+<section class="blk" id="sources"><h2>검증·출처</h2>
 
 
-<section class="blk">
-  <h2>현행 기준 반영 1건</h2>
+
+<details class="source-fold"><summary>현행 기준 반영 1건 · 필수 확인 0건</summary>
   <p class="desc">공식 법령·기관 원문으로 확인한 현행 기준과 실무 확인사항입니다.
     출처는 각 항목에 연결했으며 <a href="../../errata/index.html">반영 출처</a>에서 한 번에 볼 수 있습니다.</p>
   <div class="disc" data-sev="medium">
@@ -580,7 +597,7 @@ footer.site a{color:var(--muted)}
     <span class="badge plain muted">캄보디아</span>
     <span class="badge plain muted">D01</span>
   </div>
-  <h3>canvas.legalBasis / 근거 조달법의 현행 여부</h3>
+  <h3>근거 조달법의 현행 여부</h3>
   <div class="quote act"><b>현행 기준</b>2023 공공조달법(Royal Kram NS/RKM/0523/005)은 2023-05-16 공포됐고 제86조로 2012법을 폐지했다. 제85조는 기존 시행규정을 새 규정으로 대체할 때까지 존속시키므로 Prakas 1866 금액기준과 Prakas 986 보증규정이 과도기 적용된다.</div>
   <p class="cite">확인 출처 · Law on Public Procurement, 2023 (Royal Kram NS/RKM/0523/005); Ministry of Justice Cambodia; GDPP official duties page · <a class="ref" href="https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf" target="_blank" rel="noopener">Law on Public Procurement, 2023 (크메르어 원문)</a> · <a class="ref" href="http://gdpp.gov.kh/" target="_blank" rel="noopener">경제재무부 공공조달국(GDPP)</a></p>
   <div class="todo"><b>실무 확인</b>캄보디아 입찰 준비 시 2023 공공조달법을 기본 근거로 삼고, 입찰방식·금액구간·보증 요건은 개별 공고와 발주기관에서 재확인한다.</div>
@@ -594,10 +611,9 @@ footer.site a{color:var(--muted)}
 
   <p class="act-row">산출물 반영 — 근거 법률을 2023 공공조달법으로 바꾸고, 제85조 과도기 조항에 연결해 Prakas 1866·986의 금액·보증 기준을 반영했다.</p>
 </div>
-</section>
+</details>
 
-<section class="blk">
-  <h2>검증</h2>
+<details class="source-fold"><summary>검증 방법과 전체 출처</summary>
   <p class="desc">2023 공공조달법 크메르어 스캔 원문 24쪽을 OCR한 뒤 페이지 영상과 대조하고, MEF/NCDD의 Prakas 986 원문 10쪽과 MEF 2019 외부재원 SOP 원문을 조항별로 대조했다. 현행성은 신법 제85~87조와 2025 IFAD 감독보고서의 과도기 시행규정 확인으로 교차검증했다.</p>
   <div class="cards">
     <div class="card span2"><h3>검증 범위</h3>
@@ -611,6 +627,7 @@ footer.site a{color:var(--muted)}
   <p style="margin:22px 0 0;font-size:12.5px;color:var(--muted)">
     조문 대조 완료 — 조문의 존재와 문언 일치만 뜻합니다. 관할·필지·시설에 따른 사업 적용판정은 별도입니다.
   </p>
+</details>
 </section>
 </div>
 
@@ -628,8 +645,66 @@ footer.site a{color:var(--muted)}
 var NODES={"P01":{"id":"P01","name":"조달계획·재원 구분","lane":"발주 정부기관","stage":"G0 준비","type":"gateway","status":"done","actor":"발주 정부기관","action":"국내재원(GDPP)인지 외부재원(GDICDM·SOP 2019)인지 구분한다.","requirementRefs":["thresholds"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 조달방식·기준금액\u003c/dt\u003e\u003cdd\u003ePending replacement regulations, international bidding starts at KHR 5bn goods, 6bn works and 4bn services; national bidding spans KHR 100m to those ceilings; shopping is KHR 20m~100m and canvassing below KHR 20m. Limited and direct methods have no monetary ceiling but require statutory grounds and, for direct procurement, prior MEF approval. · \u003ca class=\"ref\" href=\"https://oldwebsite.pfm.gov.kh/document/publication/2023-01-04/PPCA%20PEFA%20Assessment%20Report.pdf\" target=\"_blank\" rel=\"noopener\"\u003e2023 PPL arts.11~14, 85; Prakas 1866 threshold table\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P01"},"P02":{"id":"P02","name":"입찰방식 선택","lane":"발주 정부기관","stage":"G0 준비","type":"gateway","status":"current","actor":"발주 정부기관","action":"금액구간에 따라 국제경쟁·국내경쟁·가격경쟁·비교견적·직접계약 중 택일. 품목 무관 동일 제도.","confidence":0.8,"legal_basis":[{"law":"2023 공공조달법 및 과도기 Prakas 1866","article":"arts.11~14, 85; Prakas 1866 threshold table","url":"https://oldwebsite.pfm.gov.kh/document/publication/2023-01-04/PPCA%20PEFA%20Assessment%20Report.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P02"},"P03":{"id":"P03","name":"적격심사 방식 결정","lane":"발주 정부기관","stage":"G0 준비","type":"task","status":"waiting","actor":"발주 정부기관","action":"사전적격심사 또는 사후적격심사 여부를 정해 공고문에 명시한다.","procurement_evidence":"\u003cdt\u003e2026 자료집 발췌 · 당시 절차\u003c/dt\u003e\u003cdd\u003e시일이 소요되므로 입찰 공고 전 사전에 완비할 필요가 있음. - 사전적격심사를 하는 경우와 사후적격심사를 하는 경우가 있어 공고문 확인이 필요함. - 외부재원 사업 공공조달 건은 개발협력 파트너(예, 세계은행, 아시아개발은행 등)와의 재정지원약정 · \u003ca class=\"ref\" href=\"https://github.com/amnotyoung/overseas-procurement-100/blob/main/sources/koica-2026/asia-pacific/cambodia.txt#L283-L285\" target=\"_blank\" rel=\"noopener\"\u003e국가별 원문 발췌\u003c/a\u003e\u003c/dd\u003e","display_id":"P03"},"P04":{"id":"P04","name":"입찰공고","lane":"발주 정부기관","stage":"G1 공고","type":"notice","status":"current","actor":"발주 정부기관","action":"제42~43조에 따라 입찰서류에 제출기한을 명시하고 공고한다. 실제 일수는 적용 Prakas·입찰서류·금융협정에서 확정한다.","blocker":"수의계약 선호로 공개 공고가 적어 정보 접근성이 낮다","requirementRefs":["deadlines"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 기한\u003c/dt\u003e\u003cdd\u003eThe bid deadline is a mandatory bidding-document term under art.42 rather than one universal statutory number. Award notice triggers a 10-working-day standstill/complaint period; written debriefing is answered in 5 working days. Performance security is due within 7 working days under Prakas 986, and security-release notices issue within 5 working days after the relevant event. · \u003ca class=\"ref\" href=\"https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf\" target=\"_blank\" rel=\"noopener\"\u003e2023 PPL arts.42, 51~52; Prakas 986 prakars 6, 9, 11\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P04"},"P05":{"id":"P05","name":"DP 조달지침 확인","lane":"MEF·DP","stage":"G1 공고","type":"gateway","status":"risk","actor":"개발협력파트너","action":"외부재원 사업은 재정지원약정 특수조건으로 SOP가 수정·예외되거나 DP 자체 지침이 우선할 수 있다.","blocker":"DP 유사 사업 이전 공고문을 사전 확인해야 한다","confidence":0.8,"legal_basis":[{"law":"외부재원 조달 표준운영절차(SOP on Procurement for All Externally Financed Projects/Programs, 2019)","article":"특수조건","url":"https://oldwebsite.pfm.gov.kh/document/publication/2021-03-17/SOP%20on%20Procurement%20For%20all%20Externally%20Financed%20Projects%20Programs%20in%20Cambodia%20Volume%20I.pdf","kind":"","scope_label":"","verification":"","verification_tone":"muted","note":""}],"confidence_reason":"노드별 원문 조문 또는 공식 근거에 직접 연결된 기존 검증값","procurement_evidence":"","display_id":"P05"},"P06":{"id":"P06","name":"입찰서 제출","lane":"입찰자","stage":"G2 입찰","type":"task","status":"waiting","actor":"입찰자","action":"경쟁방식은 입찰자 수 제한이 없다. 외국인 건설업은 MLIT 면허 필요.","output_documents":["입찰서","법인등록증","세금완납증명서","MLIT 면허(건설)"],"requirementRefs":["deadlines"],"procurement_evidence":"\u003cdt\u003e2026 자료집 발췌 · 당시 절차\u003c/dt\u003e\u003cdd\u003e필요함. 대다수의 공고문 열람이 유료인 점 유의 필요 - 통상 ‘입찰의향서 제출(생략가능) → 입찰서류 제출 → 기술평가(생략가능) 및 가격평가 → 낙찰자 선정 → 협상 → 계약체결’의 절차를 거치며 입찰공고기간 포함 3개월에서 6개월 소요됨. · \u003ca class=\"ref\" href=\"https://github.com/amnotyoung/overseas-procurement-100/blob/main/sources/koica-2026/asia-pacific/cambodia.txt#L276-L279\" target=\"_blank\" rel=\"noopener\"\u003e국가별 원문 발췌\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e관련 요건 · 기한\u003c/dt\u003e\u003cdd\u003eThe bid deadline is a mandatory bidding-document term under art.42 rather than one universal statutory number. Award notice triggers a 10-working-day standstill/complaint period; written debriefing is answered in 5 working days. Performance security is due within 7 working days under Prakas 986, and security-release notices issue within 5 working days after the relevant event. · \u003ca class=\"ref\" href=\"https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf\" target=\"_blank\" rel=\"noopener\"\u003e2023 PPL arts.42, 51~52; Prakas 986 prakars 6, 9, 11\u003c/a\u003e\u003c/dd\u003e","display_id":"P06"},"P07":{"id":"P07","name":"평가","lane":"발주 정부기관","stage":"G3 평가","type":"task","status":"waiting","actor":"발주 정부기관","action":"품목 무관 동일 제도로 평가. 기술평가 기준 부재 시 가격평가에 의존.","procurement_evidence":"\u003cdt\u003e2026 자료집 발췌 · 당시 절차\u003c/dt\u003e\u003cdd\u003e필요함. 대다수의 공고문 열람이 유료인 점 유의 필요 - 통상 ‘입찰의향서 제출(생략가능) → 입찰서류 제출 → 기술평가(생략가능) 및 가격평가 → 낙찰자 선정 → 협상 → 계약체결’의 절차를 거치며 입찰공고기간 포함 3개월에서 6개월 소요됨. · \u003ca class=\"ref\" href=\"https://github.com/amnotyoung/overseas-procurement-100/blob/main/sources/koica-2026/asia-pacific/cambodia.txt#L276-L279\" target=\"_blank\" rel=\"noopener\"\u003e국가별 원문 발췌\u003c/a\u003e\u003c/dd\u003e","display_id":"P07"},"P08":{"id":"P08","name":"낙찰·계약","lane":"발주 정부기관","stage":"G4 계약","type":"gateway","status":"waiting","actor":"발주 정부기관","output_documents":["계약서"],"requirementRefs":["performanceSecurity"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 계약이행보증\u003c/dt\u003e\u003cdd\u003ePerformance security is 10% of contract value, due within 7 working days of the invitation to contract and valid through complete acceptance or the warranty period. Art.63 exempts price-survey, consulting, state-specialist and community contracts. · \u003ca class=\"ref\" href=\"https://lib.ncdd.gov.kh/storage/app/public/library_backend/CAT_7307_1/2016-986-Deposit%20Guarantee%20for%20Bidding%20and%20Contract.pdf\" target=\"_blank\" rel=\"noopener\"\u003e2023 PPL arts.52, 63; Prakas 986 prakars 3~6, 9~11\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P08"},"P09":{"id":"P09","name":"직접계약(수의)","lane":"발주 정부기관","stage":"G1 공고","type":"gateway","status":"risk","actor":"발주 정부기관","action":"계약기간 6개월 미만·기존 계약 25% 미만 추가구매 등 특별한 경우에 한한다. 실무상 과업 세분으로 선호되나 신법이 벌칙을 강화했다.","blocker":"수의계약 남용은 2023 신법의 강화된 벌칙 대상이 될 수 있다","requirementRefs":["exceptions"],"procurement_evidence":"\u003cdt\u003e관련 요건 · 예외 적용\u003c/dt\u003e\u003cdd\u003eArt.2 excludes financing-agreement procedures, PPP procurement, and Prime-Minister-approved confidential defence/public-order procurement. Art.14 confines direct procurement to enumerated grounds and prior MEF approval; art.63 lists security exemptions, and arts.85~86 distinguish preserved implementing rules from the repealed 2012 Act. · \u003ca class=\"ref\" href=\"https://data.opendevelopmentcambodia.net/km/dataset/c3e26003-dd4e-4123-b81e-ba00b92fdb99/resource/52db9db2-0f84-4b2e-b50a-50acefc6b44d/download/law_on_public_procurement__16.05.2023.pdf\" target=\"_blank\" rel=\"noopener\"\u003e2023 PPL arts.2, 14, 63, 85~86\u003c/a\u003e\u003c/dd\u003e\u003cdt\u003e근거 범위\u003c/dt\u003e\u003cdd\u003e인용 자료는 표시된 개별 요건을 뒷받침합니다. 단계 전체의 직접 조문은 추가 확인이 필요합니다.\u003c/dd\u003e","display_id":"P09"}};
 var EDGES=[{"id":"E01","source":"P01","target":"P02","type":"sequence"},{"id":"E02","source":"P02","target":"P03","type":"sequence"},{"id":"E03","source":"P02","target":"P09","type":"sequence","label":"특별 사유"},{"id":"E04","source":"P03","target":"P04","type":"sequence"},{"id":"E05","source":"P04","target":"P05","type":"message","label":"외부재원 시"},{"id":"E06","source":"P04","target":"P06","type":"sequence"},{"id":"E07","source":"P05","target":"P06","type":"message","label":"DP 지침 우선"},{"id":"E08","source":"P06","target":"P07","type":"sequence"},{"id":"E09","source":"P07","target":"P08","type":"sequence"},{"id":"E10","source":"P09","target":"P08","type":"sequence","label":"수의 계약"}];
 
-var _sel=document.getElementById('sel');
-if(_sel) _sel.addEventListener('change',function(){ location.href='../'+this.value+'/index.html'; });
+const listState = new URLSearchParams(location.search).get('list');
+if (listState !== null) {
+  const input = new URLSearchParams(listState);
+  const state = new URLSearchParams();
+  for (const key of ['country', 'axis', 'q']) if (input.get(key)) state.set(key, input.get(key));
+  const listLink = document.querySelector('header.site nav a');
+  const back = document.querySelector('#catalog-return');
+  if (back && listLink) {
+    const href = '../../index.html' + (state.size ? '?' + state.toString() : '') + '#results';
+    back.href = listLink.href = href;
+    back.textContent = '보고 있던 목록으로 돌아가기';
+    for (const link of document.querySelectorAll('a[href^="../"]')) {
+      const url = new URL(link.href);
+      if (url.pathname.includes('/model/')) {
+        url.searchParams.set('list', state.toString());
+        link.href = url.href;
+      }
+    }
+  }
+}
+const selector = document.querySelector('#sel');
+if (selector) selector.addEventListener('change', () => {
+  const url = new URL('../' + selector.value + '/index.html', location.href);
+  if (listState !== null) url.searchParams.set('list', listState);
+  location.assign(url.href);
+});
+document.querySelector('#copy-steps').addEventListener('click', async () => {
+  const list = document.querySelector('#readable-steps');
+  const status = document.querySelector('#copy-status');
+  const text = [...list.children].map((item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = '단계 목록을 복사했습니다.';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(list);
+    const selection = getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    status.textContent = '목록을 선택했습니다. 기기의 복사 기능을 사용하세요.';
+  }
+});
+
+document.querySelector('#dbody').addEventListener('click', async event => {
+  const button = event.target.closest('[data-copy-citation]');
+  if (!button) return;
+  const section = button.closest('details');
+  const field = section.querySelector('textarea');
+  const status = section.querySelector('[role="status"]');
+  try {
+    await navigator.clipboard.writeText(field.value);
+    status.textContent = '인용 문장과 출처를 복사했습니다.';
+  } catch {
+    field.hidden = false;
+    field.focus();
+    field.select();
+    status.textContent = '선택된 문장과 출처를 복사하세요.';
+  }
+});
+
 
 /* 엣지 그리기 — 노드 DOM 위치를 재서 SVG로 연결 */
 function draw(){
@@ -1051,6 +1126,7 @@ function openNode(id){
       return '<div style="margin-bottom:9px">'+nm+' <code>'+l.article+'</code>'+meta
         +(l.note?'<div style="margin-top:3px;color:var(--muted)">'+l.note+'</div>':'')+'</div>';}).join('')+'</dd>';
   }
+  if(n.guide_comparison) h+=n.guide_comparison;
   if(typeof n.confidence==='number'){
     h+='<dt>법령 근거 확신도</dt><dd>'+n.confidence.toFixed(2)
       +(n.confidence<0.8?' <span class="badge warn">현장 검증 필요</span>':'')+'</dd>';
