@@ -140,8 +140,6 @@ def check(path: Path) -> None:
             err(slug, "sourceQuotes는 배열이어야 함")
         else:
             source_laws = {s.get("law") for s in data.get("verification", {}).get("sources", [])}
-            node_ids = {n["id"] for n in data.get("process", {}).get("nodes", [])}
-            guide_nodes = set()
             for i, q in enumerate(sq):
                 comparison = q.get("comparison")
                 if comparison is not None and (
@@ -149,14 +147,6 @@ def check(path: Path) -> None:
                     or not all(comparison.get(key) for key in ("title", "edition", "currentEdition", "summary", "sourceLabel", "checkedOn"))
                 ):
                     err(slug, f"sourceQuotes[{i}].comparison 판본 대조 정보 누락")
-                if isinstance(comparison, dict) and "guideCitation" in comparison:
-                    guide = comparison["guideCitation"]
-                    if (not isinstance(guide, dict) or not isinstance(guide.get("nodeId"), str)
-                            or guide["nodeId"] not in node_ids or guide["nodeId"] in guide_nodes
-                            or not guide.get("label") or not guide.get("quote") or not web_url(guide.get("url"))):
-                        err(slug, f"sourceQuotes[{i}].guideCitation 단계·원문 연결 오류")
-                    else:
-                        guide_nodes.add(guide["nodeId"])
                 for field in ("law", "article", "quote", "gist"):
                     if not q.get(field):
                         err(slug, f"sourceQuotes[{i}].{field} 누락")
@@ -166,6 +156,37 @@ def check(path: Path) -> None:
                 # law가 verification.sources와 연결되는지 (URL 자동 연결 조건)
                 if q.get("law") and q["law"] not in source_laws:
                     warn(slug, f"sourceQuotes[{i}].law가 verification.sources에 없음 — 원문 URL 연결 안 됨: {q['law']!r}")
+
+    node_ids = {n.get("id") for n in data.get("process", {}).get("nodes", [])}
+    guide_nodes = set()
+    direct = data.get("guideComparisons", [])
+    if not isinstance(direct, list):
+        err(slug, "guideComparisons 배열 누락")
+        direct = []
+    embedded = []
+    for quote in sq if isinstance(sq, list) else []:
+        comparison = quote.get("comparison") if isinstance(quote, dict) else None
+        if isinstance(comparison, dict) and "guideCitation" in comparison:
+            embedded.append(comparison)
+    for comparison in [*direct, *embedded]:
+        if not isinstance(comparison, dict):
+            err(slug, "자료집 대조 객체 누락")
+            continue
+        guide = comparison.get("guideCitation")
+        if (not isinstance(guide, dict) or not isinstance(guide.get("nodeId"), str)
+                or guide["nodeId"] not in node_ids or guide["nodeId"] in guide_nodes
+                or not guide.get("label") or not guide.get("quote") or not web_url(guide.get("url"))):
+            err(slug, "자료집 대조의 단계·원문 연결 오류")
+        else:
+            guide_nodes.add(guide["nodeId"])
+        if not web_url(comparison.get("sourceUrl")) or not all(comparison.get(key) for key in (
+            "title", "currentEdition", "summary", "sourceLabel", "checkedOn"
+        )):
+            err(slug, "자료집 대조에 적용 판본·조문·출처·확인일 누락")
+        extra = comparison.get("additionalSources", [])
+        if not isinstance(extra, list) or any(not isinstance(ref, dict) or not ref.get("title")
+                                              or not web_url(ref.get("url")) for ref in extra):
+            err(slug, "자료집 대조 보조 출처 오류")
 
     for entry in fv or []:
         if isinstance(entry, str):

@@ -8,6 +8,8 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 
+from procurement_evidence import guide_comparisons
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 
@@ -62,19 +64,19 @@ def main():
             if not panel or not all(term in panel[1] for term in ("2~3%", "2.5%", "2007년", "제16차")):
                 raise ValueError("네팔 입찰보증의 산정 기준과 비교 판본 누락")
         nodes = json.loads(re.search(r"^var NODES=(.+);$", page, re.M)[1])
-        if data["slug"] == "nepal-bidding-system":
-            comparison = next(q["comparison"] for q in data["sourceQuotes"] if q.get("comparison"))
+        compared = {c["guideCitation"]["nodeId"]: c for c in guide_comparisons(data)}
+        if set(compared) != {key for key, node in nodes.items() if node.get("guide_comparison")}:
+            raise ValueError(f"{path.stem}: 자료집 대조가 다른 단계에 표시됨")
+        for node_id, comparison in compared.items():
             guide = comparison["guideCitation"]
-            shortcut = f'#guide-{guide["nodeId"]}'
-            entry = re.search(r'<nav class="guide-entry".*?</nav>', page, re.S)
-            row = re.search(r'<tr data-c="nepal" data-a="bidding".*?</tr>', catalog, re.S)
-            if not entry or f'href="{shortcut}"' not in entry[0] or not row or f'index.html{shortcut}"' not in row[0]:
-                raise ValueError("네팔 입찰제도 목록·상세에서 대조 항목 접근 불가")
-            targets = [node_id for node_id, view in nodes.items() if view.get("guide_comparison")]
-            panel = nodes["P07"].get("guide_comparison", "")
-            if targets != ["P07"] or not all(html.escape(t) in panel for t in
-                    (guide["quote"], guide["url"], comparison["summary"], comparison["sourceUrl"])):
-                raise ValueError("네팔 P07 자료집·개정 조문 대조 누락")
+            shortcut = f'#guide-{node_id}'
+            if f'href="{shortcut}"' not in page or f'model/{path.stem}/index.html{shortcut}"' not in catalog:
+                raise ValueError(f"{path.stem}/{node_id}: 자료집 대조 링크 누락")
+            panel = nodes[node_id]["guide_comparison"]
+            required = [guide["quote"], guide["url"], comparison["summary"], comparison["sourceUrl"],
+                        *(r["url"] for r in comparison.get("additionalSources", []))]
+            if not all(html.escape(value) in panel for value in required):
+                raise ValueError(f"{path.stem}/{node_id}: 대조 문구·원문 누락")
         for node in data["process"]["nodes"]:
             rendered = nodes[node["id"]]
             evidence = rendered["procurement_evidence"]

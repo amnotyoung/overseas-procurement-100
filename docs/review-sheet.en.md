@@ -915,10 +915,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 51. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Bidding system
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, art.53 (2022 edition); INSS, 2 September 2026 (amendment notice) · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [INSS · 제46/2026호 개정 안내](<https://www.inss.gov.mz/2026/09/02/inss-reflecte-sobre-a-contratacao-publica/>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — INSS confirms the regulation was amended by Decree 46/2026. Article 53 of the 2022 text specified at least 21 days. Verify the operative text and the deadline in the applicable tender.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -932,10 +932,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 52. [HIGH] Current legal basis check
 
 - Institution: Mozambique — ODA project pipeline
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, art.53 (2022 edition); INSS, 2 September 2026 (amendment notice) · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [INSS · 제46/2026호 개정 안내](<https://www.inss.gov.mz/2026/09/02/inss-reflecte-sobre-a-contratacao-publica/>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — INSS confirms the regulation was amended by Decree 46/2026. Article 53 of the 2022 text specified at least 21 days. Verify the operative text and the deadline in the applicable tender.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -949,10 +949,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 53. [HIGH] Current legal basis check
 
 - Institution: Mozambique — Procurement governance
-- Legal basis: Decreto 79/2022 decree arts.1~5; regulation arts.6~9, 53, 76, 78, 88, 90, 93, 105~106 and 278~281 · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>)
+- Legal basis: Decreto 79/2022, art.53 (2022 edition); INSS, 2 September 2026 (amendment notice) · [Decreto n.º 79/2022, de 30 de Dezembro — Regulamento de Contratação Pública](<https://www.mef.gov.mz/index.php/todas-publicacoes/legislacao/1903-br-regulamento-de-contratacao-publica/file>) · [INSS · 제46/2026호 개정 안내](<https://www.inss.gov.mz/2026/09/02/inss-reflecte-sobre-a-contratacao-publica/>)
 - KOICA guide: p.73-83
 
-**Current legal basis** — 제79/2022호가 방식별 기준금액·기한·보증·불복·예외를 정하며 2026년 승인된 개정안은 공포문이 확인되지 않았다.
+**Current legal basis** — INSS confirms the regulation was amended by Decree 46/2026. Article 53 of the 2022 text specified at least 21 days. Verify the operative text and the deadline in the applicable tender.
 
 **✔ Verify** — Check the live notice, financing agreement, standard documents, submission time and security form.
 
@@ -1424,7 +1424,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 80. [HIGH] Current legal basis check
 
 - Institution: Philippines — Bidding system
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.
@@ -1458,7 +1458,7 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 82. [HIGH] Current legal basis check
 
 - Institution: Philippines — Procurement governance
-- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://www.gppb.gov.ph/wp-content/uploads/2026/05/IRR-of-RA-12009-1st-Edition.pdf>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
+- Legal basis: RA 12009; 2025 IRR; GPPB Resolution 05-2025 · [Republic Act n.º 12009 — New Government Procurement Act](<https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97750>) · [GPPB Circular on RA 12009 transitory provisions](<https://www.gppb.gov.ph/wp-content/uploads/2025/10/GPPB-Resolution-No.-05-2025.pdf>)
 - KOICA guide: p.177-191
 
 **Current legal basis** — RA 12009 and its IRR took effect in 2024 and 2025 with a three-year transition; GPPB sets policy and procuring entities and BACs execute procedures.
@@ -2036,7 +2036,7 @@ the dataset manager will record it. Items already returned show the result inlin
 - Legal basis: Decree-Law 25/2025 Arts.2~4; Code Arts.41, 83 and 86~88 · [Decree-Law No.25/2025 — First amendment to Decree-Law No.1/2025](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_33.pdf>) · [Decree-Law No.1/2025 — Procurement and Public Contracts Code](<https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf>)
 - KOICA guide: p.21-29
 
-**Current legal basis** — 2026년 시행 신법 Arts.41, 83, 86~88은 50,000/200,000 USD 방식기준과 1,000 USD 간소 직접조달을 정하고, 국내공급자에게 최대 10% 우대·현지내용 조건을 두되 100,000 USD 이하의 일률적 외국업체 배제는 두지 않는다.
+**Current legal basis** — Articles 41 and 86 address method selection and evaluation preference. They do not resolve the scope of the guide’s eligibility statement for a particular programme.
 
 **✔ Verify** — Check commencement date, current CNA document, submission channel, delegated authority, financing agreement and securities.
 
@@ -2927,10 +2927,10 @@ the dataset manager will record it. Items already returned show the result inlin
 ### 165. [MEDIUM] Current legal basis check
 
 - Institution: Tanzania — Bidding system
-- Legal basis: Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025) reg.23(6), reg.29(2), reg.315(2), reg.318(2), reg.329(2)(7), Third Schedule · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>)
+- Legal basis: PPR regs.23(6), 29(2); PPRA Securities Guidelines (2025) §§8.3, 9.5–9.7, 11.3, 12.1 · [Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)](<https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf>) · [PPRA 보증지침(2025) · 제8.3·9.5~9.7·11.3·12.1항](<https://ppra.go.tz/uploads/documents/en-1789974385-GUIDELINES%20OF%20SECURITIES%20IN%20PUBLIC%20PROCUREMENT.pdf#page=11>)
 - KOICA guide: p.193-194
 
-**Current legal basis** — PPR 2024 delegates the amounts rather than fixing them: bid security (reg.23(6)) and performance security (reg.29(2)) are set in the tender documents; the defect surety is retention money set by the contract (reg.329(2)); the defects-liability period is 'the period specified in the contract' (reg.329(7)). The only fixed values are the advance-payment cap of 30% (reg.315(2)) and liquidated damages of 0.10-0.20% (goods), 0.10-0.15% (works), 0.10-0.20% (consultancy) per day (reg.318(2)). There is no 'transport/storage' liquidated-damages category.
+**Current legal basis** — The 2024 Regulations require disclosure in tender documents. The PPRA guidelines set a 1–3% tender-security calculation where required, distinguish declarations, and set separate performance-security rates and a combined environmental-security cap.
 
 **✔ Verify** — Read the bid and performance security amounts from each tender's documents; read retention money and the defects-liability period from the contract. Do not assume 5% / 10% / 3% / 1-2 years. Check whether any 'transport/storage' liquidated damages exist as a contract-specific special term.
 
