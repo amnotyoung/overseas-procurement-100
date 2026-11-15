@@ -40,6 +40,7 @@
         "name": "사업주·발주기관·전문조달조직",
         "role": "계획·입찰서류·공고·평가·승인·계약관리를 수행한다.",
         "processNodes": [
+          "P05",
           "P06"
         ]
       },
@@ -341,20 +342,14 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "사업주(chủ đầu tư) · 전문가단(tổ chuyên gia)",
-        "action": "시행령 제28조의 단일봉투 입찰에서 사업주는 마감 전 접수한 입찰서를 공개 개찰한다. 전문가단은 입찰요건에 따라 제출서류를 평가한다.",
-        "legal_basis": [
-          {
-            "law": "Nghị định 214/2025/NĐ-CP",
-            "article": "Điều 28(4), 29",
-            "url": "https://kdpm.khanhhoa.gov.vn/FileStorage/Document/214_2025_nd-cp_668157.pdf"
-          },
-          {
-            "law": "Consolidated Bidding Law 126/VBHN-VPQH of 27 August 2025",
-            "article": "Điều 80(2)",
-            "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/126-vbhn-vpqh.pdf"
-          }
-        ]
+        "actor": "사업주·발주기관·전문조달조직",
+        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
+        "actorScope": "authority",
+        "basisStatus": "pending",
+        "basisReview": {
+          "checkedOn": "2026-11-16",
+          "finding": "2026년 9월 통합 시행령 36/2026/VBHN-NĐ-BTC 제2장 제28조 제4항은 비전자 단일봉투 계약자 입찰의 개찰을 규정한다. 이 조문과 입찰법 제80조의 전문가단 평가 권한만으로는 이 모델이 포괄하는 전자입찰·투자자 선정의 개찰 담당까지 확정할 수 없어 대기한다."
+        }
       },
       {
         "id": "P06",

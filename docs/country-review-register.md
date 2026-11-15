@@ -1,6 +1,6 @@
 # 협력국 검수 대장
 
-협력국 44개국 · 발행기관 원본 대기 1건 · 조달 근거 미연결 158단계
+협력국 44개국 · 발행기관 원본 대기 1건 · 조달 근거 미연결 159단계
 
 ## 발행기관 원본 대기
 
@@ -29,7 +29,7 @@
 | [몽골](#pending-mongolia) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/mongolia-bidding-system.json) / [2026-07-29](../data/institutions/mongolia-procurement-governance.json) / [2026-07-29](../data/institutions/mongolia-oda-project-pipeline.json) | [article-verified · 2026-08-07](../data/construction-regulations/mongolia.json) |
 | [미얀마](#pending-myanmar) | 0 | 0 | 4 | 2 | [2026-07-29](../data/institutions/myanmar-bidding-system.json) / [2026-07-29](../data/institutions/myanmar-procurement-governance.json) / [2026-07-29](../data/institutions/myanmar-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/myanmar.json) |
 | [방글라데시](#pending-bangladesh) | 0 | 0 | 3 | 3 | [2026-07-28](../data/institutions/bangladesh-bidding-system.json) / [2026-07-28](../data/institutions/bangladesh-procurement-governance.json) / [2026-07-28](../data/institutions/bangladesh-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bangladesh.json) |
-| [베트남](#pending-vietnam) | 0 | 0 | 2 | 3 | [2026-07-29](../data/institutions/vietnam-bidding-system.json) / [2026-07-29](../data/institutions/vietnam-procurement-governance.json) / [2026-07-29](../data/institutions/vietnam-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/vietnam.json) |
+| [베트남](#pending-vietnam) | 0 | 1 | 2 | 3 | [2026-07-29](../data/institutions/vietnam-bidding-system.json) / [2026-07-29](../data/institutions/vietnam-procurement-governance.json) / [2026-07-29](../data/institutions/vietnam-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/vietnam.json) |
 | [볼리비아](#pending-bolivia) | 0 | 0 | 3 | 2 | [2026-07-29](../data/institutions/bolivia-bidding-system.json) / [2026-07-29](../data/institutions/bolivia-procurement-governance.json) / [2026-07-29](../data/institutions/bolivia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bolivia.json) |
 | [세네갈](#pending-senegal) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/senegal-bidding-system.json) / [2026-07-29](../data/institutions/senegal-procurement-governance.json) / [2026-07-29](../data/institutions/senegal-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/senegal.json) |
 | [스리랑카](#pending-sri-lanka) | 0 | 0 | 1 | 4 | [2026-07-29](../data/institutions/sri-lanka-bidding-system.json) / [2026-07-29](../data/institutions/sri-lanka-procurement-governance.json) / [2026-07-29](../data/institutions/sri-lanka-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/sri-lanka.json) |
@@ -59,7 +59,7 @@
 | [페루](#pending-peru) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/peru-bidding-system.json) / [2026-07-29](../data/institutions/peru-procurement-governance.json) / [2026-07-29](../data/institutions/peru-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/peru.json) |
 | [피지](#pending-fiji) | 0 | 0 | 3 | 2 | [2026-07-28](../data/institutions/fiji-bidding-system.json) / [2026-07-28](../data/institutions/fiji-procurement-governance.json) / [2026-07-28](../data/institutions/fiji-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/fiji.json) |
 | [필리핀](#pending-philippines) | 0 | 0 | 3 | 0 | [2026-07-28](../data/institutions/philippines-bidding-system.json) / [2026-07-28](../data/institutions/philippines-procurement-governance.json) / [2026-07-28](../data/institutions/philippines-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/philippines.json) |
-| **합계** | **1** | **6** | **97** | **55** | | |
+| **합계** | **1** | **7** | **97** | **55** | | |
 
 ## 근거 미연결 단계
 
@@ -221,15 +221,20 @@
 
 <a id="pending-vietnam"></a>
 
-### 베트남 · 5단계
+### 베트남 · 6단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
+| [입찰](../data/institutions/vietnam-bidding-system.json) | P05 | 개찰·적격심사 | 사업주·발주기관·전문조달조직 |
 | [거버넌스](../data/institutions/vietnam-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
 | [거버넌스](../data/institutions/vietnam-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P04 | 공식 사업요청 | 사업유형별 공식 요청기관 |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
+
+검수 후 대기 사유
+
+- 입찰 P05 · 2026-11-16 · 2026년 9월 통합 시행령 36/2026/VBHN-NĐ-BTC 제2장 제28조 제4항은 비전자 단일봉투 계약자 입찰의 개찰을 규정한다. 이 조문과 입찰법 제80조의 전문가단 평가 권한만으로는 이 모델이 포괄하는 전자입찰·투자자 선정의 개찰 담당까지 확정할 수 없어 대기한다.
 
 <a id="pending-bolivia"></a>
 
