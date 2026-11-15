@@ -34,6 +34,10 @@
 | 미얀마 보강 | 1 | 조달 3 + 건축 3 | 조달 등급은 위 원천 집계 참조, 건축은 제도별 등급 표시 |
 | KOICA(발주자) | 1 | 조달 3 | `article-verified` |
 
+유지보수용 [협력국 검수 대장](docs/country-review-register.md)은 발행기관 원본 대기 건과 근거 미연결 단계를 국가별로 연결한다. `python3 tools/build_docs.py`로 재생성한다. 단계는 원천 JSON의 `basisStatus: pending`에서 집계한다.
+
+발행기관 원본을 기다릴 때는 `data/manifest.json`의 해당 국가 `sourceRequests`에 문서당 한 건을 기록하고 관련 제도축을 `axes`로 연결한다. 발행처 주소·대상 조항·확인일·확인 결과·다음 작업을 적는다. 원본을 직접 대조하면 같은 ID의 상태를 `verified`로 변경하고 `verifiedSourceUrl`, `locator`(쪽·조항), `checkedOn`, `finding`을 갱신한다. 다음 생성 때 원본 확인 기록으로 이동한다. 개별 공고 확인 등 현장 질문은 별도로 관리한다.
+
 자세한 현행 기준과 출처는 [현행 기준 확인 대장](docs/verification-log.md), [반영 출처](docs/errata.md), [영어 현장 확인 시트](docs/review-sheet.en.md)에서 확인한다.
 
 ### ODA 건축 법·제도

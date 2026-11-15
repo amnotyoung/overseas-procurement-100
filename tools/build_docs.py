@@ -13,6 +13,7 @@ from pathlib import Path
 
 from procurement_evidence import finding_title
 from procurement_summary import write_summaries
+from country_review_register import build_country_review_register
 
 ROOT = Path(__file__).resolve().parent.parent
 INST_DIR = ROOT / "data" / "institutions"
@@ -336,7 +337,9 @@ def main() -> int:
         print("제도 데이터가 없습니다.")
         return 1
 
+    register = build_country_review_register(items)
     write_summaries(items)
+    (DOCS / "country-review-register.md").write_text(register, encoding="utf-8")
     (DOCS / "verification-log.md").write_text(build_verification_log(items), encoding="utf-8")
     (DOCS / "errata.md").write_text(build_errata(items), encoding="utf-8")
     (DOCS / "review-sheet.en.md").write_text(build_review_sheet(items), encoding="utf-8")

@@ -52,6 +52,7 @@ jobs:
       - name: Build documentation and site
         run: |
           python tools/build_docs.py
+          git diff --exit-code -- docs/country-review-register.md
           python tools/build_construction_regulations.py
           python tools/build_site.py
           npm run build:construction-boards
