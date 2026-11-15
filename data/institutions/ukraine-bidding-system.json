@@ -44,7 +44,6 @@
         "name": "조달기관의 권한담당자",
         "role": "계획·공고·절차·평가·계약공개를 수행한다.",
         "processNodes": [
-          "P05",
           "P06"
         ]
       },
@@ -373,10 +372,20 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "조달기관의 권한담당자",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "전자조달시스템 · 발주기관",
+        "action": "결의 1178호의 공개입찰에서는 전자조달시스템이 제안을 공개하고, 발주기관이 최우선 평가 제안을 심사한다. 결의가 정한 공개 예외와 서류 보완 규정이 적용된다.",
+        "legal_basis": [
+          {
+            "law": "Law of Ukraine No. 922-VIII On Public Procurement",
+            "article": "Art. 28",
+            "url": "https://zakon.rada.gov.ua/laws/show/922-19?lang=en"
+          },
+          {
+            "law": "Cabinet Resolution No.1178 of 12 October 2022",
+            "article": "Points 39–41, 43",
+            "url": "https://zakon.rada.gov.ua/go/1178-2022-%D0%BF"
+          }
+        ]
       },
       {
         "id": "P06",

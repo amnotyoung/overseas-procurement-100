@@ -50,11 +50,7 @@
       },
       {
         "name": "조달기관(autorité contractante)",
-        "role": "계획·공고·평가·낙찰·계약관리를 수행한다.",
-        "processNodes": [
-          "P05",
-          "P06"
-        ]
+        "role": "계획·공고·평가·낙찰·계약관리를 수행한다."
       },
       {
         "name": "APPEL",
@@ -424,10 +420,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "조달기관(autorité contractante)",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "조달위원회(commission des marchés)",
+        "action": "조달위원회가 기한 내 받은 봉투를 공개 개찰하고, 참가자격·필수서류와 시방서 적합성을 예비심사한다.",
+        "legal_basis": [
+          {
+            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
+            "article": "Arts. 68–69",
+            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
+          }
+        ]
       },
       {
         "id": "P06",
@@ -436,10 +437,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "조달기관(autorité contractante)",
-        "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "조달위원회 · 발주기관",
+        "action": "조달위원회가 공고 기준에 따라 상세평가하고 낙찰 후보를 제안한다. 발주기관이 이를 승인하면 미선정자에게 사유를 알리고 잠정 낙찰 결과를 공고하거나 통지한다.",
+        "legal_basis": [
+          {
+            "law": "Décret n° 2022-2295 du 28 décembre 2022 portant Code des marchés publics",
+            "article": "Arts. 71, 84",
+            "url": "https://arcop.sn/wp-content/uploads/2023/10/RECUEIL-DES-TEXTES-JURIDIQUES-DE-LA-COMMANDE-PUBLIQUE-AU-SENEGAL-VOL-1-EDITION-2023-2.pdf"
+          }
+        ]
       },
       {
         "id": "P07",

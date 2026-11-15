@@ -40,7 +40,6 @@
         "name": "구매기관(Entidad Pública Contratante)",
         "role": "기관별 규정과 NB-SABS에 따라 조달절차·평가·계약관리를 수행한다.",
         "processNodes": [
-          "P05",
           "P06"
         ]
       }
@@ -288,10 +287,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "구매기관(Entidad Pública Contratante)",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "평가담당자 또는 자격심사위원회",
+        "action": "조달방식에 따라 평가담당자 또는 자격심사위원회가 공개 개찰하고 제시가격을 낭독한 뒤 기술·행정 서류를 분석·평가한다.",
+        "legal_basis": [
+          {
+            "law": "Decreto Supremo n.º 0181 — NB-SABS (texto compilado 2025)",
+            "article": "Art. 38.I–III(a–b)",
+            "url": "https://economiayfinanzas.gob.bo/sites/default/files/2025-11/TEXTO_COMPILADO_%202025_NB-SABS.pdf"
+          }
+        ]
       },
       {
         "id": "P06",

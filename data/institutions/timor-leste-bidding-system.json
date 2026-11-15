@@ -46,11 +46,7 @@
       },
       {
         "name": "계약기관·조달책임자·평가주체",
-        "role": "권한·위임에 따라 계획·절차개시·공고·평가·낙찰·계약관리를 수행한다.",
-        "processNodes": [
-          "P05",
-          "P06"
-        ]
+        "role": "권한·위임에 따라 계획·절차개시·공고·평가·낙찰·계약관리를 수행한다."
       },
       {
         "name": "CAFI·계획투자기관",
@@ -389,8 +385,14 @@
         "type": "task",
         "status": "risk",
         "actor": "입찰자",
-        "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "basisStatus": "pending"
+        "action": "입찰자는 기술·가격 제안과 결격사유가 없다는 진술을 준비하고 요구받은 자격 증빙을 첨부한다.",
+        "legal_basis": [
+          {
+            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
+            "article": "Art. 65(1)–(4)",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
+          }
+        ]
       },
       {
         "id": "P04",
@@ -412,10 +414,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "계약기관·조달책임자·평가주체",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "조달절차 심사위원회(júri)",
+        "action": "심사위원회가 입찰서를 개봉하고 자격 증빙과 결격사유를 확인한다. 공개 사전자격심사가 있는 경우에는 참가신청서도 심사한다.",
+        "legal_basis": [
+          {
+            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
+            "article": "Arts. 26(1)–(2), 70–71",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
+          }
+        ]
       },
       {
         "id": "P06",
@@ -424,10 +431,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "계약기관·조달책임자·평가주체",
-        "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "조달절차 심사위원회 · 절차 개시 결정권자",
+        "action": "공개경쟁입찰에서 심사위원회가 제안을 평가해 순위를 담은 보고서를 제출하고 절차 개시 결정권자가 낙찰 여부를 결정한다.",
+        "legal_basis": [
+          {
+            "law": "Decree-Law No.1/2025 — Procurement and Public Contracts Code",
+            "article": "Arts. 70, 73, 76, 81–82",
+            "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_2.pdf"
+          }
+        ]
       },
       {
         "id": "P07",

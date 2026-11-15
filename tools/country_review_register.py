@@ -93,12 +93,16 @@ def build_country_review_register(items):
 
         counts = Counter()
         rows = []
+        review_notes = []
         for axis, label in AXES.items():
             model = models[axis]
             for node in model["process"]["nodes"]:
                 if node.get("basisStatus") != "pending":
                     continue
                 rows.append(f"| {model_link(model, label)} | {node['id']} | {cell(node['name'])} | {cell(node['actor'])} |")
+                if review := node.get("basisReview"):
+                    reviewed_on = date.fromisoformat(review["checkedOn"])
+                    review_notes.append(f"- {label} {node['id']} · {reviewed_on} · {cell(review['finding'])}")
                 counts[axis] += 1
         total_waiting += wait_count
         totals.update(counts)
@@ -109,6 +113,8 @@ def build_country_review_register(items):
         if rows:
             sections.extend([f'<a id="pending-{slug}"></a>', "", f"### {name} · {len(rows)}단계", "",
                              "| 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |", "|---|---|---|---|", *rows, ""])
+            if review_notes:
+                sections.extend(["검수 후 대기 사유", "", *review_notes, ""])
 
     lines = ["# 협력국 검수 대장", "",
              f"협력국 {len(countries)}개국 · 발행기관 원본 대기 {total_waiting}건 · 조달 근거 미연결 {sum(totals.values())}단계",
