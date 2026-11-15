@@ -54,11 +54,7 @@
       },
       {
         "name": "발주기관·계약운영단위(UOC)",
-        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다.",
-        "processNodes": [
-          "P05",
-          "P06"
-        ]
+        "role": "PAC, 시장조사·예정가·조달전략, 공고·평가·낙찰·계약·정산을 수행한다."
       },
       {
         "name": "외교부(MRE)·수원부처·KOICA",
@@ -446,10 +442,20 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "발주기관·계약운영단위(UOC)",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "계약운영단위(UOC) · 평가위원회",
+        "action": "UOC 직원이 공개 개찰을 주재하고 서류 제출 여부를 확인한다. 평가위원회를 두는 절차에서는 위원회가 자격과 제안 내용을 심사한다.",
+        "legal_basis": [
+          {
+            "law": "Decreto N.º 2264/2024 reglamentario de la Ley 7021",
+            "article": "Art. 71",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          },
+          {
+            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
+            "article": "Art. 54",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          }
+        ]
       },
       {
         "id": "P06",
@@ -458,10 +464,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "발주기관·계약운영단위(UOC)",
-        "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "평가위원회 · 발주기관",
+        "action": "평가위원회를 두는 절차에서 위원회가 제안을 평가하고 낙찰을 권고한다. 발주기관이 평가보고서를 토대로 낙찰자를 결정한다.",
+        "legal_basis": [
+          {
+            "law": "Ley N.º 7021/2022 de Suministro y Contrataciones Públicas",
+            "article": "Arts. 54–55",
+            "url": "https://www.contrataciones.gov.py/dncp/wp-content/uploads/2026/01/digesto_ley_7021.pdf"
+          }
+        ]
       },
       {
         "id": "P07",

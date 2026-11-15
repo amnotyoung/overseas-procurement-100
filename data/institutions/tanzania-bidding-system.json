@@ -514,9 +514,20 @@
         "type": "task",
         "status": "waiting",
         "actor": "입찰자",
-        "action": "NeST 시스템 등록 후 전자로 입찰서류를 받는다.",
+        "action": "입찰자는 전자조달시스템(NeST)에 등록하고 발주기관이 제공하는 입찰서류를 받는다.",
         "blocker": "시스템 미등록 시 참여 불가",
-        "basisStatus": "pending"
+        "legal_basis": [
+          {
+            "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
+            "article": "Reg. 11(1), (3), (8), (11)",
+            "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+          },
+          {
+            "law": "Public Procurement Act, No. 10 of 2023",
+            "article": "Ss. 83(3), 84(1)",
+            "url": "https://www.ppra.go.tz/uploads/documents/en-1736861173-THE%20PUBLIC%20PROCUREMENT%20ACT.pdf"
+          }
+        ]
       },
       {
         "id": "P05",
@@ -546,13 +557,18 @@
         "type": "task",
         "status": "waiting",
         "actor": "입찰자",
-        "action": "NeST로 입찰서·보증·자격서류를 제출.",
+        "action": "입찰자는 기한 내 전자조달시스템에 전자서명한 입찰서를 제출한다. 공고가 보증을 요구하면 정해진 금액·형태·방법으로 마감 전 제출한다.",
         "output_documents": [
-          "입찰서",
-          "입찰보증",
-          "BRELA·TIN·세금 인증서"
+          "전자서명한 입찰서",
+          "공고가 요구하는 경우 입찰보증"
         ],
-        "basisStatus": "pending"
+        "legal_basis": [
+          {
+            "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
+            "article": "Regs. 11(1), 199(1)–(4)",
+            "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+          }
+        ]
       },
       {
         "id": "P07",
@@ -620,11 +636,18 @@
         "stage": "G4 계약",
         "type": "gateway",
         "status": "waiting",
-        "actor": "발주 공공기관",
+        "actor": "회계책임자 또는 입찰위원회 · 회계책임자",
         "output_documents": [
           "낙찰통지서"
         ],
-        "basisStatus": "pending"
+        "action": "회계책임자 또는 입찰위원회가 평가위원회의 권고를 승인한다. 회계책임자는 낙찰 의향을 알리고, 이의가 없으면 선정자에게 낙찰을 통지한다.",
+        "legal_basis": [
+          {
+            "law": "Public Procurement Regulations, 2024 (English version: GN No. 261 of 2025)",
+            "article": "Reg. 238(1)–(5)",
+            "url": "https://www.mof.go.tz/uploads/documents/en-1758539549-GN%20No.%20261%20OF%202025%20-%20THE%20PUBLIC%20PROCUREMENT%20REGULATIONS%20%20-%20ENGLISH%20VERSION.pdf"
+          }
+        ]
       },
       {
         "id": "P11",

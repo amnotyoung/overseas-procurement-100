@@ -34,11 +34,7 @@
       },
       {
         "name": "발주기관(Maître d'Ouvrage)",
-        "role": "필요·계획·조달절차·계약이행을 담당한다.",
-        "processNodes": [
-          "P05",
-          "P06"
-        ]
+        "role": "필요·계획·조달절차·계약이행을 담당한다."
       }
     ],
     "procedure": [
@@ -46,8 +42,8 @@
       "2. 입찰공고·서류 발행 · 발주기관 — 발주기관이 지정 채널에 공고하고 입찰조건·평가기준·계약조건을 공개한다.",
       "3. 자격·제안서 준비 · 입찰자 — 입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
       "4. 입찰서 제출 · 입찰자 — 입찰자가 공고에 정한 방식과 기한에 맞춰 입찰서를 제출한다.",
-      "5. 개찰·적격심사 · 발주기관(Maître d'Ouvrage) — 담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다. (단계 근거 확인 필요)",
-      "6. 평가·낙찰 · 발주기관(Maître d'Ouvrage) — 공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다. (단계 근거 확인 필요)",
+      "5. 개찰·적격심사 · 조달위원회 위원장 · 분석소위원회 — 조달위원장이 봉투를 개봉해 행정서류를 예비 확인한다. 분석소위원회가 공고 요건에 따라 입찰서의 적합성을 심사한다.",
+      "6. 평가·낙찰 · 분석소위원회 · 조달위원회 · 발주기관장 또는 수임 발주기관장 — 분석소위원회가 적합한 제안을 상세평가하고 조달위원회가 최종 낙찰안을 제안한다. 발주기관장 또는 수임 발주기관장이 낙찰을 결정하고 결과를 공표한다.",
       "7. 계약 체결·이행 · 발주기관 — 낙찰자가 요구 보증·등록을 완료하고 발주기관과 계약을 체결·이행한다."
     ],
     "applicability": "자료집에 기재된 카메룬의 공공조달 또는 개발협력 사업을 대상으로 한다. 자료집 발췌: 제한 입찰 ∙ 입찰서의 제출 기한의 범위는 국내입찰의 경우 15~21일(근무일 기준), 국제입찰의 경우",
@@ -289,10 +285,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "발주기관(Maître d'Ouvrage)",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "조달위원회 위원장 · 분석소위원회",
+        "action": "조달위원장이 봉투를 개봉해 행정서류를 예비 확인한다. 분석소위원회가 공고 요건에 따라 입찰서의 적합성을 심사한다.",
+        "legal_basis": [
+          {
+            "law": "Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics",
+            "article": "Arts. 92(1)–(2), (10), 95(1)",
+            "url": "https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf"
+          }
+        ]
       },
       {
         "id": "P06",
@@ -301,10 +302,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "발주기관(Maître d'Ouvrage)",
-        "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "분석소위원회 · 조달위원회 · 발주기관장 또는 수임 발주기관장",
+        "action": "분석소위원회가 적합한 제안을 상세평가하고 조달위원회가 최종 낙찰안을 제안한다. 발주기관장 또는 수임 발주기관장이 낙찰을 결정하고 결과를 공표한다.",
+        "legal_basis": [
+          {
+            "law": "Décret No. 2018/366 du 20 juin 2018 portant Code des Marchés Publics",
+            "article": "Arts. 95(1)–(2), 101(1)–(3)",
+            "url": "https://pridesoft.armp.cm/_lib/file/doc/SiteWeb/Documents/Decret_N_2018_366_du_20_juin_2018_portant_code_des_Marches_Publics.pdf"
+          }
+        ]
       },
       {
         "id": "P07",

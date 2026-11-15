@@ -49,11 +49,7 @@
       },
       {
         "name": "발주기관(maître d’ouvrage)·계약위원회",
-        "role": "조달계획·공고·평가·승인·계약관리를 수행한다.",
-        "processNodes": [
-          "P05",
-          "P06"
-        ]
+        "role": "조달계획·공고·평가·승인·계약관리를 수행한다."
       }
     ],
     "procedure": [
@@ -336,10 +332,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "발주기관(maître d’ouvrage)·계약위원회",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "입찰위원회 위원장 · 입찰위원회",
+        "action": "위원장이 공개 개찰해 행정·기술 서류 목록을 확인한다. 이어 위원회가 비공개로 서류와 참가요건을 심사한다.",
+        "legal_basis": [
+          {
+            "law": "Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics",
+            "article": "Art. 39(6)–(8)",
+            "url": "https://www.tgr.gov.ma/wps/wcm/connect/1f3081fc-2d01-41de-8339-9a2c7de0480f/DECRET%2B2-22-431%2BFR.pdf?MOD=AJPERES"
+          }
+        ]
       },
       {
         "id": "P06",
@@ -348,10 +349,15 @@
         "stage": "G3 평가",
         "type": "gateway",
         "status": "waiting",
-        "actor": "발주기관(maître d’ouvrage)·계약위원회",
-        "action": "공고된 평가기준으로 기술·가격을 평가하고 낙찰자를 결정·통지한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "입찰위원회 · 발주기관 · 관할 승인권자",
+        "action": "입찰위원회가 제안을 비교·검토해 발주기관에 선정안을 제안한다. 국가 및 지방자치단체 계약은 관할 권한자의 승인을 거쳐 확정된다.",
+        "legal_basis": [
+          {
+            "law": "Décret n° 2-22-431 du 8 mars 2023 relatif aux marchés publics",
+            "article": "Arts. 43(2)–(9), 142",
+            "url": "https://www.tgr.gov.ma/wps/wcm/connect/1f3081fc-2d01-41de-8339-9a2c7de0480f/DECRET%2B2-22-431%2BFR.pdf?MOD=AJPERES"
+          }
+        ]
       },
       {
         "id": "P07",

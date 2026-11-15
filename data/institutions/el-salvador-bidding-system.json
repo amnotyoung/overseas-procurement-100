@@ -52,7 +52,6 @@
         "name": "개별 공공기관 계약단위",
         "role": "분권화된 운영 원칙에 따라 계획·공고·평가·낙찰·계약관리를 수행한다.",
         "processNodes": [
-          "P05",
           "P06"
         ]
       }
@@ -399,8 +398,14 @@
         "type": "task",
         "status": "risk",
         "actor": "입찰자",
-        "action": "입찰자가 공고별 자격, 등록, 보증, 기술·가격 서류를 준비한다.",
-        "basisStatus": "pending"
+        "action": "입찰자는 입찰요청서에 따라 제안을 준비하고, 법적 자격은 공증 선서진술서 또는 지정 양식의 서면 진술로 입증할 수 있다.",
+        "legal_basis": [
+          {
+            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+            "article": "Arts. 90, 99",
+            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+          }
+        ]
       },
       {
         "id": "P04",
@@ -422,10 +427,15 @@
         "stage": "G3 평가",
         "type": "task",
         "status": "waiting",
-        "actor": "개별 공공기관 계약단위",
-        "action": "담당 기관이 입찰서를 개찰하고 필수요건과 적격 여부를 확인한다.",
-        "actorScope": "authority",
-        "basisStatus": "pending"
+        "actor": "공공구매부서(UCP) · 제안평가패널(PEO)",
+        "action": "UCP가 개찰하고 회의록을 작성한다. 일반 평가에서는 PEO가 요청서 기준에 따라 심사하며, 간소화 절차에서는 지정된 기술부서 또는 요청부서가 심사할 수 있다.",
+        "legal_basis": [
+          {
+            "law": "Decreto Legislativo n.º 652 — Ley de Compras Públicas",
+            "article": "Arts. 20(g), 21, 95–96, 99",
+            "url": "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/27A6DD23-B09C-4819-98B3-4CF00F899A51.pdf"
+          }
+        ]
       },
       {
         "id": "P06",
