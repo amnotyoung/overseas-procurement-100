@@ -21,6 +21,7 @@ def model_link(model, label):
 def source_requests(country, models):
     requests = []
     seen = set()
+    document_scopes = set()
     for request in country.get("sourceRequests", []):
         key = request["id"]
         axes = request["axes"]
@@ -32,6 +33,11 @@ def source_requests(country, models):
         date.fromisoformat(request["checkedOn"])
         if not all(request.get(k) for k in ("document", "scope", "finding")) or not web_url(request.get("publisherUrl")):
             raise ValueError(f"{key}: 원본 서지·확인 범위·발행처 정보 누락")
+        # 세 모델의 작업이나 상태 변경을 별도 요청으로 다시 등록하지 않도록 한다.
+        document_scope = tuple(" ".join(request[k].split()).casefold() for k in ("document", "scope"))
+        if document_scope in document_scopes:
+            raise ValueError(f"{country['slug']}: 동일 문서·확인 범위의 원본 요청 중복")
+        document_scopes.add(document_scope)
         if request["status"] == "verified":
             if not web_url(request.get("verifiedSourceUrl")) or not request.get("locator"):
                 raise ValueError(f"{key}: 확인한 발행기관 원본 및 조항 위치 누락")

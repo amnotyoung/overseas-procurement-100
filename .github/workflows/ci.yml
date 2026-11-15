@@ -52,6 +52,7 @@ jobs:
       - name: Build documentation and site
         run: |
           python tools/build_docs.py
+          git ls-files --error-unmatch docs/country-review-register.md
           git diff --exit-code -- docs/country-review-register.md
           python tools/build_construction_regulations.py
           python tools/build_site.py
