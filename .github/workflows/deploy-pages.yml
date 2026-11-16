@@ -51,6 +51,9 @@ jobs:
 
       - name: Build static site
         run: |
+          python3 tools/build_docs.py
+          git ls-files --error-unmatch docs/country-review-register.md
+          git diff --exit-code -- docs/country-review-register.md
           python3 tools/build_site.py
           npm run build:construction-boards
           python3 tools/check_construction_site.py
