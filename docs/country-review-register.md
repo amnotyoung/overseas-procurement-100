@@ -1,6 +1,8 @@
 # 협력국 검수 대장
 
-협력국 44개국 · 발행기관 원본 대기 1건 · 조달 근거 미연결 159단계
+협력국 44개국 · 발행기관 원본 대기 1건 · 조달 근거 미연결 125단계
+
+조달 데이터 스키마 v0.1 · 44개국 × 3축 · 전체 132개 모델에 캔버스와 절차도 적용
 
 ## 발행기관 원본 대기
 
@@ -15,51 +17,51 @@
 
 | 국가 | 원본 대기 | 입찰 | 거버넌스 | 사업형성 | 조달 모델 확인일 (입찰 / 거버넌스 / 사업형성) | 건축 등급 · 확인일 |
 |---|---:|---:|---:|---:|---|---|
-| [DR콩고](#pending-dr-congo) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/dr-congo-bidding-system.json) / [2026-07-29](../data/institutions/dr-congo-procurement-governance.json) / [2026-07-29](../data/institutions/dr-congo-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/dr-congo.json) |
+| [DR콩고](#pending-dr-congo) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/dr-congo-bidding-system.json) / [2026-07-29](../data/institutions/dr-congo-procurement-governance.json) / [2026-07-29](../data/institutions/dr-congo-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/dr-congo.json) |
 | [가나](#pending-ghana) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/ghana-bidding-system.json) / [2026-07-29](../data/institutions/ghana-procurement-governance.json) / [2026-07-29](../data/institutions/ghana-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ghana.json) |
-| [과테말라](#pending-guatemala) | 0 | 0 | 3 | 2 | [2026-07-29](../data/institutions/guatemala-bidding-system.json) / [2026-07-29](../data/institutions/guatemala-procurement-governance.json) / [2026-07-29](../data/institutions/guatemala-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/guatemala.json) |
+| [과테말라](#pending-guatemala) | 0 | 0 | 2 | 2 | [2026-07-29](../data/institutions/guatemala-bidding-system.json) / [2026-07-29](../data/institutions/guatemala-procurement-governance.json) / [2026-07-29](../data/institutions/guatemala-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/guatemala.json) |
 | [나이지리아](#pending-nigeria) | 0 | 0 | 0 | 2 | [2026-07-29](../data/institutions/nigeria-bidding-system.json) / [2026-07-29](../data/institutions/nigeria-procurement-governance.json) / [2026-07-29](../data/institutions/nigeria-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/nigeria.json) |
 | [네팔](#pending-nepal) | 0 | 0 | 0 | 1 | [2026-07-22](../data/institutions/nepal-bidding-system.json) / [2026-07-22](../data/institutions/nepal-procurement-governance.json) / [2026-07-23](../data/institutions/nepal-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/nepal.json) |
-| [도미니카공화국](#pending-dominican-republic) | 0 | 0 | 1 | 2 | [2026-07-29](../data/institutions/dominican-republic-bidding-system.json) / [2026-07-29](../data/institutions/dominican-republic-procurement-governance.json) / [2026-07-29](../data/institutions/dominican-republic-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/dominican-republic.json) |
-| [동티모르](#pending-timor-leste) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/timor-leste-bidding-system.json) / [2026-07-29](../data/institutions/timor-leste-procurement-governance.json) / [2026-07-29](../data/institutions/timor-leste-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/timor-leste.json) |
-| [라오스](#pending-laos) | 0 | 0 | 1 | 2 | [2026-07-29](../data/institutions/laos-bidding-system.json) / [2026-07-29](../data/institutions/laos-procurement-governance.json) / [2026-07-29](../data/institutions/laos-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/laos.json) |
-| [르완다](#pending-rwanda) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/rwanda-bidding-system.json) / [2026-07-29](../data/institutions/rwanda-procurement-governance.json) / [2026-07-29](../data/institutions/rwanda-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/rwanda.json) |
-| [모로코](#pending-morocco) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/morocco-bidding-system.json) / [2026-07-29](../data/institutions/morocco-procurement-governance.json) / [2026-07-29](../data/institutions/morocco-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/morocco.json) |
+| [도미니카공화국](#pending-dominican-republic) | 0 | 0 | 0 | 2 | [2026-07-29](../data/institutions/dominican-republic-bidding-system.json) / [2026-07-29](../data/institutions/dominican-republic-procurement-governance.json) / [2026-07-29](../data/institutions/dominican-republic-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/dominican-republic.json) |
+| [동티모르](#pending-timor-leste) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/timor-leste-bidding-system.json) / [2026-07-29](../data/institutions/timor-leste-procurement-governance.json) / [2026-07-29](../data/institutions/timor-leste-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/timor-leste.json) |
+| [라오스](#pending-laos) | 0 | 0 | 0 | 2 | [2026-07-29](../data/institutions/laos-bidding-system.json) / [2026-07-29](../data/institutions/laos-procurement-governance.json) / [2026-07-29](../data/institutions/laos-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/laos.json) |
+| [르완다](#pending-rwanda) | 0 | 0 | 1 | 1 | [2026-07-29](../data/institutions/rwanda-bidding-system.json) / [2026-07-29](../data/institutions/rwanda-procurement-governance.json) / [2026-07-29](../data/institutions/rwanda-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/rwanda.json) |
+| [모로코](#pending-morocco) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/morocco-bidding-system.json) / [2026-07-29](../data/institutions/morocco-procurement-governance.json) / [2026-07-29](../data/institutions/morocco-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/morocco.json) |
 | [모잠비크](#pending-mozambique) | 1 | 2 | 2 | 1 | [2026-07-29](../data/institutions/mozambique-bidding-system.json) / [2026-07-29](../data/institutions/mozambique-procurement-governance.json) / [2026-07-29](../data/institutions/mozambique-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/mozambique.json) |
-| [몽골](#pending-mongolia) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/mongolia-bidding-system.json) / [2026-07-29](../data/institutions/mongolia-procurement-governance.json) / [2026-07-29](../data/institutions/mongolia-oda-project-pipeline.json) | [article-verified · 2026-08-07](../data/construction-regulations/mongolia.json) |
+| [몽골](#pending-mongolia) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/mongolia-bidding-system.json) / [2026-07-29](../data/institutions/mongolia-procurement-governance.json) / [2026-07-29](../data/institutions/mongolia-oda-project-pipeline.json) | [article-verified · 2026-08-07](../data/construction-regulations/mongolia.json) |
 | [미얀마](#pending-myanmar) | 0 | 0 | 4 | 2 | [2026-07-29](../data/institutions/myanmar-bidding-system.json) / [2026-07-29](../data/institutions/myanmar-procurement-governance.json) / [2026-07-29](../data/institutions/myanmar-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/myanmar.json) |
-| [방글라데시](#pending-bangladesh) | 0 | 0 | 3 | 3 | [2026-07-28](../data/institutions/bangladesh-bidding-system.json) / [2026-07-28](../data/institutions/bangladesh-procurement-governance.json) / [2026-07-28](../data/institutions/bangladesh-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bangladesh.json) |
-| [베트남](#pending-vietnam) | 0 | 1 | 2 | 3 | [2026-07-29](../data/institutions/vietnam-bidding-system.json) / [2026-07-29](../data/institutions/vietnam-procurement-governance.json) / [2026-07-29](../data/institutions/vietnam-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/vietnam.json) |
-| [볼리비아](#pending-bolivia) | 0 | 0 | 3 | 2 | [2026-07-29](../data/institutions/bolivia-bidding-system.json) / [2026-07-29](../data/institutions/bolivia-procurement-governance.json) / [2026-07-29](../data/institutions/bolivia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bolivia.json) |
-| [세네갈](#pending-senegal) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/senegal-bidding-system.json) / [2026-07-29](../data/institutions/senegal-procurement-governance.json) / [2026-07-29](../data/institutions/senegal-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/senegal.json) |
-| [스리랑카](#pending-sri-lanka) | 0 | 0 | 1 | 4 | [2026-07-29](../data/institutions/sri-lanka-bidding-system.json) / [2026-07-29](../data/institutions/sri-lanka-procurement-governance.json) / [2026-07-29](../data/institutions/sri-lanka-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/sri-lanka.json) |
-| [아제르바이잔](#pending-azerbaijan) | 0 | 0 | 2 | 0 | [2026-07-28](../data/institutions/azerbaijan-bidding-system.json) / [2026-07-28](../data/institutions/azerbaijan-procurement-governance.json) / [2026-07-28](../data/institutions/azerbaijan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/azerbaijan.json) |
-| [에콰도르](#pending-ecuador) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/ecuador-bidding-system.json) / [2026-07-29](../data/institutions/ecuador-procurement-governance.json) / [2026-07-29](../data/institutions/ecuador-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ecuador.json) |
-| [에티오피아](#pending-ethiopia) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/ethiopia-bidding-system.json) / [2026-07-29](../data/institutions/ethiopia-procurement-governance.json) / [2026-07-29](../data/institutions/ethiopia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ethiopia.json) |
-| [엘살바도르](#pending-el-salvador) | 0 | 0 | 1 | 5 | [2026-07-29](../data/institutions/el-salvador-bidding-system.json) / [2026-07-29](../data/institutions/el-salvador-procurement-governance.json) / [2026-07-29](../data/institutions/el-salvador-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/el-salvador.json) |
-| [요르단](#pending-jordan) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/jordan-bidding-system.json) / [2026-07-29](../data/institutions/jordan-procurement-governance.json) / [2026-07-29](../data/institutions/jordan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/jordan.json) |
-| [우간다](#pending-uganda) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/uganda-bidding-system.json) / [2026-07-29](../data/institutions/uganda-procurement-governance.json) / [2026-07-29](../data/institutions/uganda-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/uganda.json) |
-| [우즈베키스탄](#pending-uzbekistan) | 0 | 0 | 2 | 3 | [2026-07-29](../data/institutions/uzbekistan-bidding-system.json) / [2026-07-29](../data/institutions/uzbekistan-procurement-governance.json) / [2026-07-29](../data/institutions/uzbekistan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/uzbekistan.json) |
-| [우크라이나](#pending-ukraine) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/ukraine-bidding-system.json) / [2026-07-29](../data/institutions/ukraine-procurement-governance.json) / [2026-07-29](../data/institutions/ukraine-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ukraine.json) |
-| [이집트](#pending-egypt) | 0 | 0 | 3 | 1 | [2026-07-29](../data/institutions/egypt-bidding-system.json) / [2026-07-29](../data/institutions/egypt-procurement-governance.json) / [2026-07-29](../data/institutions/egypt-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/egypt.json) |
-| [인도네시아](#pending-indonesia) | 0 | 1 | 3 | 3 | [2026-07-29](../data/institutions/indonesia-bidding-system.json) / [2026-07-29](../data/institutions/indonesia-procurement-governance.json) / [2026-07-29](../data/institutions/indonesia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/indonesia.json) |
-| [카메룬](#pending-cameroon) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/cameroon-bidding-system.json) / [2026-07-29](../data/institutions/cameroon-procurement-governance.json) / [2026-07-29](../data/institutions/cameroon-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/cameroon.json) |
+| [방글라데시](#pending-bangladesh) | 0 | 0 | 2 | 3 | [2026-07-28](../data/institutions/bangladesh-bidding-system.json) / [2026-07-28](../data/institutions/bangladesh-procurement-governance.json) / [2026-07-28](../data/institutions/bangladesh-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bangladesh.json) |
+| [베트남](#pending-vietnam) | 0 | 1 | 1 | 3 | [2026-07-29](../data/institutions/vietnam-bidding-system.json) / [2026-07-29](../data/institutions/vietnam-procurement-governance.json) / [2026-07-29](../data/institutions/vietnam-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/vietnam.json) |
+| [볼리비아](#pending-bolivia) | 0 | 0 | 2 | 2 | [2026-07-29](../data/institutions/bolivia-bidding-system.json) / [2026-07-29](../data/institutions/bolivia-procurement-governance.json) / [2026-07-29](../data/institutions/bolivia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/bolivia.json) |
+| [세네갈](#pending-senegal) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/senegal-bidding-system.json) / [2026-07-29](../data/institutions/senegal-procurement-governance.json) / [2026-07-29](../data/institutions/senegal-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/senegal.json) |
+| [스리랑카](#pending-sri-lanka) | 0 | 0 | 0 | 4 | [2026-07-29](../data/institutions/sri-lanka-bidding-system.json) / [2026-07-29](../data/institutions/sri-lanka-procurement-governance.json) / [2026-07-29](../data/institutions/sri-lanka-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/sri-lanka.json) |
+| [아제르바이잔](#pending-azerbaijan) | 0 | 0 | 1 | 0 | [2026-07-28](../data/institutions/azerbaijan-bidding-system.json) / [2026-07-28](../data/institutions/azerbaijan-procurement-governance.json) / [2026-07-28](../data/institutions/azerbaijan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/azerbaijan.json) |
+| [에콰도르](#pending-ecuador) | 0 | 0 | 1 | 1 | [2026-07-29](../data/institutions/ecuador-bidding-system.json) / [2026-07-29](../data/institutions/ecuador-procurement-governance.json) / [2026-07-29](../data/institutions/ecuador-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ecuador.json) |
+| [에티오피아](#pending-ethiopia) | 0 | 0 | 1 | 0 | [2026-07-29](../data/institutions/ethiopia-bidding-system.json) / [2026-07-29](../data/institutions/ethiopia-procurement-governance.json) / [2026-07-29](../data/institutions/ethiopia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ethiopia.json) |
+| [엘살바도르](#pending-el-salvador) | 0 | 0 | 0 | 5 | [2026-07-29](../data/institutions/el-salvador-bidding-system.json) / [2026-07-29](../data/institutions/el-salvador-procurement-governance.json) / [2026-07-29](../data/institutions/el-salvador-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/el-salvador.json) |
+| [요르단](#pending-jordan) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/jordan-bidding-system.json) / [2026-07-29](../data/institutions/jordan-procurement-governance.json) / [2026-07-29](../data/institutions/jordan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/jordan.json) |
+| [우간다](#pending-uganda) | 0 | 0 | 1 | 0 | [2026-07-29](../data/institutions/uganda-bidding-system.json) / [2026-07-29](../data/institutions/uganda-procurement-governance.json) / [2026-07-29](../data/institutions/uganda-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/uganda.json) |
+| [우즈베키스탄](#pending-uzbekistan) | 0 | 0 | 1 | 3 | [2026-07-29](../data/institutions/uzbekistan-bidding-system.json) / [2026-07-29](../data/institutions/uzbekistan-procurement-governance.json) / [2026-07-29](../data/institutions/uzbekistan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/uzbekistan.json) |
+| [우크라이나](#pending-ukraine) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/ukraine-bidding-system.json) / [2026-07-29](../data/institutions/ukraine-procurement-governance.json) / [2026-07-29](../data/institutions/ukraine-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/ukraine.json) |
+| [이집트](#pending-egypt) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/egypt-bidding-system.json) / [2026-07-29](../data/institutions/egypt-procurement-governance.json) / [2026-07-29](../data/institutions/egypt-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/egypt.json) |
+| [인도네시아](#pending-indonesia) | 0 | 1 | 2 | 3 | [2026-07-29](../data/institutions/indonesia-bidding-system.json) / [2026-07-29](../data/institutions/indonesia-procurement-governance.json) / [2026-07-29](../data/institutions/indonesia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/indonesia.json) |
+| [카메룬](#pending-cameroon) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/cameroon-bidding-system.json) / [2026-07-29](../data/institutions/cameroon-procurement-governance.json) / [2026-07-29](../data/institutions/cameroon-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/cameroon.json) |
 | [캄보디아](#pending-cambodia) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/cambodia-bidding-system.json) / [2026-07-29](../data/institutions/cambodia-procurement-governance.json) / [2026-07-29](../data/institutions/cambodia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/cambodia.json) |
-| [케냐](#pending-kenya) | 0 | 0 | 2 | 1 | [2026-07-29](../data/institutions/kenya-bidding-system.json) / [2026-07-29](../data/institutions/kenya-procurement-governance.json) / [2026-07-29](../data/institutions/kenya-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/kenya.json) |
-| [코트디부아르](#pending-cote-divoire) | 0 | 0 | 1 | 3 | [2026-07-29](../data/institutions/cote-divoire-bidding-system.json) / [2026-07-29](../data/institutions/cote-divoire-procurement-governance.json) / [2026-07-29](../data/institutions/cote-divoire-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/cote-divoire.json) |
-| [콜롬비아](#pending-colombia) | 0 | 1 | 1 | 1 | [2026-07-29](../data/institutions/colombia-bidding-system.json) / [2026-07-29](../data/institutions/colombia-procurement-governance.json) / [2026-07-29](../data/institutions/colombia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/colombia.json) |
+| [케냐](#pending-kenya) | 0 | 0 | 1 | 1 | [2026-07-29](../data/institutions/kenya-bidding-system.json) / [2026-07-29](../data/institutions/kenya-procurement-governance.json) / [2026-07-29](../data/institutions/kenya-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/kenya.json) |
+| [코트디부아르](#pending-cote-divoire) | 0 | 0 | 0 | 3 | [2026-07-29](../data/institutions/cote-divoire-bidding-system.json) / [2026-07-29](../data/institutions/cote-divoire-procurement-governance.json) / [2026-07-29](../data/institutions/cote-divoire-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/cote-divoire.json) |
+| [콜롬비아](#pending-colombia) | 0 | 1 | 0 | 1 | [2026-07-29](../data/institutions/colombia-bidding-system.json) / [2026-07-29](../data/institutions/colombia-procurement-governance.json) / [2026-07-29](../data/institutions/colombia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/colombia.json) |
 | [키르기스스탄](#pending-kyrgyzstan) | 0 | 2 | 3 | 2 | [2026-07-29](../data/institutions/kyrgyzstan-bidding-system.json) / [2026-07-29](../data/institutions/kyrgyzstan-procurement-governance.json) / [2026-07-29](../data/institutions/kyrgyzstan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/kyrgyzstan.json) |
 | [타지키스탄](#pending-tajikistan) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/tajikistan-bidding-system.json) / [2026-07-29](../data/institutions/tajikistan-procurement-governance.json) / [2026-07-29](../data/institutions/tajikistan-oda-project-pipeline.json) | [article-verified · 2026-08-07](../data/construction-regulations/tajikistan.json) |
 | 탄자니아 | 0 | 0 | 0 | 0 | [2026-07-23](../data/institutions/tanzania-bidding-system.json) / [2026-07-23](../data/institutions/tanzania-procurement-governance.json) / [2026-07-28](../data/institutions/tanzania-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/tanzania.json) |
-| [태국](#pending-thailand) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/thailand-bidding-system.json) / [2026-07-29](../data/institutions/thailand-procurement-governance.json) / [2026-07-29](../data/institutions/thailand-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/thailand.json) |
-| [튀니지](#pending-tunisia) | 0 | 0 | 2 | 2 | [2026-07-29](../data/institutions/tunisia-bidding-system.json) / [2026-07-29](../data/institutions/tunisia-procurement-governance.json) / [2026-07-29](../data/institutions/tunisia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/tunisia.json) |
-| [파라과이](#pending-paraguay) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/paraguay-bidding-system.json) / [2026-07-29](../data/institutions/paraguay-procurement-governance.json) / [2026-07-29](../data/institutions/paraguay-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/paraguay.json) |
-| [파키스탄](#pending-pakistan) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/pakistan-bidding-system.json) / [2026-07-29](../data/institutions/pakistan-procurement-governance.json) / [2026-07-29](../data/institutions/pakistan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/pakistan.json) |
-| [팔레스타인](#pending-palestine) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/palestine-bidding-system.json) / [2026-07-29](../data/institutions/palestine-procurement-governance.json) / [2026-07-29](../data/institutions/palestine-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/palestine.json) |
+| [태국](#pending-thailand) | 0 | 0 | 1 | 0 | [2026-07-29](../data/institutions/thailand-bidding-system.json) / [2026-07-29](../data/institutions/thailand-procurement-governance.json) / [2026-07-29](../data/institutions/thailand-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/thailand.json) |
+| [튀니지](#pending-tunisia) | 0 | 0 | 1 | 2 | [2026-07-29](../data/institutions/tunisia-bidding-system.json) / [2026-07-29](../data/institutions/tunisia-procurement-governance.json) / [2026-07-29](../data/institutions/tunisia-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/tunisia.json) |
+| [파라과이](#pending-paraguay) | 0 | 0 | 1 | 0 | [2026-07-29](../data/institutions/paraguay-bidding-system.json) / [2026-07-29](../data/institutions/paraguay-procurement-governance.json) / [2026-07-29](../data/institutions/paraguay-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/paraguay.json) |
+| [파키스탄](#pending-pakistan) | 0 | 0 | 1 | 0 | [2026-07-29](../data/institutions/pakistan-bidding-system.json) / [2026-07-29](../data/institutions/pakistan-procurement-governance.json) / [2026-07-29](../data/institutions/pakistan-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/pakistan.json) |
+| [팔레스타인](#pending-palestine) | 0 | 0 | 2 | 0 | [2026-07-29](../data/institutions/palestine-bidding-system.json) / [2026-07-29](../data/institutions/palestine-procurement-governance.json) / [2026-07-29](../data/institutions/palestine-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/palestine.json) |
 | [페루](#pending-peru) | 0 | 0 | 3 | 0 | [2026-07-29](../data/institutions/peru-bidding-system.json) / [2026-07-29](../data/institutions/peru-procurement-governance.json) / [2026-07-29](../data/institutions/peru-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/peru.json) |
-| [피지](#pending-fiji) | 0 | 0 | 3 | 2 | [2026-07-28](../data/institutions/fiji-bidding-system.json) / [2026-07-28](../data/institutions/fiji-procurement-governance.json) / [2026-07-28](../data/institutions/fiji-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/fiji.json) |
-| [필리핀](#pending-philippines) | 0 | 0 | 3 | 0 | [2026-07-28](../data/institutions/philippines-bidding-system.json) / [2026-07-28](../data/institutions/philippines-procurement-governance.json) / [2026-07-28](../data/institutions/philippines-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/philippines.json) |
-| **합계** | **1** | **7** | **97** | **55** | | |
+| [피지](#pending-fiji) | 0 | 0 | 2 | 2 | [2026-07-28](../data/institutions/fiji-bidding-system.json) / [2026-07-28](../data/institutions/fiji-procurement-governance.json) / [2026-07-28](../data/institutions/fiji-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/fiji.json) |
+| [필리핀](#pending-philippines) | 0 | 0 | 2 | 0 | [2026-07-28](../data/institutions/philippines-bidding-system.json) / [2026-07-28](../data/institutions/philippines-procurement-governance.json) / [2026-07-28](../data/institutions/philippines-oda-project-pipeline.json) | [law-linked · 2026-08-07](../data/construction-regulations/philippines.json) |
+| **합계** | **1** | **7** | **63** | **55** | | |
 
 ## 근거 미연결 단계
 
@@ -67,12 +69,11 @@
 
 <a id="pending-dr-congo"></a>
 
-### DR콩고 · 4단계
+### DR콩고 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/dr-congo-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/dr-congo-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/dr-congo-procurement-governance.json) | P05 | 절차 감독·감사 | 공공조달규제청(ARMP) |
 | [사업형성](../data/institutions/dr-congo-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 
@@ -87,12 +88,11 @@
 
 <a id="pending-guatemala"></a>
 
-### 과테말라 · 5단계
+### 과테말라 · 4단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/guatemala-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/guatemala-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/guatemala-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 | [사업형성](../data/institutions/guatemala-oda-project-pipeline.json) | P04 | 공식 사업요청 | 대통령실 기획청(SEGEPLAN) 협력·개발파트너십 차관실 |
 | [사업형성](../data/institutions/guatemala-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
@@ -116,53 +116,48 @@
 
 <a id="pending-dominican-republic"></a>
 
-### 도미니카공화국 · 3단계
+### 도미니카공화국 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/dominican-republic-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/dominican-republic-oda-project-pipeline.json) | P02 | PCP·요청서 작성 | 수원부처 |
 | [사업형성](../data/institutions/dominican-republic-oda-project-pipeline.json) | P04 | 공식 사업요청 | 대통령부(MINPRE) 국제협력 담당조직 |
 
 <a id="pending-timor-leste"></a>
 
-### 동티모르 · 4단계
+### 동티모르 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/timor-leste-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/timor-leste-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/timor-leste-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 | [사업형성](../data/institutions/timor-leste-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-laos"></a>
 
-### 라오스 · 3단계
+### 라오스 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/laos-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/laos-oda-project-pipeline.json) | P02 | PCP·요청서 작성 | 수원부처 |
 | [사업형성](../data/institutions/laos-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 
 <a id="pending-rwanda"></a>
 
-### 르완다 · 3단계
+### 르완다 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/rwanda-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/rwanda-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/rwanda-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 
 <a id="pending-morocco"></a>
 
-### 모로코 · 4단계
+### 모로코 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/morocco-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/morocco-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/morocco-procurement-governance.json) | P05 | 절차 감독·감사 | 재정경제부·왕국총재무국(TGR) |
 | [사업형성](../data/institutions/morocco-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 
@@ -182,15 +177,15 @@
 
 - 입찰 P05 · 2026-11-16 · 2026년 재공포를 인용하는 공사 입찰서가 있다. 관보 제148호 재공포본에서 개찰과 자격심사의 담당을 확인한다.
 - 입찰 P06 · 2026-11-16 · 2026년 공고가 인용한 재공포본에서 심사위원회의 평가 권고와 낙찰 결정권자의 권한을 확인한다.
+- 거버넌스 P04 · 2026-11-16 · 정부 공고가 2026년 재공포 규정을 인용한다. 관보 제148호 원본에서 입찰 집행과 조서 작성의 담당을 확인한다.
 
 <a id="pending-mongolia"></a>
 
-### 몽골 · 3단계
+### 몽골 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/mongolia-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/mongolia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/mongolia-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 
 <a id="pending-myanmar"></a>
@@ -208,12 +203,11 @@
 
 <a id="pending-bangladesh"></a>
 
-### 방글라데시 · 6단계
+### 방글라데시 · 5단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/bangladesh-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/bangladesh-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/bangladesh-procurement-governance.json) | P05 | 절차 감독·감사 | 방글라데시 공공조달청(BPPA, Bangladesh Public Procurement Authority) |
 | [사업형성](../data/institutions/bangladesh-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 | [사업형성](../data/institutions/bangladesh-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
@@ -221,13 +215,12 @@
 
 <a id="pending-vietnam"></a>
 
-### 베트남 · 6단계
+### 베트남 · 5단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [입찰](../data/institutions/vietnam-bidding-system.json) | P05 | 개찰·적격심사 | 사업주·발주기관·전문조달조직 |
 | [거버넌스](../data/institutions/vietnam-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/vietnam-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P04 | 공식 사업요청 | 사업유형별 공식 요청기관 |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
 | [사업형성](../data/institutions/vietnam-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
@@ -238,34 +231,31 @@
 
 <a id="pending-bolivia"></a>
 
-### 볼리비아 · 5단계
+### 볼리비아 · 4단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/bolivia-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/bolivia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/bolivia-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 | [사업형성](../data/institutions/bolivia-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 공공투자·외부재원부(VIPFE) |
 | [사업형성](../data/institutions/bolivia-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-senegal"></a>
 
-### 세네갈 · 4단계
+### 세네갈 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/senegal-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/senegal-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/senegal-procurement-governance.json) | P05 | 절차 감독·감사 | 공공계약규제청(ARCOP) |
 | [사업형성](../data/institutions/senegal-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 
 <a id="pending-sri-lanka"></a>
 
-### 스리랑카 · 5단계
+### 스리랑카 · 4단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/sri-lanka-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/sri-lanka-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 국가기획국(NPD) |
 | [사업형성](../data/institutions/sri-lanka-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 | [사업형성](../data/institutions/sri-lanka-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
@@ -273,39 +263,35 @@
 
 <a id="pending-azerbaijan"></a>
 
-### 아제르바이잔 · 2단계
+### 아제르바이잔 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/azerbaijan-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/azerbaijan-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 
 <a id="pending-ecuador"></a>
 
-### 에콰도르 · 3단계
+### 에콰도르 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/ecuador-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/ecuador-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/ecuador-oda-project-pipeline.json) | P02 | PCP·요청서 작성 | 수원부처 |
 
 <a id="pending-ethiopia"></a>
 
-### 에티오피아 · 2단계
+### 에티오피아 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/ethiopia-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/ethiopia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 
 <a id="pending-el-salvador"></a>
 
-### 엘살바도르 · 6단계
+### 엘살바도르 · 5단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/el-salvador-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/el-salvador-oda-project-pipeline.json) | P02 | PCP·요청서 작성 | 수원부처 |
 | [사업형성](../data/institutions/el-salvador-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 | [사업형성](../data/institutions/el-salvador-oda-project-pipeline.json) | P04 | 공식 사업요청 | 엘살바도르 국제협력청(ESCO) |
@@ -314,31 +300,28 @@
 
 <a id="pending-jordan"></a>
 
-### 요르단 · 4단계
+### 요르단 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/jordan-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/jordan-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/jordan-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 | [사업형성](../data/institutions/jordan-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-uganda"></a>
 
-### 우간다 · 2단계
+### 우간다 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/uganda-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/uganda-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 
 <a id="pending-uzbekistan"></a>
 
-### 우즈베키스탄 · 5단계
+### 우즈베키스탄 · 4단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/uzbekistan-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/uzbekistan-procurement-governance.json) | P05 | 절차 감독·감사 | 경제재정부 |
 | [사업형성](../data/institutions/uzbekistan-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 | [사업형성](../data/institutions/uzbekistan-oda-project-pipeline.json) | P06 | 기획·사업 확정 | KOICA |
@@ -346,35 +329,32 @@
 
 <a id="pending-ukraine"></a>
 
-### 우크라이나 · 4단계
+### 우크라이나 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/ukraine-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/ukraine-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/ukraine-procurement-governance.json) | P05 | 절차 감독·감사 | 반독점위원회(AMCU)·국가감사원 |
 | [사업형성](../data/institutions/ukraine-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-egypt"></a>
 
-### 이집트 · 4단계
+### 이집트 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/egypt-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/egypt-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/egypt-procurement-governance.json) | P05 | 절차 감독·감사 | 정부서비스청(GAGS) |
 | [사업형성](../data/institutions/egypt-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 무상원조 우선순위 심사기관 (확인 필요) |
 
 <a id="pending-indonesia"></a>
 
-### 인도네시아 · 7단계
+### 인도네시아 · 6단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [입찰](../data/institutions/indonesia-bidding-system.json) | P05 | 개찰·적격심사 | 예산사용자·계약담당관(PA/KPA·PPK) 및 조달작업반 |
 | [거버넌스](../data/institutions/indonesia-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/indonesia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/indonesia-procurement-governance.json) | P05 | 절차 감독·감사 | 정부조달정책원(LKPP) |
 | [사업형성](../data/institutions/indonesia-oda-project-pipeline.json) | P04 | 공식 사업요청 | 국가개발기획부/국가개발기획청(Bappenas) 외부재원·무상원조국 |
 | [사업형성](../data/institutions/indonesia-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
@@ -386,12 +366,11 @@
 
 <a id="pending-cameroon"></a>
 
-### 카메룬 · 3단계
+### 카메룬 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/cameroon-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/cameroon-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/cameroon-procurement-governance.json) | P05 | 절차 감독·감사 | 공공계약부(MINMAP, Ministry of Public Contracts) |
 
 <a id="pending-cambodia"></a>
@@ -405,33 +384,30 @@
 
 <a id="pending-kenya"></a>
 
-### 케냐 · 3단계
+### 케냐 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/kenya-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/kenya-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/kenya-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 국가재무부 자원동원부 |
 
 <a id="pending-cote-divoire"></a>
 
-### 코트디부아르 · 4단계
+### 코트디부아르 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/cote-divoire-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/cote-divoire-oda-project-pipeline.json) | P03 | 국가 우선순위 검토 | 사업유형별 우선순위 심사기관 |
 | [사업형성](../data/institutions/cote-divoire-oda-project-pipeline.json) | P04 | 공식 사업요청 | 사업유형별 공식 요청기관 |
 | [사업형성](../data/institutions/cote-divoire-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-colombia"></a>
 
-### 콜롬비아 · 3단계
+### 콜롬비아 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [입찰](../data/institutions/colombia-bidding-system.json) | P05 | 개찰·적격심사 | 개별 국가기관·지방정부 발주기관 |
-| [거버넌스](../data/institutions/colombia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/colombia-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 
 검수 후 대기 사유
@@ -456,6 +432,7 @@
 
 - 입찰 P05 · 2026-11-16 · 법률 27호 구판 제25조는 포털 자동 개찰을 규정한다. 2026년 개정이 반영된 공식 본문에서 개찰과 후속 적격심사의 담당을 확인한다.
 - 입찰 P06 · 2026-11-16 · 법률 27호 구판 제26조의 평가 절차와 2026년 개정법의 시행시점을 대조해 현행 평가·낙찰 권한을 확인한다.
+- 거버넌스 P04 · 2026-11-16 · 포털의 자동 개찰 사례는 확인했다. 2026년 개정이 반영된 공식 원문에서 개찰조서 생성 주체와 적용 범위를 확인한다.
 
 <a id="pending-tajikistan"></a>
 
@@ -467,52 +444,51 @@
 | [거버넌스](../data/institutions/tajikistan-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/tajikistan-procurement-governance.json) | P05 | 절차 감독·감사 | 정부 산하 물품·공사·서비스 공공조달청 |
 
+검수 후 대기 사유
+
+- 거버넌스 P04 · 2026-11-16 · 정부 결정 제362호의 2026년 개정은 확인했다. 개정 부속 규칙에서 개찰조서나 평가보고서 작성 주체를 확인한다.
+
 <a id="pending-thailand"></a>
 
-### 태국 · 2단계
+### 태국 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/thailand-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/thailand-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 
 <a id="pending-tunisia"></a>
 
-### 튀니지 · 4단계
+### 튀니지 · 3단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/tunisia-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/tunisia-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [사업형성](../data/institutions/tunisia-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 | [사업형성](../data/institutions/tunisia-oda-project-pipeline.json) | P07 | RD·MOU 공식화 | 해당 협정의 양측 서명권자 |
 
 <a id="pending-paraguay"></a>
 
-### 파라과이 · 2단계
+### 파라과이 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/paraguay-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/paraguay-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 
 <a id="pending-pakistan"></a>
 
-### 파키스탄 · 2단계
+### 파키스탄 · 1단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
-| [거버넌스](../data/institutions/pakistan-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/pakistan-procurement-governance.json) | P05 | 절차 감독·감사 | 공공조달규제청(PPRA) |
 
 <a id="pending-palestine"></a>
 
-### 팔레스타인 · 3단계
+### 팔레스타인 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/palestine-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/palestine-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/palestine-procurement-governance.json) | P05 | 절차 감독·감사 | 공공조달정책고등위원회(HCPPP) |
 
 <a id="pending-peru"></a>
@@ -525,24 +501,26 @@
 | [거버넌스](../data/institutions/peru-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/peru-procurement-governance.json) | P05 | 절차 감독·감사 | 효율적공공계약전문기관(OECE) |
 
+검수 후 대기 사유
+
+- 거버넌스 P04 · 2026-11-16 · 평가위원의 심사와 Pladicop 의사록 등록은 확인했다. 일반 선정 절차의 의사록 작성자를 지정한 원문을 확인한다.
+
 <a id="pending-fiji"></a>
 
-### 피지 · 5단계
+### 피지 · 4단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/fiji-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/fiji-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/fiji-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
 | [사업형성](../data/institutions/fiji-oda-project-pipeline.json) | P01 | 수요 발굴 | 수원부처 |
 | [사업형성](../data/institutions/fiji-oda-project-pipeline.json) | P05 | 예비조사·타당성 검토 | KOICA |
 
 <a id="pending-philippines"></a>
 
-### 필리핀 · 3단계
+### 필리핀 · 2단계
 
 | 조달 원천 | 단계 ID | 확인할 절차 | 원천에 기재된 담당 |
 |---|---|---|---|
 | [거버넌스](../data/institutions/philippines-procurement-governance.json) | P01 | 조달계획 수립 | 발주기관 |
-| [거버넌스](../data/institutions/philippines-procurement-governance.json) | P04 | 입찰 집행·기록 | 발주기관 |
 | [거버넌스](../data/institutions/philippines-procurement-governance.json) | P05 | 절차 감독·감사 | 해당 조달의 감독·감사기관 |
