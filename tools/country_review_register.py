@@ -96,6 +96,8 @@ def build_country_review_register(items):
         review_notes = []
         for axis, label in AXES.items():
             model = models[axis]
+            if model.get("status") != "full" or not model.get("canvas") or not (model.get("process") or {}).get("nodes"):
+                raise ValueError(f"{iso} {label}: 공개 모델에는 캔버스와 절차도가 모두 필요합니다")
             for node in model["process"]["nodes"]:
                 if node.get("basisStatus") != "pending":
                     continue
@@ -118,6 +120,7 @@ def build_country_review_register(items):
 
     lines = ["# 협력국 검수 대장", "",
              f"협력국 {len(countries)}개국 · 발행기관 원본 대기 {total_waiting}건 · 조달 근거 미연결 {sum(totals.values())}단계",
+             "", f"조달 데이터 스키마 v{manifest['schemaVersion']} · {len(countries)}개국 × {len(AXES)}축 · 전체 {sum(len(models) for models in registry.values())}개 모델에 캔버스와 절차도 적용",
              "", "## 발행기관 원본 대기", "",
              *(pending_requests or ["현재 등록된 원본 대기 건이 없습니다.", ""]),
              "## 국가별 검수 현황", "",
